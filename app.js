@@ -349,10 +349,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Helper: kunin question bank depende sa topic
   function getQuestionBank(topic) {
-  if (topic === "nouns") return NOUN_QUESTIONS;
-  if (topic === "gender") return GENDER_QUESTIONS;
-  // for other topics: wala pa
-  return null;
+  switch (topic) {
+    case "nouns":
+      return NOUN_QUESTIONS;
+    case "gender":
+      return GENDER_QUESTIONS;
+    case "grammatical_number":
+      return GRAMMATICAL_NUMBER_QUESTIONS;
+    default:
+      return null;
+  }
 }
 
 
