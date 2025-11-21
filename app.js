@@ -133,7 +133,7 @@ const LESSONS = {
   }
 };
 
-// Question banks for practice mode
+// Question banks for practice mode - ONLY ONE DECLARATION
 const GENDER_QUESTIONS = {
   beginner: [
     {
@@ -351,7 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getQuestionBank(topic) {
     if (topic === "gender") return GENDER_QUESTIONS;
-    // Add more question banks as they become available
     return null;
   }
 
