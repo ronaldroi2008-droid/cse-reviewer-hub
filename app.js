@@ -507,10 +507,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return GENDER_QUESTIONS;
     case "grammatical_number":
       return GRAMMATICAL_NUMBER_QUESTIONS;
+    case "verbs":
+      return VERB_QUESTIONS;
     default:
       return null;
   }
 }
+
 
 
   // Populate topic select
