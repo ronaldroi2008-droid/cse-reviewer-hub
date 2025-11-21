@@ -76,45 +76,6 @@ const LESSONS = {
   }
 };
 
-// Question banks for Practice Mode
-const GENDER_QUESTIONS = {
-  beginner: [
-    {
-      question: "Which noun is feminine gender?",
-      choices: ["King", "Prince", "Queen", "Waiter"],
-      correctIndex: 2,
-      explanation: "Queen is feminine gender because it refers to a female ruler."
-    },
-    {
-      question: "The teacher said that ____ would check our papers tomorrow.",
-      choices: ["he", "she", "he or she", "they"],
-      correctIndex: 2,
-      explanation: "Since the teacher's gender is unknown, 'he or she' is the most appropriate gender-neutral choice."
-    }
-  ],
-  intermediate: [
-    {
-      question: "Identify the common gender noun:",
-      choices: ["Actress", "Father", "Student", "Princess"],
-      correctIndex: 2,
-      explanation: "Student is common gender because it can refer to both male and female."
-    }
-  ],
-  advanced: [
-    {
-      question: "Choose the sentence with correct gender usage:",
-      choices: [
-        "Every doctor must bring his stethoscope.",
-        "Each nurse must complete her training.",
-        "The manager said they would review the applications.",
-        "All of the above are correct."
-      ],
-      correctIndex: 2,
-      explanation: "Using 'they' as a singular gender-neutral pronoun is widely accepted in modern English and avoids gender bias."
-    }
-  ]
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   // ========== Mode tabs ==========
   const modeTabs = document.querySelectorAll(".mode-tab");
