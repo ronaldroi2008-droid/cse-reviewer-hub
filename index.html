@@ -32,8 +32,8 @@
             <div id="topicsList"></div>
 
             <p class="sidebar-note">
-              Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz para
-              masanay sa exam-style questions.
+              Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz
+              para masanay sa exam-style questions.
             </p>
           </aside>
 
@@ -43,7 +43,6 @@
               <p id="lesson-meta" class="lesson-meta"></p>
             </header>
             <div id="lesson-content" class="lesson-body">
-              <!-- Auto-filled by app.js -->
               <p>Loading lesson…</p>
             </div>
           </section>
@@ -58,7 +57,6 @@
 
             <label class="field">
               <span class="field-label">Topic</span>
-              <!-- Options will be auto-filled from VERBAL_TOPICS sa app.js -->
               <select id="practice-topic"></select>
             </label>
 
@@ -157,14 +155,18 @@
 
     <footer class="app-footer">
       <span>
-        CSE Reviewer Hub · Verbal Ability · Practice only · Not official CSC material
+        CSE Reviewer Hub · Verbal Ability · Practice only · Not official CSC
+        material
       </span>
     </footer>
   </div>
 
+  <!-- ORDER: question banks muna, tapos logic -->
+  <script src="questions_nouns.js"></script>
   <script src="questions_gender.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
 
 
