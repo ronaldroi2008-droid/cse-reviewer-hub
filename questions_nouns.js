@@ -1,4 +1,4 @@
-const NOUN_QUESTIONS_PART_1 = {
+const NOUN_QUESTIONS = {
   beginner: [
     // 1-10: Identifying Nouns (Person)
     { question: "Which word is a noun?", choices: ["quickly", "happy", "table", "outside"], correctIndex: 2, explanation: '"Table" is a noun because it names a thing.' },
@@ -244,4 +244,4 @@ const NOUN_QUESTIONS_PART_1 = {
     { question: "Final Question: 'Physics is my favorite.' Physics is:", choices: ["Plural form, Singular meaning", "Plural form, Plural meaning", "Singular form, Singular meaning", "Singular form, Plural meaning"], correctIndex: 0, explanation: 'It looks plural (s) but functions as a singular concept.' }
   ]
 };
-};
+
