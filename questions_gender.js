@@ -122,7 +122,7 @@ const GENDER_QUESTIONS = {
     { question: "Which is the gender-neutral term for 'Stewardess'?", choices: ["Flight attendant", "Plane server", "Air host", "Flyer"], correctIndex: 0, explanation: '"Flight attendant" is the modern term.' },
     { question: "Which is the gender-neutral term for 'Chairman'?", choices: ["Chairperson", "Chair", "Both A and B", "Chairlady"], correctIndex: 2, explanation: "Chairperson or simply 'The Chair' are used." }
 
-    // const GENDER_QUESTIONS_PART_2 = {
+    // const GENDER_QUESTIONS= {
   advanced: [
     // 1-10: Gender-Neutral Language (Singular 'They')
     { question: "The student lost ____ book. (Gender unknown)", choices: ["his", "her", "their", "its"], correctIndex: 2, explanation: 'Singular "their" is now standard for unknown gender.' },
