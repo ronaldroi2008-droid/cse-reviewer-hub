@@ -1,9 +1,6 @@
 // Question bank for "Gender of Nouns"
-// Each question has:
-// - question: string
-// - choices: array of strings
-// - correctIndex: 0-based index of correct choice
-// - explanation: string
+// Each item:
+// { question: string, choices: [..], correctIndex: number, explanation: string }
 
 const GENDER_QUESTIONS = {
   beginner: [
@@ -12,37 +9,40 @@ const GENDER_QUESTIONS = {
       choices: ["Aunt", "Bride", "Brother", "Niece"],
       correctIndex: 2,
       explanation:
-        "\"Brother\" is masculine. \"Aunt\", \"Bride\", and \"Niece\" are feminine."
+        '"Brother" is masculine. "Aunt", "Bride", and "Niece" are feminine.'
     },
     {
       question: "Which noun is feminine gender?",
       choices: ["Uncle", "Waiter", "Queen", "Prince"],
       correctIndex: 2,
       explanation:
-        "\"Queen\" is feminine. \"Uncle\", \"Waiter\", and \"Prince\" are masculine."
+        '"Queen" is feminine. "Uncle", "Waiter", and "Prince" are masculine.'
     },
     {
       question: "Which noun is neuter gender?",
       choices: ["Actor", "Desk", "Widow", "Father"],
       correctIndex: 1,
       explanation:
-        "\"Desk\" is an object and has neuter gender. The others refer to people with masculine or feminine gender."
+        '"Desk" is an object and has neuter gender. The others refer to people.'
     },
     {
       question: "Which noun is common gender?",
       choices: ["King", "Mother", "Teacher", "Bride"],
       correctIndex: 2,
       explanation:
-        "\"Teacher\" can refer to either a male or a female, so it is common gender."
+        '"Teacher" can refer to either a male or a female, so it is common gender.'
     },
     {
       question:
-        "Which of the following is the best classification for the noun \"child\"?",
+        'Which of the following is the best classification for the noun "child"?',
       choices: ["Masculine", "Feminine", "Common", "Neuter"],
       correctIndex: 2,
       explanation:
-        "\"Child\" can be male or female, so it is a common gender noun."
+        '"Child" can be male or female, so it is a common gender noun.'
     }
+
+    // 👉 DITO MO I-PASTE LAHAT NG IBA MO PANG BEGINNER QUESTIONS
+    // (hanggang umabot ng 50 kung yan ang target mo)
   ],
 
   intermediate: [
@@ -52,7 +52,7 @@ const GENDER_QUESTIONS = {
       choices: ["he", "she", "he or she", "they"],
       correctIndex: 3,
       explanation:
-        "Modern English often uses singular \"they\" as a gender-neutral pronoun, especially if the gender is not specified."
+        'Modern English often uses singular "they" as a gender-neutral pronoun when gender is not specified.'
     },
     {
       question:
@@ -60,7 +60,7 @@ const GENDER_QUESTIONS = {
       choices: ["his", "her", "his or her", "their"],
       correctIndex: 3,
       explanation:
-        "\"Their\" is widely used as a singular, gender-neutral pronoun in modern English. In more traditional style, \"his or her\" may be preferred."
+        '"Their" is widely used as a singular, gender-neutral pronoun in modern English.'
     },
     {
       question:
@@ -73,29 +73,26 @@ const GENDER_QUESTIONS = {
       ],
       correctIndex: 2,
       explanation:
-        "\"Police officer\" is gender-neutral. \"Chairman\", \"salesman\", and \"fireman\" are traditionally male-oriented terms."
+        '"Police officer" is gender-neutral. The other terms are traditionally male-oriented.'
     },
     {
       question:
         "Which noun pair shows masculine and feminine forms of the same word?",
-      choices: [
-        "Prince – Princess",
-        "Boy – Woman",
-        "Actor – Widow",
-        "Father – Aunt"
-      ],
+      choices: ["Prince – Princess", "Boy – Woman", "Actor – Widow", "Father – Aunt"],
       correctIndex: 0,
       explanation:
-        "\"Prince\" is masculine and \"Princess\" is the feminine counterpart. The other pairs do not match correctly."
+        '"Prince" is masculine and "Princess" is the feminine counterpart.'
     },
     {
       question:
-        "Which pronoun correctly completes the sentence?\n\n\"If a person wants to pass the exam, ____ must review consistently.\"",
+        'Which pronoun correctly completes the sentence: "If a person wants to pass the exam, ____ must review consistently."',
       choices: ["he", "she", "he or she", "it"],
       correctIndex: 2,
       explanation:
-        "\"He or she\" is the traditional gender-balanced form. \"It\" is incorrect for people."
+        '"He or she" is the traditional gender-balanced form for formal exams.'
     }
+
+    // 👉 PASTE DITO LAHAT NG IBANG INTERMEDIATE QUESTIONS MO
   ],
 
   advanced: [
@@ -110,11 +107,11 @@ const GENDER_QUESTIONS = {
       ],
       correctIndex: 2,
       explanation:
-        "In many exams, \"his or her\" is still considered the safest formal choice. \"Their\" is common in actual usage but sometimes questioned in tests."
+        '"His or her" is often considered the safest choice in formal exams.'
     },
     {
       question:
-        "Identify the problem in this sentence:\n\n\"When a student is late, he should apologize to the class.\"",
+        'Identify the problem in this sentence: "When a student is late, he should apologize to the class."',
       choices: [
         "The pronoun is plural.",
         "The gender of the pronoun may not match the noun.",
@@ -123,29 +120,10 @@ const GENDER_QUESTIONS = {
       ],
       correctIndex: 1,
       explanation:
-        "\"Student\" may refer to a male or female, but the sentence uses \"he\" only, which may be considered gender-biased."
-    },
-    {
-      question:
-        "Which revision best improves gender fairness?\n\n\"Every engineer must keep his license valid.\"",
-      choices: [
-        "Every engineer must keep his license valid at all times.",
-        "Every engineer must keep her license valid.",
-        "All engineers must keep their licenses valid.",
-        "Every engineer must keep his or her license valid."
-      ],
-      correctIndex: 3,
-      explanation:
-        "\"Every engineer must keep his or her license valid\" keeps the singular structure and is gender-balanced. \"All engineers...their\" is also acceptable but changes the structure."
-    },
-    {
-      question:
-        "Which noun is LEAST likely to carry a natural gender (masculine or feminine)?",
-      choices: ["Bride", "Widower", "Colleague", "Husband"],
-      correctIndex: 2,
-      explanation:
-        "\"Colleague\" can refer to a male or female and is usually treated as common gender. The others have clear masculine or feminine meaning."
+        '"Student" may refer to both male and female, but the sentence only uses "he", which may be considered gender-biased.'
     }
+
+    // 👉 PASTE DITO LAHAT NG ADVANCED QUESTIONS MO
   ],
 
   super: [
@@ -160,11 +138,11 @@ const GENDER_QUESTIONS = {
       ],
       correctIndex: 1,
       explanation:
-        "\"He or she\" is the safest choice in many formal exams because it is clearly gender-balanced and grammatically singular."
+        '"He or she" is the safest choice in many formal exams because it is clearly gender-balanced and singular.'
     },
     {
       question:
-        "In the sentence, \"The committee decided that they would postpone its decision,\" what is the main issue?",
+        'In the sentence, "The committee decided that they would postpone its decision," what is the main issue?',
       choices: [
         "The noun and pronoun disagree in number.",
         "The gender of the pronoun is incorrect.",
@@ -173,22 +151,10 @@ const GENDER_QUESTIONS = {
       ],
       correctIndex: 0,
       explanation:
-        "\"Committee\" is singular, but \"they\" is plural while \"its\" is singular. The pronoun reference is inconsistent."
-    },
-    {
-      question:
-        "Which option correctly classifies the noun and suggests the most natural pronoun?\n\n\"The doctor said that ____ would arrive soon.\"",
-      choices: [
-        "Masculine noun; use \"he\" only.",
-        "Feminine noun; use \"she\" only.",
-        "Common gender noun; use \"he or she\".",
-        "Neuter noun; use \"it\"."
-      ],
-      correctIndex: 2,
-      explanation:
-        "\"Doctor\" is a common gender noun; in formal test style, \"he or she\" is usually preferred if the gender is not specified."
+        '"Committee" is singular, but "they" is plural while "its" is singular. The pronoun reference is inconsistent.'
     }
+
+    // 👉 PASTE DITO LAHAT NG SUPER LEVEL QUESTIONS MO
   ]
 };
 
-// NOTE: You can add more items up to 50 per level if needed.
