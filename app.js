@@ -63,6 +63,111 @@ const LESSONS = {
     ]
   },
 
+    grammatical_number: {
+    title: "Grammatical Number – Singular, Plural, and Agreement",
+    level: "Verbal Ability · Nouns & Pronouns · Number",
+    intro:
+      "Grammatical number tells us whether a word refers to one (singular) or more than one (plural) person, place, thing, or idea. In English, this affects the form of nouns (book/books), pronouns (this/these, it/they), and verbs (plays/play). In the Civil Service Exam, many questions quietly test your understanding of number: choosing correct plural forms, distinguishing countable from uncountable nouns, and making sure that subjects, verbs, and pronouns agree with each other in number.",
+    keyPoints: [
+      "A singular noun names one person, place, thing, or idea (student, city, idea). A plural noun refers to more than one (students, cities, ideas).",
+      "Regular plurals are usually formed by adding -s or -es (book → books, bus → buses, box → boxes).",
+      "Some plurals change spelling and must be memorized (child → children, foot → feet, mouse → mice, person → people).",
+      "A few nouns have the same form in singular and plural (deer, sheep, fish, series, species). The number is shown by the verb or context.",
+      "Countable nouns can be counted and have both singular and plural forms (one apple, two apples). Uncountable nouns usually do not have a normal plural and refer to mass or abstract ideas (rice, water, furniture, information, news).",
+      "Different quantifiers are used for countable and uncountable nouns: many/few for countable; much/little for uncountable.",
+      "Subject–verb agreement: a singular subject takes a singular verb (usually ending in -s), while a plural subject takes a plural verb (usually without -s).",
+      "Indefinite pronouns such as each, every, everyone, someone, and nobody are grammatically singular and take singular verbs (Everyone is, Each has).",
+      "Collective nouns (team, jury, family, committee, staff) can be singular or plural depending on whether the group is acting as one unit or as individuals.",
+      "Pronouns must match their antecedent in number: this/that with singular, these/those with plural, it with singular things, they with plural things or people. Modern English also uses singular they/their for gender-neutral reference."
+    ],
+    patterns: [
+      "Choosing the correct plural form of a noun, including irregular plurals and nouns with changing spelling (y → ies, f/fe → ves).",
+      "Identifying whether a noun in a sentence is countable or uncountable and selecting the correct quantifier (many vs much, few vs little).",
+      "Checking subject–verb agreement in sentences where the true subject is hidden by prepositional phrases (The box of apples is heavy).",
+      "Deciding whether a collective noun should be treated as singular or plural based on the meaning of the sentence.",
+      "Matching pronouns with their nouns in number and sometimes person (this/these, that/those, it/they, he or she/they).",
+      "Error identification: spotting wrong plurals (childrens, informations, datas), incorrect verb forms (Each of the boys are), and wrong quantifiers (much books, many money)."
+    ],
+    examples: [
+      {
+        q: "Which is the correct plural form?",
+        choices: ["lifes", "lives", "lifees", "life's"],
+        answer: "lives",
+        explanation:
+          "Many nouns ending in -f or -fe form the plural by changing -f/-fe to -ves. The correct plural of life is lives (like wife → wives, leaf → leaves)."
+      },
+      {
+        q: "Choose the correct sentence:",
+        choices: [
+          "Each of the players are ready.",
+          "Each of the players is ready.",
+          "Each of the player are ready.",
+          "Each of the player is ready."
+        ],
+        answer: "Each of the players is ready.",
+        explanation:
+          "The subject is Each, which is grammatically singular and requires a singular verb (is). The phrase of the players is a prepositional phrase and does not change the number of the subject."
+      },
+      {
+        q: "Which sentence uses an uncountable noun correctly?",
+        choices: [
+          "She gave me many informations.",
+          "She gave me much information.",
+          "She gave me two informations.",
+          "She gave me an information."
+        ],
+        answer: "She gave me much information.",
+        explanation:
+          "Information is uncountable in standard English. It does not normally have a plural form and does not use many. We use much information or a lot of information instead."
+      },
+      {
+        q: "Select the correct verb form:",
+        choices: [
+          "The box of apples are heavy.",
+          "The box of apples is heavy.",
+          "The boxes of apple is heavy.",
+          "The boxes of apple was heavy."
+        ],
+        answer: "The box of apples is heavy.",
+        explanation:
+          "The true subject is box (singular), not apples. Prepositional phrases like of apples only describe the subject and do not control the verb. Singular subject box needs the singular verb is."
+      },
+      {
+        q: "Which sentence has correct subject–verb agreement?",
+        choices: [
+          "The students in the class was noisy.",
+          "The student in the class were noisy.",
+          "The students in the class were noisy.",
+          "The student in the class are noisy."
+        ],
+        answer: "The students in the class were noisy.",
+        explanation:
+          "The subject is students (plural), so the verb must be plural (were). The phrase in the class is a prepositional phrase and does not affect the number of the subject."
+      },
+      {
+        q: "Choose the correct pronoun:",
+        choices: [
+          "This books are expensive.",
+          "These book is expensive.",
+          "This book is expensive.",
+          "These book are expensive."
+        ],
+        answer: "This book is expensive.",
+        explanation:
+          "Use this with a singular noun (book) and a singular verb (is). Use these with plural nouns (books) and plural verbs (are). The correct singular combination is This book is expensive."
+      }
+    ],
+    quickTips: [
+      "Always identify the real subject of the sentence first, then choose the verb. Ignore prepositional phrases like of the students, in the classroom, or with their friends when deciding on the verb form.",
+      "Memorize the most common irregular plurals (man/men, woman/women, child/children, tooth/teeth, foot/feet, mouse/mice, person/people). They appear frequently in grammar exams.",
+      "Remember that information, advice, news, furniture, luggage, equipment, and traffic are uncountable in standard English. Do not use them with many or with a plural -s.",
+      "If you are unsure about using his or her, make the noun plural and use they/their instead. For example: Each student must submit his or her paper → Students must submit their papers.",
+      "Watch out for double plurals or invented plurals such as childrens, peoples (when you mean people), and datas. In most contexts, child → children, person → people, data is already plural.",
+      "In exam questions about subject–verb agreement, be careful with sentences that start with phrases like There is/There are or that use collective nouns. Always match the verb with the real, closest subject."
+    ]
+  },
+
+
   gender: {
     title: "Gender of Nouns & Pronouns",
     level: "Verbal Ability · Nouns · Gender",
