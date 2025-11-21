@@ -264,6 +264,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let quizState = null;
 
+  // === FIX 1: helper para tumigil ang current timer (kung meron) ===
+  function stopCurrentTimer() {
+    if (quizState && quizState.timerId) {
+      clearInterval(quizState.timerId);
+      quizState.timerId = null;
+    }
+  }
+
   function shuffleArray(arr) {
     const copy = arr.slice();
     for (let i = copy.length - 1; i > 0; i--) {
@@ -299,7 +307,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startTimer() {
     if (!quizState) return;
-    if (quizState.timerId) clearInterval(quizState.timerId);
+    // dati: if (quizState.timerId) clearInterval(quizState.timerId);
+    stopCurrentTimer();
 
     const mode = quizState.timerMode;
     if (mode === "off") {
@@ -401,6 +410,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startQuizBtn.addEventListener("click", () => {
+    // === FIX 2: puwede mag-start ng bagong quiz kahit nasa gitna ka pa ===
+    // Itigil muna ang lumang timer kung may dating quiz
+    stopCurrentTimer();
+
     const topic = practiceTopicEl.value;
     const level = practiceLevelEl.value;
     const count = parseInt(practiceCountEl.value, 10);
@@ -435,8 +448,9 @@ document.addEventListener("DOMContentLoaded", () => {
       weakNotes
     };
 
-    startQuizBtn.disabled = true;
-    practiceTopicEl.disabled = true;
+    // === FIX 3: huwag nang i-disable ang Start at Topic ===
+    // startQuizBtn.disabled = true;
+    // practiceTopicEl.disabled = true;
 
     showQuestion();
   });
@@ -458,8 +472,8 @@ document.addEventListener("DOMContentLoaded", () => {
       quizExplanationEl.classList.add("hide");
       quizNextBtn.classList.add("hide");
 
-      startQuizBtn.disabled = false;
-      practiceTopicEl.disabled = false;
+      // startQuizBtn.disabled = false;
+      // practiceTopicEl.disabled = false;
 
       const restartBtn = document.createElement("button");
       restartBtn.className = "mode-btn active";
