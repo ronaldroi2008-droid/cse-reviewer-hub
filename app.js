@@ -63,6 +63,157 @@ const LESSONS = {
     ]
   },
 
+      verbs: {
+    title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
+    level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
+    intro:
+      "A verb is the engine of the sentence. It tells what the subject does (action), what it is, or what state it is in. In English, verbs change their form to show time (tense), number (singular/plural), and aspect (simple, progressive, perfect). In the Civil Service Exam, verb questions usually appear in subject–verb agreement, correct tense, error identification, sentence improvement, and reading comprehension items.",
+    keyPoints: [
+      // 1. Basic definition and types
+      "A verb expresses an action, a state, or existence. Without a verb, a group of words cannot form a complete sentence.",
+      "Action verbs show what someone or something does: physical actions (run, write, speak) or mental actions (think, believe, decide).",
+      "Linking verbs connect the subject to a word that describes or renames it: be (am, is, are, was, were), become, seem, appear, look, feel, sound, taste.",
+      "Helping (auxiliary) verbs come before the main verb to form different tenses, voices, and questions: be (am, is, are, was, were), have (has, have, had), do (do, does, did), modals (can, could, may, might, must, will, would, shall, should).",
+      "",
+      // 2. Regular vs irregular & principal parts
+      "Regular verbs form the past tense and past participle by adding -ed or -d: walk → walked → walked; clean → cleaned → cleaned.",
+      "Irregular verbs change in different ways and must be memorized: go → went → gone; eat → ate → eaten; take → took → taken; write → wrote → written.",
+      "The three principal parts of a verb are: base form (go), past tense (went), and past participle (gone). These are used to build all common tenses.",
+      "",
+      // 3. Verb phrases and transitive / intransitive
+      "A verb phrase consists of one or more helping verbs plus a main verb: has finished, will be going, should have been done.",
+      "Transitive verbs take a direct object (She wrote a letter. They bought a car.); intransitive verbs do not need an object to complete the meaning (He slept. The baby cried.).",
+      "Some verbs can be either transitive or intransitive depending on how they are used: She runs a small shop (transitive). She runs every morning (intransitive).",
+      "",
+      // 4. Agreement and tense consistency
+      "Verbs must agree with the subject in number and person: singular subject → singular verb (He runs); plural subject → plural verb (They run).",
+      "The verb be has special forms for agreement: I am, you are, he/she/it is, we/you/they are; past forms: I/he/she/it was; you/we/they were.",
+      "Tense shows time: present (they work), past (they worked), future (they will work). Aspect shows whether an action is finished or ongoing (simple, progressive, perfect).",
+      "Keep the tense consistent within a sentence or paragraph unless the time clearly changes. Unnecessary tense shifts are common exam errors.",
+      "",
+      // 5. Modals and common exam traps
+      "Modal verbs (can, could, may, might, must, will, would, shall, should) always use the base form of the main verb: can go, should study, must finish, will take.",
+      "Do/does/did are helping verbs for questions and negatives in simple tenses: Do you understand? She does not agree. They did not come.",
+      "Common exam errors include wrong verb forms (has went, did went, is finish, have saw) and wrong agreement (He go, They goes, The list of items are long)."
+    ],
+    patterns: [
+      "Choosing the correct form of be (am/is/are/was/were) to match a singular or plural subject in the correct time frame.",
+      "Selecting the correct past tense or past participle of irregular verbs in sentences with has/have/had or in passive voice.",
+      "Identifying action verbs, linking verbs, and helping verbs in exam-style underlined portions.",
+      "Deciding if a verb is transitive or intransitive, and checking if a direct object is used correctly.",
+      "Using modals correctly to express ability, permission, obligation, advice, possibility, and polite requests (can, may, must, should, could, would).",
+      "Spotting tense shift errors where the sentence suddenly jumps from past to present or future without a clear reason.",
+      "Correcting sentences where the auxiliary is wrong or missing (She do not knows → She does not know; He have finished → He has finished)."
+    ],
+    examples: [
+      {
+        q: "In the sentence 'The students are studying for the exam,' what is the complete verb phrase and which word is the main verb?",
+        choices: [
+          "Complete verb: are; main verb: are",
+          "Complete verb: studying; main verb: studying",
+          "Complete verb: are studying; main verb: studying",
+          "Complete verb: are studying; main verb: are"
+        ],
+        answer: "Complete verb: are studying; main verb: studying",
+        explanation:
+          "The helping verb are combines with the main verb studying to form the verb phrase are studying. The main verb is the word that carries the main meaning (studying)."
+      },
+      {
+        q: "Which sentence uses a linking verb correctly?",
+        choices: [
+          "She looked happily the movie.",
+          "She looked happy after the movie.",
+          "She looked the movie happily.",
+          "She looked at happy movie."
+        ],
+        answer: "She looked happy after the movie.",
+        explanation:
+          "In this sentence, looked acts as a linking verb connecting she to the adjective happy, which describes her state. The other sentences use looked incorrectly or form ungrammatical phrases."
+      },
+      {
+        q: "Which sentence uses the correct past participle with a helping verb?",
+        choices: [
+          "She has went to the office.",
+          "She has gone to the office.",
+          "She had went to the office.",
+          "She have gone to the office."
+        ],
+        answer: "She has gone to the office.",
+        explanation:
+          "The past participle of go is gone, not went. With has/have/had, we use the past participle: has gone, have gone, had gone. The subject she is singular, so we use has, not have."
+      },
+      {
+        q: "Which sentence shows a transitive verb with a direct object?",
+        choices: [
+          "He slept on the sofa.",
+          "The baby cried loudly.",
+          "She wrote a letter.",
+          "They arrived early."
+        ],
+        answer: "She wrote a letter.",
+        explanation:
+          "Wrote is a transitive verb here because it has a direct object (a letter). In the other sentences, the verbs slept, cried, and arrived do not have direct objects, so they are intransitive in those contexts."
+      },
+      {
+        q: "Which sentence uses the modal verb correctly for a past possibility?",
+        choices: [
+          "He can to finish the work yesterday.",
+          "He could finished the work yesterday.",
+          "He could have finished the work yesterday.",
+          "He can have finished the work yesterday ago."
+        ],
+        answer: "He could have finished the work yesterday.",
+        explanation:
+          "Could have + past participle (finished) is used to talk about a past possibility or something that was possible but did not happen, or that we are imagining. After could/can/may/might/must, always use the base form or the perfect form (have + past participle), not a simple past alone."
+      },
+      {
+        q: "Which pair shows the correct subject–verb agreement in the present tense?",
+        choices: [
+          "He walk to work every day.",
+          "They walks to work every day.",
+          "She walks to work every day.",
+          "They walks to works every day."
+        ],
+        answer: "She walks to work every day.",
+        explanation:
+          "In the simple present, a singular third-person subject (he, she, it) takes a verb with -s (walks). A plural subject (they) uses the base form (walk). Therefore, She walks is correct; They walk would also be correct, but they walks is wrong."
+      },
+      {
+        q: "Which sentence maintains consistent verb tense?",
+        choices: [
+          "Yesterday, we visited the museum and learn many things.",
+          "Yesterday, we visit the museum and learned many things.",
+          "Yesterday, we visited the museum and learned many things.",
+          "Yesterday, we are visiting the museum and learned many things."
+        ],
+        answer: "Yesterday, we visited the museum and learned many things.",
+        explanation:
+          "The time marker yesterday is past, so both verbs should be in the simple past tense: visited and learned. The other sentences mix past and present forms without a good reason, which is a common exam error."
+      },
+      {
+        q: "Which sentence uses the auxiliary do correctly?",
+        choices: [
+          "She do not like spicy food.",
+          "She does not likes spicy food.",
+          "She does not like spicy food.",
+          "She did not liked spicy food."
+        ],
+        answer: "She does not like spicy food.",
+        explanation:
+          "With does not, the main verb must be in the base form (like). The correct structure is does not like. We do not say do not likes or did not liked in standard English."
+      }
+    ],
+    quickTips: [
+      "Always identify the subject first, then match the verb in number and person (singular/plural, I/you/he/they).",
+      "With has, have, or had, always use the past participle (has gone, have seen, had taken), not the simple past (has went, have saw).",
+      "After modal verbs (can, could, may, might, must, will, would, shall, should), use the base form of the verb: can go, must finish, should study.",
+      "Be careful with linking verbs (am, is, are, was, were, seem, become, look, feel). They are followed by adjectives or nouns, not adverbs: She is happy (not She is happily).",
+      "Check sentences with There is/There are by looking at the real subject after the verb: There is a book. / There are many books.",
+      "Avoid unnecessary tense shifts. If you start narrating in the past (I walked into the room), keep using the past unless the time clearly changes.",
+      "Memorize the most common irregular verbs that appear in exams: go–went–gone, come–came–come, take–took–taken, give–gave–given, write–wrote–written, see–saw–seen, eat–ate–eaten, speak–spoke–spoken."
+    ]
+  },
+    
     grammatical_number: {
     title: "Grammatical Number – Singular, Plural, and Agreement",
     level: "Verbal Ability · Nouns & Pronouns · Number",
