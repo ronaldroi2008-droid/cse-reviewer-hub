@@ -31,6 +31,63 @@ const VERBAL_TOPICS = [
 
 // Basic lesson data for Study Mode
 const LESSONS = {
+  nouns: {
+    title: "Nouns – Basics & Types",
+    level: "All levels · CSE Verbal Ability",
+    intro:
+      "A noun is a word that names a person, place, thing, or idea. In the CSE, many questions test your understanding of noun types, singular and plural forms, countable vs. uncountable nouns, and how nouns behave in sentences.",
+    keyPoints: [
+      "A noun names a person, place, thing, or idea (teacher, city, book, happiness).",
+      "Common nouns name general persons/things; proper nouns name specific persons/places and start with a capital letter.",
+      "Concrete nouns are things you can see, touch, taste, hear, or smell; abstract nouns are ideas, feelings, or qualities.",
+      "Countable nouns can be counted and have singular and plural forms; uncountable nouns do not normally have a plural form.",
+      "Collective nouns refer to groups (team, family, committee). They may take singular or plural verbs depending on meaning.",
+      "Nouns can function as the subject, object, complement, or object of a preposition in a sentence."
+    ],
+    patterns: [
+      "Identify which word(s) in a sentence are nouns.",
+      "Choose the correct noun type: common vs. proper, concrete vs. abstract, countable vs. uncountable.",
+      "Select the correct singular or plural form of a noun in a sentence.",
+      "Decide if a collective noun should take a singular or plural verb based on context.",
+      "Identify the function of the noun in a sentence (subject, object, complement)."
+    ],
+    examples: [
+      {
+        q: "Which of the following is a proper noun?",
+        choices: ["city", "teacher", "Manila", "river"],
+        answer: "Manila",
+        explanation:
+          "A proper noun names a specific person, place, or thing and begins with a capital letter. \"Manila\" is a specific city."
+      },
+      {
+        q: "Which noun in the sentence is abstract? \"Her courage inspired the whole team.\"",
+        choices: ["courage", "team", "her", "inspired"],
+        answer: "courage",
+        explanation:
+          "\"Courage\" is an abstract noun because it is a quality or idea that cannot be seen or touched."
+      },
+      {
+        q: "Which sentence uses a countable noun correctly?",
+        choices: [
+          "She gave me many informations.",
+          "He bought three books yesterday.",
+          "We need a few furnitures.",
+          "She has much friends at work."
+        ],
+        answer: "He bought three books yesterday.",
+        explanation:
+          "\"Books\" is a countable noun and can be used with numbers. The other sentences use uncountable or plural nouns incorrectly."
+      }
+    ],
+    quickTips: [
+      "Ask: \"Does this word name a person, place, thing, or idea?\" If yes, it is probably a noun.",
+      "Check capitalization: proper nouns for specific names usually start with a capital letter.",
+      "Remember common uncountable nouns in English (information, advice, furniture, luggage, equipment).",
+      "For exam items, read carefully: some options mix adjectives, verbs, and nouns. Focus on the word's function.",
+      "Practice spotting the subject and object: they are usually nouns or pronouns in the sentence."
+    ]
+  },
+
   gender: {
     title: "Gender of Nouns & Pronouns",
     level: "All levels · CSE Verbal Ability",
@@ -76,6 +133,45 @@ const LESSONS = {
   }
 };
 
+// Question banks for practice mode
+const GENDER_QUESTIONS = {
+  beginner: [
+    {
+      question: "Which noun is feminine gender?",
+      choices: ["King", "Prince", "Actress", "Waiter"],
+      correctIndex: 2,
+      explanation: "Actress is feminine gender as it refers to a female performer."
+    },
+    {
+      question: "The doctor said that ____ would call later.",
+      choices: ["he", "she", "he or she", "they"],
+      correctIndex: 2,
+      explanation: "When gender is unknown, 'he or she' is the most appropriate choice in formal writing."
+    }
+  ],
+  intermediate: [
+    {
+      question: "Every student must bring ____ own materials.",
+      choices: ["his", "her", "his or her", "their"],
+      correctIndex: 2,
+      explanation: "When referring to individuals of unknown gender, 'his or her' maintains proper agreement."
+    }
+  ],
+  advanced: [
+    {
+      question: "Identify the gender-neutral sentence:",
+      choices: [
+        "Each employee must submit his report by Friday.",
+        "Every nurse should complete her training.",
+        "A manager should ensure his team is productive.",
+        "The applicant should bring their identification."
+      ],
+      correctIndex: 3,
+      explanation: "Using 'their' as a singular gender-neutral pronoun is widely accepted in modern English."
+    }
+  ]
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // ========== Mode tabs ==========
   const modeTabs = document.querySelectorAll(".mode-tab");
@@ -100,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lessonMetaEl = document.getElementById("lesson-meta");
   const lessonContentEl = document.getElementById("lesson-content");
 
-  function renderTopicsSidebar(activeId = "gender") {
+  function renderTopicsSidebar(activeId = "nouns") {
     if (!topicsListEl) return;
     
     topicsListEl.innerHTML = "";
@@ -123,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!data) {
       lessonTitleEl.textContent = "Coming soon";
       lessonMetaEl.textContent = "Lesson content for this topic will be added in the next update.";
-      lessonContentEl.innerHTML = "<p>For now, focus on Gender of Nouns and drill the practice questions.</p>";
+      lessonContentEl.innerHTML = "<p>For now, focus on available lessons and drill the practice questions.</p>";
       return;
     }
 
@@ -201,8 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Initialize Study Mode
-  renderTopicsSidebar("gender");
-  renderLesson("gender");
+  renderTopicsSidebar("nouns");
+  renderLesson("nouns");
 
   // ========== Practice Mode: quiz engine ==========
   const practiceTopicEl = document.getElementById("practice-topic");
@@ -255,6 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getQuestionBank(topic) {
     if (topic === "gender") return GENDER_QUESTIONS;
+    // Add more question banks as they become available
     return null;
   }
 
