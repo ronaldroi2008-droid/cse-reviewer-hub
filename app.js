@@ -1,3 +1,34 @@
+// VERBAL ABILITY – topic order
+const VERBAL_TOPICS = [
+  // Grammatical Categories
+  { id: "nouns",               label: "Nouns" },
+  { id: "gender",              label: "Gender" },
+  { id: "grammatical_number",  label: "Grammatical Number" },
+  { id: "verbs",               label: "Verbs" },
+  { id: "tenses",              label: "Tenses" },
+  { id: "pronouns",            label: "Pronouns" },
+  { id: "adjectives",          label: "Adjectives" },
+  { id: "adverbs",             label: "Adverbs" },
+  { id: "prepositions",        label: "Prepositions" },
+  { id: "conjunctions",        label: "Conjunctions" },
+  { id: "interjections",       label: "Interjections" },
+  { id: "articles",            label: "Articles" },
+  { id: "subject_verb_agreement", label: "Subject–Verb Agreement" },
+  { id: "sentence_construction",  label: "Sentence Construction" },
+  { id: "sentence_structure",     label: "Sentence Structure" },
+
+  // Other Verbal Ability topics
+  { id: "affixes",             label: "Affixes" },
+  { id: "punctuations",        label: "Punctuations" },
+  { id: "correct_usage",       label: "Correct Usage" },
+  { id: "error_identification",label: "Error Identification" },
+  { id: "synonyms",            label: "Synonyms" },
+  { id: "antonyms",            label: "Antonyms" },
+  { id: "analogy",             label: "Analogy" },
+  { id: "paragraph_organization", label: "Paragraph Organization" },
+  { id: "reading_comprehension",  label: "Reading Comprehension" }
+];
+
 // Basic lesson data for Study Mode
 const LESSONS = {
   gender: {
@@ -45,6 +76,45 @@ const LESSONS = {
   }
 };
 
+// Question banks for Practice Mode
+const GENDER_QUESTIONS = {
+  beginner: [
+    {
+      question: "Which noun is feminine gender?",
+      choices: ["King", "Prince", "Queen", "Waiter"],
+      correctIndex: 2,
+      explanation: "Queen is feminine gender because it refers to a female ruler."
+    },
+    {
+      question: "The teacher said that ____ would check our papers tomorrow.",
+      choices: ["he", "she", "he or she", "they"],
+      correctIndex: 2,
+      explanation: "Since the teacher's gender is unknown, 'he or she' is the most appropriate gender-neutral choice."
+    }
+  ],
+  intermediate: [
+    {
+      question: "Identify the common gender noun:",
+      choices: ["Actress", "Father", "Student", "Princess"],
+      correctIndex: 2,
+      explanation: "Student is common gender because it can refer to both male and female."
+    }
+  ],
+  advanced: [
+    {
+      question: "Choose the sentence with correct gender usage:",
+      choices: [
+        "Every doctor must bring his stethoscope.",
+        "Each nurse must complete her training.",
+        "The manager said they would review the applications.",
+        "All of the above are correct."
+      ],
+      correctIndex: 2,
+      explanation: "Using 'they' as a singular gender-neutral pronoun is widely accepted in modern English and avoids gender bias."
+    }
+  ]
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // ========== Mode tabs ==========
   const modeTabs = document.querySelectorAll(".mode-tab");
@@ -63,22 +133,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ========== Study Mode: lessons ==========
-
-  const topicButtons = document.querySelectorAll(".topic-btn");
+  // ========== Study Mode: Dynamic Topics Sidebar ==========
+  const topicsListEl = document.getElementById("topicsList");
   const lessonTitleEl = document.getElementById("lesson-title");
   const lessonMetaEl = document.getElementById("lesson-meta");
   const lessonContentEl = document.getElementById("lesson-content");
+
+  function renderTopicsSidebar(activeId = "gender") {
+    if (!topicsListEl) return;
+    
+    topicsListEl.innerHTML = "";
+    VERBAL_TOPICS.forEach(t => {
+      const btn = document.createElement("button");
+      btn.className = "topic-btn" + (t.id === activeId ? " active" : "");
+      btn.textContent = t.label;
+      btn.dataset.topic = t.id;
+      btn.addEventListener("click", () => {
+        renderTopicsSidebar(t.id);
+        renderLesson(t.id);
+      });
+      topicsListEl.appendChild(btn);
+    });
+  }
 
   function renderLesson(topicKey) {
     const data = LESSONS[topicKey];
 
     if (!data) {
       lessonTitleEl.textContent = "Coming soon";
-      lessonMetaEl.textContent =
-        "Lesson content for this topic will be added in the next update.";
-      lessonContentEl.innerHTML =
-        "<p>For now, focus on Gender of Nouns and drill the practice questions.</p>";
+      lessonMetaEl.textContent = "Lesson content for this topic will be added in the next update.";
+      lessonContentEl.innerHTML = "<p>For now, focus on Gender of Nouns and drill the practice questions.</p>";
       return;
     }
 
@@ -155,20 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonContentEl.innerHTML = html;
   }
 
-  topicButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const topic = btn.dataset.topic;
-      topicButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderLesson(topic);
-    });
-  });
-
-  // Load default lesson
+  // Initialize Study Mode
+  renderTopicsSidebar("gender");
   renderLesson("gender");
 
   // ========== Practice Mode: quiz engine ==========
-
   const practiceTopicEl = document.getElementById("practice-topic");
   const practiceLevelEl = document.getElementById("practice-level");
   const practiceCountEl = document.getElementById("practice-count");
@@ -185,11 +260,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const quizOutputEl = document.getElementById("quiz-output");
   const quizProgressFillEl = document.getElementById("quiz-progress-fill");
 
+  // Populate practice topic dropdown
+  if (practiceTopicEl) {
+    VERBAL_TOPICS.forEach(topic => {
+      const option = document.createElement("option");
+      option.value = topic.id;
+      option.textContent = topic.label;
+      practiceTopicEl.appendChild(option);
+    });
+  }
+
   let quizState = null;
 
   function labelForTopic(topic) {
-    if (topic === "gender") return "Gender of Nouns";
-    return topic;
+    const found = VERBAL_TOPICS.find(t => t.id === topic);
+    return found ? found.label : topic;
   }
 
   function labelForLevel(level) {
@@ -452,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
         practiceCountEl.disabled = false;
 
         quizQuestionEl.innerHTML =
-          'Ready when you are. Set up your quiz on the left and press <strong>“Start practice quiz”</strong>.';
+          'Ready when you are. Set up your quiz on the left and press <strong>"Start practice quiz"</strong>.';
         quizChoicesEl.innerHTML = "";
         showExplanation("");
         quizNextBtn.classList.add("hide");
@@ -530,4 +615,3 @@ document.addEventListener("DOMContentLoaded", () => {
     showQuestion();
   });
 });
-
