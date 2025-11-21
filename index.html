@@ -28,9 +28,8 @@
           <aside class="sidebar">
             <h2 class="sidebar-title">Topics</h2>
 
-            <button class="topic-btn active" data-topic="gender">
-              Gender of Nouns
-            </button>
+            <!-- Dynamic list ng topics – pupunuin ng app.js gamit VERBAL_TOPICS -->
+            <div id="topicsList"></div>
 
             <p class="sidebar-note">
               Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz para
@@ -59,9 +58,8 @@
 
             <label class="field">
               <span class="field-label">Topic</span>
-              <select id="practice-topic">
-                <option value="gender">Gender of Nouns</option>
-              </select>
+              <!-- Options will be auto-filled from VERBAL_TOPICS sa app.js -->
+              <select id="practice-topic"></select>
             </label>
 
             <label class="field">
@@ -168,4 +166,5 @@
   <script src="app.js"></script>
 </body>
 </html>
+
 
