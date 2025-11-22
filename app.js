@@ -623,7 +623,7 @@ const LESSONS = {
       "Animals are often 'it' unless the sex is highlighted (bull/cow, rooster/hen)."
     ]
   }
-};
+
 
   adjectives: {
     title: "Adjectives – Describing, Comparing, and Limiting Nouns",
@@ -783,6 +783,7 @@ const LESSONS = {
       "When you see several adjectives before a noun in a test question, check if the order follows the usual pattern: opinion, size, age, color, origin, material, purpose."
     ]
   },
+};
 
 
 // ==========================================
