@@ -797,7 +797,7 @@ const LESSONS = {
 // Adverbs – Full Expanded Lesson
 // ==========================================
 
-  adverbs: {
+    adverbs: {
     title: "Adverbs – How, When, Where, and How Often",
     level: "Verbal Ability · Adverbs · CSE Grammar",
     intro:
@@ -1059,7 +1059,7 @@ const LESSONS = {
   </section>
     `
   }
-}; // ← Dito na sa dulo dapat ang closing ng const LESSONS = { ... }
+
 
 
 
