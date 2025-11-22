@@ -622,8 +622,7 @@ const ADVERB_QUESTIONS = {
       correctIndex: 0, 
       explanation: "Simple intensifier. 'Very sweet' means it has a lot of sugar." 
     }
-  ]
-};
+  ], 
 
 
   advanced: [
