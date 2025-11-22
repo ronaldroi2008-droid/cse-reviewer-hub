@@ -28,6 +28,15 @@ const VERBAL_TOPICS = [
   { id: "reading_comprehension",  label: "Reading Comprehension" }
 ];
 
+const TOPIC_MAX_QUESTIONS = {
+  nouns: 50,
+  gender: 50,
+  grammatical_number: 50,
+  verbs: 50,
+  adjectives: 50   // ← para 50 rin ang lalabas sa Adjectives
+};
+
+
 // ==========================================
 // 2. LESSONS DATA
 // ==========================================
