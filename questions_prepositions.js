@@ -918,7 +918,7 @@ const PREPOSITION_QUESTIONS = [
     answer: "along",
     explanation:
       "Rule: The edge of the cliff is a line or long boundary, so “along the edge” is correct. “Across the edge” is awkward, “over the edge” suggests falling off, and “through the edge” is not logical."
-  }
+  },
 
     // =========================
   // LEVEL 3 – ADVANCE (Collocations: adjectives & verbs with prepositions)
