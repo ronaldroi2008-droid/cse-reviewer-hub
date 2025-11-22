@@ -31,6 +31,9 @@ const VERBAL_TOPICS = [
 // ==========================================
 // 2. LESSONS DATA
 // ==========================================
+// ==========================================
+// 2. LESSONS DATA
+// ==========================================
 const LESSONS = {
   nouns: {
     title: "Nouns – Basics & Types",
@@ -63,7 +66,7 @@ const LESSONS = {
     ]
   },
 
-      verbs: {
+  verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
     level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
     intro:
@@ -213,13 +216,12 @@ const LESSONS = {
       "Memorize the most common irregular verbs that appear in exams: go–went–gone, come–came–come, take–took–taken, give–gave–given, write–wrote–written, see–saw–seen, eat–ate–eaten, speak–spoke–spoken."
     ]
   },
-    
-      tenses: {
+
+  tenses: {
     title: "Tenses – Time, Aspect, and Consistent Use",
     level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
     intro:
       "Tense tells us WHEN an action happens (past, present, future), while aspect tells us HOW the action happens (simple, continuous/progressive, perfect, perfect continuous). In the Civil Service Exam, tense questions usually test correct form (has gone vs had gone), tense consistency in a sentence or paragraph, and the difference between similar tenses like past simple vs present perfect, or past perfect vs past simple.",
-
     keyPoints: [
       // 1. Core idea
       "Tense = time (past, present, future). Aspect = how the action unfolds (simple, continuous, perfect, perfect continuous). Example: 'I study' (simple present), 'I am studying' (present continuous), 'I have studied' (present perfect), 'I have been studying' (present perfect continuous).",
@@ -252,7 +254,6 @@ const LESSONS = {
       "Conditionals use specific tense patterns: If + present, will + base (real future); If + past, would + base (unreal present); If + past perfect, would have + past participle (unreal past).",
       "Common Errors: mixing up past simple and present perfect (I have seen it yesterday ❌), using past perfect without a second past action, and using continuous where simple is better (I am knowing him for years ❌)."
     ],
-
     patterns: [
       "Choosing the correct tense based on time expressions (yesterday, already, since 2010, now, by next year).",
       "Correcting sentences that shift tenses without a clear reason (especially in narratives and paragraph improvement items).",
@@ -262,7 +263,6 @@ const LESSONS = {
       "Choosing proper tense combinations in conditionals (If-clauses), time clauses (when, after, before), and reported speech.",
       "Recognizing which future form to use: will, be going to, present continuous, or future perfect."
     ],
-
     examples: [
       {
         q: "Which sentence uses the correct tense with the time marker yesterday?",
@@ -361,7 +361,6 @@ const LESSONS = {
           "Real future conditionals use If + simple present (rains) and will + base verb (will stay). We do not use will directly after if."
       }
     ],
-
     quickTips: [
       "Look at time expressions first (yesterday, now, since, by next year). They are strong clues for which tense to use.",
       "For experiences with no specific time, use present perfect (have/has + past participle). For finished actions at a known time in the past, use simple past.",
@@ -372,136 +371,114 @@ const LESSONS = {
       "In conditionals, beware of using will after if. Use: If + present (If it rains), will + base verb (we will stay). For unreal situations, use If + past (If I were rich), would + base (I would travel)."
     ]
   },
-   
-   const pronouns = {
-  title: "Pronouns – The Complete Master Guide",
-  level: "Advanced · Verbal Ability · CSE Grammar",
-  intro: `
-    A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific 'formal grammar' rules that often differ from casual speech. 
-    
-    This guide covers the three pillars of Pronoun Proficiency:
-    1. Case (The I/Me/My rule)
-    2. Agreement (Singular/Plural consistency)
-    3. Reference (Clarity)
-  `,
 
-  keyPoints: [
-    // BASIC RULES
-    "**1. The Three Cases (Must Memorize):**",
-    "   - **Subjective (Doer):** I, He, She, We, They, Who. (Use for subjects: 'SHE and I left.')",
-    "   - **Objective (Receiver):** Me, Him, Her, Us, Them, Whom. (Use for objects: 'Call HIM and ME.')",
-    "   - **Possessive (Owner):** My/Mine, His, Her/Hers, Their/Theirs, Whose. (Use for ownership: 'That is THEIRS.')",
+  pronouns: {
+    title: "Pronouns – The Complete Master Guide",
+    level: "Verbal Ability · Pronouns · CSE Grammar",
+    intro: `
+      A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific “formal grammar” rules that often differ from casual speech.
+      
+      This guide covers the three pillars of Pronoun Proficiency:
+      1. Case (The I/Me/My rule)
+      2. Agreement (Singular/Plural consistency)
+      3. Reference (Clarity)
+    `,
+    keyPoints: [
+      "**1. The Three Cases (Must Memorize):**",
+      "   - **Subjective (Doer):** I, He, She, We, They, Who. (Use for subjects: 'SHE and I left.')",
+      "   - **Objective (Receiver):** Me, Him, Her, Us, Them, Whom. (Use for objects: 'Call HIM and ME.')",
+      "   - **Possessive (Owner):** My/Mine, His, Her/Hers, Their/Theirs, Whose. (Use for ownership: 'That is THEIRS.')",
+      "",
+      "**2. The Preposition Rule (Crucial):**",
+      "   - Any pronoun following a preposition (between, with, to, from, for, about) MUST be Objective.",
+      "   - CORRECT: 'Between you and ME.'",
+      "   - CORRECT: 'For YOU and HER.'",
+      "   - WRONG: 'Between you and I.' (Common error!)",
+      "",
+      "**3. Indefinite Pronouns - The 'Singular' List:**",
+      "   - These are ALWAYS singular in formal grammar: Each, Every, Everyone, Everybody, Anyone, Anybody, Someone, Somebody, No one, Nobody, Either, Neither.",
+      "   - Rule: Use singular verbs and pronouns.",
+      "   - Example: 'Everyone has his or her own style.' (Not 'their' in strict exams.)",
+      "",
+      "**4. Indefinite Pronouns - The 'SANAM' Rule (Tricky!):**",
+      "   - The pronouns Some, Any, None, All, Most (SANAM) can be Singular OR Plural.",
+      "   - Rule: Look at the noun in the 'of' phrase that follows.",
+      "   - Countable Noun = Plural: 'All of the apples ARE gone.'",
+      "   - Uncountable Noun = Singular: 'All of the water IS gone.'",
+      "",
+      "**5. Collective Nouns (Team, Jury, Committee, Family):**",
+      "   - As a Unit: If the group acts as one, use Singular. (e.g., 'The jury has reached its decision.')",
+      "   - As Individuals: If members act separately, use Plural. (e.g., 'The jury are arguing among themselves.')",
+      "",
+      "**6. Relative Pronouns (Who vs. Whom vs. That vs. Which):**",
+      "   - Who: Subject (like 'he'). 'He is the one who called.'",
+      "   - Whom: Object (like 'him'). 'He is the one whom I met.'",
+      "   - That: Essential clauses (no commas). 'The car that I bought.'",
+      "   - Which: Non-essential clauses (with commas). 'The car, which is red, is fast.'"
+    ],
+    patterns: [
+      "Compound Subject Test: 'Juan and I/Me went.' Remove 'Juan' → '(I) went' is correct → 'Juan and I'.",
+      "Appositive Pronoun: '(We/Us) teachers love coffee.' Remove 'teachers' → 'We love coffee.' → 'We teachers' is correct.",
+      "Than/As Comparison Trap: 'She is taller than I/Me.' Complete: 'She is taller than I am.' → 'I' is formally correct for exams.",
+      "Ambiguous Reference: Avoid unclear 'he/she/they'. Make sure every pronoun clearly refers to only one noun."
+    ],
+    examples: [
+      {
+        q: "Which sentence is grammatically correct regarding indefinite pronouns?",
+        choices: [
+          "None of the cake are left.",
+          "None of the students is here.",
+          "None of the cake is left.",
+          "None of the students was given their grades."
+        ],
+        answer: "None of the cake is left.",
+        explanation:
+          "SANAM rule: 'None' can be singular or plural. Look at the 'of' phrase. 'Of the cake' (cake is uncountable) → singular verb 'is'. 'None of the cake are' is wrong. For 'None of the students', we usually use 'are' in modern English."
+      },
+      {
+        q: "Choose the correct pronoun: 'The supervisor asked ______ employees to work overtime.'",
+        choices: ["we", "us", "ourselves", "they"],
+        answer: "us",
+        explanation:
+          "Test without 'employees': 'The supervisor asked us.' 'Asked' takes an object, so we use objective 'us', not 'we'. Therefore, 'us employees' is correct."
+      },
+      {
+        q: "Identify the error: 'Me and her are going to the mall later.'",
+        choices: ["Me and her", "are going", "to the", "mall later"],
+        answer: "Me and her",
+        explanation:
+          "Compound subject needs subjective case: 'She and I are going.' 'Me and her' uses objective case for subjects, which is incorrect in formal grammar."
+      },
+      {
+        q: "Select the correct sentence regarding collective nouns.",
+        choices: [
+          "The committee have signed its report.",
+          "The committee has signed their report.",
+          "The committee has signed its report.",
+          "The committee have signed their report."
+        ],
+        answer: "The committee has signed its report.",
+        explanation:
+          "Here, the committee acts as one unit (signing one report). Treat it as singular: singular verb 'has' + singular pronoun 'its'."
+      },
+      {
+        q: "Who vs. Whom: '______ did you vote for in the election?'",
+        choices: ["Who", "Whom", "Which", "That"],
+        answer: "Whom",
+        explanation:
+          "Turn it into a statement: 'You voted for _____.' You would say 'You voted for him', not 'he'. 'Him' = object → use 'whom'."
+      }
+    ],
+    quickTips: [
+      "After prepositions (to, for, with, between, about), always use objective case: 'to him', 'with her', 'between you and me'.",
+      "Each, every, either, neither, anyone, everyone are singular. Use singular verbs and pronouns in strict exam grammar.",
+      "Use 'myself' only if 'I' is already in the sentence: 'I hurt myself.' Don't use 'myself' just to sound formal.",
+      "In comparisons with than/as, silently complete the sentence: 'He is taller than I (am).' This helps you pick the correct pronoun.",
+      "For very formal answers, avoid ambiguous 'they' if the exam requires 'his or her', but remember singular 'they' is common in modern usage."
+    ]
+  },
 
-    "**2. The Preposition Rule (Crucial):**",
-    "   - Any pronoun following a preposition (between, with, to, from, for, about) MUST be Objective.",
-    "   - CORRECT: 'Between you and ME.'",
-    "   - CORRECT: 'For YOU and HER.'",
-    "   - WRONG: 'Between you and I.' (Common error!)",
-
-    // ADVANCED RULES
-    "**3. Indefinite Pronouns - The 'Singular' List:**",
-    "   - These are ALWAYS singular in formal grammar: *Each, Every, Everyone, Everybody, Anyone, Anybody, Someone, Somebody, No one, Nobody, Either, Neither.*",
-    "   - Rule: Use singular verbs and pronouns.",
-    "   - Example: 'Everyone has *his or her* own style.' (Not 'their').",
-    
-    "**4. Indefinite Pronouns - The 'SANAM' Rule (Tricky!):**",
-    "   - The pronouns *Some, Any, None, All, Most* (SANAM) can be Singular OR Plural.",
-    "   - **Rule:** Look at the prepositional phrase following them.",
-    "   - Countable Noun = Plural: 'All of the *apples* ARE gone.'",
-    "   - Uncountable Noun = Singular: 'All of the *water* IS gone.'",
-
-    "**5. Collective Nouns (Team, Jury, Committee, Family):**",
-    "   - **As a Unit:** If the group acts as one, use Singular. (e.g., 'The jury *has* reached *its* decision.')",
-    "   - **As Individuals:** If members act separately, use Plural. (e.g., 'The jury *are* arguing among *themselves*.')",
-
-    "**6. Relative Pronouns (Who vs. Whom vs. That vs. Which):**",
-    "   - **Who:** Subject (He). 'He is the one *who* called.'",
-    "   - **Whom:** Object (Him). 'He is the one *whom* I met.'",
-    "   - **That:** Essential clauses (no commas). 'The car *that* I bought.'",
-    "   - **Which:** Non-essential clauses (needs commas). 'The car, *which* is red, is fast.'"
-  ],
-
-  patterns: [
-    // Pattern 1
-    {
-      name: "The Compound Subject Test",
-      rule: "When you have 'Name + Pronoun', delete the Name to test the pronoun.",
-      example: "'Juan and (I/Me) went.' -> Delete Juan -> '(I) went' sounds correct. '(Me) went' sounds wrong. Answer: 'Juan and I'."
-    },
-    // Pattern 2
-    {
-      name: "The 'Appositive' Pronoun",
-      rule: "When a pronoun is followed by a noun (e.g., 'We/Us students'), look at the verb.",
-      example: "'(We/Us) teachers love coffee.' -> Remove 'teachers' -> 'WE love coffee.' Correct: 'We teachers'."
-    },
-    // Pattern 3
-    {
-      name: "The 'Than/As' Comparison Trap",
-      rule: "When comparing, finish the implied sentence.",
-      example: "'She is taller than (I/Me).' -> Implied: 'She is taller than I (am).' -> Correct: 'I'. (Using 'me' is informal/conversational, but 'I' is safer for formal exams)."
-    },
-    // Pattern 4
-    {
-      name: "Ambiguous Reference",
-      rule: "Never use a pronoun if it could refer to two different people.",
-      example: "Wrong: 'When the teacher met the parent, she was angry.' (Who was angry?). Correct: 'The teacher was angry when she met the parent.'"
-    }
-  ],
-
-  examples: [
-    {
-      q: "Which sentence is grammatically correct regarding indefinite pronouns?",
-      choices: [
-        "None of the cake are left.",
-        "None of the students is here.",
-        "None of the cake is left.",
-        "None of the students was given their grades."
-      ],
-      answer: "None of the cake is left.",
-      explanation: "This uses the SANAM rule. 'None' can be singular or plural. Look at the 'of' phrase. 'Of the cake' (Cake is uncountable/singular) -> Use singular verb 'is'. For 'None of the students' (Students is countable/plural), you would typically use 'are' in modern English, though 'is' is traditionally accepted. However, 'None of the cake are' is definitely wrong."
-    },
-    {
-      q: "Choose the correct pronoun: 'The supervisor asked ______ employees to work overtime.'",
-      choices: ["we", "us", "ourselves", "they"],
-      answer: "us",
-      explanation: "The pronoun here is an 'Appositive' modifying 'employees', but functionally it is the object of the verb 'asked'. Test it by removing 'employees': 'The supervisor asked US'. You wouldn't say 'The supervisor asked WE'. Therefore, 'us employees' is correct."
-    },
-    {
-      q: "Identify the error: 'Me and her are going to the mall later.'",
-      choices: ["Me and her", "are going", "to the", "mall later"],
-      answer: "Me and her",
-      explanation: "This is a Compound Subject error. 'Me' and 'Her' are objective pronouns. Subjects must be Subjective. It should be 'She and I are going'."
-    },
-    {
-      q: "Select the correct sentence regarding collective nouns.",
-      choices: [
-        "The committee have signed its report.",
-        "The committee has signed their report.",
-        "The committee has signed its report.",
-        "The committee have signed their report."
-      ],
-      answer: "The committee has signed its report.",
-      explanation: "Here, the committee is acting as a single unit (signing one report). Therefore, we treat it as singular. Singular Verb ('has') + Singular Pronoun ('its')."
-    },
-    {
-      q: "Who vs. Whom: '______ did you vote for in the election?'",
-      choices: ["Who", "Whom", "Which", "That"],
-      answer: "Whom",
-      explanation: "Rearrange the sentence to statement form: 'You did vote for ______.' You would say 'I voted for HIM' (not He). Since 'Him' is the answer, 'Whom' is the correct question word."
-    }
-  ],
-
-  quickTips: [
-    "**Singular Keywords:** Each, Every, Neither, Either. (Think: 'EACH ONE').",
-    "**The 'Self' Rule:** You can only use 'Myself' if 'I' has already been used in the sentence. (e.g., 'I bought myself a gift.')",
-    "**Comparing:** 'He is as smart as I.' (Not 'me'). Why? Because 'He is as smart as I (am).'",
-    "**Possessive Gerunds:** Use possessive pronouns before -ing nouns. 'I appreciate *your* (not you) helping me.' (You appreciate the *helping*, not the person)."
-  ]
-};
-  
-  
-  
-    grammatical_number: {
+  grammatical_number: {
     title: "Grammatical Number – Singular, Plural, and Agreement",
     level: "Verbal Ability · Nouns & Pronouns · Number",
     intro:
@@ -604,7 +581,6 @@ const LESSONS = {
       "In exam questions about subject–verb agreement, be careful with sentences that start with phrases like There is/There are or that use collective nouns. Always match the verb with the real, closest subject."
     ]
   },
-
 
   gender: {
     title: "Gender of Nouns & Pronouns",
