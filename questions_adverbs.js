@@ -121,7 +121,7 @@ const ADVERB_QUESTIONS = {
     { question: "I am ______ happy for you.", choices: ["so", "too", "enough", "such"], correctIndex: 0, explanation: "'So' or 'very' works here for emphasis." },
     { question: "It was ______ a good movie.", choices: ["so", "such", "very", "too"], correctIndex: 1, explanation: "'Such' is used before a noun phrase (a good movie)." },
     { question: "The tea is ______ sweet.", choices: ["very", "enough", "much", "many"], correctIndex: 0, explanation: "Simple intensifier." }
-  
+    ],
     
   advanced: [
     // 101-110: Inversion
