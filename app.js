@@ -45,7 +45,10 @@ const TOPIC_MAX_QUESTIONS = {
 // ==========================================
 const LESSONS = {
  
-  nouns: {
+    nouns: {
+    title: "Nouns – The Ultimate Reviewer (Deep Dive)",
+    level: "Verbal Ability · Nouns · CSE Grammar",
+    fullHtml: `
   <section class="lesson-section">
     <h2>1. The Anatomy of a Noun</h2>
     <p>A noun names a person, place, thing, idea, or event. But deeper than that, nouns have <strong>Properties</strong> that determine how they fit in a sentence.</p>
@@ -224,7 +227,7 @@ const LESSONS = {
       <li><strong>Stationary</strong> (Not moving) vs. <strong>Stationery</strong> (Paper/Envelopes).</li>
     </ul>
   </section>
-`  ]
+    `
   },
 
 
