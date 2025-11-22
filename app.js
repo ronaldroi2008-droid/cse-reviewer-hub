@@ -1387,7 +1387,9 @@ document.addEventListener("DOMContentLoaded", () => {
     case "pronouns":
       return PRONOUN_QUESTIONS;
     case "adjectives":
-      return ADJECTIVE_QUESTIONS;  
+      return ADJECTIVE_QUESTIONS;
+    case "adverbs":
+      return ADVERB_QUESTIONS;  
     default:
       return null;
   }
