@@ -1505,6 +1505,569 @@ const ADJECTIVE_QUESTIONS = {
     }
   ],
 
+    super: [
+    // 1–10: adjective vs adverb, linking verbs, adjective phrases
+    {
+      question: "Which sentence uses an adjective correctly after a linking verb?",
+      choices: [
+        "The soup smells deliciously.",
+        "The soup smells delicious.",
+        "The soup smells more deliciously.",
+        "The soup smells very deliciously."
+      ],
+      correctIndex: 1,
+      explanation: "After the linking verb 'smells', we use an adjective: 'delicious'."
+    },
+    {
+      question: "Which sentence is correct in standard English?",
+      choices: [
+        "The flowers smell sweetly in the garden.",
+        "The flowers smell sweet in the garden.",
+        "The flowers are smelling sweetly in the garden.",
+        "The flowers are smelling very sweetly in the garden."
+      ],
+      correctIndex: 1,
+      explanation: "With 'smell' as a linking verb, we use an adjective: 'smell sweet'."
+    },
+    {
+      question: "Identify the adjectives in the sentence: 'The sky turned dark and cloudy before the storm.'",
+      choices: [
+        "sky, storm",
+        "turned, dark",
+        "dark, cloudy",
+        "before, storm"
+      ],
+      correctIndex: 2,
+      explanation: "'Dark' and 'cloudy' both describe the noun 'sky'."
+    },
+    {
+      question: "Which sentence uses 'feel' as a linking verb with an adjective?",
+      choices: [
+        "I feel strongly about this issue.",
+        "I feel strong after resting.",
+        "I feel stronglyly after resting.",
+        "I feel more stronglyly about this issue."
+      ],
+      correctIndex: 1,
+      explanation: "When we talk about physical or emotional condition, we use an adjective: 'feel strong'."
+    },
+    {
+      question: "Which sentence correctly uses an adjective phrase?",
+      choices: [
+        "The man in the gray suit is our manager.",
+        "The man in gray is ourly manager.",
+        "The man gray in suit is our manager.",
+        "The man suit gray in is our manager."
+      ],
+      correctIndex: 0,
+      explanation: "'In the gray suit' is an adjective phrase describing 'man'."
+    },
+    {
+      question: "Identify the adjective in: 'The children grew restless during the long meeting.'",
+      choices: [
+        "children",
+        "grew",
+        "restless",
+        "meeting"
+      ],
+      correctIndex: 2,
+      explanation: "'Restless' describes the noun 'children'."
+    },
+    {
+      question: "Which sentence uses 'appear' as a linking verb with an adjective?",
+      choices: [
+        "He appeared suddenly on the stage.",
+        "He appeared nervous on the stage.",
+        "He appeared quickly on the stage.",
+        "He appeared quietly on the stage."
+      ],
+      correctIndex: 1,
+      explanation: "'Appeared nervous' links the subject 'he' to the adjective 'nervous'."
+    },
+    {
+      question: "Which sentence uses 'remain' correctly with an adjective?",
+      choices: [
+        "The streets remained quietly after curfew.",
+        "The streets remained quiet after curfew.",
+        "The streets remained quietlier after curfew.",
+        "The streets remained quietful after curfew."
+      ],
+      correctIndex: 1,
+      explanation: "'Remain' is a linking verb; it should be followed by an adjective: 'quiet'."
+    },
+    {
+      question: "Identify the adjective phrase in the sentence: 'Students eager to learn often ask many questions.'",
+      choices: [
+        "Students eager",
+        "eager to learn",
+        "to learn often",
+        "many questions"
+      ],
+      correctIndex: 1,
+      explanation: "'Eager to learn' describes 'students' and is an adjective phrase."
+    },
+    {
+      question: "Which sentence uses an adjective correctly after 'sound'?",
+      choices: [
+        "The plan sounds reasonably.",
+        "The plan sounds reasonable.",
+        "The plan sounds reasonablely.",
+        "The plan sounds more reasonably."
+      ],
+      correctIndex: 1,
+      explanation: "After 'sounds' as a linking verb, we use the adjective 'reasonable'."
+    },
+
+    // 11–20: degrees of comparison, irregular forms, logical comparisons
+    {
+      question: "Which sentence uses the comparative degree correctly?",
+      choices: [
+        "This task is more easier than the last one.",
+        "This task is easier than the last one.",
+        "This task is easiest than the last one.",
+        "This task is the most easier than the last one."
+      ],
+      correctIndex: 1,
+      explanation: "Use the comparative 'easier than' without 'more'."
+    },
+    {
+      question: "Which is the correct set of forms?",
+      choices: [
+        "good, gooder, goodest",
+        "good, better, best",
+        "good, more good, most good",
+        "good, goodest, most good"
+      ],
+      correctIndex: 1,
+      explanation: "The irregular forms are: good → better → best."
+    },
+    {
+      question: "Choose the sentence that compares exactly two things correctly:",
+      choices: [
+        "Between the two cars, this one is the cheapest.",
+        "Between the two cars, this one is the cheaper.",
+        "Between the two cars, this one is cheapest.",
+        "Between the two cars, this one is most cheap."
+      ],
+      correctIndex: 1,
+      explanation: "With two items, use the comparative: 'the cheaper (car)'."
+    },
+    {
+      question: "Which sentence uses the superlative correctly?",
+      choices: [
+        "She is the most tallest player in the team.",
+        "She is the tallest player in the team.",
+        "She is the taller player in the team.",
+        "She is tallest player in the team than others."
+      ],
+      correctIndex: 1,
+      explanation: "Avoid double comparison; just use 'the tallest'."
+    },
+    {
+      question: "Fill in the blank: 'This is the ______ book I have ever read.'",
+      choices: [
+        "more interesting",
+        "most interesting",
+        "interestinger",
+        "interestingest"
+      ],
+      correctIndex: 1,
+      explanation: "With 'ever', we normally use the superlative: 'the most interesting'."
+    },
+    {
+      question: "Which sentence avoids an illogical comparison?",
+      choices: [
+        "Your result is better than your previous.",
+        "Your result is better than your previous result.",
+        "Your result is better than previous.",
+        "Your result is better than before result."
+      ],
+      correctIndex: 1,
+      explanation: "We must compare 'result' with 'previous result', not with 'previous' alone."
+    },
+    {
+      question: "Which sentence is correct in formal English?",
+      choices: [
+        "This is the most ideal solution.",
+        "This is the more ideal solution.",
+        "This is the ideal solution.",
+        "This is the most ideally solution."
+      ],
+      correctIndex: 2,
+      explanation: "'Ideal' already suggests the best choice; 'the ideal solution' is usually preferred."
+    },
+    {
+      question: "Which sentence correctly compares three or more items?",
+      choices: [
+        "Of the three options, this one is the better.",
+        "Of the three options, this one is the best.",
+        "Of the three options, this one is better.",
+        "Of the three options, this one is more better."
+      ],
+      correctIndex: 1,
+      explanation: "For three or more, we use the superlative: 'the best'."
+    },
+    {
+      question: "Which sentence uses 'worse' and 'worst' correctly?",
+      choices: [
+        "This is the worse day of my life.",
+        "This is the worst day of my life.",
+        "This is the most worst day of my life.",
+        "This is worser day of my life."
+      ],
+      correctIndex: 1,
+      explanation: "The correct superlative is 'worst'; 'worse' is comparative."
+    },
+    {
+      question: "Which sentence is logically correct?",
+      choices: [
+        "Among the two candidates, she is the better.",
+        "Between the three candidates, she is the better.",
+        "Among the three candidates, she is the best.",
+        "Between the two candidates, she is the best."
+      ],
+      correctIndex: 2,
+      explanation: "Use 'among' with three or more, and the superlative 'the best'."
+    },
+
+    // 21–30: order of adjectives, such/so, enough/too
+    {
+      question: "Which phrase follows the natural order of adjectives?",
+      choices: [
+        "a red small plastic cup",
+        "a small red plastic cup",
+        "a plastic red small cup",
+        "a cup small red plastic"
+      ],
+      correctIndex: 1,
+      explanation: "Size (small) → color (red) → material (plastic) → noun (cup)."
+    },
+    {
+      question: "Choose the best-ordered phrase:",
+      choices: [
+        "a Chinese new interesting book",
+        "an interesting new Chinese book",
+        "a new Chinese interesting book",
+        "an interesting Chinese new book"
+      ],
+      correctIndex: 1,
+      explanation: "Opinion (interesting) → age (new) → origin (Chinese) → noun (book)."
+    },
+    {
+      question: "Which phrase is most natural?",
+      choices: [
+        "a big old wooden house",
+        "an old big wooden house",
+        "a wooden big old house",
+        "a big wooden old house"
+      ],
+      correctIndex: 0,
+      explanation: "Opinion/size (big) often comes before age (old), followed by material (wooden)."
+    },
+    {
+      question: "Which sentence uses 'such' correctly with an adjective and noun?",
+      choices: [
+        "It was such difficult exam.",
+        "It was such a difficult exam.",
+        "It was a such difficult exam.",
+        "It was difficult such an exam."
+      ],
+      correctIndex: 1,
+      explanation: "Pattern: 'such a/an + adjective + noun'."
+    },
+    {
+      question: "Which sentence uses 'so' correctly?",
+      choices: [
+        "The movie was so interesting that I watched it twice.",
+        "The movie was such interesting that I watched it twice.",
+        "The movie was so interesting film.",
+        "The movie was so an interesting film."
+      ],
+      correctIndex: 0,
+      explanation: "'So + adjective + that-clause' is correct: 'so interesting that…'."
+    },
+    {
+      question: "Which sentence uses 'too' correctly with an adjective?",
+      choices: [
+        "The box is too heavy for me to lift.",
+        "The box is heavy too for me to lift.",
+        "The box is heavy for me too to lift.",
+        "The box is heavy too much for me to lift."
+      ],
+      correctIndex: 0,
+      explanation: "'Too' comes before the adjective to show excess: 'too heavy'."
+    },
+    {
+      question: "Which sentence uses 'enough' correctly with an adjective?",
+      choices: [
+        "She is enough tall to join the team.",
+        "She is tall enough to join the team.",
+        "She tall enough is to join the team.",
+        "She is tall to join the team enough."
+      ],
+      correctIndex: 1,
+      explanation: "We say 'adjective + enough': 'tall enough'."
+    },
+    {
+      question: "Which sentence uses 'quite' correctly?",
+      choices: [
+        "The instructions are quite clear.",
+        "The instructions are clear quite.",
+        "The quite instructions are clear.",
+        "The instructions are clearly quite."
+      ],
+      correctIndex: 0,
+      explanation: "'Quite' usually comes before the adjective: 'quite clear'."
+    },
+    {
+      question: "Which sentence uses 'rather' correctly?",
+      choices: [
+        "The weather is rather cold today.",
+        "The weather is cold rather today.",
+        "The rather weather is cold today.",
+        "The weather cold rather is today."
+      ],
+      correctIndex: 0,
+      explanation: "'Rather' is an adverb of degree placed before the adjective 'cold'."
+    },
+    {
+      question: "Which sentence uses 'pretty' (informal) as an adverb of degree?",
+      choices: [
+        "The exam was pretty difficult.",
+        "The exam was difficult pretty.",
+        "The pretty exam was difficult.",
+        "The exam was difficult prettily."
+      ],
+      correctIndex: 0,
+      explanation: "In informal English, 'pretty' can mean 'fairly' or 'quite' before an adjective."
+    },
+
+    // 31–40: quantifiers & types of adjectives
+    {
+      question: "Which sentence uses 'few' and 'little' correctly?",
+      choices: [
+        "We have little chairs and few time.",
+        "We have few chairs and little time.",
+        "We have few chairs and few time.",
+        "We have little chairs and little time."
+      ],
+      correctIndex: 1,
+      explanation: "Use 'few' with countable nouns (chairs) and 'little' with uncountable nouns (time)."
+    },
+    {
+      question: "Which sentence uses 'many' and 'much' correctly?",
+      choices: [
+        "There are many people and much noise in the room.",
+        "There are much people and many noise in the room.",
+        "There is many people and much noise in the room.",
+        "There are many peoples and much noises in the room."
+      ],
+      correctIndex: 0,
+      explanation: "Use 'many' with countable nouns (people) and 'much' with uncountable nouns (noise)."
+    },
+    {
+      question: "Which sentence uses a demonstrative adjective?",
+      choices: [
+        "This is yours.",
+        "These books are new.",
+        "There is mine.",
+        "Here is hers."
+      ],
+      correctIndex: 1,
+      explanation: "'These' modifies 'books', functioning as a demonstrative adjective."
+    },
+    {
+      question: "Which sentence uses a possessive adjective correctly?",
+      choices: [
+        "This is hers pen.",
+        "This is her pen.",
+        "This is she pen.",
+        "This is she's pen."
+      ],
+      correctIndex: 1,
+      explanation: "'Her' is the correct possessive adjective before 'pen'."
+    },
+    {
+      question: "Which sentence uses an interrogative adjective?",
+      choices: [
+        "What did you say?",
+        "Which color do you like?",
+        "Who called you?",
+        "When did you arrive?"
+      ],
+      correctIndex: 1,
+      explanation: "In 'Which color', 'which' modifies the noun 'color'."
+    },
+    {
+      question: "Which sentence uses a distributive adjective?",
+      choices: [
+        "Each student received a certificate.",
+        "All student received a certificate.",
+        "Much students received a certificate.",
+        "Many student received a certificate."
+      ],
+      correctIndex: 0,
+      explanation: "'Each' is a distributive adjective referring to members of a group individually."
+    },
+    {
+      question: "Which sentence uses a proper adjective correctly?",
+      choices: [
+        "She bought a japan phone.",
+        "She bought a Japanese phone.",
+        "She bought a japanese phone.",
+        "She bought a Japanes phone."
+      ],
+      correctIndex: 1,
+      explanation: "Proper adjectives (Japanese) are capitalized and placed before the noun."
+    },
+    {
+      question: "Which is a quantitative adjective?",
+      choices: [
+        "several",
+        "happy",
+        "Filipino",
+        "round"
+      ],
+      correctIndex: 0,
+      explanation: "'Several' shows quantity and is used with countable nouns."
+    },
+    {
+      question: "Which sentence uses 'no' as an adjective?",
+      choices: [
+        "No student was late.",
+        "No one student were late.",
+        "No the student was late.",
+        "No students was late, they were all early."
+      ],
+      correctIndex: 0,
+      explanation: "'No' modifies 'student' and functions as an adjective."
+    },
+    {
+      question: "Which sentence uses 'another' correctly?",
+      choices: [
+        "She needs another informations.",
+        "She needs another piece of information.",
+        "She needs other another information.",
+        "She needs anothers information."
+      ],
+      correctIndex: 1,
+      explanation: "Use 'another' with singular countable nouns: 'another piece of information'."
+    },
+
+    // 41–50: error identification & improvement (adjective-focused)
+    {
+      question: "Find the part with an error: 'She is the most smartest in the class.'",
+      choices: [
+        "She is",
+        "the most",
+        "smartest",
+        "in the class"
+      ],
+      correctIndex: 2,
+      explanation: "Double comparison; it should be 'the smartest'."
+    },
+    {
+      question: "Find the error: 'He gave me a few good advices.'",
+      choices: [
+        "He gave",
+        "me",
+        "a few good",
+        "advices"
+      ],
+      correctIndex: 3,
+      explanation: "'Advice' is uncountable; it should be 'a few good pieces of advice'."
+    },
+    {
+      question: "Find the error: 'There is only few time left before the exam.'",
+      choices: [
+        "There is",
+        "only few",
+        "time left",
+        "before the exam"
+      ],
+      correctIndex: 2,
+      explanation: "The problem is 'few' with an uncountable noun; it should be 'little time left'."
+    },
+    {
+      question: "Find the error: 'This is the more importantest point in the report.'",
+      choices: [
+        "This is",
+        "the more",
+        "importantest point",
+        "in the report"
+      ],
+      correctIndex: 2,
+      explanation: "Use 'most important', not 'importantest' or 'more importantest'."
+    },
+    {
+      question: "Improve the sentence: 'She is more friendlier now than before.'",
+      choices: [
+        "She is friendlier now than before.",
+        "She is more friendly now than before.",
+        "She is the friendlier now than before.",
+        "She is most friendlier now than before."
+      ],
+      correctIndex: 0,
+      explanation: "Use the comparative 'friendlier' without 'more'."
+    },
+    {
+      question: "Improve the sentence: 'This is the less useful of the three proposals.'",
+      choices: [
+        "This is the least useful of the three proposals.",
+        "This is less useful of the three proposals.",
+        "This is the lesser useful of the three proposals.",
+        "This is the less most useful of the three proposals."
+      ],
+      correctIndex: 0,
+      explanation: "For three proposals, use the superlative 'least useful'."
+    },
+    {
+      question: "Improve the sentence: 'He is more superior than his teammates.'",
+      choices: [
+        "He is superior to his teammates.",
+        "He is more superior to his teammates.",
+        "He is superior than his teammates.",
+        "He is the most superior than his teammates."
+      ],
+      correctIndex: 0,
+      explanation: "Avoid 'more superior'; 'superior to' is enough."
+    },
+    {
+      question: "Improve the sentence: 'She is more elder than her cousin.' (general comparison)",
+      choices: [
+        "She is older than her cousin.",
+        "She is the elder than her cousin.",
+        "She is more older than her cousin.",
+        "She is eldest than her cousin."
+      ],
+      correctIndex: 0,
+      explanation: "For general age comparison, use 'older than'."
+    },
+    {
+      question: "Improve the sentence: 'The report is more complete now than yesterday.'",
+      choices: [
+        "The report is more complete now than it was yesterday.",
+        "The report is complete now than yesterday.",
+        "The report is the most complete now than yesterday.",
+        "The report is completely now than yesterday."
+      ],
+      correctIndex: 0,
+      explanation: "The comparison must be completed: 'than it was yesterday'."
+    },
+    {
+      question: "Improve the sentence: 'She almost nearly missed the last train.'",
+      choices: [
+        "She almost missed the last train.",
+        "She nearly almost missed the last train.",
+        "She almost nearly last missed the train.",
+        "She nearly almost last missed the train."
+      ],
+      correctIndex: 0,
+      explanation: "We avoid using 'almost' and 'nearly' together because they have similar meanings."
+    }
+  ],
+
+
   exam: [
     // 1–10: mixed difficulty
     {
