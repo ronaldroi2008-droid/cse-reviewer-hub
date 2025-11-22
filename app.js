@@ -214,6 +214,169 @@ const LESSONS = {
     ]
   },
     
+      tenses: {
+    title: "Tenses – Time, Aspect, and Consistent Use",
+    level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
+    intro:
+      "Tense tells us WHEN an action happens (past, present, future), while aspect tells us HOW the action happens (simple, continuous/progressive, perfect, perfect continuous). In the Civil Service Exam, tense questions usually test correct form (has gone vs had gone), tense consistency in a sentence or paragraph, and the difference between similar tenses like past simple vs present perfect, or past perfect vs past simple.",
+
+    keyPoints: [
+      // 1. Core idea
+      "Tense = time (past, present, future). Aspect = how the action unfolds (simple, continuous, perfect, perfect continuous). Example: 'I study' (simple present), 'I am studying' (present continuous), 'I have studied' (present perfect), 'I have been studying' (present perfect continuous).",
+      "Simple tenses focus on facts, habits, finished events, and scheduled events. Continuous tenses focus on actions in progress. Perfect tenses connect two different times. Perfect continuous tenses show an action that started earlier and continues up to another time.",
+
+      // 2. Simple tenses
+      "Simple Present: used for habits, general truths, fixed schedules, and permanent situations. Examples: 'She works in Cebu.' 'The sun rises in the east.' 'The meeting starts at 8:00 a.m.'",
+      "Simple Past: used for finished actions at a specific time in the past, usually with time markers like yesterday, last week, a year ago, in 2019. Example: 'They visited Baguio last year.'",
+      "Simple Future (will + base verb): used for decisions made at the moment of speaking, promises, offers, predictions without strong evidence. Example: 'I will call you later.'",
+
+      // 3. Continuous / Progressive
+      "Present Continuous (am/is/are + -ing): used for actions happening now, temporary actions, or definite future arrangements. Examples: 'She is studying now.' 'I am staying with my cousin this week.' 'We are meeting the client tomorrow.'",
+      "Past Continuous (was/were + -ing): used for an action that was in progress at a particular time in the past, often interrupted by another shorter action in the simple past. Example: 'I was reading when the phone rang.'",
+      "Future Continuous (will be + -ing): used for actions that will be in progress at a specific time in the future. Example: 'At 10 a.m. tomorrow, I will be taking the exam.'",
+
+      // 4. Perfect tenses
+      "Present Perfect (has/have + past participle): connects past and present. Used for (a) experiences at an unspecified time (I have visited Manila), (b) recent events with present result (She has lost her keys), and (c) actions that started in the past and continue until now when used with for/since (He has lived here for five years).",
+      "Past Perfect (had + past participle): used for an action that was completed before another past action or time. Example: 'He had left when I arrived.' Here, leaving happened first; arriving happened second.",
+      "Future Perfect (will have + past participle): used for actions that will be completed before a certain future time. Example: 'By next month, we will have finished the project.'",
+
+      // 5. Perfect continuous
+      "Present Perfect Continuous (has/have been + -ing): used for actions that started in the past and continue up to now, often emphasizing duration. Example: 'She has been studying for three hours.'",
+      "Past Perfect Continuous (had been + -ing): used for longer past actions that continued up to another point in the past. Example: 'They had been working all day before they finally rested.'",
+      "Future Perfect Continuous (will have been + -ing): used to emphasize the length of an activity up to a future time. Example: 'By next year, I will have been working here for ten years.'",
+
+      // 6. Consistency & common exam traps
+      "Tense Consistency: In one sentence or paragraph, keep the tense consistent unless the time clearly changes. Mixing past and present without reason is a common error (Wrong: 'Yesterday I go to town and bought groceries.').",
+      "Time Markers: Words like yesterday, last week, in 2010, ago usually go with simple past; words like since, for, already, yet, ever, never often go with perfect tenses; words like now, at the moment, currently often go with continuous tenses.",
+      "Reported Speech: In reported statements, present tenses often shift back if the reporting verb is in the past. Example: 'I am tired,' she said → She said that she was tired.",
+      "Conditionals use specific tense patterns: If + present, will + base (real future); If + past, would + base (unreal present); If + past perfect, would have + past participle (unreal past).",
+      "Common Errors: mixing up past simple and present perfect (I have seen it yesterday ❌), using past perfect without a second past action, and using continuous where simple is better (I am knowing him for years ❌)."
+    ],
+
+    patterns: [
+      "Choosing the correct tense based on time expressions (yesterday, already, since 2010, now, by next year).",
+      "Correcting sentences that shift tenses without a clear reason (especially in narratives and paragraph improvement items).",
+      "Distinguishing between simple past and present perfect in context, especially with or without specific time markers.",
+      "Using past perfect only when there are two past actions and one happened before the other.",
+      "Identifying incorrect continuous forms (I am knowing, she is having a car) and replacing them with the simple form where needed.",
+      "Choosing proper tense combinations in conditionals (If-clauses), time clauses (when, after, before), and reported speech.",
+      "Recognizing which future form to use: will, be going to, present continuous, or future perfect."
+    ],
+
+    examples: [
+      {
+        q: "Which sentence uses the correct tense with the time marker yesterday?",
+        choices: [
+          "I have seen the report yesterday.",
+          "I saw the report yesterday.",
+          "I am seeing the report yesterday.",
+          "I had seen the report yesterday."
+        ],
+        answer: "I saw the report yesterday.",
+        explanation:
+          "Yesterday refers to a specific time in the past, so we use the simple past: saw. Present perfect (have seen) is usually not used with specific past time expressions like yesterday, last week, in 2010."
+      },
+      {
+        q: "Choose the best sentence to talk about an experience with no specific time:",
+        choices: [
+          "I went to Palawan.",
+          "I have gone to Palawan yesterday.",
+          "I have been to Palawan.",
+          "I was going to Palawan last year."
+        ],
+        answer: "I have been to Palawan.",
+        explanation:
+          "When the exact time is not mentioned and we talk about life experience, we use the present perfect (have been). 'Yesterday' or 'last year' would require simple past (I went...)."
+      },
+      {
+        q: "Which sentence correctly uses the past perfect?",
+        choices: [
+          "By the time I arrived, he left.",
+          "By the time I arrived, he had left.",
+          "By the time I had arrived, he left.",
+          "By the time I had arrived, he had left yesterday."
+        ],
+        answer: "By the time I arrived, he had left.",
+        explanation:
+          "There are two past actions: he left and I arrived. The earlier action uses the past perfect (had left); the later action uses the simple past (arrived)."
+      },
+      {
+        q: "Which sentence shows an action in progress interrupted by another past action?",
+        choices: [
+          "I was eating dinner when the phone rang.",
+          "I ate dinner when the phone was ringing.",
+          "I have eaten dinner when the phone rang.",
+          "I am eating dinner when the phone rang."
+        ],
+        answer: "I was eating dinner when the phone rang.",
+        explanation:
+          "This pattern (past continuous + simple past) shows one action in progress (was eating) interrupted by a shorter completed action (rang). This is a very common CSE exam pattern."
+      },
+      {
+        q: "Which sentence correctly expresses a situation that started in the past and continues up to now?",
+        choices: [
+          "She lives here since 2015.",
+          "She lived here since 2015.",
+          "She has lived here since 2015.",
+          "She had lived here since 2015."
+        ],
+        answer: "She has lived here since 2015.",
+        explanation:
+          "For an action that began in the past and still continues, we use the present perfect (has/have + past participle) with since/for. 'Has lived' shows the action from 2015 up to the present."
+      },
+      {
+        q: "Choose the correct future form: 'By next month, we ___ this training.'",
+        choices: [
+          "will finish",
+          "will have finished",
+          "are finishing",
+          "finished"
+        ],
+        answer: "will have finished",
+        explanation:
+          "By next month refers to a deadline in the future. We use the future perfect (will have + past participle) to show that an action will be completed before that time: will have finished."
+      },
+      {
+        q: "Which sentence maintains consistent tense?",
+        choices: [
+          "Last night, I watch TV and fell asleep.",
+          "Last night, I watched TV and fall asleep.",
+          "Last night, I watched TV and fell asleep.",
+          "Last night, I am watching TV and fell asleep."
+        ],
+        answer: "Last night, I watched TV and fell asleep.",
+        explanation:
+          "Last night signals past time. Both verbs should be in the simple past: watched and fell. Mixing watch/fall with past forms is incorrect."
+      },
+      {
+        q: "Choose the correct conditional sentence:",
+        choices: [
+          "If it will rain, we will stay at home.",
+          "If it rained, we will stay at home.",
+          "If it rains, we will stay at home.",
+          "If it is raining yesterday, we will stay at home."
+        ],
+        answer: "If it rains, we will stay at home.",
+        explanation:
+          "Real future conditionals use If + simple present (rains) and will + base verb (will stay). We do not use will directly after if."
+      }
+    ],
+
+    quickTips: [
+      "Look at time expressions first (yesterday, now, since, by next year). They are strong clues for which tense to use.",
+      "For experiences with no specific time, use present perfect (have/has + past participle). For finished actions at a known time in the past, use simple past.",
+      "Use past perfect only when there are two different past times and you need to show which action happened first.",
+      "Continuous tenses (-ing) are often used with now, at the moment, currently, and while. Simple tenses are used for habits and facts.",
+      "Avoid mixing present and past in one sentence unless there is a really clear reason. The Civil Service Exam loves to test tense consistency errors.",
+      "Memorize common irregular verb forms (go–went–gone, see–saw–seen, take–took–taken, write–wrote–written) because they appear in many tense questions.",
+      "In conditionals, beware of using will after if. Use: If + present (If it rains), will + base verb (we will stay). For unreal situations, use If + past (If I were rich), would + base (I would travel)."
+    ]
+  },
+
+  
+  
+  
+  
     grammatical_number: {
     title: "Grammatical Number – Singular, Plural, and Agreement",
     level: "Verbal Ability · Nouns & Pronouns · Number",
