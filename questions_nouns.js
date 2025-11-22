@@ -169,7 +169,7 @@ const NOUN_QUESTIONS = {
     { question: "Find the appositive: 'We visited Paris, the capital of France.'", choices: ["We", "visited", "Paris", "the capital of France"], correctIndex: 3, explanation: 'Renames Paris.' },
     { question: "Is the appositive essential? 'My friend John is here.' (I have many friends)", choices: ["Yes", "No"], correctIndex: 0, explanation: 'Essential (no commas) because it specifies WHICH friend.' },
     { question: "Is the appositive essential? 'My husband, Mark, is here.' (I have one husband)", choices: ["Yes", "No"], correctIndex: 1, explanation: 'Non-essential (uses commas) because the name isn\'t needed to identify him.' },
-    { question: 'In "The insect, a cockroach, crawled away," "cockroach" is:', choices: ["Subject", "Object", "Appositive", "Verb"], correctIndex: 2, explanation: 'Renames "insect".' },
+    { question: 'In "The insect, a cockroach, crawled away," "cockroach" is:', choices: ["Subject", "Object", "Appositive", "Verb"], correctIndex: 2, explanation: 'An Appositive stands next to a noun to explain it. Here, "cockroach" identifies exactly what the "insect" is.' },
 
     // 41-50: Noun Clauses (Introduction)
     { question: 'Identify the noun clause: "I know what you did."', choices: ["I know", "what you did", "you did", "know what"], correctIndex: 1, explanation: 'The clause acts as the direct object.' },
