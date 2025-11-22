@@ -1215,8 +1215,7 @@ const LESSONS = {
     </ul>
   </section>
     `
-  }
- };     
+  },   
 
 // ==========================================
 // PREPOSITIONS – STUDY NOTES (for Study Mode)
