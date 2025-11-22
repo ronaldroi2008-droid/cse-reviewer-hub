@@ -937,6 +937,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return TENSE_QUESTIONS;
     case "pronouns":
       return PRONOUN_QUESTIONS;
+    case "adjectives":
+      return ADJECTIVE_QUESTIONS;  
     default:
       return null;
   }
