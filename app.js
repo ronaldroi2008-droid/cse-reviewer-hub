@@ -672,6 +672,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return GRAMMATICAL_NUMBER_QUESTIONS;
     case "verbs":
       return VERB_QUESTIONS;
+    case "tenses":
+      return TENSE_QUESTIONS;
     default:
       return null;
   }
