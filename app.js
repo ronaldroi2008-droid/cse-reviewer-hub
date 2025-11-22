@@ -1136,7 +1136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     topicsListEl.appendChild(listContainer);
   }
 
-  function renderLesson(topicKey) {
+    function renderLesson(topicKey) {
     const data = LESSONS[topicKey];
     if (!data) {
       lessonTitleEl.textContent = "Coming soon";
@@ -1146,10 +1146,20 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    lessonTitleEl.textContent = data.title;
-    lessonMetaEl.textContent = data.level;
+    lessonTitleEl.textContent = data.title || "Verbal Ability Topic";
+    lessonMetaEl.textContent = data.level || "CSE Verbal Ability";
 
-    let html = `<div class="lesson-section"><p>${data.intro}</p></div>`;
+    // ✅ SPECIAL CASE: kung may fullHtml (gaya ng Adverbs), diretso natin i-render
+    if (data.fullHtml) {
+      lessonContentEl.innerHTML = data.fullHtml;
+      return;
+    }
+
+    // ✅ Default path para sa ibang lessons (Nouns, Verbs, etc.)
+    let html = "";
+    if (data.intro) {
+      html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
+    }
 
     if (data.keyPoints) {
       html += `
@@ -1158,6 +1168,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <ul>${data.keyPoints.map((k) => `<li>${k}</li>`).join("")}</ul>
         </div>`;
     }
+
     if (data.patterns) {
       html += `
         <div class="lesson-section">
@@ -1165,6 +1176,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <ul>${data.patterns.map((p) => `<li>${p}</li>`).join("")}</ul>
         </div>`;
     }
+
     if (data.examples) {
       html += `<div class="lesson-section">
         <div class="lesson-section-title">Examples</div>`;
@@ -1183,6 +1195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       html += `</div>`;
     }
+
     if (data.quickTips) {
       html += `
         <div class="lesson-section">
@@ -1193,6 +1206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lessonContentEl.innerHTML = html;
   }
+
 
   // Init Study Mode
   renderTopicsSidebar("nouns");
