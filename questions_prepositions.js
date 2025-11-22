@@ -2,7 +2,7 @@
 // 200 Civil Service–style questions on PREPOSITIONS with detailed explanations.
 // Structure is simple so you can reuse it in your CSE Reviewer Hub.
 
-export const PREPOSITION_QUESTIONS = [
+const PREPOSITION_QUESTIONS = [
   // =========================
   // LEVEL 1 – BASIC PLACE & TIME
   // =========================
