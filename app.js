@@ -45,7 +45,7 @@ const TOPIC_MAX_QUESTIONS = {
 // ==========================================
 const LESSONS = {
  
-  verbs: {
+  nouns: {
   <section class="lesson-section">
     <h2>1. The Anatomy of a Noun</h2>
     <p>A noun names a person, place, thing, idea, or event. But deeper than that, nouns have <strong>Properties</strong> that determine how they fit in a sentence.</p>
