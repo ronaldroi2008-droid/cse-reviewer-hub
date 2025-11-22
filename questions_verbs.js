@@ -409,6 +409,25 @@ const VERB_QUESTIONS = {
       correctIndex: 2,
       explanation:
         "Now suggests present continuous; with singular cat, use is sleeping."
+    },
+    {
+      question: "Choose the correct verb: 'My friends ___ to music every evening.'",
+      choices: ["listen", "listens", "listening", "listened"],
+      correctIndex: 0,
+      explanation:
+        "Friends is plural, so we use the base form listen in the simple present."
+    },
+    {
+      question: "Which sentence uses the past continuous correctly?",
+      choices: [
+        "I was read when you called.",
+        "I was reading when you called.",
+        "I am reading when you called.",
+        "I reading when you called."
+      ],
+      correctIndex: 1,
+      explanation:
+        "Past continuous uses was/were + -ing: I was reading when you called."
     }
   ],
 
@@ -835,6 +854,63 @@ const VERB_QUESTIONS = {
       correctIndex: 1,
       explanation:
         "A number of + plural noun usually takes a plural verb: are absent."
+    },
+    {
+      question: "Choose the correct verb: 'The list of items ___ on the desk.'",
+      choices: ["is", "are", "were", "be"],
+      correctIndex: 0,
+      explanation:
+        "The subject is list (singular), so we use is."
+    },
+    {
+      question: "Which sentence uses the past continuous correctly?",
+      choices: [
+        "When I arrived, they were eating dinner.",
+        "When I arrived, they have eaten dinner.",
+        "When I arrived, they had eating dinner.",
+        "When I arrived, they eats dinner."
+      ],
+      correctIndex: 0,
+      explanation:
+        "Ongoing past action interrupted by another past action uses past continuous: were eating."
+    },
+    {
+      question: "Choose the correct verb form: 'She ___ already left when I called.'",
+      choices: ["has", "had", "have", "was"],
+      correctIndex: 1,
+      explanation:
+        "Her leaving happened before I called, so we use past perfect: had already left."
+    },
+    {
+      question: "Which sentence is correct?",
+      choices: [
+        "Neither the manager nor the employees is happy about the policy.",
+        "Neither the manager nor the employees are happy about the policy.",
+        "Neither the manager nor the employees be happy about the policy.",
+        "Neither the manager nor the employees were happy about the policy today."
+      ],
+      correctIndex: 1,
+      explanation:
+        "With neither...nor, the verb agrees with the nearer subject (employees, plural), so use are."
+    },
+    {
+      question: "Choose the correct verb: 'The police ___ investigating the case.'",
+      choices: ["is", "are", "was", "has"],
+      correctIndex: 1,
+      explanation:
+        "Police is a collective noun usually treated as plural; use are investigating."
+    },
+    {
+      question: "Which sentence uses the correct verb?",
+      choices: [
+        "Ten kilometers are a long distance to walk.",
+        "Ten kilometers is a long distance to walk.",
+        "Ten kilometers be a long distance to walk.",
+        "Ten kilometers were a long distance to walk."
+      ],
+      correctIndex: 1,
+      explanation:
+        "A measurement used as a single amount takes a singular verb: Ten kilometers is a long distance."
     }
   ],
 
@@ -1261,6 +1337,58 @@ const VERB_QUESTIONS = {
       correctIndex: 1,
       explanation:
         "Documents is plural; together with the envelope is a prepositional phrase; use are."
+    },
+    {
+      question: "Choose the correct verb: 'If he ___ harder, he might have passed the exam.'",
+      choices: ["had studied", "has studied", "studied", "would study"],
+      correctIndex: 0,
+      explanation:
+        "For a past unreal condition with a possible past result, we use had + past participle: had studied."
+    },
+    {
+      question: "Which sentence uses the future perfect correctly?",
+      choices: [
+        "By the end of this month, she will work here for five years.",
+        "By the end of this month, she will have worked here for five years.",
+        "By the end of this month, she has worked here for five years.",
+        "By the end of this month, she will be work here for five years."
+      ],
+      correctIndex: 1,
+      explanation:
+        "Future perfect describes an action completed before a future time: will have worked."
+    },
+    {
+      question: "Choose the correct verb form: 'No matter how hard he ___, he couldn't solve the puzzle.'",
+      choices: ["tries", "tried", "had tried", "has tried"],
+      correctIndex: 1,
+      explanation:
+        "The main clause is in the past (couldn't solve), so we use the simple past tried."
+    },
+    {
+      question: "Which sentence is correct?",
+      choices: [
+        "He acts as if he know everything.",
+        "He acts as if he knew everything.",
+        "He acts as if he had knew everything.",
+        "He acts as if he knows everything, even yesterday."
+      ],
+      correctIndex: 1,
+      explanation:
+        "As if + past form (knew) suggests his knowing everything is probably not true."
+    },
+    {
+      question: "Choose the correct verb: 'She was supposed ___ at 8 a.m., but she arrived late.'",
+      choices: ["to arrive", "arrive", "arriving", "to arriving"],
+      correctIndex: 0,
+      explanation:
+        "Supposed is followed by the infinitive to + base verb: to arrive."
+    },
+    {
+      question: "Which sentence correctly completes the idea? 'He apologized for ___ the deadline several times.'",
+      choices: ["misses", "missing", "to miss", "have missed"],
+      correctIndex: 1,
+      explanation:
+        "After a preposition (for), we use the -ing form: for missing the deadline."
     }
   ],
 
@@ -1680,7 +1808,75 @@ const VERB_QUESTIONS = {
       correctIndex: 1,
       explanation:
         "Inversion with were he to + base verb expresses a hypothetical present; result: would still accept."
+    },
+    {
+      question: "Not until later ___ how serious the situation was.",
+      choices: [
+        "we realized",
+        "did we realize",
+        "we had realized",
+        "we realize"
+      ],
+      correctIndex: 1,
+      explanation:
+        "After a negative adverbial (Not until later), we invert the auxiliary and subject: did we realize."
+    },
+    {
+      question: "Choose the correct verb form: 'If he ___ the instructions, he wouldn't be in trouble now.'",
+      choices: ["had followed", "followed", "would follow", "has followed"],
+      correctIndex: 0,
+      explanation:
+        "This is a mixed conditional: past condition with a present result uses past perfect in the if-clause."
+    },
+    {
+      question: "Only after the meeting ___ that the issue was resolved.",
+      choices: [
+        "we learned",
+        "did we learn",
+        "we had learned",
+        "have we learned"
+      ],
+      correctIndex: 1,
+      explanation:
+        "With only after at the beginning, we use inversion: did we learn."
+    },
+    {
+      question: "So difficult ___ that few candidates passed it.",
+      choices: [
+        "the exam was",
+        "was the exam",
+        "had the exam been",
+        "the exam had been"
+      ],
+      correctIndex: 1,
+      explanation:
+        "So + adjective at the beginning causes inversion: So difficult was the exam that..."
+    },
+    {
+      question: "Choose the correct verb form: 'If it ___ for your help, I wouldn't have completed the project.'",
+      choices: ["wasn't", "weren't", "hadn't been", "wouldn't be"],
+      correctIndex: 2,
+      explanation:
+        "If it hadn't been for... is the correct form for a past condition that did not happen."
+    },
+    {
+      question: "Little ___ about the plan until yesterday.",
+      choices: [
+        "did we know",
+        "we knew",
+        "had we known",
+        "have we known"
+      ],
+      correctIndex: 0,
+      explanation:
+        "Little at the beginning triggers inversion: Little did we know..."
+    },
+    {
+      question: "Should you ___ any questions, feel free to contact me.",
+      choices: ["having", "have", "had", "has"],
+      correctIndex: 1,
+      explanation:
+        "In conditional inversion with should, we use the base verb: Should you have any questions..."
     }
   ]
 };
-
