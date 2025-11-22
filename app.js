@@ -44,36 +44,190 @@ const TOPIC_MAX_QUESTIONS = {
 // 2. LESSONS DATA
 // ==========================================
 const LESSONS = {
-  nouns: {
-    title: "Nouns – Basics & Types",
-    level: "All levels · CSE Verbal Ability",
-    intro:
-      "A noun is a word that names a person, place, thing, or idea. In the CSE, questions often test noun types, singular/plural forms, and usage.",
-    keyPoints: [
-      "A noun names a person (teacher), place (city), thing (book), or idea (freedom).",
-      "Common nouns are general; proper nouns are specific and capitalized.",
-      "Concrete nouns are tangible; abstract nouns are ideas or feelings.",
-      "Countable nouns have plurals; uncountable nouns usually do not.",
-      "Collective nouns refer to groups (team, family) and can be singular or plural depending on meaning."
-    ],
-    patterns: [
-      "Identify noun types (common vs proper, concrete vs abstract).",
-      "Select correct singular/plural forms.",
-      "Subject–verb agreement with collective nouns."
-    ],
-    examples: [
-      {
-        q: "Which is a proper noun?",
-        choices: ["city", "teacher", "Manila", "river"],
-        answer: "Manila",
-        explanation: "It names a specific city and is capitalized."
-      }
-    ],
-    quickTips: [
-      "Check capitalization for proper nouns.",
-      "Memorize common uncountable nouns (furniture, information, equipment)."
-    ]
+ 
+  verbs: {
+  <section class="lesson-section">
+    <h2>1. The Anatomy of a Noun</h2>
+    <p>A noun names a person, place, thing, idea, or event. But deeper than that, nouns have <strong>Properties</strong> that determine how they fit in a sentence.</p>
+    <div class="highlight-box">
+      <p><strong>The 4 Properties of Nouns:</strong></p>
+      <ul>
+        <li><strong>Gender:</strong> Masculine, Feminine, Common (teacher), Neuter (table).</li>
+        <li><strong>Number:</strong> Singular vs. Plural.</li>
+        <li><strong>Case:</strong> Subjective, Objective, Possessive.</li>
+        <li><strong>Person:</strong> First, Second, or Third person.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Deep Dive: Count vs. Mass Nouns (The Shifters)</h2>
+    <p>Some nouns change meaning depending on whether they are countable or uncountable.</p>
+    <table class="lesson-table">
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>As Mass Noun (Uncountable)</th>
+          <th>As Count Noun (Pluralizable)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Paper</strong></td>
+          <td>Material to write on.<br><em>"I need some paper."</em></td>
+          <td>Documents or newspapers.<br><em>"I lost my important papers."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Hair</strong></td>
+          <td>All hair on the head.<br><em>"Her hair is black."</em></td>
+          <td>Individual strands.<br><em>"There are two gray hairs in my soup."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Glass</strong></td>
+          <td>The material.<br><em>"Windows are made of glass."</em></td>
+          <td>Drinking vessels or eyewear.<br><em>"I drank three glasses of water."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Iron</strong></td>
+          <td>The metal.<br><em>"Steel contains iron."</em></td>
+          <td>Device for clothes.<br><em>"We have two flat irons."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Room</strong></td>
+          <td>Space.<br><em>"Is there enough room for me?"</em></td>
+          <td>Partitioned areas.<br><em>"The house has five rooms."</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Advanced Pluralization Rules</h2>
+    
+    <h3>3.1 The Tricky "-O" Endings</h3>
+    <p>Not all nouns ending in "o" take "-es". This is a memorization game.</p>
+    <ul>
+      <li><strong>Add -ES (Usually heroes/potatoes):</strong> <em>Heroes, Tomatoes, Potatoes, Echoes, Torpedoes, Vetos, Mosquitoes.</em></li>
+      <li><strong>Add -S (Usually musical/tech terms):</strong> <em>Pianos, Solos, Photos, Radios, Studios, Videos, Logos, Memos.</em></li>
+      <li><strong>Both are accepted:</strong> <em>Volcanoes/Volcanos, Mangoes/Mangos, Tornadoes/Tornados.</em></li>
+    </ul>
+
+    <h3>3.2 Compound Nouns (The "Head Word" Rule)</h3>
+    <p>Find the main word/person being described.</p>
+    <ul>
+      <li><em>Attorney-at-law</em> → <strong>Attorneys</strong>-at-law</li>
+      <li><em>Passer-by</em> → <strong>Passers</strong>-by</li>
+      <li><em>Major General</em> → Major <strong>Generals</strong> (General is the noun, Major is the adjective)</li>
+      <li><em>Poet Laureate</em> → <strong>Poets</strong> Laureate</li>
+    </ul>
+    <p><strong>BUT: No clear noun? Add 's' at the end.</strong></p>
+    <ul>
+      <li><em>Merry-go-round</em> → Merry-go-rounds</li>
+      <li><em>Grown-up</em> → Grown-ups</li>
+    </ul>
+
+    <h3>3.3 The "Same Form" Nouns (Zero Plural)</h3>
+    <p>Singular and Plural are identical.</p>
+    <ul>
+      <li><em>Sheep, Deer, Moose, Swine, Aircraft, Spacecraft, Series, Species, Corps (pronounced 'kors').</em></li>
+      <li>Note: <em>Fish</em> is plural for same species. <em>Fishes</em> refers to different species types.</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. Subject-Verb Agreement: The "Killer" Questions</h2>
+    <p>This is where most examinees fail. Pay close attention.</p>
+
+    <h3>4.1 Intervening Phrases (Ignore them!)</h3>
+    <p>Do not be distracted by words between the subject and the verb.</p>
+    <ul>
+      <li><em>The <strong>box</strong> [of chocolates] <strong>is</strong> missing.</em> (Subject is Box, not chocolates).</li>
+      <li><em>The <strong>politician</strong>, [together with his wife and kids], <strong>has</strong> arrived.</em></li>
+      <li>Phrases starting with <em>along with, as well as, together with, accompanied by, in addition to</em> DO NOT make the subject plural.</li>
+    </ul>
+
+    <h3>4.2 "And" vs. "One Idea"</h3>
+    <p>Usually, "and" makes the subject plural. BUT, if the two nouns form <strong>one single idea/dish</strong>, use Singular.</p>
+    <ul>
+      <li><em>Bread and butter <strong>is</strong> my favorite breakfast.</em> (One meal).</li>
+      <li><em>Fish and chips <strong>is</strong> popular in the UK.</em></li>
+      <li><em><strong>BUT:</strong> Bread and butter <strong>were</strong> bought separately.</em> (Two distinct items).</li>
+    </ul>
+
+    <h3>4.3 Fractions and Percentages</h3>
+    <p>The verb depends on the <strong>Object of the Preposition</strong> (what comes after "of").</p>
+    <ul>
+      <li><em>Fifty percent of the <strong>pie is</strong> eaten.</em> (Pie = Singular).</li>
+      <li><em>Fifty percent of the <strong>pies are</strong> eaten.</em> (Pies = Plural).</li>
+      <li><em>One-third of the <strong>students are</strong> absent.</em></li>
+      <li><em>All of the <strong>water is</strong> gone.</em></li>
+    </ul>
+
+    <h3>4.4 "Here" and "There" (Inverted Sentences)</h3>
+    <p>In sentences starting with Here/There, the subject comes <strong>after</strong> the verb.</p>
+    <ul>
+      <li><em>There <strong>is</strong> a <strong>problem</strong>.</em></li>
+      <li><em>There <strong>are</strong> many <strong>reasons</strong>.</em></li>
+      <li><em>Here <strong>comes</strong> the <strong>bus</strong>.</em></li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>5. Noun Cases (Nominative, Objective, Possessive)</h2>
+    <p>Understanding cases helps you choose between I/Me, He/Him, Who/Whom.</p>
+
+    <h3>5.1 Nominative Case (Subject)</h3>
+    <p>The noun is doing the action or is the subject complement.</p>
+    <ul>
+      <li><em><strong>Maria</strong> sings.</em> (Subject)</li>
+      <li><em>The winner is <strong>Maria</strong>.</em> (Predicate Nominative - follows "is/was/are").</li>
+    </ul>
+
+    <h3>5.2 Objective Case (Receiver)</h3>
+    <p>The noun receives action or follows a preposition.</p>
+    <ul>
+      <li><em>I saw <strong>Maria</strong>.</em> (Direct Object)</li>
+      <li><em>I gave <strong>Maria</strong> a gift.</em> (Indirect Object)</li>
+      <li><em>I sat next to <strong>Maria</strong>.</em> (Object of Preposition)</li>
+    </ul>
+
+    <h3>5.3 Possessive Case (Ownership)</h3>
+    <p><strong>The "Joint Ownership" Rule:</strong></p>
+    <ul>
+      <li><em>Ben and Benjie's car.</em> (They share ONE car).</li>
+      <li><em>Ben's and Benjie's cars.</em> (They have TWO separate cars).</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>6. Specialized Collective Nouns</h2>
+    <p>Exams sometimes test vocabulary by asking for the specific collective noun.</p>
+    <ul class="two-column-list">
+      <li>A <strong>pride</strong> of lions</li>
+      <li>A <strong>murder</strong> of crows</li>
+      <li>A <strong>school/shoal</strong> of fish</li>
+      <li>A <strong>pack</strong> of wolves</li>
+      <li>A <strong>gaggle</strong> of geese</li>
+      <li>A <strong>parliament</strong> of owls</li>
+      <li>A <strong>convocation</strong> of eagles</li>
+      <li>A <strong>troop</strong> of monkeys</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>7. Final "Look-Alike" Warnings</h2>
+    <p>Don't confuse these:</p>
+    <ul>
+      <li><strong>Advice</strong> (Noun) vs. <strong>Advise</strong> (Verb).</li>
+      <li><strong>Prophecy</strong> (Noun) vs. <strong>Prophesy</strong> (Verb).</li>
+      <li><strong>Effect</strong> (Noun/Result) vs. <strong>Affect</strong> (Verb/Influence).</li>
+      <li><strong>Stationary</strong> (Not moving) vs. <strong>Stationery</strong> (Paper/Envelopes).</li>
+    </ul>
+  </section>
+`  ]
   },
+
+
 
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
