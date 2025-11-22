@@ -121,7 +121,7 @@ const NOUN_QUESTIONS = {
     { question: "Which word can refer to both male and female?", choices: ["King", "Sister", "Student", "Father"], correctIndex: 2, explanation: '"Student" is a common gender noun.' }
   ],
   
-  // const NOUN_QUESTIONS_PART_2 = {
+  
   advanced: [
     // 1-10: Noun Functions (Subject, Object, Predicate Nominative)
     { question: 'In the phrase "the old wooden bridge", which word is the head noun?', choices: ["the", "old", "wooden", "bridge"], correctIndex: 3, explanation: '"Bridge" is the head noun; the others describe it.' },
