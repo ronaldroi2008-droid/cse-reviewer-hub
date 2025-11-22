@@ -1601,9 +1601,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return ADJECTIVE_QUESTIONS;
       case "adverbs":
         return ADVERB_QUESTIONS;
-      // prepositions questions pwede mong idagdag dito later:
-      // case "prepositions":
-      //   return PREPOSITION_QUESTIONS;
+      case "prepositions":
+        return PREPOSITION_QUESTIONS;
       default:
         return null;
     }
