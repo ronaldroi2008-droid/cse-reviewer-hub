@@ -1223,480 +1223,229 @@ const LESSONS = {
 // ==========================================
 
  prepositions: {
-    title: "1. What is a preposition?",
-    content: `
-A preposition is a small word that shows the relationship between another word in the sentence and its object. 
-It almost always has an **object** (usually a noun, pronoun, or gerund).
-
-It often shows relationships of:
-• Time (when?)
-• Place (where?)
-• Direction or movement (where to?)
-• Reason (why?)
-• Manner (how?)
-• And other logical relationships
-
-Structure:
-• preposition + object = prepositional phrase
-
-Examples:
-• in the room
-• on the table
-• at night
-• for two hours
-
-Sentence examples:
-• The book is on the table.
-  → on = preposition
-  → the table = object
-  → on the table = prepositional phrase (answers: Where is the book?)
-
-• She arrived at 7:00 p.m.
-  → at = preposition of time
-  → 7:00 p.m. = object
-`,
-  },
-
-  {
-    id: "prep-cheatsheet",
-    title: "2. Prepositions by question (shortcut cheat sheet)",
-    content: `
-A. Prepositions of PLACE (Where?)
-Common examples:
-• in, on, at
-• under, above, over, below
-• behind, in front of
-• between, among
-• inside, outside
-• near, beside, next to
-• across from, opposite
-• around, along, through
-
-B. Prepositions of TIME (When?)
-Common examples:
-• at, on, in
-• by, before, after
-• during
-• from, until/till
-• since, for
-
-C. Prepositions of DIRECTION / MOVEMENT (Where to?)
-Common examples:
-• to, into, onto
-• from, towards
-• through, across, along
-• over, past, around
-
-D. Other important groups:
-• Reason / Purpose: for, because of, due to
-• Agent (doer of the action in passive voice): by
-• Instrument / Means: with, by
-• Topic / Subject: about, on, regarding, concerning
-`,
-  },
-
-  {
-    id: "at-in-on-time",
-    title: "3A. AT / ON / IN – Time",
-    content: `
-AT – specific, exact time:
-• at 5:00
-• at noon
-• at midnight
-• at night
-• at the moment
-• at the weekend (British English)
-
-ON – specific day or date:
-• on Monday
-• on Christmas Day
-• on July 5, 2025
-• on my birthday
-• on Friday morning (day + part of the day)
-
-IN – longer periods:
-• in the morning / in the afternoon / in the evening
-• in July / in 2025
-• in the 1990s
-• in summer / in winter
-• in the past / in the future
-
-Common CSE-style errors:
-• ❌ on 1995  → ✅ in 1995
-• ❌ at Monday → ✅ on Monday
-• ❌ on the night (general) → ✅ at night
-`,
-  },
-
-  {
-    id: "at-in-on-place",
-    title: "3B. AT / IN / ON – Place",
-    content: `
-AT – specific point or place (focus on the point of action):
-• at home
-• at the office
-• at school
-• at the door
-• at the bus stop
-• at the corner
-
-IN – inside an enclosed space / area / city / country:
-• in the room
-• in the box
-• in the car
-• in Cebu
-• in the Philippines
-• in a restaurant (inside the restaurant)
-
-ON – on a surface (touching or attached to the surface):
-• on the table
-• on the wall
-• on the floor
-• on the ceiling
-• on the page
-• on the screen
-
-Common mistakes:
-• ❌ on the room  → ✅ in the room
-• ❌ in the table → ✅ on the table
-`,
-  },
-
-  {
-    id: "since-for",
-    title: "4. SINCE vs FOR",
-    content: `
-FOR – duration (how long?):
-• for two hours
-• for five days
-• for three months
-• for many years
-
-SINCE – starting point (when did it start?):
-• since 2010
-• since last week
-• since Monday
-• since 6:00 a.m.
-• since I was a child
-
-Typical exam errors:
-• ❌ I have lived here for 2010.
-  ✅ I have lived here since 2010.
-
-• ❌ I have worked here since five years.
-  ✅ I have worked here for five years.
-
-Pattern:
-• Present perfect + since/for
-  → I have worked here for three years.
-  → She has lived here since 2018.
-`,
-  },
-
-  {
-    id: "by-until",
-    title: "5. BY vs UNTIL / TILL",
-    content: `
-BY – means "not later than" (deadline):
-• Finish this by 5:00. (any time before or exactly at 5:00)
-• I’ll be there by Monday. (on or before Monday)
-
-UNTIL / TILL – means "up to that time" (continuation):
-• I waited until 5:00. (waiting continued up to 5:00)
-• She worked here until 2020.
-
-Compare:
-• I will finish it by Friday.
-  → It will be completed before or on Friday.
-
-• I will work here until Friday.
-  → I will continue working up to Friday, then stop.
-`,
-  },
-
-  {
-    id: "during-while",
-    title: "6. DURING vs WHILE",
-    content: `
-DURING + noun:
-• during the meeting
-• during the night
-• during the exam
-• during the vacation
-
-WHILE + clause (subject + verb):
-• while I was studying
-• while he was sleeping
-• while they were talking
-
-Incorrect:
-• ❌ during I was studying
-Correct alternatives:
-• ✅ while I was studying
-• ✅ during my study time
-`,
-  },
-
-  {
-    id: "direction-preps",
-    title: "7. Direction prepositions (movement)",
-    content: `
-TO – movement toward a place:
-• go to school
-• walk to the park
-• send this to me
-
-INTO – from outside to inside:
-• He walked into the room.
-• She jumped into the pool.
-
-ONTO – from off to on top of:
-• The cat jumped onto the table.
-
-ACROSS – from one side to the other:
-• walk across the street
-
-THROUGH – from one side to another by passing inside:
-• walk through the park
-• drive through the tunnel
-
-ALONG – in a line, parallel to something:
-• walk along the river
-
-PAST – passing by / passing beside:
-• walk past the bank (you pass in front of the bank)
-`,
-  },
-
-  {
-    id: "between-among",
-    title: "8. BETWEEN vs AMONG",
-    content: `
-BETWEEN – usually used for two items, but may be used for more when the items are clearly separate:
-• between you and me
-• between the two buildings
-• between the three departments (when they are clearly distinct)
-
-AMONG – used when something is in the middle of a group; the individual items are not clearly separated:
-• among friends
-• among the people
-• among the trees
-
-CSE-style example:
-• He divided the money ______ his three children.
-  → Usually: between his three children (identified individuals).
-`,
-  },
-
-  {
-    id: "verb-prep",
-    title: "9. Common verb + preposition combinations",
-    content: `
-Many exam questions focus on correct collocations (natural verb + preposition pairs).
-
-Common verb + preposition patterns:
-• depend on
-• listen to
-• look at (to look at something)
-• look for (to search for something)
-• look after (to take care of)
-• wait for
-• apologize for
-• approve of
-• belong to
-• complain about
-• suffer from
-
-Common Filipino-style mistakes:
-• ❌ I will wait you.
-  ✅ I will wait for you.
-
-• ❌ She listened me.
-  ✅ She listened to me.
-`,
-  },
-
-  {
-    id: "adj-prep",
-    title: "10. Common adjective + preposition combinations",
-    content: `
-Adjectives also often use fixed prepositions.
-
-Examples:
-• good at
-  → He is good at math.
-
-• interested in
-  → I am interested in history.
-
-• afraid of
-• proud of
-• famous for
-• responsible for
-• similar to
-• different from
-• angry with (a person)
-• angry about (a thing/situation)
-
-Typical exam trap:
-• ❌ different than (formal exams usually avoid this)
-• ✅ different from
-`,
-  },
-
-  {
-    id: "noun-prep",
-    title: "11. Common noun + preposition combinations",
-    content: `
-Common patterns:
-• reason for
-  → What is the reason for the delay?
-
-• cause of
-• effect of
-• solution to
-• key to
-  → This is the key to success.
-
-• advantage of
-• disadvantage of
-• need for
-`,
-  },
-
-  {
-    id: "prep-gerund",
-    title: "12. Preposition + gerund (-ing form)",
-    content: `
-After a preposition, we normally use the **-ing** form (gerund), not the base verb.
-
-Examples:
-• interested in learning
-• good at drawing
-• afraid of driving
-• before going
-• after eating
-
-Incorrect:
-• ❌ She is interested in learn English.
-Correct:
-• ✅ She is interested in learning English.
-`,
-  },
-
-  {
-    id: "prep-vs-adverb",
-    title: "13. Preposition or adverb?",
-    content: `
-Some words can be both prepositions and adverbs, depending on whether they have an object.
-
-Preposition – followed by an object:
-• He climbed up the ladder.
-  → up = preposition
-  → the ladder = object
-
-Adverb – no object after the word:
-• He climbed up.
-• Sit down.
-• Come in.
-
-In exams, they may ask:
-• Is 'up' used as a preposition or as an adverb in this sentence?
-`,
-  },
-
-  {
-    id: "common-errors",
-    title: "14. Common Filipino / exam errors with prepositions",
-    content: `
-A. 'On next week' / 'on last year'
-• ❌ on next week
-• ✅ next week
-Rule: No preposition before next, last, this, every.
-
-Example:
-• See you next week. (not on next week)
-
-B. Discuss about
-• ❌ We discussed about the issue.
-• ✅ We discussed the issue.
-Reason: 'Discuss' already means 'talk about'. We do not add 'about'.
-
-C. Marry with / marry to
-• ❌ She married with him.
-• ✅ She married him.
-• ✅ She got married to him.
-
-D. On the bus / in the bus
-• ✅ We are on the bus. (public transport, idiomatic use)
-• ✅ We are in the car / in a taxi.
-
-E. In / at night
-• ✅ at night (general)
-• ✅ in the night (rare / literary; usually means during a specific night)
-
-F. In the internet / on the internet
-• ✅ on the internet
-• ✅ on Facebook, on TikTok, on YouTube
-
-G. Off of
-In formal or exam English, prefer:
-• off the table or from the table
-rather than:
-• off of the table
-`,
-  },
-
-  {
-    id: "prep-end",
-    title: "15. Prepositions at the end of a sentence",
-    content: `
-Old traditional rule: "Do not end a sentence with a preposition."
-Modern English: Ending with a preposition is natural and acceptable, especially in conversation.
-
-Examples (natural and accepted):
-• Who are you talking to?
-• This is the person I was referring to.
-
-More formal versions:
-• To whom are you talking?
-• This is the person to whom I was referring.
-
-In many modern exams (including CSE-style), natural modern English is usually accepted.
-`,
-  },
-
-  {
-    id: "cse-recap",
-    title: "16. Mini CSE-style recap",
-    content: `
-Typical exam task types:
-
-A. Choose the correct preposition:
-• He has lived here ______ 2010.
-  → for / since / at / in
-  → Correct: since
-
-B. Error spotting:
-• He has been working here since five years.
-  → Error: since five years
-  → Correct: for five years
-
-C. Sentence improvement:
-• She is good in math.
-  → Correct: She is good at math.
-
-Exam strategy:
-• Watch 'since' vs 'for' with present perfect.
-• Pay attention to fixed collocations (good at, interested in, responsible for, wait for, listen to).
-• Remember: no preposition before next/last/this/every (next week, last year).
-• Check if a preposition is really needed or if the verb already includes the idea (discuss, marry, etc.).
-`,
-  },
-];
-
-
-
+    title: "Prepositions – The Complete Master Guide",
+    level: "Verbal Ability · Prepositions · CSE Grammar",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. What is a preposition?</h2>
+        <p>A preposition is a small word that shows the relationship between another word in the sentence and its object. It almost always has an <strong>object</strong> (usually a noun, pronoun, or gerund).</p>
+        <p>It often shows relationships of:</p>
+        <ul>
+          <li><strong>Time</strong> (when?)</li>
+          <li><strong>Place</strong> (where?)</li>
+          <li><strong>Direction</strong> (where to?)</li>
+          <li><strong>Reason</strong> (why?)</li>
+          <li><strong>Manner</strong> (how?)</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Structure:</strong><br>
+          Preposition + Object = <em>Prepositional Phrase</em></p>
+        </div>
+        <p><strong>Example:</strong> "The book is <em>on</em> (prep) <em>the table</em> (object)." → <em>on the table</em> (phrase)</p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Prepositions Cheat Sheet</h2>
+        <h3>A. Place (Where?)</h3>
+        <p><em>in, on, at, under, above, behind, between, among, inside, near, beside, across, opposite.</em></p>
+        
+        <h3>B. Time (When?)</h3>
+        <p><em>at, on, in, by, before, after, during, until, since, for.</em></p>
+        
+        <h3>C. Direction (Where to?)</h3>
+        <p><em>to, into, onto, towards, through, across, along, over, past.</em></p>
+        
+        <h3>D. Other Groups</h3>
+        <ul>
+          <li><strong>Reason:</strong> for, because of, due to</li>
+          <li><strong>Agent:</strong> by (The book was written <em>by</em> Jose.)</li>
+          <li><strong>Topic:</strong> about, regarding, concerning</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. AT, ON, IN (The "Big Three")</h2>
+        
+        <h3>3A. Time Rules</h3>
+        <table class="lesson-table">
+          <tr>
+            <th>Preposition</th>
+            <th>Usage</th>
+            <th>Examples</th>
+          </tr>
+          <tr>
+            <td><strong>AT</strong></td>
+            <td>Specific, Exact Time</td>
+            <td>at 5:00, at noon, at night, at the moment</td>
+          </tr>
+          <tr>
+            <td><strong>ON</strong></td>
+            <td>Days & Dates</td>
+            <td>on Monday, on July 5, on my birthday, on Christmas Day</td>
+          </tr>
+          <tr>
+            <td><strong>IN</strong></td>
+            <td>Long Periods</td>
+            <td>in 2025, in July, in the morning, in the past</td>
+          </tr>
+        </table>
+        <p><strong>Common Errors:</strong><br>
+        ❌ <em>on 1995</em> → ✅ <strong>in 1995</strong><br>
+        ❌ <em>at Monday</em> → ✅ <strong>on Monday</strong></p>
+
+        <h3>3B. Place Rules</h3>
+        <table class="lesson-table">
+          <tr>
+            <th>Preposition</th>
+            <th>Usage</th>
+            <th>Examples</th>
+          </tr>
+          <tr>
+            <td><strong>AT</strong></td>
+            <td>Specific Point</td>
+            <td>at home, at the bus stop, at the door, at school</td>
+          </tr>
+          <tr>
+            <td><strong>IN</strong></td>
+            <td>Enclosed Space / City / Country</td>
+            <td>in the room, in the box, in Cebu, in the Philippines</td>
+          </tr>
+          <tr>
+            <td><strong>ON</strong></td>
+            <td>Surface</td>
+            <td>on the table, on the wall, on the floor, on the screen</td>
+          </tr>
+        </table>
+        <p><strong>Common Errors:</strong><br>
+        ❌ <em>on the room</em> → ✅ <strong>in the room</strong><br>
+        ❌ <em>in the table</em> → ✅ <strong>on the table</strong></p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. SINCE vs. FOR</h2>
+        <p>This is a very common exam topic regarding the <strong>Present Perfect Tense</strong>.</p>
+        <ul>
+          <li><strong>FOR</strong> (Duration): Shows <em>how long</em>. <br>
+          <em>Examples: for two hours, for five days, for many years.</em></li>
+          
+          <li><strong>SINCE</strong> (Starting Point): Shows <em>when it started</em>.<br>
+          <em>Examples: since 2010, since last week, since 6:00 a.m.</em></li>
+        </ul>
+        <p><strong>Pattern:</strong><br>
+        ❌ <em>I have lived here for 2010.</em><br>
+        ✅ <em>I have lived here <strong>since</strong> 2010.</em></p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. BY vs. UNTIL</h2>
+        <ul>
+          <li><strong>BY</strong> (Deadline): "Not later than." The action happens before or at that moment.<br>
+          <em>"Finish this by 5:00."</em></li>
+          
+          <li><strong>UNTIL</strong> (Continuation): "Up to that time." The action continues and stops at that moment.<br>
+          <em>"I waited until 5:00."</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. DURING vs. WHILE</h2>
+        <ul>
+          <li><strong>DURING + Noun:</strong> <em>during the meeting, during the night.</em></li>
+          <li><strong>WHILE + Clause (Subject+Verb):</strong> <em>while I was studying, while he was sleeping.</em></li>
+        </ul>
+        <p>❌ <em>during I was studying</em> → ✅ <em>while I was studying</em></p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>7. Direction & Movement</h2>
+        <ul>
+          <li><strong>TO:</strong> Movement toward a specific place. <em>(Go to school)</em></li>
+          <li><strong>INTO:</strong> From outside to inside. <em>(Walked into the room)</em></li>
+          <li><strong>ONTO:</strong> From off to on top of. <em>(Jumped onto the table)</em></li>
+          <li><strong>THROUGH:</strong> Passing inside something. <em>(Drive through the tunnel)</em></li>
+          <li><strong>ALONG:</strong> Parallel movement. <em>(Walk along the beach)</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>8. BETWEEN vs. AMONG</h2>
+        <ul>
+          <li><strong>BETWEEN:</strong> Usually for <strong>TWO</strong> items or distinct individuals.<br>
+          <em>"Between you and me." "Between the three distinct buildings."</em></li>
+          
+          <li><strong>AMONG:</strong> For a group where individuals are not separated.<br>
+          <em>"Among friends." "Among the trees."</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>9. Common Combinations (Collocations)</h2>
+        <p>Exams test which preposition naturally pairs with a verb or adjective.</p>
+        
+        <h3>Verb + Preposition</h3>
+        <ul class="two-column-list">
+          <li>Depend <strong>on</strong></li>
+          <li>Listen <strong>to</strong></li>
+          <li>Wait <strong>for</strong></li>
+          <li>Apologize <strong>for</strong></li>
+          <li>Belong <strong>to</strong></li>
+          <li>Suffer <strong>from</strong></li>
+          <li>Look <strong>at</strong> (see)</li>
+          <li>Look <strong>for</strong> (search)</li>
+          <li>Look <strong>after</strong> (care)</li>
+        </ul>
+        <p>❌ <em>I will wait you.</em> → ✅ <em>I will wait <strong>for</strong> you.</em></p>
+
+        <h3>Adjective + Preposition</h3>
+        <ul class="two-column-list">
+          <li>Good <strong>at</strong> (skill)</li>
+          <li>Interested <strong>in</strong></li>
+          <li>Afraid <strong>of</strong></li>
+          <li>Famous <strong>for</strong></li>
+          <li>Similar <strong>to</strong></li>
+          <li>Different <strong>from</strong> (Not 'than')</li>
+          <li>Angry <strong>with</strong> (person)</li>
+          <li>Angry <strong>about</strong> (thing)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>10. The Gerund Rule</h2>
+        <p>If you put a verb after a preposition, it MUST be in the <strong>-ING</strong> form (Gerund).</p>
+        <ul>
+          <li><em>Interested in <strong>learning</strong>.</em> (Not 'learn')</li>
+          <li><em>Good at <strong>drawing</strong>.</em></li>
+          <li><em>Before <strong>going</strong>.</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>11. Common Filipino/Exam Errors</h2>
+        <ol>
+          <li><strong>No Prep before Next/Last/This:</strong><br>
+          ❌ <em>See you on next week.</em><br>
+          ✅ <em>See you <strong>next week</strong>.</em></li>
+          
+          <li><strong>Discuss/Marry:</strong> These verbs do not need prepositions.<br>
+          ❌ <em>Discuss about the topic.</em> → ✅ <em><strong>Discuss</strong> the topic.</em><br>
+          ❌ <em>Married with him.</em> → ✅ <em>Married <strong>him</strong> (or to him).</em></li>
+          
+          <li><strong>Off of:</strong> In formal English, remove 'of'.<br>
+          ❌ <em>Off of the table.</em> → ✅ <em><strong>Off</strong> the table.</em></li>
+        </ol>
+      </section>
+
+      <section class="lesson-section">
+        <h2>12. Final Exam Strategy</h2>
+        <ul class="check-list">
+          <li>Check for <strong>Subject-Verb Agreement</strong> even if there is a prepositional phrase in the middle.</li>
+          <li>If the sentence has <strong>"has/have" (Present Perfect)</strong>, check if you need <strong>Since</strong> or <strong>For</strong>.</li>
+          <li>Memorize the "Big Three": <strong>AT</strong> (Exact), <strong>ON</strong> (Days/Surface), <strong>IN</strong> (General/Enclosed).</li>
+        </ul>
+      </section>
+    `
+  }
+};
 // ==========================================
 // 3. APP LOGIC
 // ==========================================
