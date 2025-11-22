@@ -625,6 +625,166 @@ const LESSONS = {
   }
 };
 
+  adjectives: {
+    title: "Adjectives – Describing, Comparing, and Limiting Nouns",
+    level: "Verbal Ability · Adjectives · CSE Grammar",
+    intro:
+      "An adjective describes or gives more information about a noun or pronoun. It can tell us what kind, which one, how many, or how much. In the Civil Service Exam, adjectives are often tested through error identification, sentence improvement, correct usage, and comparison of adjectives.",
+
+    keyPoints: [
+      // 1. Basic role and questions
+      "An adjective modifies a noun or pronoun. It answers questions like: What kind? Which one? How many? How much?",
+      "Examples: a busy street (What kind?), that building (Which one?), three students (How many?), little time (How much?).",
+      "Adjectives usually come before a noun (a small house) or after a linking verb (The house is small).",
+
+      // 2. Positions of adjectives
+      "Attributive position: the adjective comes before the noun. Example: a beautiful garden, an honest officer.",
+      "Predicative position: the adjective comes after a linking verb like be, seem, become, look, feel. Example: The garden is beautiful. The officer seems honest.",
+      "Only adjectives (not adverbs) follow linking verbs when they describe the subject. Example: She feels bad (not badly) about the result.",
+
+      // 3. Types of adjectives
+      "Descriptive adjectives: tell quality or characteristic (strong, kind, expensive, noisy).",
+      "Quantitative adjectives: show quantity or amount (some, much, little, enough). Often used with uncountable nouns (some water, little time).",
+      "Numeral adjectives: show exact number or order (three books, first prize, second chance).",
+      "Demonstrative adjectives: point out specific nouns (this, that, these, those). Example: this report, those files.",
+      "Possessive adjectives: show ownership (my, your, his, her, its, our, their). Example: my folder, their office.",
+      "Interrogative adjectives: used in questions (which, what, whose) before a noun. Example: Which book? Whose application form?",
+      "Proper adjectives: formed from proper nouns and usually capitalized (Filipino culture, English grammar, Asian country).",
+
+      // 4. Adjectives vs. adverbs (very common exam trap)
+      "Adjectives describe nouns and pronouns (She is careful, a careful driver). Adverbs usually describe verbs, adjectives, or other adverbs (She drives carefully).",
+      "Good is an adjective (She is a good singer). Well is usually an adverb (She sings well), but can also be an adjective meaning in good health (I am well now).",
+      "Fast, hard, and late can be both adjectives and adverbs without -ly. Examples: a fast car (adjective) / drive fast (adverb); a hard task (adjective) / work hard (adverb).",
+      "Avoid using an adverb after a linking verb when describing the subject. Use an adjective instead: The soup tastes good (not tastes well).",
+
+      // 5. Order of adjectives (when there are many)
+      "When several adjectives appear before a noun, there is a natural order in English: Opinion (lovely) – Size (small) – Age (old) – Shape (round) – Color (red) – Origin (Filipino) – Material (wooden) – Purpose (sleeping as in sleeping bag).",
+      "Example: a beautiful small old brown wooden chair (not a wooden old beautiful brown small chair).",
+      "In exams, you may need to choose which combination sounds natural or correct based on this order.",
+
+      // 6. Degrees of comparison
+      "Adjectives have three degrees: Positive (big), Comparative (bigger), and Superlative (biggest). These are used to compare one, two, or more than two things.",
+      "Use the positive degree when there is no comparison: The task is difficult. She is tall.",
+      "Use the comparative degree to compare two people or things, usually with than: taller than, more careful than, less expensive than.",
+      "Use the superlative degree to compare three or more, usually with the or among: the tallest in the group, the most careful worker, the least expensive option.",
+
+      // 7. Forming comparatives and superlatives
+      "One-syllable adjectives usually add -er and -est: tall → taller → tallest; fast → faster → fastest.",
+      "Two-syllable adjectives ending in y usually change y to i and add -er / -est: happy → happier → happiest; easy → easier → easiest.",
+      "Many two-syllable and most longer adjectives use more and most instead of -er and -est: beautiful → more beautiful → most beautiful; careful → more careful → most careful.",
+      "Do not double the comparative: avoid phrases like more better, more kinder, most highest. Use either the -er form or more, but not both.",
+
+      // 8. Irregular adjectives (must memorize)
+      "Common irregular comparisons: good → better → best; bad → worse → worst; little → less → least; many/much → more → most; far → farther/further → farthest/furthest.",
+      "These forms do not follow the regular -er/-est pattern and are frequently tested in exams.",
+
+      // 9. Consistency and logic in comparisons
+      "When comparing two people or things, use the comparative degree and often include than (He is taller than his brother).",
+      "When comparing more than two, use the superlative with the (She is the most experienced member of the team).",
+      "Be sure that comparisons are logical and complete. Example: This policy is better than the previous one (not better than the previous).",
+
+      // 10. Common exam traps
+      "Using adjectives instead of adverbs with action verbs (She speaks clear ❌ → She speaks clearly ✅).",
+      "Using adverbs instead of adjectives after linking verbs (The food tastes wonderfully ❌ → The food tastes wonderful ✅).",
+      "Incorrect double comparatives or superlatives (more better, most highest, more superior).",
+      "Using wrong degree in context (among three candidates, say the best, not the better)."
+    ],
+
+    patterns: [
+      "Choosing whether an adjective or an adverb is needed, especially after linking verbs (is, seems, looks, feels, tastes).",
+      "Identifying correct and incorrect degrees of comparison in sentences (better vs best, more beautiful vs most beautiful).",
+      "Arranging multiple adjectives in a natural, standard order before a noun (opinion–size–age–color–origin–material–purpose).",
+      "Correcting sentences with double comparisons such as more better or most cheapest.",
+      "Selecting the correct irregular comparative or superlative form (worse vs worst, further vs farthest).",
+      "Error identification involving adjective–noun agreement and logical comparison (comparing a thing with itself or using the wrong reference)."
+    ],
+
+    examples: [
+      {
+        q: "Which sentence uses the adjective correctly after a linking verb?",
+        choices: [
+          "The soup tastes wonderfully.",
+          "The soup tastes wonderful.",
+          "The soup is tasting wonderfully.",
+          "The soup tasted very carefully."
+        ],
+        answer: "The soup tastes wonderful.",
+        explanation:
+          "Tastes is a linking verb here (like is or seems), so it should be followed by an adjective that describes the soup (wonderful), not an adverb (wonderfully). The other options either use the wrong form or add an unrelated adverb."
+      },
+      {
+        q: "Which sentence shows the correct degree of comparison?",
+        choices: [
+          "This is the more difficult exam I have taken.",
+          "This exam is more difficult than the last one.",
+          "This exam is the most more difficult one.",
+          "This exam is difficult than the last one."
+        ],
+        answer: "This exam is more difficult than the last one.",
+        explanation:
+          "We are comparing two exams (this exam and the last one), so we use the comparative form more difficult followed by than. The first sentence incorrectly uses the superlative structure with more, the third has a double comparison (most more difficult), and the fourth omits more before difficult."
+      },
+      {
+        q: "Which is the correct sentence using irregular comparisons?",
+        choices: [
+          "Her performance is more better this year.",
+          "Her performance is better this year.",
+          "Her performance is best this year among the two.",
+          "Her performance is gooder this year."
+        ],
+        answer: "Her performance is better this year.",
+        explanation:
+          "Good has an irregular comparative form better, not more better or gooder. We do not combine more with better because that would be a double comparative. The phrase best is superlative and is normally used when comparing three or more."
+      },
+      {
+        q: "Which sentence uses adjective order in the most natural way?",
+        choices: [
+          "She bought a wooden small beautiful table.",
+          "She bought a beautiful small wooden table.",
+          "She bought a small wooden beautiful table.",
+          "She bought a wooden beautiful small table."
+        ],
+        answer: "She bought a beautiful small wooden table.",
+        explanation:
+          "The natural order is: Opinion (beautiful) – Size (small) – Material (wooden) – Noun (table). The correct sentence follows this pattern. The others sound unnatural or confusing to native speakers and will be considered wrong in formal exams."
+      },
+      {
+        q: "Which sentence correctly compares more than two people?",
+        choices: [
+          "Of the three siblings, Ana is the taller.",
+          "Of the three siblings, Ana is taller.",
+          "Of the three siblings, Ana is the tallest.",
+          "Of the three siblings, Ana is more tall."
+        ],
+        answer: "Of the three siblings, Ana is the tallest.",
+        explanation:
+          "We use the superlative degree when comparing three or more: Ana is the tallest. The comparative taller is used only to compare two. More tall is not the standard form; we use taller for short adjectives like tall."
+      },
+      {
+        q: "Which sentence correctly distinguishes adjective and adverb?",
+        choices: [
+          "He is a carefully driver.",
+          "He drives very careful.",
+          "He is a careful driver.",
+          "He drives very good."
+        ],
+        answer: "He is a careful driver.",
+        explanation:
+          "Careful is an adjective and should be used to describe the noun driver (a careful driver). Carefully is an adverb and should be used to describe how he drives (He drives carefully). Good is an adjective; the adverb form is well (He drives very well)."
+      }
+    ],
+
+    quickTips: [
+      "Remember: adjectives describe nouns or pronouns; adverbs usually describe verbs, adjectives, or other adverbs.",
+      "After linking verbs like be, seem, appear, feel, look, taste, and sound, use adjectives (The plan looks good), not adverbs.",
+      "For comparisons with two items, use the comparative (taller than, more careful than). For three or more, use the superlative (the tallest, the most careful).",
+      "Avoid double comparisons such as more better, more superior, and most highest. Use either -er/-est or more/most, not both.",
+      "Memorize common irregular forms: good–better–best; bad–worse–worst; little–less–least; many/much–more–most.",
+      "When you see several adjectives before a noun in a test question, check if the order follows the usual pattern: opinion, size, age, color, origin, material, purpose."
+    ]
+  },
+
+
 // ==========================================
 // 3. APP LOGIC
 // ==========================================
