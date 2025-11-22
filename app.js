@@ -792,6 +792,268 @@ const LESSONS = {
       "When you see several adjectives before a noun in a test question, check if the order follows the usual pattern: opinion, size, age, color, origin, material, purpose."
     ]
   },
+
+// ==========================================
+// Adverbs – Full Expanded Lesson
+// ==========================================
+
+const adverbs: = `
+  <section class="lesson-section">
+    <h2>1. What is an Adverb?</h2>
+    <p>
+      An <strong>adverb</strong> is a "modifier." It adds detail to a sentence by answering specific questions about how, when, where, or to what degree something happens.
+    </p>
+    <div class="highlight-box">
+      <p><strong>The 3 Jobs of an Adverb:</strong></p>
+      <ol>
+        <li><strong>Modifies a Verb:</strong> <em>He runs <strong>fast</strong>.</em> (How does he run?)</li>
+        <li><strong>Modifies an Adjective:</strong> <em>She is <strong>extremely</strong> smart.</em> (How smart?)</li>
+        <li><strong>Modifies another Adverb:</strong> <em>The project is moving <strong>quite</strong> slowly.</em> (How slowly?)</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. The 7 Types of Adverbs</h2>
+    <p>To master adverbs, you must recognize the different categories. Each answers a specific question.</p>
+
+    <h3>2.1 Adverbs of Manner (How?)</h3>
+    <p>Describes the behavior or way an action is performed. Usually follows the verb or object.</p>
+    <ul>
+      <li><em>The soldiers fought <strong>bravely</strong>.</em></li>
+      <li><em>Please handle the glass <strong>carefully</strong>.</em></li>
+    </ul>
+
+    <h3>2.2 Adverbs of Place (Where?)</h3>
+    <p>Describes location or direction.</p>
+    <ul>
+      <li><em>Please come <strong>here</strong>.</em></li>
+      <li><em>The children are playing <strong>upstairs</strong>.</em></li>
+      <li><em>He walked <strong>away</strong>.</em></li>
+    </ul>
+
+    <h3>2.3 Adverbs of Time (When?)</h3>
+    <p>Describes when an action happened or for how long.</p>
+    <ul>
+      <li><em>I will call you <strong>later</strong>.</em></li>
+      <li><em>We have <strong>already</strong> eaten.</em></li>
+      <li><em>I haven't seen him <strong>lately</strong>.</em></li>
+    </ul>
+
+    <h3>2.4 Adverbs of Frequency (How often?)</h3>
+    <p><strong>Definite Frequency:</strong> Exact timing (daily, weekly, yearly).</p>
+    <ul>
+      <li><em>We get paid <strong>monthly</strong>.</em></li>
+    </ul>
+    <p><strong>Indefinite Frequency:</strong> Vague timing (always, seldom, often, never).</p>
+    <ul>
+      <li><em>She <strong>rarely</strong> complains.</em></li>
+    </ul>
+
+    <h3>2.5 Adverbs of Degree (To what extent?)</h3>
+    <p>Increases or decreases the intensity of the word it modifies.</p>
+    <ul>
+      <li><em>It is <strong>too</strong> cold outside.</em> (Negative intensity)</li>
+      <li><em>She is <strong>very</strong> talented.</em> (High intensity)</li>
+      <li><em>I <strong>barely</strong> know him.</em> (Low intensity)</li>
+    </ul>
+
+    <h3>2.6 Adverbs of Certainty (Probability)</h3>
+    <p>Expresses how sure the speaker is.</p>
+    <ul>
+      <li><em><strong>Surely</strong>, you are joking.</em></li>
+      <li><em>He is <strong>probably</strong> sleeping.</em></li>
+      <li><em>I will <strong>definitely</strong> be there.</em></li>
+    </ul>
+
+    <h3>2.7 Conjunctive Adverbs (Connectors)</h3>
+    <p>These connect two independent clauses or sentences. They show relationship, logic, or transition.</p>
+    <p><strong>Common examples:</strong> <em>however, therefore, moreover, consequently, meanwhile, otherwise.</em></p>
+    <div class="alert-box">
+      <strong>Punctuation Rule:</strong> Use a semicolon (;) before and a comma (,) after.
+    </div>
+    <ul>
+      <li><em>I studied hard; <strong>however</strong>, I failed the test.</em></li>
+      <li><em>It was raining; <strong>therefore</strong>, the game was canceled.</em></li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. The Order of Adverbs (Syntax)</h2>
+    <p>When you have multiple adverbs in one sentence, you cannot just place them anywhere. You must follow the <strong>Royal Order of Adverbs</strong>.</p>
+
+    <h3>3.1 The Standard Order: M - P - T</h3>
+    <p><strong>Manner</strong> &rarr; <strong>Place</strong> &rarr; <strong>Time</strong></p>
+    <table class="lesson-table">
+      <thead>
+        <tr>
+          <th>Subject + Verb</th>
+          <th>Manner (How)</th>
+          <th>Place (Where)</th>
+          <th>Time (When)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>She sang</td>
+          <td>beautifully</td>
+          <td>at the concert</td>
+          <td>last night.</td>
+        </tr>
+        <tr>
+          <td>He swam</td>
+          <td>enthusiastically</td>
+          <td>in the pool</td>
+          <td>this morning.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><em>Incorrect: She sang last night at the concert beautifully.</em> ✖</p>
+
+    <h3>3.2 Movement Verbs (P - M - T)</h3>
+    <p>If the verb indicates <strong>movement</strong> (go, run, drive, fly), Place often comes before Manner.</p>
+    <ul>
+      <li><em>He went <strong>to the hospital</strong> (Place) <strong>hurriedly</strong> (Manner).</em></li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. Tricky Rules & Common Exam Traps</h2>
+
+    <h3>4.1 The "-ly" Adjective Trap</h3>
+    <p>Not all words ending in <strong>-ly</strong> are adverbs. Some are adjectives.</p>
+    <p><strong>Examples of Adjectives ending in -ly:</strong> <em>friendly, lovely, lonely, ugly, silly, deadly, costly.</em></p>
+    <ul>
+      <li>✖ <em>He spoke <strong>friendlily</strong>.</em> (This word does not exist!)</li>
+      <li>✔ <em>He spoke <strong>in a friendly manner/way</strong>.</em></li>
+      <li>✖ <em>She looks <strong>lovelily</strong>.</em> (Wrong)</li>
+      <li>✔ <em>She looks <strong>lovely</strong>.</em> (Correct - 'looks' is a linking verb taking an adjective).</li>
+    </ul>
+
+    <h3>4.2 Flat Adverbs (Adjectives and Adverbs look the same)</h3>
+    <p>Some words act as both adjectives and adverbs without adding -ly.</p>
+    <table class="lesson-table">
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>As Adjective (Modifies Noun)</th>
+          <th>As Adverb (Modifies Verb)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fast</strong></td>
+          <td>He is a <strong>fast</strong> runner.</td>
+          <td>He runs <strong>fast</strong>. (Not fastly)</td>
+        </tr>
+        <tr>
+          <td><strong>Hard</strong></td>
+          <td>This is a <strong>hard</strong> rock.</td>
+          <td>He hit the ball <strong>hard</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Late</strong></td>
+          <td>The bus is <strong>late</strong>.</td>
+          <td>He arrived <strong>late</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Straight</strong></td>
+          <td>Draw a <strong>straight</strong> line.</td>
+          <td>Go <strong>straight</strong> home.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4.3 Placement of "Only" (Focus Adverbs)</h3>
+    <p>The position of the word <strong>only</strong> changes the meaning of the sentence completely.</p>
+    <ul>
+      <li><em><strong>Only</strong> I hit him in the eye.</em> (No one else did it).</li>
+      <li><em>I <strong>only</strong> hit him in the eye.</em> (I didn't kick or scratch him, just hit).</li>
+      <li><em>I hit <strong>only</strong> him in the eye.</em> (I didn't hit anyone else).</li>
+      <li><em>I hit him <strong>only</strong> in the eye.</em> (I didn't hit his nose or mouth).</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>5. Comparison of Adverbs</h2>
+    <p>Like adjectives, adverbs have three degrees: Positive, Comparative, and Superlative.</p>
+
+    <h3>5.1 Regular Adverbs (-ly)</h3>
+    <p>Use <strong>more</strong> and <strong>most</strong>.</p>
+    <ul>
+      <li>Carefully &rarr; More carefully &rarr; Most carefully</li>
+      <li>Slowly &rarr; More slowly &rarr; Most slowly</li>
+    </ul>
+
+    <h3>5.2 Short Adverbs (No -ly)</h3>
+    <p>Add <strong>-er</strong> and <strong>-est</strong>.</p>
+    <ul>
+      <li>Fast &rarr; Faster &rarr; Fastest</li>
+      <li>Hard &rarr; Harder &rarr; Hardest</li>
+      <li>Soon &rarr; Sooner &rarr; Soonest</li>
+    </ul>
+
+    <h3>5.3 Irregular Adverbs</h3>
+    <table class="lesson-table">
+      <thead>
+        <tr>
+          <th>Positive</th>
+          <th>Comparative</th>
+          <th>Superlative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Well</td>
+          <td>Better</td>
+          <td>Best</td>
+        </tr>
+        <tr>
+          <td>Badly</td>
+          <td>Worse</td>
+          <td>Worst</td>
+        </tr>
+        <tr>
+          <td>Little</td>
+          <td>Less</td>
+          <td>Least</td>
+        </tr>
+        <tr>
+          <td>Far</td>
+          <td>Farther (distance) / Further (degree)</td>
+          <td>Farthest / Furthest</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="lesson-section">
+    <h2>6. Advanced: Negative Inversion</h2>
+    <p>In formal English and exams, if a sentence starts with a <strong>negative adverb</strong>, the subject and auxiliary verb are inverted (switched).</p>
+    <p><strong>Negative Adverbs:</strong> <em>Never, Rarely, Seldom, Scarcely, Barely, No sooner.</em></p>
+    <ul>
+      <li><strong>Normal:</strong> <em>I have <strong>never</strong> seen such a mess.</em></li>
+      <li><strong>Inverted:</strong> <em><strong>Never</strong> have I seen such a mess.</em></li>
+    </ul>
+    <ul>
+      <li><strong>Normal:</strong> <em>He <strong>rarely</strong> goes to church.</em></li>
+      <li><strong>Inverted:</strong> <em><strong>Rarely</strong> does he go to church.</em> (Note the addition of "does")</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>7. Summary Checklist</h2>
+    <ul class="check-list">
+      <li>Does it answer How, When, Where, or How often? It's an adverb.</li>
+      <li>Does it modify a Noun? It's an <strong>Adjective</strong>.</li>
+      <li>Does it modify a Verb/Adj/Adv? It's an <strong>Adverb</strong>.</li>
+      <li>"Good" is an adjective. "Well" is an adverb (unless talking about health).</li>
+      <li>"Hardly" means "almost not," not "with effort."</li>
+      <li>"Fastly" is not a word. Use "Fast."</li>
+    </ul>
+  </section>
+ ]
+ }
 };
 
 
