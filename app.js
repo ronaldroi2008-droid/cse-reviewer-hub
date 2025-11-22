@@ -1222,8 +1222,7 @@ const LESSONS = {
 // PREPOSITIONS – STUDY NOTES (for Study Mode)
 // ==========================================
 
- verbs: {
-    id: "prep-definition",
+ prepositions: {
     title: "1. What is a preposition?",
     content: `
 A preposition is a small word that shows the relationship between another word in the sentence and its object. 
