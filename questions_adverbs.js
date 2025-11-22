@@ -309,8 +309,8 @@ const ADVERB_QUESTIONS = {
       correctIndex: 0, 
       explanation: "Irregular! 'Hard' means with effort. 'Hardly' means 'almost not'. If you work with effort, you work **hard**." 
      }
-  ]
-},
+  ], 
+
 
   intermediate: [
     // --- 51-60: Good vs Well (Common Confusion) ---
