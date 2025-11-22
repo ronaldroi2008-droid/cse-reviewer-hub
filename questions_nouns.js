@@ -239,20 +239,26 @@ const NOUN_QUESTIONS = {
     { question: 'What type of noun is "Self-esteem"?', choices: ["Simple", "Compound", "Proper", "Collective"], correctIndex: 1, explanation: 'Hyphenated compound noun.' },
     { question: 'In "I consider him a genius", "genius" is:', choices: ["Direct Object", "Object Complement", "Indirect Object", "Appositive"], correctIndex: 1, explanation: 'Completes the thought about the object "him".' },
     { question: "Which sentence uses a 'Noun Adjunct'?", choices: ["The soup is chicken.", "It is a chicken soup.", "The soup has chicken.", "Chicken is good."], correctIndex: 1, explanation: '"Chicken" acts as an adjective modifying "soup".' },
-    { question: "Correct form:", choices: ["Five-year-old boy", "Five-years-old boy", "Five-years-olds boy", "Five-year-olds boy"], correctIndex: 0, explanation: 'Compound modifiers before a noun are singular and hyphenated.' },
-    { question: "Correct form:", choices: ["Two dozen eggs", "Two dozens eggs", "Two dozens of eggs", "Two dozen of egg"], correctIndex: 0, explanation: 'Dozen stays singular after a number.' },
+    { question: "Correct form:", choices: ["Five-year-old boy", "Five-years-old boy", "Five-years-olds boy", "Five-year-olds boy"], 
+      correctIndex: 0, 
+      explanation: 'Compound modifiers before a noun are singular and hyphenated.' 
+    },
+    { 
+      question: "Correct form:", 
+      choices: ["Two dozen eggs", "Two dozens eggs", "Two dozens of eggs", "Two dozen of egg"], 
+      correctIndex: 0, 
+      explanation: 'Dozen stays singular after a number (two dozen, not dozens).' 
+    },
     {
-  question: "In the sentence 'Physics is my favorite.', the word 'Physics' is:",
-  choices: [
-    "Plural form, Singular meaning",
-    "Plural form, Plural meaning",
-    "Singular form, Singular meaning",
-    "Singular form, Plural meaning"
-  ],
-  correctIndex: 0,
-  explanation: "It looks plural because of -s but it is treated as a singular subject."
-}
-
+      question: "In the sentence 'Physics is my favorite.', the word 'Physics' is:",
+      choices: [
+        "Plural form, Singular meaning",
+        "Plural form, Plural meaning",
+        "Singular form, Singular meaning",
+        "Singular form, Plural meaning"
+      ],
+      correctIndex: 0,
+      explanation: "It looks plural because of -s but it is treated as a singular subject."
+    }
   ]
 };
-
