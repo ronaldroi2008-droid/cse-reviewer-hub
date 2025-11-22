@@ -786,22 +786,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Practice Mode Logic ---
 
   // Helper: kunin question bank depende sa topic
-  function getQuestionBank(topic) {
-  switch (topic) {
-    case "nouns":
-      return NOUN_QUESTIONS;
-    case "gender":
-      return GENDER_QUESTIONS;
-    case "grammatical_number":
-      return GRAMMATICAL_NUMBER_QUESTIONS;
-    case "verbs":
-      return VERB_QUESTIONS;
-    case "tenses":
-      return TENSE_QUESTIONS;
-    default:
-      return null;
+    function getQuestionBank(topic) {
+    switch (topic) {
+      case "nouns":
+        return NOUN_QUESTIONS;
+      case "gender":
+        return GENDER_QUESTIONS;
+      case "grammatical_number":
+        return GRAMMATICAL_NUMBER_QUESTIONS;
+      case "verbs":
+        return VERB_QUESTIONS;
+      case "pronouns":
+        return PRONOUN_QUESTIONS;
+      default:
+        return null;
+    }
   }
-}
+
 
 
 
