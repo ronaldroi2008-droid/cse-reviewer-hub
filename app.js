@@ -33,7 +33,7 @@ const TOPIC_MAX_QUESTIONS = {
   gender: 50,
   grammatical_number: 50,
   verbs: 50,
-  adjectives: 50
+  adjectives: 50,
   prepositions: 50
 };
 
