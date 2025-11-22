@@ -40,12 +40,8 @@ const TOPIC_MAX_QUESTIONS = {
 // ==========================================
 // 2. LESSONS DATA
 // ==========================================
-// ==========================================
-// 2. LESSONS DATA
-// ==========================================
 const LESSONS = {
- 
-    nouns: {
+  nouns: {
     title: "Nouns – The Ultimate Reviewer (Deep Dive)",
     level: "Verbal Ability · Nouns · CSE Grammar",
     fullHtml: `
@@ -229,8 +225,6 @@ const LESSONS = {
   </section>
     `
   },
-
-
 
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
@@ -726,7 +720,7 @@ const LESSONS = {
           "The subject is students (plural), so the verb must be plural (were). The phrase in the class is a prepositional phrase and does not affect the number of the subject."
       },
       {
-        q: "Choose the correct pronoun:",
+        q: "Which sentence uses the correct pronoun?",
         choices: [
           "This books are expensive.",
           "These book is expensive.",
@@ -790,13 +784,11 @@ const LESSONS = {
     ]
   },
 
-
   adjectives: {
     title: "Adjectives – Describing, Comparing, and Limiting Nouns",
     level: "Verbal Ability · Adjectives · CSE Grammar",
     intro:
       "An adjective describes or gives more information about a noun or pronoun. It can tell us what kind, which one, how many, or how much. In the Civil Service Exam, adjectives are often tested through error identification, sentence improvement, correct usage, and comparison of adjectives.",
-
     keyPoints: [
       // 1. Basic role and questions
       "An adjective modifies a noun or pronoun. It answers questions like: What kind? Which one? How many? How much?",
@@ -855,16 +847,14 @@ const LESSONS = {
       "Incorrect double comparatives or superlatives (more better, most highest, more superior).",
       "Using wrong degree in context (among three candidates, say the best, not the better)."
     ],
-
     patterns: [
-      "Choosing whether an adjective or an adverb is needed, especially after linking verbs (is, seems, looks, feels, tastes).",
+      "Choosing whether an adjective or an adverb is needed, especially after linking verbs (is, seems, looks, feels).",
       "Identifying correct and incorrect degrees of comparison in sentences (better vs best, more beautiful vs most beautiful).",
       "Arranging multiple adjectives in a natural, standard order before a noun (opinion–size–age–color–origin–material–purpose).",
       "Correcting sentences with double comparisons such as more better or most cheapest.",
       "Selecting the correct irregular comparative or superlative form (worse vs worst, further vs farthest).",
       "Error identification involving adjective–noun agreement and logical comparison (comparing a thing with itself or using the wrong reference)."
     ],
-
     examples: [
       {
         q: "Which sentence uses the adjective correctly after a linking verb?",
@@ -939,7 +929,6 @@ const LESSONS = {
           "Careful is an adjective and should be used to describe the noun driver (a careful driver). Carefully is an adverb and should be used to describe how he drives (He drives carefully). Good is an adjective; the adverb form is well (He drives very well)."
       }
     ],
-
     quickTips: [
       "Remember: adjectives describe nouns or pronouns; adverbs usually describe verbs, adjectives, or other adverbs.",
       "After linking verbs like be, seem, appear, feel, look, taste, and sound, use adjectives (The plan looks good), not adverbs.",
@@ -950,11 +939,10 @@ const LESSONS = {
     ]
   },
 
-// ==========================================
-// Adverbs – Full Expanded Lesson
-// ==========================================
-
-    adverbs: {
+  // ==========================================
+  // Adverbs – Full Expanded Lesson
+  // ==========================================
+  adverbs: {
     title: "Adverbs – How, When, Where, and How Often",
     level: "Verbal Ability · Adverbs · CSE Grammar",
     intro:
@@ -1215,13 +1203,12 @@ const LESSONS = {
     </ul>
   </section>
     `
-  },   
+  },
 
-// ==========================================
-// PREPOSITIONS – STUDY NOTES (for Study Mode)
-// ==========================================
-
- prepositions: {
+  // ==========================================
+  // PREPOSITIONS – STUDY NOTES (for Study Mode)
+  // ==========================================
+  prepositions: {
     title: "Prepositions – The Complete Master Guide",
     level: "Verbal Ability · Prepositions · CSE Grammar",
     fullHtml: `
@@ -1445,6 +1432,7 @@ const LESSONS = {
     `
   }
 };
+
 // ==========================================
 // 3. APP LOGIC
 // ==========================================
@@ -1517,7 +1505,7 @@ document.addEventListener("DOMContentLoaded", () => {
     topicsListEl.appendChild(listContainer);
   }
 
-    function renderLesson(topicKey) {
+  function renderLesson(topicKey) {
     const data = LESSONS[topicKey];
     if (!data) {
       lessonTitleEl.textContent = "Coming soon";
@@ -1530,13 +1518,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonTitleEl.textContent = data.title || "Verbal Ability Topic";
     lessonMetaEl.textContent = data.level || "CSE Verbal Ability";
 
-    // ✅ SPECIAL CASE: kung may fullHtml (gaya ng Adverbs), diretso natin i-render
+    // SPECIAL CASE: kung may fullHtml (gaya ng Adverbs / Prepositions), diretso natin i-render
     if (data.fullHtml) {
       lessonContentEl.innerHTML = data.fullHtml;
       return;
     }
 
-    // ✅ Default path para sa ibang lessons (Nouns, Verbs, etc.)
+    // Default path para sa ibang lessons (Nouns, Verbs, etc.)
     let html = "";
     if (data.intro) {
       html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
@@ -1588,7 +1576,6 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonContentEl.innerHTML = html;
   }
 
-
   // Init Study Mode
   renderTopicsSidebar("nouns");
   renderLesson("nouns");
@@ -1596,31 +1583,31 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Practice Mode Logic ---
 
   // Helper: kunin question bank depende sa topic
-    function getQuestionBank(topic) {
-  switch (topic) {
-    case "nouns":
-      return NOUN_QUESTIONS;
-    case "gender":
-      return GENDER_QUESTIONS;
-    case "grammatical_number":
-      return GRAMMATICAL_NUMBER_QUESTIONS;
-    case "verbs":
-      return VERB_QUESTIONS;
-    case "tenses":
-      return TENSE_QUESTIONS;
-    case "pronouns":
-      return PRONOUN_QUESTIONS;
-    case "adjectives":
-      return ADJECTIVE_QUESTIONS;
-    case "adverbs":
-      return ADVERB_QUESTIONS;  
-    default:
-      return null;
+  function getQuestionBank(topic) {
+    switch (topic) {
+      case "nouns":
+        return NOUN_QUESTIONS;
+      case "gender":
+        return GENDER_QUESTIONS;
+      case "grammatical_number":
+        return GRAMMATICAL_NUMBER_QUESTIONS;
+      case "verbs":
+        return VERB_QUESTIONS;
+      case "tenses":
+        return TENSE_QUESTIONS;
+      case "pronouns":
+        return PRONOUN_QUESTIONS;
+      case "adjectives":
+        return ADJECTIVE_QUESTIONS;
+      case "adverbs":
+        return ADVERB_QUESTIONS;
+      // prepositions questions pwede mong idagdag dito later:
+      // case "prepositions":
+      //   return PREPOSITION_QUESTIONS;
+      default:
+        return null;
+    }
   }
-}
-
-
-
 
   // Populate topic select
   if (practiceTopicEl) {
@@ -1636,7 +1623,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let quizState = null;
 
-  // === FIX 1: helper para tumigil ang current timer (kung meron) ===
+  // Helper para tumigil ang current timer (kung meron)
   function stopCurrentTimer() {
     if (quizState && quizState.timerId) {
       clearInterval(quizState.timerId);
@@ -1670,7 +1657,9 @@ document.addEventListener("DOMContentLoaded", () => {
     quizOutputEl.innerHTML = `
       <div class="stats-panel">
         <div class="stat-item"><span>Correct</span><span>${quizState.correct}</span></div>
-        <div class="stat-item"><span>Incorrect</span><span>${quizState.incorrect}</span></div>
+        <div class="stat-item"><span>Incorrect</span><span>${
+          quizState.incorrect
+        }</span></div>
         <div class="stat-item"><span>Left</span><span>${
           quizState.questions.length - quizState.currentIndex
         }</span></div>
@@ -1679,7 +1668,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startTimer() {
     if (!quizState) return;
-    // dati: if (quizState.timerId) clearInterval(quizState.timerId);
     stopCurrentTimer();
 
     const mode = quizState.timerMode;
@@ -1782,15 +1770,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startQuizBtn.addEventListener("click", () => {
-    // === FIX 2: puwede mag-start ng bagong quiz kahit nasa gitna ka pa ===
-    // Itigil muna ang lumang timer kung may dating quiz
+    // puwede mag-start ng bagong quiz kahit nasa gitna ka pa
     stopCurrentTimer();
 
     const topic = practiceTopicEl.value;
     const level = practiceLevelEl.value;
     const count = parseInt(practiceCountEl.value, 10);
     const timer = timerModeEl.value;
-    const weakNotes = practiceWeakEl.value.trim(); // di pa ginagamit, pero pwede sa future
+    const weakNotes = practiceWeakEl.value.trim(); // reserved for future
 
     const bank = getQuestionBank(topic);
     if (!bank) {
@@ -1820,10 +1807,6 @@ document.addEventListener("DOMContentLoaded", () => {
       weakNotes
     };
 
-    // === FIX 3: huwag nang i-disable ang Start at Topic ===
-    // startQuizBtn.disabled = true;
-    // practiceTopicEl.disabled = true;
-
     showQuestion();
   });
 
@@ -1843,9 +1826,6 @@ document.addEventListener("DOMContentLoaded", () => {
       quizChoicesEl.innerHTML = "";
       quizExplanationEl.classList.add("hide");
       quizNextBtn.classList.add("hide");
-
-      // startQuizBtn.disabled = false;
-      // practiceTopicEl.disabled = false;
 
       const restartBtn = document.createElement("button");
       restartBtn.className = "mode-btn active";
