@@ -797,7 +797,12 @@ const LESSONS = {
 // Adverbs – Full Expanded Lesson
 // ==========================================
 
-const adverbs: = `
+  adverbs: {
+    title: "Adverbs – How, When, Where, and How Often",
+    level: "Verbal Ability · Adverbs · CSE Grammar",
+    intro:
+      "An adverb is a modifier. It adds detail to a sentence by answering how, when, where, how often, or to what degree something happens. In the Civil Service Exam, adverbs are tested through usage, position, comparison, and common traps with adjectives.",
+    fullHtml: `
   <section class="lesson-section">
     <h2>1. What is an Adverb?</h2>
     <p>
@@ -883,7 +888,7 @@ const adverbs: = `
     <p>When you have multiple adverbs in one sentence, you cannot just place them anywhere. You must follow the <strong>Royal Order of Adverbs</strong>.</p>
 
     <h3>3.1 The Standard Order: M - P - T</h3>
-    <p><strong>Manner</strong> &rarr; <strong>Place</strong> &rarr; <strong>Time</strong></p>
+    <p><strong>Manner</strong> → <strong>Place</strong> → <strong>Time</strong></p>
     <table class="lesson-table">
       <thead>
         <tr>
@@ -981,16 +986,16 @@ const adverbs: = `
     <h3>5.1 Regular Adverbs (-ly)</h3>
     <p>Use <strong>more</strong> and <strong>most</strong>.</p>
     <ul>
-      <li>Carefully &rarr; More carefully &rarr; Most carefully</li>
-      <li>Slowly &rarr; More slowly &rarr; Most slowly</li>
+      <li>Carefully → More carefully → Most carefully</li>
+      <li>Slowly → More slowly → Most slowly</li>
     </ul>
 
     <h3>5.2 Short Adverbs (No -ly)</h3>
     <p>Add <strong>-er</strong> and <strong>-est</strong>.</p>
     <ul>
-      <li>Fast &rarr; Faster &rarr; Fastest</li>
-      <li>Hard &rarr; Harder &rarr; Hardest</li>
-      <li>Soon &rarr; Sooner &rarr; Soonest</li>
+      <li>Fast → Faster → Fastest</li>
+      <li>Hard → Harder → Hardest</li>
+      <li>Soon → Sooner → Soonest</li>
     </ul>
 
     <h3>5.3 Irregular Adverbs</h3>
@@ -1052,9 +1057,10 @@ const adverbs: = `
       <li>"Fastly" is not a word. Use "Fast."</li>
     </ul>
   </section>
- ]
- }
-};
+    `
+  }
+}; // ← Dito na sa dulo dapat ang closing ng const LESSONS = { ... }
+
 
 
 // ==========================================
