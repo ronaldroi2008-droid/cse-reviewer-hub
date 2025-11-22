@@ -1222,8 +1222,7 @@ const LESSONS = {
 // PREPOSITIONS – STUDY NOTES (for Study Mode)
 // ==========================================
 
-const PREPOSITION_LESSON = [
-  {
+ verbs: {
     id: "prep-definition",
     title: "1. What is a preposition?",
     content: `
