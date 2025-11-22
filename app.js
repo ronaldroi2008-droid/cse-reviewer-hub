@@ -622,7 +622,7 @@ const LESSONS = {
       "Be careful with sentences like 'The nurse lost his...' – check meaning and context.",
       "Animals are often 'it' unless the sex is highlighted (bull/cow, rooster/hen)."
     ]
-  }
+  },
 
 
   adjectives: {
