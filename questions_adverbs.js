@@ -944,61 +944,61 @@ const ADVERB_QUESTIONS = {
       question: "He threw the ball ______.", 
       choices: ["high", "highly"], 
       correctIndex: 0, 
-      explanation: "Use **high** when talking about physical height/distance. 'He jumped high'." 
+      explanation: "Use **high** for physical height/distance (e.g., jumping high). Use **highly** only for figurative meaning (e.g., highly recommended)." 
     },
     { 
       question: "He is ______ respected.", 
       choices: ["high", "highly"], 
       correctIndex: 1, 
-      explanation: "Use **highly** to mean 'very' or in a figurative sense. 'Highly recommended'." 
+      explanation: "Here, we are not talking about altitude. We mean 'very' respected. In this figurative sense, we use **highly**." 
     },
     { 
       question: "I dove ______ into the ocean.", 
       choices: ["deep", "deeply"], 
       correctIndex: 0, 
-      explanation: "Use **deep** for physical distance downwards. 'Dig deep'." 
+      explanation: "We are talking about physical depth in the water. Use **deep**. (Use 'deeply' for emotions, like 'deeply hurt')." 
     },
     { 
       question: "I was ______ moved by the movie.", 
       choices: ["deep", "deeply"], 
       correctIndex: 1, 
-      explanation: "Use **deeply** for emotions or abstract concepts. 'Deeply in love'." 
+      explanation: "This describes an emotion/feeling, not physical depth. Therefore, we use **deeply**." 
     },
     { 
       question: "The bird flew ______.", 
       choices: ["low", "lowly"], 
       correctIndex: 0, 
-      explanation: "Use **low** for physical height. 'Lowly' means humble or low status." 
+      explanation: "For physical height, use **low**. ('Lowly' is an adjective meaning humble/low status, e.g., 'a lowly servant')." 
     },
     { 
       question: "He bowed ______.", 
       choices: ["low", "lowly"], 
       correctIndex: 0, 
-      explanation: "Physical action. He bent his body down low." 
+      explanation: "He physically bent his body down. Use the adverb **low**." 
     },
     { 
       question: "She arrived ______.", 
       choices: ["late", "lately"], 
       correctIndex: 0, 
-      explanation: "Not on time = **late**." 
+      explanation: "Common Trap! **Late** means 'not on time'. **Lately** means 'recently'. She was not on time, so she arrived **late**." 
     },
     { 
       question: "I haven't eaten ______.", 
       choices: ["late", "lately"], 
       correctIndex: 1, 
-      explanation: "Recently = **lately**." 
+      explanation: "The meaning here is 'in the near past' or 'recently'. The correct word is **lately**." 
     },
     { 
       question: "Stand ______.", 
       choices: ["clear", "clearly"], 
       correctIndex: 0, 
-      explanation: "Here, 'clear' means 'away from'. Stand clear of the doors." 
+      explanation: "Here, 'clear' is a Flat Adverb meaning 'away from' something (Stand clear of the doors). 'Clearly' means 'understandably'." 
     },
     { 
       question: "Speak ______.", 
       choices: ["clear", "clearly"], 
       correctIndex: 1, 
-      explanation: "Means 'in a clear manner'. Speak **clearly**." 
+      explanation: "We are describing the manner of speaking (to be understood). Use **clearly**." 
     },
 
     // --- 161-170: Meaning Shift with -ly ---
@@ -1006,61 +1006,61 @@ const ADVERB_QUESTIONS = {
       question: "He works ______.", 
       choices: ["hard", "hardly"], 
       correctIndex: 0, 
-      explanation: "Means 'with effort'. He works **hard**." 
+      explanation: "Careful! **Hard** means 'with effort'. **Hardly** means 'almost not'. If he is a good worker, he works **hard**." 
     },
     { 
       question: "He ______ works.", 
       choices: ["hardly", "hard"], 
       correctIndex: 0, 
-      explanation: "Means 'almost never'. He **hardly** works." 
+      explanation: "Position clue: The adverb is before the verb. This implies frequency/negation. 'He **hardly** works' means he is lazy (almost never works)." 
     },
     { 
       question: "The eagle flies ______.", 
       choices: ["high", "highly"], 
       correctIndex: 0, 
-      explanation: "Physical altitude = **high**." 
+      explanation: "Physical altitude = **high**. (Highly is for degree, like 'highly likely')." 
     },
     { 
       question: "It is ______ probable.", 
       choices: ["high", "highly"], 
       correctIndex: 1, 
-      explanation: "Means 'very probable'. Use **highly**." 
+      explanation: "We are expressing the *degree* of probability (meaning 'very'). Use **highly**." 
     },
     { 
       question: "He sat ______ to me.", 
       choices: ["close", "closely"], 
       correctIndex: 0, 
-      explanation: "Physical distance (near). He sat **close**." 
+      explanation: "For physical distance (nearness), use **close**. 'Don't stand so close'." 
     },
     { 
       question: "Listen ______.", 
       choices: ["close", "closely"], 
       correctIndex: 1, 
-      explanation: "Pay attention carefully. Listen **closely**." 
+      explanation: "This means 'pay attention carefully'. The correct adverb is **closely**." 
     },
     { 
       question: "The door was ______ open.", 
       choices: ["wide", "widely"], 
       correctIndex: 0, 
-      explanation: "Physical extent. **Wide** open." 
+      explanation: "For physical width/extent, use **wide**. 'Wide open'." 
     },
     { 
       question: "He is ______ known.", 
       choices: ["wide", "widely"], 
       correctIndex: 1, 
-      explanation: "Known by many people (extent/range). **Widely** known." 
+      explanation: "When talking about range or number of people, use **widely**. 'Widely known' = Known by many." 
     },
     { 
       question: "You are ______ right.", 
       choices: ["dead", "deadly"], 
       correctIndex: 0, 
-      explanation: "'Dead' can mean 'completely' in informal English. 'Dead right' or 'Dead wrong'." 
+      explanation: "Idiom Alert: 'Dead' here is an adverb meaning 'completely' or 'absolutely'. 'Dead right' or 'Dead wrong'." 
     },
     { 
       question: "It is a ______ weapon.", 
       choices: ["dead", "deadly"], 
       correctIndex: 1, 
-      explanation: "'Deadly' is an adjective meaning 'lethal' or 'causing death'." 
+      explanation: "Here we need an Adjective to describe 'weapon'. **Deadly** means 'lethal' or 'causing death'." 
     },
 
     // --- 171-180: Imposter Adjectives (Ending in -ly) ---
@@ -1068,61 +1068,61 @@ const ADVERB_QUESTIONS = {
       question: "She is a ______ person.", 
       choices: ["lovely", "lovelily"], 
       correctIndex: 0, 
-      explanation: "'Lovely' ends in -ly but it is an **Adjective**. It describes the noun 'person'." 
+      explanation: "TRICK QUESTION! 'Lovely' ends in -ly, but it is actually an **Adjective** describing the noun 'person'. 'Lovelily' is not a word." 
     },
     { 
       question: "He behaved in a ______ manner.", 
       choices: ["friendly", "friendlily"], 
       correctIndex: 0, 
-      explanation: "'Friendly' is an adjective. To use it as an adverb, we often say 'in a friendly manner' because 'friendlily' sounds awkward." 
+      explanation: "Grammar Tip: 'Friendly' is an adjective. It sounds awkward to say 'friendlily', so we say 'in a **friendly** manner'." 
     },
     { 
       question: "I feel ______.", 
       choices: ["lonely", "lone"], 
       correctIndex: 0, 
-      explanation: "'Lonely' is an adjective describing a feeling." 
+      explanation: "'Lonely' is an adjective describing a feeling/state. Even though it ends in -ly, it is not an adverb here." 
     },
     { 
       question: "It was a ______ meeting.", 
       choices: ["timely", "timelily"], 
       correctIndex: 0, 
-      explanation: "'Timely' is an adjective meaning 'happening at the right time'." 
+      explanation: "'Timely' is an adjective that means 'happening at the correct time'. It modifies the noun 'meeting'." 
     },
     { 
       question: "That looks ______.", 
       choices: ["ugly", "uglily"], 
       correctIndex: 0, 
-      explanation: "'Ugly' is an adjective describing the noun." 
+      explanation: "'Looks' is a linking verb, so we need an Adjective. **Ugly** is the adjective. 'Uglily' is not a word." 
     },
     { 
       question: "He is a ______ man.", 
       choices: ["kindly", "kindlily"], 
       correctIndex: 0, 
-      explanation: "'Kindly' is an adjective meaning kind and warm-hearted." 
+      explanation: "TRICK QUESTION! Even though it ends in -ly, **kindly** is an adjective here meaning 'gentle' or 'warm-hearted'. It describes the noun 'man'." 
     },
     { 
       question: "It was a ______ error.", 
       choices: ["costly", "costlily"], 
       correctIndex: 0, 
-      explanation: "'Costly' is an adjective meaning expensive." 
+      explanation: "**Costly** is an adjective meaning 'expensive'. It describes the noun 'error'." 
     },
     { 
       question: "Daily is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "It can be both. 'A daily paper' (Adj) and 'I exercise daily' (Adv)." 
+      explanation: "It can be both! Adjective: 'A daily paper'. Adverb: 'I exercise daily'." 
     },
     { 
       question: "Early is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "Both. 'Early bird' (Adj) and 'Arrived early' (Adv)." 
+      explanation: "It can be both! Adjective: 'An early bird'. Adverb: 'He arrived early'." 
     },
     { 
       question: "Fast is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "Both. 'Fast car' (Adj) and 'Run fast' (Adv)." 
+      explanation: "It can be both! Adjective: 'A fast car'. Adverb: 'He runs fast'. (Never say 'fastly')." 
     },
 
     // --- 181-190: Adverbial Objectives & Nouns as Adverbs ---
@@ -1130,61 +1130,61 @@ const ADVERB_QUESTIONS = {
       question: "Let's go ______.", 
       choices: ["home", "to home"], 
       correctIndex: 0, 
-      explanation: "'Home' acts as an adverb of place here. We do not use the preposition 'to' before home." 
+      explanation: "Grammar Rule: When 'Home' is used with verbs of movement (go, come), it acts as an adverb. Do NOT use 'to'." 
     },
     { 
       question: "I waited ______.", 
       choices: ["two hours", "for two hours", "Both are correct"], 
       correctIndex: 2, 
-      explanation: "Nouns of time can act as adverbs. 'I waited two hours' is correct. 'For two hours' is also correct." 
+      explanation: "Duration of time can be expressed with or without the preposition 'for'. Both are grammatically correct." 
     },
     { 
       question: "He ran ______.", 
       choices: ["three miles", "for three miles", "Both are correct"], 
       correctIndex: 2, 
-      explanation: "Distance phrases can act as adverbs. Both are acceptable." 
+      explanation: "Noun phrases indicating distance (three miles) can function as adverbs modifying the verb." 
     },
     { 
       question: "See you ______.", 
       choices: ["next week", "on next week"], 
       correctIndex: 0, 
-      explanation: "Rule: Do not use 'on', 'in', or 'at' before 'next' or 'last' in time expressions." 
+      explanation: "Time Rule: Do not use prepositions (on, in, at) before 'next', 'last', 'this', or 'every'. Correct: **Next week**." 
     },
     { 
       question: "We met ______.", 
       choices: ["last night", "on last night"], 
       correctIndex: 0, 
-      explanation: "Correct: 'Last night'. Incorrect: 'On last night'." 
+      explanation: "Time Rule: Never use 'on' before 'last night'. Correct: **Last night**." 
     },
     { 
       question: "Do it ______.", 
       choices: ["this way", "on this way"], 
       correctIndex: 0, 
-      explanation: "'This way' is an adverbial phrase of manner. No preposition needed." 
+      explanation: "'This way' is an adverbial phrase indicating manner. It does not require a preposition." 
     },
     { 
       question: "They went ______.", 
       choices: ["abroad", "to abroad"], 
       correctIndex: 0, 
-      explanation: "'Abroad' is an adverb. Never use 'to' before abroad." 
+      explanation: "**Abroad** is an adverb of place. It already includes the concept of destination, so 'to' is wrong." 
     },
     { 
       question: "Go ______.", 
       choices: ["upstairs", "to upstairs"], 
       correctIndex: 0, 
-      explanation: "'Upstairs' is an adverb of place. No 'to' needed." 
+      explanation: "**Upstairs** is an adverb telling you where to go. Do not use 'to'." 
     },
     { 
       question: "Come ______.", 
       choices: ["inside", "to inside"], 
       correctIndex: 0, 
-      explanation: "'Inside' functions as an adverb here." 
+      explanation: "**Inside** functions as an adverb of place here. No preposition is needed." 
     },
     { 
       question: "He went ______.", 
       choices: ["downtown", "to downtown"], 
       correctIndex: 0, 
-      explanation: "'Downtown' is an adverb of place. We go downtown (no 'to')." 
+      explanation: "**Downtown** is an adverb. You simply 'go downtown'. Using 'to' is a common mistake." 
     },
 
     // --- 191-200: Double Negatives & Redundancy ---
@@ -1192,61 +1192,61 @@ const ADVERB_QUESTIONS = {
       question: "I can't see ______.", 
       choices: ["nothing", "anything"], 
       correctIndex: 1, 
-      explanation: "**Double Negative Rule:** 'Can't' is already negative. 'Nothing' is negative. You cannot have two negatives. Use 'anything'." 
+      explanation: "**Double Negative Rule:** 'Can't' is already negative. If you add 'nothing', it becomes a double negative. Correct: 'I can't see **anything**'." 
     },
     { 
       question: "He hardly ______ speaks.", 
       choices: ["never", "ever"], 
       correctIndex: 1, 
-      explanation: "'Hardly' is negative (meaning almost not). Do not use 'never' with it. Use 'ever'." 
+      explanation: "**Hardly** is a negative adverb (meaning almost not). Using 'never' creates a double negative. Correct: 'Hardly **ever**'." 
     },
     { 
       question: "I rarely ______ eat there.", 
       choices: ["don't", "ever"], 
       correctIndex: 1, 
-      explanation: "'Rarely' is already negative. Saying 'rarely don't' is a double negative. Correct: 'I rarely ever eat there'." 
+      explanation: "**Rarely** is negative. Saying 'rarely don't' is incorrect logic. The correct phrasing is 'I rarely **ever** eat there'." 
     },
     { 
       question: "Return back is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "**Redundancy:** 'Return' already means 'go back'. Adding 'back' repeats the meaning unnecessarily." 
+      explanation: "**Redundancy Alert:** 'Return' means 'go back'. Adding 'back' is repetitive. Just say 'Return'." 
     },
     { 
       question: "Repeat again is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "'Repeat' means 'say/do again'. Adding 'again' is redundant." 
+      explanation: "**Redundancy Alert:** 'Repeat' means 'do again'. Adding 'again' is repetitive. Just say 'Repeat'." 
     },
     { 
       question: "Proceed forward is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "'Proceed' means to move forward. 'Forward' is redundant." 
+      explanation: "'Proceed' means to move forward. Adding 'forward' is unnecessary." 
     },
     { 
       question: "Revert back is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "A common error in emails. 'Revert' means to go back to a previous state. 'Back' is redundant." 
+      explanation: "A classic email mistake! 'Revert' means to go back to a previous state. 'Back' is redundant. Just say 'Revert'." 
     },
     { 
       question: "Sufficient enough is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "Choose one. Something is either 'sufficient' or 'enough'. Using both is repetitive." 
+      explanation: "Redundant. Choose one: 'It is sufficient' OR 'It is enough'. Do not use both." 
     },
     { 
       question: "Scarcely ______ (meaning 'almost no one').", 
       choices: ["anyone", "no one"], 
       correctIndex: 0, 
-      explanation: "'Scarcely' is negative. Using 'no one' creates a double negative. Use 'anyone'." 
+      explanation: "**Scarcely** implies negativity. Using 'no one' makes a double negative. Correct: 'Scarcely **anyone**'." 
     },
     { 
       question: "Barely ______ (meaning 'almost nothing').", 
       choices: ["anything", "nothing"], 
       correctIndex: 0, 
-      explanation: "'Barely' is negative. Use 'anything' to avoid a double negative." 
+      explanation: "**Barely** implies negativity. Using 'nothing' is a double negative error. Correct: 'Barely **anything**'." 
     }
   ]
 };
