@@ -37,6 +37,7 @@ const TOPIC_MAX_QUESTIONS = {
   conjunctions: 50,
   interjections: 50,
   articles: 50,
+  subject_verb_agreement: 50,
   prepositions: 50
 };
 
@@ -685,6 +686,125 @@ const LESSONS = {
     `
   },
 
+      subject_verb_agreement: {
+    title: "Subject–Verb Agreement",
+    level: "Verbal Ability · Grammar · Subject–Verb Agreement",
+    intro:
+      "Subject–verb agreement means the verb must match the subject in number (singular or plural) and sometimes in person (I/you/he/they). In the Civil Service Exam, many questions hide the true subject or distract you with extra phrases. Your job is to find the real subject and make sure the verb agrees with it.",
+
+    keyPoints: [
+      // 1. Core rules
+      "A singular subject takes a singular verb (often with -s in the present tense): The student studies. He works.",
+      "A plural subject takes a plural verb (base form in the present): The students study. They work.",
+      "Always identify the true subject first. Ignore prepositional phrases (of, in, on, with, for, from, among, between, etc.) and extra clauses when deciding the verb form.",
+
+      // 2. Phrases that do NOT change the subject
+      "Prepositional phrases do not control the verb: The list of topics is long. (Subject: list, not topics)",
+      "Phrases like along with, as well as, together with, in addition to do NOT make the subject plural: The manager, along with his staff, is attending the meeting.",
+
+      // 3. Subjects joined by AND / OR / NOR
+      "Subjects joined by and are usually plural: Maria and Juan are classmates.",
+      "If two nouns joined by and form one idea or one unit, use a singular verb: Bread and butter is my favorite breakfast.",
+      "With either…or / neither…nor / not only…but also, the verb agrees with the part of the subject closest to the verb: Either the students or the teacher is coming. Either the teacher or the students are coming.",
+
+      // 4. Indefinite pronouns
+      "Always singular: each, every, either, neither, one, everyone, everybody, someone, somebody, anyone, anybody, no one, nobody, anything, everything, something. Example: Each of the answers is correct.",
+      "Always plural: both, few, many, several. Example: Many are called, but few are chosen.",
+      "SANAM group (some, any, none, all, most) can be singular or plural depending on the noun after of: Some of the water is dirty (uncountable → singular); Some of the students are late (countable plural → plural).",
+
+      // 5. Collective nouns, amounts, titles
+      "Collective nouns (team, committee, family, jury) are usually singular when acting as one unit: The committee has reached its decision.",
+      "They can be plural when the members act individually: The committee are arguing among themselves.",
+      "Units of time, money, distance, or weight are often treated as singular when viewed as one amount: Five years is a long time. Ten thousand pesos is a big amount.",
+      "Titles of books, movies, or organizations that look plural usually take a singular verb: The Philippines is a beautiful country. The United Nations is meeting today.",
+
+      // 6. There is / There are; who / that / which
+      "In sentences starting with There or Here, the real subject comes after the verb: There are many reasons. Here is your ID card.",
+      "In relative clauses, the verb after who / that / which must agree with its antecedent: He is one of the students who are taking the exam. He is the only one who is qualified.",
+
+      // 7. Fractions, percentages, and gerunds
+      "Fractions and percentages follow the same logic as SANAM: One-third of the students are absent. One-third of the cake is gone.",
+      "When a gerund (-ing form) is the subject, we usually use a singular verb: Reading English is helpful. Listening carefully helps you understand."
+    ],
+
+    patterns: [
+      "Sentences where the subject is separated from the verb by a long prepositional phrase (The box of old books in the corner is dusty).",
+      "Sentences starting with there is / there are or here is / here are where the subject follows the verb.",
+      "Sentences with either…or, neither…nor, or not only…but also, where the verb must agree with the nearer subject.",
+      "Questions and error identification items using indefinite pronouns such as each, everyone, all, some, none, most.",
+      "Sentences with collective nouns (team, committee, family) and measurements (years, pesos, kilometers) used as one unit.",
+      "Relative clauses with who / that / which where you must match the verb to the correct noun (antecedent)."
+    ],
+
+    examples: [
+      {
+        q: "Choose the correct verb to complete the sentence:\n\"The list of required documents ___ on the table.\"",
+        choices: ["are", "were", "is", "have been"],
+        answer: "is",
+        explanation:
+          "The true subject is list, which is singular. The phrase of required documents is a prepositional phrase and does not affect the verb. Therefore, we use the singular verb is."
+      },
+      {
+        q: "Which sentence is grammatically correct?",
+        choices: [
+          "Each of the applicants have submitted their forms.",
+          "Each of the applicants has submitted their form.",
+          "Each of the applicants have submitted his form.",
+          "Each of the applicants has submitted his or her form."
+        ],
+        answer: "Each of the applicants has submitted his or her form.",
+        explanation:
+          "Each is always singular and takes a singular verb (has). In strict formal grammar, we also use a singular pronoun (his or her) to agree with each. The phrase of the applicants is a prepositional phrase and does not change the subject."
+      },
+      {
+        q: "Fill in the blank with the correct verb:\n\"Either the manager or the employees ___ responsible for the delay.\"",
+        choices: ["is", "was", "are", "has been"],
+        answer: "are",
+        explanation:
+          "With either…or, the verb agrees with the part of the subject closer to it. The nearer subject is employees, which is plural, so we use the plural verb are."
+      },
+      {
+        q: "Which sentence correctly uses subject–verb agreement?",
+        choices: [
+          "The team of engineers are arriving tomorrow.",
+          "The team of engineers is arriving tomorrow.",
+          "The engineers team is arriving tomorrow.",
+          "The team is of engineers arriving tomorrow."
+        ],
+        answer: "The team of engineers is arriving tomorrow.",
+        explanation:
+          "Team is a collective noun acting as one unit and takes a singular verb (is arriving). The phrase of engineers is a descriptive prepositional phrase and does not control the verb."
+      },
+      {
+        q: "Choose the correct form of the verb:\n\"Fifty percent of the work ___ already finished.\"",
+        choices: ["are", "is", "have", "were"],
+        answer: "is",
+        explanation:
+          "We look at the noun after of. Work is uncountable and treated as singular, so we use the singular verb is."
+      },
+      {
+        q: "Which sentence is correct?",
+        choices: [
+          "He is one of the students who likes to volunteer.",
+          "He is one of the students who like to volunteer.",
+          "He is one of the student who likes to volunteer.",
+          "He is one of the student who like to volunteer."
+        ],
+        answer: "He is one of the students who like to volunteer.",
+        explanation:
+          "The relative pronoun who refers to students (plural), not to he. Therefore, the verb after who must be plural (like). The phrase one of the students shows he belongs to a group of students who like to volunteer."
+      }
+    ],
+
+    quickTips: [
+      "Always find the real subject first; ignore prepositional phrases and extra information between the subject and the verb.",
+      "Remember that each, every, either, neither, everyone, someone, anyone, nobody, and similar indefinite pronouns are grammatically singular.",
+      "With either…or, neither…nor, and not only…but also, match the verb with the part of the subject closest to the verb.",
+      "Collective nouns like team, committee, and family are usually singular when acting as one unit: The team is winning.",
+      "Use the SANAM rule (some, any, none, all, most): look at the noun after of to decide if the verb should be singular or plural.",
+      "In sentences beginning with There is/There are or Here is/Here are, the verb must agree with the true subject that comes after it."
+    ]
+  },
 
   
 
@@ -2543,6 +2663,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return INTERJECTION_QUESTIONS;  
        case "articles":
         return ARTICLE_QUESTIONS; 
+       case "subject_verb_agreement":
+        return SUBJECT_VERB_AGREEMENT_QUESTIONS;  
       default:
         return null;
     }
