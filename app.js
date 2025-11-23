@@ -683,7 +683,7 @@ const LESSONS = {
           <li>Check if you are comparing two or more things: articles often appear with <strong>comparatives</strong> and <strong>superlatives</strong>.</li>
         </ul>
       </section>
-     
+     `
 },
 
       subject_verb_agreement: {
