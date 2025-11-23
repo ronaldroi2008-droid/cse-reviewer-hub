@@ -1929,6 +1929,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return ADVERB_QUESTIONS;
       case "prepositions":
         return PREPOSITION_QUESTIONS;
+       case "conjunctions":
+        return CONJUNCTION_QUESTIONS; 
       default:
         return null;
     }
