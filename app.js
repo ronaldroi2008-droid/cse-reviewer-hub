@@ -2017,32 +2017,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  function showQuestion() {
-    if (!quizState) return;
-    const q = quizState.questions[quizState.currentIndex];
-    quizState.answered = false;
+ function showQuestion() {
+  if (!quizState) return;
+  const q = quizState.questions[quizState.currentIndex];
 
-    quizProgressEl.textContent = `Question ${
-      quizState.currentIndex + 1
-    } of ${quizState.questions.length}`;
-    updateProgressFill();
-
-    quizQuestionEl.textContent = q.question;
-    quizChoicesEl.innerHTML = "";
-    quizExplanationEl.classList.add("hide");
-    quizNextBtn.classList.add("hide");
-
-    q.choices.forEach((choice, idx) => {
-      const btn = document.createElement("button");
-      btn.className = "quiz-choice";
-      btn.textContent = choice;
-      btn.addEventListener("click", () => handleAnswer(idx));
-      quizChoicesEl.appendChild(btn);
-    });
-
-    updateStats();
-    startTimer();
+  // 🔁 NORMALIZE DATA (para gumana ang Conjunctions)
+  // Kung wala pang choices/correctIndex pero may options/answer,
+  // gawin natin silang compatible sa ibang topics.
+  if (
+    (!Array.isArray(q.choices) || typeof q.correctIndex !== "number") &&
+    Array.isArray(q.options) &&
+    typeof q.answer === "string"
+  ) {
+    q.choices = q.options.slice(); // copy array
+    q.correctIndex = q.options.indexOf(q.answer); // convert string to index
   }
+
+  quizState.answered = false;
+
+  quizProgressEl.textContent = `Question ${
+    quizState.currentIndex + 1
+  } of ${quizState.questions.length}`;
+  updateProgressFill();
+
+  quizQuestionEl.textContent = q.question;
+  quizChoicesEl.innerHTML = "";
+  quizExplanationEl.classList.add("hide");
+  quizNextBtn.classList.add("hide");
+
+  q.choices.forEach((choice, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "quiz-choice";
+    btn.textContent = choice;
+    btn.addEventListener("click", () => handleAnswer(idx));
+    quizChoicesEl.appendChild(btn);
+  });
+
+  updateStats();
+  startTimer();
+}
+
 
   function handleAnswer(idx) {
     if (!quizState || quizState.answered) return;
