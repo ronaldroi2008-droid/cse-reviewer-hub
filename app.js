@@ -230,7 +230,7 @@ const LESSONS = {
     </ul>
   </section>
     `
-  },
+ },
  
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
@@ -381,11 +381,9 @@ const LESSONS = {
       "Avoid unnecessary tense shifts. If you start narrating in the past (I walked into the room), keep using the past unless the time clearly changes.",
       "Memorize the most common irregular verbs that appear in exams: go–went–gone, come–came–come, take–took–taken, give–gave–given, write–wrote–written, see–saw–seen, eat–ate–eaten, speak–spoke–spoken."
     ]
-  },
+}, 
 
-   // ==========================================
-  // ARTICLES – FULL LESSON (Study Mode)
-  // ==========================================
+  
   articles: {
     title: "Articles – A, An, The, and Zero Article",
     
@@ -686,7 +684,7 @@ const LESSONS = {
         </ul>
       </section>
      
-  },
+},
 
       subject_verb_agreement: {
     title: "Subject–Verb Agreement",
@@ -805,11 +803,10 @@ const LESSONS = {
       "Collective nouns like team, committee, and family are usually singular when acting as one unit: The team is winning.",
       "Use the SANAM rule (some, any, none, all, most): look at the noun after of to decide if the verb should be singular or plural.",
       "In sentences beginning with There is/There are or Here is/Here are, the verb must agree with the true subject that comes after it."
-    ]
-  },
+  ]
+},
 
-// Sentence Construction – Study Mode Lesson
-// Add this to your lessons data (e.g., VERBAL_LESSONS["sentence_construction"])
+
 
  sentence_construction: {
     title: "Sentence Construction",
@@ -2080,8 +2077,9 @@ const LESSONS = {
       "If you are unsure about using his or her, make the noun plural and use they/their instead. For example: Each student must submit his or her paper → Students must submit their papers.",
       "Watch out for double plurals or invented plurals such as childrens, peoples (when you mean people), and datas. In most contexts, child → children, person → people, data is already plural.",
       "In exam questions about subject–verb agreement, be careful with sentences that start with phrases like There is/There are or that use collective nouns. Always match the verb with the real, closest subject."
-    
-  },
+      ]
+}, 
+ 
 
   gender: {
     title: "Gender of Nouns & Pronouns",
@@ -2280,9 +2278,7 @@ const LESSONS = {
     ] 
   },
 
-  // ==========================================
-  // Adverbs – Full Expanded Lesson
-  // ==========================================
+
   adverbs: {
     title: "Adverbs – How, When, Where, and How Often",
     
@@ -3091,8 +3087,9 @@ const LESSONS = {
           <li>Memorize the "Big Three": <strong>AT</strong> (Exact), <strong>ON</strong> (Days/Surface), <strong>IN</strong> (General/Enclosed).</li>
         </ul>
       </section>   `
-  },
+    }
 };
+
 
 // ==========================================
 // 3. APP LOGIC
