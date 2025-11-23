@@ -1207,8 +1207,8 @@ const LESSONS = {
   },
 
   conjunctions: {
-  title: "Conjunctions – The Ultimate Reviewer (Deep Dive)",
-  level: "Verbal Ability · Conjunctions · CSE Grammar",
+  title: "Conjunctions – Words that Connect Ideas",
+  
   fullHtml: `
   <section class="lesson-section">
     <h2>1. What is a Conjunction?</h2>
