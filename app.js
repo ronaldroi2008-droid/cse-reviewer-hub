@@ -226,7 +226,7 @@ const LESSONS = {
   </section>
     `
   },
-
+ 
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
     level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
@@ -1206,6 +1206,331 @@ const LESSONS = {
     `
   },
 
+  conjunctions: {
+  title: "Conjunctions – The Ultimate Reviewer (Deep Dive)",
+  level: "Verbal Ability · Conjunctions · CSE Grammar",
+  fullHtml: `
+  <section class="lesson-section">
+    <h2>1. What is a Conjunction?</h2>
+    <p>
+      A <strong>conjunction</strong> is a word that joins:
+    </p>
+    <ul>
+      <li>word + word</li>
+      <li>phrase + phrase</li>
+      <li>clause + clause</li>
+    </ul>
+    <p>Think of it as a <strong>connector</strong> or <strong>bridge</strong> inside a sentence.</p>
+
+    <div class="highlight-box">
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li>
+          <strong>word + word:</strong><br />
+          <em>John and Mary are studying.</em>
+        </li>
+        <li>
+          <strong>phrase + phrase:</strong><br />
+          <em>We went to the market and to the park.</em>
+        </li>
+        <li>
+          <strong>clause + clause:</strong><br />
+          <em>She studied hard, so she passed the exam.</em>
+        </li>
+      </ul>
+    </div>
+
+    <p>Without conjunctions, your sentences would be short and choppy.</p>
+    <p><strong>Conjunction = joins ideas to make your sentence smoother and clearer.</strong></p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. Three Main Types of Conjunctions</h2>
+    <ul>
+      <li><strong>Coordinating conjunctions</strong> – join equal parts (word + word, clause + clause)</li>
+      <li><strong>Subordinating conjunctions</strong> – join a main clause and a dependent clause</li>
+      <li><strong>Correlative conjunctions</strong> – pairs of conjunctions that work together</li>
+    </ul>
+    <p>We’ll go through each one with rules and examples.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Coordinating Conjunctions (FANBOYS)</h2>
+    <p>These join <strong>similar or equal</strong> parts of a sentence.</p>
+    <div class="highlight-box">
+      <p><strong>Shortcut to remember them: FANBOYS</strong></p>
+      <ul>
+        <li><strong>F</strong> – for (reason)</li>
+        <li><strong>A</strong> – and (addition)</li>
+        <li><strong>N</strong> – nor (negative addition)</li>
+        <li><strong>B</strong> – but (contrast)</li>
+        <li><strong>O</strong> – or (choice)</li>
+        <li><strong>Y</strong> – yet (contrast, similar to “but”)</li>
+        <li><strong>S</strong> – so (result)</li>
+      </ul>
+    </div>
+
+    <h3>3.1 Uses and Examples</h3>
+
+    <h4>a) AND – to add information</h4>
+    <ul>
+      <li><em>She is smart and hardworking.</em></li>
+      <li><em>We visited Manila and Cebu.</em></li>
+    </ul>
+    <p><strong>Tip:</strong> Use <strong>and</strong> when the two ideas are both true and related.</p>
+
+    <h4>b) BUT / YET – to show contrast</h4>
+    <ul>
+      <li><em>He is rich, but he is not happy.</em></li>
+      <li><em>She studied hard, yet she still failed the test.</em></li>
+    </ul>
+    <p>
+      <strong>BUT</strong> and <strong>YET</strong> both show contrast. In many cases, they can be exchanged, but
+      <strong>yet</strong> is a bit more formal or dramatic.
+    </p>
+
+    <h4>c) OR – to show a choice</h4>
+    <ul>
+      <li><em>Do you want coffee or tea?</em></li>
+      <li><em>We can study now or we can rest first.</em></li>
+    </ul>
+
+    <h4>d) NOR – negative choice (usually after “neither” or “not”)</h4>
+    <ul>
+      <li><em>She doesn’t like coffee, nor does she like tea.</em></li>
+      <li><em>He is neither smart nor hardworking.</em></li>
+    </ul>
+    <p><strong>Note:</strong> <strong>Nor</strong> is not common in casual speech, but it appears in exams.</p>
+
+    <h4>e) FOR – gives a reason (similar to “because”)</h4>
+    <ul>
+      <li><em>She stayed at home, for she was feeling sick.</em></li>
+    </ul>
+    <p>
+      In modern English, <strong>for</strong> as a conjunction is a bit formal. In most everyday sentences we use
+      <strong>because</strong> instead. But it can appear in exams.
+    </p>
+
+    <h4>f) SO – shows result or consequence</h4>
+    <ul>
+      <li><em>It was raining, so we stayed inside.</em></li>
+      <li><em>She was late, so she missed the bus.</em></li>
+    </ul>
+
+    <h3>3.2 Punctuation Rule for FANBOYS</h3>
+    <p>
+      When a coordinating conjunction joins <strong>two full clauses</strong> (each with a subject and a verb), we
+      usually use a <strong>comma</strong> before it.
+    </p>
+    <p>
+      <em>She was tired, so she went to bed early.</em><br />
+      Clause 1: <em>She was tired</em><br />
+      Clause 2: <em>she went to bed early</em>
+    </p>
+
+    <div class="highlight-box">
+      <p><strong>✅ Correct:</strong></p>
+      <p><em>He wanted to pass the exam, so he studied every night.</em></p>
+
+      <p><strong>❌ Wrong:</strong></p>
+      <p>
+        <em>He wanted to pass the exam so he studied every night.</em><br />
+        <small>(Missing comma in formal writing.)</small>
+      </p>
+    </div>
+
+    <p>But when joining just words or phrases, sometimes no comma is needed:</p>
+    <ul>
+      <li><em>She bought apples, oranges, and bananas.</em></li>
+      <li><em>They went to the mall and to the park.</em></li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. Subordinating Conjunctions</h2>
+    <p>
+      These join a <strong>main clause</strong> and a <strong>subordinate (dependent) clause</strong>.
+    </p>
+    <p>A subordinate clause:</p>
+    <ul>
+      <li>cannot stand alone as a complete sentence</li>
+      <li>needs the main clause to complete the meaning</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Common subordinating conjunctions:</strong></p>
+      <ul>
+        <li><strong>Time:</strong> when, while, after, before, since, until</li>
+        <li><strong>Cause/Reason:</strong> because, since, as</li>
+        <li><strong>Contrast:</strong> although, though, even though, whereas, while</li>
+        <li><strong>Condition:</strong> if, unless, provided that, as long as</li>
+        <li><strong>Result / Purpose:</strong> so that, in order that</li>
+        <li><strong>Comparison:</strong> than, as…as</li>
+      </ul>
+    </div>
+
+    <h3>4.1 Examples by Function</h3>
+
+    <h4>a) Time</h4>
+    <ul>
+      <li><em>When the bell rings, we will start the test.</em></li>
+      <li><em>We stayed at home until the rain stopped.</em></li>
+      <li><em>After he finished his work, he went home.</em></li>
+    </ul>
+    <p>Here, the time clause tells us <strong>when</strong> the action happens.</p>
+
+    <h4>b) Cause / Reason</h4>
+    <ul>
+      <li><em>She stayed home because she was sick.</em></li>
+      <li><em>Since it was raining, we canceled the picnic.</em></li>
+      <li><em>As he had no money, he could not buy the book.</em></li>
+    </ul>
+    <p>These show <strong>why</strong> something happened.</p>
+
+    <h4>c) Contrast</h4>
+    <ul>
+      <li><em>Although he is young, he is very responsible.</em></li>
+      <li><em>She went to work even though she was sick.</em></li>
+      <li><em>While she likes coffee, he prefers tea.</em></li>
+    </ul>
+    <p>These show <strong>unexpected contrast</strong> between the two clauses.</p>
+
+    <h4>d) Condition</h4>
+    <ul>
+      <li><em>If you study hard, you will pass the exam.</em></li>
+      <li><em>You will fail the test unless you study.</em></li>
+      <li><em>As long as you follow the rules, you will be safe.</em></li>
+    </ul>
+    <p>These show something that must happen first.</p>
+
+    <h3>4.2 Position in the Sentence</h3>
+    <p>A subordinating conjunction can come at the <strong>beginning</strong> or in the <strong>middle</strong> of the sentence.</p>
+
+    <p><strong>Subordinate clause first (use a comma):</strong></p>
+    <ul>
+      <li><em>Although it was raining, we played basketball.</em></li>
+      <li><em>Because she was tired, she went to bed early.</em></li>
+    </ul>
+
+    <p><strong>Main clause first (usually no comma):</strong></p>
+    <ul>
+      <li><em>We played basketball although it was raining.</em></li>
+      <li><em>She went to bed early because she was tired.</em></li>
+    </ul>
+
+    <p>
+      <strong>Rule:</strong> If the sentence <strong>starts</strong> with the subordinate clause → <strong>add a comma</strong> after it.<br />
+      If the main clause comes first → <strong>no comma</strong> in most cases.
+    </p>
+
+    <h3>4.3 Common Mistake: Double Conjunctions</h3>
+    <p><strong>❌ Wrong:</strong> <em>Because he was sick, so he stayed home.</em></p>
+
+    <p><strong>✅ Correct (choose only one):</strong></p>
+    <ul>
+      <li><em>Because he was sick, he stayed home.</em></li>
+      <li><em>He was sick, so he stayed home.</em></li>
+    </ul>
+    <p>Never use <strong>because</strong> and <strong>so</strong> together in the same sentence as connectors.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>5. Correlative Conjunctions</h2>
+    <p>These are <strong>pairs of conjunctions</strong> that work together.</p>
+
+    <div class="highlight-box">
+      <p><strong>Common pairs:</strong></p>
+      <ul>
+        <li><strong>both … and</strong></li>
+        <li><strong>either … or</strong></li>
+        <li><strong>neither … nor</strong></li>
+        <li><strong>not only … but also</strong></li>
+        <li><strong>whether … or</strong></li>
+      </ul>
+    </div>
+
+    <h3>5.1 Examples</h3>
+    <ul>
+      <li>
+        <strong>Both … and –</strong> two positive things<br />
+        <em>She is both intelligent and hardworking.</em>
+      </li>
+      <li>
+        <strong>Either … or –</strong> choice between two<br />
+        <em>You can either take the bus or walk.</em>
+      </li>
+      <li>
+        <strong>Neither … nor –</strong> two negative options<br />
+        <em>He is neither happy nor satisfied.</em>
+      </li>
+      <li>
+        <strong>Not only … but also –</strong> emphasizes two positive things<br />
+        <em>She is not only a good teacher but also a great mentor.</em>
+      </li>
+      <li>
+        <strong>Whether … or –</strong> two possibilities<br />
+        <em>Whether you pass or fail, you must learn from the experience.</em>
+      </li>
+    </ul>
+
+    <h3>5.2 Parallel Structure (Very Important for Exams)</h3>
+    <p>
+      With correlative conjunctions, the words after each part should be <strong>similar in form (parallel)</strong>.
+    </p>
+
+    <div class="highlight-box">
+      <p><strong>✅ Correct:</strong></p>
+      <p>
+        <em>She is not only smart but also kind.</em><br />
+        <small>(adjective + adjective)</small>
+      </p>
+
+      <p><strong>✅ Correct:</strong></p>
+      <p>
+        <em>He likes both singing and dancing.</em><br />
+        <small>(gerund + gerund)</small>
+      </p>
+
+      <p><strong>❌ Wrong:</strong></p>
+      <p>
+        <em>He likes both to sing and dancing.</em><br />
+        <small>(to + verb vs. gerund – not parallel)</small>
+      </p>
+    </div>
+
+    <p><strong>Tip:</strong> For the CSE, always check that the words after each pair match in form.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>6. Common Errors with Conjunctions</h2>
+
+    <h3>1. Using two conjunctions together incorrectly</h3>
+    <p><strong>❌</strong> <em>Because he was late, so he missed the bus.</em></p>
+    <p><strong>✅</strong> <em>Because he was late, he missed the bus.</em></p>
+    <p><strong>✅</strong> <em>He was late, so he missed the bus.</em></p>
+
+    <h3>2. Missing commas with FANBOYS when joining two clauses</h3>
+    <p><strong>❌</strong> <em>She was tired so she went home.</em></p>
+    <p><strong>✅</strong> <em>She was tired, so she went home.</em></p>
+
+    <h3>3. Wrong pair in correlative conjunctions</h3>
+    <p><strong>❌</strong> <em>Either he will go, nor she will go.</em></p>
+    <p><strong>✅</strong> <em>Either he will go, or she will go.</em></p>
+
+    <h3>4. Not parallel structure</h3>
+    <p>
+      <strong>❌</strong> <em>She is not only beautiful but also a good singer.</em><br />
+      <small>(still okay, but better if both are adjectives or both are noun phrases in the same style)</small>
+    </p>
+    <p><strong>✅</strong> <em>She is not only beautiful but also talented.</em></p>
+  </section>
+  `
+},
+
+
+
+
+  
   // ==========================================
   // PREPOSITIONS – STUDY NOTES (for Study Mode)
   // ==========================================
