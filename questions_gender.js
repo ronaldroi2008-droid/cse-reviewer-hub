@@ -244,7 +244,7 @@ const GENDER_QUESTIONS = {
     { question: "What is the masculine of 'Amazon' (Warrior woman)?", choices: ["No specific equivalent", "Warrior", "Soldier", "Spartan"], correctIndex: 0, explanation: 'Amazon specifically refers to a female warrior tribe.' },
     { question: "The term 'Hero' was originally masculine. The feminine is 'Heroine'. Today 'Hero' is:", choices: ["Common gender", "Still masculine only", "Neuter", "Archaic"], correctIndex: 0, explanation: 'Women are often called Heroes now.' },
     { question: "What is the feminine of 'Tsar'?", choices: ["Tsarina", "Tsara", "Queen", "Duchess"], correctIndex: 0, explanation: 'Russian Empress.' },
-    { question: "Final Question: 'Justice' is often personified as a woman holding scales. Why?", choices: ["Based on Roman Goddess Justitia", "Based on Greek God Zeus", "Arbitrary choice", "Because women are judges"], correctIndex: 0, explanation: 'Historical mythological personification.' }
+    { question: "Justice' is often personified as a woman holding scales. Why?", choices: ["Based on Roman Goddess Justitia", "Based on Greek God Zeus", "Arbitrary choice", "Because women are judges"], correctIndex: 0, explanation: 'Historical mythological personification.' }
   ]
 };
   
