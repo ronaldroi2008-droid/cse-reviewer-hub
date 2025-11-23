@@ -246,3 +246,4 @@ const INTERJECTION_QUESTIONS = {
     { question: "The interjection 'Eureka' is associated with which scientist?", choices: ["Archimedes", "Einstein", "Newton", "Tesla"], correctIndex: 0, explanation: "Legend says Archimedes shouted 'Eureka!' (I have found it!) after discovering the principle of water displacement in his bath." },
     { question: "The interjection 'Checkmate' comes from:", choices: ["Chess", "Poker", "Tennis", "Football"], correctIndex: 0, explanation: "It is the shout of victory in Chess. It comes from the Persian phrase 'Shah Mat', meaning 'The King is dead/helpless'." }
   ]
+};
