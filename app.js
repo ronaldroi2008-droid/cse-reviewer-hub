@@ -1411,7 +1411,7 @@ const LESSONS = {
         <li>Does the sentence sound <strong>clear and logical</strong> when read aloud?</li>
       </ul>
     </section>
-  `
+ ]
 },
 
 
