@@ -685,7 +685,7 @@ const LESSONS = {
           <li>Check if you are comparing two or more things: articles often appear with <strong>comparatives</strong> and <strong>superlatives</strong>.</li>
         </ul>
       </section>
-     ]`
+     
   },
 
       subject_verb_agreement: {
@@ -1243,7 +1243,7 @@ const LESSONS = {
       <li>Are the connectors and modifiers in the right place?</li>
       <li>Is the structure parallel and clear?</li>
     </ul>
-  ` ]
+  ` 
 },
 
   sentence_structure: {
@@ -1568,7 +1568,7 @@ const LESSONS = {
       "Avoid mixing present and past in one sentence unless there is a really clear reason. The Civil Service Exam loves to test tense consistency errors.",
       "Memorize common irregular verb forms (go–went–gone, see–saw–seen, take–took–taken, write–wrote–written) because they appear in many tense questions.",
       "In conditionals, beware of using will after if. Use: If + present (If it rains), will + base verb (we will stay). For unreal situations, use If + past (If I were rich), would + base (I would travel)."
-    
+       ]
   },
 
  interjections: {
@@ -2277,7 +2277,7 @@ const LESSONS = {
       "Avoid double comparisons such as more better, more superior, and most highest. Use either -er/-est or more/most, not both.",
       "Memorize common irregular forms: good–better–best; bad–worse–worst; little–less–least; many/much–more–most.",
       "When you see several adjectives before a noun in a test question, check if the order follows the usual pattern: opinion, size, age, color, origin, material, purpose."
-    
+    ] 
   },
 
   // ==========================================
