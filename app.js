@@ -685,7 +685,7 @@ const LESSONS = {
           <li>Check if you are comparing two or more things: articles often appear with <strong>comparatives</strong> and <strong>superlatives</strong>.</li>
         </ul>
       </section>
-    `
+     ]`
   },
 
       subject_verb_agreement: {
@@ -1243,7 +1243,7 @@ const LESSONS = {
       <li>Are the connectors and modifiers in the right place?</li>
       <li>Is the structure parallel and clear?</li>
     </ul>
-  `
+  ` ]
 },
 
   sentence_structure: {
@@ -1868,7 +1868,7 @@ const LESSONS = {
       In exam questions, sometimes they place an interjection at the beginning to distract you.
     </p>
   </section>
-  `
+  ` ]
 },
 
 
