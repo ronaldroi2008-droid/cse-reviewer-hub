@@ -1568,7 +1568,7 @@ const LESSONS = {
       "Avoid mixing present and past in one sentence unless there is a really clear reason. The Civil Service Exam loves to test tense consistency errors.",
       "Memorize common irregular verb forms (go–went–gone, see–saw–seen, take–took–taken, write–wrote–written) because they appear in many tense questions.",
       "In conditionals, beware of using will after if. Use: If + present (If it rains), will + base verb (we will stay). For unreal situations, use If + past (If I were rich), would + base (I would travel)."
-    ]
+    
   },
 
  interjections: {
@@ -1868,7 +1868,7 @@ const LESSONS = {
       In exam questions, sometimes they place an interjection at the beginning to distract you.
     </p>
   </section>
-  ` ]
+  ` 
 },
 
 
@@ -2080,7 +2080,7 @@ const LESSONS = {
       "If you are unsure about using his or her, make the noun plural and use they/their instead. For example: Each student must submit his or her paper → Students must submit their papers.",
       "Watch out for double plurals or invented plurals such as childrens, peoples (when you mean people), and datas. In most contexts, child → children, person → people, data is already plural.",
       "In exam questions about subject–verb agreement, be careful with sentences that start with phrases like There is/There are or that use collective nouns. Always match the verb with the real, closest subject."
-    ]
+    
   },
 
   gender: {
@@ -2277,7 +2277,7 @@ const LESSONS = {
       "Avoid double comparisons such as more better, more superior, and most highest. Use either -er/-est or more/most, not both.",
       "Memorize common irregular forms: good–better–best; bad–worse–worst; little–less–least; many/much–more–most.",
       "When you see several adjectives before a noun in a test question, check if the order follows the usual pattern: opinion, size, age, color, origin, material, purpose."
-    ]
+    
   },
 
   // ==========================================
