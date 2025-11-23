@@ -35,6 +35,7 @@ const TOPIC_MAX_QUESTIONS = {
   verbs: 50,
   adjectives: 50,
   conjunctions: 50,
+  interjections: 50,
   prepositions: 50
 };
 
@@ -2229,6 +2230,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return PREPOSITION_QUESTIONS;
        case "conjunctions":
         return CONJUNCTION_QUESTIONS; 
+       case "interjections":
+        return INTERJECTION_QUESTIONS; 
       default:
         return null;
     }
