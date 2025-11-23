@@ -43,8 +43,8 @@ const TOPIC_MAX_QUESTIONS = {
 // ==========================================
 const LESSONS = {
   nouns: {
-    title: "Nouns – The Ultimate Reviewer (Deep Dive)",
-    level: "Verbal Ability · Nouns · CSE Grammar",
+    title: "Nouns – Names of People, Places, Things, and Ideas",
+    
     fullHtml: `
   <section class="lesson-section">
     <h2>1. The Anatomy of a Noun</h2>
@@ -380,7 +380,7 @@ const LESSONS = {
 
   tenses: {
     title: "Tenses – Time, Aspect, and Consistent Use",
-    level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
+    
     intro:
       "Tense tells us WHEN an action happens (past, present, future), while aspect tells us HOW the action happens (simple, continuous/progressive, perfect, perfect continuous). In the Civil Service Exam, tense questions usually test correct form (has gone vs had gone), tense consistency in a sentence or paragraph, and the difference between similar tenses like past simple vs present perfect, or past perfect vs past simple.",
     keyPoints: [
@@ -534,8 +534,8 @@ const LESSONS = {
   },
 
   pronouns: {
-    title: "Pronouns – The Complete Master Guide",
-    level: "Verbal Ability · Pronouns · CSE Grammar",
+    title: "Pronouns – Words that Replace Nouns",
+    
     intro: `
       A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific “formal grammar” rules that often differ from casual speech.
       
@@ -945,7 +945,7 @@ const LESSONS = {
   // ==========================================
   adverbs: {
     title: "Adverbs – How, When, Where, and How Often",
-    level: "Verbal Ability · Adverbs · CSE Grammar",
+    
     intro:
       "An adverb is a modifier. It adds detail to a sentence by answering how, when, where, how often, or to what degree something happens. In the Civil Service Exam, adverbs are tested through usage, position, comparison, and common traps with adjectives.",
     fullHtml: `
@@ -1535,8 +1535,8 @@ const LESSONS = {
   // PREPOSITIONS – STUDY NOTES (for Study Mode)
   // ==========================================
   prepositions: {
-    title: "Prepositions – The Complete Master Guide",
-    level: "Verbal Ability · Prepositions · CSE Grammar",
+    title: "Prepositions – Words that Show Time, Place, and Direction",
+    
     fullHtml: `
       <section class="lesson-section">
         <h2>1. What is a preposition?</h2>
