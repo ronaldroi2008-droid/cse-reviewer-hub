@@ -1,4 +1,4 @@
-const subject_verb_agreement_QUESTIONS = {
+const SUBJECT_VERB_AGREEMENT_QUESTIONS = {
   beginner: [
     // 1-10: Basic Singular Subjects (He/She/It/Names)
     { question: "She ____ to the store every day.", choices: ["walk", "walks", "walking", "walked"], correctIndex: 1, explanation: "The subject 'She' is singular (one person). In the present tense, singular subjects take an 's' on the verb. She walks." },
