@@ -38,6 +38,7 @@ const TOPIC_MAX_QUESTIONS = {
   interjections: 50,
   articles: 50,
   subject_verb_agreement: 50,
+  sentence_construction: 50,
   prepositions: 50
 };
 
@@ -806,7 +807,446 @@ const LESSONS = {
     ]
   },
 
-  
+// Sentence Construction – Study Mode Lesson
+// Add this to your lessons data (e.g., VERBAL_LESSONS["sentence_construction"])
+
+const SENTENCE_CONSTRUCTION_LESSON = {
+  id: "sentence_construction",
+  title: "Sentence Construction",
+  meta: "Complete thought + correct grammar + clear structure",
+  content: `
+    <h2>Sentence Construction</h2>
+    <p>
+      In English, a <strong>sentence</strong> must express a complete thought and follow correct grammar.
+      At minimum, it needs a <strong>subject</strong> and a <strong>predicate</strong>.
+    </p>
+
+    <hr />
+
+    <h3>1. What is a sentence?</h3>
+    <p>
+      A sentence is a group of words that:
+    </p>
+    <ul>
+      <li>Has a <strong>subject</strong> (who or what the sentence is about), and</li>
+      <li>Has a <strong>predicate</strong> (what the subject does, what happens, or what the subject is), and</li>
+      <li>Expresses a <strong>complete thought</strong>.</li>
+    </ul>
+
+    <p><strong>Example of a correct sentence:</strong></p>
+    <p>
+      <em>She is studying for the exam.</em><br />
+      Subject: <strong>She</strong><br />
+      Predicate: <strong>is studying for the exam</strong><br />
+      → The idea is complete.
+    </p>
+
+    <p><strong>Sentence fragment (incorrect):</strong></p>
+    <p>
+      <em>Because she is studying.</em><br />
+      This is <strong>not</strong> a complete sentence. The word <em>because</em> makes it a dependent clause.
+      It needs a main clause to complete the idea.
+    </p>
+
+    <p><strong>Run-on sentence (incorrect):</strong></p>
+    <p>
+      <em>She is studying she wants to pass.</em><br />
+      Two complete ideas are pushed together without proper punctuation or connector.
+    </p>
+
+    <p><strong>Corrected versions:</strong></p>
+    <ul>
+      <li><em>She is studying because she wants to pass.</em></li>
+      <li><em>She is studying. She wants to pass.</em></li>
+    </ul>
+
+    <hr />
+
+    <h3>2. Main Parts of a Sentence</h3>
+
+    <h4>a. Subject</h4>
+    <p>
+      The <strong>subject</strong> tells who or what the sentence is about.
+    </p>
+    <ul>
+      <li>Noun: <em>The teacher, my friends, the exam</em></li>
+      <li>Pronoun: <em>I, you, he, she, they, it</em></li>
+      <li>Phrase or clause: <em>Reading books</em> helps me relax.</li>
+    </ul>
+    <p>
+      <em>The students are tired.</em><br />
+      Subject: <strong>The students</strong>
+    </p>
+
+    <h4>b. Predicate</h4>
+    <p>
+      The <strong>predicate</strong> tells what the subject does, what happens, or what the subject is.
+      It always contains a verb.
+    </p>
+    <p>
+      <em>The students are tired after the long exam.</em><br />
+      Predicate: <strong>are tired after the long exam</strong>
+    </p>
+
+    <h4>c. Object</h4>
+    <ul>
+      <li>
+        <strong>Direct object</strong> – receives the action of the verb.<br />
+        <em>She wrote a letter.</em><br />
+        Direct object: <strong>a letter</strong>
+      </li>
+      <li>
+        <strong>Indirect object</strong> – the person who receives the direct object.<br />
+        <em>She wrote her friend a letter.</em><br />
+        Indirect object: <strong>her friend</strong><br />
+        Direct object: <strong>a letter</strong>
+      </li>
+    </ul>
+
+    <h4>d. Complement</h4>
+    <p>
+      A <strong>complement</strong> gives extra information about the subject or the object.
+    </p>
+    <ul>
+      <li><em>She is happy.</em> → <strong>happy</strong> (subject complement)</li>
+      <li><em>They elected him president.</em> → <strong>president</strong> (object complement)</li>
+    </ul>
+
+    <h4>e. Modifiers</h4>
+    <p>
+      <strong>Modifiers</strong> are words, phrases, or clauses that describe other words.
+      They are often adjectives or adverbs.
+    </p>
+    <p>
+      <em>The very tired student walked slowly to the room.</em><br />
+      <strong>very</strong> modifies <strong>tired</strong><br />
+      <strong>slowly</strong> modifies <strong>walked</strong>
+    </p>
+
+    <p><strong>Key idea:</strong> Clear subject + correct verb + complete thought = good sentence construction.</p>
+
+    <hr />
+
+    <h3>3. Basic Sentence Patterns</h3>
+    <p>
+      Common sentence patterns that are very useful in tests like the CSE:
+    </p>
+    <ul>
+      <li>
+        <strong>S – V</strong><br />
+        <em>The children laughed.</em>
+      </li>
+      <li>
+        <strong>S – V – O</strong><br />
+        <em>She answered the question.</em>
+      </li>
+      <li>
+        <strong>S – LV – C</strong> (Linking verb + complement)<br />
+        <em>The exam was difficult.</em>
+      </li>
+      <li>
+        <strong>S – V – IO – DO</strong><br />
+        <em>The teacher gave the students homework.</em>
+      </li>
+      <li>
+        <strong>S – V – O – C</strong><br />
+        <em>They elected him president.</em>
+      </li>
+    </ul>
+    <p>
+      In sentence-construction questions, choose the option that follows a clear pattern and has no missing part.
+    </p>
+
+    <hr />
+
+    <h3>4. Types of Sentences by Purpose</h3>
+    <ul>
+      <li>
+        <strong>Declarative</strong> – makes a statement.<br />
+        <em>The test is on Sunday.</em>
+      </li>
+      <li>
+        <strong>Interrogative</strong> – asks a question.<br />
+        <em>When is the test?</em>
+      </li>
+      <li>
+        <strong>Imperative</strong> – gives a command or request.<br />
+        <em>Please answer all the items carefully.</em>
+      </li>
+      <li>
+        <strong>Exclamatory</strong> – shows strong feeling.<br />
+        <em>What a difficult exam that was!</em>
+      </li>
+    </ul>
+    <p>
+      In many exams, most sentences are declarative and interrogative.
+    </p>
+
+    <hr />
+
+    <h3>5. Simple, Compound, Complex, and Compound-Complex Sentences</h3>
+
+    <h4>a. Simple sentence</h4>
+    <p>
+      A <strong>simple sentence</strong> has one independent clause.
+    </p>
+    <p>
+      <em>The exam is difficult.</em><br />
+      <em>Many students are nervous.</em>
+    </p>
+
+    <h4>b. Compound sentence</h4>
+    <p>
+      A <strong>compound sentence</strong> has two or more independent clauses.
+      They are joined by:
+    </p>
+    <ul>
+      <li>A coordinating conjunction (FANBOYS: <strong>for, and, nor, but, or, yet, so</strong>), or</li>
+      <li>A semicolon (<strong>;</strong>).</li>
+    </ul>
+    <p>
+      <em>The exam is difficult, but many students are prepared.</em><br />
+      <em>The exam is difficult; many students are prepared.</em>
+    </p>
+
+    <h4>c. Complex sentence</h4>
+    <p>
+      A <strong>complex sentence</strong> has one independent clause and at least one dependent (subordinate) clause.
+      It uses subordinating conjunctions such as:
+      <strong>because, although, if, when, while, since, unless</strong>, etc.
+    </p>
+    <p>
+      <em>Because the exam is difficult, many students are studying hard.</em><br />
+      <em>Many students are studying hard because the exam is difficult.</em>
+    </p>
+
+    <h4>d. Compound-complex sentence</h4>
+    <p>
+      A <strong>compound-complex sentence</strong> has two or more independent clauses and at least one dependent clause.
+    </p>
+    <p>
+      <em>Many students are studying hard because the exam is difficult, and they hope they will pass.</em>
+    </p>
+    <p>
+      In sentence-construction items, you are often asked: <strong>"Which sentence is best constructed?"</strong>
+      You must look for correct use of connectors and correct combination of clauses.
+    </p>
+
+    <hr />
+
+    <h3>6. Word Order in English</h3>
+    <p>
+      The usual word order in English is:
+    </p>
+    <p>
+      <strong>Subject – Verb – Object – (Place) – (Time)</strong>
+    </p>
+    <p>
+      <em>She wrote a letter at home yesterday.</em><br />
+      S: <strong>She</strong><br />
+      V: <strong>wrote</strong><br />
+      O: <strong>a letter</strong><br />
+      Place: <strong>at home</strong><br />
+      Time: <strong>yesterday</strong>
+    </p>
+
+    <p><strong>Common problem:</strong> Adverbs or phrases in the wrong position make the sentence sound awkward or confusing.</p>
+
+    <p><strong>Good:</strong> <em>He carefully explained the lesson to the class yesterday.</em></p>
+    <p><strong>Awkward:</strong> <em>He explained to the class yesterday carefully the lesson.</em></p>
+
+    <hr />
+
+    <h3>7. Agreement and Consistency</h3>
+    <p>
+      In sentence construction, you must check not only the word order but also:
+    </p>
+    <ul>
+      <li><strong>Subject–verb agreement</strong></li>
+      <li><strong>Verb tense consistency</strong></li>
+      <li><strong>Pronoun consistency</strong></li>
+    </ul>
+
+    <h4>a. Subject–Verb Agreement (SVA)</h4>
+    <p>
+      <strong>Singular subject → singular verb</strong><br />
+      <strong>Plural subject → plural verb</strong>
+    </p>
+    <p>
+      <em>The teacher explains the lesson.</em> (singular)<br />
+      <em>The teachers explain the lesson.</em> (plural)
+    </p>
+
+    <h4>b. Tense consistency</h4>
+    <p>
+      Inside one sentence, keep the tense consistent unless there is a clear reason to change the time.
+    </p>
+    <p><strong>Inconsistent (unclear):</strong><br />
+      <em>She studies every day and watched a movie last night.</em>
+    </p>
+    <p><strong>Better options:</strong></p>
+    <ul>
+      <li><em>She studies every day and watches movies on weekends.</em> (present)</li>
+      <li><em>She studied all day and watched a movie at night.</em> (past)</li>
+    </ul>
+
+    <h4>c. Pronoun consistency</h4>
+    <p>
+      Do not mix <em>he, she, they, you</em> without a reason.
+    </p>
+    <p><strong>Incorrect:</strong> <em>A student must bring their pencil if you want to pass.</em></p>
+    <p><strong>Better:</strong></p>
+    <ul>
+      <li><em>A student must bring his or her pencil if he or she wants to pass.</em></li>
+      <li><em>Students must bring their pencils if they want to pass.</em></li>
+    </ul>
+
+    <hr />
+
+    <h3>8. Parallelism (Parallel Structure)</h3>
+    <p>
+      <strong>Parallel structure</strong> means using the same grammatical form for items in a list or for ideas joined by
+      <em>and, or, not only... but also</em>, etc.
+    </p>
+
+    <p><strong>Not parallel:</strong> <em>She likes reading, to swim, and jogging.</em></p>
+    <p><strong>Parallel:</strong></p>
+    <ul>
+      <li><em>She likes reading, swimming, and jogging.</em></li>
+      <li><em>She likes to read, to swim, and to jog.</em></li>
+    </ul>
+
+    <p><strong>Not parallel:</strong> <em>He wants to succeed and having a good life.</em></p>
+    <p><strong>Parallel:</strong> <em>He wants to succeed and to have a good life.</em></p>
+
+    <p>
+      In many tests, at least one option is wrong because of faulty parallelism.
+    </p>
+
+    <hr />
+
+    <h3>9. Connectors: Are They Used Correctly?</h3>
+    <p>
+      Sentence-construction questions often test the correct use of <strong>connectors</strong>.
+    </p>
+
+    <h4>a. Coordinating conjunctions (FANBOYS)</h4>
+    <p>
+      These join ideas of equal importance (two independent clauses):
+      <strong>for, and, nor, but, or, yet, so</strong>.
+    </p>
+    <p>
+      <em>The exam was difficult, but she passed.</em>
+    </p>
+
+    <h4>b. Subordinating conjunctions</h4>
+    <p>
+      These introduce a dependent clause: <strong>because, although, while, if, when, since, unless</strong>, etc.
+    </p>
+    <p>
+      <em>She passed because she studied hard.</em><br />
+      <em>Although the exam was difficult, she passed.</em>
+    </p>
+
+    <h4>c. Conjunctive adverbs</h4>
+    <p>
+      These usually appear with a semicolon and a comma:
+      <strong>however, therefore, moreover, consequently, meanwhile</strong>, etc.
+    </p>
+    <p>
+      <em>The exam was difficult; however, she passed.</em>
+    </p>
+
+    <p>
+      Misused connectors are a very common reason for wrong answers.
+    </p>
+
+    <hr />
+
+    <h3>10. Common Sentence Construction Errors</h3>
+    <p>
+      These are the errors that exam questions often target:
+    </p>
+
+    <h4>1) Sentence fragments</h4>
+    <p>
+      A fragment is missing a main clause or complete thought.
+    </p>
+    <p><strong>Fragment:</strong> <em>Because she studied very hard.</em></p>
+    <p><strong>Complete:</strong> <em>She passed the exam because she studied very hard.</em></p>
+
+    <h4>2) Run-on sentences and comma splices</h4>
+    <p>
+      A <strong>run-on sentence</strong> joins two sentences without proper punctuation or connector.<br />
+      A <strong>comma splice</strong> joins two sentences using only a comma.
+    </p>
+    <p>
+      <strong>Run-on:</strong> <em>She studied hard she passed the exam.</em><br />
+      <strong>Comma splice:</strong> <em>She studied hard, she passed the exam.</em>
+    </p>
+    <p><strong>Correct ways to fix:</strong></p>
+    <ul>
+      <li>Use a period: <em>She studied hard. She passed the exam.</em></li>
+      <li>Use a conjunction: <em>She studied hard, so she passed the exam.</em></li>
+      <li>Use a semicolon: <em>She studied hard; she passed the exam.</em></li>
+    </ul>
+
+    <h4>3) Misplaced modifiers</h4>
+    <p>
+      A <strong>misplaced modifier</strong> is too far from the word it describes, making the sentence confusing or funny.
+    </p>
+    <p>
+      <strong>Incorrect:</strong> <em>She almost failed every subject she took.</em><br />
+      (This suggests she nearly failed all subjects, but the intended meaning may be different.)
+    </p>
+    <p>
+      <strong>Better:</strong> <em>She failed almost every subject she took.</em>
+    </p>
+    <p>
+      <strong>Incorrect:</strong> <em>Walking down the street, the house looked old.</em><br />
+      (It sounds like the house is walking.)
+    </p>
+    <p>
+      <strong>Better:</strong> <em>Walking down the street, I saw an old house.</em>
+    </p>
+
+    <h4>4) Vague or ambiguous pronoun reference</h4>
+    <p>
+      A pronoun must clearly refer to one specific noun.
+    </p>
+    <p>
+      <strong>Vague:</strong> <em>When Maria met Ana, she was nervous.</em><br />
+      (Who was nervous?)
+    </p>
+    <p><strong>Clear versions:</strong></p>
+    <ul>
+      <li><em>When Maria met Ana, Maria was nervous.</em></li>
+      <li><em>When Maria met Ana, both of them were nervous.</em></li>
+    </ul>
+
+    <h4>5) Faulty parallelism</h4>
+    <p>
+      When ideas in a list do not follow the same grammatical form, the structure is not parallel.
+    </p>
+    <p>
+      <strong>Not parallel:</strong> <em>The job requires patience, honesty, and working hard.</em><br />
+      <strong>Parallel:</strong> <em>The job requires patience, honesty, and hard work.</em>
+    </p>
+
+    <hr />
+
+    <p><strong>Exam tip:</strong> In sentence-construction questions, always check:</p>
+    <ul>
+      <li>Does it express a complete thought?</li>
+      <li>Is the subject–verb agreement correct?</li>
+      <li>Is the tense consistent?</li>
+      <li>Are the connectors and modifiers in the right place?</li>
+      <li>Is the structure parallel and clear?</li>
+    </ul>
+  `
+};
+
+
 
   tenses: {
     title: "Tenses – Time, Aspect, and Consistent Use",
@@ -2664,7 +3104,9 @@ document.addEventListener("DOMContentLoaded", () => {
        case "articles":
         return ARTICLE_QUESTIONS; 
        case "subject_verb_agreement":
-        return SUBJECT_VERB_AGREEMENT_QUESTIONS;  
+        return SUBJECT_VERB_AGREEMENT_QUESTIONS; 
+        case "sentence_construction":
+        return SENTENCE_CONSTRUCTION_QUESTIONS;
       default:
         return null;
     }
