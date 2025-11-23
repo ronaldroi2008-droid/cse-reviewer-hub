@@ -809,9 +809,9 @@ const LESSONS = {
 
 
  sentence_construction: {
-    title: "Sentence Construction",
-    level: "Verbal Ability · Grammar · Sentence Construction",
-    fullHtml: `
+  title: "Sentence Construction",
+  level: "Verbal Ability · Grammar · Sentence Construction",
+  fullHtml: `
       <h2>Sentence Construction</h2>
     <p>
       In English, a <strong>sentence</strong> must express a complete thought and follow correct grammar.
@@ -1240,7 +1240,7 @@ const LESSONS = {
       <li>Are the connectors and modifiers in the right place?</li>
       <li>Is the structure parallel and clear?</li>
     </ul>
-  ` 
+  `
 },
 
   sentence_structure: {
