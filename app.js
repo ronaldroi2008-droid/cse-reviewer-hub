@@ -1248,7 +1248,7 @@ const LESSONS = {
 
   sentence_structure: {
   title: "Sentence Structure",
-  html: `
+  fullHtml: ` `
     <section class="lesson-block">
       <h2>1. What is Sentence Structure?</h2>
       <p>
