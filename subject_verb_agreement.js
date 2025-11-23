@@ -181,7 +181,7 @@ const SUBJECT_VERB_AGREEMENT_QUESTIONS = {
     { question: "'The Avengers' ____ an action movie.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Title = Singular. Is." },
     { question: "Eating vegetables ____ healthy.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Subject is 'Eating'. Is." },
     { question: "Waiting for buses ____ annoying.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Subject is 'Waiting'. Is." },
-    { question: "'Tales of Two Cities' ____ a classic.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Title = Singular. Is." },
+    { question: "'A Tale of Two Cities' ____ a classic.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Titles of books are treated as singular, so we say: 'A Tale of Two Cities is a classic.'"},
     { question: "Listening to music ____ me relax.", choices: ["help", "helps", "helping", "helped"], correctIndex: 1, explanation: "Subject is 'Listening'. Helps." }
   ],
 
@@ -214,7 +214,7 @@ const SUBJECT_VERB_AGREEMENT_QUESTIONS = {
     { question: "A number of students ____ absent.", choices: ["is", "are", "was", "be"], correctIndex: 1, explanation: "Rule: 'A number of' = Many (Plural). Are." },
     { question: "The number of students ____ increasing.", choices: ["is", "are", "were", "be"], correctIndex: 0, explanation: "Rule: 'The number of' = The specific count (Singular). Is." },
     { question: "The rich ____ not always happy.", choices: ["is", "are", "was", "be"], correctIndex: 1, explanation: "When using 'The + Adjective' to mean a group of people, it is plural. The rich (people) are." },
-    { question: "The poor ____ need help.", choices: ["is", "are", "was", "be"], correctIndex: 1, explanation: "The poor (people) are." },
+    { question: "The poor ____ in need of help.", choices: ["is", "are", "was", "be"], correctIndex: 1, explanation: "The phrase 'the poor' refers to poor people (plural), so we say: 'The poor are in need of help.'"},
     { question: "The injured ____ taken to the hospital.", choices: ["was", "were", "is", "am"], correctIndex: 1, explanation: "The injured (people) were." },
     { question: "The blind ____ Braille.", choices: ["use", "uses", "using", "used"], correctIndex: 0, explanation: "The blind (people) use." },
     { question: "A number of cars ____ parked outside.", choices: ["is", "are", "was", "be"], correctIndex: 1, explanation: "'A number of' = Plural. Are." },
