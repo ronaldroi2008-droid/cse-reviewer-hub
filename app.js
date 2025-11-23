@@ -1243,7 +1243,7 @@ const LESSONS = {
       <li>Is the structure parallel and clear?</li>
     </ul>
   `
-};
+},
 
 
 
