@@ -38,7 +38,6 @@ const TOPIC_MAX_QUESTIONS = {
   prepositions: 50
 };
 
-
 // ==========================================
 // 2. LESSONS DATA
 // ==========================================
@@ -538,7 +537,7 @@ const LESSONS = {
     title: "Pronouns – Words that Replace Nouns",
     
     intro: `
-      A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific “formal grammar” rules that often differ from casual speech.
+      A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific "formal grammar" rules that often differ from casual speech.
       
       This guide covers the three pillars of Pronoun Proficiency:
       1. Case (The I/Me/My rule)
@@ -1096,7 +1095,7 @@ const LESSONS = {
         <tr>
           <td><strong>Fast</strong></td>
           <td>He is a <strong>fast</strong> runner.</td>
-          <td>He runs <strong>fast</strong>. (Not fastly)</td>
+          <td>He runs <strong>fast</strong>.</td>
         </tr>
         <tr>
           <td><strong>Hard</strong></td>
@@ -1189,7 +1188,7 @@ const LESSONS = {
     </ul>
     <ul>
       <li><strong>Normal:</strong> <em>He <strong>rarely</strong> goes to church.</em></li>
-      <li><strong>Inverted:</strong> <em><strong>Rarely</strong> does he go to church.</em> (Note the addition of "does")</li>
+      <li><strong>Inverted:</strong> <em><strong>Rarely</strong> does he go to church.</em></li>
     </ul>
   </section>
 
@@ -1252,7 +1251,7 @@ const LESSONS = {
       <li><strong>Subordinating conjunctions</strong> – join a main clause and a dependent clause</li>
       <li><strong>Correlative conjunctions</strong> – pairs of conjunctions that work together</li>
     </ul>
-    <p>We’ll go through each one with rules and examples.</p>
+    <p>We'll go through each one with rules and examples.</p>
   </section>
 
   <section class="lesson-section">
@@ -1266,7 +1265,7 @@ const LESSONS = {
         <li><strong>N</strong> – nor (negative addition)</li>
         <li><strong>B</strong> – but (contrast)</li>
         <li><strong>O</strong> – or (choice)</li>
-        <li><strong>Y</strong> – yet (contrast, similar to “but”)</li>
+        <li><strong>Y</strong> – yet (contrast, similar to "but")</li>
         <li><strong>S</strong> – so (result)</li>
       </ul>
     </div>
@@ -1296,14 +1295,14 @@ const LESSONS = {
       <li><em>We can study now or we can rest first.</em></li>
     </ul>
 
-    <h4>d) NOR – negative choice (usually after “neither” or “not”)</h4>
+    <h4>d) NOR – negative choice (usually after "neither" or "not")</h4>
     <ul>
-      <li><em>She doesn’t like coffee, nor does she like tea.</em></li>
+      <li><em>She doesn't like coffee, nor does she like tea.</em></li>
       <li><em>He is neither smart nor hardworking.</em></li>
     </ul>
     <p><strong>Note:</strong> <strong>Nor</strong> is not common in casual speech, but it appears in exams.</p>
 
-    <h4>e) FOR – gives a reason (similar to “because”)</h4>
+    <h4>e) FOR – gives a reason (similar to "because")</h4>
     <ul>
       <li><em>She stayed at home, for she was feeling sick.</em></li>
     </ul>
@@ -1528,10 +1527,6 @@ const LESSONS = {
   `
 },
 
-
-
-
-  
   // ==========================================
   // PREPOSITIONS – STUDY NOTES (for Study Mode)
   // ==========================================
@@ -1981,16 +1976,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateStats() {
-    if (!quizState) return;
+    if (!quizState || !quizState.questions) return;
+
+    const total = quizState.questions.length;
+    const answered = quizState.correct + quizState.incorrect;
+    const left = total - answered;
+
     quizOutputEl.innerHTML = `
       <div class="stats-panel">
         <div class="stat-item"><span>Correct</span><span>${quizState.correct}</span></div>
-        <div class="stat-item"><span>Incorrect</span><span>${
-          quizState.incorrect
-        }</span></div>
-        <div class="stat-item"><span>Left</span><span>${
-          quizState.questions.length - quizState.currentIndex
-        }</span></div>
+        <div class="stat-item"><span>Incorrect</span><span>${quizState.incorrect}</span></div>
+        <div class="stat-item"><span>Left</span><span>${left}</span></div>
       </div>`;
   }
 
@@ -2057,7 +2053,6 @@ document.addEventListener("DOMContentLoaded", () => {
   startTimer();
 }
 
-
   function handleAnswer(idx) {
     if (!quizState || quizState.answered) return;
     quizState.answered = true;
@@ -2066,7 +2061,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const q = quizState.questions[quizState.currentIndex];
     const btns = quizChoicesEl.querySelectorAll("button");
 
-    if (idx === q.correctIndex) {
+    const isCorrect = idx === q.correctIndex;
+
+    if (isCorrect) {
       quizState.correct++;
       btns[idx].classList.add("correct");
     } else {
@@ -2075,6 +2072,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (btns[q.correctIndex]) {
         btns[q.correctIndex].classList.add("correct");
       }
+
+      // 🔴 Save sa Weak Points
+      if (!Array.isArray(quizState.wrongAnswers)) {
+        quizState.wrongAnswers = [];
+      }
+      quizState.wrongAnswers.push({
+        question: q.question,
+        yourAnswer: q.choices[idx],
+        correctAnswer: q.choices[q.correctIndex],
+        explanation: q.explanation
+      });
     }
 
     quizExplanationEl.textContent = q.explanation;
@@ -2099,6 +2107,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btns[q.correctIndex]) {
       btns[q.correctIndex].classList.add("correct");
     }
+
+    // 🔴 Time's up -> Weak Point din ito
+    if (!Array.isArray(quizState.wrongAnswers)) {
+      quizState.wrongAnswers = [];
+    }
+    quizState.wrongAnswers.push({
+      question: q.question,
+      yourAnswer: "(No answer – time's up)",
+      correctAnswer: q.choices[q.correctIndex],
+      explanation: q.explanation
+    });
 
     quizExplanationEl.textContent = "Time's up! " + q.explanation;
     quizExplanationEl.classList.remove("hide");
@@ -2146,7 +2165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       timeLeft: 0,
       timerId: null,
       answered: false,
-      weakNotes
+      weakNotes,
+      wrongAnswers: [] // 🔴 dito natin ilalagay ang weak points
     };
 
     showQuestion();
@@ -2156,32 +2176,113 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!quizState) return;
 
     if (quizState.currentIndex < quizState.questions.length - 1) {
+      // May next question pa
       quizState.currentIndex++;
       showQuestion();
     } else {
-      // Finish quiz
+      // ✅ Finish quiz + show full summary + weak points
+      stopCurrentTimer();
       updateProgressFill(100);
-      quizQuestionEl.innerHTML = `
-        <h3>Quiz Complete!</h3>
-        <p>Score: ${quizState.correct} / ${quizState.questions.length}</p>
+
+      const total = quizState.questions.length;
+      const correct = quizState.correct;
+      const incorrect = quizState.incorrect;
+      const answered = correct + incorrect;
+      const left = total - answered;
+      const wrongItems = Array.isArray(quizState.wrongAnswers)
+        ? quizState.wrongAnswers
+        : [];
+
+      let summaryHtml = `
+        <div class="result-card">
+          <h2>Quiz Complete!</h2>
+          <p class="result-score">Score: <strong>${correct} / ${total}</strong></p>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="stat-label">Correct</div>
+              <div class="stat-value success">${correct}</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Incorrect</div>
+              <div class="stat-value danger">${incorrect}</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Left</div>
+              <div class="stat-value">${left}</div>
+            </div>
+          </div>
+        </div>
       `;
+
+      if (wrongItems.length > 0) {
+        summaryHtml += `
+          <div class="weakpoints-card">
+            <h3>Weak Points (Review)</h3>
+            <p class="muted">These are the questions you missed. Study the correct answers and explanations.</p>
+            <ol class="weakpoints-list">
+              ${wrongItems
+                .map(
+                  (item, idx) => `
+                <li class="weakpoint-item">
+                  <p class="wp-question"><strong>Q${idx + 1}.</strong> ${
+                    item.question
+                  }</p>
+                  <p class="wp-your-answer">
+                    <span class="wp-label">Your answer:</span>
+                    <span class="wp-bad">${item.yourAnswer}</span>
+                  </p>
+                  <p class="wp-correct-answer">
+                    <span class="wp-label">Correct answer:</span>
+                    <span class="wp-good">${item.correctAnswer}</span>
+                  </p>
+                  <p class="wp-explanation">${item.explanation}</p>
+                </li>
+              `
+                )
+                .join("")}
+            </ol>
+          </div>
+        `;
+      } else {
+        summaryHtml += `
+          <div class="weakpoints-card">
+            <h3>No Weak Points 🎉</h3>
+            <p class="muted">
+              You answered everything correctly this round. Great job!
+            </p>
+          </div>
+        `;
+      }
+
+      // Ipakita ang summary + weakpoints sa main panel
+      quizQuestionEl.innerHTML = summaryHtml;
       quizChoicesEl.innerHTML = "";
       quizExplanationEl.classList.add("hide");
       quizNextBtn.classList.add("hide");
 
+      // Final sync ng mini stats panel
+      quizOutputEl.innerHTML = `
+        <div class="stats-panel">
+          <div class="stat-item"><span>Correct</span><span>${correct}</span></div>
+          <div class="stat-item"><span>Incorrect</span><span>${incorrect}</span></div>
+          <div class="stat-item"><span>Left</span><span>${left}</span></div>
+        </div>`;
+
+      // Restart button
       const restartBtn = document.createElement("button");
       restartBtn.className = "mode-btn active";
       restartBtn.style.marginTop = "20px";
       restartBtn.textContent = "Take Another Quiz";
       restartBtn.onclick = () => {
+        quizState = null;
         quizQuestionEl.textContent =
-          "Ready when you are. Set up your quiz on the left and press “Start practice quiz”.";
+          "Ready when you are. Set up your quiz on the left and press \"Start practice quiz\".";
         restartBtn.remove();
         quizOutputEl.innerHTML = `
           <div class="stats-panel">
             <div class="stat-item"><span>Correct</span><span>0</span></div>
             <div class="stat-item"><span>Incorrect</span><span>0</span></div>
-            <div class="stat-item"><span>Unanswered</span><span>0</span></div>
+            <div class="stat-item"><span>Left</span><span>0</span></div>
           </div>`;
         updateProgressFill(0);
       };
