@@ -1247,8 +1247,9 @@ const LESSONS = {
 },
 
   sentence_structure: {
-    title: "Sentence Structure",
-    fullHtml: `
+  title: "Sentence Structure",
+  level: "Verbal Ability · Grammar · Sentence Structure",
+  fullHtml: `
     <section class="lesson-block">
       <h2>1. What is Sentence Structure?</h2>
       <p>
@@ -1268,6 +1269,7 @@ const LESSONS = {
 
     <section class="lesson-block">
       <h2>2. Basic Parts of a Sentence</h2>
+
       <h3>2.1 Subject and Predicate</h3>
       <p>
         The <strong>subject</strong> is the person, thing, or idea that does the action or is described.
@@ -1287,14 +1289,14 @@ const LESSONS = {
       <ul>
         <li>
           <strong>Direct object</strong> – answers <em>what?</em> or <em>whom?</em> after the verb.<br>
-          <em>She bought a new laptop.</em> → "a new laptop" is the direct object.
+          <em>She wrote a letter.</em> → "a letter" is the direct object.
         </li>
         <li>
           <strong>Indirect object</strong> – tells <em>to whom</em> or <em>for whom</em> the action is done.<br>
-          <em>He gave his friend a gift.</em>
+          <em>The teacher gave the students homework.</em>
         </li>
         <li>
-          <strong>Subject complement</strong> – usually comes after a linking verb and describes the subject.<br>
+          <strong>Subject complement</strong> – comes after a linking verb and describes the subject.<br>
           <em>The weather is pleasant.</em>
         </li>
       </ul>
@@ -1334,21 +1336,21 @@ const LESSONS = {
       <p>
         A <strong>simple sentence</strong> has one independent clause (one complete thought).
       </p>
-      <p><em>The dog barked loudly.</em></p>
+      <p><em>The exam is difficult.</em></p>
 
       <h3>4.2 Compound Sentence</h3>
       <p>
         A <strong>compound sentence</strong> has two or more independent clauses joined by a
         coordinating conjunction (<strong>for, and, nor, but, or, yet, so</strong>) or a semicolon.
       </p>
-      <p><em>The sun was already setting, but they continued their hike.</em></p>
+      <p><em>The exam is difficult, but many students are prepared.</em></p>
 
       <h3>4.3 Complex Sentence</h3>
       <p>
         A <strong>complex sentence</strong> has one independent clause and at least one dependent
         (subordinate) clause introduced by words like <em>because, although, while, when, if, since</em>.
       </p>
-      <p><em>Because it was raining, we stayed indoors.</em></p>
+      <p><em>Because the exam is difficult, many students are studying hard.</em></p>
 
       <h3>4.4 Compound-Complex Sentence</h3>
       <p>
@@ -1368,36 +1370,34 @@ const LESSONS = {
       <p><strong>Fragment:</strong> <em>When the meeting ended.</em></p>
       <p><strong>Correct:</strong> <em>When the meeting ended, everyone went home.</em></p>
 
-      <h3>5.2 Run-on Sentences</h3>
+      <h3>5.2 Run-on Sentences & Comma Splices</h3>
       <p>
-        A <strong>run-on sentence</strong> joins two independent clauses without proper punctuation
-        or conjunction.
+        A <strong>run-on</strong> joins two independent clauses without proper punctuation
+        or conjunction. A <strong>comma splice</strong> joins them with only a comma.
       </p>
       <p><strong>Run-on:</strong> <em>The exam is tomorrow I have not prepared.</em></p>
-      <p><strong>Correct:</strong> <em>The exam is tomorrow, but I have not prepared.</em></p>
+      <p><strong>Comma splice:</strong> <em>The roads were flooded, we decided to stay home.</em></p>
+      <p><strong>Correct:</strong></p>
+      <ul>
+        <li><em>The roads were flooded, so we decided to stay home.</em></li>
+        <li><em>The roads were flooded; we decided to stay home.</em></li>
+        <li><em>The roads were flooded. We decided to stay home.</em></li>
+      </ul>
 
-      <h3>5.3 Comma Splices</h3>
+      <h3>5.3 Misplaced & Dangling Modifiers</h3>
       <p>
-        A <strong>comma splice</strong> uses only a comma to join two independent clauses.
+        A <strong>misplaced modifier</strong> is too far from the word it describes.
+        A <strong>dangling modifier</strong> has no clear word to modify.
       </p>
-      <p><strong>Wrong:</strong> <em>The roads were flooded, we decided to stay home.</em></p>
-      <p><strong>Correct:</strong> <em>The roads were flooded, so we decided to stay home.</em></p>
+      <p><strong>Wrong:</strong> <em>Walking down the street, the house looked old.</em></p>
+      <p><strong>Correct:</strong> <em>Walking down the street, I saw an old house.</em></p>
 
-      <h3>5.4 Misplaced and Dangling Modifiers</h3>
+      <h3>5.4 Faulty Parallelism</h3>
       <p>
-        A <strong>misplaced modifier</strong> is too far from the word it describes. A
-        <strong>dangling modifier</strong> has no clear word to describe.
+        <strong>Parallelism</strong> means using the same grammatical form for items in a list or comparison.
       </p>
-      <p><strong>Wrong:</strong> <em>Walking down the street, the flowers looked beautiful.</em></p>
-      <p><strong>Correct:</strong> <em>Walking down the street, I thought the flowers looked beautiful.</em></p>
-
-      <h3>5.5 Faulty Parallelism</h3>
-      <p>
-        <strong>Parallelism</strong> means using the same grammatical form for items in a list
-        or comparison.
-      </p>
-      <p><strong>Not parallel:</strong> <em>She likes reading, to write, and to jog.</em></p>
-      <p><strong>Parallel:</strong> <em>She likes reading, writing, and jogging.</em></p>
+      <p><strong>Not parallel:</strong> <em>She likes reading, to swim, and jogging.</em></p>
+      <p><strong>Parallel:</strong> <em>She likes reading, swimming, and jogging.</em></p>
     </section>
 
     <section class="lesson-block">
@@ -1411,7 +1411,7 @@ const LESSONS = {
         <li>Does the sentence sound <strong>clear and logical</strong> when read aloud?</li>
       </ul>
     </section>
- ]
+  `
 },
 
 
