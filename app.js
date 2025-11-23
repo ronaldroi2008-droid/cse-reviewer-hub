@@ -810,7 +810,7 @@ const LESSONS = {
 // Sentence Construction – Study Mode Lesson
 // Add this to your lessons data (e.g., VERBAL_LESSONS["sentence_construction"])
 
-const SENTENCE_CONSTRUCTION_LESSON = {
+ sentence_construction: {
   id: "sentence_construction",
   title: "Sentence Construction",
   meta: "Complete thought + correct grammar + clear structure",
