@@ -36,6 +36,7 @@ const TOPIC_MAX_QUESTIONS = {
   adjectives: 50,
   conjunctions: 50,
   interjections: 50,
+  articles: 50,
   prepositions: 50
 };
 
