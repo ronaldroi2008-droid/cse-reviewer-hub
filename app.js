@@ -2538,8 +2538,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return PREPOSITION_QUESTIONS;
        case "conjunctions":
         return CONJUNCTION_QUESTIONS; 
-       case "interjections":
-        return INTERJECTION_QUESTIONS; 
+        case "interjections":
+        return INTERJECTION_QUESTIONS;  
+       case "articles":
+        return ARTICLE_QUESTIONS; 
       default:
         return null;
     }
