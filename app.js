@@ -39,6 +39,7 @@ const TOPIC_MAX_QUESTIONS = {
   articles: 50,
   subject_verb_agreement: 50,
   sentence_construction: 50,
+  sentence_structure: 50,
   prepositions: 50
 };
 
@@ -3273,6 +3274,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return SUBJECT_VERB_AGREEMENT_QUESTIONS; 
         case "sentence_construction":
         return SENTENCE_CONSTRUCTION_QUESTIONS;
+        case "sentence_structure":
+        return SENTENCE_STRUCTURE_QUESTIONS;
       default:
         return null;
     }
