@@ -533,6 +533,308 @@ const LESSONS = {
     ]
   },
 
+ interjections: {
+  title: "Interjections – Expressing Sudden Emotion and Reaction",
+  fullHtml: `
+  <section class="lesson-section">
+    <h2>1. What is an Interjection?</h2>
+    <p>
+      An <strong>interjection</strong> is a short word or phrase that shows emotion or reaction.
+      It is usually separated from the rest of the sentence by a comma or an exclamation mark and
+      is not grammatically necessary for the sentence to be complete.
+    </p>
+    <ul>
+      <li>Shows sudden emotion or reaction</li>
+      <li>Is not grammatically necessary to complete the sentence</li>
+      <li>Is usually followed by a comma (,) or exclamation mark (!)</li>
+      <li>Can often be removed without changing the basic meaning of the sentence</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li><em>Wow!</em> You got a perfect score.</li>
+        <li><em>Ouch!</em> That hurts.</li>
+        <li><em>Hey,</em> listen to the instructions.</li>
+      </ul>
+    </div>
+    <p>In the Civil Service Exam, interjections appear in:</p>
+    <ul>
+      <li>Parts of speech questions</li>
+      <li>Error identification</li>
+      <li>Reading comprehension (tone / emotion)</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>2. How to Recognize an Interjection</h2>
+    <p>You can usually recognize an interjection because:</p>
+    <ul>
+      <li>It often appears at the beginning of the sentence.</li>
+      <li>It is followed by a comma or exclamation mark.</li>
+      <li>If you remove it, the sentence is still grammatically complete.</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li><em>Oh no,</em> I forgot my ID.</li>
+        <li><em>Well,</em> that’s your decision.</li>
+        <li><em>Wow!</em> The view is amazing.</li>
+      </ul>
+    </div>
+    <p><strong>Remove the interjection:</strong></p>
+    <ul>
+      <li>I forgot my ID.</li>
+      <li>That’s your decision.</li>
+      <li>The view is amazing.</li>
+    </ul>
+    <p>
+      The sentences are still complete. That means <em>Oh no</em>, <em>Well</em>, and <em>Wow</em> are interjections.
+    </p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>3. Types of Interjections (by Emotion or Function)</h2>
+
+    <h3>3.1 Interjections of Surprise</h3>
+    <p>Used when someone is surprised:</p>
+    <ul>
+      <li>Wow!</li>
+      <li>Oh!</li>
+      <li>What?!</li>
+      <li>Goodness!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Wow!</em> You finished the test early.</li>
+      <li><em>Oh!</em> I didn’t know you were here.</li>
+    </ul>
+
+    <h3>3.2 Interjections of Joy / Happiness</h3>
+    <p>Used to show happiness, excitement, or celebration:</p>
+    <ul>
+      <li>Yay!</li>
+      <li>Hurrah!</li>
+      <li>Hooray!</li>
+      <li>Yippee!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Yay!</em> I passed the Civil Service Exam.</li>
+      <li><em>Hurrah!</em> Our team won the game.</li>
+    </ul>
+
+    <h3>3.3 Interjections of Pain</h3>
+    <p>Used when something hurts (physically or emotionally):</p>
+    <ul>
+      <li>Ouch!</li>
+      <li>Ow!</li>
+      <li>Oh no!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Ouch!</em> I hit my elbow.</li>
+      <li><em>Oh no,</em> I lost my wallet.</li>
+    </ul>
+
+    <h3>3.4 Interjections of Fear / Worry</h3>
+    <p>Used to show fear, shock, or worry:</p>
+    <ul>
+      <li>Ahh!</li>
+      <li>Eek!</li>
+      <li>Oh dear!</li>
+      <li>Good heavens!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Oh dear,</em> I think we are lost.</li>
+      <li><em>Eek!</em> There’s a mouse in the kitchen.</li>
+    </ul>
+
+    <h3>3.5 Interjections of Anger / Frustration</h3>
+    <p>Used when someone is angry, annoyed, or frustrated:</p>
+    <ul>
+      <li>Hey! (in a scolding tone)</li>
+      <li>Ugh!</li>
+      <li>Tsk! or Tsk-tsk! (sound of disapproval)</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Hey!</em> Don’t talk to me like that.</li>
+      <li><em>Ugh,</em> this traffic is terrible.</li>
+    </ul>
+
+    <h3>3.6 Interjections of Greeting</h3>
+    <p>Used to greet someone:</p>
+    <ul>
+      <li>Hi!</li>
+      <li>Hello!</li>
+      <li>Hey! (friendly/casual)</li>
+      <li>Good morning! (can function as a greeting interjection)</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Hi,</em> how are you?</li>
+      <li><em>Hello!</em> Nice to meet you.</li>
+    </ul>
+
+    <h3>3.7 Interjections of Agreement / Approval</h3>
+    <p>Used to show agreement or approval:</p>
+    <ul>
+      <li>Yes!</li>
+      <li>Yeah! (informal)</li>
+      <li>Exactly!</li>
+      <li>Sure!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Yes!</em> That answer is correct.</li>
+      <li><em>Exactly!</em> That’s what I mean.</li>
+    </ul>
+
+    <h3>3.8 Interjections of Disagreement / Refusal</h3>
+    <p>Used to show disagreement or refusal:</p>
+    <ul>
+      <li>No!</li>
+      <li>Nope! (informal)</li>
+      <li>Never!</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>No!</em> I will not accept that.</li>
+      <li><em>Never!</em> I will not give up.</li>
+    </ul>
+
+    <h3>3.9 Interjections as Fillers in Conversation</h3>
+    <p>
+      Sometimes, an interjection is not a strong emotion, but a conversation filler.
+      It helps the speaker think or soften what they are saying.
+    </p>
+    <p><strong>Common examples:</strong></p>
+    <ul>
+      <li>Well,</li>
+      <li>So,</li>
+      <li>Hmm,</li>
+      <li>Ah,</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><em>Well,</em> I think we should start now.</li>
+      <li><em>So,</em> what do you want to do?</li>
+      <li><em>Hmm,</em> I’m not sure about that.</li>
+    </ul>
+    <p>
+      In grammar, these are still often treated as interjections or discourse markers.
+    </p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>4. Punctuation Rules for Interjections</h2>
+
+    <h3>4.1 Exclamation Mark (!)</h3>
+    <p>Use <strong>!</strong> with strong emotions:</p>
+    <ul>
+      <li><em>Wow!</em> That was amazing.</li>
+      <li><em>Ouch!</em> That really hurt.</li>
+      <li><em>Stop!</em></li>
+    </ul>
+    <p>The exclamation mark shows intensity or strong feeling.</p>
+
+    <h3>4.2 Comma (,)</h3>
+    <p>Use a comma with mild emotion or neutral tone:</p>
+    <ul>
+      <li><em>Well,</em> we can try again tomorrow.</li>
+      <li><em>Hey,</em> listen to the instructions.</li>
+      <li><em>Oh,</em> I see your point.</li>
+    </ul>
+
+    <h3>4.3 Interjections in the Middle or at the End</h3>
+    <p>Sometimes the interjection appears in the middle of a sentence:</p>
+    <ul>
+      <li>That was, <em>wow,</em> really unexpected.</li>
+    </ul>
+    <p>Or at the end:</p>
+    <ul>
+      <li>You did great, <em>wow!</em></li>
+    </ul>
+    <p>But in exam questions, the most common pattern is still at the beginning.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>5. Interjections vs Other Parts of Speech</h2>
+    <p>
+      Interjections are easy to confuse with other parts of speech.
+      The key is to check the <strong>function</strong> of the word in the sentence.
+    </p>
+
+    <h3>5.1 “Oh” as Interjection</h3>
+    <ul>
+      <li><em>Oh,</em> I get it now. → Interjection (emotion / reaction)</li>
+      <li><em>Oh my God!</em> → Expression containing an interjection (<em>Oh</em>)</li>
+    </ul>
+
+    <h3>5.2 “Well” as Interjection vs Adverb</h3>
+    <ul>
+      <li><em>Well,</em> I don’t know. → Interjection (filler / reaction)</li>
+      <li>She did the job well. → Adverb (modifies “did”)</li>
+    </ul>
+
+    <h3>5.3 “Yes” as Interjection vs Noun</h3>
+    <ul>
+      <li><em>Yes!</em> You are right. → Interjection (emotional reaction)</li>
+      <li>The answer is yes. → Noun (“yes” is the thing being talked about)</li>
+    </ul>
+
+    <p>In exam questions like:</p>
+    <p><em>What part of speech is the underlined word?</em></p>
+    <p>You must look at what the word is <strong>doing</strong> in the sentence.</p>
+  </section>
+
+  <section class="lesson-section">
+    <h2>6. Common Exam Patterns with Interjections</h2>
+
+    <h3>Pattern 1 – Identify the Interjection</h3>
+    <p><strong>Question:</strong> Which word is the interjection in the sentence?</p>
+    <p><em>Wow, that solution is very clever!</em></p>
+    <p><strong>Correct answer:</strong> <em>Wow</em></p>
+
+    <h3>Pattern 2 – Choose the Best Interjection</h3>
+    <p><strong>Question:</strong></p>
+    <p>You got a perfect score! ______, that’s impressive!</p>
+    <ul>
+      <li>a) Ouch</li>
+      <li>b) Wow</li>
+      <li>c) Oh no</li>
+      <li>d) Hey</li>
+    </ul>
+    <p><strong>Best answer:</strong> b) Wow</p>
+    <p>Because the context is positive surprise and admiration.</p>
+
+    <h3>Pattern 3 – Error Identification (Punctuation)</h3>
+    <ul>
+      <li>❌ Wow that was amazing.</li>
+      <li>✅ Wow, that was amazing.</li>
+      <li>✅ Wow! That was amazing.</li>
+    </ul>
+    <p>The exam may ask you to choose the sentence with correct punctuation.</p>
+
+    <h3>Pattern 4 – Subject–Verb Agreement with Interjections</h3>
+    <p>In this sentence:</p>
+    <p><em>Oh, the students are here.</em></p>
+    <ul>
+      <li><strong>Subject</strong> = students</li>
+      <li><strong>Verb</strong> = are</li>
+      <li><strong>Oh</strong> = interjection only (extra emotion)</li>
+    </ul>
+    <p>
+      The interjection does not affect subject–verb agreement.
+      In exam questions, sometimes they place an interjection at the beginning to distract you.
+    </p>
+  </section>
+  `
+},
+
+
+  
   pronouns: {
     title: "Pronouns – Words that Replace Nouns",
     
