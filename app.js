@@ -811,11 +811,10 @@ const LESSONS = {
 // Add this to your lessons data (e.g., VERBAL_LESSONS["sentence_construction"])
 
  sentence_construction: {
-  id: "sentence_construction",
-  title: "Sentence Construction",
-  meta: "Complete thought + correct grammar + clear structure",
-  content: `
-    <h2>Sentence Construction</h2>
+    title: "Sentence Construction",
+    level: "Verbal Ability · Grammar · Sentence Construction",
+    fullHtml: `
+      <h2>Sentence Construction</h2>
     <p>
       In English, a <strong>sentence</strong> must express a complete thought and follow correct grammar.
       At minimum, it needs a <strong>subject</strong> and a <strong>predicate</strong>.
