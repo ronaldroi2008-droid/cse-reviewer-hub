@@ -1245,7 +1245,7 @@ const LESSONS = {
 
   sentence_structure: {
   title: "Sentence Structure",
-  level: "Verbal Ability · Grammar · Sentence Structure",
+  level: "Verbal Ability ",
   fullHtml: `
     <section class="lesson-block">
       <h2>1. What is Sentence Structure?</h2>
