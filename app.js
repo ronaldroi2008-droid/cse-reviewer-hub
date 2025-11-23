@@ -2921,9 +2921,8 @@ const LESSONS = {
           <li>If the sentence has <strong>"has/have" (Present Perfect)</strong>, check if you need <strong>Since</strong> or <strong>For</strong>.</li>
           <li>Memorize the "Big Three": <strong>AT</strong> (Exact), <strong>ON</strong> (Days/Surface), <strong>IN</strong> (General/Enclosed).</li>
         </ul>
-      </section>
-    `
-  }
+      </section>   `
+  },
 };
 
 // ==========================================
