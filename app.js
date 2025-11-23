@@ -1245,6 +1245,174 @@ const LESSONS = {
   `
 },
 
+  sentence_structure: {
+  title: "Sentence Structure",
+  html: `
+    <section class="lesson-block">
+      <h2>1. What is Sentence Structure?</h2>
+      <p>
+        <strong>Sentence structure</strong> is the way words, phrases, and clauses are arranged
+        to express a complete thought.
+      </p>
+      <p>A good sentence:</p>
+      <ul>
+        <li>has a <strong>subject</strong> (who or what the sentence is about),</li>
+        <li>has a <strong>predicate</strong> (what the subject does or is),</li>
+        <li>expresses a <strong>complete idea</strong>, and</li>
+        <li>uses <strong>correct grammar and punctuation</strong>.</li>
+      </ul>
+      <p><strong>Example (correct):</strong> The teacher explained the lesson clearly.</p>
+      <p><strong>Example (fragment / incomplete):</strong> Because the teacher explained the lesson.</p>
+    </section>
+
+    <section class="lesson-block">
+      <h2>2. Basic Parts of a Sentence</h2>
+      <h3>2.1 Subject and Predicate</h3>
+      <p>
+        The <strong>subject</strong> is the person, thing, or idea that does the action or is described.
+        The <strong>predicate</strong> tells what the subject does or is.
+      </p>
+      <p><strong>Example:</strong> The students <em>are reviewing for the exam</em>.</p>
+      <ul>
+        <li>Subject: <strong>The students</strong></li>
+        <li>Predicate: <strong>are reviewing for the exam</strong></li>
+      </ul>
+
+      <h3>2.2 Objects and Complements</h3>
+      <p>
+        An <strong>object</strong> receives the action of the verb. A <strong>complement</strong>
+        completes the meaning of the subject or object.
+      </p>
+      <ul>
+        <li>
+          <strong>Direct object</strong> – answers <em>what?</em> or <em>whom?</em> after the verb.<br>
+          <em>She bought a new laptop.</em> → "a new laptop" is the direct object.
+        </li>
+        <li>
+          <strong>Indirect object</strong> – tells <em>to whom</em> or <em>for whom</em> the action is done.<br>
+          <em>He gave his friend a gift.</em>
+        </li>
+        <li>
+          <strong>Subject complement</strong> – usually comes after a linking verb and describes the subject.<br>
+          <em>The weather is pleasant.</em>
+        </li>
+      </ul>
+    </section>
+
+    <section class="lesson-block">
+      <h2>3. Common Sentence Patterns</h2>
+      <p>Here are useful patterns to recognize:</p>
+      <ul>
+        <li>
+          <strong>SV</strong> – Subject + Verb<br>
+          <em>Birds fly.</em>
+        </li>
+        <li>
+          <strong>SVC</strong> – Subject + Linking Verb + Complement<br>
+          <em>She is tired.</em>
+        </li>
+        <li>
+          <strong>SVO</strong> – Subject + Verb + Object<br>
+          <em>They built a house.</em>
+        </li>
+        <li>
+          <strong>SVOO</strong> – Subject + Verb + Indirect Object + Direct Object<br>
+          <em>The teacher gave the students homework.</em>
+        </li>
+        <li>
+          <strong>SVOC</strong> – Subject + Verb + Object + Complement<br>
+          <em>They elected him president.</em>
+        </li>
+      </ul>
+    </section>
+
+    <section class="lesson-block">
+      <h2>4. Types of Sentences by Structure</h2>
+
+      <h3>4.1 Simple Sentence</h3>
+      <p>
+        A <strong>simple sentence</strong> has one independent clause (one complete thought).
+      </p>
+      <p><em>The dog barked loudly.</em></p>
+
+      <h3>4.2 Compound Sentence</h3>
+      <p>
+        A <strong>compound sentence</strong> has two or more independent clauses joined by a
+        coordinating conjunction (<strong>for, and, nor, but, or, yet, so</strong>) or a semicolon.
+      </p>
+      <p><em>The sun was already setting, but they continued their hike.</em></p>
+
+      <h3>4.3 Complex Sentence</h3>
+      <p>
+        A <strong>complex sentence</strong> has one independent clause and at least one dependent
+        (subordinate) clause introduced by words like <em>because, although, while, when, if, since</em>.
+      </p>
+      <p><em>Because it was raining, we stayed indoors.</em></p>
+
+      <h3>4.4 Compound-Complex Sentence</h3>
+      <p>
+        A <strong>compound-complex sentence</strong> has at least two independent clauses and at least
+        one dependent clause.
+      </p>
+      <p><em>Although it was late, we continued our meeting, and we finished the report.</em></p>
+    </section>
+
+    <section class="lesson-block">
+      <h2>5. Common Sentence Structure Errors</h2>
+
+      <h3>5.1 Sentence Fragments</h3>
+      <p>
+        A <strong>fragment</strong> looks like a sentence but is incomplete (missing a main clause).
+      </p>
+      <p><strong>Fragment:</strong> <em>When the meeting ended.</em></p>
+      <p><strong>Correct:</strong> <em>When the meeting ended, everyone went home.</em></p>
+
+      <h3>5.2 Run-on Sentences</h3>
+      <p>
+        A <strong>run-on sentence</strong> joins two independent clauses without proper punctuation
+        or conjunction.
+      </p>
+      <p><strong>Run-on:</strong> <em>The exam is tomorrow I have not prepared.</em></p>
+      <p><strong>Correct:</strong> <em>The exam is tomorrow, but I have not prepared.</em></p>
+
+      <h3>5.3 Comma Splices</h3>
+      <p>
+        A <strong>comma splice</strong> uses only a comma to join two independent clauses.
+      </p>
+      <p><strong>Wrong:</strong> <em>The roads were flooded, we decided to stay home.</em></p>
+      <p><strong>Correct:</strong> <em>The roads were flooded, so we decided to stay home.</em></p>
+
+      <h3>5.4 Misplaced and Dangling Modifiers</h3>
+      <p>
+        A <strong>misplaced modifier</strong> is too far from the word it describes. A
+        <strong>dangling modifier</strong> has no clear word to describe.
+      </p>
+      <p><strong>Wrong:</strong> <em>Walking down the street, the flowers looked beautiful.</em></p>
+      <p><strong>Correct:</strong> <em>Walking down the street, I thought the flowers looked beautiful.</em></p>
+
+      <h3>5.5 Faulty Parallelism</h3>
+      <p>
+        <strong>Parallelism</strong> means using the same grammatical form for items in a list
+        or comparison.
+      </p>
+      <p><strong>Not parallel:</strong> <em>She likes reading, to write, and to jog.</em></p>
+      <p><strong>Parallel:</strong> <em>She likes reading, writing, and jogging.</em></p>
+    </section>
+
+    <section class="lesson-block">
+      <h2>6. Quick Exam Checklist</h2>
+      <ul>
+        <li>Is there a clear <strong>subject</strong> and <strong>verb</strong>?</li>
+        <li>Does the sentence express a <strong>complete idea</strong> (not a fragment)?</li>
+        <li>Are independent clauses joined correctly (no run-ons or comma splices)?</li>
+        <li>Are modifiers placed near the words they describe?</li>
+        <li>Are lists and comparisons in <strong>parallel form</strong>?</li>
+        <li>Does the sentence sound <strong>clear and logical</strong> when read aloud?</li>
+      </ul>
+    </section>
+  `
+},
+
 
 
   tenses: {
