@@ -379,6 +379,314 @@ const LESSONS = {
     ]
   },
 
+   // ==========================================
+  // ARTICLES – FULL LESSON (Study Mode)
+  // ==========================================
+  articles: {
+    title: "Articles – A, An, The, and Zero Article",
+    
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. What Is an Article?</h2>
+        <p>
+          An <strong>article</strong> is a small word used before a noun to show whether the noun is
+          general or specific, known or unknown, and sometimes if it is singular or plural.
+          Articles are a special type of <strong>determiner</strong>.
+        </p>
+        <p>There are three articles in English:</p>
+        <ul>
+          <li><strong>a</strong></li>
+          <li><strong>an</strong></li>
+          <li><strong>the</strong></li>
+        </ul>
+        <p>Plus one important idea: <strong>zero article</strong> (no article at all).</p>
+        <p>In the Civil Service Exam, articles appear in:</p>
+        <ul class="check-list">
+          <li>Parts of speech questions (choosing the correct article)</li>
+          <li>Error identification (wrong/missing article)</li>
+          <li>Sentence improvement and reading comprehension</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Types of Articles</h2>
+        <h3>2.1 Indefinite Articles – <em>a, an</em></h3>
+        <p>Use <strong>a</strong> or <strong>an</strong> when the noun is:</p>
+        <ul>
+          <li>Not specific or not identified</li>
+          <li>Mentioned for the first time</li>
+          <li>One of many possible things</li>
+        </ul>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>I saw <strong>a dog</strong>. (any dog, not specific)</li>
+          <li>She bought <strong>an umbrella</strong>. (first mention, not specific)</li>
+        </ul>
+
+        <h3>2.2 Definite Article – <em>the</em></h3>
+        <p>Use <strong>the</strong> when the noun is:</p>
+        <ul>
+          <li>Specific or already known</li>
+          <li>Mentioned before</li>
+          <li>Unique in the situation</li>
+        </ul>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>I saw a dog. <strong>The dog</strong> was brown. (now we know which dog)</li>
+          <li>Close <strong>the door</strong>. (the door of this room)</li>
+        </ul>
+
+        <h3>2.3 Zero Article – No Article</h3>
+        <p>Use <strong>no article</strong> when speaking about:</p>
+        <ul>
+          <li>Plural nouns in general (Dogs are loyal.)</li>
+          <li>Uncountable nouns in general (Water is essential.)</li>
+          <li>Most proper nouns (Cebu, Maria, Japan)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Using “A” vs “An”</h2>
+        <p><strong>Important:</strong> The rule is based on <strong>sound</strong>, not just spelling.</p>
+
+        <h3>3.1 Basic Rule</h3>
+        <ul>
+          <li>
+            Use <strong>a</strong> before a <strong>consonant sound</strong>:
+            <em>a book, a car, a teacher, a university</em> (university = /juː/ → consonant sound)
+          </li>
+          <li>
+            Use <strong>an</strong> before a <strong>vowel sound</strong>:
+            <em>an apple, an elephant, an hour, an MBA</em>
+          </li>
+        </ul>
+
+        <h3>3.2 Examples</h3>
+        <div class="two-column-list">
+          <ul>
+            <li>a student</li>
+            <li>a house</li>
+            <li>a one-way street (one = /wʌn/ → consonant sound)</li>
+          </ul>
+          <ul>
+            <li>an honor (silent h → vowel sound)</li>
+            <li>an exam</li>
+            <li>an honest man</li>
+          </ul>
+        </div>
+
+        <h3>3.3 When Do We Use A/An?</h3>
+        <ul>
+          <li>
+            <strong>First mention</strong>:
+            <br><em>I saw <strong>a man</strong> outside.</em>
+          </li>
+          <li>
+            <strong>One of many, not specific</strong>:
+            <br><em>I need <strong>a pen</strong>.</em>
+          </li>
+          <li>
+            <strong>Jobs or professions</strong>:
+            <br><em>She is <strong>a teacher</strong>. He is <strong>an engineer</strong>.</em>
+          </li>
+          <li>
+            <strong>Definitions / categories</strong>:
+            <br><em>A triangle is a three-sided figure.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Using “The” – Definite Article</h2>
+        <p>Use <strong>the</strong> when the noun is <strong>specific, known, or unique</strong>.</p>
+
+        <h3>4.1 Specific or Known Nouns</h3>
+        <ul>
+          <li>
+            <strong>Second mention:</strong><br>
+            <em>I saw a movie. <strong>The movie</strong> was very interesting.</em>
+          </li>
+          <li>
+            <strong>Obvious from context:</strong><br>
+            <em>Can you pass <strong>the salt</strong>?</em>
+          </li>
+          <li>
+            <strong>Unique in the situation:</strong><br>
+            <em>Close <strong>the window</strong>.</em>
+          </li>
+        </ul>
+
+        <h3>4.2 Unique Things</h3>
+        <p>Use <strong>the</strong> with things that are one-of-a-kind (in that context):</p>
+        <ul>
+          <li>the sun, the moon, the sky, the earth</li>
+          <li>the president, the Pacific Ocean</li>
+        </ul>
+
+        <h3>4.3 Superlatives and Ordinals</h3>
+        <ul>
+          <li>the best student</li>
+          <li>the tallest building</li>
+          <li>the first prize</li>
+          <li>the last chapter</li>
+        </ul>
+
+        <h3>4.4 Noun with a Describing Phrase</h3>
+        <ul>
+          <li>the man <strong>who called you</strong></li>
+          <li>the book <strong>on the table</strong></li>
+          <li>the students <strong>in this class</strong></li>
+        </ul>
+
+        <h3>4.5 Geography and “The”</h3>
+        <p><strong>Use “the” with:</strong></p>
+        <ul class="two-column-list">
+          <li>rivers: the Nile, the Amazon</li>
+          <li>seas & oceans: the Pacific, the Mediterranean Sea</li>
+          <li>mountain ranges: the Alps, the Himalayas</li>
+          <li>groups of islands: the Philippines, the Maldives</li>
+          <li>some countries: the Netherlands, the United States</li>
+          <li>organizations: the United Nations, the Department of Education</li>
+        </ul>
+        <p><strong>No “the” with:</strong> most single countries (Japan, France), cities (Cebu, Manila), and most streets (Ayala Avenue).</p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Zero Article (No Article)</h2>
+        <p>Sometimes we use <strong>no article</strong> at all. This is very common and often tested in exams.</p>
+
+        <h3>5.1 General Plural Nouns</h3>
+        <p>No article when talking about plural nouns in general.</p>
+        <ul>
+          <li><em>Dogs</em> are loyal animals.</li>
+          <li><em>Teachers</em> work hard.</li>
+          <li><em>Cars</em> are expensive.</li>
+        </ul>
+        <p>Compare:</p>
+        <ul>
+          <li>I like <strong>dogs</strong>. (dogs in general)</li>
+          <li>I like <strong>the dogs</strong> in this picture. (specific dogs)</li>
+        </ul>
+
+        <h3>5.2 Uncountable Nouns (General)</h3>
+        <p>No article when an uncountable noun is used in a general sense.</p>
+        <ul>
+          <li><em>Water</em> is essential.</li>
+          <li><em>Information</em> is power.</li>
+          <li><em>Education</em> is expensive.</li>
+        </ul>
+        <p><strong>But:</strong></p>
+        <ul>
+          <li>The water in this glass is dirty.</li>
+          <li>The information you gave me is correct.</li>
+        </ul>
+
+        <h3>5.3 Meals, Languages, Subjects, Sports</h3>
+        <ul>
+          <li>We have <strong>breakfast</strong> at 7:00.</li>
+          <li>She cooked <strong>dinner</strong>.</li>
+          <li>She speaks <strong>English</strong> and <strong>Tagalog</strong>.</li>
+          <li>I like <strong>math</strong> and <strong>science</strong>.</li>
+          <li>He plays <strong>basketball</strong>.</li>
+        </ul>
+        <p>But we can use <strong>the</strong> when we mean something specific:</p>
+        <ul>
+          <li>The dinner we had last night was delicious.</li>
+          <li>The English in this document is wrong.</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. Special Cases & Common Confusions</h2>
+
+        <h3>6.1 A/An vs The (First vs Second Mention)</h3>
+        <p>First mention (new information) → <strong>a/an</strong><br>
+        Second mention (already known) → <strong>the</strong></p>
+        <ul>
+          <li>I saw <strong>a dog</strong> in the street. <strong>The dog</strong> was barking loudly.</li>
+          <li>She bought <strong>a laptop</strong>. <strong>The laptop</strong> is on the table.</li>
+        </ul>
+
+        <h3>6.2 Article + Adjective + Noun</h3>
+        <p>The article goes before the whole adjective + noun phrase.</p>
+        <ul>
+          <li>a beautiful house</li>
+          <li>an interesting book</li>
+          <li>a good idea</li>
+          <li>an old umbrella</li>
+        </ul>
+        <p>Choose <strong>a/an</strong> based on the sound that follows, not just the first letter of the noun:</p>
+        <ul>
+          <li>an honest man (h is silent)</li>
+          <li>a useful tool (/juː/ → consonant sound)</li>
+        </ul>
+
+        <h3>6.3 “The + Adjective” = Group of People</h3>
+        <p>Sometimes <strong>the + adjective</strong> refers to a whole group:</p>
+        <ul>
+          <li>the poor = poor people</li>
+          <li>the rich = rich people</li>
+          <li>the elderly = old people</li>
+          <li>the unemployed = people without jobs</li>
+        </ul>
+        <p><em>Example: The rich should help the poor.</em></p>
+
+        <h3>6.4 No “The” with Possessive Adjectives</h3>
+        <p>Do not use <strong>the</strong> before <strong>my, your, his, her, our, their</strong>.</p>
+        <ul>
+          <li>✅ my car (not <del>the my car</del>)</li>
+          <li>✅ his house (not <del>the his house</del>)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>7. Typical Exam Patterns with Articles</h2>
+
+        <h3>Pattern 1 – Fill in the Blank</h3>
+        <p><strong>Question:</strong><br>
+          She is ____ engineer working in ____ company in Cebu.
+        </p>
+        <p><strong>Correct:</strong><br>
+          She is <strong>an</strong> engineer working in <strong>a</strong> company in Cebu.
+        </p>
+        <ul>
+          <li><strong>an engineer</strong> → vowel sound /e/</li>
+          <li><strong>a company</strong> → first mention, not specific</li>
+        </ul>
+
+        <h3>Pattern 2 – Specific vs General</h3>
+        <ul>
+          <li><em>Children</em> need love. (general, no article)</li>
+          <li><em>The children</em> in this class need more practice. (specific group)</li>
+        </ul>
+
+        <h3>Pattern 3 – Unique Things</h3>
+        <p><strong>Question:</strong> ____ sun rises in the east.</p>
+        <p><strong>Correct:</strong> <strong>The</strong> sun rises in the east.</p>
+
+        <h3>Pattern 4 – Professions</h3>
+        <p><strong>Question:</strong> She is ____ accountant and he is ____ engineer.</p>
+        <p><strong>Correct:</strong> She is <strong>an</strong> accountant and he is <strong>an</strong> engineer.</p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>8. Quick Checklist for Articles (Exam Strategy)</h2>
+        <ul class="check-list">
+          <li>Is the noun <strong>specific</strong>? → Use <strong>the</strong>.</li>
+          <li>Is it a <strong>singular count noun</strong> mentioned for the first time? → Use <strong>a/an</strong>.</li>
+          <li>Is the next sound a <strong>vowel</strong>? → Use <strong>an</strong>. Otherwise, use <strong>a</strong>.</li>
+          <li>Is it a <strong>plural</strong> or <strong>uncountable</strong> noun used in general? → Often <strong>no article</strong>.</li>
+          <li>Is it a <strong>unique</strong> thing (the sun, the president, the Pacific Ocean)? → Use <strong>the</strong>.</li>
+          <li>Is it a <strong>proper noun</strong> (Maria, Cebu, Japan)? → Usually <strong>no article</strong>, with a few exceptions (the Philippines, the United States).</li>
+          <li>Check if you are comparing two or more things: articles often appear with <strong>comparatives</strong> and <strong>superlatives</strong>.</li>
+        </ul>
+      </section>
+    `
+  },
+
+
+  
+
   tenses: {
     title: "Tenses – Time, Aspect, and Consistent Use",
     
