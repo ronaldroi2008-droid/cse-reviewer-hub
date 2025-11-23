@@ -229,7 +229,7 @@ const LESSONS = {
  
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
-    level: "Verbal Ability · Verbs & Tenses · CSE Grammar",
+    
     intro:
       "A verb is the engine of the sentence. It tells what the subject does (action), what it is, or what state it is in. In English, verbs change their form to show time (tense), number (singular/plural), and aspect (simple, progressive, perfect). In the Civil Service Exam, verb questions usually appear in subject–verb agreement, correct tense, error identification, sentence improvement, and reading comprehension items.",
     keyPoints: [
@@ -787,7 +787,7 @@ const LESSONS = {
 
   adjectives: {
     title: "Adjectives – Describing, Comparing, and Limiting Nouns",
-    level: "Verbal Ability · Adjectives · CSE Grammar",
+  
     intro:
       "An adjective describes or gives more information about a noun or pronoun. It can tell us what kind, which one, how many, or how much. In the Civil Service Exam, adjectives are often tested through error identification, sentence improvement, correct usage, and comparison of adjectives.",
     keyPoints: [
