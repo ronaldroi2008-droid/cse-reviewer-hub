@@ -3858,7 +3858,7 @@ synonyms: {
         <p><strong>Choices:</strong> <em>Create, Initiate, Make, Born</em></p>
         <p><strong>Answer:</strong> <em>Initiate</em> is the closest to "Start" in a formal context, even if "Create" is similar.</p>
       </section>
-    `
+   } `
   };
 
 
