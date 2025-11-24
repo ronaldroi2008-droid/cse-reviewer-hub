@@ -138,7 +138,7 @@ const AFFIXES_QUESTIONS = {
 
     // 111-120: Prefix 'Super-' (Above) & 'Anti-' (Against)
     { question: "What does 'superhuman' mean?", choices: ["Normal human", "Below human", "Above/Beyond human abilities", "Animal"], correctIndex: 2, explanation: "Rule: Prefix 'super-' means 'above', 'beyond', or 'extra'. Explanation: Having powers beyond normal humans." },
-    { question: "What is an 'antibiotic'?", choices: ["Promotes life", "Fights against bacteria/life", "A robot", "A biology book"], correctIndex: 1, explanation: "Rule: Prefix 'anti-' means 'against'. Explanation: A medicine that destroys bacteria (anti-life of germs)." },
+    { question: "What is an 'antibiotic'?", choices: ["Promotes life", "Fights against bacteria/life", "A robot", "A biology book"], correctIndex: 1, explanation: "Rule: Prefix 'anti-' means 'against'. Explanation: An antibiotic is a medicine that fights harmful bacteria in the body." },
     { question: "What does 'supervise' mean?", choices: ["Look from above/oversee", "Ignore", "Work hard", "Vision"], correctIndex: 0, explanation: "Rule: 'Super-' means over. Explanation: To watch over people working." },
     { question: "What does 'antisocial' mean?", choices: ["Very friendly", "Against society/unfriendly", "Social media", "Crowded"], correctIndex: 1, explanation: "Rule: 'Anti-' means against. Explanation: Avoiding social interaction." },
     { question: "What is a 'supermarket'?", choices: ["A small shop", "A large market (above normal)", "A bad market", "Online store"], correctIndex: 1, explanation: "Rule: 'Super-' indicates size/scale. Explanation: A very large grocery store." },
@@ -174,7 +174,7 @@ const AFFIXES_QUESTIONS = {
 
     // 141-150: Mixed Affixes (Context)
     { question: "Complete: 'He acted child____.' (Like a child)", choices: ["-ish", "-ous", "-ment", "-tion"], correctIndex: 0, explanation: "Rule: Suffix '-ish' means 'having the qualities of'. Explanation: Childish means like a child." },
-    { question: "Complete: 'The water is colordo____.' (No color)", choices: ["-ful", "-less", "-ness", "-able"], correctIndex: 1, explanation: "Rule: '-less' means without. Explanation: Colorless." },
+    { question: "Complete: 'The water is color____.' (No color)", choices: ["-ful", "-less", "-ness", "-able"], correctIndex: 1, explanation: "Rule: '-less' means without. Explanation: Colorless." },
     { question: "Complete: 'Please ____connect the cable.' (Remove)", choices: ["Re-", "Dis-", "Un-", "Mis-"], correctIndex: 1, explanation: "Rule: 'Dis-' is the standard prefix for 'connect' to mean separate. Explanation: Disconnect." },
     { question: "Complete: 'She is a famous art____.' (Person)", choices: ["-er", "-ist", "-or", "-ian"], correctIndex: 1, explanation: "Rule: '-ist' is a specialist. Explanation: Artist." },
     { question: "Complete: '____marine.' (Under the sea)", choices: ["Trans-", "Sub-", "Super-", "Inter-"], correctIndex: 1, explanation: "Rule: 'Sub-' means under. Explanation: Submarine." },
@@ -227,7 +227,7 @@ const AFFIXES_QUESTIONS = {
     { question: "What does 'Amoral' mean compared to 'Immoral'?", choices: ["Amoral = Very good", "Amoral = Lacking moral sense; Immoral = Knowing but doing wrong", "Same thing", "Amoral = Loving"], correctIndex: 1, explanation: "Rule: Prefix nuance. 'A-' means without (no concept of right/wrong). 'Im-' means not (violating standards)." },
     { question: "Suffix '-able' vs '-ible': It is 'Sens____'.", choices: ["-able", "-ible", "-uble", "-eble"], correctIndex: 1, explanation: "Rule: Root word test. If the root is not a full word (sens-), usually use '-ible'. Sensible." },
     { question: "Suffix '-able' vs '-ible': It is 'Depend____'.", choices: ["-able", "-ible", "-eble", "-oble"], correctIndex: 0, explanation: "Rule: Root word test. If the root is a full word (Depend), usually use '-able'. Dependable." },
-    { question: "Prefix 'Fore-' vs 'For-': '____get'.", choices: ["Fore-", "For-", "Four-", "Fro-"], correctIndex: 1, explanation: "Rule: Spelling. 'For-' usually indicates prohibition/abstention. Forget." },
+    { question: "Prefix 'Fore-' vs 'For-': '____get'.", choices: ["Fore-", "For-", "Four-", "Fro-"], correctIndex: 1, explanation: "Rule: Fore-' often means 'before' or 'front' (forehead, forecast). 'For-' in 'forget' is a different prefix and is just part of the spelling of the word." },
     { question: "Prefix 'Fore-' vs 'For-': '____head'.", choices: ["Fore-", "For-", "Four-", "Fro-"], correctIndex: 0, explanation: "Rule: 'Fore-' means front/before. Forehead." },
     { question: "Meaning of 'Biennial'?", choices: ["Twice a year", "Every two years", "Every year", "For two years"], correctIndex: 1, explanation: "Rule: 'Bi-' + 'enn' (year). Explanation: Occurring every two years. (Twice a year is Biannual)." },
     { question: "Meaning of 'Semi-annual'?", choices: ["Every two years", "Half-yearly (Twice a year)", "Partly annual", "Never"], correctIndex: 1, explanation: "Rule: 'Semi-' means half. Explanation: Occurring every half year (twice a year)." },
