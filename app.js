@@ -2280,7 +2280,7 @@ const LESSONS = {
 
 affixes: {
   title: "Affixes",
-  level: "Verbal Ability · Word Formation · Affixes",
+  level: "Verbal Ability",
   fullHtml: `
     <h2>Affixes</h2>
     <p>
