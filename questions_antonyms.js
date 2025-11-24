@@ -3,7 +3,7 @@
 // Levels: Beginner, Intermediate, Advanced, Expert
 // ==========================================
 
-const ANTONYM_QUESTIONS = {
+const ANTONYMS_QUESTIONS = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (Basic Opposites)
