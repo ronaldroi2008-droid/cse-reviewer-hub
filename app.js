@@ -4572,27 +4572,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showQuestion() {
     if (!quizState) return;
-    const q = quizState.questions[quizState.currentIndex];
+    
+    // Kunin ang current question object
+    let q = quizState.questions[quizState.currentIndex];
 
-    // Normalize Data (for compatibility)
-    if (
-      (!Array.isArray(q.choices) || typeof q.correctIndex !== "number") &&
-      Array.isArray(q.options) &&
-      typeof q.answer === "string"
-    ) {
-      q.choices = q.options.slice();
-      q.correctIndex = q.options.indexOf(q.answer);
+    // --- UNIVERSAL DATA NORMALIZER (Fix for the Error) ---
+    // Ito ang mag-aayos ng data bago gamitin para hindi mag-error ang forEach
+    
+    // 1. Kung galing sa Analogy file na may { q, a, options, exp }
+    if (q.q && q.a && q.options) {
+        q.question = q.q;           // Ilipat ang 'q' sa 'question'
+        q.choices = q.options;      // Ilipat ang 'options' sa 'choices'
+        q.answer = q.a;             // Ilipat ang 'a' sa 'answer'
+        q.explanation = q.exp;      // Ilipat ang 'exp' sa 'explanation'
+        q.correctIndex = q.options.indexOf(q.a); // Hanapin ang index ng tamang sagot
     }
+    // 2. Kung galing sa ibang file na may { question, answer, options } (Long format)
+    else if (q.options && q.answer && !q.choices) {
+        q.choices = q.options;
+        q.correctIndex = q.options.indexOf(q.answer);
+    }
+    
+    // Safety Check: Kung wala pa ring choices, mag-error ito, kaya lagyan ng empty array
+    if (!Array.isArray(q.choices)) {
+        console.error("Critical Error: Question data format is invalid", q);
+        q.choices = []; // Prevents crash on forEach
+    }
+    // -----------------------------------------------------
 
     quizState.answered = false;
     quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
     updateProgressFill();
 
-    quizQuestionEl.textContent = q.question;
+    // Display Question Text
+    quizQuestionEl.textContent = q.question || "Question text missing";
+    
+    // Reset UI
     quizChoicesEl.innerHTML = "";
     quizExplanationEl.classList.add("hide");
     quizNextBtn.classList.add("hide");
 
+    // Create Buttons (This is where it was crashing)
     q.choices.forEach((choice, idx) => {
       const btn = document.createElement("button");
       btn.className = "quiz-choice";
