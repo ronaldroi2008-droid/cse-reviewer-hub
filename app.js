@@ -4387,7 +4387,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Practice Mode Logic ---
 
-  function getQuestionBank(topic) {
+ function getQuestionBank(topic) {
+  console.log("Loading question bank for topic:", topic); // Debug line
+  
   switch (topic) {
     case "nouns": return typeof NOUN_QUESTIONS !== 'undefined' ? NOUN_QUESTIONS : null;
     case "gender": return typeof GENDER_QUESTIONS !== 'undefined' ? GENDER_QUESTIONS : null;
@@ -4411,7 +4413,9 @@ document.addEventListener("DOMContentLoaded", () => {
     case "analogy": return typeof ANALOGY_QUESTIONS !== 'undefined' ? ANALOGY_QUESTIONS : null;
     case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
     case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
-    default: return null;
+    default: 
+      console.log("Topic not found:", topic); // Debug line
+      return null;
   }
 }
 
