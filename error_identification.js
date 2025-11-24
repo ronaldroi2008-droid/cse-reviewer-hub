@@ -876,6 +876,68 @@ explanation: "Rule: Verb + Preposition. We say 'proceed to the next item' or 'pr
       correctIndex: 3,
       explanation: "Rule: Correct Idiom. 'By and large' means on the whole. No error."
     }
+    // Extra Advanced (mixed: inversion, clauses, verb patterns, agreement)
+    {
+      question: "Identify the error: 'No sooner / I had / reached home / than it started to rain.'",
+      choices: ["No sooner", "I had", "reached home", "than it started to rain."],
+      correctIndex: 1,
+      explanation: "Rule: Negative Inversion. With 'No sooner' at the beginning, invert the auxiliary and the subject: 'No sooner had I reached home than it started to rain.'"
+    },
+    {
+      question: "Identify the error: 'Hardly / I had / sat down / when the phone rang.'",
+      choices: ["Hardly", "I had", "sat down", "when the phone rang."],
+      correctIndex: 1,
+      explanation: "Rule: Negative Inversion. After 'Hardly', use inversion: 'Hardly had I sat down when the phone rang.'"
+    },
+    {
+      question: "Identify the error: 'It is / high time / he / leaves.'",
+      choices: ["It is", "high time", "he", "leaves"],
+      correctIndex: 3,
+      explanation: "Rule: 'High time'. After 'It is high time', we normally use a past tense to show that something is late: 'It is high time he left.'"
+    },
+    {
+      question: "Identify the error: 'I / would rather / that you / comes early.'",
+      choices: ["I", "would rather", "that you", "comes early"],
+      correctIndex: 3,
+      explanation: "Rule: 'Would rather'. After 'would rather (that) you', use the base form or a past tense: 'that you come early' (or 'that you came early')."
+    },
+    {
+      question: "Identify the error: 'He is / one of those students / who / works hard.'",
+      choices: ["He is", "one of those students", "who", "works hard."],
+      correctIndex: 3,
+      explanation: "Rule: Pronoun–Antecedent Agreement. 'Who' refers to 'students' (plural), so the verb must be plural: 'who work hard.'"
+    },
+    {
+      question: "Identify the error: 'This / is one of the best / book / that I have read.'",
+      choices: ["This", "is one of the best", "book", "that I have read."],
+      correctIndex: 2,
+      explanation: "Rule: 'One of the best'. After 'one of the best', the noun is normally plural: 'one of the best books that I have read.'"
+    },
+    {
+      question: "Identify the error: 'Each of the players / have / a / unique skill.'",
+      choices: ["Each of the players", "have", "a", "unique skill."],
+      correctIndex: 1,
+      explanation: "Rule: 'Each' is grammatically singular. Even though 'players' is plural, the verb agrees with 'Each': 'Each of the players has a unique skill.'"
+    },
+    {
+      question: "Identify the error: 'He / insisted / to pay / the bill.'",
+      choices: ["He", "insisted", "to pay", "the bill."],
+      correctIndex: 2,
+      explanation: "Rule: Verb Pattern. We say 'insisted on paying', not 'insisted to pay'. 'Insist on + -ing form'."
+    },
+    {
+      question: "Identify the error: 'She / denied / to steal / the money.'",
+      choices: ["She", "denied", "to steal", "the money."],
+      correctIndex: 2,
+      explanation: "Rule: Verb Pattern. 'Deny' is followed by a gerund, not an infinitive: 'denied stealing the money.'"
+    },
+    {
+      question: "Identify the error: 'We / look forward / to / see you.'",
+      choices: ["We", "look forward", "to", "see you"],
+      correctIndex: 3,
+      explanation: "Rule: 'Look forward to'. The 'to' here is a preposition, so it is followed by a gerund: 'look forward to seeing you.'"
+    }
+    
   ],
 
   super: [
