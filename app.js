@@ -3977,7 +3977,7 @@ words_often_confused: {
           <li><strong>Wealthy</strong> ≠ Destitute/Poor</li>
         </ul>
       </section>
-    `
+    
   },
 
     
