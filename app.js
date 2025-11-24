@@ -2278,6 +2278,200 @@ const LESSONS = {
     ] 
   },
 
+affixes: {
+  title: "Affixes",
+  level: "Verbal Ability · Word Formation · Affixes",
+  fullHtml: `
+    <h2>Affixes</h2>
+    <p>
+      An <strong>affix</strong> is a group of letters added to a <strong>root word</strong> to change its
+      meaning or its grammatical function. Affixes are like attachments you add
+      before or after a word:
+    </p>
+    <ul>
+      <li><code>happy</code> → <code>unhappy</code></li>
+      <li><code>kind</code> → <code>kindness</code></li>
+      <li><code>play</code> → <code>replay</code>, <code>player</code>, <code>playful</code></li>
+    </ul>
+    <p>
+      Affixes help you change:
+    </p>
+    <ul>
+      <li><strong>Meaning</strong> (happy → <em>un</em>happy)</li>
+      <li><strong>Part of speech</strong> (kind → kindness; act → action → active)</li>
+      <li><strong>Grammar form</strong> (walk → walked; big → bigger)</li>
+    </ul>
+
+    <h3>1. Types of Affixes</h3>
+
+    <h4>1.1 Prefixes</h4>
+    <p>
+      A <strong>prefix</strong> is added <strong>before</strong> the root word.
+    </p>
+    <p><strong>Pattern:</strong> prefix + root</p>
+    <ul>
+      <li><code>un</code> + <code>happy</code> → <strong>unhappy</strong></li>
+      <li><code>re</code> + <code>write</code> → <strong>rewrite</strong></li>
+    </ul>
+    <p>
+      Prefixes usually change the <strong>meaning</strong>, but keep the same
+      <strong>part of speech</strong>.
+    </p>
+    <ul>
+      <li><code>happy</code> (adjective) → <code>unhappy</code> (adjective)</li>
+      <li><code>do</code> (verb) → <code>redo</code> (verb)</li>
+    </ul>
+
+    <h4>1.2 Suffixes</h4>
+    <p>
+      A <strong>suffix</strong> is added <strong>after</strong> the root word.
+    </p>
+    <p><strong>Pattern:</strong> root + suffix</p>
+    <ul>
+      <li><code>kind</code> + <code>ness</code> → <strong>kindness</strong></li>
+      <li><code>beauty</code> + <code>ful</code> → <strong>beautiful</strong></li>
+    </ul>
+    <p>
+      Suffixes often change the <strong>part of speech</strong> and sometimes the
+      <strong>grammar form</strong> (tense, plural, comparison).
+    </p>
+
+    <h4>1.3 Other Affixes (for awareness)</h4>
+    <p>
+      English also has <strong>infixes</strong> (inside the word, rare in formal English)
+      and <strong>circumfixes</strong> (at the beginning and end, not really common in modern English).
+      For exams, focus on <strong>prefixes</strong> and <strong>suffixes</strong>.
+    </p>
+
+    <h3>2. Derivational vs. Inflectional Affixes</h3>
+
+    <h4>2.1 Derivational Affixes</h4>
+    <p>
+      <strong>Derivational affixes</strong> create a <strong>new word</strong> with a new meaning and often
+      a different part of speech.
+    </p>
+    <ul>
+      <li><code>happy</code> → <code>unhappy</code> (meaning changes)</li>
+      <li><code>happy</code> (adj) → <code>happiness</code> (noun)</li>
+      <li><code>create</code> (verb) → <code>creation</code> (noun)</li>
+      <li><code>beauty</code> (noun) → <code>beautiful</code> (adjective)</li>
+    </ul>
+    <p><strong>Key idea:</strong> Derivational = <em>derives a new word</em>.</p>
+
+    <h4>2.2 Inflectional Affixes</h4>
+    <p>
+      <strong>Inflectional affixes</strong> do <em>not</em> create a new dictionary word. They keep the same
+      basic meaning but change the <strong>form</strong> for grammar:
+      tense, plural, comparison, etc.
+    </p>
+    <p>Common inflectional suffixes:</p>
+    <ul>
+      <li><strong>-s / -es</strong> (plural or 3rd person singular): cat → cats; she walks</li>
+      <li><strong>-ed</strong> (past tense): walk → walked</li>
+      <li><strong>-ing</strong> (continuous/gerund): read → reading</li>
+      <li><strong>-er / -est</strong> (comparison): tall → taller → tallest</li>
+    </ul>
+    <p><strong>Key idea:</strong> Inflectional = <em>same word, new form</em>.</p>
+
+    <h3>3. Common Prefixes</h3>
+    <p>Below are some very common prefixes and their meanings:</p>
+    <ul>
+      <li><strong>un-</strong> = not, opposite of (unhappy, unfair)</li>
+      <li><strong>in- / im- / il- / ir-</strong> = not (incorrect, impossible, illegal, irregular)</li>
+      <li><strong>dis-</strong> = not, opposite, reverse (disagree, disconnect)</li>
+      <li><strong>re-</strong> = again, back (redo, rewrite, return)</li>
+      <li><strong>pre-</strong> = before (preview, pretest)</li>
+      <li><strong>mis-</strong> = wrongly, badly (misunderstand, misbehave)</li>
+      <li><strong>over-</strong> = too much (overeat, overconfident)</li>
+      <li><strong>under-</strong> = too little, below (underpaid, underestimate)</li>
+      <li><strong>sub-</strong> = under, below (subway, submarine)</li>
+      <li><strong>super-</strong> = above, beyond (superstar, superhuman)</li>
+      <li><strong>inter-</strong> = between, among (international, interact)</li>
+      <li><strong>trans-</strong> = across, through (transport, transmit)</li>
+      <li><strong>bi-</strong> = two (bicycle, bilingual)</li>
+      <li><strong>tri-</strong> = three (triangle, tripod)</li>
+      <li><strong>co- / com- / con-</strong> = with, together (cooperate, connect)</li>
+    </ul>
+    <p>
+      <strong>Exam tip:</strong> Many antonyms (opposites) are formed with prefixes like
+      <em>un-, in-, im-, il-, ir-, dis-, mis-</em>.
+    </p>
+
+    <h3>4. Common Suffixes</h3>
+
+    <h4>4.1 Noun-forming Suffixes</h4>
+    <ul>
+      <li><strong>-er / -or</strong> = person who does something (teach → teacher, act → actor)</li>
+      <li><strong>-ist</strong> = person who does or believes in (art → artist, science → scientist)</li>
+      <li><strong>-ness</strong> = state or quality (kind → kindness, happy → happiness)</li>
+      <li><strong>-ment</strong> = result or action (move → movement, develop → development)</li>
+      <li><strong>-tion / -sion / -ion</strong> = action or process (create → creation, decide → decision)</li>
+      <li><strong>-ity / -ty</strong> = state or condition (safe → safety, active → activity)</li>
+      <li><strong>-ance / -ence</strong> = state or quality (perform → performance, exist → existence)</li>
+    </ul>
+
+    <h4>4.2 Adjective-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ful</strong> = full of (beauty → beautiful, joy → joyful)</li>
+      <li><strong>-less</strong> = without (hope → hopeless, care → careless)</li>
+      <li><strong>-ous / -ious</strong> = full of (danger → dangerous, mystery → mysterious)</li>
+      <li><strong>-ive</strong> = having a quality (act → active, create → creative)</li>
+      <li><strong>-al</strong> = relating to (nation → national, logic → logical)</li>
+      <li><strong>-y</strong> = having, characterized by (noise → noisy, rain → rainy)</li>
+      <li><strong>-ic</strong> = relating to (poet → poetic, history → historic)</li>
+    </ul>
+
+    <h4>4.3 Verb-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ize / -ise</strong> (modern → modernize, real → realize)</li>
+      <li><strong>-en</strong> (dark → darken, strength → strengthen)</li>
+      <li><strong>-ify</strong> (simple → simplify, beauty → beautify)</li>
+    </ul>
+
+    <h4>4.4 Adverb-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ly</strong> (quick → quickly, slow → slowly, happy → happily)</li>
+    </ul>
+
+    <h3>5. Using Affixes to Guess Meaning (Exam Strategy)</h3>
+    <p>When you see a difficult word in a test:</p>
+    <ol>
+      <li>
+        <strong>Break the word</strong> into prefix + root + suffix.  
+        Example: <code>unhappiness</code> = un- (not) + happy + -ness (state) → state of not being happy.
+      </li>
+      <li>
+        <strong>Use what you know</strong>. If you know the root and the affix, you can often guess the meaning.
+      </li>
+      <li>
+        <strong>Watch negative prefixes</strong>: un-, in-, im-, il-, ir-, dis-, mis-, non-.
+      </li>
+      <li>
+        <strong>Check part of speech</strong>:
+        <ul>
+          <li>-ness, -tion, -ment, -ity → usually nouns</li>
+          <li>-ful, -less, -ous, -ive, -al → usually adjectives</li>
+          <li>-ly → usually adverbs (from adjectives)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>6. Spelling Notes with Suffixes</h3>
+    <ul>
+      <li><strong>Drop silent -e</strong>: love → loving; use → usable</li>
+      <li><strong>Double the final consonant</strong> (CVC words): run → running; big → bigger</li>
+      <li><strong>-y → -i</strong> (after a consonant): happy → happiness; easy → easier</li>
+    </ul>
+
+    <p>
+      Mastering affixes will help you understand new words, guess meanings in context,
+      and choose the correct word forms in sentence completion questions.
+    </p>
+  `
+}
+
+
+  
 
   adverbs: {
     title: "Adverbs – How, When, Where, and How Often",
