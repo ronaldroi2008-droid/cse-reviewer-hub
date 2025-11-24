@@ -44,6 +44,7 @@ const TOPIC_MAX_QUESTIONS = {
   affixes: 50,
   punctuations: 50,
   synonyms: 50,
+  antonyms:50
   words_often_confused: 50,
   prepositions: 50
 };
@@ -4248,6 +4249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "error_identification": return typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined' ? ERROR_IDENTIFICATION_QUESTIONS : null;
       case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
       case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
+       case "antonyms": return typeof ANTONYMS_QUESTIONS !== 'undefined' ? ANTONYMS_QUESTIONS : null;  
       case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
       case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
       default: return null;
