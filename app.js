@@ -4140,6 +4140,169 @@ analogy: {
     `
   },
 
+
+  paragraph_organization: {
+    title: "Paragraph Organization – Mastering Jumbled Sentences",
+    level: "Verbal Ability",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. What is Paragraph Organization?</h2>
+        <p>
+          In this test, you are presented with 4 to 6 sentences that are <strong>jumbled</strong> (scrambled).
+          Your task is to arrange them in the correct logical order to form a coherent paragraph.
+        </p>
+        <div class="highlight-box">
+          <p><strong>The Goal:</strong> Find the sequence that makes sense.</p>
+          <p>It usually follows a structure:</p>
+          <ol>
+            <li><strong>Topic Sentence</strong> (Introduction / Main Idea)</li>
+            <li><strong>Supporting Sentences</strong> (Details / Examples / Explanation)</li>
+            <li><strong>Concluding Sentence</strong> (Summary / Result / Closing)</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Strategy 1: Find the "Topic Sentence" (The Lead)</h2>
+        <p>
+          The most effective way to start is to find the <strong>First Sentence</strong>.
+          The first sentence must be <strong>independent</strong>—it does not depend on previous sentences to be understood.
+        </p>
+
+        <h3>❌ Signs a sentence is NOT First:</h3>
+        <ul class="check-list">
+          <li><strong>Pronouns without Antecedents:</strong> Sentences starting with <em>He, She, It, They, These, Those</em> usually refer to a noun mentioned earlier.</li>
+          <li><strong>Transition Words:</strong> Sentences starting with <em>However, Therefore, Also, Furthermore, Consequently</em> usually connect to a previous idea.</li>
+          <li><strong>Specific Details:</strong> Sentences that give specific data or examples usually come after a general statement.</li>
+        </ul>
+
+        <h3>✅ Signs a sentence IS First:</h3>
+        <ul class="check-list">
+          <li><strong>Full Names:</strong> Uses the full name of a person or subject (e.g., "Dr. Jose Rizal" instead of "He").</li>
+          <li><strong>General Statements:</strong> Introduces a broad topic (e.g., "Climate change is a global crisis.").</li>
+          <li><strong>Setting the Scene:</strong> Establishes time and place.</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Strategy 2: Spot the "Signal Words"</h2>
+        <p>
+          Once you have the lead, look for keywords that link sentences together.
+        </p>
+
+        <table class="lesson-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Keywords</th>
+              <th>Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chronology</strong></td>
+              <td>First, Second, Next, Then, Finally, Afterward</td>
+              <td>Arranges events in time order.</td>
+            </tr>
+            <tr>
+              <td><strong>Addition</strong></td>
+              <td>Also, Moreover, Furthermore, In addition, And</td>
+              <td>Adds related information.</td>
+            </tr>
+            <tr>
+              <td><strong>Contrast</strong></td>
+              <td>But, However, Yet, On the other hand, Although</td>
+              <td>Introduces an opposing idea.</td>
+            </tr>
+            <tr>
+              <td><strong>Result</strong></td>
+              <td>Therefore, Thus, Hence, As a result, Consequently</td>
+              <td>Shows the effect of a previous action.</td>
+            </tr>
+            <tr>
+              <td><strong>Example</strong></td>
+              <td>For example, For instance, Such as</td>
+              <td>Provides proof for a general statement.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Strategy 3: The Noun-Pronoun Rule</h2>
+        <p>
+          In English, we introduce the <strong>Noun</strong> first, then use the <strong>Pronoun</strong> later.
+        </p>
+        <div class="highlight-box">
+          <p><strong>Sentence A:</strong> <em><strong>It</strong> is very nutritious.</em></p>
+          <p><strong>Sentence B:</strong> <em>An <strong>apple</strong> is a popular fruit.</em></p>
+          <p><strong>Logic:</strong> B must come before A. We must know what "It" is.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Strategy 4: General to Specific</h2>
+        <p>
+          Paragraphs usually flow like an inverted pyramid:
+        </p>
+        <ol>
+          <li><strong>General Idea:</strong> "Pollution is destroying our oceans."</li>
+          <li><strong>Elaboration:</strong> "Plastic waste is the biggest culprit."</li>
+          <li><strong>Specific Example:</strong> "For example, turtles often mistake plastic bags for jellyfish."</li>
+        </ol>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. Step-by-Step Walkthrough</h2>
+        <p><strong>Arrange these sentences:</strong></p>
+        <ol type="A">
+          <li>Consequently, the government declared a state of calamity.</li>
+          <li>Heavy rains lashed the province for three days straight.</li>
+          <li>Rescue teams were deployed to help stranded residents.</li>
+          <li>This caused rivers to overflow and submerge nearby towns.</li>
+        </ol>
+
+        <h3>Analysis:</h3>
+        <ol>
+          <li>
+            <strong>Find the Lead:</strong>
+            <ul>
+              <li>(A) starts with "Consequently" (Result).</li>
+              <li>(C) mentions "Rescue teams" (Reaction to an event).</li>
+              <li>(D) starts with "This caused" (Refers to a cause).</li>
+              <li><strong>(B) "Heavy rains lashed..."</strong> is the main event. <strong>Start with B.</strong></li>
+            </ul>
+          </li>
+          <li>
+            <strong>What did the rains (B) do?</strong>
+            <br>Look at (D): "This caused rivers to overflow..." ("This" refers to the rains). <strong>Order: B - D</strong>.
+          </li>
+          <li>
+            <strong>What happened after the flooding (D)?</strong>
+            <br>(A) talks about the government declaration. (C) talks about rescue.
+            Usually, the calamity is declared (A), or rescue happens (C). Let's look at logic.
+            The consequence of widespread flooding is the declaration (A). The immediate action is rescue (C).
+            <em>However</em>, usually "Consequently" links directly to the major effect.
+            Let's look closer: Rains -> Overflow -> Calamity Declaration / Rescue.
+            Often, the declaration is the "Result" summary.
+            Let's try: <strong>B - D - A - C</strong> (Rains -> Flood -> Calamity -> Rescue efforts funded by calamity state).
+            Or <strong>B - D - C - A</strong> (Rains -> Flood -> Rescue -> Government declares state).
+            <em>Exam Tip: Check the options provided in the test to see which pair exists.</em>
+          </li>
+        </ol>
+      </section>
+
+      <section class="lesson-section">
+        <h2>7. Quick Tips for the Exam</h2>
+        <ul class="check-list">
+          <li><strong>Mandatory Pairs:</strong> Find two sentences that MUST go together (e.g., Question & Answer, Cause & Effect). If you find a pair (like B-D), look for that pair in the choices to eliminate wrong answers.</li>
+          <li><strong>The "Tail":</strong> Identify the concluding sentence. It often summarizes or gives a final recommendation (e.g., "Therefore," "In the end").</li>
+          <li><strong>Acronyms:</strong> The full name (World Health Organization) always comes before the acronym (WHO).</li>
+          <li><strong>Chronology:</strong> Look for dates. 1990 comes before 2000.</li>
+        </ul>
+      </section>
+    `
+  },
   
 // ==========================================
 // SYNONYMS – STUDY MODE EXPLANATION
