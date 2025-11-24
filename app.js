@@ -2279,6 +2279,289 @@ const LESSONS = {
     ] 
   },
 
+   punctuation: {
+  title: "Punctuation",
+  level: "Verbal Ability · Grammar · Punctuation",
+  fullHtml: `
+    <h2>Punctuation – Study Notes</h2>
+    <p>
+      Punctuation marks help readers know where a sentence begins and ends, where to pause, and how ideas are connected.
+      In exams, punctuation questions often test commas, apostrophes, end punctuation, semicolons, colons, and quotation marks.
+    </p>
+
+    <h3>1. Period (.)</h3>
+    <p><strong>Main Uses:</strong></p>
+    <ul>
+      <li>
+        <strong>End of a statement (declarative sentence)</strong><br />
+        <em>Examples:</em><br />
+        She passed the exam.<br />
+        The Civil Service Exam is important.
+      </li>
+      <li>
+        <strong>After some abbreviations</strong><br />
+        <em>Examples:</em> Dr., Mr., etc., a.m., p.m.
+      </li>
+    </ul>
+    <p><strong>Exam Tip:</strong> Do not join two complete sentences with just a comma. Use a period, semicolon, or a conjunction.</p>
+    <p>
+      <em>Wrong:</em> He was tired, he went home.<br />
+      <em>Correct:</em> He was tired. He went home.<br />
+      <em>Also correct:</em> He was tired, so he went home.
+    </p>
+
+    <h3>2. Question Mark (?)</h3>
+    <p><strong>Main Use:</strong> End of a direct question.</p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>What time is the exam?</li>
+      <li>Do you understand the instructions?</li>
+    </ul>
+    <p><strong>Indirect questions do not take a question mark.</strong></p>
+    <p>
+      <em>Indirect:</em> He asked if I was ready.<br />
+      <em>Direct:</em> He asked, "Are you ready?"
+    </p>
+
+    <h3>3. Exclamation Point (!)</h3>
+    <p><strong>Main Use:</strong> Shows strong feeling, surprise, or urgency.</p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>Watch out!</li>
+      <li>Congratulations!</li>
+      <li>That was amazing!</li>
+    </ul>
+    <p><strong>Exam Tip:</strong> In formal writing, exclamation marks are rare. They appear more in dialogue or expressive sentences.</p>
+
+    <h3>4. Comma (,)</h3>
+    <p>The comma is one of the most frequently tested punctuation marks.</p>
+
+    <h4>4.1 Commas in a Series (Lists)</h4>
+    <p>Use commas to separate three or more items in a list.</p>
+    <p><em>Example:</em> We bought paper, pens, and folders.</p>
+    <p>The comma before "and" is sometimes called the Oxford comma. Many exams accept both styles as long as they are clear and consistent.</p>
+
+    <h4>4.2 Commas with Coordinating Conjunctions (FANBOYS)</h4>
+    <p>
+      Use a comma before a coordinating conjunction (for, and, nor, but, or, yet, so) if it joins two independent clauses
+      (two complete sentences).
+    </p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>She studied hard, and she passed the exam.</li>
+      <li>He was tired, but he continued to work.</li>
+    </ul>
+    <p>
+      If the part after the conjunction is not a full sentence, the comma is often omitted.<br />
+      <em>Example:</em> She studied hard and passed the exam.
+    </p>
+    <p><strong>Safe exam rule:</strong> When in doubt, if both sides are full sentences, use a comma + FANBOYS.</p>
+
+    <h4>4.3 Commas After Introductory Words and Phrases</h4>
+    <p>Use a comma after introductory words, phrases, or clauses.</p>
+    <ul>
+      <li>After the meeting, they went home.</li>
+      <li>In the morning, I review my notes.</li>
+      <li>Yes, I understand.</li>
+      <li>However, I need more time.</li>
+    </ul>
+
+    <h4>4.4 Commas for Nonessential (Non-Restrictive) Information</h4>
+    <p>
+      Use commas to set off information that is extra and not necessary to identify the noun. Removing it does not change
+      the main meaning.
+    </p>
+    <ul>
+      <li>My brother, who lives in Cebu, is a teacher.</li>
+      <li>Mr. Cruz, our supervisor, approved the request.</li>
+    </ul>
+    <p>
+      If the information is essential to identify which person or thing you mean, do <strong>not</strong> use commas:
+    </p>
+    <p><em>Example:</em> Students who study hard pass the exam. (Only those students who study hard.)</p>
+
+    <h4>4.5 Commas in Direct Address, Tag Questions, and Short Comments</h4>
+    <ul>
+      <li><strong>Direct address:</strong> Maria, please close the door. / Please sit down, sir.</li>
+      <li><strong>Tag questions:</strong> You understand the lesson, don’t you?</li>
+      <li><strong>Short comments:</strong> He is late, of course. / That is impossible, frankly.</li>
+    </ul>
+
+    <h4>4.6 Common Comma Errors</h4>
+    <p><strong>Comma splice:</strong> joining two complete sentences with only a comma.</p>
+    <p>
+      <em>Wrong:</em> The exam is tomorrow, I am nervous.<br />
+      <em>Correct:</em> The exam is tomorrow, and I am nervous.<br />
+      <em>Also correct:</em> The exam is tomorrow; I am nervous.<br />
+      <em>Also correct:</em> The exam is tomorrow. I am nervous.
+    </p>
+    <p><strong>Missing comma after an introductory clause:</strong></p>
+    <p>
+      <em>Wrong:</em> When the test was over they went home.<br />
+      <em>Correct:</em> When the test was over, they went home.
+    </p>
+
+    <h3>5. Semicolon (;)</h3>
+    <p>The semicolon is stronger than a comma and weaker than a period.</p>
+
+    <h4>5.1 Between Related Independent Clauses</h4>
+    <p>Use a semicolon between two closely related complete sentences when no conjunction is used.</p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>The road was flooded; the trip was cancelled.</li>
+      <li>He studied all night; he wanted to pass the exam.</li>
+    </ul>
+
+    <h4>5.2 Before Conjunctive Adverbs</h4>
+    <p>
+      When you connect two sentences using words like however, therefore, moreover, consequently, nevertheless, etc.,
+      use this pattern:
+    </p>
+    <p><em>Pattern:</em> Sentence A; conjunctive adverb, sentence B.</p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>He wanted to rest; however, he continued working.</li>
+      <li>The instructions were clear; therefore, no one asked questions.</li>
+    </ul>
+
+    <h4>5.3 In Complex Lists</h4>
+    <p>Use semicolons to separate items in a list when the items already contain commas.</p>
+    <p><em>Example:</em> We visited Manila, Philippines; Bangkok, Thailand; and Hanoi, Vietnam.</p>
+
+    <h3>6. Colon (:)</h3>
+
+    <h4>6.1 Before a List (After a Complete Sentence)</h4>
+    <p>
+      Use a colon to introduce a list only when the part before the colon is a complete sentence.
+    </p>
+    <p>
+      <em>Correct:</em> Bring the following items: a pen, a pencil, and an eraser.<br />
+      <em>Incorrect:</em> Bring: a pen, a pencil, and an eraser.
+    </p>
+
+    <h4>6.2 Before an Explanation or Example</h4>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>He had one goal: to pass the Civil Service Exam.</li>
+      <li>She made a decision: she would resign.</li>
+    </ul>
+
+    <h4>6.3 In Time and Formal Letters</h4>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>8:30 a.m.</li>
+      <li>Dear Sir/Madam:</li>
+    </ul>
+
+    <h3>7. Quotation Marks (“ ”)</h3>
+
+    <h4>7.1 Direct Speech or Direct Quotation</h4>
+    <p>Use quotation marks for the exact words someone said or wrote.</p>
+    <p><em>Examples:</em></p>
+    <ul>
+      <li>She said, “I will review tonight.”</li>
+      <li>“Please sign here,” the clerk said.</li>
+    </ul>
+
+    <h4>7.2 Punctuation with Quotation Marks</h4>
+    <p><strong>American style:</strong> periods and commas usually go inside the closing quotation mark.</p>
+    <p>
+      He answered, “Yes.”<br />
+      “No,” she replied.
+    </p>
+    <p>
+      For question marks and exclamation points, placement depends on whether the quote itself is a question or exclamation:
+    </p>
+    <p>
+      He asked, “Are you ready?”<br />
+      Did she say, “I am ready”?
+    </p>
+
+    <h4>7.3 Titles of Short Works</h4>
+    <p>Use quotation marks for titles of short stories, poems, articles, and songs.</p>
+    <p><em>Example:</em> I enjoyed the article “Improving Your Study Habits.”</p>
+
+    <h3>8. Apostrophe (’)</h3>
+
+    <h4>8.1 Contractions</h4>
+    <p>The apostrophe shows missing letters in contractions.</p>
+    <ul>
+      <li>do not → don’t</li>
+      <li>I am → I’m</li>
+      <li>they are → they’re</li>
+    </ul>
+
+    <h4>8.2 Possessive Nouns</h4>
+    <ul>
+      <li><strong>Singular noun:</strong> add ’s<br />the girl’s bag, Mr. Cruz’s office</li>
+      <li><strong>Plural noun ending in s:</strong> add only an apostrophe after s<br />the teachers’ room, the students’ books</li>
+      <li><strong>Irregular plural (no s):</strong> add ’s<br />children’s toys, men’s clothes</li>
+    </ul>
+
+    <h4>8.3 Its vs. It’s</h4>
+    <ul>
+      <li><strong>it’s</strong> = it is / it has<br />It’s raining. (= It is raining.)</li>
+      <li><strong>its</strong> = possessive pronoun<br />The dog wagged its tail.</li>
+    </ul>
+    <p><strong>Important:</strong> Never write “it’s tail” when you mean possession.</p>
+
+    <h4>8.4 Apostrophe and Plurals</h4>
+    <p>Do not use apostrophes just to make regular plurals.</p>
+    <p>
+      <em>Wrong:</em> apple’s (if you mean many apples)<br />
+      <em>Correct:</em> apples
+    </p>
+
+    <h3>9. Hyphen (-) and Dash (—)</h3>
+
+    <h4>9.1 Hyphen (-)</h4>
+    <p>Short line, used mainly to join words.</p>
+    <ul>
+      <li><strong>Compound adjectives before a noun:</strong><br />a well-known author, a five-year-old child, a high-quality product</li>
+      <li><strong>With prefixes to avoid confusion or awkward spelling:</strong><br />re-enter, ex-president, self-control</li>
+    </ul>
+
+    <h4>9.2 Dash (—) (Em Dash)</h4>
+    <p>Longer line, used for breaks in thought or strong emphasis.</p>
+    <ul>
+      <li>She wanted to resign — but she needed the job.</li>
+      <li>My brother — the one who lives in Cebu — is visiting.</li>
+    </ul>
+    <p>In exams, a dash is often the best choice when the writer wants a strong interruption or emphasis in the sentence.</p>
+
+    <h3>10. Parentheses ( ) and Brackets [ ]</h3>
+
+    <h4>10.1 Parentheses ( )</h4>
+    <p>Used to include additional, less important information or clarification.</p>
+    <ul>
+      <li>The meeting will be on Monday (if the director is available).</li>
+      <li>He finally passed the exam (on his second attempt).</li>
+    </ul>
+
+    <h4>10.2 Brackets [ ]</h4>
+    <p>Used mainly inside quotations to add explanation or changes.</p>
+    <p><em>Example:</em> He said, “They [the committee] will decide tomorrow.”</p>
+    <p>Brackets are less common in CSE-type questions than parentheses.</p>
+
+    <h3>11. Ellipsis (...)</h3>
+    <p>Ellipsis = three dots, usually written as three periods in a row.</p>
+    <ul>
+      <li><strong>Omitting words in quotations:</strong> He said, “I believe... we can succeed.”</li>
+      <li><strong>Showing trailing or unfinished thought (informal):</strong> I thought I was ready, but...</li>
+    </ul>
+
+    <h3>12. Typical Exam Tasks on Punctuation</h3>
+    <ul>
+      <li>Choose the sentence with correct punctuation.</li>
+      <li>Identify the error (comma splice, missing comma, wrong apostrophe, etc.).</li>
+      <li>Fill in the blank with the correct punctuation mark.</li>
+      <li>Decide where to place commas, semicolons, or colons in a sentence.</li>
+    </ul>
+    <p><strong>Key Strategy:</strong> Always check if the parts are complete sentences (subject + verb + complete idea). This will guide you in choosing period, comma + conjunction, semicolon, or nothing.</p>
+  `
+},
+
+
 affixes: {
   title: "Affixes",
   level: "Verbal Ability",
