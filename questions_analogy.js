@@ -177,10 +177,10 @@ const ANALOGY_QUESTIONS = {
   ],
 
   // ==========================================
-  // LEVEL 4: EXPERT (50 Items)
+  // LEVEL 4: SUPER (50 Items)
   // Focus: Obscure vocabulary, complex reasoning
   // ==========================================
-  expert: [
+  super: [
     { q: "PERFIDIOUS : TRUST :: TREACHEROUS : _______", options: ["Loyalty", "Faith", "Honesty", "Honor"], a: "Loyalty", exp: "Perfidious means violating trust; treacherous means violating loyalty." },
     { q: "SAGACIOUS : WISDOM :: PRESCIENT : _______", options: ["Foresight", "Knowledge", "Smart", "Future"], a: "Foresight", exp: "Sagacious means having wisdom; prescient means having foresight." },
     { q: "VORACIOUS : HUNGER :: INSATIABLE : _______", options: ["Desire", "Thirst", "Need", "Want"], a: "Desire", exp: "Voracious describes extreme hunger; insatiable describes extreme desire." },
