@@ -116,7 +116,7 @@ const PUNCTUATIONS_QUESTIONS = {
     { question: "What encloses words added to a quote?", choices: ["( )", "[ ]", "{ }", "/ /"], correctIndex: 1, explanation: "Rule: Brackets [ ]. Use them to add your own words/explanation inside someone else's quote." },
     { question: "Punctuation with Parentheses: 'I saw him (yesterday).'", choices: ["(yesterday).", "(yesterday.)", ".(yesterday)", "(yesterday)"], correctIndex: 0, explanation: "Rule: If the parentheses are part of a sentence, the period goes OUTSIDE." },
     { question: "Correct: 'He said, \"It [the car] is broken.\"'", choices: ["Correct", "Incorrect"], correctIndex: 0, explanation: "Rule: Brackets clarify 'It' inside the quote." },
-    { question: "Parentheses vs Commas: Which is more formal/interruptive?", choices: ["Parentheses", "Commas"], correctIndex: 0, explanation: "Rule: Parentheses create a stronger break/separation than commas." },
+    { question: "Parentheses vs Commas: Which creates a stronger break in the sentence?", choices: ["Parentheses", "Commas"], correctIndex: 0, explanation: "Rule: Parentheses create a stronger break/separation than commas." },
     { question: "Use parentheses for: 'The meeting (held on Zoom) was long.'", choices: ["Correct", "Incorrect"], correctIndex: 0, explanation: "Rule: Extra info." },
     { question: "Full sentence in parentheses: '(He didn't know.)'", choices: ["(He didn't know.)", "(He didn't know)."], correctIndex: 0, explanation: "Rule: If the parentheses contain a full separate sentence, the period goes INSIDE." },
     { question: "Which symbols are Parentheses?", choices: ["( )", "[ ]", "{ }"], correctIndex: 0, explanation: "Rule: Identification." },
