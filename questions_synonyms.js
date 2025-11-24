@@ -924,9 +924,9 @@ const SYNONYMS_QUESTIONS = {
   ],
 
   // ==========================================
-  // LEVEL 4: EXPERT (Super Hard / Obscure)
+  // LEVEL 4: SUPER (Super Hard / Obscure)
   // ==========================================
-  expert: [
+  super: [
     {
       question: "Choose the synonym for: ABATE",
       options: ["Increase", "Subside", "Prolong", "Expand"],
