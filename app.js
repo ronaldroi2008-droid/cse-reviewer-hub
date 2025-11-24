@@ -41,6 +41,7 @@ const TOPIC_MAX_QUESTIONS = {
   sentence_construction: 50,
   sentence_structure: 50,
   affixes: 50,
+  punctuations: 50,
   prepositions: 50
 };
 
@@ -3722,6 +3723,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return SENTENCE_STRUCTURE_QUESTIONS;
          case "affixes":
         return AFFIXES_QUESTIONS;
+        case "punctuations":
+        return PUNCTUATIONS_QUESTIONS;
       default:
         return null;
     }
