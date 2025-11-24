@@ -4388,32 +4388,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Practice Mode Logic ---
 
   function getQuestionBank(topic) {
-    switch (topic) {
-      case "nouns": return typeof NOUN_QUESTIONS !== 'undefined' ? NOUN_QUESTIONS : null;
-      case "gender": return typeof GENDER_QUESTIONS !== 'undefined' ? GENDER_QUESTIONS : null;
-      case "grammatical_number": return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
-      case "verbs": return typeof VERB_QUESTIONS !== 'undefined' ? VERB_QUESTIONS : null;
-      case "tenses": return typeof TENSE_QUESTIONS !== 'undefined' ? TENSE_QUESTIONS : null;
-      case "pronouns": return typeof PRONOUN_QUESTIONS !== 'undefined' ? PRONOUN_QUESTIONS : null;
-      case "adjectives": return typeof ADJECTIVE_QUESTIONS !== 'undefined' ? ADJECTIVE_QUESTIONS : null;
-      case "adverbs": return typeof ADVERB_QUESTIONS !== 'undefined' ? ADVERB_QUESTIONS : null;
-      case "prepositions": return typeof PREPOSITION_QUESTIONS !== 'undefined' ? PREPOSITION_QUESTIONS : null;
-      case "conjunctions": return typeof CONJUNCTION_QUESTIONS !== 'undefined' ? CONJUNCTION_QUESTIONS : null;
-      case "interjections": return typeof INTERJECTION_QUESTIONS !== 'undefined' ? INTERJECTION_QUESTIONS : null;
-      case "articles": return typeof ARTICLE_QUESTIONS !== 'undefined' ? ARTICLE_QUESTIONS : null;
-      case "subject_verb_agreement": return typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined' ? SUBJECT_VERB_AGREEMENT_QUESTIONS : null;
-      case "sentence_construction": return typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined' ? SENTENCE_CONSTRUCTION_QUESTIONS : null;
-      case "sentence_structure": return typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined' ? SENTENCE_STRUCTURE_QUESTIONS : null;
-      case "error_identification": return typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined' ? ERROR_IDENTIFICATION_QUESTIONS : null;
-      case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
-      case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
-       case "antonyms": return typeof ANTONYMS_QUESTIONS !== 'undefined' ? ANTONYMS_QUESTIONS : null;  
-      case "analogy": return typeof ANALOGY_QUESTIONS !== 'undefined' ? ANALOGY_QUESTIONS : null;  
-      case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
-      case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
-      default: return null;
-    }
+  switch (topic) {
+    case "nouns": return typeof NOUN_QUESTIONS !== 'undefined' ? NOUN_QUESTIONS : null;
+    case "gender": return typeof GENDER_QUESTIONS !== 'undefined' ? GENDER_QUESTIONS : null;
+    case "grammatical_number": return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
+    case "verbs": return typeof VERB_QUESTIONS !== 'undefined' ? VERB_QUESTIONS : null;
+    case "tenses": return typeof TENSE_QUESTIONS !== 'undefined' ? TENSE_QUESTIONS : null;
+    case "pronouns": return typeof PRONOUN_QUESTIONS !== 'undefined' ? PRONOUN_QUESTIONS : null;
+    case "adjectives": return typeof ADJECTIVE_QUESTIONS !== 'undefined' ? ADJECTIVE_QUESTIONS : null;
+    case "adverbs": return typeof ADVERB_QUESTIONS !== 'undefined' ? ADVERB_QUESTIONS : null;
+    case "prepositions": return typeof PREPOSITION_QUESTIONS !== 'undefined' ? PREPOSITION_QUESTIONS : null;
+    case "conjunctions": return typeof CONJUNCTION_QUESTIONS !== 'undefined' ? CONJUNCTION_QUESTIONS : null;
+    case "interjections": return typeof INTERJECTION_QUESTIONS !== 'undefined' ? INTERJECTION_QUESTIONS : null;
+    case "articles": return typeof ARTICLE_QUESTIONS !== 'undefined' ? ARTICLE_QUESTIONS : null;
+    case "subject_verb_agreement": return typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined' ? SUBJECT_VERB_AGREEMENT_QUESTIONS : null;
+    case "sentence_construction": return typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined' ? SENTENCE_CONSTRUCTION_QUESTIONS : null;
+    case "sentence_structure": return typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined' ? SENTENCE_STRUCTURE_QUESTIONS : null;
+    case "error_identification": return typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined' ? ERROR_IDENTIFICATION_QUESTIONS : null;
+    case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
+    case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
+    case "antonyms": return typeof ANTONYMS_QUESTIONS !== 'undefined' ? ANTONYMS_QUESTIONS : null;
+    case "analogy": return typeof ANALOGY_QUESTIONS !== 'undefined' ? ANALOGY_QUESTIONS : null;
+    case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
+    case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
+    default: return null;
   }
+}
 
   if (practiceTopicEl) {
     practiceTopicEl.innerHTML = "";
