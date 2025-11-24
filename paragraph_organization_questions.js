@@ -926,9 +926,9 @@ const PARAGRAPH_ORGANIZATION_QUESTIONS = {
   ],
 
   // ==========================================
-  // LEVEL 4: EXPERT (Dense text, subtle clues)
+  // LEVEL 4: SUPER (Dense text, subtle clues)
   // ==========================================
-  expert: [
+  super: [
     {
       q: "Arrange the following:\n1. This dissonance compels the mind to resolve the conflict.\n2. Cognitive dissonance occurs when beliefs clash with actions.\n3. The individual may change their behavior to align with beliefs.\n4. Alternatively, they may justify the action to reduce discomfort.",
       options: ["2-1-3-4", "1-2-3-4", "2-3-4-1", "1-3-4-2"],
