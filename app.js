@@ -4679,42 +4679,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startQuizBtn.addEventListener("click", () => {
-    stopCurrentTimer();
-    const topic = practiceTopicEl.value;
-    const level = practiceLevelEl.value;
-    const count = parseInt(practiceCountEl.value, 10);
-    const timer = timerModeEl.value;
-    const weakNotes = practiceWeakEl.value.trim();
+  stopCurrentTimer();
+  const topic = practiceTopicEl.value;
+  const level = practiceLevelEl.value;
+  const count = parseInt(practiceCountEl.value, 10);
+  const timer = timerModeEl.value;
+  const weakNotes = practiceWeakEl.value.trim();
 
-    const bank = getQuestionBank(topic);
-    if (!bank) {
-      alert("Questions for this topic are not yet available. Please ensure the Question files are loaded.");
-      return;
-    }
+  console.log("=== DEBUG QUIZ START ===");
+  console.log("Topic:", topic);
+  console.log("Level:", level);
+  
+  const bank = getQuestionBank(topic);
+  console.log("Question bank:", bank);
+  
+  if (!bank) {
+    alert("Questions for this topic are not yet available. Please ensure the Question files are loaded.");
+    return;
+  }
 
-    const pool = bank[level];
-    if (!pool || pool.length === 0) {
-      alert(`No questions found for ${level} level.`);
-      return;
-    }
+  const pool = bank[level];
+  console.log("Level pool:", pool);
+  console.log("Pool length:", pool ? pool.length : 0);
+  
+  if (!pool || pool.length === 0) {
+    alert(`No questions found for ${level} level.`);
+    return;
+  }
 
-    const selectedQuestions = shuffleArray(pool).slice(0, count);
+  // Debug first question structure
+  if (pool[0]) {
+    console.log("First question structure:", pool[0]);
+    console.log("Question:", pool[0].question);
+    console.log("Choices:", pool[0].choices || pool[0].options);
+    console.log("Correct index:", pool[0].correctIndex);
+    console.log("Answer:", pool[0].answer);
+  }
 
-    quizState = {
-      questions: selectedQuestions,
-      currentIndex: 0,
-      correct: 0,
-      incorrect: 0,
-      timerMode: timer,
-      timeLeft: 0,
-      timerId: null,
-      answered: false,
-      weakNotes,
-      wrongAnswers: []
-    };
+  const selectedQuestions = shuffleArray(pool).slice(0, count);
+  console.log("Selected questions:", selectedQuestions);
 
-    showQuestion();
-  });
+  // Continue with your existing quiz setup...
+  quizState = {
+    questions: selectedQuestions,
+    currentIndex: 0,
+    correct: 0,
+    incorrect: 0,
+    timerMode: timer,
+    timeLeft: 0,
+    timerId: null,
+    answered: false,
+    weakNotes,
+    wrongAnswers: []
+  };
+
+  showQuestion();
+});
 
   quizNextBtn.addEventListener("click", () => {
     if (!quizState) return;
