@@ -1,4 +1,4 @@
-const CONFUSED_WORDS_QUESTIONS = {
+const WORDS_OFTEN_CONFUSED_QUESTIONS = {
   beginner: [
     // 1-10: Your vs You're
     { 
