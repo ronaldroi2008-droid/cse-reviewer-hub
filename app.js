@@ -43,6 +43,7 @@ const TOPIC_MAX_QUESTIONS = {
   error_identification: 50,
   affixes: 50,
   punctuations: 50,
+  synonyms: 50,
   words_often_confused: 50,
   prepositions: 50
 };
@@ -3767,6 +3768,135 @@ words_often_confused: {
     }
 };
 
+// ==========================================
+// SYNONYMS – STUDY MODE EXPLANATION
+// ==========================================
+
+synonym: {
+  {
+    id: "what-are-synonyms",
+    title: "1. What Are Synonyms?",
+    paragraphs: [
+      "Synonyms are words that have the same or almost the same meaning.",
+      "In real usage, they are often near-synonyms, which means they are similar but not always exactly the same in all situations.",
+      "Examples: big – large, start – begin, happy – joyful."
+    ]
+  },
+  {
+    id: "why-important-cse",
+    title: "2. Why Are Synonyms Important in CSE?",
+    paragraphs: [
+      "In CSE exams, you often see instructions like: \"Choose the word that is closest in meaning to the underlined word.\"",
+      "These questions test your vocabulary, your understanding of context, and your ability to see small differences between similar words.",
+      "A strong knowledge of synonyms also helps in reading comprehension, choosing the best word in a sentence, and answering verbal ability questions."
+    ]
+  },
+  {
+    id: "types-of-synonyms",
+    title: "3. Types of Synonyms and Nuances",
+    paragraphs: [
+      "Not all synonyms are perfect matches. Many are near-synonyms with differences in strength, tone, or usage.",
+      "You must pay attention to context: what sounds formal or informal, positive or negative, strong or weak in meaning."
+    ],
+    bullets: [
+      "Near-synonyms: Almost the same meaning, but not identical. Example: angry – upset – furious (furious is stronger).",
+      "Formal vs informal: buy (informal) – purchase (formal); ask – inquire; help – assist.",
+      "Positive vs negative connotation: slim (positive/neutral) vs skinny (negative); curious (neutral/positive) vs nosy (negative)."
+    ]
+  },
+  {
+    id: "how-questions-look",
+    title: "4. How Synonym Questions Look in the Exam",
+    paragraphs: [
+      "The usual format is: a sentence with one word highlighted or underlined, then four options. You must choose the word closest in meaning.",
+      "You should always read the entire sentence because many English words have more than one meaning."
+    ],
+    examples: [
+      {
+        sentence: "The witness gave a vague statement.",
+        targetWord: "vague",
+        explanation: "Vague means unclear or uncertain. A good synonym would be uncertain or unclear."
+      },
+      {
+        sentence: "The manager was reluctant to approve the proposal.",
+        targetWord: "reluctant",
+        explanation: "Reluctant means unwilling or hesitant. A good synonym would be unwilling or hesitant."
+      }
+    ]
+  },
+  {
+    id: "strategy-overview",
+    title: "5. General Strategy for Synonym Questions",
+    paragraphs: [
+      "Synonym questions are not only about knowing many words. They also require good reading of the sentence and careful elimination of wrong choices.",
+      "Use a step-by-step approach to improve accuracy."
+    ],
+    bullets: [
+      "Step 1 – Identify the part of speech of the underlined word (noun, verb, adjective, adverb). The correct answer is usually the same part of speech.",
+      "Step 2 – Read the whole sentence, not just the underlined word. The sentence gives context for the correct meaning.",
+      "Step 3 – Eliminate choices that are opposite in meaning, unrelated, or the wrong part of speech.",
+      "Step 4 – From the remaining options, choose the word that is closest in meaning to how the word is used in that sentence."
+    ]
+  },
+  {
+    id: "context-matters",
+    title: "6. The Importance of Context",
+    paragraphs: [
+      "Many words in English have more than one meaning. Because of this, the same word can have different synonyms depending on the sentence.",
+      "Always ask: \"How is this word used here?\" before choosing the answer."
+    ],
+    examples: [
+      {
+        sentence: "He is a very reserved person in meetings.",
+        explanation: "Here, reserved means quiet or shy in personality. A good synonym is shy, quiet, or not expressive. It does not mean \"booked\" or \"kept aside\" as in a reserved seat."
+      },
+      {
+        sentence: "The teacher gave a brief explanation.",
+        explanation: "Brief means short in length or duration. A good synonym is short, not \"boring\" or \"noisy.\""
+      }
+    ]
+  },
+  {
+    id: "common-synonym-sets",
+    title: "7. Common Synonym Sets for CSE",
+    paragraphs: [
+      "Some words appear frequently in verbal ability exams. Learning their typical synonyms will help you answer faster and more accurately."
+    ],
+    bullets: [
+      "Adjectives: vague – unclear; reluctant – unwilling, hesitant; hostile – unfriendly, aggressive; crucial – very important, essential; scarce – rare, not enough; authentic – genuine; superficial – shallow; industrious – hardworking, diligent; sincere – honest, genuine.",
+      "Verbs: expand – enlarge, increase; reduce – lessen, decrease; allow – permit, let; deny – refuse, reject; adhere – follow, stick to; assist – help, aid; indicate – show, point out; justify – explain, defend.",
+      "Nouns: proposal – suggestion, plan; obstacle – barrier, hindrance; justice – fairness; capacity – ability; conflict – disagreement, clash."
+    ]
+  },
+  {
+    id: "exam-traps",
+    title: "8. Common Traps in Synonym Questions",
+    paragraphs: [
+      "Exams often include distractors that look correct at first glance but are wrong because of meaning, tone, or usage.",
+      "You must be careful not to choose an option just because it feels familiar."
+    ],
+    bullets: [
+      "Trap 1 – Choosing a word that looks similar but has a different meaning. Always confirm the actual meaning.",
+      "Trap 2 – Ignoring tone or connotation. Some words are negative while others are neutral or positive.",
+      "Trap 3 – Choosing an opposite (antonym) by mistake. Read the sentence again and confirm if the word is positive, negative, strong, or weak.",
+      "Trap 4 – Paying attention only to the dictionary meaning and not to how the word functions in the sentence."
+    ]
+  },
+  {
+    id: "summary",
+    title: "9. Summary: How to Master Synonyms",
+    paragraphs: [
+      "Synonyms are about similarity of meaning, but context decides which word is the best answer.",
+      "In CSE synonym questions, you should: identify the part of speech, read the whole sentence carefully, eliminate clearly wrong options, and then pick the word whose meaning fits the sentence most closely.",
+      "Continuous reading and exposure to English texts (articles, books, news) will naturally increase your vocabulary and make synonym questions easier over time."
+    ]
+  };
+
+
+// You can now plug SYNONYMS_STUDY into your CSE Reviewer app's Study Mode
+// under the Verbal Ability -> Synonyms section.
+
+
 
 // ==========================================
 // 3. APP LOGIC
@@ -3954,6 +4084,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return ERROR_IDENTIFICATION_QUESTIONS;
          case "affixes":
         return AFFIXES_QUESTIONS;
+        case "synonym":
+        return SYNONYMS_QUESTIONS;
         case "punctuations":
         return PUNCTUATIONS_QUESTIONS;
         case "words_often_confused":
