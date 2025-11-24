@@ -3765,6 +3765,7 @@ words_often_confused: {
           <li>Memorize the "Big Three": <strong>AT</strong> (Exact), <strong>ON</strong> (Days/Surface), <strong>IN</strong> (General/Enclosed).</li>
         </ul>
       </section>   `
+    
     }
 },
 
@@ -3857,13 +3858,12 @@ synonyms: {
         <p><strong>Q:</strong> Synonym for <em>"Start"</em>?</p>
         <p><strong>Choices:</strong> <em>Create, Initiate, Make, Born</em></p>
         <p><strong>Answer:</strong> <em>Initiate</em> is the closest to "Start" in a formal context, even if "Create" is similar.</p>
-      </section>
-   } `
-  };
+     </section>
+    `
+  } 
 
+}; 
 
-// You can now plug SYNONYMS_STUDY into your CSE Reviewer app's Study Mode
-// under the Verbal Ability -> Synonyms section.
 
 
 
