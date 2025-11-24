@@ -48,6 +48,7 @@ const TOPIC_MAX_QUESTIONS = {
   analogy: 50,
   words_often_confused: 50,
   paragraph_organization: 50,
+  reading_comprehension: 50,
   prepositions: 50
 };
 
@@ -4700,6 +4701,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof TENSES_QUESTIONS !== 'undefined') return TENSES_QUESTIONS;
       if (typeof TENSE_QUESTIONS !== 'undefined') return TENSE_QUESTIONS;
       return null;
+
+  case "reading_comprehension": 
+      if (typeof READING_COMPREHENSION_QUESTIONS !== 'undefined') return READING_COMPREHENSION_QUESTIONS;
+      return null;
+    
     
     case "pronouns": 
       if (typeof PRONOUNS_QUESTIONS !== 'undefined') return PRONOUNS_QUESTIONS;
