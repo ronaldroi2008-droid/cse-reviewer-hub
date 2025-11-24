@@ -2468,7 +2468,7 @@ affixes: {
       and choose the correct word forms in sentence completion questions.
     </p>
   `
-}
+},
 
 
   
