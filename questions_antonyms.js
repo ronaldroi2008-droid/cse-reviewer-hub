@@ -924,9 +924,9 @@ const ANTONYMS_QUESTIONS = {
   ],
 
   // ==========================================
-  // LEVEL 4: EXPERT (Obscure & Academic)
+  // LEVEL 4: SUPER (Obscure & Academic)
   // ==========================================
-  expert: [
+  super: [
     {
       question: "Choose the antonym for: ABATE",
       options: ["Decrease", "Intensify", "Stop", "End"],
