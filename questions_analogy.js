@@ -1,628 +1,235 @@
+// ==========================================
+// ANALOGY QUESTIONS - 200 ITEMS (COMPLETE)
+// Levels: Beginner, Intermediate, Advanced, Expert
+// ==========================================
+
 const ANALOGY_QUESTIONS = {
 
   // ==========================================
-  // LEVEL 1: BEGINNER (Basic Relationships) - 50 items
+  // LEVEL 1: BEGINNER (50 Items)
+  // Focus: Basic relationships, daily objects, simple opposites
   // ==========================================
   beginner: [
-    // ... existing 25 items ...
-    {
-      question: "SUN : DAY :: MOON : _______",
-      options: ["Night", "Star", "Sky", "Light"],
-      answer: "Night",
-      explanation: "The sun appears during the day; the moon appears during the night. (Time)"
-    },
-    {
-      question: "WINTER : COLD :: SUMMER : _______",
-      options: ["Hot", "Warm", "Snow", "Rain"],
-      answer: "Hot",
-      explanation: "Winter is cold; summer is hot. (Season : Temperature)"
-    },
-    {
-      question: "BEE : HONEY :: COW : _______",
-      options: ["Milk", "Meat", "Grass", "Leather"],
-      answer: "Milk",
-      explanation: "A bee produces honey; a cow produces milk. (Animal : Product)"
-    },
-    {
-      question: "KEYBOARD : TYPE :: MOUSE : _______",
-      options: ["Click", "Scroll", "Point", "Move"],
-      answer: "Click",
-      explanation: "A keyboard is used to type; a mouse is used to click. (Computer Tool : Action)"
-    },
-    {
-      question: "BREAD : BAKER :: MEAT : _______",
-      options: ["Butcher", "Cook", "Farmer", "Hunter"],
-      answer: "Butcher",
-      explanation: "A baker makes bread; a butcher prepares meat. (Product : Worker)"
-    },
-    {
-      question: "OCEAN : SALT WATER :: LAKE : _______",
-      options: ["Fresh Water", "Deep Water", "Cold Water", "Blue Water"],
-      answer: "Fresh Water",
-      explanation: "An ocean has salt water; a lake has fresh water. (Water Body : Water Type)"
-    },
-    {
-      question: "LIBRARY : BOOKS :: MUSEUM : _______",
-      options: ["Artifacts", "People", "Animals", "Food"],
-      answer: "Artifacts",
-      explanation: "A library contains books; a museum contains artifacts. (Place : Contents)"
-    },
-    {
-      question: "CHAIR : SIT :: BED : _______",
-      options: ["Sleep", "Lie", "Rest", "Jump"],
-      answer: "Sleep",
-      explanation: "A chair is for sitting; a bed is for sleeping. (Furniture : Purpose)"
-    },
-    {
-      question: "DOCTOR : STETHOSCOPE :: SCIENTIST : _______",
-      options: ["Microscope", "Telescope", "Thermometer", "Scale"],
-      answer: "Microscope",
-      explanation: "A doctor uses a stethoscope; a scientist uses a microscope. (Professional : Tool)"
-    },
-    {
-      question: "RED : STOP :: GREEN : _______",
-      options: ["Go", "Wait", "Slow", "Caution"],
-      answer: "Go",
-      explanation: "Red means stop; green means go. (Traffic Light : Meaning)"
-    },
-    {
-      question: "FLOUR : BREAD :: GRAPES : _______",
-      options: ["Wine", "Juice", "Jam", "Vinegar"],
-      answer: "Wine",
-      explanation: "Flour is used to make bread; grapes are used to make wine. (Ingredient : Product)"
-    },
-    {
-      question: "WHEEL : CAR :: PROPELLER : _______",
-      options: ["Airplane", "Bicycle", "Train", "Boat"],
-      answer: "Airplane",
-      explanation: "A wheel moves a car; a propeller moves an airplane. (Part : Vehicle)"
-    },
-    {
-      question: "HIGH : LOW :: FAST : _______",
-      options: ["Slow", "Quick", "Rapid", "Swift"],
-      answer: "Slow",
-      explanation: "High is opposite of low; fast is opposite of slow. (Antonyms)"
-    },
-    {
-      question: "FORK : EAT :: COMB : _______",
-      options: ["Hair", "Head", "Style", "Brush"],
-      answer: "Hair",
-      explanation: "A fork is used to eat; a comb is used for hair. (Tool : Object)"
-    },
-    {
-      question: "BATTERY : ENERGY :: TANK : _______",
-      options: ["Water", "Fuel", "Air", "Oil"],
-      answer: "Fuel",
-      explanation: "A battery stores energy; a tank stores fuel. (Container : Content)"
-    },
-    {
-      question: "FARMER : CROPS :: FISHERMAN : _______",
-      options: ["Fish", "Net", "Boat", "Water"],
-      answer: "Fish",
-      explanation: "A farmer harvests crops; a fisherman catches fish. (Worker : Product)"
-    },
-    {
-      question: "UMBRELLA : RAIN :: SUNGLASSES : _______",
-      options: ["Sun", "Snow", "Wind", "Dark"],
-      answer: "Sun",
-      explanation: "An umbrella protects from rain; sunglasses protect from sun. (Item : Protection)"
-    },
-    {
-      question: "PILOT : AIRPLANE :: CAPTAIN : _______",
-      options: ["Ship", "Team", "Army", "Car"],
-      answer: "Ship",
-      explanation: "A pilot controls an airplane; a captain controls a ship. (Operator : Vehicle)"
-    },
-    {
-      question: "LEAVES : TREE :: PETALS : _______",
-      options: ["Flower", "Stem", "Root", "Branch"],
-      answer: "Flower",
-      explanation: "Leaves are part of a tree; petals are part of a flower. (Part : Whole)"
-    },
-    {
-      question: "HARD : SOFT :: LOUD : _______",
-      options: ["Quiet", "Noisy", "Sound", "Silent"],
-      answer: "Quiet",
-      explanation: "Hard is opposite of soft; loud is opposite of quiet. (Antonyms)"
-    },
-    {
-      question: "MAP : LOCATION :: CALENDAR : _______",
-      options: ["Date", "Time", "Year", "Month"],
-      answer: "Date",
-      explanation: "A map shows location; a calendar shows date. (Tool : Information)"
-    },
-    {
-      question: "BANK : MONEY :: HOTEL : _______",
-      options: ["Guests", "Food", "Rooms", "Service"],
-      answer: "Guests",
-      explanation: "A bank serves people with money; a hotel serves guests. (Place : People)"
-    },
-    {
-      question: "SCISSORS : CUT :: GLUE : _______",
-      options: ["Stick", "Break", "Color", "Write"],
-      answer: "Stick",
-      explanation: "Scissors are used to cut; glue is used to stick. (Tool : Action)"
-    },
-    {
-      question: "MORNING : SUNRISE :: EVENING : _______",
-      options: ["Sunset", "Moon", "Stars", "Dark"],
-      answer: "Sunset",
-      explanation: "Morning has sunrise; evening has sunset. (Time : Event)"
-    },
-    {
-      question: "SWEET : CANDY :: SALTY : _______",
-      options: ["Chips", "Chocolate", "Cake", "Ice Cream"],
-      answer: "Chips",
-      explanation: "Candy is sweet; chips are salty. (Taste : Food)"
-    }
+    { q: "SUN : DAY :: MOON : _______", options: ["Night", "Star", "Sky", "Light"], a: "Night", exp: "The sun appears in the day; the moon appears in the night." },
+    { q: "WINTER : COLD :: SUMMER : _______", options: ["Hot", "Warm", "Snow", "Rain"], a: "Hot", exp: "Winter is cold; summer is hot." },
+    { q: "BIRD : FLY :: FISH : _______", options: ["Walk", "Swim", "Run", "Jump"], a: "Swim", exp: "A bird flies; a fish swims." },
+    { q: "KEYBOARD : TYPE :: MOUSE : _______", options: ["Click", "Scroll", "Point", "Move"], a: "Click", exp: "You type with a keyboard; you click with a mouse." },
+    { q: "BREAD : BAKER :: MEAT : _______", options: ["Butcher", "Cook", "Farmer", "Hunter"], a: "Butcher", exp: "A baker sells bread; a butcher sells meat." },
+    { q: "OCEAN : SALT WATER :: LAKE : _______", options: ["Fresh Water", "Deep Water", "Cold Water", "Blue Water"], a: "Fresh Water", exp: "Oceans have salt water; lakes usually have fresh water." },
+    { q: "LIBRARY : BOOKS :: MUSEUM : _______", options: ["Artifacts", "People", "Animals", "Food"], a: "Artifacts", exp: "A library houses books; a museum houses artifacts." },
+    { q: "CHAIR : SIT :: BED : _______", options: ["Sleep", "Lie", "Rest", "Jump"], a: "Sleep", exp: "You sit on a chair; you sleep on a bed." },
+    { q: "DOCTOR : STETHOSCOPE :: PAINTER : _______", options: ["Brush", "Telescope", "Thermometer", "Scale"], a: "Brush", exp: "A doctor uses a stethoscope; a painter uses a brush." },
+    { q: "RED : STOP :: GREEN : _______", options: ["Go", "Wait", "Slow", "Caution"], a: "Go", exp: "Red light means stop; green light means go." },
+    { q: "FLOUR : BREAD :: GRAPES : _______", options: ["Wine", "Juice", "Jam", "Vinegar"], a: "Wine", exp: "Flour is used to make bread; grapes are used to make wine." },
+    { q: "WHEEL : CAR :: PROPELLER : _______", options: ["Airplane", "Bicycle", "Train", "Boat"], a: "Airplane", exp: "A wheel moves a car; a propeller moves an airplane." },
+    { q: "HIGH : LOW :: FAST : _______", options: ["Slow", "Quick", "Rapid", "Swift"], a: "Slow", exp: "High is the opposite of low; fast is the opposite of slow." },
+    { q: "FORK : EAT :: COMB : _______", options: ["Hair", "Head", "Style", "Brush"], a: "Hair", exp: "A fork is used for eating; a comb is used for hair." },
+    { q: "BATTERY : ENERGY :: TANK : _______", options: ["Water", "Fuel", "Air", "Oil"], a: "Fuel", exp: "A battery holds energy; a tank holds fuel." },
+    { q: "FARMER : CROPS :: FISHERMAN : _______", options: ["Fish", "Net", "Boat", "Water"], a: "Fish", exp: "A farmer harvests crops; a fisherman catches fish." },
+    { q: "UMBRELLA : RAIN :: SUNGLASSES : _______", options: ["Sun", "Snow", "Wind", "Dark"], a: "Sun", exp: "An umbrella protects from rain; sunglasses protect from the sun." },
+    { q: "PILOT : AIRPLANE :: CAPTAIN : _______", options: ["Ship", "Team", "Army", "Car"], a: "Ship", exp: "A pilot commands an airplane; a captain commands a ship." },
+    { q: "LEAVES : TREE :: PETALS : _______", options: ["Flower", "Stem", "Root", "Branch"], a: "Flower", exp: "Leaves are part of a tree; petals are part of a flower." },
+    { q: "HARD : SOFT :: LOUD : _______", options: ["Quiet", "Noisy", "Sound", "Silent"], a: "Quiet", exp: "Hard is the opposite of soft; loud is the opposite of quiet." },
+    { q: "MAP : LOCATION :: CALENDAR : _______", options: ["Date", "Time", "Year", "Month"], a: "Date", exp: "A map shows location; a calendar shows the date." },
+    { q: "BANK : MONEY :: HOTEL : _______", options: ["Guests", "Food", "Rooms", "Service"], a: "Guests", exp: "A bank holds money; a hotel holds/hosts guests." },
+    { q: "SCISSORS : CUT :: GLUE : _______", options: ["Stick", "Break", "Color", "Write"], a: "Stick", exp: "Scissors are used to cut; glue is used to stick." },
+    { q: "MORNING : SUNRISE :: EVENING : _______", options: ["Sunset", "Moon", "Stars", "Dark"], a: "Sunset", exp: "Sunrise happens in the morning; sunset happens in the evening." },
+    { q: "SWEET : CANDY :: SALTY : _______", options: ["Chips", "Chocolate", "Cake", "Ice Cream"], a: "Chips", exp: "Candy is sweet; chips are salty." },
+    { q: "CAT : MEOW :: DOG : _______", options: ["Bark", "Roar", "Hiss", "Moo"], a: "Bark", exp: "A cat meows; a dog barks." },
+    { q: "EARS : HEAR :: EYES : _______", options: ["See", "Smell", "Touch", "Taste"], a: "See", exp: "Ears are for hearing; eyes are for seeing." },
+    { q: "FOOT : SHOE :: HAND : _______", options: ["Glove", "Sock", "Hat", "Ring"], a: "Glove", exp: "A shoe is worn on the foot; a glove is worn on the hand." },
+    { q: "TEACHER : STUDENT :: DOCTOR : _______", options: ["Patient", "Nurse", "Hospital", "Medicine"], a: "Patient", exp: "A teacher teaches a student; a doctor treats a patient." },
+    { q: "CARPENTER : HAMMER :: CHEF : _______", options: ["Knife", "Saw", "Drill", "Wrench"], a: "Knife", exp: "A carpenter uses a hammer; a chef uses a knife." },
+    { q: "HAPPY : SMILE :: SAD : _______", options: ["Frown", "Laugh", "Jump", "Sing"], a: "Frown", exp: "You smile when happy; you frown when sad." },
+    { q: "MOUNTAIN : HIGH :: VALLEY : _______", options: ["Low", "Deep", "Flat", "Wide"], a: "Low", exp: "A mountain is high; a valley is low." },
+    { q: "FIRE : HOT :: ICE : _______", options: ["Cold", "Wet", "Hard", "Solid"], a: "Cold", exp: "Fire is hot; ice is cold." },
+    { q: "PEN : WRITE :: BRUSH : _______", options: ["Paint", "Draw", "Color", "Sketch"], a: "Paint", exp: "A pen is used to write; a brush is used to paint." },
+    { q: "ONE : SINGLE :: TWO : _______", options: ["Double", "Triple", "Couple", "Pair"], a: "Double", exp: "Single means one; double means two." },
+    { q: "RING : FINGER :: NECKLACE : _______", options: ["Neck", "Wrist", "Ear", "Ankle"], a: "Neck", exp: "A ring goes on a finger; a necklace goes on a neck." },
+    { q: "COW : HERD :: BIRD : _______", options: ["Flock", "Pack", "School", "Swarm"], a: "Flock", exp: "A group of cows is a herd; a group of birds is a flock." },
+    { q: "CAR : GARAGE :: PLANE : _______", options: ["Hangar", "Airport", "Sky", "Runway"], a: "Hangar", exp: "A car is stored in a garage; a plane is stored in a hangar." },
+    { q: "SNAKE : REPTILE :: FROG : _______", options: ["Amphibian", "Mammal", "Insect", "Bird"], a: "Amphibian", exp: "A snake is a reptile; a frog is an amphibian." },
+    { q: "NOSE : SMELL :: TONGUE : _______", options: ["Taste", "Touch", "Hear", "See"], a: "Taste", exp: "The nose is for smelling; the tongue is for tasting." },
+    { q: "AUTHOR : BOOK :: ARTIST : _______", options: ["Painting", "Song", "Movie", "Poem"], a: "Painting", exp: "An author creates a book; an artist creates a painting." },
+    { q: "WALK : LEGS :: FLY : _______", options: ["Wings", "Arms", "Hands", "Feet"], a: "Wings", exp: "You walk with legs; you fly with wings." },
+    { q: "HUNGRY : FOOD :: THIRSTY : _______", options: ["Water", "Bread", "Sleep", "Rest"], a: "Water", exp: "When hungry you need food; when thirsty you need water." },
+    { q: "DAY : LIGHT :: NIGHT : _______", options: ["Dark", "Sun", "Moon", "Star"], a: "Dark", exp: "Day is light; night is dark." },
+    { q: "CIRCLE : ROUND :: SQUARE : _______", options: ["Boxy", "Flat", "Long", "Oval"], a: "Boxy", exp: "A circle is round; a square is boxy (has corners)." },
+    { q: "FATHER : PARENT :: SISTER : _______", options: ["Sibling", "Mother", "Brother", "Friend"], a: "Sibling", exp: "A father is a parent; a sister is a sibling." },
+    { q: "SCHOOL : LEARN :: GYM : _______", options: ["Exercise", "Sleep", "Eat", "Read"], a: "Exercise", exp: "You go to school to learn; you go to a gym to exercise." },
+    { q: "PAPER : TREE :: WOOL : _______", options: ["Sheep", "Cow", "Cotton", "Plant"], a: "Sheep", exp: "Paper comes from trees; wool comes from sheep." },
+    { q: "LEFT : RIGHT :: UP : _______", options: ["Down", "Bottom", "Low", "Under"], a: "Down", exp: "Left is opposite of right; up is opposite of down." },
+    { q: "CLOCK : TIME :: THERMOMETER : _______", options: ["Temperature", "Heat", "Weather", "Cold"], a: "Temperature", exp: "A clock measures time; a thermometer measures temperature." }
   ],
 
   // ==========================================
-  // LEVEL 2: INTERMEDIATE (Logic & Vocabulary) - 50 items
+  // LEVEL 2: INTERMEDIATE (50 Items)
+  // Focus: Logic, categories, slight vocabulary increase
   // ==========================================
   intermediate: [
-    // ... existing 25 items ...
-    {
-      question: "ANALOGY : COMPARISON :: METAPHOR : _______",
-      options: ["Symbol", "Similarity", "Contrast", "Example"],
-      answer: "Similarity",
-      explanation: "An analogy is a type of comparison; a metaphor is a type of similarity. (Literary Term : Definition)"
-    },
-    {
-      question: "GILLS : FISH :: LUNGS : _______",
-      options: ["Mammals", "Birds", "Humans", "Animals"],
-      answer: "Mammals",
-      explanation: "Fish breathe through gills; mammals breathe through lungs. (Organ : Animal Group)"
-    },
-    {
-      question: "INSULATOR : ELECTRICITY :: REFRIGERATOR : _______",
-      options: ["Heat", "Cold", "Food", "Water"],
-      answer: "Heat",
-      explanation: "An insulator blocks electricity; a refrigerator blocks heat. (Device : Blocked Element)"
-    },
-    {
-      question: "PEDAL : BICYCLE :: RUDDER : _______",
-      options: ["Boat", "Car", "Plane", "Train"],
-      answer: "Boat",
-      explanation: "A pedal controls a bicycle; a rudder controls a boat. (Control : Vehicle)"
-    },
-    {
-      question: "COMPASS : DIRECTION :: BAROMETER : _______",
-      options: ["Pressure", "Temperature", "Humidity", "Wind"],
-      answer: "Pressure",
-      explanation: "A compass shows direction; a barometer shows pressure. (Instrument : Measurement)"
-    },
-    {
-      question: "SYMPHONY : ORCHESTRA :: SOLO : _______",
-      options: ["Singer", "Musician", "Instrument", "Performance"],
-      answer: "Musician",
-      explanation: "A symphony is played by an orchestra; a solo is played by one musician. (Performance : Performer)"
-    },
-    {
-      question: "FOSSIL : PALAEONTOLOGIST :: ARTIFACT : _______",
-      options: ["Archaeologist", "Historian", "Geologist", "Biologist"],
-      answer: "Archaeologist",
-      explanation: "A palaeontologist studies fossils; an archaeologist studies artifacts. (Scientist : Subject)"
-    },
-    {
-      question: "MOLECULE : ATOM :: SOLAR SYSTEM : _______",
-      options: ["Planet", "Star", "Sun", "Galaxy"],
-      answer: "Planet",
-      explanation: "A molecule contains atoms; a solar system contains planets. (System : Component)"
-    },
-    {
-      question: "VACCINE : IMMUNITY :: VITAMIN : _______",
-      options: ["Health", "Strength", "Energy", "Growth"],
-      answer: "Health",
-      explanation: "A vaccine provides immunity; a vitamin provides health. (Substance : Benefit)"
-    },
-    {
-      question: "METAMORPHOSIS : CHANGE :: EVOLUTION : _______",
-      options: ["Development", "Revolution", "Creation", "Destruction"],
-      answer: "Development",
-      explanation: "Metamorphosis is a type of change; evolution is a type of development. (Process : Type)"
-    },
-    {
-      question: "CENSUS : POPULATION :: INVENTORY : _______",
-      options: ["Goods", "Money", "Land", "Buildings"],
-      answer: "Goods",
-      explanation: "A census counts population; an inventory counts goods. (Count : Subject)"
-    },
-    {
-      question: "LEVER : MECHANICAL ADVANTAGE :: PULLEY : _______",
-      options: ["Lifting", "Pushing", "Turning", "Cutting"],
-      answer: "Lifting",
-      explanation: "A lever provides mechanical advantage; a pulley provides lifting power. (Tool : Function)"
-    },
-    {
-      question: "HIBERNATION : WINTER :: MIGRATION : _______",
-      options: ["Season", "Climate", "Food", "Habitat"],
-      answer: "Season",
-      explanation: "Hibernation occurs in winter; migration occurs seasonally. (Animal Behavior : Time)"
-    },
-    {
-      question: "PHOTOSYNTHESIS : PLANTS :: RESPIRATION : _______",
-      options: ["Animals", "Humans", "Mammals", "Living Things"],
-      answer: "Living Things",
-      explanation: "Plants perform photosynthesis; living things perform respiration. (Process : Organism)"
-    },
-    {
-      question: "ECLIPSE : CELESTIAL :: EARTHQUAKE : _______",
-      options: ["Geological", "Atmospheric", "Oceanic", "Cosmic"],
-      answer: "Geological",
-      explanation: "An eclipse is a celestial event; an earthquake is a geological event. (Event : Category)"
-    },
-    {
-      question: "SYNONYM : SIMILAR :: ANTONYM : _______",
-      options: ["Opposite", "Different", "Same", "Related"],
-      answer: "Opposite",
-      explanation: "Synonyms have similar meanings; antonyms have opposite meanings. (Word Relationship)"
-    },
-    {
-      question: "FRACTION : DECIMAL :: PERCENTAGE : _______",
-      options: ["Ratio", "Proportion", "Whole", "Part"],
-      answer: "Ratio",
-      explanation: "A fraction can be a decimal; a percentage is a type of ratio. (Mathematical Terms)"
-    },
-    {
-      question: "GRAVITY : ATTRACTION :: MAGNETISM : _______",
-      options: ["Polarity", "Repulsion", "Force", "Field"],
-      answer: "Polarity",
-      explanation: "Gravity involves attraction; magnetism involves polarity. (Physical Force : Characteristic)"
-    },
-    {
-      question: "METAPHOR : IMPLIED :: SIMILE : _______",
-      options: ["Stated", "Direct", "Obvious", "Explicit"],
-      answer: "Direct",
-      explanation: "A metaphor is implied comparison; a simile is direct comparison. (Literary Device : Nature)"
-    },
-    {
-      question: "ECOSYSTEM : ENVIRONMENT :: ORGANISM : _______",
-      options: ["Habitat", "Home", "Cell", "Body"],
-      answer: "Habitat",
-      explanation: "An ecosystem is an environment; an organism has a habitat. (Biology Terms)"
-    },
-    {
-      question: "CATALYST : REACTION :: ENZYME : _______",
-      options: ["Digestion", "Growth", "Movement", "Breathing"],
-      answer: "Digestion",
-      explanation: "A catalyst speeds up a reaction; an enzyme speeds up digestion. (Agent : Process)"
-    },
-    {
-      question: "INSULIN : SUGAR :: HEMOGLOBIN : _______",
-      options: ["Oxygen", "Blood", "Iron", "Cells"],
-      answer: "Oxygen",
-      explanation: "Insulin regulates sugar; hemoglobin carries oxygen. (Substance : Function)"
-    },
-    {
-      question: "RENAISSANCE : REBIRTH :: ENLIGHTENMENT : _______",
-      options: ["Reason", "Knowledge", "Light", "Education"],
-      answer: "Reason",
-      explanation: "Renaissance means rebirth; Enlightenment emphasizes reason. (Historical Period : Focus)"
-    },
-    {
-      question: "MONARCH : ROYALTY :: PRESIDENT : _______",
-      options: ["Democracy", "Republic", "Government", "Leadership"],
-      answer: "Republic",
-      explanation: "A monarch represents royalty; a president represents a republic. (Leader : System)"
-    },
-    {
-      question: "HYPOTHESIS : THEORY :: EXPERIMENT : _______",
-      explanation: "A hypothesis leads to a theory; an experiment leads to proof. (Scientific Process)"
-    }
+    { q: "ANALOGY : COMPARISON :: METAPHOR : _______", options: ["Symbol", "Similarity", "Contrast", "Example"], a: "Similarity", exp: "An analogy is a type of comparison; a metaphor is a figure of speech denoting similarity." },
+    { q: "GILLS : FISH :: LUNGS : _______", options: ["Mammals", "Birds", "Humans", "Animals"], a: "Mammals", exp: "Fish breathe with gills; mammals breathe with lungs." },
+    { q: "INSULATOR : ELECTRICITY :: REFRIGERATOR : _______", options: ["Heat", "Cold", "Food", "Water"], a: "Heat", exp: "An insulator keeps out electricity; a refrigerator keeps out heat." },
+    { q: "PEDAL : BICYCLE :: RUDDER : _______", options: ["Boat", "Car", "Plane", "Train"], a: "Boat", exp: "A pedal moves a bike; a rudder steers a boat." },
+    { q: "COMPASS : DIRECTION :: BAROMETER : _______", options: ["Pressure", "Temperature", "Humidity", "Wind"], a: "Pressure", exp: "A compass measures direction; a barometer measures atmospheric pressure." },
+    { q: "SYMPHONY : ORCHESTRA :: SOLO : _______", options: ["Musician", "Singer", "Instrument", "Performance"], a: "Musician", exp: "A symphony is performed by an orchestra; a solo is performed by one musician." },
+    { q: "FOSSIL : PALAEONTOLOGIST :: ARTIFACT : _______", options: ["Archaeologist", "Historian", "Geologist", "Biologist"], a: "Archaeologist", exp: "Palaeontologists study fossils; archaeologists study artifacts." },
+    { q: "MOLECULE : ATOM :: SOLAR SYSTEM : _______", options: ["Planet", "Star", "Sun", "Galaxy"], a: "Planet", exp: "A molecule is made of atoms; a solar system is made of planets." },
+    { q: "VACCINE : IMMUNITY :: VITAMIN : _______", options: ["Health", "Strength", "Energy", "Growth"], a: "Health", exp: "A vaccine promotes immunity; a vitamin promotes health." },
+    { q: "METAMORPHOSIS : CHANGE :: EVOLUTION : _______", options: ["Development", "Revolution", "Creation", "Destruction"], a: "Development", exp: "Metamorphosis is a form of change; evolution is a form of development." },
+    { q: "CENSUS : POPULATION :: INVENTORY : _______", options: ["Goods", "Money", "Land", "Buildings"], a: "Goods", exp: "A census counts population; an inventory counts goods." },
+    { q: "LEVER : LIFT :: PULLEY : _______", options: ["Raise", "Push", "Turn", "Cut"], a: "Raise", exp: "A lever helps lift; a pulley helps raise/hoist." },
+    { q: "HIBERNATION : WINTER :: MIGRATION : _______", options: ["Season", "Climate", "Food", "Habitat"], a: "Season", exp: "Hibernation happens in winter; migration happens according to season." },
+    { q: "PHOTOSYNTHESIS : PLANTS :: RESPIRATION : _______", options: ["Living Things", "Animals", "Humans", "Mammals"], a: "Living Things", exp: "Plants do photosynthesis; all living things do respiration." },
+    { q: "ECLIPSE : CELESTIAL :: EARTHQUAKE : _______", options: ["Geological", "Atmospheric", "Oceanic", "Cosmic"], a: "Geological", exp: "An eclipse is a celestial event; an earthquake is a geological event." },
+    { q: "SYNONYM : SIMILAR :: ANTONYM : _______", options: ["Opposite", "Different", "Same", "Related"], a: "Opposite", exp: "Synonyms are similar; antonyms are opposite." },
+    { q: "FRACTION : DECIMAL :: PERCENTAGE : _______", options: ["Ratio", "Proportion", "Whole", "Part"], a: "Ratio", exp: "Fractions and decimals represent parts; percentage is a specific type of ratio." },
+    { q: "GRAVITY : ATTRACTION :: MAGNETISM : _______", options: ["Polarity", "Repulsion", "Force", "Field"], a: "Polarity", exp: "Gravity is an attractive force; magnetism is defined by polarity (attract/repel)." },
+    { q: "METAPHOR : IMPLIED :: SIMILE : _______", options: ["Direct", "Stated", "Obvious", "Explicit"], a: "Direct", exp: "A metaphor is an implied comparison; a simile is a direct comparison (using like/as)." },
+    { q: "ECOSYSTEM : ENVIRONMENT :: ORGANISM : _______", options: ["Habitat", "Home", "Cell", "Body"], a: "Habitat", exp: "An ecosystem is the environment; an organism lives in a habitat." },
+    { q: "CATALYST : REACTION :: ENZYME : _______", options: ["Digestion", "Growth", "Movement", "Breathing"], a: "Digestion", exp: "A catalyst speeds up a reaction; an enzyme speeds up biological processes like digestion." },
+    { q: "INSULIN : SUGAR :: HEMOGLOBIN : _______", options: ["Oxygen", "Blood", "Iron", "Cells"], a: "Oxygen", exp: "Insulin regulates sugar; hemoglobin carries oxygen." },
+    { q: "RENAISSANCE : REBIRTH :: ENLIGHTENMENT : _______", options: ["Reason", "Knowledge", "Light", "Education"], a: "Reason", exp: "The Renaissance was an age of rebirth; The Enlightenment was an age of reason." },
+    { q: "MONARCH : ROYALTY :: PRESIDENT : _______", options: ["Republic", "Democracy", "Government", "Leadership"], a: "Republic", exp: "A monarch rules a kingdom/royalty; a president leads a republic." },
+    { q: "HYPOTHESIS : THEORY :: EXPERIMENT : _______", options: ["Proof", "Test", "Idea", "Law"], a: "Proof", exp: "A hypothesis is a guess; an experiment provides proof." },
+    { q: "ARCHITECT : BLUEPRINT :: COMPOSER : _______", options: ["Score", "Song", "Music", "Instrument"], a: "Score", exp: "An architect makes a blueprint; a composer makes a score." },
+    { q: "REFEREE : GAME :: MODERATOR : _______", options: ["Debate", "Meeting", "School", "Vote"], a: "Debate", exp: "A referee oversees a game; a moderator oversees a debate." },
+    { q: "CHAPTER : BOOK :: SCENE : _______", options: ["Play", "Movie", "Act", "Song"], a: "Play", exp: "A chapter is part of a book; a scene is part of a play." },
+    { q: "BOTANY : PLANTS :: ZOOLOGY : _______", options: ["Animals", "Zoos", "Life", "Nature"], a: "Animals", exp: "Botany is the study of plants; zoology is the study of animals." },
+    { q: "WALLET : MONEY :: TANK : _______", options: ["Gas", "Water", "Air", "Liquid"], a: "Gas", exp: "A wallet holds money; a tank holds gas/fuel." },
+    { q: "ORCHARD : FRUIT :: VINEYARD : _______", options: ["Grapes", "Wine", "Alcohol", "Farm"], a: "Grapes", exp: "An orchard grows fruit; a vineyard grows grapes." },
+    { q: "SOLDIER : REGIMENT :: STAR : _______", options: ["Constellation", "Galaxy", "Sky", "Universe"], a: "Constellation", exp: "A soldier is part of a regiment; a star is part of a constellation." },
+    { q: "DAM : WATER :: LEVEE : _______", options: ["Flood", "River", "Stream", "Lake"], a: "Flood", exp: "A dam controls water flow; a levee prevents a flood." },
+    { q: "MICROSCOPE : BACTERIA :: TELESCOPE : _______", options: ["Stars", "Sky", "Distance", "Moon"], a: "Stars", exp: "A microscope views bacteria; a telescope views stars." },
+    { q: "SHEEP : FLOCK :: WOLVES : _______", options: ["Pack", "Herd", "Group", "Gang"], a: "Pack", exp: "A group of sheep is a flock; a group of wolves is a pack." },
+    { q: "NOVELIST : BOOK :: PLAYWRIGHT : _______", options: ["Drama", "Script", "Stage", "Actor"], a: "Drama", exp: "A novelist writes a book; a playwright writes a drama." },
+    { q: "SNAKE : HISS :: LION : _______", options: ["Roar", "Growl", "Purr", "Bark"], a: "Roar", exp: "A snake hisses; a lion roars." },
+    { q: "THERMOMETER : TEMPERATURE :: ODOMETER : _______", options: ["Distance", "Speed", "Fuel", "Heat"], a: "Distance", exp: "Thermometer measures temperature; odometer measures distance." },
+    { q: "HUNGER : FOOD :: EXHAUSTION : _______", options: ["Sleep", "Rest", "Energy", "Run"], a: "Sleep", exp: "Food cures hunger; sleep cures exhaustion." },
+    { q: "BRICK : WALL :: CELL : _______", options: ["Tissue", "Body", "Organ", "Blood"], a: "Tissue", exp: "Bricks make a wall; cells make tissue." },
+    { q: "QUAKE : TREMBLE :: FIRE : _______", options: ["Burn", "Heat", "Smoke", "Flame"], a: "Burn", exp: "Quake means to tremble; fire means to burn (action)." },
+    { q: "INNOCENT : GUILTY :: IGNORANT : _______", options: ["Knowledgeable", "Smart", "Wise", "Educated"], a: "Knowledgeable", exp: "Innocent is opposite of guilty; ignorant is opposite of knowledgeable." },
+    { q: "AIRPLANE : HANGAR :: SHIP : _______", options: ["Dock", "Port", "Ocean", "Anchor"], a: "Dock", exp: "An airplane parks in a hangar; a ship parks at a dock." },
+    { q: "LUNG : OXYGEN :: STOMACH : _______", options: ["Food", "Digestion", "Acid", "Nutrients"], a: "Food", exp: "Lungs process oxygen; the stomach processes food." },
+    { q: "SAND : GLASS :: TREE : _______", options: ["Paper", "Wood", "Leaf", "Forest"], a: "Paper", exp: "Sand is used to make glass; trees are used to make paper." },
+    { q: "DILIGENT : LAZY :: BRAVE : _______", options: ["Cowardly", "Fearful", "Scared", "Weak"], a: "Cowardly", exp: "Diligent is opposite of lazy; brave is opposite of cowardly." },
+    { q: "POET : VERSE :: SCULPTOR : _______", options: ["Statue", "Stone", "Chisel", "Art"], a: "Statue", exp: "A poet creates verse; a sculptor creates a statue." },
+    { q: "COTTON : SOFT :: ROCK : _______", options: ["Hard", "Heavy", "Rough", "Gray"], a: "Hard", exp: "Cotton is characteristically soft; a rock is characteristically hard." },
+    { q: "KEYBOARD : COMPUTER :: REMOTE : _______", options: ["Television", "Control", "Battery", "Button"], a: "Television", exp: "A keyboard controls a computer; a remote controls a television." },
+    { q: "CHEF : RESTAURANT :: TEACHER : _______", options: ["Classroom", "School", "Desk", "Books"], a: "Classroom", exp: "A chef works in a restaurant; a teacher works in a classroom." }
   ],
 
   // ==========================================
-  // LEVEL 3: ADVANCED (Abstract & Specialized) - 50 items
+  // LEVEL 3: ADVANCED (50 Items)
+  // Focus: Abstract concepts, specialized fields
   // ==========================================
   advanced: [
-    // ... existing 25 items ...
-    {
-      question: "CATHARSIS : EMOTION :: THERAPY : _______",
-      options: ["Healing", "Treatment", "Medicine", "Recovery"],
-      answer: "Healing",
-      explanation: "Catharsis releases emotion; therapy promotes healing. (Process : Outcome)"
-    },
-    {
-      question: "PARADOX : CONTRADICTION :: DILEMMA : _______",
-      options: ["Choice", "Problem", "Solution", "Question"],
-      answer: "Choice",
-      explanation: "A paradox involves contradiction; a dilemma involves difficult choice. (Concept : Nature)"
-    },
-    {
-      question: "UTOPIA : IDEAL :: DYSTOPIA : _______",
-      options: ["Nightmare", "Reality", "Future", "Past"],
-      answer: "Nightmare",
-      explanation: "Utopia represents ideal society; dystopia represents nightmare society. (Literary Concept)"
-    },
-    {
-      question: "EMPIRICAL : OBSERVATION :: THEORETICAL : _______",
-      options: ["Speculation", "Proof", "Experiment", "Data"],
-      answer: "Speculation",
-      explanation: "Empirical is based on observation; theoretical is based on speculation. (Knowledge Type : Basis)"
-    },
-    {
-      question: "DICHOTOMY : DIVISION :: SPECTRUM : _______",
-      options: ["Range", "Color", "Light", "Scale"],
-      answer: "Range",
-      explanation: "A dichotomy is a division; a spectrum is a range. (Concept : Nature)"
-    },
-    {
-      question: "AMBIVALENCE : UNCERTAINTY :: CONVICTION : _______",
-      options: ["Certainty", "Belief", "Faith", "Trust"],
-      answer: "Certainty",
-      explanation: "Ambivalence means uncertainty; conviction means certainty. (Mental State)"
-    },
-    {
-      question: "ANACHRONISM : TIME :: ANOMALY : _______",
-      options: ["Pattern", "Rule", "System", "Order"],
-      answer: "Pattern",
-      explanation: "An anachronism is out of time; an anomaly is out of pattern. (Deviation : Context)"
-    },
-    {
-      question: "SUBJECTIVE : PERSONAL :: OBJECTIVE : _______",
-      options: ["Impersonal", "General", "Universal", "Factual"],
-      answer: "Impersonal",
-      explanation: "Subjective is personal; objective is impersonal. (Perspective)"
-    },
-    {
-      question: "METACOGNITION : THINKING :: METANARRATIVE : _______",
-      options: ["Story", "History", "Narrative", "Plot"],
-      answer: "Narrative",
-      explanation: "Metacognition is thinking about thinking; metanarrative is narrative about narrative. (Meta-concept)"
-    },
-    {
-      question: "SYMBIOSIS : MUTUALISM :: PARASITISM : _______",
-      options: ["Exploitation", "Sharing", "Cooperation", "Competition"],
-      answer: "Exploitation",
-      explanation: "Symbiosis includes mutualism; parasitism involves exploitation. (Biological Relationship)"
-    },
-    {
-      question: "EPISTEMOLOGY : KNOWLEDGE :: ONTOLOGY : _______",
-      options: ["Existence", "Reality", "Truth", "Being"],
-      answer: "Existence",
-      explanation: "Epistemology studies knowledge; ontology studies existence. (Philosophical Discipline)"
-    },
-    {
-      question: "HEGEMONY : DOMINANCE :: AUTONOMY : _______",
-      options: ["Independence", "Freedom", "Control", "Power"],
-      answer: "Independence",
-      explanation: "Hegemony means dominance; autonomy means independence. (Political Concept)"
-    },
-    {
-      question: "DIALECTIC : SYNTHESIS :: DIALOGUE : _______",
-      options: ["Understanding", "Conversation", "Argument", "Debate"],
-      answer: "Understanding",
-      explanation: "Dialectic leads to synthesis; dialogue leads to understanding. (Process : Outcome)"
-    },
-    {
-      question: "PARADIGM : FRAMEWORK :: DOGMA : _______",
-      options: ["Doctrine", "Belief", "Rule", "Law"],
-      answer: "Doctrine",
-      explanation: "A paradigm is a framework; a dogma is a doctrine. (Concept Type)"
-    },
-    {
-      question: "EMPATHY : UNDERSTANDING :: COMPASSION : _______",
-      options: ["Action", "Feeling", "Kindness", "Help"],
-      answer: "Action",
-      explanation: "Empathy involves understanding; compassion involves action. (Emotional Response)"
-    },
-    {
-      question: "ALLEGORY : SYMBOLISM :: SATIRE : _______",
-      options: ["Criticism", "Humor", "Irony", "Mockery"],
-      answer: "Criticism",
-      explanation: "Allegory uses symbolism; satire uses criticism. (Literary Device)"
-    },
-    {
-      question: "CIRCULAR REASONING : FALLACY :: AD HOMINEM : _______",
-      options: ["Attack", "Argument", "Logic", "Reason"],
-      answer: "Attack",
-      explanation: "Circular reasoning is a fallacy; ad hominem is a personal attack. (Logical Fallacy)"
-    },
-    {
-      question: "COGNITIVE DISSONANCE : CONFLICT :: CONFIRMATION BIAS : _______",
-      options: ["Selection", "Preference", "Favoritism", "Choice"],
-      answer: "Selection",
-      explanation: "Cognitive dissonance is mental conflict; confirmation bias is selective thinking. (Psychological Concept)"
-    },
-    {
-      question: "MACROECONOMICS : AGGREGATE :: MICROECONOMICS : _______",
-      options: ["Individual", "Small", "Personal", "Specific"],
-      answer: "Individual",
-      explanation: "Macroeconomics studies aggregate; microeconomics studies individual. (Economic Level)"
-    },
-    {
-      question: "QUANTITATIVE : MEASUREMENT :: QUALITATIVE : _______",
-      options: ["Description", "Quality", "Characteristic", "Attribute"],
-      answer: "Description",
-      explanation: "Quantitative involves measurement; qualitative involves description. (Research Method)"
-    },
-    {
-      question: "SEMANTICS : MEANING :: SYNTAX : _______",
-      options: ["Structure", "Grammar", "Order", "Arrangement"],
-      answer: "Structure",
-      explanation: "Semantics deals with meaning; syntax deals with structure. (Linguistic Elements)"
-    },
-    {
-      question: "PROTAGONIST : HERO :: ANTAGONIST : _______",
-      options: ["Villain", "Enemy", "Opponent", "Rival"],
-      answer: "Villain",
-      explanation: "Protagonist is the hero; antagonist is the villain. (Literary Character)"
-    },
-    {
-      question: "DENOTATION : LITERAL :: CONNOTATION : _______",
-      options: ["Associative", "Figurative", "Symbolic", "Implied"],
-      answer: "Associative",
-      explanation: "Denotation is literal meaning; connotation is associative meaning. (Word Meaning)"
-    },
-    {
-      question: "ANTHROPOMORPHISM : HUMAN :: ZOOMORPHISM : _______",
-      options: ["Animal", "Nature", "God", "Machine"],
-      answer: "Animal",
-      explanation: "Anthropomorphism attributes human traits; zoomorphism attributes animal traits. (Literary Device)"
-    },
-    {
-      question: "SOLIPSISM : SELF :: ALTRUISM : _______",
-      options: ["Others", "Society", "Community", "World"],
-      answer: "Others",
-      explanation: "Solipsism focuses on self; altruism focuses on others. (Philosophical Concept)"
-    }
+    { q: "CATHARSIS : EMOTION :: THERAPY : _______", options: ["Healing", "Treatment", "Medicine", "Recovery"], a: "Healing", exp: "Catharsis is the release of emotion; therapy is the process of healing." },
+    { q: "PARADOX : CONTRADICTION :: DILEMMA : _______", options: ["Choice", "Problem", "Solution", "Question"], a: "Choice", exp: "A paradox involves a contradiction; a dilemma involves a difficult choice." },
+    { q: "UTOPIA : IDEAL :: DYSTOPIA : _______", options: ["Nightmare", "Reality", "Future", "Past"], a: "Nightmare", exp: "Utopia is an ideal world; dystopia is a nightmare world." },
+    { q: "EMPIRICAL : OBSERVATION :: THEORETICAL : _______", options: ["Speculation", "Proof", "Experiment", "Data"], a: "Speculation", exp: "Empirical is based on observation; theoretical is based on speculation or ideas." },
+    { q: "DICHOTOMY : DIVISION :: SPECTRUM : _______", options: ["Range", "Color", "Light", "Scale"], a: "Range", exp: "A dichotomy divides into two; a spectrum offers a continuous range." },
+    { q: "AMBIVALENCE : UNCERTAINTY :: CONVICTION : _______", options: ["Certainty", "Belief", "Faith", "Trust"], a: "Certainty", exp: "Ambivalence is a state of uncertainty; conviction is a state of certainty." },
+    { q: "ANACHRONISM : TIME :: ANOMALY : _______", options: ["Pattern", "Rule", "System", "Order"], a: "Pattern", exp: "An anachronism is an error in time; an anomaly is a break from the pattern." },
+    { q: "SUBJECTIVE : PERSONAL :: OBJECTIVE : _______", options: ["Impersonal", "General", "Universal", "Factual"], a: "Impersonal", exp: "Subjective is personal bias; objective is impersonal fact." },
+    { q: "METACOGNITION : THINKING :: METANARRATIVE : _______", options: ["Narrative", "Story", "History", "Plot"], a: "Narrative", exp: "Metacognition is thinking about thinking; metanarrative is a narrative about narrative." },
+    { q: "SYMBIOSIS : MUTUALISM :: PARASITISM : _______", options: ["Exploitation", "Sharing", "Cooperation", "Competition"], a: "Exploitation", exp: "Symbiosis often implies mutual benefit; parasitism implies exploitation." },
+    { q: "EPISTEMOLOGY : KNOWLEDGE :: ONTOLOGY : _______", options: ["Existence", "Reality", "Truth", "Being"], a: "Existence", exp: "Epistemology is the study of knowledge; ontology is the study of existence." },
+    { q: "HEGEMONY : DOMINANCE :: AUTONOMY : _______", options: ["Independence", "Freedom", "Control", "Power"], a: "Independence", exp: "Hegemony is dominance over others; autonomy is independence." },
+    { q: "DIALECTIC : SYNTHESIS :: DIALOGUE : _______", options: ["Understanding", "Conversation", "Argument", "Debate"], a: "Understanding", exp: "Dialectic logic leads to synthesis; dialogue leads to understanding." },
+    { q: "PARADIGM : FRAMEWORK :: DOGMA : _______", options: ["Doctrine", "Belief", "Rule", "Law"], a: "Doctrine", exp: "A paradigm is a theoretical framework; dogma is established doctrine." },
+    { q: "EMPATHY : UNDERSTANDING :: COMPASSION : _______", options: ["Action", "Feeling", "Kindness", "Help"], a: "Action", exp: "Empathy is understanding feeling; compassion is the action to help." },
+    { q: "ALLEGORY : SYMBOLISM :: SATIRE : _______", options: ["Criticism", "Humor", "Irony", "Mockery"], a: "Criticism", exp: "Allegory uses symbolism to tell a story; satire uses humor for criticism." },
+    { q: "CIRCULAR REASONING : FALLACY :: AD HOMINEM : _______", options: ["Attack", "Argument", "Logic", "Reason"], a: "Attack", exp: "Circular reasoning is a logical fallacy; ad hominem is a personal attack." },
+    { q: "COGNITIVE DISSONANCE : CONFLICT :: CONFIRMATION BIAS : _______", options: ["Selection", "Preference", "Favoritism", "Choice"], a: "Selection", exp: "Cognitive dissonance is mental conflict; confirmation bias is selection of data that fits beliefs." },
+    { q: "MACROECONOMICS : AGGREGATE :: MICROECONOMICS : _______", options: ["Individual", "Small", "Personal", "Specific"], a: "Individual", exp: "Macroeconomics looks at the aggregate (whole); microeconomics looks at the individual." },
+    { q: "QUANTITATIVE : MEASUREMENT :: QUALITATIVE : _______", options: ["Description", "Quality", "Characteristic", "Attribute"], a: "Description", exp: "Quantitative relies on measurement; qualitative relies on description." },
+    { q: "SEMANTICS : MEANING :: SYNTAX : _______", options: ["Structure", "Grammar", "Order", "Arrangement"], a: "Structure", exp: "Semantics is the study of meaning; syntax is the study of sentence structure." },
+    { q: "PROTAGONIST : HERO :: ANTAGONIST : _______", options: ["Villain", "Enemy", "Opponent", "Rival"], a: "Villain", exp: "Protagonist is usually the hero; antagonist is the villain." },
+    { q: "DENOTATION : LITERAL :: CONNOTATION : _______", options: ["Associative", "Figurative", "Symbolic", "Implied"], a: "Associative", exp: "Denotation is the literal meaning; connotation is the associative/implied meaning." },
+    { q: "ANTHROPOMORPHISM : HUMAN :: ZOOMORPHISM : _______", options: ["Animal", "Nature", "God", "Machine"], a: "Animal", exp: "Anthropomorphism gives human traits; zoomorphism gives animal traits." },
+    { q: "SOLIPSISM : SELF :: ALTRUISM : _______", options: ["Others", "Society", "Community", "World"], a: "Others", exp: "Solipsism is absorption in the self; altruism is concern for others." },
+    { q: "CANDID : SECRETIVE :: FRANK : _______", options: ["Dishonest", "Open", "Direct", "Blunt"], a: "Dishonest", exp: "Candid/Frank are synonyms meaning honest; Secretive/Dishonest are opposites." },
+    { q: "ODOMETER : DISTANCE :: ALTIMETER : _______", options: ["Height", "Speed", "Depth", "Time"], a: "Height", exp: "An odometer measures distance; an altimeter measures height." },
+    { q: "VIRUS : INFLUENZA :: BACTERIA : _______", options: ["Tuberculosis", "Health", "Cell", "Microbe"], a: "Tuberculosis", exp: "Influenza is caused by a virus; tuberculosis is caused by bacteria." },
+    { q: "FRAGILE : CRACK :: PLIABLE : _______", options: ["Bend", "Break", "Hard", "Soft"], a: "Bend", exp: "Fragile things crack; pliable things bend." },
+    { q: "ARCHIPELAGO : ISLAND :: MOUNTAIN RANGE : _______", options: ["Peak", "Valley", "River", "Hill"], a: "Peak", exp: "An archipelago is a group of islands; a mountain range is a group of peaks." },
+    { q: "TECTONICS : GEOLOGY :: SYNTAX : _______", options: ["Grammar", "Math", "Biology", "Physics"], a: "Grammar", exp: "Tectonics is part of geology; syntax is part of grammar." },
+    { q: "TACITURN : TALKATIVE :: ALOOF : _______", options: ["Friendly", "Quiet", "Distant", "Cold"], a: "Friendly", exp: "Taciturn is opposite of talkative; aloof is opposite of friendly." },
+    { q: "PHILATELIST : STAMPS :: NUMISMATIST : _______", options: ["Coins", "Books", "Maps", "Art"], a: "Coins", exp: "A philatelist collects stamps; a numismatist collects coins." },
+    { q: "MITIGATE : SEVERE :: QUALIFY : _______", options: ["General", "Specific", "Hard", "Easy"], a: "General", exp: "To mitigate makes something less severe; to qualify makes a statement less general." },
+    { q: "EMBEZZLE : FUNDS :: PLAGIARIZE : _______", options: ["Words", "Money", "Ideas", "Theft"], a: "Words", exp: "Embezzle is stealing funds; plagiarize is stealing words." },
+    { q: "EPAULET : SHOULDER :: RING : _______", options: ["Finger", "Ear", "Neck", "Wrist"], a: "Finger", exp: "An epaulet is worn on the shoulder; a ring is worn on the finger." },
+    { q: "INDIGENT : WEALTHY :: NATIVE : _______", options: ["Foreign", "Local", "Rich", "Poor"], a: "Foreign", exp: "Indigent is opposite of wealthy; native is opposite of foreign." },
+    { q: "KEROSENE : FUEL :: WHEAT : _______", options: ["Food", "Gas", "Oil", "Grain"], a: "Food", exp: "Kerosene is a type of fuel; wheat is a type of food." },
+    { q: "GULLIBLE : DUPED :: MALLEABLE : _______", options: ["Shaped", "Broken", "Hard", "Soft"], a: "Shaped", exp: "A gullible person is easily duped; a malleable object is easily shaped." },
+    { q: "COBBLER : SHOES :: CARTOGRAPHER : _______", options: ["Maps", "Carts", "Books", "Houses"], a: "Maps", exp: "A cobbler makes shoes; a cartographer makes maps." },
+    { q: "OBSEQUIOUS : FAWN :: PARSIMONIOUS : _______", options: ["Hoard", "Spend", "Give", "Share"], a: "Hoard", exp: "An obsequious person fawns; a parsimonious person hoards." },
+    { q: "DIRGE : FUNERAL :: JINGLE : _______", options: ["Commercial", "Song", "Radio", "TV"], a: "Commercial", exp: "A dirge is sung at a funeral; a jingle is played in a commercial." },
+    { q: "HERMIT : RECLUSE :: SYCOPHANT : _______", options: ["Flatterer", "Leader", "Teacher", "Follower"], a: "Flatterer", exp: "Hermit and recluse are synonyms; sycophant and flatterer are synonyms." },
+    { q: "LOGIC : REASONING :: ETHICS : _______", options: ["Behavior", "Morals", "Science", "Law"], a: "Behavior", exp: "Logic governs reasoning; ethics governs behavior." },
+    { q: "EPILOGUE : NOVEL :: DESSERT : _______", options: ["Meal", "Lunch", "Dinner", "Appetizer"], a: "Meal", exp: "Epilogue is the end of a novel; dessert is the end of a meal." },
+    { q: "DRILL : BORE :: SIEVE : _______", options: ["Sift", "Cut", "Mix", "Hold"], a: "Sift", exp: "A drill is used to bore; a sieve is used to sift." },
+    { q: "QUORUM : VOTE :: MAJORITY : _______", options: ["Win", "Lose", "Draw", "Elect"], a: "Win", exp: "A quorum is needed to vote; a majority is needed to win." },
+    { q: "DICTATOR : AUTHORITY :: SNIPER : _______", options: ["Accuracy", "Gun", "War", "Skill"], a: "Accuracy", exp: "A dictator relies on authority; a sniper relies on accuracy." },
+    { q: "YARD : LENGTH :: QUART : _______", options: ["Volume", "Weight", "Time", "Distance"], a: "Volume", exp: "A yard measures length; a quart measures volume." },
+    { q: "IGNORANCE : KNOWLEDGE :: POVERTY : _______", options: ["Wealth", "Money", "Rich", "Poor"], a: "Wealth", exp: "Ignorance is lack of knowledge; poverty is lack of wealth." }
   ],
 
   // ==========================================
-  // LEVEL 4: SUPER (High Vocabulary & Complex Logic) - 50 items
+  // LEVEL 4: EXPERT (50 Items)
+  // Focus: Obscure vocabulary, complex reasoning
   // ==========================================
-  super: [
-    // ... existing 25 items ...
-    {
-      question: "PERFIDIOUS : TRUST :: TREACHEROUS : _______",
-      options: ["Loyalty", "Faith", "Honesty", "Allegiance"],
-      answer: "Loyalty",
-      explanation: "Perfidious violates trust; treacherous violates loyalty. (Adjective : Violated Quality)"
-    },
-    {
-      question: "SAGACIOUS : WISDOM :: PRESCIENT : _______",
-      options: ["Foresight", "Knowledge", "Intelligence", "Understanding"],
-      answer: "Foresight",
-      explanation: "Sagacious means wise; prescient means having foresight. (Adjective : Quality)"
-    },
-    {
-      question: "VORACIOUS : HUNGER :: INSATIABLE : _______",
-      options: ["Desire", "Thirst", "Appetite", "Need"],
-      answer: "Desire",
-      explanation: "Voracious describes hunger; insatiable describes desire. (Adjective : Object)"
-    },
-    {
-      question: "PROLIFIC : PRODUCTIVE :: FECUND : _______",
-      options: ["Fertile", "Creative", "Inventive", "Generative"],
-      answer: "Fertile",
-      explanation: "Prolific means productive; fecund means fertile. (Synonyms)"
-    },
-    {
-      question: "OBSTREPEROUS : NOISY :: TURBULENT : _______",
-      options: ["Chaotic", "Violent", "Stormy", "Disruptive"],
-      answer: "Chaotic",
-      explanation: "Obstreperous means noisy; turbulent means chaotic. (Adjective : Nature)"
-    },
-    {
-      question: "RECALCITRANT : AUTHORITY :: INTRANSIGENT : _______",
-      options: ["Compromise", "Change", "Agreement", "Cooperation"],
-      answer: "Compromise",
-      explanation: "Recalcitrant resists authority; intransigent resists compromise. (Adjective : Resistance)"
-    },
-    {
-      question: "SALUBRIOUS : HEALTH :: BENEFICIAL : _______",
-      options: ["Advantage", "Good", "Help", "Welfare"],
-      answer: "Advantage",
-      explanation: "Salubrious promotes health; beneficial provides advantage. (Adjective : Benefit)"
-    },
-    {
-      question: "PERNICIOUS : HARM :: DETRIMENTAL : _______",
-      options: ["Damage", "Injury", "Loss", "Ruin"],
-      answer: "Damage",
-      explanation: "Pernicious causes harm; detrimental causes damage. (Adjective : Negative Effect)"
-    },
-    {
-      question: "MAGNANIMOUS : GENEROSITY :: MUNIFICENT : _______",
-      options: ["Largesse", "Kindness", "Charity", "Giving"],
-      answer: "Largesse",
-      explanation: "Magnanimous shows generosity; munificent shows largesse. (Adjective : Quality)"
-    },
-    {
-      question: "VERBOSE : WORDY :: LACONIC : _______",
-      options: ["Concise", "Brief", "Short", "Succinct"],
-      answer: "Concise",
-      explanation: "Verbose means wordy; laconic means concise. (Antonyms)"
-    },
-    {
-      question: "EPHEMERAL : TEMPORARY :: EVANESCENT : _______",
-      options: ["Fleeting", "Brief", "Short-lived", "Momentary"],
-      answer: "Fleeting",
-      explanation: "Ephemeral means temporary; evanescent means fleeting. (Synonyms)"
-    },
-    {
-      question: "UBIQUITOUS : EVERYWHERE :: OMNIPRESENT : _______",
-      options: ["Universal", "All-present", "Widespread", "Pervasive"],
-      answer: "All-present",
-      explanation: "Ubiquitous means everywhere; omnipresent means all-present. (Synonyms)"
-    },
-    {
-      question: "ESOTERIC : OBSCURE :: ARCANE : _______",
-      options: ["Mysterious", "Secret", "Hidden", "Unknown"],
-      answer: "Mysterious",
-      explanation: "Esoteric means obscure; arcane means mysterious. (Synonyms)"
-    },
-    {
-      question: "PROCRASTINATE : DELAY :: PREVARICATE : _______",
-      options: ["Lie", "Deceive", "Evade", "Avoid"],
-      answer: "Evade",
-      explanation: "Procrastinate means to delay; prevaricate means to evade. (Verb : Meaning)"
-    },
-    {
-      question: "VACILLATE : DECISION :: OSCILLATE : _______",
-      options: ["Position", "Movement", "Direction", "Point"],
-      answer: "Position",
-      explanation: "Vacillate between decisions; oscillate between positions. (Verb : Object)"
-    },
-    {
-      question: "CAPITULATE : SURRENDER :: ACQUIESCE : _______",
-      options: ["Agree", "Comply", "Submit", "Yield"],
-      answer: "Comply",
-      explanation: "Capitulate means to surrender; acquiesce means to comply. (Verb : Meaning)"
-    },
-    {
-      question: "EXACERBATE : WORSEN :: ALLEVIATE : _______",
-      options: ["Improve", "Relieve", "Help", "Cure"],
-      answer: "Relieve",
-      explanation: "Exacerbate means to worsen; alleviate means to relieve. (Verb : Opposite)"
-    },
-    {
-      question: "ABROGATE : LAW :: ANNUL : _______",
-      options: ["Marriage", "Contract", "Agreement", "Treaty"],
-      answer: "Marriage",
-      explanation: "Abrogate a law; annul a marriage. (Verb : Object)"
-    },
-    {
-      question: "EXTRICATE : DIFFICULTY :: DISENTANGLE : _______",
-      options: ["Complication", "Problem", "Mess", "Web"],
-      answer: "Complication",
-      explanation: "Extricate from difficulty; disentangle from complication. (Verb : Situation)"
-    },
-    {
-      question: "PERPETUATE : CONTINUE :: PROPAGATE : _______",
-      options: ["Spread", "Multiply", "Grow", "Extend"],
-      answer: "Spread",
-      explanation: "Perpetuate means to continue; propagate means to spread. (Verb : Meaning)"
-    },
-    {
-      question: "SUBJUGATE : CONTROL :: DOMINATE : _______",
-      options: ["Rule", "Command", "Govern", "Lead"],
-      answer: "Rule",
-      explanation: "Subjugate means to control; dominate means to rule. (Verb : Meaning)"
-    },
-    {
-      question: "CONCATENATE : LINK :: INTEGRATE : _______",
-      options: ["Combine", "Join", "Unite", "Merge"],
-      answer: "Combine",
-      explanation: "Concatenate means to link; integrate means to combine. (Verb : Meaning)"
-    },
-    {
-      question: "DISSEMINATE : INFORMATION :: CIRCULATE : _______",
-      options: ["News", "Rumor", "Message", "Word"],
-      answer: "News",
-      explanation: "Disseminate information; circulate news. (Verb : Object)"
-    },
-    {
-      question: "SUBSTANTIATE : EVIDENCE :: CORROBORATE : _______",
-      options: ["Testimony", "Proof", "Fact", "Witness"],
-      answer: "Testimony",
-      explanation: "Substantiate with evidence; corroborate with testimony. (Verb : Support)"
-    },
-    {
-      question: "EXTRAPOLATE : DATA :: INFER : _______",
-      options: ["Information", "Clues", "Facts", "Details"],
-      answer: "Clues",
-      explanation: "Extrapolate from data; infer from clues. (Verb : Source)"
-    }
+  expert: [
+    { q: "PERFIDIOUS : TRUST :: TREACHEROUS : _______", options: ["Loyalty", "Faith", "Honesty", "Honor"], a: "Loyalty", exp: "Perfidious means violating trust; treacherous means violating loyalty." },
+    { q: "SAGACIOUS : WISDOM :: PRESCIENT : _______", options: ["Foresight", "Knowledge", "Smart", "Future"], a: "Foresight", exp: "Sagacious means having wisdom; prescient means having foresight." },
+    { q: "VORACIOUS : HUNGER :: INSATIABLE : _______", options: ["Desire", "Thirst", "Need", "Want"], a: "Desire", exp: "Voracious describes extreme hunger; insatiable describes extreme desire." },
+    { q: "PROLIFIC : PRODUCTIVE :: FECUND : _______", options: ["Fertile", "Rich", "Growth", "Life"], a: "Fertile", exp: "Prolific means productive; fecund means fertile." },
+    { q: "OBSTREPEROUS : NOISY :: TURBULENT : _______", options: ["Chaotic", "Violent", "Loud", "Fast"], a: "Chaotic", exp: "Obstreperous describes a noisy person; turbulent describes a chaotic situation." },
+    { q: "RECALCITRANT : AUTHORITY :: INTRANSIGENT : _______", options: ["Compromise", "Change", "Rules", "Law"], a: "Compromise", exp: "Recalcitrant resists authority; intransigent resists compromise." },
+    { q: "SALUBRIOUS : HEALTH :: BENEFICIAL : _______", options: ["Advantage", "Good", "Profit", "Gain"], a: "Advantage", exp: "Salubrious promotes health; beneficial promotes advantage." },
+    { q: "PERNICIOUS : HARM :: DETRIMENTAL : _______", options: ["Damage", "Loss", "Pain", "Injury"], a: "Damage", exp: "Pernicious causes harm; detrimental causes damage." },
+    { q: "MAGNANIMOUS : GENEROSITY :: MUNIFICENT : _______", options: ["Largesse", "Money", "Gift", "Kindness"], a: "Largesse", exp: "Magnanimous is showing generosity; munificent is showing largesse (generosity with money)." },
+    { q: "VERBOSE : WORDY :: LACONIC : _______", options: ["Concise", "Brief", "Short", "Silent"], a: "Concise", exp: "Verbose and wordy are synonyms; laconic and concise are synonyms." },
+    { q: "EPHEMERAL : TEMPORARY :: EVANESCENT : _______", options: ["Fleeting", "Gone", "Short", "Quick"], a: "Fleeting", exp: "Ephemeral means temporary; evanescent means fleeting/vanishing." },
+    { q: "UBIQUITOUS : EVERYWHERE :: OMNIPRESENT : _______", options: ["All-present", "Universal", "Global", "Total"], a: "All-present", exp: "Ubiquitous and everywhere are synonyms; omnipresent and all-present are synonyms." },
+    { q: "ESOTERIC : OBSCURE :: ARCANE : _______", options: ["Mysterious", "Secret", "Hidden", "Dark"], a: "Mysterious", exp: "Esoteric means obscure; arcane means mysterious." },
+    { q: "PROCRASTINATE : DELAY :: PREVARICATE : _______", options: ["Evade", "Lie", "Wait", "Stop"], a: "Evade", exp: "Procrastinate means to delay action; prevaricate means to evade the truth." },
+    { q: "VACILLATE : DECISION :: OSCILLATE : _______", options: ["Position", "Movement", "Opinion", "Place"], a: "Position", exp: "Vacillate means wavering on a decision; oscillate means wavering in position." },
+    { q: "CAPITULATE : SURRENDER :: ACQUIESCE : _______", options: ["Comply", "Agree", "Submit", "Give up"], a: "Comply", exp: "Capitulate means to surrender; acquiesce means to comply passively." },
+    { q: "EXACERBATE : WORSEN :: ALLEVIATE : _______", options: ["Relieve", "Help", "Cure", "Stop"], a: "Relieve", exp: "Exacerbate means to worsen; alleviate means to relieve." },
+    { q: "ABROGATE : LAW :: ANNUL : _______", options: ["Marriage", "Contract", "Agreement", "Vow"], a: "Marriage", exp: "Abrogate cancels a law; annul cancels a marriage." },
+    { q: "EXTRICATE : DIFFICULTY :: DISENTANGLE : _______", options: ["Complication", "Knot", "Problem", "Mess"], a: "Complication", exp: "Extricate frees from difficulty; disentangle frees from complication." },
+    { q: "PERPETUATE : CONTINUE :: PROPAGATE : _______", options: ["Spread", "Grow", "Live", "Move"], a: "Spread", exp: "Perpetuate means to make continue; propagate means to spread." },
+    { q: "SUBJUGATE : CONTROL :: DOMINATE : _______", options: ["Rule", "Power", "Win", "Beat"], a: "Rule", exp: "Subjugate means to bring under control; dominate means to rule over." },
+    { q: "CONCATENATE : LINK :: INTEGRATE : _______", options: ["Combine", "Join", "Mix", "Add"], a: "Combine", exp: "Concatenate means to link together; integrate means to combine." },
+    { q: "DISSEMINATE : INFORMATION :: CIRCULATE : _______", options: ["News", "Paper", "Data", "Ideas"], a: "News", exp: "Disseminate spreads information; circulate spreads news." },
+    { q: "SUBSTANTIATE : EVIDENCE :: CORROBORATE : _______", options: ["Testimony", "Proof", "Fact", "Witness"], a: "Testimony", exp: "Substantiate supports with evidence; corroborate supports with testimony." },
+    { q: "EXTRAPOLATE : DATA :: INFER : _______", options: ["Clues", "Facts", "Ideas", "Logic"], a: "Clues", exp: "Extrapolate concludes from data; infer concludes from clues." },
+    { q: "EPHEMERAL : ENDURING :: TRANSIENT : _______", options: ["Permanent", "Lasting", "Forever", "Stable"], a: "Permanent", exp: "Ephemeral is opposite of enduring; transient is opposite of permanent." },
+    { q: "DIDACTIC : TEACH :: HORTATORY : _______", options: ["Urge", "Preach", "Speak", "Learn"], a: "Urge", exp: "Didactic intends to teach; hortatory intends to urge/encourage." },
+    { q: "SOPORIFIC : SLEEP :: MNEMONIC : _______", options: ["Memory", "Mind", "Thought", "Brain"], a: "Memory", exp: "Soporific induces sleep; mnemonic aids memory." },
+    { q: "LACONIC : WORDS :: PARSIMONIOUS : _______", options: ["Money", "Time", "Friends", "Food"], a: "Money", exp: "Laconic uses few words; parsimonious spends little money." },
+    { q: "APOCRYPHAL : AUTHENTICITY :: NEBULOUS : _______", options: ["Definition", "Shape", "Form", "Clarify"], a: "Definition", exp: "Apocryphal lacks authenticity; nebulous lacks clear definition." },
+    { q: "TAUTOLOGY : REPETITIVE :: OXYMORON : _______", options: ["Contradictory", "Irony", "False", "True"], a: "Contradictory", exp: "Tautology is repetitive; oxymoron is contradictory." },
+    { q: "MERCENARY : MONEY :: VINDICTIVE : _______", options: ["Revenge", "Hate", "Anger", "Power"], a: "Revenge", exp: "Mercenary is motivated by money; vindictive is motivated by revenge." },
+    { q: "LUGUBRIOUS : SORROWFUL :: EUPHORIC : _______", options: ["Happy", "Joyful", "Glad", "Excited"], a: "Happy", exp: "Lugubrious is excessively sorrowful; euphoric is excessively happy." },
+    { q: "COMPENDIUM : SUMMARY :: ANTHOLOGY : _______", options: ["Collection", "Book", "Library", "Selection"], a: "Collection", exp: "A compendium is a summary; an anthology is a collection of works." },
+    { q: "METICULOUS : DETAILS :: DOGMATIC : _______", options: ["Beliefs", "Rules", "Laws", "Faith"], a: "Beliefs", exp: "Meticulous focuses on details; dogmatic focuses on beliefs." },
+    { q: "PALIMPSEST : REUSE :: HEIRLOOM : _______", options: ["Inherit", "Keep", "Save", "Value"], a: "Inherit", exp: "A palimpsest involves reuse; an heirloom involves inheritance." },
+    { q: "INDELIBLE : ERASE :: INEFFABLE : _______", options: ["Utter", "Speak", "Say", "Hear"], a: "Utter", exp: "Indelible cannot be erased; ineffable cannot be uttered/described." },
+    { q: "ICONOCLAST : TRADITION :: ANARCHIST : _______", options: ["Government", "Law", "Rule", "State"], a: "Government", exp: "Iconoclast attacks tradition; anarchist attacks government." },
+    { q: "PANEGYRIC : PRAISE :: ELEGY : _______", options: ["Lament", "Sadness", "Death", "Cry"], a: "Lament", exp: "Panegyric is a speech of praise; elegy is a poem of lament." },
+    { q: "INTRANSIGENT : FLEXIBILITY :: STOLID : _______", options: ["Emotion", "Feeling", "Movement", "Action"], a: "Emotion", exp: "Intransigent lacks flexibility; stolid lacks emotion." },
+    { q: "DESICCATE : MOISTURE :: DARKEN : _______", options: ["Light", "Sun", "Bright", "White"], a: "Light", exp: "Desiccate removes moisture; darken removes light." },
+    { q: "PULCHRITUDE : BEAUTY :: INDOLENCE : _______", options: ["Laziness", "Sleep", "Slow", "Rest"], a: "Laziness", exp: "Pulchritude is beauty; indolence is laziness." },
+    { q: "DIAPHANOUS : OPAQUE :: LIMPID : _______", options: ["Murky", "Clear", "Dark", "Cloudy"], a: "Murky", exp: "Diaphanous is opposite of opaque; limpid (clear) is opposite of murky." },
+    { q: "APOSTATE : RELIGION :: TRAITOR : _______", options: ["Country", "Team", "Friends", "Family"], a: "Country", exp: "Apostate betrays religion; traitor betrays country." },
+    { q: "QUIXOTIC : IDEALISTIC :: MACHINATION : _______", options: ["Plotting", "Planning", "Thinking", "Doing"], a: "Plotting", exp: "Quixotic means idealistic; machination means plotting." },
+    { q: "AMELIORATE : IMPROVE :: OSSIFY : _______", options: ["Harden", "Soften", "Break", "Fix"], a: "Harden", exp: "Ameliorate means to improve; ossify means to harden." },
+    { q: "OBFUSCATE : CLARITY :: ENERVATE : _______", options: ["Energy", "Strength", "Power", "Life"], a: "Energy", exp: "Obfuscate reduces clarity; enervate reduces energy." },
+    { q: "EXCULPATE : BLAME :: EXTIRPATE : _______", options: ["Destroy", "Build", "Create", "Make"], a: "Destroy", exp: "Exculpate removes blame; extirpate destroys completely." },
+    { q: "EQUIVOCATE : DECEIVE :: FILIBUSTER : _______", options: ["Delay", "Stop", "Prevent", "Block"], a: "Delay", exp: "Equivocate is used to deceive; filibuster is used to delay." },
+    { q: "MAVERICK : CONFORMITY :: HERETIC : _______", options: ["Orthodoxy", "Belief", "Faith", "Church"], a: "Orthodoxy", exp: "Maverick opposes conformity; heretic opposes orthodoxy." }
   ]
 };
