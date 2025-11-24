@@ -3952,13 +3952,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonTitleEl.textContent = data.title || "Verbal Ability Topic";
     lessonMetaEl.textContent = data.level || "CSE Verbal Ability";
 
-    // SPECIAL CASE: kung may fullHtml (gaya ng Adverbs / Prepositions), diretso natin i-render
+    // SPECIAL CASE: kung may fullHtml
     if (data.fullHtml) {
       lessonContentEl.innerHTML = data.fullHtml;
       return;
     }
 
-    // Default path para sa ibang lessons (Nouns, Verbs, etc.)
+    // Default path
     let html = "";
     if (data.intro) {
       html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
@@ -4016,55 +4016,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Practice Mode Logic ---
 
-  // Helper: kunin question bank depende sa topic
   function getQuestionBank(topic) {
     switch (topic) {
-      case "nouns":
-        return NOUN_QUESTIONS;
-      case "gender":
-        return GENDER_QUESTIONS;
-      case "grammatical_number":
-        return GRAMMATICAL_NUMBER_QUESTIONS;
-      case "verbs":
-        return VERB_QUESTIONS;
-      case "tenses":
-        return TENSE_QUESTIONS;
-      case "pronouns":
-        return PRONOUN_QUESTIONS;
-      case "adjectives":
-        return ADJECTIVE_QUESTIONS;
-      case "adverbs":
-        return ADVERB_QUESTIONS;
-      case "prepositions":
-        return PREPOSITION_QUESTIONS;
-       case "conjunctions":
-        return CONJUNCTION_QUESTIONS; 
-        case "interjections":
-        return INTERJECTION_QUESTIONS;  
-       case "articles":
-        return ARTICLE_QUESTIONS; 
-       case "subject_verb_agreement":
-        return SUBJECT_VERB_AGREEMENT_QUESTIONS; 
-        case "sentence_construction":
-        return SENTENCE_CONSTRUCTION_QUESTIONS;
-        case "sentence_structure":
-        return SENTENCE_STRUCTURE_QUESTIONS;
-         case "error_identification":
-        return ERROR_IDENTIFICATION_QUESTIONS;
-         case "affixes":
-        return AFFIXES_QUESTIONS;
-        case "synonym":
-        return SYNONYMS_QUESTIONS;
-        case "punctuations":
-        return PUNCTUATIONS_QUESTIONS;
-        case "words_often_confused":
-        return WORDS_OFTEN_CONFUSED_QUESTIONS;
-      default:
-        return null;
+      case "nouns": return typeof NOUN_QUESTIONS !== 'undefined' ? NOUN_QUESTIONS : null;
+      case "gender": return typeof GENDER_QUESTIONS !== 'undefined' ? GENDER_QUESTIONS : null;
+      case "grammatical_number": return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
+      case "verbs": return typeof VERB_QUESTIONS !== 'undefined' ? VERB_QUESTIONS : null;
+      case "tenses": return typeof TENSE_QUESTIONS !== 'undefined' ? TENSE_QUESTIONS : null;
+      case "pronouns": return typeof PRONOUN_QUESTIONS !== 'undefined' ? PRONOUN_QUESTIONS : null;
+      case "adjectives": return typeof ADJECTIVE_QUESTIONS !== 'undefined' ? ADJECTIVE_QUESTIONS : null;
+      case "adverbs": return typeof ADVERB_QUESTIONS !== 'undefined' ? ADVERB_QUESTIONS : null;
+      case "prepositions": return typeof PREPOSITION_QUESTIONS !== 'undefined' ? PREPOSITION_QUESTIONS : null;
+      case "conjunctions": return typeof CONJUNCTION_QUESTIONS !== 'undefined' ? CONJUNCTION_QUESTIONS : null;
+      case "interjections": return typeof INTERJECTION_QUESTIONS !== 'undefined' ? INTERJECTION_QUESTIONS : null;
+      case "articles": return typeof ARTICLE_QUESTIONS !== 'undefined' ? ARTICLE_QUESTIONS : null;
+      case "subject_verb_agreement": return typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined' ? SUBJECT_VERB_AGREEMENT_QUESTIONS : null;
+      case "sentence_construction": return typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined' ? SENTENCE_CONSTRUCTION_QUESTIONS : null;
+      case "sentence_structure": return typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined' ? SENTENCE_STRUCTURE_QUESTIONS : null;
+      case "error_identification": return typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined' ? ERROR_IDENTIFICATION_QUESTIONS : null;
+      case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
+      case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
+      case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
+      case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
+      default: return null;
     }
   }
 
-  // Populate topic select
   if (practiceTopicEl) {
     practiceTopicEl.innerHTML = "";
     VERBAL_TOPICS.forEach((topic) => {
@@ -4078,7 +4055,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let quizState = null;
 
-  // Helper para tumigil ang current timer (kung meron)
   function stopCurrentTimer() {
     if (quizState && quizState.timerId) {
       clearInterval(quizState.timerId);
@@ -4101,19 +4077,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof pct !== "number" && quizState) {
       pct = (quizState.currentIndex / quizState.questions.length) * 100;
     }
-    quizProgressFillEl.style.width = `${Math.max(
-      0,
-      Math.min(100, pct || 0)
-    )}%`;
+    quizProgressFillEl.style.width = `${Math.max(0, Math.min(100, pct || 0))}%`;
   }
 
   function updateStats() {
     if (!quizState || !quizState.questions) return;
-
     const total = quizState.questions.length;
     const answered = quizState.correct + quizState.incorrect;
     const left = total - answered;
-
     quizOutputEl.innerHTML = `
       <div class="stats-panel">
         <div class="stat-item"><span>Correct</span><span>${quizState.correct}</span></div>
@@ -4145,45 +4116,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
- function showQuestion() {
-  if (!quizState) return;
-  const q = quizState.questions[quizState.currentIndex];
+  function showQuestion() {
+    if (!quizState) return;
+    const q = quizState.questions[quizState.currentIndex];
 
-  // 🔁 NORMALIZE DATA (para gumana ang Conjunctions)
-  // Kung wala pang choices/correctIndex pero may options/answer,
-  // gawin natin silang compatible sa ibang topics.
-  if (
-    (!Array.isArray(q.choices) || typeof q.correctIndex !== "number") &&
-    Array.isArray(q.options) &&
-    typeof q.answer === "string"
-  ) {
-    q.choices = q.options.slice(); // copy array
-    q.correctIndex = q.options.indexOf(q.answer); // convert string to index
+    // Normalize Data (for compatibility)
+    if (
+      (!Array.isArray(q.choices) || typeof q.correctIndex !== "number") &&
+      Array.isArray(q.options) &&
+      typeof q.answer === "string"
+    ) {
+      q.choices = q.options.slice();
+      q.correctIndex = q.options.indexOf(q.answer);
+    }
+
+    quizState.answered = false;
+    quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
+    updateProgressFill();
+
+    quizQuestionEl.textContent = q.question;
+    quizChoicesEl.innerHTML = "";
+    quizExplanationEl.classList.add("hide");
+    quizNextBtn.classList.add("hide");
+
+    q.choices.forEach((choice, idx) => {
+      const btn = document.createElement("button");
+      btn.className = "quiz-choice";
+      btn.textContent = choice;
+      btn.addEventListener("click", () => handleAnswer(idx));
+      quizChoicesEl.appendChild(btn);
+    });
+
+    updateStats();
+    startTimer();
   }
-
-  quizState.answered = false;
-
-  quizProgressEl.textContent = `Question ${
-    quizState.currentIndex + 1
-  } of ${quizState.questions.length}`;
-  updateProgressFill();
-
-  quizQuestionEl.textContent = q.question;
-  quizChoicesEl.innerHTML = "";
-  quizExplanationEl.classList.add("hide");
-  quizNextBtn.classList.add("hide");
-
-  q.choices.forEach((choice, idx) => {
-    const btn = document.createElement("button");
-    btn.className = "quiz-choice";
-    btn.textContent = choice;
-    btn.addEventListener("click", () => handleAnswer(idx));
-    quizChoicesEl.appendChild(btn);
-  });
-
-  updateStats();
-  startTimer();
-}
 
   function handleAnswer(idx) {
     if (!quizState || quizState.answered) return;
@@ -4192,7 +4158,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const q = quizState.questions[quizState.currentIndex];
     const btns = quizChoicesEl.querySelectorAll("button");
-
     const isCorrect = idx === q.correctIndex;
 
     if (isCorrect) {
@@ -4204,8 +4169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (btns[q.correctIndex]) {
         btns[q.correctIndex].classList.add("correct");
       }
-
-      // 🔴 Save sa Weak Points
       if (!Array.isArray(quizState.wrongAnswers)) {
         quizState.wrongAnswers = [];
       }
@@ -4240,13 +4203,12 @@ document.addEventListener("DOMContentLoaded", () => {
       btns[q.correctIndex].classList.add("correct");
     }
 
-    // 🔴 Time's up -> Weak Point din ito
     if (!Array.isArray(quizState.wrongAnswers)) {
       quizState.wrongAnswers = [];
     }
     quizState.wrongAnswers.push({
       question: q.question,
-      yourAnswer: "(No answer – time's up)",
+      yourAnswer: "(Time's up)",
       correctAnswer: q.choices[q.correctIndex],
       explanation: q.explanation
     });
@@ -4263,20 +4225,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startQuizBtn.addEventListener("click", () => {
-    // puwede mag-start ng bagong quiz kahit nasa gitna ka pa
     stopCurrentTimer();
-
     const topic = practiceTopicEl.value;
     const level = practiceLevelEl.value;
     const count = parseInt(practiceCountEl.value, 10);
     const timer = timerModeEl.value;
-    const weakNotes = practiceWeakEl.value.trim(); // reserved for future
+    const weakNotes = practiceWeakEl.value.trim();
 
     const bank = getQuestionBank(topic);
     if (!bank) {
-      alert(
-        "Questions for this topic are not yet available. For now, try Nouns or Gender."
-      );
+      alert("Questions for this topic are not yet available. Please ensure the Question files are loaded.");
       return;
     }
 
@@ -4298,7 +4256,7 @@ document.addEventListener("DOMContentLoaded", () => {
       timerId: null,
       answered: false,
       weakNotes,
-      wrongAnswers: [] // 🔴 dito natin ilalagay ang weak points
+      wrongAnswers: []
     };
 
     showQuestion();
@@ -4308,40 +4266,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!quizState) return;
 
     if (quizState.currentIndex < quizState.questions.length - 1) {
-      // May next question pa
       quizState.currentIndex++;
       showQuestion();
     } else {
-      // ✅ Finish quiz + show full summary + weak points
       stopCurrentTimer();
       updateProgressFill(100);
 
       const total = quizState.questions.length;
       const correct = quizState.correct;
       const incorrect = quizState.incorrect;
-      const answered = correct + incorrect;
-      const left = total - answered;
-      const wrongItems = Array.isArray(quizState.wrongAnswers)
-        ? quizState.wrongAnswers
-        : [];
+      const left = total - (correct + incorrect);
+      const wrongItems = Array.isArray(quizState.wrongAnswers) ? quizState.wrongAnswers : [];
 
       let summaryHtml = `
         <div class="result-card">
           <h2>Quiz Complete!</h2>
           <p class="result-score">Score: <strong>${correct} / ${total}</strong></p>
           <div class="stat-grid">
-            <div class="stat">
-              <div class="stat-label">Correct</div>
-              <div class="stat-value success">${correct}</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Incorrect</div>
-              <div class="stat-value danger">${incorrect}</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Left</div>
-              <div class="stat-value">${left}</div>
-            </div>
+            <div class="stat"><div class="stat-label">Correct</div><div class="stat-value success">${correct}</div></div>
+            <div class="stat"><div class="stat-label">Incorrect</div><div class="stat-value danger">${incorrect}</div></div>
+            <div class="stat"><div class="stat-label">Left</div><div class="stat-value">${left}</div></div>
           </div>
         </div>
       `;
@@ -4350,76 +4294,39 @@ document.addEventListener("DOMContentLoaded", () => {
         summaryHtml += `
           <div class="weakpoints-card">
             <h3>Weak Points (Review)</h3>
-            <p class="muted">These are the questions you missed. Study the correct answers and explanations.</p>
             <ol class="weakpoints-list">
-              ${wrongItems
-                .map(
-                  (item, idx) => `
+              ${wrongItems.map((item, idx) => `
                 <li class="weakpoint-item">
-                  <p class="wp-question"><strong>Q${idx + 1}.</strong> ${
-                    item.question
-                  }</p>
-                  <p class="wp-your-answer">
-                    <span class="wp-label">Your answer:</span>
-                    <span class="wp-bad">${item.yourAnswer}</span>
-                  </p>
-                  <p class="wp-correct-answer">
-                    <span class="wp-label">Correct answer:</span>
-                    <span class="wp-good">${item.correctAnswer}</span>
-                  </p>
+                  <p class="wp-question"><strong>Q${idx + 1}.</strong> ${item.question}</p>
+                  <p class="wp-your-answer"><span class="wp-label">Your answer:</span> <span class="wp-bad">${item.yourAnswer}</span></p>
+                  <p class="wp-correct-answer"><span class="wp-label">Correct answer:</span> <span class="wp-good">${item.correctAnswer}</span></p>
                   <p class="wp-explanation">${item.explanation}</p>
                 </li>
-              `
-                )
-                .join("")}
+              `).join("")}
             </ol>
           </div>
         `;
       } else {
-        summaryHtml += `
-          <div class="weakpoints-card">
-            <h3>No Weak Points 🎉</h3>
-            <p class="muted">
-              You answered everything correctly this round. Great job!
-            </p>
-          </div>
-        `;
+        summaryHtml += `<div class="weakpoints-card"><h3>No Weak Points 🎉</h3><p class="muted">Perfect score!</p></div>`;
       }
 
-      // Ipakita ang summary + weakpoints sa main panel
       quizQuestionEl.innerHTML = summaryHtml;
       quizChoicesEl.innerHTML = "";
       quizExplanationEl.classList.add("hide");
       quizNextBtn.classList.add("hide");
 
-      // Final sync ng mini stats panel
-      quizOutputEl.innerHTML = `
-        <div class="stats-panel">
-          <div class="stat-item"><span>Correct</span><span>${correct}</span></div>
-          <div class="stat-item"><span>Incorrect</span><span>${incorrect}</span></div>
-          <div class="stat-item"><span>Left</span><span>${left}</span></div>
-        </div>`;
-
-      // Restart button
       const restartBtn = document.createElement("button");
       restartBtn.className = "mode-btn active";
       restartBtn.style.marginTop = "20px";
       restartBtn.textContent = "Take Another Quiz";
       restartBtn.onclick = () => {
         quizState = null;
-        quizQuestionEl.textContent =
-          "Ready when you are. Set up your quiz on the left and press \"Start practice quiz\".";
+        quizQuestionEl.textContent = "Ready when you are. Set up your quiz on the left.";
         restartBtn.remove();
-        quizOutputEl.innerHTML = `
-          <div class="stats-panel">
-            <div class="stat-item"><span>Correct</span><span>0</span></div>
-            <div class="stat-item"><span>Incorrect</span><span>0</span></div>
-            <div class="stat-item"><span>Left</span><span>0</span></div>
-          </div>`;
+        quizOutputEl.innerHTML = `<div class="stats-panel"><div class="stat-item"><span>Correct</span><span>0</span></div><div class="stat-item"><span>Incorrect</span><span>0</span></div></div>`;
         updateProgressFill(0);
       };
       quizChoicesEl.appendChild(restartBtn);
     }
   });
 });
-
