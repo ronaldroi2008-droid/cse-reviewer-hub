@@ -44,7 +44,8 @@ const TOPIC_MAX_QUESTIONS = {
   affixes: 50,
   punctuations: 50,
   synonyms: 50,
-  antonyms:50
+  antonyms:50,
+  analogy: 50,
   words_often_confused: 50,
   prepositions: 50
 };
@@ -3982,7 +3983,164 @@ words_often_confused: {
    `
   },
 
-    
+analogy: {
+    title: "Analogy – Word Relationships and Logic",
+    level: "Verbal Ability",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. What is an Analogy?</h2>
+        <p>
+          An analogy tests your ability to identify the <strong>relationship</strong> between two words and apply that same logic to another pair.
+        </p>
+        <div class="highlight-box">
+          <p><strong>The Format:</strong></p>
+          <p style="font-size: 1.2em; text-align: center;"><strong>A : B :: C : D</strong></p>
+          <p>This is read as: <em>"A is to B as C is to D."</em></p>
+        </div>
+        <p><strong>Example:</strong></p>
+        <p><em>Finger : Hand :: Leaf : Tree</em></p>
+        <p>
+          <strong>Logic:</strong> A finger is a <strong>part of</strong> a hand, just as a leaf is a <strong>part of</strong> a tree.
+        </p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. The "Bridge Sentence" Technique</h2>
+        <p>
+          The best way to solve analogies is to create a specific sentence that connects the first two words. This sentence is your <strong>"Bridge."</strong>
+        </p>
+        <p><strong>Step 1:</strong> Create a sentence for the first pair.</p>
+        <ul>
+          <li><strong>Pair:</strong> <em>Carpenter : Saw</em></li>
+          <li><strong>Bridge Sentence:</strong> "A carpenter <strong>uses a</strong> saw to do his job."</li>
+        </ul>
+        <p><strong>Step 2:</strong> Test the choices with the SAME sentence.</p>
+        <ul>
+          <li><strong>Choice A (Painter : Brush):</strong> "A painter <strong>uses a</strong> brush to do his job." (✅ Correct)</li>
+          <li><strong>Choice B (Lawyer : Briefcase):</strong> "A lawyer <strong>uses a</strong> briefcase to do his job?" (❌ Weak connection)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Common Types of Relationships</h2>
+        <p>In the Civil Service Exam, these are the most frequent patterns you will encounter:</p>
+
+        <table class="lesson-table">
+          <thead>
+            <tr>
+              <th>Relationship</th>
+              <th>Example A : B</th>
+              <th>Bridge / Logic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Synonyms</strong></td>
+              <td><em>Big : Huge</em></td>
+              <td>Means the same thing (Intensity usually increases).</td>
+            </tr>
+            <tr>
+              <td><strong>Antonyms</strong></td>
+              <td><em>Hot : Cold</em></td>
+              <td>Opposite meanings.</td>
+            </tr>
+            <tr>
+              <td><strong>Part to Whole</strong></td>
+              <td><em>Wheel : Car</em></td>
+              <td>A wheel is a <strong>part of</strong> a car.</td>
+            </tr>
+            <tr>
+              <td><strong>Worker & Tool</strong></td>
+              <td><em>Chef : Knife</em></td>
+              <td>A chef <strong>uses a</strong> knife.</td>
+            </tr>
+            <tr>
+              <td><strong>Worker & Product</strong></td>
+              <td><em>Baker : Bread</em></td>
+              <td>A baker <strong>makes</strong> bread.</td>
+            </tr>
+            <tr>
+              <td><strong>Animal & Young</strong></td>
+              <td><em>Cat : Kitten</em></td>
+              <td>A kitten is a <strong>baby</strong> cat.</td>
+            </tr>
+            <tr>
+              <td><strong>Animal & Sound</strong></td>
+              <td><em>Dog : Bark</em></td>
+              <td>A dog <strong>makes the sound</strong> bark.</td>
+            </tr>
+            <tr>
+              <td><strong>Cause & Effect</strong></td>
+              <td><em>Virus : Illness</em></td>
+              <td>A virus <strong>causes</strong> illness.</td>
+            </tr>
+            <tr>
+              <td><strong>Degree (Intensity)</strong></td>
+              <td><em>Warm : Hot</em></td>
+              <td>Hot is an <strong>extreme version</strong> of warm.</td>
+            </tr>
+            <tr>
+              <td><strong>Function</strong></td>
+              <td><em>Pen : Write</em></td>
+              <td>A pen is used <strong>to</strong> write.</td>
+            </tr>
+             <tr>
+              <td><strong>Geography</strong></td>
+              <td><em>Manila : Philippines</em></td>
+              <td>Manila is the <strong>capital of</strong> the Philippines.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Advanced Tips & Traps</h2>
+
+        <h3>4.1 Watch the Order!</h3>
+        <p>
+          The order of the words must be exactly the same.
+        </p>
+        <p><strong>Question:</strong> <em>Shoe : Foot :: ________ : ________</em></p>
+        <p><strong>Bridge:</strong> A shoe is worn on the foot. (Item → Body Part)</p>
+        <ul>
+          <li>❌ <em>Hand : Glove</em> (This is Body Part → Item. <strong>Wrong order!</strong>)</li>
+          <li>✅ <em>Glove : Hand</em> (Item → Body Part. <strong>Correct!</strong>)</li>
+        </ul>
+
+        <h3>4.2 Parts of Speech Must Match</h3>
+        <p>
+          If the first pair is <strong>Noun : Adjective</strong>, the answer must be <strong>Noun : Adjective</strong>.
+        </p>
+        <ul>
+          <li><strong>Example:</strong> <em>Fox : Sly</em> (Noun : Adjective)</li>
+          <li>❌ <em>Speed : Fast</em> (Noun : Adjective? Maybe, but "Speed" is usually a noun/verb)</li>
+          <li>✅ <em>Ant : Industrious</em> (Noun : Adjective describing a characteristic)</li>
+        </ul>
+
+        <h3>4.3 "Nuance" or Degree</h3>
+        <p>
+          Sometimes two answers look correct. Choose the one with the closest "degree" or intensity.
+        </p>
+        <p><strong>Question:</strong> <em>Good : Excellent :: Bad : ________</em></p>
+        <ul>
+          <li>Choice A: <em>Naughty</em> (Too weak)</li>
+          <li>Choice B: <em>Terrible</em> (Correct strength)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Quick Practice Patterns</h2>
+        <ul class="check-list">
+          <li><strong>Odometer : Mileage</strong> :: Compass : Direction (Instrument : Measures)</li>
+          <li><strong>Scissor : Cut</strong> :: Broom : Sweep (Tool : Action)</li>
+          <li><strong>Lion : Pride</strong> :: Wolf : Pack (Animal : Group/Collective Noun)</li>
+          <li><strong>Fire : Smoke</strong> :: Rain : Flood (Cause : Effect)</li>
+        </ul>
+      </section>
+    `
+  },
+
+  
 // ==========================================
 // SYNONYMS – STUDY MODE EXPLANATION
 // ==========================================
@@ -4250,6 +4408,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
       case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
        case "antonyms": return typeof ANTONYMS_QUESTIONS !== 'undefined' ? ANTONYMS_QUESTIONS : null;  
+      case "analogy": return typeof ANALOGY_QUESTIONS !== 'undefined' ? ANALOGY_QUESTIONS : null;  
       case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
       case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
       default: return null;
