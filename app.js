@@ -3767,6 +3767,218 @@ words_often_confused: {
       </section>   `    
 },
 
+
+  antonyms: {
+    title: "Antonyms – Words with Opposite Meanings",
+    level: "Verbal Ability",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. What Are Antonyms?</h2>
+        <p>
+          <strong>Antonyms</strong> are words that have opposite meanings. The word comes from the Greek words
+          <em>anti</em> (against) and <em>onym</em> (name).
+        </p>
+        <p>
+          Mastering antonyms is not just about memorizing "Hot vs. Cold." In the Civil Service Exam,
+          you must understand <strong>nuance</strong>, <strong>context</strong>, and <strong>prefixes</strong>.
+        </p>
+        <div class="highlight-box">
+          <p><strong>Basic Examples:</strong></p>
+          <ul>
+            <li><strong>Good</strong> vs. <strong>Bad</strong></li>
+            <li><strong>Entry</strong> vs. <strong>Exit</strong></li>
+            <li><strong>Accelerate</strong> vs. <strong>Decelerate</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. The Three Types of Antonyms</h2>
+        <p>Understanding these types helps you eliminate wrong answers in difficult questions.</p>
+
+        <h3>2.1 Gradable Antonyms (The Scale)</h3>
+        <p>
+          These are opposites that exist on a spectrum or scale. You can be "a little bit" of one or the other.
+        </p>
+        <ul>
+          <li><strong>Hot</strong> vs. <strong>Cold</strong> (In between: Warm, Cool)</li>
+          <li><strong>Fat</strong> vs. <strong>Thin</strong> (In between: Chubby, Slim)</li>
+          <li><strong>Happy</strong> vs. <strong>Sad</strong></li>
+        </ul>
+
+        <h3>2.2 Complementary Antonyms (Binary)</h3>
+        <p>
+          These are "all or nothing." If you are one, you cannot be the other. There is no middle ground.
+        </p>
+        <ul>
+          <li><strong>Dead</strong> vs. <strong>Alive</strong> (You cannot be "a little dead")</li>
+          <li><strong>On</strong> vs. <strong>Off</strong></li>
+          <li><strong>Pass</strong> vs. <strong>Fail</strong></li>
+        </ul>
+
+        <h3>2.3 Relational Antonyms (The Relationship)</h3>
+        <p>
+          These words are opposites because they describe a relationship from different viewpoints. One cannot exist without the other.
+        </p>
+        <ul>
+          <li><strong>Teacher</strong> vs. <strong>Student</strong></li>
+          <li><strong>Buy</strong> vs. <strong>Sell</strong></li>
+          <li><strong>Husband</strong> vs. <strong>Wife</strong></li>
+          <li><strong>Predator</strong> vs. <strong>Prey</strong></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Forming Antonyms using Prefixes</h2>
+        <p>
+          Many antonyms are created by adding a "negative prefix" to a base word.
+          Recognizing these prefixes is a huge shortcut in exams.
+        </p>
+
+        <table class="lesson-table">
+          <thead>
+            <tr>
+              <th>Prefix</th>
+              <th>Meaning</th>
+              <th>Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Un-</strong></td>
+              <td>Not / Reverse</td>
+              <td>Happy → <strong>Un</strong>happy<br>Lock → <strong>Un</strong>lock</td>
+            </tr>
+            <tr>
+              <td><strong>Dis-</strong></td>
+              <td>Away / Apart / Not</td>
+              <td>Agree → <strong>Dis</strong>agree<br>Connect → <strong>Dis</strong>connect</td>
+            </tr>
+            <tr>
+              <td><strong>In- / Im-</strong></td>
+              <td>Not</td>
+              <td>Visible → <strong>In</strong>visible<br>Possible → <strong>Im</strong>possible (before P/B/M)</td>
+            </tr>
+            <tr>
+              <td><strong>Il- / Ir-</strong></td>
+              <td>Not</td>
+              <td>Legal → <strong>Il</strong>legal (before L)<br>Regular → <strong>Ir</strong>regular (before R)</td>
+            </tr>
+            <tr>
+              <td><strong>Mis-</strong></td>
+              <td>Wrongly</td>
+              <td>Understand → <strong>Mis</strong>understand<br>Lead → <strong>Mis</strong>lead</td>
+            </tr>
+            <tr>
+              <td><strong>Non-</strong></td>
+              <td>Not</td>
+              <td>Sense → <strong>Non</strong>sense<br>Profit → <strong>Non</strong>profit</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-</strong></td>
+              <td>Against</td>
+              <td>Social → <strong>Anti</strong>social<br>Virus → <strong>Anti</strong>virus</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. The Context Trap (Crucial for Exams)</h2>
+        <p>
+          Words can have different meanings (polysemy). Therefore, the antonym depends on how the word is used in the sentence.
+        </p>
+
+        <h3>Example 1: The word "HARD"</h3>
+        <ul>
+          <li>
+            Context: "The rock is <strong>hard</strong>."<br>
+            Antonym: <strong>Soft</strong>
+          </li>
+          <li>
+            Context: "The exam is <strong>hard</strong>."<br>
+            Antonym: <strong>Easy</strong>
+          </li>
+        </ul>
+
+        <h3>Example 2: The word "LIGHT"</h3>
+        <ul>
+          <li>
+            Context: "The room is bright and <strong>light</strong>."<br>
+            Antonym: <strong>Dark</strong>
+          </li>
+          <li>
+            Context: "The feather is <strong>light</strong>."<br>
+            Antonym: <strong>Heavy</strong>
+          </li>
+        </ul>
+
+        <h3>Example 3: The word "SHARP"</h3>
+        <ul>
+          <li>
+            Context: "The knife is <strong>sharp</strong>."<br>
+            Antonym: <strong>Blunt</strong> or <strong>Dull</strong>
+          </li>
+          <li>
+            Context: "He has a <strong>sharp</strong> mind."<br>
+            Antonym: <strong>Slow</strong> or <strong>Stupid</strong>
+          </li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Exam Strategy: How to Find the Antonym</h2>
+        <ol>
+          <li>
+            <strong>Define the word first:</strong> Before looking at the choices, define the main word in your head.
+          </li>
+          <li>
+            <strong>Predict the opposite:</strong> Think of the opposite word before reading the options (A, B, C, D).
+          </li>
+          <li>
+            <strong>Check the Part of Speech:</strong>
+            <ul>
+              <li>If the word is a <strong>Noun</strong>, the answer is a <strong>Noun</strong>. (<em>Courage</em> ≠ <em>Cowardly</em> ❌; <em>Courage</em> ≠ <em>Cowardice</em> ✅)</li>
+              <li>If the word is a <strong>Verb</strong>, the answer is a <strong>Verb</strong>. (<em>Expand</em> ≠ <em>Small</em> ❌; <em>Expand</em> ≠ <em>Shrink</em> ✅)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Use Positive/Negative Charge:</strong>
+            If the main word is <strong>Positive</strong> (e.g., <em>Benevolent</em>), the antonym must be <strong>Negative</strong> (e.g., <em>Cruel</em>). Eliminate the positive choices.
+          </li>
+        </ol>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. Common Antonym List (Reviewer)</h2>
+        <ul class="two-column-list">
+          <li><strong>Abundant</strong> ≠ Scarce</li>
+          <li><strong>Artificial</strong> ≠ Genuine/Natural</li>
+          <li><strong>Arrogant</strong> ≠ Humble</li>
+          <li><strong>Bravery</strong> ≠ Cowardice</li>
+          <li><strong>Cautious</strong> ≠ Reckless</li>
+          <li><strong>Complex</strong> ≠ Simple</li>
+          <li><strong>Compliment</strong> ≠ Insult</li>
+          <li><strong>Deter</strong> ≠ Encourage</li>
+          <li><strong>Expand</strong> ≠ Contract/Shrink</li>
+          <li><strong>Frugal</strong> ≠ Extravagant</li>
+          <li><strong>Guilty</strong> ≠ Innocent</li>
+          <li><strong>Hinder</strong> ≠ Assist</li>
+          <li><strong>Ignite</strong> ≠ Extinguish</li>
+          <li><strong>Lenient</strong> ≠ Strict</li>
+          <li><strong>Obscure</strong> ≠ Clear/Famous</li>
+          <li><strong>Permanent</strong> ≠ Temporary</li>
+          <li><strong>Plentiful</strong> ≠ Sparse</li>
+          <li><strong>Professional</strong> ≠ Amateur</li>
+          <li><strong>Robust</strong> ≠ Frail/Weak</li>
+          <li><strong>Tranquil</strong> ≠ Chaotic</li>
+          <li><strong>Transparent</strong> ≠ Opaque</li>
+          <li><strong>Vacant</strong> ≠ Occupied</li>
+          <li><strong>Wealthy</strong> ≠ Destitute/Poor</li>
+        </ul>
+      </section>
+    `
+  }
 // ==========================================
 // SYNONYMS – STUDY MODE EXPLANATION
 // ==========================================
