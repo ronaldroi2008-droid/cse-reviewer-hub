@@ -4388,33 +4388,110 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Practice Mode Logic ---
 
  function getQuestionBank(topic) {
-  console.log("Loading question bank for topic:", topic); // Debug line
+  console.log("Loading question bank for topic:", topic);
   
   switch (topic) {
-    case "nouns": return typeof NOUN_QUESTIONS !== 'undefined' ? NOUN_QUESTIONS : null;
-    case "gender": return typeof GENDER_QUESTIONS !== 'undefined' ? GENDER_QUESTIONS : null;
-    case "grammatical_number": return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
-    case "verbs": return typeof VERB_QUESTIONS !== 'undefined' ? VERB_QUESTIONS : null;
-    case "tenses": return typeof TENSE_QUESTIONS !== 'undefined' ? TENSE_QUESTIONS : null;
-    case "pronouns": return typeof PRONOUN_QUESTIONS !== 'undefined' ? PRONOUN_QUESTIONS : null;
-    case "adjectives": return typeof ADJECTIVE_QUESTIONS !== 'undefined' ? ADJECTIVE_QUESTIONS : null;
-    case "adverbs": return typeof ADVERB_QUESTIONS !== 'undefined' ? ADVERB_QUESTIONS : null;
-    case "prepositions": return typeof PREPOSITION_QUESTIONS !== 'undefined' ? PREPOSITION_QUESTIONS : null;
-    case "conjunctions": return typeof CONJUNCTION_QUESTIONS !== 'undefined' ? CONJUNCTION_QUESTIONS : null;
-    case "interjections": return typeof INTERJECTION_QUESTIONS !== 'undefined' ? INTERJECTION_QUESTIONS : null;
-    case "articles": return typeof ARTICLE_QUESTIONS !== 'undefined' ? ARTICLE_QUESTIONS : null;
-    case "subject_verb_agreement": return typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined' ? SUBJECT_VERB_AGREEMENT_QUESTIONS : null;
-    case "sentence_construction": return typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined' ? SENTENCE_CONSTRUCTION_QUESTIONS : null;
-    case "sentence_structure": return typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined' ? SENTENCE_STRUCTURE_QUESTIONS : null;
-    case "error_identification": return typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined' ? ERROR_IDENTIFICATION_QUESTIONS : null;
-    case "affixes": return typeof AFFIXES_QUESTIONS !== 'undefined' ? AFFIXES_QUESTIONS : null;
-    case "synonyms": return typeof SYNONYMS_QUESTIONS !== 'undefined' ? SYNONYMS_QUESTIONS : null;
-    case "antonyms": return typeof ANTONYMS_QUESTIONS !== 'undefined' ? ANTONYMS_QUESTIONS : null;
-    case "analogy": return typeof ANALOGY_QUESTIONS !== 'undefined' ? ANALOGY_QUESTIONS : null;
-    case "punctuations": return typeof PUNCTUATIONS_QUESTIONS !== 'undefined' ? PUNCTUATIONS_QUESTIONS : null;
-    case "words_often_confused": return typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined' ? WORDS_OFTEN_CONFUSED_QUESTIONS : null;
+    case "nouns": 
+      // Check both possible variable names
+      if (typeof NOUNS_QUESTIONS !== 'undefined') return NOUNS_QUESTIONS;
+      if (typeof NOUN_QUESTIONS !== 'undefined') return NOUN_QUESTIONS;
+      return null;
+    
+    case "gender": 
+      if (typeof GENDER_NOUNS_QUESTIONS !== 'undefined') return GENDER_NOUNS_QUESTIONS;
+      if (typeof GENDER_QUESTIONS !== 'undefined') return GENDER_QUESTIONS;
+      return null;
+    
+    case "grammatical_number": 
+      return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
+    
+    case "verbs": 
+      if (typeof VERBS_QUESTIONS !== 'undefined') return VERBS_QUESTIONS;
+      if (typeof VERB_QUESTIONS !== 'undefined') return VERB_QUESTIONS;
+      return null;
+    
+    case "tenses": 
+      if (typeof TENSES_QUESTIONS !== 'undefined') return TENSES_QUESTIONS;
+      if (typeof TENSE_QUESTIONS !== 'undefined') return TENSE_QUESTIONS;
+      return null;
+    
+    case "pronouns": 
+      if (typeof PRONOUNS_QUESTIONS !== 'undefined') return PRONOUNS_QUESTIONS;
+      if (typeof PRONOUN_QUESTIONS !== 'undefined') return PRONOUN_QUESTIONS;
+      return null;
+    
+    case "adjectives": 
+      if (typeof ADJECTIVES_QUESTIONS !== 'undefined') return ADJECTIVES_QUESTIONS;
+      if (typeof ADJECTIVE_QUESTIONS !== 'undefined') return ADJECTIVE_QUESTIONS;
+      return null;
+    
+    case "adverbs": 
+      if (typeof ADVERBS_QUESTIONS !== 'undefined') return ADVERBS_QUESTIONS;
+      if (typeof ADVERB_QUESTIONS !== 'undefined') return ADVERB_QUESTIONS;
+      return null;
+    
+    case "prepositions": 
+      if (typeof PREPOSITIONS_QUESTIONS !== 'undefined') return PREPOSITIONS_QUESTIONS;
+      if (typeof PREPOSITION_QUESTIONS !== 'undefined') return PREPOSITION_QUESTIONS;
+      return null;
+    
+    case "conjunctions": 
+      if (typeof CONJUNCTIONS_QUESTIONS !== 'undefined') return CONJUNCTIONS_QUESTIONS;
+      if (typeof CONJUNCTION_QUESTIONS !== 'undefined') return CONJUNCTION_QUESTIONS;
+      return null;
+    
+    case "interjections": 
+      if (typeof INTERJECTIONS_QUESTIONS !== 'undefined') return INTERJECTIONS_QUESTIONS;
+      if (typeof INTERJECTION_QUESTIONS !== 'undefined') return INTERJECTION_QUESTIONS;
+      return null;
+    
+    case "articles": 
+      if (typeof ARTICLES_QUESTIONS !== 'undefined') return ARTICLES_QUESTIONS;
+      if (typeof ARTICLE_QUESTIONS !== 'undefined') return ARTICLE_QUESTIONS;
+      return null;
+    
+    case "subject_verb_agreement": 
+      if (typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined') return SUBJECT_VERB_AGREEMENT_QUESTIONS;
+      return null;
+    
+    case "sentence_construction": 
+      if (typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined') return SENTENCE_CONSTRUCTION_QUESTIONS;
+      return null;
+    
+    case "sentence_structure": 
+      if (typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined') return SENTENCE_STRUCTURE_QUESTIONS;
+      return null;
+    
+    case "error_identification": 
+      if (typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined') return ERROR_IDENTIFICATION_QUESTIONS;
+      return null;
+    
+    case "affixes": 
+      if (typeof AFFIXES_QUESTIONS !== 'undefined') return AFFIXES_QUESTIONS;
+      return null;
+    
+    case "synonyms": 
+      if (typeof SYNONYMS_QUESTIONS !== 'undefined') return SYNONYMS_QUESTIONS;
+      return null;
+    
+    case "antonyms": 
+      if (typeof ANTONYMS_QUESTIONS !== 'undefined') return ANTONYMS_QUESTIONS;
+      return null;
+    
+    case "analogy": 
+      if (typeof ANALOGY_QUESTIONS !== 'undefined') return ANALOGY_QUESTIONS;
+      return null;
+    
+    case "punctuations": 
+      if (typeof PUNCTUATIONS_QUESTIONS !== 'undefined') return PUNCTUATIONS_QUESTIONS;
+      return null;
+    
+    case "words_often_confused": 
+      if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined') return WORDS_OFTEN_CONFUSED_QUESTIONS;
+      return null;
+    
     default: 
-      console.log("Topic not found:", topic); // Debug line
+      console.log("Topic not found:", topic);
       return null;
   }
 }
