@@ -3978,7 +3978,9 @@ words_often_confused: {
         </ul>
       </section>
     `
-  }
+  },
+
+    
 // ==========================================
 // SYNONYMS – STUDY MODE EXPLANATION
 // ==========================================
