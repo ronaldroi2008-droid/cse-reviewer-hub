@@ -47,6 +47,7 @@ const TOPIC_MAX_QUESTIONS = {
   antonyms:50,
   analogy: 50,
   words_often_confused: 50,
+  paragraph_organization: 50,
   prepositions: 50
 };
 
@@ -4653,12 +4654,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined') return WORDS_OFTEN_CONFUSED_QUESTIONS;
       return null;
     
+    // ==========================================
+    // ADDED: PARAGRAPH ORGANIZATION
+    // ==========================================
+    case "paragraph_organization": 
+      if (typeof PARAGRAPH_ORGANIZATION_QUESTIONS !== 'undefined') return PARAGRAPH_ORGANIZATION_QUESTIONS;
+      return null;
+    
     default: 
       console.log("Topic not found:", topic);
       return null;
   }
 }
-
   if (practiceTopicEl) {
     practiceTopicEl.innerHTML = "";
     VERBAL_TOPICS.forEach((topic) => {
