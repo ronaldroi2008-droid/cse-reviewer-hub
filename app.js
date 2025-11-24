@@ -19,7 +19,7 @@ const VERBAL_TOPICS = [
   { id: "sentence_structure",     label: "Sentence Structure" },
   { id: "affixes",                label: "Affixes" },
   { id: "punctuations",           label: "Punctuations" },
-  { id: "correct_usage",          label: "Correct Usage" },
+  { id: "correct_usage",          label: "Words Often Confused" },
   { id: "error_identification",   label: "Error Identification" },
   { id: "synonyms",               label: "Synonyms" },
   { id: "antonyms",               label: "Antonyms" },
