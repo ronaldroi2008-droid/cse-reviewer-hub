@@ -2279,7 +2279,7 @@ const LESSONS = {
     ] 
   },
 
-   punctuation: {
+   punctuations: {
   title: "Punctuation",
   level: "Verbal Ability · Grammar · Punctuation",
   fullHtml: `
