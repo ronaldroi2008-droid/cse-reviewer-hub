@@ -4304,6 +4304,128 @@ analogy: {
       </section>
     `
   },
+
+reading_comprehension: {
+    title: "Reading Comprehension – The Art of Active Reading",
+    level: "Verbal Ability",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. The Golden Rule</h2>
+        <div class="highlight-box">
+          <p><strong>"If it is not in the text, it does not exist."</strong></p>
+        </div>
+        <p>
+          In the Civil Service Exam, do not use your <em>stock knowledge</em> or personal opinion.
+          The correct answer must always be found in or proven by the text provided.
+          Even if a statement is factually true in real life, if it is not mentioned in the passage, it is <strong>INCORRECT</strong> as an answer.
+        </p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. The Strategy: Don't Read Everything First!</h2>
+        <p>Many examinees waste time reading the entire story immediately, only to forget the details when they reach the questions.</p>
+        <p><strong>Use this efficient strategy:</strong></p>
+        <ol>
+          <li><strong>Read the Questions First:</strong> Skip the passage initially. Read the questions to know what you are looking for (Is it the Main Idea? A specific date? The meaning of a word?).</li>
+          <li><strong>Scan for Keywords:</strong> Once you know the question, scan the text for specific keywords.</li>
+          <li><strong>Read the Context:</strong> Read the sentence containing the keyword, plus the sentence before and after it.</li>
+        </ol>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Five Common Types of Questions</h2>
+
+        <h3>A. Main Idea / Best Title</h3>
+        <p>This asks for the summary of the whole text.</p>
+        <ul>
+          <li><strong>Technique:</strong> Read the <strong>First Sentence</strong> and the <strong>Last Sentence</strong> of the passage. The main idea is usually located there.</li>
+          <li><strong>Trap:</strong> Avoid choices that are <em>Too Broad</em> (covers too much) or <em>Too Narrow</em> (focuses on just one small detail).</li>
+        </ul>
+
+        <h3>B. Specific Detail</h3>
+        <p>Asks for facts: <em>Who, What, Where, When</em>.</p>
+        <ul>
+          <li><strong>Technique:</strong> Scanning. Locate the specific word in the passage and verify the answer directly.</li>
+        </ul>
+
+        <h3>C. Vocabulary in Context</h3>
+        <p>Asks for the meaning of a word based on how it is used.</p>
+        <ul>
+          <li><strong>Technique:</strong> Do not rely solely on the dictionary definition. Look at <strong>Context Clues</strong> (surrounding words).</li>
+          <li><em>Example:</em> "She felt <strong>famished</strong>, so she ate three burgers." (Clue: 'ate three burgers' → Famished means hungry).</li>
+        </ul>
+
+        <h3>D. Inference (Conclusion)</h3>
+        <p>The answer is not explicitly written, but it is a logical conclusion based on evidence.</p>
+        <ul>
+          <li><strong>Technique:</strong> Look for clues. <em>Example:</em> "John is soaking wet and holding a dripping umbrella." → Inference: It is raining outside.</li>
+        </ul>
+
+        <h3>E. Tone / Attitude</h3>
+        <p>What is the author's emotion? (Angry, Objective, Sarcastic, Optimistic)</p>
+        <ul>
+          <li><strong>Technique:</strong> Look at the adjectives used (e.g., "disastrous," "magnificent," "regrettable").</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. How to Spot Wrong Answers (Process of Elimination)</h2>
+        <p>Usually, there are 4 choices. 2 are obviously wrong. The real battle is between the remaining 2.</p>
+
+        <table class="lesson-table">
+          <thead>
+            <tr>
+              <th>Type of Trap</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Too Extreme</strong></td>
+              <td>Avoid choices using words like <em>Always, Never, All, None, Only</em>. These are rarely correct. Safer words are <em>Often, Some, Many, Usually</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>Not Mentioned</strong></td>
+              <td>The statement looks correct based on real-world facts, but it is <strong>not</strong> in the text.</td>
+            </tr>
+            <tr>
+              <td><strong>Rotten Apple</strong></td>
+              <td>The first half of the sentence is correct, but the second half is wrong. A small error makes the whole choice wrong.</td>
+            </tr>
+            <tr>
+              <td><strong>Verbatim Trap</strong></td>
+              <td>The choice copies a sentence from the text <strong>word-for-word</strong>, but it does not answer the specific question asked. It is just a distractor.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Context Clues Types</h2>
+        <p>How to guess the meaning of a difficult word:</p>
+        <ul>
+          <li><strong>Synonym:</strong> "The <em>blandishments</em>, or <strong>flattery</strong>, of the salesman..." (Blandishment = Flattery).</li>
+          <li><strong>Antonym:</strong> "Unlike his <em>gregarious</em> brother, Tom is <strong>shy</strong>." (Gregarious ≠ Shy → Friendly/Outgoing).</li>
+          <li><strong>Example:</strong> "Furniture, such as <em>tables and chairs</em>..."</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. Quick Exam Walkthrough</h2>
+        <p><strong>Passage:</strong></p>
+        <p><em>"Dolphins are regarded as the friendliest creatures in the sea. Stories of them helping drowning sailors have been common since Roman times. The more we learn about dolphins, the more we realize that their society is more complex than people previously imagined. They look after other dolphins when they are ill, care for pregnant mothers, and protect the weakest in the community, as we do."</em></p>
+
+        <p><strong>Q: What is the main idea of the passage?</strong></p>
+        <ul>
+          <li>A. Dolphins save sailors. (<strong>Too Narrow</strong> - this is just one detail)</li>
+          <li>B. Dolphins are fish. (<strong>False</strong> - Not mentioned and factually wrong)</li>
+          <li>C. Dolphins have complex social behavior similar to humans. (<strong>Correct</strong> - sums up the care, protection, and society mentioned)</li>
+          <li>D. Roman times were dangerous. (<strong>Not Mentioned/Irrelevant</strong>)</li>
+        </ul>
+      </section>
+    `
+  },
+  
   
 // ==========================================
 // SYNONYMS – STUDY MODE EXPLANATION
@@ -4654,9 +4776,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined') return WORDS_OFTEN_CONFUSED_QUESTIONS;
       return null;
     
-    // ==========================================
-    // ADDED: PARAGRAPH ORGANIZATION
-    // ==========================================
     case "paragraph_organization": 
       if (typeof PARAGRAPH_ORGANIZATION_QUESTIONS !== 'undefined') return PARAGRAPH_ORGANIZATION_QUESTIONS;
       return null;
