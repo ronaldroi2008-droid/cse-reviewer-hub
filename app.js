@@ -2281,7 +2281,7 @@ const LESSONS = {
 
    punctuations: {
   title: "Punctuation",
-  level: "Verbal Ability · Grammar · Punctuation",
+  level: "Verbal Ability",
   fullHtml: `
     <h2>Punctuation – Study Notes</h2>
     <p>
