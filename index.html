@@ -2,176 +2,945 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub</title>
+  <title>CSE Reviewer Hub – Verbal & Numerical Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-
   <style>
-    /* Dagdag na styles para sa Subject Switcher */
-    .app-header {
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    .app-shell {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      padding-bottom: 0;
-    }
-    
-    .subject-nav {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      min-height: 100vh;
     }
 
-    .subject-tab {
+    /* Header */
+    .app-header {
+      background: linear-gradient(135deg, #2c3e50, #4a6491);
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .app-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .app-subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .badge {
+      background: #e74c3c;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Navigation Tabs */
+    .mode-tabs {
+      display: flex;
+      background: white;
+      border-bottom: 1px solid #e1e5e9;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .mode-tab {
+      flex: 1;
+      padding: 1rem 1.5rem;
       background: none;
       border: none;
-      color: #aaa;
-      padding: 10px 15px;
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 600;
+      color: #6c757d;
       cursor: pointer;
+      transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
-      transition: all 0.3s;
     }
 
-    .subject-tab:hover {
-      color: #fff;
+    .mode-tab:hover {
+      background-color: #f8f9fa;
+      color: #495057;
     }
 
-    .subject-tab.active {
-      color: #4facfe; /* Blue highlight */
-      border-bottom: 3px solid #4facfe;
+    .mode-tab.active {
+      color: #3498db;
+      border-bottom-color: #3498db;
+      background-color: white;
+    }
+
+    /* Main Content */
+    .app-main {
+      flex: 1;
+      padding: 0;
+    }
+
+    .mode-section {
+      display: none;
+      min-height: calc(100vh - 150px);
+    }
+
+    .mode-section.active {
+      display: block;
+    }
+
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 150px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 300px;
+      background: white;
+      border-right: 1px solid #e1e5e9;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .sidebar-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #f1f2f6;
+    }
+
+    .topic-group-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #7f8c8d;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .topic-btn {
+      padding: 0.75rem 1rem;
+      background: none;
+      border: none;
+      text-align: left;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #495057;
+      font-size: 0.95rem;
+    }
+
+    .topic-btn:hover {
+      background-color: #e9ecef;
+      color: #2c3e50;
+    }
+
+    .topic-btn.active {
+      background-color: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    .sidebar-note {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e8f4fd;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+    }
+
+    /* Content Area */
+    .content {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      background-color: #f8f9fa;
+    }
+
+    /* Lesson Styles */
+    .lesson-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e1e5e9;
+    }
+
+    .lesson-header h2 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .lesson-meta {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+
+    .lesson-body {
+      line-height: 1.7;
+    }
+
+    .lesson-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .lesson-section h2 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f1f2f6;
+    }
+
+    .lesson-section h3 {
+      font-size: 1.2rem;
+      color: #34495e;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .lesson-section h4 {
+      font-size: 1.1rem;
+      color: #34495e;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .lesson-section p {
+      margin-bottom: 1rem;
+    }
+
+    .lesson-section ul, .lesson-section ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .lesson-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .lesson-table th {
+      background: #2c3e50;
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .lesson-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e1e5e9;
+    }
+
+    .lesson-table tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .lesson-table tr:hover {
+      background: #e9ecef;
+    }
+
+    .two-column-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .check-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    .lesson-example {
+      background: #f8f9fa;
+      border: 1px solid #e1e5e9;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .lesson-example strong {
+      color: #2c3e50;
+    }
+
+    .lesson-example small {
+      color: #7f8c8d;
+      font-style: italic;
+    }
+
+    /* Form Elements */
+    .field {
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #495057;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    select:focus, textarea:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 0.875rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #2980b9;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    /* Quiz Styles */
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-progress-text {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .quiz-timer {
+      font-weight: 600;
+      color: #e74c3c;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #3498db;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #2c3e50;
+    }
+
+    .quiz-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-choice {
+      padding: 1rem 1.25rem;
+      background: white;
+      border: 1px solid #e1e5e9;
+      border-radius: 6px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+
+    .quiz-choice:hover {
+      background: #f8f9fa;
+      border-color: #3498db;
+    }
+
+    .quiz-choice.correct {
+      background: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+
+    .quiz-choice.incorrect {
+      background: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+
+    .quiz-explanation {
+      padding: 1.25rem;
+      background: #e8f4fd;
+      border-radius: 6px;
+      border-left: 4px solid #3498db;
+      margin: 1.5rem 0;
+    }
+
+    .quiz-explanation.hide {
+      display: none;
+    }
+
+    .quiz-next {
+      margin-top: 1rem;
+    }
+
+    .quiz-next.hide {
+      display: none;
+    }
+
+    /* Stats & Results */
+    .stats-panel {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      min-width: 100px;
+    }
+
+    .stat-item span:first-child {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item span:last-child {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .result-score {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 6px;
+      background: #f8f9fa;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .success {
+      color: #27ae60;
+    }
+
+    .danger {
+      color: #e74c3c;
+    }
+
+    .weakpoints-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    .weakpoints-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .weakpoint-item {
+      padding: 1.5rem;
+      border: 1px solid #e1e5e9;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .wp-question {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #2c3e50;
+    }
+
+    .wp-label {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .wp-bad {
+      color: #e74c3c;
+    }
+
+    .wp-good {
+      color: #27ae60;
+    }
+
+    .wp-explanation {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #e1e5e9;
+      color: #6c757d;
+    }
+
+    .muted {
+      color: #6c757d;
+      text-align: center;
+    }
+
+    /* Sub-tabs for Numerical Ability */
+    .numerical-mode-tabs {
+      display: flex;
+      margin-bottom: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      padding: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .sub-tab {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: none;
+      border: none;
+      font-weight: 600;
+      color: #6c757d;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .sub-tab:hover {
+      background: #f8f9fa;
+    }
+
+    .sub-tab.active {
+      background: #3498db;
+      color: white;
+    }
+
+    .sub-content {
+      display: none;
+    }
+
+    .sub-content.active {
+      display: block;
+    }
+
+    /* Footer */
+    .app-footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e1e5e9;
+      }
+      
+      .stats-panel, .stat-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+      }
+      
+      .two-column-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="app-shell">
-    
     <header class="app-header">
       <div>
         <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle" id="current-subject-title">Verbal Ability · Reviewer</p>
+        <p class="app-subtitle">Verbal & Numerical Ability</p>
       </div>
-
-      <nav class="subject-nav">
-        <button class="subject-tab active" id="btn-verbal" onclick="switchSubject('verbal')">📖 Verbal Ability</button>
-        <button class="subject-tab" id="btn-numerical" onclick="switchSubject('numerical')">🧮 Numerical Ability</button>
-      </nav>
-      
+      <span class="badge">Beta</span>
     </header>
 
     <nav class="mode-tabs">
-      <button class="mode-tab active" data-mode="study">Study Mode</button>
-      <button class="mode-tab" data-mode="practice">Practice Quiz</button>
+      <button class="mode-tab active" data-mode="verbal">Verbal Ability</button>
+      <button class="mode-tab" data-mode="numerical">Numerical Ability</button>
     </nav>
 
     <main class="app-main">
-      <section id="mode-study" class="mode-section active">
+      <!-- Verbal Ability Section -->
+      <section id="mode-verbal" class="mode-section active">
         <div class="layout">
           <aside class="sidebar">
-            <h2 class="sidebar-title">Topics</h2>
-
-            <div id="topicsList"></div>
+            <h2 class="sidebar-title">Verbal Topics</h2>
+            <div class="topic-group-title">Grammar & Structure</div>
+            <div class="topic-list">
+              <button class="topic-btn active" data-topic="nouns">Nouns</button>
+              <button class="topic-btn" data-topic="verbs">Verbs</button>
+              <button class="topic-btn" data-topic="pronouns">Pronouns</button>
+              <button class="topic-btn" data-topic="adjectives">Adjectives</button>
+              <button class="topic-btn" data-topic="adverbs">Adverbs</button>
+              <button class="topic-btn" data-topic="prepositions">Prepositions</button>
+              <button class="topic-btn" data-topic="conjunctions">Conjunctions</button>
+              <button class="topic-btn" data-topic="articles">Articles</button>
+              <button class="topic-btn" data-topic="tenses">Tenses</button>
+              <button class="topic-btn" data-topic="subject_verb_agreement">Subject-Verb Agreement</button>
+            </div>
+            
+            <div class="topic-group-title" style="margin-top: 1.5rem;">Advanced Topics</div>
+            <div class="topic-list">
+              <button class="topic-btn" data-topic="sentence_construction">Sentence Construction</button>
+              <button class="topic-btn" data-topic="sentence_structure">Sentence Structure</button>
+              <button class="topic-btn" data-topic="error_identification">Error Identification</button>
+              <button class="topic-btn" data-topic="affixes">Affixes</button>
+              <button class="topic-btn" data-topic="punctuations">Punctuations</button>
+              <button class="topic-btn" data-topic="words_often_confused">Words Often Confused</button>
+            </div>
+            
+            <div class="topic-group-title" style="margin-top: 1.5rem;">Vocabulary & Comprehension</div>
+            <div class="topic-list">
+              <button class="topic-btn" data-topic="synonyms">Synonyms</button>
+              <button class="topic-btn" data-topic="antonyms">Antonyms</button>
+              <button class="topic-btn" data-topic="analogy">Analogy</button>
+              <button class="topic-btn" data-topic="paragraph_organization">Paragraph Organization</button>
+              <button class="topic-btn" data-topic="reading_comprehension">Reading Comprehension</button>
+            </div>
 
             <p class="sidebar-note">
-              Tip: Pumili ng Subject sa taas (Verbal/Numerical), tapos pumili ng Topic dito.
+              Tip: Study the lessons first, then practice with quizzes to master exam-style questions.
             </p>
           </aside>
 
           <section class="content">
             <header class="lesson-header">
-              <h2 id="lesson-title">Welcome to CSE Reviewer</h2>
-              <p id="lesson-meta" class="lesson-meta">Select a topic to start</p>
+              <h2 id="verbal-lesson-title">Nouns – Names of People, Places, Things, and Ideas</h2>
+              <p id="verbal-lesson-meta" class="lesson-meta">Verbal Ability · Grammar · Nouns</p>
             </header>
-            <div id="lesson-content" class="lesson-body">
-              <p>Please select a topic from the sidebar.</p>
+            <div id="verbal-lesson-content" class="lesson-body">
+              <section class="lesson-section">
+                <h2>1. The Anatomy of a Noun</h2>
+                <p>A noun names a person, place, thing, idea, or event. But deeper than that, nouns have <strong>Properties</strong> that determine how they fit in a sentence.</p>
+                <div class="highlight-box">
+                  <p><strong>The 4 Properties of Nouns:</strong></p>
+                  <ul>
+                    <li><strong>Gender:</strong> Masculine, Feminine, Common (teacher), Neuter (table).</li>
+                    <li><strong>Number:</strong> Singular vs. Plural.</li>
+                    <li><strong>Case:</strong> Subjective, Objective, Possessive.</li>
+                    <li><strong>Person:</strong> First, Second, or Third person.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="lesson-section">
+                <h2>2. Deep Dive: Count vs. Mass Nouns (The Shifters)</h2>
+                <p>Some nouns change meaning depending on whether they are countable or uncountable.</p>
+                <table class="lesson-table">
+                  <thead>
+                    <tr>
+                      <th>Word</th>
+                      <th>As Mass Noun (Uncountable)</th>
+                      <th>As Count Noun (Pluralizable)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Paper</strong></td>
+                      <td>Material to write on.<br><em>"I need some paper."</em></td>
+                      <td>Documents or newspapers.<br><em>"I lost my important papers."</em></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Hair</strong></td>
+                      <td>All hair on the head.<br><em>"Her hair is black."</em></td>
+                      <td>Individual strands.<br><em>"There are two gray hairs in my soup."</em></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+
+              <section class="lesson-section">
+                <h2>3. Advanced Pluralization Rules</h2>
+                <h3>3.1 The Tricky "-O" Endings</h3>
+                <p>Not all nouns ending in "o" take "-es". This is a memorization game.</p>
+                <ul>
+                  <li><strong>Add -ES:</strong> <em>Heroes, Tomatoes, Potatoes, Echoes</em></li>
+                  <li><strong>Add -S:</strong> <em>Pianos, Solos, Photos, Radios</em></li>
+                </ul>
+              </section>
             </div>
           </section>
         </div>
       </section>
 
-      <section id="mode-practice" class="mode-section">
+      <!-- Numerical Ability Section -->
+      <section id="mode-numerical" class="mode-section">
         <div class="layout">
           <aside class="sidebar">
-            <h2 class="sidebar-title">Quiz Setup</h2>
+            <h2 class="sidebar-title">Numerical Topics</h2>
+            <div class="topic-group-title">Basic Math</div>
+            <div class="topic-list">
+              <button class="topic-btn active" data-topic="basic_operations">Basic Operations</button>
+              <button class="topic-btn" data-topic="fractions_decimals">Fractions & Decimals</button>
+              <button class="topic-btn" data-topic="percentage">Percentage</button>
+              <button class="topic-btn" data-topic="ratio_proportion">Ratio & Proportion</button>
+              <button class="topic-btn" data-topic="averages">Averages</button>
+            </div>
+            
+            <div class="topic-group-title" style="margin-top: 1.5rem;">Algebra & Geometry</div>
+            <div class="topic-list">
+              <button class="topic-btn" data-topic="algebra">Basic Algebra</button>
+              <button class="topic-btn" data-topic="geometry">Geometry</button>
+              <button class="topic-btn" data-topic="word_problems">Word Problems</button>
+            </div>
+            
+            <div class="topic-group-title" style="margin-top: 1.5rem;">Advanced Topics</div>
+            <div class="topic-list">
+              <button class="topic-btn" data-topic="number_series">Number Series</button>
+              <button class="topic-btn" data-topic="data_interpretation">Data Interpretation</button>
+            </div>
 
-            <label class="field">
-              <span class="field-label">Topic</span>
-              <select id="practice-topic">
-                </select>
-            </label>
-
-            <label class="field">
-              <span class="field-label">Level</span>
-              <select id="practice-level">
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-                <option value="super">Super / Hard</option>
-              </select>
-            </label>
-
-            <label class="field">
-              <span class="field-label">Number of items</span>
-              <select id="practice-count">
-                <option value="10">10 items</option>
-                <option value="20">20 items</option>
-                <option value="30">30 items</option>
-                <option value="50">50 items</option>
-              </select>
-            </label>
-
-            <label class="field">
-              <span class="field-label">Timer</span>
-              <select id="timer-mode">
-                <option value="off">Off (no timer)</option>
-                <option value="60">60s per item</option>
-                <option value="45">45s per item</option>
-                <option value="30">30s per item</option>
-              </select>
-            </label>
-
-            <button id="start-quiz-btn" class="btn-primary full-width">
-              Start practice quiz
-            </button>
+            <p class="sidebar-note">
+              Tip: Practice mental math and learn shortcuts to solve problems faster during the exam.
+            </p>
           </aside>
 
           <section class="content">
-            <header class="quiz-header">
-              <div id="quiz-progress" class="quiz-progress-text">
-                Question 0 of 0
-              </div>
-              <div id="quiz-timer" class="quiz-timer">
-                Time left: --
-              </div>
-            </header>
-
-            <div class="progress-bar">
-              <div class="progress-fill" id="quiz-progress-fill"></div>
+            <div class="numerical-mode-tabs">
+              <button class="sub-tab active" data-submode="numerical-study">Study Mode</button>
+              <button class="sub-tab" data-submode="numerical-practice">Practice Quiz</button>
             </div>
+            
+            <!-- Numerical Study Content -->
+            <div id="numerical-study-content" class="sub-content active">
+              <header class="lesson-header">
+                <h2 id="numerical-lesson-title">Basic Operations</h2>
+                <p id="numerical-lesson-meta" class="lesson-meta">Numerical Ability · Basic Math</p>
+              </header>
+              <div id="numerical-lesson-content" class="lesson-body">
+                <section class="lesson-section">
+                  <h2>1. Order of Operations (PEMDAS)</h2>
+                  <p>Remember: <strong>P</strong>arentheses → <strong>E</strong>xponents → <strong>M</strong>ultiplication/<strong>D</strong>ivision → <strong>A</strong>ddition/<strong>S</strong>ubtraction</p>
+                  <div class="highlight-box">
+                    <p><strong>Example:</strong> 8 + 2 × (15 ÷ 3) - 4²</p>
+                    <p>= 8 + 2 × 5 - 16</p>
+                    <p>= 8 + 10 - 16</p>
+                    <p>= 18 - 16 = 2</p>
+                  </div>
+                </section>
 
-            <article class="quiz-card">
-              <div id="quiz-question" class="quiz-question">
-                Ready when you are. Select a subject and topic, then press <strong>Start</strong>.
+                <section class="lesson-section">
+                  <h2>2. Multiplication Shortcuts</h2>
+                  <h3>Multiplying by 5</h3>
+                  <p>Instead of multiplying by 5, multiply by 10 and divide by 2.</p>
+                  <p><strong>Example:</strong> 48 × 5 = 48 × 10 ÷ 2 = 480 ÷ 2 = 240</p>
+                  
+                  <h3>Multiplying by 25</h3>
+                  <p>Multiply by 100 and divide by 4.</p>
+                  <p><strong>Example:</strong> 32 × 25 = 32 × 100 ÷ 4 = 3200 ÷ 4 = 800</p>
+                </section>
+
+                <section class="lesson-section">
+                  <h2>3. Division Techniques</h2>
+                  <h3>Dividing by 5</h3>
+                  <p>Multiply by 2 and divide by 10.</p>
+                  <p><strong>Example:</strong> 245 ÷ 5 = 245 × 2 ÷ 10 = 490 ÷ 10 = 49</p>
+                  
+                  <h3>Checking Divisibility</h3>
+                  <ul>
+                    <li><strong>By 2:</strong> Last digit is even</li>
+                    <li><strong>By 3:</strong> Sum of digits divisible by 3</li>
+                    <li><strong>By 5:</strong> Last digit is 0 or 5</li>
+                    <li><strong>By 9:</strong> Sum of digits divisible by 9</li>
+                  </ul>
+                </section>
               </div>
-              <div id="quiz-choices" class="quiz-choices"></div>
-              <div id="quiz-explanation" class="quiz-explanation hide"></div>
+            </div>
+            
+            <!-- Numerical Practice Content -->
+            <div id="numerical-practice-content" class="sub-content">
+              <header class="quiz-header">
+                <div id="numerical-quiz-progress" class="quiz-progress-text">Question 1 of 5</div>
+                <div id="numerical-quiz-timer" class="quiz-timer">Time left: 60s</div>
+              </header>
 
-              <button id="quiz-next" class="btn-secondary quiz-next hide">
-                Next question
-              </button>
-            </article>
-
-            <section id="quiz-output" class="quiz-output">
-              <div class="stats-panel">
-                <div class="stat-item">
-                  <span>Correct</span><span id="score-correct">0</span>
-                </div>
-                <div class="stat-item">
-                  <span>Incorrect</span><span id="score-wrong">0</span>
-                </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="numerical-quiz-progress-fill" style="width: 20%"></div>
               </div>
-            </section>
+
+              <article class="quiz-card">
+                <div id="numerical-quiz-question" class="quiz-question">
+                  What is the result of 15 × 4 + 32 ÷ 8 - 5?
+                </div>
+                <div id="numerical-quiz-choices" class="quiz-choices">
+                  <button class="quiz-choice">A) 57</button>
+                  <button class="quiz-choice">B) 62</button>
+                  <button class="quiz-choice">C) 59</button>
+                  <button class="quiz-choice">D) 63</button>
+                </div>
+                <div id="numerical-quiz-explanation" class="quiz-explanation hide">
+                  Using PEMDAS: 32 ÷ 8 = 4, then 15 × 4 = 60, then 60 + 4 = 64, then 64 - 5 = 59. The correct answer is C) 59.
+                </div>
+
+                <button id="numerical-quiz-next" class="btn-secondary quiz-next hide">
+                  Next Question
+                </button>
+              </article>
+
+              <section id="numerical-quiz-output" class="quiz-output">
+                <div class="stats-panel">
+                  <div class="stat-item">
+                    <span>Correct</span><span>0</span>
+                  </div>
+                  <div class="stat-item">
+                    <span>Incorrect</span><span>0</span>
+                  </div>
+                  <div class="stat-item">
+                    <span>Unanswered</span><span>5</span>
+                  </div>
+                </div>
+              </section>
+            </div>
           </section>
         </div>
       </section>
@@ -179,37 +948,101 @@
 
     <footer class="app-footer">
       <span>
-        CSE Reviewer Hub · Practice only · Not official CSC material
+        CSE Reviewer Hub · Verbal & Numerical Ability · Practice only · Not official CSC material
       </span>
     </footer>
   </div>
 
-  <script src="questions_nouns.js"></script>
-  <script src="questions_gender.js"></script>
-  <script src="grammatical_number_questions.js"></script>
-  <script src="questions_pronouns.js"></script>
-  <script src="questions_tenses.js"></script>
-  <script src="questions_verbs.js"></script>
-  <script src="questions_adverbs.js"></script>
-  <script src="questions_adjectives.js"></script>
-  <script src="questions_prepositions.js"></script>
-  <script src="questions_conjunctions.js"></script>
-  <script src="questions_articles.js"></script>
-  <script src="questions_affixes.js"></script>
-  <script src="questions_synonyms.js"></script>
-  <script src="questions_antonyms.js"></script>
-  <script src="questions_analogy.js"></script>
-  <script src="questions_punctuations.js"></script>
-  <script src="questions_interjections.js"></script>
-  <script src="subject_verb_agreement.js"></script>
-  <script src="words_often_confused.js"></script>
-  <script src="sentence_construction.js"></script>
-  <script src="sentence_structure.js"></script>  
-  <script src="paragraph_organization_questions.js"></script>  
-  <script src="error_identification.js"></script>   
-  <script src="reading_comprehension.js"></script> 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Tab switching functionality
+      const modeTabs = document.querySelectorAll(".mode-tab");
+      const modeSections = document.querySelectorAll(".mode-section");
+      
+      modeTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const mode = tab.dataset.mode;
+          modeTabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          modeSections.forEach((section) => {
+            section.classList.toggle("active", section.id === `mode-${mode}`);
+          });
+        });
+      });
 
-  <script src="app.js"></script>
+      // Sub-tab switching for Numerical Ability
+      const subTabs = document.querySelectorAll(".sub-tab");
+      const subContents = document.querySelectorAll(".sub-content");
+      
+      subTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const submode = tab.dataset.submode;
+          subTabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          subContents.forEach((content) => {
+            content.classList.toggle("active", content.id === `${submode}-content`);
+          });
+        });
+      });
 
+      // Topic button functionality for both Verbal and Numerical
+      const topicButtons = document.querySelectorAll(".topic-btn");
+      
+      topicButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons in the same sidebar
+          const sidebar = btn.closest(".sidebar");
+          sidebar.querySelectorAll(".topic-btn").forEach(b => b.classList.remove("active"));
+          
+          // Add active class to clicked button
+          btn.classList.add("active");
+          
+          // In a real app, this would load the appropriate lesson content
+          const topic = btn.dataset.topic;
+          console.log(`Loading content for topic: ${topic}`);
+        });
+      });
+
+      // Quiz functionality for Numerical Ability
+      const numericalChoices = document.querySelectorAll("#numerical-quiz-choices .quiz-choice");
+      const numericalExplanation = document.getElementById("numerical-quiz-explanation");
+      const numericalNextBtn = document.getElementById("numerical-quiz-next");
+      
+      numericalChoices.forEach((choice, index) => {
+        choice.addEventListener("click", () => {
+          // Remove any existing selection
+          numericalChoices.forEach(c => {
+            c.classList.remove("correct", "incorrect");
+          });
+          
+          // Mark correct/incorrect (in this example, C is correct)
+          if (index === 2) { // C is correct
+            choice.classList.add("correct");
+          } else {
+            choice.classList.add("incorrect");
+            numericalChoices[2].classList.add("correct"); // Show correct answer
+          }
+          
+          // Show explanation and next button
+          numericalExplanation.classList.remove("hide");
+          numericalNextBtn.classList.remove("hide");
+        });
+      });
+      
+      numericalNextBtn.addEventListener("click", () => {
+        // Reset for next question
+        numericalChoices.forEach(c => {
+          c.classList.remove("correct", "incorrect");
+        });
+        numericalExplanation.classList.add("hide");
+        numericalNextBtn.classList.add("hide");
+        
+        // Update progress (in a real app, this would load the next question)
+        const progressFill = document.getElementById("numerical-quiz-progress-fill");
+        const currentWidth = parseInt(progressFill.style.width);
+        progressFill.style.width = `${Math.min(100, currentWidth + 20)}%`;
+      });
+    });
+  </script>
 </body>
 </html>
