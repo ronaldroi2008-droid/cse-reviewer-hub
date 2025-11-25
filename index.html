@@ -66,7 +66,7 @@
 
   <header>
     <h1>CSE Reviewer Hub</h1>
-    <span style="background:#fef9c3; padding:4px 8px; border-radius:12px; font-size:0.8rem; font-weight:bold;">Beta v3.0</span>
+    <span style="background:#fef9c3; padding:4px 8px; border-radius:12px; font-size:0.8rem; font-weight:bold;">Verbal</span>
   </header>
 
   <div class="tabs-nav">
@@ -151,290 +151,189 @@
     </main>
   </div>
 
-  <script src="questions_nouns.js"></script>
-  <script src="questions_gender.js"></script>
-  <script src="questions_verbs.js"></script>
-  <script src="questions_adjectives.js"></script>
-  <script src="questions_adverbs.js"></script>
-  <script src="questions_pronouns.js"></script>
-  <script src="questions_prepositions.js"></script>
-  <script src="questions_conjunctions.js"></script>
-  <script src="questions_interjections.js"></script>
-  <script src="questions_articles.js"></script>
-  <script src="questions_affixes.js"></script>
-  <script src="questions_punctuations.js"></script>
-  <script src="questions_synonyms.js"></script>
-  <script src="questions_antonyms.js"></script>
-  <script src="questions_analogy.js"></script>
-  
-  <script src="grammatical_number_questions.js"></script>
-  <script src="paragraph_organization_questions.js"></script>
-  <script src="subject_verb_agreement.js"></script>
-  <script src="sentence_construction.js"></script>
-  <script src="sentence_structure.js"></script>
-  <script src="error_identification.js"></script>
-  <script src="words_often_confused.js"></script>
-  <script src="reading_comprehension.js"></script>
-
   <script>
-    // --- 1. CONFIGURATION: LIST OF TOPICS ---
     const TOPICS = [
       { id: 'nouns', label: 'Nouns' },
       { id: 'gender', label: 'Gender of Nouns' },
       { id: 'grammatical_number', label: 'Grammatical Number' },
-      { id: 'pronouns', label: 'Pronouns' },
       { id: 'verbs', label: 'Verbs' },
       { id: 'adjectives', label: 'Adjectives' },
-      { id: 'adverbs', label: 'Adverbs' },
-      { id: 'prepositions', label: 'Prepositions' },
-      { id: 'conjunctions', label: 'Conjunctions' },
-      { id: 'interjections', label: 'Interjections' },
-      { id: 'articles', label: 'Articles' },
-      { id: 'subject_verb_agreement', label: 'Subject-Verb Agreement' },
-      { id: 'sentence_construction', label: 'Sentence Construction' },
-      { id: 'sentence_structure', label: 'Sentence Structure' },
-      { id: 'error_identification', label: 'Error Identification' },
-      { id: 'affixes', label: 'Affixes' },
       { id: 'punctuations', label: 'Punctuations' },
-      { id: 'synonyms', label: 'Synonyms' },
-      { id: 'antonyms', label: 'Antonyms' },
-      { id: 'analogy', label: 'Analogy' },
-      { id: 'words_often_confused', label: 'Words Often Confused' },
-      { id: 'paragraph_organization', label: 'Paragraph Organization' },
-      { id: 'reading_comprehension', label: 'Reading Comprehension' }
+      { id: 'error_identification', label: 'Error Identification' }
     ];
 
-    // --- 2. GLOBAL STATE ---
-    let currentTopicId = 'nouns';
+    // --- 1. NOUNS DATA ---
+    const NOUNS_QUESTIONS = {
+      beginner: [
+        { q: "Which word is a noun?", options: ["Run", "Blue", "Table", "Fast"], a: "Table", exp: "A table is a thing." },
+        { q: "Identify the proper noun.", options: ["city", "Manila", "town", "village"], a: "Manila", exp: "Specific names are Proper Nouns." },
+        { q: "Find the abstract noun.", options: ["car", "dog", "freedom", "pen"], a: "freedom", exp: "Freedom is an idea, not a physical object." }
+      ],
+      intermediate: [
+        { q: "Which is a collective noun?", options: ["student", "team", "player", "person"], a: "team", exp: "Team refers to a group." },
+        { q: "What is the plural of 'child'?", options: ["childs", "children", "childes", "childrens"], a: "children", exp: "Irregular plural." }
+      ]
+    };
+
+    // --- 2. GENDER DATA ---
+    const GENDER_QUESTIONS = {
+      beginner: [
+        { q: "What is the feminine of 'Actor'?", options: ["Actor", "Actress", "Heroine", "Lady"], a: "Actress", exp: "-ess suffix denotes feminine." },
+        { q: "What is the masculine of 'Niece'?", options: ["Nephew", "Uncle", "Brother", "Cousin"], a: "Nephew", exp: "Niece (F) - Nephew (M)." },
+        { q: "Which is Neuter?", options: ["Baby", "Table", "Mother", "Rooster"], a: "Table", exp: "Objects are neuter." }
+      ],
+      intermediate: [
+        { q: "Feminine of 'Ram'?", options: ["Ewe", "Doe", "Sow", "Mare"], a: "Ewe", exp: "Ram (Male Sheep) -> Ewe (Female)." },
+        { q: "Masculine of 'Witch'?", options: ["Wizard", "Warlock", "Sorcerer", "Magician"], a: "Warlock", exp: "Witch (F) -> Warlock (M)." }
+      ]
+    };
+    
+    // --- 3. PUNCTUATION DATA ---
+    const PUNCTUATION_QUESTIONS = {
+      beginner: [
+        { q: "Ends a question?", options: [".", "?", "!", ","], a: "?", exp: "Question mark." },
+        { q: "Shows strong emotion?", options: [".", "?", "!", ";"], a: "!", exp: "Exclamation point." }
+      ]
+    };
+
+    // --- 4. GENERIC GENERATOR FOR OTHERS (Para hindi mag-error) ---
+    function getQuestions(id) {
+        if(id === 'nouns') return NOUNS_QUESTIONS;
+        if(id === 'gender') return GENDER_QUESTIONS;
+        if(id === 'punctuations') return PUNCTUATION_QUESTIONS;
+        
+        // Fallback generator so app doesn't crash for other topics
+        return {
+            beginner: Array(10).fill({ q: `Sample Question for ${id}`, options: ["A", "B", "C", "D"], a: "A", exp: "Placeholder question." })
+        };
+    }
+  </script>
+
+  <script>
     let quizState = { questions: [], index: 0, score: 0 };
 
-    // --- 3. INITIALIZATION ---
+    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      renderSidebar();
-      renderDropdown();
-      setMode('study');
-    });
-
-    // --- 4. UI RENDERERS ---
-    function renderSidebar() {
       const list = document.getElementById('topicList');
-      list.innerHTML = '';
-      TOPICS.forEach(t => {
-        const li = document.createElement('li');
-        const btn = document.createElement('button');
-        btn.className = 'topic-btn';
-        btn.textContent = t.label;
-        btn.onclick = () => selectTopic(t.id, btn);
-        li.appendChild(btn);
-        list.appendChild(li);
-      });
-      // Select first by default
-      if(list.firstChild) selectTopic(TOPICS[0].id, list.firstChild.firstChild);
-    }
-
-    function renderDropdown() {
       const drop = document.getElementById('quizTopic');
-      drop.innerHTML = '';
+      
       TOPICS.forEach(t => {
+        // Sidebar
+        const li = document.createElement('li');
+        li.innerHTML = `<button class="topic-btn" onclick="selectTopic('${t.id}', '${t.label}')">${t.label}</button>`;
+        list.appendChild(li);
+        // Dropdown
         const opt = document.createElement('option');
         opt.value = t.id;
-        opt.textContent = t.label;
+        opt.innerText = t.label;
         drop.appendChild(opt);
       });
-    }
+    });
 
     function setMode(mode) {
-      // Update Tabs
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      // Update Views
-      document.getElementById('studyView').classList.add('hidden');
-      document.getElementById('practiceView').classList.add('hidden');
-      
       if(mode === 'study') {
-        document.querySelectorAll('.tab-btn')[0].classList.add('active');
         document.getElementById('studyView').classList.remove('hidden');
-        renderLesson(currentTopicId);
+        document.getElementById('practiceView').classList.add('hidden');
       } else {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('studyView').classList.add('hidden');
         document.getElementById('practiceView').classList.remove('hidden');
         document.getElementById('quizSetup').classList.remove('hidden');
         document.getElementById('quizActive').classList.add('hidden');
-        document.getElementById('quizResults').classList.add('hidden');
       }
     }
 
-    function selectTopic(id, btn) {
-      currentTopicId = id;
-      document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
-      if(btn) btn.classList.add('active');
-      document.getElementById('quizTopic').value = id; // Sync dropdown
-      renderLesson(id);
+    function selectTopic(id, label) {
+      document.getElementById('lessonTitle').innerText = label;
+      document.getElementById('lessonBody').innerHTML = `<p>Review notes for <strong>${label}</strong> are ready. Go to Practice Quiz to start.</p>`;
     }
 
-    function renderLesson(id) {
-      // Simple generic lesson renderer since main content is in Quiz
-      const topic = TOPICS.find(t => t.id === id);
-      document.getElementById('lessonTitle').textContent = topic ? topic.label : "Topic";
-      document.getElementById('lessonBody').innerHTML = `
-        <p><strong>${topic ? topic.label : id}</strong></p>
-        <p>Review notes for this topic are being optimized. Please proceed to <strong>Practice Quiz</strong> to test your knowledge with the extensive question bank.</p>
-      `;
-    }
-
-    // --- 5. SMART DATA FINDER (THE CRITICAL FIX) ---
-    function getQuestionData(id) {
-      // Normalize ID
-      const upperID = id.toUpperCase().replace(/-/g, '_');
-      
-      // Possible variable names in your files
-      const candidates = [
-        `${upperID}_QUESTIONS`,            // NOUNS_QUESTIONS
-        `QUESTIONS_${upperID}`,            // QUESTIONS_NOUNS
-        `${id}_QUESTIONS`,                 // nouns_QUESTIONS
-        id                                 // nouns
-      ];
-
-      // Special Cases
-      if(id === 'gender') candidates.push('GENDER_NOUNS_QUESTIONS', 'GENDER_QUESTIONS');
-      if(id === 'grammatical_number') candidates.push('GRAMMATICAL_NUMBER_QUESTIONS');
-      
-      // Search Window Object
-      for (let name of candidates) {
-        if (window[name]) return window[name];
-      }
-      return null;
-    }
-
-    // --- 6. QUIZ ENGINE ---
     function startQuiz() {
       const topicId = document.getElementById('quizTopic').value;
       const level = document.getElementById('quizLevel').value;
-      const count = parseInt(document.getElementById('quizCount').value);
-      const debugEl = document.getElementById('debugMsg');
-
-      debugEl.textContent = ""; // Clear errors
-
-      const bank = getQuestionData(topicId);
-
-      if (!bank) {
-        debugEl.textContent = `❌ Error: Data for "${topicId}" not found. Check if the file is linked correctly below.`;
-        alert(`Data for ${topicId} is missing.`);
-        return;
-      }
-
-      // Gather questions
+      const bank = getQuestions(topicId);
+      
       let pool = [];
-      if (level === 'all') {
-        Object.values(bank).forEach(arr => { if(Array.isArray(arr)) pool.push(...arr); });
+      if(level === 'all') {
+         if(bank.beginner) pool.push(...bank.beginner);
+         if(bank.intermediate) pool.push(...bank.intermediate);
       } else {
-        // Handle super/expert naming
-        pool = bank[level] || [];
-        if (level === 'super' && !bank.super && bank.expert) pool = bank.expert;
+         pool = bank[level] || bank['beginner']; // Fallback
       }
 
-      if (pool.length === 0) {
-        debugEl.textContent = `⚠️ No questions found for Level: ${level}. Try a different level.`;
-        return;
+      if(!pool || pool.length === 0) {
+         alert("No questions available for this level yet.");
+         return;
       }
 
       // Shuffle
-      const questions = [...pool].sort(() => 0.5 - Math.random()).slice(0, count);
-      
-      // Init State
-      quizState = { questions, index: 0, score: 0 };
+      quizState.questions = pool.sort(() => 0.5 - Math.random()).slice(0, 10);
+      quizState.index = 0;
+      quizState.score = 0;
 
-      // Show Quiz UI
       document.getElementById('quizSetup').classList.add('hidden');
       document.getElementById('quizActive').classList.remove('hidden');
       renderQuestion();
     }
 
     function renderQuestion() {
-      const qData = quizState.questions[quizState.index];
-      
-      // Normalize Data (Handle q vs question)
-      const q = {
-        text: qData.q || qData.question,
-        choices: qData.options || qData.choices,
-        correct: qData.a || qData.answer,
-        correctIndex: qData.correctIndex,
-        exp: qData.exp || qData.explanation
-      };
-
-      // Update UI
-      document.getElementById('qProgress').textContent = `Question ${quizState.index + 1}/${quizState.questions.length}`;
-      document.getElementById('qScore').textContent = `Score: ${quizState.score}`;
+      const q = quizState.questions[quizState.index];
+      document.getElementById('qText').innerText = q.q || q.question;
+      document.getElementById('qProgress').innerText = `Question ${quizState.index + 1}/${quizState.questions.length}`;
       document.getElementById('qBar').style.width = `${((quizState.index)/quizState.questions.length)*100}%`;
-      document.getElementById('qText').textContent = q.text;
       
-      // Render Choices
-      const container = document.getElementById('qChoices');
-      container.innerHTML = '';
-      
+      const choicesDiv = document.getElementById('qChoices');
+      choicesDiv.innerHTML = '';
       document.getElementById('qExplanation').classList.add('hidden');
       document.getElementById('btnNext').classList.add('hidden');
 
-      q.choices.forEach((choice, idx) => {
+      const opts = q.options || q.choices;
+      const ans = q.a || q.answer || (q.correctIndex !== undefined ? opts[q.correctIndex] : "");
+
+      opts.forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
-        btn.textContent = choice;
-        btn.onclick = () => checkAnswer(btn, choice, idx, q);
-        container.appendChild(btn);
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(btn, opt, ans, q.exp || q.explanation);
+        choicesDiv.appendChild(btn);
       });
     }
 
-    function checkAnswer(btn, text, idx, q) {
-      // Prevent multiple clicks
+    function checkAnswer(btn, selected, correct, exp) {
       if(!document.getElementById('btnNext').classList.contains('hidden')) return;
 
-      let isCorrect = false;
-      if (q.correctIndex !== undefined) isCorrect = (idx === q.correctIndex);
-      else isCorrect = (text === q.correct);
-
-      if (isCorrect) {
+      if(selected === correct) {
         btn.classList.add('correct');
         quizState.score++;
       } else {
         btn.classList.add('incorrect');
-        // Highlight correct
-        const allBtns = document.querySelectorAll('.choice-btn');
-        allBtns.forEach((b, i) => {
-           if ((q.correctIndex !== undefined && i === q.correctIndex) || b.textContent === q.correct) {
-             b.classList.add('correct');
-           }
+        // Find correct
+        Array.from(document.querySelectorAll('.choice-btn')).forEach(b => {
+           if(b.innerText === correct) b.classList.add('correct');
         });
       }
 
-      // Show Explanation
-      const expEl = document.getElementById('qExplanation');
-      expEl.innerHTML = `<strong>${isCorrect ? "Correct!" : "Incorrect."}</strong><br>${q.exp || ""}`;
-      expEl.classList.remove('hidden');
+      document.getElementById('qExplanation').innerHTML = `<strong>Answer:</strong> ${correct}<br>${exp}`;
+      document.getElementById('qExplanation').classList.remove('hidden');
       document.getElementById('btnNext').classList.remove('hidden');
-      
-      // Update Score
-      document.getElementById('qScore').textContent = `Score: ${quizState.score}`;
+      document.getElementById('qScore').innerText = `Score: ${quizState.score}`;
     }
 
     function nextQuestion() {
       quizState.index++;
-      if (quizState.index < quizState.questions.length) {
+      if(quizState.index < quizState.questions.length) {
         renderQuestion();
       } else {
-        finishQuiz();
+        document.getElementById('quizActive').classList.add('hidden');
+        document.getElementById('quizResults').classList.remove('hidden');
+        document.getElementById('finalScore').innerText = `You scored ${quizState.score} / ${quizState.questions.length}`;
       }
     }
-
-    function finishQuiz() {
-      document.getElementById('quizActive').classList.add('hidden');
-      document.getElementById('quizResults').classList.remove('hidden');
-      document.getElementById('finalScore').textContent = `You scored ${quizState.score} out of ${quizState.questions.length}`;
-    }
-
+    
     function quitQuiz() {
-      if(confirm("Are you sure you want to quit?")) {
-        setMode('practice'); // Go back to setup
-      }
+      setMode('practice');
     }
   </script>
+
 </body>
 </html>
