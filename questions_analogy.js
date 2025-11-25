@@ -233,3 +233,40 @@ const ANALOGY_QUESTIONS = {
     { q: "MAVERICK : CONFORMITY :: HERETIC : _______", options: ["Orthodoxy", "Belief", "Faith", "Church"], a: "Orthodoxy", exp: "Maverick opposes conformity; heretic opposes orthodoxy." }
   ]
 };
+
+
+
+// ==========================================
+// CONNECT TO VERBAL QUESTION BANK FOR THE APP
+// ==========================================
+
+// Make sure the global object exists
+window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+
+(function () {
+  // Helper: convert { q, options, a, exp } -> { question, options, answer, explanation }
+  function mapItems(items) {
+    return (items || []).map(function (item) {
+      return {
+        question: item.q,
+        options: item.options,
+        answer: item.a,
+        explanation: item.exp
+      };
+    });
+  }
+
+  const src = ANALOGY_QUESTIONS;
+
+  // Map 4 levels
+  // Note: "super" level sa data mo = "expert" level sa UI natin
+  window.VERBAL_QUESTION_BANK["analogy"] = {
+    beginner: mapItems(src.beginner),
+    intermediate: mapItems(src.intermediate),
+    advanced: mapItems(src.advanced),
+    expert: mapItems(src.super) // SUPER -> EXPERT
+  };
+})();
+
+
+
