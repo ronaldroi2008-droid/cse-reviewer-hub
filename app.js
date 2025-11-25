@@ -1,679 +1,357 @@
-const TOPIC_MAX_QUESTIONS = {
-  nouns: 50,
-  gender: 50,
-  grammatical_number: 50,
-  verbs: 50,
-  adjectives: 50,
-  conjunctions: 50,
-  interjections: 50,
-  articles: 50,
-  subject_verb_agreement: 50,
-  sentence_construction: 50,
-  sentence_structure: 50,
-  error_identification: 50,
-  affixes: 50,
-  punctuations: 50,
-  synonyms: 50,
-  antonyms: 50,
-  analogy: 50,
-  words_often_confused: 50,
-  paragraph_organization: 50,
-  reading_comprehension: 50,
-  prepositions: 50
-};
-
 document.addEventListener("DOMContentLoaded", () => {
-  // ========================
-  // DOM ELEMENTS
-  // ========================
-
-  // Tabs
-  const modeTabs = document.querySelectorAll(".mode-tab");
-  const modeSections = document.querySelectorAll(".mode-section");
-  const abilityTabs = document.querySelectorAll(".ability-tab");
-  const subtitleEl = document.getElementById("appSubtitle");
-
-  // Study Elements
-  const topicsListEl = document.getElementById("topicsList");
-  const lessonTitleEl = document.getElementById("lesson-title");
-  const lessonMetaEl = document.getElementById("lesson-meta");
-  const lessonContentEl = document.getElementById("lesson-content");
-
-  // Practice Elements
-  const practiceTopicEl = document.getElementById("practice-topic");
-  const practiceLevelEl = document.getElementById("practice-level");
-  const practiceCountEl = document.getElementById("practice-count");
-  const timerModeEl = document.getElementById("timer-mode");
-  const practiceWeakEl = document.getElementById("practice-weak");
-  const startQuizBtn = document.getElementById("start-quiz-btn");
-
-  // Quiz Active Elements
-  const quizProgressEl = document.getElementById("quiz-progress");
-  const quizTimerEl = document.getElementById("quiz-timer");
-  const quizQuestionEl = document.getElementById("quiz-question");
-  const quizChoicesEl = document.getElementById("quiz-choices");
-  const quizExplanationEl = document.getElementById("quiz-explanation");
-  const quizNextBtn = document.getElementById("quiz-next");
-  const quizOutputEl = document.getElementById("quiz-output");
-  const quizProgressFillEl = document.getElementById("quiz-progress-fill");
-
-  // ========================
-  // ABILITY TABS (VERBAL / NUMERICAL)
-  // ========================
-
-  function updateSubtitle(ability) {
-    if (!subtitleEl) return;
-    if (ability === "verbal") {
-      subtitleEl.textContent = "Verbal Ability · Gender of Nouns";
-    } else if (ability === "numerical") {
-      subtitleEl.textContent = "Numerical Ability · Basic Operations";
+    // ============================================================
+    // 1. INITIALIZATION & SAFETY CHECKS
+    // ============================================================
+    
+    if (typeof VERBAL_TOPICS === 'undefined') {
+        alert("Error: verbal.js is not loaded. Please check index.html");
+        return;
     }
-  }
 
-  if (abilityTabs.length) {
-    abilityTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        abilityTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        const ability = tab.dataset.ability;
-        updateSubtitle(ability);
-        // Future: dito tayo mag-switch sa numerical topics/questions
-      });
-    });
-  }
+    const topicListEl = document.getElementById("topicList");
+    const practiceTopicEl = document.getElementById("quizTopic"); 
+    
+    // Reset UI Lists
+    if (topicListEl) topicListEl.innerHTML = "";
+    if (practiceTopicEl) practiceTopicEl.innerHTML = "";
 
-  // ========================
-  // MODE TABS (STUDY / PRACTICE)
-  // ========================
-
-  modeTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const mode = tab.dataset.mode;
-      modeTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      modeSections.forEach((section) => {
-        section.classList.toggle("active", section.id === `mode-${mode}`);
-      });
-    });
-  });
-
-  // ========================
-  // STUDY MODE LOGIC
-  // ========================
-
-  function renderTopicsSidebar(activeId) {
-    if (!topicsListEl || typeof VERBAL_TOPICS === "undefined") return;
-    if (!Array.isArray(VERBAL_TOPICS)) return;
-
-    topicsListEl.innerHTML = "";
-
+    // Populate Sidebar & Dropdown from VERBAL_TOPICS (from verbal.js)
     VERBAL_TOPICS.forEach((t) => {
-      const li = document.createElement("li");
-      li.className = "topic-item" + (t.id === activeId ? " active" : "");
-      li.textContent = t.label;
-      li.dataset.topic = t.id;
-      li.addEventListener("click", () => {
-        renderTopicsSidebar(t.id);
-        renderLesson(t.id);
-      });
-      topicsListEl.appendChild(li);
-    });
-  }
-
-  function renderLesson(topicKey) {
-    const data = LESSONS[topicKey];
-    if (!data) {
-      lessonTitleEl.textContent = "Coming soon";
-      lessonMetaEl.textContent = "Content under development";
-      lessonContentEl.innerHTML =
-        '<p>This lesson is being updated. Please try <strong>Nouns</strong> or <strong>Gender</strong> for now.</p>';
-      return;
-    }
-
-    lessonTitleEl.textContent = data.title || "Verbal Ability Topic";
-    lessonMetaEl.textContent = data.level || "CSE Verbal Ability";
-
-    // If fullHtml is provided, use it as-is
-    if (data.fullHtml) {
-      lessonContentEl.innerHTML = data.fullHtml;
-      return;
-    }
-
-    let html = "";
-    if (data.intro) {
-      html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
-    }
-
-    if (data.keyPoints) {
-      html += `
-        <div class="lesson-section">
-          <div class="lesson-section-title">Key Points</div>
-          <ul>${data.keyPoints.map((k) => `<li>${k}</li>`).join("")}</ul>
-        </div>`;
-    }
-
-    if (data.patterns) {
-      html += `
-        <div class="lesson-section">
-          <div class="lesson-section-title">Exam Patterns</div>
-          <ul>${data.patterns.map((p) => `<li>${p}</li>`).join("")}</ul>
-        </div>`;
-    }
-
-    if (data.examples) {
-      html += `<div class="lesson-section">
-        <div class="lesson-section-title">Examples</div>`;
-      data.examples.forEach((ex) => {
-        html += `
-          <div class="lesson-example">
-            <strong>Q:</strong> ${ex.q}<br />
-            ${
-              ex.choices
-                ? `<em>Choices: ${ex.choices.join(", ")}</em><br />`
-                : ""
-            }
-            <strong>Ans:</strong> ${ex.answer}<br />
-            <small>${ex.explanation}</small>
-          </div>`;
-      });
-      html += `</div>`;
-    }
-
-    if (data.quickTips) {
-      html += `
-        <div class="lesson-section">
-          <div class="lesson-section-title">Quick Tips</div>
-          <ul>${data.quickTips.map((t) => `<li>${t}</li>`).join("")}</ul>
-        </div>`;
-    }
-
-    lessonContentEl.innerHTML = html;
-  }
-
-  // Init Study Mode
-  const defaultTopicId =
-    (typeof VERBAL_TOPICS !== "undefined" &&
-      Array.isArray(VERBAL_TOPICS) &&
-      VERBAL_TOPICS.length > 0 &&
-      VERBAL_TOPICS[0].id) ||
-    "nouns";
-
-  renderTopicsSidebar(defaultTopicId);
-  renderLesson(defaultTopicId);
-
-  // ========================
-  // PRACTICE MODE LOGIC
-  // ========================
-
-  function getQuestionBank(topic) {
-    console.log("Loading question bank for topic:", topic);
-
-    switch (topic) {
-      case "nouns":
-        if (typeof NOUNS_QUESTIONS !== "undefined") return NOUNS_QUESTIONS;
-        if (typeof NOUN_QUESTIONS !== "undefined") return NOUN_QUESTIONS;
-        return null;
-
-      case "gender":
-        if (typeof GENDER_NOUNS_QUESTIONS !== "undefined")
-          return GENDER_NOUNS_QUESTIONS;
-        if (typeof GENDER_QUESTIONS !== "undefined") return GENDER_QUESTIONS;
-        return null;
-
-      case "grammatical_number":
-        return typeof GRAMMATICAL_NUMBER_QUESTIONS !== "undefined"
-          ? GRAMMATICAL_NUMBER_QUESTIONS
-          : null;
-
-      case "verbs":
-        if (typeof VERBS_QUESTIONS !== "undefined") return VERBS_QUESTIONS;
-        if (typeof VERB_QUESTIONS !== "undefined") return VERB_QUESTIONS;
-        return null;
-
-      case "tenses":
-        if (typeof TENSES_QUESTIONS !== "undefined") return TENSES_QUESTIONS;
-        if (typeof TENSE_QUESTIONS !== "undefined") return TENSE_QUESTIONS;
-        return null;
-
-      case "reading_comprehension":
-        if (typeof READING_COMPREHENSION_QUESTIONS !== "undefined")
-          return READING_COMPREHENSION_QUESTIONS;
-        return null;
-
-      case "pronouns":
-        if (typeof PRONOUNS_QUESTIONS !== "undefined") return PRONOUNS_QUESTIONS;
-        if (typeof PRONOUN_QUESTIONS !== "undefined") return PRONOUN_QUESTIONS;
-        return null;
-
-      case "adjectives":
-        if (typeof ADJECTIVES_QUESTIONS !== "undefined")
-          return ADJECTIVES_QUESTIONS;
-        if (typeof ADJECTIVE_QUESTIONS !== "undefined")
-          return ADJECTIVE_QUESTIONS;
-        return null;
-
-      case "adverbs":
-        if (typeof ADVERBS_QUESTIONS !== "undefined") return ADVERBS_QUESTIONS;
-        if (typeof ADVERB_QUESTIONS !== "undefined") return ADVERB_QUESTIONS;
-        return null;
-
-      case "prepositions":
-        if (typeof PREPOSITIONS_QUESTIONS !== "undefined")
-          return PREPOSITIONS_QUESTIONS;
-        if (typeof PREPOSITION_QUESTIONS !== "undefined")
-          return PREPOSITION_QUESTIONS;
-        return null;
-
-      case "conjunctions":
-        if (typeof CONJUNCTIONS_QUESTIONS !== "undefined")
-          return CONJUNCTIONS_QUESTIONS;
-        if (typeof CONJUNCTION_QUESTIONS !== "undefined")
-          return CONJUNCTION_QUESTIONS;
-        return null;
-
-      case "interjections":
-        if (typeof INTERJECTIONS_QUESTIONS !== "undefined")
-          return INTERJECTIONS_QUESTIONS;
-        if (typeof INTERJECTION_QUESTIONS !== "undefined")
-          return INTERJECTION_QUESTIONS;
-        return null;
-
-      case "articles":
-        if (typeof ARTICLES_QUESTIONS !== "undefined") return ARTICLES_QUESTIONS;
-        if (typeof ARTICLE_QUESTIONS !== "undefined") return ARTICLE_QUESTIONS;
-        return null;
-
-      case "subject_verb_agreement":
-        if (typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== "undefined")
-          return SUBJECT_VERB_AGREEMENT_QUESTIONS;
-        return null;
-
-      case "sentence_construction":
-        if (typeof SENTENCE_CONSTRUCTION_QUESTIONS !== "undefined")
-          return SENTENCE_CONSTRUCTION_QUESTIONS;
-        return null;
-
-      case "sentence_structure":
-        if (typeof SENTENCE_STRUCTURE_QUESTIONS !== "undefined")
-          return SENTENCE_STRUCTURE_QUESTIONS;
-        return null;
-
-      case "error_identification":
-        if (typeof ERROR_IDENTIFICATION_QUESTIONS !== "undefined")
-          return ERROR_IDENTIFICATION_QUESTIONS;
-        return null;
-
-      case "affixes":
-        if (typeof AFFIXES_QUESTIONS !== "undefined") return AFFIXES_QUESTIONS;
-        return null;
-
-      case "synonyms":
-        if (typeof SYNONYMS_QUESTIONS !== "undefined") return SYNONYMS_QUESTIONS;
-        return null;
-
-      case "antonyms":
-        if (typeof ANTONYMS_QUESTIONS !== "undefined") return ANTONYMS_QUESTIONS;
-        return null;
-
-      case "analogy":
-        if (typeof ANALOGY_QUESTIONS !== "undefined") return ANALOGY_QUESTIONS;
-        return null;
-
-      case "punctuations":
-        if (typeof PUNCTUATIONS_QUESTIONS !== "undefined")
-          return PUNCTUATIONS_QUESTIONS;
-        return null;
-
-      case "words_often_confused":
-        if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== "undefined")
-          return WORDS_OFTEN_CONFUSED_QUESTIONS;
-        return null;
-
-      case "paragraph_organization":
-        if (typeof PARAGRAPH_ORGANIZATION_QUESTIONS !== "undefined")
-          return PARAGRAPH_ORGANIZATION_QUESTIONS;
-        return null;
-
-      default:
-        console.log("Topic not found:", topic);
-        return null;
-    }
-  }
-
-  // Fill practice topic dropdown
-  if (practiceTopicEl && typeof VERBAL_TOPICS !== "undefined") {
-    practiceTopicEl.innerHTML = "";
-    VERBAL_TOPICS.forEach((topic) => {
-      const opt = document.createElement("option");
-      opt.value = topic.id;
-      opt.textContent = topic.label;
-      practiceTopicEl.appendChild(opt);
-    });
-    practiceTopicEl.value = defaultTopicId;
-  }
-
-  let quizState = null;
-
-  function stopCurrentTimer() {
-    if (quizState && quizState.timerId) {
-      clearInterval(quizState.timerId);
-      quizState.timerId = null;
-    }
-  }
-
-  function shuffleArray(arr) {
-    const copy = arr.slice();
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-  }
-
-  function updateProgressFill(percentOverride) {
-    if (!quizProgressFillEl) return;
-    let pct = percentOverride;
-    if (typeof pct !== "number" && quizState) {
-      pct = (quizState.currentIndex / quizState.questions.length) * 100;
-    }
-    quizProgressFillEl.style.width = `${Math.max(0, Math.min(100, pct || 0))}%`;
-  }
-
-  function updateStats() {
-    if (!quizState || !quizState.questions) return;
-    const total = quizState.questions.length;
-    const answered = quizState.correct + quizState.incorrect;
-    const left = total - answered;
-    quizOutputEl.innerHTML = `
-      <div class="stats-panel">
-        <div class="stat-item"><span>Correct</span><span>${quizState.correct}</span></div>
-        <div class="stat-item"><span>Incorrect</span><span>${quizState.incorrect}</span></div>
-        <div class="stat-item"><span>Left</span><span>${left}</span></div>
-      </div>`;
-  }
-
-  function startTimer() {
-    if (!quizState) return;
-    stopCurrentTimer();
-
-    const mode = quizState.timerMode;
-    if (mode === "off") {
-      quizTimerEl.textContent = "Time: --";
-      return;
-    }
-
-    quizState.timeLeft = parseInt(mode, 10);
-    quizTimerEl.textContent = `Time: ${quizState.timeLeft}s`;
-
-    quizState.timerId = setInterval(() => {
-      quizState.timeLeft--;
-      quizTimerEl.textContent = `Time: ${quizState.timeLeft}s`;
-      if (quizState.timeLeft <= 0) {
-        clearInterval(quizState.timerId);
-        handleTimeout();
-      }
-    }, 1000);
-  }
-
-  function showQuestion() {
-    if (!quizState) return;
-
-    let q = quizState.questions[quizState.currentIndex];
-
-    // Normalize data
-    if (q.q && q.a && q.options) {
-      q.question = q.q;
-      q.choices = q.options;
-      q.answer = q.a;
-      q.explanation = q.exp;
-      q.correctIndex = q.options.indexOf(q.a);
-    } else if (q.options && q.answer && !q.choices) {
-      q.choices = q.options;
-      q.correctIndex = q.options.indexOf(q.answer);
-    }
-
-    if (!Array.isArray(q.choices)) {
-      console.error("Critical Error: Question data format is invalid", q);
-      q.choices = [];
-    }
-
-    quizState.answered = false;
-    quizProgressEl.textContent = `Question ${
-      quizState.currentIndex + 1
-    } of ${quizState.questions.length}`;
-    updateProgressFill();
-
-    quizQuestionEl.textContent = q.question || "Question text missing";
-
-    quizChoicesEl.innerHTML = "";
-    quizExplanationEl.classList.add("hide");
-    quizNextBtn.classList.add("hide");
-
-    q.choices.forEach((choice, idx) => {
-      const btn = document.createElement("button");
-      btn.className = "quiz-choice";
-      btn.textContent = choice;
-      btn.addEventListener("click", () => handleAnswer(idx));
-      quizChoicesEl.appendChild(btn);
-    });
-
-    updateStats();
-    startTimer();
-  }
-
-  function handleAnswer(idx) {
-    if (!quizState || quizState.answered) return;
-    quizState.answered = true;
-    if (quizState.timerId) clearInterval(quizState.timerId);
-
-    const q = quizState.questions[quizState.currentIndex];
-    const btns = quizChoicesEl.querySelectorAll("button");
-    const isCorrect = idx === q.correctIndex;
-
-    if (isCorrect) {
-      quizState.correct++;
-      btns[idx].classList.add("correct");
-    } else {
-      quizState.incorrect++;
-      btns[idx].classList.add("incorrect");
-      if (btns[q.correctIndex]) {
-        btns[q.correctIndex].classList.add("correct");
-      }
-      if (!Array.isArray(quizState.wrongAnswers)) {
-        quizState.wrongAnswers = [];
-      }
-      quizState.wrongAnswers.push({
-        question: q.question,
-        yourAnswer: q.choices[idx],
-        correctAnswer: q.choices[q.correctIndex],
-        explanation: q.explanation
-      });
-    }
-
-    quizExplanationEl.textContent = q.explanation || "";
-    quizExplanationEl.classList.remove("hide");
-
-    quizNextBtn.textContent =
-      quizState.currentIndex < quizState.questions.length - 1
-        ? "Next Question"
-        : "See Results";
-    quizNextBtn.classList.remove("hide");
-    updateStats();
-  }
-
-  function handleTimeout() {
-    if (!quizState || quizState.answered) return;
-    quizState.answered = true;
-
-    const q = quizState.questions[quizState.currentIndex];
-    const btns = quizChoicesEl.querySelectorAll("button");
-
-    quizState.incorrect++;
-    if (btns[q.correctIndex]) {
-      btns[q.correctIndex].classList.add("correct");
-    }
-
-    if (!Array.isArray(quizState.wrongAnswers)) {
-      quizState.wrongAnswers = [];
-    }
-    quizState.wrongAnswers.push({
-      question: q.question,
-      yourAnswer: "(Time's up)",
-      correctAnswer: q.choices[q.correctIndex],
-      explanation: q.explanation
-    });
-
-    quizExplanationEl.textContent = "Time's up! " + (q.explanation || "");
-    quizExplanationEl.classList.remove("hide");
-
-    quizNextBtn.textContent =
-      quizState.currentIndex < quizState.questions.length - 1
-        ? "Next Question"
-        : "See Results";
-    quizNextBtn.classList.remove("hide");
-    updateStats();
-  }
-
-  if (startQuizBtn) {
-    startQuizBtn.addEventListener("click", () => {
-      stopCurrentTimer();
-      const topic = practiceTopicEl.value;
-      const level = practiceLevelEl.value;
-      const count = parseInt(practiceCountEl.value, 10);
-      const timer = timerModeEl.value;
-      const weakNotes = practiceWeakEl.value.trim();
-
-      console.log("=== DEBUG QUIZ START ===");
-      console.log("Topic:", topic);
-      console.log("Level:", level);
-
-      const bank = getQuestionBank(topic);
-      console.log("Question bank:", bank);
-
-      if (!bank) {
-        alert(
-          "Questions for this topic are not yet available. Please ensure the Question files are loaded."
-        );
-        return;
-      }
-
-      const pool = bank[level];
-      console.log("Level pool:", pool);
-      console.log("Pool length:", pool ? pool.length : 0);
-
-      if (!pool || pool.length === 0) {
-        alert(`No questions found for ${level} level.`);
-        return;
-      }
-
-      if (pool[0]) {
-        console.log("First question structure:", pool[0]);
-        console.log("Question:", pool[0].question || pool[0].q);
-        console.log("Choices:", pool[0].choices || pool[0].options);
-        console.log("Correct index:", pool[0].correctIndex);
-        console.log("Answer:", pool[0].answer || pool[0].a);
-      }
-
-      const selectedQuestions = shuffleArray(pool).slice(0, count);
-      console.log("Selected questions:", selectedQuestions);
-
-      quizState = {
-        questions: selectedQuestions,
-        currentIndex: 0,
-        correct: 0,
-        incorrect: 0,
-        timerMode: timer,
-        timeLeft: 0,
-        timerId: null,
-        answered: false,
-        weakNotes,
-        wrongAnswers: []
-      };
-
-      showQuestion();
-    });
-  }
-
-  if (quizNextBtn) {
-    quizNextBtn.addEventListener("click", () => {
-      if (!quizState) return;
-
-      if (quizState.currentIndex < quizState.questions.length - 1) {
-        quizState.currentIndex++;
-        showQuestion();
-      } else {
-        stopCurrentTimer();
-        updateProgressFill(100);
-
-        const total = quizState.questions.length;
-        const correct = quizState.correct;
-        const incorrect = quizState.incorrect;
-        const left = total - (correct + incorrect);
-        const wrongItems = Array.isArray(quizState.wrongAnswers)
-          ? quizState.wrongAnswers
-          : [];
-
-        let summaryHtml = `
-          <div class="result-card">
-            <h2>Quiz Complete!</h2>
-            <p class="result-score">Score: <strong>${correct} / ${total}</strong></p>
-            <div class="stat-grid">
-              <div class="stat"><div class="stat-label">Correct</div><div class="stat-value success">${correct}</div></div>
-              <div class="stat"><div class="stat-label">Incorrect</div><div class="stat-value danger">${incorrect}</div></div>
-              <div class="stat"><div class="stat-label">Left</div><div class="stat-value">${left}</div></div>
-            </div>
-          </div>
-        `;
-
-        if (wrongItems.length > 0) {
-          summaryHtml += `
-            <div class="weakpoints-card">
-              <h3>Weak Points (Review)</h3>
-              <ol class="weakpoints-list">
-                ${wrongItems
-                  .map(
-                    (item, idx) => `
-                  <li class="weakpoint-item">
-                    <p class="wp-question"><strong>Q${idx + 1}.</strong> ${item.question}</p>
-                    <p class="wp-your-answer"><span class="wp-label">Your answer:</span> <span class="wp-bad">${item.yourAnswer}</span></p>
-                    <p class="wp-correct-answer"><span class="wp-label">Correct answer:</span> <span class="wp-good">${item.correctAnswer}</span></p>
-                    <p class="wp-explanation">${item.explanation || ""}</p>
-                  </li>
-                `
-                  )
-                  .join("")}
-              </ol>
-            </div>
-          `;
-        } else {
-          summaryHtml += `<div class="weakpoints-card"><h3>No Weak Points 🎉</h3><p class="muted">Perfect score!</p></div>`;
+        // Sidebar List Item
+        if (topicListEl) {
+            const li = document.createElement("li");
+            li.className = "topic-item";
+            li.innerHTML = `<button class="topic-btn" data-id="${t.id}">${t.label}</button>`;
+            // Click event to load lesson
+            li.querySelector("button").onclick = (e) => selectTopic(t.id, e.target);
+            topicListEl.appendChild(li);
         }
 
-        quizQuestionEl.innerHTML = summaryHtml;
-        quizChoicesEl.innerHTML = "";
-        quizExplanationEl.classList.add("hide");
-        quizNextBtn.classList.add("hide");
-
-        const restartBtn = document.createElement("button");
-        restartBtn.className = "btn-primary";
-        restartBtn.style.marginTop = "20px";
-        restartBtn.textContent = "Take Another Quiz";
-        restartBtn.onclick = () => {
-          quizState = null;
-          quizQuestionEl.textContent =
-            "Ready when you are. Set up your quiz on the left.";
-          restartBtn.remove();
-          quizOutputEl.innerHTML = `
-            <div class="stats-panel">
-              <div class="stat-item"><span>Correct</span><span>0</span></div>
-              <div class="stat-item"><span>Incorrect</span><span>0</span></div>
-              <div class="stat-item"><span>Left</span><span>0</span></div>
-            </div>`;
-          updateProgressFill(0);
-        };
-        quizChoicesEl.appendChild(restartBtn);
-      }
+        // Practice Dropdown Option
+        if (practiceTopicEl) {
+            const opt = document.createElement("option");
+            opt.value = t.id;
+            opt.textContent = t.label;
+            practiceTopicEl.appendChild(opt);
+        }
     });
-  }
+
+    // Default Selection (First Topic)
+    if (topicListEl && topicListEl.firstChild) {
+        const firstBtn = topicListEl.firstChild.querySelector("button");
+        if (firstBtn) selectTopic(VERBAL_TOPICS[0].id, firstBtn);
+    }
+
+    setupEventListeners();
 });
+
+// ============================================================
+// 2. GLOBAL STATE
+// ============================================================
+let currentTopicId = 'nouns'; // Default
+let quizState = {
+    questions: [],
+    index: 0,
+    score: 0,
+    timerId: null
+};
+
+// ============================================================
+// 3. SMART VARIABLE FINDER (THE FIX)
+// ============================================================
+
+/**
+ * Tries to find the variable name containing questions for a topic.
+ * It checks window[NAME] for various naming patterns.
+ */
+function getQuestionBank(id) {
+    // Normalize ID (e.g., "subject-verb-agreement" -> "SUBJECT_VERB_AGREEMENT")
+    const upperID = id.toUpperCase().replace(/-/g, '_'); 
+    
+    // List of possible variable names to look for in the global scope
+    const possibleNames = [
+        `${upperID}_QUESTIONS`,             // e.g., NOUNS_QUESTIONS
+        `QUESTIONS_${upperID}`,             // e.g., QUESTIONS_NOUNS
+        `${id}_QUESTIONS`,                  // e.g., nouns_QUESTIONS
+        id                                  // e.g., nouns (unlikely but possible)
+    ];
+
+    // Manual Overrides for unique file names
+    if (id === 'gender') possibleNames.push('GENDER_NOUNS_QUESTIONS');
+    if (id === 'grammatical_number') possibleNames.push('GRAMMATICAL_NUMBER_QUESTIONS');
+    if (id === 'tenses') possibleNames.push('TENSES_QUESTIONS', 'VERB_TENSES_QUESTIONS');
+
+    // Search in window object
+    for (const name of possibleNames) {
+        if (window[name] && typeof window[name] === 'object') {
+            return window[name];
+        }
+    }
+
+    console.warn(`Data not found for topic: ${id}. Checked: ${possibleNames.join(', ')}`);
+    return null;
+}
+
+// ============================================================
+// 4. EVENT LISTENERS & UI LOGIC
+// ============================================================
+
+function setupEventListeners() {
+    // Mode Switching (Study vs Practice)
+    document.querySelectorAll('.mode-tab, .btn-mode').forEach(btn => {
+        btn.onclick = (e) => {
+            // Update Tab UI
+            document.querySelectorAll('.mode-tab, .btn-mode').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            const targetMode = e.target.dataset.target || e.target.dataset.mode;
+            
+            // Hide/Show Sections
+            // Assumes index.html uses IDs 'study' and 'practice' or 'viewStudy' and 'viewQuiz'
+            if (document.getElementById('viewStudy')) {
+                document.getElementById('viewStudy').classList.add('hidden');
+                document.getElementById('viewQuiz').classList.add('hidden');
+            }
+            if (document.getElementById('study')) document.getElementById('study').classList.remove('active');
+            if (document.getElementById('practice')) document.getElementById('practice').classList.remove('active');
+
+            // Switch Logic
+            if (targetMode === 'study') {
+                if(document.getElementById('study')) document.getElementById('study').classList.add('active');
+                if(document.getElementById('viewStudy')) document.getElementById('viewStudy').classList.remove('hidden');
+                
+                // Hide Quiz Settings in Sidebar
+                if(document.getElementById('quizSettings')) document.getElementById('quizSettings').classList.add('hidden');
+                if(document.getElementById('topicListContainer')) document.getElementById('topicListContainer').classList.remove('hidden');
+                
+                renderLesson(currentTopicId);
+            } else {
+                if(document.getElementById('practice')) document.getElementById('practice').classList.add('active');
+                if(document.getElementById('viewQuiz')) document.getElementById('viewQuiz').classList.remove('hidden');
+                
+                // Show Quiz Settings
+                if(document.getElementById('quizSettings')) document.getElementById('quizSettings').classList.remove('hidden');
+                // Optional: Hide topic list on mobile to save space
+            }
+        };
+    });
+
+    // Buttons
+    const startBtn = document.getElementById('startQuiz') || document.getElementById('btnStart');
+    if(startBtn) startBtn.onclick = startQuiz;
+
+    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
+    if(nextBtn) nextBtn.onclick = nextQuestion;
+}
+
+function selectTopic(id, btnElement) {
+    currentTopicId = id;
+    // Highlight Sidebar Button
+    document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+    if(btnElement) btnElement.classList.add('active');
+    
+    // Sync Dropdown if exists
+    const dropdown = document.getElementById('quizTopic') || document.getElementById('practice-topic');
+    if(dropdown) dropdown.value = id;
+
+    renderLesson(id);
+}
+
+function renderLesson(id) {
+    // Get lesson content from verbal.js
+    const data = (typeof LESSONS !== 'undefined') ? LESSONS[id] : null;
+    const titleEl = document.getElementById('lessonTitle') || document.getElementById('lessonHeader');
+    const contentEl = document.getElementById('lessonContent') || document.getElementById('lessonBody');
+    
+    // Find Label
+    const topicObj = VERBAL_TOPICS.find(t => t.id === id);
+    const label = topicObj ? topicObj.label : "Topic";
+
+    if (titleEl) titleEl.textContent = data ? data.title : label;
+    
+    if (contentEl) {
+        if (data && data.fullHtml) {
+            contentEl.innerHTML = data.fullHtml; 
+        } else if (data) {
+            // Fallback for simple data structure
+            let html = `<p>${data.intro || ''}</p>`;
+            if(data.keyPoints) {
+                html += `<h3>Key Points</h3><ul>${data.keyPoints.map(k => `<li>${k}</li>`).join('')}</ul>`;
+            }
+            contentEl.innerHTML = html;
+        } else {
+            contentEl.innerHTML = `<p>Review notes for <strong>${label}</strong> are available in the Practice Quiz.</p>`;
+        }
+    }
+}
+
+// ============================================================
+// 5. QUIZ ENGINE
+// ============================================================
+
+function startQuiz() {
+    // Get User Selections
+    const topicSelect = document.getElementById('quizTopic') || document.getElementById('practice-topic');
+    const levelSelect = document.getElementById('quizLevel') || document.getElementById('practice-level');
+    const countSelect = document.getElementById('quizCount') || document.getElementById('practice-count');
+    
+    const topicId = topicSelect ? topicSelect.value : currentTopicId;
+    const level = levelSelect ? levelSelect.value : 'beginner';
+    const count = countSelect ? parseInt(countSelect.value) : 10;
+
+    // 1. Get the Data
+    const bank = getQuestionBank(topicId);
+
+    if (!bank) {
+        alert(`Data for "${topicId}" not found.\nPlease ensure the JS file for this topic is linked in index.html.`);
+        return;
+    }
+
+    // 2. Filter by Level
+    let pool = [];
+    if (level === 'all') {
+        // Combine all arrays found in the bank object
+        Object.values(bank).forEach(arr => { if(Array.isArray(arr)) pool.push(...arr); });
+    } else {
+        // Handle 'expert' vs 'super' key mismatch
+        pool = bank[level] || [];
+        if (level === 'super' && !bank.super && bank.expert) pool = bank.expert;
+    }
+
+    if (pool.length === 0) {
+        alert(`No questions found for Level: ${level} in Topic: ${topicId}`);
+        return;
+    }
+
+    // 3. Randomize & Slice
+    const questions = [...pool].sort(() => 0.5 - Math.random()).slice(0, count);
+
+    // 4. Init State
+    quizState = { questions, index: 0, score: 0 };
+    
+    // 5. Update UI
+    const intro = document.getElementById('quizIntro') || document.getElementById('quizStartMessage');
+    const active = document.getElementById('quizActive');
+    const results = document.getElementById('quizResults') || document.getElementById('quizResult');
+
+    if(intro) intro.classList.add('hidden');
+    if(results) results.classList.add('hidden');
+    if(active) active.classList.remove('hidden');
+
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const qData = quizState.questions[quizState.index];
+    
+    // Normalize different data formats (q vs question, options vs choices)
+    const q = {
+        text: qData.q || qData.question,
+        choices: qData.options || qData.choices,
+        correct: qData.a || qData.answer,
+        correctIndex: qData.correctIndex, 
+        exp: qData.exp || qData.explanation || ""
+    };
+
+    // Display Text
+    const qTextEl = document.getElementById('qText');
+    const qProgress = document.getElementById('qProgress');
+    const qScore = document.getElementById('qScore');
+    const qBar = document.getElementById('qBar');
+    
+    if(qTextEl) qTextEl.textContent = q.text;
+    if(qProgress) qProgress.textContent = `Question ${quizState.index + 1}/${quizState.questions.length}`;
+    if(qScore) qScore.textContent = `Score: ${quizState.score}`;
+    if(qBar) qBar.style.width = `${((quizState.index) / quizState.questions.length) * 100}%`;
+
+    // Render Buttons
+    const choicesContainer = document.getElementById('qChoices') || document.getElementById('qOptions');
+    if(choicesContainer) {
+        choicesContainer.innerHTML = '';
+        q.choices.forEach((choice, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-choice'; 
+            // Fallback style if CSS class is missing
+            if(!btn.className) btn.style.cssText = "display:block; width:100%; padding:10px; margin:5px 0; cursor:pointer; text-align:left; background:#fff; border:1px solid #ccc;";
+            
+            btn.textContent = choice;
+            btn.onclick = () => handleAnswer(btn, choice, idx, q);
+            choicesContainer.appendChild(btn);
+        });
+    }
+
+    // Hide Explanation & Next Button
+    const explainEl = document.getElementById('qExplanation') || document.getElementById('qExplain');
+    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
+    if(explainEl) explainEl.classList.add('hidden');
+    if(nextBtn) nextBtn.classList.add('hidden');
+}
+
+function handleAnswer(btn, selectedText, selectedIdx, q) {
+    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
+    if (!nextBtn.classList.contains('hidden')) return; // Stop double clicks
+
+    let isCorrect = false;
+    
+    // Check by Index or Text
+    if (q.correctIndex !== undefined && q.correctIndex !== null) {
+        isCorrect = (selectedIdx === q.correctIndex);
+    } else {
+        isCorrect = (selectedText === q.correct);
+    }
+
+    // Update Styles & Score
+    if (isCorrect) {
+        btn.classList.add('correct');
+        btn.style.backgroundColor = '#d1fae5'; // Light Green
+        btn.style.borderColor = '#10b981';
+        quizState.score++;
+    } else {
+        btn.classList.add('incorrect');
+        btn.style.backgroundColor = '#fee2e2'; // Light Red
+        btn.style.borderColor = '#ef4444';
+        
+        // Highlight the correct one
+        const allBtns = document.querySelectorAll('.quiz-choice, .quiz-options button');
+        allBtns.forEach((b, i) => {
+            if ((q.correctIndex !== undefined && i === q.correctIndex) || b.textContent === q.correct) {
+                b.classList.add('correct');
+                b.style.backgroundColor = '#d1fae5';
+            }
+        });
+    }
+
+    // Show Explanation
+    const explainEl = document.getElementById('qExplanation') || document.getElementById('qExplain');
+    if(explainEl) {
+        explainEl.innerHTML = `<strong>${isCorrect ? "Correct!" : "Incorrect."}</strong><br>${q.exp}`;
+        explainEl.classList.remove('hidden');
+    }
+
+    // Show Next Button
+    if(nextBtn) nextBtn.classList.remove('hidden');
+    
+    // Update Score UI
+    const qScore = document.getElementById('qScore');
+    if(qScore) qScore.textContent = `Score: ${quizState.score}`;
+}
+
+function nextQuestion() {
+    quizState.index++;
+    if (quizState.index < quizState.questions.length) {
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    const active = document.getElementById('quizActive');
+    const results = document.getElementById('quizResults') || document.getElementById('quizResult');
+    const finalScore = document.getElementById('finalScore');
+
+    if(active) active.classList.add('hidden');
+    if(results) results.classList.remove('hidden');
+    if(finalScore) finalScore.textContent = `You scored ${quizState.score} out of ${quizState.questions.length}`;
+}
 
