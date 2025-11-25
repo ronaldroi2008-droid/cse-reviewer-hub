@@ -15,48 +15,81 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--background); height: 100vh; overflow: hidden; }
+    
+    /* LAYOUT */
     .app-shell { height: 100vh; display: flex; flex-direction: column; }
     .app-header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
     .app-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
     .app-subtitle { color: var(--text-light); font-size: 0.9rem; }
     .badge { background: var(--warning); color: white; padding: 0.25rem 0.6rem; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+
+    /* TABS */
     .tabs-container { flex-shrink: 0; background: var(--card-bg); border-bottom: 1px solid var(--border); }
     .ability-tabs { display: flex; gap: 0.5rem; padding: 0.75rem 1.5rem; }
-    .ability-tab { padding: 0.4rem 1rem; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 0.9rem; }
-    .ability-tab.active { background: var(--accent-soft); color: var(--primary-dark); border-color: var(--accent); font-weight: 500; }
+    .ability-tab { padding: 0.4rem 1rem; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
+    .ability-tab.active { background: var(--accent-soft); color: var(--primary-dark); border-color: var(--accent); font-weight: 600; }
+    
     .mode-tabs { display: flex; padding: 0 1.5rem; gap: 1.5rem; }
-    .mode-tab { padding: 0.75rem 0; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--text-light); cursor: pointer; font-weight: 500; }
+    .mode-tab { padding: 0.75rem 0; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--text-light); cursor: pointer; font-weight: 500; transition: 0.2s; }
     .mode-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* MAIN CONTENT */
     .app-main { flex: 1; padding: 1.5rem; overflow-y: hidden; }
     .mode-section { display: none; height: 100%; }
     .mode-section.active { display: block; }
+    
     .layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; height: 100%; max-width: 1200px; margin: 0 auto; }
+    
+    /* SIDEBAR */
     .sidebar { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; flex-direction: column; overflow: hidden; }
-    .sidebar-header { padding: 1rem; border-bottom: 1px solid var(--border); font-weight: 600; background: #f8fafc; }
+    .sidebar-header { padding: 1rem; border-bottom: 1px solid var(--border); font-weight: 600; background: #f8fafc; color: var(--text-light); text-transform: uppercase; font-size: 0.85rem; }
     .topic-list { list-style: none; overflow-y: auto; flex: 1; }
-    .topic-item { padding: 0.75rem 1rem; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; font-size: 0.95rem; }
-    .topic-item:hover { background: var(--accent-soft); }
-    .topic-item.active { background: var(--accent-soft); color: var(--primary); border-left: 4px solid var(--primary); font-weight: 600; }
-    .content-area { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; overflow-y: auto; }
+    .topic-item { padding: 0; border-bottom: 1px solid #f1f5f9; }
+    .topic-btn { width: 100%; text-align: left; padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-size: 0.95rem; color: var(--text); transition: 0.2s; }
+    .topic-btn:hover { background: var(--accent-soft); }
+    .topic-btn.active { background: var(--accent-soft); color: var(--primary); border-left: 4px solid var(--primary); font-weight: 600; }
+    
+    .sidebar-content { padding: 1.5rem; overflow-y: auto; }
+
+    /* CONTENT AREA */
+    .content-area { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; overflow-y: auto; height: 100%; }
+    
+    /* QUIZ STYLES */
     .field { margin-bottom: 1rem; display: flex; flex-direction: column; }
     .field label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-light); }
-    select, textarea { padding: 0.6rem; border: 1px solid var(--border); border-radius: 0.3rem; font-family: inherit; }
-    .btn-primary { background: var(--primary); color: white; border: none; padding: 0.8rem; border-radius: 0.3rem; cursor: pointer; font-weight: 600; width: 100%; transition: 0.2s; }
+    select, textarea { padding: 0.6rem; border: 1px solid var(--border); border-radius: 0.3rem; font-family: inherit; font-size: 0.95rem; }
+    .btn-primary { background: var(--primary); color: white; border: none; padding: 0.8rem; border-radius: 0.3rem; cursor: pointer; font-weight: 600; width: 100%; transition: 0.2s; margin-top: 1rem; }
     .btn-primary:hover { background: var(--primary-dark); }
-    .quiz-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 1rem; }
+    
+    .quiz-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 1rem; color: var(--text-light); }
     .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 1.5rem; }
     .progress-fill { height: 100%; background: var(--success); width: 0%; transition: 0.3s; }
+    
     .quiz-question { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; white-space: pre-line; }
     .quiz-choices { display: flex; flex-direction: column; gap: 0.8rem; }
-    .quiz-choice { padding: 1rem; border: 1px solid var(--border); border-radius: 0.5rem; cursor: pointer; text-align: left; background: white; transition: 0.2s; }
+    .quiz-choice { padding: 1rem; border: 1px solid var(--border); border-radius: 0.5rem; cursor: pointer; text-align: left; background: white; transition: 0.2s; font-size: 1rem; }
     .quiz-choice:hover { background: var(--accent-soft); border-color: var(--accent); }
-    .quiz-choice.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
-    .quiz-choice.incorrect { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+    .quiz-choice.correct { background: #d1fae5; border-color: var(--success); color: #065f46; }
+    .quiz-choice.incorrect { background: #fee2e2; border-color: var(--error); color: #991b1b; }
+    
     .quiz-explanation { margin-top: 1.5rem; padding: 1rem; background: #eff6ff; border-left: 4px solid var(--primary); border-radius: 4px; font-size: 0.95rem; }
     .btn-next { margin-top: 1.5rem; background: white; border: 1px solid var(--primary); color: var(--primary); padding: 0.8rem 1.5rem; border-radius: 0.3rem; cursor: pointer; font-weight: 600; float: right; }
     .btn-next:hover { background: var(--accent-soft); }
-    .hide { display: none; }
-    @media(max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar { height: 200px; } }
+    
+    .hide { display: none !important; }
+    .sidebar-note { font-size: 0.8rem; color: var(--text-light); margin-top: 1rem; text-align: center; font-style: italic; }
+
+    /* Result Styles */
+    .weakpoint-item { border-bottom: 1px solid #eee; padding: 10px 0; }
+    .wp-bad { color: var(--error); font-weight: bold; }
+    .wp-good { color: var(--success); font-weight: bold; }
+
+    @media(max-width: 768px) { 
+      .layout { grid-template-columns: 1fr; } 
+      .sidebar { height: auto; max-height: 300px; margin-bottom: 1rem; } 
+      .app-main { overflow-y: auto; }
+      .content-area { overflow-y: visible; height: auto; }
+    }
   </style>
 </head>
 <body>
@@ -67,7 +100,7 @@
         <h1 class="app-title">CSE Reviewer Hub</h1>
         <p class="app-subtitle">Verbal Ability Reviewer</p>
       </div>
-      <span class="badge">Beta v1.0</span>
+      <span class="badge">Beta v2.0</span>
     </header>
 
     <div class="tabs-container">
@@ -85,50 +118,63 @@
       <section id="study" class="mode-section active">
         <div class="layout">
           <aside class="sidebar">
-            <div class="sidebar-header">Topics</div>
+            <div class="sidebar-header">Topics List</div>
             <ul class="topic-list" id="topicList"></ul>
           </aside>
-          <div class="content-area" id="lessonContent">
-            <h2>Select a Topic</h2>
-            <p>Choose a topic from the sidebar to view review notes.</p>
+          <div class="content-area">
+            <h2 id="lessonTitle" style="margin-bottom:1rem; font-size:1.8rem; color:var(--primary);">Select a Topic</h2>
+            <div id="lessonContent" style="line-height:1.8; font-size:1.05rem;">
+              <p>Please select a topic from the sidebar to view review notes.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="practice" class="mode-section">
         <div class="layout">
-          <aside class="sidebar" style="height: fit-content; padding: 1rem;">
-            <div class="field">
-              <label>Topic</label>
-              <select id="quizTopic"></select>
+          <aside class="sidebar">
+            <div class="sidebar-header">Quiz Settings</div>
+            <div class="sidebar-content">
+              <div class="field">
+                <label>Topic</label>
+                <select id="quizTopic"></select>
+              </div>
+              <div class="field">
+                <label>Level</label>
+                <select id="quizLevel">
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                  <option value="super">Super / Expert</option>
+                  <option value="all">Mix All Levels</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Number of Items</label>
+                <select id="quizCount">
+                  <option value="10">10 Items</option>
+                  <option value="20">20 Items</option>
+                  <option value="30">30 Items</option>
+                  <option value="50">50 Items</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Timer</label>
+                <select id="timerMode">
+                   <option value="off">No Timer</option>
+                   <option value="60">60s per item</option>
+                   <option value="30">30s per item</option>
+                </select>
+              </div>
+              <button class="btn-primary" id="btnStart">START QUIZ</button>
+              <p class="sidebar-note">Questions are randomized from the database.</p>
             </div>
-            <div class="field">
-              <label>Level</label>
-              <select id="quizLevel">
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-                <option value="super">Super / Expert</option>
-                <option value="all">All Levels (Mix)</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Items</label>
-              <select id="quizCount">
-                <option value="10">10 Items</option>
-                <option value="20">20 Items</option>
-                <option value="30">30 Items</option>
-                <option value="50">50 Items</option>
-              </select>
-            </div>
-            <button class="btn-primary" id="startQuiz">Start Quiz</button>
           </aside>
 
           <div class="content-area">
             <div id="quizIntro">
               <h2>Ready to Practice?</h2>
-              <p>Select your settings on the left and click "Start Quiz".</p>
-              <div id="quizResults" class="hide"></div>
+              <p>Select your topic and settings on the left, then click <strong>Start Quiz</strong>.</p>
             </div>
 
             <div id="quizActive" class="hide">
@@ -142,7 +188,16 @@
               <div class="quiz-choices" id="qChoices"></div>
               
               <div class="quiz-explanation hide" id="qExplain"></div>
-              <button class="btn-next hide" id="nextBtn">Next Question</button>
+              <button id="btnNext" class="btn-next hide">Next Question</button>
+            </div>
+
+            <div id="quizResults" class="hide">
+              <div style="text-align:center; margin-bottom:2rem;">
+                 <h2 style="color:var(--primary);">Quiz Complete!</h2>
+                 <p id="finalScore" style="font-size:1.5rem; font-weight:bold; margin:1rem 0;"></p>
+                 <button class="btn-primary" onclick="location.reload()" style="max-width:200px;">Take Another Quiz</button>
+              </div>
+              <div id="weakPointsContainer"></div>
             </div>
           </div>
         </div>
@@ -152,7 +207,6 @@
 
   <script src="questions_nouns.js"></script>
   <script src="questions_gender.js"></script>
-  <script src="grammatical_number_questions.js"></script>
   <script src="questions_verbs.js"></script>
   <script src="questions_adjectives.js"></script>
   <script src="questions_adverbs.js"></script>
@@ -161,17 +215,19 @@
   <script src="questions_conjunctions.js"></script>
   <script src="questions_interjections.js"></script>
   <script src="questions_articles.js"></script>
-  <script src="subject_verb_agreement.js"></script>
-  <script src="sentence_construction.js"></script>
-  <script src="sentence_structure.js"></script>
-  <script src="error_identification.js"></script>
   <script src="questions_affixes.js"></script>
   <script src="questions_punctuations.js"></script>
   <script src="questions_synonyms.js"></script>
   <script src="questions_antonyms.js"></script>
   <script src="questions_analogy.js"></script>
-  <script src="words_often_confused.js"></script>
+  <script src="grammatical_number_questions.js"></script>
   <script src="paragraph_organization_questions.js"></script>
+
+  <script src="subject_verb_agreement.js"></script>
+  <script src="sentence_construction.js"></script>
+  <script src="sentence_structure.js"></script>
+  <script src="error_identification.js"></script>
+  <script src="words_often_confused.js"></script>
   <script src="reading_comprehension.js"></script>
 
   <script src="verbal.js"></script>
