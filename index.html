@@ -2,18 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Verbal Ability</title>
+  <title>CSE Reviewer Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Dagdag na styles para sa Subject Switcher */
+    .app-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 0;
+    }
+    
+    .subject-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .subject-tab {
+      background: none;
+      border: none;
+      color: #aaa;
+      padding: 10px 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .subject-tab:hover {
+      color: #fff;
+    }
+
+    .subject-tab.active {
+      color: #4facfe; /* Blue highlight */
+      border-bottom: 3px solid #4facfe;
+    }
+  </style>
 </head>
 <body>
   <div class="app-shell">
+    
     <header class="app-header">
       <div>
         <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle">Verbal Ability · Gender of Nouns</p>
+        <p class="app-subtitle" id="current-subject-title">Verbal Ability · Reviewer</p>
       </div>
-      <span class="badge">Beta</span>
+
+      <nav class="subject-nav">
+        <button class="subject-tab active" id="btn-verbal" onclick="switchSubject('verbal')">📖 Verbal Ability</button>
+        <button class="subject-tab" id="btn-numerical" onclick="switchSubject('numerical')">🧮 Numerical Ability</button>
+      </nav>
+      
     </header>
 
     <nav class="mode-tabs">
@@ -22,34 +66,30 @@
     </nav>
 
     <main class="app-main">
-      <!-- Study Mode -->
       <section id="mode-study" class="mode-section active">
         <div class="layout">
           <aside class="sidebar">
             <h2 class="sidebar-title">Topics</h2>
 
-            <!-- Dynamic list ng topics – pupunuin ng app.js gamit VERBAL_TOPICS -->
             <div id="topicsList"></div>
 
             <p class="sidebar-note">
-              Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz
-              para masanay sa exam-style questions.
+              Tip: Pumili ng Subject sa taas (Verbal/Numerical), tapos pumili ng Topic dito.
             </p>
           </aside>
 
           <section class="content">
             <header class="lesson-header">
-              <h2 id="lesson-title">Gender of Nouns</h2>
-              <p id="lesson-meta" class="lesson-meta"></p>
+              <h2 id="lesson-title">Welcome to CSE Reviewer</h2>
+              <p id="lesson-meta" class="lesson-meta">Select a topic to start</p>
             </header>
             <div id="lesson-content" class="lesson-body">
-              <p>Loading lesson…</p>
+              <p>Please select a topic from the sidebar.</p>
             </div>
           </section>
         </div>
       </section>
 
-      <!-- Practice Mode -->
       <section id="mode-practice" class="mode-section">
         <div class="layout">
           <aside class="sidebar">
@@ -57,7 +97,8 @@
 
             <label class="field">
               <span class="field-label">Topic</span>
-              <select id="practice-topic"></select>
+              <select id="practice-topic">
+                </select>
             </label>
 
             <label class="field">
@@ -90,22 +131,9 @@
               </select>
             </label>
 
-            <label class="field">
-              <span class="field-label">Weak points / focus</span>
-              <textarea
-                id="practice-weak"
-                rows="2"
-                placeholder="Example: professions, common vs neuter, pronoun agreement"
-              ></textarea>
-            </label>
-
             <button id="start-quiz-btn" class="btn-primary full-width">
               Start practice quiz
             </button>
-
-            <p class="sidebar-note">
-              Questions are randomized every time based on your chosen level.
-            </p>
           </aside>
 
           <section class="content">
@@ -124,8 +152,7 @@
 
             <article class="quiz-card">
               <div id="quiz-question" class="quiz-question">
-                Ready when you are. Set up your quiz on the left and press
-                <strong>“Start practice quiz”</strong>.
+                Ready when you are. Select a subject and topic, then press <strong>Start</strong>.
               </div>
               <div id="quiz-choices" class="quiz-choices"></div>
               <div id="quiz-explanation" class="quiz-explanation hide"></div>
@@ -138,13 +165,10 @@
             <section id="quiz-output" class="quiz-output">
               <div class="stats-panel">
                 <div class="stat-item">
-                  <span>Correct</span><span>0</span>
+                  <span>Correct</span><span id="score-correct">0</span>
                 </div>
                 <div class="stat-item">
-                  <span>Incorrect</span><span>0</span>
-                </div>
-                <div class="stat-item">
-                  <span>Unanswered</span><span>0</span>
+                  <span>Incorrect</span><span id="score-wrong">0</span>
                 </div>
               </div>
             </section>
@@ -155,39 +179,37 @@
 
     <footer class="app-footer">
       <span>
-        CSE Reviewer Hub · Verbal Ability · Practice only · Not official CSC
-        material
+        CSE Reviewer Hub · Practice only · Not official CSC material
       </span>
     </footer>
   </div>
 
-  
-    <!-- ORDER: question banks muna, tapos logic -->
   <script src="questions_nouns.js"></script>
-<script src="questions_gender.js"></script>
-<script src="grammatical_number_questions.js"></script>
-<script src="questions_pronouns.js"></script>
-<script src="questions_tenses.js"></script>
-<script src="questions_verbs.js"></script>
-<script src="questions_adverbs.js"></script>
-<script src="questions_adjectives.js"></script>
-<script src="questions_prepositions.js"></script>
-<script src="questions_conjunctions.js"></script>
-<script src="questions_articles.js"></script>
- <script src="questions_affixes.js"></script>
-   <script src="questions_synonyms.js"></script>
-   <script src="questions_antonyms.js"></script>
-     <script src="questions_analogy.js"></script>
- <script src="questions_punctuations.js"></script>
-<script src="questions_interjections.js"></script>
-<script src="subject_verb_agreement.js"></script>
+  <script src="questions_gender.js"></script>
+  <script src="grammatical_number_questions.js"></script>
+  <script src="questions_pronouns.js"></script>
+  <script src="questions_tenses.js"></script>
+  <script src="questions_verbs.js"></script>
+  <script src="questions_adverbs.js"></script>
+  <script src="questions_adjectives.js"></script>
+  <script src="questions_prepositions.js"></script>
+  <script src="questions_conjunctions.js"></script>
+  <script src="questions_articles.js"></script>
+  <script src="questions_affixes.js"></script>
+  <script src="questions_synonyms.js"></script>
+  <script src="questions_antonyms.js"></script>
+  <script src="questions_analogy.js"></script>
+  <script src="questions_punctuations.js"></script>
+  <script src="questions_interjections.js"></script>
+  <script src="subject_verb_agreement.js"></script>
   <script src="words_often_confused.js"></script>
-<script src="sentence_construction.js"></script>
-<script src="sentence_structure.js"></script>  
-<script src="paragraph_organization_questions.js"></script>  
-<script src="error_identification.js"></script>   
+  <script src="sentence_construction.js"></script>
+  <script src="sentence_structure.js"></script>  
+  <script src="paragraph_organization_questions.js"></script>  
+  <script src="error_identification.js"></script>   
   <script src="reading_comprehension.js"></script> 
-<script src="app.js"></script>
+
+  <script src="app.js"></script>
 
 </body>
 </html>
