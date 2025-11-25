@@ -4,14 +4,473 @@
   <meta charset="UTF-8" />
   <title>CSE Reviewer Hub – Verbal Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --accent: #8b5cf6;
+      --accent-soft: rgba(139, 92, 246, 0.1);
+      --text: #f9fafb;
+      --text-muted: #d1d5db;
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --border: #334155;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --muted: #64748b;
+    }
+
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* App Layout */
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .app-main {
+      flex: 1;
+    }
+
+    /* Header */
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background-color: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .back-button {
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.08s;
+    }
+
+    .back-button:hover {
+      background: var(--accent-soft);
+      color: #f9fafb;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .app-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .app-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      background-color: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Tabs */
+    .mode-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+    }
+
+    .mode-tab {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-tab.active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .mode-tab:hover:not(.active) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Main Content Layout */
+    .layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .sidebar {
+      flex: 0 0 280px;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    /* Sidebar */
+    .sidebar-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background-color: rgba(59, 130, 246, 0.1);
+      border-radius: 0.5rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    /* Topic List */
+    .topic-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      background-color: var(--bg-card);
+      border-radius: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .topic-item:hover {
+      background-color: rgba(59, 130, 246, 0.1);
+      border-color: var(--primary);
+    }
+
+    .topic-item.active {
+      background-color: rgba(59, 130, 246, 0.2);
+      border-color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Form Elements */
+    .field {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--primary);
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    /* Lesson Content */
+    .lesson-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #lesson-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .lesson-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .lesson-body {
+      background-color: var(--bg-card);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Quiz Elements */
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-progress-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .quiz-timer {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--warning);
+    }
+
+    .progress-bar {
+      height: 6px;
+      background-color: var(--border);
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .quiz-card {
+      background-color: var(--bg-card);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-question {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .quiz-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-choice {
+      padding: 0.75rem 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-choice:hover {
+      background-color: rgba(59, 130, 246, 0.1);
+      border-color: var(--primary);
+    }
+
+    .quiz-choice.selected {
+      background-color: rgba(59, 130, 246, 0.2);
+      border-color: var(--primary);
+    }
+
+    .quiz-choice.correct {
+      background-color: rgba(16, 185, 129, 0.2);
+      border-color: var(--success);
+    }
+
+    .quiz-choice.incorrect {
+      background-color: rgba(239, 68, 68, 0.2);
+      border-color: var(--danger);
+    }
+
+    .quiz-explanation {
+      padding: 1rem;
+      background-color: rgba(59, 130, 246, 0.1);
+      border-radius: 0.5rem;
+      border-left: 3px solid var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .quiz-next {
+      display: block;
+      margin-left: auto;
+    }
+
+    .quiz-output {
+      background-color: var(--bg-card);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .stats-panel {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .stat-item span:first-child {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-item span:last-child {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* Utility Classes */
+    .hide {
+      display: none !important;
+    }
+
+    .active {
+      display: block !important;
+    }
+
+    .mode-section {
+      display: none;
+    }
+
+    /* Footer */
+    .app-footer {
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .sidebar {
+        flex: none;
+        width: 100%;
+      }
+      
+      .stats-panel {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .app-header {
+        padding: 1rem;
+      }
+      
+      .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="app-shell">
     <header class="app-header">
-      <div>
-        <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle">Verbal Ability · Gender of Nouns</p>
+      <div class="header-main">
+        <button class="back-button" type="button" onclick="window.location.href='index.html'">
+          ← Back to Home
+        </button>
+        <div>
+          <h1 class="app-title">CSE Reviewer Hub</h1>
+          <p class="app-subtitle">Verbal Ability · <span id="subtitleTopic">Gender of Nouns</span></p>
+        </div>
       </div>
       <span class="badge">Beta</span>
     </header>
