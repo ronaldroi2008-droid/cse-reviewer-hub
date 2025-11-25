@@ -85,6 +85,7 @@ function getQuestionBank(id) {
     // Search in window object
     for (const name of possibleNames) {
         if (window[name] && typeof window[name] === 'object') {
+            console.log(`Found question bank: ${name} for topic: ${id}`);
             return window[name];
         }
     }
@@ -169,7 +170,7 @@ function renderLesson(id) {
 }
 
 // ============================================================
-// 5. QUIZ ENGINE
+// 5. QUIZ ENGINE - FIXED CHOICES RENDERING
 // ============================================================
 
 function startQuiz() {
@@ -194,11 +195,14 @@ function startQuiz() {
     let pool = [];
     if (level === 'all') {
         // Combine all arrays found in the bank object
-        Object.values(bank).forEach(arr => { if(Array.isArray(arr)) pool.push(...arr); });
+        Object.values(bank).forEach(arr => { 
+            if(Array.isArray(arr)) pool.push(...arr); 
+        });
     } else {
         // Handle 'expert' vs 'super' key mismatch
         pool = bank[level] || [];
         if (level === 'super' && !bank.super && bank.expert) pool = bank.expert;
+        if (level === 'advanced' && !bank.advanced && bank.expert) pool = bank.expert;
     }
 
     if (pool.length === 0) {
@@ -206,8 +210,10 @@ function startQuiz() {
         return;
     }
 
+    console.log(`Found ${pool.length} questions for level: ${level}`);
+
     // 3. Randomize & Slice
-    const questions = [...pool].sort(() => 0.5 - Math.random()).slice(0, count);
+    const questions = shuffleArray([...pool]).slice(0, count);
 
     // 4. Init State
     quizState = { questions, index: 0, score: 0 };
@@ -227,14 +233,10 @@ function startQuiz() {
 function renderQuestion() {
     const qData = quizState.questions[quizState.index];
     
-    // Normalize different data formats (q vs question, options vs choices)
-    const q = {
-        text: qData.q || qData.question,
-        choices: qData.options || qData.choices,
-        correct: qData.a || qData.answer,
-        correctIndex: qData.correctIndex, 
-        exp: qData.exp || qData.explanation || ""
-    };
+    console.log("Current question data:", qData); // Debug log
+
+    // NORMALIZE QUESTION DATA - FIXED VERSION
+    const q = normalizeQuestionData(qData);
 
     // Display Text
     const qTextEl = document.getElementById('qText');
@@ -247,24 +249,87 @@ function renderQuestion() {
     if(qScore) qScore.textContent = `Score: ${quizState.score}`;
     if(qBar) qBar.style.width = `${((quizState.index) / quizState.questions.length) * 100}%`;
 
-    // Render Buttons
-    const choicesContainer = document.getElementById('qChoices');
-    if(choicesContainer) {
-        choicesContainer.innerHTML = '';
-        q.choices.forEach((choice, idx) => {
-            const btn = document.createElement('button');
-            btn.className = 'quiz-choice'; 
-            btn.textContent = choice;
-            btn.onclick = () => handleAnswer(btn, choice, idx, q);
-            choicesContainer.appendChild(btn);
+    // Render Choices - FIXED VERSION
+    renderChoices(q);
+}
+
+function normalizeQuestionData(qData) {
+    // Handle different question data structures
+    let text = qData.q || qData.question || "Question not available";
+    let choices = [];
+    let correct = "";
+    let correctIndex = null;
+    let explanation = qData.exp || qData.explanation || "";
+
+    // CASE 1: Standard format with options array
+    if (qData.options && Array.isArray(qData.options)) {
+        choices = qData.options;
+        correct = qData.a || qData.answer;
+        correctIndex = qData.correctIndex;
+    }
+    // CASE 2: Object with choice keys (a, b, c, d)
+    else if (qData.a && qData.b && qData.c && qData.d) {
+        choices = [qData.a, qData.b, qData.c, qData.d];
+        correct = qData.answer;
+    }
+    // CASE 3: Array format with numerical keys
+    else if (qData[1] && qData[2] && qData[3] && qData[4]) {
+        choices = [qData[1], qData[2], qData[3], qData[4]];
+        correct = qData.answer;
+    }
+    // CASE 4: Direct choices array
+    else if (qData.choices && Array.isArray(qData.choices)) {
+        choices = qData.choices;
+        correct = qData.answer || qData.correct;
+        correctIndex = qData.correctIndex;
+    }
+    // CASE 5: Fallback - try to find any array in the object
+    else {
+        Object.values(qData).forEach(value => {
+            if (Array.isArray(value) && value.length >= 2) {
+                choices = value;
+            }
         });
+        correct = qData.answer || qData.correct;
     }
 
-    // Hide Explanation & Next Button
-    const explainEl = document.getElementById('qExplain');
-    const nextBtn = document.getElementById('btnNext');
-    if(explainEl) explainEl.classList.add('hide');
-    if(nextBtn) nextBtn.classList.add('hide');
+    // If correctIndex is provided but no correct text, get from choices
+    if (correctIndex !== null && correctIndex !== undefined && choices[correctIndex]) {
+        correct = choices[correctIndex];
+    }
+
+    console.log("Normalized question:", { text, choices, correct, correctIndex, explanation });
+
+    return {
+        text,
+        choices,
+        correct,
+        correctIndex,
+        exp: explanation
+    };
+}
+
+function renderChoices(q) {
+    const choicesContainer = document.getElementById('qChoices');
+    if(!choicesContainer) return;
+
+    choicesContainer.innerHTML = '';
+
+    if (!q.choices || q.choices.length === 0) {
+        console.error("No choices available for question:", q);
+        choicesContainer.innerHTML = '<p>No choices available</p>';
+        return;
+    }
+
+    console.log(`Rendering ${q.choices.length} choices:`, q.choices);
+
+    q.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-choice'; 
+        btn.textContent = `${String.fromCharCode(65 + idx)}. ${choice}`; // A., B., C., D.
+        btn.onclick = () => handleAnswer(btn, choice, idx, q);
+        choicesContainer.appendChild(btn);
+    });
 }
 
 function handleAnswer(btn, selectedText, selectedIdx, q) {
@@ -273,24 +338,41 @@ function handleAnswer(btn, selectedText, selectedIdx, q) {
 
     let isCorrect = false;
     
-    // Check by Index or Text
+    // Check by Index or Text - IMPROVED LOGIC
     if (q.correctIndex !== undefined && q.correctIndex !== null) {
         isCorrect = (selectedIdx === q.correctIndex);
+        console.log(`Checking by index: ${selectedIdx} === ${q.correctIndex} = ${isCorrect}`);
     } else {
-        isCorrect = (selectedText === q.correct);
+        // Normalize both texts for comparison (trim, lowercase)
+        const normalizedSelected = selectedText.trim().toLowerCase();
+        const normalizedCorrect = q.correct.trim().toLowerCase();
+        isCorrect = normalizedSelected === normalizedCorrect;
+        console.log(`Checking by text: "${normalizedSelected}" === "${normalizedCorrect}" = ${isCorrect}`);
     }
 
     // Update Styles & Score
     if (isCorrect) {
         btn.classList.add('correct');
         quizState.score++;
+        console.log("Correct answer! Score:", quizState.score);
     } else {
         btn.classList.add('incorrect');
+        console.log("Incorrect answer");
         
         // Highlight the correct one
         const allBtns = document.querySelectorAll('.quiz-choice');
         allBtns.forEach((b, i) => {
-            if ((q.correctIndex !== undefined && i === q.correctIndex) || b.textContent === q.correct) {
+            let isThisCorrect = false;
+            
+            if (q.correctIndex !== undefined && q.correctIndex !== null) {
+                isThisCorrect = (i === q.correctIndex);
+            } else {
+                const btnText = b.textContent.replace(/^[A-Z]\.\s/, '').trim().toLowerCase();
+                const correctText = q.correct.trim().toLowerCase();
+                isThisCorrect = btnText === correctText;
+            }
+            
+            if (isThisCorrect) {
                 b.classList.add('correct');
             }
         });
@@ -299,7 +381,7 @@ function handleAnswer(btn, selectedText, selectedIdx, q) {
     // Show Explanation
     const explainEl = document.getElementById('qExplain');
     if(explainEl) {
-        explainEl.innerHTML = `<strong>${isCorrect ? "Correct!" : "Incorrect."}</strong><br>${q.exp}`;
+        explainEl.innerHTML = `<strong>${isCorrect ? "✓ Correct!" : "✗ Incorrect."}</strong><br>${q.exp || 'No explanation available.'}`;
         explainEl.classList.remove('hide');
     }
 
@@ -327,9 +409,11 @@ function showResults() {
 
     if(active) active.classList.add('hide');
     if(results) results.classList.remove('hide');
-    if(finalScore) finalScore.textContent = `You scored ${quizState.score} out of ${quizState.questions.length}`;
     
-    // Optional: Add weak points analysis
+    const percentage = Math.round((quizState.score / quizState.questions.length) * 100);
+    if(finalScore) finalScore.textContent = `You scored ${quizState.score} out of ${quizState.questions.length} (${percentage}%)`;
+    
+    // Add weak points analysis
     analyzeWeakPoints();
 }
 
@@ -337,18 +421,26 @@ function analyzeWeakPoints() {
     const weakPointsContainer = document.getElementById('weakPointsContainer');
     if (!weakPointsContainer) return;
 
-    // Simple weak points analysis - you can enhance this based on your data structure
-    let weakPointsHTML = `<h3>Performance Analysis</h3>`;
+    const percentage = Math.round((quizState.score / quizState.questions.length) * 100);
+    let weakPointsHTML = `<h3 style="margin-bottom: 1rem;">Performance Analysis</h3>`;
     
-    if (quizState.score >= quizState.questions.length * 0.8) {
-        weakPointsHTML += `<p class="wp-good">Excellent! You have a strong understanding of this topic.</p>`;
-    } else if (quizState.score >= quizState.questions.length * 0.6) {
-        weakPointsHTML += `<p class="wp-good">Good job! You're on the right track.</p>`;
+    if (percentage >= 90) {
+        weakPointsHTML += `<p class="wp-good" style="color: var(--success);">🎉 Excellent! You have mastered this topic!</p>`;
+    } else if (percentage >= 75) {
+        weakPointsHTML += `<p class="wp-good" style="color: var(--success);">👍 Good job! You have a solid understanding.</p>`;
+    } else if (percentage >= 60) {
+        weakPointsHTML += `<p style="color: var(--warning);">📚 Fair! Keep practicing to improve.</p>`;
     } else {
-        weakPointsHTML += `<p class="wp-bad">Keep practicing! Review the topics you missed.</p>`;
+        weakPointsHTML += `<p class="wp-bad" style="color: var(--error);">💪 Needs work! Review the topics and try again.</p>`;
     }
     
-    weakPointsHTML += `<p>Completion: ${Math.round((quizState.score / quizState.questions.length) * 100)}%</p>`;
+    weakPointsHTML += `
+        <div style="margin-top: 1rem; padding: 1rem; background: var(--accent-soft); border-radius: 0.5rem;">
+            <p><strong>Completion:</strong> ${percentage}%</p>
+            <p><strong>Correct Answers:</strong> ${quizState.score}</p>
+            <p><strong>Total Questions:</strong> ${quizState.questions.length}</p>
+        </div>
+    `;
     
     weakPointsContainer.innerHTML = weakPointsHTML;
 }
@@ -358,11 +450,12 @@ function analyzeWeakPoints() {
 // ============================================================
 
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
-    return array;
+    return newArray;
 }
 
 function formatTime(seconds) {
@@ -372,7 +465,26 @@ function formatTime(seconds) {
 }
 
 // ============================================================
-// 7. INITIALIZATION COMPLETE
+// 7. DEBUG FUNCTION - Check available question banks
+// ============================================================
+
+function debugQuestionBanks() {
+    console.log("=== AVAILABLE QUESTION BANKS ===");
+    VERBAL_TOPICS.forEach(topic => {
+        const bank = getQuestionBank(topic.id);
+        if (bank) {
+            console.log(`✓ ${topic.id}:`, Object.keys(bank));
+        } else {
+            console.log(`✗ ${topic.id}: NOT FOUND`);
+        }
+    });
+}
+
+// Run debug on load
+setTimeout(debugQuestionBanks, 1000);
+
+// ============================================================
+// 8. INITIALIZATION COMPLETE
 // ============================================================
 
 console.log("CSE Reviewer Hub - Verbal Ability App Initialized");
