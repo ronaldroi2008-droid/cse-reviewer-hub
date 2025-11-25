@@ -1,4 +1,3 @@
-
 const TOPIC_MAX_QUESTIONS = {
   nouns: 50,
   gender: 50,
@@ -15,7 +14,7 @@ const TOPIC_MAX_QUESTIONS = {
   affixes: 50,
   punctuations: 50,
   synonyms: 50,
-  antonyms:50,
+  antonyms: 50,
   analogy: 50,
   words_often_confused: 50,
   paragraph_organization: 50,
@@ -23,14 +22,16 @@ const TOPIC_MAX_QUESTIONS = {
   prepositions: 50
 };
 
-
-// ==========================================
-// 3. APP LOGIC
-// ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // --- DOM Elements ---
+  // ========================
+  // DOM ELEMENTS
+  // ========================
+
+  // Tabs
   const modeTabs = document.querySelectorAll(".mode-tab");
   const modeSections = document.querySelectorAll(".mode-section");
+  const abilityTabs = document.querySelectorAll(".ability-tab");
+  const subtitleEl = document.getElementById("appSubtitle");
 
   // Study Elements
   const topicsListEl = document.getElementById("topicsList");
@@ -56,7 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const quizOutputEl = document.getElementById("quiz-output");
   const quizProgressFillEl = document.getElementById("quiz-progress-fill");
 
-  // --- Tab Switching ---
+  // ========================
+  // ABILITY TABS (VERBAL / NUMERICAL)
+  // ========================
+
+  function updateSubtitle(ability) {
+    if (!subtitleEl) return;
+    if (ability === "verbal") {
+      subtitleEl.textContent = "Verbal Ability · Gender of Nouns";
+    } else if (ability === "numerical") {
+      subtitleEl.textContent = "Numerical Ability · Basic Operations";
+    }
+  }
+
+  if (abilityTabs.length) {
+    abilityTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        abilityTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const ability = tab.dataset.ability;
+        updateSubtitle(ability);
+        // Future: dito tayo mag-switch sa numerical topics/questions
+      });
+    });
+  }
+
+  // ========================
+  // MODE TABS (STUDY / PRACTICE)
+  // ========================
+
   modeTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const mode = tab.dataset.mode;
@@ -68,32 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Study Mode Logic ---
-  function renderTopicsSidebar(activeId = "nouns") {
-    if (!topicsListEl) return;
+  // ========================
+  // STUDY MODE LOGIC
+  // ========================
+
+  function renderTopicsSidebar(activeId) {
+    if (!topicsListEl || typeof VERBAL_TOPICS === "undefined") return;
+    if (!Array.isArray(VERBAL_TOPICS)) return;
+
     topicsListEl.innerHTML = "";
 
-    const groupTitle = document.createElement("div");
-    groupTitle.className = "topic-group-title";
-    groupTitle.textContent = "Verbal Ability Topics";
-    topicsListEl.appendChild(groupTitle);
-
-    const listContainer = document.createElement("div");
-    listContainer.className = "topic-list";
-
     VERBAL_TOPICS.forEach((t) => {
-      const btn = document.createElement("button");
-      btn.className = "topic-btn" + (t.id === activeId ? " active" : "");
-      btn.textContent = t.label;
-      btn.dataset.topic = t.id;
-      btn.addEventListener("click", () => {
+      const li = document.createElement("li");
+      li.className = "topic-item" + (t.id === activeId ? " active" : "");
+      li.textContent = t.label;
+      li.dataset.topic = t.id;
+      li.addEventListener("click", () => {
         renderTopicsSidebar(t.id);
         renderLesson(t.id);
       });
-      listContainer.appendChild(btn);
+      topicsListEl.appendChild(li);
     });
-
-    topicsListEl.appendChild(listContainer);
   }
 
   function renderLesson(topicKey) {
@@ -109,13 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonTitleEl.textContent = data.title || "Verbal Ability Topic";
     lessonMetaEl.textContent = data.level || "CSE Verbal Ability";
 
-    // SPECIAL CASE: kung may fullHtml
+    // If fullHtml is provided, use it as-is
     if (data.fullHtml) {
       lessonContentEl.innerHTML = data.fullHtml;
       return;
     }
 
-    // Default path
     let html = "";
     if (data.intro) {
       html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
@@ -168,129 +191,157 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Init Study Mode
-  renderTopicsSidebar("nouns");
-  renderLesson("nouns");
+  const defaultTopicId =
+    (typeof VERBAL_TOPICS !== "undefined" &&
+      Array.isArray(VERBAL_TOPICS) &&
+      VERBAL_TOPICS.length > 0 &&
+      VERBAL_TOPICS[0].id) ||
+    "nouns";
 
-  // --- Practice Mode Logic ---
+  renderTopicsSidebar(defaultTopicId);
+  renderLesson(defaultTopicId);
 
- function getQuestionBank(topic) {
-  console.log("Loading question bank for topic:", topic);
-  
-  switch (topic) {
-    case "nouns": 
-      // Check both possible variable names
-      if (typeof NOUNS_QUESTIONS !== 'undefined') return NOUNS_QUESTIONS;
-      if (typeof NOUN_QUESTIONS !== 'undefined') return NOUN_QUESTIONS;
-      return null;
-    
-    case "gender": 
-      if (typeof GENDER_NOUNS_QUESTIONS !== 'undefined') return GENDER_NOUNS_QUESTIONS;
-      if (typeof GENDER_QUESTIONS !== 'undefined') return GENDER_QUESTIONS;
-      return null;
-    
-    case "grammatical_number": 
-      return typeof GRAMMATICAL_NUMBER_QUESTIONS !== 'undefined' ? GRAMMATICAL_NUMBER_QUESTIONS : null;
-    
-    case "verbs": 
-      if (typeof VERBS_QUESTIONS !== 'undefined') return VERBS_QUESTIONS;
-      if (typeof VERB_QUESTIONS !== 'undefined') return VERB_QUESTIONS;
-      return null;
-    
-    case "tenses": 
-      if (typeof TENSES_QUESTIONS !== 'undefined') return TENSES_QUESTIONS;
-      if (typeof TENSE_QUESTIONS !== 'undefined') return TENSE_QUESTIONS;
-      return null;
+  // ========================
+  // PRACTICE MODE LOGIC
+  // ========================
 
-  case "reading_comprehension": 
-      if (typeof READING_COMPREHENSION_QUESTIONS !== 'undefined') return READING_COMPREHENSION_QUESTIONS;
-      return null;
-    
-    
-    case "pronouns": 
-      if (typeof PRONOUNS_QUESTIONS !== 'undefined') return PRONOUNS_QUESTIONS;
-      if (typeof PRONOUN_QUESTIONS !== 'undefined') return PRONOUN_QUESTIONS;
-      return null;
-    
-    case "adjectives": 
-      if (typeof ADJECTIVES_QUESTIONS !== 'undefined') return ADJECTIVES_QUESTIONS;
-      if (typeof ADJECTIVE_QUESTIONS !== 'undefined') return ADJECTIVE_QUESTIONS;
-      return null;
-    
-    case "adverbs": 
-      if (typeof ADVERBS_QUESTIONS !== 'undefined') return ADVERBS_QUESTIONS;
-      if (typeof ADVERB_QUESTIONS !== 'undefined') return ADVERB_QUESTIONS;
-      return null;
-    
-    case "prepositions": 
-      if (typeof PREPOSITIONS_QUESTIONS !== 'undefined') return PREPOSITIONS_QUESTIONS;
-      if (typeof PREPOSITION_QUESTIONS !== 'undefined') return PREPOSITION_QUESTIONS;
-      return null;
-    
-    case "conjunctions": 
-      if (typeof CONJUNCTIONS_QUESTIONS !== 'undefined') return CONJUNCTIONS_QUESTIONS;
-      if (typeof CONJUNCTION_QUESTIONS !== 'undefined') return CONJUNCTION_QUESTIONS;
-      return null;
-    
-    case "interjections": 
-      if (typeof INTERJECTIONS_QUESTIONS !== 'undefined') return INTERJECTIONS_QUESTIONS;
-      if (typeof INTERJECTION_QUESTIONS !== 'undefined') return INTERJECTION_QUESTIONS;
-      return null;
-    
-    case "articles": 
-      if (typeof ARTICLES_QUESTIONS !== 'undefined') return ARTICLES_QUESTIONS;
-      if (typeof ARTICLE_QUESTIONS !== 'undefined') return ARTICLE_QUESTIONS;
-      return null;
-    
-    case "subject_verb_agreement": 
-      if (typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== 'undefined') return SUBJECT_VERB_AGREEMENT_QUESTIONS;
-      return null;
-    
-    case "sentence_construction": 
-      if (typeof SENTENCE_CONSTRUCTION_QUESTIONS !== 'undefined') return SENTENCE_CONSTRUCTION_QUESTIONS;
-      return null;
-    
-    case "sentence_structure": 
-      if (typeof SENTENCE_STRUCTURE_QUESTIONS !== 'undefined') return SENTENCE_STRUCTURE_QUESTIONS;
-      return null;
-    
-    case "error_identification": 
-      if (typeof ERROR_IDENTIFICATION_QUESTIONS !== 'undefined') return ERROR_IDENTIFICATION_QUESTIONS;
-      return null;
-    
-    case "affixes": 
-      if (typeof AFFIXES_QUESTIONS !== 'undefined') return AFFIXES_QUESTIONS;
-      return null;
-    
-    case "synonyms": 
-      if (typeof SYNONYMS_QUESTIONS !== 'undefined') return SYNONYMS_QUESTIONS;
-      return null;
-    
-    case "antonyms": 
-      if (typeof ANTONYMS_QUESTIONS !== 'undefined') return ANTONYMS_QUESTIONS;
-      return null;
-    
-    case "analogy": 
-      if (typeof ANALOGY_QUESTIONS !== 'undefined') return ANALOGY_QUESTIONS;
-      return null;
-    
-    case "punctuations": 
-      if (typeof PUNCTUATIONS_QUESTIONS !== 'undefined') return PUNCTUATIONS_QUESTIONS;
-      return null;
-    
-    case "words_often_confused": 
-      if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== 'undefined') return WORDS_OFTEN_CONFUSED_QUESTIONS;
-      return null;
-    
-    case "paragraph_organization": 
-      if (typeof PARAGRAPH_ORGANIZATION_QUESTIONS !== 'undefined') return PARAGRAPH_ORGANIZATION_QUESTIONS;
-      return null;
-    
-    default: 
-      console.log("Topic not found:", topic);
-      return null;
+  function getQuestionBank(topic) {
+    console.log("Loading question bank for topic:", topic);
+
+    switch (topic) {
+      case "nouns":
+        if (typeof NOUNS_QUESTIONS !== "undefined") return NOUNS_QUESTIONS;
+        if (typeof NOUN_QUESTIONS !== "undefined") return NOUN_QUESTIONS;
+        return null;
+
+      case "gender":
+        if (typeof GENDER_NOUNS_QUESTIONS !== "undefined")
+          return GENDER_NOUNS_QUESTIONS;
+        if (typeof GENDER_QUESTIONS !== "undefined") return GENDER_QUESTIONS;
+        return null;
+
+      case "grammatical_number":
+        return typeof GRAMMATICAL_NUMBER_QUESTIONS !== "undefined"
+          ? GRAMMATICAL_NUMBER_QUESTIONS
+          : null;
+
+      case "verbs":
+        if (typeof VERBS_QUESTIONS !== "undefined") return VERBS_QUESTIONS;
+        if (typeof VERB_QUESTIONS !== "undefined") return VERB_QUESTIONS;
+        return null;
+
+      case "tenses":
+        if (typeof TENSES_QUESTIONS !== "undefined") return TENSES_QUESTIONS;
+        if (typeof TENSE_QUESTIONS !== "undefined") return TENSE_QUESTIONS;
+        return null;
+
+      case "reading_comprehension":
+        if (typeof READING_COMPREHENSION_QUESTIONS !== "undefined")
+          return READING_COMPREHENSION_QUESTIONS;
+        return null;
+
+      case "pronouns":
+        if (typeof PRONOUNS_QUESTIONS !== "undefined") return PRONOUNS_QUESTIONS;
+        if (typeof PRONOUN_QUESTIONS !== "undefined") return PRONOUN_QUESTIONS;
+        return null;
+
+      case "adjectives":
+        if (typeof ADJECTIVES_QUESTIONS !== "undefined")
+          return ADJECTIVES_QUESTIONS;
+        if (typeof ADJECTIVE_QUESTIONS !== "undefined")
+          return ADJECTIVE_QUESTIONS;
+        return null;
+
+      case "adverbs":
+        if (typeof ADVERBS_QUESTIONS !== "undefined") return ADVERBS_QUESTIONS;
+        if (typeof ADVERB_QUESTIONS !== "undefined") return ADVERB_QUESTIONS;
+        return null;
+
+      case "prepositions":
+        if (typeof PREPOSITIONS_QUESTIONS !== "undefined")
+          return PREPOSITIONS_QUESTIONS;
+        if (typeof PREPOSITION_QUESTIONS !== "undefined")
+          return PREPOSITION_QUESTIONS;
+        return null;
+
+      case "conjunctions":
+        if (typeof CONJUNCTIONS_QUESTIONS !== "undefined")
+          return CONJUNCTIONS_QUESTIONS;
+        if (typeof CONJUNCTION_QUESTIONS !== "undefined")
+          return CONJUNCTION_QUESTIONS;
+        return null;
+
+      case "interjections":
+        if (typeof INTERJECTIONS_QUESTIONS !== "undefined")
+          return INTERJECTIONS_QUESTIONS;
+        if (typeof INTERJECTION_QUESTIONS !== "undefined")
+          return INTERJECTION_QUESTIONS;
+        return null;
+
+      case "articles":
+        if (typeof ARTICLES_QUESTIONS !== "undefined") return ARTICLES_QUESTIONS;
+        if (typeof ARTICLE_QUESTIONS !== "undefined") return ARTICLE_QUESTIONS;
+        return null;
+
+      case "subject_verb_agreement":
+        if (typeof SUBJECT_VERB_AGREEMENT_QUESTIONS !== "undefined")
+          return SUBJECT_VERB_AGREEMENT_QUESTIONS;
+        return null;
+
+      case "sentence_construction":
+        if (typeof SENTENCE_CONSTRUCTION_QUESTIONS !== "undefined")
+          return SENTENCE_CONSTRUCTION_QUESTIONS;
+        return null;
+
+      case "sentence_structure":
+        if (typeof SENTENCE_STRUCTURE_QUESTIONS !== "undefined")
+          return SENTENCE_STRUCTURE_QUESTIONS;
+        return null;
+
+      case "error_identification":
+        if (typeof ERROR_IDENTIFICATION_QUESTIONS !== "undefined")
+          return ERROR_IDENTIFICATION_QUESTIONS;
+        return null;
+
+      case "affixes":
+        if (typeof AFFIXES_QUESTIONS !== "undefined") return AFFIXES_QUESTIONS;
+        return null;
+
+      case "synonyms":
+        if (typeof SYNONYMS_QUESTIONS !== "undefined") return SYNONYMS_QUESTIONS;
+        return null;
+
+      case "antonyms":
+        if (typeof ANTONYMS_QUESTIONS !== "undefined") return ANTONYMS_QUESTIONS;
+        return null;
+
+      case "analogy":
+        if (typeof ANALOGY_QUESTIONS !== "undefined") return ANALOGY_QUESTIONS;
+        return null;
+
+      case "punctuations":
+        if (typeof PUNCTUATIONS_QUESTIONS !== "undefined")
+          return PUNCTUATIONS_QUESTIONS;
+        return null;
+
+      case "words_often_confused":
+        if (typeof WORDS_OFTEN_CONFUSED_QUESTIONS !== "undefined")
+          return WORDS_OFTEN_CONFUSED_QUESTIONS;
+        return null;
+
+      case "paragraph_organization":
+        if (typeof PARAGRAPH_ORGANIZATION_QUESTIONS !== "undefined")
+          return PARAGRAPH_ORGANIZATION_QUESTIONS;
+        return null;
+
+      default:
+        console.log("Topic not found:", topic);
+        return null;
+    }
   }
-}
-  if (practiceTopicEl) {
+
+  // Fill practice topic dropdown
+  if (practiceTopicEl && typeof VERBAL_TOPICS !== "undefined") {
     practiceTopicEl.innerHTML = "";
     VERBAL_TOPICS.forEach((topic) => {
       const opt = document.createElement("option");
@@ -298,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       opt.textContent = topic.label;
       practiceTopicEl.appendChild(opt);
     });
-    practiceTopicEl.value = "nouns";
+    practiceTopicEl.value = defaultTopicId;
   }
 
   let quizState = null;
@@ -366,47 +417,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showQuestion() {
     if (!quizState) return;
-    
-    // Kunin ang current question object
+
     let q = quizState.questions[quizState.currentIndex];
 
-    // --- UNIVERSAL DATA NORMALIZER (Fix for the Error) ---
-    // Ito ang mag-aayos ng data bago gamitin para hindi mag-error ang forEach
-    
-    // 1. Kung galing sa Analogy file na may { q, a, options, exp }
+    // Normalize data
     if (q.q && q.a && q.options) {
-        q.question = q.q;           // Ilipat ang 'q' sa 'question'
-        q.choices = q.options;      // Ilipat ang 'options' sa 'choices'
-        q.answer = q.a;             // Ilipat ang 'a' sa 'answer'
-        q.explanation = q.exp;      // Ilipat ang 'exp' sa 'explanation'
-        q.correctIndex = q.options.indexOf(q.a); // Hanapin ang index ng tamang sagot
+      q.question = q.q;
+      q.choices = q.options;
+      q.answer = q.a;
+      q.explanation = q.exp;
+      q.correctIndex = q.options.indexOf(q.a);
+    } else if (q.options && q.answer && !q.choices) {
+      q.choices = q.options;
+      q.correctIndex = q.options.indexOf(q.answer);
     }
-    // 2. Kung galing sa ibang file na may { question, answer, options } (Long format)
-    else if (q.options && q.answer && !q.choices) {
-        q.choices = q.options;
-        q.correctIndex = q.options.indexOf(q.answer);
-    }
-    
-    // Safety Check: Kung wala pa ring choices, mag-error ito, kaya lagyan ng empty array
+
     if (!Array.isArray(q.choices)) {
-        console.error("Critical Error: Question data format is invalid", q);
-        q.choices = []; // Prevents crash on forEach
+      console.error("Critical Error: Question data format is invalid", q);
+      q.choices = [];
     }
-    // -----------------------------------------------------
 
     quizState.answered = false;
-    quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
+    quizProgressEl.textContent = `Question ${
+      quizState.currentIndex + 1
+    } of ${quizState.questions.length}`;
     updateProgressFill();
 
-    // Display Question Text
     quizQuestionEl.textContent = q.question || "Question text missing";
-    
-    // Reset UI
+
     quizChoicesEl.innerHTML = "";
     quizExplanationEl.classList.add("hide");
     quizNextBtn.classList.add("hide");
 
-    // Create Buttons (This is where it was crashing)
     q.choices.forEach((choice, idx) => {
       const btn = document.createElement("button");
       btn.className = "quiz-choice";
@@ -448,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    quizExplanationEl.textContent = q.explanation;
+    quizExplanationEl.textContent = q.explanation || "";
     quizExplanationEl.classList.remove("hide");
 
     quizNextBtn.textContent =
@@ -481,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       explanation: q.explanation
     });
 
-    quizExplanationEl.textContent = "Time's up! " + q.explanation;
+    quizExplanationEl.textContent = "Time's up! " + (q.explanation || "");
     quizExplanationEl.classList.remove("hide");
 
     quizNextBtn.textContent =
@@ -492,129 +534,146 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStats();
   }
 
-  startQuizBtn.addEventListener("click", () => {
-  stopCurrentTimer();
-  const topic = practiceTopicEl.value;
-  const level = practiceLevelEl.value;
-  const count = parseInt(practiceCountEl.value, 10);
-  const timer = timerModeEl.value;
-  const weakNotes = practiceWeakEl.value.trim();
-
-  console.log("=== DEBUG QUIZ START ===");
-  console.log("Topic:", topic);
-  console.log("Level:", level);
-  
-  const bank = getQuestionBank(topic);
-  console.log("Question bank:", bank);
-  
-  if (!bank) {
-    alert("Questions for this topic are not yet available. Please ensure the Question files are loaded.");
-    return;
-  }
-
-  const pool = bank[level];
-  console.log("Level pool:", pool);
-  console.log("Pool length:", pool ? pool.length : 0);
-  
-  if (!pool || pool.length === 0) {
-    alert(`No questions found for ${level} level.`);
-    return;
-  }
-
-  // Debug first question structure
-  if (pool[0]) {
-    console.log("First question structure:", pool[0]);
-    console.log("Question:", pool[0].question);
-    console.log("Choices:", pool[0].choices || pool[0].options);
-    console.log("Correct index:", pool[0].correctIndex);
-    console.log("Answer:", pool[0].answer);
-  }
-
-  const selectedQuestions = shuffleArray(pool).slice(0, count);
-  console.log("Selected questions:", selectedQuestions);
-
-  // Continue with your existing quiz setup...
-  quizState = {
-    questions: selectedQuestions,
-    currentIndex: 0,
-    correct: 0,
-    incorrect: 0,
-    timerMode: timer,
-    timeLeft: 0,
-    timerId: null,
-    answered: false,
-    weakNotes,
-    wrongAnswers: []
-  };
-
-  showQuestion();
-});
-
-  quizNextBtn.addEventListener("click", () => {
-    if (!quizState) return;
-
-    if (quizState.currentIndex < quizState.questions.length - 1) {
-      quizState.currentIndex++;
-      showQuestion();
-    } else {
+  if (startQuizBtn) {
+    startQuizBtn.addEventListener("click", () => {
       stopCurrentTimer();
-      updateProgressFill(100);
+      const topic = practiceTopicEl.value;
+      const level = practiceLevelEl.value;
+      const count = parseInt(practiceCountEl.value, 10);
+      const timer = timerModeEl.value;
+      const weakNotes = practiceWeakEl.value.trim();
 
-      const total = quizState.questions.length;
-      const correct = quizState.correct;
-      const incorrect = quizState.incorrect;
-      const left = total - (correct + incorrect);
-      const wrongItems = Array.isArray(quizState.wrongAnswers) ? quizState.wrongAnswers : [];
+      console.log("=== DEBUG QUIZ START ===");
+      console.log("Topic:", topic);
+      console.log("Level:", level);
 
-      let summaryHtml = `
-        <div class="result-card">
-          <h2>Quiz Complete!</h2>
-          <p class="result-score">Score: <strong>${correct} / ${total}</strong></p>
-          <div class="stat-grid">
-            <div class="stat"><div class="stat-label">Correct</div><div class="stat-value success">${correct}</div></div>
-            <div class="stat"><div class="stat-label">Incorrect</div><div class="stat-value danger">${incorrect}</div></div>
-            <div class="stat"><div class="stat-label">Left</div><div class="stat-value">${left}</div></div>
-          </div>
-        </div>
-      `;
+      const bank = getQuestionBank(topic);
+      console.log("Question bank:", bank);
 
-      if (wrongItems.length > 0) {
-        summaryHtml += `
-          <div class="weakpoints-card">
-            <h3>Weak Points (Review)</h3>
-            <ol class="weakpoints-list">
-              ${wrongItems.map((item, idx) => `
-                <li class="weakpoint-item">
-                  <p class="wp-question"><strong>Q${idx + 1}.</strong> ${item.question}</p>
-                  <p class="wp-your-answer"><span class="wp-label">Your answer:</span> <span class="wp-bad">${item.yourAnswer}</span></p>
-                  <p class="wp-correct-answer"><span class="wp-label">Correct answer:</span> <span class="wp-good">${item.correctAnswer}</span></p>
-                  <p class="wp-explanation">${item.explanation}</p>
-                </li>
-              `).join("")}
-            </ol>
-          </div>
-        `;
-      } else {
-        summaryHtml += `<div class="weakpoints-card"><h3>No Weak Points 🎉</h3><p class="muted">Perfect score!</p></div>`;
+      if (!bank) {
+        alert(
+          "Questions for this topic are not yet available. Please ensure the Question files are loaded."
+        );
+        return;
       }
 
-      quizQuestionEl.innerHTML = summaryHtml;
-      quizChoicesEl.innerHTML = "";
-      quizExplanationEl.classList.add("hide");
-      quizNextBtn.classList.add("hide");
+      const pool = bank[level];
+      console.log("Level pool:", pool);
+      console.log("Pool length:", pool ? pool.length : 0);
 
-      const restartBtn = document.createElement("button");
-      restartBtn.className = "mode-btn active";
-      restartBtn.style.marginTop = "20px";
-      restartBtn.textContent = "Take Another Quiz";
-      restartBtn.onclick = () => {
-        quizState = null;
-        quizQuestionEl.textContent = "Ready when you are. Set up your quiz on the left.";
-        restartBtn.remove();
-        quizOutputEl.innerHTML = `<div class="stats-panel"><div class="stat-item"><span>Correct</span><span>0</span></div><div class="stat-item"><span>Incorrect</span><span>0</span></div></div>`;
-        updateProgressFill(0);
+      if (!pool || pool.length === 0) {
+        alert(`No questions found for ${level} level.`);
+        return;
+      }
+
+      if (pool[0]) {
+        console.log("First question structure:", pool[0]);
+        console.log("Question:", pool[0].question || pool[0].q);
+        console.log("Choices:", pool[0].choices || pool[0].options);
+        console.log("Correct index:", pool[0].correctIndex);
+        console.log("Answer:", pool[0].answer || pool[0].a);
+      }
+
+      const selectedQuestions = shuffleArray(pool).slice(0, count);
+      console.log("Selected questions:", selectedQuestions);
+
+      quizState = {
+        questions: selectedQuestions,
+        currentIndex: 0,
+        correct: 0,
+        incorrect: 0,
+        timerMode: timer,
+        timeLeft: 0,
+        timerId: null,
+        answered: false,
+        weakNotes,
+        wrongAnswers: []
       };
-      quizChoicesEl.appendChild(restartBtn);
-    }
-  });
+
+      showQuestion();
+    });
+  }
+
+  if (quizNextBtn) {
+    quizNextBtn.addEventListener("click", () => {
+      if (!quizState) return;
+
+      if (quizState.currentIndex < quizState.questions.length - 1) {
+        quizState.currentIndex++;
+        showQuestion();
+      } else {
+        stopCurrentTimer();
+        updateProgressFill(100);
+
+        const total = quizState.questions.length;
+        const correct = quizState.correct;
+        const incorrect = quizState.incorrect;
+        const left = total - (correct + incorrect);
+        const wrongItems = Array.isArray(quizState.wrongAnswers)
+          ? quizState.wrongAnswers
+          : [];
+
+        let summaryHtml = `
+          <div class="result-card">
+            <h2>Quiz Complete!</h2>
+            <p class="result-score">Score: <strong>${correct} / ${total}</strong></p>
+            <div class="stat-grid">
+              <div class="stat"><div class="stat-label">Correct</div><div class="stat-value success">${correct}</div></div>
+              <div class="stat"><div class="stat-label">Incorrect</div><div class="stat-value danger">${incorrect}</div></div>
+              <div class="stat"><div class="stat-label">Left</div><div class="stat-value">${left}</div></div>
+            </div>
+          </div>
+        `;
+
+        if (wrongItems.length > 0) {
+          summaryHtml += `
+            <div class="weakpoints-card">
+              <h3>Weak Points (Review)</h3>
+              <ol class="weakpoints-list">
+                ${wrongItems
+                  .map(
+                    (item, idx) => `
+                  <li class="weakpoint-item">
+                    <p class="wp-question"><strong>Q${idx + 1}.</strong> ${item.question}</p>
+                    <p class="wp-your-answer"><span class="wp-label">Your answer:</span> <span class="wp-bad">${item.yourAnswer}</span></p>
+                    <p class="wp-correct-answer"><span class="wp-label">Correct answer:</span> <span class="wp-good">${item.correctAnswer}</span></p>
+                    <p class="wp-explanation">${item.explanation || ""}</p>
+                  </li>
+                `
+                  )
+                  .join("")}
+              </ol>
+            </div>
+          `;
+        } else {
+          summaryHtml += `<div class="weakpoints-card"><h3>No Weak Points 🎉</h3><p class="muted">Perfect score!</p></div>`;
+        }
+
+        quizQuestionEl.innerHTML = summaryHtml;
+        quizChoicesEl.innerHTML = "";
+        quizExplanationEl.classList.add("hide");
+        quizNextBtn.classList.add("hide");
+
+        const restartBtn = document.createElement("button");
+        restartBtn.className = "btn-primary";
+        restartBtn.style.marginTop = "20px";
+        restartBtn.textContent = "Take Another Quiz";
+        restartBtn.onclick = () => {
+          quizState = null;
+          quizQuestionEl.textContent =
+            "Ready when you are. Set up your quiz on the left.";
+          restartBtn.remove();
+          quizOutputEl.innerHTML = `
+            <div class="stats-panel">
+              <div class="stat-item"><span>Correct</span><span>0</span></div>
+              <div class="stat-item"><span>Incorrect</span><span>0</span></div>
+              <div class="stat-item"><span>Left</span><span>0</span></div>
+            </div>`;
+          updateProgressFill(0);
+        };
+        quizChoicesEl.appendChild(restartBtn);
+      }
+    });
+  }
 });
+
