@@ -7,140 +7,101 @@
   <style>
     :root {
       --primary: #2563eb; --primary-dark: #1d4ed8;
-      --accent: #3b82f6; --accent-soft: #dbeafe;
+      --accent: #3b82f6; --accent-soft: #eff6ff;
       --text: #1f2937; --text-light: #6b7280;
-      --muted: #9ca3af; --background: #f9fafb;
-      --card-bg: #ffffff; --border: #e5e7eb;
-      --success: #10b981; --error: #ef4444; --warning: #f59e0b;
+      --bg: #f9fafb; --white: #ffffff;
+      --border: #e5e7eb; --success: #10b981; --error: #ef4444;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--background); height: 100vh; overflow: hidden; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
     
-    /* LAYOUT */
-    .app-shell { height: 100vh; display: flex; flex-direction: column; }
-    .app-header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
-    .app-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-    .app-subtitle { color: var(--text-light); font-size: 0.9rem; }
-    .badge { background: var(--warning); color: white; padding: 0.25rem 0.6rem; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
-
+    /* HEADER */
+    header { background: var(--white); padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    h1 { color: var(--primary); font-size: 1.4rem; font-weight: 700; }
+    
     /* TABS */
-    .tabs-container { flex-shrink: 0; background: var(--card-bg); border-bottom: 1px solid var(--border); }
-    .ability-tabs { display: flex; gap: 0.5rem; padding: 0.75rem 1.5rem; }
-    .ability-tab { padding: 0.4rem 1rem; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
-    .ability-tab.active { background: var(--accent-soft); color: var(--primary-dark); border-color: var(--accent); font-weight: 600; }
-    
-    .mode-tabs { display: flex; padding: 0 1.5rem; gap: 1.5rem; }
-    .mode-tab { padding: 0.75rem 0; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--text-light); cursor: pointer; font-weight: 500; transition: 0.2s; }
-    .mode-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .tabs-nav { display: flex; gap: 1rem; padding: 0.5rem 1rem; background: var(--white); border-bottom: 1px solid var(--border); }
+    .tab-btn { padding: 0.5rem 1rem; border: none; background: none; color: var(--text-light); cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; }
+    .tab-btn.active { color: var(--primary); border-color: var(--primary); }
 
-    /* MAIN CONTENT */
-    .app-main { flex: 1; padding: 1.5rem; overflow-y: hidden; }
-    .mode-section { display: none; height: 100%; }
-    .mode-section.active { display: block; }
-    
-    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; height: 100%; max-width: 1200px; margin: 0 auto; }
+    /* LAYOUT */
+    .main-layout { display: grid; grid-template-columns: 260px 1fr; gap: 1rem; height: 100%; overflow: hidden; }
     
     /* SIDEBAR */
-    .sidebar { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; flex-direction: column; overflow: hidden; }
-    .sidebar-header { padding: 1rem; border-bottom: 1px solid var(--border); font-weight: 600; background: #f8fafc; color: var(--text-light); text-transform: uppercase; font-size: 0.85rem; }
+    .sidebar { background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+    .sidebar-header { padding: 1rem; font-weight: bold; background: #f8fafc; border-bottom: 1px solid var(--border); }
     .topic-list { list-style: none; overflow-y: auto; flex: 1; }
-    .topic-item { padding: 0; border-bottom: 1px solid #f1f5f9; }
-    .topic-btn { width: 100%; text-align: left; padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-size: 0.95rem; color: var(--text); transition: 0.2s; }
+    .topic-btn { width: 100%; text-align: left; padding: 12px 15px; border: none; background: none; border-bottom: 1px solid #f1f5f9; cursor: pointer; color: var(--text); transition: 0.2s; }
     .topic-btn:hover { background: var(--accent-soft); }
-    .topic-btn.active { background: var(--accent-soft); color: var(--primary); border-left: 4px solid var(--primary); font-weight: 600; }
-    
-    .sidebar-content { padding: 1.5rem; overflow-y: auto; }
+    .topic-btn.active { background: var(--accent-soft); color: var(--primary); border-left: 4px solid var(--primary); font-weight: 700; }
 
-    /* CONTENT AREA */
-    .content-area { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.5rem; padding: 2rem; overflow-y: auto; height: 100%; }
+    /* CONTENT */
+    .content-area { padding: 2rem; overflow-y: auto; background: var(--bg); }
+    .card { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; }
     
-    /* QUIZ STYLES */
-    .field { margin-bottom: 1rem; display: flex; flex-direction: column; }
-    .field label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-light); }
-    select, textarea { padding: 0.6rem; border: 1px solid var(--border); border-radius: 0.3rem; font-family: inherit; font-size: 0.95rem; }
-    .btn-primary { background: var(--primary); color: white; border: none; padding: 0.8rem; border-radius: 0.3rem; cursor: pointer; font-weight: 600; width: 100%; transition: 0.2s; margin-top: 1rem; }
-    .btn-primary:hover { background: var(--primary-dark); }
+    /* QUIZ UI */
+    .quiz-controls { margin-bottom: 1.5rem; display: grid; gap: 1rem; }
+    select, button.action-btn { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+    .action-btn { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
+    .action-btn:hover { background: var(--primary-dark); }
     
-    .quiz-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 1rem; color: var(--text-light); }
-    .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 1.5rem; }
-    .progress-fill { height: 100%; background: var(--success); width: 0%; transition: 0.3s; }
+    .question-text { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .choice-btn { display: block; width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid var(--border); background: var(--white); border-radius: 6px; cursor: pointer; text-align: left; transition: 0.2s; }
+    .choice-btn:hover { background: var(--accent-soft); border-color: var(--primary); }
     
-    .quiz-question { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; white-space: pre-line; }
-    .quiz-choices { display: flex; flex-direction: column; gap: 0.8rem; }
-    .quiz-choice { padding: 1rem; border: 1px solid var(--border); border-radius: 0.5rem; cursor: pointer; text-align: left; background: white; transition: 0.2s; font-size: 1rem; }
-    .quiz-choice:hover { background: var(--accent-soft); border-color: var(--accent); }
-    .quiz-choice.correct { background: #d1fae5; border-color: var(--success); color: #065f46; }
-    .quiz-choice.incorrect { background: #fee2e2; border-color: var(--error); color: #991b1b; }
+    .choice-btn.correct { background: #dcfce7; border-color: var(--success); color: #166534; }
+    .choice-btn.incorrect { background: #fee2e2; border-color: var(--error); color: #991b1b; }
     
-    .quiz-explanation { margin-top: 1.5rem; padding: 1rem; background: #eff6ff; border-left: 4px solid var(--primary); border-radius: 4px; font-size: 0.95rem; }
-    .btn-next { margin-top: 1.5rem; background: white; border: 1px solid var(--primary); color: var(--primary); padding: 0.8rem 1.5rem; border-radius: 0.3rem; cursor: pointer; font-weight: 600; float: right; }
-    .btn-next:hover { background: var(--accent-soft); }
-    
-    .hide { display: none !important; }
-    .sidebar-note { font-size: 0.8rem; color: var(--text-light); margin-top: 1rem; text-align: center; font-style: italic; }
+    .explanation { margin-top: 1.5rem; padding: 1rem; background: #eff6ff; border-radius: 6px; border-left: 4px solid var(--primary); }
+    .hidden { display: none !important; }
 
-    /* Result Styles */
-    .weakpoint-item { border-bottom: 1px solid #eee; padding: 10px 0; }
-    .wp-bad { color: var(--error); font-weight: bold; }
-    .wp-good { color: var(--success); font-weight: bold; }
-
-    @media(max-width: 768px) { 
-      .layout { grid-template-columns: 1fr; } 
-      .sidebar { height: auto; max-height: 300px; margin-bottom: 1rem; } 
-      .app-main { overflow-y: auto; }
-      .content-area { overflow-y: visible; height: auto; }
+    @media (max-width: 768px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; } 
+      .sidebar.show { display: flex; position: absolute; width: 100%; height: 100%; z-index: 10; }
     }
   </style>
 </head>
 <body>
 
-  <div class="app-shell">
-    <header class="app-header">
-      <div>
-        <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle">Verbal Ability Reviewer</p>
-      </div>
-      <span class="badge">Beta v2.0</span>
-    </header>
+  <header>
+    <h1>CSE Reviewer Hub</h1>
+    <span style="background:#fef9c3; padding:4px 8px; border-radius:12px; font-size:0.8rem; font-weight:bold;">Beta v3.0</span>
+  </header>
 
-    <div class="tabs-container">
-      <nav class="ability-tabs">
-        <button class="ability-tab active">Verbal Ability</button>
-        <button class="ability-tab">Numerical Ability</button>
-      </nav>
-      <nav class="mode-tabs">
-        <button class="mode-tab active" data-target="study">Review Topics</button>
-        <button class="mode-tab" data-target="practice">Practice Quiz</button>
-      </nav>
-    </div>
+  <div class="tabs-nav">
+    <button class="tab-btn active" onclick="setMode('study')">Review Topics</button>
+    <button class="tab-btn" onclick="setMode('practice')">Practice Quiz</button>
+  </div>
 
-    <main class="app-main">
-      <section id="study" class="mode-section active">
-        <div class="layout">
-          <aside class="sidebar">
-            <div class="sidebar-header">Topics List</div>
-            <ul class="topic-list" id="topicList"></ul>
-          </aside>
-          <div class="content-area">
-            <h2 id="lessonTitle" style="margin-bottom:1rem; font-size:1.8rem; color:var(--primary);">Select a Topic</h2>
-            <div id="lessonContent" style="line-height:1.8; font-size:1.05rem;">
-              <p>Please select a topic from the sidebar to view review notes.</p>
-            </div>
+  <div class="main-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">Select Topic</div>
+      <ul class="topic-list" id="topicList"></ul>
+    </aside>
+
+    <main class="content-area">
+      
+      <div id="studyView">
+        <div class="card">
+          <h2 id="lessonTitle" style="margin-bottom:1rem; color:var(--primary);">Welcome</h2>
+          <div id="lessonBody" style="line-height:1.8;">
+            <p>Select a topic from the sidebar to view review notes.</p>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="practice" class="mode-section">
-        <div class="layout">
-          <aside class="sidebar">
-            <div class="sidebar-header">Quiz Settings</div>
-            <div class="sidebar-content">
-              <div class="field">
-                <label>Topic</label>
+      <div id="practiceView" class="hidden">
+        <div class="card">
+          <div id="quizSetup">
+            <h2 style="margin-bottom:1rem;">Quiz Settings</h2>
+            <div class="quiz-controls">
+              <div>
+                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">TOPIC</label>
                 <select id="quizTopic"></select>
               </div>
-              <div class="field">
-                <label>Level</label>
+              <div>
+                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">LEVEL</label>
                 <select id="quizLevel">
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
@@ -149,59 +110,44 @@
                   <option value="all">Mix All Levels</option>
                 </select>
               </div>
-              <div class="field">
-                <label>Number of Items</label>
+              <div>
+                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">ITEMS</label>
                 <select id="quizCount">
-                  <option value="10">10 Items</option>
-                  <option value="20">20 Items</option>
-                  <option value="30">30 Items</option>
-                  <option value="50">50 Items</option>
+                  <option value="10">10 Questions</option>
+                  <option value="20">20 Questions</option>
+                  <option value="50">50 Questions</option>
                 </select>
               </div>
-              <div class="field">
-                <label>Timer</label>
-                <select id="timerMode">
-                   <option value="off">No Timer</option>
-                   <option value="60">60s per item</option>
-                   <option value="30">30s per item</option>
-                </select>
-              </div>
-              <button class="btn-primary" id="btnStart">START QUIZ</button>
-              <p class="sidebar-note">Questions are randomized from the database.</p>
+              <button class="action-btn" onclick="startQuiz()">START QUIZ</button>
             </div>
-          </aside>
-
-          <div class="content-area">
-            <div id="quizIntro">
-              <h2>Ready to Practice?</h2>
-              <p>Select your topic and settings on the left, then click <strong>Start Quiz</strong>.</p>
-            </div>
-
-            <div id="quizActive" class="hide">
-              <div class="quiz-header">
-                <span id="qProgress">Question 1/10</span>
-                <span id="qScore">Score: 0</span>
-              </div>
-              <div class="progress-bar"><div class="progress-fill" id="qBar"></div></div>
-              
-              <div class="quiz-question" id="qText"></div>
-              <div class="quiz-choices" id="qChoices"></div>
-              
-              <div class="quiz-explanation hide" id="qExplain"></div>
-              <button id="btnNext" class="btn-next hide">Next Question</button>
-            </div>
-
-            <div id="quizResults" class="hide">
-              <div style="text-align:center; margin-bottom:2rem;">
-                 <h2 style="color:var(--primary);">Quiz Complete!</h2>
-                 <p id="finalScore" style="font-size:1.5rem; font-weight:bold; margin:1rem 0;"></p>
-                 <button class="btn-primary" onclick="location.reload()" style="max-width:200px;">Take Another Quiz</button>
-              </div>
-              <div id="weakPointsContainer"></div>
-            </div>
+            <div id="debugMsg" style="margin-top:1rem; color:red; font-size:0.85rem;"></div>
           </div>
+
+          <div id="quizActive" class="hidden">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; color:var(--text-light); font-weight:bold;">
+              <span id="qProgress">Question 1/10</span>
+              <span id="qScore">Score: 0</span>
+            </div>
+            <div style="height:6px; background:#f1f5f9; border-radius:3px; margin-bottom:1.5rem;">
+              <div id="qBar" style="height:100%; background:var(--primary); width:0%; transition:0.3s;"></div>
+            </div>
+
+            <div class="question-text" id="qText">Loading...</div>
+            <div id="qChoices"></div>
+
+            <div id="qExplanation" class="explanation hidden"></div>
+            <button id="btnNext" class="action-btn hidden" style="margin-top:1rem;" onclick="nextQuestion()">Next Question</button>
+            <button class="action-btn" style="margin-top:1rem; background:#64748b;" onclick="quitQuiz()">Quit Quiz</button>
+          </div>
+
+          <div id="quizResults" class="hidden" style="text-align:center;">
+            <h2 style="color:var(--primary); font-size:2rem;">Quiz Complete!</h2>
+            <p id="finalScore" style="font-size:1.5rem; margin:1rem 0; font-weight:bold;"></p>
+            <button class="action-btn" onclick="location.reload()">Take Another Quiz</button>
+          </div>
+
         </div>
-      </section>
+      </div>
     </main>
   </div>
 
@@ -220,9 +166,9 @@
   <script src="questions_synonyms.js"></script>
   <script src="questions_antonyms.js"></script>
   <script src="questions_analogy.js"></script>
+  
   <script src="grammatical_number_questions.js"></script>
   <script src="paragraph_organization_questions.js"></script>
-
   <script src="subject_verb_agreement.js"></script>
   <script src="sentence_construction.js"></script>
   <script src="sentence_structure.js"></script>
@@ -230,8 +176,265 @@
   <script src="words_often_confused.js"></script>
   <script src="reading_comprehension.js"></script>
 
-  <script src="verbal.js"></script>
-  <script src="app.js"></script>
+  <script>
+    // --- 1. CONFIGURATION: LIST OF TOPICS ---
+    const TOPICS = [
+      { id: 'nouns', label: 'Nouns' },
+      { id: 'gender', label: 'Gender of Nouns' },
+      { id: 'grammatical_number', label: 'Grammatical Number' },
+      { id: 'pronouns', label: 'Pronouns' },
+      { id: 'verbs', label: 'Verbs' },
+      { id: 'adjectives', label: 'Adjectives' },
+      { id: 'adverbs', label: 'Adverbs' },
+      { id: 'prepositions', label: 'Prepositions' },
+      { id: 'conjunctions', label: 'Conjunctions' },
+      { id: 'interjections', label: 'Interjections' },
+      { id: 'articles', label: 'Articles' },
+      { id: 'subject_verb_agreement', label: 'Subject-Verb Agreement' },
+      { id: 'sentence_construction', label: 'Sentence Construction' },
+      { id: 'sentence_structure', label: 'Sentence Structure' },
+      { id: 'error_identification', label: 'Error Identification' },
+      { id: 'affixes', label: 'Affixes' },
+      { id: 'punctuations', label: 'Punctuations' },
+      { id: 'synonyms', label: 'Synonyms' },
+      { id: 'antonyms', label: 'Antonyms' },
+      { id: 'analogy', label: 'Analogy' },
+      { id: 'words_often_confused', label: 'Words Often Confused' },
+      { id: 'paragraph_organization', label: 'Paragraph Organization' },
+      { id: 'reading_comprehension', label: 'Reading Comprehension' }
+    ];
 
+    // --- 2. GLOBAL STATE ---
+    let currentTopicId = 'nouns';
+    let quizState = { questions: [], index: 0, score: 0 };
+
+    // --- 3. INITIALIZATION ---
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSidebar();
+      renderDropdown();
+      setMode('study');
+    });
+
+    // --- 4. UI RENDERERS ---
+    function renderSidebar() {
+      const list = document.getElementById('topicList');
+      list.innerHTML = '';
+      TOPICS.forEach(t => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.className = 'topic-btn';
+        btn.textContent = t.label;
+        btn.onclick = () => selectTopic(t.id, btn);
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+      // Select first by default
+      if(list.firstChild) selectTopic(TOPICS[0].id, list.firstChild.firstChild);
+    }
+
+    function renderDropdown() {
+      const drop = document.getElementById('quizTopic');
+      drop.innerHTML = '';
+      TOPICS.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = t.label;
+        drop.appendChild(opt);
+      });
+    }
+
+    function setMode(mode) {
+      // Update Tabs
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      // Update Views
+      document.getElementById('studyView').classList.add('hidden');
+      document.getElementById('practiceView').classList.add('hidden');
+      
+      if(mode === 'study') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('studyView').classList.remove('hidden');
+        renderLesson(currentTopicId);
+      } else {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('practiceView').classList.remove('hidden');
+        document.getElementById('quizSetup').classList.remove('hidden');
+        document.getElementById('quizActive').classList.add('hidden');
+        document.getElementById('quizResults').classList.add('hidden');
+      }
+    }
+
+    function selectTopic(id, btn) {
+      currentTopicId = id;
+      document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+      if(btn) btn.classList.add('active');
+      document.getElementById('quizTopic').value = id; // Sync dropdown
+      renderLesson(id);
+    }
+
+    function renderLesson(id) {
+      // Simple generic lesson renderer since main content is in Quiz
+      const topic = TOPICS.find(t => t.id === id);
+      document.getElementById('lessonTitle').textContent = topic ? topic.label : "Topic";
+      document.getElementById('lessonBody').innerHTML = `
+        <p><strong>${topic ? topic.label : id}</strong></p>
+        <p>Review notes for this topic are being optimized. Please proceed to <strong>Practice Quiz</strong> to test your knowledge with the extensive question bank.</p>
+      `;
+    }
+
+    // --- 5. SMART DATA FINDER (THE CRITICAL FIX) ---
+    function getQuestionData(id) {
+      // Normalize ID
+      const upperID = id.toUpperCase().replace(/-/g, '_');
+      
+      // Possible variable names in your files
+      const candidates = [
+        `${upperID}_QUESTIONS`,            // NOUNS_QUESTIONS
+        `QUESTIONS_${upperID}`,            // QUESTIONS_NOUNS
+        `${id}_QUESTIONS`,                 // nouns_QUESTIONS
+        id                                 // nouns
+      ];
+
+      // Special Cases
+      if(id === 'gender') candidates.push('GENDER_NOUNS_QUESTIONS', 'GENDER_QUESTIONS');
+      if(id === 'grammatical_number') candidates.push('GRAMMATICAL_NUMBER_QUESTIONS');
+      
+      // Search Window Object
+      for (let name of candidates) {
+        if (window[name]) return window[name];
+      }
+      return null;
+    }
+
+    // --- 6. QUIZ ENGINE ---
+    function startQuiz() {
+      const topicId = document.getElementById('quizTopic').value;
+      const level = document.getElementById('quizLevel').value;
+      const count = parseInt(document.getElementById('quizCount').value);
+      const debugEl = document.getElementById('debugMsg');
+
+      debugEl.textContent = ""; // Clear errors
+
+      const bank = getQuestionData(topicId);
+
+      if (!bank) {
+        debugEl.textContent = `❌ Error: Data for "${topicId}" not found. Check if the file is linked correctly below.`;
+        alert(`Data for ${topicId} is missing.`);
+        return;
+      }
+
+      // Gather questions
+      let pool = [];
+      if (level === 'all') {
+        Object.values(bank).forEach(arr => { if(Array.isArray(arr)) pool.push(...arr); });
+      } else {
+        // Handle super/expert naming
+        pool = bank[level] || [];
+        if (level === 'super' && !bank.super && bank.expert) pool = bank.expert;
+      }
+
+      if (pool.length === 0) {
+        debugEl.textContent = `⚠️ No questions found for Level: ${level}. Try a different level.`;
+        return;
+      }
+
+      // Shuffle
+      const questions = [...pool].sort(() => 0.5 - Math.random()).slice(0, count);
+      
+      // Init State
+      quizState = { questions, index: 0, score: 0 };
+
+      // Show Quiz UI
+      document.getElementById('quizSetup').classList.add('hidden');
+      document.getElementById('quizActive').classList.remove('hidden');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const qData = quizState.questions[quizState.index];
+      
+      // Normalize Data (Handle q vs question)
+      const q = {
+        text: qData.q || qData.question,
+        choices: qData.options || qData.choices,
+        correct: qData.a || qData.answer,
+        correctIndex: qData.correctIndex,
+        exp: qData.exp || qData.explanation
+      };
+
+      // Update UI
+      document.getElementById('qProgress').textContent = `Question ${quizState.index + 1}/${quizState.questions.length}`;
+      document.getElementById('qScore').textContent = `Score: ${quizState.score}`;
+      document.getElementById('qBar').style.width = `${((quizState.index)/quizState.questions.length)*100}%`;
+      document.getElementById('qText').textContent = q.text;
+      
+      // Render Choices
+      const container = document.getElementById('qChoices');
+      container.innerHTML = '';
+      
+      document.getElementById('qExplanation').classList.add('hidden');
+      document.getElementById('btnNext').classList.add('hidden');
+
+      q.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.textContent = choice;
+        btn.onclick = () => checkAnswer(btn, choice, idx, q);
+        container.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(btn, text, idx, q) {
+      // Prevent multiple clicks
+      if(!document.getElementById('btnNext').classList.contains('hidden')) return;
+
+      let isCorrect = false;
+      if (q.correctIndex !== undefined) isCorrect = (idx === q.correctIndex);
+      else isCorrect = (text === q.correct);
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        quizState.score++;
+      } else {
+        btn.classList.add('incorrect');
+        // Highlight correct
+        const allBtns = document.querySelectorAll('.choice-btn');
+        allBtns.forEach((b, i) => {
+           if ((q.correctIndex !== undefined && i === q.correctIndex) || b.textContent === q.correct) {
+             b.classList.add('correct');
+           }
+        });
+      }
+
+      // Show Explanation
+      const expEl = document.getElementById('qExplanation');
+      expEl.innerHTML = `<strong>${isCorrect ? "Correct!" : "Incorrect."}</strong><br>${q.exp || ""}`;
+      expEl.classList.remove('hidden');
+      document.getElementById('btnNext').classList.remove('hidden');
+      
+      // Update Score
+      document.getElementById('qScore').textContent = `Score: ${quizState.score}`;
+    }
+
+    function nextQuestion() {
+      quizState.index++;
+      if (quizState.index < quizState.questions.length) {
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      document.getElementById('quizActive').classList.add('hidden');
+      document.getElementById('quizResults').classList.remove('hidden');
+      document.getElementById('finalScore').textContent = `You scored ${quizState.score} out of ${quizState.questions.length}`;
+    }
+
+    function quitQuiz() {
+      if(confirm("Are you sure you want to quit?")) {
+        setMode('practice'); // Go back to setup
+      }
+    }
+  </script>
 </body>
 </html>
