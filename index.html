@@ -4,18 +4,434 @@
   <meta charset="UTF-8" />
   <title>CSE Reviewer Hub – Verbal Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #3b82f6;
+      --accent-soft: #dbeafe;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --muted: #9ca3af;
+      --background: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .app-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .app-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      background-color: var(--warning);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .ability-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0.75rem 1.5rem 1rem;
+    }
+
+    .ability-tab {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ability-tab.active {
+      background: var(--accent-soft);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    .mode-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .mode-tab {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-light);
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .mode-tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .app-main {
+      flex: 1;
+      padding: 1.5rem;
+    }
+
+    .mode-section {
+      display: none;
+    }
+
+    .mode-section.active {
+      display: block;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      background-color: var(--card-bg);
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      height: fit-content;
+    }
+
+    .sidebar-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .topic-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .topic-item {
+      padding: 0.75rem 1rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .topic-item:hover {
+      background-color: var(--accent-soft);
+    }
+
+    .topic-item.active {
+      background-color: var(--accent-soft);
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .sidebar-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 1rem;
+    }
+
+    .content {
+      background-color: var(--card-bg);
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .lesson-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lesson-meta {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .lesson-body {
+      line-height: 1.7;
+    }
+
+    .lesson-body h3 {
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .lesson-body ul, .lesson-body ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .lesson-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .example-box {
+      background-color: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    .field-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    select, textarea {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-progress-text {
+      font-weight: 500;
+    }
+
+    .quiz-timer {
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .progress-bar {
+      height: 6px;
+      background-color: var(--border);
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .quiz-card {
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-question {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-choice {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-choice:hover {
+      background-color: var(--accent-soft);
+    }
+
+    .quiz-choice.selected {
+      border-color: var(--primary);
+      background-color: var(--accent-soft);
+    }
+
+    .quiz-choice.correct {
+      border-color: var(--success);
+      background-color: rgba(16, 185, 129, 0.1);
+    }
+
+    .quiz-choice.incorrect {
+      border-color: var(--error);
+      background-color: rgba(239, 68, 68, 0.1);
+    }
+
+    .quiz-explanation {
+      padding: 1rem;
+      background-color: var(--accent-soft);
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--accent-soft);
+    }
+
+    .quiz-output {
+      margin-top: 1.5rem;
+    }
+
+    .stats-panel {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      background-color: var(--background);
+      border-radius: 0.375rem;
+      flex: 1;
+    }
+
+    .stat-item span:first-child {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .stat-item span:last-child {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    .app-footer {
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .ability-tabs, .mode-tabs {
+        padding: 0 1rem;
+      }
+      
+      .app-main {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="app-shell">
     <header class="app-header">
       <div>
         <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle">Verbal Ability · Gender of Nouns</p>
+        <!-- IMPORTANT: may id="appSubtitle" -->
+        <p class="app-subtitle" id="appSubtitle">Verbal Ability · Gender of Nouns</p>
       </div>
       <span class="badge">Beta</span>
     </header>
 
+    <!-- NEW: Ability tabs (Verbal / Numerical) -->
+    <nav class="ability-tabs">
+      <button class="ability-tab active" data-ability="verbal">Verbal Ability</button>
+      <button class="ability-tab" data-ability="numerical">Numerical Ability</button>
+    </nav>
+
+    <!-- Existing mo: Study / Practice tabs -->
     <nav class="mode-tabs">
       <button class="mode-tab active" data-mode="study">Study Mode</button>
       <button class="mode-tab" data-mode="practice">Practice Quiz</button>
@@ -29,7 +445,7 @@
             <h2 class="sidebar-title">Topics</h2>
 
             <!-- Dynamic list ng topics – pupunuin ng app.js gamit VERBAL_TOPICS -->
-            <div id="topicsList"></div>
+            <ul class="topic-list" id="topicsList"></ul>
 
             <p class="sidebar-note">
               Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz
@@ -161,37 +577,166 @@
     </footer>
   </div>
 
-  
-    <!-- ORDER: question banks muna, tapos logic -->
-  <script src="questions_nouns.js"></script>
-<script src="questions_gender.js"></script>
-<script src="grammatical_number_questions.js"></script>
-<script src="questions_pronouns.js"></script>
-<script src="questions_tenses.js"></script>
-<script src="questions_verbs.js"></script>
-<script src="questions_adverbs.js"></script>
-<script src="questions_adjectives.js"></script>
-<script src="questions_prepositions.js"></script>
-<script src="questions_conjunctions.js"></script>
-<script src="questions_articles.js"></script>
- <script src="questions_affixes.js"></script>
-   <script src="questions_synonyms.js"></script>
-   <script src="questions_antonyms.js"></script>
-     <script src="questions_analogy.js"></script>
- <script src="questions_punctuations.js"></script>
-<script src="questions_interjections.js"></script>
-<script src="subject_verb_agreement.js"></script>
-  <script src="words_often_confused.js"></script>
-<script src="sentence_construction.js"></script>
-<script src="sentence_structure.js"></script>  
-<script src="paragraph_organization_questions.js"></script>  
-<script src="error_identification.js"></script>   
-  <script src="reading_comprehension.js"></script> 
-<script src="app.js"></script>
+  <!-- JavaScript files -->
+  <script>
+    // Sample data structure for demonstration
+    const VERBAL_TOPICS = [
+      {
+        id: "gender-nouns",
+        title: "Gender of Nouns",
+        meta: "Masculine, Feminine, Common, Neuter",
+        content: `
+          <h3>What is Gender in Nouns?</h3>
+          <p>In English grammar, gender refers to the classification of nouns and pronouns as masculine, feminine, common, or neuter.</p>
+          
+          <h3>Types of Gender</h3>
+          <ul>
+            <li><strong>Masculine</strong> - refers to males (e.g., boy, man, king)</li>
+            <li><strong>Feminine</strong> - refers to females (e.g., girl, woman, queen)</li>
+            <li><strong>Common</strong> - refers to both males and females (e.g., teacher, doctor, student)</li>
+            <li><strong>Neuter</strong> - refers to things without life (e.g., table, book, car)</li>
+          </ul>
+          
+          <div class="example-box">
+            <strong>Examples:</strong><br>
+            Masculine: father, brother, king<br>
+            Feminine: mother, sister, queen<br>
+            Common: child, parent, cousin<br>
+            Neuter: house, tree, computer
+          </div>
+          
+          <h3>Special Cases</h3>
+          <p>Some nouns have different forms for masculine and feminine:</p>
+          <ul>
+            <li>actor - actress</li>
+            <li>waiter - waitress</li>
+            <li>hero - heroine</li>
+          </ul>
+        `
+      },
+      {
+        id: "pronouns",
+        title: "Pronouns",
+        meta: "Personal, Possessive, Reflexive",
+        content: `
+          <h3>What are Pronouns?</h3>
+          <p>Pronouns are words that replace nouns in sentences to avoid repetition.</p>
+          
+          <h3>Types of Pronouns</h3>
+          <ul>
+            <li><strong>Personal Pronouns</strong> - I, you, he, she, it, we, they</li>
+            <li><strong>Possessive Pronouns</strong> - mine, yours, his, hers, ours, theirs</li>
+            <li><strong>Reflexive Pronouns</strong> - myself, yourself, himself, herself, itself, ourselves</li>
+          </ul>
+        `
+      },
+      {
+        id: "verbs",
+        title: "Verbs and Tenses",
+        meta: "Present, Past, Future",
+        content: `
+          <h3>What are Verbs?</h3>
+          <p>Verbs are words that express action or state of being.</p>
+          
+          <h3>Verb Tenses</h3>
+          <ul>
+            <li><strong>Present Tense</strong> - describes current actions (e.g., I walk)</li>
+            <li><strong>Past Tense</strong> - describes completed actions (e.g., I walked)</li>
+            <li><strong>Future Tense</strong> - describes future actions (e.g., I will walk)</li>
+          </ul>
+        `
+      }
+    ];
 
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate topics list
+      const topicsList = document.getElementById('topicsList');
+      VERBAL_TOPICS.forEach(topic => {
+        const topicItem = document.createElement('li');
+        topicItem.className = 'topic-item';
+        topicItem.textContent = topic.title;
+        topicItem.dataset.topicId = topic.id;
+        topicsList.appendChild(topicItem);
+      });
+
+      // Set first topic as active
+      if (VERBAL_TOPICS.length > 0) {
+        topicsList.firstChild.classList.add('active');
+        loadTopic(VERBAL_TOPICS[0]);
+      }
+
+      // Add click handlers for topics
+      document.querySelectorAll('.topic-item').forEach(item => {
+        item.addEventListener('click', function() {
+          document.querySelectorAll('.topic-item').forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+          
+          const topicId = this.dataset.topicId;
+          const topic = VERBAL_TOPICS.find(t => t.id === topicId);
+          if (topic) {
+            loadTopic(topic);
+          }
+        });
+      });
+
+      // Add click handlers for ability tabs
+      document.querySelectorAll('.ability-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.ability-tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          const ability = this.dataset.ability;
+          updateSubtitle(ability);
+        });
+      });
+
+      // Add click handlers for mode tabs
+      document.querySelectorAll('.mode-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          const mode = this.dataset.mode;
+          document.querySelectorAll('.mode-section').forEach(section => {
+            section.classList.remove('active');
+          });
+          document.getElementById(`mode-${mode}`).classList.add('active');
+        });
+      });
+
+      // Populate practice topic dropdown
+      const practiceTopic = document.getElementById('practice-topic');
+      VERBAL_TOPICS.forEach(topic => {
+        const option = document.createElement('option');
+        option.value = topic.id;
+        option.textContent = topic.title;
+        practiceTopic.appendChild(option);
+      });
+
+      // Start quiz button handler
+      document.getElementById('start-quiz-btn').addEventListener('click', function() {
+        alert('Quiz functionality would be implemented here with the selected settings.');
+      });
+    });
+
+    function loadTopic(topic) {
+      document.getElementById('lesson-title').textContent = topic.title;
+      document.getElementById('lesson-meta').textContent = topic.meta;
+      document.getElementById('lesson-content').innerHTML = topic.content;
+    }
+
+    function updateSubtitle(ability) {
+      const subtitle = document.getElementById('appSubtitle');
+      if (ability === 'verbal') {
+        subtitle.textContent = 'Verbal Ability · Gender of Nouns';
+      } else if (ability === 'numerical') {
+        subtitle.textContent = 'Numerical Ability · Basic Operations';
+      }
+    }
+  </script>
 </body>
 </html>
-
 
 
 
