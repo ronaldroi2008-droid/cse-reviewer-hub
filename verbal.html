@@ -321,6 +321,40 @@
       transform: translateY(-1px);
     }
 
+    /* NEW: Items count switcher styles */
+    .count-switcher {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: flex-end;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .count-label {
+      margin-right: 2px;
+    }
+
+    .count-chip {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.08s;
+    }
+
+    .count-chip.active {
+      background: var(--accent);
+      color: #f9fafb;
+      border-color: transparent;
+      transform: translateY(-1px);
+    }
+
     .question-text {
       font-size: 1.02rem;
       margin-bottom: 10px;
@@ -442,6 +476,10 @@
       .level-switcher {
         justify-content: flex-start;
       }
+      
+      .count-switcher {
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 600px) {
@@ -503,11 +541,23 @@
                 <span id="quizLevelLabel">Beginner</span>
               </p>
             </div>
-            <div class="level-switcher">
-              <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
-              <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
-              <button class="level-chip" data-level="advanced" type="button">Advanced</button>
-              <button class="level-chip" data-level="expert" type="button">Expert</button>
+            <div>
+              <div class="level-switcher">
+                <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
+                <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
+                <button class="level-chip" data-level="advanced" type="button">Advanced</button>
+                <button class="level-chip" data-level="expert" type="button">Expert</button>
+              </div>
+
+              <!-- NEW: question-count switcher -->
+              <div class="count-switcher">
+                <span class="count-label">Items:</span>
+                <button class="count-chip active" data-count="10" type="button">10</button>
+                <button class="count-chip" data-count="20" type="button">20</button>
+                <button class="count-chip" data-count="30" type="button">30</button>
+                <button class="count-chip" data-count="40" type="button">40</button>
+                <button class="count-chip" data-count="50" type="button">50</button>
+              </div>
             </div>
           </div>
 
@@ -615,6 +665,7 @@
     let currentTopicId = VERBAL_TOPICS[0]?.id || "analogy";
     let currentLevel = "beginner";
     let currentIndex = 0;
+    let currentQuestionLimit = 10; // ✅ default: 10 items per quiz session
 
     const modeTabs = document.querySelectorAll(".mode-tab");
     const topicListEl = document.getElementById("topicList");
@@ -637,6 +688,7 @@
     const nextBtn = document.getElementById("nextBtn");
     const progressTextEl = document.getElementById("progressText");
     const levelChips = document.querySelectorAll(".level-chip");
+    const countChips = document.querySelectorAll(".count-chip"); // ✅ NEW: count chips
 
     // ==========================================
     // 3. HELPERS
@@ -776,7 +828,10 @@
       const bank = window.VERBAL_QUESTION_BANK || {};
       const topicSet = bank[currentTopicId] || {};
       const levelQuestions = topicSet[currentLevel] || [];
-      return levelQuestions;
+
+      // ✅ gumamit lang ng first N questions (10/20/30/40/50)
+      const limit = Math.min(currentQuestionLimit, levelQuestions.length);
+      return levelQuestions.slice(0, limit);
     }
 
     function renderQuiz() {
@@ -899,6 +954,23 @@
           levelChips.forEach((c) => {
             c.classList.toggle("active", c.dataset.level === level);
           });
+          renderQuiz();
+        });
+      });
+
+      // ✅ NEW: Items per quiz (10/20/30/40/50)
+      countChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const count = parseInt(chip.dataset.count, 10);
+          if (!count || count === currentQuestionLimit) return;
+
+          currentQuestionLimit = count;
+          currentIndex = 0; // balik sa unang tanong
+
+          countChips.forEach((c) => {
+            c.classList.toggle("active", c === chip);
+          });
+
           renderQuiz();
         });
       });
