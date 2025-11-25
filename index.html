@@ -573,9 +573,9 @@
     </footer>
   </div>
 
-  <!-- COMPLETE 200 QUESTIONS PER TOPIC -->
+  <!-- ACTUAL QUESTION FILES - ITO ANG GAGAMITIN NG IYONG MGA 200 QUESTIONS -->
   <script>
-    // ALL VERBAL TOPICS
+    // VERBAL TOPICS
     const VERBAL_TOPICS = [
       { id: "nouns", label: "Nouns" },
       { id: "gender", label: "Gender of Nouns" },
@@ -626,70 +626,95 @@
       }
     };
 
-    // FUNCTION TO GENERATE 200 REAL QUESTIONS PER TOPIC
-    function generate200Questions(topicName) {
-      const levels = ['beginner', 'intermediate', 'advanced', 'super'];
-      const questions = {};
+    // PLACEHOLDER FOR YOUR ACTUAL QUESTIONS
+    // ITO ANG PALITAN MO NG ACTUAL NA MGA QUESTIONS MO
+    let NOUNS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let GENDER_NOUNS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let GRAMMATICAL_NUMBER_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let VERBS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let ADJECTIVES_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let CONJUNCTIONS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let INTERJECTIONS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let ARTICLES_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let SUBJECT_VERB_AGREEMENT_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let SENTENCE_CONSTRUCTION_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let SENTENCE_STRUCTURE_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let ERROR_IDENTIFICATION_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let AFFIXES_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let PUNCTUATIONS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let SYNONYMS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let ANTONYMS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let ANALOGY_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let WORDS_OFTEN_CONFUSED_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let PARAGRAPH_ORGANIZATION_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let READING_COMPREHENSION_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+    let PREPOSITIONS_QUESTIONS = { beginner: [], intermediate: [], advanced: [], super: [] };
+
+    // FUNCTION TO LOAD YOUR ACTUAL QUESTIONS
+    function loadActualQuestions() {
+      console.log("🔄 Loading your actual questions...");
       
-      levels.forEach(level => {
-        questions[level] = [];
-        
-        // Generate 50 questions per level
-        for (let i = 1; i <= 50; i++) {
-          const questionNumber = (levels.indexOf(level) * 50) + i;
-          
-          questions[level].push({
-            question: `${topicName} - Question ${questionNumber}: Which of the following is correct?`,
+      // DITO MO ILALAGAY ANG ACTUAL NA 200 QUESTIONS MO PER TOPIC
+      // HALIMBAWA:
+      
+      // NOUNS - 200 ACTUAL QUESTIONS
+      NOUNS_QUESTIONS = {
+        beginner: [
+          // 50 actual beginner questions here
+          {
+            question: "What is a noun?",
             choices: [
-              `First option for ${topicName} Q${questionNumber}`,
-              `Second option for ${topicName} Q${questionNumber}`,
-              `Third option for ${topicName} Q${questionNumber}`,
-              `Fourth option for ${topicName} Q${questionNumber}`
+              "A word that shows action",
+              "A word that names a person, place, thing, or idea", 
+              "A word that describes something",
+              "A word that connects ideas"
             ],
-            correctIndex: questionNumber % 4, // Rotate correct answers
-            explanation: `Explanation for ${topicName} question ${questionNumber} at ${level} level. This is the correct answer because it follows proper grammar rules.`
-          });
-        }
-      });
-      
-      return questions;
+            correctIndex: 1,
+            explanation: "A noun is a word that names a person, place, thing, or idea."
+          },
+          // ... add 49 more actual beginner questions
+        ],
+        intermediate: [
+          // 50 actual intermediate questions here  
+        ],
+        advanced: [
+          // 50 actual advanced questions here
+        ],
+        super: [
+          // 50 actual super questions here
+        ]
+      };
+
+      // GENDER - 200 ACTUAL QUESTIONS  
+      GENDER_NOUNS_QUESTIONS = {
+        beginner: [
+          // 50 actual beginner questions here
+          {
+            question: "What is the feminine form of 'actor'?",
+            choices: ["actor", "actress", "acting", "act"],
+            correctIndex: 1,
+            explanation: "The feminine form of 'actor' is 'actress'."
+          },
+          // ... add 49 more actual beginner questions
+        ],
+        intermediate: [
+          // 50 actual intermediate questions here
+        ],
+        advanced: [
+          // 50 actual advanced questions here
+        ],
+        super: [
+          // 50 actual super questions here
+        ]
+      };
+
+      // ADD MORE TOPICS WITH YOUR ACTUAL 200 QUESTIONS...
+
+      console.log("✅ Actual questions loaded!");
     }
 
-    // GENERATE 200 QUESTIONS FOR EACH TOPIC
-    console.log("Generating 200 questions for each topic...");
-
-    const NOUNS_QUESTIONS = generate200Questions("Nouns");
-    const GENDER_NOUNS_QUESTIONS = generate200Questions("Gender of Nouns");
-    const GRAMMATICAL_NUMBER_QUESTIONS = generate200Questions("Grammatical Number");
-    const VERBS_QUESTIONS = generate200Questions("Verbs");
-    const ADJECTIVES_QUESTIONS = generate200Questions("Adjectives");
-    const CONJUNCTIONS_QUESTIONS = generate200Questions("Conjunctions");
-    const INTERJECTIONS_QUESTIONS = generate200Questions("Interjections");
-    const ARTICLES_QUESTIONS = generate200Questions("Articles");
-    const SUBJECT_VERB_AGREEMENT_QUESTIONS = generate200Questions("Subject-Verb Agreement");
-    const SENTENCE_CONSTRUCTION_QUESTIONS = generate200Questions("Sentence Construction");
-    const SENTENCE_STRUCTURE_QUESTIONS = generate200Questions("Sentence Structure");
-    const ERROR_IDENTIFICATION_QUESTIONS = generate200Questions("Error Identification");
-    const AFFIXES_QUESTIONS = generate200Questions("Affixes");
-    const PUNCTUATIONS_QUESTIONS = generate200Questions("Punctuations");
-    const SYNONYMS_QUESTIONS = generate200Questions("Synonyms");
-    const ANTONYMS_QUESTIONS = generate200Questions("Antonyms");
-    const ANALOGY_QUESTIONS = generate200Questions("Analogy");
-    const WORDS_OFTEN_CONFUSED_QUESTIONS = generate200Questions("Words Often Confused");
-    const PARAGRAPH_ORGANIZATION_QUESTIONS = generate200Questions("Paragraph Organization");
-    const READING_COMPREHENSION_QUESTIONS = generate200Questions("Reading Comprehension");
-    const PREPOSITIONS_QUESTIONS = generate200Questions("Prepositions");
-
-    console.log("✅ Generated 200 questions for each of 21 topics!");
-    console.log("Total questions available:", 21 * 200); // 4,200 questions total!
-
-    // Verify one topic has 200 questions
-    console.log("Nouns questions:", 
-      NOUNS_QUESTIONS.beginner.length + 
-      NOUNS_QUESTIONS.intermediate.length + 
-      NOUNS_QUESTIONS.advanced.length + 
-      NOUNS_QUESTIONS.super.length
-    );
+    // Load your actual questions when page loads
+    loadActualQuestions();
   </script>
 
   <!-- MAIN APP LOGIC -->
@@ -776,7 +801,7 @@
 
       // Practice Mode Functions
       function getQuestionBank(topic) {
-        console.log(`Loading ALL 200 questions for: ${topic}`);
+        console.log(`📚 Loading questions for: ${topic}`);
         
         const banks = {
           nouns: NOUNS_QUESTIONS,
@@ -802,7 +827,18 @@
           prepositions: PREPOSITIONS_QUESTIONS
         };
         
-        return banks[topic] || null;
+        const bank = banks[topic];
+        if (bank) {
+          console.log(`✅ Found question bank for ${topic}`);
+          console.log(`   Beginner: ${bank.beginner?.length || 0} questions`);
+          console.log(`   Intermediate: ${bank.intermediate?.length || 0} questions`);
+          console.log(`   Advanced: ${bank.advanced?.length || 0} questions`);
+          console.log(`   Super: ${bank.super?.length || 0} questions`);
+        } else {
+          console.log(`❌ No question bank found for ${topic}`);
+        }
+        
+        return bank;
       }
 
       function getAllQuestions(bank) {
@@ -815,14 +851,14 @@
           ...(bank.super || [])
         ];
         
-        console.log(`✅ Total questions available: ${allQuestions.length}`);
+        console.log(`📊 Total questions available: ${allQuestions.length}`);
         return allQuestions;
       }
 
       function getQuestionsByLevel(bank, level) {
         if (!bank) return [];
         const questions = bank[level] || [];
-        console.log(`✅ Questions for ${level} level: ${questions.length}`);
+        console.log(`📊 Questions for ${level} level: ${questions.length}`);
         return questions;
       }
 
@@ -889,10 +925,7 @@
 
         const q = quizState.questions[quizState.currentIndex];
         
-        console.log("🔄 Displaying question:", quizState.currentIndex + 1);
-        console.log("Question:", q.question);
-        console.log("Choices:", q.choices);
-        console.log("Correct index:", q.correctIndex);
+        console.log(`❓ Displaying question ${quizState.currentIndex + 1}:`, q.question);
 
         quizState.answered = false;
         quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
@@ -1018,7 +1051,6 @@
             return;
           }
 
-          // Show actual question count available
           const actualCount = Math.min(count, pool.length);
           if (actualCount < count) {
             alert(`Only ${actualCount} questions available for this selection.`);
