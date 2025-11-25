@@ -5,7 +5,6 @@
   <title>CSE Reviewer Hub – Verbal Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* CSS code remains the same as in your original file */
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -22,11 +21,7 @@
       --warning: #f59e0b;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -35,383 +30,93 @@
       background-color: var(--background);
     }
 
-    .app-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .app-shell { min-height: 100vh; display: flex; flex-direction: column; }
 
     .app-header {
       background-color: var(--card-bg);
       border-bottom: 1px solid var(--border);
       padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
-    .app-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
+    .app-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .app-subtitle { color: var(--text-light); font-size: 0.9rem; }
+    .badge { background-color: var(--warning); color: white; padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
 
-    .app-subtitle {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
+    .ability-tabs { display: flex; gap: 0.5rem; margin: 0.75rem 1.5rem 1rem; }
+    .ability-tab { padding: 0.4rem 0.9rem; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: var(--muted); font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .ability-tab.active { background: var(--accent-soft); color: var(--text); border-color: var(--accent); }
 
-    .badge {
-      background-color: var(--warning);
-      color: white;
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
+    .mode-tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 1.5rem; }
+    .mode-tab { padding: 0.75rem 1.5rem; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-light); cursor: pointer; font-weight: 500; }
+    .mode-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
 
-    .ability-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin: 0.75rem 1.5rem 1rem;
-    }
+    .app-main { flex: 1; padding: 1.5rem; }
+    .mode-section { display: none; }
+    .mode-section.active { display: block; }
 
-    .ability-tab {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .sidebar { background-color: var(--card-bg); border-radius: 0.5rem; border: 1px solid var(--border); padding: 1.5rem; height: fit-content; }
+    .sidebar-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+    .topic-list { list-style: none; margin-bottom: 1.5rem; }
+    .topic-item { padding: 0.75rem 1rem; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.2s; }
+    .topic-item:hover { background-color: var(--accent-soft); }
+    .topic-item.active { background-color: var(--accent-soft); color: var(--primary); font-weight: 500; }
+    .sidebar-note { font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-top: 1rem; }
 
-    .ability-tab.active {
-      background: var(--accent-soft);
-      color: var(--text);
-      border-color: var(--accent);
-    }
+    .content { background-color: var(--card-bg); border-radius: 0.5rem; border: 1px solid var(--border); padding: 1.5rem; }
+    .lesson-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .lesson-meta { color: var(--text-light); font-size: 0.9rem; }
+    .lesson-body { line-height: 1.7; }
+    .lesson-body h3 { margin: 1.5rem 0 0.5rem; }
+    .lesson-body ul, .lesson-body ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .lesson-body li { margin-bottom: 0.5rem; }
 
-    .mode-tabs {
-      display: flex;
-      border-bottom: 1px solid var(--border);
-      padding: 0 1.5rem;
-    }
+    .field { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .field-label { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; }
+    select, textarea { padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.375rem; font-family: inherit; }
 
-    .mode-tab {
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      color: var(--text-light);
-      cursor: pointer;
-      font-weight: 500;
-    }
+    .btn-primary { background-color: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s; }
+    .btn-primary:hover { background-color: var(--primary-dark); }
+    .full-width { width: 100%; }
 
-    .mode-tab.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
+    .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .quiz-progress-text { font-weight: 500; }
+    .quiz-timer { font-weight: 500; color: var(--text-light); }
+    .progress-bar { height: 6px; background-color: var(--border); border-radius: 3px; margin-bottom: 1.5rem; overflow: hidden; }
+    .progress-fill { height: 100%; background-color: var(--primary); width: 0%; transition: width 0.3s; }
 
-    .app-main {
-      flex: 1;
-      padding: 1.5rem;
-    }
+    .quiz-card { margin-bottom: 1.5rem; }
+    .quiz-question { font-size: 1.1rem; font-weight: 500; margin-bottom: 1.5rem; white-space: pre-line; } /* Added pre-line for breaks */
+    .quiz-choices { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .quiz-choice { padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 0.375rem; cursor: pointer; transition: all 0.2s; text-align: left; }
+    .quiz-choice:hover { background-color: var(--accent-soft); }
+    .quiz-choice.selected { border-color: var(--primary); background-color: var(--accent-soft); }
+    .quiz-choice.correct { border-color: var(--success); background-color: rgba(16, 185, 129, 0.1); }
+    .quiz-choice.incorrect { border-color: var(--error); background-color: rgba(239, 68, 68, 0.1); }
+    .quiz-explanation { padding: 1rem; background-color: var(--accent-soft); border-radius: 0.375rem; margin-bottom: 1rem; }
+    .hide { display: none; }
 
-    .mode-section {
-      display: none;
-    }
+    .btn-secondary { background-color: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+    .btn-secondary:hover { background-color: var(--accent-soft); }
 
-    .mode-section.active {
-      display: block;
-    }
+    .quiz-output { margin-top: 1.5rem; }
+    .stats-panel { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1rem; background-color: var(--background); border-radius: 0.375rem; flex: 1; }
+    .stat-item span:first-child { font-size: 0.9rem; color: var(--text-light); }
+    .stat-item span:last-child { font-size: 1.5rem; font-weight: 600; margin-top: 0.25rem; }
+    .app-footer { background-color: var(--card-bg); border-top: 1px solid var(--border); padding: 1rem 1.5rem; text-align: center; color: var(--text-light); font-size: 0.9rem; }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .sidebar {
-      background-color: var(--card-bg);
-      border-radius: 0.5rem;
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      height: fit-content;
-    }
-
-    .sidebar-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .topic-list {
-      list-style: none;
-      margin-bottom: 1.5rem;
-    }
-
-    .topic-item {
-      padding: 0.75rem 1rem;
-      border-radius: 0.375rem;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .topic-item:hover {
-      background-color: var(--accent-soft);
-    }
-
-    .topic-item.active {
-      background-color: var(--accent-soft);
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .sidebar-note {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      font-style: italic;
-      margin-top: 1rem;
-    }
-
-    .content {
-      background-color: var(--card-bg);
-      border-radius: 0.5rem;
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-    }
-
-    .lesson-header {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .lesson-meta {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    .lesson-body {
-      line-height: 1.7;
-    }
-
-    .lesson-body h3 {
-      margin: 1.5rem 0 0.5rem;
-    }
-
-    .lesson-body ul, .lesson-body ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .lesson-body li {
-      margin-bottom: 0.5rem;
-    }
-
-    .example-box {
-      background-color: var(--accent-soft);
-      border-left: 4px solid var(--accent);
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 0 0.375rem 0.375rem 0;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1rem;
-    }
-
-    .field-label {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    select, textarea {
-      padding: 0.5rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.375rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-    }
-
-    .full-width {
-      width: 100%;
-    }
-
-    .quiz-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .quiz-progress-text {
-      font-weight: 500;
-    }
-
-    .quiz-timer {
-      font-weight: 500;
-      color: var(--text-light);
-    }
-
-    .progress-bar {
-      height: 6px;
-      background-color: var(--border);
-      border-radius: 3px;
-      margin-bottom: 1.5rem;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background-color: var(--primary);
-      width: 0%;
-      transition: width 0.3s;
-    }
-
-    .quiz-card {
-      margin-bottom: 1.5rem;
-    }
-
-    .quiz-question {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-
-    .quiz-choices {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .quiz-choice {
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .quiz-choice:hover {
-      background-color: var(--accent-soft);
-    }
-
-    .quiz-choice.selected {
-      border-color: var(--primary);
-      background-color: var(--accent-soft);
-    }
-
-    .quiz-choice.correct {
-      border-color: var(--success);
-      background-color: rgba(16, 185, 129, 0.1);
-    }
-
-    .quiz-choice.incorrect {
-      border-color: var(--error);
-      background-color: rgba(239, 68, 68, 0.1);
-    }
-
-    .quiz-explanation {
-      padding: 1rem;
-      background-color: var(--accent-soft);
-      border-radius: 0.375rem;
-      margin-bottom: 1rem;
-    }
-
-    .hide {
-      display: none;
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.375rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--accent-soft);
-    }
-
-    .quiz-output {
-      margin-top: 1.5rem;
-    }
-
-    .stats-panel {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      background-color: var(--background);
-      border-radius: 0.375rem;
-      flex: 1;
-    }
-
-    .stat-item span:first-child {
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    .stat-item span:last-child {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 0.25rem;
-    }
-
-    .app-footer {
-      background-color: var(--card-bg);
-      border-top: 1px solid var(--border);
-      padding: 1rem 1.5rem;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
+    /* Result Colors */
+    .wp-bad { color: var(--error); font-weight: bold; }
+    .wp-good { color: var(--success); font-weight: bold; }
+    .weakpoints-list { margin-left: 1rem; }
+    .weakpoint-item { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 
     @media (max-width: 768px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .ability-tabs, .mode-tabs {
-        padding: 0 1rem;
-      }
-
-      .app-main {
-        padding: 1rem;
-      }
+      .layout { grid-template-columns: 1fr; }
+      .ability-tabs, .mode-tabs { padding: 0 1rem; }
+      .app-main { padding: 1rem; }
     }
   </style>
 </head>
@@ -420,70 +125,59 @@
     <header class="app-header">
       <div>
         <h1 class="app-title">CSE Reviewer Hub</h1>
-        <p class="app-subtitle" id="appSubtitle">Verbal Ability · Gender of Nouns</p>
+        <p class="app-subtitle" id="appSubtitle">Verbal Ability</p>
       </div>
       <span class="badge">Beta</span>
     </header>
 
-    <!-- Ability tabs (Verbal / Numerical) -->
     <nav class="ability-tabs">
       <button class="ability-tab active" data-ability="verbal">Verbal Ability</button>
       <button class="ability-tab" data-ability="numerical">Numerical Ability</button>
     </nav>
 
-    <!-- Study / Practice tabs -->
     <nav class="mode-tabs">
       <button class="mode-tab active" data-mode="study">Study Mode</button>
       <button class="mode-tab" data-mode="practice">Practice Quiz</button>
     </nav>
 
     <main class="app-main">
-      <!-- Study Mode -->
       <section id="mode-study" class="mode-section active">
         <div class="layout">
           <aside class="sidebar">
             <h2 class="sidebar-title">Topics</h2>
             <ul class="topic-list" id="topicsList"></ul>
-            <p class="sidebar-note">
-              Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz
-              para masanay sa exam-style questions.
-            </p>
+            <p class="sidebar-note">Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz.</p>
           </aside>
-
           <section class="content">
             <header class="lesson-header">
-              <h2 id="lesson-title">Gender of Nouns</h2>
-              <p id="lesson-meta" class="lesson-meta"></p>
+              <h2 id="lesson-title">Select a Topic</h2>
+              <p id="lesson-meta" class="lesson-meta">Lessons</p>
             </header>
             <div id="lesson-content" class="lesson-body">
-              <p>Loading lesson…</p>
+              <p>Please select a topic from the left to view the lesson.</p>
             </div>
           </section>
         </div>
       </section>
 
-      <!-- Practice Mode -->
       <section id="mode-practice" class="mode-section">
         <div class="layout">
           <aside class="sidebar">
             <h2 class="sidebar-title">Quiz Setup</h2>
-
             <label class="field">
               <span class="field-label">Topic</span>
               <select id="practice-topic"></select>
             </label>
-
             <label class="field">
               <span class="field-label">Level</span>
               <select id="practice-level">
-                <option value="all">All Levels (200 Questions)</option>
-                <option value="beginner">Beginner (50 Questions)</option>
-                <option value="intermediate">Intermediate (50 Questions)</option>
-                <option value="advanced">Advanced (50 Questions)</option>
-                <option value="super">Super / Hard (50 Questions)</option>
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert / Super</option>
               </select>
             </label>
-
             <label class="field">
               <span class="field-label">Number of items</span>
               <select id="practice-count">
@@ -492,10 +186,9 @@
                 <option value="30">30 items</option>
                 <option value="50">50 items</option>
                 <option value="100">100 items</option>
-                <option value="200">ALL 200 items</option>
+                <option value="200">Max Available</option>
               </select>
             </label>
-
             <label class="field">
               <span class="field-label">Timer</span>
               <select id="timer-mode">
@@ -505,63 +198,32 @@
                 <option value="30">30s per item</option>
               </select>
             </label>
-
             <label class="field">
               <span class="field-label">Weak points / focus</span>
-              <textarea
-                id="practice-weak"
-                rows="2"
-                placeholder="Example: professions, common vs neuter, pronoun agreement"
-              ></textarea>
+              <textarea id="practice-weak" rows="2" placeholder="Example: professions, logic"></textarea>
             </label>
-
-            <button id="start-quiz-btn" class="btn-primary full-width">
-              Start practice quiz
-            </button>
-
-            <p class="sidebar-note">
-              All 200 questions are available. Choose "All Levels" and "ALL 200 items" for complete review.
-            </p>
+            <button id="start-quiz-btn" class="btn-primary full-width">Start practice quiz</button>
           </aside>
 
           <section class="content">
             <header class="quiz-header">
-              <div id="quiz-progress" class="quiz-progress-text">
-                Question 0 of 0
-              </div>
-              <div id="quiz-timer" class="quiz-timer">
-                Time left: --
-              </div>
+              <div id="quiz-progress" class="quiz-progress-text">Question 0 of 0</div>
+              <div id="quiz-timer" class="quiz-timer">Time left: --</div>
             </header>
-
             <div class="progress-bar">
               <div class="progress-fill" id="quiz-progress-fill"></div>
             </div>
-
             <article class="quiz-card">
-              <div id="quiz-question" class="quiz-question">
-                Ready when you are. Set up your quiz on the left and press
-                <strong>"Start practice quiz"</strong>.
-              </div>
+              <div id="quiz-question" class="quiz-question">Ready when you are. Set up your quiz on the left.</div>
               <div id="quiz-choices" class="quiz-choices"></div>
               <div id="quiz-explanation" class="quiz-explanation hide"></div>
-
-              <button id="quiz-next" class="btn-secondary quiz-next hide">
-                Next question
-              </button>
+              <button id="quiz-next" class="btn-secondary quiz-next hide">Next question</button>
             </article>
-
             <section id="quiz-output" class="quiz-output">
               <div class="stats-panel">
-                <div class="stat-item">
-                  <span>Correct</span><span>0</span>
-                </div>
-                <div class="stat-item">
-                  <span>Incorrect</span><span>0</span>
-                </div>
-                <div class="stat-item">
-                  <span>Unanswered</span><span>0</span>
-                </div>
+                <div class="stat-item"><span>Correct</span><span>0</span></div>
+                <div class="stat-item"><span>Incorrect</span><span>0</span></div>
+                <div class="stat-item"><span>Unanswered</span><span>0</span></div>
               </div>
             </section>
           </section>
@@ -570,122 +232,36 @@
     </main>
 
     <footer class="app-footer">
-      <span>
-        CSE Reviewer Hub · Verbal Ability · Practice only · Not official CSC
-        material
-      </span>
+      <span>CSE Reviewer Hub · Verbal Ability · Practice only</span>
     </footer>
   </div>
 
-  <!-- SAMPLE DATA - ITO ANG MAGPAPALABAS NG LAHAT NG 200 QUESTIONS -->
-  <script>
-    // VERBAL TOPICS
-    const VERBAL_TOPICS = [
-      { id: "nouns", label: "Nouns" },
-      { id: "gender", label: "Gender of Nouns" },
-      { id: "grammatical_number", label: "Grammatical Number" },
-      { id: "verbs", label: "Verbs" },
-      { id: "adjectives", label: "Adjectives" },
-      { id: "conjunctions", label: "Conjunctions" },
-      { id: "interjections", label: "Interjections" },
-      { id: "articles", label: "Articles" },
-      { id: "subject_verb_agreement", label: "Subject-Verb Agreement" },
-      { id: "sentence_construction", label: "Sentence Construction" },
-      { id: "sentence_structure", label: "Sentence Structure" },
-      { id: "error_identification", label: "Error Identification" },
-      { id: "affixes", label: "Affixes" },
-      { id: "punctuations", label: "Punctuations" },
-      { id: "synonyms", label: "Synonyms" },
-      { id: "antonyms", label: "Antonyms" },
-      { id: "analogy", label: "Analogy" },
-      { id: "words_often_confused", label: "Words Often Confused" },
-      { id: "paragraph_organization", label: "Paragraph Organization" },
-      { id: "reading_comprehension", label: "Reading Comprehension" },
-      { id: "prepositions", label: "Prepositions" }
-    ];
+  <script src="js/questions/nouns_questions.js"></script>
+  <script src="js/questions/gender_nouns_questions.js"></script>
+  <script src="js/questions/grammatical_number_questions.js"></script>
+  <script src="js/questions/verbs_questions.js"></script>
+  <script src="js/questions/pronouns_questions.js"></script>
+  <script src="js/questions/adjectives_questions.js"></script>
+  <script src="js/questions/adverbs_questions.js"></script>
+  <script src="js/questions/prepositions_questions.js"></script>
+  <script src="js/questions/conjunctions_questions.js"></script>
+  <script src="js/questions/interjections_questions.js"></script>
+  <script src="js/questions/articles_questions.js"></script>
+  <script src="js/questions/subject_verb_agreement_questions.js"></script>
+  <script src="js/questions/sentence_construction_questions.js"></script>
+  <script src="js/questions/sentence_structure_questions.js"></script>
+  <script src="js/questions/error_identification_questions.js"></script>
+  <script src="js/questions/affixes_questions.js"></script>
+  <script src="js/questions/punctuations_questions.js"></script>
+  <script src="js/questions/synonyms_questions.js"></script>
+  <script src="js/questions/antonyms_questions.js"></script>
+  <script src="js/questions/analogy_questions.js"></script>
+  <script src="js/questions/words_often_confused_questions.js"></script>
+  <script src="js/questions/paragraph_organization_questions.js"></script>
+  <script src="js/questions/reading_comprehension_questions.js"></script>
+  
+  <script src="verbal.js"></script>
 
-    // SAMPLE LESSONS
-    const LESSONS = {
-      nouns: {
-        title: "Nouns",
-        level: "CSE Verbal Ability",
-        intro: "A noun is a word that names a person, place, thing, or idea.",
-        keyPoints: [
-          "Common nouns name general items (e.g., city, dog)",
-          "Proper nouns name specific items and are capitalized (e.g., Manila, Rover)",
-          "Collective nouns name groups (e.g., team, family)",
-          "Abstract nouns name ideas or concepts (e.g., love, freedom)"
-        ],
-        quickTips: [
-          "Look for capitalization clues for proper nouns",
-          "If it names a person, place, thing, or idea, it's a noun"
-        ]
-      },
-      gender: {
-        title: "Gender of Nouns",
-        level: "CSE Verbal Ability",
-        intro: "In English, nouns can be classified by gender: masculine, feminine, common, and neuter.",
-        keyPoints: [
-          "Masculine nouns refer to males (e.g., boy, king, uncle)",
-          "Feminine nouns refer to females (e.g., girl, queen, aunt)",
-          "Common gender nouns can be either (e.g., teacher, doctor, student)",
-          "Neuter nouns refer to things without gender (e.g., table, book, house)"
-        ],
-        quickTips: [
-          "Look for suffixes like -ess for feminine forms",
-          "Many professions have common gender forms today"
-        ]
-      }
-    };
-
-    // FUNCTION PARA GUMAWA NG 200 SAMPLE QUESTIONS
-    function generateSampleQuestions(topicName) {
-      const levels = ['beginner', 'intermediate', 'advanced', 'super'];
-      const questions = {};
-      
-      levels.forEach(level => {
-        questions[level] = [];
-        for (let i = 1; i <= 50; i++) {
-          questions[level].push({
-            question: `${topicName} Question ${i} (${level} level) - What is the correct answer?`,
-            choices: ["Option A", "Option B", "Option C", "Option D"],
-            correctIndex: i % 4, // Rotate correct answers
-            explanation: `This is the explanation for ${topicName} question ${i} at ${level} level. The correct answer is based on proper grammar rules.`
-          });
-        }
-      });
-      
-      return questions;
-    }
-
-    // GENERATE ALL 200 QUESTIONS FOR EACH TOPIC
-    const NOUNS_QUESTIONS = generateSampleQuestions("Nouns");
-    const GENDER_NOUNS_QUESTIONS = generateSampleQuestions("Gender");
-    const GRAMMATICAL_NUMBER_QUESTIONS = generateSampleQuestions("Grammatical Number");
-    const VERBS_QUESTIONS = generateSampleQuestions("Verbs");
-    const ADJECTIVES_QUESTIONS = generateSampleQuestions("Adjectives");
-    const CONJUNCTIONS_QUESTIONS = generateSampleQuestions("Conjunctions");
-    const INTERJECTIONS_QUESTIONS = generateSampleQuestions("Interjections");
-    const ARTICLES_QUESTIONS = generateSampleQuestions("Articles");
-    const SUBJECT_VERB_AGREEMENT_QUESTIONS = generateSampleQuestions("Subject-Verb Agreement");
-    const SENTENCE_CONSTRUCTION_QUESTIONS = generateSampleQuestions("Sentence Construction");
-    const SENTENCE_STRUCTURE_QUESTIONS = generateSampleQuestions("Sentence Structure");
-    const ERROR_IDENTIFICATION_QUESTIONS = generateSampleQuestions("Error Identification");
-    const AFFIXES_QUESTIONS = generateSampleQuestions("Affixes");
-    const PUNCTUATIONS_QUESTIONS = generateSampleQuestions("Punctuations");
-    const SYNONYMS_QUESTIONS = generateSampleQuestions("Synonyms");
-    const ANTONYMS_QUESTIONS = generateSampleQuestions("Antonyms");
-    const ANALOGY_QUESTIONS = generateSampleQuestions("Analogy");
-    const WORDS_OFTEN_CONFUSED_QUESTIONS = generateSampleQuestions("Words Often Confused");
-    const PARAGRAPH_ORGANIZATION_QUESTIONS = generateSampleQuestions("Paragraph Organization");
-    const READING_COMPREHENSION_QUESTIONS = generateSampleQuestions("Reading Comprehension");
-    const PREPOSITIONS_QUESTIONS = generateSampleQuestions("Prepositions");
-
-    console.log("✅ All 200 questions generated for each topic!");
-    console.log("NOUNS_QUESTIONS:", NOUNS_QUESTIONS);
-  </script>
-
-  <!-- MAIN APP LOGIC - BINAGO PARA KUNIN LAHAT NG QUESTIONS -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // DOM Elements
@@ -697,12 +273,14 @@
       const lessonTitleEl = document.getElementById("lesson-title");
       const lessonMetaEl = document.getElementById("lesson-meta");
       const lessonContentEl = document.getElementById("lesson-content");
+      
       const practiceTopicEl = document.getElementById("practice-topic");
       const practiceLevelEl = document.getElementById("practice-level");
       const practiceCountEl = document.getElementById("practice-count");
       const timerModeEl = document.getElementById("timer-mode");
       const practiceWeakEl = document.getElementById("practice-weak");
       const startQuizBtn = document.getElementById("start-quiz-btn");
+      
       const quizProgressEl = document.getElementById("quiz-progress");
       const quizTimerEl = document.getElementById("quiz-timer");
       const quizQuestionEl = document.getElementById("quiz-question");
@@ -714,11 +292,16 @@
 
       let quizState = null;
 
-      // Initialize Study Mode
+      // Ensure VERBAL_TOPICS exists (from verbal.js)
+      if (typeof VERBAL_TOPICS === 'undefined') {
+        console.error("verbal.js not loaded or VERBAL_TOPICS missing");
+        return;
+      }
+
+      // Initialize UI
       const defaultTopicId = VERBAL_TOPICS[0].id;
       renderTopicsSidebar(defaultTopicId);
-      renderLesson(defaultTopicId);
-
+      
       // Fill practice topic dropdown
       if (practiceTopicEl) {
         practiceTopicEl.innerHTML = "";
@@ -731,7 +314,9 @@
         practiceTopicEl.value = defaultTopicId;
       }
 
-      // Study Mode Functions
+      // ===========================
+      // STUDY MODE FUNCTIONS
+      // ===========================
       function renderTopicsSidebar(activeId) {
         if (!topicsListEl) return;
         topicsListEl.innerHTML = "";
@@ -749,75 +334,85 @@
       }
 
       function renderLesson(topicKey) {
-        const data = LESSONS[topicKey];
-        if (!data) {
-          lessonTitleEl.textContent = "Coming soon";
-          lessonMetaEl.textContent = "Content under development";
-          lessonContentEl.innerHTML = '<p>This lesson is being updated.</p>';
+        // Fallback if LESSONS is not defined (assumes it might be in verbal.js or empty)
+        const lessonData = (typeof LESSONS !== 'undefined') ? LESSONS[topicKey] : null;
+
+        if (!lessonData) {
+          lessonTitleEl.textContent = "Coming Soon";
+          lessonMetaEl.textContent = "Topic";
+          lessonContentEl.innerHTML = '<p>Lesson content is being updated. Please proceed to <strong>Practice Quiz</strong>.</p>';
           return;
         }
-        lessonTitleEl.textContent = data.title;
-        lessonMetaEl.textContent = data.level;
+        
+        lessonTitleEl.textContent = lessonData.title || "Topic";
+        lessonMetaEl.textContent = lessonData.level || "";
         
         let html = "";
-        if (data.intro) html += `<div class="lesson-section"><p>${data.intro}</p></div>`;
-        if (data.keyPoints) {
-          html += `<div class="lesson-section"><div class="lesson-section-title">Key Points</div><ul>${data.keyPoints.map(k => `<li>${k}</li>`).join("")}</ul></div>`;
+        if (lessonData.intro) html += `<div class="lesson-section"><p>${lessonData.intro}</p></div>`;
+        if (lessonData.keyPoints) {
+          html += `<div class="lesson-section"><h3>Key Points</h3><ul>${lessonData.keyPoints.map(k => `<li>${k}</li>`).join("")}</ul></div>`;
         }
-        if (data.quickTips) {
-          html += `<div class="lesson-section"><div class="lesson-section-title">Quick Tips</div><ul>${data.quickTips.map(t => `<li>${t}</li>`).join("")}</ul></div>`;
+        if (lessonData.quickTips) {
+          html += `<div class="lesson-section"><h3>Quick Tips</h3><ul>${lessonData.quickTips.map(t => `<li>${t}</li>`).join("")}</ul></div>`;
         }
         lessonContentEl.innerHTML = html;
       }
 
-      // Practice Mode Functions
+      // ===========================
+      // PRACTICE MODE FUNCTIONS
+      // ===========================
+      
+      // Helper to detect if variable exists globally
+      function getGlobalVar(name) {
+        return (window[name] !== undefined) ? window[name] : null;
+      }
+
       function getQuestionBank(topic) {
-        console.log(`Loading ALL 200 questions for: ${topic}`);
-        
-        const banks = {
-          nouns: NOUNS_QUESTIONS,
-          gender: GENDER_NOUNS_QUESTIONS,
-          grammatical_number: GRAMMATICAL_NUMBER_QUESTIONS,
-          verbs: VERBS_QUESTIONS,
-          adjectives: ADJECTIVES_QUESTIONS,
-          conjunctions: CONJUNCTIONS_QUESTIONS,
-          interjections: INTERJECTIONS_QUESTIONS,
-          articles: ARTICLES_QUESTIONS,
-          subject_verb_agreement: SUBJECT_VERB_AGREEMENT_QUESTIONS,
-          sentence_construction: SENTENCE_CONSTRUCTION_QUESTIONS,
-          sentence_structure: SENTENCE_STRUCTURE_QUESTIONS,
-          error_identification: ERROR_IDENTIFICATION_QUESTIONS,
-          affixes: AFFIXES_QUESTIONS,
-          punctuations: PUNCTUATIONS_QUESTIONS,
-          synonyms: SYNONYMS_QUESTIONS,
-          antonyms: ANTONYMS_QUESTIONS,
-          analogy: ANALOGY_QUESTIONS,
-          words_often_confused: WORDS_OFTEN_CONFUSED_QUESTIONS,
-          paragraph_organization: PARAGRAPH_ORGANIZATION_QUESTIONS,
-          reading_comprehension: READING_COMPREHENSION_QUESTIONS,
-          prepositions: PREPOSITIONS_QUESTIONS
-        };
-        
-        return banks[topic] || null;
+        // This maps the topic ID to the specific global variable name
+        switch (topic) {
+          case "nouns": return getGlobalVar("NOUNS_QUESTIONS") || getGlobalVar("NOUN_QUESTIONS");
+          case "gender": return getGlobalVar("GENDER_NOUNS_QUESTIONS");
+          case "grammatical_number": return getGlobalVar("GRAMMATICAL_NUMBER_QUESTIONS");
+          case "verbs": return getGlobalVar("VERBS_QUESTIONS");
+          case "adjectives": return getGlobalVar("ADJECTIVES_QUESTIONS");
+          case "conjunctions": return getGlobalVar("CONJUNCTIONS_QUESTIONS");
+          case "interjections": return getGlobalVar("INTERJECTIONS_QUESTIONS");
+          case "articles": return getGlobalVar("ARTICLES_QUESTIONS");
+          case "subject_verb_agreement": return getGlobalVar("SUBJECT_VERB_AGREEMENT_QUESTIONS");
+          case "sentence_construction": return getGlobalVar("SENTENCE_CONSTRUCTION_QUESTIONS");
+          case "sentence_structure": return getGlobalVar("SENTENCE_STRUCTURE_QUESTIONS");
+          case "error_identification": return getGlobalVar("ERROR_IDENTIFICATION_QUESTIONS");
+          case "affixes": return getGlobalVar("AFFIXES_QUESTIONS");
+          case "punctuations": return getGlobalVar("PUNCTUATIONS_QUESTIONS");
+          case "synonyms": return getGlobalVar("SYNONYMS_QUESTIONS");
+          case "antonyms": return getGlobalVar("ANTONYMS_QUESTIONS");
+          case "analogy": return getGlobalVar("ANALOGY_QUESTIONS");
+          case "words_often_confused": return getGlobalVar("WORDS_OFTEN_CONFUSED_QUESTIONS");
+          case "paragraph_organization": return getGlobalVar("PARAGRAPH_ORGANIZATION_QUESTIONS");
+          case "reading_comprehension": return getGlobalVar("READING_COMPREHENSION_QUESTIONS");
+          case "prepositions": return getGlobalVar("PREPOSITIONS_QUESTIONS");
+          default: return null;
+        }
       }
 
       function getAllQuestions(bank) {
         if (!bank) return [];
-        
-        // Kunin lahat ng questions from all levels
-        const allQuestions = [
+        // Support 'expert' or 'super' keys
+        return [
           ...(bank.beginner || []),
           ...(bank.intermediate || []),
           ...(bank.advanced || []),
-          ...(bank.super || [])
+          ...(bank.super || []),
+          ...(bank.expert || []) 
         ];
-        
-        console.log(`Total questions available: ${allQuestions.length}`);
-        return allQuestions;
       }
 
       function getQuestionsByLevel(bank, level) {
         if (!bank) return [];
+        // Map UI value 'super' or 'expert' to possible keys
+        if (level === 'super' || level === 'expert') {
+           return bank.super || bank.expert || [];
+        }
         return bank[level] || [];
       }
 
@@ -879,9 +474,41 @@
         }, 1000);
       }
 
+      // ---------------------------------------------------------
+      // IMPORTANT: NORMALIZATION LOGIC (The Fix)
+      // This converts your external file format (q, options, a)
+      // into the format the quiz uses (question, choices, correctIndex)
+      // ---------------------------------------------------------
+      function normalizeQuestion(rawQ) {
+        // Format 1: { q: "...", options: [...], a: "..." } (Your External Files)
+        if (rawQ.q && Array.isArray(rawQ.options)) {
+          return {
+            question: rawQ.q,
+            choices: rawQ.options,
+            correctAnswerText: rawQ.a, // Store the text answer
+            correctIndex: rawQ.options.indexOf(rawQ.a),
+            explanation: rawQ.exp || ""
+          };
+        }
+        // Format 2: { question: "...", choices: [...], correctIndex: 0 } (Old/Sample format)
+        if (rawQ.question && Array.isArray(rawQ.choices)) {
+          return rawQ; 
+        }
+        return null;
+      }
+
       function showQuestion() {
         if (!quizState) return;
-        let q = quizState.questions[quizState.currentIndex];
+        
+        // Get raw data and normalize it
+        let rawQ = quizState.questions[quizState.currentIndex];
+        let q = normalizeQuestion(rawQ);
+
+        if (!q || q.correctIndex === -1) {
+          console.error("Invalid question data:", rawQ);
+          quizQuestionEl.textContent = "Error: Question data is invalid or answer mismatch.";
+          return;
+        }
 
         quizState.answered = false;
         quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
@@ -896,7 +523,7 @@
           const btn = document.createElement("button");
           btn.className = "quiz-choice";
           btn.textContent = choice;
-          btn.addEventListener("click", () => handleAnswer(idx));
+          btn.addEventListener("click", () => handleAnswer(idx, q)); // Pass q object
           quizChoicesEl.appendChild(btn);
         });
 
@@ -904,14 +531,13 @@
         startTimer();
       }
 
-      function handleAnswer(idx) {
+      function handleAnswer(idx, currentQ) {
         if (!quizState || quizState.answered) return;
         quizState.answered = true;
         if (quizState.timerId) clearInterval(quizState.timerId);
 
-        const q = quizState.questions[quizState.currentIndex];
         const btns = quizChoicesEl.querySelectorAll("button");
-        const isCorrect = idx === q.correctIndex;
+        const isCorrect = (idx === currentQ.correctIndex);
 
         if (isCorrect) {
           quizState.correct++;
@@ -919,21 +545,23 @@
         } else {
           quizState.incorrect++;
           btns[idx].classList.add("incorrect");
-          if (btns[q.correctIndex]) {
-            btns[q.correctIndex].classList.add("correct");
+          // Highlight correct answer
+          if (btns[currentQ.correctIndex]) {
+            btns[currentQ.correctIndex].classList.add("correct");
           }
+          // Track wrong answer
           if (!Array.isArray(quizState.wrongAnswers)) {
             quizState.wrongAnswers = [];
           }
           quizState.wrongAnswers.push({
-            question: q.question,
-            yourAnswer: q.choices[idx],
-            correctAnswer: q.choices[q.correctIndex],
-            explanation: q.explanation
+            question: currentQ.question,
+            yourAnswer: currentQ.choices[idx],
+            correctAnswer: currentQ.choices[currentQ.correctIndex],
+            explanation: currentQ.explanation
           });
         }
 
-        quizExplanationEl.textContent = q.explanation || "";
+        quizExplanationEl.textContent = currentQ.explanation || "";
         quizExplanationEl.classList.remove("hide");
 
         quizNextBtn.textContent = quizState.currentIndex < quizState.questions.length - 1 ? "Next Question" : "See Results";
@@ -944,13 +572,16 @@
       function handleTimeout() {
         if (!quizState || quizState.answered) return;
         quizState.answered = true;
-        const q = quizState.questions[quizState.currentIndex];
+        
+        let rawQ = quizState.questions[quizState.currentIndex];
+        let q = normalizeQuestion(rawQ);
         const btns = quizChoicesEl.querySelectorAll("button");
 
         quizState.incorrect++;
         if (btns[q.correctIndex]) {
           btns[q.correctIndex].classList.add("correct");
         }
+
         if (!Array.isArray(quizState.wrongAnswers)) {
           quizState.wrongAnswers = [];
         }
@@ -974,39 +605,35 @@
           stopCurrentTimer();
           const topic = practiceTopicEl.value;
           const level = practiceLevelEl.value;
-          const count = parseInt(practiceCountEl.value, 10);
+          let count = parseInt(practiceCountEl.value, 10);
           const timer = timerModeEl.value;
           const weakNotes = practiceWeakEl.value.trim();
 
-          console.log("=== STARTING QUIZ ===");
-          console.log("Topic:", topic);
-          console.log("Level:", level);
-          console.log("Count:", count);
-
           const bank = getQuestionBank(topic);
-          console.log("Question bank:", bank);
 
           if (!bank) {
-            alert("Questions for this topic are not yet available.");
+            alert(`Topic "${topic}" is not yet loaded. Please make sure the JS file exists.`);
             return;
           }
 
           let pool = [];
           if (level === "all") {
             pool = getAllQuestions(bank);
-            console.log("Using ALL levels, total questions:", pool.length);
           } else {
             pool = getQuestionsByLevel(bank, level);
-            console.log(`Using ${level} level, questions:`, pool.length);
           }
 
           if (!pool || pool.length === 0) {
-            alert(`No questions found for ${level} level.`);
+            alert(`No questions found for ${level} level in ${topic}.`);
             return;
           }
 
+          // Cap count to available pool size
+          if (count > pool.length) {
+             count = pool.length;
+          }
+
           const selectedQuestions = shuffleArray(pool).slice(0, count);
-          console.log("Selected questions:", selectedQuestions.length);
 
           quizState = {
             questions: selectedQuestions,
@@ -1062,7 +689,7 @@
                   <ol class="weakpoints-list">
                     ${wrongItems.map((item, idx) => `
                       <li class="weakpoint-item">
-                        <p class="wp-question"><strong>Q${idx + 1}.</strong> ${item.question}</p>
+                        <p class="wp-question"><strong>Q.</strong> ${item.question}</p>
                         <p class="wp-your-answer"><span class="wp-label">Your answer:</span> <span class="wp-bad">${item.yourAnswer}</span></p>
                         <p class="wp-correct-answer"><span class="wp-label">Correct answer:</span> <span class="wp-good">${item.correctAnswer}</span></p>
                         <p class="wp-explanation">${item.explanation || ""}</p>
@@ -1092,7 +719,7 @@
                 <div class="stats-panel">
                   <div class="stat-item"><span>Correct</span><span>0</span></div>
                   <div class="stat-item"><span>Incorrect</span><span>0</span></div>
-                  <div class="stat-item"><span>Left</span><span>0</span></div>
+                  <div class="stat-item"><span>Unanswered</span><span>0</span></div>
                 </div>`;
               updateProgressFill(0);
             };
@@ -1101,7 +728,7 @@
         });
       }
 
-      // Tab switching
+      // Tab switching logic
       modeTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           const mode = tab.dataset.mode;
@@ -1120,8 +747,8 @@
           const ability = tab.dataset.ability;
           if (subtitleEl) {
             subtitleEl.textContent = ability === "verbal" 
-              ? "Verbal Ability · Gender of Nouns" 
-              : "Numerical Ability · Basic Operations";
+              ? "Verbal Ability" 
+              : "Numerical Ability";
           }
         });
       });
@@ -1129,6 +756,5 @@
   </script>
 </body>
 </html>
-
 
 
