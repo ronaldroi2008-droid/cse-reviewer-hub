@@ -1,10 +1,11 @@
+// app.js
 document.addEventListener("DOMContentLoaded", () => {
     // ============================================================
     // 1. INITIALIZATION & SAFETY CHECKS
     // ============================================================
     
     if (typeof VERBAL_TOPICS === 'undefined') {
-        alert("Error: verbal.js is not loaded. Please check index.html");
+        console.error("Error: verbal.js is not loaded. Please check index.html");
         return;
     }
 
@@ -98,49 +99,31 @@ function getQuestionBank(id) {
 
 function setupEventListeners() {
     // Mode Switching (Study vs Practice)
-    document.querySelectorAll('.mode-tab, .btn-mode').forEach(btn => {
+    document.querySelectorAll('.mode-tab').forEach(btn => {
         btn.onclick = (e) => {
             // Update Tab UI
-            document.querySelectorAll('.mode-tab, .btn-mode').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             
-            const targetMode = e.target.dataset.target || e.target.dataset.mode;
+            const targetMode = e.target.dataset.target;
             
             // Hide/Show Sections
-            // Assumes index.html uses IDs 'study' and 'practice' or 'viewStudy' and 'viewQuiz'
-            if (document.getElementById('viewStudy')) {
-                document.getElementById('viewStudy').classList.add('hidden');
-                document.getElementById('viewQuiz').classList.add('hidden');
-            }
-            if (document.getElementById('study')) document.getElementById('study').classList.remove('active');
-            if (document.getElementById('practice')) document.getElementById('practice').classList.remove('active');
-
-            // Switch Logic
-            if (targetMode === 'study') {
-                if(document.getElementById('study')) document.getElementById('study').classList.add('active');
-                if(document.getElementById('viewStudy')) document.getElementById('viewStudy').classList.remove('hidden');
-                
-                // Hide Quiz Settings in Sidebar
-                if(document.getElementById('quizSettings')) document.getElementById('quizSettings').classList.add('hidden');
-                if(document.getElementById('topicListContainer')) document.getElementById('topicListContainer').classList.remove('hidden');
-                
-                renderLesson(currentTopicId);
-            } else {
-                if(document.getElementById('practice')) document.getElementById('practice').classList.add('active');
-                if(document.getElementById('viewQuiz')) document.getElementById('viewQuiz').classList.remove('hidden');
-                
-                // Show Quiz Settings
-                if(document.getElementById('quizSettings')) document.getElementById('quizSettings').classList.remove('hidden');
-                // Optional: Hide topic list on mobile to save space
-            }
+            document.querySelectorAll('.mode-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(targetMode);
+            if(targetSection) targetSection.classList.add('active');
         };
     });
 
-    // Buttons
-    const startBtn = document.getElementById('startQuiz') || document.getElementById('btnStart');
+    // Start Quiz Button
+    const startBtn = document.getElementById('btnStart');
     if(startBtn) startBtn.onclick = startQuiz;
 
-    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
+    // Next Question Button
+    const nextBtn = document.getElementById('btnNext');
     if(nextBtn) nextBtn.onclick = nextQuestion;
 }
 
@@ -151,7 +134,7 @@ function selectTopic(id, btnElement) {
     if(btnElement) btnElement.classList.add('active');
     
     // Sync Dropdown if exists
-    const dropdown = document.getElementById('quizTopic') || document.getElementById('practice-topic');
+    const dropdown = document.getElementById('quizTopic');
     if(dropdown) dropdown.value = id;
 
     renderLesson(id);
@@ -160,8 +143,8 @@ function selectTopic(id, btnElement) {
 function renderLesson(id) {
     // Get lesson content from verbal.js
     const data = (typeof LESSONS !== 'undefined') ? LESSONS[id] : null;
-    const titleEl = document.getElementById('lessonTitle') || document.getElementById('lessonHeader');
-    const contentEl = document.getElementById('lessonContent') || document.getElementById('lessonBody');
+    const titleEl = document.getElementById('lessonTitle');
+    const contentEl = document.getElementById('lessonContent');
     
     // Find Label
     const topicObj = VERBAL_TOPICS.find(t => t.id === id);
@@ -191,9 +174,9 @@ function renderLesson(id) {
 
 function startQuiz() {
     // Get User Selections
-    const topicSelect = document.getElementById('quizTopic') || document.getElementById('practice-topic');
-    const levelSelect = document.getElementById('quizLevel') || document.getElementById('practice-level');
-    const countSelect = document.getElementById('quizCount') || document.getElementById('practice-count');
+    const topicSelect = document.getElementById('quizTopic');
+    const levelSelect = document.getElementById('quizLevel');
+    const countSelect = document.getElementById('quizCount');
     
     const topicId = topicSelect ? topicSelect.value : currentTopicId;
     const level = levelSelect ? levelSelect.value : 'beginner';
@@ -230,13 +213,13 @@ function startQuiz() {
     quizState = { questions, index: 0, score: 0 };
     
     // 5. Update UI
-    const intro = document.getElementById('quizIntro') || document.getElementById('quizStartMessage');
+    const intro = document.getElementById('quizIntro');
     const active = document.getElementById('quizActive');
-    const results = document.getElementById('quizResults') || document.getElementById('quizResult');
+    const results = document.getElementById('quizResults');
 
-    if(intro) intro.classList.add('hidden');
-    if(results) results.classList.add('hidden');
-    if(active) active.classList.remove('hidden');
+    if(intro) intro.classList.add('hide');
+    if(results) results.classList.add('hide');
+    if(active) active.classList.remove('hide');
 
     renderQuestion();
 }
@@ -265,15 +248,12 @@ function renderQuestion() {
     if(qBar) qBar.style.width = `${((quizState.index) / quizState.questions.length) * 100}%`;
 
     // Render Buttons
-    const choicesContainer = document.getElementById('qChoices') || document.getElementById('qOptions');
+    const choicesContainer = document.getElementById('qChoices');
     if(choicesContainer) {
         choicesContainer.innerHTML = '';
         q.choices.forEach((choice, idx) => {
             const btn = document.createElement('button');
             btn.className = 'quiz-choice'; 
-            // Fallback style if CSS class is missing
-            if(!btn.className) btn.style.cssText = "display:block; width:100%; padding:10px; margin:5px 0; cursor:pointer; text-align:left; background:#fff; border:1px solid #ccc;";
-            
             btn.textContent = choice;
             btn.onclick = () => handleAnswer(btn, choice, idx, q);
             choicesContainer.appendChild(btn);
@@ -281,15 +261,15 @@ function renderQuestion() {
     }
 
     // Hide Explanation & Next Button
-    const explainEl = document.getElementById('qExplanation') || document.getElementById('qExplain');
-    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
-    if(explainEl) explainEl.classList.add('hidden');
-    if(nextBtn) nextBtn.classList.add('hidden');
+    const explainEl = document.getElementById('qExplain');
+    const nextBtn = document.getElementById('btnNext');
+    if(explainEl) explainEl.classList.add('hide');
+    if(nextBtn) nextBtn.classList.add('hide');
 }
 
 function handleAnswer(btn, selectedText, selectedIdx, q) {
-    const nextBtn = document.getElementById('btnNext') || document.getElementById('quiz-next');
-    if (!nextBtn.classList.contains('hidden')) return; // Stop double clicks
+    const nextBtn = document.getElementById('btnNext');
+    if (!nextBtn.classList.contains('hide')) return; // Stop double clicks
 
     let isCorrect = false;
     
@@ -303,33 +283,28 @@ function handleAnswer(btn, selectedText, selectedIdx, q) {
     // Update Styles & Score
     if (isCorrect) {
         btn.classList.add('correct');
-        btn.style.backgroundColor = '#d1fae5'; // Light Green
-        btn.style.borderColor = '#10b981';
         quizState.score++;
     } else {
         btn.classList.add('incorrect');
-        btn.style.backgroundColor = '#fee2e2'; // Light Red
-        btn.style.borderColor = '#ef4444';
         
         // Highlight the correct one
-        const allBtns = document.querySelectorAll('.quiz-choice, .quiz-options button');
+        const allBtns = document.querySelectorAll('.quiz-choice');
         allBtns.forEach((b, i) => {
             if ((q.correctIndex !== undefined && i === q.correctIndex) || b.textContent === q.correct) {
                 b.classList.add('correct');
-                b.style.backgroundColor = '#d1fae5';
             }
         });
     }
 
     // Show Explanation
-    const explainEl = document.getElementById('qExplanation') || document.getElementById('qExplain');
+    const explainEl = document.getElementById('qExplain');
     if(explainEl) {
         explainEl.innerHTML = `<strong>${isCorrect ? "Correct!" : "Incorrect."}</strong><br>${q.exp}`;
-        explainEl.classList.remove('hidden');
+        explainEl.classList.remove('hide');
     }
 
     // Show Next Button
-    if(nextBtn) nextBtn.classList.remove('hidden');
+    if(nextBtn) nextBtn.classList.remove('hide');
     
     // Update Score UI
     const qScore = document.getElementById('qScore');
@@ -347,11 +322,57 @@ function nextQuestion() {
 
 function showResults() {
     const active = document.getElementById('quizActive');
-    const results = document.getElementById('quizResults') || document.getElementById('quizResult');
+    const results = document.getElementById('quizResults');
     const finalScore = document.getElementById('finalScore');
 
-    if(active) active.classList.add('hidden');
-    if(results) results.classList.remove('hidden');
+    if(active) active.classList.add('hide');
+    if(results) results.classList.remove('hide');
     if(finalScore) finalScore.textContent = `You scored ${quizState.score} out of ${quizState.questions.length}`;
+    
+    // Optional: Add weak points analysis
+    analyzeWeakPoints();
 }
 
+function analyzeWeakPoints() {
+    const weakPointsContainer = document.getElementById('weakPointsContainer');
+    if (!weakPointsContainer) return;
+
+    // Simple weak points analysis - you can enhance this based on your data structure
+    let weakPointsHTML = `<h3>Performance Analysis</h3>`;
+    
+    if (quizState.score >= quizState.questions.length * 0.8) {
+        weakPointsHTML += `<p class="wp-good">Excellent! You have a strong understanding of this topic.</p>`;
+    } else if (quizState.score >= quizState.questions.length * 0.6) {
+        weakPointsHTML += `<p class="wp-good">Good job! You're on the right track.</p>`;
+    } else {
+        weakPointsHTML += `<p class="wp-bad">Keep practicing! Review the topics you missed.</p>`;
+    }
+    
+    weakPointsHTML += `<p>Completion: ${Math.round((quizState.score / quizState.questions.length) * 100)}%</p>`;
+    
+    weakPointsContainer.innerHTML = weakPointsHTML;
+}
+
+// ============================================================
+// 6. UTILITY FUNCTIONS
+// ============================================================
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// ============================================================
+// 7. INITIALIZATION COMPLETE
+// ============================================================
+
+console.log("CSE Reviewer Hub - Verbal Ability App Initialized");
