@@ -403,11 +403,11 @@
       .layout {
         grid-template-columns: 1fr;
       }
-      
+
       .ability-tabs, .mode-tabs {
         padding: 0 1rem;
       }
-      
+
       .app-main {
         padding: 1rem;
       }
@@ -425,13 +425,13 @@
       <span class="badge">Beta</span>
     </header>
 
-    <!-- NEW: Ability tabs (Verbal / Numerical) -->
+    <!-- Ability tabs (Verbal / Numerical) -->
     <nav class="ability-tabs">
       <button class="ability-tab active" data-ability="verbal">Verbal Ability</button>
       <button class="ability-tab" data-ability="numerical">Numerical Ability</button>
     </nav>
 
-    <!-- Existing mo: Study / Practice tabs -->
+    <!-- Study / Practice tabs -->
     <nav class="mode-tabs">
       <button class="mode-tab active" data-mode="study">Study Mode</button>
       <button class="mode-tab" data-mode="practice">Practice Quiz</button>
@@ -577,164 +577,9 @@
     </footer>
   </div>
 
-  <!-- JavaScript files -->
-  <script>
-    // Sample data structure for demonstration
-    const VERBAL_TOPICS = [
-      {
-        id: "gender-nouns",
-        title: "Gender of Nouns",
-        meta: "Masculine, Feminine, Common, Neuter",
-        content: `
-          <h3>What is Gender in Nouns?</h3>
-          <p>In English grammar, gender refers to the classification of nouns and pronouns as masculine, feminine, common, or neuter.</p>
-          
-          <h3>Types of Gender</h3>
-          <ul>
-            <li><strong>Masculine</strong> - refers to males (e.g., boy, man, king)</li>
-            <li><strong>Feminine</strong> - refers to females (e.g., girl, woman, queen)</li>
-            <li><strong>Common</strong> - refers to both males and females (e.g., teacher, doctor, student)</li>
-            <li><strong>Neuter</strong> - refers to things without life (e.g., table, book, car)</li>
-          </ul>
-          
-          <div class="example-box">
-            <strong>Examples:</strong><br>
-            Masculine: father, brother, king<br>
-            Feminine: mother, sister, queen<br>
-            Common: child, parent, cousin<br>
-            Neuter: house, tree, computer
-          </div>
-          
-          <h3>Special Cases</h3>
-          <p>Some nouns have different forms for masculine and feminine:</p>
-          <ul>
-            <li>actor - actress</li>
-            <li>waiter - waitress</li>
-            <li>hero - heroine</li>
-          </ul>
-        `
-      },
-      {
-        id: "pronouns",
-        title: "Pronouns",
-        meta: "Personal, Possessive, Reflexive",
-        content: `
-          <h3>What are Pronouns?</h3>
-          <p>Pronouns are words that replace nouns in sentences to avoid repetition.</p>
-          
-          <h3>Types of Pronouns</h3>
-          <ul>
-            <li><strong>Personal Pronouns</strong> - I, you, he, she, it, we, they</li>
-            <li><strong>Possessive Pronouns</strong> - mine, yours, his, hers, ours, theirs</li>
-            <li><strong>Reflexive Pronouns</strong> - myself, yourself, himself, herself, itself, ourselves</li>
-          </ul>
-        `
-      },
-      {
-        id: "verbs",
-        title: "Verbs and Tenses",
-        meta: "Present, Past, Future",
-        content: `
-          <h3>What are Verbs?</h3>
-          <p>Verbs are words that express action or state of being.</p>
-          
-          <h3>Verb Tenses</h3>
-          <ul>
-            <li><strong>Present Tense</strong> - describes current actions (e.g., I walk)</li>
-            <li><strong>Past Tense</strong> - describes completed actions (e.g., I walked)</li>
-            <li><strong>Future Tense</strong> - describes future actions (e.g., I will walk)</li>
-          </ul>
-        `
-      }
-    ];
-
-    // Initialize the app
-    document.addEventListener('DOMContentLoaded', function() {
-      // Populate topics list
-      const topicsList = document.getElementById('topicsList');
-      VERBAL_TOPICS.forEach(topic => {
-        const topicItem = document.createElement('li');
-        topicItem.className = 'topic-item';
-        topicItem.textContent = topic.title;
-        topicItem.dataset.topicId = topic.id;
-        topicsList.appendChild(topicItem);
-      });
-
-      // Set first topic as active
-      if (VERBAL_TOPICS.length > 0) {
-        topicsList.firstChild.classList.add('active');
-        loadTopic(VERBAL_TOPICS[0]);
-      }
-
-      // Add click handlers for topics
-      document.querySelectorAll('.topic-item').forEach(item => {
-        item.addEventListener('click', function() {
-          document.querySelectorAll('.topic-item').forEach(i => i.classList.remove('active'));
-          this.classList.add('active');
-          
-          const topicId = this.dataset.topicId;
-          const topic = VERBAL_TOPICS.find(t => t.id === topicId);
-          if (topic) {
-            loadTopic(topic);
-          }
-        });
-      });
-
-      // Add click handlers for ability tabs
-      document.querySelectorAll('.ability-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-          document.querySelectorAll('.ability-tab').forEach(t => t.classList.remove('active'));
-          this.classList.add('active');
-          
-          const ability = this.dataset.ability;
-          updateSubtitle(ability);
-        });
-      });
-
-      // Add click handlers for mode tabs
-      document.querySelectorAll('.mode-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-          document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
-          this.classList.add('active');
-          
-          const mode = this.dataset.mode;
-          document.querySelectorAll('.mode-section').forEach(section => {
-            section.classList.remove('active');
-          });
-          document.getElementById(`mode-${mode}`).classList.add('active');
-        });
-      });
-
-      // Populate practice topic dropdown
-      const practiceTopic = document.getElementById('practice-topic');
-      VERBAL_TOPICS.forEach(topic => {
-        const option = document.createElement('option');
-        option.value = topic.id;
-        option.textContent = topic.title;
-        practiceTopic.appendChild(option);
-      });
-
-      // Start quiz button handler
-      document.getElementById('start-quiz-btn').addEventListener('click', function() {
-        alert('Quiz functionality would be implemented here with the selected settings.');
-      });
-    });
-
-    function loadTopic(topic) {
-      document.getElementById('lesson-title').textContent = topic.title;
-      document.getElementById('lesson-meta').textContent = topic.meta;
-      document.getElementById('lesson-content').innerHTML = topic.content;
-    }
-
-    function updateSubtitle(ability) {
-      const subtitle = document.getElementById('appSubtitle');
-      if (ability === 'verbal') {
-        subtitle.textContent = 'Verbal Ability · Gender of Nouns';
-      } else if (ability === 'numerical') {
-        subtitle.textContent = 'Numerical Ability · Basic Operations';
-      }
-    }
-  </script>
+  <!-- External JavaScript files -->
+  <script src="verbal.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
 
