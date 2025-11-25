@@ -1,5 +1,5 @@
 // ==========================================
-// 1. VERBAL DATA (EXISTING)
+// 1. VERBAL TOPICS LIST
 // ==========================================
 const VERBAL_TOPICS = [
   { id: "nouns",                  label: "Nouns" },
@@ -28,27 +28,442 @@ const VERBAL_TOPICS = [
   { id: "reading_comprehension",  label: "Reading Comprehension" }
 ];
 
-// Ang iyong LESSONS object (Pinanatili ko ito, mahaba kaya 'di ko na inulit lahat dito sa preview)
-// NOTE: Siguraduhin na nandito pa rin yung mahabang const LESSONS = { ... } mo.
-// Kung nawala, ibalik mo galing sa previous backup mo. 
-// Para sa code na ito, gagamitin natin ang variable na 'VERBAL_LESSONS' para malinaw.
-// I-rename natin ang dating 'LESSONS' to 'VERBAL_LESSONS' para safe.
-
+// ==========================================
+// 2. VERBAL LESSONS CONTENT (FULL)
+// ==========================================
 const VERBAL_LESSONS = {
-    // ... PASTE MO DITO YUNG BUONG CONTENT NG LESSONS MO DATI ...
-    // Dahil sobrang haba, assumed na nandito na ito.
-    // Example:
-    nouns: { title: "Nouns", fullHtml: "<p>Lesson content...</p>" },
-    gender: { title: "Gender", fullHtml: "<p>Lesson content...</p>" },
-    // ... at iba pa ...
+  nouns: {
+    title: "Nouns – Names of People, Places, Things",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. The Anatomy of a Noun</h2>
+        <p>A noun names a person, place, thing, idea, or event. But deeper than that, nouns have <strong>Properties</strong> that determine how they fit in a sentence.</p>
+        <div class="highlight-box">
+          <p><strong>The 4 Properties of Nouns:</strong></p>
+          <ul>
+            <li><strong>Gender:</strong> Masculine, Feminine, Common, Neuter.</li>
+            <li><strong>Number:</strong> Singular vs. Plural.</li>
+            <li><strong>Case:</strong> Subjective, Objective, Possessive.</li>
+            <li><strong>Person:</strong> First, Second, or Third person.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="lesson-section">
+        <h2>2. Deep Dive: Count vs. Mass Nouns</h2>
+        <p>Some nouns change meaning depending on whether they are countable or uncountable.</p>
+        <table class="lesson-table">
+          <thead><tr><th>Word</th><th>As Mass Noun</th><th>As Count Noun</th></tr></thead>
+          <tbody>
+            <tr><td>Paper</td><td>Material to write on.</td><td>Documents.</td></tr>
+            <tr><td>Hair</td><td>All hair on head.</td><td>Individual strands.</td></tr>
+            <tr><td>Glass</td><td>The material.</td><td>Drinking vessels.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="lesson-section">
+        <h2>3. Advanced Pluralization</h2>
+        <p><strong>Compound Nouns:</strong> Pluralize the "Head Word". (e.g., <em>Mothers</em>-in-law, <em>Passers</em>-by).</p>
+        <p><strong>Foreign Plurals:</strong> Datum -> Data, Crisis -> Crises, Phenomenon -> Phenomena.</p>
+      </section>
+    `
+  },
+
+  gender: {
+    title: "Gender of Nouns",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Gender Categories</h2>
+        <ul>
+            <li><strong>Masculine:</strong> King, Uncle, Rooster, Bull.</li>
+            <li><strong>Feminine:</strong> Queen, Aunt, Hen, Cow.</li>
+            <li><strong>Common:</strong> Teacher, Doctor, Student, Cousin (Can be either).</li>
+            <li><strong>Neuter:</strong> Table, Phone, Idea, City (No gender).</li>
+        </ul>
+        <p><strong>Note:</strong> In modern formal English, we often use "they/their" as a singular pronoun for Common gender nouns to avoid "he/she".</p>
+      </section>
+    `
+  },
+
+  grammatical_number: {
+    title: "Grammatical Number",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Singular vs. Plural Rules</h2>
+        <p>Most nouns add <strong>-s</strong> or <strong>-es</strong>. But watch out for these:</p>
+        <ul>
+            <li><strong>-y to -ies:</strong> Baby -> Babies (But: Toy -> Toys).</li>
+            <li><strong>-f to -ves:</strong> Leaf -> Leaves, Knife -> Knives (But: Roof -> Roofs).</li>
+            <li><strong>Irregular:</strong> Man -> Men, Child -> Children, Tooth -> Teeth, Mouse -> Mice.</li>
+            <li><strong>No Change:</strong> Sheep, Deer, Salmon, Aircraft, Series, Species.</li>
+        </ul>
+      </section>
+    `
+  },
+
+  verbs: {
+    title: "Verbs – Action and State",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>The Engine of the Sentence</h2>
+        <p>Verbs express action or state of being.</p>
+        <h3>Types of Verbs</h3>
+        <ul>
+            <li><strong>Action Verbs:</strong> Run, Eat, Think, Study.</li>
+            <li><strong>Linking Verbs:</strong> Connect subject to description (Am, Is, Are, Was, Were, Seems, Feels).</li>
+            <li><strong>Helping (Auxiliary) Verbs:</strong> Help form tenses (Have, Has, Had, Do, Does, Did, Will).</li>
+        </ul>
+        <h3>Transitive vs. Intransitive</h3>
+        <p><strong>Transitive:</strong> Needs a direct object (e.g., "She <em>wrote</em> a letter.").</p>
+        <p><strong>Intransitive:</strong> No direct object needed (e.g., "The baby <em>cried</em>.").</p>
+      </section>
+    `
+  },
+
+  tenses: {
+    title: "Tenses of Verbs",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Time and Aspect</h2>
+        <table class="lesson-table">
+            <tr><th>Tense</th><th>Usage</th><th>Example</th></tr>
+            <tr><td>Simple Present</td><td>Habit / Fact</td><td>She walks.</td></tr>
+            <tr><td>Simple Past</td><td>Completed</td><td>She walked.</td></tr>
+            <tr><td>Simple Future</td><td>Will happen</td><td>She will walk.</td></tr>
+            <tr><td>Present Perfect</td><td>Started past, relevant now</td><td>She has walked.</td></tr>
+            <tr><td>Past Perfect</td><td>Action before another past action</td><td>She had walked before...</td></tr>
+        </table>
+        <p><strong>Exam Tip:</strong> Watch out for time markers like "since", "for", "yesterday", "already".</p>
+      </section>
+    `
+  },
+
+  pronouns: {
+    title: "Pronouns",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Cases of Pronouns</h2>
+        <ul>
+            <li><strong>Subjective (Doer):</strong> I, He, She, We, They, Who.</li>
+            <li><strong>Objective (Receiver):</strong> Me, Him, Her, Us, Them, Whom.</li>
+            <li><strong>Possessive:</strong> My, Mine, His, Hers, Theirs.</li>
+        </ul>
+        <h3>The Preposition Rule</h3>
+        <p>ALWAYS use the Objective case after a preposition.</p>
+        <p>✅ <em>Between you and <strong>me</strong>.</em></p>
+        <p>❌ <em>Between you and <strong>I</strong>.</em></p>
+      </section>
+    `
+  },
+
+  adjectives: {
+    title: "Adjectives",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Describing Nouns</h2>
+        <p>Adjectives modify nouns or pronouns. They answer: What kind? Which one? How many?</p>
+        <h3>Order of Adjectives</h3>
+        <p><strong>O-S-A-S-C-O-M-P</strong></p>
+        <ol>
+            <li>Opinion (Beautiful)</li>
+            <li>Size (Small)</li>
+            <li>Age (Old)</li>
+            <li>Shape (Round)</li>
+            <li>Color (Red)</li>
+            <li>Origin (Filipino)</li>
+            <li>Material (Wooden)</li>
+            <li>Purpose (Dining)</li>
+        </ol>
+        <p><em>Example: A beautiful small old wooden table.</em></p>
+      </section>
+    `
+  },
+
+  adverbs: {
+    title: "Adverbs",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Modifying Verbs, Adjectives, Adverbs</h2>
+        <p>Adverbs usually answer: How? When? Where? To what extent?</p>
+        <ul>
+            <li><strong>Manner:</strong> Slowly, Carefully (He runs <em>fast</em>).</li>
+            <li><strong>Time:</strong> Yesterday, Now, Soon.</li>
+            <li><strong>Place:</strong> Here, There, Everywhere.</li>
+            <li><strong>Frequency:</strong> Always, Never, Often.</li>
+        </ul>
+        <p><strong>Warning:</strong> Not all words ending in -ly are adverbs (e.g., Friendly, Lonely are adjectives).</p>
+      </section>
+    `
+  },
+
+  prepositions: {
+    title: "Prepositions",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Time and Place</h2>
+        <h3>The Big Three: IN, ON, AT</h3>
+        <table class="lesson-table">
+            <tr><th>Prep</th><th>Time</th><th>Place</th></tr>
+            <tr><td><strong>AT</strong></td><td>Specific Time (at 5 PM)</td><td>Specific Point (at the door)</td></tr>
+            <tr><td><strong>ON</strong></td><td>Days/Dates (on Monday)</td><td>Surfaces (on the table)</td></tr>
+            <tr><td><strong>IN</strong></td><td>Months/Years (in 2024)</td><td>Enclosed/General (in the box, in Manila)</td></tr>
+        </table>
+      </section>
+    `
+  },
+
+  conjunctions: {
+    title: "Conjunctions",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Connecting Ideas</h2>
+        <h3>Coordinating (FANBOYS)</h3>
+        <p>For, And, Nor, But, Or, Yet, So. Use a comma if connecting two complete sentences.</p>
+        <h3>Subordinating</h3>
+        <p>Connects a dependent clause to a main clause: <em>Because, Although, If, When, Since, Unless.</em></p>
+        <h3>Correlative</h3>
+        <p>Pairs: <em>Either...or, Neither...nor, Not only...but also.</em> (Must be parallel!)</p>
+      </section>
+    `
+  },
+
+  interjections: {
+    title: "Interjections",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Expressing Emotion</h2>
+        <p>Words used to express strong feeling or sudden emotion.</p>
+        <ul>
+            <li><em>Wow!</em> (Amazement)</li>
+            <li><em>Ouch!</em> (Pain)</li>
+            <li><em>Hey,</em> (Attention)</li>
+        </ul>
+        <p>They are not grammatically related to the rest of the sentence.</p>
+      </section>
+    `
+  },
+
+  articles: {
+    title: "Articles (A, An, The)",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Determiners</h2>
+        <ul>
+            <li><strong>A:</strong> Before consonant sounds (A car, A university).</li>
+            <li><strong>AN:</strong> Before vowel sounds (An apple, An hour, An MP3).</li>
+            <li><strong>THE:</strong> Specific or unique nouns (The sun, The Philippines).</li>
+        </ul>
+        <p><strong>Zero Article:</strong> General plural nouns (Dogs are loyal) or Uncountable nouns (Water is essential).</p>
+      </section>
+    `
+  },
+
+  subject_verb_agreement: {
+    title: "Subject-Verb Agreement",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>The Golden Rules</h2>
+        <ol>
+            <li>Singular Subject takes Singular Verb (ends in -s). <em>The boy runs.</em></li>
+            <li>Plural Subject takes Plural Verb (no -s). <em>The boys run.</em></li>
+            <li><strong>Intervening Phrases:</strong> Ignore words between subject and verb. <em>The box [of chocolates] <strong>is</strong> heavy.</em></li>
+            <li><strong>Indefinite Pronouns:</strong> <em>Each, Every, Everyone, Everybody</em> are ALWAYS SINGULAR.</li>
+            <li><strong>Compound Subjects:</strong> "And" usually makes it plural. "Or/Nor" follows the subject closest to the verb.</li>
+        </ol>
+      </section>
+    `
+  },
+
+  sentence_construction: {
+    title: "Sentence Construction",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Building Better Sentences</h2>
+        <p><strong>Fragments:</strong> Incomplete thoughts. (e.g., "Because he was tired.")</p>
+        <p><strong>Run-ons:</strong> Two sentences joined without punctuation.</p>
+        <p><strong>Parallelism:</strong> Items in a list must have the same form.</p>
+        <ul>
+            <li>❌ <em>She likes swimming, hiking, and to run.</em></li>
+            <li>✅ <em>She likes swimming, hiking, and running.</em></li>
+        </ul>
+      </section>
+    `
+  },
+
+  sentence_structure: {
+    title: "Sentence Structure",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Types of Sentences</h2>
+        <ul>
+            <li><strong>Simple:</strong> One independent clause. <em>(I study.)</em></li>
+            <li><strong>Compound:</strong> Two independent clauses + FANBOYS. <em>(I study, and I learn.)</em></li>
+            <li><strong>Complex:</strong> Independent + Dependent clause. <em>(I study because I want to pass.)</em></li>
+            <li><strong>Compound-Complex:</strong> Two Independent + One Dependent.</li>
+        </ul>
+      </section>
+    `
+  },
+
+  affixes: {
+    title: "Affixes (Prefixes & Suffixes)",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Word Building</h2>
+        <h3>Prefixes (Start)</h3>
+        <ul>
+            <li><strong>Un-, Dis-, In-:</strong> Not / Opposite (Unhappy, Disagree).</li>
+            <li><strong>Re-:</strong> Again (Rewrite).</li>
+            <li><strong>Pre-:</strong> Before (Preview).</li>
+        </ul>
+        <h3>Suffixes (End)</h3>
+        <ul>
+            <li><strong>-er, -or:</strong> Person (Teacher, Actor).</li>
+            <li><strong>-tion, -ment:</strong> Noun (Action, Movement).</li>
+            <li><strong>-ful, -ous:</strong> Adjective (Joyful, Famous).</li>
+            <li><strong>-ly:</strong> Adverb (Quickly).</li>
+        </ul>
+      </section>
+    `
+  },
+
+  punctuations: {
+    title: "Punctuations",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Marks of Clarity</h2>
+        <ul>
+            <li><strong>Comma (,):</strong> Pauses, lists, compound sentences.</li>
+            <li><strong>Semicolon (;):</strong> Connects related sentences; stronger than comma.</li>
+            <li><strong>Colon (:):</strong> Introduces a list or explanation.</li>
+            <li><strong>Apostrophe ('):</strong> Possession (John's) or Contraction (Don't).</li>
+        </ul>
+      </section>
+    `
+  },
+
+  words_often_confused: {
+    title: "Words Often Confused",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Look-Alikes</h2>
+        <ul>
+            <li><strong>Accept</strong> (receive) vs <strong>Except</strong> (exclude).</li>
+            <li><strong>Affect</strong> (verb - action) vs <strong>Effect</strong> (noun - result).</li>
+            <li><strong>Its</strong> (possessive) vs <strong>It's</strong> (it is).</li>
+            <li><strong>Their</strong> (possessive) vs <strong>There</strong> (place) vs <strong>They're</strong> (they are).</li>
+            <li><strong>Advice</strong> (noun) vs <strong>Advise</strong> (verb).</li>
+        </ul>
+      </section>
+    `
+  },
+
+  error_identification: {
+    title: "Error Identification",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Spotting Mistakes</h2>
+        <p>Common errors in exams:</p>
+        <ol>
+            <li><strong>Subject-Verb Agreement:</strong> Singular vs Plural mismatch.</li>
+            <li><strong>Pronoun Agreement:</strong> "Everyone... their" (Strict grammar: his/her).</li>
+            <li><strong>Redundancy:</strong> "Return back", "Repeat again".</li>
+            <li><strong>Double Negatives:</strong> "Doesn't know nothing".</li>
+            <li><strong>Wrong Preposition:</strong> "Married with" (Should be "to").</li>
+        </ol>
+      </section>
+    `
+  },
+
+  synonyms: {
+    title: "Synonyms",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Similar Meanings</h2>
+        <p>Words that mean the same or nearly the same.</p>
+        <ul>
+            <li><strong>Important:</strong> Crucial, Vital, Essential.</li>
+            <li><strong>Happy:</strong> Elated, Joyful, Content.</li>
+            <li><strong>Strong:</strong> Robust, Sturdy, Potent.</li>
+            <li><strong>Change:</strong> Alter, Modify, Transform.</li>
+        </ul>
+        <p><strong>Tip:</strong> Look at context. "Thin" is neutral, "Slim" is positive, "Skinny" is negative.</p>
+      </section>
+    `
+  },
+
+  antonyms: {
+    title: "Antonyms",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Opposite Meanings</h2>
+        <ul>
+            <li><strong>Benevolent</strong> (Kind) ≠ <strong>Malevolent</strong> (Evil).</li>
+            <li><strong>Genuine</strong> (Real) ≠ <strong>Artificial</strong> (Fake).</li>
+            <li><strong>Expand</strong> ≠ <strong>Contract</strong>.</li>
+            <li><strong>Obscure</strong> (Hidden) ≠ <strong>Clear</strong>.</li>
+        </ul>
+        <p><strong>Prefixes for Antonyms:</strong> Un-, Dis-, In-, Im-, Ir-, Non-.</p>
+      </section>
+    `
+  },
+
+  analogy: {
+    title: "Analogy",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Word Relationships</h2>
+        <p><strong>A : B :: C : D</strong> (A is to B as C is to D)</p>
+        <h3>Common Relationships:</h3>
+        <ul>
+            <li><strong>Worker & Tool:</strong> Carpenter : Saw.</li>
+            <li><strong>Part & Whole:</strong> Finger : Hand.</li>
+            <li><strong>Synonyms:</strong> Big : Huge.</li>
+            <li><strong>Antonyms:</strong> Hot : Cold.</li>
+            <li><strong>Cause & Effect:</strong> Virus : Illness.</li>
+        </ul>
+        <p><strong>Tip:</strong> Make a "Bridge Sentence". (A carpenter uses a saw. A painter uses a brush.)</p>
+      </section>
+    `
+  },
+
+  paragraph_organization: {
+    title: "Paragraph Organization",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Arranging Sentences</h2>
+        <p>Task: Arrange jumbled sentences to form a logical paragraph.</p>
+        <h3>Strategies:</h3>
+        <ol>
+            <li><strong>Find the Topic Sentence:</strong> It stands alone. Usually introduces the subject fully (names, not just "he/she").</li>
+            <li><strong>Look for Signal Words:</strong> First, Next, However, Therefore, Finally.</li>
+            <li><strong>General to Specific:</strong> Broad idea first, details later.</li>
+            <li><strong>Noun before Pronoun:</strong> "Dr. Jose Rizal..." comes before "He...".</li>
+        </ol>
+      </section>
+    `
+  },
+
+  reading_comprehension: {
+    title: "Reading Comprehension",
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>Understanding Text</h2>
+        <p><strong>Golden Rule:</strong> If it's not in the text, it's not the answer.</p>
+        <h3>Question Types:</h3>
+        <ul>
+            <li><strong>Main Idea:</strong> Check first and last sentences.</li>
+            <li><strong>Specific Details:</strong> Scan keywords.</li>
+            <li><strong>Vocabulary in Context:</strong> Guess meaning from surrounding words.</li>
+            <li><strong>Inference:</strong> Logical conclusion based on evidence (not opinion).</li>
+        </ul>
+      </section>
+    `
+  }
 };
-// FALLBACK: Kung hindi mo ma-rename, okay lang, gagamit tayo ng logic later.
-
 
 // ==========================================
-// 2. NUMERICAL DATA (NEW)
+// 3. NUMERICAL DATA
 // ==========================================
-
 const NUMERICAL_TOPICS = [
     { id: 'integers', label: 'Integers & Operations' },
     { id: 'pemdas', label: 'PEMDAS / MDAS' },
@@ -61,7 +476,7 @@ const NUMERICAL_TOPICS = [
     { id: 'wp_distance', label: 'Word Problems: Distance' }
 ];
 
-// Placeholders for Numerical Lessons (Pwede mong lagyan ng laman later)
+// Numerical Lessons Placeholder
 const NUMERICAL_LESSONS = {
     integers: { 
         title: "Integers & Operations", 
@@ -70,17 +485,14 @@ const NUMERICAL_LESSONS = {
     pemdas: { 
         title: "PEMDAS", 
         fullHtml: "<p>Parenthesis, Exponents, Multiplication, Division, Addition, Subtraction.</p>" 
-    },
-    // Add more here...
+    }
 };
 
-
 // ==========================================
-// 3. APP LOGIC (UPDATED & FIXED)
+// 4. APP LOGIC (CORE)
 // ==========================================
 
-// Global State
-let currentSubject = 'verbal'; // Default
+let currentSubject = 'verbal'; 
 let currentActiveTopicId = null;
 let quizState = null;
 
@@ -120,11 +532,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 1. SUBJECT SWITCHING LOGIC ---
   
-  // Function to switch subject
   window.switchSubject = function(subject) {
       currentSubject = subject;
       
-      // Update Buttons UI
       if(subject === 'verbal') {
           btnVerbal.classList.add('active');
           btnNumerical.classList.remove('active');
@@ -135,24 +545,19 @@ document.addEventListener("DOMContentLoaded", () => {
           subjectTitleEl.textContent = "Numerical Ability · Reviewer";
       }
 
-      // Refresh Topics List (Study Mode)
       renderTopicsSidebar();
-      
-      // Refresh Dropdown (Practice Mode)
       updatePracticeDropdown();
 
-      // Reset Lesson View
       lessonTitleEl.textContent = "Select a Topic";
       lessonMetaEl.textContent = "";
       lessonContentEl.innerHTML = "<p>Please select a topic from the sidebar to start studying.</p>";
   };
 
-  // Helper to get current topics array
   function getCurrentTopics() {
       return currentSubject === 'verbal' ? VERBAL_TOPICS : NUMERICAL_TOPICS;
   }
 
-  // --- 2. TAB SWITCHING (Study vs Practice) ---
+  // --- 2. TAB SWITCHING ---
   modeTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const mode = tab.dataset.mode;
@@ -185,7 +590,6 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.textContent = t.label;
       btn.dataset.topic = t.id;
       btn.addEventListener("click", () => {
-        // Remove active class from others
         document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         renderLesson(t.id);
@@ -197,14 +601,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderLesson(topicKey) {
-    // Determine which lesson object to use
-    // Note: Assuming 'LESSONS' (old verbal) or 'VERBAL_LESSONS' exists
     let lessonData = null;
     
     if (currentSubject === 'verbal') {
-        // Check both old 'LESSONS' variable and new 'VERBAL_LESSONS' just in case
         if (typeof VERBAL_LESSONS !== 'undefined') lessonData = VERBAL_LESSONS[topicKey];
-        else if (typeof LESSONS !== 'undefined') lessonData = LESSONS[topicKey];
     } else {
         lessonData = NUMERICAL_LESSONS[topicKey];
     }
@@ -219,11 +619,9 @@ document.addEventListener("DOMContentLoaded", () => {
     lessonTitleEl.textContent = lessonData.title || topicKey;
     lessonMetaEl.textContent = `${currentSubject.toUpperCase()} · ${lessonData.level || 'Review'}`;
 
-    // Render HTML content
     if (lessonData.fullHtml) {
       lessonContentEl.innerHTML = lessonData.fullHtml;
     } else {
-      // Build from parts (intro, keyPoints, etc.) if fullHtml is missing
       let html = "";
       if (lessonData.intro) html += `<div class="lesson-section"><p>${lessonData.intro}</p></div>`;
       if (lessonData.keyPoints) {
@@ -247,15 +645,10 @@ document.addEventListener("DOMContentLoaded", () => {
         practiceTopicEl.appendChild(opt);
       });
       
-      // Select first option by default
       if (topics.length > 0) practiceTopicEl.value = topics[0].id;
   }
 
-  // Question Bank Retriever
   function getQuestionBank(topic) {
-    console.log(`Fetching questions for: ${currentSubject} - ${topic}`);
-    
-    // VERBAL MAPPING
     if (currentSubject === 'verbal') {
         switch (topic) {
             case "nouns": return (typeof NOUN_QUESTIONS !== 'undefined') ? NOUN_QUESTIONS : null;
@@ -284,9 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "reading_comprehension": return (typeof READING_COMPREHENSION_QUESTIONS !== 'undefined') ? READING_COMPREHENSION_QUESTIONS : null;
             default: return null;
         }
-    } 
-    // NUMERICAL MAPPING
-    else {
+    } else {
         switch (topic) {
             case "integers": return (typeof INTEGERS_QUESTIONS !== 'undefined') ? INTEGERS_QUESTIONS : null;
             case "pemdas": return (typeof PEMDAS_QUESTIONS !== 'undefined') ? PEMDAS_QUESTIONS : null;
@@ -294,15 +685,13 @@ document.addEventListener("DOMContentLoaded", () => {
             case "fractions": return (typeof FRACTIONS_QUESTIONS !== 'undefined') ? FRACTIONS_QUESTIONS : null;
             case "percent": return (typeof PERCENT_QUESTIONS !== 'undefined') ? PERCENT_QUESTIONS : null;
             case "wp_age": return (typeof WP_AGE_QUESTIONS !== 'undefined') ? WP_AGE_QUESTIONS : null;
-            // Add more cases as you create more question files
+            case "wp_work": return (typeof WP_WORK_QUESTIONS !== 'undefined') ? WP_WORK_QUESTIONS : null;
             default: return null;
         }
     }
   }
 
-  // --- 5. QUIZ EXECUTION LOGIC ---
-
-  let quizState = null;
+  // --- 5. QUIZ LOGIC ---
 
   function stopCurrentTimer() {
     if (quizState && quizState.timerId) {
@@ -368,11 +757,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function showQuestion() {
     if (!quizState) return;
     
-    // Get current question object
     let q = quizState.questions[quizState.currentIndex];
 
-    // --- DATA NORMALIZATION (Fix for different file formats) ---
-    // Analogy Format (q, a, options, exp)
+    // --- DATA NORMALIZATION ---
     if (q.q && q.a && q.options) {
         q.question = q.q;
         q.choices = q.options;
@@ -380,32 +767,26 @@ document.addEventListener("DOMContentLoaded", () => {
         q.explanation = q.exp;
         q.correctIndex = q.options.indexOf(q.a);
     }
-    // Standard Format (question, answer, options)
     else if (q.options && q.answer && !q.choices) {
         q.choices = q.options;
         q.correctIndex = q.options.indexOf(q.answer);
     }
     
-    // Safety Check for empty choices
     if (!Array.isArray(q.choices)) {
         console.error("Error: Question data is invalid", q);
         q.choices = []; 
     }
-    // -----------------------------------------------------
 
     quizState.answered = false;
     quizProgressEl.textContent = `Question ${quizState.currentIndex + 1} of ${quizState.questions.length}`;
     updateProgressFill();
 
-    // Display Question
     quizQuestionEl.textContent = q.question || "Question text missing";
     
-    // Reset UI
     quizChoicesEl.innerHTML = "";
     quizExplanationEl.classList.add("hide");
     quizNextBtn.classList.add("hide");
 
-    // Create Choices
     q.choices.forEach((choice, idx) => {
       const btn = document.createElement("button");
       btn.className = "quiz-choice";
@@ -466,7 +847,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const btns = quizChoicesEl.querySelectorAll("button");
 
     quizState.incorrect++;
-    // Highlight correct answer
     if (btns[q.correctIndex]) {
       btns[q.correctIndex].classList.add("correct");
     }
@@ -500,7 +880,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const timer = timerModeEl.value;
     const weakNotes = practiceWeakEl.value.trim();
 
-    // 1. Get Questions
     const bank = getQuestionBank(topic);
     
     if (!bank) {
@@ -508,16 +887,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 2. Filter by Level (if applicable) or use all
     let pool = [];
     
-    // Check if bank is an Array (Simple format) or Object (Level format)
     if (Array.isArray(bank)) {
-        pool = bank; // Just use the whole array
+        pool = bank; 
     } else if (bank[level]) {
-        pool = bank[level]; // Use specific level
+        pool = bank[level]; 
     } else {
-        // Fallback: Combine all levels if specific level not found
         Object.values(bank).forEach(arr => {
             if(Array.isArray(arr)) pool = pool.concat(arr);
         });
@@ -528,10 +904,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 3. Shuffle and Slice
     const selectedQuestions = shuffleArray(pool).slice(0, count);
 
-    // 4. Init Quiz State
     quizState = {
       questions: selectedQuestions,
       currentIndex: 0,
@@ -545,7 +919,6 @@ document.addEventListener("DOMContentLoaded", () => {
       wrongAnswers: []
     };
 
-    // 5. Start
     showQuestion();
   });
 
@@ -556,7 +929,6 @@ document.addEventListener("DOMContentLoaded", () => {
       quizState.currentIndex++;
       showQuestion();
     } else {
-      // FINISH QUIZ
       stopCurrentTimer();
       updateProgressFill(100);
 
@@ -604,7 +976,7 @@ document.addEventListener("DOMContentLoaded", () => {
       quizNextBtn.classList.add("hide");
 
       const restartBtn = document.createElement("button");
-      restartBtn.className = "btn-primary"; // Styled button
+      restartBtn.className = "btn-primary";
       restartBtn.style.marginTop = "20px";
       restartBtn.style.width = "100%";
       restartBtn.textContent = "Take Another Quiz";
@@ -620,6 +992,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- INITIALIZATION ---
-  // Default to Verbal
   window.switchSubject('verbal');
 });
