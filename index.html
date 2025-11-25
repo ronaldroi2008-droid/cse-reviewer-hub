@@ -4,336 +4,190 @@
   <meta charset="UTF-8" />
   <title>CSE Reviewer Hub – Verbal Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --primary: #2563eb; --primary-dark: #1d4ed8;
-      --accent: #3b82f6; --accent-soft: #eff6ff;
-      --text: #1f2937; --text-light: #6b7280;
-      --bg: #f9fafb; --white: #ffffff;
-      --border: #e5e7eb; --success: #10b981; --error: #ef4444;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
-    
-    /* HEADER */
-    header { background: var(--white); padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    h1 { color: var(--primary); font-size: 1.4rem; font-weight: 700; }
-    
-    /* TABS */
-    .tabs-nav { display: flex; gap: 1rem; padding: 0.5rem 1rem; background: var(--white); border-bottom: 1px solid var(--border); }
-    .tab-btn { padding: 0.5rem 1rem; border: none; background: none; color: var(--text-light); cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; }
-    .tab-btn.active { color: var(--primary); border-color: var(--primary); }
-
-    /* LAYOUT */
-    .main-layout { display: grid; grid-template-columns: 260px 1fr; gap: 1rem; height: 100%; overflow: hidden; }
-    
-    /* SIDEBAR */
-    .sidebar { background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
-    .sidebar-header { padding: 1rem; font-weight: bold; background: #f8fafc; border-bottom: 1px solid var(--border); }
-    .topic-list { list-style: none; overflow-y: auto; flex: 1; }
-    .topic-btn { width: 100%; text-align: left; padding: 12px 15px; border: none; background: none; border-bottom: 1px solid #f1f5f9; cursor: pointer; color: var(--text); transition: 0.2s; }
-    .topic-btn:hover { background: var(--accent-soft); }
-    .topic-btn.active { background: var(--accent-soft); color: var(--primary); border-left: 4px solid var(--primary); font-weight: 700; }
-
-    /* CONTENT */
-    .content-area { padding: 2rem; overflow-y: auto; background: var(--bg); }
-    .card { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; }
-    
-    /* QUIZ UI */
-    .quiz-controls { margin-bottom: 1.5rem; display: grid; gap: 1rem; }
-    select, button.action-btn { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
-    .action-btn { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
-    .action-btn:hover { background: var(--primary-dark); }
-    
-    .question-text { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; }
-    .choice-btn { display: block; width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid var(--border); background: var(--white); border-radius: 6px; cursor: pointer; text-align: left; transition: 0.2s; }
-    .choice-btn:hover { background: var(--accent-soft); border-color: var(--primary); }
-    
-    .choice-btn.correct { background: #dcfce7; border-color: var(--success); color: #166534; }
-    .choice-btn.incorrect { background: #fee2e2; border-color: var(--error); color: #991b1b; }
-    
-    .explanation { margin-top: 1.5rem; padding: 1rem; background: #eff6ff; border-radius: 6px; border-left: 4px solid var(--primary); }
-    .hidden { display: none !important; }
-
-    @media (max-width: 768px) {
-      .main-layout { grid-template-columns: 1fr; }
-      .sidebar { display: none; } 
-      .sidebar.show { display: flex; position: absolute; width: 100%; height: 100%; z-index: 10; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <h1>CSE Reviewer Hub</h1>
-    <span style="background:#fef9c3; padding:4px 8px; border-radius:12px; font-size:0.8rem; font-weight:bold;">Verbal</span>
-  </header>
-
-  <div class="tabs-nav">
-    <button class="tab-btn active" onclick="setMode('study')">Review Topics</button>
-    <button class="tab-btn" onclick="setMode('practice')">Practice Quiz</button>
-  </div>
-
-  <div class="main-layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">Select Topic</div>
-      <ul class="topic-list" id="topicList"></ul>
-    </aside>
-
-    <main class="content-area">
-      
-      <div id="studyView">
-        <div class="card">
-          <h2 id="lessonTitle" style="margin-bottom:1rem; color:var(--primary);">Welcome</h2>
-          <div id="lessonBody" style="line-height:1.8;">
-            <p>Select a topic from the sidebar to view review notes.</p>
-          </div>
-        </div>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1 class="app-title">CSE Reviewer Hub</h1>
+        <p class="app-subtitle">Verbal Ability · Gender of Nouns</p>
       </div>
+      <span class="badge">Beta</span>
+    </header>
 
-      <div id="practiceView" class="hidden">
-        <div class="card">
-          <div id="quizSetup">
-            <h2 style="margin-bottom:1rem;">Quiz Settings</h2>
-            <div class="quiz-controls">
-              <div>
-                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">TOPIC</label>
-                <select id="quizTopic"></select>
-              </div>
-              <div>
-                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">LEVEL</label>
-                <select id="quizLevel">
-                  <option value="beginner">Beginner</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advanced">Advanced</option>
-                  <option value="super">Super / Expert</option>
-                  <option value="all">Mix All Levels</option>
-                </select>
-              </div>
-              <div>
-                <label style="font-size:0.9rem; font-weight:bold; color:var(--text-light);">ITEMS</label>
-                <select id="quizCount">
-                  <option value="10">10 Questions</option>
-                  <option value="20">20 Questions</option>
-                  <option value="50">50 Questions</option>
-                </select>
-              </div>
-              <button class="action-btn" onclick="startQuiz()">START QUIZ</button>
+    <nav class="mode-tabs">
+      <button class="mode-tab active" data-mode="study">Study Mode</button>
+      <button class="mode-tab" data-mode="practice">Practice Quiz</button>
+    </nav>
+
+    <main class="app-main">
+      <!-- Study Mode -->
+      <section id="mode-study" class="mode-section active">
+        <div class="layout">
+          <aside class="sidebar">
+            <h2 class="sidebar-title">Topics</h2>
+
+            <!-- Dynamic list ng topics – pupunuin ng app.js gamit VERBAL_TOPICS -->
+            <div id="topicsList"></div>
+
+            <p class="sidebar-note">
+              Tip: Basahin muna ang lesson dito, then lumipat sa Practice Quiz
+              para masanay sa exam-style questions.
+            </p>
+          </aside>
+
+          <section class="content">
+            <header class="lesson-header">
+              <h2 id="lesson-title">Gender of Nouns</h2>
+              <p id="lesson-meta" class="lesson-meta"></p>
+            </header>
+            <div id="lesson-content" class="lesson-body">
+              <p>Loading lesson…</p>
             </div>
-            <div id="debugMsg" style="margin-top:1rem; color:red; font-size:0.85rem;"></div>
-          </div>
-
-          <div id="quizActive" class="hidden">
-            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; color:var(--text-light); font-weight:bold;">
-              <span id="qProgress">Question 1/10</span>
-              <span id="qScore">Score: 0</span>
-            </div>
-            <div style="height:6px; background:#f1f5f9; border-radius:3px; margin-bottom:1.5rem;">
-              <div id="qBar" style="height:100%; background:var(--primary); width:0%; transition:0.3s;"></div>
-            </div>
-
-            <div class="question-text" id="qText">Loading...</div>
-            <div id="qChoices"></div>
-
-            <div id="qExplanation" class="explanation hidden"></div>
-            <button id="btnNext" class="action-btn hidden" style="margin-top:1rem;" onclick="nextQuestion()">Next Question</button>
-            <button class="action-btn" style="margin-top:1rem; background:#64748b;" onclick="quitQuiz()">Quit Quiz</button>
-          </div>
-
-          <div id="quizResults" class="hidden" style="text-align:center;">
-            <h2 style="color:var(--primary); font-size:2rem;">Quiz Complete!</h2>
-            <p id="finalScore" style="font-size:1.5rem; margin:1rem 0; font-weight:bold;"></p>
-            <button class="action-btn" onclick="location.reload()">Take Another Quiz</button>
-          </div>
-
+          </section>
         </div>
-      </div>
+      </section>
+
+      <!-- Practice Mode -->
+      <section id="mode-practice" class="mode-section">
+        <div class="layout">
+          <aside class="sidebar">
+            <h2 class="sidebar-title">Quiz Setup</h2>
+
+            <label class="field">
+              <span class="field-label">Topic</span>
+              <select id="practice-topic"></select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Level</span>
+              <select id="practice-level">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="super">Super / Hard</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Number of items</span>
+              <select id="practice-count">
+                <option value="10">10 items</option>
+                <option value="20">20 items</option>
+                <option value="30">30 items</option>
+                <option value="50">50 items</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Timer</span>
+              <select id="timer-mode">
+                <option value="off">Off (no timer)</option>
+                <option value="60">60s per item</option>
+                <option value="45">45s per item</option>
+                <option value="30">30s per item</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Weak points / focus</span>
+              <textarea
+                id="practice-weak"
+                rows="2"
+                placeholder="Example: professions, common vs neuter, pronoun agreement"
+              ></textarea>
+            </label>
+
+            <button id="start-quiz-btn" class="btn-primary full-width">
+              Start practice quiz
+            </button>
+
+            <p class="sidebar-note">
+              Questions are randomized every time based on your chosen level.
+            </p>
+          </aside>
+
+          <section class="content">
+            <header class="quiz-header">
+              <div id="quiz-progress" class="quiz-progress-text">
+                Question 0 of 0
+              </div>
+              <div id="quiz-timer" class="quiz-timer">
+                Time left: --
+              </div>
+            </header>
+
+            <div class="progress-bar">
+              <div class="progress-fill" id="quiz-progress-fill"></div>
+            </div>
+
+            <article class="quiz-card">
+              <div id="quiz-question" class="quiz-question">
+                Ready when you are. Set up your quiz on the left and press
+                <strong>“Start practice quiz”</strong>.
+              </div>
+              <div id="quiz-choices" class="quiz-choices"></div>
+              <div id="quiz-explanation" class="quiz-explanation hide"></div>
+
+              <button id="quiz-next" class="btn-secondary quiz-next hide">
+                Next question
+              </button>
+            </article>
+
+            <section id="quiz-output" class="quiz-output">
+              <div class="stats-panel">
+                <div class="stat-item">
+                  <span>Correct</span><span>0</span>
+                </div>
+                <div class="stat-item">
+                  <span>Incorrect</span><span>0</span>
+                </div>
+                <div class="stat-item">
+                  <span>Unanswered</span><span>0</span>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
     </main>
+
+    <footer class="app-footer">
+      <span>
+        CSE Reviewer Hub · Verbal Ability · Practice only · Not official CSC
+        material
+      </span>
+    </footer>
   </div>
 
-  <script>
-    const TOPICS = [
-      { id: 'nouns', label: 'Nouns' },
-      { id: 'gender', label: 'Gender of Nouns' },
-      { id: 'grammatical_number', label: 'Grammatical Number' },
-      { id: 'verbs', label: 'Verbs' },
-      { id: 'adjectives', label: 'Adjectives' },
-      { id: 'punctuations', label: 'Punctuations' },
-      { id: 'error_identification', label: 'Error Identification' }
-    ];
-
-    // --- 1. NOUNS DATA ---
-    const NOUNS_QUESTIONS = {
-      beginner: [
-        { q: "Which word is a noun?", options: ["Run", "Blue", "Table", "Fast"], a: "Table", exp: "A table is a thing." },
-        { q: "Identify the proper noun.", options: ["city", "Manila", "town", "village"], a: "Manila", exp: "Specific names are Proper Nouns." },
-        { q: "Find the abstract noun.", options: ["car", "dog", "freedom", "pen"], a: "freedom", exp: "Freedom is an idea, not a physical object." }
-      ],
-      intermediate: [
-        { q: "Which is a collective noun?", options: ["student", "team", "player", "person"], a: "team", exp: "Team refers to a group." },
-        { q: "What is the plural of 'child'?", options: ["childs", "children", "childes", "childrens"], a: "children", exp: "Irregular plural." }
-      ]
-    };
-
-    // --- 2. GENDER DATA ---
-    const GENDER_QUESTIONS = {
-      beginner: [
-        { q: "What is the feminine of 'Actor'?", options: ["Actor", "Actress", "Heroine", "Lady"], a: "Actress", exp: "-ess suffix denotes feminine." },
-        { q: "What is the masculine of 'Niece'?", options: ["Nephew", "Uncle", "Brother", "Cousin"], a: "Nephew", exp: "Niece (F) - Nephew (M)." },
-        { q: "Which is Neuter?", options: ["Baby", "Table", "Mother", "Rooster"], a: "Table", exp: "Objects are neuter." }
-      ],
-      intermediate: [
-        { q: "Feminine of 'Ram'?", options: ["Ewe", "Doe", "Sow", "Mare"], a: "Ewe", exp: "Ram (Male Sheep) -> Ewe (Female)." },
-        { q: "Masculine of 'Witch'?", options: ["Wizard", "Warlock", "Sorcerer", "Magician"], a: "Warlock", exp: "Witch (F) -> Warlock (M)." }
-      ]
-    };
-    
-    // --- 3. PUNCTUATION DATA ---
-    const PUNCTUATION_QUESTIONS = {
-      beginner: [
-        { q: "Ends a question?", options: [".", "?", "!", ","], a: "?", exp: "Question mark." },
-        { q: "Shows strong emotion?", options: [".", "?", "!", ";"], a: "!", exp: "Exclamation point." }
-      ]
-    };
-
-    // --- 4. GENERIC GENERATOR FOR OTHERS (Para hindi mag-error) ---
-    function getQuestions(id) {
-        if(id === 'nouns') return NOUNS_QUESTIONS;
-        if(id === 'gender') return GENDER_QUESTIONS;
-        if(id === 'punctuations') return PUNCTUATION_QUESTIONS;
-        
-        // Fallback generator so app doesn't crash for other topics
-        return {
-            beginner: Array(10).fill({ q: `Sample Question for ${id}`, options: ["A", "B", "C", "D"], a: "A", exp: "Placeholder question." })
-        };
-    }
-  </script>
-
-  <script>
-    let quizState = { questions: [], index: 0, score: 0 };
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      const list = document.getElementById('topicList');
-      const drop = document.getElementById('quizTopic');
-      
-      TOPICS.forEach(t => {
-        // Sidebar
-        const li = document.createElement('li');
-        li.innerHTML = `<button class="topic-btn" onclick="selectTopic('${t.id}', '${t.label}')">${t.label}</button>`;
-        list.appendChild(li);
-        // Dropdown
-        const opt = document.createElement('option');
-        opt.value = t.id;
-        opt.innerText = t.label;
-        drop.appendChild(opt);
-      });
-    });
-
-    function setMode(mode) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      if(mode === 'study') {
-        document.getElementById('studyView').classList.remove('hidden');
-        document.getElementById('practiceView').classList.add('hidden');
-      } else {
-        document.getElementById('studyView').classList.add('hidden');
-        document.getElementById('practiceView').classList.remove('hidden');
-        document.getElementById('quizSetup').classList.remove('hidden');
-        document.getElementById('quizActive').classList.add('hidden');
-      }
-    }
-
-    function selectTopic(id, label) {
-      document.getElementById('lessonTitle').innerText = label;
-      document.getElementById('lessonBody').innerHTML = `<p>Review notes for <strong>${label}</strong> are ready. Go to Practice Quiz to start.</p>`;
-    }
-
-    function startQuiz() {
-      const topicId = document.getElementById('quizTopic').value;
-      const level = document.getElementById('quizLevel').value;
-      const bank = getQuestions(topicId);
-      
-      let pool = [];
-      if(level === 'all') {
-         if(bank.beginner) pool.push(...bank.beginner);
-         if(bank.intermediate) pool.push(...bank.intermediate);
-      } else {
-         pool = bank[level] || bank['beginner']; // Fallback
-      }
-
-      if(!pool || pool.length === 0) {
-         alert("No questions available for this level yet.");
-         return;
-      }
-
-      // Shuffle
-      quizState.questions = pool.sort(() => 0.5 - Math.random()).slice(0, 10);
-      quizState.index = 0;
-      quizState.score = 0;
-
-      document.getElementById('quizSetup').classList.add('hidden');
-      document.getElementById('quizActive').classList.remove('hidden');
-      renderQuestion();
-    }
-
-    function renderQuestion() {
-      const q = quizState.questions[quizState.index];
-      document.getElementById('qText').innerText = q.q || q.question;
-      document.getElementById('qProgress').innerText = `Question ${quizState.index + 1}/${quizState.questions.length}`;
-      document.getElementById('qBar').style.width = `${((quizState.index)/quizState.questions.length)*100}%`;
-      
-      const choicesDiv = document.getElementById('qChoices');
-      choicesDiv.innerHTML = '';
-      document.getElementById('qExplanation').classList.add('hidden');
-      document.getElementById('btnNext').classList.add('hidden');
-
-      const opts = q.options || q.choices;
-      const ans = q.a || q.answer || (q.correctIndex !== undefined ? opts[q.correctIndex] : "");
-
-      opts.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'choice-btn';
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(btn, opt, ans, q.exp || q.explanation);
-        choicesDiv.appendChild(btn);
-      });
-    }
-
-    function checkAnswer(btn, selected, correct, exp) {
-      if(!document.getElementById('btnNext').classList.contains('hidden')) return;
-
-      if(selected === correct) {
-        btn.classList.add('correct');
-        quizState.score++;
-      } else {
-        btn.classList.add('incorrect');
-        // Find correct
-        Array.from(document.querySelectorAll('.choice-btn')).forEach(b => {
-           if(b.innerText === correct) b.classList.add('correct');
-        });
-      }
-
-      document.getElementById('qExplanation').innerHTML = `<strong>Answer:</strong> ${correct}<br>${exp}`;
-      document.getElementById('qExplanation').classList.remove('hidden');
-      document.getElementById('btnNext').classList.remove('hidden');
-      document.getElementById('qScore').innerText = `Score: ${quizState.score}`;
-    }
-
-    function nextQuestion() {
-      quizState.index++;
-      if(quizState.index < quizState.questions.length) {
-        renderQuestion();
-      } else {
-        document.getElementById('quizActive').classList.add('hidden');
-        document.getElementById('quizResults').classList.remove('hidden');
-        document.getElementById('finalScore').innerText = `You scored ${quizState.score} / ${quizState.questions.length}`;
-      }
-    }
-    
-    function quitQuiz() {
-      setMode('practice');
-    }
-  </script>
+  
+    <!-- ORDER: question banks muna, tapos logic -->
+  <script src="questions_nouns.js"></script>
+<script src="questions_gender.js"></script>
+<script src="grammatical_number_questions.js"></script>
+<script src="questions_pronouns.js"></script>
+<script src="questions_tenses.js"></script>
+<script src="questions_verbs.js"></script>
+<script src="questions_adverbs.js"></script>
+<script src="questions_adjectives.js"></script>
+<script src="questions_prepositions.js"></script>
+<script src="questions_conjunctions.js"></script>
+<script src="questions_articles.js"></script>
+ <script src="questions_affixes.js"></script>
+   <script src="questions_synonyms.js"></script>
+   <script src="questions_antonyms.js"></script>
+     <script src="questions_analogy.js"></script>
+ <script src="questions_punctuations.js"></script>
+<script src="questions_interjections.js"></script>
+<script src="subject_verb_agreement.js"></script>
+  <script src="words_often_confused.js"></script>
+<script src="sentence_construction.js"></script>
+<script src="sentence_structure.js"></script>  
+<script src="paragraph_organization_questions.js"></script>  
+<script src="error_identification.js"></script>   
+  <script src="reading_comprehension.js"></script> 
+<script src="app.js"></script>
 
 </body>
 </html>
