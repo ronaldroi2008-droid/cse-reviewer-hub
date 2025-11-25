@@ -4711,47 +4711,78 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================================
 // SIMPLE QUESTION BANK RETRIEVER (WORKING VERSION)
 // ==========================================
+
+// ==========================================
+// DEBUGGING QUESTION BANK RETRIEVER
+// ==========================================
 function getQuestionBank(topic) {
-  console.log(`Fetching questions for: ${currentSubject} - ${topic}`);
+  console.log(`🔄 Fetching questions for: ${currentSubject} - ${topic}`);
   
-  // For now, return test questions for all verbal topics to verify UI works
-  if (currentSubject === 'verbal') {
-    return [
-      {
-        question: `Sample question for ${topic}: What is the correct answer?`,
-        choices: ["Option A", "Option B", "Option C", "Option D"],
-        answer: "Option B",
-        explanation: `This is a sample question for ${topic} topic. Option B is correct.`
-      },
-      {
-        question: `Another ${topic} question: Which one is right?`,
-        choices: ["Choice 1", "Choice 2", "Choice 3", "Choice 4"],
-        answer: "Choice 3",
-        explanation: `Explanation for ${topic} question. Choice 3 is the correct answer.`
-      },
-      {
-        question: `Third ${topic} question: Select the best option.`,
-        choices: ["First", "Second", "Third", "Fourth"],
-        answer: "First", 
-        explanation: `Final sample question for ${topic}. First option is correct.`
-      }
-    ];
+  // First, try to use external files if they exist
+  let externalQuestions = tryGetExternalQuestions(topic);
+  if (externalQuestions && externalQuestions.length > 0) {
+    console.log(`✅ Found ${externalQuestions.length} external questions for ${topic}`);
+    return externalQuestions;
   }
   
-  // For numerical topics
-  if (currentSubject === 'numerical') {
-    return [
-      {
-        question: `Math question for ${topic}: Solve 2 + 2?`,
-        choices: ["3", "4", "5", "6"],
-        answer: "4",
-        explanation: `Basic math question for ${topic}. 2 + 2 = 4.`
+  // Fallback: Use built-in questions if external files fail
+  console.log(`❌ No external questions found, using fallback for ${topic}`);
+  return getFallbackQuestions(topic);
+}
+
+function tryGetExternalQuestions(topic) {
+  try {
+    // VERBAL TOPICS
+    if (currentSubject === 'verbal') {
+      switch (topic) {
+        case "nouns":
+          if (typeof NOUNS_QUESTIONS !== 'undefined' && NOUNS_QUESTIONS.length > 0) 
+            return NOUNS_QUESTIONS;
+          if (typeof NOUN_QUESTIONS !== 'undefined' && NOUN_QUESTIONS.length > 0) 
+            return NOUN_QUESTIONS;
+          break;
+            
+        case "pronouns":
+          if (typeof PRONOUNS_QUESTIONS !== 'undefined' && PRONOUNS_QUESTIONS.length > 0) 
+            return PRONOUNS_QUESTIONS;
+          break;
+          
+        case "verbs":
+          if (typeof VERBS_QUESTIONS !== 'undefined' && VERBS_QUESTIONS.length > 0) 
+            return VERBS_QUESTIONS;
+          break;
+          
+        // Add more cases as needed...
+        default:
+          console.log(`No external mapping for topic: ${topic}`);
       }
-    ];
+    }
+  } catch (error) {
+    console.log(`Error loading external questions for ${topic}:`, error);
   }
   
   return null;
 }
+
+function getFallbackQuestions(topic) {
+  // Simple fallback questions to ensure UI works
+  return [
+    {
+      question: `Sample question for ${topic} (Fallback)`,
+      choices: ["Option A", "Option B", "Option C", "Option D"],
+      answer: "Option B", 
+      explanation: `This is a fallback question for ${topic} because external files failed to load.`
+    },
+    {
+      question: `Another ${topic} question (Fallback)`,
+      choices: ["Choice 1", "Choice 2", "Choice 3", "Choice 4"],
+      answer: "Choice 3",
+      explanation: `External question file for ${topic} returned 404 error.`
+    }
+  ];
+}
+
+                          
   // --- 5. QUIZ LOGIC ---
 
   function stopCurrentTimer() {
