@@ -1,4 +1,4 @@
-const NOUN_QUESTIONS = {
+const NOUNS_QUESTIONS = {
   beginner: [
     // 1-10: Identifying Nouns (Person)
     { question: "Which word is a noun?", choices: ["quickly", "happy", "table", "outside"], correctIndex: 2, explanation: '"Table" is a noun because it names a thing.' },
