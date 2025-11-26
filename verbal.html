@@ -5563,12 +5563,17 @@ function handleAnswer(selectedOption) {
         }
       });
 
-      nextBtn.addEventListener("click", function () {
+     nextBtn.addEventListener("click", function () {
         const questions = getQuestionsForCurrent();
-        if (!questions.length) return;
-        if (currentIndex < questions.length - 1) {
-          currentIndex += 1;
-          renderQuiz();
+        
+        // Kung nasa huling tanong na, tawagin ang finishQuiz()
+        if (currentIndex === questions.length - 1) {
+           finishQuiz(); 
+        } 
+        // Kung hindi pa, lipat sa susunod na tanong
+        else {
+           currentIndex++;
+           renderQuiz();
         }
       });
     }
