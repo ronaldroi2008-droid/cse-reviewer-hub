@@ -1408,53 +1408,136 @@ const LESSONS = {
 
       subject_verb_agreement: {
     title: "Subject–Verb Agreement",
-    level: "Verbal Ability · Grammar · Subject–Verb Agreement",
+    level: "Verbal Ability · Grammar · SVA",
     intro:
-      "Subject–verb agreement means the verb must match the subject in number (singular or plural) and sometimes in person (I/you/he/they). In the Civil Service Exam, many questions hide the true subject or distract you with extra phrases. Your job is to find the real subject and make sure the verb agrees with it.",
+      "Subject–verb agreement is the cornerstone of grammar. The verb must match the subject in number (Singular vs. Plural).",
+
+    // ITO ANG IDINAGDAG PARA LUMABAS ANG LESSON SA UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. The Golden Rule</h2>
+        <p><strong>Singular Subject</strong> = Verb with <strong>-S</strong> (is, has, was, walks).</p>
+        <p><strong>Plural Subject</strong> = Base Verb (are, have, were, walk).</p>
+        <ul>
+          <li>The <strong>student writes</strong> clearly. (Singular)</li>
+          <li>The <strong>students write</strong> clearly. (Plural)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Intervening Phrases (The #1 Trap)</h2>
+        <p>Do not be confused by words that come between the subject and the verb. <strong>Ignore them.</strong></p>
+        <div class="highlight-box">
+          <p><strong>Example:</strong></p>
+          <p>The <strong>box</strong> <em>(of chocolates)</em> <strong>is</strong> on the table.</p>
+          <p><em>(Subject is 'box', not 'chocolates'.)</em></p>
+        </div>
+        <p>Phrases starting with <em>together with, along with, as well as, accompanied by</em> do <strong>NOT</strong> make the subject plural.</p>
+        <ul>
+          <li>✅ "The <strong>mayor</strong>, <em>along with the councilors</em>, <strong>is</strong> coming."</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Compound Subjects (And / Or)</h2>
+        
+        <h3>A. Joined by "AND"</h3>
+        <p>Usually Plural.</p>
+        <ul>
+          <li>"<strong>Ana and Ben are</strong> friends."</li>
+        </ul>
+        <p><strong>Exception:</strong> If they form <strong>one unit/idea</strong>, use Singular.</p>
+        <ul>
+          <li>"<strong>Bread and butter is</strong> my favorite snack."</li>
+        </ul>
+
+        <h3>B. Joined by "OR / NOR" (Proximity Rule)</h3>
+        <p>The verb agrees with the subject <strong>closest</strong> to it.</p>
+        <ul>
+          <li>"Neither the teacher nor the <strong>students are</strong> late." (Students = Plural)</li>
+          <li>"Neither the students nor the <strong>teacher is</strong> late." (Teacher = Singular)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Indefinite Pronouns</h2>
+        <p><strong>Always Singular:</strong> <em>Each, Every, Everyone, Everybody, Anyone, Nobody, Either, Neither.</em></p>
+        <ul>
+          <li>✅ "<strong>Each</strong> of the answers <strong>is</strong> correct." (Ignore 'of the answers')</li>
+          <li>✅ "<strong>Everyone has</strong> a pen."</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. The SANAM Rule (Fractions/Percent)</h2>
+        <p>For <strong>S</strong>ome, <strong>A</strong>ny, <strong>N</strong>one, <strong>A</strong>ll, <strong>M</strong>ost, look at the object of the preposition ("of...").</p>
+        <table class="lesson-table">
+          <tr>
+            <th>Noun Type</th>
+            <th>Verb</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><strong>Countable (Plural)</strong></td>
+            <td>Plural</td>
+            <td>"Some of the <strong>apples are</strong> rotten."</td>
+          </tr>
+          <tr>
+            <td><strong>Uncountable (Mass)</strong></td>
+            <td>Singular</td>
+            <td>"Some of the <strong>water is</strong> dirty."</td>
+          </tr>
+        </table>
+      </section>
+    `,
 
     keyPoints: [
-      // 1. Core rules
-      "A singular subject takes a singular verb (often with -s in the present tense): The student studies. He works.",
-      "A plural subject takes a plural verb (base form in the present): The students study. They work.",
-      "Always identify the true subject first. Ignore prepositional phrases (of, in, on, with, for, from, among, between, etc.) and extra clauses when deciding the verb form.",
-
-      // 2. Phrases that do NOT change the subject
-      "Prepositional phrases do not control the verb: The list of topics is long. (Subject: list, not topics)",
-      "Phrases like along with, as well as, together with, in addition to do NOT make the subject plural: The manager, along with his staff, is attending the meeting.",
-
-      // 3. Subjects joined by AND / OR / NOR
-      "Subjects joined by and are usually plural: Maria and Juan are classmates.",
-      "If two nouns joined by and form one idea or one unit, use a singular verb: Bread and butter is my favorite breakfast.",
-      "With either…or / neither…nor / not only…but also, the verb agrees with the part of the subject closest to the verb: Either the students or the teacher is coming. Either the teacher or the students are coming.",
-
-      // 4. Indefinite pronouns
-      "Always singular: each, every, either, neither, one, everyone, everybody, someone, somebody, anyone, anybody, no one, nobody, anything, everything, something. Example: Each of the answers is correct.",
-      "Always plural: both, few, many, several. Example: Many are called, but few are chosen.",
-      "SANAM group (some, any, none, all, most) can be singular or plural depending on the noun after of: Some of the water is dirty (uncountable → singular); Some of the students are late (countable plural → plural).",
-
-      // 5. Collective nouns, amounts, titles
-      "Collective nouns (team, committee, family, jury) are usually singular when acting as one unit: The committee has reached its decision.",
-      "They can be plural when the members act individually: The committee are arguing among themselves.",
-      "Units of time, money, distance, or weight are often treated as singular when viewed as one amount: Five years is a long time. Ten thousand pesos is a big amount.",
-      "Titles of books, movies, or organizations that look plural usually take a singular verb: The Philippines is a beautiful country. The United Nations is meeting today.",
-
-      // 6. There is / There are; who / that / which
-      "In sentences starting with There or Here, the real subject comes after the verb: There are many reasons. Here is your ID card.",
-      "In relative clauses, the verb after who / that / which must agree with its antecedent: He is one of the students who are taking the exam. He is the only one who is qualified.",
-
-      // 7. Fractions, percentages, and gerunds
-      "Fractions and percentages follow the same logic as SANAM: One-third of the students are absent. One-third of the cake is gone.",
-      "When a gerund (-ing form) is the subject, we usually use a singular verb: Reading English is helpful. Listening carefully helps you understand."
+      "Singular subjects take verbs ending in -S (is, was, has).",
+      "Plural subjects take base verbs (are, were, have).",
+      "Ignore prepositional phrases (of, in, with) between subject and verb.",
+      "Phrases like 'along with' or 'as well as' do NOT make the subject plural.",
+      "For 'Either/Or' and 'Neither/Nor', match the verb to the CLOSEST subject.",
+      "'Each' and 'Every' are always singular.",
+      "Collective nouns (Team, Family) are singular if acting as one unit.",
+      "SANAM Rule: For Some/All/Most, look at the noun in the 'of' phrase."
     ],
-
     patterns: [
-      "Sentences where the subject is separated from the verb by a long prepositional phrase (The box of old books in the corner is dusty).",
-      "Sentences starting with there is / there are or here is / here are where the subject follows the verb.",
-      "Sentences with either…or, neither…nor, or not only…but also, where the verb must agree with the nearer subject.",
-      "Questions and error identification items using indefinite pronouns such as each, everyone, all, some, none, most.",
-      "Sentences with collective nouns (team, committee, family) and measurements (years, pesos, kilometers) used as one unit.",
-      "Relative clauses with who / that / which where you must match the verb to the correct noun (antecedent)."
+      "Subject separated by long phrases (The list of names...)",
+      "Inverted sentences starting with 'There is/are'",
+      "Compound subjects using 'Neither/Nor'",
+      "Indefinite pronouns like 'Each' and 'Everyone'",
+      "Collective nouns behaving as a unit vs. individuals"
     ],
+    examples: [
+      {
+        q: "The list of items ______ on the desk.",
+        choices: ["is", "are", "were", "have"],
+        answer: "is",
+        explanation:
+          "The subject is 'list' (singular), not 'items'. Therefore, use the singular verb 'is'."
+      },
+      {
+        q: "Neither the players nor the coach ______ happy.",
+        choices: ["were", "are", "is", "have"],
+        answer: "is",
+        explanation:
+          "Proximity Rule: The verb must agree with the closest subject ('coach'). Since 'coach' is singular, use 'is'."
+      },
+      {
+        q: "Each of the employees ______ a bonus.",
+        choices: ["receive", "receives", "receiving", "have received"],
+        answer: "receives",
+        explanation:
+          "‘Each’ is always singular. We need the singular verb form (ends in -s): receives."
+      }
+    ],
+    quickTips: [
+      "Cross out the phrase between the subject and verb to see clearly.",
+      "Replace the subject with He/She/It/They to test the verb.",
+      "Memorize: 'Each' is always singular.",
+      "Memorize: 'Neither... Nor' follows the neighbor rule."
+    ]
+  },
 
     examples: [
       {
