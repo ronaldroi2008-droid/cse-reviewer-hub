@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Choose Subject</title>
+  <title>CSE Reviewer Hub – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #020617;
-      --card: #020617;
-      --border: #1f2937;
-      --accent: #2563eb;
-      --accent-soft: rgba(37, 99, 235, 0.15);
-      --text: #f9fafb;
-      --muted: #9ca3af;
+      --bg: #020617;       /* Dark Blue-Black */
+      --card: #0f172a;     /* Slightly lighter dark */
+      --border: #1e293b;   /* Border color */
+      --accent: #6366f1;   /* Indigo Accent (Same as Verbal App) */
+      --accent-hover: #4f46e5;
+      --text: #f8fafc;
+      --muted: #94a3b8;
     }
 
     * { box-sizing: border-box; }
@@ -24,147 +24,144 @@
       align-items: center;
       justify-content: center;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      background: radial-gradient(circle at top, #1e1b4b 0%, #020617 60%, #000 100%);
       color: var(--text);
     }
 
     .shell {
       width: 100%;
-      max-width: 520px;
-      padding: 24px 20px;
+      max-width: 480px;
+      padding: 20px;
     }
 
     .card {
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent),
-        #020617;
-      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
       border: 1px solid var(--border);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.8);
-      padding: 22px 22px 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      padding: 32px 24px;
+      text-align: center;
     }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 16px;
+    .logo-area {
+      margin-bottom: 20px;
+    }
+
+    .app-logo {
+      font-size: 3rem;
+      margin-bottom: 8px;
+      display: block;
     }
 
     h1 {
-      margin: 0 0 4px;
-      font-size: 1.7rem;
-      letter-spacing: 0.04em;
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #818cf8, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
 
     .subtitle {
-      margin: 0;
+      margin: 0 0 32px;
       font-size: 0.95rem;
       color: var(--muted);
+      line-height: 1.5;
     }
 
-    .badge {
-      padding: 2px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      border: 1px solid rgba(37, 99, 235, 0.5);
-      background: var(--accent-soft);
+    .menu-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .subject-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subject-btn:hover {
+      border-color: var(--accent);
+      background: rgba(99, 102, 241, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .subject-btn .icon {
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+
+    .subject-btn .arrow {
+      color: var(--muted);
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .subject-btn:hover .arrow {
+      transform: translateX(4px);
       color: var(--accent);
     }
 
-    .tabs {
-      display: inline-flex;
-      padding: 4px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      margin-bottom: 18px;
-      gap: 4px;
-    }
-
-    .tab-link {
-      border: none;
-      background: transparent;
-      padding: 7px 16px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s, transform 0.08s;
-    }
-
-    .tab-link:hover {
-      transform: translateY(-1px);
-      color: #e5e7eb;
-    }
-
-    .tab-link.primary {
-      background: linear-gradient(to right, #2563eb, #4f46e5);
-      color: #f9fafb;
-    }
-
-    .body-text {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .list {
-      margin: 0 0 12px;
-      padding-left: 18px;
-      font-size: 0.88rem;
-      color: var(--muted);
+    /* Numerical is disabled for now style */
+    .subject-btn.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      filter: grayscale(1);
     }
 
     .footer-note {
-      margin: 0;
+      margin-top: 24px;
       font-size: 0.8rem;
-      color: #6b7280;
-      text-align: right;
-    }
-
-    @media (max-width: 600px) {
-      .shell {
-        padding: 16px 12px;
-      }
-      h1 {
-        font-size: 1.4rem;
-      }
+      color: #475569;
+      border-top: 1px solid #1e293b;
+      padding-top: 16px;
     }
   </style>
 </head>
 <body>
+
   <div class="shell">
     <div class="card">
-      <div class="header">
-        <div>
-          <h1>CSE Reviewer Hub</h1>
-          <p class="subtitle">Choose a subject to start reviewing.</p>
-        </div>
-        <span class="badge">Beta</span>
+      <div class="logo-area">
+        <span class="app-logo">🦅</span>
+        <h1>CSE Reviewer Hub</h1>
+        <p class="subtitle">
+          Welcome! Choose a subject below to start your review session.
+        </p>
       </div>
 
-      <!-- “Tabs” = simple links -->
-      <div class="tabs">
-        <a href="verbal.html" class="tab-link primary">Verbal Ability</a>
-        <a href="numerical.html" class="tab-link">Numerical Ability</a>
+      <div class="menu-grid">
+        <a href="verbal.html" class="subject-btn">
+          <span>📚 &nbsp; Verbal Ability</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="numerical.html" class="subject-btn">
+          <span>🧮 &nbsp; Numerical Reasoning</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
 
-      <p class="body-text">
-        This mini hub lets you practice the two most important areas in the Civil Service Exam:
+      <p class="footer-note">
+        Tip: Review consistent grammar rules first before taking the practice quizzes.
       </p>
-      <ul class="list">
-        <li><strong>Verbal Ability</strong> – grammar, vocabulary, analogy, logic, and reading.</li>
-        <li><strong>Numerical Ability</strong> – whole numbers, fractions, word problems, and more.</li>
-      </ul>
-      <p class="body-text">
-        Tap a subject above to open the full reviewer. You can switch subjects anytime using your browser Back button.
-      </p>
-
-      <p class="footer-note">Tip: Bookmark this page as your CSE review dashboard.</p>
     </div>
   </div>
+
 </body>
 </html>
