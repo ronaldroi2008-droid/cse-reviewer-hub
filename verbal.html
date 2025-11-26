@@ -5116,26 +5116,23 @@ synonyms: {
     // ==========================================
     // 2. STATE + DOM REFERENCES
     // ==========================================
-
-    let currentMode = "study";
-    let currentTopicId = VERBAL_TOPICS[0]?.id || "analogy";
+let currentMode = "study";
+    let currentTopicId = VERBAL_TOPICS[0]?.id || "nouns";
     let currentLevel = "beginner";
     let currentIndex = 0;
-    let currentQuestionLimit = 10; // default 10 items per quiz
-    let userAnswers = []; // Dito natin iipunin ang mga sagot mo
+    let currentQuestionLimit = 10;
+    let userAnswers = []; 
 
+    // DOM
     const modeTabs = document.querySelectorAll(".mode-tab");
     const topicListEl = document.getElementById("topicList");
     const subtitleTopicEl = document.getElementById("subtitleTopic");
-
     const studyView = document.getElementById("studyView");
     const practiceView = document.getElementById("practiceView");
-
     const lessonTitleEl = document.getElementById("lessonTitle");
     const lessonIntroEl = document.getElementById("lessonIntro");
     const lessonBodyEl = document.getElementById("lessonBody");
     const tipCardEl = document.getElementById("tipCard");
-
     const quizTopicTitleEl = document.getElementById("quizTopicTitle");
     const quizLevelLabelEl = document.getElementById("quizLevelLabel");
     const questionTextEl = document.getElementById("questionText");
@@ -5147,12 +5144,7 @@ synonyms: {
     const levelChips = document.querySelectorAll(".level-chip");
     const countChips = document.querySelectorAll(".count-chip");
 
-    // ==========================================
-    // 3. HELPERS
-    // ==========================================
-
     function capitalize(text) {
-      if (!text) return "";
       return text.charAt(0).toUpperCase() + text.slice(1);
     }
 
@@ -5160,235 +5152,87 @@ synonyms: {
       topicListEl.innerHTML = "";
       VERBAL_TOPICS.forEach((topic) => {
         const btn = document.createElement("button");
-        btn.type = "button";
         btn.className = "topic-pill";
-        btn.dataset.topicId = topic.id;
+        btn.textContent = topic.label;
+        
+        // Add active class if it matches
+        if (topic.id === currentTopicId) btn.classList.add("active");
 
-        const labelSpan = document.createElement("span");
-        labelSpan.className = "label";
-        labelSpan.textContent = topic.label;
-
-        const tagSpan = document.createElement("span");
-        tagSpan.className = "tag";
-        tagSpan.textContent = topic.tag || "Topic";
-
-        btn.appendChild(labelSpan);
-        btn.appendChild(tagSpan);
-
-        btn.addEventListener("click", function () {
-          selectTopic(topic.id);
-        });
-
+        btn.onclick = () => selectTopic(topic.id);
         topicListEl.appendChild(btn);
       });
     }
 
-    function updateActiveTopicPill() {
-      const pills = topicListEl.querySelectorAll(".topic-pill");
-      pills.forEach((pill) => {
-        const isActive = pill.dataset.topicId === currentTopicId;
-        pill.classList.toggle("active", isActive);
-      });
-
-      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
-      if (topic && subtitleTopicEl) {
-        subtitleTopicEl.textContent = topic.label;
-      }
-    }
-
-    function renderTips(tips) {
-      if (!tipCardEl) return;
-      tipCardEl.innerHTML = "";
-
-      const heading = document.createElement("h3");
-      heading.textContent = "Quick exam tips";
-      tipCardEl.appendChild(heading);
-
-      const list = document.createElement("ul");
-      (tips || []).forEach((tip) => {
-        const li = document.createElement("li");
-        li.textContent = tip;
-        list.appendChild(li);
-      });
-
-      tipCardEl.appendChild(list);
-    }
-
     function renderLesson() {
-      const fallbackSection = {
-        heading: "Overview",
-        bullets: [
-          "Review the basic definition and key rules for this topic.",
-          "Study one or two fully worked examples step by step.",
-          "Practice converting questions into simpler sentences you can analyze."
-        ]
-      };
-
-      const fallbackTips = [
-        "Underline keywords in every question.",
-        "Eliminate obviously wrong options before choosing.",
-        "If unsure, choose the option that best matches the core idea."
-      ];
-
-      const lesson = LESSONS[currentTopicId];
-
-      if (!lesson) {
-        lessonTitleEl.textContent = "Lesson coming soon";
-        lessonIntroEl.textContent =
-          "We are still building the full lesson notes for this topic. For now, focus on practice questions and your own notes.";
-        lessonBodyEl.innerHTML = "";
-
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = fallbackSection.heading;
-        sectionEl.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        fallbackSection.bullets.forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-        sectionEl.appendChild(ul);
-
-        lessonBodyEl.appendChild(sectionEl);
-        renderTips(fallbackTips);
-        return;
+      const lesson = LESSONS[currentTopicId] || { title: "Coming Soon", fullHtml: "<p>Content not yet loaded.</p>" };
+      lessonTitleEl.textContent = lesson.title;
+      lessonBodyEl.innerHTML = lesson.fullHtml;
+      
+      if (lesson.quickTips) {
+         let tipsHtml = "<h3>Quick Tips</h3><ul>";
+         lesson.quickTips.forEach(t => tipsHtml += `<li>${t}</li>`);
+         tipsHtml += "</ul>";
+         tipCardEl.innerHTML = tipsHtml;
+      } else {
+         tipCardEl.innerHTML = "";
       }
-
-      lessonTitleEl.textContent = lesson.title || "Lesson";
-      lessonIntroEl.textContent = lesson.intro || "";
-      lessonBodyEl.innerHTML = "";
-
-      // 1) Full rich HTML (Analogy)
-      if (lesson.fullHtml) {
-        lessonBodyEl.innerHTML = lesson.fullHtml;
-      }
-      // 2) Sections + bullets (Synonyms etc.)
-      else if (lesson.sections && lesson.sections.length) {
-        lesson.sections.forEach((section) => {
-          const sectionEl = document.createElement("section");
-          const h3 = document.createElement("h3");
-          h3.textContent = section.heading;
-          sectionEl.appendChild(h3);
-
-          const ul = document.createElement("ul");
-          (section.bullets || []).forEach((b) => {
-            const li = document.createElement("li");
-            li.textContent = b;
-            ul.appendChild(li);
-          });
-
-          sectionEl.appendChild(ul);
-          lessonBodyEl.appendChild(sectionEl);
-        });
-      }
-      // 3) Fallback
-      else {
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = fallbackSection.heading;
-        sectionEl.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        fallbackSection.bullets.forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-        sectionEl.appendChild(ul);
-
-        lessonBodyEl.appendChild(sectionEl);
-      }
-
-      renderTips(lesson.tips || fallbackTips);
     }
 
     function getQuestionsForCurrent() {
-      // 1. Kunin ang Global Bank
       const bank = window.VERBAL_QUESTION_BANK || {};
-      
-      // 2. Kunin ang data ng Current Topic
-      // (Dapat mag-match ito sa ID na "error_identification")
       const topicData = bank[currentTopicId];
-
-      // Kung walang data, ibig sabihin hindi pa na-load ang JS file ng topic na ito
-      if (!topicData) {
-        console.log("Walang data para sa topic:", currentTopicId);
-        return [];
-      }
-
-      // 3. Kunin ang questions base sa Level
-      const levelQuestions = topicData[currentLevel] || [];
+      if (!topicData) return [];
       
-      // 4. I-slice base sa limit
+      const levelQuestions = topicData[currentLevel] || [];
       const limit = Math.min(currentQuestionLimit, levelQuestions.length);
       return levelQuestions.slice(0, limit);
     }
 
     function renderQuiz() {
-      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
-      quizTopicTitleEl.textContent = topic
-        ? "Verbal · " + topic.label
-        : "Verbal Ability";
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-
       const questions = getQuestionsForCurrent();
-
-      // Reset muna ang feedback display
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
+      
+      // Reset Result View if active
+      const resContainer = document.getElementById("resultContainer");
+      if(resContainer) resContainer.remove();
+      questionTextEl.style.display = "block";
+      optionsListEl.style.display = "flex";
+      document.querySelector(".quiz-footer").style.display = "flex";
 
-      // Kung walang questions
       if (!questions.length) {
-        questionTextEl.textContent =
-          "No practice questions are available yet for this topic and level. They will be added soon.";
+        questionTextEl.textContent = "No practice questions loaded for this topic yet.";
         optionsListEl.innerHTML = "";
-        progressTextEl.textContent = "0 / 0";
         prevBtn.disabled = true;
         nextBtn.disabled = true;
         return;
       }
 
-      // Siguraduhing nasa tamang range ang index
-      if (currentIndex < 0) currentIndex = 0;
       if (currentIndex >= questions.length) currentIndex = questions.length - 1;
-
       const currentQ = questions[currentIndex];
       questionTextEl.textContent = currentQ.question;
       optionsListEl.innerHTML = "";
 
-      // Check kung nasagutan na ba ito dati (para sa Previous/Next navigation)
       const existingAnswer = userAnswers[currentIndex];
 
-      // Render Options
-      (currentQ.options || []).forEach((option) => {
-        const li = document.createElement("li");
+      currentQ.options.forEach(option => {
         const btn = document.createElement("button");
-        btn.type = "button";
         btn.className = "option-button";
         btn.textContent = option;
-
-        // Kung nasagutan na, i-apply ang styling at disable buttons
+        
         if (existingAnswer) {
-          btn.disabled = true;
-          if (option === currentQ.answer) {
-            btn.classList.add("is-correct");
-          }
-          if (option === existingAnswer.selected && !existingAnswer.isCorrect) {
-            btn.classList.add("is-incorrect");
-          }
+            btn.disabled = true;
+            if (option === currentQ.answer) btn.classList.add("is-correct");
+            if (option === existingAnswer.selected && !existingAnswer.isCorrect) btn.classList.add("is-incorrect");
         }
 
-        btn.addEventListener("click", function () {
-          handleAnswer(option);
-        });
-
+        btn.onclick = () => handleAnswer(option);
+        
+        const li = document.createElement("li");
         li.appendChild(btn);
         optionsListEl.appendChild(li);
       });
 
-      // Ibalik ang Feedback text kung nasagutan na
       if (existingAnswer) {
          if (existingAnswer.isCorrect) {
             feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
@@ -5399,280 +5243,182 @@ synonyms: {
          }
       }
 
-      progressTextEl.textContent =
-        "Question " + (currentIndex + 1) + " of " + questions.length;
-
-      // Button States
+      progressTextEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
       prevBtn.disabled = currentIndex === 0;
-
-      // LOGIC SA DULO: "Next" vs "Finish Quiz"
+      
       if (currentIndex === questions.length - 1) {
-        nextBtn.textContent = "Finish Quiz";
+          nextBtn.textContent = "Finish Quiz";
       } else {
-        nextBtn.textContent = "Next";
-      }
-
-      // Disable ang Next/Finish kung hindi pa nasasagutan ang current item
-      if (existingAnswer) {
-         nextBtn.disabled = false;
-      } else {
-         nextBtn.disabled = true;
-      }
-    }
-
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
-
-      const currentQ = questions[currentIndex];
-      questionTextEl.textContent = currentQ.question;
-      optionsListEl.innerHTML = "";
-
-      (currentQ.options || []).forEach((option) => {
-        const li = document.createElement("li");
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "option-button";
-        btn.textContent = option;
-
-        btn.addEventListener("click", function () {
-          handleAnswer(option);
-        });
-
-        li.appendChild(btn);
-        optionsListEl.appendChild(li);
-      });
-
-      progressTextEl.textContent =
-        "Question " + (currentIndex + 1) + " of " + questions.length;
-
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === questions.length - 1;
-    }
-function handleAnswer(selectedOption) {
-      const questions = getQuestionsForCurrent();
-      if (!questions.length) return;
-      
-      const currentQ = questions[currentIndex];
-      const isCorrect = selectedOption === currentQ.answer;
-
-      // 1. I-SAVE ANG SAGOT (Ito ang bago)
-      // Sinasave natin ang detalye para ma-review sa dulo
-      userAnswers[currentIndex] = {
-        question: currentQ.question,
-        selected: selectedOption,
-        correct: currentQ.answer,
-        explanation: currentQ.explanation,
-        isCorrect: isCorrect
-      };
-
-      // 2. UI UPDATES (Kulayan ang buttons - Dating code)
-      const buttons = optionsListEl.querySelectorAll(".option-button");
-      buttons.forEach((btn) => {
-        btn.disabled = true; // Bawal na pindutin ulit
-        btn.classList.remove("is-correct", "is-incorrect");
-        
-        if (btn.textContent === currentQ.answer) {
-          btn.classList.add("is-correct");
-        }
-        if (btn.textContent === selectedOption && !isCorrect) {
-          btn.classList.add("is-incorrect");
-        }
-      });
-
-      // 3. SHOW FEEDBACK (Dating code)
-      if (isCorrect) {
-        feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
-        feedbackEl.className = "feedback feedback--correct";
-      } else {
-        feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
-        feedbackEl.className = "feedback feedback--incorrect";
+          nextBtn.textContent = "Next";
       }
       
-      // 4. ENABLE NEXT BUTTON (Para makausad)
-      nextBtn.disabled = false;
-    }
-    function switchMode(mode) {
-      currentMode = mode;
-
-      modeTabs.forEach((tab) => {
-        tab.classList.toggle("active", tab.dataset.mode === mode);
-      });
-
-      if (mode === "study") {
-        studyView.classList.add("view--active");
-        practiceView.classList.remove("view--active");
-      } else {
-        practiceView.classList.add("view--active");
-        studyView.classList.remove("view--active");
-      }
+      // Enable next only if answered
+      nextBtn.disabled = !existingAnswer; 
     }
 
-    function selectTopic(topicId) {
-      currentTopicId = topicId;
-      currentIndex = 0;
-      updateActiveTopicPill();
-      renderLesson();
-      renderQuiz();
+    function handleAnswer(selected) {
+       const questions = getQuestionsForCurrent();
+       const currentQ = questions[currentIndex];
+       const isCorrect = selected === currentQ.answer;
+
+       userAnswers[currentIndex] = {
+          question: currentQ.question,
+          selected: selected,
+          correct: currentQ.answer,
+          explanation: currentQ.explanation,
+          isCorrect: isCorrect
+       };
+
+       renderQuiz(); // Re-render to update UI state
     }
 
-    function attachEvents() {
-      modeTabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-          const mode = tab.dataset.mode;
-          if (mode && mode !== currentMode) {
-            switchMode(mode);
-          }
-        });
-      });
-
-      levelChips.forEach((chip) => {
-        chip.addEventListener("click", function () {
-          const level = chip.dataset.level;
-          if (!level || level === currentLevel) return;
-          currentLevel = level;
-          currentIndex = 0;
-          levelChips.forEach((c) => {
-            c.classList.toggle("active", c.dataset.level === level);
-          });
-          renderQuiz();
-        });
-      });
-
-      countChips.forEach((chip) => {
-        chip.addEventListener("click", function () {
-          const count = parseInt(chip.dataset.count, 10);
-          if (!count || count === currentQuestionLimit) return;
-
-          currentQuestionLimit = count;
-          currentIndex = 0;
-
-          countChips.forEach((c) => {
-            c.classList.toggle("active", c === chip);
-          });
-
-          renderQuiz();
-        });
-      });
-
-      prevBtn.addEventListener("click", function () {
-        const questions = getQuestionsForCurrent();
-        if (!questions.length) return;
-        if (currentIndex > 0) {
-          currentIndex -= 1;
-          renderQuiz();
-        }
-      });
-
-     nextBtn.addEventListener("click", function () {
-        const questions = getQuestionsForCurrent();
-        
-        // Kung nasa huling tanong na, tawagin ang finishQuiz()
-        if (currentIndex === questions.length - 1) {
-           finishQuiz(); 
-        } 
-        // Kung hindi pa, lipat sa susunod na tanong
-        else {
-           currentIndex++;
-           renderQuiz();
-        }
-      });
-    }
-
-    function init() {
-      buildTopicsList();
-      attachEvents();
-      selectTopic(currentTopicId);
-      switchMode("study");
-    }
-
-    // --- ITO ANG MAGPAPAKITA NG SCORE ---
     function finishQuiz() {
-      // 1. Kalkulahin ang Score
-      let score = 0;
-      userAnswers.forEach(ans => {
-        if (ans && ans.isCorrect) score++;
-      });
-      
-      const total = getQuestionsForCurrent().length; // Siguraduhin tama ang total
-      const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-      
-      // 2. Gumawa ng HTML para sa Resulta
-      let html = `
-        <div style="text-align: center; padding: 20px;">
-          <h2>Quiz Completed!</h2>
-          <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
-          <p style="color: var(--muted); font-size: 1.1rem;">Score: ${percentage}%</p>
-          
-          <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+       let score = 0;
+       userAnswers.forEach(a => { if(a && a.isCorrect) score++; });
+       const total = getQuestionsForCurrent().length;
+       const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+
+       let html = `
+         <div style="text-align:center; padding:20px;">
+           <h2>Quiz Completed!</h2>
+           <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
+           <p style="color: var(--muted);">Score: ${percentage}%</p>
+           <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
              <button onclick="location.reload()" class="primary-button" style="background: var(--card-alt); border: 1px solid var(--border);">🏠 Home</button>
              <button onclick="resetQuiz()" class="primary-button">🔄 Retake Quiz</button>
           </div>
-        </div>
-        <hr style="border-color: var(--border); margin: 30px 0;">
-        <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
-      `;
+         </div>
+         <hr style="border-color: var(--border); margin: 30px 0;">
+         <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
+       `;
 
-      // 3. Ilista ang mga Maling Sagot
-      let hasMistakes = false;
-      userAnswers.forEach((ans, index) => {
-        if (!ans) return;
-        
-        if (!ans.isCorrect) {
+       let hasMistakes = false;
+       userAnswers.forEach((ans, idx) => {
+          if(!ans || ans.isCorrect) return;
           hasMistakes = true;
           html += `
-            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 15px; margin-bottom: 15px; text-align: left;">
-              <p style="margin: 0 0 5px; font-weight: bold; color: #fca5a5;">Question ${index + 1}: ${ans.question}</p>
-              <p style="margin: 0; color: var(--danger);">❌ You Answered: ${ans.selected}</p>
-              <p style="margin: 0; color: var(--success);">✅ Correct Answer: ${ans.correct}</p>
-              <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${ans.explanation}</p>
+            <div style="margin-bottom:15px; padding:15px; border:1px solid var(--danger); border-radius:8px; background:rgba(239, 68, 68, 0.1);">
+               <p style="margin: 0 0 5px; font-weight: bold; color: #fca5a5;">Question ${idx+1}: ${ans.question}</p>
+               <p style="margin: 0; color: var(--danger);">❌ You: ${ans.selected}</p>
+               <p style="margin: 0; color: var(--success);">✅ Correct: ${ans.correct}</p>
+               <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${ans.explanation}</p>
             </div>
           `;
-        }
-      });
+       });
 
-      if (!hasMistakes) {
-        html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
-      }
+       if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
 
-      // 4. Ipakita sa Screen (Hide questions, Show results)
-      document.getElementById("questionText").style.display = "none";
-      document.getElementById("optionsList").style.display = "none";
-      document.getElementById("feedback").style.display = "none";
-      document.querySelector(".quiz-footer").style.display = "none";
-      
-      // I-inject ang HTML
-      const quizCard = document.querySelector(".quiz-card");
-      let resultContainer = document.getElementById("resultContainer");
-      
-      if (!resultContainer) {
-        resultContainer = document.createElement("div");
-        resultContainer.id = "resultContainer";
-        quizCard.appendChild(resultContainer);
-      }
-      
-      resultContainer.innerHTML = html;
-      resultContainer.style.display = "block";
+       // Hide Quiz UI
+       questionTextEl.style.display = "none";
+       optionsListEl.style.display = "none";
+       feedbackEl.style.display = "none";
+       document.querySelector(".quiz-footer").style.display = "none";
+
+       // Show Result
+       const quizCard = document.querySelector(".quiz-card");
+       let resDiv = document.createElement("div");
+       resDiv.id = "resultContainer";
+       resDiv.innerHTML = html;
+       quizCard.appendChild(resDiv);
     }
 
-    // Helper para sa Retake button
     function resetQuiz() {
        userAnswers = [];
        currentIndex = 0;
        
-       // Ibalik ang UI elements
-       document.getElementById("questionText").style.display = "block";
-       document.getElementById("optionsList").style.display = "flex";
-       document.getElementById("feedback").style.display = "block";
+       // Restore UI
+       questionTextEl.style.display = "block";
+       optionsListEl.style.display = "flex";
+       feedbackEl.style.display = "block";
        document.querySelector(".quiz-footer").style.display = "flex";
        
-       const resultContainer = document.getElementById("resultContainer");
-       if (resultContainer) resultContainer.style.display = "none";
-
        renderQuiz();
+    }
+
+    function selectTopic(id) {
+       currentTopicId = id;
+       currentIndex = 0;
+       userAnswers = [];
+       
+       // Update Title
+       const topicObj = VERBAL_TOPICS.find(t => t.id === id);
+       subtitleTopicEl.textContent = topicObj ? topicObj.label : "Topic";
+       
+       // Update active pill manually to ensure sync
+       document.querySelectorAll(".topic-pill").forEach(btn => {
+          btn.classList.remove("active");
+          if(btn.textContent === (topicObj ? topicObj.label : "")) {
+              btn.classList.add("active");
+          }
+       });
+
+       renderLesson();
+       renderQuiz();
+    }
+
+    function attachEvents() {
+       modeTabs.forEach(tab => {
+          tab.onclick = () => {
+             modeTabs.forEach(t => t.classList.remove("active"));
+             tab.classList.add("active");
+             if(tab.dataset.mode === "study") {
+                studyView.classList.add("view--active");
+                practiceView.classList.remove("view--active");
+             } else {
+                practiceView.classList.add("view--active");
+                studyView.classList.remove("view--active");
+             }
+          }
+       });
+
+       levelChips.forEach(chip => {
+          chip.onclick = () => {
+             levelChips.forEach(c => c.classList.remove("active"));
+             chip.classList.add("active");
+             currentLevel = chip.dataset.level;
+             userAnswers = [];
+             currentIndex = 0;
+             renderQuiz();
+          }
+       });
+       
+       countChips.forEach(chip => {
+          chip.onclick = () => {
+             countChips.forEach(c => c.classList.remove("active"));
+             chip.classList.add("active");
+             currentQuestionLimit = parseInt(chip.dataset.count);
+             userAnswers = [];
+             currentIndex = 0;
+             renderQuiz();
+          }
+       });
+
+       prevBtn.onclick = () => {
+          if(currentIndex > 0) {
+             currentIndex--;
+             renderQuiz();
+          }
+       };
+
+       nextBtn.onclick = () => {
+          const q = getQuestionsForCurrent();
+          if(currentIndex === q.length - 1) {
+             finishQuiz();
+          } else {
+             currentIndex++;
+             renderQuiz();
+          }
+       };
+    }
+
+    function init() {
+       buildTopicsList();
+       attachEvents();
+       selectTopic(currentTopicId);
+       updateActiveTopicPill();
     }
 
     init();
   </script>
 </body>
 </html>
-
