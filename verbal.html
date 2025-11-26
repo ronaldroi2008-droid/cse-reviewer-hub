@@ -870,36 +870,120 @@ const LESSONS = {
  
   verbs: {
     title: "Verbs – Action, State, Helping Verbs, and Consistent Tense",
-    
+    level: "Verbal Ability · Grammar · Verbs",
     intro:
-      "A verb is the engine of the sentence. It tells what the subject does (action), what it is, or what state it is in. In English, verbs change their form to show time (tense), number (singular/plural), and aspect (simple, progressive, perfect). In the Civil Service Exam, verb questions usually appear in subject–verb agreement, correct tense, error identification, sentence improvement, and reading comprehension items.",
+      "A verb is the engine of the sentence. It tells what the subject does (action), what it is, or what state it is in.",
+    
+    // ITO ANG IDINAGDAG PARA LUMABAS ANG LESSON SA UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. Types of Verbs</h2>
+        <p>Verbs fall into three main categories based on their function:</p>
+        <ul>
+          <li><strong>Action Verbs:</strong> Show physical or mental activity.<br>
+          <em>Run, Eat, Think, Decide, Dance.</em></li>
+          
+          <li><strong>Linking Verbs:</strong> Connect the subject to a description (adjective) or rename it (noun). They express a state of being.<br>
+          <em>Am, Is, Are, Was, Were, Seem, Become, Feel, Look.</em><br>
+          <em>Example: "She <strong>looks</strong> happy." (Happy describes She)</em></li>
+          
+          <li><strong>Helping (Auxiliary) Verbs:</strong> Help the main verb show tense or mood.<br>
+          <em>Has, Have, Had, Do, Does, Did, Will, Can, Must.</em><br>
+          <em>Example: "She <strong>has</strong> finished."</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Principal Parts: Regular vs. Irregular</h2>
+        <p><strong>Regular verbs</strong> form the past tense by adding <strong>-ed</strong> or <strong>-d</strong>.</p>
+        <p><strong>Irregular verbs</strong> change spelling and must be memorized. This is a common exam target.</p>
+        
+        <table class="lesson-table">
+          <tr>
+            <th>Base Form</th>
+            <th>Past Tense (Simple)</th>
+            <th>Past Participle (Used with Has/Have/Had)</th>
+          </tr>
+          <tr>
+            <td>Go</td>
+            <td>Went</td>
+            <td>Gone</td>
+          </tr>
+          <tr>
+            <td>Write</td>
+            <td>Wrote</td>
+            <td>Written</td>
+          </tr>
+          <tr>
+            <td>Eat</td>
+            <td>Ate</td>
+            <td>Eaten</td>
+          </tr>
+          <tr>
+            <td>Take</td>
+            <td>Took</td>
+            <td>Taken</td>
+          </tr>
+          <tr>
+            <td>See</td>
+            <td>Saw</td>
+            <td>Seen</td>
+          </tr>
+        </table>
+        <div class="highlight-box">
+          <p><strong>Common Error:</strong> Do not use the Past Participle without a helping verb.</p>
+          <ul>
+            <li>❌ <em>I seen it.</em></li>
+            <li>✅ <em>I <strong>saw</strong> it.</em> (Simple Past)</li>
+            <li>✅ <em>I <strong>have seen</strong> it.</em> (Present Perfect)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Transitive vs. Intransitive</h2>
+        <ul>
+          <li><strong>Transitive Verbs:</strong> Need a direct object (a receiver of the action) to make sense.<br>
+          <em>"She <strong>wrote</strong> a letter."</em> (Wrote what? A letter.)</li>
+          
+          <li><strong>Intransitive Verbs:</strong> Do not need an object. The action stops with the subject.<br>
+          <em>"The baby <strong>cried</strong>."</em> (Complete thought.)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. The Modal Rule (Super Important)</h2>
+        <p>Modals (<em>can, could, may, might, must, should, will, would</em>) are special helping verbs.</p>
+        <p><strong>RULE:</strong> Modals are always followed by the <strong>BASE FORM</strong> of the verb (no -s, no -ed, no -ing, no 'to').</p>
+        <ul>
+          <li>❌ <em>He can goes.</em></li>
+          <li>❌ <em>He can went.</em></li>
+          <li>❌ <em>He can to go.</em></li>
+          <li>✅ <em>He can <strong>go</strong>.</em></li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Tense Consistency</h2>
+        <p>Do not shift tenses within a sentence unless the timeframe actually changes.</p>
+        <p><strong>Incorrect:</strong> <em>"Yesterday, I <strong>went</strong> to the mall and <strong>buy</strong> shoes."</em> (Mixed Past and Present)</p>
+        <p><strong>Correct:</strong> <em>"Yesterday, I <strong>went</strong> to the mall and <strong>bought</strong> shoes."</em> (Consistent Past)</p>
+      </section>
+    `,
+
     keyPoints: [
-      // 1. Basic definition and types
       "A verb expresses an action, a state, or existence. Without a verb, a group of words cannot form a complete sentence.",
       "Action verbs show what someone or something does: physical actions (run, write, speak) or mental actions (think, believe, decide).",
       "Linking verbs connect the subject to a word that describes or renames it: be (am, is, are, was, were), become, seem, appear, look, feel, sound, taste.",
       "Helping (auxiliary) verbs come before the main verb to form different tenses, voices, and questions: be (am, is, are, was, were), have (has, have, had), do (do, does, did), modals (can, could, may, might, must, will, would, shall, should).",
-      "",
-      // 2. Regular vs irregular & principal parts
       "Regular verbs form the past tense and past participle by adding -ed or -d: walk → walked → walked; clean → cleaned → cleaned.",
       "Irregular verbs change in different ways and must be memorized: go → went → gone; eat → ate → eaten; take → took → taken; write → wrote → written.",
       "The three principal parts of a verb are: base form (go), past tense (went), and past participle (gone). These are used to build all common tenses.",
-      "",
-      // 3. Verb phrases and transitive / intransitive
       "A verb phrase consists of one or more helping verbs plus a main verb: has finished, will be going, should have been done.",
       "Transitive verbs take a direct object (She wrote a letter. They bought a car.); intransitive verbs do not need an object to complete the meaning (He slept. The baby cried.).",
-      "Some verbs can be either transitive or intransitive depending on how they are used: She runs a small shop (transitive). She runs every morning (intransitive).",
-      "",
-      // 4. Agreement and tense consistency
       "Verbs must agree with the subject in number and person: singular subject → singular verb (He runs); plural subject → plural verb (They run).",
-      "The verb be has special forms for agreement: I am, you are, he/she/it is, we/you/they are; past forms: I/he/she/it was; you/we/they were.",
-      "Tense shows time: present (they work), past (they worked), future (they will work). Aspect shows whether an action is finished or ongoing (simple, progressive, perfect).",
       "Keep the tense consistent within a sentence or paragraph unless the time clearly changes. Unnecessary tense shifts are common exam errors.",
-      "",
-      // 5. Modals and common exam traps
-      "Modal verbs (can, could, may, might, must, will, would, shall, should) always use the base form of the main verb: can go, should study, must finish, will take.",
-      "Do/does/did are helping verbs for questions and negatives in simple tenses: Do you understand? She does not agree. They did not come.",
-      "Common exam errors include wrong verb forms (has went, did went, is finish, have saw) and wrong agreement (He go, They goes, The list of items are long)."
+      "Modal verbs (can, could, may, might, must, will, would, shall, should) always use the base form of the main verb: can go, should study, must finish, will take."
     ],
     patterns: [
       "Choosing the correct form of be (am/is/are/was/were) to match a singular or plural subject in the correct time frame.",
@@ -1017,7 +1101,7 @@ const LESSONS = {
       "Avoid unnecessary tense shifts. If you start narrating in the past (I walked into the room), keep using the past unless the time clearly changes.",
       "Memorize the most common irregular verbs that appear in exams: go–went–gone, come–came–come, take–took–taken, give–gave–given, write–wrote–written, see–saw–seen, eat–ate–eaten, speak–spoke–spoken."
     ]
-}, 
+  },
 
   
   articles: {
