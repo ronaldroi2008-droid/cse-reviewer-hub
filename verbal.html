@@ -5256,72 +5256,93 @@ let currentMode = "study";
       nextBtn.disabled = !existingAnswer; 
     }
 
-    function handleAnswer(selected) {
-       const questions = getQuestionsForCurrent();
-       const currentQ = questions[currentIndex];
-       const isCorrect = selected === currentQ.answer;
+  function finishQuiz() {
+      // 1. Kalkulahin ang Score
+      let score = 0;
+      userAnswers.forEach(ans => {
+        // Check kung may sagot at kung tama
+        if (ans && ans.isCorrect) score++;
+      });
 
-       userAnswers[currentIndex] = {
-          question: currentQ.question,
-          selected: selected,
-          correct: currentQ.answer,
-          explanation: currentQ.explanation,
-          isCorrect: isCorrect
-       };
+      // Compute percentage
+      const total = getQuestionsForCurrent().length; 
+      const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
-       renderQuiz(); // Re-render to update UI state
-    }
-
-    function finishQuiz() {
-       let score = 0;
-       userAnswers.forEach(a => { if(a && a.isCorrect) score++; });
-       const total = getQuestionsForCurrent().length;
-       const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-
-       let html = `
-         <div style="text-align:center; padding:20px;">
-           <h2>Quiz Completed!</h2>
-           <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
-           <p style="color: var(--muted);">Score: ${percentage}%</p>
-           <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+      // 2. Gumawa ng HTML (Scoreboard)
+      let html = `
+        <div style="text-align: center; padding: 20px;">
+          <h2 style="margin-bottom: 10px; color: var(--text);">Quiz Completed!</h2>
+          <h1 style="font-size: 4rem; margin: 10px 0; color: var(--accent); line-height: 1;">${score} / ${total}</h1>
+          <p style="color: var(--muted); font-size: 1.2rem; margin-bottom: 20px;">Score: ${percentage}%</p>
+          
+          <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 30px;">
              <button onclick="location.reload()" class="primary-button" style="background: var(--card-alt); border: 1px solid var(--border);">🏠 Home</button>
              <button onclick="resetQuiz()" class="primary-button">🔄 Retake Quiz</button>
           </div>
-         </div>
-         <hr style="border-color: var(--border); margin: 30px 0;">
-         <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
-       `;
+          
+          <hr style="border-color: var(--border); opacity: 0.3; margin-bottom: 25px;">
+          <h3 style="text-align: left; margin-bottom: 15px; color: var(--text);">📝 Review Mistakes</h3>
+      `;
 
-       let hasMistakes = false;
-       userAnswers.forEach((ans, idx) => {
-          if(!ans || ans.isCorrect) return;
-          hasMistakes = true;
-          html += `
-            <div style="margin-bottom:15px; padding:15px; border:1px solid var(--danger); border-radius:8px; background:rgba(239, 68, 68, 0.1);">
-               <p style="margin: 0 0 5px; font-weight: bold; color: #fca5a5;">Question ${idx+1}: ${ans.question}</p>
-               <p style="margin: 0; color: var(--danger);">❌ You: ${ans.selected}</p>
-               <p style="margin: 0; color: var(--success);">✅ Correct: ${ans.correct}</p>
-               <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${ans.explanation}</p>
+      // 3. Ilista ang mga Maling Sagot
+      let hasMistakes = false;
+      
+      // Gamitin ang getQuestionsForCurrent para makuha ang tamang index at tanong
+      const questions = getQuestionsForCurrent();
+
+      questions.forEach((q, index) => {
+         const userAnswer = userAnswers[index];
+         
+         // Ipakita kung MALI o WALANG SAGOT
+         if (!userAnswer || !userAnswer.isCorrect) {
+            hasMistakes = true;
+            const yourAnswerText = userAnswer ? userAnswer.selected : "No Answer";
+
+            html += `
+            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px; margin-bottom: 16px; text-align: left;">
+              <p style="margin: 0 0 10px; font-weight: 600; color: #fca5a5; font-size: 0.95rem;">Question ${index + 1}: ${q.question}</p>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
+                 <div style="background: #0f172a; padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--danger);">
+                    <span style="font-size: 0.75rem; color: var(--danger); text-transform: uppercase; letter-spacing: 0.05em;">You Answered</span><br>
+                    <strong style="color: #fecaca;">${yourAnswerText}</strong>
+                 </div>
+                 <div style="background: #0f172a; padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--success);">
+                    <span style="font-size: 0.75rem; color: var(--success); text-transform: uppercase; letter-spacing: 0.05em;">Correct Answer</span><br>
+                    <strong style="color: #bbf7d0;">${q.answer}</strong>
+                 </div>
+              </div>
+
+              <div style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
+                 💡 <span style="opacity: 0.9; font-style: italic;">${q.explanation}</span>
+              </div>
             </div>
-          `;
-       });
+            `;
+         }
+      });
 
-       if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
+      if (!hasMistakes) {
+        html += `
+          <div style="text-align: center; padding: 30px; background: rgba(34, 197, 94, 0.1); border-radius: 12px; border: 1px solid var(--success);">
+            <h3 style="color: var(--success); margin: 0; font-size: 1.5rem;">🎉 Perfect Score!</h3>
+            <p style="margin: 8px 0 0; color: var(--muted);">You mastered this topic completely!</p>
+          </div>
+        `;
+      }
+      
+      html += `</div>`; 
 
-       // Hide Quiz UI
-       questionTextEl.style.display = "none";
-       optionsListEl.style.display = "none";
-       feedbackEl.style.display = "none";
-       document.querySelector(".quiz-footer").style.display = "none";
-
-       // Show Result
-       const quizCard = document.querySelector(".quiz-card");
-       let resDiv = document.createElement("div");
-       resDiv.id = "resultContainer";
-       resDiv.innerHTML = html;
-       quizCard.appendChild(resDiv);
+      // 4. OVERWRITE Method (Ito ang solusyon sa 'walang lumabas')
+      // Itago ang header ng quiz (yung may Level selector)
+      document.querySelector(".quiz-header").style.display = "none";
+      
+      // Kunin ang card at palitan ang BUONG laman nito
+      const quizCard = document.querySelector(".quiz-card");
+      quizCard.innerHTML = html;
+      
+      // Scroll up para makita agad ang score
+      quizCard.scrollIntoView({ behavior: "smooth" });
     }
-
     function resetQuiz() {
        userAnswers = [];
        currentIndex = 0;
