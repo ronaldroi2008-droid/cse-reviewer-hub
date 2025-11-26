@@ -232,21 +232,80 @@
       margin-top: 10px;
     }
 
-    .lesson-body h3 {
-      margin: 0 0 4px;
+    /* Extra styling for rich lesson HTML */
+    .lesson-section + .lesson-section {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .lesson-section h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: #e5e7eb;
+    }
+
+    .lesson-section h3 {
+      margin: 6px 0 4px;
       font-size: 0.95rem;
       color: #e5e7eb;
     }
 
-    .lesson-body ul {
-      margin: 0;
+    .lesson-section p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .lesson-section ul {
+      margin: 4px 0 0;
       padding-left: 18px;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    .lesson-body li + li {
+    .lesson-section li + li {
       margin-top: 2px;
+    }
+
+    .highlight-box {
+      border-radius: 12px;
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      background: rgba(79, 70, 229, 0.15);
+      padding: 8px 10px;
+      margin: 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.86rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    .lesson-table th {
+      background: rgba(30, 64, 175, 0.7);
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .lesson-table tr:nth-child(even) td {
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .check-list {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     .tip-card {
@@ -321,7 +380,7 @@
       transform: translateY(-1px);
     }
 
-    /* Items count switcher styles */
+    /* Items count switcher */
     .count-switcher {
       margin-top: 6px;
       display: flex;
@@ -457,52 +516,6 @@
       color: var(--muted);
     }
 
-    /* Extra styles for the rich lesson sections */
-    .lesson-section {
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-    }
-
-    .lesson-section:last-child {
-      border-bottom: none;
-    }
-
-    .highlight-box {
-      border-radius: 10px;
-      padding: 8px 10px;
-      background: rgba(99, 102, 241, 0.12);
-      border: 1px solid rgba(129, 140, 248, 0.7);
-      margin: 8px 0;
-    }
-
-    .lesson-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 6px;
-      font-size: 0.88rem;
-    }
-
-    .lesson-table th,
-    .lesson-table td {
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 6px 8px;
-      text-align: left;
-    }
-
-    .lesson-table th {
-      background: rgba(148, 163, 184, 0.18);
-    }
-
-    .check-list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .check-list li + li {
-      margin-top: 2px;
-    }
-
     @media (max-width: 900px) {
       .layout {
         display: flex;
@@ -522,7 +535,7 @@
       .level-switcher {
         justify-content: flex-start;
       }
-      
+
       .count-switcher {
         justify-content: flex-start;
       }
@@ -595,7 +608,6 @@
                 <button class="level-chip" data-level="expert" type="button">Expert</button>
               </div>
 
-              <!-- question-count switcher -->
               <div class="count-switcher">
                 <span class="count-label">Items:</span>
                 <button class="count-chip active" data-count="10" type="button">10</button>
@@ -624,26 +636,25 @@
     </main>
   </div>
 
-  <!-- VERBAL QUESTIONS FILES -->
+  <!-- VERBAL QUESTIONS FILES (lagay mo lahat ng .js mo dito) -->
   <script src="questions_analogy.js"></script>
-  <!-- idagdag mo rin dito lahat ng ibang JS mo:
+  <!-- example:
   <script src="questions_synonyms.js"></script>
   <script src="questions_prepositions.js"></script>
   -->
 
-  <!-- MAIN VERBAL LOGIC -->
   <script>
     // Make sure global question bank exists
     window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
     // ==========================================
-    // 1. TOPIC + LESSON DATA (VERBAL)
+    // 1. TOPICS + LESSON DATA
     // ==========================================
 
     const VERBAL_TOPICS = [
-      { id: "analogy",  label: "Analogy",  tag: "Logic" },
-      { id: "synonyms", label: "Synonyms", tag: "Vocabulary" },
-      // idagdag mo pa dito lahat ng topics mo, ids must match VERBAL_QUESTION_BANK keys
+      { id: "analogy",   label: "Analogy",   tag: "Logic" },
+      { id: "synonyms",  label: "Synonyms",  tag: "Vocabulary" }
+      // idagdag mo dito lahat ng iba pang verbal topics mo
     ];
 
     const LESSONS = {
@@ -655,7 +666,8 @@
           <section class="lesson-section">
             <h2>1. What is an Analogy?</h2>
             <p>
-              An analogy tests your ability to identify the <strong>relationship</strong> between two words and apply that same logic to another pair.
+              An analogy tests your ability to identify the <strong>relationship</strong> between two words
+              and apply that same logic to another pair.
             </p>
             <div class="highlight-box">
               <p><strong>The Format:</strong></p>
@@ -665,14 +677,16 @@
             <p><strong>Example:</strong></p>
             <p><em>Finger : Hand :: Leaf : Tree</em></p>
             <p>
-              <strong>Logic:</strong> A finger is a <strong>part of</strong> a hand, just as a leaf is a <strong>part of</strong> a tree.
+              <strong>Logic:</strong> A finger is a <strong>part of</strong> a hand, just as a leaf is a
+              <strong>part of</strong> a tree.
             </p>
           </section>
 
           <section class="lesson-section">
             <h2>2. The "Bridge Sentence" Technique</h2>
             <p>
-              The best way to solve analogies is to create a specific sentence that connects the first two words. This sentence is your <strong>"Bridge."</strong>
+              The best way to solve analogies is to create a specific sentence that connects the first two
+              words. This sentence is your <strong>"bridge."</strong>
             </p>
             <p><strong>Step 1:</strong> Create a sentence for the first pair.</p>
             <ul>
@@ -681,8 +695,14 @@
             </ul>
             <p><strong>Step 2:</strong> Test the choices with the SAME sentence.</p>
             <ul>
-              <li><strong>Choice A (Painter : Brush):</strong> "A painter <strong>uses a</strong> brush to do his job." (✅ Correct)</li>
-              <li><strong>Choice B (Lawyer : Briefcase):</strong> "A lawyer <strong>uses a</strong> briefcase to do his job?" (❌ Weak connection)</li>
+              <li>
+                <strong>Choice A (Painter : Brush):</strong>
+                "A painter <strong>uses a</strong> brush to do his job." (✅ Correct)
+              </li>
+              <li>
+                <strong>Choice B (Lawyer : Briefcase):</strong>
+                "A lawyer <strong>uses a</strong> briefcase to do his job?" (❌ Weak connection)
+              </li>
             </ul>
           </section>
 
@@ -702,7 +722,7 @@
                 <tr>
                   <td><strong>Synonyms</strong></td>
                   <td><em>Big : Huge</em></td>
-                  <td>Means the same thing (Intensity usually increases).</td>
+                  <td>Means the same thing (intensity usually increases).</td>
                 </tr>
                 <tr>
                   <td><strong>Antonyms</strong></td>
@@ -762,19 +782,18 @@
             <h2>4. Advanced Tips & Traps</h2>
 
             <h3>4.1 Watch the Order!</h3>
-            <p>
-              The order of the words must be exactly the same.
-            </p>
+            <p>The order of the words must be exactly the same in both pairs.</p>
             <p><strong>Question:</strong> <em>Shoe : Foot :: ________ : ________</em></p>
-            <p><strong>Bridge:</strong> A shoe is worn on the foot. (Item → Body Part)</p>
+            <p><strong>Bridge:</strong> A shoe is worn on the foot. (Item → Body part)</p>
             <ul>
-              <li>❌ <em>Hand : Glove</em> (This is Body Part → Item. <strong>Wrong order!</strong>)</li>
-              <li>✅ <em>Glove : Hand</em> (Item → Body Part. <strong>Correct!</strong>)</li>
+              <li>❌ <em>Hand : Glove</em> (Body part → Item. <strong>Wrong order!</strong>)</li>
+              <li>✅ <em>Glove : Hand</em> (Item → Body part. <strong>Correct!</strong>)</li>
             </ul>
 
             <h3>4.2 Parts of Speech Must Match</h3>
             <p>
-              If the first pair is <strong>Noun : Adjective</strong>, the answer must be <strong>Noun : Adjective</strong>.
+              If the first pair is <strong>Noun : Adjective</strong>, the answer must also be
+              <strong>Noun : Adjective</strong>.
             </p>
             <ul>
               <li><strong>Example:</strong> <em>Fox : Sly</em> (Noun : Adjective)</li>
@@ -797,7 +816,7 @@
             <ul class="check-list">
               <li><strong>Odometer : Mileage</strong> :: Compass : Direction (Instrument : Measures)</li>
               <li><strong>Scissors : Cut</strong> :: Broom : Sweep (Tool : Action)</li>
-              <li><strong>Lion : Pride</strong> :: Wolf : Pack (Animal : Group/Collective Noun)</li>
+              <li><strong>Lion : Pride</strong> :: Wolf : Pack (Animal : Group / Collective noun)</li>
               <li><strong>Fire : Smoke</strong> :: Rain : Flood (Cause : Effect)</li>
             </ul>
           </section>
@@ -839,7 +858,7 @@
     let currentTopicId = VERBAL_TOPICS[0]?.id || "analogy";
     let currentLevel = "beginner";
     let currentIndex = 0;
-    let currentQuestionLimit = 10; // default: 10 items per session
+    let currentQuestionLimit = 10; // default 10 items per quiz
 
     const modeTabs = document.querySelectorAll(".mode-tab");
     const topicListEl = document.getElementById("topicList");
@@ -973,16 +992,15 @@
         return;
       }
 
-      // Set title & intro
       lessonTitleEl.textContent = lesson.title || "Lesson";
       lessonIntroEl.textContent = lesson.intro || "";
       lessonBodyEl.innerHTML = "";
 
-      // If rich HTML is provided, render it directly
+      // 1) Full rich HTML (Analogy)
       if (lesson.fullHtml) {
         lessonBodyEl.innerHTML = lesson.fullHtml;
       }
-      // Otherwise, use the sections + bullets style
+      // 2) Sections + bullets (Synonyms etc.)
       else if (lesson.sections && lesson.sections.length) {
         lesson.sections.forEach((section) => {
           const sectionEl = document.createElement("section");
@@ -1001,7 +1019,7 @@
           lessonBodyEl.appendChild(sectionEl);
         });
       }
-      // If no structure is provided, fallback
+      // 3) Fallback
       else {
         const sectionEl = document.createElement("section");
         const h3 = document.createElement("h3");
@@ -1015,18 +1033,17 @@
           ul.appendChild(li);
         });
         sectionEl.appendChild(ul);
+
         lessonBodyEl.appendChild(sectionEl);
       }
 
       renderTips(lesson.tips || fallbackTips);
     }
 
-    // Questions from global VERBAL_QUESTION_BANK
     function getQuestionsForCurrent() {
       const bank = window.VERBAL_QUESTION_BANK || {};
       const topicSet = bank[currentTopicId] || {};
       const levelQuestions = topicSet[currentLevel] || [];
-
       const limit = Math.min(currentQuestionLimit, levelQuestions.length);
       return levelQuestions.slice(0, limit);
     }
@@ -1155,7 +1172,6 @@
         });
       });
 
-      // Items per quiz (10/20/30/40/50)
       countChips.forEach((chip) => {
         chip.addEventListener("click", function () {
           const count = parseInt(chip.dataset.count, 10);
@@ -1202,3 +1218,4 @@
   </script>
 </body>
 </html>
+
