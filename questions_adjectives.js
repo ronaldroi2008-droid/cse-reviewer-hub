@@ -1,3 +1,8 @@
+
+window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+
+window.VERBAL_QUESTION_BANK["adjectives"] = {
+
 const ADJECTIVE_QUESTIONS = {
   beginner: [
     // 1–10: basic ID of adjectives
