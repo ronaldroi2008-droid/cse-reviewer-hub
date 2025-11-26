@@ -5304,9 +5304,23 @@ synonyms: {
     }
 
     function getQuestionsForCurrent() {
+      // 1. Kunin ang Global Bank
       const bank = window.VERBAL_QUESTION_BANK || {};
-      const topicSet = bank[currentTopicId] || {};
-      const levelQuestions = topicSet[currentLevel] || [];
+      
+      // 2. Kunin ang data ng Current Topic
+      // (Dapat mag-match ito sa ID na "error_identification")
+      const topicData = bank[currentTopicId];
+
+      // Kung walang data, ibig sabihin hindi pa na-load ang JS file ng topic na ito
+      if (!topicData) {
+        console.log("Walang data para sa topic:", currentTopicId);
+        return [];
+      }
+
+      // 3. Kunin ang questions base sa Level
+      const levelQuestions = topicData[currentLevel] || [];
+      
+      // 4. I-slice base sa limit
       const limit = Math.min(currentQuestionLimit, levelQuestions.length);
       return levelQuestions.slice(0, limit);
     }
