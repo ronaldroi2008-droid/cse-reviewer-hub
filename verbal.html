@@ -2134,459 +2134,128 @@ const LESSONS = {
 
 
   tenses: {
-    title: "Tenses – Time, Aspect, and Consistent Use",
-    
+    title: "Tenses – Time, Aspect, and Consistency",
+    level: "Verbal Ability · Grammar · Tenses",
     intro:
-      "Tense tells us WHEN an action happens (past, present, future), while aspect tells us HOW the action happens (simple, continuous/progressive, perfect, perfect continuous). In the Civil Service Exam, tense questions usually test correct form (has gone vs had gone), tense consistency in a sentence or paragraph, and the difference between similar tenses like past simple vs present perfect, or past perfect vs past simple.",
+      "Tense tells us WHEN an action happens (past, present, future), while aspect tells us HOW it happens (completed, ongoing).",
+
+    // ITO ANG IDINAGDAG PARA LUMABAS ANG LESSON SA UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. The 12 English Tenses Overview</h2>
+        <p>English tenses are a combination of <strong>Time</strong> (Past, Present, Future) and <strong>Aspect</strong> (Simple, Continuous, Perfect, Perfect Continuous).</p>
+
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Simple Past vs. Present Perfect (Exam Favorite)</h2>
+        <p>This is the most common trap in the Civil Service Exam. You must know when to use <strong>"did/went"</strong> vs <strong>"has done/has gone"</strong>.</p>
+        
+        <table class="lesson-table">
+          <tr>
+            <th>Tense</th>
+            <th>Rule</th>
+            <th>Time Markers (Keywords)</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><strong>Simple Past</strong></td>
+            <td>Action is <strong>finished</strong> at a <strong>specific time</strong> in the past.</td>
+            <td>Yesterday, Last week, In 1999, A while ago, When I was young</td>
+            <td>"I <strong>saw</strong> the movie <em>yesterday</em>."</td>
+          </tr>
+          <tr>
+            <td><strong>Present Perfect</strong><br>(Has/Have + V3)</td>
+            <td>Action happened at an <strong>unspecified time</strong> OR started in past and continues to now.</td>
+            <td>Already, Yet, Just, Ever, Never, Since, For, Lately</td>
+            <td>"I <strong>have seen</strong> that movie <em>already</em>."</td>
+          </tr>
+        </table>
+        <div class="highlight-box">
+          <p><strong>Shortcut:</strong> If you see a specific past date/time, use Simple Past. If the time is vague or relates to "now", use Present Perfect.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Past Perfect (The "Past of the Past")</h2>
+        <p><strong>Form:</strong> Had + Past Participle</p>
+        <p>Use this ONLY when there are <strong>two past actions</strong>. The Past Perfect is for the action that happened <strong>first</strong>.</p>
+        <ul>
+          <li>Action 1 (First): <strong>Past Perfect</strong></li>
+          <li>Action 2 (Second): <strong>Simple Past</strong></li>
+        </ul>
+        <p><em>Example:</em> "When I <strong>arrived</strong> (2nd) at the station, the bus <strong>had left</strong> (1st)."</p>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Future Perfect</h2>
+        <p><strong>Form:</strong> Will have + Past Participle</p>
+        <p>Used for actions that will be <strong>completed</strong> before a specific time in the future. Look for the keyword <strong>"By"</strong>.</p>
+        <ul>
+          <li>"<strong>By</strong> next year, I <strong>will have graduated</strong>."</li>
+          <li>"<strong>By</strong> the time you arrive, we <strong>will have finished</strong> dinner."</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Tense Consistency Rule</h2>
+        <p>Do not switch tenses in a sentence or paragraph without a valid reason.</p>
+        <ul>
+          <li>❌ <em>"She <strong>opened</strong> the door and <strong>looks</strong> inside."</em> (Past mixed with Present)</li>
+          <li>✅ <em>"She <strong>opened</strong> the door and <strong>looked</strong> inside."</em> (Consistent Past)</li>
+        </ul>
+      </section>
+    `,
+
     keyPoints: [
-      // 1. Core idea
-      "Tense = time (past, present, future). Aspect = how the action unfolds (simple, continuous, perfect, perfect continuous). Example: 'I study' (simple present), 'I am studying' (present continuous), 'I have studied' (present perfect), 'I have been studying' (present perfect continuous).",
-      "Simple tenses focus on facts, habits, finished events, and scheduled events. Continuous tenses focus on actions in progress. Perfect tenses connect two different times. Perfect continuous tenses show an action that started earlier and continues up to another time.",
-
-      // 2. Simple tenses
-      "Simple Present: used for habits, general truths, fixed schedules, and permanent situations. Examples: 'She works in Cebu.' 'The sun rises in the east.' 'The meeting starts at 8:00 a.m.'",
-      "Simple Past: used for finished actions at a specific time in the past, usually with time markers like yesterday, last week, a year ago, in 2019. Example: 'They visited Baguio last year.'",
-      "Simple Future (will + base verb): used for decisions made at the moment of speaking, promises, offers, predictions without strong evidence. Example: 'I will call you later.'",
-
-      // 3. Continuous / Progressive
-      "Present Continuous (am/is/are + -ing): used for actions happening now, temporary actions, or definite future arrangements. Examples: 'She is studying now.' 'I am staying with my cousin this week.' 'We are meeting the client tomorrow.'",
-      "Past Continuous (was/were + -ing): used for an action that was in progress at a particular time in the past, often interrupted by another shorter action in the simple past. Example: 'I was reading when the phone rang.'",
-      "Future Continuous (will be + -ing): used for actions that will be in progress at a specific time in the future. Example: 'At 10 a.m. tomorrow, I will be taking the exam.'",
-
-      // 4. Perfect tenses
-      "Present Perfect (has/have + past participle): connects past and present. Used for (a) experiences at an unspecified time (I have visited Manila), (b) recent events with present result (She has lost her keys), and (c) actions that started in the past and continue until now when used with for/since (He has lived here for five years).",
-      "Past Perfect (had + past participle): used for an action that was completed before another past action or time. Example: 'He had left when I arrived.' Here, leaving happened first; arriving happened second.",
-      "Future Perfect (will have + past participle): used for actions that will be completed before a certain future time. Example: 'By next month, we will have finished the project.'",
-
-      // 5. Perfect continuous
-      "Present Perfect Continuous (has/have been + -ing): used for actions that started in the past and continue up to now, often emphasizing duration. Example: 'She has been studying for three hours.'",
-      "Past Perfect Continuous (had been + -ing): used for longer past actions that continued up to another point in the past. Example: 'They had been working all day before they finally rested.'",
-      "Future Perfect Continuous (will have been + -ing): used to emphasize the length of an activity up to a future time. Example: 'By next year, I will have been working here for ten years.'",
-
-      // 6. Consistency & common exam traps
-      "Tense Consistency: In one sentence or paragraph, keep the tense consistent unless the time clearly changes. Mixing past and present without reason is a common error (Wrong: 'Yesterday I go to town and bought groceries.').",
-      "Time Markers: Words like yesterday, last week, in 2010, ago usually go with simple past; words like since, for, already, yet, ever, never often go with perfect tenses; words like now, at the moment, currently often go with continuous tenses.",
-      "Reported Speech: In reported statements, present tenses often shift back if the reporting verb is in the past. Example: 'I am tired,' she said → She said that she was tired.",
-      "Conditionals use specific tense patterns: If + present, will + base (real future); If + past, would + base (unreal present); If + past perfect, would have + past participle (unreal past).",
-      "Common Errors: mixing up past simple and present perfect (I have seen it yesterday ❌), using past perfect without a second past action, and using continuous where simple is better (I am knowing him for years ❌)."
+      "Tense = time (past, present, future). Aspect = how the action unfolds.",
+      "Simple Past is for specific past times (yesterday). Present Perfect is for unspecified times (already, yet).",
+      "Past Perfect (had + done) is the 'past of the past'. Use it only when comparing two past events.",
+      "Future Perfect (will have + done) is for deadlines, usually signaled by 'By'.",
+      "Tense Consistency: If you start a story in the past, stay in the past unless the timeframe shifts."
     ],
     patterns: [
-      "Choosing the correct tense based on time expressions (yesterday, already, since 2010, now, by next year).",
-      "Correcting sentences that shift tenses without a clear reason (especially in narratives and paragraph improvement items).",
-      "Distinguishing between simple past and present perfect in context, especially with or without specific time markers.",
-      "Using past perfect only when there are two past actions and one happened before the other.",
-      "Identifying incorrect continuous forms (I am knowing, she is having a car) and replacing them with the simple form where needed.",
-      "Choosing proper tense combinations in conditionals (If-clauses), time clauses (when, after, before), and reported speech.",
-      "Recognizing which future form to use: will, be going to, present continuous, or future perfect."
+      "Choosing between Simple Past and Present Perfect based on time markers (yesterday vs already).",
+      "Using Past Perfect for the earlier of two past actions.",
+      "Spotting correct future forms using 'will' vs 'going to' vs 'will have'.",
+      "Correcting tense shifts in error identification."
     ],
     examples: [
       {
-        q: "Which sentence uses the correct tense with the time marker yesterday?",
+        q: "Which sentence uses the correct tense with 'yesterday'?",
         choices: [
           "I have seen the report yesterday.",
           "I saw the report yesterday.",
-          "I am seeing the report yesterday.",
-          "I had seen the report yesterday."
+          "I had seen the report yesterday.",
+          "I was seeing the report yesterday."
         ],
         answer: "I saw the report yesterday.",
         explanation:
-          "Yesterday refers to a specific time in the past, so we use the simple past: saw. Present perfect (have seen) is usually not used with specific past time expressions like yesterday, last week, in 2010."
+          "Yesterday is a specific time marker, so we must use the Simple Past (saw), not Present Perfect (have seen)."
       },
       {
-        q: "Choose the best sentence to talk about an experience with no specific time:",
-        choices: [
-          "I went to Palawan.",
-          "I have gone to Palawan yesterday.",
-          "I have been to Palawan.",
-          "I was going to Palawan last year."
-        ],
-        answer: "I have been to Palawan.",
+        q: "By the time I arrived, he ______.",
+        choices: ["left", "has left", "had left", "leaves"],
+        answer: "had left",
         explanation:
-          "When the exact time is not mentioned and we talk about life experience, we use the present perfect (have been). 'Yesterday' or 'last year' would require simple past (I went...)."
+          "Two past actions: He left first, then I arrived. The first action takes Past Perfect (had left)."
       },
       {
-        q: "Which sentence correctly uses the past perfect?",
-        choices: [
-          "By the time I arrived, he left.",
-          "By the time I arrived, he had left.",
-          "By the time I had arrived, he left.",
-          "By the time I had arrived, he had left yesterday."
-        ],
-        answer: "By the time I arrived, he had left.",
+        q: "She ______ in Manila since 2010.",
+        choices: ["lives", "lived", "has lived", "had lived"],
+        answer: "has lived",
         explanation:
-          "There are two past actions: he left and I arrived. The earlier action uses the past perfect (had left); the later action uses the simple past (arrived)."
-      },
-      {
-        q: "Which sentence shows an action in progress interrupted by another past action?",
-        choices: [
-          "I was eating dinner when the phone rang.",
-          "I ate dinner when the phone was ringing.",
-          "I have eaten dinner when the phone rang.",
-          "I am eating dinner when the phone rang."
-        ],
-        answer: "I was eating dinner when the phone rang.",
-        explanation:
-          "This pattern (past continuous + simple past) shows one action in progress (was eating) interrupted by a shorter completed action (rang). This is a very common CSE exam pattern."
-      },
-      {
-        q: "Which sentence correctly expresses a situation that started in the past and continues up to now?",
-        choices: [
-          "She lives here since 2015.",
-          "She lived here since 2015.",
-          "She has lived here since 2015.",
-          "She had lived here since 2015."
-        ],
-        answer: "She has lived here since 2015.",
-        explanation:
-          "For an action that began in the past and still continues, we use the present perfect (has/have + past participle) with since/for. 'Has lived' shows the action from 2015 up to the present."
-      },
-      {
-        q: "Choose the correct future form: 'By next month, we ___ this training.'",
-        choices: [
-          "will finish",
-          "will have finished",
-          "are finishing",
-          "finished"
-        ],
-        answer: "will have finished",
-        explanation:
-          "By next month refers to a deadline in the future. We use the future perfect (will have + past participle) to show that an action will be completed before that time: will have finished."
-      },
-      {
-        q: "Which sentence maintains consistent tense?",
-        choices: [
-          "Last night, I watch TV and fell asleep.",
-          "Last night, I watched TV and fall asleep.",
-          "Last night, I watched TV and fell asleep.",
-          "Last night, I am watching TV and fell asleep."
-        ],
-        answer: "Last night, I watched TV and fell asleep.",
-        explanation:
-          "Last night signals past time. Both verbs should be in the simple past: watched and fell. Mixing watch/fall with past forms is incorrect."
-      },
-      {
-        q: "Choose the correct conditional sentence:",
-        choices: [
-          "If it will rain, we will stay at home.",
-          "If it rained, we will stay at home.",
-          "If it rains, we will stay at home.",
-          "If it is raining yesterday, we will stay at home."
-        ],
-        answer: "If it rains, we will stay at home.",
-        explanation:
-          "Real future conditionals use If + simple present (rains) and will + base verb (will stay). We do not use will directly after if."
+          "The word 'since' indicates an action starting in the past and continuing to now. We use Present Perfect (has lived)."
       }
     ],
     quickTips: [
-      "Look at time expressions first (yesterday, now, since, by next year). They are strong clues for which tense to use.",
-      "For experiences with no specific time, use present perfect (have/has + past participle). For finished actions at a known time in the past, use simple past.",
-      "Use past perfect only when there are two different past times and you need to show which action happened first.",
-      "Continuous tenses (-ing) are often used with now, at the moment, currently, and while. Simple tenses are used for habits and facts.",
-      "Avoid mixing present and past in one sentence unless there is a really clear reason. The Civil Service Exam loves to test tense consistency errors.",
-      "Memorize common irregular verb forms (go–went–gone, see–saw–seen, take–took–taken, write–wrote–written) because they appear in many tense questions.",
-      "In conditionals, beware of using will after if. Use: If + present (If it rains), will + base verb (we will stay). For unreal situations, use If + past (If I were rich), would + base (I would travel)."
-       ]
+      "See 'Yesterday/Last/Ago'? Use Simple Past.",
+      "See 'Since/For/Already/Yet'? Use Present Perfect.",
+      "See two past actions? The first one gets 'Had'.",
+      "See 'By [future time]'? Use 'Will have'.",
+      "Keep the tense consistent within the sentence."
+    ]
   },
-
- interjections: {
-  title: "Interjections – Expressing Sudden Emotion and Reaction",
-  fullHtml: `
-  <section class="lesson-section">
-    <h2>1. What is an Interjection?</h2>
-    <p>
-      An <strong>interjection</strong> is a short word or phrase that shows emotion or reaction.
-      It is usually separated from the rest of the sentence by a comma or an exclamation mark and
-      is not grammatically necessary for the sentence to be complete.
-    </p>
-    <ul>
-      <li>Shows sudden emotion or reaction</li>
-      <li>Is not grammatically necessary to complete the sentence</li>
-      <li>Is usually followed by a comma (,) or exclamation mark (!)</li>
-      <li>Can often be removed without changing the basic meaning of the sentence</li>
-    </ul>
-    <div class="highlight-box">
-      <p><strong>Examples:</strong></p>
-      <ul>
-        <li><em>Wow!</em> You got a perfect score.</li>
-        <li><em>Ouch!</em> That hurts.</li>
-        <li><em>Hey,</em> listen to the instructions.</li>
-      </ul>
-    </div>
-    <p>In the Civil Service Exam, interjections appear in:</p>
-    <ul>
-      <li>Parts of speech questions</li>
-      <li>Error identification</li>
-      <li>Reading comprehension (tone / emotion)</li>
-    </ul>
-  </section>
-
-  <section class="lesson-section">
-    <h2>2. How to Recognize an Interjection</h2>
-    <p>You can usually recognize an interjection because:</p>
-    <ul>
-      <li>It often appears at the beginning of the sentence.</li>
-      <li>It is followed by a comma or exclamation mark.</li>
-      <li>If you remove it, the sentence is still grammatically complete.</li>
-    </ul>
-    <div class="highlight-box">
-      <p><strong>Examples:</strong></p>
-      <ul>
-        <li><em>Oh no,</em> I forgot my ID.</li>
-        <li><em>Well,</em> that’s your decision.</li>
-        <li><em>Wow!</em> The view is amazing.</li>
-      </ul>
-    </div>
-    <p><strong>Remove the interjection:</strong></p>
-    <ul>
-      <li>I forgot my ID.</li>
-      <li>That’s your decision.</li>
-      <li>The view is amazing.</li>
-    </ul>
-    <p>
-      The sentences are still complete. That means <em>Oh no</em>, <em>Well</em>, and <em>Wow</em> are interjections.
-    </p>
-  </section>
-
-  <section class="lesson-section">
-    <h2>3. Types of Interjections (by Emotion or Function)</h2>
-
-    <h3>3.1 Interjections of Surprise</h3>
-    <p>Used when someone is surprised:</p>
-    <ul>
-      <li>Wow!</li>
-      <li>Oh!</li>
-      <li>What?!</li>
-      <li>Goodness!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Wow!</em> You finished the test early.</li>
-      <li><em>Oh!</em> I didn’t know you were here.</li>
-    </ul>
-
-    <h3>3.2 Interjections of Joy / Happiness</h3>
-    <p>Used to show happiness, excitement, or celebration:</p>
-    <ul>
-      <li>Yay!</li>
-      <li>Hurrah!</li>
-      <li>Hooray!</li>
-      <li>Yippee!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Yay!</em> I passed the Civil Service Exam.</li>
-      <li><em>Hurrah!</em> Our team won the game.</li>
-    </ul>
-
-    <h3>3.3 Interjections of Pain</h3>
-    <p>Used when something hurts (physically or emotionally):</p>
-    <ul>
-      <li>Ouch!</li>
-      <li>Ow!</li>
-      <li>Oh no!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Ouch!</em> I hit my elbow.</li>
-      <li><em>Oh no,</em> I lost my wallet.</li>
-    </ul>
-
-    <h3>3.4 Interjections of Fear / Worry</h3>
-    <p>Used to show fear, shock, or worry:</p>
-    <ul>
-      <li>Ahh!</li>
-      <li>Eek!</li>
-      <li>Oh dear!</li>
-      <li>Good heavens!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Oh dear,</em> I think we are lost.</li>
-      <li><em>Eek!</em> There’s a mouse in the kitchen.</li>
-    </ul>
-
-    <h3>3.5 Interjections of Anger / Frustration</h3>
-    <p>Used when someone is angry, annoyed, or frustrated:</p>
-    <ul>
-      <li>Hey! (in a scolding tone)</li>
-      <li>Ugh!</li>
-      <li>Tsk! or Tsk-tsk! (sound of disapproval)</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Hey!</em> Don’t talk to me like that.</li>
-      <li><em>Ugh,</em> this traffic is terrible.</li>
-    </ul>
-
-    <h3>3.6 Interjections of Greeting</h3>
-    <p>Used to greet someone:</p>
-    <ul>
-      <li>Hi!</li>
-      <li>Hello!</li>
-      <li>Hey! (friendly/casual)</li>
-      <li>Good morning! (can function as a greeting interjection)</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Hi,</em> how are you?</li>
-      <li><em>Hello!</em> Nice to meet you.</li>
-    </ul>
-
-    <h3>3.7 Interjections of Agreement / Approval</h3>
-    <p>Used to show agreement or approval:</p>
-    <ul>
-      <li>Yes!</li>
-      <li>Yeah! (informal)</li>
-      <li>Exactly!</li>
-      <li>Sure!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Yes!</em> That answer is correct.</li>
-      <li><em>Exactly!</em> That’s what I mean.</li>
-    </ul>
-
-    <h3>3.8 Interjections of Disagreement / Refusal</h3>
-    <p>Used to show disagreement or refusal:</p>
-    <ul>
-      <li>No!</li>
-      <li>Nope! (informal)</li>
-      <li>Never!</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>No!</em> I will not accept that.</li>
-      <li><em>Never!</em> I will not give up.</li>
-    </ul>
-
-    <h3>3.9 Interjections as Fillers in Conversation</h3>
-    <p>
-      Sometimes, an interjection is not a strong emotion, but a conversation filler.
-      It helps the speaker think or soften what they are saying.
-    </p>
-    <p><strong>Common examples:</strong></p>
-    <ul>
-      <li>Well,</li>
-      <li>So,</li>
-      <li>Hmm,</li>
-      <li>Ah,</li>
-    </ul>
-    <p><strong>Examples:</strong></p>
-    <ul>
-      <li><em>Well,</em> I think we should start now.</li>
-      <li><em>So,</em> what do you want to do?</li>
-      <li><em>Hmm,</em> I’m not sure about that.</li>
-    </ul>
-    <p>
-      In grammar, these are still often treated as interjections or discourse markers.
-    </p>
-  </section>
-
-  <section class="lesson-section">
-    <h2>4. Punctuation Rules for Interjections</h2>
-
-    <h3>4.1 Exclamation Mark (!)</h3>
-    <p>Use <strong>!</strong> with strong emotions:</p>
-    <ul>
-      <li><em>Wow!</em> That was amazing.</li>
-      <li><em>Ouch!</em> That really hurt.</li>
-      <li><em>Stop!</em></li>
-    </ul>
-    <p>The exclamation mark shows intensity or strong feeling.</p>
-
-    <h3>4.2 Comma (,)</h3>
-    <p>Use a comma with mild emotion or neutral tone:</p>
-    <ul>
-      <li><em>Well,</em> we can try again tomorrow.</li>
-      <li><em>Hey,</em> listen to the instructions.</li>
-      <li><em>Oh,</em> I see your point.</li>
-    </ul>
-
-    <h3>4.3 Interjections in the Middle or at the End</h3>
-    <p>Sometimes the interjection appears in the middle of a sentence:</p>
-    <ul>
-      <li>That was, <em>wow,</em> really unexpected.</li>
-    </ul>
-    <p>Or at the end:</p>
-    <ul>
-      <li>You did great, <em>wow!</em></li>
-    </ul>
-    <p>But in exam questions, the most common pattern is still at the beginning.</p>
-  </section>
-
-  <section class="lesson-section">
-    <h2>5. Interjections vs Other Parts of Speech</h2>
-    <p>
-      Interjections are easy to confuse with other parts of speech.
-      The key is to check the <strong>function</strong> of the word in the sentence.
-    </p>
-
-    <h3>5.1 “Oh” as Interjection</h3>
-    <ul>
-      <li><em>Oh,</em> I get it now. → Interjection (emotion / reaction)</li>
-      <li><em>Oh my God!</em> → Expression containing an interjection (<em>Oh</em>)</li>
-    </ul>
-
-    <h3>5.2 “Well” as Interjection vs Adverb</h3>
-    <ul>
-      <li><em>Well,</em> I don’t know. → Interjection (filler / reaction)</li>
-      <li>She did the job well. → Adverb (modifies “did”)</li>
-    </ul>
-
-    <h3>5.3 “Yes” as Interjection vs Noun</h3>
-    <ul>
-      <li><em>Yes!</em> You are right. → Interjection (emotional reaction)</li>
-      <li>The answer is yes. → Noun (“yes” is the thing being talked about)</li>
-    </ul>
-
-    <p>In exam questions like:</p>
-    <p><em>What part of speech is the underlined word?</em></p>
-    <p>You must look at what the word is <strong>doing</strong> in the sentence.</p>
-  </section>
-
-  <section class="lesson-section">
-    <h2>6. Common Exam Patterns with Interjections</h2>
-
-    <h3>Pattern 1 – Identify the Interjection</h3>
-    <p><strong>Question:</strong> Which word is the interjection in the sentence?</p>
-    <p><em>Wow, that solution is very clever!</em></p>
-    <p><strong>Correct answer:</strong> <em>Wow</em></p>
-
-    <h3>Pattern 2 – Choose the Best Interjection</h3>
-    <p><strong>Question:</strong></p>
-    <p>You got a perfect score! ______, that’s impressive!</p>
-    <ul>
-      <li>a) Ouch</li>
-      <li>b) Wow</li>
-      <li>c) Oh no</li>
-      <li>d) Hey</li>
-    </ul>
-    <p><strong>Best answer:</strong> b) Wow</p>
-    <p>Because the context is positive surprise and admiration.</p>
-
-    <h3>Pattern 3 – Error Identification (Punctuation)</h3>
-    <ul>
-      <li>❌ Wow that was amazing.</li>
-      <li>✅ Wow, that was amazing.</li>
-      <li>✅ Wow! That was amazing.</li>
-    </ul>
-    <p>The exam may ask you to choose the sentence with correct punctuation.</p>
-
-    <h3>Pattern 4 – Subject–Verb Agreement with Interjections</h3>
-    <p>In this sentence:</p>
-    <p><em>Oh, the students are here.</em></p>
-    <ul>
-      <li><strong>Subject</strong> = students</li>
-      <li><strong>Verb</strong> = are</li>
-      <li><strong>Oh</strong> = interjection only (extra emotion)</li>
-    </ul>
-    <p>
-      The interjection does not affect subject–verb agreement.
-      In exam questions, sometimes they place an interjection at the beginning to distract you.
-    </p>
-  </section>
-  ` 
-},
 
 
   
