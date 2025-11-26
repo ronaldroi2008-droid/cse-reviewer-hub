@@ -5113,17 +5113,15 @@ synonyms: {
 }; 
 
 
-    // ==========================================
-    // 2. STATE + DOM REFERENCES
-    // ==========================================
-let currentMode = "study";
+// STATE VARIABLES
+    let currentMode = "study";
     let currentTopicId = VERBAL_TOPICS[0]?.id || "nouns";
     let currentLevel = "beginner";
     let currentIndex = 0;
     let currentQuestionLimit = 10;
     let userAnswers = []; 
 
-    // DOM
+    // DOM Elements
     const modeTabs = document.querySelectorAll(".mode-tab");
     const topicListEl = document.getElementById("topicList");
     const subtitleTopicEl = document.getElementById("subtitleTopic");
@@ -5154,12 +5152,17 @@ let currentMode = "study";
         const btn = document.createElement("button");
         btn.className = "topic-pill";
         btn.textContent = topic.label;
-        
-        // Add active class if it matches
         if (topic.id === currentTopicId) btn.classList.add("active");
-
         btn.onclick = () => selectTopic(topic.id);
         topicListEl.appendChild(btn);
+      });
+    }
+
+    function updateActiveTopicPill() {
+      const pills = topicListEl.querySelectorAll(".topic-pill");
+      pills.forEach((pill) => {
+        const isActive = pill.textContent === VERBAL_TOPICS.find(t => t.id === currentTopicId).label;
+        pill.classList.toggle("active", isActive);
       });
     }
 
@@ -5167,48 +5170,45 @@ let currentMode = "study";
       const lesson = LESSONS[currentTopicId] || { title: "Coming Soon", fullHtml: "<p>Content not yet loaded.</p>" };
       lessonTitleEl.textContent = lesson.title;
       lessonBodyEl.innerHTML = lesson.fullHtml;
-      
-      if (lesson.quickTips) {
-         let tipsHtml = "<h3>Quick Tips</h3><ul>";
-         lesson.quickTips.forEach(t => tipsHtml += `<li>${t}</li>`);
-         tipsHtml += "</ul>";
-         tipCardEl.innerHTML = tipsHtml;
-      } else {
-         tipCardEl.innerHTML = "";
-      }
+      tipCardEl.innerHTML = ""; 
     }
 
     function getQuestionsForCurrent() {
       const bank = window.VERBAL_QUESTION_BANK || {};
       const topicData = bank[currentTopicId];
       if (!topicData) return [];
-      
       const levelQuestions = topicData[currentLevel] || [];
       const limit = Math.min(currentQuestionLimit, levelQuestions.length);
       return levelQuestions.slice(0, limit);
     }
 
     function renderQuiz() {
+      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
+      quizTopicTitleEl.textContent = topic ? "Verbal · " + topic.label : "Verbal Ability";
+      quizLevelLabelEl.textContent = capitalize(currentLevel);
+
       const questions = getQuestionsForCurrent();
+      
+      // Reset UI
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
-      
-      // Reset Result View if active
-      const resContainer = document.getElementById("resultContainer");
-      if(resContainer) resContainer.remove();
+      document.querySelector(".quiz-footer").style.display = "flex";
+      document.querySelector(".quiz-header").style.display = "flex";
+      document.getElementById("resultContainer")?.remove();
       questionTextEl.style.display = "block";
       optionsListEl.style.display = "flex";
-      document.querySelector(".quiz-footer").style.display = "flex";
 
       if (!questions.length) {
-        questionTextEl.textContent = "No practice questions loaded for this topic yet.";
+        questionTextEl.textContent = "No practice questions available for this topic/level yet.";
         optionsListEl.innerHTML = "";
+        progressTextEl.textContent = "0 / 0";
         prevBtn.disabled = true;
         nextBtn.disabled = true;
         return;
       }
 
       if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+
       const currentQ = questions[currentIndex];
       questionTextEl.textContent = currentQ.question;
       optionsListEl.innerHTML = "";
@@ -5216,143 +5216,139 @@ let currentMode = "study";
       const existingAnswer = userAnswers[currentIndex];
 
       currentQ.options.forEach(option => {
+        const li = document.createElement("li");
         const btn = document.createElement("button");
         btn.className = "option-button";
         btn.textContent = option;
-        
+
         if (existingAnswer) {
-            btn.disabled = true;
-            if (option === currentQ.answer) btn.classList.add("is-correct");
-            if (option === existingAnswer.selected && !existingAnswer.isCorrect) btn.classList.add("is-incorrect");
+          btn.disabled = true;
+          if (option === currentQ.answer) btn.classList.add("is-correct");
+          if (option === existingAnswer.selected && !existingAnswer.isCorrect) btn.classList.add("is-incorrect");
+        } else {
+          btn.onclick = () => handleAnswer(option);
         }
 
-        btn.onclick = () => handleAnswer(option);
-        
-        const li = document.createElement("li");
         li.appendChild(btn);
         optionsListEl.appendChild(li);
       });
 
       if (existingAnswer) {
-         if (existingAnswer.isCorrect) {
-            feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
-            feedbackEl.className = "feedback feedback--correct";
-         } else {
-            feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
-            feedbackEl.className = "feedback feedback--incorrect";
-         }
+        if (existingAnswer.isCorrect) {
+           feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
+           feedbackEl.className = "feedback feedback--correct";
+        } else {
+           feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
+           feedbackEl.className = "feedback feedback--incorrect";
+        }
+        nextBtn.disabled = false;
+      } else {
+        nextBtn.disabled = true;
       }
 
       progressTextEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
       prevBtn.disabled = currentIndex === 0;
       
       if (currentIndex === questions.length - 1) {
-          nextBtn.textContent = "Finish Quiz";
+        nextBtn.textContent = "Finish Quiz";
       } else {
-          nextBtn.textContent = "Next";
+        nextBtn.textContent = "Next";
       }
-      
-      // Enable next only if answered
-      nextBtn.disabled = !existingAnswer; 
     }
 
-  function finishQuiz() {
-      // 1. Kalkulahin ang Score
-      let score = 0;
-      userAnswers.forEach(ans => {
-        // Check kung may sagot at kung tama
-        if (ans && ans.isCorrect) score++;
-      });
+    function handleAnswer(selected) {
+       const questions = getQuestionsForCurrent();
+       const currentQ = questions[currentIndex];
+       const isCorrect = selected === currentQ.answer;
 
-      // Compute percentage
-      const total = getQuestionsForCurrent().length; 
+       userAnswers[currentIndex] = {
+          question: currentQ.question,
+          selected: selected,
+          correct: currentQ.answer,
+          explanation: currentQ.explanation,
+          isCorrect: isCorrect
+       };
+
+       renderQuiz(); 
+    }
+
+    function finishQuiz() {
+      let score = 0;
+      userAnswers.forEach(ans => { if (ans && ans.isCorrect) score++; });
+      
+      const total = getQuestionsForCurrent().length;
       const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
-      // 2. Gumawa ng HTML (Scoreboard)
       let html = `
         <div style="text-align: center; padding: 20px;">
-          <h2 style="margin-bottom: 10px; color: var(--text);">Quiz Completed!</h2>
-          <h1 style="font-size: 4rem; margin: 10px 0; color: var(--accent); line-height: 1;">${score} / ${total}</h1>
-          <p style="color: var(--muted); font-size: 1.2rem; margin-bottom: 20px;">Score: ${percentage}%</p>
-          
-          <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 30px;">
+          <h2>Quiz Completed!</h2>
+          <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
+          <p style="color: var(--muted); font-size: 1.1rem;">Score: ${percentage}%</p>
+          <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
              <button onclick="location.reload()" class="primary-button" style="background: var(--card-alt); border: 1px solid var(--border);">🏠 Home</button>
              <button onclick="resetQuiz()" class="primary-button">🔄 Retake Quiz</button>
           </div>
-          
-          <hr style="border-color: var(--border); opacity: 0.3; margin-bottom: 25px;">
-          <h3 style="text-align: left; margin-bottom: 15px; color: var(--text);">📝 Review Mistakes</h3>
+        </div>
+        <hr style="border-color: var(--border); margin: 30px 0;">
+        <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
       `;
 
-      // 3. Ilista ang mga Maling Sagot
       let hasMistakes = false;
-      
-      // Gamitin ang getQuestionsForCurrent para makuha ang tamang index at tanong
       const questions = getQuestionsForCurrent();
 
       questions.forEach((q, index) => {
-         const userAnswer = userAnswers[index];
-         
-         // Ipakita kung MALI o WALANG SAGOT
-         if (!userAnswer || !userAnswer.isCorrect) {
+         const ans = userAnswers[index];
+         if (!ans || !ans.isCorrect) {
             hasMistakes = true;
-            const yourAnswerText = userAnswer ? userAnswer.selected : "No Answer";
-
+            const yourAns = ans ? ans.selected : "No Answer";
             html += `
-            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px; margin-bottom: 16px; text-align: left;">
-              <p style="margin: 0 0 10px; font-weight: 600; color: #fca5a5; font-size: 0.95rem;">Question ${index + 1}: ${q.question}</p>
-              
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                 <div style="background: #0f172a; padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--danger);">
-                    <span style="font-size: 0.75rem; color: var(--danger); text-transform: uppercase; letter-spacing: 0.05em;">You Answered</span><br>
-                    <strong style="color: #fecaca;">${yourAnswerText}</strong>
-                 </div>
-                 <div style="background: #0f172a; padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--success);">
-                    <span style="font-size: 0.75rem; color: var(--success); text-transform: uppercase; letter-spacing: 0.05em;">Correct Answer</span><br>
-                    <strong style="color: #bbf7d0;">${q.answer}</strong>
-                 </div>
-              </div>
-
-              <div style="margin-top: 12px; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
-                 💡 <span style="opacity: 0.9; font-style: italic;">${q.explanation}</span>
-              </div>
-            </div>
-            `;
+            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 15px; margin-bottom: 15px; text-align: left;">
+              <p style="margin: 0 0 5px; font-weight: bold; color: #fca5a5;">Question ${index + 1}: ${q.question}</p>
+              <p style="margin: 0; color: var(--danger);">❌ You: ${yourAns}</p>
+              <p style="margin: 0; color: var(--success);">✅ Correct: ${q.answer}</p>
+              <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${q.explanation}</p>
+            </div>`;
          }
       });
 
-      if (!hasMistakes) {
-        html += `
-          <div style="text-align: center; padding: 30px; background: rgba(34, 197, 94, 0.1); border-radius: 12px; border: 1px solid var(--success);">
-            <h3 style="color: var(--success); margin: 0; font-size: 1.5rem;">🎉 Perfect Score!</h3>
-            <p style="margin: 8px 0 0; color: var(--muted);">You mastered this topic completely!</p>
-          </div>
-        `;
-      }
-      
-      html += `</div>`; 
+      if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Perfect Score!</p>`;
 
-      // 4. OVERWRITE Method (Ito ang solusyon sa 'walang lumabas')
-      // Itago ang header ng quiz (yung may Level selector)
+      // Overwrite Content
       document.querySelector(".quiz-header").style.display = "none";
-      
-      // Kunin ang card at palitan ang BUONG laman nito
       const quizCard = document.querySelector(".quiz-card");
-      quizCard.innerHTML = html;
-      
-      // Scroll up para makita agad ang score
+      quizCard.innerHTML = `<div id="resultContainer">${html}</div>`;
       quizCard.scrollIntoView({ behavior: "smooth" });
     }
+
     function resetQuiz() {
        userAnswers = [];
        currentIndex = 0;
        
-       // Restore UI
-       questionTextEl.style.display = "block";
-       optionsListEl.style.display = "flex";
-       feedbackEl.style.display = "block";
-       document.querySelector(".quiz-footer").style.display = "flex";
+       // Restore Card Structure
+       const quizCard = document.querySelector(".quiz-card");
+       quizCard.innerHTML = `
+          <div id="questionText" class="question-text"></div>
+          <ul id="optionsList" class="options-list"></ul>
+          <div id="feedback" class="feedback"></div>
+          <div class="quiz-footer">
+            <div>
+              <button id="prevBtn" class="primary-button secondary" type="button">Previous</button>
+              <button id="nextBtn" class="primary-button" type="button">Next</button>
+            </div>
+            <span id="progressText" class="progress-text"></span>
+          </div>
+       `;
        
+       // Re-attach buttons (needed because we overwrote innerHTML)
+       document.getElementById("prevBtn").onclick = () => {
+          if(currentIndex > 0) { currentIndex--; renderQuiz(); }
+       };
+       document.getElementById("nextBtn").onclick = () => {
+          const q = getQuestionsForCurrent();
+          if(currentIndex === q.length - 1) finishQuiz();
+          else { currentIndex++; renderQuiz(); }
+       };
+
        renderQuiz();
     }
 
@@ -5360,19 +5356,8 @@ let currentMode = "study";
        currentTopicId = id;
        currentIndex = 0;
        userAnswers = [];
-       
-       // Update Title
-       const topicObj = VERBAL_TOPICS.find(t => t.id === id);
-       subtitleTopicEl.textContent = topicObj ? topicObj.label : "Topic";
-       
-       // Update active pill manually to ensure sync
-       document.querySelectorAll(".topic-pill").forEach(btn => {
-          btn.classList.remove("active");
-          if(btn.textContent === (topicObj ? topicObj.label : "")) {
-              btn.classList.add("active");
-          }
-       });
-
+       subtitleTopicEl.textContent = VERBAL_TOPICS.find(t => t.id === id).label;
+       updateActiveTopicPill();
        renderLesson();
        renderQuiz();
     }
@@ -5402,7 +5387,7 @@ let currentMode = "study";
              renderQuiz();
           }
        });
-       
+
        countChips.forEach(chip => {
           chip.onclick = () => {
              countChips.forEach(c => c.classList.remove("active"));
@@ -5436,7 +5421,6 @@ let currentMode = "study";
        buildTopicsList();
        attachEvents();
        selectTopic(currentTopicId);
-       updateActiveTopicPill();
     }
 
     init();
