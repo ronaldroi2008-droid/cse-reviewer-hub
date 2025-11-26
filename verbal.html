@@ -5375,17 +5375,29 @@ synonyms: {
       prevBtn.disabled = currentIndex === 0;
       nextBtn.disabled = currentIndex === questions.length - 1;
     }
-
-    function handleAnswer(selectedOption) {
+function handleAnswer(selectedOption) {
       const questions = getQuestionsForCurrent();
       if (!questions.length) return;
+      
       const currentQ = questions[currentIndex];
-
       const isCorrect = selectedOption === currentQ.answer;
 
+      // 1. I-SAVE ANG SAGOT (Ito ang bago)
+      // Sinasave natin ang detalye para ma-review sa dulo
+      userAnswers[currentIndex] = {
+        question: currentQ.question,
+        selected: selectedOption,
+        correct: currentQ.answer,
+        explanation: currentQ.explanation,
+        isCorrect: isCorrect
+      };
+
+      // 2. UI UPDATES (Kulayan ang buttons - Dating code)
       const buttons = optionsListEl.querySelectorAll(".option-button");
       buttons.forEach((btn) => {
+        btn.disabled = true; // Bawal na pindutin ulit
         btn.classList.remove("is-correct", "is-incorrect");
+        
         if (btn.textContent === currentQ.answer) {
           btn.classList.add("is-correct");
         }
@@ -5394,15 +5406,18 @@ synonyms: {
         }
       });
 
+      // 3. SHOW FEEDBACK (Dating code)
       if (isCorrect) {
         feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
         feedbackEl.className = "feedback feedback--correct";
       } else {
-        feedbackEl.textContent = "Not quite. " + (currentQ.explanation || "");
+        feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
         feedbackEl.className = "feedback feedback--incorrect";
       }
+      
+      // 4. ENABLE NEXT BUTTON (Para makausad)
+      nextBtn.disabled = false;
     }
-
     function switchMode(mode) {
       currentMode = mode;
 
