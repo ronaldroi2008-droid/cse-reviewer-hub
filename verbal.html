@@ -3354,96 +3354,102 @@ interjections: {
   },  
 
 error_identification: {
-  title: "Error Identification – Finding the Wrong Part of the Sentence",
+    title: "Error Identification – Spotting the Mistake",
+    level: "Verbal Ability · Grammar · Error ID",
+    intro:
+      "In this test type, a sentence is divided into parts (A, B, C, D). You must find the part with the error. If there is none, choose No Error (E).",
 
-  intro:
-    "In Error Identification questions, you are given one complete sentence that is divided into labeled parts (A, B, C, D, and sometimes E = No error). Your task is to choose which part contains a grammar or usage error, or decide that there is no error at all. These items test your mastery of basic grammar: subject–verb agreement, verb tense and form, pronouns, articles, prepositions, modifiers, parallelism, and confusing word pairs.",
+    // ITO ANG IDINAGDAG PARA LUMABAS ANG LESSON SA UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. How to Approach Error ID</h2>
+        <p>Do not just read for "sound". Analyze the grammar structure systematically.</p>
+        <div class="highlight-box">
+          <p><strong>The Checklist:</strong></p>
+          <ol>
+            <li><strong>Subject-Verb Agreement:</strong> Is the subject singular or plural? Does the verb match?</li>
+            <li><strong>Tenses:</strong> Is the timeframe consistent? (e.g., "Yesterday" requires Past Tense).</li>
+            <li><strong>Pronouns:</strong> Do they match their antecedents? (e.g., "Everyone" = singular "his/her").</li>
+            <li><strong>Parallelism:</strong> Are items in a list the same format? (e.g., "swimming, running, and biking").</li>
+          </ol>
+        </div>
+      </section>
 
-  keyPoints: [
-    // 1. What error identification tests
-    "In the Civil Service Exam, error identification focuses on one sentence divided into parts. You choose the letter of the part that contains the error (A, B, C, or D). If the sentence is completely correct, the answer is usually E: No error.",
-    "You are not asked to rewrite the sentence. You only need to locate the part that is wrong based on standard English grammar and usage.",
+      <section class="lesson-section">
+        <h2>2. Common Error Types</h2>
+        
+        <h3>A. Subject-Verb Agreement Errors</h3>
+        <p>Watch out for intervening phrases.</p>
+        <ul>
+          <li>❌ <em>"The list of names <strong>are</strong> on the table."</em> (Error: 'are')</li>
+          <li>✅ <em>"The list of names <strong>is</strong> on the table."</em> (Subject is 'list')</li>
+        </ul>
 
-    // 2. Common grammar areas tested
-    "Subject–verb agreement: The verb must agree in number with the true subject (singular subject → singular verb, plural subject → plural verb). Words like each, everyone, everybody, neither, either, and none are usually singular in formal exam English.",
-    "Verb tense and verb form: Check if the tense matches the time marker (yesterday, now, tomorrow, every day, since, for). With has/have/had, use the past participle (has gone, have seen, had taken). With do/does/did, use the base form (does not like, did not go).",
-    "Pronouns: Check if the pronoun matches its antecedent in number (singular/plural) and case (subject vs object). Watch out for errors with everyone–their, he and me vs he and I, who vs whom, and reflexive pronouns (myself, himself, themselves).",
-    "Articles and determiners: Look for missing or extra a, an, the, and incorrect use of some, any, much, many, few, little. Make sure the article fits the noun (countable vs uncountable, specific vs general).",
-    "Prepositions and collocations: Check if the preposition fits naturally: in/at/on for time and place, for/since with time expressions, by/with for means and agent. Many expressions have fixed prepositions: good at, interested in, responsible for, complain about.",
-    "Adjectives, adverbs, and modifiers: Make sure you use adjectives to describe nouns and adverbs to describe verbs, adjectives, or other adverbs. Check for misplaced modifiers that are too far from the word they describe or seem to describe the wrong word.",
-    "Parallel structure: Items in a series or comparison should have the same grammatical form. After words like and, or, either…or, neither…nor, not only…but also, check that all verbs or phrases are parallel (reading, writing, and swimming – not reading, to write, and swimming).",
-    "Degree and comparison: Check comparative and superlative forms (better, best; more beautiful, most beautiful). Avoid double comparatives such as more better or most tallest. Watch the correct use of than vs then in comparisons and time expressions.",
-    "Confusing word pairs: Many errors involve homophones or commonly confused words such as affect/effect, its/it's, your/you're, their/there/they're, fewer/less, lie/lay, rise/raise, principal/principle. Check the function of the word in the sentence (noun, verb, adjective) and choose accordingly.",
-    "No error: Sometimes all parts are correct. Only choose No error if you have systematically checked each part for grammar and usage and found no mistake. Do not choose it just because you are unsure."
-  ],
+        <h3>B. Verb Form Errors</h3>
+        <p>Check the auxiliary verbs.</p>
+        <ul>
+          <li>❌ <em>"She has <strong>went</strong> to the market."</em> (Error: 'went')</li>
+          <li>✅ <em>"She has <strong>gone</strong> to the market."</em> (Has + Past Participle)</li>
+        </ul>
 
-  patterns: [
-    "Finding a subject–verb agreement error when the subject is separated from the verb by a long phrase (The list of items is/are…).",
-    "Finding a wrong verb form after an auxiliary such as has, have, had, do, does, did, will, would (has went → has gone; did went → did go).",
-    "Finding a pronoun that does not agree with its antecedent in number or case (Everyone must submit their paper → his or her paper in formal English).",
-    "Finding an incorrect or missing article or preposition in a fixed expression (in the afternoon, at school, responsible for, interested in).",
-    "Finding a modifier that is in the wrong place or using an adverb where an adjective is required, or vice versa (She feels badly → She feels bad).",
-    "Finding non-parallel structures in lists or comparisons (She likes to read, writing, and to swim → to read, to write, and to swim).",
-    "Recognizing that a sentence has no error at all, even if it looks long or complex."
-  ],
+        <h3>C. Parallelism Errors</h3>
+        <p>Items in a series must match.</p>
+        <ul>
+          <li>❌ <em>"He likes <strong>swimming</strong>, <strong>hiking</strong>, and <strong>to run</strong>."</em> (Error: 'to run')</li>
+          <li>✅ <em>"He likes <strong>swimming</strong>, <strong>hiking</strong>, and <strong>running</strong>."</em></li>
+        </ul>
+      </section>
 
-  examples: [
-    {
-      q: "Which part of the sentence contains an error?\n\nA. Each of the employees\nB. were asked\nC. to submit his report\nD. before Friday.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "B",
-      explanation:
-        "The true subject is Each, which is singular in formal English (Each of the employees). A singular subject needs a singular verb. Therefore, were asked is incorrect and should be was asked. The other parts are acceptable in formal exam style, so the error is in part B."
-    },
-    {
-      q: "Which part of the sentence contains an error?\n\nA. She has\nB. went to the office\nC. before eight o'clock\nD. every morning.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "B",
-      explanation:
-        "With has/have/had, standard grammar requires the past participle, not the simple past. The past participle of go is gone, not went. The phrase should be has gone to the office. Therefore, part B contains the error."
-    },
-    {
-      q: "Which part of the sentence contains an error?\n\nA. Everyone in the class\nB. must submit their assignment\nC. on or before\nD. the deadline.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "B",
-      explanation:
-        "In formal exam English, everyone is treated as a singular indefinite pronoun and should take a singular pronoun such as his or her. The phrase must submit their assignment is considered incorrect in this context and should be must submit his or her assignment. Therefore, the error is in part B."
-    },
-    {
-      q: "Which part of the sentence contains an error?\n\nA. The report was discussed\nB. in the meeting\nC. by the manager\nD. and her staffs.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "D",
-      explanation:
-        "The plural of staff (meaning employees as a group) is usually staff, not staffs, in standard English. The correct phrase is by the manager and her staff. Therefore, part D contains the error. The other parts are grammatically acceptable."
-    },
-    {
-      q: "Which part of the sentence contains an error?\n\nA. The company aims\nB. to improve productivity,\nC. reducing costs,\nD. and to expand its market.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "C",
-      explanation:
-        "This sentence has a problem with parallel structure. The verbs following aims should have the same form. We have to improve, reducing, and to expand. To be parallel, all items should either use the to-infinitive (to improve, to reduce, and to expand) or all -ing forms (improving, reducing, and expanding). 'Reducing' breaks the pattern, so part C is the error."
-    },
-    {
-      q: "Which part of the sentence contains an error?\n\nA. The number of applicants\nB. has increased\nC. during the last three years\nD. in this company.\nE. No error.",
-      choices: ["A", "B", "C", "D", "E (No error)"],
-      answer: "E (No error)",
-      explanation:
-        "Here, the subject is The number (singular), so has increased is correct. The time phrase during the last three years and the prepositional phrase in this company are also correct. All parts are grammatically sound, so the correct answer is E: No error."
-    }
-  ],
+      <section class="lesson-section">
+        <h2>3. The "No Error" Option</h2>
+        <p>Sometimes, sentences are correct. If you have checked SVA, Tenses, Pronouns, and Prepositions and found nothing wrong, trust your analysis and choose <strong>No Error</strong>.</p>
+      </section>
+    `,
 
-  quickTips: [
-    "Always read the whole sentence first to understand the general meaning before looking for the error.",
-    "Find the true subject and match it with the verb. Ignore phrases like of the students or along with his friends when checking agreement.",
-    "With has, have, or had, use the past participle (has gone, have seen, had taken). With do, does, or did, use the base form (does not like, did not go).",
-    "Check pronouns carefully. Make sure they clearly refer to a noun and agree in number and gender, and that you choose the correct case (I vs me, who vs whom).",
-    "Look for fixed expressions with articles and prepositions: at night, in the morning, on Monday, responsible for, interested in, similar to, complain about.",
-    "Check lists and comparisons for parallel structure. If one item is to + verb, the others should normally be to + verb as well; if one is -ing, the others should also be -ing.",
-    "Watch out for very common confusing pairs inside the sentence (its/it's, their/there/they're, affect/effect, fewer/less, rise/raise, lie/lay). Use the function of the word (noun, verb, adjective) as your guide.",
-    "Only choose No error after you have checked every part for agreement, tense, pronouns, articles, prepositions, modifiers, and parallelism. Do not use it as a guess without analysis.",
-    "Practice regularly. The more error-identification items you see, the faster you will recognize typical patterns and traps in the exam."
-  ]
-},
+    keyPoints: [
+      "In the Civil Service Exam, error identification focuses on one sentence divided into parts.",
+      "Subject–verb agreement: The verb must agree in number with the true subject.",
+      "Verb tense and verb form: Check if the tense matches the time marker. With has/have/had, use the past participle.",
+      "Pronouns: Check if the pronoun matches its antecedent in number and case.",
+      "Parallel structure: Items in a series or comparison should have the same grammatical form.",
+      "No error: Only choose No error if you have systematically checked each part."
+    ],
+    patterns: [
+      "Finding a subject–verb agreement error when the subject is separated from the verb by a long phrase.",
+      "Finding a wrong verb form after an auxiliary such as has, have, had, do, does, did.",
+      "Finding a pronoun that does not agree with its antecedent.",
+      "Finding non-parallel structures in lists or comparisons."
+    ],
+    examples: [
+      {
+        q: "Each of the employees (A) / were asked (B) / to submit his report (C) / before Friday (D) / No error (E).",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B",
+        explanation:
+          "The subject is 'Each' (singular), so the verb should be 'was asked', not 'were asked'."
+      },
+      {
+        q: "She has (A) / went to the office (B) / before eight o'clock (C) / every morning (D) / No error (E).",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "B",
+        explanation:
+          "With 'has', use the past participle 'gone', not the simple past 'went'."
+      },
+      {
+        q: "The company aims (A) / to improve productivity, (B) / reducing costs, (C) / and to expand its market (D) / No error (E).",
+        choices: ["A", "B", "C", "D", "E"],
+        answer: "C",
+        explanation:
+          "Parallelism error. 'To improve' and 'to expand' are infinitives. 'Reducing' is a gerund. It should be 'to reduce' or just 'reduce'."
+      }
+    ],
+    quickTips: [
+      "Always find the main Subject and Verb first.",
+      "Check lists for Parallelism (all -ing or all to-infinitive).",
+      "Watch out for 'Each', 'Every', 'Neither' (Singular).",
+      "Don't be afraid to choose No Error if everything checks out."
+    ]
+  },
 
   
 
