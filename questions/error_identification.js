@@ -914,264 +914,325 @@ window.VERBAL_QUESTION_BANK["error_identification"] = {
       explanation: "Rule: List Structure. Adj, Adj, Clause. Fix: 'and fuel-efficient'."
     }
   ],
-
 expert: [
-    // --- QUANTIFIERS & COUNTABILITY ---
-    {
-      question: "Identify the error: 'I have / less / friends / than you.'",
-      options: ["I have", "less", "friends", "No error"],
-      answer: "less",
-      explanation: "Rule: Quantifiers. 'Friends' is a countable noun. Use 'fewer' for countable items, 'less' for uncountable."
-    },
-    {
-      question: "Identify the error: 'The / amount / of people / was huge.'",
-      options: ["The", "amount", "of people", "No error"],
-      answer: "amount",
-      explanation: "Rule: Quantifiers. 'Amount' is for uncountable nouns (water, sand). For people (countable), use 'number'."
-    },
-    {
-      question: "Identify the error: 'He / has / much / books.'",
-      options: ["He", "has", "much", "No error"],
-      answer: "much",
-      explanation: "Rule: Quantifiers. Books are countable. Use 'many'."
-    },
-    {
-      question: "Identify the error: 'She / gave / me / a few advice.'",
-      options: ["She", "gave", "me", "a few advice"],
-      answer: "a few advice",
-      explanation: "Rule: Countability. 'Advice' is uncountable in English. Use 'some advice' or 'a piece of advice'."
-    },
-    {
-      question: "Identify the error: 'We / need / less / calories.'",
-      options: ["We", "need", "less", "No error"],
-      answer: "less",
-      explanation: "Rule: Quantifiers. Calories are countable. Use 'fewer'."
-    },
+  // --- QUANTIFIERS & COUNTABILITY ---
+  {
+    question: "Identify the error: 'I have / less / friends / than you.'",
+    options: ["I have", "less", "friends", "No error"],
+    answer: "less",
+    explanation: "Rule: Quantifiers. 'Friends' is a countable noun. Use 'fewer' for countable items, 'less' for uncountable."
+  },
+  {
+    question: "Identify the error: 'The / amount / of people / was huge.'",
+    options: ["The", "amount", "of people", "No error"],
+    answer: "amount",
+    explanation: "Rule: Quantifiers. 'Amount' is for uncountable nouns (water, sand). For people (countable), use 'number'."
+  },
+  {
+    question: "Identify the error: 'He / has / much / books.'",
+    options: ["He", "has", "much", "No error"],
+    answer: "much",
+    explanation: "Rule: Quantifiers. Books are countable. Use 'many'."
+  },
+  {
+    question: "Identify the error: 'She / gave / me / a few advice.'",
+    options: ["She", "gave", "me", "a few advice"],
+    answer: "a few advice",
+    explanation: "Rule: Countability. 'Advice' is uncountable in English. Use 'some advice' or 'a piece of advice'."
+  },
+  {
+    question: "Identify the error: 'We / need / less / calories.'",
+    options: ["We", "need", "less", "No error"],
+    answer: "less",
+    explanation: "Rule: Quantifiers. Calories are countable. Use 'fewer'."
+  },
 
-    // --- REDUNDANCIES (Wordiness) ---
-    {
-      question: "Identify the error: 'Please / repeat / that / again.'",
-      options: ["Please", "repeat", "that", "again"],
-      answer: "again",
-      explanation: "Rule: Redundancy. 'Repeat' already means to say again. Removing 'again' makes it concise."
-    },
-    {
-      question: "Identify the error: 'The / reason is / because / he was late.'",
-      options: ["The", "reason is", "because", "No error"],
-      answer: "because",
-      explanation: "Rule: Redundancy. 'The reason is' implies cause. It should be followed by 'that', not 'because'."
-    },
-    {
-      question: "Identify the error: 'She / returned / back / home.'",
-      options: ["She", "returned", "back", "No error"],
-      answer: "back",
-      explanation: "Rule: Redundancy. 'Return' means to go back. 'Back' is unnecessary."
-    },
-    {
-      question: "Identify the error: 'Advance / forward / to the / next level.'",
-      options: ["Advance", "forward", "to the", "No error"],
-      answer: "forward",
-      explanation: "Rule: Redundancy. 'Advance' means to move forward. Drop 'forward'."
-    },
-    {
-      question: "Identify the error: 'We / discussed / about / the problem.'",
-      options: ["We", "discussed", "about", "No error"],
-      answer: "about",
-      explanation: "Rule: Transitive Verb. 'Discuss' means 'talk about'. Adding 'about' makes it redundant. Just say 'discussed the problem'."
-    },
-    {
-      question: "Identify the error: 'I / entered / into / the room.'",
-      options: ["I", "entered", "into", "No error"],
-      answer: "into",
-      explanation: "Rule: Transitive Verb. 'Enter' (a place) does not take 'into'. Just 'entered the room'."
-    },
-    {
-      question: "Identify the error: 'Please / await / for / your turn.'",
-      options: ["Please", "await", "for", "your turn"],
-      answer: "for",
-      explanation: "Rule: Redundancy. 'Await' means 'wait for'. Either say 'wait for' or 'await' (without for)."
-    },
+  // --- REDUNDANCIES (Wordiness) ---
+  {
+    question: "Identify the error: 'Please / repeat / that / again.'",
+    options: ["Please", "repeat", "that", "again"],
+    answer: "again",
+    explanation: "Rule: Redundancy. 'Repeat' already means to say again. Removing 'again' makes it concise."
+  },
+  {
+    question: "Identify the error: 'The / reason is / because / he was late.'",
+    options: ["The", "reason is", "because", "No error"],
+    answer: "because",
+    explanation: "Rule: Redundancy. 'The reason is' implies cause. It should be followed by 'that', not 'because'."
+  },
+  {
+    question: "Identify the error: 'She / returned / back / home.'",
+    options: ["She", "returned", "back", "No error"],
+    answer: "back",
+    explanation: "Rule: Redundancy. 'Return' means to go back. 'Back' is unnecessary."
+  },
+  {
+    question: "Identify the error: 'Advance / forward / to the / next level.'",
+    options: ["Advance", "forward", "to the", "No error"],
+    answer: "forward",
+    explanation: "Rule: Redundancy. 'Advance' means to move forward. Drop 'forward'."
+  },
+  {
+    question: "Identify the error: 'We / discussed / about / the problem.'",
+    options: ["We", "discussed", "about", "No error"],
+    answer: "about",
+    explanation: "Rule: Transitive Verb. 'Discuss' means 'talk about'. Adding 'about' makes it redundant. Just say 'discussed the problem'."
+  },
+  {
+    question: "Identify the error: 'I / entered / into / the room.'",
+    options: ["I", "entered", "into", "No error"],
+    answer: "into",
+    explanation: "Rule: Transitive Verb. 'Enter' (a place) does not take 'into'. Just 'entered the room'."
+  },
+  {
+    question: "Identify the error: 'Please / await / for / your turn.'",
+    options: ["Please", "await", "for", "your turn"],
+    answer: "for",
+    explanation: "Rule: Redundancy. 'Await' means 'wait for'. Either say 'wait for' or 'await' (without for)."
+  },
 
-    // --- ADVANCED GRAMMAR & IDIOMS ---
-    {
-      question: "Identify the error: 'He / is / senior / than me.'",
-      options: ["He", "is", "senior", "than me"],
-      answer: "than me",
-      explanation: "Rule: Latin Comparatives. Words like senior, junior, superior, and inferior take 'to', not 'than'. (senior to me)."
-    },
-    {
-      question: "Identify the error: 'I / prefer / coffee / than tea.'",
-      options: ["I", "prefer", "coffee", "than tea"],
-      answer: "than tea",
-      explanation: "Rule: Preference. The verb 'prefer' is followed by 'to', not 'than'. (prefer coffee to tea)."
-    },
-    {
-      question: "Identify the error: 'She / is / married / with a doctor.'",
-      options: ["She", "is", "married", "with a doctor"],
-      answer: "with a doctor",
-      explanation: "Rule: Idiom. You are married 'to' someone, not 'with' someone."
-    },
-    {
-      question: "Identify the error: 'I / look / forward / to meet you.'",
-      options: ["I", "look", "forward", "to meet you"],
-      answer: "to meet you",
-      explanation: "Rule: Gerunds. 'Look forward to' is a phrasal verb where 'to' is a preposition. It must be followed by a gerund (-ing). Correct: 'to meeting you'."
-    },
-    {
-      question: "Identify the error: 'He / is / used to / wake up early.'",
-      options: ["He", "is", "used to", "wake up early"],
-      answer: "wake up early",
-      explanation: "Rule: Gerunds. 'Be used to' means accustomed to. It takes a gerund. Correct: 'used to waking up early'."
-    },
-    {
-      question: "Identify the error: 'One / of the boys / have / a bike.'",
-      options: ["One", "of the boys", "have", "No error"],
-      answer: "have",
-      explanation: "Rule: Subject-Verb Agreement. The subject is 'One' (singular), not 'boys'. Use 'has'."
-    },
-    {
-      question: "Identify the error: 'Neither / of the men / were / happy.'",
-      options: ["Neither", "of the men", "were", "No error"],
-      answer: "were",
-      explanation: "Rule: Indefinite Pronoun. In formal grammar, 'Neither' is singular. Use 'was'."
-    },
-    {
-      question: "Identify the error: 'The number / of students / are / increasing.'",
-      options: ["The number", "of students", "are", "increasing"],
-      answer: "are",
-      explanation: "Rule: The Number vs A Number. 'The number' is specific and singular. Use 'is increasing'. (Contrast with 'A number of students are...')."
-    },
+  // --- ADVANCED GRAMMAR & IDIOMS ---
+  {
+    question: "Identify the error: 'He / is / senior / than me.'",
+    options: ["He", "is", "senior", "than me"],
+    answer: "than me",
+    explanation: "Rule: Latin Comparatives. Words like senior, junior, superior, and inferior take 'to', not 'than'. (senior to me)."
+  },
+  {
+    question: "Identify the error: 'I / prefer / coffee / than tea.'",
+    options: ["I", "prefer", "coffee", "than tea"],
+    answer: "than tea",
+    explanation: "Rule: Preference. The verb 'prefer' is followed by 'to', not 'than'. (prefer coffee to tea)."
+  },
+  {
+    question: "Identify the error: 'She / is / married / with a doctor.'",
+    options: ["She", "is", "married", "with a doctor"],
+    answer: "with a doctor",
+    explanation: "Rule: Idiom. You are married 'to' someone, not 'with' someone."
+  },
+  {
+    question: "Identify the error: 'I / look / forward / to meet you.'",
+    options: ["I", "look", "forward", "to meet you"],
+    answer: "to meet you",
+    explanation: "Rule: Gerunds. 'Look forward to' is a phrasal verb where 'to' is a preposition. It must be followed by a gerund (-ing). Correct: 'to meeting you'."
+  },
+  {
+    question: "Identify the error: 'He / is / used to / wake up early.'",
+    options: ["He", "is", "used to", "wake up early"],
+    answer: "wake up early",
+    explanation: "Rule: Gerunds. 'Be used to' means accustomed to. It takes a gerund. Correct: 'used to waking up early'."
+  },
+  {
+    question: "Identify the error: 'One / of the boys / have / a bike.'",
+    options: ["One", "of the boys", "have", "No error"],
+    answer: "have",
+    explanation: "Rule: Subject-Verb Agreement. The subject is 'One' (singular), not 'boys'. Use 'has'."
+  },
+  {
+    question: "Identify the error: 'Neither / of the men / were / happy.'",
+    options: ["Neither", "of the men", "were", "No error"],
+    answer: "were",
+    explanation: "Rule: Indefinite Pronoun. In formal grammar, 'Neither' is singular. Use 'was'."
+  },
+  {
+    question: "Identify the error: 'The number / of students / are / increasing.'",
+    options: ["The number", "of students", "are", "increasing"],
+    answer: "are",
+    explanation: "Rule: The Number vs A Number. 'The number' is specific and singular. Use 'is increasing'. (Contrast with 'A number of students are...')."
+  },
 
-    // --- MODIFIERS (Dangling & Misplaced) ---
-    {
-      question: "Identify the error: 'Walking / down the street, / the trees / looked beautiful.'",
-      options: ["Walking", "down the street,", "the trees", "looked beautiful"],
-      answer: "the trees",
-      explanation: "Rule: Dangling Modifier. The trees were not walking. The subject (I/He/She) is missing."
-    },
-    {
-      question: "Identify the error: 'To / get a loan, / a credit check / is required.'",
-      options: ["To", "get a loan,", "a credit check", "is required"],
-      answer: "a credit check",
-      explanation: "Rule: Dangling Modifier. A credit check cannot 'get a loan'. A person must be the subject. 'To get a loan, YOU must...'"
-    },
-    {
-      question: "Identify the error: 'I / only have / five / pesos.'",
-      options: ["I", "only have", "five", "pesos"],
-      answer: "only have",
-      explanation: "Rule: Placement of 'Only'. It should be placed next to the word it modifies. Strict usage: 'I have only five pesos'."
-    },
-    {
-      question: "Identify the error: 'Barking / loudly, / John / shouted at the dog.'",
-      options: ["Barking", "loudly,", "John", "shouted at the dog"],
-      answer: "John",
-      explanation: "Rule: Misplaced Modifier. This implies John was barking. Correct: 'John shouted at the loudly barking dog'."
-    },
+  // --- MODIFIERS (Dangling & Misplaced) ---
+  {
+    question: "Identify the error: 'Walking / down the street, / the trees / looked beautiful.'",
+    options: ["Walking", "down the street,", "the trees", "looked beautiful"],
+    answer: "the trees",
+    explanation: "Rule: Dangling Modifier. The trees were not walking. The subject (I/He/She) is missing."
+  },
+  {
+    question: "Identify the error: 'To / get a loan, / a credit check / is required.'",
+    options: ["To", "get a loan,", "a credit check", "is required"],
+    answer: "a credit check",
+    explanation: "Rule: Dangling Modifier. A credit check cannot 'get a loan'. A person must be the subject. 'To get a loan, YOU must...'"
+  },
+  {
+    question: "Identify the error: 'I / only have / five / pesos.'",
+    options: ["I", "only have", "five", "pesos"],
+    answer: "only have",
+    explanation: "Rule: Placement of 'Only'. It should be placed next to the word it modifies. Strict usage: 'I have only five pesos'."
+  },
+  {
+    question: "Identify the error: 'Barking / loudly, / John / shouted at the dog.'",
+    options: ["Barking", "loudly,", "John", "shouted at the dog"],
+    answer: "John",
+    explanation: "Rule: Misplaced Modifier. This implies John was barking. Correct: 'John shouted at the loudly barking dog'."
+  },
 
-    // --- DOUBLE NEGATIVES & NON-STANDARD ---
-    {
-      question: "Identify the error: 'I / don't have / no / money.'",
-      options: ["I", "don't have", "no", "No error"],
-      answer: "no",
-      explanation: "Rule: Double Negative. 'Don't' is already negative. Use 'any' instead of 'no'."
-    },
-    {
-      question: "Identify the error: 'He / can't / hardly / see.'",
-      options: ["He", "can't", "hardly", "No error"],
-      answer: "can't",
-      explanation: "Rule: Double Negative. 'Hardly' is considered negative. Use 'can hardly see' or 'cannot see'."
-    },
-    {
-      question: "Identify the error: 'Irregardless / of the weather, / we / will go.'",
-      options: ["Irregardless", "of the weather,", "we", "will go"],
-      answer: "Irregardless",
-      explanation: "Rule: Vocabulary. 'Irregardless' is non-standard (a double negative prefix/suffix). Use 'Regardless'."
-    },
-    {
-      question: "Identify the error: 'I / could / care / less.'",
-      options: ["I", "could", "care", "less"],
-      answer: "could",
-      explanation: "Rule: Idiom Logic. If you 'could' care less, it means you care somewhat. The correct phrase for zero care is 'Couldn't care less'."
-    },
+  // --- DOUBLE NEGATIVES & NON-STANDARD ---
+  {
+    question: "Identify the error: 'I / don't have / no / money.'",
+    options: ["I", "don't have", "no", "No error"],
+    answer: "no",
+    explanation: "Rule: Double Negative. 'Don't' is already negative. Use 'any' instead of 'no'."
+  },
+  {
+    question: "Identify the error: 'He / can't / hardly / see.'",
+    options: ["He", "can't", "hardly", "No error"],
+    answer: "can't",
+    explanation: "Rule: Double Negative. 'Hardly' is considered negative. Use 'can hardly see' or 'cannot see'."
+  },
+  {
+    question: "Identify the error: 'Irregardless / of the weather, / we / will go.'",
+    options: ["Irregardless", "of the weather,", "we", "will go"],
+    answer: "Irregardless",
+    explanation: "Rule: Vocabulary. 'Irregardless' is non-standard (a double negative prefix/suffix). Use 'Regardless'."
+  },
+  {
+    question: "Identify the error: 'I / could / care / less.'",
+    options: ["I", "could", "care", "less"],
+    answer: "could",
+    explanation: "Rule: Idiom Logic. If you 'could' care less, it means you care somewhat. The correct phrase for zero care is 'Couldn't care less'."
+  },
 
-    // --- SUBJUNCTIVE MOOD ---
-    {
-      question: "Identify the error: 'If / I / was / you, I would accept.'",
-      options: ["If", "I", "was", "you, I would accept"],
-      answer: "was",
-      explanation: "Rule: Subjunctive Mood. For hypothetical situations, use 'were' instead of 'was'. Correct: 'If I were you'."
-    },
-    {
-      question: "Identify the error: 'I / wish / I / was there.'",
-      options: ["I", "wish", "I", "was there"],
-      answer: "was there",
-      explanation: "Rule: Subjunctive. Wishes imply contrary to fact. Use 'were'. Correct: 'I wish I were there'."
-    },
-    {
-      question: "Identify the error: 'The boss / asks that / he / arrives on time.'",
-      options: ["The boss", "asks that", "he", "arrives on time"],
-      answer: "arrives on time",
-      explanation: "Rule: Mandative Subjunctive. After words like ask, demand, suggest, use the base form. Correct: 'that he arrive on time'."
-    },
+  // --- SUBJUNCTIVE MOOD ---
+  {
+    question: "Identify the error: 'If / I / was / you, I would accept.'",
+    options: ["If", "I", "was", "you, I would accept"],
+    answer: "was",
+    explanation: "Rule: Subjunctive Mood. For hypothetical situations, use 'were' instead of 'was'. Correct: 'If I were you'."
+  },
+  {
+    question: "Identify the error: 'I / wish / I / was there.'",
+    options: ["I", "wish", "I", "was there"],
+    answer: "was there",
+    explanation: "Rule: Subjunctive. Wishes imply contrary to fact. Use 'were'. Correct: 'I wish I were there'."
+  },
+  {
+    question: "Identify the error: 'The boss / asks that / he / arrives on time.'",
+    options: ["The boss", "asks that", "he", "arrives on time"],
+    answer: "arrives on time",
+    explanation: "Rule: Mandative Subjunctive. After words like ask, demand, suggest, use the base form. Correct: 'that he arrive on time'."
+  },
 
-    // --- PARALLELISM ---
-    {
-      question: "Identify the error: 'She likes / swimming, / hiking, / and to run.'",
-      options: ["She likes", "swimming,", "hiking,", "and to run"],
-      answer: "and to run",
-      explanation: "Rule: Parallelism. Items in a list must match form. Gerunds (ing) are used, so the last must be 'running'."
-    },
-    {
-      question: "Identify the error: 'He is / smart, / handsome, / and a doctor.'",
-      options: ["He is", "smart,", "handsome,", "and a doctor"],
-      answer: "and a doctor",
-      explanation: "Rule: Parallelism. Adjective, Adjective... Noun. Better style: 'smart, handsome, and successful' (all adjectives)."
-    },
-    {
-      question: "Identify the error: 'To think / is / to / existing.'",
-      options: ["To think", "is", "to", "existing"],
-      answer: "existing",
-      explanation: "Rule: Parallelism. Infinitive (To think) must match Infinitive (to exist)."
-    },
+  // --- PARALLELISM ---
+  {
+    question: "Identify the error: 'She likes / swimming, / hiking, / and to run.'",
+    options: ["She likes", "swimming,", "hiking,", "and to run"],
+    answer: "and to run",
+    explanation: "Rule: Parallelism. Items in a list must match form. Gerunds (ing) are used, so the last must be 'running'."
+  },
+  {
+    question: "Identify the error: 'He is / smart, / handsome, / and a doctor.'",
+    options: ["He is", "smart,", "handsome,", "and a doctor"],
+    answer: "and a doctor",
+    explanation: "Rule: Parallelism. Adjective, Adjective... Noun. Better style: 'smart, handsome, and successful' (all adjectives)."
+  },
+  {
+    question: "Identify the error: 'To think / is / to / existing.'",
+    options: ["To think", "is", "to", "existing"],
+    answer: "existing",
+    explanation: "Rule: Parallelism. Infinitive (To think) must match Infinitive (to exist)."
+  },
 
-    // --- ABSOLUTE ADJECTIVES ---
-    {
-      question: "Identify the error: 'This / is / more / perfect.'",
-      options: ["This", "is", "more", "perfect"],
-      answer: "more",
-      explanation: "Rule: Absolute Adjectives. 'Perfect' cannot be compared. Something is either perfect or it isn't. Remove 'more'."
-    },
-    {
-      question: "Identify the error: 'It is / the / most / unique design.'",
-      options: ["It is", "the", "most", "unique design"],
-      answer: "most",
-      explanation: "Rule: Absolute Adjectives. 'Unique' means one of a kind. It cannot be 'most' unique."
-    },
+  // --- ABSOLUTE ADJECTIVES ---
+  {
+    question: "Identify the error: 'This / is / more / perfect.'",
+    options: ["This", "is", "more", "perfect"],
+    answer: "more",
+    explanation: "Rule: Absolute Adjectives. 'Perfect' cannot be compared. Something is either perfect or it isn't. Remove 'more'."
+  },
+  {
+    question: "Identify the error: 'It is / the / most / unique design.'",
+    options: ["It is", "the", "most", "unique design"],
+    answer: "most",
+    explanation: "Rule: Absolute Adjectives. 'Unique' means one of a kind. It cannot be 'most' unique."
+  },
 
-    // --- CONFUSING WORDS ---
-    {
-      question: "Identify the error: 'He / lost / his / site.'",
-      options: ["He", "lost", "his", "site"],
-      answer: "site",
-      explanation: "Rule: Homophones. Vision is 'sight'. Location is 'site'. Correct: 'lost his sight'."
-    },
-    {
-      question: "Identify the error: 'Your / going / to / fall.'",
-      options: ["Your", "going", "to", "fall"],
-      answer: "Your",
-      explanation: "Rule: Homophones. 'Your' is possessive. 'You're' is You are. Correct: 'You're going to fall'."
-    },
-    {
-      question: "Identify the error: 'Its / a / beautiful / day.'",
-      options: ["Its", "a", "beautiful", "day"],
-      answer: "Its",
-      explanation: "Rule: Apostrophes. 'Its' is possessive. 'It's' is It is. Correct: 'It's a beautiful day'."
-    },
-    {
-      question: "Identify the error: 'Who / did / you / invite?'",
-      options: ["Who", "did", "you", "invite?"],
-      answer: "Who",
-      explanation: "Rule: Who vs Whom. You invited HIM (object), so use 'Whom'. (Strict formal grammar)."
-    }
-  ]
-  };
+  // --- CONFUSING WORDS ---
+  {
+    question: "Identify the error: 'He / lost / his / site.'",
+    options: ["He", "lost", "his", "site"],
+    answer: "site",
+    explanation: "Rule: Homophones. Vision is 'sight'. Location is 'site'. Correct: 'lost his sight'."
+  },
+  {
+    question: "Identify the error: 'Your / going / to / fall.'",
+    options: ["Your", "going", "to", "fall"],
+    answer: "Your",
+    explanation: "Rule: Homophones. 'Your' is possessive. 'You're' is You are. Correct: 'You're going to fall'."
+  },
+  {
+    question: "Identify the error: 'Its / a / beautiful / day.'",
+    options: ["Its", "a", "beautiful", "day"],
+    answer: "Its",
+    explanation: "Rule: Apostrophes. 'Its' is possessive. 'It's' is It is. Correct: 'It's a beautiful day'."
+  },
+  {
+    question: "Identify the error: 'Who / did / you / invite?'",
+    options: ["Who", "did", "you", "invite?"],
+    answer: "Who",
+    explanation: "Rule: Who vs Whom. You invited HIM (object), so use 'Whom'. (Strict formal grammar)."
+  },
+
+  // --- EXTRA EXPERT ITEMS (41–50) ---
+  {
+    question: "Identify the error: 'This secret / is / between / you and I.'",
+    options: ["This secret", "is", "between", "you and I"],
+    answer: "you and I",
+    explanation: "Rule: Pronoun Case. After prepositions like 'between', we use object pronouns ('me', 'him', 'her', 'us', 'them'). Correct: 'This secret is between you and me'."
+  },
+  {
+    question: "Identify the error: 'Each / of the students / have / a laptop.'",
+    options: ["Each", "of the students", "have", "a laptop"],
+    answer: "have",
+    explanation: "Rule: Subject–Verb Agreement. 'Each' is grammatically singular, so it takes a singular verb. Correct: 'Each of the students has a laptop'."
+  },
+  {
+    question: "Identify the error: 'If he / will come, / we / will start.'",
+    options: ["If he", "will come,", "we", "will start"],
+    answer: "will come,",
+    explanation: "Rule: Conditionals. In a first conditional, the 'if'-clause uses the simple present, not 'will'. Correct: 'If he comes, we will start'."
+  },
+  {
+    question: "Identify the error: 'No sooner / I reached / the station / than it started raining.'",
+    options: ["No sooner", "I reached", "the station", "than it started raining"],
+    answer: "I reached",
+    explanation: "Rule: Inversion with 'No sooner'. After 'No sooner', invert the auxiliary and subject: 'No sooner had I reached the station than it started raining'."
+  },
+  {
+    question: "Identify the error: 'Neither the students / nor the teacher / are / ready.'",
+    options: ["Neither the students", "nor the teacher", "are", "ready"],
+    answer: "are",
+    explanation: "Rule: 'Neither...nor' Agreement. The verb agrees with the subject closest to it. 'Teacher' is singular, so the verb should be 'is': 'Neither the students nor the teacher is ready'."
+  },
+  {
+    question: "Identify the error: 'He wants / not only money / but also / to gain fame.'",
+    options: ["He wants", "not only money", "but also", "to gain fame"],
+    answer: "to gain fame",
+    explanation: "Rule: Parallelism with 'not only...but also'. The structures on both sides must match. Use two noun phrases ('not only money but also fame') or two infinitives ('to earn money but also to gain fame')."
+  },
+  {
+    question: "Identify the error: 'She / suggested / to go / early.'",
+    options: ["She", "suggested", "to go", "early"],
+    answer: "to go",
+    explanation: "Rule: Verb Patterns. 'Suggest' is followed by a gerund or a that-clause, not an infinitive. Correct: 'She suggested going early' or 'She suggested that we go early'."
+  },
+  {
+    question: "Identify the error: 'Between / the three / options, / this is best.'",
+    options: ["Between", "the three", "options,", "this is best"],
+    answer: "Between",
+    explanation: "Rule: Between vs Among. Use 'between' for two items and 'among' for three or more. Correct: 'Among the three options, this is best'."
+  },
+  {
+    question: "Identify the error: 'Despite / of / the rain, / we played.'",
+    options: ["Despite", "of", "the rain,", "we played"],
+    answer: "of",
+    explanation: "Rule: Prepositions. 'Despite' is not followed by 'of'. Correct: 'Despite the rain, we played' or 'In spite of the rain, we played'."
+  },
+  {
+    question: "Identify the error: 'This / is / more / better.'",
+    options: ["This", "is", "more", "better"],
+    answer: "more",
+    explanation: "Rule: Double Comparative. 'Better' is already the comparative form of 'good'; we do not add 'more' before it. Correct: 'This is better'."
+  }
+]
+};
