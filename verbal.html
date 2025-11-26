@@ -605,9 +605,11 @@
     ];
 
     const LESSONS = {
-      analogy: {
+      const LESSONS = {
+  analogy: {
     title: "Analogy – Word Relationships and Logic",
-    level: "Verbal Ability",
+    intro:
+      "This lesson shows you how to spot the relationship between word pairs and use that logic to answer analogy questions correctly.",
     fullHtml: `
       <section class="lesson-section">
         <h2>1. What is an Analogy?</h2>
@@ -706,7 +708,7 @@
               <td><em>Pen : Write</em></td>
               <td>A pen is used <strong>to</strong> write.</td>
             </tr>
-             <tr>
+            <tr>
               <td><strong>Geography</strong></td>
               <td><em>Manila : Philippines</em></td>
               <td>Manila is the <strong>capital of</strong> the Philippines.</td>
@@ -735,7 +737,6 @@
         </p>
         <ul>
           <li><strong>Example:</strong> <em>Fox : Sly</em> (Noun : Adjective)</li>
-          <li>❌ <em>Speed : Fast</em> (Noun : Adjective? Maybe, but "Speed" is usually a noun/verb)</li>
           <li>✅ <em>Ant : Industrious</em> (Noun : Adjective describing a characteristic)</li>
         </ul>
 
@@ -754,35 +755,41 @@
         <h2>5. Quick Practice Patterns</h2>
         <ul class="check-list">
           <li><strong>Odometer : Mileage</strong> :: Compass : Direction (Instrument : Measures)</li>
-          <li><strong>Scissor : Cut</strong> :: Broom : Sweep (Tool : Action)</li>
+          <li><strong>Scissors : Cut</strong> :: Broom : Sweep (Tool : Action)</li>
           <li><strong>Lion : Pride</strong> :: Wolf : Pack (Animal : Group/Collective Noun)</li>
           <li><strong>Fire : Smoke</strong> :: Rain : Flood (Cause : Effect)</li>
         </ul>
       </section>
-    `
+    `,
+    tips: [
+      "Always build a short bridge sentence between the first pair before checking the options.",
+      "Check if the direction/order of the words is the same in both pairs.",
+      "If two answers both look okay, choose the one with the closest degree or intensity."
+    ]
   },
 
-      synonyms: {
-        title: "Synonyms – Words with Similar Meanings",
-        intro:
-          "Synonym questions check your vocabulary and your ability to choose the closest meaning.",
-        sections: [
-          {
-            heading: "Key reminders",
-            bullets: [
-              "A synonym is not always 100% the same, but it should be the closest in meaning.",
-              "Look for the general attitude of the word: positive, negative, formal, casual.",
-              "If two words are too strong or too weak compared to the original, eliminate them."
-            ]
-          }
-        ],
-        tips: [
-          "Use context: imagine a sentence where the word is used.",
-          "Eliminate answers that are opposite or totally different in tone.",
-          "Read English daily (articles, stories) to see words in real use."
+  synonyms: {
+    title: "Synonyms – Words with Similar Meanings",
+    intro:
+      "Synonym questions check your vocabulary and your ability to choose the closest meaning.",
+    sections: [
+      {
+        heading: "Key reminders",
+        bullets: [
+          "A synonym is not always 100% the same, but it should be the closest in meaning.",
+          "Look for the general attitude of the word: positive, negative, formal, casual.",
+          "If two words are too strong or too weak compared to the original, eliminate them."
         ]
       }
-    };
+    ],
+    tips: [
+      "Use context: imagine a sentence where the word is used.",
+      "Eliminate answers that are opposite or totally different in tone.",
+      "Read English daily (articles, stories) to see words in real use."
+    ]
+  }
+};
+
 
     // ==========================================
     // 2. STATE + DOM REFERENCES
