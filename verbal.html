@@ -5113,7 +5113,9 @@ synonyms: {
 }; 
 
 
-// STATE VARIABLES
+// ==========================================
+    // 4. STATE VARIABLES
+    // ==========================================
     let currentMode = "study";
     let currentTopicId = VERBAL_TOPICS[0]?.id || "nouns";
     let currentLevel = "beginner";
@@ -5127,10 +5129,11 @@ synonyms: {
     const subtitleTopicEl = document.getElementById("subtitleTopic");
     const studyView = document.getElementById("studyView");
     const practiceView = document.getElementById("practiceView");
+    
     const lessonTitleEl = document.getElementById("lessonTitle");
-    const lessonIntroEl = document.getElementById("lessonIntro");
     const lessonBodyEl = document.getElementById("lessonBody");
     const tipCardEl = document.getElementById("tipCard");
+
     const quizTopicTitleEl = document.getElementById("quizTopicTitle");
     const quizLevelLabelEl = document.getElementById("quizLevelLabel");
     const questionTextEl = document.getElementById("questionText");
@@ -5142,6 +5145,10 @@ synonyms: {
     const levelChips = document.querySelectorAll(".level-chip");
     const countChips = document.querySelectorAll(".count-chip");
 
+    // ==========================================
+    // 5. HELPER FUNCTIONS
+    // ==========================================
+
     function capitalize(text) {
       return text.charAt(0).toUpperCase() + text.slice(1);
     }
@@ -5152,7 +5159,9 @@ synonyms: {
         const btn = document.createElement("button");
         btn.className = "topic-pill";
         btn.textContent = topic.label;
+        
         if (topic.id === currentTopicId) btn.classList.add("active");
+
         btn.onclick = () => selectTopic(topic.id);
         topicListEl.appendChild(btn);
       });
@@ -5176,11 +5185,19 @@ synonyms: {
     function getQuestionsForCurrent() {
       const bank = window.VERBAL_QUESTION_BANK || {};
       const topicData = bank[currentTopicId];
-      if (!topicData) return [];
+      
+      if (!topicData) {
+        return [];
+      }
+
       const levelQuestions = topicData[currentLevel] || [];
       const limit = Math.min(currentQuestionLimit, levelQuestions.length);
       return levelQuestions.slice(0, limit);
     }
+
+    // ==========================================
+    // 6. QUIZ LOGIC
+    // ==========================================
 
     function renderQuiz() {
       const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
@@ -5188,16 +5205,23 @@ synonyms: {
       quizLevelLabelEl.textContent = capitalize(currentLevel);
 
       const questions = getQuestionsForCurrent();
-      
-      // Reset UI
+
+      // Reset UI State
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
-      document.querySelector(".quiz-footer").style.display = "flex";
+      
+      // Ensure Quiz UI is visible (Safety for Retake)
       document.querySelector(".quiz-header").style.display = "flex";
-      document.getElementById("resultContainer")?.remove();
       questionTextEl.style.display = "block";
       optionsListEl.style.display = "flex";
+      feedbackEl.style.display = "block";
+      document.querySelector(".quiz-footer").style.display = "flex";
+      
+      // Hide result if present
+      const resContainer = document.getElementById("resultContainer");
+      if(resContainer) resContainer.style.display = "none";
 
+      // Handle Empty Questions
       if (!questions.length) {
         questionTextEl.textContent = "No practice questions available for this topic/level yet.";
         optionsListEl.innerHTML = "";
@@ -5207,14 +5231,18 @@ synonyms: {
         return;
       }
 
+      // Clamp Index
+      if (currentIndex < 0) currentIndex = 0;
       if (currentIndex >= questions.length) currentIndex = questions.length - 1;
 
       const currentQ = questions[currentIndex];
       questionTextEl.textContent = currentQ.question;
       optionsListEl.innerHTML = "";
 
+      // Check if previously answered
       const existingAnswer = userAnswers[currentIndex];
 
+      // Render Options
       currentQ.options.forEach(option => {
         const li = document.createElement("li");
         const btn = document.createElement("button");
@@ -5233,26 +5261,29 @@ synonyms: {
         optionsListEl.appendChild(li);
       });
 
+      // Show Feedback if Answered
       if (existingAnswer) {
-        if (existingAnswer.isCorrect) {
-           feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
-           feedbackEl.className = "feedback feedback--correct";
-        } else {
-           feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
-           feedbackEl.className = "feedback feedback--incorrect";
-        }
-        nextBtn.disabled = false;
+         if (existingAnswer.isCorrect) {
+            feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
+            feedbackEl.className = "feedback feedback--correct";
+         } else {
+            feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
+            feedbackEl.className = "feedback feedback--incorrect";
+         }
+         nextBtn.disabled = false;
       } else {
-        nextBtn.disabled = true;
+         nextBtn.disabled = true;
       }
 
+      // Progress & Buttons
       progressTextEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
       prevBtn.disabled = currentIndex === 0;
       
+      // Logic for Finish Button
       if (currentIndex === questions.length - 1) {
-        nextBtn.textContent = "Finish Quiz";
+         nextBtn.textContent = "Finish Quiz";
       } else {
-        nextBtn.textContent = "Next";
+         nextBtn.textContent = "Next";
       }
     }
 
@@ -5261,6 +5292,7 @@ synonyms: {
        const currentQ = questions[currentIndex];
        const isCorrect = selected === currentQ.answer;
 
+       // Save Answer
        userAnswers[currentIndex] = {
           question: currentQ.question,
           selected: selected,
@@ -5273,82 +5305,82 @@ synonyms: {
     }
 
     function finishQuiz() {
-      let score = 0;
-      userAnswers.forEach(ans => { if (ans && ans.isCorrect) score++; });
-      
-      const total = getQuestionsForCurrent().length;
-      const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+       let score = 0;
+       userAnswers.forEach(a => { if(a && a.isCorrect) score++; });
+       
+       const total = getQuestionsForCurrent().length;
+       const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
 
-      let html = `
-        <div style="text-align: center; padding: 20px;">
-          <h2>Quiz Completed!</h2>
-          <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
-          <p style="color: var(--muted); font-size: 1.1rem;">Score: ${percentage}%</p>
-          <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+       let html = `
+         <div style="text-align:center; padding:20px;">
+           <h2>Quiz Completed!</h2>
+           <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
+           <p style="color: var(--muted); font-size: 1.1rem;">Score: ${percentage}%</p>
+           <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
              <button onclick="location.reload()" class="primary-button" style="background: var(--card-alt); border: 1px solid var(--border);">🏠 Home</button>
              <button onclick="resetQuiz()" class="primary-button">🔄 Retake Quiz</button>
           </div>
-        </div>
-        <hr style="border-color: var(--border); margin: 30px 0;">
-        <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
-      `;
+         </div>
+         <hr style="border-color: var(--border); margin: 30px 0; opacity: 0.3;">
+         <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
+       `;
 
-      let hasMistakes = false;
-      const questions = getQuestionsForCurrent();
+       let hasMistakes = false;
+       const questions = getQuestionsForCurrent();
+       
+       questions.forEach((q, index) => {
+          const ans = userAnswers[index];
+          if(!ans || !ans.isCorrect) {
+             hasMistakes = true;
+             const yourAns = ans ? ans.selected : "No Answer";
+             html += `
+               <div style="margin-bottom:15px; padding:15px; border:1px solid rgba(239, 68, 68, 0.3); border-radius:8px; background:rgba(239, 68, 68, 0.1); text-align: left;">
+                  <p style="margin: 0 0 10px; font-weight: bold; color: #fca5a5;">Question ${index+1}: ${q.question}</p>
+                  <div style="font-size: 0.9rem;">
+                    <p style="margin: 5px 0; color: var(--danger);">❌ You: ${yourAns}</p>
+                    <p style="margin: 5px 0; color: var(--success);">✅ Correct: ${q.answer}</p>
+                  </div>
+                  <p style="margin: 10px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${q.explanation}</p>
+               </div>
+             `;
+          }
+       });
 
-      questions.forEach((q, index) => {
-         const ans = userAnswers[index];
-         if (!ans || !ans.isCorrect) {
-            hasMistakes = true;
-            const yourAns = ans ? ans.selected : "No Answer";
-            html += `
-            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 15px; margin-bottom: 15px; text-align: left;">
-              <p style="margin: 0 0 5px; font-weight: bold; color: #fca5a5;">Question ${index + 1}: ${q.question}</p>
-              <p style="margin: 0; color: var(--danger);">❌ You: ${yourAns}</p>
-              <p style="margin: 0; color: var(--success);">✅ Correct: ${q.answer}</p>
-              <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${q.explanation}</p>
-            </div>`;
-         }
-      });
+       if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
 
-      if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Perfect Score!</p>`;
+       // 1. ITAGO ANG QUIZ UI (Huwag burahin)
+       document.querySelector(".quiz-header").style.display = "none";
+       questionTextEl.style.display = "none";
+       optionsListEl.style.display = "none";
+       feedbackEl.style.display = "none";
+       document.querySelector(".quiz-footer").style.display = "none";
 
-      // Overwrite Content
-      document.querySelector(".quiz-header").style.display = "none";
-      const quizCard = document.querySelector(".quiz-card");
-      quizCard.innerHTML = `<div id="resultContainer">${html}</div>`;
-      quizCard.scrollIntoView({ behavior: "smooth" });
+       // 2. IPAKITA ANG RESULTA
+       const quizCard = document.querySelector(".quiz-card");
+       
+       let resDiv = document.getElementById("resultContainer");
+       if (!resDiv) {
+           resDiv = document.createElement("div");
+           resDiv.id = "resultContainer";
+           quizCard.appendChild(resDiv);
+       }
+       
+       resDiv.innerHTML = html;
+       resDiv.style.display = "block";
+       
+       quizCard.scrollIntoView({ behavior: "smooth" });
     }
 
     function resetQuiz() {
+       // Reset Variables
        userAnswers = [];
        currentIndex = 0;
        
-       // Restore Card Structure
-       const quizCard = document.querySelector(".quiz-card");
-       quizCard.innerHTML = `
-          <div id="questionText" class="question-text"></div>
-          <ul id="optionsList" class="options-list"></ul>
-          <div id="feedback" class="feedback"></div>
-          <div class="quiz-footer">
-            <div>
-              <button id="prevBtn" class="primary-button secondary" type="button">Previous</button>
-              <button id="nextBtn" class="primary-button" type="button">Next</button>
-            </div>
-            <span id="progressText" class="progress-text"></span>
-          </div>
-       `;
-       
-       // Re-attach buttons (needed because we overwrote innerHTML)
-       document.getElementById("prevBtn").onclick = () => {
-          if(currentIndex > 0) { currentIndex--; renderQuiz(); }
-       };
-       document.getElementById("nextBtn").onclick = () => {
-          const q = getQuestionsForCurrent();
-          if(currentIndex === q.length - 1) finishQuiz();
-          else { currentIndex++; renderQuiz(); }
-       };
+       // Hide Result
+       const resDiv = document.getElementById("resultContainer");
+       if(resDiv) resDiv.style.display = "none";
 
+       // Render Quiz will restore the hidden elements
        renderQuiz();
     }
 
@@ -5356,26 +5388,29 @@ synonyms: {
        currentTopicId = id;
        currentIndex = 0;
        userAnswers = [];
-       subtitleTopicEl.textContent = VERBAL_TOPICS.find(t => t.id === id).label;
+       
+       const topicObj = VERBAL_TOPICS.find(t => t.id === id);
+       subtitleTopicEl.textContent = topicObj ? topicObj.label : "Topic";
+       
        updateActiveTopicPill();
        renderLesson();
        renderQuiz();
     }
 
+    function switchMode(mode) {
+       currentMode = mode;
+       modeTabs.forEach(t => t.classList.toggle("active", t.dataset.mode === mode));
+       if(mode === "study") {
+          studyView.classList.add("view--active");
+          practiceView.classList.remove("view--active");
+       } else {
+          practiceView.classList.add("view--active");
+          studyView.classList.remove("view--active");
+       }
+    }
+
     function attachEvents() {
-       modeTabs.forEach(tab => {
-          tab.onclick = () => {
-             modeTabs.forEach(t => t.classList.remove("active"));
-             tab.classList.add("active");
-             if(tab.dataset.mode === "study") {
-                studyView.classList.add("view--active");
-                practiceView.classList.remove("view--active");
-             } else {
-                practiceView.classList.add("view--active");
-                studyView.classList.remove("view--active");
-             }
-          }
-       });
+       modeTabs.forEach(tab => tab.onclick = () => switchMode(tab.dataset.mode));
 
        levelChips.forEach(chip => {
           chip.onclick = () => {
@@ -5400,10 +5435,7 @@ synonyms: {
        });
 
        prevBtn.onclick = () => {
-          if(currentIndex > 0) {
-             currentIndex--;
-             renderQuiz();
-          }
+          if(currentIndex > 0) { currentIndex--; renderQuiz(); }
        };
 
        nextBtn.onclick = () => {
@@ -5425,5 +5457,3 @@ synonyms: {
 
     init();
   </script>
-</body>
-</html>
