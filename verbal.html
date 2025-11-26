@@ -5334,9 +5334,12 @@ synonyms: {
       quizLevelLabelEl.textContent = capitalize(currentLevel);
 
       const questions = getQuestionsForCurrent();
+
+      // Reset muna ang feedback display
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
 
+      // Kung walang questions
       if (!questions.length) {
         questionTextEl.textContent =
           "No practice questions are available yet for this topic and level. They will be added soon.";
@@ -5346,6 +5349,76 @@ synonyms: {
         nextBtn.disabled = true;
         return;
       }
+
+      // Siguraduhing nasa tamang range ang index
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+
+      const currentQ = questions[currentIndex];
+      questionTextEl.textContent = currentQ.question;
+      optionsListEl.innerHTML = "";
+
+      // Check kung nasagutan na ba ito dati (para sa Previous/Next navigation)
+      const existingAnswer = userAnswers[currentIndex];
+
+      // Render Options
+      (currentQ.options || []).forEach((option) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-button";
+        btn.textContent = option;
+
+        // Kung nasagutan na, i-apply ang styling at disable buttons
+        if (existingAnswer) {
+          btn.disabled = true;
+          if (option === currentQ.answer) {
+            btn.classList.add("is-correct");
+          }
+          if (option === existingAnswer.selected && !existingAnswer.isCorrect) {
+            btn.classList.add("is-incorrect");
+          }
+        }
+
+        btn.addEventListener("click", function () {
+          handleAnswer(option);
+        });
+
+        li.appendChild(btn);
+        optionsListEl.appendChild(li);
+      });
+
+      // Ibalik ang Feedback text kung nasagutan na
+      if (existingAnswer) {
+         if (existingAnswer.isCorrect) {
+            feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
+            feedbackEl.className = "feedback feedback--correct";
+         } else {
+            feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
+            feedbackEl.className = "feedback feedback--incorrect";
+         }
+      }
+
+      progressTextEl.textContent =
+        "Question " + (currentIndex + 1) + " of " + questions.length;
+
+      // Button States
+      prevBtn.disabled = currentIndex === 0;
+
+      // LOGIC SA DULO: "Next" vs "Finish Quiz"
+      if (currentIndex === questions.length - 1) {
+        nextBtn.textContent = "Finish Quiz";
+      } else {
+        nextBtn.textContent = "Next";
+      }
+
+      // Disable ang Next/Finish kung hindi pa nasasagutan ang current item
+      if (existingAnswer) {
+         nextBtn.disabled = false;
+      } else {
+         nextBtn.disabled = true;
+      }
+    }
 
       if (currentIndex < 0) currentIndex = 0;
       if (currentIndex >= questions.length) currentIndex = questions.length - 1;
