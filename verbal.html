@@ -5133,6 +5133,7 @@ synonyms: {
     const practiceView = document.getElementById("practiceView");
     
     const lessonTitleEl = document.getElementById("lessonTitle");
+    const lessonIntroEl = document.getElementById("lessonIntro");
     const lessonBodyEl = document.getElementById("lessonBody");
     const tipCardEl = document.getElementById("tipCard");
 
@@ -5198,7 +5199,7 @@ synonyms: {
     }
 
     // ==========================================
-    // 6. QUIZ LOGIC
+    // 6. QUIZ LOGIC (THE FIXED PART)
     // ==========================================
 
     function renderQuiz() {
@@ -5208,22 +5209,20 @@ synonyms: {
 
       const questions = getQuestionsForCurrent();
 
-      // Reset UI State
+      // 1. RESET UI STATE (Show Quiz elements, Hide Result)
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
       
-      // Ensure Quiz UI is visible (Safety for Retake)
       document.querySelector(".quiz-header").style.display = "flex";
       questionTextEl.style.display = "block";
       optionsListEl.style.display = "flex";
       feedbackEl.style.display = "block";
       document.querySelector(".quiz-footer").style.display = "flex";
       
-      // Hide result if present
       const resContainer = document.getElementById("resultContainer");
       if(resContainer) resContainer.style.display = "none";
 
-      // Handle Empty Questions
+      // 2. Handle Empty Questions
       if (!questions.length) {
         questionTextEl.textContent = "No practice questions available for this topic/level yet.";
         optionsListEl.innerHTML = "";
@@ -5233,7 +5232,7 @@ synonyms: {
         return;
       }
 
-      // Clamp Index
+      // 3. Clamp Index
       if (currentIndex < 0) currentIndex = 0;
       if (currentIndex >= questions.length) currentIndex = questions.length - 1;
 
@@ -5241,10 +5240,10 @@ synonyms: {
       questionTextEl.textContent = currentQ.question;
       optionsListEl.innerHTML = "";
 
-      // Check if previously answered
+      // 4. Check if previously answered
       const existingAnswer = userAnswers[currentIndex];
 
-      // Render Options
+      // 5. Render Options
       currentQ.options.forEach(option => {
         const li = document.createElement("li");
         const btn = document.createElement("button");
@@ -5263,7 +5262,7 @@ synonyms: {
         optionsListEl.appendChild(li);
       });
 
-      // Show Feedback if Answered
+      // 6. Show Feedback if Answered
       if (existingAnswer) {
          if (existingAnswer.isCorrect) {
             feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
@@ -5277,11 +5276,10 @@ synonyms: {
          nextBtn.disabled = true;
       }
 
-      // Progress & Buttons
+      // 7. Update Progress & Buttons
       progressTextEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
       prevBtn.disabled = currentIndex === 0;
       
-      // Logic for Finish Button
       if (currentIndex === questions.length - 1) {
          nextBtn.textContent = "Finish Quiz";
       } else {
@@ -5294,7 +5292,6 @@ synonyms: {
        const currentQ = questions[currentIndex];
        const isCorrect = selected === currentQ.answer;
 
-       // Save Answer
        userAnswers[currentIndex] = {
           question: currentQ.question,
           selected: selected,
@@ -5350,23 +5347,21 @@ synonyms: {
 
        if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
 
-       // 1. ITAGO ANG QUIZ UI (Huwag burahin)
+       // 1. ITAGO ANG QUIZ UI (Hide, don't delete)
        document.querySelector(".quiz-header").style.display = "none";
        questionTextEl.style.display = "none";
        optionsListEl.style.display = "none";
        feedbackEl.style.display = "none";
        document.querySelector(".quiz-footer").style.display = "none";
 
-       // 2. IPAKITA ANG RESULTA
+       // 2. SHOW RESULT
        const quizCard = document.querySelector(".quiz-card");
-       
        let resDiv = document.getElementById("resultContainer");
        if (!resDiv) {
            resDiv = document.createElement("div");
            resDiv.id = "resultContainer";
            quizCard.appendChild(resDiv);
        }
-       
        resDiv.innerHTML = html;
        resDiv.style.display = "block";
        
@@ -5374,15 +5369,9 @@ synonyms: {
     }
 
     function resetQuiz() {
-       // Reset Variables
        userAnswers = [];
        currentIndex = 0;
-       
-       // Hide Result
-       const resDiv = document.getElementById("resultContainer");
-       if(resDiv) resDiv.style.display = "none";
-
-       // Render Quiz will restore the hidden elements
+       // renderQuiz() will handle showing the UI elements again
        renderQuiz();
     }
 
@@ -5442,12 +5431,8 @@ synonyms: {
 
        nextBtn.onclick = () => {
           const q = getQuestionsForCurrent();
-          if(currentIndex === q.length - 1) {
-             finishQuiz();
-          } else {
-             currentIndex++;
-             renderQuiz();
-          }
+          if(currentIndex === q.length - 1) finishQuiz();
+          else { currentIndex++; renderQuiz(); }
        };
     }
 
