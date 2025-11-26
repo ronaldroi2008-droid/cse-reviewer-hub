@@ -1,12 +1,9 @@
 // verbal-quiz.js
-// Generic Quiz Engine for Verbal Ability
-// Uses a questions object shaped like:
-// {
-//   beginner: [ { question, options, answer, explanation }, ... ],
-//   intermediate: [...],
-//   advanced: [...],
-//   expert: [...]
-// }
+// Generic quiz engine for Verbal Ability
+// Requires a global object: CURRENT_VERBAL_QUESTIONS with levels:
+// { beginner: [...], intermediate: [...], advanced: [...], expert: [...] }
+
+"use strict";
 
 // ==========================================
 // STATE
@@ -17,13 +14,11 @@ let currentIndex = 0;
 let score = 0;
 let quizFinished = false;
 
-// This should be set by the specific topic data file, e.g.:
-// const CURRENT_VERBAL_QUESTIONS = SYNONYMS_QUESTIONS;
-// or
-// const CURRENT_VERBAL_QUESTIONS = PREPOSITIONS_QUESTIONS;
-let QUESTIONS_SOURCE = typeof CURRENT_VERBAL_QUESTIONS !== "undefined"
-  ? CURRENT_VERBAL_QUESTIONS
-  : null;
+// Detect questions source
+let QUESTIONS_SOURCE =
+  typeof CURRENT_VERBAL_QUESTIONS !== "undefined"
+    ? CURRENT_VERBAL_QUESTIONS
+    : null;
 
 // ==========================================
 // DOM HELPERS
@@ -32,30 +27,31 @@ function $(selector) {
   return document.querySelector(selector);
 }
 
-const topicLabelEl      = $("#quiz-topic-label");
-const levelSelectEl     = $("#quiz-level-select");
-const questionTextEl    = $("#quiz-question-text");
-const optionsContainer  = $("#quiz-options");
-const explanationEl     = $("#quiz-explanation");
-const progressEl        = $("#quiz-progress");
-const startBtn          = $("#quiz-start-btn");
-const nextBtn           = $("#quiz-next-btn");
+const topicLabelEl     = $("#quiz-topic-label");
+const levelSelectEl    = $("#quiz-level-select");
+const questionTextEl   = $("#quiz-question-text");
+const optionsContainer = $("#quiz-options");
+const explanationEl    = $("#quiz-explanation");
+const progressEl       = $("#quiz-progress");
+const startBtn         = $("#quiz-start-btn");
+const nextBtn          = $("#quiz-next-btn");
 
 // ==========================================
 // INITIALIZATION
 // ==========================================
 function initVerbalQuiz() {
   if (!QUESTIONS_SOURCE) {
-    console.warn("No QUESTIONS_SOURCE found for verbal quiz.");
+    console.warn("verbal-quiz.js: No CURRENT_VERBAL_QUESTIONS found.");
+    if (questionTextEl) {
+      questionTextEl.textContent = "Quiz data not loaded yet.";
+    }
     return;
   }
 
-  // Default level
+  // Default level from select (if present)
   currentLevel = levelSelectEl ? levelSelectEl.value || "beginner" : "beginner";
   loadQuestionsForLevel(currentLevel);
-  attachEventListeners();
-
-  // Optional: Show initial state
+  attachQuizEventListeners();
   resetQuizUI();
 }
 
@@ -65,11 +61,16 @@ function loadQuestionsForLevel(level) {
   if (!QUESTIONS_SOURCE[level] || !Array.isArray(QUESTIONS_SOURCE[level])) {
     console.warn(`No questions found for level: ${level}`);
     currentQuestions = [];
+    if (questionTextEl) {
+      questionTextEl.textContent = "No questions found for this level yet.";
+    }
+    if (optionsContainer) optionsContainer.innerHTML = "";
+    if (explanationEl) explanationEl.textContent = "";
+    if (progressEl) progressEl.textContent = "";
     return;
   }
 
   currentQuestions = [...QUESTIONS_SOURCE[level]];
-  // Optional: shuffle questions
   shuffleArray(currentQuestions);
 
   currentIndex = 0;
@@ -88,7 +89,7 @@ function shuffleArray(arr) {
 // ==========================================
 // EVENT LISTENERS
 // ==========================================
-function attachEventListeners() {
+function attachQuizEventListeners() {
   if (levelSelectEl) {
     levelSelectEl.addEventListener("change", () => {
       loadQuestionsForLevel(levelSelectEl.value);
@@ -105,7 +106,7 @@ function attachEventListeners() {
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
       if (quizFinished) {
-        // restart quiz on same level
+        // Retake same level
         loadQuestionsForLevel(currentLevel);
         startQuiz();
       } else {
@@ -120,10 +121,13 @@ function attachEventListeners() {
 // ==========================================
 function startQuiz() {
   if (!currentQuestions.length) {
-    questionTextEl.textContent = "No questions available for this level yet.";
-    optionsContainer.innerHTML = "";
-    explanationEl.textContent = "";
-    progressEl.textContent = "";
+    if (questionTextEl) {
+      questionTextEl.textContent =
+        "No questions available for this level yet.";
+    }
+    if (optionsContainer) optionsContainer.innerHTML = "";
+    if (explanationEl) explanationEl.textContent = "";
+    if (progressEl) progressEl.textContent = "";
     return;
   }
 
@@ -135,20 +139,26 @@ function startQuiz() {
 
 function renderQuestion() {
   const item = currentQuestions[currentIndex];
+
   if (!item) {
     finishQuiz();
     return;
   }
 
-  // Question text
-  questionTextEl.textContent = item.question;
+  if (questionTextEl) {
+    questionTextEl.textContent = item.question;
+  }
 
-  // Clear old options
-  optionsContainer.innerHTML = "";
-  explanationEl.textContent = "";
-  explanationEl.classList.remove("show-explanation");
+  if (optionsContainer) {
+    optionsContainer.innerHTML = "";
+  }
 
-  // Render options as buttons
+  if (explanationEl) {
+    explanationEl.textContent = "";
+    explanationEl.classList.remove("show-explanation");
+  }
+
+  // Render options
   item.options.forEach((opt) => {
     const btn = document.createElement("button");
     btn.className = "quiz-option-btn";
@@ -161,10 +171,19 @@ function renderQuestion() {
     optionsContainer.appendChild(btn);
   });
 
-  // Progress
-  progressEl.textContent = `Question ${currentIndex + 1} of ${currentQuestions.length}`;
-  nextBtn.disabled = true;
-  nextBtn.textContent = "Next Question";
+  if (progressEl) {
+    progressEl.textContent = `Question ${
+      currentIndex + 1
+    } of ${currentQuestions.length}`;
+  }
+
+  if (nextBtn) {
+    nextBtn.disabled = true;
+    nextBtn.textContent =
+      currentIndex === currentQuestions.length - 1
+        ? "Finish Quiz"
+        : "Next Question";
+  }
 }
 
 function handleAnswer(selected, item) {
@@ -173,9 +192,11 @@ function handleAnswer(selected, item) {
 
   allButtons.forEach((btn) => {
     btn.disabled = true;
+
     if (btn.textContent === item.answer) {
       btn.classList.add("correct-option");
     }
+
     if (btn.textContent === selected && !isCorrect) {
       btn.classList.add("wrong-option");
     }
@@ -185,21 +206,22 @@ function handleAnswer(selected, item) {
     score += 1;
   }
 
-  // Show explanation
-  explanationEl.textContent = item.explanation || "";
-  explanationEl.classList.add("show-explanation");
+  if (explanationEl) {
+    explanationEl.textContent = item.explanation || "";
+    explanationEl.classList.add("show-explanation");
+  }
 
-  // Enable Next
-  nextBtn.disabled = false;
-
-  // If last question, change button label
-  if (currentIndex === currentQuestions.length - 1) {
-    nextBtn.textContent = "Finish Quiz";
+  if (nextBtn) {
+    nextBtn.disabled = false;
+    if (currentIndex === currentQuestions.length - 1) {
+      nextBtn.textContent = "Finish Quiz";
+    }
   }
 }
 
 function goToNextQuestion() {
   currentIndex += 1;
+
   if (currentIndex >= currentQuestions.length) {
     finishQuiz();
   } else {
@@ -210,22 +232,31 @@ function goToNextQuestion() {
 function finishQuiz() {
   quizFinished = true;
 
-  questionTextEl.textContent = "Quiz Finished!";
-  optionsContainer.innerHTML = "";
+  const total = currentQuestions.length || 0;
+  const percentage = total ? Math.round((score / total) * 100) : 0;
 
-  const percentage = currentQuestions.length
-    ? Math.round((score / currentQuestions.length) * 100)
-    : 0;
+  if (questionTextEl) {
+    questionTextEl.textContent = "Quiz Finished!";
+  }
+  if (optionsContainer) {
+    optionsContainer.innerHTML = "";
+  }
 
-  explanationEl.textContent =
-    `You scored ${score} out of ${currentQuestions.length} (${percentage}%).` +
-    getTeacherComment(percentage);
+  if (explanationEl) {
+    explanationEl.textContent =
+      `You scored ${score} out of ${total} (${percentage}%).` +
+      getTeacherComment(percentage);
+    explanationEl.classList.add("show-explanation");
+  }
 
-  explanationEl.classList.add("show-explanation");
-
-  progressEl.textContent = "Great job! You can try another level or retake this one.";
-  nextBtn.disabled = false;
-  nextBtn.textContent = "Retake Level";
+  if (progressEl) {
+    progressEl.textContent =
+      "Great job! You can try another level or retake this one.";
+  }
+  if (nextBtn) {
+    nextBtn.disabled = false;
+    nextBtn.textContent = "Retake Level";
+  }
 }
 
 function getTeacherComment(percentage) {
@@ -241,11 +272,19 @@ function getTeacherComment(percentage) {
 }
 
 function resetQuizUI() {
-  questionTextEl.textContent = "Click Start Quiz to begin.";
-  optionsContainer.innerHTML = "";
-  explanationEl.textContent = "";
-  explanationEl.classList.remove("show-explanation");
-  progressEl.textContent = "";
+  if (questionTextEl) {
+    questionTextEl.textContent = "Click Start Quiz to begin.";
+  }
+  if (optionsContainer) {
+    optionsContainer.innerHTML = "";
+  }
+  if (explanationEl) {
+    explanationEl.textContent = "";
+    explanationEl.classList.remove("show-explanation");
+  }
+  if (progressEl) {
+    progressEl.textContent = "";
+  }
   if (nextBtn) {
     nextBtn.disabled = true;
     nextBtn.textContent = "Next Question";
@@ -253,7 +292,7 @@ function resetQuizUI() {
 }
 
 // ==========================================
-// AUTO-INIT ON DOM LOAD
+// AUTO-INIT
 // ==========================================
 document.addEventListener("DOMContentLoaded", initVerbalQuiz);
 
