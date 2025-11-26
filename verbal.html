@@ -2261,47 +2261,94 @@ const LESSONS = {
   
   pronouns: {
     title: "Pronouns – Words that Replace Nouns",
+    level: "Verbal Ability · Grammar · Pronouns",
+    intro: 
+      "A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific 'formal grammar' rules that often differ from casual speech.",
     
-    intro: `
-      A pronoun replaces a noun (the antecedent). While basic pronouns are easy, the Civil Service Exam tests specific "formal grammar" rules that often differ from casual speech.
-      
-      This guide covers the three pillars of Pronoun Proficiency:
-      1. Case (The I/Me/My rule)
-      2. Agreement (Singular/Plural consistency)
-      3. Reference (Clarity)
+    // ITO ANG IDINAGDAG PARA LUMABAS ANG LESSON SA UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. The Three Cases of Pronouns</h2>
+        <p>You must choose the correct pronoun based on its function in the sentence.</p>
+        
+        <table class="lesson-table">
+          <tr>
+            <th>Case</th>
+            <th>Function</th>
+            <th>Pronouns</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><strong>Subjective</strong></td>
+            <td>Doer of action</td>
+            <td>I, He, She, We, They, Who</td>
+            <td>"<strong>She</strong> and <strong>I</strong> left."</td>
+          </tr>
+          <tr>
+            <td><strong>Objective</strong></td>
+            <td>Receiver of action</td>
+            <td>Me, Him, Her, Us, Them, Whom</td>
+            <td>"Call <strong>him</strong> and <strong>me</strong>."</td>
+          </tr>
+          <tr>
+            <td><strong>Possessive</strong></td>
+            <td>Shows ownership</td>
+            <td>My/Mine, His, Her/Hers, Their/Theirs</td>
+            <td>"That book is <strong>mine</strong>."</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. The Preposition Rule (Crucial)</h2>
+        <p>Any pronoun following a preposition (<em>between, with, to, from, for, about</em>) MUST be in the <strong>Objective Case</strong>.</p>
+        <div class="highlight-box">
+          <p><strong>Common Exam Trap:</strong></p>
+          <ul>
+            <li>❌ <em>"This secret is between you and <strong>I</strong>."</em></li>
+            <li>✅ <em>"This secret is between you and <strong>me</strong>."</em></li>
+            <li>✅ <em>"The gift is for <strong>her</strong> and <strong>me</strong>."</em></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Indefinite Pronouns</h2>
+        
+        <h3>A. Always Singular</h3>
+        <p>These words require singular verbs and singular pronouns (he/she/it):</p>
+        <p><em>Each, Every, Everyone, Everybody, Anyone, Someone, Nobody, Either, Neither.</em></p>
+        <ul>
+          <li>"<strong>Everyone</strong> has <strong>his or her</strong> own opinion."</li>
+        </ul>
+
+        <h3>B. The SANAM Rule (Tricky!)</h3>
+        <p><strong>S</strong>ome, <strong>A</strong>ny, <strong>N</strong>one, <strong>A</strong>ll, <strong>M</strong>ost can be Singular OR Plural depending on the object of the preposition.</p>
+        <ul>
+          <li>"All of the <strong>cake is</strong> gone." (Cake = Singular)</li>
+          <li>"All of the <strong>cookies are</strong> gone." (Cookies = Plural)</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Who vs. Whom</h2>
+        <p>Use the "He/Him" Method to check:</p>
+        <ul>
+          <li>If you can replace it with <strong>He</strong> → Use <strong>Who</strong>.</li>
+          <li>If you can replace it with <strong>Him</strong> → Use <strong>Whom</strong>.</li>
+        </ul>
+        <p><em>Example: "_____ did you call?"</em> (I called <strong>him</strong>) → <strong>Whom</strong> did you call?</p>
+      </section>
     `,
+
     keyPoints: [
-      "**1. The Three Cases (Must Memorize):**",
-      "   - **Subjective (Doer):** I, He, She, We, They, Who. (Use for subjects: 'SHE and I left.')",
-      "   - **Objective (Receiver):** Me, Him, Her, Us, Them, Whom. (Use for objects: 'Call HIM and ME.')",
-      "   - **Possessive (Owner):** My/Mine, His, Her/Hers, Their/Theirs, Whose. (Use for ownership: 'That is THEIRS.')",
-      "",
-      "**2. The Preposition Rule (Crucial):**",
-      "   - Any pronoun following a preposition (between, with, to, from, for, about) MUST be Objective.",
-      "   - CORRECT: 'Between you and ME.'",
-      "   - CORRECT: 'For YOU and HER.'",
-      "   - WRONG: 'Between you and I.' (Common error!)",
-      "",
-      "**3. Indefinite Pronouns - The 'Singular' List:**",
-      "   - These are ALWAYS singular in formal grammar: Each, Every, Everyone, Everybody, Anyone, Anybody, Someone, Somebody, No one, Nobody, Either, Neither.",
-      "   - Rule: Use singular verbs and pronouns.",
-      "   - Example: 'Everyone has his or her own style.' (Not 'their' in strict exams.)",
-      "",
-      "**4. Indefinite Pronouns - The 'SANAM' Rule (Tricky!):**",
-      "   - The pronouns Some, Any, None, All, Most (SANAM) can be Singular OR Plural.",
-      "   - Rule: Look at the noun in the 'of' phrase that follows.",
-      "   - Countable Noun = Plural: 'All of the apples ARE gone.'",
-      "   - Uncountable Noun = Singular: 'All of the water IS gone.'",
-      "",
-      "**5. Collective Nouns (Team, Jury, Committee, Family):**",
-      "   - As a Unit: If the group acts as one, use Singular. (e.g., 'The jury has reached its decision.')",
-      "   - As Individuals: If members act separately, use Plural. (e.g., 'The jury are arguing among themselves.')",
-      "",
-      "**6. Relative Pronouns (Who vs. Whom vs. That vs. Which):**",
-      "   - Who: Subject (like 'he'). 'He is the one who called.'",
-      "   - Whom: Object (like 'him'). 'He is the one whom I met.'",
-      "   - That: Essential clauses (no commas). 'The car that I bought.'",
-      "   - Which: Non-essential clauses (with commas). 'The car, which is red, is fast.'"
+      "Subjective (Doer): I, He, She, We, They, Who. (Use for subjects: 'SHE and I left.')",
+      "Objective (Receiver): Me, Him, Her, Us, Them, Whom. (Use for objects: 'Call HIM and ME.')",
+      "Possessive (Owner): My/Mine, His, Her/Hers, Their/Theirs, Whose. (Use for ownership: 'That is THEIRS.')",
+      "The Preposition Rule: Any pronoun following a preposition (between, with, to, from, for, about) MUST be Objective. (e.g., 'Between you and ME'.)",
+      "Indefinite Pronouns - The 'Singular' List: Each, Every, Everyone, Everybody, Anyone, Anybody, Someone, Somebody, No one, Nobody, Either, Neither take singular verbs.",
+      "Indefinite Pronouns - The 'SANAM' Rule: Some, Any, None, All, Most can be Singular OR Plural depending on the noun in the 'of' phrase.",
+      "Relative Pronouns: Who is for Subjects (like 'he'). Whom is for Objects (like 'him')."
     ],
     patterns: [
       "Compound Subject Test: 'Juan and I/Me went.' Remove 'Juan' → '(I) went' is correct → 'Juan and I'.",
@@ -2320,21 +2367,21 @@ const LESSONS = {
         ],
         answer: "None of the cake is left.",
         explanation:
-          "SANAM rule: 'None' can be singular or plural. Look at the 'of' phrase. 'Of the cake' (cake is uncountable) → singular verb 'is'. 'None of the cake are' is wrong. For 'None of the students', we usually use 'are' in modern English."
+          "SANAM rule: 'None' can be singular or plural. Look at the 'of' phrase. 'Of the cake' (cake is uncountable) → singular verb 'is'."
       },
       {
         q: "Choose the correct pronoun: 'The supervisor asked ______ employees to work overtime.'",
         choices: ["we", "us", "ourselves", "they"],
         answer: "us",
         explanation:
-          "Test without 'employees': 'The supervisor asked us.' 'Asked' takes an object, so we use objective 'us', not 'we'. Therefore, 'us employees' is correct."
+          "Test without 'employees': 'The supervisor asked us.' 'Asked' takes an object, so we use objective 'us'."
       },
       {
         q: "Identify the error: 'Me and her are going to the mall later.'",
         choices: ["Me and her", "are going", "to the", "mall later"],
         answer: "Me and her",
         explanation:
-          "Compound subject needs subjective case: 'She and I are going.' 'Me and her' uses objective case for subjects, which is incorrect in formal grammar."
+          "Compound subject needs subjective case: 'She and I are going.' 'Me and her' uses objective case for subjects, which is incorrect."
       },
       {
         q: "Select the correct sentence regarding collective nouns.",
