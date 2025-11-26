@@ -2786,7 +2786,74 @@ const LESSONS = {
 
     // FULL, DETAILED STUDY LESSON FOR THE UI
     // You can render this directly in your Study Mode panel.
-    lessonHtml: `
+    gender: {
+    title: "Gender of Nouns & Pronouns",
+    level: "Verbal Ability · Nouns · Gender",
+    intro:
+      "Gender in English grammar classifies nouns as Masculine, Feminine, Common, or Neuter. This is crucial for pronoun–antecedent agreement. You must match the pronoun (he, she, it, they) with the noun it replaces in both gender and number.",
+
+    keyPoints: [
+      "Masculine: Refers to males (king, uncle, rooster, father, boy). Pronoun: he / him / his.",
+      "Feminine: Refers to females (queen, aunt, hen, mother, girl). Pronoun: she / her / hers.",
+      "Common: Can be either male or female (teacher, doctor, cousin, student, child).",
+      "Neuter: Things, ideas, places (table, city, government, happiness). Pronoun: it / its.",
+      "Collective nouns (team, jury, committee, family) are often treated as neuter (it) when viewed as one unit.",
+      "Modern usage: 'They / Them / Their' is widely accepted as singular gender-neutral for people when the sex is unknown.",
+      "Pronoun–antecedent agreement: The pronoun must match its noun in gender (he / she / it / they) and number (singular / plural)."
+    ],
+
+    patterns: [
+      "Choosing the correct masculine / feminine pair (e.g., ram–ewe, king–queen, nephew–niece).",
+      "Spotting pronoun agreement errors (e.g., 'The bride thanked his parents' = error in gender).",
+      "Distinguishing common nouns (teacher, friend, neighbor) from clearly masculine or feminine nouns.",
+      "Identifying neuter nouns (objects, places, ideas) that must take 'it/its'.",
+      "Choosing gender-neutral expressions (firefighter vs. fireman, police officer vs. policeman).",
+      "Deciding between 'he or she' (formal) and 'they' (modern) when the gender is not specified."
+    ],
+
+    examples: [
+      {
+        q: "Which noun is COMMON gender?",
+        choices: ["King", "Actress", "Teacher", "Mother"],
+        answer: "Teacher",
+        explanation:
+          "‘Teacher’ can refer to a man or a woman. The word itself does not tell you the sex, so it is common gender. ‘King’ is masculine, ‘Actress’ is feminine, and ‘Mother’ is feminine."
+      },
+      {
+        q: "The manager said that ____ would review the report.",
+        choices: ["he", "she", "he or she", "they"],
+        answer: "he or she / they",
+        explanation:
+          "‘Manager’ is common gender (could be male or female). In formal exam style, ‘he or she’ fits best. In modern everyday English, singular ‘they’ is widely used as a gender-neutral pronoun."
+      },
+      {
+        q: "Each of the students must submit ____ project on Friday.",
+        choices: ["his", "her", "his or her", "their"],
+        answer: "his or her / their",
+        explanation:
+          "‘Each’ is grammatically singular. Formal exams often prefer ‘his or her project’. Many modern writers accept ‘their project’ as a natural singular-they form, but some test questions still treat ‘their’ as incorrect here."
+      },
+      {
+        q: "The lion chased ____ prey across the field.",
+        choices: ["his", "her", "its", "their"],
+        answer: "its",
+        explanation:
+          "Here, ‘lion’ is an animal with no specific sex mentioned, so English usually treats it as neuter and uses ‘it / its’. We only use ‘his/her’ if the sentence clearly refers to a male or female animal."
+      }
+    ],
+
+    quickTips: [
+      "Step 1: Find the antecedent (the noun the pronoun refers to). Decide: Is it a male, a female, a person with unknown sex, or a thing?",
+      "Step 2: Check number – is the antecedent singular or plural? Your pronoun must match both gender AND number.",
+      "Things, places, and ideas (book, city, freedom) are almost always neuter – use it/its, not he or she.",
+      "Professions like doctor, teacher, manager are common gender; in formal exams, use ‘he or she’ if the choices include it.",
+      "Remove long phrases and focus on the core sentence (e.g., ‘Each of the hardworking nurses … did ____ best.’ Focus on ‘Each … did ____ best.’).",
+      "Quick elimination: Cross out any pronoun that is the wrong number (plural vs singular), wrong gender (he vs she), or wrong type (‘its’ for people).",
+      "If still unsure, choose the option that best matches the core idea of the sentence and the exam’s usual style (many CSE items still prefer ‘he or she’ over informal singular ‘they’)."
+    ],
+
+    // IMPORTANTE: Ito ang pinalitan ko mula lessonHtml -> fullHtml
+    fullHtml: `
       <h2 class="lesson-title">Gender of Nouns &amp; Pronouns</h2>
       <p>
         In English grammar, <strong>gender</strong> is a way of classifying nouns 
@@ -2964,8 +3031,8 @@ const LESSONS = {
         simplifying sentences and checking the match between each pronoun 
         and its antecedent.
       </p>
-      `
-},
+    `
+  },
 
   adjectives: {
     title: "Adjectives – Describing, Comparing, and Limiting Nouns",
