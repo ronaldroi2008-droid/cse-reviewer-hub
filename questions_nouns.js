@@ -1,5 +1,8 @@
 // questions/nouns.js
 
+alert("HELLO! Nabasa ang Nouns file!");
+
+
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
 window.VERBAL_QUESTION_BANK["nouns"] = {
