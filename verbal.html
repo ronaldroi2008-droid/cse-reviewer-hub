@@ -2616,7 +2616,106 @@ const LESSONS = {
     title: "Grammatical Number – Singular, Plural, and Agreement",
     level: "Verbal Ability · Nouns & Pronouns · Number",
     intro:
-      "Grammatical number tells us whether a word refers to one (singular) or more than one (plural) person, place, thing, or idea. In English, this affects the form of nouns (book/books), pronouns (this/these, it/they), and verbs (plays/play). In the Civil Service Exam, many questions quietly test your understanding of number: choosing correct plural forms, distinguishing countable from uncountable nouns, and making sure that subjects, verbs, and pronouns agree with each other in number.",
+      "Grammatical number tells us whether a word refers to one (singular) or more than one (plural) person, place, thing, or idea. In English, this affects the form of nouns (book/books), pronouns (this/these), and verbs (plays/play).",
+    
+    // Ito ang idinagdag para lumabas ang content sa UI
+    fullHtml: `
+      <section class="lesson-section">
+        <h2>1. Basics: Singular vs. Plural</h2>
+        <p><strong>Singular</strong> refers to one person or thing. <strong>Plural</strong> refers to more than one.</p>
+        <p>This distinction changes the spelling of nouns and the form of verbs and pronouns used with them.</p>
+        <div class="highlight-box">
+          <p><strong>The Golden Rule of Agreement:</strong></p>
+          <ul>
+            <li><strong>Singular Subject</strong> = Singular Verb (Usually ends in <strong>-S</strong>).<br>
+            <em>"The boy <strong>runs</strong>." / "She <strong>is</strong> happy."</em></li>
+            <li><strong>Plural Subject</strong> = Plural Verb (Base form).<br>
+            <em>"The boys <strong>run</strong>." / "They <strong>are</strong> happy."</em></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Spelling Rules for Plurals</h2>
+        <p>Most nouns add <strong>-s</strong> (book → books). Here are the tricky patterns:</p>
+        
+        <table class="lesson-table">
+          <tr>
+            <th>Ending</th>
+            <th>Rule</th>
+            <th>Examples</th>
+          </tr>
+          <tr>
+            <td><strong>-s, -sh, -ch, -x, -z</strong></td>
+            <td>Add <strong>-es</strong></td>
+            <td>Bus → Buses, Box → Boxes, Watch → Watches</td>
+          </tr>
+          <tr>
+            <td><strong>Consonant + y</strong></td>
+            <td>Change <strong>y</strong> to <strong>i</strong>, add <strong>-es</strong></td>
+            <td>City → Cities, Baby → Babies, Lady → Ladies</td>
+          </tr>
+          <tr>
+            <td><strong>Vowel + y</strong></td>
+            <td>Just add <strong>-s</strong></td>
+            <td>Boy → Boys, Key → Keys, Day → Days</td>
+          </tr>
+          <tr>
+            <td><strong>-f</strong> or <strong>-fe</strong></td>
+            <td>Change to <strong>-ves</strong></td>
+            <td>Life → Lives, Knife → Knives, Leaf → Leaves</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Irregular & Zero Plurals</h2>
+        <p>These nouns do not follow standard rules and must be memorized.</p>
+        
+        <h3>A. Changing Vowels (Mutation)</h3>
+        <ul>
+          <li>Man → Men</li>
+          <li>Woman → Women</li>
+          <li>Tooth → Teeth</li>
+          <li>Foot → Feet</li>
+          <li>Mouse → Mice</li>
+        </ul>
+
+        <h3>B. Zero Plural (Same Form)</h3>
+        <p>The singular and plural forms are identical. Look at the verb or context to know the number.</p>
+        <ul>
+          <li><strong>Sheep:</strong> One sheep, two sheep.</li>
+          <li><strong>Deer:</strong> One deer, many deer.</li>
+          <li><strong>Fish:</strong> One fish, plenty of fish (same species).</li>
+          <li><strong>Series:</strong> A TV series, many TV series.</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Count vs. Mass Nouns</h2>
+        <p><strong>Count nouns</strong> can be counted (apples, chairs). <strong>Mass nouns</strong> cannot be counted directly (water, rice, information).</p>
+        <div class="highlight-box">
+          <p><strong>Key Rules for Mass Nouns:</strong></p>
+          <ul>
+            <li>They are always treated as <strong>Singular</strong>.</li>
+            <li>They never take <strong>a/an</strong> directly.</li>
+            <li>Use quantifiers like <em>much, little, or a lot of</em> (not <em>many</em> or <em>few</em>).</li>
+          </ul>
+          <p><em>Example: "The information <strong>is</strong> correct." (Not 'are')</em></p>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Indefinite Pronouns (The "Each" Trap)</h2>
+        <p>In formal exams, the following are always <strong>Singular</strong>:</p>
+        <p><em>Each, Every, Everyone, Everybody, Someone, Anybody, Nobody, Either, Neither.</em></p>
+        <ul>
+          <li>✅ <em>Each of the students <strong>has</strong> an ID.</em> (Correct)</li>
+          <li>❌ <em>Each of the students <strong>have</strong> an ID.</em> (Wrong)</li>
+        </ul>
+      </section>
+    `,
+
     keyPoints: [
       "A singular noun names one person, place, thing, or idea (student, city, idea). A plural noun refers to more than one (students, cities, ideas).",
       "Regular plurals are usually formed by adding -s or -es (book → books, bus → buses, box → boxes).",
@@ -2707,14 +2806,11 @@ const LESSONS = {
       }
     ],
     quickTips: [
-      "Always identify the real subject of the sentence first, then choose the verb. Ignore prepositional phrases like of the students, in the classroom, or with their friends when deciding on the verb form.",
-      "Memorize the most common irregular plurals (man/men, woman/women, child/children, tooth/teeth, foot/feet, mouse/mice, person/people). They appear frequently in grammar exams.",
-      "Remember that information, advice, news, furniture, luggage, equipment, and traffic are uncountable in standard English. Do not use them with many or with a plural -s.",
-      "If you are unsure about using his or her, make the noun plural and use they/their instead. For example: Each student must submit his or her paper → Students must submit their papers.",
-      "Watch out for double plurals or invented plurals such as childrens, peoples (when you mean people), and datas. In most contexts, child → children, person → people, data is already plural.",
-      "In exam questions about subject–verb agreement, be careful with sentences that start with phrases like There is/There are or that use collective nouns. Always match the verb with the real, closest subject."
-      ]
-}, 
+      "Underline keywords in every question.",
+      "Eliminate obviously wrong options before choosing.",
+      "If unsure, choose the option that best matches the core idea."
+    ]
+  },
  
 
  gender: {
