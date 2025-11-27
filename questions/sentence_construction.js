@@ -941,7 +941,7 @@ window.VERBAL_QUESTION_BANK["sentence_construction"] = {
     }
   ],
 
-  super: [
+  expert: [
     // 151-160: Cleft Sentences (Emphasis)
     {
       question: "Rewrite for emphasis: 'John stole the cake.'",
