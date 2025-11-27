@@ -128,130 +128,8 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "STEP 1: Borrow 1 from tens: 3 becomes 13\nSTEP 2: Subtract ones: 13 - 5 = 8\nSTEP 3: Subtract tens: 50 - 30 = 20\nSTEP 4: Combine: 20 + 8 = 28"
     },
 
-    // 10 EVEN/ODD QUESTIONS
-    {
-      question: "Is 24 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Even",
-      explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 24 ÷ 2 = 12 with no remainder\nSTEP 3: Therefore, 24 is an even number"
-    },
-    {
-      question: "Is 37 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Odd",
-      explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 37 ÷ 2 = 18 remainder 1\nSTEP 3: Therefore, 37 is an odd number"
-    },
-    {
-      question: "Is 52 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Even",
-      explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 52 ÷ 2 = 26 with no remainder\nSTEP 3: Therefore, 52 is an even number"
-    },
-    {
-      question: "Is 89 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Odd",
-      explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 89 ÷ 2 = 44 remainder 1\nSTEP 3: Therefore, 89 is an odd number"
-    },
-    {
-      question: "Is 70 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Even",
-      explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 70 ÷ 2 = 35 with no remainder\nSTEP 3: Therefore, 70 is an even number"
-    },
-    {
-      question: "Is 101 an even or odd number?",
-      options: ["Odd", "Even", "Neither", "Both"],
-      answer: "Odd",
-      explanation: "The last digit, 1, is odd, meaning the number is not divisible by 2. Therefore, 101 is an odd number."
-    },
-    {
-      question: "Is 450 an even or odd number?",
-      options: ["Even", "Odd", "Prime", "Composite"],
-      answer: "Even",
-      explanation: "The last digit, 0, is an even number, which means 450 is divisible by 2. Therefore, 450 is an even number."
-    },
-    {
-      question: "What is the remainder when 95 is divided by 2?",
-      options: ["1", "0", "2", "3"],
-      answer: "1",
-      explanation: "95 ÷ 2 = 47 with a remainder of 1. Odd numbers always have a remainder of 1 when divided by 2."
-    },
-    {
-      question: "Which of these is an odd number: 12, 54, 33, 80?",
-      options: ["33", "12", "54", "80"],
-      answer: "33",
-      explanation: "A number is odd if its ones digit is 1, 3, 5, 7, or 9. The number 33 has a 3 in the ones place."
-    },
-    {
-      question: "Which of these is an even number: 1, 7, 19, 26?",
-      options: ["26", "1", "7", "19"],
-      answer: "26",
-      explanation: "A number is even if its ones digit is 0, 2, 4, 6, or 8. The number 26 has a 6 in the ones place."
-    },
-
-    // 10 COMPARISON QUESTIONS
-    {
-      question: "Which symbol makes the statement true: 45 __ 59?",
-      options: [">", "<", "=", "≠"],
-      answer: "<",
-      explanation: "STEP 1: Compare tens digits: 4 vs 5\nSTEP 2: Since 4 < 5, then 45 < 59\nSTEP 3: Therefore, use < symbol"
-    },
-    {
-      question: "Which symbol makes the statement true: 72 __ 60?",
-      options: [">", "<", "=", "≠"],
-      answer: ">",
-      explanation: "STEP 1: Compare tens digits: 7 vs 6\nSTEP 2: Since 7 > 6, then 72 > 60\nSTEP 3: Therefore, use > symbol"
-    },
-    {
-      question: "Which symbol makes the statement true: 38 __ 38?",
-      options: [">", "<", "=", "≠"],
-      answer: "=",
-      explanation: "STEP 1: Compare both numbers\nSTEP 2: 38 = 38 exactly\nSTEP 3: Therefore, use = symbol"
-    },
-    {
-      question: "Which symbol makes the statement true: 91 __ 109?",
-      options: [">", "<", "=", "≠"],
-      answer: "<",
-      explanation: "STEP 1: Compare hundreds digits: 0 vs 1\nSTEP 2: Since 0 < 1, then 91 < 109\nSTEP 3: Therefore, use < symbol"
-    },
-    {
-      question: "Which symbol makes the statement true: 120 __ 98?",
-      options: [">", "<", "=", "≠"],
-      answer: ">",
-      explanation: "STEP 1: Compare hundreds digits: 1 vs 0\nSTEP 2: Since 1 > 0, then 120 > 98\nSTEP 3: Therefore, use > symbol"
-    },
-    {
-      question: "Which symbol makes the statement true: 501 __ 510?",
-      options: [">", "<", "=", "≠"],
-      answer: "<",
-      explanation: "Compare from the left: hundreds are the same (5=5). Tens: 0 < 1, so 501 < 510."
-    },
-    {
-      question: "Which symbol makes the statement true: 1000 __ 999?",
-      options: [">", "<", "=", "≠"],
-      answer: ">",
-      explanation: "1000 has four digits, and 999 has three digits. Any four-digit number is greater than any three-digit number."
-    },
-    {
-      question: "Which number is greater: 247 or 274?",
-      options: ["274", "247", "They are equal", "Cannot tell"],
-      answer: "274",
-      explanation: "Both numbers have 2 in the hundreds place. Comparing the tens place, 7 is greater than 4, so 274 > 247."
-    },
-    {
-      question: "Order the numbers from least to greatest: 15, 51, 25, 52.",
-      options: ["15, 25, 51, 52", "52, 51, 25, 15", "15, 51, 52, 25", "25, 15, 51, 52"],
-      answer: "15, 25, 51, 52",
-      explanation: "The correct order is 15 (smallest), 25, 51, and 52 (largest)."
-    },
-    {
-      question: "Which symbol makes the statement true: 605 __ 605?",
-      options: ["=", ">", "<", "≠"],
-      answer: "=",
-      explanation: "The two numbers are identical, so the equals symbol (=) makes the statement true."
-    },
-
+    
+    
     // 10 PLACE VALUE QUESTIONS
     {
       question: "In the number 482, which digit is in the tens place?",
@@ -745,12 +623,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
 
   advanced: [
     // 50 ADVANCED QUESTIONS (Complex operations, GCF/LCM, Exponents/Powers)
-    {
-      question: "Evaluate: 72 ÷ 8 + 5 × 3.",
-      options: ["24", "25", "29", "27"],
-      answer: "24",
-      explanation: "STEP 1: Division and multiplication first: 72 ÷ 8 = 9, 5 × 3 = 15\nSTEP 2: Then addition: 9 + 15 = 24\nSTEP 3: Final answer: 24"
-    },
+   
     {
       question: "Evaluate: (45 - 17) + 6 × 2.",
       options: ["40", "38", "42", "44"],
@@ -1055,24 +928,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
 
   expert: [
     // 50 EXPERT QUESTIONS (Multi-step complex problems, large arithmetic)
-    {
-      question: "Evaluate: (150 - 36) ÷ 6 + 7 × 3.",
-      options: ["40", "39", "42", "45"],
-      answer: "40",
-      explanation: "STEP 1: Parentheses: 150 - 36 = 114\nSTEP 2: Division/Multiplication: 114 ÷ 6 = 19, 7 × 3 = 21\nSTEP 3: Addition: 19 + 21 = 40\nSTEP 4: Final answer: 40"
-    },
-    {
-      question: "Evaluate: (248 + 132) ÷ 4 - 15.",
-      options: ["80", "72", "68", "64"],
-      answer: "80",
-      explanation: "STEP 1: Parentheses: 248 + 132 = 380\nSTEP 2: Division: 380 ÷ 4 = 95\nSTEP 3: Subtraction: 95 - 15 = 80\nSTEP 4:  80"
-    },
-    {
-      question: "Evaluate: $100 - [2 \times (15 + 5)] + 5$.",
-      options: ["65", "60", "70", "75"],
-      answer: "65",
-      explanation: "Inner parentheses: $15 + 5 = 20$. Brackets: $2 \times 20 = 40$. $100 - 40 + 5 = 65$."
-    },
+   
     {
       question: "Evaluate: $(10 + 2) \times (12 - 4) \div 3$.",
       options: ["32", "16", "24", "40"],
