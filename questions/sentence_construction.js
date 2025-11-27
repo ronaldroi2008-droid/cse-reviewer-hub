@@ -1,9 +1,9 @@
-// questions/sentence-construction.js
+// questions/sentence_construction.js
 
 // 1. Safety Check
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
-// 2. Inject Data
+// 2. Inject Data - USE UNDERSCORE TO MATCH FILENAME
 window.VERBAL_QUESTION_BANK["sentence_construction"] = {
   beginner: [
     // 1-10: Basic Word Order (S-V-O Rule)
