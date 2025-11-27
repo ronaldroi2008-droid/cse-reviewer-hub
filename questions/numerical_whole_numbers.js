@@ -3,6 +3,7 @@ window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 
 window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
   beginner: [
+    // 50 BEGINNER QUESTIONS
     // 10 BASIC ADDITION QUESTIONS
     {
       question: "What is 12 + 15?",
@@ -127,7 +128,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "STEP 1: Borrow 1 from tens: 3 becomes 13\nSTEP 2: Subtract ones: 13 - 5 = 8\nSTEP 3: Subtract tens: 50 - 30 = 20\nSTEP 4: Combine: 20 + 8 = 28"
     },
 
-    // 5 EVEN/ODD QUESTIONS (Completing the section to 10 questions)
+    // 10 EVEN/ODD QUESTIONS
     {
       question: "Is 24 an even or odd number?",
       options: ["Even", "Odd", "Prime", "Composite"],
@@ -158,7 +159,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "Even",
       explanation: "STEP 1: Check if divisible by 2\nSTEP 2: 70 ÷ 2 = 35 with no remainder\nSTEP 3: Therefore, 70 is an even number"
     },
-    // Adding 5 more to complete Even/Odd to 10
     {
       question: "Is 101 an even or odd number?",
       options: ["Odd", "Even", "Neither", "Both"],
@@ -190,7 +190,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "A number is even if its ones digit is 0, 2, 4, 6, or 8. The number 26 has a 6 in the ones place."
     },
 
-    // 5 COMPARISON QUESTIONS (Completing the section to 10 questions)
+    // 10 COMPARISON QUESTIONS
     {
       question: "Which symbol makes the statement true: 45 __ 59?",
       options: [">", "<", "=", "≠"],
@@ -221,7 +221,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: ">",
       explanation: "STEP 1: Compare hundreds digits: 1 vs 0\nSTEP 2: Since 1 > 0, then 120 > 98\nSTEP 3: Therefore, use > symbol"
     },
-    // Adding 5 more to complete Comparison to 10
     {
       question: "Which symbol makes the statement true: 501 __ 510?",
       options: [">", "<", "=", "≠"],
@@ -253,7 +252,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "The two numbers are identical, so the equals symbol (=) makes the statement true."
     },
 
-    // 5 PLACE VALUE QUESTIONS (Completing the section to 10 questions)
+    // 10 PLACE VALUE QUESTIONS
     {
       question: "In the number 482, which digit is in the tens place?",
       options: ["8", "4", "2", "0"],
@@ -284,7 +283,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "5",
       explanation: "STEP 1: Write place values: 7(thousands) 5(hundreds) 0(tens) 4(ones)\nSTEP 2: Identify hundreds place\nSTEP 3: Digit in hundreds place is 5"
     },
-    // Adding 5 more to complete Place Value to 10
     {
       question: "What is the value of the digit 6 in 6,145?",
       options: ["6000", "600", "60", "6"],
@@ -316,7 +314,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "The digit 8 is in the hundreds place."
     },
 
-    // 5 ROUNDING QUESTIONS (Completing the section to 10 questions)
+    // 10 ROUNDING QUESTIONS
     {
       question: "Round 34 to the nearest ten.",
       options: ["30", "40", "20", "50"],
@@ -347,7 +345,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "100",
       explanation: "STEP 1: Look at ones digit: 9\nSTEP 2: If ones digit is 5-9, round up\nSTEP 3: 99 rounded to nearest ten is 100"
     },
-    // Adding 5 more to complete Rounding to 10
     {
       question: "Round 256 to the nearest hundred.",
       options: ["300", "200", "250", "350"],
@@ -504,7 +501,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "8",
       explanation: "STEP 1: Division first: 60 ÷ 5 = 12\nSTEP 2: Then subtraction: 12 - 4 = 8\nSTEP 3: Final answer: 8"
     },
-    // Adding 40 more intermediate questions
     {
       question: "Evaluate: 18 + 2 × 5.",
       options: ["28", "20", "14", "46"],
@@ -738,6 +734,12 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       options: ["400", "50", "80", "40"],
       answer: "400",
       explanation: "Total hours: 8 × 5 = 40. Total pay: 40 × 10 = 400."
+    },
+    {
+      question: "Evaluate: 13 × 3 + 11.",
+      options: ["50", "39", "40", "49"],
+      answer: "50",
+      explanation: "Multiplication first: 13 × 3 = 39. Then addition: 39 + 11 = 50."
     }
   ],
 
@@ -755,7 +757,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "40",
       explanation: "STEP 1: Parentheses first: 45 - 17 = 28\nSTEP 2: Multiplication: 6 × 2 = 12\nSTEP 3: Addition: 28 + 12 = 40\nSTEP 4: Final answer: 40"
     },
-    // Adding 48 more advanced questions
     {
       question: "What is $4^2 - 10$?",
       options: ["6", "14", "16", "26"],
@@ -820,7 +821,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       question: "Find the LCM of 7 and 10.",
       options: ["70", "1", "17", "3"],
       answer: "70",
-      explanation: "LCM of two prime numbers is their product: $7 \times 10 = 70$."
+      explanation: "LCM of two numbers with no common factors is their product: $7 \times 10 = 70$."
     },
     {
       question: "Evaluate: $20 + 8 \times 2 - 40 \div 5$.",
@@ -1049,12 +1050,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       options: ["512", "64", "24", "16"],
       answer: "512",
       explanation: "8 cubed is $8^3 = 8 \times 8 \times 8 = 64 \times 8 = 512$."
-    },
-    {
-      question: "A bus can hold 40 people. How many buses are needed for 180 people?",
-      options: ["5", "4", "6", "4.5"],
-      answer: "5",
-      explanation: "Divide $180 \div 40 = 4$ with a remainder of 20. Since you cannot leave 20 people behind, you need 5 buses."
     }
   ],
 
@@ -1072,7 +1067,6 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "80",
       explanation: "STEP 1: Parentheses: 248 + 132 = 380\nSTEP 2: Division: 380 ÷ 4 = 95\nSTEP 3: Subtraction: 95 - 15 = 80\nSTEP 4:  80"
     },
-    // Adding 48 more expert questions
     {
       question: "Evaluate: $100 - [2 \times (15 + 5)] + 5$.",
       options: ["65", "60", "70", "75"],
@@ -1215,7 +1209,7 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       question: "Find the LCM of 3, 4, and 5.",
       options: ["60", "12", "20", "30"],
       answer: "60",
-      explanation: "Since there are no common factors, $3 \times 4 \times 5 = 60$."
+      explanation: "Since they are all prime, the LCM is their product: $3 \times 4 \times 5 = 60$."
     },
     {
       question: "Evaluate: $7 \times (9 - 3^2) + 12$.",
