@@ -1252,5 +1252,319 @@ window.VERBAL_QUESTION_BANK["articles"] = {
       answer: "The",
       explanation: "Exception! Some cities naturally keep 'The' in their name (The Hague, The Vatican)."
     }
+  ],
+
+  expert: [
+    // 1-10: Nuances of Abstract Nouns & Generalizations
+    {
+      question: "___ nature looks beautiful in autumn.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "When 'nature' refers to the physical world (plants, animals), we use no article."
+    },
+    {
+      question: "___ nature of this problem is complex.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Here 'nature' means 'the essential quality' or 'character' of something specific, so we use 'the'."
+    },
+    {
+      question: "___ society must protect its children.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "When referring to society as a general concept/civilization, we use no article."
+    },
+    {
+      question: "He joined ___ society for animal welfare.",
+      options: ["a", "an", "the", "-"],
+      answer: "a",
+      explanation: "Here 'society' refers to a specific organization or club, so we use 'a'."
+    },
+    {
+      question: "___ space is endless.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "When referring to the universe, 'space' takes no article."
+    },
+    {
+      question: "I tried to park, but ___ space was too small.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Referring to a specific area/spot."
+    },
+    {
+      question: "___ history repeats itself.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "General abstract concept."
+    },
+    {
+      question: "He wrote a book on ___ history of Magic.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Specific history of a specific subject."
+    },
+    {
+      question: "___ man cannot live by bread alone.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "When 'Man' implies 'Mankind' or the human race, we use no article."
+    },
+    {
+      question: "___ woman was elected as chairperson.",
+      options: ["a", "an", "the", "-"],
+      answer: "a",
+      explanation: "Unlike 'Man', 'Woman' usually follows standard article rules (A woman/The woman). Use 'a' for singular generic here."
+    },
+
+    // 11-20: Tricky Geographical & Place Names
+    {
+      question: "We stayed at ___ Hilton Hotel.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Hotels, theaters, and museums usually take 'The'."
+    },
+    {
+      question: "They visited ___ British Museum.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Museums usually take 'The'."
+    },
+    {
+      question: "I met him at ___ Kennedy Airport.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Airports, stations, and bridges usually take NO article (e.g., Heathrow Airport, Waterloo Station)."
+    },
+    {
+      question: "We walked across ___ Tower Bridge.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Most bridges (named after places/people) use zero article."
+    },
+    {
+      question: "___ Golden Gate Bridge is in San Francisco.",
+      options: ["A", "An", "The", "-"],
+      answer: "The",
+      explanation: "Exception! Major famous bridges often keep 'The' if the name feels descriptive, but local bridges usually don't."
+    },
+    {
+      question: "___ Hyde Park is famous.",
+      options: ["A", "An", "The", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Parks usually take NO article (Central Park, Rizal Park)."
+    },
+    {
+      question: "She studies at ___ Oxford University.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Name + University = No Article."
+    },
+    {
+      question: "She studies at ___ University of Oxford.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "The University of + Name = 'The'."
+    },
+    {
+      question: "___ Mount Olympus.",
+      options: ["A", "An", "The", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Individual mountain = No article."
+    },
+    {
+      question: "___ Matterhorn.",
+      options: ["A", "An", "The", "-"],
+      answer: "The",
+      explanation: "Exception! Some famous peaks (especially in the Alps) take 'The' (The Matterhorn, The Eiger)."
+    },
+
+    // 21-30: Parallel Structures & Comparatives
+    {
+      question: "___ sooner, ___ better.",
+      options: ["The / the", "A / a", "- / -", "The / -"],
+      answer: "The / the",
+      explanation: "Double Comparative structure: 'The [comparative], the [comparative]'."
+    },
+    {
+      question: "___ more you learn, ___ more you know.",
+      options: ["The / the", "A / a", "- / -", "The / -"],
+      answer: "The / the",
+      explanation: "Double Comparative rule."
+    },
+    {
+      question: "He walked from ___ top to ___ bottom.",
+      options: ["the / the", "- / -", "a / a", "the / -"],
+      answer: "- / -",
+      explanation: "Idiom: 'From top to bottom' usually takes zero articles in this parallel structure."
+    },
+    {
+      question: "They fought ___ face to ___ face.",
+      options: ["the / the", "a / a", "- / -", "the / a"],
+      answer: "- / -",
+      explanation: "Idiom: 'Face to face' takes no articles."
+    },
+    {
+      question: "They go to school by ___ day and sleep by ___ night.",
+      options: ["the / the", "- / -", "a / a", "the / a"],
+      answer: "- / -",
+      explanation: "Time idioms with 'by' (by day, by night) take no article."
+    },
+    {
+      question: "___ pen is mightier than ___ sword.",
+      options: ["The / the", "A / a", "- / -", "The / a"],
+      answer: "The / the",
+      explanation: "Proverbial usage: referring to the concepts/inventions of 'The Pen' and 'The Sword'."
+    },
+    {
+      question: "___ arm in ___ arm.",
+      options: ["The / the", "An / an", "- / -", "The / -"],
+      answer: "- / -",
+      explanation: "Idiom: 'Arm in arm' (linked arms) takes no article."
+    },
+    {
+      question: "___ father and ___ son were reunited.",
+      options: ["The / the", "- / -", "A / a", "The / -"],
+      answer: "- / -",
+      explanation: "In parallel pairs describing relationships, articles are often omitted: 'Father and son', 'Husband and wife'."
+    },
+    {
+      question: "___ owl is a nocturnal bird.",
+      options: ["The", "A", "An", "All of the above"],
+      answer: "All of the above",
+      explanation: "Expert nuance: You can say 'The owl' (species), 'An owl' (any owl), or 'Owls' (plural). All act as valid generalizations."
+    },
+    {
+      question: "___ telephone was invented by Bell.",
+      options: ["A", "An", "The", "-"],
+      answer: "The",
+      explanation: "When referring to an invention as a class/system, use 'The'."
+    },
+
+    // 31-40: Body Parts & Physical Actions
+    {
+      question: "He hit me in ___ face.",
+      options: ["a", "an", "the", "my"],
+      answer: "the",
+      explanation: "English Idiom: We usually use 'the' + body part after a verb of contact (hit in the face, pat on the back), rather than possessive 'my'."
+    },
+    {
+      question: "She patted him on ___ back.",
+      options: ["a", "an", "the", "his"],
+      answer: "the",
+      explanation: "Verb of contact + preposition + 'the' + body part."
+    },
+    {
+      question: "He took her by ___ hand.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Standard idiom: 'By the hand'."
+    },
+    {
+      question: "Look me in ___ eye.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Standard idiom: 'In the eye'."
+    },
+    {
+      question: "He has ___ broad shoulders.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Plural body parts described with adjectives usually take no article."
+    },
+    {
+      question: "She has ___ broken leg.",
+      options: ["a", "an", "the", "-"],
+      answer: "a",
+      explanation: "Specific medical injury = 'a'."
+    },
+    {
+      question: "My brother is ___ sea captain.",
+      options: ["a", "an", "the", "-"],
+      answer: "a",
+      explanation: "Profession = 'a'."
+    },
+    {
+      question: "He is at ___ sea (sailing).",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'At sea' means on a voyage. 'At the sea' means at the coast/beach."
+    },
+    {
+      question: "The sailor went to ___ sea.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'Go to sea' means to become a sailor or start a voyage."
+    },
+    {
+      question: "We went to ___ sea to swim.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Referring to the ocean/beach location."
+    },
+
+    // 41-50: Rare & Complex Idioms
+    {
+      question: "He was taken into ___ custody.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Legal idiom: 'Into custody' takes no article."
+    },
+    {
+      question: "The two countries are at ___ war.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "State of conflict: 'At war' takes no article."
+    },
+    {
+      question: "During ___ war (WWII), life was hard.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Referring to a specific historical period."
+    },
+    {
+      question: "I am in ___ trouble.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'In trouble' takes no article."
+    },
+    {
+      question: "It is out of ___ question.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Idiom: 'Out of the question' (impossible) always takes 'the'."
+    },
+    {
+      question: "He took ___ office (power) in January.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'Take office' (assume power) uses zero article."
+    },
+    {
+      question: "She works at ___ post office.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "We usually say 'the post office', 'the bank', 'the doctor' even if not specifying which one specifically."
+    },
+    {
+      question: "To be in ___ debt.",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'In debt' uses zero article."
+    },
+    {
+      question: "On ___ whole, the movie was good.",
+      options: ["a", "an", "the", "-"],
+      answer: "the",
+      explanation: "Idiom: 'On the whole'."
+    },
+    {
+      question: "In ___ conclusion, I would like to say...",
+      options: ["a", "an", "the", "- (No article)"],
+      answer: "- (No article)",
+      explanation: "Idiom: 'In conclusion' uses zero article."
+    }
   ]
+
+  
 };
