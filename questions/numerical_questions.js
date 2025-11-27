@@ -1,8 +1,5 @@
-// questions/numerical_questions.js
-
-// Global question bank for Numerical page
-window.NUMERICAL_QUESTION_BANK = {
-  whole_numbers: {
+window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
+window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
     beginner: [
       {
         question: "What is 37 + 25?",
