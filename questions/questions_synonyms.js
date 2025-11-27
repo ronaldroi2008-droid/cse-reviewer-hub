@@ -930,7 +930,7 @@ window.VERBAL_QUESTION_BANK["synonyms"] = {
   // ==========================================
   // LEVEL 4: SUPER (Super Hard / Obscure)
   // ==========================================
-  super: [
+  expert: [
     {
       question: "Choose the synonym for: **ABATE**",
       options: ["Increase", "Subside", "Prolong", "Expand"],
