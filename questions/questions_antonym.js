@@ -1,3 +1,5 @@
+// questions/questions_antonyms.js
+
 // 1. Safety Check
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
@@ -923,9 +925,9 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
   ], // END OF ADVANCED
 
   // ==========================================
-  // LEVEL 4: SUPER (Obscure & Academic) - 50 ITEMS
+  // LEVEL 4: EXPERT (Obscure & Academic) - 50 ITEMS
   // ==========================================
-  super: [
+  expert: [
     {
       question: "Choose the antonym for: ABATE",
       options: ["Decrease", "Intensify", "Stop", "End"],
@@ -1214,5 +1216,5 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "Agitate",
       explanation: "Conciliate is to soothe. Agitate is to disturb/anger."
     }
-  ] // END OF SUPER - NO COMMA HERE
+  ] // END OF EXPERT
 }; // END OF ANTONYMS OBJECT
