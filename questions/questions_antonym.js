@@ -4,9 +4,9 @@ window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 // 2. Inject Data
 window.VERBAL_QUESTION_BANK["antonyms"] = {
 
-
-
-
+  // ==========================================
+  // LEVEL 1: BEGINNER (Common Daily Words) - 50 ITEMS
+  // ==========================================
   beginner: [
     {
       question: "Choose the antonym for: HOT",
@@ -308,10 +308,10 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "No",
       explanation: "Yes expresses agreement. No expresses disagreement."
     }
-  ],
+  ], // END OF BEGINNER
 
   // ==========================================
-  // LEVEL 2: INTERMEDIATE (General Usage)
+  // LEVEL 2: INTERMEDIATE (General Usage) - 50 ITEMS
   // ==========================================
   intermediate: [
     {
@@ -614,10 +614,10 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "Silent",
       explanation: "Noisy means making much sound. Silent means making no sound."
     }
-  ],
+  ], // END OF INTERMEDIATE
 
   // ==========================================
-  // LEVEL 3: ADVANCED (Formal & Professional)
+  // LEVEL 3: ADVANCED (Formal & Professional) - 50 ITEMS
   // ==========================================
   advanced: [
     {
@@ -920,10 +920,10 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "Safe",
       explanation: "Hazardous means dangerous. Safe means free from danger."
     }
-  ],
+  ], // END OF ADVANCED
 
   // ==========================================
-  // LEVEL 4: SUPER (Obscure & Academic)
+  // LEVEL 4: SUPER (Obscure & Academic) - 50 ITEMS
   // ==========================================
   super: [
     {
@@ -1214,5 +1214,5 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "Agitate",
       explanation: "Conciliate is to soothe. Agitate is to disturb/anger."
     }
-  ]
-};
+  ] // END OF SUPER - NO COMMA HERE
+}; // END OF ANTONYMS OBJECT
