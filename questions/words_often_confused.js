@@ -1,1256 +1,1256 @@
+// questions/words_often_confused.js
 
-
-
+// 1. Safety Check
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
+// 2. Inject Data for "words_often_confused"
 window.VERBAL_QUESTION_BANK["words_often_confused"] = {
-
 
   beginner: [
     // 1-10: Your vs You're
-    { 
-      question: "____ my best friend.", 
-      choices: ["Your", "You're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Contraction vs. Possession. 'You're' is the short form of 'You are'. 'Your' indicates ownership. Explanation: The sentence means 'You are my best friend', so 'You're' is correct." 
+    {
+      question: "Is this ____ backpack?",
+      options: ["your", "you're"],
+      answer: "your",
+      explanation: "Rule: Possessive Adjectives. 'Your' shows that something belongs to you. Explanation: We are asking about ownership of the backpack."
     },
-    { 
-      question: "Is this ____ book?", 
-      choices: ["your", "you're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possessive Adjectives. 'Your' shows that something belongs to you. Explanation: We are asking about the ownership of the book, so we use 'your'." 
+    {
+      question: "____ coming to the party tonight.",
+      options: ["Your", "You're"],
+      answer: "You're",
+      explanation: "Rule: Contraction. 'You're' stands for 'You are'. Explanation: The sentence means 'You are coming to the party'."
     },
-    { 
-      question: "____ going to be late!", 
-      choices: ["Your", "You're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Subject + Verb. 'You're' stands for 'You are'. Explanation: The sentence reads 'You are going to be late', so the contraction 'You're' is required." 
+    {
+      question: "What's ____ favorite color?",
+      options: ["your", "you're"],
+      answer: "your",
+      explanation: "Rule: Possession. The color preference belongs to the person. Explanation: Use 'your' to indicate personal preference."
     },
-    { 
-      question: "Brush ____ teeth.", 
-      choices: ["your", "you're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The teeth belong to the person being spoken to. Explanation: Since we are talking about ownership, we use the possessive form 'your'." 
+    {
+      question: "I think ____ very talented.",
+      options: ["your", "you're"],
+      answer: "you're",
+      explanation: "Rule: Subject + Verb. The sentence needs 'You are'. Explanation: 'You're' is the contraction for 'You are'."
     },
-    { 
-      question: "I like ____ shoes.", 
-      choices: ["your", "you're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. 'Your' modifies the noun 'shoes'. Explanation: I am admiring the shoes that belong to you." 
+    {
+      question: "Don't forget ____ jacket.",
+      options: ["your", "you're"],
+      answer: "your",
+      explanation: "Rule: Possession. The jacket belongs to the person. Explanation: Use 'your' to show ownership."
     },
-    { 
-      question: "I think ____ right.", 
-      choices: ["your", "you're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Subject + Verb. The sentence needs a subject and a verb to be complete. Explanation: 'I think [you are] right', so 'you're' is the correct choice." 
+    {
+      question: "____ going to love this movie!",
+      options: ["Your", "You're"],
+      answer: "You're",
+      explanation: "Rule: Contraction. Explanation: This means 'You are going to love this movie'."
     },
-    { 
-      question: "Where is ____ house?", 
-      choices: ["your", "you're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possessive Adjectives. We need a word to describe the noun 'house'. Explanation: We are asking about the house that belongs to you, so we use 'your'." 
+    {
+      question: "Is that ____ final answer?",
+      options: ["your", "you're"],
+      answer: "your",
+      explanation: "Rule: Possessive Adjective. Explanation: The answer belongs to the person being asked."
     },
-    { 
-      question: "____ welcome!", 
-      choices: ["Your", "You're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Common Phrases. This is short for 'You are welcome'. Explanation: Because we need the verb 'are', we use the contraction 'You're'." 
+    {
+      question: "____ the best friend anyone could have.",
+      options: ["Your", "You're"],
+      answer: "You're",
+      explanation: "Rule: Subject + Verb. Explanation: The sentence requires 'You are' to be complete."
     },
-    { 
-      question: "What is ____ name?", 
-      choices: ["your", "you're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The name belongs to the person. Explanation: Use 'your' to indicate ownership of the name." 
+    {
+      question: "Show me ____ identification.",
+      options: ["your", "you're"],
+      answer: "your",
+      explanation: "Rule: Possession. Explanation: The identification belongs to the person."
     },
-    { 
-      question: "If ____ happy, I'm happy.", 
-      choices: ["your", "you're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Clause Structure. The clause needs a subject and verb. Explanation: 'If [you are] happy', therefore 'you're' is the correct spelling." 
+    {
+      question: "I heard ____ getting a promotion.",
+      options: ["your", "you're"],
+      answer: "you're",
+      explanation: "Rule: Contraction. Explanation: This means 'You are getting a promotion'."
     },
 
     // 11-20: Their vs There vs They're
-    { 
-      question: "The kids are playing with ____ toys.", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. 'Their' means 'belonging to them'. Explanation: The toys belong to the kids, so we use the possessive 'their'." 
+    {
+      question: "The students left ____ books in the classroom.",
+      options: ["their", "there", "they're"],
+      answer: "their",
+      explanation: "Rule: Possession. 'Their' means 'belonging to them'. Explanation: The books belong to the students."
     },
-    { 
-      question: "Look over ____!", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Location. 'There' refers to a place or position. Explanation: The speaker is pointing to a specific location, so 'there' is correct." 
+    {
+      question: "Put the groceries over ____.",
+      options: ["their", "there", "they're"],
+      answer: "there",
+      explanation: "Rule: Location. 'There' refers to a place. Explanation: Pointing to where the groceries should go."
     },
-    { 
-      question: "____ going to the park.", 
-      choices: ["Their", "There", "They're"], 
-      correctIndex: 2, 
-      explanation: "Rule: Contraction. 'They're' means 'They are'. Explanation: The sentence says 'They are going to the park', so we use 'They're'." 
+    {
+      question: "____ planning a surprise party.",
+      options: ["Their", "There", "They're"],
+      answer: "They're",
+      explanation: "Rule: Contraction. 'They're' means 'They are'. Explanation: 'They are planning a surprise party'."
     },
-    { 
-      question: "Is ____ any milk left?", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Existence. We use 'There is' or 'Is there' to ask if something exists. Explanation: 'Is there' is the correct phrase for asking about the milk's existence." 
+    {
+      question: "____ house is painted blue.",
+      options: ["Their", "There", "They're"],
+      answer: "Their",
+      explanation: "Rule: Ownership. Explanation: The house belongs to them."
     },
-    { 
-      question: "This is ____ house.", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Ownership. The house belongs to a group of people. Explanation: 'Their' is the possessive adjective for 'they'." 
+    {
+      question: "____ going to be a great concert.",
+      options: ["Their", "There", "They're"],
+      answer: "There",
+      explanation: "Rule: Existence. 'There' is used to indicate that something exists. Explanation: 'There is going to be a great concert'."
     },
-    { 
-      question: "____ very happy today.", 
-      choices: ["Their", "There", "They're"], 
-      correctIndex: 2, 
-      explanation: "Rule: Subject + Verb. We need to say 'They are'. Explanation: 'They're' is the only choice that includes the verb 'are'." 
+    {
+      question: "I hope ____ having a good time.",
+      options: ["their", "there", "they're"],
+      answer: "they're",
+      explanation: "Rule: Contraction. Explanation: This means 'They are having a good time'."
     },
-    { 
-      question: "Put the bag down right ____.", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adverb of Place. 'There' answers the question 'Where?'. Explanation: You are instructing someone to put the bag in a specific spot." 
+    {
+      question: "The keys are right ____ on the table.",
+      options: ["their", "there", "they're"],
+      answer: "there",
+      explanation: "Rule: Location. Explanation: Specifying where the keys are located."
     },
-    { 
-      question: "They forgot ____ homework.", 
-      choices: ["their", "there", "they're"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possessive Adjective. The homework belongs to 'them'. Explanation: Use 'their' to show ownership." 
+    {
+      question: "____ car broke down yesterday.",
+      options: ["Their", "There", "They're"],
+      answer: "Their",
+      explanation: "Rule: Possession. Explanation: The car belongs to them."
     },
-    { 
-      question: "____ are five apples.", 
-      choices: ["Their", "There", "They're"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'There are'. This phrase is used to point out existence or quantity. Explanation: 'There' acts as the dummy subject for 'are'." 
+    {
+      question: "____ not coming to the meeting.",
+      options: ["Their", "There", "They're"],
+      answer: "They're",
+      explanation: "Rule: Contraction. Explanation: This means 'They are not coming'."
     },
-    { 
-      question: "____ waiting for the bus.", 
-      choices: ["Their", "There", "They're"], 
-      correctIndex: 2, 
-      explanation: "Rule: Present Continuous Tense. We need 'They are' + verb-ing. Explanation: 'They're waiting' is the contraction of 'They are waiting'." 
+    {
+      question: "Look at ____ beautiful garden!",
+      options: ["their", "there", "they're"],
+      answer: "their",
+      explanation: "Rule: Possession. Explanation: The garden belongs to them."
     },
 
     // 21-30: Its vs It's
-    { 
-      question: "The dog wagged ____ tail.", 
-      choices: ["its", "it's"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possessive 'Its'. Unlike nouns, possessive pronouns (yours, hers, its) do NOT use apostrophes. Explanation: The tail belongs to the dog, so we use 'its'." 
+    {
+      question: "The company is known for ____ excellent customer service.",
+      options: ["its", "it's"],
+      answer: "its",
+      explanation: "Rule: Possessive 'Its'. Explanation: The customer service belongs to the company."
     },
-    { 
-      question: "____ a beautiful day.", 
-      choices: ["Its", "It's"], 
-      correctIndex: 1, 
-      explanation: "Rule: Contraction 'It's'. 'It's' is short for 'It is'. Explanation: The sentence means 'It is a beautiful day', so we need the apostrophe." 
+    {
+      question: "____ been raining all day.",
+      options: ["Its", "It's"],
+      answer: "It's",
+      explanation: "Rule: Contraction. 'It's' means 'It has'. Explanation: 'It has been raining all day'."
     },
-    { 
-      question: "I think ____ going to rain.", 
-      choices: ["its", "it's"], 
-      correctIndex: 1, 
-      explanation: "Rule: Contraction. We need the subject 'It' and verb 'is'. Explanation: 'It is going to rain' becomes 'It's going to rain'." 
+    {
+      question: "The tree lost ____ leaves in autumn.",
+      options: ["its", "it's"],
+      answer: "its",
+      explanation: "Rule: Possession. Explanation: The leaves belong to the tree."
     },
-    { 
-      question: "The cat licked ____ paws.", 
-      choices: ["its", "it's"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The paws belong to the cat. Explanation: We use 'its' (no apostrophe) to show ownership for animals/things." 
+    {
+      question: "____ important to study for the test.",
+      options: ["Its", "It's"],
+      answer: "It's",
+      explanation: "Rule: Contraction. Explanation: This means 'It is important to study'."
     },
-    { 
-      question: "____ time to go.", 
-      choices: ["Its", "It's"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'It is'. The expression is 'It is time to go'. Explanation: Therefore, the contraction 'It's' is required." 
+    {
+      question: "The phone has ____ own charger.",
+      options: ["its", "it's"],
+      answer: "its",
+      explanation: "Rule: Possession. Explanation: The charger belongs specifically to the phone."
     },
-    { 
-      question: "The car lost ____ wheel.", 
-      choices: ["its", "it's"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The wheel is part of the car. Explanation: Use 'its' to indicate the car's ownership of the wheel." 
+    {
+      question: "____ not fair that she got extra time.",
+      options: ["Its", "It's"],
+      answer: "It's",
+      explanation: "Rule: Contraction. Explanation: This means 'It is not fair'."
     },
-    { 
-      question: "____ my turn.", 
-      choices: ["Its", "It's"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'It is'. The sentence means 'It is my turn'. Explanation: Use 'It's' for the contraction." 
+    {
+      question: "The cat is cleaning ____ fur.",
+      options: ["its", "it's"],
+      answer: "its",
+      explanation: "Rule: Possession. Explanation: The fur belongs to the cat."
     },
-    { 
-      question: "Everything has ____ place.", 
-      choices: ["its", "it's"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The place belongs to 'everything'. Explanation: Use the possessive form 'its' without the apostrophe." 
+    {
+      question: "____ been a long time since we met.",
+      options: ["Its", "It's"],
+      answer: "It's",
+      explanation: "Rule: Contraction. Explanation: This means 'It has been a long time'."
     },
-    { 
-      question: "____ very hot outside.", 
-      choices: ["Its", "It's"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'It is'. Explanation: We are describing the weather saying 'It is very hot', so we use 'It's'." 
+    {
+      question: "The hotel has ____ own swimming pool.",
+      options: ["its", "it's"],
+      answer: "its",
+      explanation: "Rule: Possession. Explanation: The swimming pool belongs to the hotel."
     },
-    { 
-      question: "The phone needs ____ battery changed.", 
-      choices: ["its", "it's"], 
-      correctIndex: 0, 
-      explanation: "Rule: Possession. The battery belongs to the phone. Explanation: Use 'its' to show ownership." 
+    {
+      question: "____ amazing how fast time flies.",
+      options: ["Its", "It's"],
+      answer: "It's",
+      explanation: "Rule: Contraction. Explanation: This means 'It is amazing'."
     },
 
     // 31-40: To vs Too vs Two
-    { 
-      question: "I want ____ go home.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 0, 
-      explanation: "Rule: Infinitive Verb. The word 'to' is used before a verb (go) to form the infinitive. Explanation: 'To go' is the correct verb form." 
+    {
+      question: "I need ____ buy some groceries.",
+      options: ["to", "too", "two"],
+      answer: "to",
+      explanation: "Rule: Infinitive Verb. 'To' is used before a verb. Explanation: 'To buy' is the infinitive form."
     },
-    { 
-      question: "I ate ____ much.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adverb of Degree. 'Too' means 'excessively'. Explanation: You ate an excessive amount, so 'too much' is correct." 
+    {
+      question: "This coffee is ____ hot to drink.",
+      options: ["to", "too", "two"],
+      answer: "too",
+      explanation: "Rule: Adverb of Degree. 'Too' means 'excessively'. Explanation: The coffee is excessively hot."
     },
-    { 
-      question: "I have ____ brothers.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 2, 
-      explanation: "Rule: Number. 'Two' is the written form of the number 2. Explanation: You are counting brothers, so use 'two'." 
+    {
+      question: "I have ____ younger sisters.",
+      options: ["to", "too", "two"],
+      answer: "two",
+      explanation: "Rule: Number. 'Two' is the number 2. Explanation: Referring to the quantity of sisters."
     },
-    { 
-      question: "Can I come ____?", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Also'. 'Too' means 'also' or 'as well'. Explanation: You are asking if you can come 'also'." 
+    {
+      question: "Would you like ____ come with us?",
+      options: ["to", "too", "two"],
+      answer: "to",
+      explanation: "Rule: Infinitive. Explanation: 'To come' is the infinitive verb."
     },
-    { 
-      question: "She walked ____ the store.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 0, 
-      explanation: "Rule: Preposition of Movement. 'To' indicates direction. Explanation: She is walking in the direction of the store." 
+    {
+      question: "She's coming ____ the party ____.",
+      options: ["to, too", "too, to", "two, to"],
+      answer: "to, too",
+      explanation: "Rule: Preposition + Adverb. Explanation: 'To' indicates direction, 'too' means 'also'."
     },
-    { 
-      question: "It is ____ cold outside.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Excessively'. Explanation: It is colder than desirable, so we use 'too'." 
+    {
+      question: "It's ____ late ____ apologize.",
+      options: ["too, to", "to, too", "two, to"],
+      answer: "too, to",
+      explanation: "Rule: Adverb + Infinitive. Explanation: 'Too' means excessively, 'to apologize' is the infinitive."
     },
-    { 
-      question: "We bought ____ pizzas.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 2, 
-      explanation: "Rule: Quantity. Explanation: This refers to the number of pizzas, so 'two' is correct." 
+    {
+      question: "We need ____ more chairs for the guests.",
+      options: ["to", "too", "two"],
+      answer: "two",
+      explanation: "Rule: Number. Explanation: Referring to the quantity of chairs needed."
     },
-    { 
-      question: "Happy Birthday ____ you!", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 0, 
-      explanation: "Rule: Preposition. 'To' indicates the recipient of an action/feeling. Explanation: The birthday wish is directed 'to' you." 
+    {
+      question: "I'm going ____ the library ____ study.",
+      options: ["to, to", "too, to", "two, to"],
+      answer: "to, to",
+      explanation: "Rule: Preposition + Infinitive. Explanation: First 'to' indicates direction, second 'to' is for the infinitive."
     },
-    { 
-      question: "Me ____!", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Also'. Explanation: The speaker wants to be included 'as well', so they say 'Me too'." 
+    {
+      question: "This package is ____ heavy for me ____ carry.",
+      options: ["too, to", "to, too", "two, to"],
+      answer: "too, to",
+      explanation: "Rule: Adverb + Infinitive. Explanation: 'Too' means excessively, 'to carry' is the infinitive."
     },
-    { 
-      question: "Give it ____ me.", 
-      choices: ["to", "too", "two"], 
-      correctIndex: 0, 
-      explanation: "Rule: Preposition of Direction/Recipient. Explanation: You are giving the object in the direction of the speaker, so use 'to'." 
+    {
+      question: "There are only ____ days left until vacation.",
+      options: ["to", "too", "two"],
+      answer: "two",
+      explanation: "Rule: Number. Explanation: Counting the number of days remaining."
     },
 
-    // 41-50: Basic Homophones (Hear/Here, Buy/By)
-    { 
-      question: "Can you ____ me?", 
-      choices: ["hear", "here"], 
-      correctIndex: 0, 
-      explanation: "Rule: Sense of Sound. 'Hear' (with the word 'ear' inside) refers to listening. Explanation: The question asks if the person can perceive the sound of your voice." 
+    // 41-50: Basic Homophones (Hear/Here, Buy/By/Bye)
+    {
+      question: "Can you ____ that strange noise?",
+      options: ["hear", "here"],
+      answer: "hear",
+      explanation: "Rule: Sense of Sound. 'Hear' refers to listening. Explanation: Asking about auditory perception."
     },
-    { 
-      question: "Come over ____.", 
-      choices: ["hear", "here"], 
-      correctIndex: 1, 
-      explanation: "Rule: Location. 'Here' refers to the place where the speaker is. Explanation: You are inviting someone to your location." 
+    {
+      question: "Please come ____ and sit down.",
+      options: ["hear", "here"],
+      answer: "here",
+      explanation: "Rule: Location. 'Here' refers to the speaker's location. Explanation: Inviting someone to your current position."
     },
-    { 
-      question: "I want to ____ a toy.", 
-      choices: ["buy", "by", "bye"], 
-      correctIndex: 0, 
-      explanation: "Rule: Purchasing. 'Buy' means to purchase with money. Explanation: You want to purchase a toy." 
+    {
+      question: "I need to ____ a new laptop for school.",
+      options: ["buy", "by", "bye"],
+      answer: "buy",
+      explanation: "Rule: Purchasing. 'Buy' means to purchase. Explanation: Referring to acquiring a new laptop."
     },
-    { 
-      question: "The book was written ____ Mark.", 
-      choices: ["buy", "by", "bye"], 
-      correctIndex: 1, 
-      explanation: "Rule: Preposition of Agency. 'By' indicates who performed the action. Explanation: Mark is the author, so it was written 'by' him." 
+    {
+      question: "The report was written ____ the research team.",
+      options: ["buy", "by", "bye"],
+      answer: "by",
+      explanation: "Rule: Preposition of Agency. 'By' indicates who performed the action. Explanation: The research team wrote the report."
     },
-    { 
-      question: "____ for now!", 
-      choices: ["Buy", "By", "Bye"], 
-      correctIndex: 2, 
-      explanation: "Rule: Farewell. 'Bye' is a shortening of 'Goodbye'. Explanation: This is a standard closing phrase." 
+    {
+      question: "____! See you tomorrow!",
+      options: ["Buy", "By", "Bye"],
+      answer: "Bye",
+      explanation: "Rule: Farewell. 'Bye' is short for 'Goodbye'. Explanation: Standard parting phrase."
     },
-    { 
-      question: "Where did you ____ that shirt?", 
-      choices: ["buy", "by"], 
-      correctIndex: 0, 
-      explanation: "Rule: Purchasing. Explanation: The question asks where the shirt was purchased, so 'buy' is correct." 
+    {
+      question: "Did you ____ that beautiful painting?",
+      options: ["hear", "here"],
+      answer: "hear",
+      explanation: "Rule: Sense of Sound. Explanation: Asking if someone heard about the painting."
     },
-    { 
-      question: "Sit ____ me.", 
-      choices: ["buy", "by"], 
-      correctIndex: 1, 
-      explanation: "Rule: Preposition of Place. 'By' means 'next to' or 'beside'. Explanation: You are asking someone to sit next to you." 
+    {
+      question: "Your package is right ____ on the desk.",
+      options: ["hear", "here"],
+      answer: "here",
+      explanation: "Rule: Location. Explanation: Indicating the exact location of the package."
     },
-    { 
-      question: "I can ____ the music.", 
-      choices: ["hear", "here"], 
-      correctIndex: 0, 
-      explanation: "Rule: Sense of Sound. Explanation: You are using your ears to perceive the music, so 'hear' is correct." 
+    {
+      question: "We're going ____ train to Chicago.",
+      options: ["buy", "by", "bye"],
+      answer: "by",
+      explanation: "Rule: Means of Transport. Explanation: Indicating the mode of transportation."
     },
-    { 
-      question: "We are ____.", 
-      choices: ["hear", "here"], 
-      correctIndex: 1, 
-      explanation: "Rule: Location. Explanation: You are stating your current location, so 'here' is correct." 
+    {
+      question: "Let's ____ some snacks for the movie.",
+      options: ["buy", "by", "bye"],
+      answer: "buy",
+      explanation: "Rule: Purchasing. Explanation: Planning to purchase snacks."
     },
-    { 
-      question: "I go to school ____ bus.", 
-      choices: ["buy", "by"], 
-      correctIndex: 1, 
-      explanation: "Rule: Means of Transport. 'By' is used to show how something is done. Explanation: You travel using a bus, so you go 'by bus'." 
+    {
+      question: "The decision was made ____ the committee.",
+      options: ["buy", "by", "bye"],
+      answer: "by",
+      explanation: "Rule: Preposition of Agency. Explanation: The committee made the decision."
     }
   ],
 
   intermediate: [
     // 51-60: Accept vs Except
-    { 
-      question: "Please ____ my apology.", 
-      choices: ["accept", "except"], 
-      correctIndex: 0, 
-      explanation: "Rule: Definitions. 'Accept' means to receive or agree to something. 'Except' means to exclude. Explanation: You want someone to receive your apology." 
+    {
+      question: "I ____ your generous offer.",
+      options: ["accept", "except"],
+      answer: "accept",
+      explanation: "Rule: Definitions. 'Accept' means to receive or agree. Explanation: Receiving the offer willingly."
     },
-    { 
-      question: "Everyone went ____ John.", 
-      choices: ["accept", "except"], 
-      correctIndex: 1, 
-      explanation: "Rule: Exclusion. 'Except' means 'not including'. Explanation: Everyone went, but John was excluded." 
+    {
+      question: "Everyone is invited ____ Tom.",
+      options: ["accept", "except"],
+      answer: "except",
+      explanation: "Rule: Exclusion. 'Except' means 'not including'. Explanation: Tom is excluded from the invitation."
     },
-    { 
-      question: "I cannot ____ this gift.", 
-      choices: ["accept", "except"], 
-      correctIndex: 0, 
-      explanation: "Rule: Receiving. Explanation: The sentence refers to receiving a gift, so 'accept' is the correct verb." 
+    {
+      question: "The store ____s credit cards.",
+      options: ["accept", "except"],
+      answer: "accept",
+      explanation: "Rule: Receiving. Explanation: The store takes credit cards as payment."
     },
-    { 
-      question: "The store is open every day ____ Sunday.", 
-      choices: ["accept", "except"], 
-      correctIndex: 1, 
-      explanation: "Rule: Exclusion. Explanation: The store is open on all days, excluding Sunday." 
+    {
+      question: "All the students passed ____ Maria.",
+      options: ["accept", "except"],
+      answer: "except",
+      explanation: "Rule: Exclusion. Explanation: Maria is the only one who didn't pass."
     },
-    { 
-      question: "Did they ____ the offer?", 
-      choices: ["accept", "except"], 
-      correctIndex: 0, 
-      explanation: "Rule: Agreement. Explanation: Did they agree to or take the offer? Use 'accept'." 
+    {
+      question: "Will you ____ my friend request?",
+      options: ["accept", "except"],
+      answer: "accept",
+      explanation: "Rule: Agreement. Explanation: Asking someone to approve the friend request."
     },
-    { 
-      question: "I like all fruits ____ durian.", 
-      choices: ["accept", "except"], 
-      correctIndex: 1, 
-      explanation: "Rule: Exclusion. Explanation: You like fruits, but you exclude durian from that list." 
+    {
+      question: "I like all vegetables ____ broccoli.",
+      options: ["accept", "except"],
+      answer: "except",
+      explanation: "Rule: Exclusion. Explanation: Broccoli is the only vegetable not liked."
     },
-    { 
-      question: "You must ____ the consequences.", 
-      choices: ["accept", "except"], 
-      correctIndex: 0, 
-      explanation: "Rule: Embracing/Facing. Explanation: You must acknowledge or take the consequences, so 'accept' is correct." 
+    {
+      question: "The university ____s applications until March.",
+      options: ["accept", "except"],
+      answer: "accept",
+      explanation: "Rule: Receiving. Explanation: The university takes applications."
     },
-    { 
-      question: "All the boys ____ Tom were late.", 
-      choices: ["accept", "except"], 
-      correctIndex: 1, 
-      explanation: "Rule: Exclusion. Explanation: Tom was the only one not late, so he is the exception." 
+    {
+      question: "The museum is open daily ____ Mondays.",
+      options: ["accept", "except"],
+      answer: "except",
+      explanation: "Rule: Exclusion. Explanation: Mondays are the only days closed."
     },
-    { 
-      question: "Will you ____ this job?", 
-      choices: ["accept", "except"], 
-      correctIndex: 0, 
-      explanation: "Rule: Receiving/Agreeing. Explanation: You are being asked if you will take the job." 
+    {
+      question: "She decided to ____ the job offer.",
+      options: ["accept", "except"],
+      answer: "accept",
+      explanation: "Rule: Agreement. Explanation: Taking the job that was offered."
     },
-    { 
-      question: "Everything is ready ____ the lights.", 
-      choices: ["accept", "except"], 
-      correctIndex: 1, 
-      explanation: "Rule: Exclusion. Explanation: The lights are the only thing NOT ready." 
+    {
+      question: "All team members attended ____ the captain.",
+      options: ["accept", "except"],
+      answer: "except",
+      explanation: "Rule: Exclusion. Explanation: The captain was the only one absent."
     },
 
     // 61-70: Affect vs Effect
-    { 
-      question: "The weather will ____ our plans.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 0, 
-      explanation: "Rule: RAVEN (Remember Affect Verb Effect Noun). 'Affect' is usually a verb meaning to influence. 'Effect' is a noun meaning result. Explanation: The weather will influence (verb) our plans, so 'affect' is correct." 
+    {
+      question: "The weather can ____ your mood significantly.",
+      options: ["affect", "effect"],
+      answer: "affect",
+      explanation: "Rule: RAVEN (Remember Affect Verb Effect Noun). 'Affect' is usually a verb meaning to influence. Explanation: Weather influences mood."
     },
-    { 
-      question: "The medicine had a good ____.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 1, 
-      explanation: "Rule: Part of Speech (Noun). 'Effect' is the noun. Explanation: 'A good...' introduces a noun. We are talking about the result of the medicine." 
+    {
+      question: "The new policy had a positive ____ on morale.",
+      options: ["affect", "effect"],
+      answer: "effect",
+      explanation: "Rule: Noun Usage. 'Effect' is a noun meaning result. Explanation: Referring to the result of the policy."
     },
-    { 
-      question: "How does this ____ you?", 
-      choices: ["affect", "effect"], 
-      correctIndex: 0, 
-      explanation: "Rule: Part of Speech (Verb). Explanation: 'Does' is an auxiliary verb that needs a main verb. 'Affect' is the verb meaning 'to influence'." 
+    {
+      question: "Lack of sleep can ____ your performance.",
+      options: ["affect", "effect"],
+      answer: "affect",
+      explanation: "Rule: Verb Usage. Explanation: Sleep influences performance."
     },
-    { 
-      question: "The special ____s in the movie were cool.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 1, 
-      explanation: "Rule: Common Noun Phrase. Explanation: We always say 'Special Effects' (noun), referring to the visuals." 
+    {
+      question: "The medicine's side ____s were minimal.",
+      options: ["affect", "effect"],
+      answer: "effect",
+      explanation: "Rule: Noun Usage. Explanation: Referring to the results of taking medicine."
     },
-    { 
-      question: "Pollution ____s the environment.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 0, 
-      explanation: "Rule: Action Verb. Explanation: Pollution does something to the environment; it influences or harms it. Use the verb 'affects'." 
+    {
+      question: "Her speech deeply ____ed the audience.",
+      options: ["affect", "effect"],
+      answer: "affect",
+      explanation: "Rule: Verb Usage. Explanation: The speech influenced the audience emotionally."
     },
-    { 
-      question: "Cause and ____.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 1, 
-      explanation: "Rule: Fixed Phrase (Nouns). Explanation: The standard phrase is 'Cause and Effect', meaning origin and result." 
+    {
+      question: "The new law will take ____ next month.",
+      options: ["affect", "effect"],
+      answer: "effect",
+      explanation: "Rule: Idiom 'Take effect'. Explanation: The law will become operational."
     },
-    { 
-      question: "Her speech deeply ____ed me.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb usage. Explanation: The speech influenced the speaker emotionally. 'Affected' is the past tense verb." 
+    {
+      question: "Stress can ____ your health negatively.",
+      options: ["affect", "effect"],
+      answer: "affect",
+      explanation: "Rule: Verb Usage. Explanation: Stress influences health."
     },
-    { 
-      question: "The new law goes into ____ tomorrow.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 1, 
-      explanation: "Rule: Idiom 'Into effect'. Explanation: This means the law becomes operational/a result. It functions as a noun." 
+    {
+      question: "The special ____s in the movie were impressive.",
+      options: ["affect", "effect"],
+      answer: "effect",
+      explanation: "Rule: Common Noun Phrase. Explanation: Referring to visual effects in film."
     },
-    { 
-      question: "Smoking ____s your lungs.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb (to harm/influence). Explanation: Smoking performs an action on your lungs, so we use the verb 'affects'." 
+    {
+      question: "The teacher's encouragement ____ed her confidence.",
+      options: ["affect", "effect"],
+      answer: "affect",
+      explanation: "Rule: Verb Usage. Explanation: Encouragement influenced confidence."
     },
-    { 
-      question: "We studied the ____ of heat on ice.", 
-      choices: ["affect", "effect"], 
-      correctIndex: 1, 
-      explanation: "Rule: Noun (The Result). Explanation: We are studying the outcome, which is a noun. Therefore, 'effect' is correct." 
+    {
+      question: "What was the ____ of the decision?",
+      options: ["affect", "effect"],
+      answer: "effect",
+      explanation: "Rule: Noun Usage. Explanation: Asking about the result of the decision."
     },
 
     // 71-80: Lose vs Loose
-    { 
-      question: "I don't want to ____ the game.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 0, 
-      explanation: "Rule: Definitions. 'Lose' (pronounced 'looz') means to fail or misplace. 'Loose' (pronounced 'loos') means not tight. Explanation: You don't want to fail the game, so 'lose' is correct." 
+    {
+      question: "Be careful not to ____ your passport.",
+      options: ["lose", "loose"],
+      answer: "lose",
+      explanation: "Rule: Definitions. 'Lose' means to misplace. Explanation: Warning about misplacing the passport."
     },
-    { 
-      question: "This shirt is too ____.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adjective usage. Explanation: The shirt is not tight enough. 'Loose' describes the fit." 
+    {
+      question: "The screw is ____ and needs tightening.",
+      options: ["lose", "loose"],
+      answer: "loose",
+      explanation: "Rule: Adjective Usage. 'Loose' means not tight. Explanation: The screw is not firmly attached."
     },
-    { 
-      question: "Did you ____ your keys?", 
-      choices: ["lose", "loose"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb usage (Misplace). Explanation: You are asking if the keys were misplaced. 'Lose' is the verb." 
+    {
+      question: "Our team cannot afford to ____ this game.",
+      options: ["lose", "loose"],
+      answer: "lose",
+      explanation: "Rule: Failure. Explanation: The team cannot afford to fail in the game."
     },
-    { 
-      question: "A ____ tooth.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adjective. Explanation: The tooth is wobbly or not firmly attached. It is 'loose'." 
+    {
+      question: "She wore a ____ dress for comfort.",
+      options: ["lose", "loose"],
+      answer: "loose",
+      explanation: "Rule: Adjective Usage. Explanation: The dress is not tight-fitting."
     },
-    { 
-      question: "Win or ____.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 0, 
-      explanation: "Rule: Opposites. Explanation: The opposite of 'win' is 'lose'." 
+    {
+      question: "Did you ____ your phone again?",
+      options: ["lose", "loose"],
+      answer: "lose",
+      explanation: "Rule: Misplacement. Explanation: Asking if the phone was misplaced."
     },
-    { 
-      question: "The dog broke ____.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Break loose'. Explanation: This is an idiom meaning to escape or become untethered. 'Loose' is correct." 
+    {
+      question: "The dog broke ____ from its leash.",
+      options: ["lose", "loose"],
+      answer: "loose",
+      explanation: "Rule: 'Break loose' idiom. Explanation: The dog escaped from restraint."
     },
-    { 
-      question: "Don't ____ hope.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 0, 
-      explanation: "Rule: To cease to have. Explanation: You are advising someone not to let go of hope. Use the verb 'lose'." 
+    {
+      question: "I always ____ my keys in this messy room.",
+      options: ["lose", "loose"],
+      answer: "lose",
+      explanation: "Rule: Misplacement. Explanation: Frequently misplacing keys."
     },
-    { 
-      question: "The screws are ____.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Not tight. Explanation: The screws need tightening because they are 'loose'." 
+    {
+      question: "The button on my shirt is ____.",
+      options: ["lose", "loose"],
+      answer: "loose",
+      explanation: "Rule: Adjective Usage. Explanation: The button is not securely attached."
     },
-    { 
-      question: "He might ____ his job.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 0, 
-      explanation: "Rule: To be deprived of. Explanation: He is in danger of not having his job anymore. Use 'lose'." 
+    {
+      question: "We might ____ our funding if we're not careful.",
+      options: ["lose", "loose"],
+      answer: "lose",
+      explanation: "Rule: Deprivation. Explanation: Risking the loss of funding."
     },
-    { 
-      question: "Let the horses ____ in the field.", 
-      choices: ["lose", "loose"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Turn loose' / 'Let loose'. Explanation: This means to set them free. Use the adjective/adverb 'loose'." 
+    {
+      question: "The rope was too ____ to be safe.",
+      options: ["lose", "loose"],
+      answer: "loose",
+      explanation: "Rule: Adjective Usage. Explanation: The rope lacked proper tension."
     },
 
     // 81-90: Then vs Than
-    { 
-      question: "I am taller ____ you.", 
-      choices: ["then", "than"], 
-      correctIndex: 1, 
-      explanation: "Rule: Comparison. 'Than' is used for comparisons. 'Then' is for time. Explanation: We are comparing height, so 'than' is required." 
+    {
+      question: "First complete your homework, ____ you can play.",
+      options: ["then", "than"],
+      answer: "then",
+      explanation: "Rule: Sequence of Time. 'Then' indicates what happens next. Explanation: Playing happens after homework."
     },
-    { 
-      question: "We ate dinner, ____ we slept.", 
-      choices: ["then", "than"], 
-      correctIndex: 0, 
-      explanation: "Rule: Sequence of Time. Explanation: This describes what happened next. 'Then' indicates the next step in time." 
+    {
+      question: "She is taller ____ her brother.",
+      options: ["then", "than"],
+      answer: "than",
+      explanation: "Rule: Comparison. 'Than' is used for comparisons. Explanation: Comparing heights."
     },
-    { 
-      question: "I would rather play ____ study.", 
-      choices: ["then", "than"], 
-      correctIndex: 1, 
-      explanation: "Rule: Comparison/Preference. Explanation: 'Rather... than' is the fixed structure for showing preference." 
+    {
+      question: "If it rains, ____ we'll stay indoors.",
+      options: ["then", "than"],
+      answer: "then",
+      explanation: "Rule: Conditional Logic. Explanation: 'Then' introduces the consequence."
     },
-    { 
-      question: "First wash your hands, ____ eat.", 
-      choices: ["then", "than"], 
-      correctIndex: 0, 
-      explanation: "Rule: Sequence. Explanation: Eating happens *after* washing hands. Use 'then' for time order." 
+    {
+      question: "This book is more interesting ____ that one.",
+      options: ["then", "than"],
+      answer: "than",
+      explanation: "Rule: Comparison. Explanation: Comparing the interest level of two books."
     },
-    { 
-      question: "More ____ enough.", 
-      choices: ["then", "than"], 
-      correctIndex: 1, 
-      explanation: "Rule: Comparison phrases. Explanation: 'More' is a comparative word that always pairs with 'than'." 
+    {
+      question: "We went to dinner and ____ to the movies.",
+      options: ["then", "than"],
+      answer: "then",
+      explanation: "Rule: Time Sequence. Explanation: Movies happened after dinner."
     },
-    { 
-      question: "If you study, ____ you will pass.", 
-      choices: ["then", "than"], 
-      correctIndex: 0, 
-      explanation: "Rule: Conditional Logic (If... then). Explanation: The result follows the condition. 'Then' introduces the consequence." 
+    {
+      question: "I'd rather read ____ watch television.",
+      options: ["then", "than"],
+      answer: "than",
+      explanation: "Rule: Preference. Explanation: Showing preference between two activities."
     },
-    { 
-      question: "Better late ____ never.", 
-      choices: ["then", "than"], 
-      correctIndex: 1, 
-      explanation: "Rule: Comparison. Explanation: 'Better' is a comparative adjective comparing 'late' to 'never'. Use 'than'." 
+    {
+      question: "Back ____, things were very different.",
+      options: ["then", "than"],
+      answer: "then",
+      explanation: "Rule: Time Reference. Explanation: Referring to a specific past time."
     },
-    { 
-      question: "Back ____, I was young.", 
-      choices: ["then", "than"], 
-      correctIndex: 0, 
-      explanation: "Rule: Time Reference. Explanation: 'Back then' refers to a specific time in the past." 
+    {
+      question: "Your essay is better ____ mine.",
+      options: ["then", "than"],
+      answer: "than",
+      explanation: "Rule: Comparison. Explanation: Comparing the quality of two essays."
     },
-    { 
-      question: "It costs less ____ $5.", 
-      choices: ["then", "than"], 
-      correctIndex: 1, 
-      explanation: "Rule: Comparison of Amount. Explanation: 'Less' compares the price to $5. Use 'than'." 
+    {
+      question: "We'll have lunch and ____ go shopping.",
+      options: ["then", "than"],
+      answer: "then",
+      explanation: "Rule: Time Sequence. Explanation: Shopping happens after lunch."
     },
-    { 
-      question: "Finish your work, ____ you can go.", 
-      choices: ["then", "than"], 
-      correctIndex: 0, 
-      explanation: "Rule: Time/Condition. Explanation: You can go *after* you finish. Use 'then' to show the sequence." 
+    {
+      question: "Nothing tastes better ____ homemade pizza.",
+      options: ["then", "than"],
+      answer: "than",
+      explanation: "Rule: Comparison. Explanation: Comparing homemade pizza to other foods."
     },
 
     // 91-100: Passed vs Past
-    { 
-      question: "We walked ____ the school.", 
-      choices: ["passed", "past"], 
-      correctIndex: 1, 
-      explanation: "Rule: Preposition of Movement. 'Passed' is strictly a verb (past tense of pass). 'Past' is a preposition meaning 'beyond'. Explanation: We walked *beyond* the school, so 'past' is correct." 
+    {
+      question: "We ____ the library on our way to school.",
+      options: ["passed", "past"],
+      answer: "passed",
+      explanation: "Rule: Past Tense Verb. 'Passed' is the past tense of pass. Explanation: We moved by the library."
     },
-    { 
-      question: "He ____ the ball to me.", 
-      choices: ["passed", "past"], 
-      correctIndex: 0, 
-      explanation: "Rule: Past Tense Verb. Explanation: This describes the action of passing a ball. The past tense of 'pass' is 'passed'." 
+    {
+      question: "In the ____, people used different technology.",
+      options: ["passed", "past"],
+      answer: "past",
+      explanation: "Rule: Noun Usage. 'Past' refers to time before now. Explanation: Referring to previous times."
     },
-    { 
-      question: "It is half ____ three.", 
-      choices: ["passed", "past"], 
-      correctIndex: 1, 
-      explanation: "Rule: Time Expression. Explanation: In telling time, we use the preposition 'past' to mean 'after'." 
+    {
+      question: "She ____ her driving test on the first try.",
+      options: ["passed", "past"],
+      answer: "passed",
+      explanation: "Rule: Achievement. Explanation: She succeeded in the test."
     },
-    { 
-      question: "She ____ the exam.", 
-      choices: ["passed", "past"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb (Achievement). Explanation: She succeeded in the exam. This is an action, so use the verb 'passed'." 
+    {
+      question: "The store is just ____ the traffic light.",
+      options: ["passed", "past"],
+      answer: "past",
+      explanation: "Rule: Preposition of Movement. 'Past' means beyond. Explanation: The store is beyond the traffic light."
     },
-    { 
-      question: "Don't live in the ____.", 
-      choices: ["passed", "past"], 
-      correctIndex: 1, 
-      explanation: "Rule: Noun (Time). Explanation: 'The past' refers to the time before now. It functions as a noun." 
+    {
+      question: "Time has ____ so quickly this year.",
+      options: ["passed", "past"],
+      answer: "passed",
+      explanation: "Rule: Verb Usage. Explanation: Time has moved forward."
     },
-    { 
-      question: "The car ____ us quickly.", 
-      choices: ["passed", "past"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb (Movement). Explanation: The car performed the action of overtaking us. Use 'passed'." 
+    {
+      question: "Let's not dwell on the ____.",
+      options: ["passed", "past"],
+      answer: "past",
+      explanation: "Rule: Noun Usage. Explanation: Referring to previous events or times."
     },
-    { 
-      question: "In the ____ few years...", 
-      choices: ["passed", "past"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adjective (Previous). Explanation: 'Past' describes the years (meaning 'previous'). It functions as an adjective." 
+    {
+      question: "The runner ____ the finish line first.",
+      options: ["passed", "past"],
+      answer: "passed",
+      explanation: "Rule: Movement. Explanation: The runner moved beyond the finish line."
     },
-    { 
-      question: "Time ____ slowly.", 
-      choices: ["passed", "past"], 
-      correctIndex: 0, 
-      explanation: "Rule: Verb (Elapse). Explanation: Time performed the action of passing. Use the verb form 'passed'." 
+    {
+      question: "Our ____ experiences shape who we are.",
+      options: ["passed", "past"],
+      answer: "past",
+      explanation: "Rule: Adjective Usage. Explanation: Referring to previous experiences."
     },
-    { 
-      question: "Run ____ the finish line.", 
-      choices: ["passed", "past"], 
-      correctIndex: 1, 
-      explanation: "Rule: Preposition (Beyond). Explanation: You need to run *beyond* the line. Use the preposition 'past'." 
+    {
+      question: "He ____ the ball to his teammate.",
+      options: ["passed", "past"],
+      answer: "passed",
+      explanation: "Rule: Sports Action. Explanation: Throwing the ball to another player."
     },
-    { 
-      question: "He has ____ away.", 
-      choices: ["passed", "past"], 
-      correctIndex: 0, 
-      explanation: "Rule: Phrasal Verb (Died). Explanation: The verb is 'pass away'. The past participle is 'passed'." 
+    {
+      question: "The old building has seen better days in years ____.",
+      options: ["passed", "past"],
+      answer: "past",
+      explanation: "Rule: Time Reference. Explanation: Referring to previous years."
     }
   ],
 
   advanced: [
     // 101-110: Fewer vs Less
-    { 
-      question: "I have ____ apples than you.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 0, 
-      explanation: "Rule: Countable vs Uncountable. Use 'Fewer' for countable nouns (things with plurals). Use 'Less' for uncountable nouns. Explanation: Apples are countable, so 'fewer' is correct." 
+    {
+      question: "There are ____ students in class today.",
+      options: ["fewer", "less"],
+      answer: "fewer",
+      explanation: "Rule: Countable vs Uncountable. 'Fewer' for countable nouns. Explanation: Students can be counted."
     },
-    { 
-      question: "There is ____ water in the glass.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Uncountable Noun. Explanation: Water cannot be counted (you can't say 'two waters'). Therefore, use 'less'." 
+    {
+      question: "I need ____ sugar in my coffee.",
+      options: ["fewer", "less"],
+      answer: "less",
+      explanation: "Rule: Uncountable Noun. 'Less' for mass nouns. Explanation: Sugar cannot be counted individually."
     },
-    { 
-      question: "There are ____ students today.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 0, 
-      explanation: "Rule: Countable Noun. Explanation: Students can be counted. Use 'fewer'." 
+    {
+      question: "We have ____ opportunities this year.",
+      options: ["fewer", "less"],
+      answer: "fewer",
+      explanation: "Rule: Countable Noun. Explanation: Opportunities are countable."
     },
-    { 
-      question: "I have ____ time than before.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Uncountable Noun. Explanation: 'Time' (in general) is uncountable. Use 'less'." 
+    {
+      question: "Please use ____ water when showering.",
+      options: ["fewer", "less"],
+      answer: "less",
+      explanation: "Rule: Uncountable Noun. Explanation: Water is a mass noun."
     },
-    { 
-      question: "She made ____ mistakes.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 0, 
-      explanation: "Rule: Countable Noun. Explanation: Mistakes are individual items that can be counted. Use 'fewer'." 
+    {
+      question: "There were ____ cars on the road during the storm.",
+      options: ["fewer", "less"],
+      answer: "fewer",
+      explanation: "Rule: Countable Noun. Explanation: Cars are countable objects."
     },
-    { 
-      question: "He drinks ____ milk.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Uncountable Noun. Explanation: Milk is a liquid/mass noun. Use 'less'." 
+    {
+      question: "I have ____ patience for rude behavior.",
+      options: ["fewer", "less"],
+      answer: "less",
+      explanation: "Rule: Uncountable Noun. Explanation: Patience is an abstract quality."
     },
-    { 
-      question: "10 items or ____ (Supermarket sign).", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Idiomatic Exception. Grammatically, it *should* be 'fewer' (items are countable). However, '10 items or less' is the standard, accepted idiom on signs." 
+    {
+      question: "____ people attended the meeting than expected.",
+      options: ["Fewer", "Less"],
+      answer: "Fewer",
+      explanation: "Rule: Countable Noun. Explanation: People are countable."
     },
-    { 
-      question: "I want ____ noise.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Uncountable Noun. Explanation: Noise is generally abstract/mass. Use 'less'." 
+    {
+      question: "We need ____ furniture in this small room.",
+      options: ["fewer", "less"],
+      answer: "less",
+      explanation: "Rule: Uncountable Noun. Explanation: Furniture is treated as a mass noun."
     },
-    { 
-      question: "I have ____ coins in my pocket.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 0, 
-      explanation: "Rule: Countable Noun. Explanation: Coins are individual objects. Use 'fewer'." 
+    {
+      question: "There are ____ mistakes in your second draft.",
+      options: ["fewer", "less"],
+      answer: "fewer",
+      explanation: "Rule: Countable Noun. Explanation: Mistakes are individual items."
     },
-    { 
-      question: "We need ____ sugar.", 
-      choices: ["fewer", "less"], 
-      correctIndex: 1, 
-      explanation: "Rule: Uncountable Noun. Explanation: Sugar is a mass noun. Use 'less'." 
+    {
+      question: "I feel ____ stress since I started exercising.",
+      options: ["fewer", "less"],
+      answer: "less",
+      explanation: "Rule: Uncountable Noun. Explanation: Stress is an abstract concept."
     },
 
     // 111-120: Lie vs Lay
-    { 
-      question: "I am going to ____ down.", 
-      choices: ["lie", "lay"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive vs Transitive. 'Lie' means to recline (you do it yourself). 'Lay' means to put something else down (needs an object). Explanation: You are reclining yourself (no object), so use 'lie'." 
+    {
+      question: "I need to ____ down for a while.",
+      options: ["lie", "lay"],
+      answer: "lie",
+      explanation: "Rule: Intransitive vs Transitive. 'Lie' means to recline. Explanation: No object is being placed."
     },
-    { 
-      question: "Please ____ the book on the table.", 
-      choices: ["lie", "lay"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive Verb. Explanation: You are placing an object ('the book'). Therefore, use 'lay'." 
+    {
+      question: "Please ____ the documents on my desk.",
+      options: ["lie", "lay"],
+      answer: "lay",
+      explanation: "Rule: Transitive Verb. 'Lay' means to put something down. Explanation: Documents are the object being placed."
     },
-    { 
-      question: "Don't ____ to me.", 
-      choices: ["lie", "lay"], 
-      correctIndex: 0, 
-      explanation: "Rule: Definition. Explanation: Here, 'lie' means to tell a falsehood. 'Lay' does not have this meaning." 
+    {
+      question: "The cat loves to ____ in the sun.",
+      options: ["lie", "lay"],
+      answer: "lie",
+      explanation: "Rule: Intransitive. Explanation: The cat is reclining itself."
     },
-    { 
-      question: "Chickens ____ eggs.", 
-      choices: ["lie", "lay"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive (Producing). Explanation: The chicken produces/puts down an object ('eggs'). Use 'lay'." 
+    {
+      question: "Will you ____ the table for dinner?",
+      options: ["lie", "lay"],
+      answer: "lay",
+      explanation: "Rule: Transitive. Explanation: Setting the table involves placing objects."
     },
-    { 
-      question: "He ____ in bed all day yesterday.", 
-      choices: ["lay", "laid"], 
-      correctIndex: 0, 
-      explanation: "Rule: Irregular Past Tense. The past tense of 'Lie' (to recline) is 'Lay'. The past tense of 'Lay' (to put) is 'Laid'. Explanation: He reclined yesterday, so use 'lay'." 
+    {
+      question: "The books have ____ on that shelf for years.",
+      options: ["lain", "laid"],
+      answer: "lain",
+      explanation: "Rule: Past Participle. 'Lain' is past participle of lie. Explanation: Books have been resting there."
     },
-    { 
-      question: "She ____ the baby in the crib.", 
-      choices: ["lay", "laid"], 
-      correctIndex: 1, 
-      explanation: "Rule: Past Tense of Lay. Explanation: She put the baby down yesterday. The past tense of 'lay' is 'laid'." 
+    {
+      question: "She ____ the foundation for the new building.",
+      options: ["lay", "laid"],
+      answer: "laid",
+      explanation: "Rule: Past Tense of Lay. Explanation: She put down the foundation."
     },
-    { 
-      question: "____ your hands on your head.", 
-      choices: ["Lie", "Lay"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive Command. Explanation: You are putting an object ('your hands') somewhere. Use 'Lay'." 
+    {
+      question: "I'm going to ____ on the couch and read.",
+      options: ["lie", "lay"],
+      answer: "lie",
+      explanation: "Rule: Intransitive. Explanation: Reclining on the couch."
     },
-    { 
-      question: "The dog likes to ____ in the sun.", 
-      choices: ["lie", "lay"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive. Explanation: The dog is reclining itself. Use 'lie'." 
+    {
+      question: "The hen ____ an egg every morning.",
+      options: ["lies", "lays"],
+      answer: "lays",
+      explanation: "Rule: Transitive (Producing). Explanation: The hen produces eggs."
     },
-    { 
-      question: "I have ____ the keys on the counter.", 
-      choices: ["lain", "laid"], 
-      correctIndex: 1, 
-      explanation: "Rule: Past Participle. 'Lay' (put) becomes 'Laid'. 'Lie' (recline) becomes 'Lain'. Explanation: You put the keys down, so use 'laid'." 
+    {
+      question: "He has ____ in bed all morning.",
+      options: ["lain", "laid"],
+      answer: "lain",
+      explanation: "Rule: Past Participle. Explanation: He has been reclining in bed."
     },
-    { 
-      question: "He has ____ in bed for weeks.", 
-      choices: ["lain", "laid"], 
-      correctIndex: 0, 
-      explanation: "Rule: Past Participle. Explanation: He has been reclining. The participle of 'lie' is 'lain'." 
+    {
+      question: "They ____ the carpet in the living room.",
+      options: ["lay", "laid"],
+      answer: "laid",
+      explanation: "Rule: Past Tense of Lay. Explanation: They installed the carpet."
     },
 
     // 121-130: Farther vs Further
-    { 
-      question: "My house is ____ than yours.", 
-      choices: ["farther", "further"], 
-      correctIndex: 0, 
-      explanation: "Rule: Physical Distance. 'Farther' is preferred for measurable physical distance. 'Further' is for metaphorical distance or degree. Explanation: Comparing physical distance of houses, so 'farther' is correct." 
+    {
+      question: "How much ____ do we have to drive?",
+      options: ["farther", "further"],
+      answer: "farther",
+      explanation: "Rule: Physical Distance. 'Farther' for measurable distance. Explanation: Asking about physical driving distance."
     },
-    { 
-      question: "Do you have any ____ questions?", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Additional/Degree. Explanation: 'Further' means 'additional' or 'more'. You are asking for more questions." 
+    {
+      question: "We need to discuss this ____.",
+      options: ["farther", "further"],
+      answer: "further",
+      explanation: "Rule: Metaphorical Distance. 'Further' for degree or extent. Explanation: Wanting more in-depth discussion."
     },
-    { 
-      question: "We need to discuss this ____.", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Metaphorical Distance. Explanation: You want to discuss it in more depth (degree), not physical distance. Use 'further'." 
+    {
+      question: "Can you throw the ball ____?",
+      options: ["farther", "further"],
+      answer: "farther",
+      explanation: "Rule: Physical Distance. Explanation: Asking about physical throwing distance."
     },
-    { 
-      question: "He ran ____ than me.", 
-      choices: ["farther", "further"], 
-      correctIndex: 0, 
-      explanation: "Rule: Physical Distance. Explanation: Running involves measurable distance. Use 'farther'." 
+    {
+      question: "I have nothing ____ to add.",
+      options: ["farther", "further"],
+      answer: "further",
+      explanation: "Rule: Additional. Explanation: No more information to contribute."
     },
-    { 
-      question: "Nothing could be ____ from the truth.", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Abstract Distance. Explanation: The distance from 'truth' is abstract/metaphorical. 'Further' is standard here." 
+    {
+      question: "The ____ we go, the more beautiful the scenery.",
+      options: ["farther", "further"],
+      answer: "farther",
+      explanation: "Rule: Physical Distance. Explanation: Referring to physical travel distance."
     },
-    { 
-      question: "Look ____ into the matter.", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Degree/Depth. Explanation: You are investigating more deeply. Use 'further'." 
+    {
+      question: "For ____ information, check our website.",
+      options: ["farther", "further"],
+      answer: "further",
+      explanation: "Rule: Additional. Explanation: More or additional information."
     },
-    { 
-      question: "How much ____ do we have to walk?", 
-      choices: ["farther", "further"], 
-      correctIndex: 0, 
-      explanation: "Rule: Physical Distance. Explanation: Walking implies actual distance. Use 'farther'." 
+    {
+      question: "My house is ____ from school than yours.",
+      options: ["farther", "further"],
+      answer: "farther",
+      explanation: "Rule: Physical Distance. Explanation: Comparing physical distances."
     },
-    { 
-      question: "Wait for ____ instructions.", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Additional. Explanation: You are waiting for *more* instructions. Use 'further'." 
+    {
+      question: "We need to look ____ into this matter.",
+      options: ["farther", "further"],
+      answer: "further",
+      explanation: "Rule: Degree/Depth. Explanation: Investigating more thoroughly."
     },
-    { 
-      question: "Paris is ____ north than Madrid.", 
-      choices: ["farther", "further"], 
-      correctIndex: 0, 
-      explanation: "Rule: Physical Distance. Explanation: This is a geographical fact involving distance. Use 'farther'." 
+    {
+      question: "The store is ____ down the road.",
+      options: ["farther", "further"],
+      answer: "farther",
+      explanation: "Rule: Physical Distance. Explanation: Referring to physical location."
     },
-    { 
-      question: "To ____ his career...", 
-      choices: ["farther", "further"], 
-      correctIndex: 1, 
-      explanation: "Rule: Verb Usage. 'Further' can be a verb meaning 'to advance'. 'Farther' is not a verb. Explanation: He wants to advance his career." 
+    {
+      question: "This will ____ complicate the situation.",
+      options: ["farther", "further"],
+      answer: "further",
+      explanation: "Rule: Verb Usage. 'Further' can be a verb. Explanation: This will advance the complication."
     },
 
     // 131-140: Rise vs Raise
-    { 
-      question: "Please ____ your hand.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive vs Intransitive. 'Raise' needs an object (something you lift). 'Rise' means to go up on its own. Explanation: You are lifting 'your hand' (object), so use 'raise'." 
+    {
+      question: "The sun will ____ at 6:00 AM tomorrow.",
+      options: ["rise", "raise"],
+      answer: "rise",
+      explanation: "Rule: Intransitive vs Transitive. 'Rise' means to go up on its own. Explanation: The sun moves upward by itself."
     },
-    { 
-      question: "The sun ____s in the east.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive. Explanation: The sun goes up by itself. There is no object being lifted. Use 'rises'." 
+    {
+      question: "Please ____ your hand if you have a question.",
+      options: ["rise", "raise"],
+      answer: "raise",
+      explanation: "Rule: Transitive Verb. 'Raise' needs an object. Explanation: You are lifting your hand."
     },
-    { 
-      question: "They plan to ____ prices.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive. Explanation: 'Prices' is the object. They are lifting the prices. Use 'raise'." 
+    {
+      question: "Bread dough needs to ____ for an hour.",
+      options: ["rise", "raise"],
+      answer: "rise",
+      explanation: "Rule: Intransitive. Explanation: The dough expands upward naturally."
     },
-    { 
-      question: "The water level will ____.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive. Explanation: The water goes up itself. Use 'rise'." 
+    {
+      question: "The company will ____ prices next month.",
+      options: ["rise", "raise"],
+      answer: "raise",
+      explanation: "Rule: Transitive. Explanation: The company is increasing prices (object)."
     },
-    { 
-      question: "He ____d his eyebrows.", 
-      choices: ["rose", "raised"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive. Explanation: He lifted his eyebrows (object). Use 'raised'." 
+    {
+      question: "Everyone ____ when the judge entered.",
+      options: ["rose", "raised"],
+      answer: "rose",
+      explanation: "Rule: Past Tense of Rise. Explanation: People stood up themselves."
     },
-    { 
-      question: "Everyone ____d for the anthem.", 
-      choices: ["rose", "raised"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive (Past Tense). Explanation: People stood up themselves. The past tense of 'rise' is 'rose'." 
+    {
+      question: "She ____ three children by herself.",
+      options: ["rose", "raised"],
+      answer: "raised",
+      explanation: "Rule: Past Tense of Raise. Explanation: She brought up children (object)."
     },
-    { 
-      question: "____ the flag.", 
-      choices: ["Rise", "Raise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive Command. Explanation: You are lifting the flag (object). Use 'Raise'." 
+    {
+      question: "The moon ____ over the mountains.",
+      options: ["rises", "raises"],
+      answer: "rises",
+      explanation: "Rule: Intransitive. Explanation: The moon appears to move upward."
     },
-    { 
-      question: "Smoke ____s from the fire.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive. Explanation: Smoke goes up naturally. Use 'rises'." 
+    {
+      question: "We need to ____ awareness about this issue.",
+      options: ["rise", "raise"],
+      answer: "raise",
+      explanation: "Rule: Transitive. Explanation: Increasing awareness (object)."
     },
-    { 
-      question: "Do not ____ your voice.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Transitive. Explanation: You are lifting the volume of your voice (object). Use 'raise'." 
+    {
+      question: "The cost of living continues to ____.",
+      options: ["rise", "raise"],
+      answer: "rise",
+      explanation: "Rule: Intransitive. Explanation: Costs are increasing by themselves."
     },
-    { 
-      question: "The bread dough needs to ____.", 
-      choices: ["rise", "raise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Intransitive. Explanation: The dough expands upwards by itself. Use 'rise'." 
+    {
+      question: "He ____ his voice to be heard.",
+      options: ["rose", "raised"],
+      answer: "raised",
+      explanation: "Rule: Past Tense of Raise. Explanation: He increased his voice volume."
     },
 
     // 141-150: Advice vs Advise
-    { 
-      question: "Can you give me some ____?", 
-      choices: ["advice", "advise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Noun vs Verb. 'Advice' (with a 'c') is the noun. 'Advise' (with an 's') is the verb. Explanation: You give a thing (noun), so 'advice' is correct." 
+    {
+      question: "Can you give me some ____ about colleges?",
+      options: ["advice", "advise"],
+      answer: "advice",
+      explanation: "Rule: Noun vs Verb. 'Advice' is the noun. Explanation: Asking for recommendations or guidance."
     },
-    { 
-      question: "I ____ you to stop.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Verb Usage. Explanation: You are performing the action of recommending. Use the verb 'advise'." 
+    {
+      question: "I ____ you to apply early.",
+      options: ["advice", "advise"],
+      answer: "advise",
+      explanation: "Rule: Verb Usage. 'Advise' is the verb. Explanation: Giving a recommendation or suggestion."
     },
-    { 
-      question: "That is good ____.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Noun Usage. Explanation: 'That' refers to a thing. The thing is 'advice' (noun)." 
+    {
+      question: "That's excellent ____!",
+      options: ["advice", "advise"],
+      answer: "advice",
+      explanation: "Rule: Noun Usage. Explanation: Referring to the quality of the recommendation."
     },
-    { 
-      question: "Please ____ us on what to do.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Verb Usage. Explanation: 'Please' introduces a request for action. The action is to 'advise' (verb)." 
+    {
+      question: "My doctor ____d me to exercise more.",
+      options: ["advice", "advise"],
+      answer: "advise",
+      explanation: "Rule: Verb Usage. Explanation: The doctor recommended exercise."
     },
-    { 
-      question: "I took his ____.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Noun Usage. Explanation: 'His' is a possessive adjective, which must be followed by a noun ('advice')." 
+    {
+      question: "I need your ____ on this matter.",
+      options: ["advice", "advise"],
+      answer: "advice",
+      explanation: "Rule: Noun Usage. Explanation: Asking for guidance or opinion."
     },
-    { 
-      question: "He is my ____r.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Agent Noun. Explanation: A person who gives advice is an 'Adviser' or 'Advisor', formed from the verb 'Advise'." 
+    {
+      question: "They ____ against traveling during the storm.",
+      options: ["advice", "advise"],
+      answer: "advise",
+      explanation: "Rule: Verb Usage. Explanation: They recommend not traveling."
     },
-    { 
-      question: "My ____ is free.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Subject Noun. Explanation: The subject of the sentence is the noun 'Advice'." 
+    {
+      question: "Her ____ was very helpful.",
+      options: ["advice", "advise"],
+      answer: "advice",
+      explanation: "Rule: Noun Usage. Explanation: Referring to the helpful recommendation."
     },
-    { 
-      question: "I wouldn't ____ against it.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Verb with Modal. Explanation: 'Wouldn't' is a modal auxiliary that requires a main verb ('advise')." 
+    {
+      question: "What would you ____ me to do?",
+      options: ["advice", "advise"],
+      answer: "advise",
+      explanation: "Rule: Verb Usage. Explanation: Asking for a recommendation."
     },
-    { 
-      question: "A piece of ____.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 0, 
-      explanation: "Rule: Partitive Noun. Explanation: 'Advice' is uncountable, so we say 'a piece of advice'." 
+    {
+      question: "I always follow my father's ____.",
+      options: ["advice", "advise"],
+      answer: "advice",
+      explanation: "Rule: Noun Usage. Explanation: Referring to father's guidance."
     },
-    { 
-      question: "Doctors ____ eating well.", 
-      choices: ["advice", "advise"], 
-      correctIndex: 1, 
-      explanation: "Rule: Subject + Verb. Explanation: Doctors perform the action of recommending. Use 'advise'." 
+    {
+      question: "The lawyer will ____ you of your rights.",
+      options: ["advice", "advise"],
+      answer: "advise",
+      explanation: "Rule: Verb Usage. Explanation: The lawyer will inform you."
     }
   ],
 
-  super: [
+  expert: [
     // 151-160: Disinterested vs Uninterested
-    { 
-      question: "A judge must be ____.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 1, 
-      explanation: "Rule: Bias vs Boredom. 'Disinterested' means impartial/unbiased. 'Uninterested' means bored/not interested. Explanation: A judge needs to be unbiased, so 'disinterested' is correct." 
+    {
+      question: "A good judge must remain ____.",
+      options: ["uninterested", "disinterested"],
+      answer: "disinterested",
+      explanation: "Rule: Bias vs Boredom. 'Disinterested' means impartial. Explanation: Judges need to be unbiased."
     },
-    { 
-      question: "He yawned, looking ____.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 0, 
-      explanation: "Rule: Boredom. Explanation: Yawning indicates boredom. He looked 'uninterested'." 
+    {
+      question: "He seemed ____ in the lecture and kept checking his phone.",
+      options: ["uninterested", "disinterested"],
+      answer: "uninterested",
+      explanation: "Rule: Boredom. 'Uninterested' means not interested. Explanation: His behavior showed lack of interest."
     },
-    { 
-      question: "I need a ____ third party to mediate.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 1, 
-      explanation: "Rule: Impartiality. Explanation: A mediator must be neutral and unbiased. Use 'disinterested'." 
+    {
+      question: "We need a ____ party to mediate the dispute.",
+      options: ["uninterested", "disinterested"],
+      answer: "disinterested",
+      explanation: "Rule: Impartiality. Explanation: A mediator must be neutral."
     },
-    { 
-      question: "She was ____ in the movie and left.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 0, 
-      explanation: "Rule: Lack of Interest. Explanation: She didn't like the movie (bored). Use 'uninterested'." 
+    {
+      question: "The children were ____ in the educational video.",
+      options: ["uninterested", "disinterested"],
+      answer: "uninterested",
+      explanation: "Rule: Lack of Interest. Explanation: The children found it boring."
     },
-    { 
-      question: "Scientists should be ____ observers.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 1, 
-      explanation: "Rule: Impartiality. Explanation: Scientists should not let personal bias affect their observation. They should be 'disinterested'." 
+    {
+      question: "Her ____ analysis helped resolve the conflict.",
+      options: ["uninterested", "disinterested"],
+      answer: "disinterested",
+      explanation: "Rule: Unbiased. Explanation: The analysis was objective and fair."
     },
-    { 
-      question: "The cat was ____ in the toy.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 0, 
-      explanation: "Rule: Lack of Interest. Explanation: The cat didn't care about the toy. Use 'uninterested'." 
+    {
+      question: "I'm completely ____ in sports.",
+      options: ["uninterested", "disinterested"],
+      answer: "uninterested",
+      explanation: "Rule: Personal Interest. Explanation: Having no interest in sports."
     },
-    { 
-      question: "His ____ advice helped us settle the dispute.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 1, 
-      explanation: "Rule: Unbiased Advice. Explanation: Advice is helpful because it is impartial. Use 'disinterested'." 
+    {
+      question: "The committee sought ____ advice.",
+      options: ["uninterested", "disinterested"],
+      answer: "disinterested",
+      explanation: "Rule: Impartial Advice. Explanation: Seeking objective, unbiased advice."
     },
-    { 
-      question: "Are you ____ in joining us?", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 0, 
-      explanation: "Rule: Asking about Interest. Explanation: The question is about whether you want to join (interest). Use 'uninterested' (referring to the opposite state)." 
+    {
+      question: "She was ____ in continuing the conversation.",
+      options: ["uninterested", "disinterested"],
+      answer: "uninterested",
+      explanation: "Rule: Boredom. Explanation: She didn't want to continue talking."
     },
-    { 
-      question: "A ____ referee.", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 1, 
-      explanation: "Rule: Fairness. Explanation: A referee must be fair and unbiased. Use 'disinterested'." 
+    {
+      question: "A ____ observer recorded the events.",
+      options: ["uninterested", "disinterested"],
+      answer: "disinterested",
+      explanation: "Rule: Objective Observation. Explanation: The observer was neutral."
     },
-    { 
-      question: "Don't be so ____; pay attention!", 
-      choices: ["uninterested", "disinterested"], 
-      correctIndex: 0, 
-      explanation: "Rule: Boredom. Explanation: The person is not paying attention (bored). Use 'uninterested'." 
+    {
+      question: "He's ____ in learning anything new.",
+      options: ["uninterested", "disinterested"],
+      answer: "uninterested",
+      explanation: "Rule: Lack of Curiosity. Explanation: He has no desire to learn."
     },
 
     // 161-170: Imply vs Infer
-    { 
-      question: "Are you ____ing that I am lazy?", 
-      choices: ["imply", "infer"], 
-      correctIndex: 0, 
-      explanation: "Rule: Speaker vs Listener. The speaker 'implies' (hints). The listener 'infers' (deduces). Explanation: You are asking what the speaker is hinting at. Use 'imply'." 
+    {
+      question: "What are you trying to ____ with that statement?",
+      options: ["imply", "infer"],
+      answer: "imply",
+      explanation: "Rule: Speaker vs Listener. 'Imply' means to suggest. Explanation: The speaker is suggesting something."
     },
-    { 
-      question: "From your words, I ____ that you are angry.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 1, 
-      explanation: "Rule: Deduction. Explanation: 'I' (the listener) am figuring this out from your words. Use 'infer'." 
+    {
+      question: "From her tone, I ____ that she was angry.",
+      options: ["imply", "infer"],
+      answer: "infer",
+      explanation: "Rule: Deduction. 'Infer' means to deduce. Explanation: The listener is drawing a conclusion."
     },
-    { 
-      question: "The article ____s that the economy is bad.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 0, 
-      explanation: "Rule: Source. Explanation: The article (the source/speaker) is suggesting something. Use 'implies'." 
+    {
+      question: "The data ____s a correlation between the variables.",
+      options: ["imply", "infer"],
+      answer: "imply",
+      explanation: "Rule: Suggestion. Explanation: The data suggests a relationship."
     },
-    { 
-      question: "What can we ____ from this evidence?", 
-      choices: ["imply", "infer"], 
-      correctIndex: 1, 
-      explanation: "Rule: Deduction. Explanation: We are looking at evidence and drawing a conclusion. Use 'infer'." 
+    {
+      question: "What can we ____ from these results?",
+      options: ["imply", "infer"],
+      answer: "infer",
+      explanation: "Rule: Conclusion. Explanation: Drawing conclusions from results."
     },
-    { 
-      question: "I didn't mean to ____ anything bad.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 0, 
-      explanation: "Rule: Suggestion. Explanation: The speaker is saying they didn't intend to suggest something bad. Use 'imply'." 
+    {
+      question: "I didn't mean to ____ that you were wrong.",
+      options: ["imply", "infer"],
+      answer: "imply",
+      explanation: "Rule: Suggestion. Explanation: Not intending to suggest something."
     },
-    { 
-      question: "He ____red correctly that I was lying.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 1, 
-      explanation: "Rule: Deduction. Explanation: He figured out (deduced) that I was lying. Use 'inferred'." 
+    {
+      question: "Readers can ____ the author's meaning from context.",
+      options: ["imply", "infer"],
+      answer: "infer",
+      explanation: "Rule: Deduction. Explanation: Readers deduce meaning."
     },
-    { 
-      question: "Silence often ____s consent.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 0, 
-      explanation: "Rule: Suggestion. Explanation: Silence suggests or hints at consent. Use 'implies'." 
+    {
+      question: "His smile ____ed that he approved.",
+      options: ["imply", "infer"],
+      answer: "imply",
+      explanation: "Rule: Suggestion. Explanation: The smile suggested approval."
     },
-    { 
-      question: "Don't ____ what isn't there.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 1, 
-      explanation: "Rule: Reading into things. Explanation: Don't conclude/deduce things that aren't true. Use 'infer'." 
+    {
+      question: "From the evidence, we ____ that he was innocent.",
+      options: ["imply", "infer"],
+      answer: "infer",
+      explanation: "Rule: Conclusion. Explanation: Drawing a conclusion from evidence."
     },
-    { 
-      question: "Her smile ____ed she was happy.", 
-      choices: ["imply", "infer"], 
-      correctIndex: 0, 
-      explanation: "Rule: Indication. Explanation: The smile gave the hint. It 'implied' happiness." 
+    {
+      question: "The report ____s several possible solutions.",
+      options: ["imply", "infer"],
+      answer: "imply",
+      explanation: "Rule: Suggestion. Explanation: The report suggests solutions."
     },
-    { 
-      question: "Am I to ____ you are quitting?", 
-      choices: ["imply", "infer"], 
-      correctIndex: 1, 
-      explanation: "Rule: Conclusion. Explanation: The speaker is asking if they should conclude (deduce) that you are quitting. Use 'infer'." 
+    {
+      question: "It's dangerous to ____ too much from limited data.",
+      options: ["imply", "infer"],
+      answer: "infer",
+      explanation: "Rule: Deduction. Explanation: Drawing extensive conclusions."
     },
 
     // 171-180: Comprise vs Compose
-    { 
-      question: "The team is ____d of ten members.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Standard Usage. 'Compose' means 'to make up'. 'Comprise' means 'to include'. Explanation: The standard phrase is 'is composed of'. 'Is comprised of' is often considered incorrect in strict grammar." 
+    {
+      question: "The committee ____ seven members.",
+      options: ["comprises", "composes"],
+      answer: "comprises",
+      explanation: "Rule: Whole to Parts. 'Comprise' means to include. Explanation: The committee includes seven members."
     },
-    { 
-      question: "The US ____ 50 states.", 
-      choices: ["comprises", "composes"], 
-      correctIndex: 0, 
-      explanation: "Rule: Active Voice. The whole 'comprises' the parts. Explanation: The US (whole) includes (comprises) 50 states." 
+    {
+      question: "Seven members ____ the committee.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Parts to Whole. 'Compose' means to make up. Explanation: The members make up the committee."
     },
-    { 
-      question: "Ten members ____ the team.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Parts to Whole. Explanation: The parts (members) make up (compose) the whole (team)." 
+    {
+      question: "The book is ____d of twelve chapters.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Standard Usage. Explanation: 'Is composed of' is the correct phrase."
     },
-    { 
-      question: "The book is ____d of three parts.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Passive Voice. Explanation: 'Is composed of' is the correct idiom for 'made up of'." 
+    {
+      question: "Fifty states ____ the United States.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Parts to Whole. Explanation: The states make up the country."
     },
-    { 
-      question: "The zoo ____ many animals.", 
-      choices: ["comprises", "composes"], 
-      correctIndex: 0, 
-      explanation: "Rule: Whole 'comprises' Parts. Explanation: The zoo (whole) contains (comprises) animals." 
+    {
+      question: "The collection ____ valuable artifacts.",
+      options: ["comprises", "composes"],
+      answer: "comprises",
+      explanation: "Rule: Whole to Parts. Explanation: The collection includes artifacts."
     },
-    { 
-      question: "Water is ____d of hydrogen and oxygen.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 1, 
-      explanation: "Rule: 'Made up of'. Explanation: Use 'is composed of' to describe chemical composition." 
+    {
+      question: "Water is ____d of hydrogen and oxygen.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Chemical Composition. Explanation: 'Is composed of' describes makeup."
     },
-    { 
-      question: "The committee ____ five people.", 
-      choices: ["comprises", "composes"], 
-      correctIndex: 0, 
-      explanation: "Rule: Whole includes Parts. Explanation: The committee comprises (includes) five people." 
+    {
+      question: "The team ____ players from various countries.",
+      options: ["comprises", "composes"],
+      answer: "comprises",
+      explanation: "Rule: Whole to Parts. Explanation: The team includes the players."
     },
-    { 
-      question: "Do not say 'is ____d of'.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 0, 
-      explanation: "Rule: Grammar Error. Explanation: 'Is comprised of' is widely considered an error by purists. The correct phrase is 'is composed of'." 
+    {
+      question: "Various elements ____ the complex mixture.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Parts to Whole. Explanation: The elements make up the mixture."
     },
-    { 
-      question: "Various ethnic groups ____ the population.", 
-      choices: ["comprise", "compose"], 
-      correctIndex: 1, 
-      explanation: "Rule: Parts make up Whole. Explanation: The groups form (compose) the population." 
+    {
+      question: "The apartment ____ three rooms.",
+      options: ["comprises", "composes"],
+      answer: "comprises",
+      explanation: "Rule: Whole to Parts. Explanation: The apartment includes three rooms."
     },
-    { 
-      question: "The pack ____ 52 cards.", 
-      choices: ["comprises", "composes"], 
-      correctIndex: 0, 
-      explanation: "Rule: Whole to Parts. Explanation: The pack (whole) consists of (comprises) cards." 
+    {
+      question: "Three rooms ____ the apartment.",
+      options: ["comprise", "compose"],
+      answer: "compose",
+      explanation: "Rule: Parts to Whole. Explanation: The rooms make up the apartment."
     },
 
     // 181-190: Principle vs Principal
-    { 
-      question: "He is the school ____.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 1, 
-      explanation: "Rule: Person vs Rule. 'Principal' means 'main' or 'school head' (ends in -pal, like a person). 'Principle' is a rule. Explanation: We are talking about the head of the school, so 'Principal'." 
+    {
+      question: "The school ____ announced the new policy.",
+      options: ["principle", "principal"],
+      answer: "principal",
+      explanation: "Rule: Person vs Rule. 'Principal' means school head. Explanation: Referring to the school administrator."
     },
-    { 
-      question: "It is a matter of ____.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 0, 
-      explanation: "Rule: Fundamental Truth. Explanation: This refers to a moral rule or belief ('principle'), not a person." 
+    {
+      question: "It's against my ____ to lie.",
+      options: ["principle", "principal"],
+      answer: "principle",
+      explanation: "Rule: Moral Rule. 'Principle' means fundamental truth. Explanation: Referring to personal moral standards."
     },
-    { 
-      question: "The ____ reason for leaving.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adjective 'Main'. Explanation: 'Principal' can act as an adjective meaning 'primary' or 'most important'. 'Principle' is only a noun." 
+    {
+      question: "The ____ amount of the loan is $10,000.",
+      options: ["principle", "principal"],
+      answer: "principal",
+      explanation: "Rule: Finance. Explanation: Referring to the main amount of money."
     },
-    { 
-      question: "He stuck to his ____s.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 0, 
-      explanation: "Rule: Beliefs/Rules. Explanation: He stuck to his moral rules. Use 'principles'." 
+    {
+      question: "She stands by her ____s.",
+      options: ["principle", "principal"],
+      answer: "principle",
+      explanation: "Rule: Beliefs. Explanation: Referring to her fundamental beliefs."
     },
-    { 
-      question: "The ____ sum of money.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 1, 
-      explanation: "Rule: Finance. Explanation: In finance, the main amount of money is the 'principal' (as opposed to interest)." 
+    {
+      question: "The ____ dancer performed beautifully.",
+      options: ["principle", "principal"],
+      answer: "principal",
+      explanation: "Rule: Main Performer. Explanation: Referring to the lead dancer."
     },
-    { 
-      question: "Scientific ____s.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 0, 
-      explanation: "Rule: Laws of Nature. Explanation: Scientific rules are called 'principles'." 
+    {
+      question: "The ____ of gravity explains why objects fall.",
+      options: ["principle", "principal"],
+      answer: "principle",
+      explanation: "Rule: Scientific Law. Explanation: Referring to a fundamental scientific concept."
     },
-    { 
-      question: "She is a ____ in the ballet.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 1, 
-      explanation: "Rule: Main Performer. Explanation: She is the 'main' dancer, so she is a 'Principal'." 
+    {
+      question: "Our ____ concern is student safety.",
+      options: ["principle", "principal"],
+      answer: "principal",
+      explanation: "Rule: Adjective 'Main'. Explanation: Referring to the primary concern."
     },
-    { 
-      question: "Against my ____s.", 
-      choices: ["principle", "principal"], 
-      correctIndex: 0, 
-      explanation: "Rule: Morals. Explanation: It goes against my moral beliefs, so 'principles'." 
+    {
+      question: "He's a man of strong ____.",
+      options: ["principle", "principal"],
+      answer: "principle",
+      explanation: "Rule: Moral Character. Explanation: Referring to strong moral standards."
     },
-    { 
-      question: "____ city.", 
-      choices: ["Principle", "Principal"], 
-      correctIndex: 1, 
-      explanation: "Rule: Adjective (Main). Explanation: Referring to the main city. Use 'Principal'." 
+    {
+      question: "The ____ investigator on the case.",
+      options: ["principle", "principal"],
+      answer: "principal",
+      explanation: "Rule: Main Role. Explanation: Referring to the lead investigator."
     },
-    { 
-      question: "Archimedes' ____.", 
-      choices: ["Principle", "Principal"], 
-      correctIndex: 0, 
-      explanation: "Rule: Scientific Law. Explanation: Referring to a specific rule of physics. Use 'Principle'." 
+    {
+      question: "Basic ____s of mathematics.",
+      options: ["principle", "principal"],
+      answer: "principle",
+      explanation: "Rule: Fundamental Rules. Explanation: Referring to basic mathematical rules."
     },
 
-    // 191-200: Obscure Pairs (Discreet/Discrete, etc.)
-    { 
-      question: "Please be ____ about this secret.", 
-      choices: ["discrete", "discreet"], 
-      correctIndex: 1, 
-      explanation: "Rule: Spelling Nuance. 'Discreet' (ee) means careful/secretive. 'Discrete' (ete) means separate/distinct. Explanation: You need to be secretive, so 'discreet'." 
+    // 191-200: Obscure Pairs
+    {
+      question: "Please be ____ when discussing confidential matters.",
+      options: ["discrete", "discreet"],
+      answer: "discreet",
+      explanation: "Rule: Spelling Nuance. 'Discreet' means careful/secretive. Explanation: Need for confidentiality requires discretion."
     },
-    { 
-      question: "The data is broken into ____ parts.", 
-      choices: ["discrete", "discreet"], 
-      correctIndex: 0, 
-      explanation: "Rule: Distinct Parts. Explanation: The parts are separate from each other. Use 'discrete'." 
+    {
+      question: "The data is divided into ____ categories.",
+      options: ["discrete", "discreet"],
+      answer: "discrete",
+      explanation: "Rule: Distinct Parts. 'Discrete' means separate. Explanation: Categories are distinct from each other."
     },
-    { 
-      question: "He is an ____ author.", 
-      choices: ["imminent", "eminent"], 
-      correctIndex: 1, 
-      explanation: "Rule: Definitions. 'Eminent' means famous/respected. 'Imminent' means about to happen. Explanation: The author is respected, so 'eminent'." 
+    {
+      question: "She is an ____ scientist in her field.",
+      options: ["imminent", "eminent"],
+      answer: "eminent",
+      explanation: "Rule: Definitions. 'Eminent' means famous/respected. Explanation: Referring to a highly regarded scientist."
     },
-    { 
-      question: "A storm is ____.", 
-      choices: ["imminent", "eminent"], 
-      correctIndex: 0, 
-      explanation: "Rule: Time. Explanation: The storm is about to happen soon. Use 'imminent'." 
+    {
+      question: "The storm's arrival is ____.",
+      options: ["imminent", "eminent"],
+      answer: "imminent",
+      explanation: "Rule: Time. 'Imminent' means about to happen. Explanation: The storm is coming soon."
     },
-    { 
-      question: "The joke ____ed a laugh.", 
-      choices: ["illicit", "elicit"], 
-      correctIndex: 1, 
-      explanation: "Rule: Verb vs Adjective. 'Elicit' is a verb meaning 'to draw out'. 'Illicit' is an adjective meaning 'illegal'. Explanation: The joke drew out a laugh, so 'elicited'." 
+    {
+      question: "The teacher tried to ____ responses from the quiet students.",
+      options: ["illicit", "elicit"],
+      answer: "elicit",
+      explanation: "Rule: Verb vs Adjective. 'Elicit' means to draw out. Explanation: Drawing out responses from students."
     },
-    { 
-      question: "____ drug use.", 
-      choices: ["Illicit", "Elicit"], 
-      correctIndex: 0, 
-      explanation: "Rule: Legality. Explanation: Drug use that is forbidden by law is 'illicit'." 
+    {
+      question: "____ activities are prohibited.",
+      options: ["Illicit", "Elicit"],
+      answer: "Illicit",
+      explanation: "Rule: Legality. 'Illicit' means illegal. Explanation: Illegal activities are forbidden."
     },
-    { 
-      question: "We visited the state ____.", 
-      choices: ["capital", "capitol"], 
-      correctIndex: 1, 
-      explanation: "Rule: Building vs City. 'Capitol' (with an 'o') is the specific building where legislature meets. 'Capital' is the city. Explanation: You visited the building, so 'Capitol'." 
+    {
+      question: "We visited the state ____ building.",
+      options: ["capital", "capitol"],
+      answer: "capitol",
+      explanation: "Rule: Building vs City. 'Capitol' is the building. Explanation: Referring to the government building."
     },
-    { 
-      question: "Paris is the ____ of France.", 
-      choices: ["capital", "capitol"], 
-      correctIndex: 0, 
-      explanation: "Rule: Governing City. Explanation: Paris is the main city, not a specific building. Use 'capital'." 
+    {
+      question: "Madrid is the ____ of Spain.",
+      options: ["capital", "capitol"],
+      answer: "capital",
+      explanation: "Rule: Governing City. Explanation: Referring to the main city."
     },
-    { 
-      question: "I wrote on beautiful ____.", 
-      choices: ["stationary", "stationery"], 
-      correctIndex: 1, 
-      explanation: "Rule: Spelling Trick. 'Stationery' (with 'e') is paper (think 'LettEr'). 'Stationary' (with 'a') is not moving (think 'pArk'). Explanation: You write on paper, so 'stationery'." 
+    {
+      question: "I need to buy some ____ for writing letters.",
+      options: ["stationary", "stationery"],
+      answer: "stationery",
+      explanation: "Rule: Spelling Trick. 'Stationery' is paper. Explanation: Paper products for writing."
     },
-    { 
-      question: "The car remained ____.", 
-      choices: ["stationary", "stationery"], 
-      correctIndex: 0, 
-      explanation: "Rule: Movement. Explanation: The car did not move. Use 'stationary'." 
+    {
+      question: "The car remained ____ at the red light.",
+      options: ["stationary", "stationery"],
+      answer: "stationary",
+      explanation: "Rule: Movement. 'Stationary' means not moving. Explanation: The car was stopped."
     }
   ]
 };
