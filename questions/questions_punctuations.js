@@ -1,7 +1,13 @@
 
 
 
-const PUNCTUATIONS_QUESTIONS = {
+// 1. Safety Check
+window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+
+// 2. Inject Data
+window.VERBAL_QUESTION_BANK["punctuations"] = {
+
+  
   beginner: [
     // 1–10: End Marks (Period, Question Mark, Exclamation Point)
     {
