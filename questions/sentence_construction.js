@@ -4,7 +4,7 @@
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
 // 2. Inject Data
-window.VERBAL_QUESTION_BANK["sentence-construction"] = {
+window.VERBAL_QUESTION_BANK["sentence_construction"] = {
   beginner: [
     // 1-10: Basic Word Order (S-V-O Rule)
     {
