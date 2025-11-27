@@ -538,6 +538,16 @@
       { id: "data_interpretation",    label: "Data Interpretation",             tag: "Graphs" }
     ];
 
+
+  <!-- Load Numerical Question Files -->
+  <script src="questions/numerical_whole_numbers.js"></script>
+  <!-- later: <script src="questions/numerical_fractions_decimals.js"></script> etc. -->
+
+  <script>
+    // dito na papasok yung NUMERICAL_TOPICS, LESSONS, QUESTION_BANK, etc.
+
+    
+
     const LESSONS = {
   whole_numbers: {
     title: "Whole Numbers & Basic Operations",
@@ -961,113 +971,30 @@
     // 2. QUESTION BANK (SAMPLE ONLY)
     // ==========================================
 
-    const QUESTION_BANK = {
-      whole_numbers: {
-        beginner: [
-          {
-            question: "What is 37 + 25?",
-            options: ["52", "60", "62", "63"],
-            answer: "62",
-            explanation:
-              "Add the ones first: 7 + 5 = 12 (write 2, carry 1). Then add tens: 3 + 2 + 1 = 6, so the sum is 62."
-          },
-          {
-            question: "Which number is an even number?",
-            options: ["39", "47", "52", "75"],
-            answer: "52",
-            explanation:
-              "Even numbers end in 0, 2, 4, 6, or 8. Only 52 ends with 2."
-          },
-          {
-            question: "Which symbol makes the statement true: 45 __ 39?",
-            options: [">", "<", "=", "≤"],
-            answer: ">",
-            explanation:
-              "45 is greater than 39, so we use the symbol >."
-          }
-        ],
-        intermediate: [
-          {
-            question: "Evaluate: 15 × 4 + 8.",
-            options: ["68", "72", "80", "92"],
-            answer: "68",
-            explanation:
-              "Follow order of operations: multiply first → 15 × 4 = 60, then add 8 → 60 + 8 = 68."
-          },
-          {
-            question: "What is 420 ÷ 7?",
-            options: ["50", "55", "60", "65"],
-            answer: "60",
-            explanation:
-              "You can use mental math: 42 ÷ 7 = 6, then add one zero → 60."
-          }
-        ],
-        advanced: [
-          {
-            question: "Evaluate: 120 − 3 × 16.",
-            options: ["72", "80", "120", "168"],
-            answer: "72",
-            explanation:
-              "Multiply first: 3 × 16 = 48. Then subtract: 120 − 48 = 72."
-          }
-        ],
-        expert: [
-          {
-            question: "A number is 9 more than twice 14. What is the number?",
-            options: ["23", "28", "37", "41"],
-            answer: "37",
-            explanation:
-              "Twice 14 is 28. Then add 9: 28 + 9 = 37."
-          }
-        ]
-      },
-      fractions_decimals: {
-        beginner: [
-          {
-            question: "Which fraction is equal to 0.5?",
-            options: ["1/2", "1/3", "2/3", "3/4"],
-            answer: "1/2",
-            explanation:
-              "0.5 means half of 1, so it is equal to 1/2."
-          },
-          {
-            question: "Which is greater: 3/4 or 2/3?",
-            options: ["3/4", "2/3", "They are equal", "Cannot be compared"],
-            answer: "3/4",
-            explanation:
-              "Convert to twelfths: 3/4 = 9/12 and 2/3 = 8/12, so 3/4 is greater."
-          }
-        ],
-        intermediate: [
-          {
-            question: "What is 0.6 + 0.35?",
-            options: ["0.95", "0.85", "0.75", "0.7"],
-            answer: "0.95",
-            explanation:
-              "Align decimals: 0.60 + 0.35 = 0.95."
-          }
-        ],
-        advanced: [
-          {
-            question: "Simplify: 18/24.",
-            options: ["3/4", "2/3", "4/5", "5/6"],
-            answer: "3/4",
-            explanation:
-              "Divide numerator and denominator by 6 → 18 ÷ 6 = 3 and 24 ÷ 6 = 4."
-          }
-        ],
-        expert: [
-          {
-            question: "Convert 7/8 to a decimal.",
-            options: ["0.7", "0.75", "0.8", "0.875"],
-            answer: "0.875",
-            explanation:
-              "7 ÷ 8 = 0.875. This is a common fraction–decimal pair to memorize."
-          }
-        ]
-      }
-      // Other topics fallback to “no questions yet” per level.
-    };
+   // ==========================================
+// 2. QUESTION BANK (SAMPLE ONLY)
+// ==========================================
+
+const QUESTION_BANK = {
+  whole_numbers: {
+    beginner: [ ... ],
+    intermediate: [ ... ],
+    advanced: [ ... ],
+    expert: [ ... ]
+  },
+  fractions_decimals: {
+    beginner: [ ... ],
+    intermediate: [ ... ],
+    advanced: [ ... ],
+    expert: [ ... ]
+  }
+  // Other topics fallback to “no questions yet” per level.
+};
+
+
+
+    <script src="questions/numerical_whole_numbers.js"></script>
+
 
     // ==========================================
     // 3. STATE + DOM REFERENCES
