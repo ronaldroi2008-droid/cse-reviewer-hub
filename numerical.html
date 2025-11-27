@@ -528,19 +528,36 @@
     // 1. TOPIC + LESSON DATA (NUMERICAL)
     // ==========================================
 
-    const NUMERICAL_TOPICS = [
-      { id: "whole_numbers",        label: "Whole Numbers & Operations",    tag: "Core" },
-      { id: "fractions_decimals",   label: "Fractions & Decimals",          tag: "Core" },
-      { id: "percentages",          label: "Percentages",                   tag: "Core" },
-      { id: "ratio_proportion",     label: "Ratio & Proportion",            tag: "Core" },
-      { id: "simple_interest",      label: "Simple Interest",               tag: "Word Problems" },
-      { id: "profit_loss_discount", label: "Profit, Loss & Discount",       tag: "Word Problems" },
-      { id: "speed_distance_time",  label: "Speed, Distance & Time",        tag: "Word Problems" },
-      { id: "work_problems",        label: "Work Problems",                 tag: "Word Problems" },
-      { id: "algebra_linear",       label: "Linear Equations",              tag: "Algebra" },
-      { id: "sequences_series",     label: "Sequences & Series",            tag: "Algebra" },
-      { id: "data_interpretation",  label: "Data Interpretation",           tag: "Graphs" }
-    ];
+const NUMERICAL_TOPICS = [
+  // --- From your reviewer (main list) ---
+  { id: "whole_numbers",            label: "Integers / Whole Numbers",                 tag: "Core" },
+  { id: "pemdas",                   label: "PEMDAS (Order of Operations)",             tag: "Core" },
+  { id: "decimals",                 label: "Decimals",                                 tag: "Core" },
+  { id: "fractions_decimals",       label: "Fractions & Operations on Fractions",      tag: "Core" },
+  { id: "percentages",              label: "Percent",                                  tag: "Core" },
+  { id: "ratio_proportion",         label: "Ratio and Proportion",                     tag: "Core" },
+  { id: "averages",                 label: "Averages",                                 tag: "Core" },
+  { id: "data_interpretation",      label: "Tables, Charts, and Graphs",               tag: "Graphs" },
+
+  { id: "algebra_linear",           label: "Linear Equations",                         tag: "Algebra" },
+  { id: "solving_math_expressions", label: "Solving Mathematical Expressions",         tag: "Algebra" },
+  { id: "writing_math_expressions", label: "Writing Mathematical Expressions",         tag: "Algebra" },
+
+  { id: "number_problems",          label: "Number Problems",                          tag: "Word Problems" },
+  { id: "odd_even_consecutive",     label: "Odd, Even and Consecutive Integers",       tag: "Word Problems" },
+  { id: "age_problems",             label: "Age Problems",                             tag: "Word Problems" },
+  { id: "work_problems",            label: "Work Problems",                            tag: "Word Problems" },
+  { id: "speed_distance_time",      label: "Motion Problems (Speed, Distance & Time)", tag: "Word Problems" },
+  { id: "geometry_problems",        label: "Geometry Problems",                        tag: "Word Problems" },
+
+  { id: "divisibility_rules",       label: "Divisibility Rules",                       tag: "Numerical Ability" },
+  { id: "multiples_factors",        label: "Multiples and Factors",                    tag: "Numerical Ability" },
+
+  // --- Extra/bonus topics we already prepared lessons for ---
+  { id: "simple_interest",          label: "Simple Interest (Bonus Topic)",            tag: "Bonus" },
+  { id: "profit_loss_discount",     label: "Profit, Loss & Discount (Bonus)",          tag: "Bonus" },
+  { id: "sequences_series",         label: "Sequences & Series (Bonus)",               tag: "Bonus" }
+];
 
     const LESSONS = {
       whole_numbers: {
