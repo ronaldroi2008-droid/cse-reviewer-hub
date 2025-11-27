@@ -1,6 +1,3 @@
-Narito ang naayos na bersyon ng iyong `sentence_structure.js` file na sumusunod sa parehong format ng `adverbs.js`:
-
-```javascript
 // questions/sentence_structure.js
 
 // 1. Safety Check
