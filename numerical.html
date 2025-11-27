@@ -519,482 +519,453 @@
     </main>
   </div>
 
+  <!-- External numerical question files -->
+  <script src="questions/numerical_whole_numbers.js"></script>
+  <!-- Later: <script src="questions/numerical_fractions_decimals.js"></script> etc. -->
+
   <script>
     // ==========================================
     // 1. TOPIC + LESSON DATA (NUMERICAL)
     // ==========================================
 
     const NUMERICAL_TOPICS = [
-      { id: "whole_numbers",          label: "Whole Numbers & Operations",      tag: "Core" },
-      { id: "fractions_decimals",     label: "Fractions & Decimals",            tag: "Core" },
-      { id: "percentages",            label: "Percentages",                     tag: "Core" },
-      { id: "ratio_proportion",       label: "Ratio & Proportion",              tag: "Core" },
-      { id: "simple_interest",        label: "Simple Interest",                 tag: "Word Problems" },
-      { id: "profit_loss_discount",   label: "Profit, Loss & Discount",         tag: "Word Problems" },
-      { id: "speed_distance_time",    label: "Speed, Distance & Time",          tag: "Word Problems" },
-      { id: "work_problems",          label: "Work Problems",                   tag: "Word Problems" },
-      { id: "algebra_linear",         label: "Linear Equations",                tag: "Algebra" },
-      { id: "sequences_series",       label: "Sequences & Series",              tag: "Algebra" },
-      { id: "data_interpretation",    label: "Data Interpretation",             tag: "Graphs" }
+      { id: "whole_numbers",        label: "Whole Numbers & Operations",    tag: "Core" },
+      { id: "fractions_decimals",   label: "Fractions & Decimals",          tag: "Core" },
+      { id: "percentages",          label: "Percentages",                   tag: "Core" },
+      { id: "ratio_proportion",     label: "Ratio & Proportion",            tag: "Core" },
+      { id: "simple_interest",      label: "Simple Interest",               tag: "Word Problems" },
+      { id: "profit_loss_discount", label: "Profit, Loss & Discount",       tag: "Word Problems" },
+      { id: "speed_distance_time",  label: "Speed, Distance & Time",        tag: "Word Problems" },
+      { id: "work_problems",        label: "Work Problems",                 tag: "Word Problems" },
+      { id: "algebra_linear",       label: "Linear Equations",              tag: "Algebra" },
+      { id: "sequences_series",     label: "Sequences & Series",            tag: "Algebra" },
+      { id: "data_interpretation",  label: "Data Interpretation",           tag: "Graphs" }
     ];
 
-
-  <!-- Load Numerical Question Files -->
-  <script src="questions/numerical_whole_numbers.js"></script>
-  <!-- later: <script src="questions/numerical_fractions_decimals.js"></script> etc. -->
-
-  <script>
-    // dito na papasok yung NUMERICAL_TOPICS, LESSONS, QUESTION_BANK, etc.
-
-    
-
     const LESSONS = {
-  whole_numbers: {
-    title: "Whole Numbers & Basic Operations",
-    intro:
-      "This topic reviews addition, subtraction, multiplication, and division of whole numbers, plus how to follow the order of operations correctly.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Whole numbers are 0, 1, 2, 3, ... (no fractions or decimals). They are used for counting and basic calculations.",
-          "Addition and subtraction are inverse operations. Multiplication is repeated addition, and division is repeated subtraction or sharing equally.",
-          "Follow the order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)."
+      whole_numbers: {
+        title: "Whole Numbers & Basic Operations",
+        intro:
+          "This topic reviews addition, subtraction, multiplication, and division of whole numbers, plus how to follow the order of operations correctly.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Whole numbers are 0, 1, 2, 3, ... (no fractions or decimals). They are used for counting and basic calculations.",
+              "Addition and subtraction are inverse operations. Multiplication is repeated addition, and division is repeated subtraction or sharing equally.",
+              "Follow the order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)."
+            ]
+          },
+          {
+            heading: "Worked example: 37 + 25",
+            bullets: [
+              "Step 1: Add the ones place → 7 + 5 = 12. Write 2 in the ones place and carry 1 to the tens place.",
+              "Step 2: Add the tens place → 3 + 2 + carried 1 = 6.",
+              "Final answer: 62. Quick estimate: 40 + 30 = 70, so an exact answer of 62 is reasonable (a bit less than the estimate)."
+            ]
+          },
+          {
+            heading: "Worked example: 120 − 45",
+            bullets: [
+              "Step 1: Line up the numbers by place value: 120 − 45.",
+              "Step 2: Borrow from the tens if needed: 0 cannot subtract 5, so borrow 1 ten from 2 (becomes 1), making the ones 10.",
+              "Step 3: 10 − 5 = 5 (ones), 1 − 4 cannot, so borrow 1 hundred from 1 (hundreds). Then 11 − 4 = 7 (tens), and remaining hundreds is 0.",
+              "Answer: 120 − 45 = 75."
+            ]
+          }
+        ],
+        tips: [
+          "Write multi-step operations vertically so digits line up in columns.",
+          "Circle or underline the operation sign (+, −, ×, ÷) to avoid using the wrong operation.",
+          "Do a quick mental estimate before and after solving to check if your answer is reasonable."
         ]
       },
-      {
-        heading: "Worked example: 37 + 25",
-        bullets: [
-          "Step 1: Add the ones place → 7 + 5 = 12. Write 2 in the ones place and carry 1 to the tens place.",
-          "Step 2: Add the tens place → 3 + 2 + carried 1 = 6.",
-          "Final answer: 62. Quick estimate: 40 + 30 = 70, so an exact answer of 62 is reasonable (a bit less than the estimate)."
-        ]
-      },
-      {
-        heading: "Worked example: 120 − 45",
-        bullets: [
-          "Step 1: Line up the numbers by place value: 120 − 45.",
-          "Step 2: Borrow from the tens if needed: 0 cannot subtract 5, so borrow 1 ten from 2 (becomes 1), making the ones 10.",
-          "Step 3: 10 − 5 = 5 (ones), 1 − 4 cannot, so borrow 1 hundred from 1 (hundreds). Then 11 − 4 = 7 (tens), and remaining hundreds is 0.",
-          "Answer: 120 − 45 = 75."
-        ]
-      }
-    ],
-    tips: [
-      "Write multi-step operations vertically so digits line up in columns.",
-      "Circle or underline the operation sign (+, −, ×, ÷) to avoid using the wrong operation.",
-      "Do a quick mental estimate before and after solving to check if your answer is reasonable."
-    ]
-  },
 
-  fractions_decimals: {
-    title: "Fractions & Decimals",
-    intro:
-      "This topic covers how to compare, add, subtract, multiply, and divide fractions and decimals, and how to move between fraction and decimal forms.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "A fraction a/b represents a ÷ b. The denominator tells into how many equal parts the whole is divided.",
-          "To compare fractions, use a common denominator or convert them to decimals.",
-          "To convert a fraction to a decimal, divide the numerator by the denominator (for example, 3 ÷ 4 = 0.75).",
-          "Decimals are another way of writing fractions with denominators 10, 100, 1000, and so on."
+      fractions_decimals: {
+        title: "Fractions & Decimals",
+        intro:
+          "This topic covers how to compare, add, subtract, multiply, and divide fractions and decimals, and how to move between fraction and decimal forms.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A fraction a/b represents a ÷ b. The denominator tells into how many equal parts the whole is divided.",
+              "To compare fractions, use a common denominator or convert them to decimals.",
+              "To convert a fraction to a decimal, divide the numerator by the denominator (for example, 3 ÷ 4 = 0.75).",
+              "Decimals are another way of writing fractions with denominators 10, 100, 1000, and so on."
+            ]
+          },
+          {
+            heading: "Worked example: 3/4 + 2/3",
+            bullets: [
+              "Step 1: Find a common denominator. For 4 and 3, the least common multiple (LCM) is 12.",
+              "Step 2: Convert: 3/4 = 9/12 and 2/3 = 8/12.",
+              "Step 3: Add the numerators: 9/12 + 8/12 = 17/12.",
+              "Step 4: Write as a mixed number: 17/12 = 1 5/12."
+            ]
+          },
+          {
+            heading: "Worked example: 0.6 + 0.35",
+            bullets: [
+              "Step 1: Align decimal points: 0.60 + 0.35.",
+              "Step 2: Add the hundredths: 0.60 + 0.35 = 0.95.",
+              "Check: 0.6 is a little more than one-half, 0.35 is about one-third; total near 1.0, so 0.95 makes sense."
+            ]
+          }
+        ],
+        tips: [
+          "When stuck, draw a bar model or number line to visualize fractions.",
+          "Always simplify your final fraction if possible (divide numerator and denominator by a common factor).",
+          "Align decimal points in vertical addition or subtraction to avoid place-value mistakes."
         ]
       },
-      {
-        heading: "Worked example: 3/4 + 2/3",
-        bullets: [
-          "Step 1: Find a common denominator. For 4 and 3, the least common multiple (LCM) is 12.",
-          "Step 2: Convert: 3/4 = 9/12 and 2/3 = 8/12.",
-          "Step 3: Add the numerators: 9/12 + 8/12 = 17/12.",
-          "Step 4: Write as a mixed number: 17/12 = 1 5/12."
-        ]
-      },
-      {
-        heading: "Worked example: 0.6 + 0.35",
-        bullets: [
-          "Step 1: Align decimal points: 0.60 + 0.35.",
-          "Step 2: Add the hundredths: 0.60 + 0.35 = 0.95.",
-          "Check: 0.6 is a little more than one-half, 0.35 is about one-third; total near 1.0, so 0.95 makes sense."
-        ]
-      }
-    ],
-    tips: [
-      "When stuck, draw a bar model or number line to visualize fractions.",
-      "Always simplify your final fraction if possible (divide numerator and denominator by a common factor).",
-      "Align decimal points in vertical addition or subtraction to avoid place-value mistakes."
-    ]
-  },
 
-  percentages: {
-    title: "Percentages",
-    intro:
-      "This topic focuses on understanding percentages, converting between fractions, decimals, and percentages, and solving 'percent of' word problems.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Percent means 'per hundred'. So 25% means 25 out of 100 or 25/100.",
-          "To convert a percent to a decimal, divide by 100 or move the decimal point two places to the left (e.g., 18% = 0.18).",
-          "To convert a decimal to a percent, multiply by 100 or move the decimal two places to the right (e.g., 0.45 = 45%).",
-          "'x% of y' is translated as (x/100) × y."
+      percentages: {
+        title: "Percentages",
+        intro:
+          "This topic focuses on understanding percentages, converting between fractions, decimals, and percentages, and solving 'percent of' word problems.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Percent means 'per hundred'. So 25% means 25 out of 100 or 25/100.",
+              "To convert a percent to a decimal, divide by 100 or move the decimal point two places to the left (e.g., 18% = 0.18).",
+              "To convert a decimal to a percent, multiply by 100 or move the decimal two places to the right (e.g., 0.45 = 45%).",
+              "'x% of y' is translated as (x/100) × y."
+            ]
+          },
+          {
+            heading: "Worked example: Find 20% of 150.",
+            bullets: [
+              "Step 1: Write 20% as a decimal → 20% = 0.20.",
+              "Step 2: Multiply: 0.20 × 150.",
+              "Step 3: 0.2 × 150 = 30.",
+              "So 20% of 150 is 30."
+            ]
+          },
+          {
+            heading: "Worked example: A score of 36 is what percent of 40?",
+            bullets: [
+              "Step 1: Use formula: Percent = (Part / Whole) × 100%.",
+              "Step 2: Part = 36, Whole = 40 → (36/40) × 100%.",
+              "Step 3: 36/40 = 0.9 → 0.9 × 100% = 90%.",
+              "So 36 is 90% of 40."
+            ]
+          }
+        ],
+        tips: [
+          "Remember three basic forms: fraction, decimal, and percent. Practice converting quickly between them.",
+          "For 'percent of' problems, underline the base quantity (the 'of' number).",
+          "Estimate: for example, 10% of a number is easy (divide by 10), then adjust from there."
         ]
       },
-      {
-        heading: "Worked example: Find 20% of 150.",
-        bullets: [
-          "Step 1: Write 20% as a decimal → 20% = 0.20.",
-          "Step 2: Multiply: 0.20 × 150.",
-          "Step 3: 0.2 × 150 = 30.",
-          "So 20% of 150 is 30."
-        ]
-      },
-      {
-        heading: "Worked example: A score of 36 is what percent of 40?",
-        bullets: [
-          "Step 1: Use formula: Percent = (Part / Whole) × 100%.",
-          "Step 2: Part = 36, Whole = 40 → (36/40) × 100%.",
-          "Step 3: 36/40 = 0.9 → 0.9 × 100% = 90%.",
-          "So 36 is 90% of 40."
-        ]
-      }
-    ],
-    tips: [
-      "Remember three basic forms: fraction, decimal, and percent. Practice converting quickly between them.",
-      "For 'percent of' problems, underline the base quantity (the 'of' number).",
-      "Estimate: for example, 10% of a number is easy (divide by 10), then adjust from there."
-    ]
-  },
 
-  ratio_proportion: {
-    title: "Ratio & Proportion",
-    intro:
-      "This topic deals with comparing quantities using ratios and solving for unknowns using proportions (equations of equal ratios).",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "A ratio compares two quantities, often written as a:b, a to b, or a/b.",
-          "Ratios may be simplified by dividing both terms by their greatest common divisor.",
-          "A proportion is an equation stating that two ratios are equal, such as a/b = c/d.",
-          "When two ratios form a proportion, you can use cross-multiplication: a × d = b × c."
+      ratio_proportion: {
+        title: "Ratio & Proportion",
+        intro:
+          "This topic deals with comparing quantities using ratios and solving for unknowns using proportions (equations of equal ratios).",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A ratio compares two quantities, often written as a:b, a to b, or a/b.",
+              "Ratios may be simplified by dividing both terms by their greatest common divisor.",
+              "A proportion is an equation stating that two ratios are equal, such as a/b = c/d.",
+              "When two ratios form a proportion, you can use cross-multiplication: a × d = b × c."
+            ]
+          },
+          {
+            heading: "Worked example: Simplify the ratio 12:18.",
+            bullets: [
+              "Step 1: Find the greatest common divisor (GCD) of 12 and 18. GCD = 6.",
+              "Step 2: Divide both terms by 6 → 12 ÷ 6 : 18 ÷ 6 = 2 : 3.",
+              "So the simplified ratio is 2 : 3."
+            ]
+          },
+          {
+            heading: "Worked example: If 3/5 = x/20, find x.",
+            bullets: [
+              "Step 1: Recognize this as a proportion: 3/5 = x/20.",
+              "Step 2: Cross-multiply: 3 × 20 = 5 × x.",
+              "Step 3: 60 = 5x, so x = 60 ÷ 5 = 12.",
+              "Therefore, x = 12."
+            ]
+          }
+        ],
+        tips: [
+          "Always simplify ratios before comparing them; it makes patterns easier to see.",
+          "In proportion problems, label your units clearly (e.g., boys:girls, km:hour).",
+          "Use cross-multiplication carefully and show each step to avoid mixing terms."
         ]
       },
-      {
-        heading: "Worked example: Simplify the ratio 12:18.",
-        bullets: [
-          "Step 1: Find the greatest common divisor (GCD) of 12 and 18. GCD = 6.",
-          "Step 2: Divide both terms by 6 → 12 ÷ 6 : 18 ÷ 6 = 2 : 3.",
-          "So the simplified ratio is 2 : 3."
-        ]
-      },
-      {
-        heading: "Worked example: If 3/5 = x/20, find x.",
-        bullets: [
-          "Step 1: Recognize this as a proportion: 3/5 = x/20.",
-          "Step 2: Cross-multiply: 3 × 20 = 5 × x.",
-          "Step 3: 60 = 5x, so x = 60 ÷ 5 = 12.",
-          "Therefore, x = 12."
-        ]
-      }
-    ],
-    tips: [
-      "Always simplify ratios before comparing them; it makes patterns easier to see.",
-      "In proportion problems, label your units clearly (e.g., boys:girls, km:hour).",
-      "Use cross-multiplication carefully and show each step to avoid mixing terms."
-    ]
-  },
 
-  simple_interest: {
-    title: "Simple Interest",
-    intro:
-      "This topic covers simple interest on loans and savings, using the standard formula to find interest and the total amount to be paid or received.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Simple interest is calculated only on the original principal, not on accumulated interest.",
-          "Formula: I = P × R × T, where I = interest, P = principal, R = rate per year (in decimal form), T = time in years.",
-          "Total amount (future value) is A = P + I.",
-          "If time is given in months, convert to years (e.g., 6 months = 6/12 = 0.5 year)."
+      simple_interest: {
+        title: "Simple Interest",
+        intro:
+          "This topic covers simple interest on loans and savings, using the standard formula to find interest and the total amount to be paid or received.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Simple interest is calculated only on the original principal, not on accumulated interest.",
+              "Formula: I = P × R × T, where I = interest, P = principal, R = rate per year (in decimal form), T = time in years.",
+              "Total amount (future value) is A = P + I.",
+              "If time is given in months, convert to years (e.g., 6 months = 6/12 = 0.5 year)."
+            ]
+          },
+          {
+            heading: "Worked example: Find the simple interest on ₱8,000 at 6% per year for 2 years.",
+            bullets: [
+              "Step 1: Identify P = 8,000; R = 6% = 0.06; T = 2 years.",
+              "Step 2: Substitute in formula: I = PRT = 8,000 × 0.06 × 2.",
+              "Step 3: 8,000 × 0.06 = 480; then 480 × 2 = 960.",
+              "So the simple interest is ₱960, and the total amount is A = 8,000 + 960 = ₱8,960."
+            ]
+          }
+        ],
+        tips: [
+          "Always convert the percent rate to decimal before using the formula.",
+          "Under exam pressure, write the formula first to avoid plugging numbers wrongly.",
+          "Watch the units for time. If it is in months, convert to years before calculating."
         ]
       },
-      {
-        heading: "Worked example: Find the simple interest on ₱8,000 at 6% per year for 2 years.",
-        bullets: [
-          "Step 1: Identify P = 8,000; R = 6% = 0.06; T = 2 years.",
-          "Step 2: Substitute in formula: I = PRT = 8,000 × 0.06 × 2.",
-          "Step 3: 8,000 × 0.06 = 480; then 480 × 2 = 960.",
-          "So the simple interest is ₱960, and the total amount is A = 8,000 + 960 = ₱8,960."
-        ]
-      }
-    ],
-    tips: [
-      "Always convert the percent rate to decimal before using the formula.",
-      "Under exam pressure, write the formula first to avoid plugging numbers wrongly.",
-      "Watch the units for time. If it is in months, convert to years before calculating."
-    ]
-  },
 
-  profit_loss_discount: {
-    title: "Profit, Loss & Discount",
-    intro:
-      "This topic covers basic business math: finding cost price, selling price, profit, loss, and discounts, often in percentage form.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Cost Price (CP): the original price or cost of an item.",
-          "Selling Price (SP): the price at which the item is sold.",
-          "Profit = SP − CP, Loss = CP − SP (when SP < CP).",
-          "Profit% = (Profit / CP) × 100%, Loss% = (Loss / CP) × 100%.",
-          "Discount is the reduction from the marked price. Discount% = (Discount / Marked Price) × 100%."
+      profit_loss_discount: {
+        title: "Profit, Loss & Discount",
+        intro:
+          "This topic covers basic business math: finding cost price, selling price, profit, loss, and discounts, often in percentage form.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Cost Price (CP): the original price or cost of an item.",
+              "Selling Price (SP): the price at which the item is sold.",
+              "Profit = SP − CP, Loss = CP − SP (when SP < CP).",
+              "Profit% = (Profit / CP) × 100%, Loss% = (Loss / CP) × 100%.",
+              "Discount is the reduction from the marked price. Discount% = (Discount / Marked Price) × 100%."
+            ]
+          },
+          {
+            heading: "Worked example: A shirt costs ₱400 and is sold for ₱460. Find the profit and profit percentage.",
+            bullets: [
+              "Step 1: CP = 400, SP = 460.",
+              "Step 2: Profit = SP − CP = 460 − 400 = ₱60.",
+              "Step 3: Profit% = (60 / 400) × 100% = 0.15 × 100% = 15%.",
+              "So the profit is ₱60, and the profit rate is 15%."
+            ]
+          },
+          {
+            heading: "Worked example: A bag with a marked price of ₱1,200 is sold at a 25% discount. What is the selling price?",
+            bullets: [
+              "Step 1: Discount = 25% of 1,200 = 0.25 × 1,200 = ₱300.",
+              "Step 2: SP = Marked Price − Discount = 1,200 − 300 = ₱900.",
+              "So the selling price after discount is ₱900."
+            ]
+          }
+        ],
+        tips: [
+          "Decide first whether the situation is profit (SP > CP) or loss (SP < CP).",
+          "Base all percentages on the cost price unless the problem clearly says otherwise.",
+          "For discounts, compute the discount amount first, then subtract from the marked price."
         ]
       },
-      {
-        heading: "Worked example: A shirt costs ₱400 and is sold for ₱460. Find the profit and profit percentage.",
-        bullets: [
-          "Step 1: CP = 400, SP = 460.",
-          "Step 2: Profit = SP − CP = 460 − 400 = ₱60.",
-          "Step 3: Profit% = (60 / 400) × 100% = 0.15 × 100% = 15%.",
-          "So the profit is ₱60, and the profit rate is 15%."
-        ]
-      },
-      {
-        heading: "Worked example: A bag with a marked price of ₱1,200 is sold at a 25% discount. What is the selling price?",
-        bullets: [
-          "Step 1: Discount = 25% of 1,200 = 0.25 × 1,200 = ₱300.",
-          "Step 2: SP = Marked Price − Discount = 1,200 − 300 = ₱900.",
-          "So the selling price after discount is ₱900."
-        ]
-      }
-    ],
-    tips: [
-      "Decide first whether the situation is profit (SP > CP) or loss (SP < CP).",
-      "Base all percentages on the cost price unless the problem clearly says otherwise.",
-      "For discounts, compute the discount amount first, then subtract from the marked price."
-    ]
-  },
 
-  speed_distance_time: {
-    title: "Speed, Distance & Time",
-    intro:
-      "This topic deals with motion problems, using the relationship between speed, distance, and time to solve word problems.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Basic formula: Distance = Speed × Time (D = S × T).",
-          "Rearranged: Speed = Distance ÷ Time, Time = Distance ÷ Speed.",
-          "Always make sure units are consistent (e.g., km/h with hours, m/s with seconds).",
-          "Average speed is total distance divided by total time, not simply the average of two speeds."
+      speed_distance_time: {
+        title: "Speed, Distance & Time",
+        intro:
+          "This topic deals with motion problems, using the relationship between speed, distance, and time to solve word problems.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Basic formula: Distance = Speed × Time (D = S × T).",
+              "Rearranged: Speed = Distance ÷ Time, Time = Distance ÷ Speed.",
+              "Always make sure units are consistent (e.g., km/h with hours, m/s with seconds).",
+              "Average speed is total distance divided by total time, not simply the average of two speeds."
+            ]
+          },
+          {
+            heading: "Worked example: A car travels 150 km in 3 hours. What is its speed?",
+            bullets: [
+              "Step 1: Use speed formula: Speed = Distance ÷ Time.",
+              "Step 2: Substitute: Speed = 150 km ÷ 3 h = 50 km/h.",
+              "So the car’s speed is 50 km/h."
+            ]
+          },
+          {
+            heading: "Worked example: At 60 km/h, how long will it take to travel 180 km?",
+            bullets: [
+              "Step 1: Use time formula: Time = Distance ÷ Speed.",
+              "Step 2: Time = 180 ÷ 60 = 3 hours.",
+              "So the trip will take 3 hours."
+            ]
+          }
+        ],
+        tips: [
+          "Draw a simple diagram showing the movement to organize information.",
+          "Write D = S × T at the top of your scratch paper and rearrange as needed.",
+          "Convert all times to the same unit before calculating, especially when mixing minutes and hours."
         ]
       },
-      {
-        heading: "Worked example: A car travels 150 km in 3 hours. What is its speed?",
-        bullets: [
-          "Step 1: Use speed formula: Speed = Distance ÷ Time.",
-          "Step 2: Substitute: Speed = 150 km ÷ 3 h = 50 km/h.",
-          "So the car’s speed is 50 km/h."
-        ]
-      },
-      {
-        heading: "Worked example: At 60 km/h, how long will it take to travel 180 km?",
-        bullets: [
-          "Step 1: Use time formula: Time = Distance ÷ Speed.",
-          "Step 2: Time = 180 ÷ 60 = 3 hours.",
-          "So the trip will take 3 hours."
-        ]
-      }
-    ],
-    tips: [
-      "Draw a simple diagram showing the movement to organize information.",
-      "Write D = S × T at the top of your scratch paper and rearrange as needed.",
-      "Convert all times to the same unit before calculating, especially when mixing minutes and hours."
-    ]
-  },
 
-  work_problems: {
-    title: "Work Problems (Rates of Work)",
-    intro:
-      "This topic covers problems where people or machines work together or alone, using the concept of work rates to find time or amount of work done.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "If a person can finish a job in T days, then the rate of work is 1/T job per day.",
-          "When two or more workers work together, their rates are added.",
-          "Total work completed = (Total rate) × (Time).",
-          "You can set up equations using 'part of the job done' as fractions of 1 whole job."
+      work_problems: {
+        title: "Work Problems (Rates of Work)",
+        intro:
+          "This topic covers problems where people or machines work together or alone, using the concept of work rates to find time or amount of work done.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "If a person can finish a job in T days, then the rate of work is 1/T job per day.",
+              "When two or more workers work together, their rates are added.",
+              "Total work completed = (Total rate) × (Time).",
+              "You can set up equations using 'part of the job done' as fractions of 1 whole job."
+            ]
+          },
+          {
+            heading: "Worked example: A can finish a job in 12 days, B in 18 days. How long will it take them working together?",
+            bullets: [
+              "Step 1: A’s rate = 1/12 job per day.",
+              "Step 2: B’s rate = 1/18 job per day.",
+              "Step 3: Combined rate = 1/12 + 1/18.",
+              "Find common denominator (36): 1/12 = 3/36, 1/18 = 2/36 → total = 5/36 job per day.",
+              "Step 4: Time = 1 ÷ (5/36) = 36/5 = 7.2 days.",
+              "So they can finish the job in 7.2 days (about 7 days and 5 hours)."
+            ]
+          }
+        ],
+        tips: [
+          "Always convert 'can finish in T days' into a rate of 1/T.",
+          "Use a table with columns: worker, time alone, rate, and contribution to organize info.",
+          "Check if your answer is reasonable: working together should always be faster than the faster worker alone."
         ]
       },
-      {
-        heading: "Worked example: A can finish a job in 12 days, B in 18 days. How long will it take them working together?",
-        bullets: [
-          "Step 1: A’s rate = 1/12 job per day.",
-          "Step 2: B’s rate = 1/18 job per day.",
-          "Step 3: Combined rate = 1/12 + 1/18.",
-          "Find common denominator (36): 1/12 = 3/36, 1/18 = 2/36 → total = 5/36 job per day.",
-          "Step 4: Time = 1 ÷ (5/36) = 36/5 = 7.2 days.",
-          "So they can finish the job in 7.2 days (about 7 days and 5 hours)."
-        ]
-      }
-    ],
-    tips: [
-      "Always convert 'can finish in T days' into a rate of 1/T.",
-      "Use a table with columns: worker, time alone, rate, and contribution to organize info.",
-      "Check if your answer is reasonable: working together should always be faster than the faster worker alone."
-    ]
-  },
 
-  algebra_linear: {
-    title: "Linear Equations",
-    intro:
-      "This topic introduces simple algebraic equations with one variable and how to solve them using basic operations.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "A variable (like x or y) represents an unknown number.",
-          "A linear equation in one variable has the form ax + b = c.",
-          "To solve an equation, perform the same operation on both sides to isolate the variable.",
-          "The goal is to get the variable alone on one side of the equation."
+      algebra_linear: {
+        title: "Linear Equations",
+        intro:
+          "This topic introduces simple algebraic equations with one variable and how to solve them using basic operations.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A variable (like x or y) represents an unknown number.",
+              "A linear equation in one variable has the form ax + b = c.",
+              "To solve an equation, perform the same operation on both sides to isolate the variable.",
+              "The goal is to get the variable alone on one side of the equation."
+            ]
+          },
+          {
+            heading: "Worked example: Solve 3x + 5 = 20.",
+            bullets: [
+              "Step 1: Subtract 5 from both sides: 3x + 5 − 5 = 20 − 5 → 3x = 15.",
+              "Step 2: Divide both sides by 3: 3x ÷ 3 = 15 ÷ 3 → x = 5.",
+              "Step 3: Check: 3(5) + 5 = 15 + 5 = 20, which matches the original equation."
+            ]
+          },
+          {
+            heading: "Worked example: Solve 2(x − 4) = 10.",
+            bullets: [
+              "Step 1: Distribute 2: 2x − 8 = 10.",
+              "Step 2: Add 8 to both sides: 2x − 8 + 8 = 10 + 8 → 2x = 18.",
+              "Step 3: Divide both sides by 2: x = 18 ÷ 2 = 9.",
+              "Step 4: Check: 2(9 − 4) = 2 × 5 = 10, correct."
+            ]
+          }
+        ],
+        tips: [
+          "Write each step on a new line to keep the solution clear.",
+          "Whatever you do to one side of the equation, do exactly the same to the other side.",
+          "Always substitute your answer back into the original equation to verify."
         ]
       },
-      {
-        heading: "Worked example: Solve 3x + 5 = 20.",
-        bullets: [
-          "Step 1: Subtract 5 from both sides: 3x + 5 − 5 = 20 − 5 → 3x = 15.",
-          "Step 2: Divide both sides by 3: 3x ÷ 3 = 15 ÷ 3 → x = 5.",
-          "Step 3: Check: 3(5) + 5 = 15 + 5 = 20, which matches the original equation."
-        ]
-      },
-      {
-        heading: "Worked example: Solve 2(x − 4) = 10.",
-        bullets: [
-          "Step 1: Distribute 2: 2x − 8 = 10.",
-          "Step 2: Add 8 to both sides: 2x − 8 + 8 = 10 + 8 → 2x = 18.",
-          "Step 3: Divide both sides by 2: x = 18 ÷ 2 = 9.",
-          "Step 4: Check: 2(9 − 4) = 2 × 5 = 10, correct."
-        ]
-      }
-    ],
-    tips: [
-      "Write each step on a new line to keep the solution clear.",
-      "Whatever you do to one side of the equation, do exactly the same to the other side.",
-      "Always substitute your answer back into the original equation to verify."
-    ]
-  },
 
-  sequences_series: {
-    title: "Sequences & Series",
-    intro:
-      "This topic covers number patterns, especially arithmetic sequences where the difference between consecutive terms is constant.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "A sequence is an ordered list of numbers following a pattern.",
-          "In an arithmetic sequence, each term after the first is obtained by adding a fixed number called the common difference (d).",
-          "If a₁ is the first term, then the nth term of an arithmetic sequence is aₙ = a₁ + (n − 1)d.",
-          "A series is the sum of the terms of a sequence."
+      sequences_series: {
+        title: "Sequences & Series",
+        intro:
+          "This topic covers number patterns, especially arithmetic sequences where the difference between consecutive terms is constant.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A sequence is an ordered list of numbers following a pattern.",
+              "In an arithmetic sequence, each term after the first is obtained by adding a fixed number called the common difference (d).",
+              "If a₁ is the first term, then the nth term of an arithmetic sequence is aₙ = a₁ + (n − 1)d.",
+              "A series is the sum of the terms of a sequence."
+            ]
+          },
+          {
+            heading: "Worked example: Find the 10th term of 5, 8, 11, 14, ...",
+            bullets: [
+              "Step 1: Identify first term a₁ = 5.",
+              "Step 2: Common difference d = 8 − 5 = 3.",
+              "Step 3: Use formula aₙ = a₁ + (n − 1)d.",
+              "Step 4: a₁₀ = 5 + (10 − 1)×3 = 5 + 9×3 = 5 + 27 = 32.",
+              "So the 10th term is 32."
+            ]
+          },
+          {
+            heading: "Worked example: Find the sum of the first 5 terms of 2, 4, 6, 8, ...",
+            bullets: [
+              "Step 1: List the first 5 terms: 2, 4, 6, 8, 10.",
+              "Step 2: Add directly: 2 + 4 + 6 + 8 + 10 = 30.",
+              "In higher-level math, you can use the formula Sₙ = n/2 × (first term + last term).",
+              "Here: S₅ = 5/2 × (2 + 10) = 5/2 × 12 = 5 × 6 = 30."
+            ]
+          }
+        ],
+        tips: [
+          "Write out the first few terms to clearly see the pattern.",
+          "Identify whether the pattern is increasing or decreasing and by how much.",
+          "Check your computed nth term by plugging in small values of n (like n = 1 or 2) to see if you get the known terms."
         ]
       },
-      {
-        heading: "Worked example: Find the 10th term of 5, 8, 11, 14, ...",
-        bullets: [
-          "Step 1: Identify first term a₁ = 5.",
-          "Step 2: Common difference d = 8 − 5 = 3.",
-          "Step 3: Use formula aₙ = a₁ + (n − 1)d.",
-          "Step 4: a₁₀ = 5 + (10 − 1)×3 = 5 + 9×3 = 5 + 27 = 32.",
-          "So the 10th term is 32."
-        ]
-      },
-      {
-        heading: "Worked example: Find the sum of the first 5 terms of 2, 4, 6, 8, ...",
-        bullets: [
-          "Step 1: List the first 5 terms: 2, 4, 6, 8, 10.",
-          "Step 2: Add directly: 2 + 4 + 6 + 8 + 10 = 30.",
-          "In higher-level math, you can use the formula Sₙ = n/2 × (first term + last term).",
-          "Here: S₅ = 5/2 × (2 + 10) = 5/2 × 12 = 5 × 6 = 30."
-        ]
-      }
-    ],
-    tips: [
-      "Write out the first few terms to clearly see the pattern.",
-      "Identify whether the pattern is increasing or decreasing and by how much.",
-      "Check your computed nth term by plugging in small values of n (like n = 1 or 2) to see if you get the known terms."
-    ]
-  },
 
-  data_interpretation: {
-    title: "Data Interpretation (Tables & Graphs)",
-    intro:
-      "This topic focuses on reading, understanding, and interpreting numerical data from tables, bar graphs, line graphs, and pie charts.",
-    sections: [
-      {
-        heading: "Key ideas",
-        bullets: [
-          "Read all titles, labels, and legends in a graph or table before answering questions.",
-          "Identify what each axis or row/column represents (e.g., years, categories, amounts).",
-          "Pay attention to units (e.g., pesos, number of people, percentage).",
-          "Most questions ask for totals, differences, or comparisons between data points."
-        ]
-      },
-      {
-        heading: "Worked example: Reading a simple table",
-        bullets: [
-          "Suppose a table shows the number of books sold in 3 months: January–40, February–35, March–45.",
-          "To find the total books sold, add all values: 40 + 35 + 45 = 120.",
-          "To find the month with the highest sales, compare: March (45) is greater than January (40) and February (35)."
-        ]
-      },
-      {
-        heading: "Worked example: Estimating from a bar graph",
-        bullets: [
-          "In a bar graph of students in four sections, check the scale (e.g., each grid line may represent 5 students).",
-          "If one bar reaches the level marked 25, that category has 25 students.",
-          "If another bar is slightly below 30 and above 25, estimate it as around 28–29 students (depending on the scale).",
-          "Use exact values when given; estimate only when exact values are not shown."
+      data_interpretation: {
+        title: "Data Interpretation (Tables & Graphs)",
+        intro:
+          "This topic focuses on reading, understanding, and interpreting numerical data from tables, bar graphs, line graphs, and pie charts.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Read all titles, labels, and legends in a graph or table before answering questions.",
+              "Identify what each axis or row/column represents (e.g., years, categories, amounts).",
+              "Pay attention to units (e.g., pesos, number of people, percentage).",
+              "Most questions ask for totals, differences, or comparisons between data points."
+            ]
+          },
+          {
+            heading: "Worked example: Reading a simple table",
+            bullets: [
+              "Suppose a table shows the number of books sold in 3 months: January–40, February–35, March–45.",
+              "To find the total books sold, add all values: 40 + 35 + 45 = 120.",
+              "To find the month with the highest sales, compare: March (45) is greater than January (40) and February (35)."
+            ]
+          },
+          {
+            heading: "Worked example: Estimating from a bar graph",
+            bullets: [
+              "In a bar graph of students in four sections, check the scale (e.g., each grid line may represent 5 students).",
+              "If one bar reaches the level marked 25, that category has 25 students.",
+              "If another bar is slightly below 30 and above 25, estimate it as around 28–29 students (depending on the scale).",
+              "Use exact values when given; estimate only when exact values are not shown."
+            ]
+          }
+        ],
+        tips: [
+          "Before computing anything, re-read the question and mark the specific data points needed.",
+          "Use your finger or a ruler to trace lines from the axis to the bar/point to avoid misreading values.",
+          "Most errors in data interpretation are reading mistakes, not calculation mistakes — take time to read carefully."
         ]
       }
-    ],
-    tips: [
-      "Before computing anything, re-read the question and mark the specific data points needed.",
-      "Use your finger or a ruler to trace lines from the axis to the bar/point to avoid misreading values.",
-      "Most errors in data interpretation are reading mistakes, not calculation mistakes — take time to read carefully."
-    ]
-  }
-};
+    };
 
     // ==========================================
-    // 2. QUESTION BANK (SAMPLE ONLY)
+    // 2. QUESTION BANK – from external files
     // ==========================================
-
-   // ==========================================
-// 2. QUESTION BANK (SAMPLE ONLY)
-// ==========================================
-
-const QUESTION_BANK = {
-  whole_numbers: {
-    beginner: [ ... ],
-    intermediate: [ ... ],
-    advanced: [ ... ],
-    expert: [ ... ]
-  },
-  fractions_decimals: {
-    beginner: [ ... ],
-    intermediate: [ ... ],
-    advanced: [ ... ],
-    expert: [ ... ]
-  }
-  // Other topics fallback to “no questions yet” per level.
-};
-
-
-
-    <script src="questions/numerical_whole_numbers.js"></script>
-
+    window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
+    const QUESTION_BANK = window.NUMERICAL_QUESTION_BANK;
 
     // ==========================================
     // 3. STATE + DOM REFERENCES
@@ -1009,7 +980,7 @@ const QUESTION_BANK = {
     const topicListEl     = document.getElementById("topicList");
     const subtitleTopicEl = document.getElementById("subtitleTopic");
 
-    const studyView   = document.getElementById("studyView");
+    const studyView    = document.getElementById("studyView");
     const practiceView = document.getElementById("practiceView");
 
     const lessonTitleEl = document.getElementById("lessonTitle");
