@@ -1,273 +1,620 @@
-// ==========================================
-// ADVERBS QUESTIONS
-// Levels: Beginner, Intermediate, Advanced, Expert
-// Total: 200 Items (50 per level)
-// ==========================================
+// questions/paragraph_organization.js
 
+// 1. Safety Check
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
-window.VERBAL_QUESTION_BANK["adverbs"] = {
+// 2. Inject Data
+window.VERBAL_QUESTION_BANK["paragraph_organization"] = {
 
-  // ============================================================
-  // LEVEL 1: BEGINNER (50 Items) - Identification & Types
-  // ============================================================
+  // ==========================================
+  // LEVEL 1: BEGINNER (Simple Chronology & Recipes)
+  // ==========================================
   beginner: [
-    // --- 1-10: Identification ---
-    { question: "In 'He runs quickly', identify the adverb.", options: ["He", "runs", "quickly", "is"], answer: "quickly", explanation: "'Quickly' modifies 'runs' (how)." },
-    { question: "In 'She sings loudly', identify the adverb.", options: ["She", "sings", "loudly", "song"], answer: "loudly", explanation: "'Loudly' describes 'sings' (how)." },
-    { question: "In 'They played happily', identify the adverb.", options: ["They", "played", "happily", "game"], answer: "happily", explanation: "'Happily' describes 'played' (manner)." },
-    { question: "In 'Go inside now', identify the adverb.", options: ["Go", "inside", "now", "Both B and C"], answer: "Both B and C", explanation: "'Inside' (place) and 'now' (time) are both adverbs." },
-    { question: "In 'He never lies', identify the adverb.", options: ["He", "never", "lies", "is"], answer: "never", explanation: "'Never' is an adverb of frequency." },
-    { question: "In 'It is very cold', identify the adverb.", options: ["It", "is", "very", "cold"], answer: "very", explanation: "'Very' modifies the adjective 'cold'." },
-    { question: "In 'She eats slowly', identify the adverb.", options: ["She", "eats", "slowly", "food"], answer: "slowly", explanation: "'Slowly' describes the action 'eats'." },
-    { question: "In 'We met yesterday', identify the adverb.", options: ["We", "met", "yesterday", "us"], answer: "yesterday", explanation: "'Yesterday' answers 'when' (time)." },
-    { question: "In 'Look up', identify the adverb.", options: ["Look", "up", "you", "none"], answer: "up", explanation: "'Up' answers 'where' (place/direction)." },
-    { question: "In 'I am fully prepared', identify the adverb.", options: ["I", "am", "fully", "prepared"], answer: "fully", explanation: "'Fully' modifies 'prepared' (degree)." },
-
-    // --- 11-20: Classification ---
-    { question: "What type of adverb is 'tomorrow'?", options: ["Manner", "Time", "Place", "Degree"], answer: "Time", explanation: "Answers 'when'." },
-    { question: "What type of adverb is 'here'?", options: ["Manner", "Time", "Place", "Frequency"], answer: "Place", explanation: "Answers 'where'." },
-    { question: "What type of adverb is 'beautifully'?", options: ["Manner", "Time", "Place", "Degree"], answer: "Manner", explanation: "Answers 'how'." },
-    { question: "What type of adverb is 'always'?", options: ["Manner", "Time", "Frequency", "Degree"], answer: "Frequency", explanation: "Answers 'how often'." },
-    { question: "What type of adverb is 'outside'?", options: ["Manner", "Time", "Place", "Degree"], answer: "Place", explanation: "Answers 'where'." },
-    { question: "What type of adverb is 'carefully'?", options: ["Manner", "Time", "Place", "Frequency"], answer: "Manner", explanation: "Answers 'how'." },
-    { question: "What type of adverb is 'soon'?", options: ["Manner", "Time", "Place", "Degree"], answer: "Time", explanation: "Answers 'when'." },
-    { question: "What type of adverb is 'everywhere'?", options: ["Manner", "Time", "Place", "Frequency"], answer: "Place", explanation: "Answers 'where'." },
-    { question: "What type of adverb is 'rarely'?", options: ["Manner", "Time", "Frequency", "Place"], answer: "Frequency", explanation: "Answers 'how often'." },
-    { question: "What type of adverb is 'quite'?", options: ["Manner", "Time", "Place", "Degree"], answer: "Degree", explanation: "Answers 'to what extent'." },
-
-    // --- 21-30: Fill in the blank (Basic Forms) ---
-    { question: "She walked ______ down the street.", options: ["slow", "slowly", "slower", "slowest"], answer: "slowly", explanation: "Describes 'walked' (verb)." },
-    { question: "He speaks English ______.", options: ["fluent", "fluently", "fluency", "most fluent"], answer: "fluently", explanation: "Describes 'speaks' (verb)." },
-    { question: "The dog barked ______.", options: ["loud", "loudly", "loudness", "louder"], answer: "loudly", explanation: "Describes 'barked' (verb)." },
-    { question: "Please hold the glass ______.", options: ["careful", "carefully", "care", "caring"], answer: "carefully", explanation: "Describes 'hold' (verb)." },
-    { question: "She answered ______.", options: ["correct", "correctly", "correction", "corrects"], answer: "correctly", explanation: "Describes 'answered' (verb)." },
-    { question: "The sun shines ______.", options: ["bright", "brightly", "brightness", "brighter"], answer: "brightly", explanation: "Describes 'shines' (verb)." },
-    { question: "He waited ______ for his turn.", options: ["patient", "patiently", "patience", "patients"], answer: "patiently", explanation: "Describes 'waited' (verb)." },
-    { question: "The rain fell ______.", options: ["heavy", "heavily", "heavier", "heaviest"], answer: "heavily", explanation: "Describes 'fell' (verb)." },
-    { question: "They lived ______ ever after.", options: ["happy", "happily", "happiness", "happier"], answer: "happily", explanation: "Describes 'lived' (verb)." },
-    { question: "Drive ______!", options: ["safe", "safely", "safety", "saver"], answer: "safely", explanation: "Describes 'drive' (verb)." },
-
-    // --- 31-40: Adj vs Adv Distinction ---
-    { question: "He is a ______ driver.", options: ["careful", "carefully"], answer: "careful", explanation: "Describes noun 'driver' -> Adjective." },
-    { question: "He drives ______.", options: ["careful", "carefully"], answer: "carefully", explanation: "Describes verb 'drives' -> Adverb." },
-    { question: "She has a ______ voice.", options: ["loud", "loudly"], answer: "loud", explanation: "Describes noun 'voice' -> Adjective." },
-    { question: "She speaks ______.", options: ["loud", "loudly"], answer: "loudly", explanation: "Describes verb 'speaks' -> Adverb." },
-    { question: "This math problem is ______.", options: ["easy", "easily"], answer: "easy", explanation: "Linking verb 'is' -> Adjective." },
-    { question: "I can solve it ______.", options: ["easy", "easily"], answer: "easily", explanation: "Describes verb 'solve' -> Adverb." },
-    { question: "Be ______.", options: ["quiet", "quietly"], answer: "quiet", explanation: "Describes subject 'you' -> Adjective." },
-    { question: "Work ______.", options: ["quiet", "quietly"], answer: "quietly", explanation: "Describes verb 'work' -> Adverb." },
-    { question: "The test was ______.", options: ["bad", "badly"], answer: "bad", explanation: "Linking verb 'was' -> Adjective." },
-    { question: "The team played ______.", options: ["bad", "badly"], answer: "badly", explanation: "Describes verb 'played' -> Adverb." },
-
-    // --- 41-50: Spelling & Formation ---
-    { question: "Adverb form of 'happy'?", options: ["happyly", "happily", "happely", "happly"], answer: "happily", explanation: "y -> i + ly." },
-    { question: "Adverb form of 'terrible'?", options: ["terribly", "terriblely", "terriby", "terriblly"], answer: "terribly", explanation: "Drop e + y." },
-    { question: "Adverb form of 'gentle'?", options: ["gently", "gentlely", "gentlyly", "gentily"], answer: "gently", explanation: "Drop e + y." },
-    { question: "Adverb form of 'basic'?", options: ["basicly", "basically", "basicaly", "basiclly"], answer: "basically", explanation: "Add -ally." },
-    { question: "Adverb form of 'tragic'?", options: ["tragicly", "tragically", "tragicaly", "tragicy"], answer: "tragically", explanation: "Add -ally." },
-    { question: "Adverb form of 'full'?", options: ["fully", "fuly", "fullly", "fullley"], answer: "fully", explanation: "Standard spelling." },
-    { question: "Adverb form of 'angry'?", options: ["angryly", "angrily", "angrely", "angry"], answer: "angrily", explanation: "y -> i + ly." },
-    { question: "Adverb form of 'fast'?", options: ["fast", "fastly", "faster", "fastest"], answer: "fast", explanation: "Irregular: Fast is both adj and adv." },
-    { question: "Adverb form of 'good'?", options: ["goodly", "well", "good", "goodest"], answer: "well", explanation: "Irregular: Good -> Well." },
-    { question: "Adverb form of 'hard' (meaning 'with effort')?", options: ["hard", "hardly", "harder", "hardest"], answer: "hard", explanation: "Irregular: 'Hard' is the adverb. 'Hardly' means 'almost not'." }
+    {
+      question: "Arrange the following:\n1. The sun set behind the mountains.\n2. The sky turned orange and purple.\n3. It was a beautiful afternoon.\n4. Soon, the stars began to appear.",
+      options: ["3-1-2-4", "1-2-3-4", "3-2-1-4", "4-1-2-3"],
+      answer: "3-1-2-4",
+      explanation: "Correct Order: 3-1-2-4.\n(3) Start with the general setting (Afternoon).\n(1) The main action happens (Sun set).\n(2) The visual result of sunset (Sky turned orange).\n(4) Transition to night (Stars appear)."
+    },
+    {
+      question: "Arrange the following:\n1. Then, he put on his shoes.\n2. First, John put on his socks.\n3. Finally, he tied the laces.\n4. He was ready to go for a run.",
+      options: ["2-1-3-4", "1-2-3-4", "4-3-2-1", "2-3-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nSequence: Socks (First) -> Shoes (Then) -> Laces (Finally) -> Ready (Result)."
+    },
+    {
+      question: "Arrange the following:\n1. She added boiling water to the cup.\n2. Maria took a teabag out of the box.\n3. She put the teabag in the cup.\n4. Finally, she added a little sugar.",
+      options: ["2-3-1-4", "1-2-3-4", "3-2-1-4", "2-1-3-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nSteps: Get teabag -> Put in cup -> Add water -> Add sugar."
+    },
+    {
+      question: "Arrange the following:\n1. The seed began to sprout roots.\n2. The farmer planted a seed in the soil.\n3. Soon, a small green shoot appeared.\n4. He watered it every day.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nGrowth Cycle: Plant (2) -> Water (4) -> Roots (1) -> Shoot (3)."
+    },
+    {
+      question: "Arrange the following:\n1. He paid for the groceries at the counter.\n2. Mark went to the supermarket.\n3. He put the bags in his car.\n4. He picked up milk, eggs, and bread.",
+      options: ["2-4-1-3", "2-1-4-3", "4-2-1-3", "1-2-3-4"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nChronology: Go to market -> Pick items -> Pay -> Leave."
+    },
+    {
+      question: "Arrange the following:\n1. The audience clapped loudly.\n2. The singer walked onto the stage.\n3. She took a bow and smiled.\n4. She sang a beautiful song.",
+      options: ["2-4-3-1", "2-1-4-3", "2-4-1-3", "1-2-3-4"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nEvent Flow: Enter (2) -> Sing (4) -> Audience Claps (1) -> Bow (3). Note: Sometimes Clapping happens before Bowing."
+    },
+    {
+      question: "Arrange the following:\n1. I brushed my teeth.\n2. I woke up at 6:00 AM.\n3. I ate my breakfast.\n4. I took a shower.",
+      options: ["2-1-4-3", "2-4-1-3", "2-3-1-4", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nTypical Routine: Wake up -> Shower -> Brush -> Breakfast."
+    },
+    {
+      question: "Arrange the following:\n1. It started to rain heavily.\n2. We decided to go for a picnic.\n3. We packed our food and drinks.\n4. We had to run back inside the house.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nStory: Plan (2) -> Prep (3) -> Conflict/Rain (1) -> Result/Run (4)."
+    },
+    {
+      question: "Arrange the following:\n1. Then, mix the eggs and flour.\n2. First, break the eggs into a bowl.\n3. Finally, pour the mixture into a pan.\n4. Beat the eggs until fluffy.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nRecipe: Break -> Beat -> Mix -> Pour."
+    },
+    {
+      question: "Arrange the following:\n1. She failed the exam.\n2. She did not study for the test.\n3. She felt very sad.\n4. The teacher returned the papers.",
+      options: ["2-4-1-3", "1-2-3-4", "4-1-2-3", "2-1-4-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nCause & Effect: Didn't study -> Papers returned -> Failed -> Sad."
+    },
+    {
+      question: "Arrange the following:\n1. He washed the car with soap.\n2. Dad decided to clean his car.\n3. He rinsed it with water.\n4. He dried it with a towel.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-2-1-3"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nProcess: Decide -> Wash -> Rinse -> Dry."
+    },
+    {
+      question: "Arrange the following:\n1. The dog chased the cat.\n2. The cat ran up the tree.\n3. The dog barked at the bottom.\n4. They were playing in the garden.",
+      options: ["4-1-2-3", "1-2-3-4", "4-2-1-3", "1-4-2-3"],
+      answer: "4-1-2-3",
+      explanation: "Correct Order: 4-1-2-3.\nStory: Setting (Garden) -> Chase -> Escape -> Ending."
+    },
+    {
+      question: "Arrange the following:\n1. Put the letter in the envelope.\n2. Write your message on the paper.\n3. Seal the envelope.\n4. Place a stamp on the corner.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nSteps: Write -> Insert -> Seal -> Stamp."
+    },
+    {
+      question: "Arrange the following:\n1. Everyone shouted 'Happy Birthday!'.\n2. The room was dark and quiet.\n3. Maria walked into the room.\n4. Suddenly, the lights turned on.",
+      options: ["2-3-4-1", "1-2-3-4", "3-2-4-1", "2-4-3-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nSurprise: Dark room -> Enter -> Lights -> Shout."
+    },
+    {
+      question: "Arrange the following:\n1. He bought a ticket at the booth.\n2. He watched the movie and ate popcorn.\n3. John went to the cinema.\n4. He found his seat inside.",
+      options: ["3-1-4-2", "3-4-1-2", "1-3-4-2", "2-3-1-4"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nChronology: Arrive -> Buy Ticket -> Seat -> Watch."
+    },
+    {
+      question: "Arrange the following:\n1. The teacher asked a question.\n2. Lisa raised her hand.\n3. The teacher called her name.\n4. Lisa gave the correct answer.",
+      options: ["1-2-3-4", "2-3-1-4", "1-3-2-4", "4-1-2-3"],
+      answer: "1-2-3-4",
+      explanation: "Correct Order: 1-2-3-4.\nClassroom flow: Ask -> Raise hand -> Call -> Answer."
+    },
+    {
+      question: "Arrange the following:\n1. Mix blue and yellow paint.\n2. Get a clean canvas.\n3. You will get the color green.\n4. Paint the grass on the canvas.",
+      options: ["2-1-3-4", "1-2-3-4", "2-4-1-3", "4-1-3-2"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nArt: Canvas -> Mix -> Result (Green) -> Use."
+    },
+    {
+      question: "Arrange the following:\n1. The alarm rang loudly.\n2. He turned off the alarm.\n3. He went back to sleep.\n4. He was late for work.",
+      options: ["1-2-3-4", "2-3-1-4", "1-3-2-4", "4-1-2-3"],
+      answer: "1-2-3-4",
+      explanation: "Correct Order: 1-2-3-4.\nBad morning: Ring -> Off -> Sleep -> Late."
+    },
+    {
+      question: "Arrange the following:\n1. Open the book to page one.\n2. Sit down in a comfortable chair.\n3. Start reading the first chapter.\n4. Pick a book from the shelf.",
+      options: ["4-2-1-3", "4-1-2-3", "2-4-1-3", "1-2-3-4"],
+      answer: "4-2-1-3",
+      explanation: "Correct Order: 4-2-1-3.\nReading: Pick -> Sit -> Open -> Read."
+    },
+    {
+      question: "Arrange the following:\n1. It creates a rainbow.\n2. The sun shines through the rain.\n3. The light bends and splits into colors.\n4. It rains on a sunny day.",
+      options: ["4-2-3-1", "1-2-3-4", "4-3-2-1", "2-4-3-1"],
+      answer: "4-2-3-1",
+      explanation: "Correct Order: 4-2-3-1.\nScience: Rain/Sun -> Sunlight passes -> Refraction -> Rainbow."
+    },
+    {
+      question: "Arrange the following:\n1. She checked her shopping list.\n2. She went to the checkout counter.\n3. She put items in her cart.\n4. She entered the grocery store.",
+      options: ["4-1-3-2", "1-4-3-2", "4-3-1-2", "2-4-1-3"],
+      answer: "4-1-3-2",
+      explanation: "Correct Order: 4-1-3-2.\nShopping: Enter -> List -> Cart -> Pay."
+    },
+    {
+      question: "Arrange the following:\n1. The bird built a nest.\n2. The eggs hatched into chicks.\n3. She laid three blue eggs.\n4. She sat on them to keep them warm.",
+      options: ["1-3-4-2", "1-2-3-4", "3-4-2-1", "1-4-3-2"],
+      answer: "1-3-4-2",
+      explanation: "Correct Order: 1-3-4-2.\nNature: Nest -> Lay -> Incubate -> Hatch."
+    },
+    {
+      question: "Arrange the following:\n1. He put on his helmet.\n2. He rode his bike to the park.\n3. He checked the tires.\n4. He took his bike out of the garage.",
+      options: ["4-3-1-2", "1-2-3-4", "4-1-2-3", "3-4-1-2"],
+      answer: "4-3-1-2",
+      explanation: "Correct Order: 4-3-1-2.\nSafety first: Bike out -> Check tires -> Helmet -> Ride."
+    },
+    {
+      question: "Arrange the following:\n1. Apply shampoo to your hair.\n2. Wet your hair with water.\n3. Rinse the shampoo off.\n4. Dry your hair with a towel.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nShower: Wet -> Soap -> Rinse -> Dry."
+    },
+    {
+      question: "Arrange the following:\n1. The crowd cheered wildly.\n2. The game ended with a goal.\n3. The players shook hands.\n4. The winning team lifted the trophy.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-4-1", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nSports: End/Goal -> Cheer -> Handshake -> Trophy."
+    },
+    {
+      question: "Arrange the following:\n1. He realized he lost his keys.\n2. He arrived at his front door.\n3. He searched his pockets.\n4. He had to call a locksmith.",
+      options: ["2-3-1-4", "2-1-3-4", "1-2-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nEvent: Arrive -> Search -> Realization -> Consequence."
+    },
+    {
+      question: "Arrange the following:\n1. The water turns into vapor.\n2. The sun heats the ocean.\n3. The vapor forms clouds.\n4. The rain falls from the clouds.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nWater Cycle: Heat -> Evaporation -> Condensation -> Rain."
+    },
+    {
+      question: "Arrange the following:\n1. Press the power button.\n2. Plug the computer into the outlet.\n3. Wait for the system to boot up.\n4. Log in with your password.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTech: Plug -> Power -> Boot -> Login."
+    },
+    {
+      question: "Arrange the following:\n1. The caterpillar eats leaves.\n2. It forms a chrysalis.\n3. A butterfly emerges.\n4. An egg is laid on a leaf.",
+      options: ["4-1-2-3", "1-2-3-4", "4-2-1-3", "3-2-1-4"],
+      answer: "4-1-2-3",
+      explanation: "Correct Order: 4-1-2-3.\nInsect Life: Egg -> Eat -> Chrysalis -> Butterfly."
+    },
+    {
+      question: "Arrange the following:\n1. Put the dirty clothes in the washer.\n2. Add detergent powder.\n3. Turn on the machine.\n4. Hang the clothes to dry.",
+      options: ["1-2-3-4", "2-1-3-4", "1-3-2-4", "4-1-2-3"],
+      answer: "1-2-3-4",
+      explanation: "Correct Order: 1-2-3-4.\nLaundry: Load -> Soap -> Wash -> Dry."
+    },
+    {
+      question: "Arrange the following:\n1. She saved money for months.\n2. She wanted a new phone.\n3. She went to the store.\n4. She bought the phone happily.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-3-2-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nGoal: Want -> Save -> Go -> Buy."
+    },
+    {
+      question: "Arrange the following:\n1. The waiter brought the menu.\n2. We sat at a table.\n3. We ordered our food.\n4. We entered the restaurant.",
+      options: ["4-2-1-3", "1-2-3-4", "4-1-2-3", "2-4-1-3"],
+      answer: "4-2-1-3",
+      explanation: "Correct Order: 4-2-1-3.\nRestaurant: Enter -> Sit -> Menu -> Order."
+    },
+    {
+      question: "Arrange the following:\n1. Blow out the candles.\n2. Sing the birthday song.\n3. Light the candles on the cake.\n4. Make a wish.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nCake Ritual: Light -> Sing -> Wish -> Blow."
+    },
+    {
+      question: "Arrange the following:\n1. The movie ended.\n2. The lights came on.\n3. The credits rolled on the screen.\n4. The audience walked out.",
+      options: ["1-3-2-4", "1-2-3-4", "3-1-2-4", "2-1-3-4"],
+      answer: "1-3-2-4",
+      explanation: "Correct Order: 1-3-2-4.\nEnding: End -> Credits -> Lights -> Exit."
+    },
+    {
+      question: "Arrange the following:\n1. He put the letter in the mailbox.\n2. He wrote a letter to his friend.\n3. He walked to the post office.\n4. He bought a stamp.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "4-2-3-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nMail: Write -> Go -> Stamp -> Post."
+    },
+    {
+      question: "Arrange the following:\n1. The ambulance arrived.\n2. There was a car accident.\n3. The victim was taken to the hospital.\n4. People called for help.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nEmergency: Accident -> Call -> Arrival -> Hospital."
+    },
+    {
+      question: "Arrange the following:\n1. She opened her gift.\n2. It was a beautiful necklace.\n3. She hugged her mother.\n4. It was her birthday.",
+      options: ["4-1-2-3", "1-2-3-4", "4-2-1-3", "1-4-2-3"],
+      answer: "4-1-2-3",
+      explanation: "Correct Order: 4-1-2-3.\nGift giving: Context (Birthday) -> Open -> See -> React."
+    },
+    {
+      question: "Arrange the following:\n1. He practiced every day.\n2. He wanted to learn guitar.\n3. He bought a guitar.\n4. He played a song for his friends.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nMusic: Want -> Buy -> Practice -> Perform."
+    },
+    {
+      question: "Arrange the following:\n1. The bread popped up.\n2. Put the bread in the toaster.\n3. Spread butter on the toast.\n4. Push the lever down.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nToast: Insert -> Push -> Pop -> Butter."
+    },
+    {
+      question: "Arrange the following:\n1. The referee blew the whistle.\n2. The players took their positions.\n3. The game started.\n4. The ball was kicked.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nKickoff: Positions -> Whistle -> Kick -> Game On."
+    },
+    {
+      question: "Arrange the following:\n1. She studied hard for the test.\n2. She received an 'A'.\n3. She took the test.\n4. She was very happy.",
+      options: ["1-3-2-4", "1-2-3-4", "3-1-2-4", "2-1-3-4"],
+      answer: "1-3-2-4",
+      explanation: "Correct Order: 1-3-2-4.\nGrades: Study -> Take Test -> Result -> Feeling."
+    },
+    {
+      question: "Arrange the following:\n1. The phone rang.\n2. He answered it.\n3. He said 'Hello'.\n4. He picked up the receiver.",
+      options: ["1-4-2-3", "1-2-3-4", "1-4-3-2", "4-1-2-3"],
+      answer: "1-4-2-3",
+      explanation: "Correct Order: 1-4-2-3.\nCall: Ring -> Pickup -> Connect -> Speak."
+    },
+    {
+      question: "Arrange the following:\n1. It creates a snowman.\n2. Roll a large ball of snow.\n3. Roll a medium and small ball.\n4. Stack them on top of each other.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nBuilding: Base -> Parts -> Assemble -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. The library closes at 5 PM.\n2. She borrowed three books.\n3. She arrived at 4:30 PM.\n4. She left just in time.",
+      options: ["1-3-2-4", "1-2-3-4", "3-2-1-4", "2-3-1-4"],
+      answer: "1-3-2-4",
+      explanation: "Correct Order: 1-3-2-4.\nConstraint: Info -> Arrive -> Action -> Escape."
+    },
+    {
+      question: "Arrange the following:\n1. Put the dirty dishes in the sink.\n2. Wash them with soap.\n3. Rinse them with water.\n4. Place them on the rack to dry.",
+      options: ["1-2-3-4", "2-1-3-4", "1-3-2-4", "4-1-2-3"],
+      answer: "1-2-3-4",
+      explanation: "Correct Order: 1-2-3-4.\nDishes: Sink -> Soap -> Rinse -> Dry."
+    },
+    {
+      question: "Arrange the following:\n1. He crossed the finish line.\n2. The race began.\n3. He ran as fast as he could.\n4. He won the gold medal.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nRace: Start -> Run -> Finish -> Win."
+    },
+    {
+      question: "Arrange the following:\n1. Add hot water.\n2. Put coffee powder in a mug.\n3. Stir well.\n4. Add sugar and milk.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "4-2-1-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nCoffee: Powder -> Water -> Additions -> Stir."
+    },
+    {
+      question: "Arrange the following:\n1. The guests arrived.\n2. She cleaned the house.\n3. She cooked dinner.\n4. They ate together.",
+      options: ["2-3-1-4", "1-2-3-4", "3-2-1-4", "1-4-2-3"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nParty: Clean -> Cook -> Arrival -> Eat."
+    },
+    {
+      question: "Arrange the following:\n1. He saw a dentist.\n2. He had a toothache.\n3. The dentist filled the cavity.\n4. He felt much better.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "1-4-2-3"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nPain: Problem -> Visit -> Fix -> Relief."
+    },
+    {
+      question: "Arrange the following:\n1. The plane took off.\n2. Passengers boarded the plane.\n3. They fastened their seatbelts.\n4. The plane arrived at the destination.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nFlight: Board -> Buckle -> Takeoff -> Land."
+    }
   ],
 
-  // ============================================================
-  // LEVEL 2: INTERMEDIATE (50 Items) - Irregular & Comparison
-  // ============================================================
+  // ==========================================
+  // LEVEL 2: INTERMEDIATE (Cause & Effect, Processes)
+  // ==========================================
   intermediate: [
-    // --- 51-60: Good vs Well ---
-    { question: "She plays the piano ______.", options: ["good", "well", "better", "best"], answer: "well", explanation: "Modifies 'plays' (verb)." },
-    { question: "Her piano playing is ______.", options: ["good", "well", "better", "best"], answer: "good", explanation: "Modifies 'playing' (noun phrase) via linking verb." },
-    { question: "I don't feel ______ today.", options: ["good", "well", "nice", "fine"], answer: "well", explanation: "Well as adjective for health." },
-    { question: "He did a ______ job.", options: ["good", "well"], answer: "good", explanation: "Modifies 'job' (noun)." },
-    { question: "The team played ______ yesterday.", options: ["good", "well"], answer: "well", explanation: "Modifies 'played' (verb)." },
-    { question: "It looks ______.", options: ["good", "well"], answer: "good", explanation: "Linking verb 'looks' -> Adjective." },
-    { question: "She speaks English ______.", options: ["good", "well"], answer: "well", explanation: "Modifies 'speaks' (verb)." },
-    { question: "He is a ______ student.", options: ["good", "well"], answer: "good", explanation: "Modifies 'student' (noun)." },
-    { question: "Did you sleep ______?", options: ["good", "well"], answer: "well", explanation: "Modifies 'sleep' (verb)." },
-    { question: "The food tastes ______.", options: ["good", "well"], answer: "good", explanation: "Linking verb 'tastes' -> Adjective." },
-
-    // --- 61-70: Comparison ---
-    { question: "He runs ______ than me.", options: ["fast", "faster", "fastly", "more fast"], answer: "faster", explanation: "Comparative of fast." },
-    { question: "She works ______ than her brother.", options: ["hard", "harder", "hardly", "more hard"], answer: "harder", explanation: "Comparative of hard." },
-    { question: "Please speak ______.", options: ["more clearly", "clearlier", "most clearly", "clear"], answer: "more clearly", explanation: "Comparative of -ly adverb." },
-    { question: "He arrived ______ than expected.", options: ["early", "earlier", "more early", "earliest"], answer: "earlier", explanation: "Comparative of early." },
-    { question: "Of all the runners, he ran ______.", options: ["fastest", "faster", "most fast", "fastly"], answer: "fastest", explanation: "Superlative." },
-    { question: "She sings ______ of all.", options: ["beautifully", "more beautifully", "most beautifully", "beauty"], answer: "most beautifully", explanation: "Superlative of -ly adverb." },
-    { question: "He drives ______ than his father.", options: ["carefully", "more carefully", "most carefully", "carefuller"], answer: "more carefully", explanation: "Comparative." },
-    { question: "Who woke up ______?", options: ["earlier", "earliest", "early", "more early"], answer: "earlier", explanation: "Comparing (implied context usually 2, or simple comparative)." },
-    { question: "I did ______ on the test than I thought.", options: ["badly", "worse", "worst", "badder"], answer: "worse", explanation: "Irregular comparative of badly." },
-    { question: "He treats her ______ than anyone else.", options: ["better", "best", "gooder", "well"], answer: "better", explanation: "Irregular comparative of well." },
-
-    // --- 71-80: Placement ---
-    { question: "Choose the correct order:", options: ["I always am late.", "I am always late.", "Always I am late.", "I am late always."], answer: "I am always late.", explanation: "After 'to be'." },
-    { question: "Choose the correct order:", options: ["He often plays tennis.", "He plays often tennis.", "He plays tennis often.", "Often he plays tennis."], answer: "He often plays tennis.", explanation: "Before main verb." },
-    { question: "Choose the correct order:", options: ["We usually go to the park.", "We go usually to the park.", "We go to the park usually.", "Usually we go to the park."], answer: "We usually go to the park.", explanation: "Before main verb." },
-    { question: "Choose the correct order:", options: ["She doesn't always eat breakfast.", "She always doesn't eat breakfast.", "She doesn't eat always breakfast.", "She eats always breakfast."], answer: "She doesn't always eat breakfast.", explanation: "Between aux and verb." },
-    { question: "Choose the correct order:", options: ["I have never been to Japan.", "I never have been to Japan.", "I have been never to Japan.", "I have been to Japan never."], answer: "I have never been to Japan.", explanation: "After first auxiliary 'have'." },
-    { question: "Choose the correct order:", options: ["They rarely watch TV.", "They watch rarely TV.", "Rarely they watch TV.", "They watch TV rarely."], answer: "They rarely watch TV.", explanation: "Before main verb." },
-    { question: "Choose the correct order:", options: ["He is seldom angry.", "He seldom is angry.", "He is angry seldom.", "Seldom he is angry."], answer: "He is seldom angry.", explanation: "After 'is'." },
-    { question: "Choose the correct order:", options: ["Do you often visit?", "Do often you visit?", "You do visit often?", "Visit you often?"], answer: "Do you often visit?", explanation: "Subject + Adverb + Verb." },
-    { question: "Choose the correct order:", options: ["She sometimes cooks.", "She cooks sometimes.", "Sometimes she cooks.", "All are acceptable."], answer: "All are acceptable.", explanation: "'Sometimes' is flexible." },
-    { question: "Choose the correct order:", options: ["My dad usually works late.", "My dad works usually late.", "Usually works my dad late.", "My dad works late usually."], answer: "My dad usually works late.", explanation: "Before main verb." },
-
-    // --- 81-90: Hard vs Hardly, Late vs Lately ---
-    { question: "He works ______.", options: ["hard", "hardly"], answer: "hard", explanation: "With effort." },
-    { question: "He ______ works.", options: ["hard", "hardly"], answer: "hardly", explanation: "Almost not (lazy)." },
-    { question: "I haven't seen him ______.", options: ["late", "lately"], answer: "lately", explanation: "Recently." },
-    { question: "The bus arrived ______.", options: ["late", "lately"], answer: "late", explanation: "Not on time." },
-    { question: "She can ______ see without her glasses.", options: ["hard", "hardly"], answer: "hardly", explanation: "Almost not." },
-    { question: "He hit the ball ______.", options: ["hard", "hardly"], answer: "hard", explanation: "With force." },
-    { question: "Have you been busy ______?", options: ["late", "lately"], answer: "lately", explanation: "Recently." },
-    { question: "He stayed up ______.", options: ["late", "lately"], answer: "late", explanation: "Until late time." },
-    { question: "There is ______ any food left.", options: ["hard", "hardly"], answer: "hardly", explanation: "Almost none." },
-    { question: "She tries ______ to succeed.", options: ["hard", "hardly"], answer: "hard", explanation: "With effort." },
-
-    // --- 91-100: Intensifiers ---
-    { question: "The soup is ______ hot to eat.", options: ["very", "too", "enough", "much"], answer: "too", explanation: "Negative excess." },
-    { question: "He is strong ______ to lift it.", options: ["very", "too", "enough", "so"], answer: "enough", explanation: "Adj + Enough." },
-    { question: "She is ______ tired.", options: ["very", "enough", "much", "many"], answer: "very", explanation: "High degree." },
-    { question: "It is ______ cold today.", options: ["very", "enough", "much", "many"], answer: "very", explanation: "Modifies adjective." },
-    { question: "He is not old ______ to drive.", options: ["very", "too", "enough", "much"], answer: "enough", explanation: "Adj + Enough." },
-    { question: "The box is ______ heavy for me to lift.", options: ["very", "too", "enough", "so"], answer: "too", explanation: "Excess." },
-    { question: "He ran fast ______ to win.", options: ["very", "too", "enough", "so"], answer: "enough", explanation: "Adv + Enough." },
-    { question: "I am ______ happy for you.", options: ["so", "too", "enough", "such"], answer: "so", explanation: "Emphasize adj." },
-    { question: "It was ______ a good movie.", options: ["so", "such", "very", "too"], answer: "such", explanation: "Such + a/an + Adj + Noun." },
-    { question: "The tea is ______ sweet.", options: ["very", "enough", "much", "many"], answer: "very", explanation: "High degree." }
-  ],
-
-  // ============================================================
-  // LEVEL 3: ADVANCED (50 Items) - Inversion & Connectors
-  // ============================================================
-  advanced: [
-    // --- 101-110: Inversion ---
-    { question: "______ have I seen such a mess.", options: ["Never", "Always", "Often", "Usually"], answer: "Never", explanation: "Negative inversion." },
-    { question: "Rarely ______ to the cinema.", options: ["we go", "do we go", "we do go", "go we"], answer: "do we go", explanation: "Inversion with 'Rarely'." },
-    { question: "Seldom ______ such talent.", options: ["one sees", "does one see", "sees one", "one does see"], answer: "does one see", explanation: "Inversion with 'Seldom'." },
-    { question: "Hardly ______ arrived when it rained.", options: ["had I", "I had", "have I", "I have"], answer: "had I", explanation: "Inversion with 'Hardly'." },
-    { question: "Little ______ that he was watching.", options: ["did she know", "she knew", "she did know", "knew she"], answer: "did she know", explanation: "Inversion with 'Little'." },
-    { question: "Nowhere ______ find a better offer.", options: ["you will", "will you", "you can", "can"], answer: "will you", explanation: "Inversion with 'Nowhere'." },
-    { question: "On no account ______ be opened.", options: ["should this door", "this door should", "this door", "door should"], answer: "should this door", explanation: "Inversion with 'On no account'." },
-    { question: "Not only ______ sing, but he also dances.", options: ["he does", "does he", "he can", "he is"], answer: "does he", explanation: "Inversion with 'Not only'." },
-    { question: "Scarcely ______ down when the phone rang.", options: ["I sat", "did I sit", "had I sat", "was I sitting"], answer: "had I sat", explanation: "Inversion with 'Scarcely' (Past Perfect)." },
-    { question: "Under no circumstances ______ leave.", options: ["you should", "should you", "you must", "are you"], answer: "should you", explanation: "Inversion with 'Under no circumstances'." },
-
-    // --- 111-120: Placement of "Only" ---
-    { question: "Meaning: 'No one else but John went.'", options: ["Only John went.", "John went only.", "John only went.", "John went."], answer: "Only John went.", explanation: "Modifies subject 'John'." },
-    { question: "Meaning: 'I merely looked at him (didn't talk).'", options: ["Only I looked at him.", "I only looked at him.", "I looked at him only.", "I looked only at him."], answer: "I only looked at him.", explanation: "Modifies verb 'looked'." },
-    { question: "Meaning: 'She eats nothing but vegetables.'", options: ["She only eats vegetables.", "She eats only vegetables.", "Only she eats vegetables.", "She eats vegetables only."], answer: "She eats only vegetables.", explanation: "Modifies 'vegetables'." },
-    { question: "Place 'only' correctly: 'He lent me five pesos.' (Meaning: No more than 5).", options: ["Only he lent me five pesos.", "He lent me only five pesos.", "He only lent me five pesos.", "He lent me five pesos only."], answer: "He lent me only five pesos.", explanation: "Modifies 'five pesos'." },
-    { question: "Meaning: 'It happens on Sundays and no other day.'", options: ["It only happens on Sundays.", "It happens only on Sundays.", "Only it happens on Sundays.", "It happens on Sundays only."], answer: "It happens only on Sundays.", explanation: "Modifies 'on Sundays'." },
-    { question: "The meeting lasted ______ an hour.", options: ["only", "alone", "single", "justly"], answer: "only", explanation: "Limiter." },
-    { question: "______ three students passed.", options: ["Only", "Justly", "Merely", "Alone"], answer: "Only", explanation: "Limiter." },
-    { question: "I have ______ two hands.", options: ["only", "alone", "merely", "single"], answer: "only", explanation: "Limiter." },
-    { question: "She is the ______ one who knows.", options: ["only", "alone", "lonely", "solely"], answer: "only", explanation: "Adjective meaning 'sole'." },
-    { question: "He did it ______ for the money.", options: ["only", "alone", "lonely", "solitary"], answer: "only", explanation: "Limiter." },
-
-    // --- 121-130: Connectors ---
-    { question: "It rained hard; ______, we played soccer.", options: ["however", "therefore", "moreover", "consequently"], answer: "however", explanation: "Contrast." },
-    { question: "He didn't study; ______, he failed.", options: ["however", "therefore", "nevertheless", "otherwise"], answer: "therefore", explanation: "Result." },
-    { question: "The rent is high; ______, the location is bad.", options: ["therefore", "moreover", "consequently", "thus"], answer: "moreover", explanation: "Addition (negative + negative)." },
-    { question: "Run fast; ______, you will be late.", options: ["otherwise", "therefore", "however", "besides"], answer: "otherwise", explanation: "Condition/Else." },
-    { question: "I love milk; ______, I am allergic to it.", options: ["consequently", "however", "therefore", "moreover"], answer: "however", explanation: "Contrast." },
-    { question: "Select correct punctuation:", options: ["He is sick, therefore he is absent.", "He is sick; therefore, he is absent.", "He is sick therefore, he is absent.", "He is sick; therefore he is absent."], answer: "He is sick; therefore, he is absent.", explanation: "Semicolon + connector + comma." },
-    { question: "Select correct punctuation:", options: ["I tried hard; however, I failed.", "I tried hard, however I failed.", "I tried hard however, I failed.", "I tried hard; however I failed."], answer: "I tried hard; however, I failed.", explanation: "Semicolon + connector + comma." },
-    { question: "He is rich; ______, he is unhappy.", options: ["nevertheless", "consequently", "therefore", "additionally"], answer: "nevertheless", explanation: "Contrast/In spite of." },
-    { question: "We have no money; ______, we can't buy it.", options: ["however", "consequently", "nevertheless", "otherwise"], answer: "consequently", explanation: "Result." },
-    { question: "It was cold; ______, we went swimming.", options: ["therefore", "besides", "nonetheless", "consequently"], answer: "nonetheless", explanation: "Contrast/Even so." },
-
-    // --- 131-140: Intensity ---
-    { question: "I ______ agree with you.", options: ["completely", "very", "too", "much"], answer: "completely", explanation: "Strong agreement." },
-    { question: "It was ______ ridiculous.", options: ["utterly", "very", "much", "many"], answer: "utterly", explanation: "Extreme adjective modifier." },
-    { question: "She is ______ prettier than her sister.", options: ["much", "very", "too", "so"], answer: "much", explanation: "Modifier for comparative." },
-    { question: "He is ______ the best player.", options: ["by far", "very", "too", "so"], answer: "by far", explanation: "Modifier for superlative." },
-    { question: "I am ______ sorry.", options: ["terribly", "terrible", "much", "many"], answer: "terribly", explanation: "Collocation." },
-    { question: "It is ______ freezing outside.", options: ["absolutely", "very", "too", "fairly"], answer: "absolutely", explanation: "Extreme adjective modifier." },
-    { question: "The movie was ______ hilarious.", options: ["absolutely", "very", "slightly", "fairly"], answer: "absolutely", explanation: "Extreme adjective modifier." },
-    { question: "I was ______ exhausted.", options: ["totally", "very", "quite", "fairly"], answer: "totally", explanation: "Extreme adjective modifier." },
-    { question: "It is ______ hot (meaning 'a little').", options: ["rather", "too", "utterly", "completely"], answer: "rather", explanation: "Moderate degree." },
-    { question: "She is ______ shorter than him.", options: ["slightly", "very", "too", "quite"], answer: "slightly", explanation: "Small degree." },
-
-    // --- 141-150: Viewpoint ---
-    { question: "______, he didn't get the job.", options: ["Unfortunately", "Unfortunate", "Happy", "Badly"], answer: "Unfortunately", explanation: "Comment adverb." },
-    { question: "______, it will rain today.", options: ["Presumably", "Presume", "Sure", "Definite"], answer: "Presumably", explanation: "Comment adverb." },
-    { question: "______, I don't care.", options: ["Frankly", "Frank", "Honest", "True"], answer: "Frankly", explanation: "Comment adverb." },
-    { question: "______, he arrived on time.", options: ["Surprisingly", "Surprising", "Surprise", "Shock"], answer: "Surprisingly", explanation: "Comment adverb." },
-    { question: "______, there are no free seats.", options: ["Regrettably", "Regret", "Sorry", "Sad"], answer: "Regrettably", explanation: "Comment adverb." },
-    { question: "______, she is the best candidate.", options: ["Undoubtedly", "Doubt", "Sure", "Uncertain"], answer: "Undoubtedly", explanation: "Comment adverb." },
-    { question: "______, we need to cut costs.", options: ["Basically", "Basic", "Base", "Basis"], answer: "Basically", explanation: "Comment adverb." },
-    { question: "______, I prefer tea.", options: ["Personally", "Person", "Private", "Self"], answer: "Personally", explanation: "Comment adverb." },
-    { question: "______, he is right.", options: ["Technically", "Technical", "Technique", "Tech"], answer: "Technically", explanation: "Comment adverb." },
-    { question: "______, it was a disaster.", options: ["Essentially", "Essential", "Essence", "Real"], answer: "Essentially", explanation: "Comment adverb." }
-  ],
-
-  // ============================================================
-  // LEVEL 4: EXPERT (50 Items) - Tricky Pairs & Redundancy
-  // ============================================================
-  expert: [
-    // --- 151-160: Deep vs Deeply etc. ---
-    { question: "He threw the ball ______.", options: ["high", "highly"], answer: "high", explanation: "Physical height." },
-    { question: "He is ______ respected.", options: ["high", "highly"], answer: "highly", explanation: "Figurative degree." },
-    { question: "I dove ______ into the ocean.", options: ["deep", "deeply"], answer: "deep", explanation: "Physical depth." },
-    { question: "I was ______ moved by the movie.", options: ["deep", "deeply"], answer: "deeply", explanation: "Emotional degree." },
-    { question: "The bird flew ______.", options: ["low", "lowly"], answer: "low", explanation: "Physical height." },
-    { question: "He bowed ______.", options: ["low", "lowly"], answer: "low", explanation: "Physical action." },
-    { question: "She arrived ______.", options: ["late", "lately"], answer: "late", explanation: "Not on time." },
-    { question: "I haven't eaten ______.", options: ["late", "lately"], answer: "lately", explanation: "Recently." },
-    { question: "Stand ______.", options: ["clear", "clearly"], answer: "clear", explanation: "Away from." },
-    { question: "Speak ______.", options: ["clear", "clearly"], answer: "clearly", explanation: "Understandably." },
-
-    // --- 161-170: Meaning Shift ---
-    { question: "He works ______.", options: ["hard", "hardly"], answer: "hard", explanation: "With effort." },
-    { question: "He ______ works.", options: ["hardly", "hard"], answer: "hardly", explanation: "Almost not." },
-    { question: "The eagle flies ______.", options: ["high", "highly"], answer: "high", explanation: "Physical." },
-    { question: "It is ______ probable.", options: ["high", "highly"], answer: "highly", explanation: "Degree." },
-    { question: "He sat ______ to me.", options: ["close", "closely"], answer: "close", explanation: "Distance." },
-    { question: "Listen ______.", options: ["close", "closely"], answer: "closely", explanation: "Attention." },
-    { question: "The door was ______ open.", options: ["wide", "widely"], answer: "wide", explanation: "Physical extent." },
-    { question: "He is ______ known.", options: ["wide", "widely"], answer: "widely", explanation: "Range/Degree." },
-    { question: "You are ______ right.", options: ["dead", "deadly"], answer: "dead", explanation: "Idiom: Completely." },
-    { question: "It is a ______ weapon.", options: ["dead", "deadly"], answer: "deadly", explanation: "Lethal (Adjective)." },
-
-    // --- 171-180: Imposter Adjectives ---
-    { question: "She is a ______ person.", options: ["lovely", "lovelily"], answer: "lovely", explanation: "Adjective." },
-    { question: "He behaved in a ______ manner.", options: ["friendly", "friendlily"], answer: "friendly", explanation: "Adjective used in phrase." },
-    { question: "I feel ______.", options: ["lonely", "lone"], answer: "lonely", explanation: "Adjective." },
-    { question: "It was a ______ meeting.", options: ["timely", "timelily"], answer: "timely", explanation: "Adjective." },
-    { question: "That looks ______.", options: ["ugly", "uglily"], answer: "ugly", explanation: "Adjective." },
-    { question: "He is a ______ man.", options: ["kindly", "kindlily"], answer: "kindly", explanation: "Adjective." },
-    { question: "It was a ______ error.", options: ["costly", "costlily"], answer: "costly", explanation: "Adjective." },
-    { question: "Daily is an ______.", options: ["Adjective only", "Adverb only", "Both"], answer: "Both", explanation: "Can be both." },
-    { question: "Early is an ______.", options: ["Adjective only", "Adverb only", "Both"], answer: "Both", explanation: "Can be both." },
-    { question: "Fast is an ______.", options: ["Adjective only", "Adverb only", "Both"], answer: "Both", explanation: "Can be both." },
-
-    // --- 181-190: Adverbial Objectives ---
-    { question: "Let's go ______.", options: ["home", "to home"], answer: "home", explanation: "Adverb of place." },
-    { question: "I waited ______.", options: ["two hours", "for two hours", "Both are correct"], answer: "Both are correct", explanation: "Duration." },
-    { question: "He ran ______.", options: ["three miles", "for three miles", "Both are correct"], answer: "Both are correct", explanation: "Distance." },
-    { question: "See you ______.", options: ["next week", "on next week"], answer: "next week", explanation: "No prep before 'next'." },
-    { question: "We met ______.", options: ["last night", "on last night"], answer: "last night", explanation: "No prep before 'last'." },
-    { question: "Do it ______.", options: ["this way", "on this way"], answer: "this way", explanation: "Manner." },
-    { question: "They went ______.", options: ["abroad", "to abroad"], answer: "abroad", explanation: "Adverb of place." },
-    { question: "Go ______.", options: ["upstairs", "to upstairs"], answer: "upstairs", explanation: "Adverb of place." },
-    { question: "Come ______.", options: ["inside", "to inside"], answer: "inside", explanation: "Adverb of place." },
-    { question: "He went ______.", options: ["downtown", "to downtown"], answer: "downtown", explanation: "Adverb of place." },
-
-    // --- 191-200: Redundancy ---
-    { question: "I can't see ______.", options: ["nothing", "anything"], answer: "anything", explanation: "Avoid double negative." },
-    { question: "He hardly ______ speaks.", options: ["never", "ever"], answer: "ever", explanation: "Avoid double negative." },
-    { question: "I rarely ______ eat there.", options: ["don't", "ever"], answer: "ever", explanation: "Avoid double negative." },
-    { question: "Return back is ______.", options: ["correct", "redundant"], answer: "redundant", explanation: "Return means go back." },
-    { question: "Repeat again is ______.", options: ["correct", "redundant"], answer: "redundant", explanation: "Repeat means do again." },
-    { question: "Proceed forward is ______.", options: ["correct", "redundant"], answer: "redundant", explanation: "Proceed means move forward." },
-    { question: "Revert back is ______.", options: ["correct", "redundant"], answer: "redundant", explanation: "Revert means go back." },
-    { question: "Sufficient enough is ______.", options: ["correct", "redundant"], answer: "redundant", explanation: "Mean the same thing." },
-    { question: "Scarcely ______ (meaning 'almost no one').", options: ["anyone", "no one"], answer: "anyone", explanation: "Avoid double negative." },
-    { question: "Barely ______ (meaning 'almost nothing').", options: ["anything", "nothing"], answer: "anything", explanation: "Avoid double negative." }
+    {
+      question: "Arrange the following:\n1. Consequently, classes were suspended.\n2. The typhoon hit the city strongly last night.\n3. Students stayed at home and waited for updates.\n4. Strong winds and heavy rains caused flooding.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\n(2) Main Event: Typhoon hits.\n(4) Detail: Flooding.\n(1) Result: Suspension.\n(3) Reaction: Students stay home."
+    },
+    {
+      question: "Arrange the following:\n1. This leads to global warming.\n2. Carbon dioxide traps heat in the atmosphere.\n3. Human activities burn fossil fuels.\n4. As a result, polar ice caps are melting.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-3-1-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nFlow: Activity -> Mechanism -> Warming -> Melting."
+    },
+    {
+      question: "Arrange the following:\n1. He opened the small box carefully.\n2. Inside, he found an old, rusty key.\n3. It belonged to the mysterious door in the attic.\n4. John found a box in the basement.",
+      options: ["4-1-2-3", "1-2-3-4", "4-2-1-3", "2-1-3-4"],
+      answer: "4-1-2-3",
+      explanation: "Correct Order: 4-1-2-3.\nNarrative: Find box -> Open -> See contents -> Identify use."
+    },
+    {
+      question: "Arrange the following:\n1. However, it started to rain in the afternoon.\n2. The morning was bright and sunny.\n3. We planned to play tennis outside.\n4. So, we decided to play chess indoors instead.",
+      options: ["2-3-1-4", "1-2-3-4", "3-2-1-4", "2-1-3-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nContrast: Good start -> Plan -> Rain (However) -> Change plan (So)."
+    },
+    {
+      question: "Arrange the following:\n1. This allows the plant to grow.\n2. Roots absorb water from the soil.\n3. The water travels up the stem to the leaves.\n4. Photosynthesis uses this water to make food.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nBiology: Absorb -> Transport -> Use -> Grow."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, regular exercise is recommended.\n2. It strengthens the heart and lungs.\n3. Exercise has many health benefits.\n4. It also reduces stress and anxiety.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nArgument: Topic -> Benefit 1 -> Benefit 2 -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. First, identify the problem clearly.\n2. Finally, evaluate if the solution worked.\n3. Problem solving involves several steps.\n4. Then, brainstorm possible solutions.",
+      options: ["3-1-4-2", "1-4-2-3", "3-4-1-2", "1-2-3-4"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nSteps: Topic (3) -> First (1) -> Then (4) -> Finally (2)."
+    },
+    {
+      question: "Arrange the following:\n1. This prevents soil erosion.\n2. Trees are vital for the environment.\n3. Their roots hold the soil together.\n4. Furthermore, they provide oxygen.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-1-2-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Mechanism -> Result -> Added Benefit."
+    },
+    {
+      question: "Arrange the following:\n1. She applied for several jobs.\n2. Mary graduated with honors.\n3. She was hired by a top company.\n4. Eventually, she was called for an interview.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nCareer: Graduate -> Apply -> Interview -> Hired."
+    },
+    {
+      question: "Arrange the following:\n1. The mixture is then baked in an oven.\n2. Clay is molded into a shape.\n3. This hardens it into pottery.\n4. Finally, it is painted and glazed.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nPottery: Mold -> Bake -> Harden -> Paint."
+    },
+    {
+      question: "Arrange the following:\n1. But today, smartphones are mini-computers.\n2. Technology has evolved rapidly.\n3. In the past, phones were only for calling.\n4. We can now browse the web and take photos.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-1-2-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nEvolution: General -> Past -> Present (But) -> Detail."
+    },
+    {
+      question: "Arrange the following:\n1. This helps maintain a healthy weight.\n2. A balanced diet includes fruits and vegetables.\n3. It also provides energy for daily activities.\n4. Eating right is essential for health.",
+      options: ["4-2-3-1", "1-2-3-4", "4-3-2-1", "2-3-4-1"],
+      answer: "4-2-3-1",
+      explanation: "Correct Order: 4-2-3-1.\nTopic -> Definition -> Benefit 1 -> Benefit 2."
+    },
+    {
+      question: "Arrange the following:\n1. The liquid turns into gas.\n2. Boiling occurs when liquid is heated.\n3. This gas escapes as steam.\n4. Bubbles form and rise to the surface.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nBoiling: Definition -> Bubbles -> Gas -> Steam."
+    },
+    {
+      question: "Arrange the following:\n1. He trained hard for the marathon.\n2. He felt proud of his achievement.\n3. On race day, he ran steady and fast.\n4. He crossed the finish line in record time.",
+      options: ["1-3-4-2", "1-2-3-4", "3-4-1-2", "1-4-3-2"],
+      answer: "1-3-4-2",
+      explanation: "Correct Order: 1-3-4-2.\nRace: Train -> Run -> Finish -> Feeling."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a vacuum inside the straw.\n2. You suck air out of the straw.\n3. Drinking with a straw involves physics.\n4. Atmospheric pressure pushes the liquid up.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-1-4-3"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nPhysics: Topic -> Action -> Vacuum -> Pressure."
+    },
+    {
+      question: "Arrange the following:\n1. However, he soon realized it was hard work.\n2. Tom wanted to build a treehouse.\n3. He gathered wood and tools.\n4. He asked his friends for help.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nProject: Idea -> Prep -> Struggle -> Solution."
+    },
+    {
+      question: "Arrange the following:\n1. It connects people from all over the world.\n2. The internet is a vast network.\n3. Information travels in seconds.\n4. This has changed how we communicate.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nInternet: Definition -> Function -> Speed -> Impact."
+    },
+    {
+      question: "Arrange the following:\n1. They have thick fur to keep warm.\n2. Polar bears live in the Arctic.\n3. They primarily eat seals.\n4. This helps them survive the cold.",
+      options: ["2-1-4-3", "1-2-3-4", "2-3-1-4", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nBear: Habitat -> Fur -> Benefit -> Diet."
+    },
+    {
+      question: "Arrange the following:\n1. Then, clouds began to form.\n2. It was a sunny morning.\n3. Soon, a thunderstorm struck.\n4. The wind picked up speed.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "4-3-2-1"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nWeather: Sunny -> Clouds -> Wind -> Storm."
+    },
+    {
+      question: "Arrange the following:\n1. Recycling reduces waste.\n2. We should separate paper and plastic.\n3. It also conserves natural resources.\n4. Everyone must do their part.",
+      options: ["1-3-2-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "1-3-2-4",
+      explanation: "Correct Order: 1-3-2-4.\nEnvironment: Benefit 1 -> Benefit 2 -> Action -> Call to Action."
+    },
+    {
+      question: "Arrange the following:\n1. He missed the bus.\n2. His alarm clock broke.\n3. He overslept by an hour.\n4. He arrived late to school.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nEvents: Alarm -> Sleep -> Bus -> Late."
+    },
+    {
+      question: "Arrange the following:\n1. This creates energy for the cell.\n2. Mitochondria are the powerhouse of the cell.\n3. They take in nutrients.\n4. They break down these nutrients.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-3-4", "3-4-2-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nCell: Topic -> Intake -> Breakdown -> Energy."
+    },
+    {
+      question: "Arrange the following:\n1. She drafted an outline.\n2. She submitted the final essay.\n3. She researched her topic.\n4. She wrote the first draft.",
+      options: ["3-1-4-2", "1-2-3-4", "3-4-1-2", "1-3-4-2"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nWriting: Research -> Outline -> Draft -> Submit."
+    },
+    {
+      question: "Arrange the following:\n1. In contrast, summer is hot and dry.\n2. The seasons change throughout the year.\n3. Spring brings new life and rain.\n4. Winter is cold and snowy.",
+      options: ["2-3-4-1", "1-2-3-4", "2-3-1-4", "2-4-1-3"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nSeasons: Topic -> Spring -> Winter -> Summer (Contrast)."
+    },
+    {
+      question: "Arrange the following:\n1. He found a wallet on the street.\n2. He checked the ID inside.\n3. He returned it to the owner.\n4. The owner thanked him.",
+      options: ["1-2-3-4", "2-1-3-4", "1-3-2-4", "4-1-2-3"],
+      answer: "1-2-3-4",
+      explanation: "Correct Order: 1-2-3-4.\nHonesty: Find -> Check -> Return -> Thanks."
+    },
+    {
+      question: "Arrange the following:\n1. The caterpillar spins a cocoon.\n2. A butterfly emerges.\n3. An egg is laid on a leaf.\n4. It hatches into a larva.",
+      options: ["3-4-1-2", "1-2-3-4", "3-1-4-2", "4-1-2-3"],
+      answer: "3-4-1-2",
+      explanation: "Correct Order: 3-4-1-2.\nLife Cycle: Egg -> Hatch -> Cocoon -> Butterfly."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, traffic was stopped.\n2. A tree fell across the road.\n3. There was a severe storm.\n4. Drivers had to find another route.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-3-1-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nTraffic: Storm -> Tree falls -> Stop -> Detour."
+    },
+    {
+      question: "Arrange the following:\n1. It helps you wake up fresh.\n2. Sleep is vital for health.\n3. During sleep, the body repairs itself.\n4. Lack of sleep causes fatigue.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nSleep: Topic -> Repair -> Freshness -> Contrast."
+    },
+    {
+      question: "Arrange the following:\n1. He unpacked his bags.\n2. He checked into the hotel.\n3. He arrived at the destination.\n4. He went to the beach.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-3-1-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nVacation: Arrive -> Hotel -> Unpack -> Beach."
+    },
+    {
+      question: "Arrange the following:\n1. First, read the instructions carefully.\n2. Success in exams requires strategy.\n3. Finally, review your answers.\n4. Then, answer the easy questions first.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nStrategy: Topic -> First -> Then -> Finally."
+    },
+    {
+      question: "Arrange the following:\n1. She won the competition.\n2. She practiced every morning.\n3. She wanted to be a swimmer.\n4. She joined the swim team.",
+      options: ["3-4-2-1", "1-2-3-4", "3-2-4-1", "4-3-2-1"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nSuccess: Want -> Join -> Practice -> Win."
+    },
+    {
+      question: "Arrange the following:\n1. The cake is ready to eat.\n2. Bake for 30 minutes.\n3. Mix ingredients in a bowl.\n4. Let it cool down.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nBaking: Mix -> Bake -> Cool -> Eat."
+    },
+    {
+      question: "Arrange the following:\n1. However, he forgot his wallet.\n2. He ordered a large meal.\n3. John went to a restaurant.\n4. He had to call his wife to pay.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-3-1-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nStory: Restaurant -> Order -> Wallet Issue -> Solution."
+    },
+    {
+      question: "Arrange the following:\n1. This makes it a global language.\n2. English is spoken in many countries.\n3. It is used in business and science.\n4. Many people learn it as a second language.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-3-4", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nLanguage: Topic -> Usage -> Learners -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. They decided to build a raft.\n2. Two friends were stranded on an island.\n3. They sailed to safety.\n4. They gathered logs and vines.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "4-2-1-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nSurvival: Stranded -> Decision -> Gather -> Escape."
+    },
+    {
+      question: "Arrange the following:\n1. The lava cools and hardens.\n2. A volcano erupts.\n3. It forms new land/rock.\n4. Molten lava flows down the side.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nVolcano: Erupt -> Flow -> Cool -> Rock."
+    },
+    {
+      question: "Arrange the following:\n1. She planted rose bushes.\n2. She bought gardening tools.\n3. Her garden looks beautiful now.\n4. She watered them regularly.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nGarden: Tools -> Plant -> Water -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It pumps blood to the body.\n2. The heart is a vital organ.\n3. This blood carries oxygen.\n4. Without it, cells cannot survive.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nHeart: Topic -> Function 1 -> Function 2 -> Importance."
+    },
+    {
+      question: "Arrange the following:\n1. He checked the weather report.\n2. He put on a raincoat.\n3. He saw that it would rain.\n4. He left the house.",
+      options: ["1-3-2-4", "1-2-3-4", "1-2-4-3", "3-1-2-4"],
+      answer: "1-3-2-4",
+      explanation: "Correct Order: 1-3-2-4.\nRain: Check -> See Info -> Gear Up -> Leave."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a surplus.\n2. Sometimes supply exceeds demand.\n3. Prices usually drop.\n4. Economics relies on supply and demand.",
+      options: ["4-2-1-3", "1-2-3-4", "4-1-2-3", "2-1-3-4"],
+      answer: "4-2-1-3",
+      explanation: "Correct Order: 4-2-1-3.\nEcon: Topic -> Scenario -> Result 1 (Surplus) -> Result 2 (Prices)."
+    },
+    {
+      question: "Arrange the following:\n1. Then, the judge entered.\n2. Everyone stood up.\n3. The trial began.\n4. People were waiting in the courtroom.",
+      options: ["4-1-2-3", "1-2-3-4", "4-2-1-3", "3-4-1-2"],
+      answer: "4-1-2-3",
+      explanation: "Correct Order: 4-1-2-3.\nCourt: Waiting -> Entry -> Stand -> Start."
+    },
+    {
+      question: "Arrange the following:\n1. It provides light and heat.\n2. The sun is a star.\n3. Plants need this light to grow.\n4. Without the sun, life would end.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nSun: Definition -> Function -> Benefit -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. She saved a file.\n2. She turned on the laptop.\n3. She typed her document.\n4. She opened the word processor.",
+      options: ["2-4-3-1", "1-2-3-4", "2-3-4-1", "4-2-3-1"],
+      answer: "2-4-3-1",
+      explanation: "Correct Order: 2-4-3-1.\nWork: On -> Open -> Type -> Save."
+    },
+    {
+      question: "Arrange the following:\n1. The dog wagged its tail.\n2. He gave the dog a treat.\n3. The boy called his dog.\n4. The dog ran to him.",
+      options: ["3-4-1-2", "1-2-3-4", "3-1-4-2", "2-3-4-1"],
+      answer: "3-4-1-2",
+      explanation: "Correct Order: 3-4-1-2.\nDog: Call -> Come -> Wag -> Treat."
+    },
+    {
+      question: "Arrange the following:\n1. They set up the tent.\n2. They drove to the campsite.\n3. They made a campfire.\n4. They slept under the stars.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "1-2-4-3"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nCamping: Drive -> Tent -> Fire -> Sleep."
+    },
+    {
+      question: "Arrange the following:\n1. He finished the race.\n2. He started running.\n3. He tied his shoes.\n4. He stretched his muscles.",
+      options: ["3-4-2-1", "1-2-3-4", "3-2-4-1", "4-3-2-1"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nExercise: Shoes -> Stretch -> Run -> Finish."
+    },
+    {
+      question: "Arrange the following:\n1. The ice cream melted.\n2. It was a very hot day.\n3. She bought an ice cream cone.\n4. She didn't eat it fast enough.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-4-3", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nMelt: Heat -> Buy -> Delay -> Melt."
+    },
+    {
+      question: "Arrange the following:\n1. He paid the bill.\n2. He checked out of the hotel.\n3. He packed his suitcase.\n4. He called a taxi.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-1-3-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nCheckout: Pack -> Checkout -> Pay -> Taxi."
+    },
+    {
+      question: "Arrange the following:\n1. The glass fell on the floor.\n2. It shattered into pieces.\n3. She accidentally bumped the table.\n4. She had to sweep it up.",
+      options: ["3-1-2-4", "1-2-3-4", "3-2-1-4", "2-3-1-4"],
+      answer: "3-1-2-4",
+      explanation: "Correct Order: 3-1-2-4.\nBreak: Bump -> Fall -> Shatter -> Clean."
+    },
+    {
+      question: "Arrange the following:\n1. Birds start to sing.\n2. The sun rises.\n3. People wake up.\n4. The day begins.",
+      options: ["2-1-3-4", "1-2-3-4", "2-4-1-3", "4-2-1-3"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nDawn: Sun -> Birds -> People -> Day."
+    }
   ]
 };
-
-// Optional: also expose a direct constant if your code uses it
-const ADVERBS_QUESTIONS = window.VERBAL_QUESTION_BANK["adverbs"];
