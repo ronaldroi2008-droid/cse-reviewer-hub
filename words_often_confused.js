@@ -1,4 +1,10 @@
-const WORDS_OFTEN_CONFUSED_QUESTIONS = {
+
+
+window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+
+window.VERBAL_QUESTION_BANK["words_often_confused"] = {
+
+
   beginner: [
     // 1-10: Your vs You're
     { 
