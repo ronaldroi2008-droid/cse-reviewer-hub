@@ -5,7 +5,7 @@
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
 // 2. Inject Data
-window.VERBAL_QUESTION_BANK["punctuations"] = {
+window.VERBAL_QUESTION_BANK["punctuation"] = {
 
   
   beginner: [
