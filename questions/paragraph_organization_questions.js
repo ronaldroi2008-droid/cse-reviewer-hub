@@ -7,7 +7,7 @@ window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 window.VERBAL_QUESTION_BANK["paragraph_organization"] = {
 
   // ==========================================
-  // LEVEL 1: BEGINNER (Simple Chronology & Recipes)
+  // LEVEL 1: BEGINNER (50 Items - Simple Chronology & Recipes)
   // ==========================================
   beginner: [
     {
@@ -313,7 +313,7 @@ window.VERBAL_QUESTION_BANK["paragraph_organization"] = {
   ],
 
   // ==========================================
-  // LEVEL 2: INTERMEDIATE (Cause & Effect, Processes)
+  // LEVEL 2: INTERMEDIATE (50 Items - Cause & Effect, Processes)
   // ==========================================
   intermediate: [
     {
@@ -615,6 +615,642 @@ window.VERBAL_QUESTION_BANK["paragraph_organization"] = {
       options: ["2-1-3-4", "1-2-3-4", "2-4-1-3", "4-2-1-3"],
       answer: "2-1-3-4",
       explanation: "Correct Order: 2-1-3-4.\nDawn: Sun -> Birds -> People -> Day."
+    }
+  ],
+
+  // ==========================================
+  // LEVEL 3: ADVANCED (50 Items - Complex Logic & Pronoun Reference)
+  // ==========================================
+  advanced: [
+    {
+      question: "Arrange the following:\n1. 'It' refers to the fear of public speaking.\n2. Glossophobia is a common condition.\n3. This anxiety can hinder professional growth.\n4. Many people suffer from it without knowing.",
+      options: ["2-1-4-3", "2-4-1-3", "1-2-3-4", "2-3-1-4"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\n(2) Topic. (4) Detail. (1) Clarification. (3) Consequence."
+    },
+    {
+      question: "Arrange the following:\n1. Furthermore, it reduces the cost of production.\n2. Automation has revolutionized the industry.\n3. However, it also leads to job displacement.\n4. Machines can work faster than humans.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nTopic -> Benefit 1 -> Benefit 2 -> Contrast."
+    },
+    {
+      question: "Arrange the following:\n1. They are often called the 'lungs of the earth'.\n2. Rainforests play a critical role in the ecosystem.\n3. This is because they absorb massive amounts of carbon dioxide.\n4. Protecting them is essential for our survival.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "1-3-2-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Metaphor -> Explanation -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, the city was buried under ash.\n2. Residents had no time to escape.\n3. Mount Vesuvius erupted in 79 AD.\n4. It released a deadly cloud of gas and debris.",
+      options: ["3-4-2-1", "1-2-3-4", "3-2-4-1", "2-3-4-1"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nEvent -> Detail -> Immediate Effect -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. On the other hand, digital books are convenient.\n2. Physical books offer a tactile experience.\n3. Reading habits have changed over time.\n4. Some readers prefer the smell of paper.",
+      options: ["3-2-4-1", "1-2-3-4", "3-1-2-4", "2-4-1-3"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nTopic -> Side A -> Detail A -> Side B."
+    },
+    {
+      question: "Arrange the following:\n1. This leads to a healthier lifestyle.\n2. People who cook at home consume fewer calories.\n3. Cooking is a valuable life skill.\n4. They control the ingredients they use.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nTopic -> Specific -> Reason -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. As a result, businesses must adapt strategies.\n2. Social media affects consumer behavior.\n3. Reviews and influencers drive sales.\n4. Marketing has shifted to digital platforms.",
+      options: ["2-3-1-4", "4-2-3-1", "2-1-3-4", "4-3-1-2"],
+      answer: "4-2-3-1",
+      explanation: "Correct Order: 4-2-3-1.\nContext -> Driver -> Mechanism -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. First, gather your financial documents.\n2. Filing taxes can be stressful.\n3. Finally, submit your return before the deadline.\n4. Next, calculate your total income.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nTopic -> First -> Next -> Finally."
+    },
+    {
+      question: "Arrange the following:\n1. These microplastics enter the food chain.\n2. Plastic pollution is a global crisis.\n3. It breaks down into tiny particles.\n4. Eventually, humans consume them.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nProblem -> Process -> Ecology -> Impact."
+    },
+    {
+      question: "Arrange the following:\n1. He became one of the greatest physicists.\n2. Albert Einstein was born in Germany.\n3. His theory of relativity changed science.\n4. He showed an early interest in mathematics.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nBio: Birth -> Youth -> Status -> Work."
+    },
+    {
+      question: "Arrange the following:\n1. This confirms the hypothesis.\n2. Scientists conduct an experiment.\n3. They analyze the data collected.\n4. They formulate a hypothesis.",
+      options: ["4-2-3-1", "1-2-3-4", "4-3-2-1", "2-3-1-4"],
+      answer: "4-2-3-1",
+      explanation: "Correct Order: 4-2-3-1.\nMethod: Hypothesis -> Test -> Analysis -> Confirm."
+    },
+    {
+      question: "Arrange the following:\n1. However, excessive use can be harmful.\n2. The internet provides endless information.\n3. It creates addiction and eye strain.\n4. It is a powerful tool for education.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-3-4", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nPro 1 -> Pro 2 -> Pivot -> Con."
+    },
+    {
+      question: "Arrange the following:\n1. They perform photosynthesis to make food.\n2. Plants are producers in the food web.\n3. This energy is passed to herbivores.\n4. They capture energy from the sun.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nTopic -> Mechanism -> Action -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. Thus, voting is a civic duty.\n2. Democracy relies on participation.\n3. Citizens choose their leaders.\n4. This ensures representation.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nConcept -> Mechanism -> Benefit -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. She revised the manuscript.\n2. J.K. Rowling wrote Harry Potter.\n3. It became a worldwide phenomenon.\n4. Many publishers rejected it at first.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nCreation -> Rejection -> Revision -> Success."
+    },
+    {
+      question: "Arrange the following:\n1. This causes sea levels to rise.\n2. Global temperatures are increasing.\n3. Coastal cities are at risk of flooding.\n4. Glaciers are melting at alarming rates.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nCause -> Effect 1 -> Effect 2 -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. He invested in stocks.\n2. He retired as a millionaire.\n3. He worked hard and saved money.\n4. The market value increased over time.",
+      options: ["3-1-4-2", "1-2-3-4", "3-4-1-2", "1-3-4-2"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nWork -> Invest -> Growth -> Retire."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, we must conserve water.\n2. Fresh water is a limited resource.\n3. Only a small percentage is drinkable.\n4. Population growth strains this supply.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Detail -> Problem -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. It is called the Red Planet.\n2. Mars captures human imagination.\n3. Scientists are exploring colonization.\n4. Its surface is covered in iron oxide.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-2-4-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nTopic -> Name -> Reason -> Future."
+    },
+    {
+      question: "Arrange the following:\n1. She presented her findings.\n2. The committee approved her project.\n3. She conducted a survey.\n4. She analyzed the results.",
+      options: ["3-4-1-2", "1-2-3-4", "3-1-4-2", "1-3-4-2"],
+      answer: "3-4-1-2",
+      explanation: "Correct Order: 3-4-1-2.\nResearch -> Analysis -> Presentation -> Approval."
+    },
+    {
+      question: "Arrange the following:\n1. However, it requires discipline.\n2. Working from home offers flexibility.\n3. Distractions can reduce productivity.\n4. You avoid the daily commute.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nPro 1 -> Pro 2 -> Pivot -> Con."
+    },
+    {
+      question: "Arrange the following:\n1. This leads to higher prices.\n2. Inflation is a rise in general prices.\n3. The purchasing power of money falls.\n4. It occurs when demand exceeds supply.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-3-4", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nDefinition -> Cause -> Effect -> Impact."
+    },
+    {
+      question: "Arrange the following:\n1. They are built to withstand winds.\n2. Skyscrapers define modern cities.\n3. Engineers use steel and glass.\n4. Deep foundations support the structure.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-4-3", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Material -> Foundation -> Feature."
+    },
+    {
+      question: "Arrange the following:\n1. This helps identifying the suspect.\n2. Forensic science solves crimes.\n3. Experts analyze fingerprints and DNA.\n4. Evidence is collected from the scene.",
+      options: ["2-4-3-1", "1-2-3-4", "2-3-4-1", "4-2-3-1"],
+      answer: "2-4-3-1",
+      explanation: "Correct Order: 2-4-3-1.\nTopic -> Step 1 -> Step 2 -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It was signed in 1215.\n2. The Magna Carta is a historic document.\n3. It limited the power of the King.\n4. This laid the groundwork for democracy.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Date -> Function -> Legacy."
+    },
+    {
+      question: "Arrange the following:\n1. They migrate to warmer climates.\n2. Birds sense the change in season.\n3. Winter approaches with cold winds.\n4. This journey ensures their survival.",
+      options: ["3-2-1-4", "1-2-3-4", "3-1-2-4", "2-3-1-4"],
+      answer: "3-2-1-4",
+      explanation: "Correct Order: 3-2-1-4.\nContext -> Sensing -> Action -> Purpose."
+    },
+    {
+      question: "Arrange the following:\n1. The engine converts fuel to motion.\n2. A car is a complex machine.\n3. Wheels transfer this motion to the road.\n4. Several systems work together.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nGeneral -> Systems -> Specific 1 -> Specific 2."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, health deteriorates.\n2. Smoking damages the lungs.\n3. It introduces tar into the body.\n4. This reduces oxygen intake.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Mechanism -> Effect -> Consequence."
+    },
+    {
+      question: "Arrange the following:\n1. He drafted the Declaration of Independence.\n2. Thomas Jefferson was a Founding Father.\n3. He later became the 3rd President.\n4. He advocated for liberty.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nTopic -> Belief -> Action -> Later Life."
+    },
+    {
+      question: "Arrange the following:\n1. It provides nutrients to the embryo.\n2. A seed contains a future plant.\n3. The outer coat protects it.\n4. When conditions are right, it germinates.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Part 1 -> Part 2 -> Function."
+    },
+    {
+      question: "Arrange the following:\n1. However, not all bacteria are harmful.\n2. Bacteria are microscopic organisms.\n3. Some help in digestion.\n4. Others cause diseases.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nTopic -> Negative -> Pivot -> Positive."
+    },
+    {
+      question: "Arrange the following:\n1. She managed the budget effectively.\n2. The project was a huge success.\n3. Alice was appointed as team leader.\n4. The team met all deadlines.",
+      options: ["3-1-4-2", "1-2-3-4", "3-4-1-2", "1-3-4-2"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nAppointment -> Action 1 -> Action 2 -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a sense of community.\n2. Festivals bring people together.\n3. They share food and traditions.\n4. They celebrate shared values.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Detail 1 -> Detail 2 -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. Then, data is broken into packets.\n2. Sending an email involves steps.\n3. Finally, it arrives at the inbox.\n4. The packets travel across the network.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nTopic -> Step 1 -> Step 2 -> End."
+    },
+    {
+      question: "Arrange the following:\n1. He painted the Mona Lisa.\n2. Leonardo da Vinci was a Renaissance man.\n3. He was also an inventor.\n4. His notebooks contain flying machine sketches.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Art -> Pivot (Also) -> Science."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, diversity is strength.\n2. Different perspectives solve problems.\n3. Teams should include varied backgrounds.\n4. Innovation comes from new ideas.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nRecommendation -> Reason 1 -> Reason 2 -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. It reflects the sun's light.\n2. The moon does not produce light.\n3. We see different phases.\n4. This depends on its position.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nFact -> Mechanism -> Observation -> Explanation."
+    },
+    {
+      question: "Arrange the following:\n1. She trained for the Olympics.\n2. She broke the world record.\n3. She started swimming at age five.\n4. She won the gold medal.",
+      options: ["3-1-4-2", "1-2-3-4", "3-4-1-2", "1-3-4-2"],
+      answer: "3-1-4-2",
+      explanation: "Correct Order: 3-1-4-2.\nYouth -> Training -> Win -> Record."
+    },
+    {
+      question: "Arrange the following:\n1. It regulates body temperature.\n2. Water is essential for life.\n3. It transports nutrients to cells.\n4. Dehydration can be fatal.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-4-1"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Function 1 -> Function 2 -> Warning."
+    },
+    {
+      question: "Arrange the following:\n1. This led to the Great Depression.\n2. The stock market crashed in 1929.\n3. Many people lost their savings.\n4. Banks failed across the country.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nEvent -> Effect 1 -> Effect 2 -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. He wrote plays and sonnets.\n2. William Shakespeare is a famous bard.\n3. 'Hamlet' is his most famous tragedy.\n4. His works are still performed today.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Work -> Specific -> Legacy."
+    },
+    {
+      question: "Arrange the following:\n1. It allows for instant communication.\n2. The smartphone changed society.\n3. We can access information anywhere.\n4. However, it reduces face-to-face interaction.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "4-2-1-3"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Benefit 1 -> Benefit 2 -> Drawback."
+    },
+    {
+      question: "Arrange the following:\n1. This causes an earthquake.\n2. Tectonic plates are always moving.\n3. Sometimes they get stuck.\n4. Pressure builds until it snaps.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nContext -> Problem -> Buildup -> Release."
+    },
+    {
+      question: "Arrange the following:\n1. She proofread for errors.\n2. She wrote the conclusion.\n3. She outlined her main points.\n4. She wrote the body paragraphs.",
+      options: ["3-4-2-1", "1-2-3-4", "3-2-4-1", "1-3-4-2"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nStructure: Outline -> Body -> End -> Review."
+    },
+    {
+      question: "Arrange the following:\n1. It absorbs sunlight.\n2. Chlorophyll is a green pigment.\n3. This energy converts CO2 into sugar.\n4. It is found in the chloroplasts.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nDefinition -> Location -> Action -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, he was promoted.\n2. He completed the difficult task.\n3. He worked overtime for weeks.\n4. His boss noticed his dedication.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nEffort -> Completion -> Notice -> Reward."
+    },
+    {
+      question: "Arrange the following:\n1. This protects the rights of citizens.\n2. The Constitution is the supreme law.\n3. It establishes the government structure.\n4. No law can contradict it.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nDefinition -> Role 1 -> Role 2 -> Power."
+    },
+    {
+      question: "Arrange the following:\n1. Then, the mixture is heated.\n2. Glass making starts with sand.\n3. It melts into a liquid.\n4. It is shaped while hot.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nStart -> Heat -> Melt -> Shape."
+    },
+    {
+      question: "Arrange the following:\n1. He discovered penicillin.\n2. Alexander Fleming was a biologist.\n3. He noticed mold killing bacteria.\n4. This discovery saved millions.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Observation -> Discovery -> Impact."
+    },
+    {
+      question: "Arrange the following:\n1. Gravity pulls it into a sphere.\n2. A star is born from gas and dust.\n3. Fusion begins in the core.\n4. It shines for billions of years.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nBirth -> Form -> Ignite -> Life."
+    },
+    {
+      question: "Arrange the following:\n1. The patient's condition improved.\n2. The doctor prescribed antibiotics.\n3. The patient had a bacterial infection.\n4. Lab tests confirmed the diagnosis.",
+      options: ["3-4-2-1", "1-2-3-4", "2-3-4-1", "4-3-2-1"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nMedical: Problem -> Diagnosis -> Treatment -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. This enhances critical thinking skills.\n2. Students learn to analyze information.\n3. Education develops multiple competencies.\n4. It also fosters creativity and innovation.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nEducation: Topic -> Skill 1 -> Skill 2 -> Benefit."
+    }
+  ],
+
+  // ==========================================
+  // LEVEL 4: EXPERT (50 Items - Dense text, subtle clues)
+  // ==========================================
+  expert: [
+    {
+      question: "Arrange the following:\n1. This dissonance compels the mind to resolve the conflict.\n2. Cognitive dissonance occurs when beliefs clash with actions.\n3. The individual may change their behavior to align with beliefs.\n4. Alternatively, they may justify the action to reduce discomfort.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-4-1", "1-3-4-2"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nDefinition -> Effect (Compels) -> Solution 1 -> Solution 2."
+    },
+    {
+      question: "Arrange the following:\n1. It posits that the universe began as a singularity.\n2. The Big Bang theory explains cosmic origin.\n3. Over billions of years, it expanded and cooled.\n4. This expansion allowed matter to form stars.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "1-3-2-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Hypothesis (Posits) -> Process -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. Such policies can lead to inflation.\n2. Governments print money to pay debts.\n3. This devalues the currency.\n4. Consumers then lose purchasing power.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-3-4", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nAction -> Direct Effect -> Result -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. However, critics argue it stifles creativity.\n2. Standardized testing is a common metric.\n3. It allows for objective comparison of students.\n4. Teachers may teach only to the test.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-4-3", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Benefit -> Counterpoint -> Explanation."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a feedback loop.\n2. Melting ice reduces the earth's albedo.\n3. Less sunlight is reflected back to space.\n4. The earth absorbs more heat, melting more ice.",
+      options: ["2-3-4-1", "1-2-3-4", "2-1-3-4", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTrigger -> Mechanism -> Effect -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. He advocated for non-violent resistance.\n2. Mahatma Gandhi led India to independence.\n3. His methods inspired civil rights movements globally.\n4. The Salt March was a pivotal moment in his campaign.",
+      options: ["2-1-4-3", "1-2-3-4", "2-4-1-3", "1-4-2-3"],
+      answer: "2-1-4-3",
+      explanation: "Correct Order: 2-1-4-3.\nPerson -> Belief -> Specific Event -> Global Impact."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, the population crashed.\n2. The ecosystem could not support the numbers.\n3. Deer were introduced to an island without predators.\n4. They reproduced rapidly and ate all the vegetation.",
+      options: ["3-4-2-1", "1-2-3-4", "3-2-4-1", "2-3-4-1"],
+      answer: "3-4-2-1",
+      explanation: "Correct Order: 3-4-2-1.\nIntroduction -> Explosion -> Limit Reached -> Collapse."
+    },
+    {
+      question: "Arrange the following:\n1. It requires a suspension of disbelief.\n2. Magical realism blends the mundane with the fantastic.\n3. Characters treat magic as a normal occurrence.\n4. This genre challenges our perception of reality.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nGenre -> Feature -> Requirement -> Impact."
+    },
+    {
+      question: "Arrange the following:\n1. Thus, ethical AI is a growing field.\n2. Artificial Intelligence is advancing rapidly.\n3. Algorithms can inherit biases from data.\n4. This can lead to discriminatory outcomes.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nContext -> Problem -> Consequence -> Solution."
+    },
+    {
+      question: "Arrange the following:\n1. The proletariat would eventually revolt.\n2. Marx believed capitalism creates inequality.\n3. They would establish a classless society.\n4. He argued that the bourgeoisie exploits workers.",
+      options: ["2-4-1-3", "1-2-3-4", "2-1-4-3", "4-2-1-3"],
+      answer: "2-4-1-3",
+      explanation: "Correct Order: 2-4-1-3.\nPhilosophy -> Explanation -> Prediction -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It acts as a barrier to UV radiation.\n2. The ozone layer is in the stratosphere.\n3. Without it, life on earth would be at risk.\n4. Chemicals like CFCs have damaged this layer.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nLocation -> Function -> Importance -> Threat."
+    },
+    {
+      question: "Arrange the following:\n1. This concept is known as Opportunity Cost.\n2. Every decision involves a trade-off.\n3. Choosing one option means foregoing another.\n4. The value of the next best alternative is lost.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nPremise -> Action -> Consequence -> Terminology."
+    },
+    {
+      question: "Arrange the following:\n1. They function as biological catalysts.\n2. Enzymes are proteins.\n3. They lower the activation energy of reactions.\n4. This speeds up metabolic processes.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nCategory -> Role -> Mechanism -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. However, it lacks the nuance of human thought.\n2. It can process vast amounts of data.\n3. Machine learning is a subset of AI.\n4. It identifies patterns humans might miss.",
+      options: ["3-2-4-1", "1-2-3-4", "3-4-2-1", "2-3-4-1"],
+      answer: "3-2-4-1",
+      explanation: "Correct Order: 3-2-4-1.\nDefinition -> Ability 1 -> Ability 2 -> Limitation."
+    },
+    {
+      question: "Arrange the following:\n1. This allows for specialization of labor.\n2. Globalization integrates economies.\n3. Countries trade goods they produce efficiently.\n4. Consequently, global wealth increases.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Action -> Benefit -> Outcome."
+    },
+    {
+      question: "Arrange the following:\n1. He proposed the Heliocentric model.\n2. Nicolaus Copernicus challenged ancient astronomy.\n3. It placed the sun at the center.\n4. This contradicted the church's teachings.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nPerson -> Proposal -> Detail -> Conflict."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, logic is the foundation of philosophy.\n2. A valid argument forces a true conclusion.\n3. If the premises are true, the result must be true.\n4. Deductive reasoning moves from general to specific.",
+      options: ["4-3-2-1", "1-2-3-4", "4-2-3-1", "2-3-4-1"],
+      answer: "4-3-2-1",
+      explanation: "Correct Order: 4-3-2-1.\nDefinition -> Condition -> Result -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a 'tragedy of the commons'.\n2. Resources held in common are often abused.\n3. Individuals act in self-interest.\n4. The resource is depleted for everyone.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Action -> Result -> Name of concept."
+    },
+    {
+      question: "Arrange the following:\n1. It converts mechanical energy to electrical energy.\n2. A generator works on induction.\n3. A magnet rotates inside a coil of wire.\n4. This movement induces a current.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Definition -> Process -> Outcome."
+    },
+    {
+      question: "Arrange the following:\n1. However, interpretation varies by culture.\n2. Non-verbal communication conveys emotion.\n3. Gestures and facial expressions are key.\n4. A smile in one country may mean something else in another.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Detail -> Pivot -> Example."
+    },
+    {
+      question: "Arrange the following:\n1. This is called the 'invisible hand'.\n2. Adam Smith wrote 'The Wealth of Nations'.\n3. He argued that self-interest drives markets.\n4. It guides resources to their most valued use.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nAuthor -> Argument -> Mechanism -> Terminology."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, biodiversity is lost.\n2. Deforestation clears land for agriculture.\n3. Habitats for countless species are destroyed.\n4. This also accelerates climate change.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nAction -> Direct Effect -> Consequence 1 -> Consequence 2."
+    },
+    {
+      question: "Arrange the following:\n1. It suggests that space and time are linked.\n2. Einstein's General Relativity is complex.\n3. Massive objects warp this space-time fabric.\n4. This warping is what we perceive as gravity.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nSubject -> Theory -> Mechanism -> Definition."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, skepticism is a healthy scientific attitude.\n2. Science is not a collection of facts.\n3. It is a process of constant revision.\n4. New evidence can overturn old theories.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nDefinition (Negative) -> Definition (Positive) -> Example -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a sense of depth.\n2. Perspective was a breakthrough in art.\n3. Artists began using vanishing points.\n4. Parallel lines appear to converge.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Technique -> Detail -> Effect."
+    },
+    {
+      question: "Arrange the following:\n1. He utilized the assembly line.\n2. Henry Ford revolutionized manufacturing.\n3. This reduced the cost of the Model T.\n4. Cars became affordable for the masses.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Method -> Economic Effect -> Social Effect."
+    },
+    {
+      question: "Arrange the following:\n1. It traps infrared radiation.\n2. The greenhouse effect warms the planet.\n3. Gases like CO2 act like a blanket.\n4. Without it, Earth would be too cold.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Analogy -> Mechanism -> Importance."
+    },
+    {
+      question: "Arrange the following:\n1. This ensures no single branch becomes too powerful.\n2. The US government has a system of checks and balances.\n3. Each branch can limit the others.\n4. For example, the President can veto laws.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Action -> Goal -> Example."
+    },
+    {
+      question: "Arrange the following:\n1. However, it raises ethical concerns.\n2. Genetic engineering allows us to modify DNA.\n3. We can cure diseases before birth.\n4. Some fear it could lead to 'designer babies'.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTechnology -> Benefit -> Pivot -> Fear."
+    },
+    {
+      question: "Arrange the following:\n1. This led to trench warfare.\n2. World War I introduced modern weaponry.\n3. Machine guns made open charges suicidal.\n4. The front lines became static and deadly.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nContext -> Cause -> Effect -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It is a symbol of hope.\n2. The Statue of Liberty stands in New York.\n3. It was a gift from France.\n4. Immigrants saw it as they arrived by sea.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nLocation -> Origin -> Meaning -> Audience."
+    },
+    {
+      question: "Arrange the following:\n1. This period is known as the Great Dying.\n2. The Permian extinction was the most severe.\n3. 96% of marine species vanished.\n4. Volcanic activity is the suspected cause.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Statistic -> Name -> Cause."
+    },
+    {
+      question: "Arrange the following:\n1. They rely on instinct and observation.\n2. Animals do not have a complex language.\n3. However, they communicate effectively.\n4. Bees, for example, dance to share locations.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nLimitation -> Contrast -> Method -> Example."
+    },
+    {
+      question: "Arrange the following:\n1. It posits that all life is suffering.\n2. Buddhism was founded by Siddhartha Gautama.\n3. The cause of suffering is attachment.\n4. Nirvana is the cessation of this suffering.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nFounder -> Core Belief -> Reason -> Goal."
+    },
+    {
+      question: "Arrange the following:\n1. Thus, silence can be loud.\n2. In literature, what is not said matters.\n3. Subtext conveys meaning beneath the dialogue.\n4. Readers must infer emotions from context.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Definition -> Action -> Paradox/Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a price floor.\n2. Minimum wage laws set a baseline income.\n3. Employers cannot pay below this rate.\n4. Debate continues on its effect on employment.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nDefinition -> Constraint -> Terminology -> Consequence/Debate."
+    },
+    {
+      question: "Arrange the following:\n1. He used non-violent civil disobedience.\n2. Martin Luther King Jr. fought for civil rights.\n3. His 'I Have a Dream' speech is iconic.\n4. It envisioned a world without racism.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nPerson -> Method -> Event -> Vision."
+    },
+    {
+      question: "Arrange the following:\n1. It is the resistance to flow.\n2. Viscosity is a property of fluids.\n3. Honey has high viscosity.\n4. Water has low viscosity.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTerm -> Definition -> Example 1 -> Example 2."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, interest rates are raised.\n2. The Central Bank aims to control inflation.\n3. This discourages borrowing.\n4. Spending slows down, cooling the economy.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nGoal -> Action -> Mechanism -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It allows us to question existence.\n2. Philosophy is the love of wisdom.\n3. It uses logic to analyze arguments.\n4. Ultimately, it seeks the truth.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nDefinition -> Method -> Application -> Goal."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a sense of movement.\n2. Van Gogh's 'Starry Night' is a masterpiece.\n3. He used swirling brush strokes.\n4. The colors reflect his emotional state.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nSubject -> Technique -> Effect -> Interpretation."
+    },
+    {
+      question: "Arrange the following:\n1. Therefore, correlation is not causation.\n2. Two variables may move together.\n3. However, a third factor might cause both.\n4. Ice cream sales and crime rates both rise in summer.",
+      options: ["2-4-3-1", "1-2-3-4", "2-3-4-1", "4-2-3-1"],
+      answer: "2-4-3-1",
+      explanation: "Correct Order: 2-4-3-1.\nConcept -> Example -> Alternative explanation -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. It focuses on the unconscious mind.\n2. Psychoanalysis was developed by Freud.\n3. He believed dreams reveal hidden desires.\n4. Therapy involves interpreting these signals.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nOrigin -> Focus -> Theory -> Practice."
+    },
+    {
+      question: "Arrange the following:\n1. This is called the Doppler Effect.\n2. Sound waves compress as a source approaches.\n3. The pitch seems to become higher.\n4. As it moves away, the waves stretch out.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nMechanism 1 -> Effect 1 -> Mechanism 2 -> Name."
+    },
+    {
+      question: "Arrange the following:\n1. It is a self-regulating system.\n2. The Gaia hypothesis views Earth as an organism.\n3. Life interacts with the inorganic environment.\n4. This maintains conditions for life to persist.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nTopic -> Explanation -> Definition -> Goal."
+    },
+    {
+      question: "Arrange the following:\n1. However, it is prone to bias.\n2. History is often written by the victors.\n3. Their perspective dominates the narrative.\n4. Modern historians strive to uncover lost voices.",
+      options: ["2-3-1-4", "1-2-3-4", "2-1-3-4", "3-2-1-4"],
+      answer: "2-3-1-4",
+      explanation: "Correct Order: 2-3-1-4.\nObservation -> Effect -> Critique -> Correction."
+    },
+    {
+      question: "Arrange the following:\n1. This creates a shortage of goods.\n2. Price ceilings set a maximum price.\n3. Suppliers produce less at lower prices.\n4. Consumers demand more, emptying shelves.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nDefinition -> Supplier reaction -> Consumer reaction -> Result."
+    },
+    {
+      question: "Arrange the following:\n1. It ended the age of dinosaurs.\n2. An asteroid struck the Yucatan peninsula.\n3. Dust blocked the sun for years.\n4. Plants died, collapsing the food chain.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nEvent -> Immediate Effect -> Chain Reaction -> Conclusion."
+    },
+    {
+      question: "Arrange the following:\n1. Thus, absolute power corrupts absolutely.\n2. Totalitarian regimes suppress dissent.\n3. They control media and education.\n4. The truth becomes whatever the state says.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nTopic -> Mechanism -> Consequence -> Moral."
+    },
+    {
+      question: "Arrange the following:\n1. It questions the nature of knowledge.\n2. Socratic irony involves feigning ignorance.\n3. This exposes the contradictions in others.\n4. Socrates used this to teach.",
+      options: ["2-3-4-1", "1-2-3-4", "2-4-3-1", "3-2-4-1"],
+      answer: "2-3-4-1",
+      explanation: "Correct Order: 2-3-4-1.\nDefinition -> Mechanism -> Purpose -> Effect."
+    },
+    {
+      question: "Arrange the following:\n1. This demonstrates quantum superposition.\n2. Schrödinger's cat is a thought experiment.\n3. The cat is both alive and dead until observed.\n4. It challenges classical physics concepts.",
+      options: ["2-1-3-4", "1-2-3-4", "2-3-1-4", "3-2-1-4"],
+      answer: "2-1-3-4",
+      explanation: "Correct Order: 2-1-3-4.\nTopic -> Demonstration -> Explanation -> Significance."
+    },
+    {
+      question: "Arrange the following:\n1. Consequently, ecosystems become unbalanced.\n2. Invasive species outcompete native ones.\n3. They often lack natural predators.\n4. Humans accidentally introduce foreign species.",
+      options: ["4-3-2-1", "1-2-3-4", "4-2-3-1", "2-3-4-1"],
+      answer: "4-3-2-1",
+      explanation: "Correct Order: 4-3-2-1.\nCause -> Advantage -> Effect -> Consequence."
     }
   ]
 };
