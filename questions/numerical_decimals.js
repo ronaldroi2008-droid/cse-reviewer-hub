@@ -305,6 +305,18 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       options: ["6/10", "1/6", "3/5", "6/100"],
       answer: "3/5",
       explanation: "0.6 = 6/10 = 3/5."
+    },
+    {
+      question: "What is 0.125 as a fraction?",
+      options: ["1/8", "1/125", "125/1000", "1/4"],
+      answer: "1/8",
+      explanation: "0.125 = 125/1000 = 1/8."
+    },
+    {
+      question: "What is 0.8 as a fraction?",
+      options: ["4/5", "8/10", "2/5", "1/8"],
+      answer: "4/5",
+      explanation: "0.8 = 8/10 = 4/5."
     }
   ],
 
@@ -605,6 +617,18 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       options: ["1", "0.1", "10", "0.01"],
       answer: "1",
       explanation: "0.125 × 8 = 1"
+    },
+    {
+      question: "What is 2.4 ÷ 0.3?",
+      options: ["8", "0.8", "80", "0.08"],
+      answer: "8",
+      explanation: "2.4 ÷ 0.3 = 8"
+    },
+    {
+      question: "Multiply: 1.25 × 0.8",
+      options: ["1.0", "0.1", "10", "0.01"],
+      answer: "1.0",
+      explanation: "1.25 × 0.8 = 1.0"
     }
   ],
 
@@ -899,6 +923,18 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       options: ["80", "8", "0.8", "800"],
       answer: "80",
       explanation: "7.2 ÷ 0.09 = 80"
+    },
+    {
+      question: "What is 2.5 × 0.04?",
+      options: ["0.1", "1.0", "0.01", "10"],
+      answer: "0.1",
+      explanation: "2.5 × 0.04 = 0.1"
+    },
+    {
+      question: "What is 0.48 ÷ 0.06?",
+      options: ["8", "0.8", "80", "0.08"],
+      answer: "8",
+      explanation: "0.48 ÷ 0.06 = 8"
     }
   ],
 
@@ -934,7 +970,7 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       question: "A store marks up a ₱850.75 item by 12.5%. What is the selling price? (Round to the nearest centavo.)",
       options: ["₱956.09", "₱956.19", "₱956.00", "₱950.19"],
       answer: "₱956.09",
-      explanation: "Markup = 0.125 × 850.75 = 106.34375; price = 850.75 + 106.34 = 957.09? Let's compute: 850.75 × 1.125 = 956.09375 ≈ ₱956.09"
+      explanation: "850.75 × 1.125 = 956.09375 ≈ ₱956.09"
     },
     {
       question: "A car travels 68.4 km using 4.5 liters of fuel. What is its fuel consumption in km per liter (to the nearest hundredth)?",
@@ -1205,10 +1241,21 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       options: ["6.48 km/h", "7.2 km/h", "7.68 km/h", "8.2 km/h"],
       answer: "7.68 km/h",
       explanation: "3.2 ÷ (25/60) = 3.2 × 2.4 = 7.68 km/h"
+    },
+    {
+      question: "Evaluate (6.25 ÷ 0.5) − 3.4.",
+      options: ["8.1", "8.5", "9.1", "9.5"],
+      answer: "9.1",
+      explanation: "6.25 ÷ 0.5 = 12.5; 12.5 − 3.4 = 9.1"
+    },
+    {
+      question: "A rectangular lot is 24.5 m long and 18.75 m wide. What is its area, to the nearest hundredth of a square meter?",
+      options: ["456.35 m²", "458.75 m²", "459.25 m²", "459.38 m²"],
+      answer: "459.38 m²",
+      explanation: "24.5 × 18.75 = 459.375 ≈ 459.38 m²"
     }
   ]
 };
-
 
 
 
