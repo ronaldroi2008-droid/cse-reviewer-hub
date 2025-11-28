@@ -913,309 +913,309 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
     }
   ],
-// ==========================================
-// LEVEL 4: EXPERT (50 Items)
-// ==========================================
-window.NUMERICAL_QUESTION_BANK["fractions"].expert = [
-  {
-    question: "Evaluate: (3 1/2 + 2 2/3) × 4/5.",
-    options: ["4 2/3", "4 3/4", "4 14/15", "5 1/5"],
-    answer: "4 14/15",
-    explanation: "3 1/2 = 7/2 and 2 2/3 = 8/3. LCD is 6. 7/2 = 21/6 and 8/3 = 16/6. Sum = 37/6. Multiply: 37/6 × 4/5 = 148/30 = 74/15 = 4 14/15."
-  },
-  {
-    question: "Evaluate: (5 3/4 − 2 5/6) ÷ 7/9.",
-    options: ["3", "3 1/4", "3 1/2", "3 3/4"],
-    answer: "3 3/4",
-    explanation: "5 3/4 = 23/4 and 2 5/6 = 17/6. LCD is 12. 23/4 = 69/12 and 17/6 = 34/12. Difference: 69/12 − 34/12 = 35/12. Divide: 35/12 ÷ 7/9 = 35/12 × 9/7 = 315/84 = 15/4 = 3 3/4."
-  },
-  {
-    question: "Evaluate: 1 1/2 + (3/4 ÷ 2/5).",
-    options: ["2 7/8", "3 1/8", "3 3/8", "3 1/2"],
-    answer: "3 3/8",
-    explanation: "3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. 1 1/2 = 3/2 = 12/8. Sum: 12/8 + 15/8 = 27/8 = 3 3/8."
-  },
-  {
-    question: "Evaluate: (7/8 × 4/5) + (2/3 × 3/10).",
-    options: ["4/5", "9/10", "1", "11/10"],
-    answer: "9/10",
-    explanation: "7/8 × 4/5 = 28/40 = 7/10. 2/3 × 3/10 = 6/30 = 1/5. Sum: 7/10 + 1/5 = 7/10 + 2/10 = 9/10."
-  },
-  {
-    question: "Find 2/3 of (4 1/2 − 1 3/4).",
-    options: ["1 1/3", "1 5/6", "2", "2 1/6"],
-    answer: "1 5/6",
-    explanation: "4 1/2 = 9/2 and 1 3/4 = 7/4. LCD is 4. 9/2 = 18/4. Difference: 18/4 − 7/4 = 11/4. Now take 2/3 of 11/4: 2/3 × 11/4 = 22/12 = 11/6 = 1 5/6."
-  },
-  {
-    question: "A pizza is cut into 12 equal slices. You eat 3/4 of the pizza. How many slices do you eat?",
-    options: ["6", "8", "9", "10"],
-    answer: "9",
-    explanation: "3/4 of 12 slices is 3/4 × 12 = 36/4 = 9 slices."
-  },
-  {
-    question: "A tank is 5/8 full. After using 1/6 of the full tank, what fraction of the tank remains?",
-    options: ["11/24", "13/24", "7/12", "3/4"],
-    answer: "11/24",
-    explanation: "Start with 5/8. Subtract 1/6. LCD of 8 and 6 is 24. 5/8 = 15/24 and 1/6 = 4/24. 15/24 − 4/24 = 11/24."
-  },
-  {
-    question: "A student studies 3/5 hour on Monday, 4/3 hours on Tuesday, and 5/6 hour on Wednesday. How many hours in total?",
-    options: ["2 1/2", "2 2/3", "2 23/30", "3"],
-    answer: "2 23/30",
-    explanation: "LCD of 5, 3, and 6 is 30. 3/5 = 18/30, 4/3 = 40/30, 5/6 = 25/30. Sum: (18 + 40 + 25)/30 = 83/30 = 2 23/30."
-  },
-  {
-    question: "A recipe needs 2 1/4 cups of flour for one cake. How much flour is needed for 3 1/2 cakes?",
-    options: ["7 1/2 cups", "7 5/8 cups", "7 7/8 cups", "8 cups"],
-    answer: "7 7/8 cups",
-    explanation: "2 1/4 = 9/4 and 3 1/2 = 7/2. Multiply: 9/4 × 7/2 = 63/8 = 7 7/8 cups."
-  },
-  {
-    question: "A pipe fills 2/7 of a tank in 3 hours. At this rate, how many hours are needed to fill the entire tank?",
-    options: ["7", "9", "10 1/2", "12"],
-    answer: "10 1/2",
-    explanation: "In 3 hours, 2/7 of the tank is filled. Time for full tank = 3 ÷ (2/7) = 3 × 7/2 = 21/2 = 10 1/2 hours."
-  },
-  {
-    question: "Pipe A fills 1/4 of a tank per hour and Pipe B fills 1/6 per hour. How long will they take to fill the tank together?",
-    options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
-    answer: "2 2/5 hours",
-    explanation: "Combined rate = 1/4 + 1/6. LCD is 12. 1/4 = 3/12 and 1/6 = 2/12, so total = 5/12. Time = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
-  },
-  {
-    question: "In a class, 3/8 of the students are absent and 25 are present. How many students are in the class?",
-    options: ["30", "35", "40", "45"],
-    answer: "40",
-    explanation: "If 3/8 are absent, 5/8 are present. 5/8 of total = 25. Total = 25 ÷ (5/8) = 25 × 8/5 = 40."
-  },
-  {
-    question: "In a survey, 5/12 prefer A, 1/3 prefer B, and the rest prefer C. What fraction prefer C?",
-    options: ["1/4", "5/12", "7/12", "3/8"],
-    answer: "1/4",
-    explanation: "1/3 = 4/12. Total for A and B is 5/12 + 4/12 = 9/12 = 3/4. The rest is 1 − 3/4 = 1/4."
-  },
-  {
-    question: "A product costs ₱480. The store offers a discount of 1/5 of the price. What is the sale price?",
-    options: ["₱360", "₱376", "₱384", "₱400"],
-    answer: "₱384",
-    explanation: "Discount = 1/5 of 480 = 480 ÷ 5 = 96. Sale price = 480 − 96 = 384."
-  },
-  {
-    question: "A number is decreased by 1/4 of itself and the result is 36. What is the original number?",
-    options: ["40", "44", "48", "52"],
-    answer: "48",
-    explanation: "Let the number be n. Then n − 1/4 n = 36. That is 3/4 n = 36. Multiply both sides by 4/3: n = 36 × 4/3 = 48."
-  },
-  {
-    question: "Three objects weigh 2 1/2 kg, 3 3/4 kg, and 4 1/4 kg. What is their average weight?",
-    options: ["3 kg", "3 1/4 kg", "3 1/2 kg", "3 3/4 kg"],
-    answer: "3 1/2 kg",
-    explanation: "Convert to improper fractions: 2 1/2 = 5/2, 3 3/4 = 15/4, 4 1/4 = 17/4. Sum: 5/2 + 15/4 + 17/4 = 10/4 + 15/4 + 17/4 = 42/4 = 21/2 = 10 1/2. Average = 10 1/2 ÷ 3 = 10 1/2 × 1/3 = 3 1/2."
-  },
-  {
-    question: "A jogger runs 3 1/4 km each day for 6 days. How far does he run in total?",
-    options: ["18 km", "18 1/2 km", "19 1/2 km", "20 km"],
-    answer: "19 1/2 km",
-    explanation: "3 1/4 = 13/4. Multiply: 13/4 × 6 = 78/4 = 39/2 = 19 1/2 km."
-  },
-  {
-    question: "A rope 10 1/2 meters long is cut into pieces each 1 3/4 meters long. How many pieces can be cut?",
-    options: ["4", "5", "6", "7"],
-    answer: "6",
-    explanation: "10 1/2 = 21/2 and 1 3/4 = 7/4. 21/2 ÷ 7/4 = 21/2 × 4/7 = 84/14 = 6 pieces."
-  },
-  {
-    question: "Two workers together finish 3/4 of a job in one day. At this rate, how many days to finish the whole job?",
-    options: ["1", "1 1/3", "1 1/2", "2"],
-    answer: "1 1/3",
-    explanation: "Work done per day = 3/4 of the job. Time to finish 1 job = 1 ÷ (3/4) = 4/3 = 1 1/3 days."
-  },
-  {
-    question: "A car travels 5 1/2 km on 3/4 liter of gasoline. How far does it travel per liter?",
-    options: ["6 km", "7 km", "7 1/3 km", "8 km"],
-    answer: "7 1/3 km",
-    explanation: "5 1/2 = 11/2. Distance per liter = (11/2) ÷ (3/4) = 11/2 × 4/3 = 44/6 = 22/3 = 7 1/3 km."
-  },
-  {
-    question: "A machine produces 2 1/2 dozen parts per hour. How many parts will it produce in 3 1/2 hours?",
-    options: ["90", "96", "102", "105"],
-    answer: "105",
-    explanation: "2 1/2 dozen = 5/2 dozen. 3 1/2 hours = 7/2 hours. Total dozens = 5/2 × 7/2 = 35/4 dozen = 8.75 dozen. In pieces: 8.75 × 12 = 105 parts."
-  },
-  {
-    question: "A line segment is 7 1/2 cm long. If 2/5 is red and 1/3 is blue, how many centimeters are uncolored?",
-    options: ["1 cm", "1 1/2 cm", "2 cm", "2 1/2 cm"],
-    answer: "2 cm",
-    explanation: "Fraction uncolored = 1 − 2/5 − 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15. Sum = 11/15. Uncolored = 4/15. 4/15 of 7 1/2 (15/2) is 4/15 × 15/2 = 4/2 = 2 cm."
-  },
-  {
-    question: "A box is 3/5 full of apples. After selling 24 apples, it is 1/3 full. How many apples can the box hold when full?",
-    options: ["60", "75", "90", "105"],
-    answer: "90",
-    explanation: "Let full capacity be C. Apples removed = 3/5C − 1/3C. LCD is 15. 3/5 = 9/15 and 1/3 = 5/15. Difference = 4/15C. This equals 24. So C = 24 ÷ (4/15) = 24 × 15/4 = 90."
-  },
-  {
-    question: "Lina ran 2 2/3 km, which is 2/5 of the entire course. How long is the full course?",
-    options: ["5 km", "6 2/3 km", "6 km", "7 1/2 km"],
-    answer: "6 2/3 km",
-    explanation: "2 2/3 = 8/3. Let course length be L. 2/5 of L = 8/3. So L = 8/3 ÷ 2/5 = 8/3 × 5/2 = 40/6 = 20/3 = 6 2/3 km."
-  },
-  {
-    question: "A bucket is 7/8 full. After removing 3/10 of its capacity, what fraction of the bucket is still filled?",
-    options: ["23/40", "29/40", "3/4", "4/5"],
-    answer: "23/40",
-    explanation: "Starts 7/8 full. Removing 3/10 of the full capacity, remaining fraction = 7/8 − 3/10. LCD is 40. 7/8 = 35/40 and 3/10 = 12/40. 35/40 − 12/40 = 23/40."
-  },
-  {
-    question: "Three friends share a cake. A gets 3/10, B gets 1/4, and C gets the rest. What fraction does C receive?",
-    options: ["2/5", "9/20", "7/20", "3/10"],
-    answer: "9/20",
-    explanation: "Total given to A and B is 3/10 + 1/4. LCD is 20. 3/10 = 6/20 and 1/4 = 5/20, sum = 11/20. C gets 1 − 11/20 = 9/20."
-  },
-  {
-    question: "An exam has 80 items. A student answers 5/8 correctly and 3/20 incorrectly. How many items are left unanswered?",
-    options: ["10", "14", "16", "18"],
-    answer: "18",
-    explanation: "Correct: 5/8 of 80 = 50. Incorrect: 3/20 of 80 = 12. Total answered = 50 + 12 = 62. Unanswered: 80 − 62 = 18."
-  },
-  {
-    question: "In a box, 1/4 of the marbles are red, 2/5 are blue, and the rest are green. If there are 42 green marbles, how many marbles are there in total?",
-    options: ["90", "100", "110", "120"],
-    answer: "120",
-    explanation: "Red + blue = 1/4 + 2/5. LCD is 20. 1/4 = 5/20 and 2/5 = 8/20, sum = 13/20. Green fraction = 1 − 13/20 = 7/20. 7/20 of total = 42, so total = 42 ÷ (7/20) = 42 × 20/7 = 120."
-  },
-  {
-    question: "A recipe for 5 people uses 3/4 kg of meat. How much meat is needed per person?",
-    options: ["1/5 kg", "3/20 kg", "2/5 kg", "3/10 kg"],
-    answer: "3/20 kg",
-    explanation: "Per person: (3/4) ÷ 5 = 3/4 × 1/5 = 3/20 kg."
-  },
-  {
-    question: "To paint a wall, Worker A alone takes 6 hours and Worker B alone takes 4 hours. What fraction of the wall do they paint together in one hour?",
-    options: ["1/2", "3/5", "5/12", "7/12"],
-    answer: "5/12",
-    explanation: "A paints 1/6 per hour, B paints 1/4 per hour. Together: 1/6 + 1/4 = 2/12 + 3/12 = 5/12."
-  },
-  {
-    question: "From the previous problem, how many hours will they take to paint the entire wall together?",
-    options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
-    answer: "2 2/5 hours",
-    explanation: "They complete 5/12 of the wall per hour. Time to finish 1 wall = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
-  },
-  {
-    question: "Find the missing term in the sequence: 1/2, 5/6, 7/6, __, 11/6.",
-    options: ["3/2", "4/3", "5/3", "7/4"],
-    answer: "3/2",
-    explanation: "The difference between each consecutive term is 1/3. 1/2 + 1/3 = 5/6, 5/6 + 1/3 = 7/6. Next term is 7/6 + 1/3 = 7/6 + 2/6 = 9/6 = 3/2."
-  },
-  {
-    question: "Find the average of 1/2, 2/3, 3/4, and 4/5.",
-    options: ["151/240", "157/240", "163/240", "169/240"],
-    answer: "163/240",
-    explanation: "LCD is 240. 1/2 = 120/240, 2/3 = 160/240, 3/4 = 180/240, 4/5 = 192/240. Sum = (120 + 160 + 180 + 192) = 652. Average = 652/240 ÷ 4 = 652/960 = 163/240."
-  },
-  {
-    question: "A bag of nuts contains 2/7 almonds, 3/7 cashews, and the rest peanuts. If there are 18 peanuts, how many nuts are in the bag?",
-    options: ["42", "49", "56", "63"],
-    answer: "63",
-    explanation: "Almonds + cashews = 2/7 + 3/7 = 5/7. Peanuts = 2/7 of the bag. 2/7 of total = 18, so total = 18 ÷ (2/7) = 18 × 7/2 = 63."
-  },
-  {
-    question: "A student answered 3/4 of the 120-item test correctly. How many items did the student answer correctly?",
-    options: ["80", "85", "90", "95"],
-    answer: "90",
-    explanation: "Correct items = 3/4 of 120 = (3 × 120)/4 = 360/4 = 90."
-  },
-  {
-    question: "An alloy contains 3/10 copper and 2/5 zinc, with the rest tin. If there are 24 kg of tin, what is the total weight of the alloy?",
-    options: ["60 kg", "70 kg", "80 kg", "90 kg"],
-    answer: "80 kg",
-    explanation: "2/5 = 4/10, so copper + zinc = 3/10 + 4/10 = 7/10. Tin = 3/10. 3/10 of total = 24, so total = 24 ÷ (3/10) = 24 × 10/3 = 80 kg."
-  },
-  {
-    question: "A rectangular garden is 4 1/2 m long and 3 2/3 m wide. What is its area?",
-    options: ["14 1/2 m²", "15 m²", "16 1/2 m²", "17 m²"],
-    answer: "16 1/2 m²",
-    explanation: "4 1/2 = 9/2 and 3 2/3 = 11/3. Area = 9/2 × 11/3 = 99/6 = 33/2 = 16 1/2 m²."
-  },
-  {
-    question: "A bottle contains 1 1/4 liters of juice. If each serving is 3/10 liter, how many full servings can be made?",
-    options: ["3", "4", "5", "6"],
-    answer: "4",
-    explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
-  },
-  {
-    question: "A shopkeeper mixes 3/5 kg of nuts costing ₱200 per kg with 2/5 kg costing ₱300 per kg. What is the total cost of the mixture?",
-    options: ["₱220", "₱230", "₱240", "₱250"],
-    answer: "₱240",
-    explanation: "First part: 3/5 × 200 = 600/5 = ₱120. Second part: 2/5 × 300 = 600/5 = ₱120. Total cost = 120 + 120 = ₱240."
-  },
-  {
-    question: "A school spends 2/7 of its budget on salaries and 1/3 on equipment. What fraction of the budget is left for other expenses?",
-    options: ["4/21", "5/21", "8/21", "11/21"],
-    answer: "8/21",
-    explanation: "LCD of 7 and 3 is 21. 2/7 = 6/21 and 1/3 = 7/21. Total spent = 13/21. Leftover = 1 − 13/21 = 8/21."
-  },
-  {
-    question: "Mary spends 3/8 of her salary on rent, 1/4 on food, and 1/10 on transport. What fraction of her salary does she save?",
-    options: ["7/40", "9/40", "11/40", "13/40"],
-    answer: "11/40",
-    explanation: "LCD of 8, 4, and 10 is 40. 3/8 = 15/40, 1/4 = 10/40, 1/10 = 4/40. Total spent = 29/40. Saved = 1 − 29/40 = 11/40."
-  },
-  {
-    question: "Tap A fills a tank in 5 hours. Tap B fills 2/3 of the tank in 4 hours. If both are opened together on an empty tank, how many hours to fill it?",
-    options: ["2", "2 3/4", "2 8/11", "3"],
-    answer: "2 8/11",
-    explanation: "Tap A rate: 1/5 tank per hour. Tap B rate: (2/3) ÷ 4 = 2/12 = 1/6 tank per hour. Combined rate = 1/5 + 1/6 = 11/30. Time = 1 ÷ (11/30) = 30/11 = 2 8/11 hours."
-  },
-  {
-    question: "A trader buys goods for ₱3 1/2 million and sells them at a profit of 1/7 of the cost. What is the selling price?",
-    options: ["₱3.75 million", "₱3.9 million", "₱4 million", "₱4.25 million"],
-    answer: "₱4 million",
-    explanation: "3 1/2 = 7/2 million. Profit = 1/7 of 7/2 = 1/2 million. Selling price = 7/2 + 1/2 = 8/2 = 4 million."
-  },
-  {
-    question: "A recipe uses 2/3 cup of milk for 4 pancakes. How many cups of milk are needed for 10 pancakes?",
-    options: ["1 cup", "1 1/3 cups", "1 2/3 cups", "2 cups"],
-    answer: "1 2/3 cups",
-    explanation: "Milk per pancake = (2/3) ÷ 4 = 2/3 × 1/4 = 2/12 = 1/6 cup. For 10 pancakes: 10 × 1/6 = 10/6 = 5/3 = 1 2/3 cups."
-  },
-  {
-    question: "What is 3/5 of 7/8 of ₱320?",
-    options: ["₱112", "₱128", "₱160", "₱168"],
-    answer: "₱168",
-    explanation: "3/5 of 7/8 is (3/5 × 7/8) = 21/40. 21/40 of 320 = 320 × 21/40 = 8 × 21 = ₱168."
-  },
-  {
-    question: "A pole stands so that 2/5 of its length is above water and 3/10 is buried in the mud. What fraction of the pole is under water but not in the mud?",
-    options: ["1/5", "1/4", "3/10", "2/5"],
-    answer: "3/10",
-    explanation: "Total above or in mud = 2/5 + 3/10. 2/5 = 4/10. Sum = 4/10 + 3/10 = 7/10. The part in water (not mud) = 1 − 7/10 = 3/10."
-  },
-  {
-    question: "A sack of rice is 3/4 full and weighs 36 kg. What is the weight of the sack when full?",
-    options: ["42 kg", "44 kg", "46 kg", "48 kg"],
-    answer: "48 kg",
-    explanation: "3/4 of full weight = 36 kg. Full weight = 36 ÷ (3/4) = 36 × 4/3 = 48 kg."
-  },
-  {
-    question: "A man spends 2/5 of his salary on rent and 1/3 on food. If he spends ₱22,000 on rent and food together, what is his monthly salary?",
-    options: ["₱28,000", "₱30,000", "₱32,000", "₱35,000"],
-    answer: "₱30,000",
-    explanation: "Total fraction spent = 2/5 + 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15, so total = 11/15. 11/15 of salary = 22,000. Salary = 22,000 ÷ (11/15) = 22,000 × 15/11 = 30,000."
-  },
-  {
-    question: "A container holds 6 liters of juice. If 3/8 of it is poured out, how many liters remain?",
-    options: ["3 1/2 L", "3 3/4 L", "4 L", "4 1/2 L"],
-    answer: "3 3/4 L",
-    explanation: "Poured out = 3/8 of 6 = 18/8 = 9/4 = 2 1/4 L. Remaining = 6 − 2 1/4 = 3 3/4 L."
-  },
-  {
-    question: "A car completes a 180 km trip using 3 3/4 tanks of fuel. How many kilometers does it travel per tank of fuel?",
-    options: ["40 km", "45 km", "48 km", "50 km"],
-    answer: "48 km",
-    explanation: "3 3/4 = 15/4 tanks. Distance per tank = 180 ÷ (15/4) = 180 × 4/15 = 720/15 = 48 km."
-  }
+ // ==========================================
+  // LEVEL 4: EXPERT (50 Items)
+  // ==========================================
+  expert: [
+    {
+      question: "Evaluate: (3 1/2 + 2 2/3) × 4/5.",
+      options: ["4 2/3", "4 3/4", "4 14/15", "5 1/5"],
+      answer: "4 14/15",
+      explanation: "3 1/2 = 7/2 and 2 2/3 = 8/3. LCD is 6. 7/2 = 21/6 and 8/3 = 16/6. Sum = 37/6. Multiply: 37/6 × 4/5 = 148/30 = 74/15 = 4 14/15."
+    },
+    {
+      question: "Evaluate: (5 3/4 − 2 5/6) ÷ 7/9.",
+      options: ["3", "3 1/4", "3 1/2", "3 3/4"],
+      answer: "3 3/4",
+      explanation: "5 3/4 = 23/4 and 2 5/6 = 17/6. LCD is 12. 23/4 = 69/12 and 17/6 = 34/12. Difference: 69/12 − 34/12 = 35/12. Divide: 35/12 ÷ 7/9 = 35/12 × 9/7 = 315/84 = 15/4 = 3 3/4."
+    },
+    {
+      question: "Evaluate: 1 1/2 + (3/4 ÷ 2/5).",
+      options: ["2 7/8", "3 1/8", "3 3/8", "3 1/2"],
+      answer: "3 3/8",
+      explanation: "3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. 1 1/2 = 3/2 = 12/8. Sum: 12/8 + 15/8 = 27/8 = 3 3/8."
+    },
+    {
+      question: "Evaluate: (7/8 × 4/5) + (2/3 × 3/10).",
+      options: ["4/5", "9/10", "1", "11/10"],
+      answer: "9/10",
+      explanation: "7/8 × 4/5 = 28/40 = 7/10. 2/3 × 3/10 = 6/30 = 1/5. Sum: 7/10 + 1/5 = 7/10 + 2/10 = 9/10."
+    },
+    {
+      question: "Find 2/3 of (4 1/2 − 1 3/4).",
+      options: ["1 1/3", "1 5/6", "2", "2 1/6"],
+      answer: "1 5/6",
+      explanation: "4 1/2 = 9/2 and 1 3/4 = 7/4. LCD is 4. 9/2 = 18/4. Difference: 18/4 − 7/4 = 11/4. Now take 2/3 of 11/4: 2/3 × 11/4 = 22/12 = 11/6 = 1 5/6."
+    },
+    {
+      question: "A pizza is cut into 12 equal slices. You eat 3/4 of the pizza. How many slices do you eat?",
+      options: ["6", "8", "9", "10"],
+      answer: "9",
+      explanation: "3/4 of 12 slices is 3/4 × 12 = 36/4 = 9 slices."
+    },
+    {
+      question: "A tank is 5/8 full. After using 1/6 of the full tank, what fraction of the tank remains?",
+      options: ["11/24", "13/24", "7/12", "3/4"],
+      answer: "11/24",
+      explanation: "Start with 5/8. Subtract 1/6. LCD of 8 and 6 is 24. 5/8 = 15/24 and 1/6 = 4/24. 15/24 − 4/24 = 11/24."
+    },
+    {
+      question: "A student studies 3/5 hour on Monday, 4/3 hours on Tuesday, and 5/6 hour on Wednesday. How many hours in total?",
+      options: ["2 1/2", "2 2/3", "2 23/30", "3"],
+      answer: "2 23/30",
+      explanation: "LCD of 5, 3, and 6 is 30. 3/5 = 18/30, 4/3 = 40/30, 5/6 = 25/30. Sum: (18 + 40 + 25)/30 = 83/30 = 2 23/30."
+    },
+    {
+      question: "A recipe needs 2 1/4 cups of flour for one cake. How much flour is needed for 3 1/2 cakes?",
+      options: ["7 1/2 cups", "7 5/8 cups", "7 7/8 cups", "8 cups"],
+      answer: "7 7/8 cups",
+      explanation: "2 1/4 = 9/4 and 3 1/2 = 7/2. Multiply: 9/4 × 7/2 = 63/8 = 7 7/8 cups."
+    },
+    {
+      question: "A pipe fills 2/7 of a tank in 3 hours. At this rate, how many hours are needed to fill the entire tank?",
+      options: ["7", "9", "10 1/2", "12"],
+      answer: "10 1/2",
+      explanation: "In 3 hours, 2/7 of the tank is filled. Time for full tank = 3 ÷ (2/7) = 3 × 7/2 = 21/2 = 10 1/2 hours."
+    },
+    {
+      question: "Pipe A fills 1/4 of a tank per hour and Pipe B fills 1/6 per hour. How long will they take to fill the tank together?",
+      options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
+      answer: "2 2/5 hours",
+      explanation: "Combined rate = 1/4 + 1/6. LCD is 12. 1/4 = 3/12 and 1/6 = 2/12, so total = 5/12. Time = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
+    },
+    {
+      question: "In a class, 3/8 of the students are absent and 25 are present. How many students are in the class?",
+      options: ["30", "35", "40", "45"],
+      answer: "40",
+      explanation: "If 3/8 are absent, 5/8 are present. 5/8 of total = 25. Total = 25 ÷ (5/8) = 25 × 8/5 = 40."
+    },
+    {
+      question: "In a survey, 5/12 prefer A, 1/3 prefer B, and the rest prefer C. What fraction prefer C?",
+      options: ["1/4", "5/12", "7/12", "3/8"],
+      answer: "1/4",
+      explanation: "1/3 = 4/12. Total for A and B is 5/12 + 4/12 = 9/12 = 3/4. The rest is 1 − 3/4 = 1/4."
+    },
+    {
+      question: "A product costs ₱480. The store offers a discount of 1/5 of the price. What is the sale price?",
+      options: ["₱360", "₱376", "₱384", "₱400"],
+      answer: "₱384",
+      explanation: "Discount = 1/5 of 480 = 480 ÷ 5 = 96. Sale price = 480 − 96 = 384."
+    },
+    {
+      question: "A number is decreased by 1/4 of itself and the result is 36. What is the original number?",
+      options: ["40", "44", "48", "52"],
+      answer: "48",
+      explanation: "Let the number be n. Then n − 1/4 n = 36. That is 3/4 n = 36. Multiply both sides by 4/3: n = 36 × 4/3 = 48."
+    },
+    {
+      question: "Three objects weigh 2 1/2 kg, 3 3/4 kg, and 4 1/4 kg. What is their average weight?",
+      options: ["3 kg", "3 1/4 kg", "3 1/2 kg", "3 3/4 kg"],
+      answer: "3 1/2 kg",
+      explanation: "Convert to improper fractions: 2 1/2 = 5/2, 3 3/4 = 15/4, 4 1/4 = 17/4. Sum: 5/2 + 15/4 + 17/4 = 10/4 + 15/4 + 17/4 = 42/4 = 21/2 = 10 1/2. Average = 10 1/2 ÷ 3 = 10 1/2 × 1/3 = 3 1/2."
+    },
+    {
+      question: "A jogger runs 3 1/4 km each day for 6 days. How far does he run in total?",
+      options: ["18 km", "18 1/2 km", "19 1/2 km", "20 km"],
+      answer: "19 1/2 km",
+      explanation: "3 1/4 = 13/4. Multiply: 13/4 × 6 = 78/4 = 39/2 = 19 1/2 km."
+    },
+    {
+      question: "A rope 10 1/2 meters long is cut into pieces each 1 3/4 meters long. How many pieces can be cut?",
+      options: ["4", "5", "6", "7"],
+      answer: "6",
+      explanation: "10 1/2 = 21/2 and 1 3/4 = 7/4. 21/2 ÷ 7/4 = 21/2 × 4/7 = 84/14 = 6 pieces."
+    },
+    {
+      question: "Two workers together finish 3/4 of a job in one day. At this rate, how many days to finish the whole job?",
+      options: ["1", "1 1/3", "1 1/2", "2"],
+      answer: "1 1/3",
+      explanation: "Work done per day = 3/4 of the job. Time to finish 1 job = 1 ÷ (3/4) = 4/3 = 1 1/3 days."
+    },
+    {
+      question: "A car travels 5 1/2 km on 3/4 liter of gasoline. How far does it travel per liter?",
+      options: ["6 km", "7 km", "7 1/3 km", "8 km"],
+      answer: "7 1/3 km",
+      explanation: "5 1/2 = 11/2. Distance per liter = (11/2) ÷ (3/4) = 11/2 × 4/3 = 44/6 = 22/3 = 7 1/3 km."
+    },
+    {
+      question: "A machine produces 2 1/2 dozen parts per hour. How many parts will it produce in 3 1/2 hours?",
+      options: ["90", "96", "102", "105"],
+      answer: "105",
+      explanation: "2 1/2 dozen = 5/2 dozen. 3 1/2 hours = 7/2 hours. Total dozens = 5/2 × 7/2 = 35/4 dozen = 8.75 dozen. In pieces: 8.75 × 12 = 105 parts."
+    },
+    {
+      question: "A line segment is 7 1/2 cm long. If 2/5 is red and 1/3 is blue, how many centimeters are uncolored?",
+      options: ["1 cm", "1 1/2 cm", "2 cm", "2 1/2 cm"],
+      answer: "2 cm",
+      explanation: "Fraction uncolored = 1 − 2/5 − 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15. Sum = 11/15. Uncolored = 4/15. 4/15 of 7 1/2 (15/2) is 4/15 × 15/2 = 4/2 = 2 cm."
+    },
+    {
+      question: "A box is 3/5 full of apples. After selling 24 apples, it is 1/3 full. How many apples can the box hold when full?",
+      options: ["60", "75", "90", "105"],
+      answer: "90",
+      explanation: "Let full capacity be C. Apples removed = 3/5C − 1/3C. LCD is 15. 3/5 = 9/15 and 1/3 = 5/15. Difference = 4/15C. This equals 24. So C = 24 ÷ (4/15) = 24 × 15/4 = 90."
+    },
+    {
+      question: "Lina ran 2 2/3 km, which is 2/5 of the entire course. How long is the full course?",
+      options: ["5 km", "6 2/3 km", "6 km", "7 1/2 km"],
+      answer: "6 2/3 km",
+      explanation: "2 2/3 = 8/3. Let course length be L. 2/5 of L = 8/3. So L = 8/3 ÷ 2/5 = 8/3 × 5/2 = 40/6 = 20/3 = 6 2/3 km."
+    },
+    {
+      question: "A bucket is 7/8 full. After removing 3/10 of its capacity, what fraction of the bucket is still filled?",
+      options: ["23/40", "29/40", "3/4", "4/5"],
+      answer: "23/40",
+      explanation: "Starts 7/8 full. Removing 3/10 of the full capacity, remaining fraction = 7/8 − 3/10. LCD is 40. 7/8 = 35/40 and 3/10 = 12/40. 35/40 − 12/40 = 23/40."
+    },
+    {
+      question: "Three friends share a cake. A gets 3/10, B gets 1/4, and C gets the rest. What fraction does C receive?",
+      options: ["2/5", "9/20", "7/20", "3/10"],
+      answer: "9/20",
+      explanation: "Total given to A and B is 3/10 + 1/4. LCD is 20. 3/10 = 6/20 and 1/4 = 5/20, sum = 11/20. C gets 1 − 11/20 = 9/20."
+    },
+    {
+      question: "An exam has 80 items. A student answers 5/8 correctly and 3/20 incorrectly. How many items are left unanswered?",
+      options: ["10", "14", "16", "18"],
+      answer: "18",
+      explanation: "Correct: 5/8 of 80 = 50. Incorrect: 3/20 of 80 = 12. Total answered = 50 + 12 = 62. Unanswered: 80 − 62 = 18."
+    },
+    {
+      question: "In a box, 1/4 of the marbles are red, 2/5 are blue, and the rest are green. If there are 42 green marbles, how many marbles are there in total?",
+      options: ["90", "100", "110", "120"],
+      answer: "120",
+      explanation: "Red + blue = 1/4 + 2/5. LCD is 20. 1/4 = 5/20 and 2/5 = 8/20, sum = 13/20. Green fraction = 1 − 13/20 = 7/20. 7/20 of total = 42, so total = 42 ÷ (7/20) = 42 × 20/7 = 120."
+    },
+    {
+      question: "A recipe for 5 people uses 3/4 kg of meat. How much meat is needed per person?",
+      options: ["1/5 kg", "3/20 kg", "2/5 kg", "3/10 kg"],
+      answer: "3/20 kg",
+      explanation: "Per person: (3/4) ÷ 5 = 3/4 × 1/5 = 3/20 kg."
+    },
+    {
+      question: "To paint a wall, Worker A alone takes 6 hours and Worker B alone takes 4 hours. What fraction of the wall do they paint together in one hour?",
+      options: ["1/2", "3/5", "5/12", "7/12"],
+      answer: "5/12",
+      explanation: "A paints 1/6 per hour, B paints 1/4 per hour. Together: 1/6 + 1/4 = 2/12 + 3/12 = 5/12."
+    },
+    {
+      question: "From the previous problem, how many hours will they take to paint the entire wall together?",
+      options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
+      answer: "2 2/5 hours",
+      explanation: "They complete 5/12 of the wall per hour. Time to finish 1 wall = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
+    },
+    {
+      question: "Find the missing term in the sequence: 1/2, 5/6, 7/6, __, 11/6.",
+      options: ["3/2", "4/3", "5/3", "7/4"],
+      answer: "3/2",
+      explanation: "The difference between each consecutive term is 1/3. 1/2 + 1/3 = 5/6, 5/6 + 1/3 = 7/6. Next term is 7/6 + 1/3 = 7/6 + 2/6 = 9/6 = 3/2."
+    },
+    {
+      question: "Find the average of 1/2, 2/3, 3/4, and 4/5.",
+      options: ["151/240", "157/240", "163/240", "169/240"],
+      answer: "163/240",
+      explanation: "LCD is 240. 1/2 = 120/240, 2/3 = 160/240, 3/4 = 180/240, 4/5 = 192/240. Sum = (120 + 160 + 180 + 192) = 652. Average = 652/240 ÷ 4 = 652/960 = 163/240."
+    },
+    {
+      question: "A bag of nuts contains 2/7 almonds, 3/7 cashews, and the rest peanuts. If there are 18 peanuts, how many nuts are in the bag?",
+      options: ["42", "49", "56", "63"],
+      answer: "63",
+      explanation: "Almonds + cashews = 2/7 + 3/7 = 5/7. Peanuts = 2/7 of the bag. 2/7 of total = 18, so total = 18 ÷ (2/7) = 18 × 7/2 = 63."
+    },
+    {
+      question: "A student answered 3/4 of the 120-item test correctly. How many items did the student answer correctly?",
+      options: ["80", "85", "90", "95"],
+      answer: "90",
+      explanation: "Correct items = 3/4 of 120 = (3 × 120)/4 = 360/4 = 90."
+    },
+    {
+      question: "An alloy contains 3/10 copper and 2/5 zinc, with the rest tin. If there are 24 kg of tin, what is the total weight of the alloy?",
+      options: ["60 kg", "70 kg", "80 kg", "90 kg"],
+      answer: "80 kg",
+      explanation: "2/5 = 4/10, so copper + zinc = 3/10 + 4/10 = 7/10. Tin = 3/10. 3/10 of total = 24, so total = 24 ÷ (3/10) = 24 × 10/3 = 80 kg."
+    },
+    {
+      question: "A rectangular garden is 4 1/2 m long and 3 2/3 m wide. What is its area?",
+      options: ["14 1/2 m²", "15 m²", "16 1/2 m²", "17 m²"],
+      answer: "16 1/2 m²",
+      explanation: "4 1/2 = 9/2 and 3 2/3 = 11/3. Area = 9/2 × 11/3 = 99/6 = 33/2 = 16 1/2 m²."
+    },
+    {
+      question: "A bottle contains 1 1/4 liters of juice. If each serving is 3/10 liter, how many full servings can be made?",
+      options: ["3", "4", "5", "6"],
+      answer: "4",
+      explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
+    },
+    {
+      question: "A shopkeeper mixes 3/5 kg of nuts costing ₱200 per kg with 2/5 kg costing ₱300 per kg. What is the total cost of the mixture?",
+      options: ["₱220", "₱230", "₱240", "₱250"],
+      answer: "₱240",
+      explanation: "First part: 3/5 × 200 = 600/5 = ₱120. Second part: 2/5 × 300 = 600/5 = ₱120. Total cost = 120 + 120 = ₱240."
+    },
+    {
+      question: "A school spends 2/7 of its budget on salaries and 1/3 on equipment. What fraction of the budget is left for other expenses?",
+      options: ["4/21", "5/21", "8/21", "11/21"],
+      answer: "8/21",
+      explanation: "LCD of 7 and 3 is 21. 2/7 = 6/21 and 1/3 = 7/21. Total spent = 13/21. Leftover = 1 − 13/21 = 8/21."
+    },
+    {
+      question: "Mary spends 3/8 of her salary on rent, 1/4 on food, and 1/10 on transport. What fraction of her salary does she save?",
+      options: ["7/40", "9/40", "11/40", "13/40"],
+      answer: "11/40",
+      explanation: "LCD of 8, 4, and 10 is 40. 3/8 = 15/40, 1/4 = 10/40, 1/10 = 4/40. Total spent = 29/40. Saved = 1 − 29/40 = 11/40."
+    },
+    {
+      question: "Tap A fills a tank in 5 hours. Tap B fills 2/3 of the tank in 4 hours. If both are opened together on an empty tank, how many hours to fill it?",
+      options: ["2", "2 3/4", "2 8/11", "3"],
+      answer: "2 8/11",
+      explanation: "Tap A rate: 1/5 tank per hour. Tap B rate: (2/3) ÷ 4 = 2/12 = 1/6 tank per hour. Combined rate = 1/5 + 1/6 = 11/30. Time = 1 ÷ (11/30) = 30/11 = 2 8/11 hours."
+    },
+    {
+      question: "A trader buys goods for ₱3 1/2 million and sells them at a profit of 1/7 of the cost. What is the selling price?",
+      options: ["₱3.75 million", "₱3.9 million", "₱4 million", "₱4.25 million"],
+      answer: "₱4 million",
+      explanation: "3 1/2 = 7/2 million. Profit = 1/7 of 7/2 = 1/2 million. Selling price = 7/2 + 1/2 = 8/2 = 4 million."
+    },
+    {
+      question: "A recipe uses 2/3 cup of milk for 4 pancakes. How many cups of milk are needed for 10 pancakes?",
+      options: ["1 cup", "1 1/3 cups", "1 2/3 cups", "2 cups"],
+      answer: "1 2/3 cups",
+      explanation: "Milk per pancake = (2/3) ÷ 4 = 2/3 × 1/4 = 2/12 = 1/6 cup. For 10 pancakes: 10 × 1/6 = 10/6 = 5/3 = 1 2/3 cups."
+    },
+    {
+      question: "What is 3/5 of 7/8 of ₱320?",
+      options: ["₱112", "₱128", "₱160", "₱168"],
+      answer: "₱168",
+      explanation: "3/5 of 7/8 is (3/5 × 7/8) = 21/40. 21/40 of 320 = 320 × 21/40 = 8 × 21 = ₱168."
+    },
+    {
+      question: "A pole stands so that 2/5 of its length is above water and 3/10 is buried in the mud. What fraction of the pole is under water but not in the mud?",
+      options: ["1/5", "1/4", "3/10", "2/5"],
+      answer: "3/10",
+      explanation: "Total above or in mud = 2/5 + 3/10. 2/5 = 4/10. Sum = 4/10 + 3/10 = 7/10. The part in water (not mud) = 1 − 7/10 = 3/10."
+    },
+    {
+      question: "A sack of rice is 3/4 full and weighs 36 kg. What is the weight of the sack when full?",
+      options: ["42 kg", "44 kg", "46 kg", "48 kg"],
+      answer: "48 kg",
+      explanation: "3/4 of full weight = 36 kg. Full weight = 36 ÷ (3/4) = 36 × 4/3 = 48 kg."
+    },
+    {
+      question: "A man spends 2/5 of his salary on rent and 1/3 on food. If he spends ₱22,000 on rent and food together, what is his monthly salary?",
+      options: ["₱28,000", "₱30,000", "₱32,000", "₱35,000"],
+      answer: "₱30,000",
+      explanation: "Total fraction spent = 2/5 + 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15, so total = 11/15. 11/15 of salary = 22,000. Salary = 22,000 ÷ (11/15) = 22,000 × 15/11 = 30,000."
+    },
+    {
+      question: "A container holds 6 liters of juice. If 3/8 of it is poured out, how many liters remain?",
+      options: ["3 1/2 L", "3 3/4 L", "4 L", "4 1/2 L"],
+      answer: "3 3/4 L",
+      explanation: "Poured out = 3/8 of 6 = 18/8 = 9/4 = 2 1/4 L. Remaining = 6 − 2 1/4 = 3 3/4 L."
+    },
+    {
+      question: "A car completes a 180 km trip using 3 3/4 tanks of fuel. How many kilometers does it travel per tank of fuel?",
+      options: ["40 km", "45 km", "48 km", "50 km"],
+      answer: "48 km",
+      explanation: "3 3/4 = 15/4 tanks. Distance per tank = 180 ÷ (15/4) = 180 × 4/15 = 720/15 = 48 km."
+    }
   ]
-];
+};
