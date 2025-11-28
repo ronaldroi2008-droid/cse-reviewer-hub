@@ -13,6 +13,18 @@ window.NUMERICAL_QUESTION_BANK["solving_math_expressions"] = {
   // ==========================================
   beginner: [
     {
+  question: "Solve: 17 + 8 - 9",
+  options: ["16", "15", "17", "18"],
+  answer: "16",
+  explanation: "Add first: 17 + 8 = 25. Then subtract: 25 - 9 = 16. For addition and subtraction only, we work from left to right."
+},
+{
+  question: "Solve: 13 + 6 - 4", 
+  options: ["15", "14", "16", "17"],
+  answer: "15",
+  explanation: "Left to right: 13 + 6 = 19, then 19 - 4 = 15. Simple addition and subtraction in order from left to right."
+},
+    {
       question: "Solve: 2 + 10 - 8",
       options: ["9", "4", "2", "10"],
       answer: "4",
@@ -306,6 +318,12 @@ window.NUMERICAL_QUESTION_BANK["solving_math_expressions"] = {
   // LEVEL 2: INTERMEDIATE (50 items – Multi-step Expressions)
   // ==========================================
   intermediate: [
+    {
+  question: "Solve: 20 + 4 × 3 - 5",
+  options: ["27", "28", "29", "30"],
+  answer: "27",
+  explanation: "Multiplication first: 4 × 3 = 12. Then addition: 20 + 12 = 32. Finally subtraction: 32 - 5 = 27. Follow PEMDAS: Multiplication before Addition/Subtraction."
+},
     {
       question: "Solve: 29 + 5 × 4 - 8",
       options: ["35", "46", "41", "43"],
