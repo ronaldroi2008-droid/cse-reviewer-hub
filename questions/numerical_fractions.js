@@ -13,23 +13,24 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // ==========================================
   beginner: [
     {
-      question: "In the fraction 3/5, what is the numerator?",
-      options: ["3", "5", "8", "1"],
-      answer: "3",
-      explanation: "The numerator is the top number of the fraction. In 3/5, the top number is 3."
-    },
-    {
-      question: "In the fraction 7/9, what is the denominator?",
-      options: ["7", "9", "16", "2"],
-      answer: "9",
-      explanation: "The denominator is the bottom number of the fraction. In 7/9, the bottom number is 9."
-    },
-    {
-      question: "Which fraction represents 'one-half'?",
-      options: ["1/3", "1/4", "1/2", "2/3"],
-      answer: "1/2",
-      explanation: "One-half means one out of two equal parts, written as 1/2."
-    },
+    question: "In the fraction 3/5, what is the numerator?",
+    options: ["3", "5", "8", "1"],
+    answer: "3",
+    explanation: "The numerator is the top number of the fraction. In 3/5, the top number is 3."
+  },
+  {
+    question: "In the fraction 7/9, what is the denominator?",
+    options: ["7", "9", "16", "2"],
+    answer: "9",
+    explanation: "The denominator is the bottom number of the fraction. In 7/9, the bottom number is 9."
+  },
+  {
+    question: "Which fraction represents 'three-fourths'?",
+    options: ["1/3", "2/3", "3/4", "4/3"],
+    answer: "3/4",
+    explanation: "Three-fourths means 3 parts out of 4 equal parts, written as 3/4."
+  },
+
     {
       question: "Which fraction represents 'three out of four equal parts'?",
       options: ["3/4", "4/3", "1/4", "2/3"],
