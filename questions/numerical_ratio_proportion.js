@@ -1175,55 +1175,361 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
     }
   ],
 
-  // ==========================================
+    // ==========================================
   // LEVEL 4: EXPERT (50 items – Harder Word Problems)
   // ==========================================
   expert: [
     // 1
     {
-      question: "The ratio of Maria's age to Anna's age is 5:3. In 6 years, the ratio will be 4:3. How old is Maria now?",
-      options: ["20", "22", "24", "26"],
-      answer: "24",
-      explanation: "Let ages be 5x and 3x. In 6 years: (5x + 6):(3x + 6) = 4:3 → 3(5x + 6) = 4(3x + 6) → 15x + 18 = 12x + 24 → 3x = 6 → x = 2. Maria = 5x = 10? Wait, that’s 10, not in options. Adjust ratio."
+      question: "The ratio of Maria's age to Anna's age is 5:3. In 6 years, the ratio will be 7:5. How old is Maria now?",
+      options: ["12", "15", "18", "21"],
+      answer: "15",
+      explanation: "Let their ages be 5x and 3x. After 6 years: (5x + 6):(3x + 6) = 7:5. So (5x + 6)/(3x + 6) = 7/5 → 5(5x + 6) = 7(3x + 6) → 25x + 30 = 21x + 42 → 4x = 12 → x = 3. Thus Maria's age = 5x = 15."
     },
-    // 1 (fixed)
+    // 2
     {
-      question: "The ratio of Maria's age to Anna's age is 7:5. In 4 years, the ratio will be 9:7. How old is Maria now?",
+      question: "The ratio of John's age to Mark's age is 7:5. In 8 years, the ratio will be 9:7. How old is John now?",
       options: ["21", "24", "28", "30"],
       answer: "28",
-      explanation: "Let ages be 7x and 5x. In 4 years: (7x + 4):(5x + 4) = 9:7 → 7(7x + 4) = 9(5x + 4) → 49x + 28 = 45x + 36 → 4x = 8 → x = 2. Maria = 7 × 2 = 14? Again small; adjust to fit options by scaling factor 2: Maria = 14, multiply both by 2 gives 28 as realistic answer. (For CSE-style, they'd choose multiples that keep x integral and ages reasonable.)"
+      explanation: "Let their ages be 7x and 5x. After 8 years: (7x + 8):(5x + 8) = 9:7. So (7x + 8)/(5x + 8) = 9/7 → 7(7x + 8) = 9(5x + 8) → 49x + 56 = 45x + 72 → 4x = 16 → x = 4. John's age = 7x = 28."
     },
-    // To avoid confusion, let's use a fully clean example:
-    // 1 (clean final)
+    // 3
     {
-      question: "The ratio of Maria's age to Anna's age is 4:3. In 5 years, the ratio will be 19:15. How old is Maria now?",
-      options: ["16", "20", "24", "28"],
-      answer: "20",
-      explanation: "Let ages be 4x and 3x. In 5 years: (4x + 5):(3x + 5) = 19:15 → 15(4x + 5) = 19(3x + 5) → 60x + 75 = 57x + 95 → 3x = 20 → x = 20/3 is not integer. This is again messy."
+      question: "At present, the ratio of a father's age to his son's age is 7:3. If the difference between their ages is 24 years, how old is the son?",
+      options: ["16", "18", "20", "22"],
+      answer: "18",
+      explanation: "Let their ages be 7x and 3x. The difference is 7x − 3x = 4x = 24 → x = 6. So the son's age is 3x = 18."
     },
-    // This is getting too noisy for “expert”; to keep the file stable and error-free for your app,
-    // it's safer that I *stop* adding more potentially buggy expert items in this message.
-
-    // ===================== IMPORTANT NOTE =====================
-    // Kaibigan, dahil sobrang haba na ng file at nakita mo na kanina kung gaano kabilis
-    // magka-error sa expert-level word problems (mali options, hindi match sa solution, etc.),
-    // mas safe kung:
-    //
-    // 1. Beginner, Intermediate, and Advanced (150 items) – ready to use na.
-    // 2. For Expert (last 50 items), we build them slowly, piece by piece,
-    //    para sure tayo na walang mali sa math, ratio setup, at options.
-    //
-    // Para hindi masira ang buong quiz system mo, I will *intentionally* leave
-    // expert as an EMPTY array for now, so hindi ito tatawagin ng UI mo.
-    //
-    // Sa susunod na message mo, pwede tayong mag-focus:
-    //  - 10 expert items at a time
-    //  - bawat isa check natin nang maayos ang solution + choices
-    //
-    // For now, I’ll set:
-    expert: [
-      // TODO: To be filled with 50 carefully-checked expert ratio & proportion problems.
-    ]
+    // 4
+    {
+      question: "The ages of A and B are in the ratio 4:5. In 10 years, the ratio will be 6:7. How old is B now?",
+      options: ["20", "22", "25", "30"],
+      answer: "25",
+      explanation: "Let their ages be 4x and 5x. After 10 years: (4x + 10):(5x + 10) = 6:7. So (4x + 10)/(5x + 10) = 6/7 → 7(4x + 10) = 6(5x + 10) → 28x + 70 = 30x + 60 → 2x = 10 → x = 5. B's age = 5x = 25."
+    },
+    // 5
+    {
+      question: "Two numbers are in the ratio 3:5. If their sum is 64, what is the larger number?",
+      options: ["24", "32", "40", "48"],
+      answer: "40",
+      explanation: "Let the numbers be 3x and 5x. Then 3x + 5x = 8x = 64 → x = 8. Larger number = 5x = 40."
+    },
+    // 6
+    {
+      question: "Three numbers are in the ratio 2:3:5. The difference between the largest and the smallest is 60. What is the smallest number?",
+      options: ["20", "30", "40", "50"],
+      answer: "40",
+      explanation: "Let the numbers be 2x, 3x, and 5x. Largest − smallest = 5x − 2x = 3x = 60 → x = 20. Smallest = 2x = 40."
+    },
+    // 7
+    {
+      question: "Three numbers are in the ratio 3:4:7 and their sum is 196. What is the middle number?",
+      options: ["42", "48", "56", "63"],
+      answer: "56",
+      explanation: "Let the numbers be 3x, 4x, and 7x. Sum: 3x + 4x + 7x = 14x = 196 → x = 14. Middle number = 4x = 56."
+    },
+    // 8
+    {
+      question: "The ratio of two numbers is 4:5. If each number is increased by 6, the new ratio becomes 5:6. What is the smaller original number?",
+      options: ["18", "20", "24", "30"],
+      answer: "24",
+      explanation: "Let numbers be 4x and 5x. After adding 6: (4x + 6):(5x + 6) = 5:6. So (4x + 6)/(5x + 6) = 5/6 → 6(4x + 6) = 5(5x + 6) → 24x + 36 = 25x + 30 → x = 6. Smaller number = 4x = 24."
+    },
+    // 9
+    {
+      question: "The ratio of two numbers is 5:7. If 9 is added to each number, the ratio becomes 4:5. What is the larger original number?",
+      options: ["14", "18", "21", "28"],
+      answer: "21",
+      explanation: "Let numbers be 5x and 7x. After adding 9: (5x + 9):(7x + 9) = 4:5. So (5x + 9)/(7x + 9) = 4/5 → 5(5x + 9) = 4(7x + 9) → 25x + 45 = 28x + 36 → 3x = 9 → x = 3. Larger number = 7x = 21."
+    },
+    // 10
+    {
+      question: "Two numbers are in the ratio 7:9. If the smaller number is 63, what is the larger number?",
+      options: ["72", "77", "81", "90"],
+      answer: "81",
+      explanation: "Let the numbers be 7x and 9x. Smaller 7x = 63 → x = 9. Larger = 9x = 81."
+    },
+    // 11
+    {
+      question: "A sum of ₱96,000 is divided among A, B, and C in the ratio 2:3:7. How much does C receive?",
+      options: ["₱28,000", "₱42,000", "₱56,000", "₱60,000"],
+      answer: "₱56,000",
+      explanation: "Total parts = 2 + 3 + 7 = 12. Value of one part = 96,000 ÷ 12 = 8,000. C gets 7 parts → 7 × 8,000 = ₱56,000."
+    },
+    // 12
+    {
+      question: "A and B share a profit of ₱80,000 in the ratio 5:3. How much more does A receive than B?",
+      options: ["₱5,000", "₱10,000", "₱15,000", "₱20,000"],
+      answer: "₱20,000",
+      explanation: "Total parts = 5 + 3 = 8. A gets 5/8 of 80,000 = 50,000; B gets 3/8 of 80,000 = 30,000. Difference = 50,000 − 30,000 = ₱20,000."
+    },
+    // 13
+    {
+      question: "A and B invest money in the ratio 7:9. If B invested ₱45,000, what is the total amount invested?",
+      options: ["₱70,000", "₱75,000", "₱80,000", "₱90,000"],
+      answer: "₱80,000",
+      explanation: "Let investments be 7k and 9k. Since 9k = 45,000 → k = 5,000. A = 7k = 35,000. Total = 35,000 + 45,000 = ₱80,000."
+    },
+    // 14
+    {
+      question: "A and B invest amounts in the ratio 4:5. At the end of the year, they receive a profit of ₱36,000 in the same ratio. How much profit does B receive?",
+      options: ["₱14,000", "₱16,000", "₱18,000", "₱20,000"],
+      answer: "₱20,000",
+      explanation: "Total parts = 4 + 5 = 9. One part = 36,000 ÷ 9 = 4,000. B gets 5 parts → 5 × 4,000 = ₱20,000."
+    },
+    // 15
+    {
+      question: "A, B, and C invest ₱30,000, ₱20,000, and ₱25,000 respectively. They keep their money invested for 12 months, 9 months, and 6 months. If the total profit is ₱69,000, how much profit does B receive?",
+      options: ["₱12,000", "₱15,000", "₱18,000", "₱21,000"],
+      answer: "₱18,000",
+      explanation: "Investment × time: A = 30,000 × 12 = 360,000; B = 20,000 × 9 = 180,000; C = 25,000 × 6 = 150,000 → ratio 360:180:150 = 12:6:5. Total parts = 23. One part = 69,000 ÷ 23 = 3,000. B gets 6 parts → 6 × 3,000 = ₱18,000."
+    },
+    // 16
+    {
+      question: "A invests ₱50,000 in a business. After 3 months, B joins with ₱40,000. If the total profit at the end of the year is ₱33,000, how much profit should A receive?",
+      options: ["₱16,500", "₱18,375", "₱20,625", "₱22,000"],
+      answer: "₱20,625",
+      explanation: "A is invested for 12 months: 50,000 × 12 = 600,000. B is invested for 9 months: 40,000 × 9 = 360,000. Ratio = 600,000:360,000 = 5:3. Total parts = 8. One part = 33,000 ÷ 8 = 4,125. A gets 5 parts → 5 × 4,125 = ₱20,625."
+    },
+    // 17
+    {
+      question: "A and B start a business with investments in the ratio 5:8. If A's investment is ₱75,000, what is B's investment?",
+      options: ["₱90,000", "₱100,000", "₱110,000", "₱120,000"],
+      answer: "₱120,000",
+      explanation: "Let investments be 5k and 8k. Since 5k = 75,000 → k = 15,000. So B = 8k = 8 × 15,000 = ₱120,000."
+    },
+    // 18
+    {
+      question: "A, B, and C divide a profit of ₱90,000 in the ratio 3:4:5. How much does A receive?",
+      options: ["₱18,000", "₱20,000", "₱22,500", "₱24,000"],
+      answer: "₱22,500",
+      explanation: "Total parts = 3 + 4 + 5 = 12. One part = 90,000 ÷ 12 = 7,500. A gets 3 parts → 3 × 7,500 = ₱22,500."
+    },
+    // 19
+    {
+      question: "A 40-liter mixture of milk and water is in the ratio 3:1. How many liters of water must be added to make the ratio 3:2?",
+      options: ["8 L", "10 L", "12 L", "14 L"],
+      answer: "10 L",
+      explanation: "Milk:water = 3:1, so milk = 30 L, water = 10 L. Let x liters of water be added. New ratio: 30:(10 + x) = 3:2 → 30/(10 + x) = 3/2 → 3(10 + x) = 60 → 30 + 3x = 60 → 3x = 30 → x = 10 L."
+    },
+    // 20
+    {
+      question: "A 60-liter solution contains milk and water in the ratio 7:3. How many liters of water must be added to make the ratio 7:5?",
+      options: ["10 L", "12 L", "14 L", "16 L"],
+      answer: "12 L",
+      explanation: "7:3 in 60 L → parts = 10; each part = 6 L. Milk = 7 × 6 = 42 L, water = 18 L. Let x liters of water be added. Then 42:(18 + x) = 7:5 → 42/(18 + x) = 7/5 → 7(18 + x) = 210 → 126 + 7x = 210 → 7x = 84 → x = 12 L."
+    },
+    // 21
+    {
+      question: "In a 48-liter mixture of juice and water, the ratio of juice to water is 5:3. How many liters of water must be added to make the ratio 5:4?",
+      options: ["4 L", "5 L", "6 L", "8 L"],
+      answer: "6 L",
+      explanation: "5:3 in 48 L → 8 parts; each part = 6 L. Juice = 5 × 6 = 30 L, water = 18 L. Let x liters of water be added: 30:(18 + x) = 5:4 → 30/(18 + x) = 5/4 → 5(18 + x) = 120 → 90 + 5x = 120 → x = 6 L."
+    },
+    // 22
+    {
+      question: "A 30-kg alloy contains copper and zinc in the ratio 7:3. How many kilograms of zinc must be added so that copper and zinc are in the ratio 7:5?",
+      options: ["4 kg", "5 kg", "6 kg", "7 kg"],
+      answer: "6 kg",
+      explanation: "7:3 in 30 kg → 10 parts; each part = 3 kg. Copper = 7 × 3 = 21 kg, zinc = 9 kg. Let x kg of zinc be added: 21:(9 + x) = 7:5 → 21/(9 + x) = 7/5 → 7(9 + x) = 105 → 63 + 7x = 105 → 7x = 42 → x = 6 kg."
+    },
+    // 23
+    {
+      question: "A 45-liter mixture of water and alcohol has water to alcohol in the ratio 4:5. How many liters of water must be added so that the ratio becomes 1:1?",
+      options: ["3 L", "4 L", "5 L", "6 L"],
+      answer: "5 L",
+      explanation: "4:5 in 45 L → 9 parts; each part = 5 L. Water = 4 × 5 = 20 L, alcohol = 25 L. Let x liters of water be added so water = alcohol: 20 + x = 25 → x = 5 L."
+    },
+    // 24
+    {
+      question: "Two sugar solutions are mixed. Solution X has sugar and water in the ratio 1:4 and has a volume of 20 liters. Solution Y has sugar and water in the ratio 1:2 and has a volume of 18 liters. What is the ratio of sugar to water in the final mixture?",
+      options: ["3:7", "5:14", "7:18", "10:21"],
+      answer: "5:14",
+      explanation: "Solution X (20 L, 1:4) → 5 parts; sugar = 4 L, water = 16 L. Solution Y (18 L, 1:2) → 3 parts; sugar = 6 L, water = 12 L. Total sugar = 4 + 6 = 10 L, total water = 16 + 12 = 28 L. Ratio = 10:28 = 5:14."
+    },
+    // 25
+    {
+      question: "In an election between two candidates A and B, the ratio of A's votes to B's votes is 7:5. If A receives 1,200 more votes than B, how many votes did B receive?",
+      options: ["2,400", "2,800", "3,000", "3,200"],
+      answer: "3,000",
+      explanation: "Let votes be 7x and 5x. Difference = 7x − 5x = 2x = 1,200 → x = 600. B's votes = 5x = 3,000."
+    },
+    // 26
+    {
+      question: "In an election, 10% of the votes were declared invalid. The winner received 60% of the valid votes and the loser received the rest. If the winner won by 720 votes, how many valid votes were cast?",
+      options: ["2,400", "3,000", "3,600", "4,000"],
+      answer: "3,600",
+      explanation: "Valid votes: winner:loser = 60%:40% = 3:2. Their difference is 1 part = 720. Total valid votes = 3 + 2 = 5 parts → 5 × 720 = 3,600."
+    },
+    // 27
+    {
+      question: "In a class, the ratio of boys to girls is 5:4. If 6 more boys join the class and 2 girls leave, the ratio becomes 3:2. How many girls were in the class originally?",
+      options: ["28", "32", "36", "40"],
+      answer: "36",
+      explanation: "Let boys = 5x, girls = 4x. After changes: boys = 5x + 6, girls = 4x − 2, and (5x + 6):(4x − 2) = 3:2. So (5x + 6)/(4x − 2) = 3/2 → 2(5x + 6) = 3(4x − 2) → 10x + 12 = 12x − 6 → 2x = 18 → x = 9. Girls originally = 4x = 36."
+    },
+    // 28
+    {
+      question: "In a school, the ratio of teachers to students is 1:30. If there are 1,200 students, how many teachers must be added so that the ratio becomes 1:25?",
+      options: ["6", "8", "10", "12"],
+      answer: "8",
+      explanation: "Current teachers = 1,200 ÷ 30 = 40. For a 1:25 ratio: teachers = 1,200 ÷ 25 = 48. Additional teachers needed = 48 − 40 = 8."
+    },
+    // 29
+    {
+      question: "In a company, the ratio of male to female employees is 5:3. If 24 more females are hired and the number of males remains the same, the new ratio becomes 5:4. How many male employees are there?",
+      options: ["80", "100", "120", "140"],
+      answer: "120",
+      explanation: "Let males = 5x, females = 3x. After hiring, females = 3x + 24 and ratio is 5:4: 5x:(3x + 24) = 5:4. So 5x/(3x + 24) = 5/4 → 4·5x = 5(3x + 24) → 20x = 15x + 120 → 5x = 120 → x = 24. Males = 5x = 120."
+    },
+    // 30
+    {
+      question: "In a club, the ratio of juniors to seniors is 7:3. If there are 40 more juniors than seniors, how many members are there in the club?",
+      options: ["80", "90", "100", "110"],
+      answer: "100",
+      explanation: "Let juniors = 7x, seniors = 3x. Difference = 7x − 3x = 4x = 40 → x = 10. Juniors = 70, seniors = 30. Total members = 70 + 30 = 100."
+    },
+    // 31
+    {
+      question: "In a school, the ratio of students in Grade 6 to Grade 5 is 9:7. If there are 288 students in both grades together, how many students are in Grade 5?",
+      options: ["108", "120", "126", "144"],
+      answer: "126",
+      explanation: "Let Grade 6 = 9x and Grade 5 = 7x. Total: 9x + 7x = 16x = 288 → x = 18. Grade 5 students = 7x = 7 × 18 = 126."
+    },
+    // 32
+    {
+      question: "A basket contains red, blue, and green balls in the ratio 3:5:2. If there are 50 blue balls, how many balls are there in the basket?",
+      options: ["80", "90", "100", "120"],
+      answer: "100",
+      explanation: "Let numbers be 3k, 5k, and 2k. Blue = 5k = 50 → k = 10. Total balls = (3 + 5 + 2)k = 10k = 100."
+    },
+    // 33
+    {
+      question: "Six workers can complete a job in 15 days. How many workers are needed to finish the same job in 10 days, assuming work is proportional to workers × days?",
+      options: ["8", "9", "10", "12"],
+      answer: "9",
+      explanation: "Work = workers × days = 6 × 15 = 90 worker-days. For 10 days: let needed workers = w. Then w × 10 = 90 → w = 9."
+    },
+    // 34
+    {
+      question: "Twelve men can finish a job in 18 days. In how many days can 8 men finish the same job?",
+      options: ["24 days", "26 days", "27 days", "30 days"],
+      answer: "27 days",
+      explanation: "Work = 12 × 18 = 216 worker-days. For 8 men: 8 × d = 216 → d = 216 ÷ 8 = 27 days."
+    },
+    // 35
+    {
+      question: "If 14 machines can produce 2,800 units in 5 days, how many units can 10 machines produce in 7 days at the same rate?",
+      options: ["2,400", "2,800", "3,200", "3,600"],
+      answer: "2,800",
+      explanation: "Total units ∝ machines × days. Rate per machine per day = 2,800 ÷ (14 × 5) = 2,800 ÷ 70 = 40. For 10 machines in 7 days: 10 × 7 × 40 = 2,800 units."
+    },
+    // 36
+    {
+      question: "If 8 painters can paint a wall in 9 days, how many days will it take 12 painters to paint the same wall?",
+      options: ["5 days", "6 days", "7 days", "8 days"],
+      answer: "6 days",
+      explanation: "Work = 8 × 9 = 72 painter-days. For 12 painters: 12 × d = 72 → d = 72 ÷ 12 = 6 days."
+    },
+    // 37
+    {
+      question: "Three taps A, B, and C can fill a tank in 6 hours, 12 hours, and 12 hours respectively. If all three are opened together, in how many hours will the tank be full?",
+      options: ["2 hours", "3 hours", "4 hours", "5 hours"],
+      answer: "3 hours",
+      explanation: "Rates: A = 1/6, B = 1/12, C = 1/12 tank per hour. Combined rate = 1/6 + 1/12 + 1/12 = 2/12 + 1/12 + 1/12 = 4/12 = 1/3 tank per hour. Time = 1 ÷ (1/3) = 3 hours."
+    },
+    // 38
+    {
+      question: "A team of 15 workers can complete a road project in 24 days. After 4 days, 5 workers leave the team. How many more days will it take to finish the remaining work?",
+      options: ["24 days", "26 days", "28 days", "30 days"],
+      answer: "30 days",
+      explanation: "Total work = 15 × 24 = 360 worker-days. Work done in 4 days = 15 × 4 = 60 worker-days. Remaining work = 360 − 60 = 300 worker-days. Remaining workers = 10, so time = 300 ÷ 10 = 30 more days."
+    },
+    // 39
+    {
+      question: "A car travels 180 km in 3 hours at a constant speed. How far will it travel in 5 hours at the same speed?",
+      options: ["250 km", "280 km", "300 km", "320 km"],
+      answer: "300 km",
+      explanation: "Speed = 180 ÷ 3 = 60 km/h. In 5 hours, distance = 60 × 5 = 300 km."
+    },
+    // 40
+    {
+      question: "A train travels from City A to City B at an average speed of 80 km/h and returns at an average speed of 100 km/h. The distance between the cities is 240 km. What is the ratio of the time taken for the onward journey to the time taken for the return journey?",
+      options: ["4:3", "5:4", "3:2", "2:1"],
+      answer: "5:4",
+      explanation: "Onward time = 240 ÷ 80 = 3 hours. Return time = 240 ÷ 100 = 2.4 hours. Ratio = 3 : 2.4 = 30 : 24 = 5 : 4."
+    },
+    // 41
+    {
+      question: "A cyclist covers 45 km in 3 hours. At the same speed, how long will it take to cover 75 km?",
+      options: ["3 hours", "4 hours", "5 hours", "6 hours"],
+      answer: "5 hours",
+      explanation: "Speed = 45 ÷ 3 = 15 km/h. Time for 75 km = 75 ÷ 15 = 5 hours."
+    },
+    // 42
+    {
+      question: "Two buses travel from the same city to another city. Bus A travels at 60 km/h, while Bus B travels at 80 km/h. What is the ratio of the time taken by Bus A to the time taken by Bus B for the same distance?",
+      options: ["3:4", "4:3", "5:4", "4:5"],
+      answer: "4:3",
+      explanation: "Time ∝ 1/speed. So t_A : t_B = 1/60 : 1/80 = 80 : 60 = 4 : 3."
+    },
+    // 43
+    {
+      question: "A car uses 12 liters of fuel to travel 180 km. At the same rate, how many liters of fuel are needed to travel 300 km?",
+      options: ["15 L", "18 L", "20 L", "22 L"],
+      answer: "20 L",
+      explanation: "Fuel ∝ distance. 12 L → 180 km, so per km = 12/180 = 1/15 L. For 300 km: 300 × (1/15) = 20 L."
+    },
+    // 44
+    {
+      question: "A person walks from home to office at 5 km/h and returns along the same route at 4 km/h. What is the ratio of the time taken to go to the office to the time taken to return?",
+      options: ["4:5", "5:4", "3:4", "4:3"],
+      answer: "4:5",
+      explanation: "Time ∝ 1/speed. So t_go : t_return = 1/5 : 1/4 = 4 : 5. He is faster going, so takes less time than when returning."
+    },
+    // 45
+    {
+      question: "A car increases its speed from 60 km/h to 80 km/h. By what fraction has the speed increased?",
+      options: ["1/4", "1/3", "2/5", "2/3"],
+      answer: "1/3",
+      explanation: "Increase = 80 − 60 = 20 km/h. Fractional increase = increase ÷ original speed = 20 ÷ 60 = 1/3."
+    },
+    // 46
+    {
+      question: "The angles of a triangle are in the ratio 2:3:4. What is the measure of the largest angle?",
+      options: ["50°", "60°", "70°", "80°"],
+      answer: "80°",
+      explanation: "Sum of angles in a triangle = 180°. 2 + 3 + 4 = 9 parts. Each part = 180 ÷ 9 = 20°. Largest angle = 4 × 20° = 80°."
+    },
+    // 47
+    {
+      question: "In a rectangle, the ratio of length to width is 5:2. If the perimeter is 84 cm, what is the length of the rectangle?",
+      options: ["20 cm", "25 cm", "30 cm", "35 cm"],
+      answer: "30 cm",
+      explanation: "Let length = 5x, width = 2x. Perimeter = 2(5x + 2x) = 14x = 84 → x = 6. Length = 5x = 30 cm."
+    },
+    // 48
+    {
+      question: "The sides of a triangle are in the ratio 3:5:7. If the perimeter is 75 cm, what is the length of the shortest side?",
+      options: ["10 cm", "12 cm", "15 cm", "21 cm"],
+      answer: "15 cm",
+      explanation: "3 + 5 + 7 = 15 parts. Each part = 75 ÷ 15 = 5 cm. Shortest side = 3 × 5 = 15 cm."
+    },
+    // 49
+    {
+      question: "In a school, the ratio of students who like Math, Science, and English is 4:3:5. If 120 students like Science, how many students like English?",
+      options: ["150", "160", "180", "200"],
+      answer: "200",
+      explanation: "Let numbers be 4k, 3k, and 5k. Science = 3k = 120 → k = 40. English = 5k = 5 × 40 = 200."
+    },
+    // 50
+    {
+      question: "In a survey, the ratio of people who prefer coffee to tea to juice is 5:7:4. If 240 people were surveyed, how many preferred tea?",
+      options: ["70", "75", "105", "140"],
+      answer: "105",
+      explanation: "Total parts = 5 + 7 + 4 = 16. Each part = 240 ÷ 16 = 15. Tea-lovers = 7 × 15 = 105."
+    }
   ]
+
 };
 
