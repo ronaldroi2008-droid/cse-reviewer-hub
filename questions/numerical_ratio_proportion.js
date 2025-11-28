@@ -6,7 +6,8 @@
 
 window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 
-window.NUMERICAL_QUESTION_BANK["ratio_and_proportion"] = {
+window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
+
 
   // ==========================================
   // LEVEL 1: BEGINNER (50 items – Basic Ratios)
