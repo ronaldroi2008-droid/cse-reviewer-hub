@@ -368,6 +368,9 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
   // ==========================================
   // LEVEL 2: INTERMEDIATE (50 items – Sharing & Proportion)
   // ==========================================
+   // ==========================================
+  // LEVEL 2: INTERMEDIATE (50 items – Sharing & Proportion)
+  // ==========================================
   intermediate: [
     // 1
     {
@@ -404,15 +407,7 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "₱240",
       explanation: "B = 1 part = 60, so 1 part = 60. A = 4 parts → 4 × 60 = ₱240."
     },
-    // 6
-    {
-  question: "In a class, the ratio of boys to girls is 3:5. If there are 30 girls, how many boys are there?",
-  options: ["12", "15", "18", "20"],
-  answer: "18",
-  explanation: "5 parts → 30, so 1 part = 6. Boys = 3 parts = 3 × 6 = 18."
-}
-    // NOTE: The above is messy for a clean multiple. Let's REPLACE it with a nice integer example:
-    // 6 (fixed)
+    // 6 (FIXED - One version only)
     {
       question: "In a class, the ratio of boys to girls is 3:5. If there are 30 girls, how many boys are there?",
       options: ["12", "15", "18", "20"],
@@ -426,15 +421,7 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "25",
       explanation: "Total parts = 5 + 3 = 8. Each part = 40 ÷ 8 = 5. Men = 5 × 5 = 25."
     },
-    // 8
- {
-  question: "In a class, the ratio of students who like Math to those who like Science is 7:3. If 70 students like Math, how many like Science?",
-  options: ["21", "25", "28", "30"],
-  answer: "30",
-  explanation: "7 parts → 70, so 1 part = 10. Science = 3 parts = 3 × 10 = 30."
-}
-    // The above again is messy. Let's REPLACE with a clean integer.
-    // 8 (fixed)
+    // 8 (FIXED - One version only)
     {
       question: "In a class, the ratio of students who like Math to those who like Science is 7:3. If 70 students like Math, how many like Science?",
       options: ["21", "25", "28", "30"],
@@ -567,15 +554,6 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "20 cm",
       explanation: "2 parts → 8, so 1 part = 4. Length = 5 parts = 5 × 4 = 20 cm."
     },
-    // 27
-   {
-  question: "The ratio of students who passed to those who failed is 7:3. If 70 students passed, how many failed?",
-  options: ["20", "25", "30", "35"],
-  answer: "30",
-  explanation: "7 parts → 70, so 1 part = 10. Failed = 3 parts = 3 × 10 = 30."
-}
-    // To keep it clean, let's REPLACE with exact ratio.
-    // 27 (fixed)
     {
       question: "The ratio of students who passed to those who failed is 7:3. If 70 students passed, how many failed?",
       options: ["20", "25", "30", "35"],
@@ -813,11 +791,11 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "9 + 5 = 14 parts. Each part = 112 ÷ 14 = 8. Larger = 9 × 8 = 72."
     },
     // 10
-    {
-      question: "The ratio of two numbers is 11:7, and their difference is 24. What is the larger number?",
-      options: ["44", "48", "52", "56"],
+  {
+      question: "The ratio of two numbers is 11:7, and their difference is 16. What is the larger number?",
+      options: ["22", "28", "36", "44"],
       answer: "44",
-      explanation: "Let numbers be 11k and 7k. Difference = 4k = 24 → k = 6. Larger = 11 × 6 = 66? Wait— this exceeds options. For clean values, use difference 16: 4k = 16 → k = 4, larger = 44."
+      explanation: "Let numbers be 11k and 7k. Difference = 4k = 16 → k = 4. Larger = 11 × 4 = 44."
     },
     
     // 11
@@ -891,12 +869,13 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "15",
       explanation: "Let numbers be 2x and 3x. (2x + 5):(3x + 5) = 3:4 → 4(2x + 5) = 3(3x + 5) → 8x + 20 = 9x + 15 → x = 5. Larger original = 3x = 15."
     },
-   {
-  question: "The ratio of two numbers is 3:4. If the smaller number is 18, what is the larger number?",
-  options: ["21", "22", "23", "24"],
-  answer: "24",
-  explanation: "3 parts → 18, so 1 part = 6. Larger = 4 × 6 = 24."
-}
+    // 21 (FIXED)
+    {
+      question: "The ratio of two numbers is 3:4. If the smaller number is 18, what is the larger number?",
+      options: ["21", "22", "23", "24"],
+      answer: "24",
+      explanation: "3 parts → 18, so 1 part = 6. Larger = 4 × 6 = 24."
+    },
     // 22
     {
       question: "The ratio of two numbers is 5:6. If their sum is 88, what is the larger number?",
