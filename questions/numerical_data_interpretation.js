@@ -6,7 +6,7 @@
 
 window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 
-window.NUMERICAL_QUESTION_BANK["tables_charts_graphs"] = {
+window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (50 items – Basic Reading)
