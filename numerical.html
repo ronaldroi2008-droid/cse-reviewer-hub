@@ -1500,6 +1500,10 @@
     let currentIndex = 0;
     let currentItemCount = 10; // NEW: default 10 items
 
+    // NEW: quiz state for finish/score
+    let userAnswers = [];
+    let quizFinished = false;
+
     const modeTabs        = document.querySelectorAll(".mode-tab");
     const topicListEl     = document.getElementById("topicList");
     const subtitleTopicEl = document.getElementById("subtitleTopic");
@@ -1663,12 +1667,33 @@
       return levelQuestions.slice(0, currentItemCount);
     }
 
+    // NEW: reset quiz state when topic/level/items change or restart
+    function resetQuizState() {
+      const questions = getQuestionsForCurrent();
+      userAnswers = questions.map(() => null);
+      currentIndex = 0;
+      quizFinished = false;
+      if (feedbackEl) {
+        feedbackEl.textContent = "";
+        feedbackEl.className = "feedback";
+      }
+      if (progressTextEl) {
+        progressTextEl.textContent = "";
+      }
+    }
+
     function renderQuiz() {
       const topic = NUMERICAL_TOPICS.find((t) => t.id === currentTopicId);
       quizTopicTitleEl.textContent = topic ? topic.label : "Numerical Ability";
       quizLevelLabelEl.textContent = capitalize(currentLevel);
 
       const questions = getQuestionsForCurrent();
+
+      // keep userAnswers same length as questions
+      if (userAnswers.length !== questions.length) {
+        userAnswers = questions.map(() => null);
+      }
+
       feedbackEl.textContent = "";
       feedbackEl.className = "feedback";
 
@@ -1704,19 +1729,94 @@
         optionsListEl.appendChild(li);
       });
 
+      // If this question was already answered, restore highlight + feedback
+      const stored = userAnswers[currentIndex];
+      if (stored && stored.selected != null) {
+        const buttons = optionsListEl.querySelectorAll(".option-button");
+        buttons.forEach((btn) => {
+          if (btn.textContent === currentQ.answer) {
+            btn.classList.add("is-correct");
+          }
+          if (btn.textContent === stored.selected && !stored.correct) {
+            btn.classList.add("is-incorrect");
+          }
+        });
+
+        feedbackEl.textContent =
+          (stored.correct ? "Correct! " : "Not quite. ") +
+          (currentQ.explanation || "");
+        feedbackEl.className =
+          "feedback " + (stored.correct ? "feedback--correct" : "feedback--incorrect");
+      }
+
       progressTextEl.textContent =
         "Question " + (currentIndex + 1) + " of " + questions.length;
 
+      // Prev only disabled at first question
       prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === questions.length - 1;
+
+      // Next button label / state
+      if (quizFinished) {
+        nextBtn.textContent = "Restart Quiz";
+        nextBtn.disabled = false;
+      } else if (currentIndex === questions.length - 1) {
+        nextBtn.textContent = "Finish Quiz";
+        nextBtn.disabled = false;
+      } else {
+        nextBtn.textContent = "Next";
+        nextBtn.disabled = false;
+      }
+    }
+
+    // NEW: finish quiz – compute score and show in feedback + progress
+    function finishQuiz() {
+      const questions = getQuestionsForCurrent();
+      if (!questions.length) return;
+
+      let answered = 0;
+      let correct = 0;
+
+      userAnswers.forEach((ans) => {
+        if (ans && ans.selected != null) {
+          answered++;
+          if (ans.correct) correct++;
+        }
+      });
+
+      const total = questions.length;
+      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      quizFinished = true;
+
+      feedbackEl.className = "feedback";
+      feedbackEl.textContent =
+        "Quiz finished! You answered " +
+        correct + " out of " + total +
+        " correctly (" + percent + "%). " +
+        (answered < total
+          ? "Some items were not answered; you can go back to review them, then click 'Restart Quiz' to try again."
+          : "Great work! You can click 'Restart Quiz' to try again or change level/topic.");
+
+      progressTextEl.textContent =
+        "Score: " + correct + " / " + total + " (" + percent + "%)";
+
+      nextBtn.textContent = "Restart Quiz";
+      nextBtn.disabled = false;
     }
 
     function handleAnswer(selectedOption) {
       const questions = getQuestionsForCurrent();
       if (!questions.length) return;
+      if (quizFinished) return; // do not change answers after finishing
 
       const currentQ = questions[currentIndex];
       const isCorrect = selectedOption === currentQ.answer;
+
+      // store answer state
+      userAnswers[currentIndex] = {
+        selected: selectedOption,
+        correct: isCorrect
+      };
 
       const buttons = optionsListEl.querySelectorAll(".option-button");
       buttons.forEach((btn) => {
@@ -1758,7 +1858,7 @@
 
     function selectTopic(topicId) {
       currentTopicId = topicId;
-      currentIndex = 0;
+      resetQuizState();
       updateActiveTopicPill();
       renderLesson();
       renderQuiz();
@@ -1779,7 +1879,7 @@
           const level = chip.dataset.level;
           if (!level || level === currentLevel) return;
           currentLevel = level;
-          currentIndex = 0;
+          resetQuizState();
           levelChips.forEach((c) => {
             c.classList.toggle("active", c.dataset.level === level);
           });
@@ -1794,7 +1894,7 @@
           if (!count || count === currentItemCount) return;
 
           currentItemCount = count;
-          currentIndex = 0;
+          resetQuizState();
 
           itemChips.forEach((c) => {
             c.classList.toggle("active", c === chip);
@@ -1816,9 +1916,20 @@
       nextBtn.addEventListener("click", function () {
         const questions = getQuestionsForCurrent();
         if (!questions.length) return;
+
+        // If quiz is finished, this button restarts
+        if (quizFinished) {
+          resetQuizState();
+          renderQuiz();
+          return;
+        }
+
         if (currentIndex < questions.length - 1) {
           currentIndex += 1;
           renderQuiz();
+        } else {
+          // last question -> finish quiz
+          finishQuiz();
         }
       });
     }
