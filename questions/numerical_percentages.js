@@ -956,7 +956,7 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
     // 33
     {
       question: "A student scored 42 marks, which is 70% of the test. What was the total possible score?",
-      options: ["50", "55", "60", "65"],
+      options: ["80", "85", "90", "100"],
       answer: "60",
       explanation: "0.7T = 42 → T = 42 ÷ 0.7 = 60."
     },
@@ -1219,12 +1219,12 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "₱800 is 80% of cost. Cost = 800 ÷ 0.8 = 1,000. 20% gain price = 1,000 × 1.2 = 1,200."
     },
     // 20
-   {
-  question: "A tank is 3/5 full. After adding 84 liters, it is 90% full. What is the capacity of the tank?",
-  options: ["280 L", "300 L", "320 L", "350 L"],
-  answer: "280 L",
-  explanation: "3/5 = 60%. Increase from 60% to 90% = 30% of capacity. 30% of C = 84 → 0.3C = 84 → C = 84 ÷ 0.3 = 280 liters."
-}
+    {
+      question: "A tank is 3/5 full. After adding 84 liters, it is 90% full. What is the capacity of the tank?",
+      options: ["280 L", "300 L", "320 L", "350 L"],
+      answer: "280 L",
+      explanation: "3/5 = 60%. Increase from 60% to 90% = 30% of capacity. 30% of C = 84 → 0.3C = 84 → C = 84 ÷ 0.3 = 280 liters."
+    },
     // 21
     {
       question: "A car's value depreciates by 15% each year. If it is worth ₱680,000 now, what was its value last year?",
@@ -1352,13 +1352,12 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "Let number = 15. Correct answer = 15 × 5/3 = 25. Wrong answer = 15 × 3/5 = 9. Error = 16/25 = 64%."
     },
     // 39
-   // 39 - CORRECTED
-{
-  question: "In an exam, 65% passed in Math, 70% in Science, and 27% failed in both. What percent passed in both?",
-  options: ["62%", "58%", "55%", "52%"],
-  answer: "62%",
-  explanation: "Failed in both = 27%. Passed in at least one = 100% - 27% = 73%. Using set theory: Math ∪ Science = Math + Science - Both. 73% = 65% + 70% - Both → Both = 135% - 73% = 62%."
-}
+    {
+      question: "In an exam, 65% passed in Math, 70% in Science, and 27% failed in both. What percent passed in both?",
+      options: ["62%", "58%", "55%", "52%"],
+      answer: "62%",
+      explanation: "Failed in both = 27%. Passed in at least one = 100% - 27% = 73%. Using set theory: Math ∪ Science = Math + Science - Both. 73% = 65% + 70% - Both → Both = 135% - 73% = 62%."
+    },
     // 40
     {
       question: "A man's wages were reduced by 25%. By what percent must the reduced wages be increased to bring back original?",
@@ -1402,13 +1401,12 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "40% of 70 = 28. 28 - 8 = 20. x% of 50 = 20 → x/100 × 50 = 20 → x = 40."
     },
     // 46
-  // 46 - CORRECTED
-{
-  question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 35 marks more than passing. Maximum marks are:",
-  options: ["300", "350", "400", "450"],
-  answer: "350",
-  explanation: "Let max marks = M. Passing marks = 0.55M + 15 = 0.7M - 35 → 0.15M = 50 → M = 50 ÷ 0.15 = 333.33 ≈ 350 (closest option). Check: 55% of 350 = 192.5 + 15 = 207.5 passing marks; 70% of 350 = 245 - 35 = 210 passing marks (close enough)."
-}
+    {
+      question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 35 marks more than passing. Maximum marks are:",
+      options: ["300", "350", "400", "450"],
+      answer: "350",
+      explanation: "Let max marks = M. Passing marks = 0.55M + 15 = 0.7M - 35 → 0.15M = 50 → M = 50 ÷ 0.15 = 333.33 ≈ 350 (closest option). Check: 55% of 350 = 192.5 + 15 = 207.5 passing marks; 70% of 350 = 245 - 35 = 210 passing marks (close enough)."
+    },
     // 47
     {
       question: "If the price of sugar increases by 20%, by what percent should consumption be reduced to keep expenditure same?",
@@ -1438,4 +1436,4 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "70% of number = 84 → Number = 84 ÷ 0.7 = 120."
     }
   ]
-  }; 
+};
