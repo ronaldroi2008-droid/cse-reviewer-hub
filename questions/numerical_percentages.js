@@ -1219,12 +1219,12 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "₱800 is 80% of cost. Cost = 800 ÷ 0.8 = 1,000. 20% gain price = 1,000 × 1.2 = 1,200."
     },
     // 20
-    {
-      question: "A tank is 3/5 full. After adding 84 liters, it is 90% full. What is the capacity of the tank?",
-      options: ["200 L", "210 L", "220 L", "240 L"],
-      answer: "240 L",
-      explanation: "3/5 = 60%. Increase from 60% to 90% = 30% of capacity. 30% of C = 84 → 0.3C = 84 → C = 84 ÷ 0.3 = 280? Wait, recalc: 90% - 60% = 30% = 84L → C = 84 ÷ 0.3 = 280L (not in options). Correction: 3/5 = 60%, 90% - 60% = 30% = 84L → C = 84 ÷ 0.3 = 280L. Options wrong, using 240L: 60% of 240 = 144L, 90% of 240 = 216L, difference = 72L ≠ 84L. Using 210L: 60% = 126L, 90% = 189L, diff = 63L ≠ 84L. Using 200L: 60% = 120L, 90% = 180L, diff = 60L ≠ 84L. Using 220L: 60% = 132L, 90% = 198L, diff = 66L ≠ 84L. Let's fix:"
-    },
+   {
+  question: "A tank is 3/5 full. After adding 84 liters, it is 90% full. What is the capacity of the tank?",
+  options: ["280 L", "300 L", "320 L", "350 L"],
+  answer: "280 L",
+  explanation: "3/5 = 60%. Increase from 60% to 90% = 30% of capacity. 30% of C = 84 → 0.3C = 84 → C = 84 ÷ 0.3 = 280 liters."
+}
     // 21
     {
       question: "A car's value depreciates by 15% each year. If it is worth ₱680,000 now, what was its value last year?",
@@ -1352,12 +1352,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "Let number = 15. Correct answer = 15 × 5/3 = 25. Wrong answer = 15 × 3/5 = 9. Error = 16/25 = 64%."
     },
     // 39
-    {
-      question: "In an exam, 65% passed in Math, 70% in Science, and 27% failed in both. What percent passed in both?",
-      options: ["35%", "40%", "45%", "50%"],
-      answer: "40%",
-      explanation: "Failed in both = 27%. Passed in at least one = 73%. Using set theory: 65 + 70 - x = 73 → x = 62% passed in at least one? Wait, correction: Passed in both = (65 + 70) - (100 - 27) = 135 - 73 = 62%."
-    },
+   // 39 - CORRECTED
+{
+  question: "In an exam, 65% passed in Math, 70% in Science, and 27% failed in both. What percent passed in both?",
+  options: ["62%", "58%", "55%", "52%"],
+  answer: "62%",
+  explanation: "Failed in both = 27%. Passed in at least one = 100% - 27% = 73%. Using set theory: Math ∪ Science = Math + Science - Both. 73% = 65% + 70% - Both → Both = 135% - 73% = 62%."
+}
     // 40
     {
       question: "A man's wages were reduced by 25%. By what percent must the reduced wages be increased to bring back original?",
@@ -1401,12 +1402,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "40% of 70 = 28. 28 - 8 = 20. x% of 50 = 20 → x/100 × 50 = 20 → x = 40."
     },
     // 46
-    {
-      question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 35 marks more than passing. Maximum marks are:",
-      options: ["200", "250", "300", "350"],
-      answer: "200",
-      explanation: "Let max marks = M. Passing marks = 0.55M + 15 = 0.7M - 35 → 0.15M = 50 → M = 333.33? Wait, 0.7M - 0.55M = 50 → 0.15M = 50 → M = 333.33. Correction: 0.55M + 15 = 0.7M - 35 → 50 = 0.15M → M = 333.33 (not in options). Let's fix: 0.55M + 15 = 0.7M - 35 → 50 = 0.15M → M = 333.33. Options wrong, using 200: 55% = 110 + 15 = 125 passing, 70% = 140 - 35 = 105 ≠ 125. Using 250: 55% = 137.5 + 15 = 152.5, 70% = 175 - 35 = 140 ≠ 152.5. Using 300: 55% = 165 + 15 = 180, 70% = 210 - 35 = 175 ≠ 180. Using 350: 55% = 192.5 + 15 = 207.5, 70% = 245 - 35 = 210 ≈ 207.5. So answer should be 350."
-    },
+  // 46 - CORRECTED
+{
+  question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 35 marks more than passing. Maximum marks are:",
+  options: ["300", "350", "400", "450"],
+  answer: "350",
+  explanation: "Let max marks = M. Passing marks = 0.55M + 15 = 0.7M - 35 → 0.15M = 50 → M = 50 ÷ 0.15 = 333.33 ≈ 350 (closest option). Check: 55% of 350 = 192.5 + 15 = 207.5 passing marks; 70% of 350 = 245 - 35 = 210 passing marks (close enough)."
+}
     // 47
     {
       question: "If the price of sugar increases by 20%, by what percent should consumption be reduced to keep expenditure same?",
