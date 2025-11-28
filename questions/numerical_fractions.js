@@ -625,6 +625,19 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // LEVEL 3: ADVANCED (50 items - Mixed Numbers & Complex Operations)
   // ==========================================
   advanced: [
+        {
+      question: "A tank contains 2 1/2 liters of water, which is 5/8 of its full capacity. What is the full capacity of the tank?",
+      options: ["3 liters", "4 liters", "5 liters", "6 liters"],
+      answer: "4 liters",
+      explanation: "Let the full capacity be C. Given 5/8 of C = 2 1/2 liters. Convert 2 1/2 to an improper fraction: 2 1/2 = 5/2. So 5/8 · C = 5/2. Solve for C: C = (5/2) ÷ (5/8) = (5/2) × (8/5) = 40/10 = 4 liters."
+    },
+    {
+      question: "Evaluate: (1 2/3 + 3/4) × 3/5.",
+      options: ["1 1/4", "1 3/10", "1 9/20", "1 1/2"],
+      answer: "1 9/20",
+      explanation: "Convert 1 2/3 to 5/3. Add 5/3 and 3/4. The LCD of 3 and 4 is 12, so 5/3 = 20/12 and 3/4 = 9/12. Sum = 29/12. Now multiply by 3/5: (29/12) × (3/5) = 87/60 = 29/20 = 1 9/20."
+    }
+
     {
       question: "Convert the improper fraction 9/4 to a mixed number.",
       options: ["2 1/4", "2 2/4", "1 3/4", "3 1/4"],
