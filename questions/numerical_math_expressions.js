@@ -6,7 +6,7 @@
 
 window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 
-window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
+window.NUMERICAL_QUESTION_BANK["solving_math_expressions"] = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (50 items – Basic Expressions)
