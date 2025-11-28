@@ -406,11 +406,11 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
     },
     // 6
     {
-      question: "In a class, the ratio of boys to girls is 3:5. If there are 24 girls, how many boys are there?",
-      options: ["12", "14", "15", "18"],
-      answer: "18",
-      explanation: "5 parts → 24, so 1 part = 24 ÷ 5 = 4.8? This is not an integer, so choose a better number. Actually, we scale 3:5 to match 24 girls: 5k = 24 → k = 4.8. To keep it simple, think in multiples: 3:5 → 18:30 etc. To avoid confusion, you can remember that boys = (3/5) × girls only when total is known. For this item, assume k is real and 3k ≈ 14.4? (Note: for clean integer, teacher might adjust numbers.)"
-    },
+  question: "In a class, the ratio of boys to girls is 3:5. If there are 30 girls, how many boys are there?",
+  options: ["12", "15", "18", "20"],
+  answer: "18",
+  explanation: "5 parts → 30, so 1 part = 6. Boys = 3 parts = 3 × 6 = 18."
+}
     // NOTE: The above is messy for a clean multiple. Let's REPLACE it with a nice integer example:
     // 6 (fixed)
     {
@@ -427,12 +427,12 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "Total parts = 5 + 3 = 8. Each part = 40 ÷ 8 = 5. Men = 5 × 5 = 25."
     },
     // 8
-    {
-      question: "In a class, the ratio of students who like Math to those who like Science is 7:3. If 40 students like Math, how many like Science?",
-      options: ["12", "15", "16", "18"],
-      answer: "18",
-      explanation: "7 parts → 40, so 1 part ≈ 5.714, but to keep it integer we scale an exact multiple: 7:3 → 14:6 → 21:9 → 28:12 → 35:15 → 42:18. 40 is close to 42. For clean exam items we usually match multiples; better to choose 42 instead of 40."
-    },
+ {
+  question: "In a class, the ratio of students who like Math to those who like Science is 7:3. If 70 students like Math, how many like Science?",
+  options: ["21", "25", "28", "30"],
+  answer: "30",
+  explanation: "7 parts → 70, so 1 part = 10. Science = 3 parts = 3 × 10 = 30."
+}
     // The above again is messy. Let's REPLACE with a clean integer.
     // 8 (fixed)
     {
@@ -568,12 +568,12 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "2 parts → 8, so 1 part = 4. Length = 5 parts = 5 × 4 = 20 cm."
     },
     // 27
-    {
-      question: "The ratio of students who passed to those who failed is 7:3. If 90 students passed, how many failed?",
-      options: ["30", "35", "38", "40"],
-      answer: "30",
-      explanation: "7 parts → 90, so 1 part ≈ 12.857. For a neat exam item, 70 passed would give exactly 30 failed. (For clean integers in class, teachers would usually choose numbers like 70 and 30.)"
-    },
+   {
+  question: "The ratio of students who passed to those who failed is 7:3. If 70 students passed, how many failed?",
+  options: ["20", "25", "30", "35"],
+  answer: "30",
+  explanation: "7 parts → 70, so 1 part = 10. Failed = 3 parts = 3 × 10 = 30."
+}
     // To keep it clean, let's REPLACE with exact ratio.
     // 27 (fixed)
     {
@@ -819,13 +819,7 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "44",
       explanation: "Let numbers be 11k and 7k. Difference = 4k = 24 → k = 6. Larger = 11 × 6 = 66? Wait— this exceeds options. For clean values, use difference 16: 4k = 16 → k = 4, larger = 44."
     },
-    // 10 (fixed)
-    {
-      question: "The ratio of two numbers is 11:7, and their difference is 16. What is the larger number?",
-      options: ["22", "28", "36", "44"],
-      answer: "44",
-      explanation: "Let numbers be 11k and 7k. Difference = 4k = 16 → k = 4. Larger = 11 × 4 = 44."
-    },
+    
     // 11
     {
       question: "A and B share a profit in the ratio 5:3. If the total profit is ₱8,000, how much does A receive?",
@@ -889,13 +883,7 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "₱320",
       explanation: "7 m → 560, so 1 m = 80. 4 m = 4 × 80 = ₱320."
     },
-    // 20
-    {
-      question: "The ratio of two numbers is 4:5. If adding 10 to each number makes the ratio 7:8, what is the larger original number?",
-      options: ["20", "25", "30", "35"],
-      answer: "25",
-      explanation: "Let numbers be 4x and 5x. After adding 10: (4x + 10):(5x + 10) = 7:8. Cross-multiply: 8(4x + 10) = 7(5x + 10) → 32x + 80 = 35x + 70 → 3x = 10 → x = 10/3, giving non-integer. To keep things simple for CSE, exam items usually choose x for which the equation is neat. So we adjust the numbers."
-    },
+    
     // 20 (fixed)
     {
       question: "The ratio of two numbers is 2:3. If adding 5 to each makes the ratio 3:4, what is the larger original number?",
@@ -903,28 +891,12 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       answer: "15",
       explanation: "Let numbers be 2x and 3x. (2x + 5):(3x + 5) = 3:4 → 4(2x + 5) = 3(3x + 5) → 8x + 20 = 9x + 15 → x = 5. Larger original = 3x = 15."
     },
-    // 21
-    {
-      question: "The ratio of two numbers is 3:4. If their product is 192, what is the larger number?",
-      options: ["16", "24", "32", "36"],
-      answer: "24",
-      explanation: "Let numbers be 3x and 4x. Product = 12x² = 192 → x² = 16 → x = 4. Larger = 4x = 16? Wait, that’s 16. So adjust the product to 12x² = 384 for x = 4 and larger = 16. To match options, we refine the values."
-    },
-    // 21 (fixed)
-    {
-      question: "The ratio of two numbers is 3:4. If their product is 384, what is the larger number?",
-      options: ["16", "24", "28", "32"],
-      answer: "24",
-      explanation: "Let numbers be 3x and 4x. Product = 12x² = 384 → x² = 32 → x = √32 (not neat). For a clean item, we should match a perfect square."
-    },
-    // Instead, let's replace with a simpler, clean problem:
-    // 21 (clean final)
-    {
-      question: "The ratio of two numbers is 3:4. If the smaller number is 18, what is the larger number?",
-      options: ["21", "22", "23", "24"],
-      answer: "24",
-      explanation: "3 parts → 18, so 1 part = 6. Larger = 4 × 6 = 24."
-    },
+   {
+  question: "The ratio of two numbers is 3:4. If the smaller number is 18, what is the larger number?",
+  options: ["21", "22", "23", "24"],
+  answer: "24",
+  explanation: "3 parts → 18, so 1 part = 6. Larger = 4 × 6 = 24."
+}
     // 22
     {
       question: "The ratio of two numbers is 5:6. If their sum is 88, what is the larger number?",
@@ -940,34 +912,19 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "3 + 2 = 5 parts. Each part = 30 ÷ 5 = 6. Juice = 2 × 6 = 12."
     },
     // 24
-    {
-      question: "In a mixture of rice and beans, the ratio is 7:3. If there are 50 kg of rice, how many kg of beans are there?",
-      options: ["18", "19", "20", "21"],
-      answer: "21",
-      explanation: "7 parts → 50, so 1 part ≈ 7.14. For neat exam problems, use 49 instead. Let's adjust."
-    },
-    // 24 (fixed)
-    {
-      question: "In a mixture of rice and beans, the ratio is 7:3. If there are 70 kg of rice, how many kg of beans are there?",
-      options: ["24", "27", "30", "33"],
-      answer: "30",
-      explanation: "7 parts → 70, so 1 part = 10. Beans = 3 × 10 = 30 kg."
-    },
+   {
+  question: "In a mixture of rice and beans, the ratio is 7:3. If there are 70 kg of rice, how many kg of beans are there?",
+  options: ["24", "27", "30", "33"],
+  answer: "30",
+  explanation: "7 parts → 70, so 1 part = 10. Beans = 3 × 10 = 30 kg."
+}
     // 25
-    {
-      question: "The ratio of sugar to flour is 1:4. If there are 45 kg of flour, how many kg of sugar are needed?",
-      options: ["9", "10", "11", "12"],
-      answer: "11.25",
-      explanation: "4 parts → 45, so 1 part = 11.25. Sugar = 1 part = 11.25 kg. (Decimals are allowed in real life, but many CSE items prefer integers.)"
-    },
-    // For integer-only style, let's replace:
-    // 25 (fixed)
-    {
-      question: "The ratio of sugar to flour is 1:4. If there are 40 kg of flour, how many kg of sugar are needed?",
-      options: ["8", "9", "10", "12"],
-      answer: "10",
-      explanation: "4 parts → 40, so 1 part = 10. Sugar = 1 part = 10 kg."
-    },
+  {
+  question: "The ratio of sugar to flour is 1:4. If there are 40 kg of flour, how many kg of sugar are needed?",
+  options: ["8", "9", "10", "12"],
+  answer: "10",
+  explanation: "4 parts → 40, so 1 part = 10. Sugar = 1 part = 10 kg."
+}
     // 26
     {
       question: "A and B invest money in the ratio 3:5. If B invested ₱25,000, how much did A invest?",
@@ -1011,19 +968,12 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "12/x = 4/5 → 4x = 60 → x = 15."
     },
     // 32
-    {
-      question: "If 21:14 = y:4, what is y?",
-      options: ["4", "6", "8", "12"],
-      answer: "12",
-      explanation: "21/14 = y/4 → Simplify 21/14 = 3/2. So 3/2 = y/4 → 2y = 12 → y = 6? Wait: 3/2 = y/4 → 3 × 4 = 2y → 12 = 2y → y = 6."
-    },
-    // 32 (fixed)
-    {
-      question: "If 21:14 = y:2, what is y?",
-      options: ["2", "3", "4", "6"],
-      answer: "3",
-      explanation: "21/14 = y/2 → 3/2 = y/2 → cross-multiply: 3 × 2 = 2y → 6 = 2y → y = 3."
-    },
+  {
+  question: "If 21:14 = y:2, what is y?",
+  options: ["2", "3", "4", "6"],
+  answer: "3",
+  explanation: "21/14 = y/2 → 3/2 = y/2 → cross-multiply: 3 × 2 = 2y → 6 = 2y → y = 3."
+}
     // 33
     {
       question: "If 16:24 = 2:x, what is x?",
@@ -1074,42 +1024,19 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
       explanation: "7 parts → 63, so 1 part = 9. Oranges = 9 × 9 = 81."
     },
     // 40
-    {
-      question: "A container has water and juice in the ratio 5:2. If there are 17.5 liters of juice, how much water is there?",
-      options: ["35 L", "40 L", "42 L", "45 L"],
-      answer: "43.75 L",
-      explanation: "2 parts → 17.5, so 1 part = 8.75. Water = 5 × 8.75 = 43.75 L."
-    },
-    // This has decimals; for exam-style integers, let's replace:
-    // 40 (fixed)
-    {
-      question: "A container has water and juice in the ratio 5:2. If there are 28 liters of juice, how much water is there?",
-      options: ["60 L", "65 L", "70 L", "75 L"],
-      answer: "70 L",
-      explanation: "2 parts → 28, so 1 part = 14. Water = 5 × 14 = 70 L."
-    },
+   {
+  question: "A container has water and juice in the ratio 5:2. If there are 28 liters of juice, how much water is there?",
+  options: ["60 L", "65 L", "70 L", "75 L"],
+  answer: "70 L",
+  explanation: "2 parts → 28, so 1 part = 14. Water = 5 × 14 = 70 L."
+}
     // 41
     {
-      question: "Three numbers are in the ratio 2:5:7. If the largest number is 84, what is the sum of the three numbers?",
-      options: ["120", "132", "144", "156"],
-      answer: "144",
-      explanation: "7 parts → 84, so 1 part = 12. Numbers: 2×12 = 24, 5×12 = 60, 7×12 = 84. Sum = 24 + 60 + 84 = 168? Wait, that’s 168. Adjust value."
-    },
-    // 41 (fixed)
-    {
-      question: "Three numbers are in the ratio 2:5:7. If the largest number is 56, what is the sum of the three numbers?",
-      options: ["80", "96", "112", "128"],
-      answer: "96",
-      explanation: "7 parts → 56, so 1 part = 8. Numbers: 16, 40, 56. Sum = 16 + 40 + 56 = 112? That is 112, not 96."
-    },
-    // Let's correct cleanly:
-    // 41 (clean final)
-    {
-      question: "Three numbers are in the ratio 2:5:7. If the largest number is 42, what is the sum of the three numbers?",
-      options: ["54", "70", "84", "98"],
-      answer: "84",
-      explanation: "7 parts → 42, so 1 part = 6. Numbers: 12, 30, 42. Sum = 12 + 30 + 42 = 84."
-    },
+  question: "Three numbers are in the ratio 2:5:7. If the largest number is 42, what is the sum of the three numbers?",
+  options: ["54", "70", "84", "98"],
+  answer: "84",
+  explanation: "7 parts → 42, so 1 part = 6. Numbers: 12, 30, 42. Sum = 12 + 30 + 42 = 84."
+}
     // 42
     {
       question: "The ratio of the angles of a triangle is 1:2:3. What is the smallest angle?",
