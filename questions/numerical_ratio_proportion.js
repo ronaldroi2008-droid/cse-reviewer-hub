@@ -896,14 +896,14 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
   options: ["24", "27", "30", "33"],
   answer: "30",
   explanation: "7 parts → 70, so 1 part = 10. Beans = 3 × 10 = 30 kg."
-}
+},
     // 25
   {
   question: "The ratio of sugar to flour is 1:4. If there are 40 kg of flour, how many kg of sugar are needed?",
   options: ["8", "9", "10", "12"],
   answer: "10",
   explanation: "4 parts → 40, so 1 part = 10. Sugar = 1 part = 10 kg."
-}
+},
     // 26
     {
       question: "A and B invest money in the ratio 3:5. If B invested ₱25,000, how much did A invest?",
@@ -952,7 +952,7 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
   options: ["2", "3", "4", "6"],
   answer: "3",
   explanation: "21/14 = y/2 → 3/2 = y/2 → cross-multiply: 3 × 2 = 2y → 6 = 2y → y = 3."
-}
+},
     // 33
     {
       question: "If 16:24 = 2:x, what is x?",
@@ -1008,14 +1008,14 @@ window.NUMERICAL_QUESTION_BANK["ratio_proportion"] = {
   options: ["60 L", "65 L", "70 L", "75 L"],
   answer: "70 L",
   explanation: "2 parts → 28, so 1 part = 14. Water = 5 × 14 = 70 L."
-}
+},
     // 41
     {
   question: "Three numbers are in the ratio 2:5:7. If the largest number is 42, what is the sum of the three numbers?",
   options: ["54", "70", "84", "98"],
   answer: "84",
   explanation: "7 parts → 42, so 1 part = 6. Numbers: 12, 30, 42. Sum = 12 + 30 + 42 = 84."
-}
+},
     // 42
     {
       question: "The ratio of the angles of a triangle is 1:2:3. What is the smallest angle?",
