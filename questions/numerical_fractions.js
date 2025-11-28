@@ -1217,4 +1217,5 @@ window.NUMERICAL_QUESTION_BANK["fractions"].expert = [
     answer: "48 km",
     explanation: "3 3/4 = 15/4 tanks. Distance per tank = 180 ÷ (15/4) = 180 × 4/15 = 720/15 = 48 km."
   }
+  ]
 ];
