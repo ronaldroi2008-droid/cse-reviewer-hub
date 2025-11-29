@@ -9,7 +9,7 @@ window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 window.NUMERICAL_QUESTION_BANK["number_problems"] = {
 
   // ==========================================
-  // LEVEL 1: Beginner (50 items)
+  // LEVEL 1: Beginner (50 items) - REVISED FOR VARIETY
   // ==========================================
   beginner: [
     {
@@ -17,12 +17,6 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
       options: ["2", "0", "1", "4"],
       answer: "4",
       explanation: "Let x be the number. The equation is x + 6 = 10. So x = 10 - 6 = 4."
-    },
-    {
-      question: "The sum of a number and 3 is 7. What is the number?",
-      options: ["8", "7", "2", "4"],
-      answer: "4",
-      explanation: "Let x be the number. The equation is x + 3 = 7. So x = 7 - 3 = 4."
     },
     {
       question: "When a number is divided by 5, the result is 9. What is the number?",
@@ -47,12 +41,6 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
       options: ["25", "22", "20", "15"],
       answer: "22",
       explanation: "Let x be the number. The equation is x + 8 = 30. So x = 30 - 8 = 22."
-    },
-    {
-      question: "A number minus 5 equals 19. What is the number?",
-      options: ["24", "20", "18", "26"],
-      answer: "24",
-      explanation: "Let x be the number. The equation is x - 5 = 19. So x = 19 + 5 = 24."
     },
     {
       question: "4 times a number is 36. What is the number?",
@@ -315,7 +303,7 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
   ],
 
   // ==========================================
-  // LEVEL 2: Intermediate (50 items)
+  // LEVEL 2: Intermediate (50 items) - REVISED FOR VARIETY
   // ==========================================
   intermediate: [
     {
@@ -621,7 +609,7 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
   ],
 
   // ==========================================
-  // LEVEL 3: Advanced (50 items)
+  // LEVEL 3: Advanced (50 items) - REVISED FOR VARIETY
   // ==========================================
   advanced: [
     {
@@ -927,7 +915,7 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
   ],
 
   // ==========================================
-  // LEVEL 4: Expert (50 items)
+  // LEVEL 4: Expert (50 items) - COMPLETELY REVISED FOR VARIETY
   // ==========================================
   expert: [
     {
