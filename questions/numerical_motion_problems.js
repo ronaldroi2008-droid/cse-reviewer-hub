@@ -408,12 +408,22 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
       answer: "14 s",
       explanation: `STEP 1: Relative speed = 54 + 36 = 90 km/h = 25 m/s\nSTEP 2: Total distance = 150 + 200 = 350 m\nSTEP 3: Time = 350 ÷ 25 = 14 seconds`
     },
-    {
-      question: "A person covers 1/3 distance at 20 km/h, remaining at 30 km/h. Average speed?",
-      options: ["24 km/h", "25 km/h", "26 km/h", "27 km/h"],
-      answer: "25 km/h",
-      explanation: `STEP 1: Let total distance = 3D\nSTEP 2: Time 1 = D/20, Time 2 = 2D/30 = D/15\nSTEP 3: Total time = D/20 + D/15 = D(3/60 + 4/60) = 7D/60\nSTEP 4: Average speed = 3D ÷ (7D/60) = 180/7 ≈ 25.71 km/h`
-    },
+   // 1) Average speed (1/3 at 20 km/h, 2/3 at 30 km/h)
+{
+  question: "A person covers 1/3 of a distance at 20 km/h and the remaining 2/3 at 30 km/h. What is the average speed for the whole journey?",
+  options: ["24 km/h", "25 km/h", "26 km/h", "27 km/h"],
+  answer: "26 km/h",
+  explanation: `
+    STEP 1: Let the total distance be 3D.
+    STEP 2: First part: distance = D at 20 km/h → time₁ = D/20.
+    STEP 3: Second part: distance = 2D at 30 km/h → time₂ = 2D/30 = D/15.
+    STEP 4: Total time = D/20 + D/15 = (3D + 4D)/60 = 7D/60.
+    STEP 5: Average speed = total distance ÷ total time
+            = 3D ÷ (7D/60) = 180/7 ≈ 25.7 km/h.
+    STEP 6: Rounded to the nearest option, the average speed is 26 km/h.
+  `
+},
+
     {
       question: "Two trains 120 m and 180 m long run towards each other at 40 km/h and 50 km/h. Crossing time?",
       options: ["10 s", "12 s", "14 s", "16 s"],
