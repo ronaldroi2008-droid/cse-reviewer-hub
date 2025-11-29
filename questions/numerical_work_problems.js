@@ -1067,9 +1067,9 @@ beginner: [
       STEP 2: Combined rate = 1/18 + 1/27 = 3/54 + 2/54 = 5/54 job/minute
       
       STEP 3: Time = 1 ÷ (5/54) = 54/5 = 10.8 minutes
-    `
+   `
   }
-],
+], 
 
 // ==========================================
 // LEVEL 2: INTERMEDIATE (50 items – three-person & rate problems)
