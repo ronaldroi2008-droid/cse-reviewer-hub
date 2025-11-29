@@ -1369,6 +1369,7 @@ expert: [
       
       STEP 8: Total time:
       Total = 4 + 3 + 3 = 10 days
+        `
     }
   ]  // <- ITO ANG TAMANG PAG-CLOSE NG expert array
 };  
