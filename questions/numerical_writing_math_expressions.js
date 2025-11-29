@@ -623,6 +623,18 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
   // ==========================================
   advanced: [
     // 1-25 (Original items)
+    // ==========================================
+// LEVEL 3: ADVANCED (50 items – Exponents & multi-step)
+// ==========================================
+advanced: [
+ 
+  {
+    question: "Which expression represents 'the square of the product of 3 and x'?",
+    options: ["3x^2", "(3x)^2", "3(x^2)", "9x"],
+    answer: "(3x)^2",
+    explanation: "'Square of the product' means square the entire 3x: (3x)^2."
+  },
+
     {
       question: "Which expression represents 'the square of a number x'?",
       options: ["2x", "x^2", "x ÷ 2", "x + 2"],
