@@ -442,12 +442,21 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
       answer: "100 km",
       explanation: `STEP 1: Relative speed = 50 + 70 = 120 km/h\nSTEP 2: Time to meet = 240 ÷ 120 = 2 hours\nSTEP 3: Distance by slower car = 50 × 2 = 100 km`
     },
-    {
-      question: "A train 100 m long crosses another train 150 m long in 20 seconds when running in same direction. Speeds ratio 3:2. Faster train speed?",
-      options: ["54 km/h", "60 km/h", "66 km/h", "72 km/h"],
-      answer: "54 km/h",
-      explanation: `STEP 1: Let speeds be 3x and 2x m/s\nSTEP 2: Relative speed = 3x - 2x = x m/s\nSTEP 3: Distance = 100 + 150 = 250 m\nSTEP 4: Time = 250/x = 20 ⇒ x = 12.5 m/s\nSTEP 5: Faster speed = 3 × 12.5 = 37.5 m/s = 135 km/h`
-    },
+    // 2) Two trains 100 m & 150 m, same direction, ratio 3:2
+{
+  question: "A train 100 m long crosses another train 150 m long in 20 seconds when running in the same direction. The ratio of their speeds is 3 : 2. What is the speed of the faster train?",
+  options: ["54 km/h", "60 km/h", "66 km/h", "135 km/h"],
+  answer: "135 km/h",
+  explanation: `
+    STEP 1: Let the speeds of the trains be 3x and 2x m/s (faster and slower).
+    STEP 2: Since they move in the same direction, relative speed = 3x - 2x = x m/s.
+    STEP 3: Total distance to be covered = 100 m + 150 m = 250 m.
+    STEP 4: Time to cross each other = 20 s ⇒ 250 / x = 20 ⇒ x = 12.5 m/s.
+    STEP 5: Faster train speed = 3x = 3 × 12.5 = 37.5 m/s.
+    STEP 6: Convert to km/h: 37.5 × 3.6 = 135 km/h.
+  `
+},
+
     {
       question: "A man travels 600 km partly by train at 80 km/h and car at 120 km/h. Total time 7 hours. Distance by train?",
       options: ["240 km", "280 km", "320 km", "360 km"],
