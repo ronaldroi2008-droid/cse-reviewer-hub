@@ -447,9 +447,3 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   ]
 };
 
-// Count verification
-console.log(`Level 1: ${window.MOTION_PROBLEMS_BANK.basic.length} questions`);
-console.log(`Level 2: ${window.MOTION_PROBLEMS_BANK.intermediate.length} questions`);
-console.log(`Level 3: ${window.MOTION_PROBLEMS_BANK.advanced.length} questions`);
-console.log(`Level 4: ${window.MOTION_PROBLEMS_BANK.expert.length} questions`);
-console.log(`Total: ${window.MOTION_PROBLEMS_BANK.basic.length + window.MOTION_PROBLEMS_BANK.intermediate.length + window.MOTION_PROBLEMS_BANK.advanced.length + window.MOTION_PROBLEMS_BANK.expert.length} questions`);
