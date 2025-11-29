@@ -4569,5 +4569,4 @@ expert: [
 ]
 };
 
-// Close the window.NUMERICAL_QUESTION_BANK assignment
-window.NUMERICAL_QUESTION_BANK["work_problems"] = NUMERICAL_QUESTION_BANK["work_problems"] || {};
+
