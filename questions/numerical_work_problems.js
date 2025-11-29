@@ -1,3 +1,11 @@
+
+
+window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
+
+window.NUMERICAL_QUESTION_BANK["work_problems"] = {
+
+
+
 // ==========================================
 // LEVEL 1: BEGINNER (50 items – basic two-person problems)
 // ==========================================
