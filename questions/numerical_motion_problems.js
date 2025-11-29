@@ -7,7 +7,7 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   // ==========================================
   // LEVEL 1: BASIC (50 items - Direct Formula Application)
   // ==========================================
-  basic: [
+  beginner: [
     {
       question: "A car travels at 60 km/h for 3 hours. What distance does it cover?",
       options: ["150 km", "180 km", "200 km", "220 km"],
