@@ -4561,12 +4561,40 @@ expert: [
     },
 
     {
-    question: "24 men can complete a work in 18 days. 36 women can complete the same work in 24 days. In how many days will 12 men and 18 women complete the work?",
-    options: ["16 days", "18 days", "20 days", "22 days"],
-    answer: "21 days",
-    explanation: "STEP 1: Find men's rate: 24 men in 18 days, so 1 man's rate = 1/(24×18) = 1/432 work/day. STEP 2: Find women's rate: 36 women in 24 days, so 1 woman's rate = 1/(36×24) = 1/864 work/day. STEP 3: Team rate (12 men + 18 women): Rate = 12×(1/432) + 18×(1/864) = 12/432 + 18/864 = 1/36 + 1/48 = 4/144 + 3/144 = 7/144 work/day. STEP 4: Time to complete: Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days ≈ 21 days"
-  }
-]
-};
+      question: "24 men can complete a work in 18 days. 36 women can complete the same work in 24 days. In how many days will 12 men and 18 women complete the work?",
+      options: ["16 days", "18 days", "20 days", "22 days"],
+      answer: "20 days",
+      explanation: `
+STEP 1: Find one man's work rate.
+24 men finish the job in 18 days.
 
+Total man-days = 24 × 18 = 432 man-days for 1 job.
+So 1 man's rate = 1/432 of the work per day.
+
+STEP 2: Find one woman's work rate.
+36 women finish the job in 24 days.
+
+Total woman-days = 36 × 24 = 864 woman-days for 1 job.
+So 1 woman's rate = 1/864 of the work per day.
+
+STEP 3: Compute the combined rate of 12 men and 18 women.
+Rate of 12 men = 12 × (1/432) = 12/432 = 1/36 of the work per day.
+Rate of 18 women = 18 × (1/864) = 18/864 = 1/48 of the work per day.
+
+Combined rate = 1/36 + 1/48
+Find LCM of 36 and 48, which is 144:
+1/36 = 4/144
+1/48 = 3/144
+
+So combined rate = 4/144 + 3/144 = 7/144 of the work per day.
+
+STEP 4: Find the total time needed.
+Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days.
+
+Among the choices (16, 18, 20, 22), the closest is 20 days.
+So the best answer is 20 days.
+      `
+    }
+  ]
+};
 
