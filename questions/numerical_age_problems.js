@@ -544,6 +544,79 @@ beginner: [
 // ==========================================
 intermediate: [
   {
+    question: "The present age of a mother is 3 times that of her daughter. After 12 years, the mother's age will be twice that of her daughter. Find the present age of the daughter.",
+    options: ["10 years", "11 years", "12 years", "13 years"],
+    answer: "12 years",
+    explanation: `
+      STEP 1: Let daughter's present age = x years
+      STEP 2: Mother's present age = 3x years
+      STEP 3: After 12 years: Daughter's age = x + 12
+      STEP 4: After 12 years: Mother's age = 3x + 12
+      STEP 5: Equation: 3x + 12 = 2(x + 12)
+      STEP 6: 3x + 12 = 2x + 24
+      STEP 7: x = 12 years
+    `
+  },
+  {
+    question: "A man is 4 times as old as his son. After 16 years, he will be twice as old as his son. Find the present age of the son.",
+    options: ["6 years", "7 years", "8 years", "9 years"],
+    answer: "8 years",
+    explanation: `
+      STEP 1: Let son's present age = x years
+      STEP 2: Man's present age = 4x years
+      STEP 3: After 16 years: Son's age = x + 16
+      STEP 4: After 16 years: Man's age = 4x + 16
+      STEP 5: Equation: 4x + 16 = 2(x + 16)
+      STEP 6: 4x + 16 = 2x + 32
+      STEP 7: 2x = 16
+      STEP 8: x = 8 years
+    `
+  },
+  {
+    question: "The ratio of present ages of two brothers is 5:6. After 4 years, the ratio will be 6:7. Find the present age of the younger brother.",
+    options: ["18 years", "19 years", "20 years", "21 years"],
+    answer: "20 years",
+    explanation: `
+      STEP 1: Let present ages = 5x and 6x
+      STEP 2: After 4 years: Younger = 5x + 4, Elder = 6x + 4
+      STEP 3: Ratio after 4 years: (5x + 4)/(6x + 4) = 6/7
+      STEP 4: Cross multiply: 7(5x + 4) = 6(6x + 4)
+      STEP 5: 35x + 28 = 36x + 24
+      STEP 6: x = 4
+      STEP 7: Younger brother = 5 × 4 = 20 years
+    `
+  },
+  {
+    question: "A woman is 15 years older than her daughter. After 5 years, the woman will be twice as old as her daughter. Find the present age of the daughter.",
+    options: ["8 years", "9 years", "10 years", "11 years"],
+    answer: "10 years",
+    explanation: `
+      STEP 1: Let daughter's present age = x years
+      STEP 2: Woman's present age = x + 15 years
+      STEP 3: After 5 years: Daughter's age = x + 5
+      STEP 4: After 5 years: Woman's age = x + 15 + 5 = x + 20
+      STEP 5: Equation: x + 20 = 2(x + 5)
+      STEP 6: x + 20 = 2x + 10
+      STEP 7: x = 10 years
+    `
+  },
+  {
+    question: "The sum of present ages of father and son is 68 years. After 8 years, the father will be twice as old as his son. Find the present age of the son.",
+    options: ["18 years", "19 years", "20 years", "21 years"],
+    answer: "20 years",
+    explanation: `
+      STEP 1: Let son's present age = x years
+      STEP 2: Father's present age = 68 - x years
+      STEP 3: After 8 years: Son's age = x + 8
+      STEP 4: After 8 years: Father's age = 68 - x + 8 = 76 - x
+      STEP 5: Equation: 76 - x = 2(x + 8)
+      STEP 6: 76 - x = 2x + 16
+      STEP 7: 60 = 3x
+      STEP 8: x = 20 years
+    `
+  },
+
+  {
     question: "John is 20 years old now. How old will he be after 15 years?",
     options: ["33 years", "34 years", "35 years", "36 years"],
     answer: "35 years",
@@ -1249,6 +1322,172 @@ intermediate: [
 // ==========================================
 advanced: [
   {
+    question: "The ratio of ages of A, B and C is 2:3:5. The sum of their ages is 80 years. After how many years will the ratio become 3:4:6?",
+    options: ["8 years", "9 years", "10 years", "11 years"],
+    answer: "10 years",
+    explanation: `
+      STEP 1: Let present ages = 2x, 3x, 5x
+      STEP 2: Sum: 2x + 3x + 5x = 10x = 80
+      STEP 3: x = 8
+      STEP 4: Present ages: A = 16, B = 24, C = 40
+      STEP 5: Let y years later: (16 + y):(24 + y):(40 + y) = 3:4:6
+      STEP 6: (16 + y)/(24 + y) = 3/4
+      STEP 7: 4(16 + y) = 3(24 + y)
+      STEP 8: 64 + 4y = 72 + 3y
+      STEP 9: y = 8 years
+    `
+  },
+  {
+    question: "A father is 4 times as old as his son. 8 years ago, he was 6 times as old as his son. After how many years will he be 2.5 times as old as his son?",
+    options: ["12 years", "13 years", "14 years", "15 years"],
+    answer: "12 years",
+    explanation: `
+      STEP 1: Let son's present age = x years
+      STEP 2: Father's present age = 4x years
+      STEP 3: 8 years ago: Son's age = x - 8
+      STEP 4: 8 years ago: Father's age = 4x - 8
+      STEP 5: Equation: 4x - 8 = 6(x - 8)
+      STEP 6: 4x - 8 = 6x - 48
+      STEP 7: 40 = 2x
+      STEP 8: x = 20 years
+      STEP 9: Present ages: Son = 20, Father = 80
+      STEP 10: Let y years later: 80 + y = 2.5(20 + y)
+      STEP 11: 80 + y = 50 + 2.5y
+      STEP 12: 30 = 1.5y
+      STEP 13: y = 20 years
+    `
+  },
+  {
+    question: "The sum of ages of three friends is 75 years. The ratio of ages of first and second is 2:3, and the ratio of second and third is 4:5. Find the age of the eldest.",
+    options: ["25 years", "26 years", "27 years", "28 years"],
+    answer: "27 years",
+    explanation: `
+      STEP 1: Let first:second = 2:3 = 8:12
+      STEP 2: Let second:third = 4:5 = 12:15
+      STEP 3: Ratio first:second:third = 8:12:15
+      STEP 4: Let ages = 8x, 12x, 15x
+      STEP 5: Sum: 8x + 12x + 15x = 35x = 75
+      STEP 6: x = 2.143
+      STEP 7: Eldest = 15 × 2.143 = 32.14 ≈ 32 years
+    `
+  },
+  {
+    question: "A is 5 years older than B who is 3 years younger than C. The sum of their ages is 60 years. Find the age of A.",
+    options: ["21 years", "22 years", "23 years", "24 years"],
+    answer: "22 years",
+    explanation: `
+      STEP 1: Let B's age = x years
+      STEP 2: A's age = x + 5 years
+      STEP 3: C's age = x + 3 years
+      STEP 4: Sum: (x + 5) + x + (x + 3) = 60
+      STEP 5: 3x + 8 = 60
+      STEP 6: 3x = 52
+      STEP 7: x = 17.33 years
+      STEP 8: A's age = 17.33 + 5 = 22.33 ≈ 22 years
+    `
+  },
+  {
+    question: "The ratio of ages of X and Y is 5:7. After 6 years, the ratio becomes 7:9. After how many years will the sum of their ages be 100 years?",
+    options: ["18 years", "19 years", "20 years", "21 years"],
+    answer: "20 years",
+    explanation: `
+      STEP 1: Let X's present age = 5x years
+      STEP 2: Y's present age = 7x years
+      STEP 3: After 6 years: (5x + 6)/(7x + 6) = 7/9
+      STEP 4: 9(5x + 6) = 7(7x + 6)
+      STEP 5: 45x + 54 = 49x + 42
+      STEP 6: 12 = 4x
+      STEP 7: x = 3
+      STEP 8: Present ages: X = 15, Y = 21
+      STEP 9: Let y years later: (15 + y) + (21 + y) = 100
+      STEP 10: 36 + 2y = 100
+      STEP 11: 2y = 64
+      STEP 12: y = 32 years
+    `
+  },
+  {
+    question: "A grandfather is 6 times as old as his grandson. After 10 years, he will be 3 times as old as his grandson. After how many years will he be twice as old as his grandson?",
+    options: ["20 years", "21 years", "22 years", "23 years"],
+    answer: "20 years",
+    explanation: `
+      STEP 1: Let grandson's present age = x years
+      STEP 2: Grandfather's present age = 6x years
+      STEP 3: After 10 years: 6x + 10 = 3(x + 10)
+      STEP 4: 6x + 10 = 3x + 30
+      STEP 5: 3x = 20
+      STEP 6: x = 6.67 years
+      STEP 7: Present ages: Grandson = 6.67, Grandfather = 40
+      STEP 8: Let y years later: 40 + y = 2(6.67 + y)
+      STEP 9: 40 + y = 13.33 + 2y
+      STEP 10: 26.67 = y
+      STEP 11: y = 26.67 ≈ 27 years
+    `
+  },
+  {
+    question: "The sum of ages of a man and his wife is 85 years. 10 years ago, the ratio of their ages was 2:3. Find the present age of the wife.",
+    options: ["40 years", "41 years", "42 years", "43 years"],
+    answer: "45 years",
+    explanation: `
+      STEP 1: Let wife's present age = x years
+      STEP 2: Man's present age = 85 - x years
+      STEP 3: 10 years ago: Wife's age = x - 10
+      STEP 4: 10 years ago: Man's age = 85 - x - 10 = 75 - x
+      STEP 5: Ratio: (75 - x)/(x - 10) = 2/3
+      STEP 6: 3(75 - x) = 2(x - 10)
+      STEP 7: 225 - 3x = 2x - 20
+      STEP 8: 245 = 5x
+      STEP 9: x = 49 years
+    `
+  },
+  {
+    question: "The ratio of ages of P and Q is 4:5. After 8 years, the ratio becomes 5:6. After how many years will the ratio be 6:7?",
+    options: ["16 years", "17 years", "18 years", "19 years"],
+    answer: "16 years",
+    explanation: `
+      STEP 1: Let P's present age = 4x years
+      STEP 2: Q's present age = 5x years
+      STEP 3: After 8 years: (4x + 8)/(5x + 8) = 5/6
+      STEP 4: 6(4x + 8) = 5(5x + 8)
+      STEP 5: 24x + 48 = 25x + 40
+      STEP 6: x = 8
+      STEP 7: Present ages: P = 32, Q = 40
+      STEP 8: Let y years later: (32 + y)/(40 + y) = 6/7
+      STEP 9: 7(32 + y) = 6(40 + y)
+      STEP 10: 224 + 7y = 240 + 6y
+      STEP 11: y = 16 years
+    `
+  },
+  {
+    question: "A mother is 20 years older than her daughter. After 5 years, the mother will be twice as old as her daughter. Find the present age of the mother.",
+    options: ["33 years", "34 years", "35 years", "36 years"],
+    answer: "35 years",
+    explanation: `
+      STEP 1: Let daughter's present age = x years
+      STEP 2: Mother's present age = x + 20 years
+      STEP 3: After 5 years: Daughter's age = x + 5
+      STEP 4: After 5 years: Mother's age = x + 20 + 5 = x + 25
+      STEP 5: Equation: x + 25 = 2(x + 5)
+      STEP 6: x + 25 = 2x + 10
+      STEP 7: x = 15 years
+      STEP 8: Mother's age = 15 + 20 = 35 years
+    `
+  },
+  {
+    question: "The sum of ages of three brothers is 54 years. The eldest is 6 years older than the middle, and the middle is 4 years older than the youngest. Find the age of the youngest.",
+    options: ["12 years", "13 years", "14 years", "15 years"],
+    answer: "14 years",
+    explanation: `
+      STEP 1: Let youngest's age = x years
+      STEP 2: Middle's age = x + 4 years
+      STEP 3: Eldest's age = (x + 4) + 6 = x + 10 years
+      STEP 4: Sum: x + (x + 4) + (x + 10) = 54
+      STEP 5: 3x + 14 = 54
+      STEP 6: 3x = 40
+      STEP 7: x = 13.33 ≈ 13 years
+    `
+  },
+
+  {
     question: "The sum of ages of A, B, and C is 90 years. A is 10 years older than B, and B is 5 years older than C. Find the age of A.",
     options: ["30 years", "32 years", "34 years", "36 years"],
     answer: "35 years",
@@ -1904,6 +2143,238 @@ advanced: [
 // LEVEL 4: EXPERT (50 items – very complex multi-step problems)
 // ==========================================
 expert: [
+   {
+    question: "The ratio of ages of A, B and C is 3:5:7. The sum of their ages is 90 years. After how many years will the ratio become 4:6:8?",
+    options: ["10 years", "11 years", "12 years", "13 years"],
+    answer: "10 years",
+    explanation: `
+      STEP 1: Let present ages = 3x, 5x, 7x
+      STEP 2: Sum: 3x + 5x + 7x = 15x = 90
+      STEP 3: x = 6
+      STEP 4: Present ages: A = 18, B = 30, C = 42
+      STEP 5: Let y years later: (18 + y):(30 + y):(42 + y) = 4:6:8
+      STEP 6: (18 + y)/(30 + y) = 4/6 = 2/3
+      STEP 7: 3(18 + y) = 2(30 + y)
+      STEP 8: 54 + 3y = 60 + 2y
+      STEP 9: y = 6 years
+    `
+  },
+  {
+    question: "A father is 5 times as old as his son. 10 years ago, he was 9 times as old as his son. After how many years will he be 2 times as old as his son?",
+    options: ["15 years", "16 years", "17 years", "18 years"],
+    answer: "15 years",
+    explanation: `
+      STEP 1: Let son's present age = x years
+      STEP 2: Father's present age = 5x years
+      STEP 3: 10 years ago: Son's age = x - 10
+      STEP 4: 10 years ago: Father's age = 5x - 10
+      STEP 5: Equation: 5x - 10 = 9(x - 10)
+      STEP 6: 5x - 10 = 9x - 90
+      STEP 7: 80 = 4x
+      STEP 8: x = 20 years
+      STEP 9: Present ages: Son = 20, Father = 100
+      STEP 10: Let y years later: 100 + y = 2(20 + y)
+      STEP 11: 100 + y = 40 + 2y
+      STEP 12: 60 = y
+      STEP 13: After 60 years
+    `
+  },
+  {
+    question: "The sum of ages of four family members is 120 years. The father is twice as old as the mother, the mother is 3 times as old as the daughter, and the daughter is 2 times as old as the son. Find the age of the son.",
+    options: ["5 years", "6 years", "7 years", "8 years"],
+    answer: "6 years",
+    explanation: `
+      STEP 1: Let son's age = x years
+      STEP 2: Daughter's age = 2x years
+      STEP 3: Mother's age = 3 × 2x = 6x years
+      STEP 4: Father's age = 2 × 6x = 12x years
+      STEP 5: Sum: x + 2x + 6x + 12x = 21x = 120
+      STEP 6: x = 5.71 ≈ 6 years
+    `
+  },
+  {
+    question: "The ratio of ages of A and B is 7:9. After 5 years, the ratio becomes 4:5. After how many years will the ratio be 5:6?",
+    options: ["10 years", "11 years", "12 years", "13 years"],
+    answer: "10 years",
+    explanation: `
+      STEP 1: Let A's present age = 7x years
+      STEP 2: B's present age = 9x years
+      STEP 3: After 5 years: (7x + 5)/(9x + 5) = 4/5
+      STEP 4: 5(7x + 5) = 4(9x + 5)
+      STEP 5: 35x + 25 = 36x + 20
+      STEP 6: x = 5
+      STEP 7: Present ages: A = 35, B = 45
+      STEP 8: Let y years later: (35 + y)/(45 + y) = 5/6
+      STEP 9: 6(35 + y) = 5(45 + y)
+      STEP 10: 210 + 6y = 225 + 5y
+      STEP 11: y = 15 years
+    `
+  },
+  {
+    question: "A is 4 years older than B who is 5 years younger than C. The sum of their ages is 70 years. Find the age of C.",
+    options: ["25 years", "26 years", "27 years", "28 years"],
+    answer: "27 years",
+    explanation: `
+      STEP 1: Let B's age = x years
+      STEP 2: A's age = x + 4 years
+      STEP 3: C's age = x + 5 years
+      STEP 4: Sum: (x + 4) + x + (x + 5) = 70
+      STEP 5: 3x + 9 = 70
+      STEP 6: 3x = 61
+      STEP 7: x = 20.33 years
+      STEP 8: C's age = 20.33 + 5 = 25.33 ≈ 25 years
+    `
+  },
+  {
+    question: "The product of ages of a father and his son is 300. The father is 5 times as old as his son. Find the age of the son.",
+    options: ["6 years", "7 years", "8 years", "9 years"],
+    answer: "7 years",
+    explanation: `
+      STEP 1: Let son's age = x years
+      STEP 2: Father's age = 5x years
+      STEP 3: Product: x × 5x = 300
+      STEP 4: 5x² = 300
+      STEP 5: x² = 60
+      STEP 6: x = 7.75 ≈ 8 years
+    `
+  },
+  {
+    question: "The ratio of ages of X and Y is 2:3. After 10 years, the ratio becomes 3:4. After how many years will the sum of their ages be 100 years?",
+    options: ["20 years", "21 years", "22 years", "23 years"],
+    answer: "20 years",
+    explanation: `
+      STEP 1: Let X's present age = 2x years
+      STEP 2: Y's present age = 3x years
+      STEP 3: After 10 years: (2x + 10)/(3x + 10) = 3/4
+      STEP 4: 4(2x + 10) = 3(3x + 10)
+      STEP 5: 8x + 40 = 9x + 30
+      STEP 6: x = 10
+      STEP 7: Present ages: X = 20, Y = 30
+      STEP 8: Let y years later: (20 + y) + (30 + y) = 100
+      STEP 9: 50 + 2y = 100
+      STEP 10: 2y = 50
+      STEP 11: y = 25 years
+    `
+  },
+  {
+    question: "A grandfather is 8 times as old as his grandson. After 12 years, he will be 3 times as old as his grandson. After how many years will he be twice as old as his grandson?",
+    options: ["16 years", "17 years", "18 years", "19 years"],
+    answer: "16 years",
+    explanation: `
+      STEP 1: Let grandson's present age = x years
+      STEP 2: Grandfather's present age = 8x years
+      STEP 3: After 12 years: 8x + 12 = 3(x + 12)
+      STEP 4: 8x + 12 = 3x + 36
+      STEP 5: 5x = 24
+      STEP 6: x = 4.8 years
+      STEP 7: Present ages: Grandson = 4.8, Grandfather = 38.4
+      STEP 8: Let y years later: 38.4 + y = 2(4.8 + y)
+      STEP 9: 38.4 + y = 9.6 + 2y
+      STEP 10: 28.8 = y
+      STEP 11: y = 28.8 ≈ 29 years
+    `
+  },
+  {
+    question: "The sum of ages of a man and his wife is 90 years. 15 years ago, the ratio of their ages was 2:3. Find the present age of the man.",
+    options: ["40 years", "41 years", "42 years", "43 years"],
+    answer: "42 years",
+    explanation: `
+      STEP 1: Let man's present age = x years
+      STEP 2: Wife's present age = 90 - x years
+      STEP 3: 15 years ago: Man's age = x - 15
+      STEP 4: 15 years ago: Wife's age = 90 - x - 15 = 75 - x
+      STEP 5: Ratio: (x - 15)/(75 - x) = 2/3
+      STEP 6: 3(x - 15) = 2(75 - x)
+      STEP 7: 3x - 45 = 150 - 2x
+      STEP 8: 5x = 195
+      STEP 9: x = 39 years
+    `
+  },
+  {
+    question: "The ratio of ages of P and Q is 3:4. After 7 years, the ratio becomes 4:5. After how many years will the ratio be 5:6?",
+    options: ["14 years", "15 years", "16 years", "17 years"],
+    answer: "14 years",
+    explanation: `
+      STEP 1: Let P's present age = 3x years
+      STEP 2: Q's present age = 4x years
+      STEP 3: After 7 years: (3x + 7)/(4x + 7) = 4/5
+      STEP 4: 5(3x + 7) = 4(4x + 7)
+      STEP 5: 15x + 35 = 16x + 28
+      STEP 6: x = 7
+      STEP 7: Present ages: P = 21, Q = 28
+      STEP 8: Let y years later: (21 + y)/(28 + y) = 5/6
+      STEP 9: 6(21 + y) = 5(28 + y)
+      STEP 10: 126 + 6y = 140 + 5y
+      STEP 11: y = 14 years
+    `
+  },
+  {
+    question: "A mother is 25 years older than her daughter. After 8 years, the mother will be twice as old as her daughter. Find the present age of the mother.",
+    options: ["40 years", "41 years", "42 years", "43 years"],
+    answer: "42 years",
+    explanation: `
+      STEP 1: Let daughter's present age = x years
+      STEP 2: Mother's present age = x + 25 years
+      STEP 3: After 8 years: Daughter's age = x + 8
+      STEP 4: After 8 years: Mother's age = x + 25 + 8 = x + 33
+      STEP 5: Equation: x + 33 = 2(x + 8)
+      STEP 6: x + 33 = 2x + 16
+      STEP 7: x = 17 years
+      STEP 8: Mother's age = 17 + 25 = 42 years
+    `
+  },
+  {
+    question: "The sum of ages of three sisters is 48 years. The eldest is 4 years older than the middle, and the middle is 3 years older than the youngest. Find the age of the youngest.",
+    options: ["12 years", "13 years", "14 years", "15 years"],
+    answer: "13 years",
+    explanation: `
+      STEP 1: Let youngest's age = x years
+      STEP 2: Middle's age = x + 3 years
+      STEP 3: Eldest's age = (x + 3) + 4 = x + 7 years
+      STEP 4: Sum: x + (x + 3) + (x + 7) = 48
+      STEP 5: 3x + 10 = 48
+      STEP 6: 3x = 38
+      STEP 7: x = 12.67 ≈ 13 years
+    `
+  },
+  {
+    question: "The ratio of ages of A and B is 5:8. After 6 years, the ratio becomes 2:3. After how many years will the ratio be 3:4?",
+    options: ["12 years", "13 years", "14 years", "15 years"],
+    answer: "12 years",
+    explanation: `
+      STEP 1: Let A's present age = 5x years
+      STEP 2: B's present age = 8x years
+      STEP 3: After 6 years: (5x + 6)/(8x + 6) = 2/3
+      STEP 4: 3(5x + 6) = 2(8x + 6)
+      STEP 5: 15x + 18 = 16x + 12
+      STEP 6: x = 6
+      STEP 7: Present ages: A = 30, B = 48
+      STEP 8: Let y years later: (30 + y)/(48 + y) = 3/4
+      STEP 9: 4(30 + y) = 3(48 + y)
+      STEP 10: 120 + 4y = 144 + 3y
+      STEP 11: y = 24 years
+    `
+  },
+  {
+    question: "A father is 6 times as old as his son. 12 years ago, he was 10 times as old as his son. After how many years will he be 3 times as old as his son?",
+    options: ["9 years", "10 years", "11 years", "12 years"],
+    answer: "9 years",
+    explanation: `
+      STEP 1: Let son's present age = x years
+      STEP 2: Father's present age = 6x years
+      STEP 3: 12 years ago: Son's age = x - 12
+      STEP 4: 12 years ago: Father's age = 6x - 12
+      STEP 5: Equation: 6x - 12 = 10(x - 12)
+      STEP 6: 6x - 12 = 10x - 120
+      STEP 7: 108 = 4x
+      STEP 8: x = 27 years
+      STEP 9: Present ages: Son = 27, Father = 162
+      STEP 10: Let y years later: 162 + y = 3(27 + y)
+      STEP 11: 162 + y = 81 + 3y
+      STEP 12: 81 = 2y
+      STEP 13: y = 40.5 ≈ 41 years
+    `
+  }
   {
     question: "The sum of present ages of A and B is 60 years. 5 years ago, the ratio of their ages was 5:7. Find the present age of A.",
     options: ["23 years", "24 years", "25 years", "26 years"],
