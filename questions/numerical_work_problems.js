@@ -4541,32 +4541,72 @@ expert: [
       STEP 8: Total time = 5 + 5 + 5 = 15 days
     `
   },
+   // 49
   {
     question: "A and B can do a work in 18 days, B and C in 24 days, C and A in 27 days. How long will A alone take to complete the work?",
     options: ["36 days", "38 days", "40 days", "42 days"],
-    answer: "36 days",
+    answer: "40 days",
     explanation: `
-      STEP 1: Let A, B, C rates be a, b, c
+      STEP 1: Let A, B, and C have daily work rates a, b, and c.
+
+      From the problem:
       a + b = 1/18
       b + c = 1/24
       c + a = 1/27
-      
-      STEP 2: Add all three: 2(a + b + c) = 1/18 + 1/24 + 1/27 = 12/216 + 9/216 + 8/216 = 29/216
-      a + b + c = 29/432
-      
-      STEP 3: a = (a + b + c) - (b + c) = 29/432 - 1/24 = 29/432 - 18/432 = 11/432
-      
-      STEP 4: A's time alone = 1 ÷ (11/432) = 432/11 ≈ 39.27 days ≈ 40 days
-    
-    },
 
-{
+      STEP 2: Add the three equations:
+      (a + b) + (b + c) + (c + a) = 1/18 + 1/24 + 1/27
+      2(a + b + c) = 1/18 + 1/24 + 1/27
+
+      Convert to a common denominator of 216:
+      1/18 = 12/216
+      1/24 = 9/216
+      1/27 = 8/216
+
+      So:
+      2(a + b + c) = (12 + 9 + 8) / 216 = 29/216
+      => a + b + c = 29/432
+
+      STEP 3: Solve for a (rate of A):
+      a = (a + b + c) - (b + c)
+        = 29/432 - 1/24
+        = 29/432 - 18/432
+        = 11/432
+
+      STEP 4: Time for A alone:
+      Time = 1 ÷ (11/432) = 432 / 11 ≈ 39.27 days ≈ 40 days.
+    `
+  },
+
+  // 50
+  {
     question: "24 men can complete a work in 18 days. 36 women can complete the same work in 24 days. In how many days will 12 men and 18 women complete the work?",
-    options: ["16 days", "18 days", "20 days", "22 days"],
-    answer: "20 days",
-    explanation: "Step 1: 24 men finish the work in 18 days, so the total work is 24 × 18 = 432 man-days. One man does 1/432 of the work per day. Step 2: 36 women finish the work in 24 days, so the total work is 36 × 24 = 864 woman-days. One woman does 1/864 of the work per day. Step 3: The rate of 12 men is 12 × 1/432 = 1/36 of the work per day, and the rate of 18 women is 18 × 1/864 = 1/48 of the work per day. Step 4: Combine the rates: 1/36 + 1/48 = 4/144 + 3/144 = 7/144 of the work per day. Step 5: Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days, so the closest option is 20 days."
-  }
-]
+    options: ["16 days", "18 days", "20 days", "21 days"],
+    answer: "21 days",
+    explanation: `
+      STEP 1: 24 men finish the work in 18 days.
+      Total work = 24 × 18 = 432 man-days.
+      So one man’s rate = 1/432 of the work per day.
 
-// 👉 VERY IMPORTANT: ito dapat ang nasa pinakababa ng file:
-};
+      STEP 2: 36 women finish the work in 24 days.
+      Total work = 36 × 24 = 864 woman-days.
+      So one woman’s rate = 1/864 of the work per day.
+
+      STEP 3: Rate of 12 men:
+      12 × (1/432) = 12/432 = 1/36 of the work per day.
+
+      STEP 4: Rate of 18 women:
+      18 × (1/864) = 18/864 = 1/48 of the work per day.
+
+      STEP 5: Combine their rates:
+      Total rate = 1/36 + 1/48
+                 = 4/144 + 3/144
+                 = 7/144 of the work per day.
+
+      STEP 6: Time to finish:
+      Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days ≈ 21 days.
+    `
+  }
+  ] // end of EXPERT array
+
+}; // end of work_rate question bank
