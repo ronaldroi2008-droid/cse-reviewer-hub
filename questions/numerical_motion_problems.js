@@ -542,12 +542,21 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
       answer: "5 hours",
       explanation: `STEP 1: Relative speed = 60 - 45 = 15 km/h\nSTEP 2: Time = Distance ÷ Relative speed = 75 ÷ 15 = 5 hours`
     },
-    {
-      question: "A train running at 54 km/h takes 20 seconds to pass a platform. Next 12 seconds to pass a man. Platform length?",
-      options: ["140 m", "150 m", "160 m", "170 m"],
-      answer: "150 m",
-      explanation: `STEP 1: Speed = 54 km/h = 15 m/s\nSTEP 2: Train length = 15 × 12 = 180 m\nSTEP 3: Platform + train = 15 × 20 = 300 m\nSTEP 4: Platform = 300 - 180 = 120 m`
-    },
+   // 6) Train 54 km/h, passes platform & man
+{
+  question: "A train running at 54 km/h takes 20 seconds to pass a platform and 12 seconds to pass a man standing on the platform. What is the length of the platform?",
+  options: ["120 m", "140 m", "150 m", "160 m"],
+  answer: "120 m",
+  explanation: `
+    STEP 1: Convert speed: 54 km/h = (54 × 1000) / 3600 = 15 m/s.
+    STEP 2: Train length = speed × time to pass the man
+            = 15 × 12 = 180 m.
+    STEP 3: While passing the platform, total distance covered = train + platform
+            = 15 × 20 = 300 m.
+    STEP 4: Platform length = 300 − 180 = 120 m.
+  `
+},
+
     {
       question: "A person travels 600 km by train at 80 km/h, 800 km by ship at 40 km/h, 500 km by plane at 400 km/h. Average speed?",
       options: ["65.22 km/h", "68.33 km/h", "72.45 km/h", "75.67 km/h"],
@@ -662,12 +671,19 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
       answer: "250 m",
       explanation: `STEP 1: Speed = 36 km/h = 10 m/s\nSTEP 2: Train length = 10 × 25 = 250 m`
     },
-    {
-      question: "Two cars start from same point at 9 AM at 45 km/h and 60 km/h. When will they be 225 km apart?",
-      options: ["1 PM", "2 PM", "3 PM", "4 PM"],
-      answer: "3 PM",
-      explanation: `STEP 1: Relative speed = 60 - 45 = 15 km/h\nSTEP 2: Time = 225 ÷ 15 = 15 hours\nSTEP 3: 9 AM + 15 hours = 12 AM next day`
-    }
+   // 7) Two cars from same point at 9 AM, 45 & 60 km/h
+{
+  question: "Two cars start from the same point at 9 AM and travel in the same direction at 45 km/h and 60 km/h respectively. When will they be 90 km apart?",
+  options: ["1 PM", "2 PM", "3 PM", "4 PM"],
+  answer: "3 PM",
+  explanation: `
+    STEP 1: Since they move in the same direction, relative speed = 60 − 45 = 15 km/h.
+    STEP 2: Required separation = 90 km.
+    STEP 3: Time = distance ÷ relative speed = 90 ÷ 15 = 6 hours.
+    STEP 4: 9 AM + 6 hours = 3 PM.
+  `
+},
+
   ],
 
   // ==========================================
@@ -686,12 +702,21 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   answer: "360 km",
   explanation: `STEP 1: Let distance = D, original speed = S\nSTEP 2: D/S - D/(S+15) = 1\nSTEP 3: D/(S-10) - D/S = 2\nSTEP 4: Solve equations: D = 360 km, S = 60 km/h`
 },
+// A1) Two trains 500 km apart, meet in 5 hours, speed difference 20
 {
-  question: "Two trains start from stations 500 km apart. They meet after 5 hours. If difference of speeds is 20 km/h, find speeds",
-  options: ["40&60 km/h", "45&65 km/h", "50&70 km/h", "55&75 km/h"],
-  answer: "45&65 km/h",
-  explanation: `STEP 1: Let speeds be x and x+20\nSTEP 2: Relative speed = x + (x+20) = 2x + 20\nSTEP 3: Distance = (2x + 20) × 5 = 500\nSTEP 4: 10x + 100 = 500 ⇒ 10x = 400 ⇒ x = 40\nSTEP 5: Speeds = 40 and 60 km/h`
+  question: "Two trains start from stations 500 km apart and move towards each other. They meet after 5 hours. If the difference of their speeds is 20 km/h, what are their speeds?",
+  options: ["40 km/h & 60 km/h", "45 km/h & 65 km/h", "50 km/h & 70 km/h", "55 km/h & 75 km/h"],
+  answer: "40 km/h & 60 km/h",
+  explanation: `
+    STEP 1: Let the slower train's speed be x km/h and the faster train's speed be (x + 20) km/h.
+    STEP 2: Since they move towards each other, relative speed = x + (x + 20) = 2x + 20 km/h.
+    STEP 3: They meet in 5 hours and the distance is 500 km:
+            (2x + 20) × 5 = 500.
+    STEP 4: 10x + 100 = 500 ⇒ 10x = 400 ⇒ x = 40 km/h.
+    STEP 5: Therefore, the speeds are 40 km/h and 60 km/h.
+  `
 },
+
     {
       question: "A train crosses a pole in 15 seconds and a platform 150 m long in 25 seconds. Find length and speed of train",
       options: ["225 m, 54 km/h", "225 m, 60 km/h", "250 m, 54 km/h", "250 m, 60 km/h"],
@@ -770,12 +795,22 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
       answer: "10 km/h",
       explanation: `STEP 1: Let boat speed = b, river speed = r\nSTEP 2: 24/(b-r) + 28/(b+r) = 6\nSTEP 3: 30/(b-r) + 21/(b+r) = 6.5\nSTEP 4: Solve equations: b = 10 km/h`
     },
-    {
-      question: "A train crosses a pole in 12 seconds and a platform 180 m long in 27 seconds. Speed in km/h?",
-      options: ["48 km/h", "54 km/h", "60 km/h", "66 km/h"],
-      answer: "54 km/h",
-      explanation: `STEP 1: Let length = L, speed = v\nSTEP 2: L = 12v\nSTEP 3: L + 180 = 27v\nSTEP 4: 12v + 180 = 27v ⇒ 180 = 15v ⇒ v = 12 m/s\nSTEP 5: Speed = 12 × 3.6 = 43.2 km/h`
-    },
+   // A2) Train crosses pole & platform (12 s and 24 s)
+{
+  question: "A train crosses a signal pole in 12 seconds and a platform 180 m long in 24 seconds. What is the speed of the train in km/h?",
+  options: ["48 km/h", "54 km/h", "60 km/h", "66 km/h"],
+  answer: "54 km/h",
+  explanation: `
+    STEP 1: Let the length of the train be L meters and its speed be v m/s.
+    STEP 2: Passing the pole: L / v = 12  ⇒  L = 12v.
+    STEP 3: Passing the platform (length 180 m): (L + 180) / v = 24.
+    STEP 4: Substitute L = 12v into the second equation:
+            (12v + 180) / v = 24
+            12 + 180/v = 24 ⇒ 180/v = 12 ⇒ v = 15 m/s.
+    STEP 5: Convert speed to km/h: 15 × 3.6 = 54 km/h.
+  `
+},
+
     {
       question: "A car covers first 1/3 at 30 km/h, second 1/3 at 40 km/h, last 1/3 at 60 km/h. Average speed?",
       options: ["38 km/h", "40 km/h", "42 km/h", "45 km/h"],
