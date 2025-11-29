@@ -365,146 +365,6 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
   ],
 
   // ==========================================
-  // LEVEL 2: Intermediate (50 items – Sums/ Differences, Basic Word Problems)
-  // ==========================================
-  intermediate: [
-    // 1
-    {
-      question: "The sum of two consecutive integers is 29. What is the larger integer?",
-      options: ["13", "14", "15", "16"],
-      answer: "15",
-      explanation: "Let the integers be x and x + 1. Then x + (x + 1) = 29 → 2x + 1 = 29 → 2x = 28 → x = 14. The larger is 15."
-    },
-    // 2
-    {
-      question: "The sum of two consecutive integers is 55. What is the smaller integer?",
-      options: ["26", "27", "28", "29"],
-      answer: "27",
-      explanation: "Let the integers be x and x + 1. Then 2x + 1 = 55 → 2x = 54 → x = 27."
-    },
-    // 3
-    {
-      question: "The sum of two consecutive even integers is 46. What is the larger integer?",
-      options: ["20", "22", "24", "26"],
-      answer: "24",
-      explanation: "Let the even integers be x and x + 2. Then x + (x + 2) = 46 → 2x + 2 = 46 → 2x = 44 → x = 22. Larger is 24."
-    },
-    // 4
-    {
-      question: "The sum of two consecutive odd integers is 52. What is the smaller integer?",
-      options: ["23", "25", "27", "29"],
-      answer: "25",
-      explanation: "Let the odd integers be x and x + 2. Then x + (x + 2) = 52 → 2x + 2 = 52 → 2x = 50 → x = 25."
-    },
-    // 5
-    {
-      question: "The sum of two consecutive integers is 101. What is the larger integer?",
-      options: ["50", "51", "52", "53"],
-      answer: "51",
-      explanation: "Let the integers be x and x + 1. Then 2x + 1 = 101 → 2x = 100 → x = 50. Larger is 51."
-    },
-    // 6
-    {
-      question: "The sum of two consecutive even integers is 74. What is the smaller integer?",
-      options: ["34", "35", "36", "37"],
-      answer: "36",
-      explanation: "Let the even integers be x and x + 2. Then 2x + 2 = 74 → 2x = 72 → x = 36."
-    },
-    // 7
-    {
-      question: "The sum of two consecutive odd integers is 88. What is the larger integer?",
-      options: ["43", "45", "47", "49"],
-      answer: "45",
-      explanation: "Let the odd integers be x and x + 2. Then 2x + 2 = 88 → 2x = 86 → x = 43. Larger is 45."
-    },
-    // 8
-    {
-      question: "The difference between two consecutive integers is:",
-      options: ["0", "1", "2", "3"],
-      answer: "1",
-      explanation: "Consecutive integers always differ by 1."
-    },
-    // 9
-    {
-      question: "The difference between two consecutive even integers is:",
-      options: ["1", "2", "3", "4"],
-      answer: "2",
-      explanation: "Even numbers go 2, 4, 6, 8, ... so consecutive even integers differ by 2."
-    },
-    // 10
-    {
-      question: "The difference between two consecutive odd integers is:",
-      options: ["1", "2", "3", "4"],
-      answer: "2",
-      explanation: "Odd numbers go 1, 3, 5, 7, ... so consecutive odd integers differ by 2."
-    },
-    // 11
-    {
-      question: "The sum of two odd integers is always:",
-      options: ["Odd", "Even", "Prime", "Negative"],
-      answer: "Even",
-      explanation: "Odd + odd = even. Example: 3 + 5 = 8."
-    },
-    // 12
-    {
-      question: "The sum of two even integers is always:",
-      options: ["Odd", "Even", "Prime", "Negative"],
-      answer: "Even",
-      explanation: "Even + even = even. Example: 4 + 6 = 10."
-    },
-    // 13
-    {
-      question: "The sum of an odd integer and an even integer is always:",
-      options: ["Odd", "Even", "Prime", "Zero"],
-      answer: "Odd",
-      explanation: "Odd + even = odd. Example: 3 + 4 = 7."
-    },
-    // 14
-    {
-      question: "If x is an even integer and y is an odd integer, then x + y is:",
-      options: ["Even", "Odd", "Zero", "Negative"],
-      answer: "Odd",
-      explanation: "An even plus an odd is always odd."
-    },
-    // 15
-    {
-      question: "If x is an odd integer, which of the following is always even?",
-      options: ["x + 1", "x + 3", "2x + 1", "x^2"],
-      answer: "x + 1",
-      explanation: "Odd + 1 = even. The other expressions may be odd."
-    },
-    // 16
-    {
-      question: "If x is an even integer, which of the following is always even?",
-      options: ["x + 1", "x + 3", "x - 1", "x + 4"],
-      answer: "x + 4",
-      explanation: "Even + even = even, so x + 4 is always even."
-    },
-    // 17
-    {
-      question: "The sum of two consecutive integers is 43. What is the smaller integer?",
-      options: ["20", "21", "22", "19"],
-      answer: "21",
-      explanation: "Let the integers be x and x + 1. Then 2x + 1 = 43 → 2x = 42 → x = 21."
-    },
-    // 18
-    {
-      question: "The sum of two consecutive even integers is 90. What is the larger integer?",
-      options: ["44", "46", "48", "50"],
-      answer: "46",
-      explanation: "Let them be x and x + 2. Then 2x + 2 = 90 → 2x = 88 → x = 44. Larger is 46."
-    },
-    // 19
-    {
-      question: "The sum of two consecutive odd integers is 70. What is the smaller integer?",
-      options: ["33", "34", "35", "36"],
-      answer: "35",
-      explanation: "Let them be x and x + 2. Then 2x + 2 = 70 → 2x = 68 → x = 34. But 34 is even, so we must have mis-guessed: try x and x + 2 with x odd → x = 35 works: 35 + 37 = 72. So correct sum for 70 is 33 and 35 → smaller is 33.",
-      // NOTE to dev: Correct the logic above in explanation:
-      // Let's fix this properly:
-        }
-  ],
-  // ==========================================
   // LEVEL 2: Intermediate (50 items – Sums, Differences, Basic Word Problems)
   // ==========================================
   intermediate: [
@@ -538,10 +398,10 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
     },
     // 5
     {
-      question: "The sum of two consecutive odd integers is 52. What is the smaller integer?",
-      options: ["23", "24", "25", "27"],
-      answer: "25",
-      explanation: "Let the odd integers be x and x + 2. Then 2x + 2 = 52 → 2x = 50 → x = 25, the smaller odd integer."
+      question: "The sum of two consecutive odd integers is 68. What is the smaller integer?",
+      options: ["31", "33", "35", "37"],
+      answer: "33",
+      explanation: "Let the odd integers be x and x + 2. Then 2x + 2 = 68 → 2x = 66 → x = 33, the smaller odd integer."
     },
     // 6
     {
@@ -566,10 +426,10 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
     },
     // 9
     {
-      question: "The sum of two consecutive odd integers is 68. What is the smaller integer?",
-      options: ["31", "33", "35", "37"],
-      answer: "33",
-      explanation: "Let the odd integers be x and x + 2. Then 2x + 2 = 68 → 2x = 66 → x = 33, the smaller odd integer."
+      question: "The sum of two consecutive odd integers is 72. What is the smaller integer?",
+      options: ["33", "35", "37", "39"],
+      answer: "35",
+      explanation: "Let the odd integers be x and x + 2. Then 2x + 2 = 72 → 2x = 70 → x = 35, the smaller odd integer."
     },
     // 10
     {
@@ -860,8 +720,7 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
     }
   ],
 
-
-    // ==========================================
+  // ==========================================
   // LEVEL 3: ADVANCED (50 items – Harder sums & word problems)
   // ==========================================
   advanced: [
@@ -1572,5 +1431,5 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
       explanation: "Let them be x, x + 2, x + 4, x + 6, x + 8, x + 10. The third is x + 4. Sum: 6x + 30. Given 6x + 30 = 5(x + 4) + 17 ⇒ 6x + 30 = 5x + 37 ⇒ x = 7."
     }
   ]
- };
+};
 
