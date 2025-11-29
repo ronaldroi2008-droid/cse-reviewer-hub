@@ -457,12 +457,25 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   `
 },
 
-    {
-      question: "A man travels 600 km partly by train at 80 km/h and car at 120 km/h. Total time 7 hours. Distance by train?",
-      options: ["240 km", "280 km", "320 km", "360 km"],
-      answer: "240 km",
-      explanation: `STEP 1: Let train distance = x, car distance = 600-x\nSTEP 2: Time equation: x/80 + (600-x)/120 = 7\nSTEP 3: Multiply by 240: 3x + 1200 - 2x = 1680\nSTEP 4: x + 1200 = 1680 ⇒ x = 480 km`
-    },
+    // 3) 600 km partly by train & car
+{
+  question: "A man travels 600 km partly by train at 80 km/h and partly by car at 120 km/h. The total time taken is 7 hours. How many kilometers does he travel by train?",
+  options: ["240 km", "300 km", "360 km", "480 km"],
+  answer: "480 km",
+  explanation: `
+    STEP 1: Let the distance travelled by train be x km, so by car = 600 − x km.
+    STEP 2: Time by train = x / 80 hours.
+    STEP 3: Time by car = (600 − x) / 120 hours.
+    STEP 4: Total time = 7 hours:
+            x/80 + (600 − x)/120 = 7.
+    STEP 5: Multiply both sides by 240:
+            3x + 2(600 − x) = 1680
+            3x + 1200 − 2x = 1680
+            x + 1200 = 1680 ⇒ x = 480.
+    STEP 6: So he travels 480 km by train.
+  `
+},
+
     {
       question: "Two trains from stations A and B 220 km apart. They meet after 2 hours. If one is 20 km/h faster, find speeds",
       options: ["50,70", "45,65", "40,60", "55,75"],
