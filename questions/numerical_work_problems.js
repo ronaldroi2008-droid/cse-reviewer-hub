@@ -858,7 +858,7 @@ beginner: [
       STEP 4: Calculate time together:
       Time = 1 job ÷ (40/399 job/hour) = 399/40 hours = 9.975 hours ≈ 10.0 hours
     `
-  }
+  },
  {
     question: "Worker A can complete a task in 8 hours. Worker B can do it in 6 hours. How long together?",
     options: ["3.2 hours", "3.4 hours", "3.6 hours", "3.8 hours"],
@@ -2052,7 +2052,7 @@ intermediate: [
       STEP 6: Time for B and C to finish:
       Time = (73/120) ÷ (1/40) = (73/120) × 40 = 2920/120 = 24.33 days ≈ 25 days
     `
-  }
+  },
   {
     question: "A, B, and C can complete a work in 14, 21, and 28 days respectively. They work together for 5 days, then B leaves. How long will A and C take to finish?",
     options: ["4 days", "5 days", "6 days", "7 days"],
@@ -3241,7 +3241,7 @@ advanced: [
       STEP 6: Time for pipe C alone:
       Time = (11/20) ÷ (1/15) = (11/20) × 15 = 165/20 = 8.25 hours
     `
-  }
+  },
 {
     question: "Two pipes A and B can fill a tank in 15 and 20 minutes respectively. Both are opened together but after 6 minutes, pipe A is closed. How long will it take to fill the tank?",
     options: ["10 minutes", "11 minutes", "12 minutes", "13 minutes"],
@@ -4560,10 +4560,10 @@ expert: [
     
     },
 
-  {
+   {
     question: "24 men can complete a work in 18 days. 36 women can complete the same work in 24 days. In how many days will 12 men and 18 women complete the work?",
     options: ["16 days", "18 days", "20 days", "22 days"],
-    answer: "18 days",
+    answer: "21 days",
     explanation: `
       STEP 1: Find men's rate:
       24 men in 18 days, so 1 man's rate = 1/(24×18) = 1/432 work/day
@@ -4578,5 +4578,4 @@ expert: [
       Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days ≈ 21 days
     `
   }
-]
-};
+];
