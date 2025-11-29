@@ -4560,7 +4560,7 @@ expert: [
     
     },
 
-   {
+  {
     question: "24 men can complete a work in 18 days. 36 women can complete the same work in 24 days. In how many days will 12 men and 18 women complete the work?",
     options: ["16 days", "18 days", "20 days", "22 days"],
     answer: "21 days",
@@ -4578,4 +4578,5 @@ expert: [
       Time = 1 ÷ (7/144) = 144/7 ≈ 20.57 days ≈ 21 days
     `
   }
-];
+]
+};
