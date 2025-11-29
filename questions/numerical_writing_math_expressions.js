@@ -618,11 +618,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     }
   ],
 
-  // ==========================================
-  // LEVEL 3: ADVANCED (50 items – Exponents & multi-step)
-  // ==========================================
-  advanced: [
-    // 1-25 (Original items)
+
     // ==========================================
 // LEVEL 3: ADVANCED (50 items – Exponents & multi-step)
 // ==========================================
