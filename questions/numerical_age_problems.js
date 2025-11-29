@@ -2374,7 +2374,7 @@ expert: [
       STEP 12: 81 = 2y
       STEP 13: y = 40.5 ≈ 41 years
     `
-  }
+  },
   {
     question: "The sum of present ages of A and B is 60 years. 5 years ago, the ratio of their ages was 5:7. Find the present age of A.",
     options: ["23 years", "24 years", "25 years", "26 years"],
