@@ -643,6 +643,24 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   // ==========================================
   advanced: [
     {
+  question: "A train running at 60 km/h crosses another train of same length running at 40 km/h in opposite direction in 15 seconds. Length of each train?",
+  options: ["200 m", "208.33 m", "216.67 m", "225 m"],
+  answer: "208.33 m",
+  explanation: `STEP 1: Relative speed = 60 + 40 = 100 km/h = 250/9 m/s\nSTEP 2: Total distance = 2L (both trains)\nSTEP 3: Time = 2L ÷ (250/9) = 15\nSTEP 4: 18L/250 = 15 ⇒ L = (15 × 250)/18 = 208.33 m`
+},
+{
+  question: "A car covers distance between two cities. If speed increases by 15 km/h, time reduces by 1 hour. If speed decreases by 10 km/h, time increases by 2 hours. Distance?",
+  options: ["300 km", "320 km", "340 km", "360 km"],
+  answer: "360 km",
+  explanation: `STEP 1: Let distance = D, original speed = S\nSTEP 2: D/S - D/(S+15) = 1\nSTEP 3: D/(S-10) - D/S = 2\nSTEP 4: Solve equations: D = 360 km, S = 60 km/h`
+},
+{
+  question: "Two trains start from stations 500 km apart. They meet after 5 hours. If difference of speeds is 20 km/h, find speeds",
+  options: ["40&60 km/h", "45&65 km/h", "50&70 km/h", "55&75 km/h"],
+  answer: "45&65 km/h",
+  explanation: `STEP 1: Let speeds be x and x+20\nSTEP 2: Relative speed = x + (x+20) = 2x + 20\nSTEP 3: Distance = (2x + 20) × 5 = 500\nSTEP 4: 10x + 100 = 500 ⇒ 10x = 400 ⇒ x = 40\nSTEP 5: Speeds = 40 and 60 km/h`
+},
+    {
       question: "A train crosses a pole in 15 seconds and a platform 150 m long in 25 seconds. Find length and speed of train",
       options: ["225 m, 54 km/h", "225 m, 60 km/h", "250 m, 54 km/h", "250 m, 60 km/h"],
       answer: "225 m, 54 km/h",
@@ -930,6 +948,18 @@ window.NUMERICAL_QUESTION_BANK["motion_problems"] = {
   // LEVEL 4: EXPERT (50 items - Challenging Multi-Concept Problems)
   // ==========================================
   expert: [
+    {
+  question: "A boat takes 6 hours for 24 km upstream and 28 km downstream. It takes 6.5 hours for 30 km upstream and 21 km downstream. Find time for 40 km in still water",
+  options: ["4 hours", "5 hours", "6 hours", "7 hours"],
+  answer: "5 hours",
+  explanation: `STEP 1: Let boat speed = b, river speed = r\nSTEP 2: 24/(b-r) + 28/(b+r) = 6\nSTEP 3: 30/(b-r) + 21/(b+r) = 6.5\nSTEP 4: Solve: b = 10 km/h, r = 3 km/h\nSTEP 5: Time in still water = 40/10 = 4 hours`
+},
+{
+  question: "Two trains of lengths 200 m and 300 m cross each other in 25 seconds when running in opposite directions. When running in same direction, faster takes 150 seconds to pass slower. Ratio of speeds?",
+  options: ["2:1", "3:2", "4:3", "5:4"],
+  answer: "3:2",
+  explanation: `STEP 1: Let speeds be v1 and v2 (v1 > v2)\nSTEP 2: Opposite: 500/(v1+v2) = 25 ⇒ v1+v2 = 20\nSTEP 3: Same: 500/(v1-v2) = 150 ⇒ v1-v2 = 10/3\nSTEP 4: Solve: v1 = 35/3 m/s, v2 = 25/3 m/s\nSTEP 5: Ratio = 35:25 = 7:5`
+},
     {
       question: "Two trains of lengths 200 m and 250 m run on parallel tracks. When running in same direction, faster passes slower in 90 s. When in opposite directions, they pass in 18 s. Find speeds",
       options: ["30 m/s & 20 m/s", "35 m/s & 25 m/s", "40 m/s & 30 m/s", "45 m/s & 35 m/s"],
