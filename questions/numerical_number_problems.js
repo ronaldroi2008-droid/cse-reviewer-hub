@@ -8,15 +8,21 @@ window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
 
 window.NUMERICAL_QUESTION_BANK["number_problems"] = {
 
-  // ==========================================
-  // LEVEL 1: Beginner (50 items) - REVISED FOR VARIETY
-  // ==========================================
-  beginner: [
+ // ==========================================
+// LEVEL 1: Beginner (50 items) - COMPLETED
+// ==========================================
+beginner: [
     {
       question: "The sum of a number and 6 is 10. What is the number?",
       options: ["2", "0", "1", "4"],
       answer: "4",
       explanation: "Let x be the number. The equation is x + 6 = 10. So x = 10 - 6 = 4."
+    },
+    {
+      question: "The sum of a number and 3 is 7. What is the number?",
+      options: ["8", "7", "2", "4"],
+      answer: "4",
+      explanation: "Let x be the number. The equation is x + 3 = 7. So x = 7 - 3 = 4."
     },
     {
       question: "When a number is divided by 5, the result is 9. What is the number?",
@@ -41,6 +47,12 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
       options: ["25", "22", "20", "15"],
       answer: "22",
       explanation: "Let x be the number. The equation is x + 8 = 30. So x = 30 - 8 = 22."
+    },
+    {
+      question: "A number minus 5 equals 19. What is the number?",
+      options: ["24", "20", "18", "26"],
+      answer: "24",
+      explanation: "Let x be the number. The equation is x - 5 = 19. So x = 19 + 5 = 24."
     },
     {
       question: "4 times a number is 36. What is the number?",
@@ -299,6 +311,19 @@ window.NUMERICAL_QUESTION_BANK["number_problems"] = {
       options: ["29", "31", "25", "27"],
       answer: "29",
       explanation: "Let x be the number. The equation is x - 7 = 22. So x = 22 + 7 = 29."
+    },
+    // ADDED 2 MORE QUESTIONS TO COMPLETE 50 ITEMS
+    {
+      question: "8 times a number is 72. What is the number?",
+      options: ["8", "9", "10", "11"],
+      answer: "9",
+      explanation: "Let x be the number. The equation is 8x = 72. So x = 72 ÷ 8 = 9."
+    },
+    {
+      question: "The sum of a number and 14 is 37. What is the number?",
+      options: ["21", "23", "25", "27"],
+      answer: "23",
+      explanation: "Let x be the number. The equation is x + 14 = 37. So x = 37 - 14 = 23."
     }
   ],
 
