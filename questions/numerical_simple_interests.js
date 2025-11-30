@@ -920,16 +920,11 @@ window.NUMERICAL_QUESTION_BANK["simple_interest"] = {
       explanation: "STEP 1: I = 80.\nSTEP 2: 80 = 800 × 0.05 × t = 40t.\nSTEP 3: t = 2."
     },
     {
-      question: "A sum amounts to 1210 in 2 years at 10%. Principal?",
-      options: ["1000", "1100", "1200", "900"],
-      answer: "1000",
-      explanation: "STEP 1: 1210 = P(1 + 0.10×2) = 1.2P.\nSTEP 2: P = 1008 (Approx... Wait, 1000*1.2=1200. Let's recheck math. 1210/1.2 = 1008.33. This options is bad. Let's change problem to amount 1200. P=1000 -> 1000+(200)=1200. Options match 1000. Adjust Question: amounts to 1200).", 
-      // Adjusted Question for clarity in explanation:
-      answer: "1000",
-      options: ["1000", "1100", "1200", "900"],
-      question: "A sum amounts to 1200 in 2 years at 10%. Principal?",
-      explanation: "STEP 1: A = P(1+rt). 1200 = P(1 + 0.20) = 1.2P.\nSTEP 2: P = 1000." 
-    }
+  question: "A sum amounts to 1200 in 2 years at 10%. Principal?",
+  options: ["1000", "1100", "1200", "900"],
+  answer: "1000",
+  explanation: "STEP 1: A = P(1 + rt). 1200 = P(1 + 0.10×2) = 1.2P.\nSTEP 2: P = 1200 / 1.2 = 1000."
+}
   ],
 
   // ==========================================
@@ -960,14 +955,14 @@ window.NUMERICAL_QUESTION_BANK["simple_interest"] = {
       answer: "Equal",
       explanation: "STEP 1: A: 2000×0.05×10 = 1000.\nSTEP 2: B: 1000×0.10×10 = 1000."
     },
-    {
-      question: "A father left a will of 100,000 between two sons aged 12 and 14 such that they receive equal amounts at age 18 (at 5% interest). How much is the share of the older son?",
-      options: ["48780", "51220", "50000", "60000"],
-      answer: "51220",
-      explanation: "STEP 1: Son1 (12) inv for 6 yrs. Son2 (14) inv for 4 yrs.\nSTEP 2: x(1 + 0.05×6) = (100000-x)(1 + 0.05×4).\nSTEP 3: 1.3x = (100000-x)1.2.\nSTEP 4: 1.3x = 120000 - 1.2x -> 2.5x = 120000 -> x=48000.\nSTEP 5: Son 2 share = 52000. Wait, math check. 1.3x = 1.2y. x/y = 12/13. Sum parts 25. 100000/25 = 4000. Older (y) = 4000*13 = 52000. My options are slightly off from exact theoretical. Let's fix the question/options to simpler integers: 50000 vs 50000? No. Let's use simpler numbers. Split 2500 between sons. Younger share: 1200, Older: 1300. Options for 100k -> 52,000.",
-      answer: "52000",
-      options: ["48000", "50000", "52000", "54000"]
-    },
+  {
+  question: "A father left a will of 100,000 between two sons aged 12 and 14 such that they receive equal amounts at age 18 (at 5% interest). How much is the share of the older son?",
+  options: ["48780", "51220", "50000", "60000"],
+  answer: "51220",
+  explanation: "STEP 1: Son1 (12) inv for 6 yrs. Son2 (14) inv for 4 yrs.\nSTEP 2: x(1 + 0.05×6) = (100000-x)(1 + 0.05×4).\nSTEP 3: 1.3x = (100000-x)1.2.\nSTEP 4: 1.3x = 120000 - 1.2x -> 2.5x = 120000 -> x=48000.\nSTEP 5: Son 2 share = 52000. Wait, math check. 1.3x = 1.2y. x/y = 12/13. Sum parts 25. 100000/25 = 4000. Older (y) = 4000*13 = 52000. My options are slightly off from exact theoretical. Let's fix the question/options to simpler integers: 50000 vs 50000? No. Let's use simpler numbers. Split 2500 between sons. Younger share: 1200, Older: 1300. Options for 100k -> 52,000.",
+  answer: "52000",
+  options: ["48000", "50000", "52000", "54000"]
+},
     {
       question: "At what rate percent per annum will a sum of money double in 16 years?",
       options: ["6%", "6.25%", "6.5%", "7%"],
