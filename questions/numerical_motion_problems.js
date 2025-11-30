@@ -763,330 +763,716 @@ STEP 3: 9 AM + 6 hours = 3 PM`
     }
   ],
 
-  // ==========================================
-  // LEVEL 3: ADVANCED (50 items - Complex Problems with Variables)
+    // ==========================================
+  // LEVEL 3: ADVANCED (50 items – Multi-step & algebraic problems)
   // ==========================================
   advanced: [
+    // 1
     {
-  question: "A train running at 60 km/h crosses another train of same length running at 40 km/h in opposite direction in 15 seconds. Length of each train?",
-  options: ["200 m", "208.33 m", "216.67 m", "225 m"],
-  answer: "208.33 m",
-  explanation: `STEP 1: Relative speed = 60 + 40 = 100 km/h = 250/9 m/s\nSTEP 2: Total distance = 2L (both trains)\nSTEP 3: Time = 2L ÷ (250/9) = 15\nSTEP 4: 18L/250 = 15 ⇒ L = (15 × 250)/18 = 208.33 m`
-},
-{
-  question: "A car covers distance between two cities. If speed increases by 15 km/h, time reduces by 1 hour. If speed decreases by 10 km/h, time increases by 2 hours. Distance?",
-  options: ["300 km", "320 km", "340 km", "360 km"],
-  answer: "360 km",
-  explanation: `STEP 1: Let distance = D, original speed = S\nSTEP 2: D/S - D/(S+15) = 1\nSTEP 3: D/(S-10) - D/S = 2\nSTEP 4: Solve equations: D = 360 km, S = 60 km/h`
-},
-// A1) Two trains 500 km apart, meet in 5 hours, speed difference 20
-{
-  question: "Two trains start from stations 500 km apart and move towards each other. They meet after 5 hours. If the difference of their speeds is 20 km/h, what are their speeds?",
-  options: ["40 km/h & 60 km/h", "45 km/h & 65 km/h", "50 km/h & 70 km/h", "55 km/h & 75 km/h"],
-  answer: "40 km/h & 60 km/h",
-  explanation: `
-    STEP 1: Let the slower train's speed be x km/h and the faster train's speed be (x + 20) km/h.
-    STEP 2: Since they move towards each other, relative speed = x + (x + 20) = 2x + 20 km/h.
-    STEP 3: They meet in 5 hours and the distance is 500 km:
-            (2x + 20) × 5 = 500.
-    STEP 4: 10x + 100 = 500 ⇒ 10x = 400 ⇒ x = 40 km/h.
-    STEP 5: Therefore, the speeds are 40 km/h and 60 km/h.
-  `
-},
+      question:
+        "Two trains of equal length are running on parallel tracks in opposite directions at 60 km/h and 40 km/h. They completely cross each other in 15 seconds. What is the length of each train?",
+      options: ["200 m", "208.3 m", "225 m", "250 m"],
+      answer: "208.3 m",
+      explanation: `STEP 1: Relative speed (opposite directions) = 60 + 40 = 100 km/h.
+STEP 2: Convert to m/s: 100 × (5/18) = 500/18 m/s.
+STEP 3: Total distance covered while crossing = relative speed × time
+        = (500/18) × 15 = 7500/18 = 416.67 m.
+STEP 4: This distance is the sum of both train lengths = 2L, so:
+        2L = 416.67 ⇒ L ≈ 208.3 m.`
+    },
 
+    // 2
     {
-      question: "A train crosses a pole in 15 seconds and a platform 150 m long in 25 seconds. Find length and speed of train",
-      options: ["225 m, 54 km/h", "225 m, 60 km/h", "250 m, 54 km/h", "250 m, 60 km/h"],
-      answer: "225 m, 54 km/h",
-      explanation: `STEP 1: Let length = L, speed = V\nSTEP 2: L = V × 15\nSTEP 3: L + 150 = V × 25\nSTEP 4: Subtract: 150 = 10V ⇒ V = 15 m/s\nSTEP 5: L = 15 × 15 = 225 m\nSTEP 6: V = 15 × 3.6 = 54 km/h`
+      question:
+        "Two trains 200 m and 300 m long are running in opposite directions at 72 km/h and 54 km/h. How much time (in seconds) will they take to completely cross each other?",
+      options: ["12 s", "14 s", "14.3 s", "16 s"],
+      answer: "14.3 s",
+      explanation: `STEP 1: Relative speed = 72 + 54 = 126 km/h.
+STEP 2: Convert to m/s: 126 × (5/18) = 35 m/s.
+STEP 3: Total distance = 200 + 300 = 500 m.
+STEP 4: Time = distance ÷ speed = 500 ÷ 35 = 100/7 ≈ 14.3 s.`
     },
-    {
-      question: "A man covers 30 km partly at 4 km/h and partly at 5 km/h. If he takes 7 hours, find distance at 4 km/h",
-      options: ["10 km", "12 km", "15 km", "18 km"],
-      answer: "20 km",
-      explanation: `STEP 1: Let distance at 4 km/h = x, at 5 km/h = 30-x\nSTEP 2: Time equation: x/4 + (30-x)/5 = 7\nSTEP 3: Multiply by 20: 5x + 120 - 4x = 140\nSTEP 4: x + 120 = 140 ⇒ x = 20 km`
-    },
-    {
-      question: "A train running at speed V crosses a platform in 20 seconds. If length is increased by 50%, it takes 25 seconds. Platform length?",
-      options: ["100 m", "150 m", "200 m", "250 m"],
-      answer: "150 m",
-      explanation: `STEP 1: Let train length = L, platform = P\nSTEP 2: (L+P)/V = 20\nSTEP 3: (1.5L+P)/V = 25\nSTEP 4: Solve: P = 150 m`
-    },
-    {
-      question: "Two trains start from A and B towards each other. After meeting, they take 4 and 9 hours to reach B and A. Ratio of speeds?",
-      options: ["2:3", "3:2", "4:9", "9:4"],
-      answer: "3:2",
-      explanation: `STEP 1: Ratio of speeds = √(9/4) = 3/2\nSTEP 2: Speeds ratio = 3:2`
-    },
-    {
-      question: "A man rows 30 km upstream and 44 km downstream in 10 hours. Also rows 40 km upstream and 55 km downstream in 13 hours. River speed?",
-      options: ["2 km/h", "3 km/h", "4 km/h", "5 km/h"],
-      answer: "3 km/h",
-      explanation: `STEP 1: Let boat speed = b, river speed = r\nSTEP 2: 30/(b-r) + 44/(b+r) = 10\nSTEP 3: 40/(b-r) + 55/(b+r) = 13\nSTEP 4: Solve equations: r = 3 km/h`
-    },
-    {
-      question: "A train crosses two persons walking at 3 km/h and 4.5 km/h in same direction in 12 and 15 seconds. Train length?",
-      options: ["50 m", "75 m", "100 m", "125 m"],
-      answer: "75 m",
-      explanation: `STEP 1: Let train speed = v m/s, length = L\nSTEP 2: L/(v - 3×5/18) = 12\nSTEP 3: L/(v - 4.5×5/18) = 15\nSTEP 4: Solve equations: L = 75 m`
-    },
-    {
-      question: "A car covers distance between two cities in 4 hours. If speed increases by 20 km/h, time reduces by 1 hour. Distance?",
-      options: ["240 km", "300 km", "360 km", "400 km"],
-      answer: "240 km",
-      explanation: `STEP 1: Let distance = D, original speed = S\nSTEP 2: D/S = 4 ⇒ D = 4S\nSTEP 3: D/(S+20) = 3 ⇒ 4S/(S+20) = 3\nSTEP 4: 4S = 3S + 60 ⇒ S = 60 km/h\nSTEP 5: D = 4 × 60 = 240 km`
-    },
-    {
-      question: "Two trains of lengths 200 m and 300 m cross each other in 20 seconds when running in opposite directions. Speed ratio 2:3. Faster train speed?",
-      options: ["54 km/h", "60 km/h", "66 km/h", "72 km/h"],
-      answer: "54 km/h",
-      explanation: `STEP 1: Let speeds be 2x and 3x m/s\nSTEP 2: Relative speed = 2x + 3x = 5x m/s\nSTEP 3: Distance = 200 + 300 = 500 m\nSTEP 4: Time = 500/5x = 20 ⇒ x = 5 m/s\nSTEP 5: Faster speed = 3 × 5 = 15 m/s = 54 km/h`
-    },
-    {
-      question: "A man covers 2/3 distance at 30 km/h and remaining at 60 km/h. Average speed?",
-      options: ["36 km/h", "38 km/h", "40 km/h", "42 km/h"],
-      answer: "36 km/h",
-      explanation: `STEP 1: Let total distance = 3D\nSTEP 2: Time1 = 2D/30 = D/15, Time2 = D/60\nSTEP 3: Total time = D/15 + D/60 = D(4/60 + 1/60) = 5D/60 = D/12\nSTEP 4: Average speed = 3D ÷ (D/12) = 36 km/h`
-    },
-    {
-      question: "A train takes 10 seconds to pass a man and 25 seconds to pass a platform. If platform is 150 m longer than train, train length?",
-      options: ["100 m", "120 m", "150 m", "180 m"],
-      answer: "100 m",
-      explanation: `STEP 1: Let train length = L, platform = L+150\nSTEP 2: L/v = 10, (2L+150)/v = 25\nSTEP 3: From first: v = L/10\nSTEP 4: Substitute: (2L+150)/(L/10) = 25 ⇒ 20 + 1500/L = 25 ⇒ 1500/L = 5 ⇒ L = 300 m`
-    },
-    {
-      question: "A car travels from A to B at 40 km/h and returns at 60 km/h. If average speed is 50 km/h, ratio of distance?",
-      options: ["1:1", "2:3", "3:4", "4:5"],
-      answer: "1:1",
-      explanation: `STEP 1: For round trip with different speeds, average speed = 2×40×60/(40+60) = 48 km/h\nSTEP 2: Given average is 50 km/h, so distances must be different\nSTEP 3: Let distance AB = D1, BA = D2\nSTEP 4: Total time = D1/40 + D2/60, Total distance = D1 + D2\nSTEP 5: (D1+D2)/(D1/40 + D2/60) = 50\nSTEP 6: Solve: D1:D2 = 1:1`
-    },
-    {
-      question: "Two trains start from stations 240 km apart at 8 AM. They meet at 10 AM. If one is 20 km/h faster, meeting point distance?",
-      options: ["100 km", "110 km", "120 km", "130 km"],
-      answer: "110 km",
-      explanation: `STEP 1: Time = 2 hours\nSTEP 2: Let speeds be x and x+20\nSTEP 3: Relative speed = 2x + 20\nSTEP 4: Distance = (2x + 20) × 2 = 240 ⇒ 4x + 40 = 240 ⇒ x = 50\nSTEP 5: Slower train distance = 50 × 2 = 100 km\nSTEP 6: Meeting point distance from slower station = 100 km`
-    },
-    {
-      question: "A man rows 24 km upstream and 28 km downstream in 6 hours. Also rows 30 km upstream and 21 km downstream in 6.5 hours. Boat speed?",
-      options: ["8 km/h", "9 km/h", "10 km/h", "11 km/h"],
-      answer: "10 km/h",
-      explanation: `STEP 1: Let boat speed = b, river speed = r\nSTEP 2: 24/(b-r) + 28/(b+r) = 6\nSTEP 3: 30/(b-r) + 21/(b+r) = 6.5\nSTEP 4: Solve equations: b = 10 km/h`
-    },
-   // A2) Train crosses pole & platform (12 s and 24 s)
-{
-  question: "A train crosses a signal pole in 12 seconds and a platform 180 m long in 24 seconds. What is the speed of the train in km/h?",
-  options: ["48 km/h", "54 km/h", "60 km/h", "66 km/h"],
-  answer: "54 km/h",
-  explanation: `
-    STEP 1: Let the length of the train be L meters and its speed be v m/s.
-    STEP 2: Passing the pole: L / v = 12  ⇒  L = 12v.
-    STEP 3: Passing the platform (length 180 m): (L + 180) / v = 24.
-    STEP 4: Substitute L = 12v into the second equation:
-            (12v + 180) / v = 24
-            12 + 180/v = 24 ⇒ 180/v = 12 ⇒ v = 15 m/s.
-    STEP 5: Convert speed to km/h: 15 × 3.6 = 54 km/h.
-  `
-},
 
+    // 3
     {
-      question: "A car covers first 1/3 at 30 km/h, second 1/3 at 40 km/h, last 1/3 at 60 km/h. Average speed?",
-      options: ["38 km/h", "40 km/h", "42 km/h", "45 km/h"],
-      answer: "40 km/h",
-      explanation: `STEP 1: Let total distance = 3D\nSTEP 2: Time1 = D/30, Time2 = D/40, Time3 = D/60\nSTEP 3: Total time = D(1/30 + 1/40 + 1/60) = D(4/120 + 3/120 + 2/120) = 9D/120 = 3D/40\nSTEP 4: Average speed = 3D ÷ (3D/40) = 40 km/h`
+      question:
+        "A train 180 m long is running at 54 km/h. How long (in meters) is the platform if the train passes it completely in 24 seconds?",
+      options: ["120 m", "150 m", "180 m", "210 m"],
+      answer: "180 m",
+      explanation: `STEP 1: Convert 54 km/h to m/s: 54 × (5/18) = 15 m/s.
+STEP 2: In 24 s, distance covered = 15 × 24 = 360 m.
+STEP 3: Total distance = train length + platform length
+        ⇒ 360 = 180 + platform.
+STEP 4: Platform length = 360 − 180 = 180 m.`
     },
+
+    // 4
     {
-      question: "Two trains of equal length take 15 and 20 seconds to cross a pole. Time to cross each other in opposite direction?",
-      options: ["8.57 s", "9.23 s", "10.15 s", "11.42 s"],
-      answer: "8.57 s",
-      explanation: `STEP 1: Let length = L\nSTEP 2: Speed1 = L/15, Speed2 = L/20\nSTEP 3: Relative speed = L/15 + L/20 = 7L/60\nSTEP 4: Distance = 2L\nSTEP 5: Time = 2L ÷ (7L/60) = 120/7 ≈ 17.14 seconds`
+      question:
+        "A train crosses a telegraph post in 15 seconds and a 150 m long platform in 25 seconds. What are the length of the train and its speed?",
+      options: [
+        "200 m and 48 km/h",
+        "225 m and 54 km/h",
+        "250 m and 54 km/h",
+        "225 m and 60 km/h"
+      ],
+      answer: "225 m and 54 km/h",
+      explanation: `STEP 1: Let train length = L (m), speed = v (m/s).
+STEP 2: Passing a post uses only train length:
+        L ÷ v = 15  ⇒  L = 15v.
+STEP 3: Passing a 150 m platform:
+        (L + 150) ÷ v = 25 ⇒ 15v + 150 = 25v.
+STEP 4: 150 = 10v ⇒ v = 15 m/s = 54 km/h.
+STEP 5: L = 15v = 15 × 15 = 225 m.`
     },
+
+    // 5
     {
-      question: "A man covers 60 km in 5 hours partly on foot at 8 km/h and bicycle at 16 km/h. Distance on foot?",
-      options: ["20 km", "25 km", "30 km", "35 km"],
-      answer: "20 km",
-      explanation: `STEP 1: Let foot distance = x, bicycle = 60-x\nSTEP 2: Time equation: x/8 + (60-x)/16 = 5\nSTEP 3: Multiply by 16: 2x + 60 - x = 80\nSTEP 4: x + 60 = 80 ⇒ x = 20 km`
+      question:
+        "Two trains of equal length take 12 seconds and 18 seconds respectively to pass a telegraph post. How long (in seconds) will they take to completely cross each other when running in opposite directions on parallel tracks?",
+      options: ["10.8 s", "12 s", "14.4 s", "15 s"],
+      answer: "14.4 s",
+      explanation: `STEP 1: Let each train length = L.
+Train 1: L ÷ v₁ = 12  ⇒  v₁ = L/12.
+Train 2: L ÷ v₂ = 18  ⇒  v₂ = L/18.
+STEP 2: Relative speed (opposite directions):
+        v₁ + v₂ = L/12 + L/18 = 5L/36.
+STEP 3: Total distance to cross = L + L = 2L.
+STEP 4: Time = distance ÷ speed
+        = 2L ÷ (5L/36) = (2L) × (36/5L) = 72/5 = 14.4 s.`
     },
+
+    // 6
     {
-      question: "A train running at 45 km/h takes 18 seconds to pass a platform and 12 seconds to pass a man. Platform length?",
-      options: ["75 m", "90 m", "105 m", "120 m"],
-      answer: "75 m",
-      explanation: `STEP 1: Speed = 45 km/h = 12.5 m/s\nSTEP 2: Train length = 12.5 × 12 = 150 m\nSTEP 3: Platform + train = 12.5 × 18 = 225 m\nSTEP 4: Platform = 225 - 150 = 75 m`
+      question:
+        "Two trains each 120 m long are running in the same direction on parallel tracks at 54 km/h and 36 km/h, respectively. How long (in seconds) will the faster train take to completely pass the slower one?",
+      options: ["36 s", "40 s", "48 s", "60 s"],
+      answer: "48 s",
+      explanation: `STEP 1: Relative speed (same direction) = 54 − 36 = 18 km/h.
+STEP 2: Convert to m/s: 18 × (5/18) = 5 m/s.
+STEP 3: Distance to be covered = 120 + 120 = 240 m.
+STEP 4: Time = distance ÷ speed = 240 ÷ 5 = 48 s.`
     },
+
+    // 7
     {
-      question: "Two cars start from same point at 7 AM at 35 km/h and 50 km/h. When will they be 180 km apart?",
-      options: ["11 AM", "12 PM", "1 PM", "2 PM"],
-      answer: "1 PM",
-      explanation: `STEP 1: Relative speed = 50 - 35 = 15 km/h\nSTEP 2: Time = 180 ÷ 15 = 12 hours\nSTEP 3: 7 AM + 12 hours = 7 PM`
+      question:
+        "A train running at 72 km/h overtakes a man walking in the same direction at 6 km/h and passes him completely in 18 seconds. What is the length of the train?",
+      options: ["270 m", "300 m", "330 m", "360 m"],
+      answer: "330 m",
+      explanation: `STEP 1: Relative speed (same direction) = 72 − 6 = 66 km/h.
+STEP 2: Convert to m/s: 66 × (5/18) = 330/18 = 55/3 m/s.
+STEP 3: Length of train = relative speed × time
+        = (55/3) × 18 = 55 × 6 = 330 m.`
     },
+
+    // 8
     {
-      question: "A train crosses a bridge in 40 seconds. If length is doubled, it takes 60 seconds. Bridge length?",
-      options: ["200 m", "250 m", "300 m", "350 m"],
-      answer: "200 m",
-      explanation: `STEP 1: Let train length = L, bridge = B, speed = v\nSTEP 2: (L+B)/v = 40\nSTEP 3: (2L+B)/v = 60\nSTEP 4: Subtract: L/v = 20 ⇒ L = 20v\nSTEP 5: From first: 20v + B = 40v ⇒ B = 20v\nSTEP 6: So bridge length = train length`
+      question:
+        "A train running at 60 km/h crosses a bridge 300 m long in 36 seconds. What is the length of the train?",
+      options: ["200 m", "250 m", "300 m", "360 m"],
+      answer: "300 m",
+      explanation: `STEP 1: Convert 60 km/h to m/s: 60 × (5/18) = 50/3 m/s.
+STEP 2: In 36 s, distance covered = (50/3) × 36 = 600 m.
+STEP 3: Total distance = train length + bridge length
+        ⇒ train + 300 = 600 ⇒ train = 300 m.`
     },
+
+    // 9
     {
-      question: "A man rows 18 km downstream in 2 hours and 12 km upstream in 3 hours. Speed in still water?",
-      options: ["6 km/h", "7 km/h", "8 km/h", "9 km/h"],
-      answer: "7 km/h",
-      explanation: `STEP 1: Downstream speed = 18 ÷ 2 = 9 km/h\nSTEP 2: Upstream speed = 12 ÷ 3 = 4 km/h\nSTEP 3: Speed in still water = (9 + 4) ÷ 2 = 6.5 km/h`
+      question:
+        "A train traveling at 45 km/h passes through a tunnel 660 m long in 1 minute. What is the length of the train?",
+      options: ["60 m", "75 m", "90 m", "120 m"],
+      answer: "90 m",
+      explanation: `STEP 1: Convert 45 km/h to m/s: 45 × (5/18) = 12.5 m/s.
+STEP 2: Time = 1 minute = 60 s. Distance covered = 12.5 × 60 = 750 m.
+STEP 3: Total distance = tunnel + train length
+        ⇒ 660 + train = 750 ⇒ train = 90 m.`
     },
+
+    // 10
     {
-      question: "Two trains from A and B start at same time. After meeting, they take 16 and 25 hours to reach B and A. Ratio of speeds?",
-      options: ["4:5", "5:4", "16:25", "25:16"],
-      answer: "4:5",
-      explanation: `STEP 1: Ratio of speeds = √(25/16) = 5/4\nSTEP 2: Speeds ratio = 5:4`
+      question:
+        "Two trains 150 m and 200 m long are running in opposite directions at 54 km/h and 36 km/h respectively. How long (in seconds) will they take to completely cross each other?",
+      options: ["10 s", "12 s", "14 s", "16 s"],
+      answer: "14 s",
+      explanation: `STEP 1: Relative speed = 54 + 36 = 90 km/h.
+STEP 2: Convert to m/s: 90 × (5/18) = 25 m/s.
+STEP 3: Total distance = 150 + 200 = 350 m.
+STEP 4: Time = 350 ÷ 25 = 14 s.`
     },
+
+    // 11
     {
-      question: "A car travels 150 km at 50 km/h, 120 km at 60 km/h, 180 km at 90 km/h. Average speed?",
-      options: ["62 km/h", "64 km/h", "66 km/h", "68 km/h"],
-      answer: "64 km/h",
-      explanation: `STEP 1: Time1 = 150/50 = 3 hours\nSTEP 2: Time2 = 120/60 = 2 hours\nSTEP 3: Time3 = 180/90 = 2 hours\nSTEP 4: Total distance = 450 km, Total time = 7 hours\nSTEP 5: Average speed = 450 ÷ 7 ≈ 64.29 km/h`
-    },
-    {
-      question: "A train 200 m long crosses a pole in 10 seconds. Another train 300 m long crosses a pole in 15 seconds. Relative speed in opposite direction?",
-      options: ["30 km/h", "36 km/h", "40 km/h", "45 km/h"],
-      answer: "36 km/h",
-      explanation: `STEP 1: Speed1 = 200/10 = 20 m/s\nSTEP 2: Speed2 = 300/15 = 20 m/s\nSTEP 3: Relative speed = 20 + 20 = 40 m/s = 144 km/h`
-    },
-    {
-      question: "A man covers 40 km at 20 km/h and 60 km at 30 km/h. Average speed?",
-      options: ["24 km/h", "25 km/h", "26 km/h", "27 km/h"],
-      answer: "25 km/h",
-      explanation: `STEP 1: Time1 = 40/20 = 2 hours\nSTEP 2: Time2 = 60/30 = 2 hours\nSTEP 3: Total distance = 100 km, Total time = 4 hours\nSTEP 4: Average speed = 100 ÷ 4 = 25 km/h`
-    },
-    {
-      question: "Two trains 120 m and 180 m long run at 54 km/h and 72 km/h in same direction. Time to cross?",
-      options: ["50 s", "55 s", "60 s", "65 s"],
-      answer: "60 s",
-      explanation: `STEP 1: Relative speed = 72 - 54 = 18 km/h = 5 m/s\nSTEP 2: Total distance = 120 + 180 = 300 m\nSTEP 3: Time = 300 ÷ 5 = 60 seconds`
-    },
-    {
-      question: "A car covers distance in 6 hours. If speed increases by 10 km/h, time reduces by 1 hour. Original speed?",
-      options: ["40 km/h", "45 km/h", "50 km/h", "55 km/h"],
-      answer: "50 km/h",
-      explanation: `STEP 1: Let distance = D, original speed = S\nSTEP 2: D/S = 6 ⇒ D = 6S\nSTEP 3: D/(S+10) = 5 ⇒ 6S/(S+10) = 5\nSTEP 4: 6S = 5S + 50 ⇒ S = 50 km/h`
-    },
-    {
-      question: "A train crosses two bridges 300 m and 500 m long in 25 and 35 seconds. Train length?",
-      options: ["100 m", "150 m", "200 m", "250 m"],
-      answer: "150 m",
-      explanation: `STEP 1: Let length = L, speed = v\nSTEP 2: (L+300)/v = 25, (L+500)/v = 35\nSTEP 3: Subtract: 200/v = 10 ⇒ v = 20 m/s\nSTEP 4: L+300 = 500 ⇒ L = 200 m`
-    },
-    {
-      question: "Two cars start from same point at 8 AM and 9 AM at 40 km/h and 60 km/h. When will they meet?",
-      options: ["11 AM", "12 PM", "1 PM", "2 PM"],
-      answer: "12 PM",
-      explanation: `STEP 1: First car head start = 40 × 1 = 40 km\nSTEP 2: Relative speed = 60 - 40 = 20 km/h\nSTEP 3: Time to meet = 40 ÷ 20 = 2 hours\nSTEP 4: 9 AM + 2 hours = 11 AM`
-    },
-    {
-      question: "A train 250 m long crosses a platform 350 m long in 30 seconds. Speed in km/h?",
-      options: ["60 km/h", "66 km/h", "72 km/h", "78 km/h"],
-      answer: "72 km/h",
-      explanation: `STEP 1: Total distance = 250 + 350 = 600 m\nSTEP 2: Speed = 600 ÷ 30 = 20 m/s\nSTEP 3: Convert: 20 × 3.6 = 72 km/h`
-    },
-    {
-      question: "A man rows 16 km downstream in 2 hours and 12 km upstream in 3 hours. River speed?",
-      options: ["1 km/h", "2 km/h", "3 km/h", "4 km/h"],
-      answer: "2 km/h",
-      explanation: `STEP 1: Downstream speed = 16 ÷ 2 = 8 km/h\nSTEP 2: Upstream speed = 12 ÷ 3 = 4 km/h\nSTEP 3: River speed = (8 - 4) ÷ 2 = 2 km/h`
-    },
-    {
-      question: "Two trains 150 m and 200 m long run towards each other at 40 km/h and 50 km/h. Crossing time?",
-      options: ["10 s", "11 s", "12 s", "13 s"],
-      answer: "12 s",
-      explanation: `STEP 1: Relative speed = 40 + 50 = 90 km/h = 25 m/s\nSTEP 2: Total distance = 150 + 200 = 350 m\nSTEP 3: Time = 350 ÷ 25 = 14 seconds`
-    },
-    {
-      question: "A car travels first 100 km at 50 km/h, next 100 km at 40 km/h, last 100 km at 25 km/h. Average speed?",
-      options: ["35 km/h", "36 km/h", "37 km/h", "38 km/h"],
-      answer: "35 km/h",
-      explanation: `STEP 1: Time1 = 100/50 = 2 hours\nSTEP 2: Time2 = 100/40 = 2.5 hours\nSTEP 3: Time3 = 100/25 = 4 hours\nSTEP 4: Total distance = 300 km, Total time = 8.5 hours\nSTEP 5: Average speed = 300 ÷ 8.5 ≈ 35.29 km/h`
-    },
-    {
-      question: "A train takes 15 seconds to pass a platform and 5 seconds to pass a pole. If platform is 200 m long, train length?",
-      options: ["100 m", "120 m", "150 m", "180 m"],
-      answer: "100 m",
-      explanation: `STEP 1: Let train length = L, speed = v\nSTEP 2: L/v = 5, (L+200)/v = 15\nSTEP 3: From first: v = L/5\nSTEP 4: Substitute: (L+200)/(L/5) = 15 ⇒ 5 + 1000/L = 15 ⇒ 1000/L = 10 ⇒ L = 100 m`
-    },
-    {
-      question: "Two cars start from same point at 10 km/h and 15 km/h in same direction. After 6 hours, distance between?",
-      options: ["20 km", "25 km", "30 km", "35 km"],
-      answer: "30 km",
-      explanation: `STEP 1: Relative speed = 15 - 10 = 5 km/h\nSTEP 2: Distance = 5 × 6 = 30 km`
-    },
-    {
-      question: "A train 180 m long crosses a pole in 12 seconds. Speed in km/h?",
-      options: ["45 km/h", "50 km/h", "54 km/h", "60 km/h"],
-      answer: "54 km/h",
-      explanation: `STEP 1: Speed = 180 ÷ 12 = 15 m/s\nSTEP 2: Convert: 15 × 3.6 = 54 km/h`
-    },
-    {
-      question: "A man covers 25 km at 5 km/h and 30 km at 6 km/h. Average speed?",
-      options: ["5.2 km/h", "5.4 km/h", "5.6 km/h", "5.8 km/h"],
-      answer: "5.5 km/h",
-      explanation: `STEP 1: Time1 = 25/5 = 5 hours\nSTEP 2: Time2 = 30/6 = 5 hours\nSTEP 3: Total distance = 55 km, Total time = 10 hours\nSTEP 4: Average speed = 55 ÷ 10 = 5.5 km/h`
-    },
-    {
-      question: "Two trains 120 m and 160 m long run at 45 km/h and 55 km/h in opposite directions. Crossing time?",
-      options: ["8 s", "9 s", "10 s", "11 s"],
+      question:
+        "A train running at 72 km/h passes a telegraph post in 10 seconds. How long (in seconds) will it take to completely pass another train 150 m long coming from the opposite direction at 54 km/h?",
+      options: ["8 s", "10 s", "12 s", "15 s"],
       answer: "10 s",
-      explanation: `STEP 1: Relative speed = 45 + 55 = 100 km/h = 250/9 m/s\nSTEP 2: Total distance = 120 + 160 = 280 m\nSTEP 3: Time = 280 ÷ (250/9) = 280 × 9/250 = 10.08 seconds`
+      explanation: `STEP 1: Convert 72 km/h to m/s: 72 × (5/18) = 20 m/s.
+STEP 2: Passing a post: train length L = speed × time = 20 × 10 = 200 m.
+STEP 3: Other train length = 150 m. Total distance to cross = 200 + 150 = 350 m.
+STEP 4: Relative speed (opposite) = (72 + 54) km/h = 126 km/h
+        = 126 × (5/18) = 35 m/s.
+STEP 5: Time = 350 ÷ 35 = 10 s.`
     },
+
+    // 12
     {
-      question: "A car travels 200 km at 40 km/h, 300 km at 60 km/h, 400 km at 80 km/h. Average speed?",
-      options: ["60 km/h", "62 km/h", "64 km/h", "66 km/h"],
-      answer: "64 km/h",
-      explanation: `STEP 1: Time1 = 200/40 = 5 hours\nSTEP 2: Time2 = 300/60 = 5 hours\nSTEP 3: Time3 = 400/80 = 5 hours\nSTEP 4: Total distance = 900 km, Total time = 15 hours\nSTEP 5: Average speed = 900 ÷ 15 = 60 km/h`
+      question:
+        "A train passes a telegraph post in 9 seconds and a platform 220 m long in 20 seconds. What are the length of the train and its speed?",
+      options: [
+        "160 m and 64 km/h",
+        "180 m and 72 km/h",
+        "200 m and 72 km/h",
+        "220 m and 80 km/h"
+      ],
+      answer: "180 m and 72 km/h",
+      explanation: `STEP 1: Let train length = L, speed = v m/s.
+From the post: L ÷ v = 9 ⇒ L = 9v.
+STEP 2: From the platform:
+        (L + 220) ÷ v = 20 ⇒ 9v + 220 = 20v ⇒ 220 = 11v ⇒ v = 20 m/s.
+STEP 3: Convert speed: 20 m/s = 20 × (18/5) = 72 km/h.
+STEP 4: Train length L = 9v = 9 × 20 = 180 m.`
     },
+
+    // 13
     {
-      question: "A train crosses a bridge in 30 seconds. If speed doubles, it takes 18 seconds. Bridge length?",
-      options: ["200 m", "240 m", "280 m", "320 m"],
-      answer: "240 m",
-      explanation: `STEP 1: Let train length = L, bridge = B, speed = v\nSTEP 2: (L+B)/v = 30\nSTEP 3: (L+B)/2v = 18\nSTEP 4: From second: L+B = 36v\nSTEP 5: From first: 36v/v = 30? Contradiction\nSTEP 6: Let me recalculate...`
+      question:
+        "Two trains, each 150 m long, pass a man standing on a platform in 6 seconds and 8 seconds respectively. What are the speeds of the two trains?",
+      options: [
+        "72 km/h and 54 km/h",
+        "90 km/h and 60 km/h",
+        "90 km/h and 67.5 km/h",
+        "96 km/h and 72 km/h"
+      ],
+      answer: "90 km/h and 67.5 km/h",
+      explanation: `STEP 1: For the first train:
+        Speed v₁ = distance ÷ time = 150 ÷ 6 = 25 m/s = 25 × (18/5) = 90 km/h.
+STEP 2: For the second train:
+        Speed v₂ = 150 ÷ 8 = 18.75 m/s = 18.75 × (18/5) = 67.5 km/h.`
     },
+
+    // 14
     {
-      question: "Two cars start from same point at 8 AM at 30 km/h and 45 km/h. When will they be 150 km apart?",
-      options: ["10 AM", "11 AM", "12 PM", "1 PM"],
-      answer: "1 PM",
-      explanation: `STEP 1: Relative speed = 45 - 30 = 15 km/h\nSTEP 2: Time = 150 ÷ 15 = 10 hours\nSTEP 3: 8 AM + 10 hours = 6 PM`
+      question:
+        "Two trains running in the same direction pass a man standing on a platform in 10 seconds and 15 seconds respectively. If they take 30 seconds to completely cross each other, what are their speeds?",
+      options: [
+        "54 km/h and 36 km/h",
+        "64.8 km/h and 28.8 km/h",
+        "72 km/h and 54 km/h",
+        "80 km/h and 40 km/h"
+      ],
+      answer: "64.8 km/h and 28.8 km/h",
+      explanation: `STEP 1: Let faster train speed = v₁, slower = v₂ (m/s).
+Train 1 passes man: L₁ ÷ v₁ = 10 ⇒ L₁ = 10v₁.
+Train 2 passes man: L₂ ÷ v₂ = 15 ⇒ L₂ = 15v₂.
+STEP 2: When crossing each other in same direction:
+        Time = (L₁ + L₂) ÷ (v₁ − v₂) = 30 s.
+        ⇒ (10v₁ + 15v₂) ÷ (v₁ − v₂) = 30.
+STEP 3: Simplify: 10v₁ + 15v₂ = 30v₁ − 30v₂
+        ⇒ 20v₁ = 45v₂ ⇒ v₁ : v₂ = 9 : 4.
+STEP 4: Choose convenient v₂ = 8 m/s ⇒ v₁ = 18 m/s.
+Convert to km/h: v₁ = 18 × (18/5) = 64.8 km/h,
+                 v₂ = 8 × (18/5) = 28.8 km/h.`
     },
+
+    // 15
     {
-      question: "A train 160 m long crosses a platform 240 m long in 20 seconds. Speed in km/h?",
-      options: ["60 km/h", "64 km/h", "68 km/h", "72 km/h"],
+      question:
+        "Two trains start at the same time from two stations 12.6 km apart and move toward each other at 54 km/h and 72 km/h respectively. After how much time will they meet?",
+      options: ["4 minutes", "5 minutes", "6 minutes", "7 minutes"],
+      answer: "6 minutes",
+      explanation: `STEP 1: Relative speed = 54 + 72 = 126 km/h.
+STEP 2: Time (in hours) = distance ÷ speed = 12.6 ÷ 126 = 0.1 h.
+STEP 3: Convert 0.1 h to minutes: 0.1 × 60 = 6 minutes.`
+    },
+
+    // 16
+    {
+      question:
+        "A boat travels 30 km downstream in 2 hours and the same distance upstream in 3 hours. What are the speed of the boat in still water and the speed of the stream?",
+      options: [
+        "10 km/h and 5 km/h",
+        "11 km/h and 4 km/h",
+        "12.5 km/h and 2.5 km/h",
+        "13 km/h and 3 km/h"
+      ],
+      answer: "12.5 km/h and 2.5 km/h",
+      explanation: `STEP 1: Downstream speed = 30 ÷ 2 = 15 km/h.
+STEP 2: Upstream speed = 30 ÷ 3 = 10 km/h.
+STEP 3: Boat speed in still water = (15 + 10) ÷ 2 = 12.5 km/h.
+STEP 4: Stream speed = (15 − 10) ÷ 2 = 2.5 km/h.`
+    },
+
+    // 17
+    {
+      question:
+        "A boat travels 24 km upstream and then 28 km downstream in a total of 6 hours. On another day, it travels 30 km upstream and 21 km downstream in 6.5 hours. What are the speed of the boat in still water and the speed of the stream?",
+      options: [
+        "8 km/h and 2 km/h",
+        "9 km/h and 3 km/h",
+        "10 km/h and 4 km/h",
+        "12 km/h and 3 km/h"
+      ],
+      answer: "10 km/h and 4 km/h",
+      explanation: `STEP 1: Let boat speed in still water = b km/h, stream speed = s km/h.
+Upstream speed = b − s, downstream speed = b + s.
+STEP 2: From the first trip:
+        24/(b − s) + 28/(b + s) = 6.   (Equation 1)
+From the second trip:
+        30/(b − s) + 21/(b + s) = 6.5. (Equation 2)
+STEP 3: Solving these two equations simultaneously gives:
+        b = 10 km/h and s = 4 km/h.
+STEP 4: Check (first trip): 24/6 + 28/14 = 4 + 2 = 6 hours ✔
+        (second trip): 30/6 + 21/14 = 5 + 1.5 = 6.5 hours ✔`
+    },
+
+    // 18
+    {
+      question:
+        "A boat can row in still water at 10 km/h, and the stream flows at 2 km/h. How much longer (in hours) does it take to travel 24 km upstream than to travel the same distance downstream?",
+      options: ["0.5 hour", "1 hour", "1.5 hours", "2 hours"],
+      answer: "1 hour",
+      explanation: `STEP 1: Upstream speed = 10 − 2 = 8 km/h.
+Downstream speed = 10 + 2 = 12 km/h.
+STEP 2: Time upstream = 24 ÷ 8 = 3 hours.
+Time downstream = 24 ÷ 12 = 2 hours.
+STEP 3: Extra time = 3 − 2 = 1 hour.`
+    },
+
+    // 19
+    {
+      question:
+        "A boat takes 4 hours to travel 32 km upstream and 2 hours to travel the same distance downstream. What are the speed of the boat in still water and the speed of the stream?",
+      options: [
+        "10 km/h and 2 km/h",
+        "11 km/h and 3 km/h",
+        "12 km/h and 4 km/h",
+        "14 km/h and 2 km/h"
+      ],
+      answer: "12 km/h and 4 km/h",
+      explanation: `STEP 1: Upstream speed = 32 ÷ 4 = 8 km/h.
+Downstream speed = 32 ÷ 2 = 16 km/h.
+STEP 2: Boat speed in still water = (8 + 16) ÷ 2 = 12 km/h.
+STEP 3: Stream speed = (16 − 8) ÷ 2 = 4 km/h.`
+    },
+
+    // 20
+    {
+      question:
+        "A boat can move at 12 km/h in still water. If the speed of the stream is 3 km/h, how long (in hours) will it take to cover 45 km upstream?",
+      options: ["3 hours", "4 hours", "5 hours", "6 hours"],
+      answer: "5 hours",
+      explanation: `STEP 1: Upstream speed = 12 − 3 = 9 km/h.
+STEP 2: Time = distance ÷ speed = 45 ÷ 9 = 5 hours.`
+    },
+
+    // 21
+    {
+      question:
+        "A boat can move at 15 km/h in still water and the stream flows at 3 km/h. It travels 24 km downstream and then 36 km upstream. How much total time (in hours) does the journey take?",
+      options: [
+        "4 hours 10 minutes",
+        "4 hours 20 minutes",
+        "4 hours 30 minutes",
+        "5 hours"
+      ],
+      answer: "4 hours 20 minutes",
+      explanation: `STEP 1: Downstream speed = 15 + 3 = 18 km/h.
+Upstream speed = 15 − 3 = 12 km/h.
+STEP 2: Time downstream = 24 ÷ 18 = 4/3 hours = 1 hour 20 min.
+Time upstream = 36 ÷ 12 = 3 hours.
+STEP 3: Total time = 1 h 20 min + 3 h = 4 h 20 min.`
+    },
+
+    // 22
+    {
+      question:
+        "Two motorboats travel in still water at 12 km/h and 15 km/h respectively. If they start from the same point at the same time and move in opposite directions, how far apart (in km) will they be after 2 hours?",
+      options: ["24 km", "30 km", "54 km", "60 km"],
+      answer: "54 km",
+      explanation: `STEP 1: Relative speed (opposite directions) = 12 + 15 = 27 km/h.
+STEP 2: In 2 hours, distance apart = 27 × 2 = 54 km.`
+    },
+
+    // 23
+    {
+      question:
+        "A car covers the distance between two cities in 4 hours at a constant speed. If the car increases its speed by 20 km/h, it takes 1 hour less to cover the same distance. If it decreases its speed by 20 km/h, it takes 2 hours more. What is the distance between the two cities?",
+      options: ["200 km", "220 km", "240 km", "260 km"],
+      answer: "240 km",
+      explanation: `STEP 1: Let original speed = v km/h, distance = D km.
+Given: D ÷ v = 4 ⇒ D = 4v.
+STEP 2: With speed (v + 20), time is 3 h:
+        D ÷ (v + 20) = 3 ⇒ 4v ÷ (v + 20) = 3.
+Solve: 4v = 3(v + 20) ⇒ 4v = 3v + 60 ⇒ v = 60 km/h.
+STEP 3: Distance D = 4v = 4 × 60 = 240 km.
+(The slower case with v − 20 gives time 6 h, consistent with data.)`
+    },
+
+    // 24
+    {
+      question:
+        "Two towns are 280 km apart. Car A starts from the first town at 60 km/h and car B starts from the second at 80 km/h at the same time, moving towards each other. After how many hours will they meet?",
+      options: ["1.5 hours", "2 hours", "2.5 hours", "3 hours"],
+      answer: "2 hours",
+      explanation: `STEP 1: Relative speed towards each other = 60 + 80 = 140 km/h.
+STEP 2: Time = distance ÷ speed = 280 ÷ 140 = 2 hours.`
+    },
+
+    // 25
+    {
+      question:
+        "A bus leaves a town at 40 km/h. Forty-five minutes later, a car leaves the same town along the same road at 60 km/h. After how many hours from the moment the car starts will it overtake the bus?",
+      options: ["1 hour", "1.5 hours", "2 hours", "2.5 hours"],
+      answer: "1.5 hours",
+      explanation: `STEP 1: In 45 minutes = 3/4 h, the bus travels:
+        distance = 40 × (3/4) = 30 km.
+STEP 2: Relative speed (car vs bus) = 60 − 40 = 20 km/h.
+STEP 3: Time for car to close 30 km gap:
+        t = 30 ÷ 20 = 1.5 hours after the car starts.`
+    },
+
+    // 26
+    {
+      question:
+        "Two cyclists start 80 km apart and move towards each other at 14 km/h and 18 km/h respectively. After how many hours will they meet?",
+      options: ["2 hours", "2.5 hours", "3 hours", "3.5 hours"],
+      answer: "2.5 hours",
+      explanation: `STEP 1: Relative speed = 14 + 18 = 32 km/h.
+STEP 2: Time = distance ÷ speed = 80 ÷ 32 = 2.5 hours.`
+    },
+
+    // 27
+    {
+      question:
+        "A car travels 120 km, covering the first 60 km at 40 km/h and the remaining 60 km at 60 km/h. What is its average speed for the whole journey?",
+      options: ["45 km/h", "48 km/h", "50 km/h", "52 km/h"],
+      answer: "48 km/h",
+      explanation: `STEP 1: Time for first 60 km: 60 ÷ 40 = 1.5 h.
+Time for next 60 km: 60 ÷ 60 = 1 h.
+STEP 2: Total distance = 120 km, total time = 1.5 + 1 = 2.5 h.
+STEP 3: Average speed = total distance ÷ total time
+        = 120 ÷ 2.5 = 48 km/h.`
+    },
+
+    // 28
+    {
+      question:
+        "A car travels at 40 km/h for 2 hours, then at 60 km/h for 3 hours, and finally at 80 km/h for 1 hour. What is the average speed for the entire trip?",
+      options: ["52 km/h", "54 km/h", "56.7 km/h", "60 km/h"],
+      answer: "56.7 km/h",
+      explanation: `STEP 1: Distances:
+        40 × 2 = 80 km,
+        60 × 3 = 180 km,
+        80 × 1 = 80 km.
+Total distance = 80 + 180 + 80 = 340 km.
+STEP 2: Total time = 2 + 3 + 1 = 6 hours.
+STEP 3: Average speed = 340 ÷ 6 ≈ 56.7 km/h.`
+    },
+
+    // 29
+    {
+      question:
+        "A man goes from his home to a town 12 km away by walking at 4 km/h and returns by car at 12 km/h. What is his average speed for the entire journey?",
+      options: ["5 km/h", "6 km/h", "7 km/h", "8 km/h"],
+      answer: "6 km/h",
+      explanation: `STEP 1: Time walking to town: 12 ÷ 4 = 3 hours.
+Time returning by car: 12 ÷ 12 = 1 hour.
+STEP 2: Total distance = 12 + 12 = 24 km.
+Total time = 3 + 1 = 4 hours.
+STEP 3: Average speed = 24 ÷ 4 = 6 km/h.`
+    },
+
+    // 30
+    {
+      question:
+        "A car travels from town A to town B at 60 km/h and returns from B to A at 90 km/h. If the total time taken for the whole journey is 5 hours, what is the distance between A and B?",
+      options: ["150 km", "160 km", "170 km", "180 km"],
+      answer: "180 km",
+      explanation: `STEP 1: Let distance one way = d km.
+Time A→B = d ÷ 60, time B→A = d ÷ 90.
+STEP 2: Total time:
+        d/60 + d/90 = 5.
+LCM of 60 and 90 is 180:
+        (3d + 2d)/180 = 5 ⇒ 5d/180 = 5 ⇒ d = 180 km.`
+    },
+
+    // 31
+    {
+      question:
+        "A man walking at 4 km/h reaches his office 10 minutes late. If he walks at 5 km/h, he reaches 5 minutes early. What is the distance between his home and office?",
+      options: ["4 km", "4.5 km", "5 km", "5.5 km"],
+      answer: "5 km",
+      explanation: `STEP 1: Let distance = D km, correct time = T hours.
+At 4 km/h: D/4 = T + 10/60.
+At 5 km/h: D/5 = T − 5/60.
+STEP 2: Solve the system:
+From the two equations, D = 5 km and T = 1 hour 5 minutes (13/12 h).
+STEP 3: Therefore, distance = 5 km.`
+    },
+
+    // 32
+    {
+      question:
+        "A bus travels from city A to city B at 50 km/h, halts there for 30 minutes, and then returns from B to A at 60 km/h. If the total time taken for the whole trip (including the halt) is 6 hours, what is the distance between A and B?",
+      options: ["120 km", "135 km", "150 km", "165 km"],
+      answer: "150 km",
+      explanation: `STEP 1: Let distance one way = d km.
+Time A→B = d/50, time B→A = d/60, halt = 0.5 h.
+STEP 2: Total time:
+        d/50 + d/60 + 0.5 = 6 ⇒ d/50 + d/60 = 5.5.
+STEP 3: LCM of 50 and 60 is 300:
+        (6d + 5d)/300 = 5.5 ⇒ 11d/300 = 5.5
+        ⇒ 11d = 5.5 × 300 = 1650 ⇒ d = 150 km.`
+    },
+
+    // 33
+    {
+      question:
+        "Two persons start from the same point at the same time and walk in the same direction at 4 km/h and 5 km/h respectively. After how many hours will they be 3 km apart?",
+      options: ["2 hours", "2.5 hours", "3 hours", "3.5 hours"],
+      answer: "3 hours",
+      explanation: `STEP 1: Relative speed between them = 5 − 4 = 1 km/h.
+STEP 2: To be 3 km apart:
+        Time = distance ÷ relative speed = 3 ÷ 1 = 3 hours.`
+    },
+
+    // 34
+    {
+      question:
+        "At 8:00 a.m., two persons are 20 km apart and start walking towards each other with speeds of 4 km/h and 6 km/h. At what time will they meet?",
+      options: ["9:30 a.m.", "10:00 a.m.", "10:30 a.m.", "11:00 a.m."],
+      answer: "10:00 a.m.",
+      explanation: `STEP 1: Relative speed towards each other = 4 + 6 = 10 km/h.
+STEP 2: Time to meet = 20 ÷ 10 = 2 hours.
+STEP 3: Starting at 8:00 a.m., they meet at 10:00 a.m.`
+    },
+
+    // 35
+    {
+      question:
+        "A truck travels from P to Q, 240 km away, at 40 km/h and returns from Q to P at 60 km/h. What is its average speed for the whole journey?",
+      options: ["44 km/h", "46 km/h", "48 km/h", "50 km/h"],
+      answer: "48 km/h",
+      explanation: `STEP 1: Total distance = 240 + 240 = 480 km.
+STEP 2: Time P→Q = 240/40 = 6 h, time Q→P = 240/60 = 4 h.
+Total time = 6 + 4 = 10 h.
+STEP 3: Average speed = total distance ÷ total time
+        = 480 ÷ 10 = 48 km/h.`
+    },
+
+    // 36
+    {
+      question:
+        "A motorist travels 300 km. For the first 100 km, he drives at 50 km/h; for the next 100 km, at 60 km/h; and for the last 100 km, at 75 km/h. How many hours does the journey take?",
+      options: ["4.5 hours", "5 hours", "5.5 hours", "6 hours"],
+      answer: "5 hours",
+      explanation: `STEP 1: Time for each segment:
+First 100 km: 100/50 = 2 h.
+Next 100 km: 100/60 ≈ 1.67 h.
+Last 100 km: 100/75 ≈ 1.33 h.
+STEP 2: Total time = 2 + 1.67 + 1.33 = 5 hours exactly.`
+    },
+
+    // 37
+    {
+      question:
+        "A car covers the first 150 km of a journey at 60 km/h and the next 150 km at 90 km/h. What is its average speed for the whole journey?",
+      options: ["66 km/h", "70 km/h", "72 km/h", "75 km/h"],
       answer: "72 km/h",
-      explanation: `STEP 1: Total distance = 160 + 240 = 400 m\nSTEP 2: Speed = 400 ÷ 20 = 20 m/s\nSTEP 3: Convert: 20 × 3.6 = 72 km/h`
+      explanation: `STEP 1: Time for first 150 km: 150/60 = 2.5 h.
+Time for next 150 km: 150/90 = 5/3 h ≈ 1.67 h.
+STEP 2: Total distance = 300 km.
+Total time = 2.5 + 5/3 = 2.5 + 1.666... = 4.166... h.
+STEP 3: Average speed = 300 ÷ (25/6) = 300 × 6/25 = 72 km/h.`
     },
+
+    // 38
     {
-      question: "A man rows 20 km downstream in 2 hours and 10 km upstream in 2 hours. Speed in still water?",
-      options: ["7.5 km/h", "8 km/h", "8.5 km/h", "9 km/h"],
-      answer: "7.5 km/h",
-      explanation: `STEP 1: Downstream speed = 20 ÷ 2 = 10 km/h\nSTEP 2: Upstream speed = 10 ÷ 2 = 5 km/h\nSTEP 3: Speed in still water = (10 + 5) ÷ 2 = 7.5 km/h`
+      question:
+        "A local train leaves town A at 9:00 a.m. at 60 km/h. An express train leaves the same town along the same track at 11:00 a.m. at 90 km/h. At what time will the express train overtake the local train?",
+      options: ["1:00 p.m.", "2:00 p.m.", "3:00 p.m.", "4:00 p.m."],
+      answer: "3:00 p.m.",
+      explanation: `STEP 1: By 11:00 a.m., the local has traveled:
+        Distance = 60 × 2 = 120 km.
+STEP 2: After 11:00 a.m., let t = hours until overtaking.
+Local distance = 120 + 60t.
+Express distance = 90t.
+Equate: 90t = 120 + 60t ⇒ 30t = 120 ⇒ t = 4 h.
+STEP 3: 4 hours after 11:00 a.m. is 3:00 p.m.`
     },
+
+    // 39
     {
-      question: "Two trains 140 m and 160 m long run at 50 km/h and 40 km/h in same direction. Time to cross?",
-      options: ["90 s", "95 s", "100 s", "105 s"],
-      answer: "108 s",
-      explanation: `STEP 1: Relative speed = 50 - 40 = 10 km/h = 25/9 m/s\nSTEP 2: Total distance = 140 + 160 = 300 m\nSTEP 3: Time = 300 ÷ (25/9) = 300 × 9/25 = 108 seconds`
+      question:
+        "A car completes a 600 km journey in 8 hours, traveling part of the time at 90 km/h and the rest at 60 km/h. For how many hours does it travel at each speed?",
+      options: [
+        "3 h at 90 km/h and 5 h at 60 km/h",
+        "4 h at 90 km/h and 4 h at 60 km/h",
+        "5 h at 90 km/h and 3 h at 60 km/h",
+        "2 h at 90 km/h and 6 h at 60 km/h"
+      ],
+      answer: "4 h at 90 km/h and 4 h at 60 km/h",
+      explanation: `STEP 1: Let time at 90 km/h = x h, time at 60 km/h = 8 − x h.
+STEP 2: Total distance:
+        90x + 60(8 − x) = 600.
+⇒ 90x + 480 − 60x = 600 ⇒ 30x = 120 ⇒ x = 4 h.
+STEP 3: So 4 h at 90 km/h and 4 h at 60 km/h.`
     },
+
+    // 40
     {
-      question: "A car covers first 50 km at 25 km/h, next 60 km at 30 km/h, last 70 km at 35 km/h. Average speed?",
-      options: ["28 km/h", "29 km/h", "30 km/h", "31 km/h"],
-      answer: "30 km/h",
-      explanation: `STEP 1: Time1 = 50/25 = 2 hours\nSTEP 2: Time2 = 60/30 = 2 hours\nSTEP 3: Time3 = 70/35 = 2 hours\nSTEP 4: Total distance = 180 km, Total time = 6 hours\nSTEP 5: Average speed = 180 ÷ 6 = 30 km/h`
+      question:
+        "A car travels a certain distance in 5 hours at 60 km/h. If it travels the same distance at 75 km/h, how much time (in hours) will it save?",
+      options: ["0.5 hour", "0.75 hour", "1 hour", "1.5 hours"],
+      answer: "1 hour",
+      explanation: `STEP 1: Distance = 60 × 5 = 300 km.
+STEP 2: New time at 75 km/h = 300 ÷ 75 = 4 hours.
+STEP 3: Time saved = 5 − 4 = 1 hour.`
     },
+
+    // 41
     {
-      question: "A train takes 20 seconds to pass a platform and 8 seconds to pass a pole. If platform is 180 m long, train length?",
-      options: ["120 m", "130 m", "140 m", "150 m"],
-      answer: "120 m",
-      explanation: `STEP 1: Let train length = L, speed = v\nSTEP 2: L/v = 8, (L+180)/v = 20\nSTEP 3: From first: v = L/8\nSTEP 4: Substitute: (L+180)/(L/8) = 20 ⇒ 8 + 1440/L = 20 ⇒ 1440/L = 12 ⇒ L = 120 m`
+      question:
+        "A train leaves a station at 7:00 a.m. at 50 km/h. Another train leaves the same station at 9:00 a.m. in the same direction at 70 km/h. At what time will the second train overtake the first?",
+      options: ["12:00 p.m.", "1:00 p.m.", "2:00 p.m.", "3:00 p.m."],
+      answer: "2:00 p.m.",
+      explanation: `STEP 1: By 9:00 a.m., the first train has been traveling for 2 hours:
+        distance = 50 × 2 = 100 km.
+STEP 2: After 9:00 a.m., let t = hours until overtaking.
+First train distance = 100 + 50t.
+Second train distance = 70t.
+Equate: 70t = 100 + 50t ⇒ 20t = 100 ⇒ t = 5 h.
+STEP 3: 5 hours after 9:00 a.m. is 2:00 p.m.`
     },
+
+    // 42
     {
-      question: "Two cars start from same point at 9 AM at 20 km/h and 30 km/h. When will they be 100 km apart?",
-      options: ["10 AM", "11 AM", "12 PM", "1 PM"],
-      answer: "1 PM",
-      explanation: `STEP 1: Relative speed = 30 - 20 = 10 km/h\nSTEP 2: Time = 100 ÷ 10 = 10 hours\nSTEP 3: 9 AM + 10 hours = 7 PM`
+      question:
+        "Two cars start at the same time from towns A and B, which are 400 km apart, and travel towards each other. After they meet, the car starting from A takes 2 hours 40 minutes more to reach B, while the car starting from B takes 6 hours more to reach A. What are the speeds of the two cars?",
+      options: [
+        "40 km/h and 50 km/h",
+        "40 km/h and 60 km/h",
+        "50 km/h and 60 km/h",
+        "60 km/h and 80 km/h"
+      ],
+      answer: "60 km/h and 40 km/h",
+      explanation: `STEP 1: Let distance from A to meeting point = x km.
+Then distance from B to meeting point = 400 − x km.
+STEP 2: Let speed from A = v₁, from B = v₂.
+After meeting:
+  Time for car from A to reach B: (400 − x)/v₁ = 2 h 40 min = 8/3 h.
+  Time for car from B to reach A: x/v₂ = 6 h.
+STEP 3: Also, they meet at the same time, so
+        x/v₁ = (400 − x)/v₂, giving x/(400 − x) = v₁/v₂.
+STEP 4: From the two “after meeting” equations:
+        v₁ = (400 − x)/(8/3) and v₂ = x/6.
+Using x/(400 − x) = v₁/v₂ and solving gives x = 240 km,
+        v₁ = 60 km/h (from A) and v₂ = 40 km/h (from B).`
+    },
+
+    // 43
+    {
+      question:
+        "A man normally walks to his office at 6 km/h and arrives exactly on time. One day, he increases his speed by 25% and reaches 10 minutes early. How far (in km) is his office from his home?",
+      options: ["4 km", "4.5 km", "5 km", "6 km"],
+      answer: "5 km",
+      explanation: `STEP 1: Normal speed = 6 km/h, increased speed = 6 × 1.25 = 7.5 km/h.
+Let distance = D km, normal time = T hours.
+STEP 2: Time at normal speed: T = D/6.
+Time at higher speed: T' = D/7.5.
+He arrives 10 minutes = 1/6 h early ⇒ T − T' = 1/6.
+STEP 3: D/6 − D/7.5 = 1/6 ⇒ D(1/6 − 2/15) = 1/6
+        ⇒ D(5/30 − 4/30) = 1/6 ⇒ D/30 = 1/6 ⇒ D = 5 km.`
+    },
+
+    // 44
+    {
+      question:
+        "A car travels 200 km at 80 km/h. By how much should the speed be reduced (in km/h) so that the journey will take 30 minutes longer?",
+      options: ["10 km/h", "12 km/h", "13.3 km/h", "15 km/h"],
+      answer: "13.3 km/h",
+      explanation: `STEP 1: Original time = 200 ÷ 80 = 2.5 hours.
+New time = 2.5 + 0.5 = 3 hours.
+STEP 2: New required speed = 200 ÷ 3 ≈ 66.7 km/h.
+STEP 3: Reduction in speed = 80 − 66.7 ≈ 13.3 km/h.`
+    },
+
+    // 45
+    {
+      question:
+        "A man travels from town A to town B at 20 km/h and returns from B to A at 30 km/h. If he takes 5 hours in all, what is the distance between A and B?",
+      options: ["40 km", "50 km", "60 km", "70 km"],
+      answer: "60 km",
+      explanation: `STEP 1: Let distance one way = d km.
+Total time: d/20 + d/30 = 5.
+STEP 2: LCM of 20 and 30 is 60:
+        (3d + 2d)/60 = 5 ⇒ 5d/60 = 5 ⇒ d = 60 km.`
+    },
+
+    // 46
+    {
+      question:
+        "Two buses start from the same point at the same time in opposite directions at 60 km/h and 75 km/h. After how many hours will they be 270 km apart?",
+      options: ["1.5 hours", "2 hours", "2.5 hours", "3 hours"],
+      answer: "2 hours",
+      explanation: `STEP 1: Relative speed (opposite directions) = 60 + 75 = 135 km/h.
+STEP 2: Time to be 270 km apart:
+        t = 270 ÷ 135 = 2 hours.`
+    },
+
+    // 47
+    {
+      question:
+        "A man rides his motorcycle at 45 km/h and reaches his destination 10 minutes late. If he rides at 60 km/h, he reaches 5 minutes early. What is the distance to his destination?",
+      options: ["40 km", "42 km", "45 km", "48 km"],
+      answer: "45 km",
+      explanation: `STEP 1: Let distance = D km, scheduled time = T hours.
+At 45 km/h: D/45 = T + 10/60.
+At 60 km/h: D/60 = T − 5/60.
+STEP 2: Solving these equations gives:
+        D = 45 km, T = 50 minutes (5/6 h).`
+    },
+
+    // 48
+    {
+      question:
+        "A car runs at 90 km/h and covers a certain distance. If it had run at 75 km/h, it would have taken 1 hour more to cover the same distance. What is the distance?",
+      options: ["300 km", "360 km", "400 km", "450 km"],
+      answer: "450 km",
+      explanation: `STEP 1: Let distance = D km.
+Time at 90 km/h = D/90, time at 75 km/h = D/75.
+Given: D/75 − D/90 = 1.
+STEP 2: Compute:
+        D(1/75 − 1/90) = 1
+        ⇒ D((6 − 5)/450) = 1 ⇒ D/450 = 1 ⇒ D = 450 km.`
+    },
+
+    // 49
+    {
+      question:
+        "Car B is 150 km ahead of car A on a straight road. Car A travels at 80 km/h and car B at 60 km/h, both in the same direction. After how many hours will car A catch up with car B?",
+      options: ["5 hours", "6 hours", "7.5 hours", "8 hours"],
+      answer: "7.5 hours",
+      explanation: `STEP 1: Initial gap = 150 km.
+Relative speed (A gaining on B) = 80 − 60 = 20 km/h.
+STEP 2: Time to catch up:
+        t = 150 ÷ 20 = 7.5 hours.`
+    },
+
+    // 50
+    {
+      question:
+        "Two trains leave the same station at the same time in opposite directions, one at 40 km/h and the other at 50 km/h. After how many hours will they be 360 km apart?",
+      options: ["3 hours", "4 hours", "4.5 hours", "5 hours"],
+      answer: "4 hours",
+      explanation: `STEP 1: Relative speed = 40 + 50 = 90 km/h.
+STEP 2: Time to be 360 km apart:
+        t = 360 ÷ 90 = 4 hours.`
     }
   ],
+
 
   // ==========================================
   // LEVEL 4: EXPERT (50 items - Challenging Multi-Concept Problems)
