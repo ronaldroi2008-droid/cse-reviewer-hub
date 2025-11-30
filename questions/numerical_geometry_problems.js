@@ -1526,6 +1526,410 @@ advanced: [
     answer: "50.2 m²",
     explanation: "STEP 1: Total area of four walls = Perimeter of room × height.\nSTEP 2: Perimeter = 2(5 + 4) = 18 m; height = 3 m.\nSTEP 3: Wall area = 18 × 3 = 54 m².\nSTEP 4: Area of door = 2 × 1 = 2 m²; area of window = 1.5 × 1.2 = 1.8 m².\nSTEP 5: Total area not painted = 2 + 1.8 = 3.8 m².\nSTEP 6: Area to be painted = 54 − 3.8 = 50.2 m²."
   }
+],
+
+    // ==========================================
+  // LEVEL 4: EXPERT (50 items – Mixed Advanced Geometry)
+  // ==========================================
+  expert: [
+    // 1
+    {
+      question: "The sides of a triangle are in the ratio 3 : 4 : 5 and its perimeter is 72 cm. What is the area of the triangle?",
+      options: ["192 cm²", "204 cm²", "216 cm²", "240 cm²"],
+      answer: "216 cm²",
+      explanation: "STEP 1: Let the sides be 3k, 4k, 5k. Then 3k + 4k + 5k = 12k = 72 ⇒ k = 6.\nSTEP 2: The sides are 18 cm, 24 cm, and 30 cm. This is a 3-4-5 right triangle scaled by 6.\nSTEP 3: Area = 1/2 × base × height = 1/2 × 18 × 24 = 216 cm²."
+    },
+
+    // 2
+    {
+      question: "An isosceles triangle has two equal sides of 13 cm and a base of 10 cm. What is its area?",
+      options: ["52 cm²", "56 cm²", "60 cm²", "65 cm²"],
+      answer: "60 cm²",
+      explanation: "STEP 1: Draw a height from the vertex to the base. It bisects the base into two segments of 5 cm.\nSTEP 2: Height² = 13² − 5² = 169 − 25 = 144 ⇒ height = 12 cm.\nSTEP 3: Area = 1/2 × base × height = 1/2 × 10 × 12 = 60 cm²."
+    },
+
+    // 3
+    {
+      question: "An equilateral triangle has a perimeter of 36 cm. What is its area? (Use √3 ≈ 1.732)",
+      options: ["54.0 cm²", "60.0 cm²", "62.4 cm²", "64.0 cm²"],
+      answer: "62.4 cm²",
+      explanation: "STEP 1: Side = 36 ÷ 3 = 12 cm.\nSTEP 2: Area = (√3 / 4) × side² = (1.732 / 4) × 12² = 0.433 × 144 ≈ 62.4 cm²."
+    },
+
+    // 4
+    {
+      question: "A right triangle has a hypotenuse of 25 cm and one leg of 7 cm. What is its area?",
+      options: ["60 cm²", "72 cm²", "84 cm²", "96 cm²"],
+      answer: "84 cm²",
+      explanation: "STEP 1: Find the other leg using Pythagorean theorem: b² = 25² − 7² = 625 − 49 = 576 ⇒ b = 24 cm.\nSTEP 2: Area = 1/2 × 7 × 24 = 84 cm²."
+    },
+
+    // 5
+    {
+      question: "A triangle has sides 9 cm, 10 cm, and 17 cm. What type of triangle is it based on its angles?",
+      options: ["Right triangle", "Acute triangle", "Obtuse triangle", "Not a triangle"],
+      answer: "Obtuse triangle",
+      explanation: "STEP 1: Compare the square of the longest side with the sum of squares of the other two.\nSTEP 2: 17² = 289, while 9² + 10² = 81 + 100 = 181.\nSTEP 3: Since 289 > 181, the triangle is obtuse."
+    },
+
+    // 6
+    {
+      question: "Two similar triangles have perimeters 30 cm and 50 cm. If the area of the smaller triangle is 45 cm², what is the area of the larger triangle?",
+      options: ["75 cm²", "90 cm²", "100 cm²", "125 cm²"],
+      answer: "125 cm²",
+      explanation: "STEP 1: Perimeter ratio = side ratio = 30 : 50 = 3 : 5.\nSTEP 2: Area ratio = (3 : 5)² = 9 : 25.\nSTEP 3: 45 corresponds to 9 parts ⇒ 1 part = 45 ÷ 9 = 5.\nSTEP 4: Larger area = 25 × 5 = 125 cm²."
+    },
+
+    // 7
+    {
+      question: "In a right triangle, the altitude to the hypotenuse divides it into segments of 9 cm and 16 cm. What is the perimeter of the triangle?",
+      options: ["48 cm", "50 cm", "55 cm", "60 cm"],
+      answer: "60 cm",
+      explanation: "STEP 1: Hypotenuse = 9 + 16 = 25 cm.\nSTEP 2: By the theorem: leg² = hypotenuse × adjacent segment.\nSTEP 3: One leg: √(25 × 9) = √225 = 15 cm. Other leg: √(25 × 16) = √400 = 20 cm.\nSTEP 4: Perimeter = 15 + 20 + 25 = 60 cm."
+    },
+
+    // 8
+    {
+      question: "A triangle has base 18 cm and height 7 cm. A second triangle is similar and has a height of 14 cm. What is the area of the second triangle?",
+      options: ["126 cm²", "189 cm²", "252 cm²", "288 cm²"],
+      answer: "252 cm²",
+      explanation: "STEP 1: Original area = 1/2 × 18 × 7 = 63 cm².\nSTEP 2: Height ratio = 14 : 7 = 2 : 1, so side ratio is 2 : 1.\nSTEP 3: Area ratio = 2² : 1² = 4 : 1.\nSTEP 4: New area = 63 × 4 = 252 cm²."
+    },
+
+    // 9
+    {
+      question: "A triangle has area 96 cm² and base 24 cm. A new triangle is formed by doubling the base and halving the height. What is the area of the new triangle?",
+      options: ["48 cm²", "72 cm²", "96 cm²", "192 cm²"],
+      answer: "96 cm²",
+      explanation: "STEP 1: Original area = 1/2 × base × height.\nSTEP 2: New base = 2b, new height = h/2.\nSTEP 3: New area = 1/2 × (2b) × (h/2) = 1/2 × b × h = original area.\nSTEP 4: So new area = 96 cm²."
+    },
+
+    // 10
+    {
+      question: "A regular hexagon has side length 10 cm. What is its area? (Use √3 ≈ 1.732)",
+      options: ["216.0 cm²", "240.0 cm²", "259.8 cm²", "300.0 cm²"],
+      answer: "259.8 cm²",
+      explanation: "STEP 1: A regular hexagon = 6 equilateral triangles of side 10.\nSTEP 2: Area of one equilateral triangle = (√3 / 4) × 10² ≈ (1.732 / 4) × 100 ≈ 43.3 cm².\nSTEP 3: Hexagon area ≈ 6 × 43.3 ≈ 259.8 cm²."
+    },
+
+    // 11
+    {
+      question: "In a rectangle, the length is 4 cm more than its width. The diagonal is 20 cm. What is the area of the rectangle?",
+      options: ["160 cm²", "176 cm²", "192 cm²", "200 cm²"],
+      answer: "192 cm²",
+      explanation: "STEP 1: Let width = x, length = x + 4.\nSTEP 2: By Pythagorean theorem: x² + (x + 4)² = 20².\nSTEP 3: x² + x² + 8x + 16 = 400 ⇒ 2x² + 8x − 384 = 0 ⇒ x = 12.\nSTEP 4: Then length = 16, area = 12 × 16 = 192 cm²."
+    },
+
+    // 12
+    {
+      question: "A square has side 15 cm. A rectangle has the same perimeter as the square and a length of 22 cm. What is the area of the rectangle?",
+      options: ["160 cm²", "176 cm²", "184 cm²", "196 cm²"],
+      answer: "176 cm²",
+      explanation: "STEP 1: Square perimeter = 4 × 15 = 60 cm.\nSTEP 2: Rectangle: 2(L + W) = 60 ⇒ L + W = 30.\nSTEP 3: 22 + W = 30 ⇒ W = 8 cm.\nSTEP 4: Area = 22 × 8 = 176 cm²."
+    },
+
+    // 13
+    {
+      question: "A parallelogram has sides 10 cm and 17 cm, and the included angle between them is 60°. What is its area? (Use √3 ≈ 1.732)",
+      options: ["120.0 cm²", "136.0 cm²", "147.2 cm²", "153.0 cm²"],
+      answer: "147.2 cm²",
+      explanation: "STEP 1: Area of a parallelogram = ab sinθ.\nSTEP 2: Area = 10 × 17 × sin 60° = 170 × (√3 / 2).\nSTEP 3: Using √3 ≈ 1.732, sin 60° ≈ 0.866 ⇒ Area ≈ 170 × 0.866 ≈ 147.2 cm²."
+    },
+
+    // 14
+    {
+      question: "An isosceles trapezoid has bases 8 cm and 14 cm, and legs of 5 cm each. What is its area?",
+      options: ["40 cm²", "42 cm²", "44 cm²", "48 cm²"],
+      answer: "44 cm²",
+      explanation: "STEP 1: Difference of bases = 14 − 8 = 6 cm. Each right triangle at the sides has base 3 cm.\nSTEP 2: Height² = 5² − 3² = 25 − 9 = 16 ⇒ height = 4 cm.\nSTEP 3: Area = 1/2 × (sum of bases) × height = 1/2 × (8 + 14) × 4 = 44 cm²."
+    },
+
+    // 15
+    {
+      question: "A rhombus has diagonals of 16 cm and 30 cm. What is its perimeter?",
+      options: ["60 cm", "64 cm", "68 cm", "72 cm"],
+      answer: "68 cm",
+      explanation: "STEP 1: Each side is formed by half of each diagonal: 8 cm and 15 cm.\nSTEP 2: Side length = √(8² + 15²) = √(64 + 225) = √289 = 17 cm.\nSTEP 3: Perimeter = 4 × 17 = 68 cm."
+    },
+
+    // 16
+    {
+      question: "A square has a diagonal of 12√2 cm. What is its area?",
+      options: ["72 cm²", "96 cm²", "128 cm²", "144 cm²"],
+      answer: "144 cm²",
+      explanation: "STEP 1: For a square, diagonal = side × √2.\nSTEP 2: 12√2 = side × √2 ⇒ side = 12 cm.\nSTEP 3: Area = side² = 12² = 144 cm²."
+    },
+
+    // 17
+    {
+      question: "A rectangular field measures 150 m by 80 m. A path 5 m wide runs all around inside the field. What is the area of the path?",
+      options: ["2000 m²", "2100 m²", "2200 m²", "2400 m²"],
+      answer: "2200 m²",
+      explanation: "STEP 1: Outer field area = 150 × 80 = 12,000 m².\nSTEP 2: Inner field dimensions = (150 − 2×5) by (80 − 2×5) = 140 × 70.\nSTEP 3: Inner area = 140 × 70 = 9,800 m².\nSTEP 4: Path area = 12,000 − 9,800 = 2,200 m²."
+    },
+
+    // 18
+    {
+      question: "A rectangular garden is 12 m by 9 m. A path of uniform width is built around it so that the total outer area becomes 180 m². What is the width of the path?",
+      options: ["1 m", "1.5 m", "2 m", "2.5 m"],
+      answer: "1.5 m",
+      explanation: "STEP 1: Let the width be x.\nSTEP 2: Outer dimensions: (12 + 2x) by (9 + 2x).\nSTEP 3: (12 + 2x)(9 + 2x) = 180 ⇒ 108 + 42x + 4x² = 180.\nSTEP 4: 4x² + 42x − 72 = 0 ⇒ divide by 2 ⇒ 2x² + 21x − 36 = 0 ⇒ x = 1.5 m (positive root)."
+    },
+
+    // 19
+    {
+      question: "The ratio of the areas of two rectangles is 5 : 8. Their lengths are 10 cm and 16 cm respectively. What is the ratio of their widths?",
+      options: ["5 : 8", "4 : 5", "1 : 1", "2 : 3"],
+      answer: "1 : 1",
+      explanation: "STEP 1: Let widths be w₁ and w₂.\nSTEP 2: Area ratio = (10w₁) : (16w₂) = 5 : 8.\nSTEP 3: Simplify: (10w₁)/(16w₂) = 5/8 ⇒ (5w₁)/(8w₂) = 5/8.\nSTEP 4: Cross-multiply: 5w₁ × 8 = 5 × 8w₂ ⇒ 40w₁ = 40w₂ ⇒ w₁ : w₂ = 1 : 1."
+    },
+
+    // 20
+    {
+      question: "The perimeter of a rectangle is 44 cm. Its length is 4 cm more than twice its width. What is the area of the rectangle?",
+      options: ["80 cm²", "88 cm²", "96 cm²", "104 cm²"],
+      answer: "96 cm²",
+      explanation: "STEP 1: Let width = w, length = 2w + 4.\nSTEP 2: Perimeter: 2(L + W) = 44 ⇒ L + W = 22.\nSTEP 3: (2w + 4) + w = 22 ⇒ 3w + 4 = 22 ⇒ 3w = 18 ⇒ w = 6; L = 16.\nSTEP 4: Area = 6 × 16 = 96 cm²."
+    },
+
+    // 21
+    {
+      question: "A circle has radius 7 cm. What is the area of a sector with central angle 120°? (Use π = 22/7)",
+      options: ["38.5 cm²", "42.0 cm²", "51.3 cm²", "56.0 cm²"],
+      answer: "51.3 cm²",
+      explanation: "STEP 1: Full circle area = πr² = (22/7) × 7² = 154 cm².\nSTEP 2: Sector area = (120/360) × 154 = (1/3) × 154 ≈ 51.3 cm²."
+    },
+
+    // 22
+    {
+      question: "The circumference of a circle is 44π cm. What is its radius?",
+      options: ["11 cm", "18 cm", "20 cm", "22 cm"],
+      answer: "22 cm",
+      explanation: "STEP 1: Circumference C = 2πr.\nSTEP 2: 44π = 2πr ⇒ r = 44π ÷ (2π) = 22 cm."
+    },
+
+    // 23
+    {
+      question: "Two circles have radii 7 cm and 14 cm. What is the ratio of their areas?",
+      options: ["1 : 2", "1 : 3", "1 : 4", "1 : 8"],
+      answer: "1 : 4",
+      explanation: "STEP 1: Area ratio = r₁² : r₂² = 7² : 14² = 49 : 196.\nSTEP 2: Simplify 49 : 196 = 1 : 4."
+    },
+
+    // 24
+    {
+      question: "Two concentric circles have radii 6 cm and 10 cm. What is the area of the ring between them? (Use π ≈ 3.14)",
+      options: ["150.8 cm²", "188.4 cm²", "200.9 cm²", "220.0 cm²"],
+      answer: "200.9 cm²",
+      explanation: "STEP 1: Area = π(R² − r²) = 3.14 × (10² − 6²) = 3.14 × (100 − 36).\nSTEP 2: 100 − 36 = 64 ⇒ Area ≈ 3.14 × 64 ≈ 200.9 cm²."
+    },
+
+    // 25
+    {
+      question: "A circle is inscribed in a square of side 14 cm. What is the area of the part of the square not covered by the circle? (Use π = 22/7)",
+      options: ["32 cm²", "36 cm²", "40 cm²", "42 cm²"],
+      answer: "42 cm²",
+      explanation: "STEP 1: Square area = 14² = 196 cm².\nSTEP 2: Circle radius = 7 cm ⇒ area = (22/7) × 7² = 154 cm².\nSTEP 3: Shaded area = 196 − 154 = 42 cm²."
+    },
+
+    // 26
+    {
+      question: "The radius of a circle increases from 5 cm to 8 cm. By how much does the area increase? (Leave your answer in terms of π.)",
+      options: ["26π cm²", "36π cm²", "39π cm²", "45π cm²"],
+      answer: "39π cm²",
+      explanation: "STEP 1: Original area = π(5²) = 25π.\nSTEP 2: New area = π(8²) = 64π.\nSTEP 3: Increase in area = 64π − 25π = 39π cm²."
+    },
+
+    // 27
+    {
+      question: "The area of a circle is 196π cm². What is its circumference?",
+      options: ["14π cm", "21π cm", "28π cm", "32π cm"],
+      answer: "28π cm",
+      explanation: "STEP 1: A = πr² = 196π ⇒ r² = 196 ⇒ r = 14 cm.\nSTEP 2: Circumference = 2πr = 2π × 14 = 28π cm."
+    },
+
+    // 28
+    {
+      question: "A circular track has radius 70 m. What distance is covered in running one-fourth of the track? (Use π = 22/7)",
+      options: ["55 m", "70 m", "90 m", "110 m"],
+      answer: "110 m",
+      explanation: "STEP 1: Circumference = 2πr = 2 × (22/7) × 70 = 440 m.\nSTEP 2: One-fourth of the track = 440 ÷ 4 = 110 m."
+    },
+
+    // 29
+    {
+      question: "The diameter of a wheel is 70 cm. How many complete revolutions must it make to cover 44 m? (Use π = 22/7)",
+      options: ["10", "15", "20", "25"],
+      answer: "20",
+      explanation: "STEP 1: Circumference = πd = (22/7) × 70 = 220 cm.\nSTEP 2: Distance to cover = 44 m = 4400 cm.\nSTEP 3: Revolutions = 4400 ÷ 220 = 20."
+    },
+
+    // 30
+    {
+      question: "The areas of two circles are in the ratio 4 : 9. If the radius of the smaller circle is 10 cm, what is the radius of the larger circle?",
+      options: ["12 cm", "13 cm", "14 cm", "15 cm"],
+      answer: "15 cm",
+      explanation: "STEP 1: Area ratio = r₁² : r₂² = 4 : 9 ⇒ r₂/r₁ = √(9/4) = 3/2.\nSTEP 2: r₂ = (3/2) × 10 = 15 cm."
+    },
+
+    // 31
+    {
+      question: "A rectangular box has dimensions 12 cm, 8 cm, and 5 cm. What is its total surface area?",
+      options: ["272 cm²", "296 cm²", "344 cm²", "392 cm²"],
+      answer: "392 cm²",
+      explanation: "STEP 1: Surface area = 2(lw + lh + wh).\nSTEP 2: lw = 12×8 = 96, lh = 12×5 = 60, wh = 8×5 = 40.\nSTEP 3: Sum = 96 + 60 + 40 = 196 ⇒ SA = 2 × 196 = 392 cm²."
+    },
+
+    // 32
+    {
+      question: "A right circular cylinder has radius 7 cm and height 10 cm. What is its volume? (Use π = 22/7)",
+      options: ["980 cm³", "1320 cm³", "1540 cm³", "1760 cm³"],
+      answer: "1540 cm³",
+      explanation: "STEP 1: Volume = πr²h.\nSTEP 2: V = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 7 × 10 = 1540 cm³."
+    },
+
+    // 33
+    {
+      question: "A cylinder has radius 7 cm and height 10 cm. What is its total surface area, including top and bottom? (Use π = 22/7)",
+      options: ["616 cm²", "682 cm²", "748 cm²", "792 cm²"],
+      answer: "748 cm²",
+      explanation: "STEP 1: Total surface area = 2πr² + 2πrh.\nSTEP 2: 2πr² = 2 × (22/7) × 7² = 308 cm².\nSTEP 3: 2πrh = 2 × (22/7) × 7 × 10 = 440 cm².\nSTEP 4: TSA = 308 + 440 = 748 cm²."
+    },
+
+    // 34
+    {
+      question: "The total surface area of a cube is 150 cm². What is its volume?",
+      options: ["100 cm³", "110 cm³", "120 cm³", "125 cm³"],
+      answer: "125 cm³",
+      explanation: "STEP 1: Surface area of a cube = 6a² = 150 ⇒ a² = 25 ⇒ a = 5 cm.\nSTEP 2: Volume = a³ = 5³ = 125 cm³."
+    },
+
+    // 35
+    {
+      question: "A right circular cone has radius 7 cm and height 12 cm. What is its volume? (Use π = 22/7)",
+      options: ["462 cm³", "528 cm³", "616 cm³", "672 cm³"],
+      answer: "616 cm³",
+      explanation: "STEP 1: Volume of a cone = (1/3)πr²h.\nSTEP 2: V = (1/3) × (22/7) × 7² × 12 = (1/3) × (22/7) × 49 × 12.\nSTEP 3: Simplify: (22 × 7 × 12)/3 = (22 × 28) = 616 cm³."
+    },
+
+    // 36
+    {
+      question: "A cylinder and a cone have the same base radius and height. If the cylinder's volume is 240 cm³, what is the volume of the cone?",
+      options: ["60 cm³", "80 cm³", "90 cm³", "120 cm³"],
+      answer: "80 cm³",
+      explanation: "STEP 1: Volume of cylinder = πr²h, volume of cone = (1/3)πr²h.\nSTEP 2: Cone's volume = 1/3 of cylinder's volume.\nSTEP 3: 1/3 × 240 = 80 cm³."
+    },
+
+    // 37
+    {
+      question: "A water tank in the shape of a rectangular prism measures 5 m by 4 m by 3 m and is full of water. The water is poured into a cylindrical tank of radius 2 m. What is the height of water in the cylinder? (Use π ≈ 3.14)",
+      options: ["3.8 m", "4.2 m", "4.5 m", "4.8 m"],
+      answer: "4.8 m",
+      explanation: "STEP 1: Volume of rectangular tank = 5 × 4 × 3 = 60 m³.\nSTEP 2: Cylinder volume = πr²h = 3.14 × 2² × h = 12.56h.\nSTEP 3: Set equal: 60 = 12.56h ⇒ h ≈ 60 ÷ 12.56 ≈ 4.8 m."
+    },
+
+    // 38
+    {
+      question: "A hemispherical bowl of radius 7 cm is filled with water. The water is poured into a cylindrical jar of radius 3.5 cm. What is the height of the water in the jar? (Use π ≈ 3.14)",
+      options: ["12.5 cm", "15.0 cm", "18.7 cm", "21.0 cm"],
+      answer: "18.7 cm",
+      explanation: "STEP 1: Volume of hemisphere = (2/3)πr³ = (2/3) × 3.14 × 7³.\nSTEP 2: Volume of cylinder = πr²h = 3.14 × 3.5² × h.\nSTEP 3: Cancel π and solve: (2/3) × 7³ = 3.5² × h ⇒ h ≈ 18.7 cm."
+    },
+
+    // 39
+    {
+      question: "For a certain cube, its total surface area is numerically equal to its volume. What is the length of each edge?",
+      options: ["4 cm", "5 cm", "6 cm", "8 cm"],
+      answer: "6 cm",
+      explanation: "STEP 1: Let edge length = a. Then surface area = 6a², volume = a³.\nSTEP 2: Given: 6a² = a³ ⇒ a ≠ 0 ⇒ a = 6 cm."
+    },
+
+    // 40
+    {
+      question: "A rectangular solid has dimensions in the ratio 1 : 2 : 4 and volume 512 cm³. What is the length of its longest edge?",
+      options: ["8 cm", "10 cm", "12 cm", "16 cm"],
+      answer: "16 cm",
+      explanation: "STEP 1: Let dimensions be x, 2x, and 4x.\nSTEP 2: Volume = x × 2x × 4x = 8x³ = 512 ⇒ x³ = 64 ⇒ x = 4.\nSTEP 3: Longest edge = 4x = 16 cm."
+    },
+
+    // 41
+    {
+      question: "A rectangular park measures 20 m by 14 m. A semicircular playground is attached along the 14 m side, with diameter equal to 14 m. What is the total area of the park plus playground? (Use π = 22/7)",
+      options: ["330 m²", "345 m²", "357 m²", "372 m²"],
+      answer: "357 m²",
+      explanation: "STEP 1: Rectangle area = 20 × 14 = 280 m².\nSTEP 2: Semicircle radius = 7 m ⇒ area of full circle = (22/7) × 7² = 154 m².\nSTEP 3: Semicircle area = 154 ÷ 2 = 77 m².\nSTEP 4: Total area = 280 + 77 = 357 m²."
+    },
+
+    // 42
+    {
+      question: "A circular flower bed of radius 7 m is at the center of a square lawn of side 20 m. What is the area of the lawn not occupied by the flower bed? (Use π = 22/7)",
+      options: ["220 m²", "230 m²", "240 m²", "246 m²"],
+      answer: "246 m²",
+      explanation: "STEP 1: Square area = 20² = 400 m².\nSTEP 2: Circle area = (22/7) × 7² = 154 m².\nSTEP 3: Grass area = 400 − 154 = 246 m²."
+    },
+
+    // 43
+    {
+      question: "A rectangle has area 40 cm². A similar rectangle has its sides 1.5 times as long as the first. What is the area of the larger rectangle?",
+      options: ["60 cm²", "75 cm²", "90 cm²", "100 cm²"],
+      answer: "90 cm²",
+      explanation: "STEP 1: For similar figures, area scales with the square of the linear scale factor.\nSTEP 2: Factor = 1.5 ⇒ area factor = 1.5² = 2.25.\nSTEP 3: New area = 40 × 2.25 = 90 cm²."
+    },
+
+    // 44
+    {
+      question: "A solid metal sphere of radius 7 cm is melted and recast into small solid spheres of radius 3.5 cm. How many small spheres are formed?",
+      options: ["4", "6", "8", "10"],
+      answer: "8",
+      explanation: "STEP 1: Number of spheres = Volume of big sphere ÷ Volume of small sphere.\nSTEP 2: Volume ∝ r³, so ratio = 7³ : 3.5³.\nSTEP 3: 7³ = 343, 3.5 = 7/2 ⇒ (7/2)³ = 343/8.\nSTEP 4: Ratio = 343 : 343/8 = 8 : 1 ⇒ 8 small spheres."
+    },
+
+    // 45
+    {
+      question: "A model pyramid is similar to a larger pyramid. Their heights are in the ratio 1 : 4. If the volume of the larger pyramid is 512 m³, what is the volume of the model?",
+      options: ["4 m³", "8 m³", "16 m³", "32 m³"],
+      answer: "8 m³",
+      explanation: "STEP 1: For similar solids, volume ratio = (linear ratio)³.\nSTEP 2: Volume ratio = 1³ : 4³ = 1 : 64.\nSTEP 3: Model volume = 512 ÷ 64 = 8 m³."
+    },
+
+    // 46
+    {
+      question: "A right triangular prism has a base that is a right triangle with legs 5 cm and 12 cm. The height of the prism is 10 cm. What is its volume?",
+      options: ["250 cm³", "280 cm³", "300 cm³", "320 cm³"],
+      answer: "300 cm³",
+      explanation: "STEP 1: Area of triangular base = 1/2 × 5 × 12 = 30 cm².\nSTEP 2: Volume of prism = base area × height = 30 × 10 = 300 cm³."
+    },
+
+    // 47
+    {
+      question: "A rectangular box has dimensions 6 cm, 8 cm, and 24 cm. What is the length of its longest diagonal (space diagonal)?",
+      options: ["20 cm", "22 cm", "24 cm", "26 cm"],
+      answer: "26 cm",
+      explanation: "STEP 1: Space diagonal d = √(l² + w² + h²).\nSTEP 2: d = √(6² + 8² + 24²) = √(36 + 64 + 576) = √676 = 26 cm."
+    },
+
+    // 48
+    {
+      question: "A circular pond of radius 8 m is surrounded by a path of width 2 m. What is the area of the path? (Use π ≈ 3.14)",
+      options: ["94.2 m²", "100.5 m²", "113.1 m²", "120.0 m²"],
+      answer: "113.1 m²",
+      explanation: "STEP 1: Outer radius = 8 + 2 = 10 m.\nSTEP 2: Path area = π(R² − r²) = 3.14 × (10² − 8²) = 3.14 × (100 − 64) = 3.14 × 36 ≈ 113.1 m²."
+    },
+
+    // 49
+    {
+      question: "A regular pentagon has side length 10 cm and apothem 6.9 cm. What is its area?",
+      options: ["160.0 cm²", "172.5 cm²", "180.0 cm²", "190.0 cm²"],
+      answer: "172.5 cm²",
+      explanation: "STEP 1: Perimeter = 5 × 10 = 50 cm.\nSTEP 2: Area of a regular polygon = (1/2) × perimeter × apothem.\nSTEP 3: Area = 1/2 × 50 × 6.9 = 25 × 6.9 = 172.5 cm²."
+    },
+
+    // 50
+    {
+      question: "A chord of a circle is 16 cm long and is 6 cm away from the center. What is the radius of the circle?",
+      options: ["8 cm", "9 cm", "10 cm", "12 cm"],
+      answer: "10 cm",
+      explanation: "STEP 1: Draw a perpendicular from the center to the chord; it bisects the chord.\nSTEP 2: Half-chord = 16 ÷ 2 = 8 cm, distance from center = 6 cm.\nSTEP 3: Radius² = 8² + 6² = 64 + 36 = 100 ⇒ radius = 10 cm."
+    }
   ] // end of expert
 };
-
