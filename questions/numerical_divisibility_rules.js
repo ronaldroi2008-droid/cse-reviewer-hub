@@ -1819,8 +1819,7 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       explanation: `STEP 1: Last two digits 24 ⇒ the number is divisible by 4.\nSTEP 2: Given it has a factor 3 ⇒ divisible by 3.\nSTEP 3: Divisible by 2 (because last digit is 4), by 3, and by 4.\nSTEP 4: Therefore, it must be divisible by 6 (2 × 3). Divisibility by 8, 12, or 24 is not guaranteed without more information.`
     },
 
-    // 48
-      },
+    
 
     // 48
     {
