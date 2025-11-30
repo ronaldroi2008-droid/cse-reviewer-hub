@@ -716,7 +716,7 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
     },
     {
       question: "A number lies between 100 and 150. It is a multiple of 8 and 12. What is the number?",
-      options: ["108", "120", "132", "144"],
+      options: ["108", "120", "132", "140"],
       answer: "120",
       explanation: "STEP 1: LCM(8, 12) = 24.\nSTEP 2: Multiples of 24: 96, 120, 144.\nSTEP 3: Both 120 and 144 are in range, but 120 is the smallest."
     },
@@ -1196,11 +1196,11 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       answer: "28",
       explanation: "STEP 1: 2310 = 2×3×5×7×11\nSTEP 2: Sum = 2+3+5+7+11 = 28"
     },
-    {
-      question: "Which number has most factors?",
+   {
+      question: "Which number has the most factors?",
       options: ["72", "120", "100", "24"],
       answer: "120",
-      explanation: "STEP 1: 72=12 factors, 120=16 factors, 100=9 factors, 24=8 factors"
+      explanation: "STEP 1: 72 (2³×3²) has (3+1)(2+1)=12 factors.\nSTEP 2: 100 (2²×5²) has 9 factors. 24 (2³×3) has 8 factors.\nSTEP 3: 120 (2³×3×5) has (3+1)(1+1)(1+1) = 16 factors. 120 has the most."
     },
     {
       question: "Least multiple of 13 leaving remainder 2 when divided by 4,5,6,7,8:",
@@ -1245,10 +1245,10 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       explanation: "STEP 1: Lowest powers: 2³ and 3¹"
     },
     {
-      question: "Largest number dividing 200 and 300 leaving remainders 8 and 12:",
-      options: ["16", "24", "48", "192"],
-      answer: "48",
-      explanation: "STEP 1: 200-8=192, 300-12=288\nSTEP 2: GCF(192,288)=48"
+      question: "Find the largest number which divides 200 and 300 leaving remainders 8 and 12 respectively.",
+      options: ["24", "48", "72", "96"], // Updated options to include 96
+      answer: "96",
+      explanation: "STEP 1: Subtract remainders: 200-8=192, 300-12=288.\nSTEP 2: Find GCF(192, 288).\nSTEP 3: 192 = 96 × 2, 288 = 96 × 3. The GCF is 96."
     }
   ]
 };
