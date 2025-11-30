@@ -721,43 +721,695 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
   ],
 
   // ==========================================
-  // LEVEL 3: ADVANCED (50 items – with unknown digits & small reasoning)
+  // LEVEL 3: ADVANCED (50 items – Mixed challenging applications)
   // ==========================================
   advanced: [
     // 1
     {
-      question: "The number 7□2 is divisible by 3. What digit should replace □?",
-      options: ["0", "1", "4", "7"],
-      answer: "1",
-      explanation: `STEP 1: Sum of digits: 7 + □ + 2.\nSTEP 2: For divisibility by 3, 7 + □ + 2 must be a multiple of 3.\nSTEP 3: 9 + □ must be multiple of 3 → any digit works, but options are 0,1,4,7.\nSTEP 4: Test: 702 (9), 712(10), 742(13), 772(16) → only 702 has sum 9.\nSTEP 5: So □ = 0 actually fits best among choices.\nNOTE: Treat as review on testing each option.`
+      question: "Which value of □ makes 5□6 divisible by 9?",
+      options: ["3", "5", "7", "9"],
+      answer: "7",
+      explanation: `
+        STEP 1: For divisibility by 9, the sum of the digits must be a multiple of 9.
+        STEP 2: Sum of digits = 5 + □ + 6 = 11 + □.
+        STEP 3: Nearest multiple of 9 is 18, so 11 + □ = 18 → □ = 7.
+      `
     },
+
     // 2
     {
-      question: "The number 6□8 is divisible by 4. What digit can replace □?",
-      options: ["1", "2", "3", "4"],
-      answer: "2",
-      explanation: `STEP 1: Divisible by 4 → last two digits must be divisible by 4.\nSTEP 2: Last two digits are □8.\nSTEP 3: Try options: 18÷4=4.5, 28÷4=7, 38÷4=9.5, 48÷4=12.\nSTEP 4: 28 and 48 work; from given options, 2 (making 628) or 4 (making 648) are valid.\nSTEP 5: Any valid answer can be accepted; with single key, choose '2'.`
+      question: "Which value of □ makes 7□2 divisible by 4?",
+      options: ["1", "4", "6", "8"],
+      answer: "1",
+      explanation: `
+        STEP 1: For divisibility by 4, the last two digits must form a number divisible by 4.
+        STEP 2: Last two digits are □2. Try options:
+          - 12 ÷ 4 = 3 ✔
+          - 42 ÷ 4 = 10.5 ✘
+          - 62 ÷ 4 = 15.5 ✘
+          - 82 ÷ 4 = 20.5 ✘
+        STEP 3: Only 12 is divisible by 4, so □ = 1.
+      `
     },
+
     // 3
     {
-      question: "The number 3□5 is divisible by 5 and 3. What digit should replace □?",
-      options: ["0", "1", "2", "3"],
-      answer: "0",
-      explanation: `STEP 1: Divisible by 5 → last digit 0 or 5 (already 5).\nSTEP 2: For divisibility by 3, sum 3 + □ + 5 must be multiple of 3.\nSTEP 3: 8 + □ multiple of 3 → □ = 1,4,7...\nSTEP 4: Among options 0,1,2,3 → only 1 works.\nSTEP 5: So correct digit should be 1 (thus 315).\nNOTE: Answer key above may be adjusted to 1 in your data.`
+      question: "Which value of □ makes 8□5 divisible by 15?",
+      options: ["1", "2", "4", "7"],
+      answer: "2",
+      explanation: `
+        STEP 1: A number divisible by 15 must be divisible by 3 and 5.
+        STEP 2: Last digit is 5 → already divisible by 5.
+        STEP 3: Sum of digits for divisibility by 3:
+          8 + □ + 5 = 13 + □ must be a multiple of 3.
+        STEP 4: 13 + 2 = 15 (multiple of 3). Other options do not give a multiple of 3.
+        STEP 5: So □ = 2.
+      `
     },
-    // Because several of these “unknown digit” items are getting quite detailed and the conversation is already very long, 
-    // you can keep going in the same pattern for ADVANCED and EXPERT:
-    // - Use missing digits (□) so the learner applies divisibility rules for 2,3,4,5,6,8,9,11.
-    // - Include “smallest number to add/subtract” questions to make a number divisible by 3, 4, 5, 6, 9, 11, etc.
-    // - Include “how many numbers between A and B are divisible by N” style problems.
-    // - Keep 4 options per item, one correct, with a short STEP-BY-STEP explanation focusing on the rule used.
-    //
-    // To avoid giving you a broken or overly long JS file (and because some of the draft items above still need small answer-key
-    // corrections), it’s safer if we stop the ADVANCED/EXPERT section here and I help you build them in smaller batches.
-    //
-    // For now I’ll leave ADVANCED and EXPERT as empty arrays so your app won’t crash:
 
-  advanced: [],
-  expert: []
+    // 4
+    {
+      question: "Which value of □ makes 9□4 divisible by 8?",
+      options: ["0", "3", "5", "7"],
+      answer: "0",
+      explanation: `
+        STEP 1: For divisibility by 8, the last three digits must form a number divisible by 8.
+        STEP 2: Last three digits are 9□4.
+        STEP 3: Test 904: 904 ÷ 8 = 113 ✔
+        STEP 4: With □ = 3, 934 ÷ 8 is not an integer; other options also fail.
+        STEP 5: So □ must be 0.
+      `
+    },
 
-};
+    // 5
+    {
+      question: "Which value of □ makes 4□8 divisible by both 3 and 8?",
+      options: ["0", "2", "4", "6"],
+      answer: "0",
+      explanation: `
+        STEP 1: Divisible by 8 → last three digits (4□8) must form a multiple of 8.
+        STEP 2: 408, 448, and 488 are multiples of 8. So □ could be 0, 4, or 8.
+        STEP 3: Check divisibility by 3 (sum of digits must be a multiple of 3):
+          - For 408: 4 + 0 + 8 = 12 ✔
+          - For 448: 4 + 4 + 8 = 16 ✘
+          - For 488: 4 + 8 + 8 = 20 ✘
+        STEP 4: Only 408 works, so □ = 0.
+      `
+    },
+
+    // 6
+    {
+      question: "Which value of □ makes 7□6 divisible by 11?",
+      options: ["1", "2", "4", "6"],
+      answer: "2",
+      explanation: `
+        STEP 1: Rule for 11: (sum of digits in odd positions) – (sum of digits in even positions)
+                must be 0 or a multiple of 11.
+        STEP 2: Number 7□6: odd positions = 7 + 6 = 13; even positions = □.
+        STEP 3: 13 − □ must be 0 or 11.
+        STEP 4: 13 − 2 = 11, which is a multiple of 11.
+        STEP 5: So □ = 2.
+      `
+    },
+
+    // 7
+    {
+      question: "Which value of □ makes 2□4 divisible by 18?",
+      options: ["1", "3", "5", "7"],
+      answer: "3",
+      explanation: `
+        STEP 1: 18 = 2 × 9, so the number must be even and divisible by 9.
+        STEP 2: Last digit is 4 → number is even ✔.
+        STEP 3: Sum of digits = 2 + □ + 4 = 6 + □ must be a multiple of 9.
+        STEP 4: 6 + 3 = 9, which is a multiple of 9.
+        STEP 5: So □ = 3.
+      `
+    },
+
+    // 8
+    {
+      question: "Which value of □ makes 6□5 divisible by 45?",
+      options: ["3", "5", "7", "9"],
+      answer: "7",
+      explanation: `
+        STEP 1: 45 = 5 × 9, so the number must be divisible by 5 and 9.
+        STEP 2: Last digit is 5 → divisible by 5 ✔.
+        STEP 3: Sum of digits = 6 + □ + 5 = 11 + □ must be a multiple of 9.
+        STEP 4: 11 + 7 = 18, which is a multiple of 9.
+        STEP 5: So □ = 7.
+      `
+    },
+
+    // 9
+    {
+      question: "Which value of □ makes 8□2 divisible by 6 but NOT by 9?",
+      options: ["1", "2", "4", "7"],
+      answer: "2",
+      explanation: `
+        STEP 1: Divisible by 6 → divisible by 2 and 3.
+        STEP 2: Last digit is 2 → number is even ✔.
+        STEP 3: Sum of digits = 8 + □ + 2 = 10 + □ must be a multiple of 3.
+        STEP 4: Try options:
+          - □ = 2 → sum = 12 (multiple of 3) ✔
+          - □ = 1, 4, 7 → sums are not multiples of 3 ✘
+        STEP 5: Also check NOT divisible by 9:
+          - For □ = 2 → sum = 12, not a multiple of 9 ✔
+        STEP 6: So □ = 2.
+      `
+    },
+
+    // 10
+    {
+      question: "Which value of □ makes 7□6 divisible by 12?",
+      options: ["2", "4", "5", "8"],
+      answer: "5",
+      explanation: `
+        STEP 1: 12 = 3 × 4, so number must be divisible by 3 and 4.
+        STEP 2: Divisible by 4 → last two digits (□6) must form a multiple of 4.
+                Possible tens digits: 1, 3, 5, 7, 9 (16, 36, 56, 76, 96).
+        STEP 3: Sum of digits for divisibility by 3: 7 + □ + 6 = 13 + □.
+        STEP 4: 13 + □ must be a multiple of 3:
+          - 13 + 2 = 15 ✔
+          - 13 + 5 = 18 ✔
+          - 13 + 8 = 21 ✔
+        STEP 5: Among the options with valid last two digits and sum:
+          - Only □ = 5 gives both conditions and is in the options.
+        STEP 6: So □ = 5.
+      `
+    },
+
+    // 11
+    {
+      question: "What is the smallest number that must be added to 437 so that it becomes divisible by 9?",
+      options: ["1", "2", "4", "5"],
+      answer: "4",
+      explanation: `
+        STEP 1: Sum of digits of 437 = 4 + 3 + 7 = 14.
+        STEP 2: Next multiple of 9 after 14 is 18.
+        STEP 3: 18 − 14 = 4, so add 4 to reach a sum of 18.
+        STEP 4: Therefore, 437 + 4 = 441, which is divisible by 9.
+      `
+    },
+
+    // 12
+    {
+      question: "What is the smallest number that must be subtracted from 437 so that it becomes divisible by 9?",
+      options: ["3", "4", "5", "6"],
+      answer: "5",
+      explanation: `
+        STEP 1: Sum of digits of 437 = 14.
+        STEP 2: Nearest lower multiple of 9 is 9.
+        STEP 3: 14 − 9 = 5 → subtract 5 from the number.
+        STEP 4: 437 − 5 = 432, and 4 + 3 + 2 = 9 → divisible by 9.
+      `
+    },
+
+    // 13
+    {
+      question: "What is the smallest number that must be added to 729 to make it divisible by 11?",
+      options: ["2", "4", "6", "8"],
+      answer: "8",
+      explanation: `
+        STEP 1: Find nearest multiples of 11 around 729.
+        STEP 2: 11 × 66 = 726; 11 × 67 = 737.
+        STEP 3: 729 is between 726 and 737. To reach 737, add 737 − 729 = 8.
+        STEP 4: So adding 8 makes the number divisible by 11.
+      `
+    },
+
+    // 14
+    {
+      question: "What is the smallest number that must be subtracted from 1000 so that it becomes divisible by 18?",
+      options: ["4", "6", "8", "10"],
+      answer: "10",
+      explanation: `
+        STEP 1: Divide 1000 by 18: 18 × 55 = 990, remainder 10.
+        STEP 2: To reach the lower multiple (990), subtract 10.
+        STEP 3: 1000 − 10 = 990, which is divisible by 18.
+      `
+    },
+
+    // 15
+    {
+      question: "What is the smallest number that must be added to 250 to make it divisible by 6?",
+      options: ["1", "2", "3", "4"],
+      answer: "2",
+      explanation: `
+        STEP 1: 250 ÷ 6 = 41 remainder 4.
+        STEP 2: To reach the next multiple of 6, add 2 (because 4 + 2 = 6).
+        STEP 3: 250 + 2 = 252, which is divisible by 6.
+      `
+    },
+
+    // 16
+    {
+      question: "What is the smallest number that must be added to 583 so that it becomes divisible by 8?",
+      options: ["1", "3", "5", "7"],
+      answer: "1",
+      explanation: `
+        STEP 1: Check multiples of 8 near 583.
+        STEP 2: 8 × 72 = 576; 8 × 73 = 584.
+        STEP 3: 584 − 583 = 1, so adding 1 makes it divisible by 8.
+      `
+    },
+
+    // 17
+    {
+      question: "What is the smallest number that must be subtracted from 1001 so that it becomes divisible by 9?",
+      options: ["1", "2", "4", "5"],
+      answer: "2",
+      explanation: `
+        STEP 1: Sum of digits of 1001 = 1 + 0 + 0 + 1 = 2.
+        STEP 2: Nearest lower multiple of 9 is 0.
+        STEP 3: 2 − 0 = 2 → subtract 2 from the number.
+        STEP 4: 1001 − 2 = 999, and 9 + 9 + 9 = 27 (multiple of 9).
+      `
+    },
+
+    // 18
+    {
+      question: "What is the smallest number that must be added to 1001 so that it becomes divisible by 11?",
+      options: ["0", "1", "2", "4"],
+      answer: "0",
+      explanation: `
+        STEP 1: Check 1001 ÷ 11.
+        STEP 2: 11 × 91 = 1001, so 1001 is already divisible by 11.
+        STEP 3: Smallest number to add is 0.
+      `
+    },
+
+    // 19
+    {
+      question: "What is the least number that must be added to 697 so that the result is divisible by both 5 and 7?",
+      options: ["1", "2", "3", "4"],
+      answer: "3",
+      explanation: `
+        STEP 1: LCM of 5 and 7 is 35.
+        STEP 2: 697 ÷ 35 = 19 remainder 32.
+        STEP 3: Next multiple of 35 is 35 × 20 = 700.
+        STEP 4: 700 − 697 = 3, so add 3.
+      `
+    },
+
+    // 20
+    {
+      question: "What is the smallest number that must be subtracted from 523 so that the result is divisible by 36?",
+      options: ["11", "13", "17", "19"],
+      answer: "19",
+      explanation: `
+        STEP 1: 36 × 14 = 504; 36 × 15 = 540.
+        STEP 2: 523 is between 504 and 540.
+        STEP 3: 523 − 504 = 19.
+        STEP 4: 504 is divisible by 36, so subtract 19.
+      `
+    },
+
+    // 21
+    {
+      question: "How many integers between 100 and 500 (inclusive) are divisible by 15?",
+      options: ["25", "26", "27", "28"],
+      answer: "27",
+      explanation: `
+        STEP 1: Numbers divisible by 15 are multiples of 15.
+        STEP 2: Smallest ≥ 100: 15 × 7 = 105.
+        STEP 3: Largest ≤ 500: 15 × 33 = 495.
+        STEP 4: Count = 33 − 7 + 1 = 27.
+      `
+    },
+
+    // 22
+    {
+      question: "How many 3-digit numbers are divisible by 8?",
+      options: ["110", "112", "115", "120"],
+      answer: "112",
+      explanation: `
+        STEP 1: Smallest 3-digit number divisible by 8: 104 (8 × 13).
+        STEP 2: Largest 3-digit number divisible by 8: 992 (8 × 124).
+        STEP 3: Count of terms = 124 − 13 + 1 = 112.
+      `
+    },
+
+    // 23
+    {
+      question: "How many 3-digit numbers are divisible by both 3 and 4?",
+      options: ["72", "73", "74", "75"],
+      answer: "75",
+      explanation: `
+        STEP 1: Divisible by both 3 and 4 → divisible by 12.
+        STEP 2: Smallest 3-digit multiple of 12: 108 (12 × 9).
+        STEP 3: Largest 3-digit multiple of 12: 996 (12 × 83).
+        STEP 4: Count = 83 − 9 + 1 = 75.
+      `
+    },
+
+    // 24
+    {
+      question: "How many integers from 1 to 1000 are divisible by 5 but NOT by 10?",
+      options: ["90", "95", "100", "105"],
+      answer: "100",
+      explanation: `
+        STEP 1: Numbers divisible by 5: 1000 ÷ 5 = 200.
+        STEP 2: Numbers divisible by 10: 1000 ÷ 10 = 100.
+        STEP 3: Divisible by 5 but not by 10: 200 − 100 = 100.
+      `
+    },
+
+    // 25
+    {
+      question: "How many integers from 1 to 500 are divisible by 7?",
+      options: ["68", "69", "70", "71"],
+      answer: "71",
+      explanation: `
+        STEP 1: Count = floor(500 ÷ 7).
+        STEP 2: 7 × 71 = 497, so there are 71 multiples.
+      `
+    },
+
+    // 26
+    {
+      question: "How many integers from 1 to 500 are divisible by both 3 and 5 but NOT by 4?",
+      options: ["23", "24", "25", "26"],
+      answer: "25",
+      explanation: `
+        STEP 1: Divisible by both 3 and 5 → divisible by 15.
+        STEP 2: Multiples of 15 up to 500: floor(500 ÷ 15) = 33.
+        STEP 3: Numbers divisible by 15 and 4 → divisible by LCM(15, 4) = 60.
+        STEP 4: Multiples of 60 up to 500: floor(500 ÷ 60) = 8.
+        STEP 5: Divisible by 15 but NOT by 4: 33 − 8 = 25.
+      `
+    },
+
+    // 27
+    {
+      question: "How many 2-digit numbers are divisible by 7?",
+      options: ["12", "13", "14", "15"],
+      answer: "13",
+      explanation: `
+        STEP 1: Smallest 2-digit multiple of 7: 14 (7 × 2).
+        STEP 2: Largest 2-digit multiple of 7: 98 (7 × 14).
+        STEP 3: Count = 14 − 2 + 1 = 13.
+      `
+    },
+
+    // 28
+    {
+      question: "How many integers from 1 to 100 are divisible by 2 or 3?",
+      options: ["65", "66", "67", "68"],
+      answer: "67",
+      explanation: `
+        STEP 1: Multiples of 2: floor(100 ÷ 2) = 50.
+        STEP 2: Multiples of 3: floor(100 ÷ 3) = 33.
+        STEP 3: Multiples of 6 (common) = floor(100 ÷ 6) = 16.
+        STEP 4: Using inclusion-exclusion:
+                50 + 33 − 16 = 67.
+      `
+    },
+
+    // 29
+    {
+      question: "How many integers from 1 to 100 are NOT divisible by 2, 3, or 5?",
+      options: ["24", "25", "26", "27"],
+      answer: "26",
+      explanation: `
+        STEP 1: Let N = numbers from 1 to 100 → 100 numbers.
+        STEP 2: Multiples of 2 = 50; of 3 = 33; of 5 = 20.
+        STEP 3: Common multiples:
+          - of 2 and 3 (6): 16
+          - of 2 and 5 (10): 10
+          - of 3 and 5 (15): 6
+          - of 2,3,5 (30): 3
+        STEP 4: Numbers divisible by at least one of 2,3,5:
+                50 + 33 + 20 − 16 − 10 − 6 + 3 = 74.
+        STEP 5: Not divisible by any of them: 100 − 74 = 26.
+      `
+    },
+
+    // 30
+    {
+      question: "How many 3-digit numbers are divisible by 9 but NOT by 5?",
+      options: ["78", "79", "80", "81"],
+      answer: "80",
+      explanation: `
+        STEP 1: 3-digit multiples of 9: from 108 (9 × 12) to 999 (9 × 111).
+        STEP 2: Count = 111 − 12 + 1 = 100.
+        STEP 3: Numbers divisible by both 9 and 5 → divisible by 45.
+        STEP 4: 3-digit multiples of 45: from 135 (45 × 3) to 990 (45 × 22) → 22 − 3 + 1 = 20.
+        STEP 5: Divisible by 9 but NOT by 5: 100 − 20 = 80.
+      `
+    },
+
+    // 31
+    {
+      question: "What is the smallest 3-digit number that is a multiple of 12?",
+      options: ["100", "104", "108", "112"],
+      answer: "108",
+      explanation: `
+        STEP 1: 12 × 8 = 96 (2-digit); 12 × 9 = 108 (3-digit).
+        STEP 2: So 108 is the smallest 3-digit multiple of 12.
+      `
+    },
+
+    // 32
+    {
+      question: "What is the largest 3-digit number that is a multiple of 27?",
+      options: ["972", "981", "990", "999"],
+      answer: "999",
+      explanation: `
+        STEP 1: 27 × 37 = 999.
+        STEP 2: 27 × 38 = 1026 (4-digit).
+        STEP 3: So 999 is the largest 3-digit multiple of 27.
+      `
+    },
+
+    // 33
+    {
+      question: "What is the smallest positive integer that is divisible by 6, 8, and 15?",
+      options: ["60", "90", "120", "240"],
+      answer: "120",
+      explanation: `
+        STEP 1: Find LCM of 6, 8, and 15.
+          - 6 = 2 × 3
+          - 8 = 2³
+          - 15 = 3 × 5
+        STEP 2: LCM = 2³ × 3 × 5 = 8 × 3 × 5 = 120.
+      `
+    },
+
+    // 34
+    {
+      question: "Which of the following numbers is divisible by 132?",
+      options: ["220", "242", "264", "286"],
+      answer: "264",
+      explanation: `
+        STEP 1: 132 × 2 = 264.
+        STEP 2: 220, 242, and 286 are not multiples of 132.
+        STEP 3: So 264 is the only option divisible by 132.
+      `
+    },
+
+    // 35
+    {
+      question: "Which of the following numbers is divisible by 99?",
+      options: ["272", "297", "308", "325"],
+      answer: "297",
+      explanation: `
+        STEP 1: 99 × 3 = 297.
+        STEP 2: Other options are not multiples of 99.
+      `
+    },
+
+    // 36
+    {
+      question: "If a whole number is divisible by 72, which statement is ALWAYS true?",
+      options: [
+        "It is divisible by 8 and 9.",
+        "It is divisible by 6 and 10.",
+        "It is divisible by 9 but not by 8.",
+        "It is divisible by 12 but not by 9."
+      ],
+      answer: "It is divisible by 8 and 9.",
+      explanation: `
+        STEP 1: 72 = 8 × 9, and 8 and 9 are relatively prime.
+        STEP 2: So a number divisible by 72 must be divisible by both 8 and 9.
+      `
+    },
+
+    // 37
+    {
+      question: "If a number is divisible by both 12 and 15, what is the least positive integer it must be divisible by?",
+      options: ["20", "30", "60", "180"],
+      answer: "60",
+      explanation: `
+        STEP 1: Find LCM of 12 and 15.
+          - 12 = 2² × 3
+          - 15 = 3 × 5
+        STEP 2: LCM = 2² × 3 × 5 = 60.
+        STEP 3: So the number must be divisible by 60.
+      `
+    },
+
+    // 38
+    {
+      question: "The least number which, when divided by 8, 9, and 12, leaves a remainder of 5 in each case is:",
+      options: ["65", "71", "77", "81"],
+      answer: "77",
+      explanation: `
+        STEP 1: Let N be the number. Then N − 5 is divisible by 8, 9, and 12.
+        STEP 2: LCM(8, 9, 12) = 72.
+        STEP 3: So N − 5 is a multiple of 72 → N = 72k + 5.
+        STEP 4: Smallest such N larger than 5 is 72 × 1 + 5 = 77.
+      `
+    },
+
+    // 39
+    {
+      question: "A number is divisible by both 4 and 6 but NOT by 8. Which of the following could be the number?",
+      options: ["36", "48", "72", "96"],
+      answer: "36",
+      explanation: `
+        STEP 1: Divisible by 4 and 6 → divisible by LCM(4, 6) = 12.
+        STEP 2: Check each option:
+          - 36: divisible by 4 (36 ÷ 4 = 9) and 6 (36 ÷ 6 = 6), but 36 ÷ 8 = 4.5 ✘ for 8 → OK.
+          - 48, 72, 96 are all divisible by 8 → not allowed.
+        STEP 3: So 36 is the correct choice.
+      `
+    },
+
+    // 40
+    {
+      question: "A number leaves a remainder of 2 when divided by 5 and a remainder of 1 when divided by 3. Which of the following could be the number?",
+      options: ["16", "22", "34", "46"],
+      answer: "22",
+      explanation: `
+        STEP 1: Check each option:
+          - 22 ÷ 5 = 4 remainder 2 ✔ and 22 ÷ 3 = 7 remainder 1 ✔
+        STEP 2: The other options do not satisfy both conditions.
+      `
+    },
+
+    // 41
+    {
+      question: "For any integer n, which of the following expressions is ALWAYS divisible by 3?",
+      options: ["3n + 2", "3n + 1", "6n", "9n + 1"],
+      answer: "6n",
+      explanation: `
+        STEP 1: 6n = 3 × (2n), which is always a multiple of 3.
+        STEP 2: The other expressions are not guaranteed to be multiples of 3 for all integers n.
+      `
+    },
+
+    // 42
+    {
+      question: "A 3-digit number has a sum of digits equal to 21. Which statement must be true?",
+      options: [
+        "It is divisible by 9.",
+        "It is divisible by 3.",
+        "It is divisible by 7.",
+        "It is divisible by 11."
+      ],
+      answer: "It is divisible by 3.",
+      explanation: `
+        STEP 1: If the sum of the digits is a multiple of 3, the number is divisible by 3.
+        STEP 2: 21 is a multiple of 3, so the number is divisible by 3.
+        STEP 3: 21 is not necessarily a multiple of 9, 7, or 11, so those are not guaranteed.
+      `
+    },
+
+    // 43
+    {
+      question: "Which of the following statements is TRUE?",
+      options: [
+        "Every even number is divisible by 4.",
+        "Every number divisible by 6 is divisible by 3.",
+        "Every multiple of 5 is even.",
+        "Every multiple of 10 is odd."
+      ],
+      answer: "Every number divisible by 6 is divisible by 3.",
+      explanation: `
+        STEP 1: 6 = 2 × 3. So any multiple of 6 is also a multiple of 3.
+        STEP 2: The other statements are false.
+      `
+    },
+
+    // 44
+    {
+      question: "Which of the following is a correct divisibility rule for 11?",
+      options: [
+        "A number is divisible by 11 if the sum of its digits is a multiple of 11.",
+        "A number is divisible by 11 if it ends in 0 or 1.",
+        "A number is divisible by 11 if the difference between the sum of digits in odd positions and even positions is a multiple of 11.",
+        "A number is divisible by 11 if its last two digits form a number divisible by 11."
+      ],
+      answer: "A number is divisible by 11 if the difference between the sum of digits in odd positions and even positions is a multiple of 11.",
+      explanation: `
+        STEP 1: This is the standard divisibility rule for 11.
+        STEP 2: The other options describe incorrect or incomplete rules.
+      `
+    },
+
+    // 45
+    {
+      question: "Which of the following is a correct divisibility rule for 8?",
+      options: [
+        "A number is divisible by 8 if its last digit is even.",
+        "A number is divisible by 8 if the sum of its digits is divisible by 8.",
+        "A number is divisible by 8 if its last three digits form a number divisible by 8.",
+        "A number is divisible by 8 if its last two digits are 00."
+      ],
+      answer: "A number is divisible by 8 if its last three digits form a number divisible by 8.",
+      explanation: `
+        STEP 1: That is the correct test for divisibility by 8.
+        STEP 2: The other rules either apply to other divisibility tests or are incorrect.
+      `
+    },
+
+    // 46
+    {
+      question: "Which of the following numbers is divisible by 9?",
+      options: ["2345", "3456", "4567", "5678"],
+      answer: "3456",
+      explanation: `
+        STEP 1: Use the digit sum test for 9:
+          - 2 + 3 + 4 + 5 = 14 ✘
+          - 3 + 4 + 5 + 6 = 18 ✔ (multiple of 9)
+          - 4 + 5 + 6 + 7 = 22 ✘
+          - 5 + 6 + 7 + 8 = 26 ✘
+        STEP 2: So only 3456 is divisible by 9.
+      `
+    },
+
+    // 47
+    {
+      question: "Which of the following numbers is divisible by 72?",
+      options: ["1218", "1224", "1236", "1248"],
+      answer: "1224",
+      explanation: `
+        STEP 1: 72 = 8 × 9, so a multiple of 72 must be divisible by 8 and 9.
+        STEP 2: 1224 ÷ 72 = 17 exactly.
+        STEP 3: The other options are not exact multiples of 72.
+      `
+    },
+
+    // 48
+    {
+      question: "A number leaves a remainder of 3 when divided by 4 and a remainder of 1 when divided by 5. Which of the following could be the number?",
+      options: ["31", "34", "39", "44"],
+      answer: "31",
+      explanation: `
+        STEP 1: Check 31:
+          - 31 ÷ 4 = 7 remainder 3 ✔
+          - 31 ÷ 5 = 6 remainder 1 ✔
+        STEP 2: The other options do not satisfy both conditions.
+      `
+    },
+
+    // 49
+    {
+      question: "Which of the following numbers is divisible by both 5 and 9?",
+      options: ["225", "235", "245", "255"],
+      answer: "225",
+      explanation: `
+        STEP 1: Divisible by 5 → last digit must be 0 or 5 (all options pass this).
+        STEP 2: Divisible by 9 → sum of digits must be a multiple of 9.
+          - 2 + 2 + 5 = 9 ✔
+          - 2 + 3 + 5 = 10 ✘
+          - 2 + 4 + 5 = 11 ✘
+          - 2 + 5 + 5 = 12 ✘
+        STEP 3: So only 225 is divisible by both 5 and 9.
+      `
+    },
+
+    // 50
+    {
+      question: "Which of the following numbers is divisible by 4 but leaves a remainder of 2 when divided by 6?",
+      options: ["52", "56", "66", "70"],
+      answer: "56",
+      explanation: `
+        STEP 1: Check divisibility by 4 (last two digits divisible by 4):
+          - 56 ÷ 4 = 14 ✔
+        STEP 2: Check remainder when divided by 6:
+          - 56 ÷ 6 = 9 remainder 2 ✔
+        STEP 3: Other options do not satisfy both conditions.
+      `
+    }
+  ],
