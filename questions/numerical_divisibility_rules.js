@@ -1828,26 +1828,22 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
     },
 
     // 49
-    {
-      question: "A number leaves a remainder of 2 when divided by 3 and a remainder of 3 when divided by 4. Which of the following could be the number?",
-      options: ["5", "11", "14", "23"],
-      answer: "11",
-      explanation: `STEP 1: Check each option.\nCondition: N ≡ 2 (mod 3) and N ≡ 3 (mod 4).\n- 5: 5 ÷ 3 = 1 r2 ✔; 5 ÷ 4 = 1 r1 ✘.\n- 11: 11 ÷ 3 = 3 r2 ✔; 11 ÷ 4 = 2 r3 ✔.\n- 14: 14 ÷ 3 = 4 r2 ✔; 14 ÷ 4 = 3 r2 ✘.\n- 23: 23 ÷ 3 = 7 r2 ✔; 23 ÷ 4 = 5 r3 ✔ (also works).\n(Teacher note: 11 and 23 both satisfy the conditions; keep just one.)`
-    },
-
-    // 50
-    {
-      question: "Which of the following must be true for any integer that is divisible by both 4 and 9?",
-      options: [
-        "It is divisible by 18.",
-        "It is divisible by 36.",
-        "It is divisible by 45.",
-        "It is divisible by 72."
-      ],
-      answer: "It is divisible by 36.",
-      explanation: `STEP 1: Divisible by 4 and 9 ⇒ divisible by LCM(4, 9).\nSTEP 2: 4 = 2², 9 = 3².\nLCM = 2² × 3² = 36.\nSTEP 3: So it must be divisible by 36.`
-   }
-  ] // end of expert level
-}; /
-
-  
+   const problems = [
+  {
+    question: "A number leaves a remainder of 2 when divided by 3 and a remainder of 3 when divided by 4. Which of the following could be the number?",
+    options: ["5", "11", "14", "23"],
+    answer: "11",
+    explanation: `STEP 1: Check each option.\nCondition: N ≡ 2 (mod 3) and N ≡ 3 (mod 4).\n- 5: 5 ÷ 3 = 1 r2 ✔; 5 ÷ 4 = 1 r1 ✘.\n- 11: 11 ÷ 3 = 3 r2 ✔; 11 ÷ 4 = 2 r3 ✔.\n- 14: 14 ÷ 3 = 4 r2 ✔; 14 ÷ 4 = 3 r2 ✘.\n- 23: 23 ÷ 3 = 7 r2 ✔; 23 ÷ 4 = 5 r3 ✔ (also works).\n(Teacher note: 11 and 23 both satisfy the conditions; keep just one.)`
+  },
+  {
+    question: "Which of the following must be true for any integer that is divisible by both 4 and 9?",
+    options: [
+      "It is divisible by 18.",
+      "It is divisible by 36.",
+      "It is divisible by 45.",
+      "It is divisible by 72."
+    ],
+    answer: "It is divisible by 36.",
+    explanation: `STEP 1: Divisible by 4 and 9 ⇒ divisible by LCM(4, 9).\nSTEP 2: 4 = 2², 9 = 3².\nLCM = 2² × 3² = 36.\nSTEP 3: So it must be divisible by 36.`
+  }
+]; // end of expert level
