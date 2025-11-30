@@ -1818,7 +1818,12 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "The number is divisible by 6.",
       explanation: `STEP 1: Last two digits 24 ⇒ the number is divisible by 4.\nSTEP 2: Given it has a factor 3 ⇒ divisible by 3.\nSTEP 3: Divisible by 2 (because last digit is 4), by 3, and by 4.\nSTEP 4: Therefore, it must be divisible by 6 (2 × 3). Divisibility by 8, 12, or 24 is not guaranteed without more information.`
     },
-
+{
+  question: "How many integers from 1 to 1000 are divisible by 6 or 10 but NOT by 15?",
+  options: ["199", "200", "212", "233"],
+  answer: "200",
+  explanation: `STEP 1: Count multiples of 6 up to 1000.\n1000 ÷ 6 = 166.\nSTEP 2: Count multiples of 10 up to 1000.\n1000 ÷ 10 = 100.\nSTEP 3: Subtract overlap (multiples of lcm(6,10)=30).\n1000 ÷ 30 = 33.\nMultiples of 6 or 10 = 166 + 100 − 33 = 233.\nSTEP 4: From those, remove numbers divisible by 15 that are also counted above. Any number divisible by 15 and (6 or 10) must be divisible by lcm(15,6)=30 (or lcm(15,10)=30).\n1000 ÷ 30 = 33.\nSTEP 5: Not divisible by 15 => 233 − 33 = 200.`
+},
     
 
     // 48
