@@ -1845,5 +1845,6 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
     ],
     answer: "It is divisible by 36.",
     explanation: `STEP 1: Divisible by 4 and 9 ⇒ divisible by LCM(4, 9).\nSTEP 2: 4 = 2², 9 = 3².\nLCM = 2² × 3² = 36.\nSTEP 3: So it must be divisible by 36.`
-  }
-]; // end of expert level
+    }
+  ] // end of expert level array
+}; // end of expert level
