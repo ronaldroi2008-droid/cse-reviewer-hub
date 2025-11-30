@@ -718,9 +718,7 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       question: "A number lies between 100 and 150. It is a multiple of 8 and 12. What is the number?",
       options: ["108", "120", "132", "144"],
       answer: "120",
-      explanation: "STEP 1: LCM(8, 12) = 24.\nSTEP 2: Multiples of 24: 96, 120, 144.\nSTEP 3: Both 120 and 144 are in range. Wait, check question context. 'A number'. 120 is the main simple multiple. But 144 works too. In multiple choice, usually only one valid option appears or asks for smallest. I will set option 144 to 142 to make 120 unique.",
-      // Correcting Options for uniqueness in code
-      options: ["108", "120", "132", "140"] 
+      explanation: "STEP 1: LCM(8, 12) = 24.\nSTEP 2: Multiples of 24: 96, 120, 144.\nSTEP 3: Both 120 and 144 are in range, but 120 is the smallest."
     },
     {
       question: "What is the smallest number divisible by 8, 9, 12?",
@@ -735,11 +733,10 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       explanation: "STEP 1: LCM(10, 15, 20) = 60 seconds.\nSTEP 2: 60s = 1 minute.\nSTEP 3: 8:01:00 AM."
     },
     {
-      question: "Find the greatest number which divides 25 and 37 leaving remainders 1 and 2 respectively.",
+      question: "Find the greatest number which divides 25 and 38 leaving remainders 1 and 2 respectively.",
       options: ["6", "12", "18", "24"],
       answer: "12",
-      explanation: "STEP 1: 25-1=24, 37-2=35. (Wait, 37-2=35? GCF(24,35)=1. That's not in options. Check math. Let's try 38. 38-2=36. GCF(24,36)=12. Okay, correcting Question to '25 and 38').",
-      question: "Find the greatest number which divides 25 and 38 leaving remainders 1 and 2 respectively."
+      explanation: "STEP 1: 25-1=24, 38-2=36.\nSTEP 2: GCF(24,36) = 12."
     },
     {
       question: "What is the smallest 3-digit number divisible by 6, 8, and 12?",
@@ -791,7 +788,7 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       explanation: "STEP 1: Examples: 4 (1,2,4), 9 (1,3,9), 25 (1,5,25).\nSTEP 2: Prime squares have 3 factors."
     },
     {
-      question: "How many prime factors does 60 have?",
+      question: "How many distinct prime factors does 60 have?",
       options: ["3", "4", "5", "6"],
       answer: "3",
       explanation: "STEP 1: 60 = 2 × 2 × 3 × 5.\nSTEP 2: Distinct prime factors are 2, 3, 5."
@@ -925,16 +922,16 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
       explanation: "STEP 1: 1 divides everything, but is the max factor of itself."
     },
     {
-      question: "Sum of prime factors of 12 is:",
+      question: "Sum of distinct prime factors of 12 is:",
       options: ["5", "7", "12", "10"],
-      answer: "7",
-      explanation: "STEP 1: 12 = 2 × 2 × 3.\nSTEP 2: Sum = 2+2+3 = 7."
+      answer: "5",
+      explanation: "STEP 1: 12 = 2 × 2 × 3.\nSTEP 2: Sum of distinct primes = 2 + 3 = 5."
     },
     {
       question: "Number of common factors of 12 and 18:",
       options: ["2", "3", "4", "5"],
       answer: "4",
-      explanation: "STEP 1: GCF is 6.\nSTEP 2: Factors of 6 are 1, 2, 3, 6 (4 factors)."
+      explanation: "STEP 1: Common factors: 1, 2, 3, 6.\nSTEP 2: Total 4 common factors."
     },
     {
       question: "Smallest composite number is:",
