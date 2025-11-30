@@ -1820,27 +1820,33 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
     },
 
     // 48
+      },
+
+    // 48
     {
       question: "How many integers from 1 to 999 are divisible by 3 but NOT by 9?",
       options: ["222", "333", "444", "555"],
-      answer: "444",
-      explanation: `STEP 1: Count multiples of 3 up to 999.\n999 ÷ 3 = 333.\nSTEP 2: Count multiples of 9 up to 999.\n999 ÷ 9 = 111.\nSTEP 3: Multiples of 3 but NOT 9 = 333 − 111 = 222.\n(Teacher note: Correct answer is 222; adjust options.)`
+      answer: "222",
+      explanation: `STEP 1: Count multiples of 3 up to 999.
+999 ÷ 3 = 333.
+STEP 2: Count multiples of 9 up to 999.
+999 ÷ 9 = 111.
+STEP 3: Multiples of 3 but NOT 9 = 333 − 111 = 222.`
     },
 
     // 49
-   const problems = [
-  {
-    question: "A number leaves a remainder of 2 when divided by 3 and a remainder of 3 when divided by 4. Which of the following could be the number?",
-    options: ["5", "11", "14", "23"],
-    answer: "11",
-    explanation: `STEP 1: Check each option.\nCondition: N ≡ 2 (mod 3) and N ≡ 3 (mod 4).\n- 5: 5 ÷ 3 = 1 r2 ✔; 5 ÷ 4 = 1 r1 ✘.\n- 11: 11 ÷ 3 = 3 r2 ✔; 11 ÷ 4 = 2 r3 ✔.\n- 14: 14 ÷ 3 = 4 r2 ✔; 14 ÷ 4 = 3 r2 ✘.\n- 23: 23 ÷ 3 = 7 r2 ✔; 23 ÷ 4 = 5 r3 ✔ (also works).\n(Teacher note: 11 and 23 both satisfy the conditions; keep just one.)`
-  },
-  {
+    {
       question: "A number leaves a remainder of 2 when divided by 3 and a remainder of 3 when divided by 4. Which of the following could be the number?",
-      options: ["5", "11", "14", "23"],
+      options: ["5", "11", "14", "17"],
       answer: "11",
-      explanation: `STEP 1: Check each option.\nCondition: N ≡ 2 (mod 3) and N ≡ 3 (mod 4).\n- 5: 5 ÷ 3 = 1 r2 ✔; 5 ÷ 4 = 1 r1 ✘.\n- 11: 11 ÷ 3 = 3 r2 ✔; 11 ÷ 4 = 2 r3 ✔.\n- 14: 14 ÷ 3 = 4 r2 ✔; 14 ÷ 4 = 3 r2 ✘.\n- 23: 23 ÷ 3 = 7 r2 ✔; 23 ÷ 4 = 5 r3 ✔ (also works).\nSTEP 2: Both 11 and 23 satisfy the conditions.`
+      explanation: `Condition: N ≡ 2 (mod 3) and N ≡ 3 (mod 4).
+Check the options:
+- 5: 5 ÷ 3 = 1 r2 ✔; 5 ÷ 4 = 1 r1 ✘.
+- 11: 11 ÷ 3 = 3 r2 ✔; 11 ÷ 4 = 2 r3 ✔. (Correct)
+- 14: 14 ÷ 3 = 4 r2 ✔; 14 ÷ 4 = 3 r2 ✘.
+- 17: 17 ÷ 3 = 5 r2 ✔; 17 ÷ 4 = 4 r1 ✘.`
     }
+
   ] // end of expert array
 
 }; // end of main object
