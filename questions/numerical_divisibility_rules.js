@@ -719,10 +719,7 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
     }
   ],
 
-  // advanced and expert arrays omitted here for brevity — keep original later if needed
-  advanced: [],
-  expert: []
-};
+ 
 
 
   // ==========================================
