@@ -335,12 +335,12 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       explanation: `STEP 1: Check last digit.\nSTEP 2: 924 ends in 4, an even digit.\nSTEP 3: So 924 is divisible by 2.`
     },
     // 47
-    {
-      question: "Which number is divisible by 3?",
-      options: ["802", "815", "827", "841"],
-      answer: "815",
-      explanation: `STEP 1: Sum of digits: 8+1+5=14 (not divisible by 3) → Wait.\nSTEP 2: Correct sum is 8+1+5=14, so 815 is NOT divisible by 3.\nSTEP 3: Among the options, none are divisible by 3 → adjust.\nNOTE: In the app, treat this item as a review to check sums carefully.`
-    },
+   {
+  question: "Which number is divisible by 3?",
+  options: ["618", "724", "815", "927"],
+  answer: "927",
+  explanation: `STEP 1: Sum of digits: 9+2+7=18\nSTEP 2: 18 is divisible by 3\nSTEP 3: So 927 is divisible by 3.`
+},
     // 48
     {
       question: "Which number is divisible by 9?",
@@ -1754,12 +1754,12 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
     },
 
     // 41
-    {
-      question: "How many integers from 1 to 1,000 are divisible by exactly one of 4 or 6 (but not both)?",
-      options: ["250", "333", "417", "500"],
-      answer: "417",
-      explanation: `STEP 1: Count multiples of 4: 1,000 ÷ 4 = 250.\nSTEP 2: Count multiples of 6: 1,000 ÷ 6 = 166.\nSTEP 3: Count multiples of both 4 and 6 ⇒ multiples of LCM(4, 6) = 12.\n1,000 ÷ 12 = 83.\nSTEP 4: Exactly one of 4 or 6 = (250 − 83) + (166 − 83) = 167 + 83 = 250.\n(Teacher note: Result is 250; adjust answer/options.)`
-    },
+ {
+  question: "How many integers from 1 to 1,000 are divisible by exactly one of 4 or 6 (but not both)?",
+  options: ["250", "333", "334", "500"],
+  answer: "334",
+  explanation: `STEP 1: Multiples of 4: 1000÷4=250\nSTEP 2: Multiples of 6: 1000÷6=166\nSTEP 3: Multiples of both (LCM=12): 1000÷12=83\nSTEP 4: Exactly one = (250-83) + (166-83) = 167 + 83 = 250`
+},
 
     // 42
     {
