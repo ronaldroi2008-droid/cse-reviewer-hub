@@ -1415,8 +1415,7 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       `
     }
   ],
-
-  // ==========================================
+// ==========================================
   // LEVEL 4: EXPERT (50 items – Challenging Multi-Step Divisibility Problems)
   // ==========================================
   expert: [
@@ -1532,14 +1531,7 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "4",
       explanation: `STEP 1: N = 7k + 4.\nSTEP 2: Test k values:\n- k=0, N=4. 4÷21 rem 4.\n- k=1, N=11. 11÷21 rem 11.\n- k=2, N=18. 18÷21 rem 18.\nSTEP 3: Among options, 4 is the valid remainder.`
     },
-    // 17
-    {
-      question: "How many integers from 1 to 500 are divisible by 3 OR 5?",
-      options: ["233", "267", "280", "300"],
-      answer: "267",
-      explanation: `STEP 1: Div by 3: 500÷3 = 166.\nSTEP 2: Div by 5: 500÷5 = 100.\nSTEP 3: Div by 15 (LCM): 500÷15 = 33.\nSTEP 4: 166 + 100 - 33 = 233.\nSTEP 5: Wait, let me re-calculate: 266-33 = 233. Oh, wait, correct calculation is 166+100-33=233. The Answer key should be 233. Let me fix the correct answer in this block.`
-    },
-    // CORRECTION FOR 17 within the block to ensure consistency
+    // 17 (Cleaned)
     {
       question: "How many integers from 1 to 500 are divisible by 3 OR 5?",
       options: ["200", "233", "266", "300"],
@@ -1722,14 +1714,7 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "31",
       explanation: `STEP 1: LCM(2, 3, 5) = 30.\nSTEP 2: N = 30k + 1.\nSTEP 3: If k=1, N=31.\nSTEP 4: 31 fits the description.`
     },
-    // 41
-    {
-      question: "How many integers from 1 to 1,000 are divisible by exactly one of 4 or 6 (but not both)?",
-      options: ["250", "333", "334", "500"],
-      answer: "334",
-      explanation: `STEP 1: Divisible by 4: 250.\nSTEP 2: Divisible by 6: 166.\nSTEP 3: Divisible by 12 (both): 83.\nSTEP 4: Only 4: 250-83 = 167.\nSTEP 5: Only 6: 166-83 = 83.\nSTEP 6: Total = 167 + 83 = 250. Wait, calculation error in previous turns. 167+83=250. Let me check the options. 250 is correct answer. I will fix answer key to 250.`
-    },
-    // CORRECTION FOR 41 within block
+    // 41 (Cleaned)
     {
       question: "How many integers from 1 to 1,000 are divisible by exactly one of 4 or 6 (but not both)?",
       options: ["167", "250", "333", "416"],
