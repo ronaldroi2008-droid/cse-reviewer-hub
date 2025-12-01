@@ -859,12 +859,12 @@ window.NUMERICAL_QUESTION_BANK["sequences_series"] = {
       answer: "4.5",
       explanation: "(x+3)/x = (x+8)/(x+3) -> (x+3)^2 = x(x+8) -> x^2+6x+9 = x^2+8x -> 9=2x -> x=4.5."
     },
-    {
-      question: "If 2x, 5x+2, 10x-2 are arithmetic, find x.",
-      options: ["2", "3", "4", "6"],
-      answer: "6",
-      explanation: "2(5x+2) = 2x + 10x - 2 -> 10x+4 = 12x-2 -> 6=2x -> x=3. Wait, let's recheck. (5x+2)-2x = 3x+2. (10x-2)-(5x+2) = 5x-4. 3x+2=5x-4 -> 6=2x -> x=3. The option is 3."
-    },
+  {
+  question: "If 2x, 5x+2, 10x-2 are arithmetic, find x.",
+  options: ["2", "3", "4", "6"],
+  answer: "3",
+  explanation: "For AP, common difference is constant: (5x+2) - 2x = (10x-2) - (5x+2). Simplifying: 3x+2 = 5x-4 -> 6 = 2x -> x = 3."
+},
     {
       question: "Sum of first n odd integers is:",
       options: ["n", "2n", "n^2", "n^3"],
