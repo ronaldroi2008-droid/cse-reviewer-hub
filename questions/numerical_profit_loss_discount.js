@@ -952,9 +952,8 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       explanation: "CP=450. 1.10 * 450 = 495."
     }
   ],
-
   // ==========================================
-  // LEVEL 4: EXPERT (50 items – Complex & Tricky)
+  // LEVEL 4: EXPERT (50 items – Complex & Tricky) - CORRECTED
   // ==========================================
   expert: [
     // 1-10: Dishonest Dealer & Weights
@@ -1154,7 +1153,7 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       question: "Sold for ₱1, gains x%. Sold for ₱0.75, loses x%. x is?",
       options: ["10", "12.5", "14.28", "15"],
       answer: "14.28",
-      explanation: "CP is average of SPs? No. CP/(1+x) vs CP/(1-x). Actually (1-0.75)/0.75? Quick logic: CP is roughly mid 0.875. x approx 1/7."
+      explanation: "CP = 1/(1+x/100) = 0.75/(1-x/100). Solve: 1-x/100 = 0.75(1+x/100). 1-x/100 = 0.75+0.75x/100. 0.25 = 1.75x/100. x = (0.25*100)/1.75 = 14.28%."
     },
     {
       question: "After discount of 15%, profit is 19%. If no discount, profit?",
@@ -1166,7 +1165,7 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       question: "Profit is 320% of cost. If cost increases 25% and SP constant, profit is?",
       options: ["215%", "236%", "240%", "250%"],
       answer: "236%",
-      explanation: "CP=100. P=320. SP=420. New CP=125. P=295. 295/125 = 2.36."
+      explanation: "CP=100. P=320. SP=420. New CP=125. P=295. 295/125 = 2.36 = 236%."
     },
     {
       question: "Manufacturer gains 10%, Wholesaler 15%, Retailer 25%. Total increase?",
@@ -1205,7 +1204,7 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       explanation: "MP=3000. SP=2550. Tax=306. Final=2856."
     },
 
-    // 41-50: Final Exam Challenge
+    // 41-50: Final Exam Challenge - CORRECTED
     {
       question: "Trader mixes 26kg rice at ₱20 with 30kg rice at ₱36. Sells mix at ₱30. Gain?",
       options: ["5%", "6%", "7%", "8%"],
@@ -1243,28 +1242,28 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       explanation: "1000 * 0.9^3 = 729."
     },
     {
-      question: "A sells article to B at profit. B sells to C at loss. If SP of A = SP of B...",
-      options: ["Impossible", "Always True", "Depends on rates", "No P/L"],
-      answer: "Impossible",
-      explanation: "If A sells at profit, SP_A > CP_A. If B sells at loss, SP_B < CP_B (which is SP_A). So SP_B cannot equal SP_A."
+      question: "A sells article to B at profit. B sells to C at loss. If SP of A = SP of B, what is true?",
+      options: ["A's CP > B's CP", "A's CP = B's CP", "A's CP < B's CP", "Impossible"],
+      answer: "A's CP < B's CP",
+      explanation: "SP_A = SP_B. A made profit: SP_A > CP_A. B made loss: SP_B < CP_B. Since SP_A = SP_B, then CP_A < SP_A = SP_B < CP_B, so CP_A < CP_B."
     },
     {
       question: "If discount is equal to profit, and markup is 50%, what is profit %?",
       options: ["10%", "15%", "20%", "25%"],
-      answer: "16.67%",
-      explanation: "Let CP=100 MP=150. D=P. MP-SP = SP-CP. 150-SP = SP-100. 2SP=250 SP=125. P=25. 25%."
+      answer: "25%",
+      explanation: "Let CP=100. MP=150. Let profit=P, discount=D, and D=P. SP = MP-D = 150-P = CP+P = 100+P. 150-P = 100+P. 50=2P. P=25. Profit% = 25%."
     },
     {
       question: "Discount is 3 times the profit. Markup is 60%. Profit %?",
       options: ["10%", "12%", "15%", "20%"],
-      answer: "12%",
-      explanation: "D=3P. M=60. MP=160. D+P = 60. 4P=60. P=15. 15/100 = 15%."
+      answer: "15%",
+      explanation: "Let CP=100. MP=160. D=3P. SP = MP-D = 160-3P = CP+P = 100+P. 160-3P = 100+P. 60=4P. P=15. Profit% = 15%."
     },
     {
-      question: "Final Question: CP is X. SP is Y. If CP drops 10% and SP rises 10%, new profit is 40 more than old. If old profit 20%, find X.",
+      question: "CP is ₱X. Old profit 20%. If CP drops 10% and SP rises 10%, new profit is ₱44 more than old profit. Find X.",
       options: ["₱100", "₱200", "₱400", "₱500"],
-      answer: "₱1000",
-      explanation: "Old P = 0.2X. New CP 0.9X, New SP 1.32X (1.2*1.1). New P = 0.42X - 0.9X?? No. Re-calc: Old SP=1.2X. New SP=1.32X. New CP=0.9X. New P = 1.32X-0.9X = 0.42X. Diff = 0.22X. 0.22X = 40. X = 181... (Wait, logical check on 'SP rises 10%')."
+      answer: "₱200",
+      explanation: "Old CP = X, Old SP = 1.2X, Old Profit = 0.2X. New CP = 0.9X, New SP = 1.32X (10% rise), New Profit = 0.42X. Diff = 0.22X = 44. X = 44/0.22 = 200."
     }
   ]
 };
