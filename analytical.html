@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSE Reviewer Hub – Analytical Ability</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --card-alt: #0b1220;
+      --border: #1f2937;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --success: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-shell {
+      max-width: 1100px;
+      margin: 24px auto 32px;
+      padding: 16px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      font-size: 2rem;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #818cf8, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text p {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .top-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .top-link {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .top-link:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 800px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      padding: 18px 16px;
+    }
+
+    .sidebar-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .sidebar-intro {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .topic-btn {
+      width: 100%;
+      text-align: left;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .topic-btn span.label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .topic-btn small.tag {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid #1e293b;
+      color: var(--muted);
+    }
+
+    .topic-btn svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .topic-btn:hover {
+      border-color: var(--accent);
+      background: rgba(99, 102, 241, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .topic-btn.active {
+      border-color: var(--accent);
+      background: rgba(99, 102, 241, 0.16);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.7);
+    }
+
+    .sidebar-note {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+
+    /* Main content */
+    .lesson-card {
+      margin-bottom: 16px;
+    }
+
+    .lesson-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    #lesson-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .lesson-badge {
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #c7d2fe;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    #lesson-intro {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .lesson-section {
+      margin-bottom: 12px;
+      padding: 10px 10px 8px;
+      border-radius: 14px;
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+    }
+
+    .lesson-section h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .lesson-section ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .lesson-section li + li {
+      margin-top: 4px;
+    }
+
+    .lesson-tips-title {
+      margin: 4px 0 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    #tips-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    #tips-list li + li {
+      margin-top: 4px;
+    }
+
+    /* Quiz / Question area */
+    .quiz-card h2 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .quiz-subtitle {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .level-tabs {
+      display: inline-flex;
+      flex-wrap: wrap;
+      border-radius: 999px;
+      padding: 2px;
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      margin-bottom: 10px;
+      gap: 2px;
+    }
+
+    .level-tab {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding: 5px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .level-tab.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .level-tab:hover:not(.active) {
+      background: rgba(148, 163, 184, 0.12);
+      color: #e5e7eb;
+    }
+
+    .questions-container {
+      border-radius: 14px;
+      border: 1px dashed var(--border);
+      padding: 10px 10px 6px;
+      background: rgba(15, 23, 42, 0.8);
+      max-height: 420px;
+      overflow: auto;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .question-card {
+      border-radius: 12px;
+      border: 1px solid #1f2933;
+      padding: 8px 10px;
+      background: #020617;
+      margin-bottom: 8px;
+    }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+
+    .q-number {
+      font-size: 0.78rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #c7d2fe;
+    }
+
+    .q-level {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .q-text {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .options {
+      margin: 0 0 4px;
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .options li + li {
+      margin-top: 2px;
+    }
+
+    details.explanation {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    details.explanation summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details.explanation summary::marker,
+    details.explanation summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.explanation summary::before {
+      content: "▸ ";
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    details.explanation[open] summary::before {
+      content: "▾ ";
+    }
+
+    details.explanation p {
+      margin: 2px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">🧠</div>
+        <div class="brand-text">
+          <h1>Analytical Ability – CSE Reviewer Hub</h1>
+          <p>Logical reasoning, flowcharts, problem solving, and cognitive skills.</p>
+        </div>
+      </div>
+      <nav class="top-links">
+        <a href="index.html" class="top-link">🏠 Home</a>
+        <a href="verbal.html" class="top-link">📚 Verbal</a>
+        <a href="numerical.html" class="top-link">🧮 Numerical</a>
+      </nav>
+    </header>
+
+    <main class="app-grid">
+      <!-- LEFT: Topics -->
+      <aside class="card">
+        <h2 class="sidebar-title">Analytical Topics</h2>
+        <p class="sidebar-intro">
+          Piliin ang topic sa ibaba para makita ang lesson overview at quick tips.
+        </p>
+
+        <div id="topic-list" class="topic-list"></div>
+
+        <p class="sidebar-note">
+          Tip: Sa analytical questions, laging i-visualize ang sitwasyon — tables, diagrams,
+          at simpleng sketches sa scratch paper ay malaking tulong.
+        </p>
+      </aside>
+
+      <!-- RIGHT: Lesson + Quiz -->
+      <section>
+        <article class="card lesson-card">
+          <div class="lesson-header">
+            <h2 id="lesson-title">Lesson title</h2>
+            <span class="lesson-badge">Lesson Overview</span>
+          </div>
+          <p id="lesson-intro"></p>
+          <div id="lesson-body"></div>
+
+          <h3 class="lesson-tips-title">Test-taking tips</h3>
+          <ul id="tips-list"></ul>
+        </article>
+
+        <article class="card quiz-card">
+          <h2>Practice Quiz (per topic)</h2>
+          <p class="quiz-subtitle">
+            Piliin ang level ng difficulty. Kapag na-load mo na ang <code>ANALYTICAL_QUESTION_BANK</code>,
+            lalabas dito ang questions.
+          </p>
+
+          <div class="level-tabs">
+            <button class="level-tab active" data-level="beginner">Beginner</button>
+            <button class="level-tab" data-level="intermediate">Intermediate</button>
+            <button class="level-tab" data-level="advanced">Advanced</button>
+            <button class="level-tab" data-level="expert">Expert</button>
+          </div>
+
+          <div id="questions-container" class="questions-container">
+            <p class="muted">
+              Select a topic on the left to view its lesson. Question sets for Analytical Ability
+              will be added here (beginner to expert) as you create the
+              <code>window.ANALYTICAL_QUESTION_BANK</code> files.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // ==========================================
+    // Analytical topics list
+    // ==========================================
+    const ANALYTICAL_TOPICS = [
+      { id: "logical_reasoning",  label: "Logical Reasoning",    tag: "Core" },
+      { id: "flowchart",          label: "Flowchart",            tag: "Process" },
+      { id: "problem_solving",    label: "Problem Solving",      tag: "Word Problems" },
+      { id: "special_topic",      label: "Special Topic",        tag: "Mixed" },
+      { id: "cognitive_reasoning",label: "Cognitive Reasoning",  tag: "Thinking Skills" }
+    ];
+
+    // ==========================================
+    // Analytical lessons content
+    // ==========================================
+    const ANALYTICAL_LESSONS = {
+      logical_reasoning: {
+        title: "Logical Reasoning",
+        intro:
+          "Logical reasoning questions test your ability to follow rules, analyze statements, and arrive at valid conclusions. Sa CSE, common ang syllogisms, if–then statements, at pattern-type arguments.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Identify the given facts first. Huwag mag-assume ng hindi sinabi sa problem.",
+              "Watch for words like ALL, SOME, NONE, IF, ONLY IF – sila ang nagdadala ng tunay na meaning.",
+              "A conclusion is valid only if it must be true for every case that satisfies the given statements.",
+              "Diagramming (tables, arrows, simple letter codes) helps you see relationships clearly."
+            ]
+          },
+          {
+            heading: "Worked example: Syllogism",
+            bullets: [
+              "Statements:",
+              "1) All teachers are college graduates.",
+              "2) Some nurses are teachers.",
+              "Question: Which conclusion is valid?",
+              "Analysis:",
+              "• From (1): Teacher → College Graduate.",
+              "• From (2): May ilang nurse na teacher din.",
+              "Conclusion: “Some nurses are college graduates.” – VALID, dahil yung nurses na teachers ay siguradong college graduates."
+            ]
+          },
+          {
+            heading: "Worked example: If–Then statement",
+            bullets: [
+              "Given: “If a person passes the CSE, then the person is eligible for a permanent government position.”",
+              "Valid inferences:",
+              "• If Maria passed CSE → she is eligible.",
+              "• Pero kung si Juan ay eligible, hindi automatic na pasado siya sa CSE (baka exempted o ibang basis).",
+              "Mahalaga: Huwag baligtarin ang if–then maliban kung may dagdag na information."
+            ]
+          }
+        ],
+        tips: [
+          "Underline keywords (ALL, SOME, ONLY, MUST, TRUE) bago mag-analisa.",
+          "Draw quick diagrams instead of solving everything in your head.",
+          "If a choice goes beyond the given information, malamang “Cannot be determined” o “Not valid” yan."
+        ]
+      },
+
+      flowchart: {
+        title: "Flowchart & Process Diagrams",
+        intro:
+          "Flowchart questions ask you to trace step-by-step procedures. Kailangan mong sundan ang arrows, decisions (Yes/No), at processes para makita ang final output.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Start at the terminal symbol (usually START) and follow the arrows exactly.",
+              "Decision boxes (diamonds) split the path. Piliin ang “YES” o “NO” based sa kondisyon.",
+              "Keep track of variables (counters like i, n, total). Isulat sa scratch paper habang nagbabago sila.",
+              "Stop at the END symbol or when the question tells you which step/output to inspect."
+            ]
+          },
+          {
+            heading: "Worked example: Counting loop",
+            bullets: [
+              "Sample instruction in a flowchart:",
+              "1) Set i = 1, total = 0.",
+              "2) Add i to total.",
+              "3) Increase i by 1.",
+              "4) If i ≤ 3, go back to Step 2; otherwise STOP.",
+              "Tracing:",
+              "• Start: i = 1, total = 0 → add → total = 1.",
+              "• i becomes 2 → add → total = 3.",
+              "• i becomes 3 → add → total = 6.",
+              "• i becomes 4 → 4 ≤ 3? No → STOP.",
+              "Final output: total = 6."
+            ]
+          },
+          {
+            heading: "Reading Yes/No branches",
+            bullets: [
+              "Kapag may decision box na “Is X > 10?”:",
+              "• Kung condition is TRUE (Yes branch) → sundan mo yung arrow with label “Yes”.",
+              "• Kung FALSE (No branch) → sundan ang “No” arrow.",
+              "Always re-check kung ano ang initial value ng variable bago humusga sa condition."
+            ]
+          }
+        ],
+        tips: [
+          "Gumamit ng maliit na table (Step / i / total / output) habang tinitrace ang flowchart.",
+          "Bilugan ang tanong: “What is the value of … after Step ___?” para alam kung saan titigil.",
+          "Be careful sa off-by-one errors (mali lang ng isang loop, iba na result)."
+        ]
+      },
+
+      problem_solving: {
+        title: "Problem Solving (Analytical Word Problems)",
+        intro:
+          "Problem-solving items combine basic math, logic, at reading comprehension. Kadalasan may table, schedule, o short story na kailangang i-analyze bago mag-compute.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Translate verbal description into equations, tables, or diagrams.",
+              "Identify what is asked (unknown) and what information is given.",
+              "Remove irrelevant data – minsan may extra numbers para lituhin ka.",
+              "Try simple cases or smaller numbers to see the pattern before solving generally."
+            ]
+          },
+          {
+            heading: "Worked example: Seating arrangement",
+            bullets: [
+              "Problem (simplified): Four friends A, B, C, D sit in a row. A is not at either end. B sits immediately to the right of A. Who can sit at the leftmost seat?",
+              "Step 1: Possible positions for A (not at ends): seat 2 or seat 3.",
+              "Case 1: A at seat 2 → B at seat 3. Leftmost seat (1) can be C or D.",
+              "Case 2: A at seat 3 → B at seat 4. Leftmost seat (1) can be C or D.",
+              "Conclusion: Either C or D can be at the leftmost seat."
+            ]
+          },
+          {
+            heading: "Worked example: Simple number puzzle",
+            bullets: [
+              "Problem: The sum of two numbers is 30. One number is 4 more than the other. Find the numbers.",
+              "Step 1: Let smaller = x, larger = x + 4.",
+              "Step 2: x + (x + 4) = 30 → 2x + 4 = 30.",
+              "Step 3: 2x = 26 → x = 13, so the other is 17.",
+              "Answer: 13 and 17."
+            ]
+          }
+        ],
+        tips: [
+          "Draw quick diagrams (rows, tables, boxes) para makita ang relationships.",
+          "Kung nalilito, subukan ang choices (structured trial and error).",
+          "Always re-read the last sentence of the problem para sure ka na yun talaga ang sinagot mo."
+        ]
+      },
+
+      special_topic: {
+        title: "Special Topic (Venn, Schedules, Codes, etc.)",
+        intro:
+          "Special topic questions cover mixed analytical skills: Venn diagrams, schedules/timetables, coding-decoding, o arrangement puzzles. Goal: ma-organize mo nang maayos ang information.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "For Venn diagrams, label each region and carefully place each group.",
+              "For schedules and timetables, build a timeline and mark start–end times.",
+              "For coding questions, compare examples to find consistent substitution patterns.",
+              "Always convert words into simple symbols (A, B, C; ✓/✗; sets; arrows)."
+            ]
+          },
+          {
+            heading: "Worked example: Simple Venn diagram",
+            bullets: [
+              "Problem: In a group of 50 examinees, 30 passed Math, 28 passed English, and 20 passed both. How many passed at least one of the two subjects?",
+              "Step 1: Use formula: n(M ∪ E) = n(M) + n(E) − n(M ∩ E).",
+              "Step 2: Substitute: 30 + 28 − 20 = 38.",
+              "So, 38 passed at least one of Math or English."
+            ]
+          },
+          {
+            heading: "Worked example: Code pattern",
+            bullets: [
+              "Given: “CAT” is coded as 3120 (C=3, A=1, T=20).",
+              "Question: What is the code for “BAT”?",
+              "Step 1: Assign positions in alphabet: B=2, A=1, T=20.",
+              "Step 2: Code becomes 2 1 20 → 2120.",
+              "So “BAT” can be coded as 2120."
+            ]
+          }
+        ],
+        tips: [
+          "Sa Venn questions, laging unahin ilagay ang intersection (both) bago ang “Math only” o “English only”.",
+          "For codes, ilista sa table: Letter | Code value, then fill in missing letters.",
+          "For schedules, convert times to 24-hour format para iwas kalituhan sa AM/PM."
+        ]
+      },
+
+      cognitive_reasoning: {
+        title: "Cognitive Reasoning",
+        intro:
+          "Cognitive reasoning items measure pattern recognition, analogies, classification, at iba pang higher-order thinking skills.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Analogies compare two pairs: A is to B as C is to __. Hanapin ang relasyon sa unang pair, i-apply sa pangalawa.",
+              "Classification items ask which item does NOT belong in the group (odd one out).",
+              "Series/pattern questions require you to detect rules in numbers, letters, or figures.",
+              "Always test your guessed rule with more than one step to see if consistent."
+            ]
+          },
+          {
+            heading: "Worked example: Word analogy",
+            bullets: [
+              "SUN : DAY :: MOON : __",
+              "Relationship: The sun is associated with the day; the moon is associated with the night.",
+              "So the missing word is NIGHT."
+            ]
+          },
+          {
+            heading: "Worked example: Number pattern",
+            bullets: [
+              "Sequence: 2, 6, 12, 20, ?",
+              "Differences: 6 − 2 = 4, 12 − 6 = 6, 20 − 12 = 8.",
+              "Next difference follows pattern +2: 4, 6, 8, 10.",
+              "So next term = 20 + 10 = 30.",
+              "Answer: 30."
+            ]
+          }
+        ],
+        tips: [
+          "Sa analogies, i-sentence mo: “A is a type of B”, “A causes B”, “A is opposite of B”, etc., para makita ang relasyon.",
+          "For odd-one-out, hanapin muna ang common property ng tatlong magkakapareho; kung sino ang wala nun, siya ang sagot.",
+          "Kapag may time, balik sa pattern at i-test ang rule sa 2–3 steps para sigurado na tama."
+        ]
+      }
+    };
+
+    // ==========================================
+    // Basic state + helpers
+    // ==========================================
+    let currentTopicId = ANALYTICAL_TOPICS[0].id;
+    let currentLevel = "beginner";
+
+    function getTopicLabel(id) {
+      const t = ANALYTICAL_TOPICS.find(x => x.id === id);
+      return t ? t.label : id;
+    }
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // ==========================================
+    // Render Topic buttons
+    // ==========================================
+    function renderTopics() {
+      const list = document.getElementById("topic-list");
+      list.innerHTML = "";
+
+      ANALYTICAL_TOPICS.forEach((topic, index) => {
+        const btn = document.createElement("button");
+        btn.className = "topic-btn" + (index === 0 ? " active" : "");
+        btn.dataset.topicId = topic.id;
+        btn.innerHTML = `
+          <span class="label">
+            <span>${topic.label}</span>
+            <small class="tag">${topic.tag}</small>
+          </span>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path fill="currentColor" d="M7.5 4.5L13 10l-5.5 5.5-1.1-1.1L10.8 10 6.4 5.6z"/>
+          </svg>
+        `;
+        btn.addEventListener("click", () => selectTopic(topic.id));
+        list.appendChild(btn);
+      });
+    }
+
+    // ==========================================
+    // Render Lesson content
+    // ==========================================
+    function selectTopic(topicId) {
+      currentTopicId = topicId;
+
+      document
+        .querySelectorAll(".topic-btn")
+        .forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.topicId === topicId);
+        });
+
+      const lesson = ANALYTICAL_LESSONS[topicId];
+      if (!lesson) return;
+
+      document.getElementById("lesson-title").textContent = lesson.title;
+      document.getElementById("lesson-intro").textContent = lesson.intro;
+
+      const bodyEl = document.getElementById("lesson-body");
+      bodyEl.innerHTML = lesson.sections
+        .map(
+          section => `
+          <section class="lesson-section">
+            <h3>${section.heading}</h3>
+            <ul>
+              ${section.bullets.map(b => `<li>${b}</li>`).join("")}
+            </ul>
+          </section>
+        `
+        )
+        .join("");
+
+      const tipsEl = document.getElementById("tips-list");
+      tipsEl.innerHTML = (lesson.tips || [])
+        .map(t => `<li>${t}</li>`)
+        .join("");
+
+      renderQuestions(); // refresh quiz view for new topic
+    }
+
+    // ==========================================
+    // Quiz area – uses window.ANALYTICAL_QUESTION_BANK if available
+    // ==========================================
+    function initLevelTabs() {
+      document
+        .querySelectorAll(".level-tab")
+        .forEach(tab => {
+          tab.addEventListener("click", () => {
+            const level = tab.dataset.level;
+            currentLevel = level;
+            document
+              .querySelectorAll(".level-tab")
+              .forEach(t => t.classList.toggle("active", t.dataset.level === level));
+            renderQuestions();
+          });
+        });
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("questions-container");
+      const bank = window.ANALYTICAL_QUESTION_BANK || {};
+      const topicBank = bank[currentTopicId];
+      const questions = topicBank && topicBank[currentLevel];
+
+      if (!questions || !questions.length) {
+        container.innerHTML = `
+          <p class="muted">
+            Practice questions for <strong>${getTopicLabel(currentTopicId)}</strong>
+            – <em>${capitalize(currentLevel)}</em> level will appear here once you load
+            <code>window.ANALYTICAL_QUESTION_BANK["${currentTopicId}"].${currentLevel}</code>
+            from your <code>questions/...</code> JS files.
+          </p>
+        `;
+        return;
+      }
+
+      let html = "";
+      questions.forEach((q, idx) => {
+        html += `
+          <div class="question-card">
+            <div class="q-header">
+              <span class="q-number">Q${idx + 1}</span>
+              <span class="q-level">${capitalize(currentLevel)}</span>
+            </div>
+            <div class="q-text">${q.question}</div>
+            ${
+              Array.isArray(q.options)
+                ? `<ul class="options">${q.options
+                    .map(opt => `<li>${opt}</li>`)
+                    .join("")}</ul>`
+                : ""
+            }
+            ${
+              q.explanation
+                ? `<details class="explanation"><summary>Show explanation</summary><p>${q.explanation}</p></details>`
+                : ""
+            }
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ==========================================
+    // Init on load
+    // ==========================================
+    renderTopics();
+    initLevelTabs();
+    selectTopic(currentTopicId);
+  </script>
+</body>
+</html>
