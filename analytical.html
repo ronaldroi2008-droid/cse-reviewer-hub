@@ -8,10 +8,12 @@
     :root {
       --bg: #020617;
       --card: #020617;
-      --card-alt: #0b1220;
-      --border: #1f2937;
+      --card-alt: #020617;
+      --sidebar: #020617;
+      --border: #1e293b;
       --accent: #6366f1;
-      --accent-soft: rgba(99, 102, 241, 0.12);
+      --accent-soft: rgba(99, 102, 241, 0.18);
+      --accent-strong: rgba(79, 70, 229, 0.7);
       --text: #f9fafb;
       --muted: #9ca3af;
       --danger: #f97373;
@@ -36,135 +38,154 @@
     }
 
     .app-shell {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 24px auto 32px;
-      padding: 16px;
+      padding: 0 16px;
     }
 
-    .top-bar {
+    .page-header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
       gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .brand {
-      display: flex;
+    .back-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
-    .brand-logo {
-      font-size: 2rem;
+    .back-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(15, 23, 42, 1);
     }
 
-    .brand-text h1 {
+    .page-title-block {
+      flex: 1;
+      padding-left: 8px;
+    }
+
+    .page-title {
       margin: 0;
       font-size: 1.4rem;
       letter-spacing: -0.02em;
-      background: linear-gradient(to right, #818cf8, #c7d2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
-    .brand-text p {
+    .page-title span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    .page-subtitle {
       margin: 2px 0 0;
       font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .top-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .top-link {
-      font-size: 0.8rem;
-      padding: 6px 10px;
+    .header-badge {
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.15s ease;
+      padding: 4px 10px;
+      border: 1px solid rgba(99, 102, 241, 0.45);
+      background: var(--accent-soft);
+      font-size: 0.75rem;
+      color: #c7d2fe;
     }
 
-    .top-link:hover {
-      border-color: var(--accent);
-      color: var(--text);
-    }
-
-    .app-grid {
+    /* Layout */
+    .main-layout {
       display: grid;
-      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      grid-template-columns: 260px minmax(0, 1fr);
       gap: 16px;
       align-items: flex-start;
     }
 
-    @media (max-width: 800px) {
-      .app-grid {
+    @media (max-width: 900px) {
+      .main-layout {
         grid-template-columns: 1fr;
       }
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 24px;
       border: 1px solid var(--border);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      padding: 18px 16px;
+      box-shadow: 0 22px 45px -18px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      padding: 18px 14px;
     }
 
     .sidebar-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
       margin: 0 0 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
     }
 
-    .sidebar-intro {
-      font-size: 0.87rem;
+    .sidebar-note {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
       color: var(--muted);
-      margin: 0 0 16px;
     }
 
     .topic-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 4px;
+      margin: 0;
+      padding: 4px;
+      list-style: none;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #111827 0, #020617 55%);
+      border: 1px solid #020617;
+      max-height: 420px;
+      overflow-y: auto;
     }
 
     .topic-btn {
       width: 100%;
-      text-align: left;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--card-alt);
-      color: var(--text);
-      padding: 10px 12px;
-      font-size: 0.9rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 10px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.16s ease;
     }
 
     .topic-btn span.label {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .topic-btn small.tag {
-      font-size: 0.7rem;
-      padding: 2px 6px;
+    .topic-pill {
+      height: 22px;
+      min-width: 22px;
       border-radius: 999px;
-      border: 1px solid #1e293b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      background: #020617;
+      border: 1px solid #1f2937;
       color: var(--muted);
     }
 
@@ -172,71 +193,115 @@
       width: 14px;
       height: 14px;
       opacity: 0.7;
-      flex-shrink: 0;
     }
 
     .topic-btn:hover {
-      border-color: var(--accent);
-      background: rgba(99, 102, 241, 0.08);
-      transform: translateY(-1px);
+      background: rgba(99, 102, 241, 0.12);
+      color: #e5e7eb;
     }
 
     .topic-btn.active {
-      border-color: var(--accent);
-      background: rgba(99, 102, 241, 0.16);
-      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.7);
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      color: #f9fafb;
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.9);
     }
 
-    .sidebar-note {
-      margin-top: 10px;
+    .topic-btn.active .topic-pill {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(191, 219, 254, 0.8);
+      color: #c7d2fe;
+    }
+
+    /* Right panel */
+    .main-card {
+      padding: 18px 18px 18px;
+    }
+
+    .mode-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .mode-tabs {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 3px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .mode-tab {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mode-tab.active {
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      color: #f9fafb;
+      box-shadow: 0 0 0 1px var(--accent-strong);
+    }
+
+    .mode-tab:hover:not(.active)) {
+      background: rgba(148, 163, 184, 0.16);
+      color: #e5e7eb;
+    }
+
+    .mode-help {
       font-size: 0.78rem;
       color: var(--muted);
-      border-top: 1px solid var(--border);
-      padding-top: 8px;
+      text-align: right;
     }
 
-    /* Main content */
-    .lesson-card {
-      margin-bottom: 16px;
+    /* Study panel */
+    .panel {
+      margin-top: 6px;
+    }
+
+    .hidden {
+      display: none;
     }
 
     .lesson-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      align-items: baseline;
       margin-bottom: 10px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+      padding-bottom: 8px;
     }
 
     #lesson-title {
+      margin: 0 0 6px;
       font-size: 1.2rem;
-      margin: 0;
     }
 
-    .lesson-badge {
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #c7d2fe;
-      border: 1px solid rgba(129, 140, 248, 0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
+    #lesson-path {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
     }
 
     #lesson-intro {
-      margin: 0 0 12px;
+      margin: 6px 0 12px;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
     .lesson-section {
       margin-bottom: 12px;
-      padding: 10px 10px 8px;
-      border-radius: 14px;
-      background: var(--card-alt);
-      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%);
+      border: 1px solid #111827;
     }
 
     .lesson-section h3 {
@@ -248,7 +313,7 @@
     .lesson-section ul {
       margin: 0;
       padding-left: 18px;
-      font-size: 0.88rem;
+      font-size: 0.87rem;
       color: var(--muted);
     }
 
@@ -256,8 +321,8 @@
       margin-top: 4px;
     }
 
-    .lesson-tips-title {
-      margin: 4px 0 4px;
+    .tips-title {
+      margin: 8px 0 4px;
       font-size: 0.9rem;
       font-weight: 600;
     }
@@ -265,7 +330,7 @@
     #tips-list {
       margin: 0;
       padding-left: 18px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--muted);
     }
 
@@ -273,36 +338,41 @@
       margin-top: 4px;
     }
 
-    /* Quiz / Question area */
-    .quiz-card h2 {
-      margin: 0 0 4px;
-      font-size: 1rem;
+    /* Quiz panel */
+    .quiz-header {
+      margin-bottom: 10px;
     }
 
-    .quiz-subtitle {
-      margin: 0 0 10px;
+    .quiz-header h2 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+    }
+
+    .quiz-header p {
+      margin: 0;
       font-size: 0.8rem;
       color: var(--muted);
     }
 
     .level-tabs {
       display: inline-flex;
-      flex-wrap: wrap;
+      gap: 4px;
+      padding: 3px;
       border-radius: 999px;
-      padding: 2px;
-      background: var(--card-alt);
+      background: #020617;
       border: 1px solid var(--border);
       margin-bottom: 10px;
-      gap: 2px;
+      margin-top: 8px;
+      flex-wrap: wrap;
     }
 
     .level-tab {
       border: none;
       background: transparent;
-      color: var(--muted);
-      font-size: 0.8rem;
-      padding: 5px 9px;
       border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
       cursor: pointer;
       transition: all 0.15s ease;
     }
@@ -313,62 +383,63 @@
     }
 
     .level-tab:hover:not(.active) {
-      background: rgba(148, 163, 184, 0.12);
+      background: rgba(148, 163, 184, 0.16);
       color: #e5e7eb;
     }
 
-    .questions-container {
-      border-radius: 14px;
+    .questions-box {
+      margin-top: 8px;
+      border-radius: 18px;
       border: 1px dashed var(--border);
-      padding: 10px 10px 6px;
-      background: rgba(15, 23, 42, 0.8);
-      max-height: 420px;
-      overflow: auto;
+      padding: 10px 12px 6px;
+      background: rgba(2, 6, 23, 0.9);
+      max-height: 430px;
+      overflow-y: auto;
     }
 
     .muted {
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
     }
 
     .question-card {
-      border-radius: 12px;
-      border: 1px solid #1f2933;
-      padding: 8px 10px;
-      background: #020617;
       margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 8px 10px;
     }
 
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       gap: 8px;
     }
 
-    .q-number {
-      font-size: 0.78rem;
+    .q-num {
+      font-size: 0.76rem;
       padding: 2px 6px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: #c7d2fe;
     }
 
-    .q-level {
-      font-size: 0.7rem;
+    .q-meta {
+      font-size: 0.76rem;
       color: var(--muted);
     }
 
     .q-text {
       font-size: 0.9rem;
-      margin-bottom: 4px;
+      margin: 4px 0;
     }
 
     .options {
       margin: 0 0 4px;
       padding-left: 18px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--muted);
     }
 
@@ -377,7 +448,7 @@
     }
 
     details.explanation {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
     }
 
@@ -386,7 +457,6 @@
       list-style: none;
     }
 
-    details.explanation summary::marker,
     details.explanation summary::-webkit-details-marker {
       display: none;
     }
@@ -408,57 +478,72 @@
 </head>
 <body>
   <div class="app-shell">
-    <header class="top-bar">
-      <div class="brand">
-        <div class="brand-logo">🧠</div>
-        <div class="brand-text">
-          <h1>Analytical Ability – CSE Reviewer Hub</h1>
-          <p>Logical reasoning, flowcharts, problem solving, and cognitive skills.</p>
-        </div>
+    <header class="page-header">
+      <a href="index.html" class="back-btn">
+        ← Back to Home
+      </a>
+
+      <div class="page-title-block">
+        <h1 class="page-title">
+          CSE Reviewer Hub · <span>Analytical Ability</span>
+        </h1>
+        <p class="page-subtitle">
+          Logical Reasoning • Flowchart • Problem Solving • Special Topic • Cognitive Reasoning
+        </p>
       </div>
-      <nav class="top-links">
-        <a href="index.html" class="top-link">🏠 Home</a>
-        <a href="verbal.html" class="top-link">📚 Verbal</a>
-        <a href="numerical.html" class="top-link">🧮 Numerical</a>
-      </nav>
+
+      <div class="header-badge">
+        Beta · Study Mode + Practice Quiz
+      </div>
     </header>
 
-    <main class="app-grid">
-      <!-- LEFT: Topics -->
-      <aside class="card">
-        <h2 class="sidebar-title">Analytical Topics</h2>
-        <p class="sidebar-intro">
-          Piliin ang topic sa ibaba para makita ang lesson overview at quick tips.
-        </p>
-
-        <div id="topic-list" class="topic-list"></div>
-
+    <main class="main-layout">
+      <!-- Sidebar: topics -->
+      <aside class="card sidebar">
+        <h2 class="sidebar-title">ANALYTICAL TOPICS</h2>
         <p class="sidebar-note">
-          Tip: Sa analytical questions, laging i-visualize ang sitwasyon — tables, diagrams,
-          at simpleng sketches sa scratch paper ay malaking tulong.
+          Piliin ang topic sa ibaba. Sa kanan, maaari kang mag-switch sa Study Mode o Practice Quiz.
         </p>
+        <ul id="topic-list" class="topic-list"></ul>
       </aside>
 
-      <!-- RIGHT: Lesson + Quiz -->
-      <section>
-        <article class="card lesson-card">
-          <div class="lesson-header">
-            <h2 id="lesson-title">Lesson title</h2>
-            <span class="lesson-badge">Lesson Overview</span>
+      <!-- Right side: modes -->
+      <section class="card main-card">
+        <div class="mode-row">
+          <div class="mode-tabs">
+            <button id="mode-study" class="mode-tab active" data-mode="study">
+              📘 <span>Study Mode</span>
+            </button>
+            <button id="mode-quiz" class="mode-tab" data-mode="quiz">
+              📝 <span>Practice Quiz</span>
+            </button>
           </div>
+          <p class="mode-help">
+            Tip: Unahin ang lesson, tapos mag-practice ng 5–10 questions per topic.
+          </p>
+        </div>
+
+        <!-- STUDY MODE PANEL -->
+        <div id="panel-study" class="panel">
+          <header class="lesson-header">
+            <h2 id="lesson-title">Lesson title</h2>
+            <p id="lesson-path">Analytical Ability · Topic</p>
+          </header>
           <p id="lesson-intro"></p>
           <div id="lesson-body"></div>
-
-          <h3 class="lesson-tips-title">Test-taking tips</h3>
+          <h3 class="tips-title">Test-taking tips</h3>
           <ul id="tips-list"></ul>
-        </article>
+        </div>
 
-        <article class="card quiz-card">
-          <h2>Practice Quiz (per topic)</h2>
-          <p class="quiz-subtitle">
-            Piliin ang level ng difficulty. Kapag na-load mo na ang <code>ANALYTICAL_QUESTION_BANK</code>,
-            lalabas dito ang questions.
-          </p>
+        <!-- PRACTICE QUIZ PANEL -->
+        <div id="panel-quiz" class="panel hidden">
+          <div class="quiz-header">
+            <h2>Practice Quiz</h2>
+            <p>
+              Topic: <strong id="quiz-topic-label"></strong> ·
+              Level: <strong id="quiz-level-label">Beginner</strong>
+            </p>
+          </div>
 
           <div class="level-tabs">
             <button class="level-tab active" data-level="beginner">Beginner</button>
@@ -467,32 +552,32 @@
             <button class="level-tab" data-level="expert">Expert</button>
           </div>
 
-          <div id="questions-container" class="questions-container">
+          <div id="questions-container" class="questions-box">
             <p class="muted">
-              Select a topic on the left to view its lesson. Question sets for Analytical Ability
-              will be added here (beginner to expert) as you create the
-              <code>window.ANALYTICAL_QUESTION_BANK</code> files.
+              Practice questions for <strong>Analytical Ability</strong> will appear here.
+              I-load mo lang ang mga JS file na nagse-set ng
+              <code>window.ANALYTICAL_QUESTION_BANK</code> (per topic at level) katulad sa Verbal/Numerical.
             </p>
           </div>
-        </article>
+        </div>
       </section>
     </main>
   </div>
 
   <script>
     // ==========================================
-    // Analytical topics list
+    // 1. ANALYTICAL TOPICS LIST
     // ==========================================
     const ANALYTICAL_TOPICS = [
-      { id: "logical_reasoning",  label: "Logical Reasoning",    tag: "Core" },
-      { id: "flowchart",          label: "Flowchart",            tag: "Process" },
-      { id: "problem_solving",    label: "Problem Solving",      tag: "Word Problems" },
-      { id: "special_topic",      label: "Special Topic",        tag: "Mixed" },
-      { id: "cognitive_reasoning",label: "Cognitive Reasoning",  tag: "Thinking Skills" }
+      { id: "logical_reasoning",   label: "Logical Reasoning",    tag: "Core" },
+      { id: "flowchart",           label: "Flowchart",            tag: "Process" },
+      { id: "problem_solving",     label: "Problem Solving",      tag: "Word Problems" },
+      { id: "special_topic",       label: "Special Topic",        tag: "Mixed" },
+      { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
     ];
 
     // ==========================================
-    // Analytical lessons content
+    // 2. LESSON CONTENT (Study Mode)
     // ==========================================
     const ANALYTICAL_LESSONS = {
       logical_reasoning: {
@@ -712,10 +797,11 @@
     };
 
     // ==========================================
-    // Basic state + helpers
+    // 3. STATE
     // ==========================================
     let currentTopicId = ANALYTICAL_TOPICS[0].id;
     let currentLevel = "beginner";
+    let currentMode = "study";
 
     function getTopicLabel(id) {
       const t = ANALYTICAL_TOPICS.find(x => x.id === id);
@@ -727,59 +813,55 @@
     }
 
     // ==========================================
-    // Render Topic buttons
+    // 4. RENDER SIDEBAR TOPICS
     // ==========================================
     function renderTopics() {
       const list = document.getElementById("topic-list");
       list.innerHTML = "";
 
       ANALYTICAL_TOPICS.forEach((topic, index) => {
+        const li = document.createElement("li");
         const btn = document.createElement("button");
         btn.className = "topic-btn" + (index === 0 ? " active" : "");
         btn.dataset.topicId = topic.id;
         btn.innerHTML = `
           <span class="label">
             <span>${topic.label}</span>
-            <small class="tag">${topic.tag}</small>
+            <span class="topic-pill">${topic.tag}</span>
           </span>
           <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path fill="currentColor" d="M7.5 4.5L13 10l-5.5 5.5-1.1-1.1L10.8 10 6.4 5.6z"/>
+            <path fill="currentColor" d="M7.5 4.5L13 10l-5.5 5.5-1.1-1.1L10.8 10 6.4 5.6z" />
           </svg>
         `;
         btn.addEventListener("click", () => selectTopic(topic.id));
-        list.appendChild(btn);
+        li.appendChild(btn);
+        list.appendChild(li);
       });
     }
 
     // ==========================================
-    // Render Lesson content
+    // 5. STUDY MODE: RENDER LESSON
     // ==========================================
-    function selectTopic(topicId) {
-      currentTopicId = topicId;
-
-      document
-        .querySelectorAll(".topic-btn")
-        .forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.topicId === topicId);
-        });
-
-      const lesson = ANALYTICAL_LESSONS[topicId];
+    function renderLesson() {
+      const lesson = ANALYTICAL_LESSONS[currentTopicId];
       if (!lesson) return;
 
       document.getElementById("lesson-title").textContent = lesson.title;
+      document.getElementById("lesson-path").textContent =
+        "Analytical Ability · " + getTopicLabel(currentTopicId);
       document.getElementById("lesson-intro").textContent = lesson.intro;
 
       const bodyEl = document.getElementById("lesson-body");
       bodyEl.innerHTML = lesson.sections
         .map(
           section => `
-          <section class="lesson-section">
-            <h3>${section.heading}</h3>
-            <ul>
-              ${section.bullets.map(b => `<li>${b}</li>`).join("")}
-            </ul>
-          </section>
-        `
+        <section class="lesson-section">
+          <h3>${section.heading}</h3>
+          <ul>
+            ${section.bullets.map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </section>
+      `
         )
         .join("");
 
@@ -787,26 +869,61 @@
       tipsEl.innerHTML = (lesson.tips || [])
         .map(t => `<li>${t}</li>`)
         .join("");
+    }
 
-      renderQuestions(); // refresh quiz view for new topic
+    function selectTopic(topicId) {
+      currentTopicId = topicId;
+
+      document.querySelectorAll(".topic-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.topicId === topicId);
+      });
+
+      renderLesson();
+      renderQuestions();
+      document.getElementById("quiz-topic-label").textContent = getTopicLabel(currentTopicId);
     }
 
     // ==========================================
-    // Quiz area – uses window.ANALYTICAL_QUESTION_BANK if available
+    // 6. MODE TOGGLE
+    // ==========================================
+    function initModeToggle() {
+      const studyBtn = document.getElementById("mode-study");
+      const quizBtn = document.getElementById("mode-quiz");
+      const studyPanel = document.getElementById("panel-study");
+      const quizPanel = document.getElementById("panel-quiz");
+
+      studyBtn.addEventListener("click", () => {
+        currentMode = "study";
+        studyBtn.classList.add("active");
+        quizBtn.classList.remove("active");
+        studyPanel.classList.remove("hidden");
+        quizPanel.classList.add("hidden");
+      });
+
+      quizBtn.addEventListener("click", () => {
+        currentMode = "quiz";
+        quizBtn.classList.add("active");
+        studyBtn.classList.remove("active");
+        quizPanel.classList.remove("hidden");
+        studyPanel.classList.add("hidden");
+      });
+    }
+
+    // ==========================================
+    // 7. QUIZ: LEVEL TABS + RENDER QUESTIONS
     // ==========================================
     function initLevelTabs() {
-      document
-        .querySelectorAll(".level-tab")
-        .forEach(tab => {
-          tab.addEventListener("click", () => {
-            const level = tab.dataset.level;
-            currentLevel = level;
-            document
-              .querySelectorAll(".level-tab")
-              .forEach(t => t.classList.toggle("active", t.dataset.level === level));
-            renderQuestions();
+      document.querySelectorAll(".level-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          const level = tab.dataset.level;
+          currentLevel = level;
+          document.querySelectorAll(".level-tab").forEach(t => {
+            t.classList.toggle("active", t.dataset.level === level);
           });
+          document.getElementById("quiz-level-label").textContent = capitalize(level);
+          renderQuestions();
         });
+      });
     }
 
     function renderQuestions() {
@@ -818,34 +935,41 @@
       if (!questions || !questions.length) {
         container.innerHTML = `
           <p class="muted">
-            Practice questions for <strong>${getTopicLabel(currentTopicId)}</strong>
-            – <em>${capitalize(currentLevel)}</em> level will appear here once you load
+            Walang naka-load na questions para sa
+            <strong>${getTopicLabel(currentTopicId)}</strong>
+            – <em>${capitalize(currentLevel)}</em> level.
+            <br /><br />
+            Mag-create ka ng JS file (hal. <code>questions/analytical_${currentTopicId}.js</code>)
+            na nagse-set ng
             <code>window.ANALYTICAL_QUESTION_BANK["${currentTopicId}"].${currentLevel}</code>
-            from your <code>questions/...</code> JS files.
+            katulad ng structure sa Verbal/Numerical question banks.
           </p>
         `;
         return;
       }
 
       let html = "";
-      questions.forEach((q, idx) => {
+      questions.forEach((q, index) => {
         html += `
           <div class="question-card">
             <div class="q-header">
-              <span class="q-number">Q${idx + 1}</span>
-              <span class="q-level">${capitalize(currentLevel)}</span>
+              <span class="q-num">Q${index + 1}</span>
+              <span class="q-meta">${getTopicLabel(currentTopicId)} · ${capitalize(currentLevel)}</span>
             </div>
             <div class="q-text">${q.question}</div>
             ${
               Array.isArray(q.options)
-                ? `<ul class="options">${q.options
-                    .map(opt => `<li>${opt}</li>`)
-                    .join("")}</ul>`
+                ? `<ul class="options">
+                    ${q.options.map(opt => `<li>${opt}</li>`).join("")}
+                   </ul>`
                 : ""
             }
             ${
               q.explanation
-                ? `<details class="explanation"><summary>Show explanation</summary><p>${q.explanation}</p></details>`
+                ? `<details class="explanation">
+                     <summary>Show explanation</summary>
+                     <p>${q.explanation}</p>
+                   </details>`
                 : ""
             }
           </div>
@@ -856,11 +980,13 @@
     }
 
     // ==========================================
-    // Init on load
+    // 8. INIT
     // ==========================================
     renderTopics();
+    initModeToggle();
     initLevelTabs();
     selectTopic(currentTopicId);
   </script>
 </body>
 </html>
+
