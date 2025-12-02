@@ -520,32 +520,7 @@
       color: var(--muted);
     }
 
-    .explanation-wrapper {
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .explanation-wrapper details summary {
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .explanation-wrapper details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .explanation-wrapper details summary::before {
-      content: "▸ ";
-      font-size: 0.7rem;
-      opacity: 0.7;
-    }
-
-    .explanation-wrapper details[open] summary::before {
-      content: "▾ ";
-    }
-
-    /* Feedback text (Correct / Mali) */
+    /* Feedback text (Correct / Incorrect) */
     .quiz-feedback {
       margin-top: 4px;
       font-size: 0.8rem;
@@ -561,6 +536,22 @@
 
     .quiz-feedback.muted {
       color: var(--muted);
+    }
+
+    /* Explanation block – auto visible after answer */
+    .explanation-wrapper {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px dashed #1f2937;
+      padding-top: 4px;
+    }
+
+    .explanation-title {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 2px;
+      font-size: 0.8rem;
     }
   </style>
 </head>
@@ -662,14 +653,13 @@
 
             <div id="quiz-options"></div>
 
-            <!-- Feedback: Correct / Mali + tamang sagot -->
+            <!-- Feedback: Correct / Incorrect + correct answer -->
             <div id="quiz-feedback" class="quiz-feedback muted"></div>
 
+            <!-- Explanation – auto visible after answering -->
             <div class="explanation-wrapper hidden" id="explanation-wrapper">
-              <details id="quiz-explanation-details">
-                <summary>Show explanation</summary>
-                <p id="quiz-explanation-text"></p>
-              </details>
+              <div class="explanation-title">Explanation</div>
+              <p id="quiz-explanation-text"></p>
             </div>
 
             <div class="quiz-footer">
@@ -687,7 +677,7 @@
     </main>
   </div>
 
-  <!-- Logical Reasoning question bank (dapat gumawa ka ng ganitong file) -->
+  <!-- Logical Reasoning question bank -->
   <script src="questions/analytical_logical_reasoning.js"></script>
 
   <script>
@@ -1086,7 +1076,6 @@
       const levelLabelEl = document.getElementById("quiz-level-label");
       const explWrap = document.getElementById("explanation-wrapper");
       const explText = document.getElementById("quiz-explanation-text");
-      const explDetails = document.getElementById("quiz-explanation-details");
       const feedbackEl = document.getElementById("quiz-feedback");
       const prevBtn = document.getElementById("btn-prev");
       const nextBtn = document.getElementById("btn-next");
@@ -1099,12 +1088,12 @@
           "No questions are loaded yet for this topic and level. Make sure a JS file sets window.ANALYTICAL_QUESTION_BANK for Analytical Ability.";
         optionsEl.innerHTML = "";
         counterEl.textContent = "0 of 0";
-        explWrap.classList.add("hidden");
-        explText.textContent = "";
         if (feedbackEl) {
           feedbackEl.textContent = "";
-          feedbackEl.className = "quiz-feedback";
+          feedbackEl.className = "quiz-feedback muted";
         }
+        explWrap.classList.add("hidden");
+        explText.textContent = "";
         prevBtn.disabled = true;
         nextBtn.disabled = true;
         return;
@@ -1130,7 +1119,7 @@
         optionsEl.appendChild(btn);
       });
 
-      // Default: wala pang feedback at explanation kung wala pang sagot
+      // Default: no feedback + no explanation if no answer yet
       if (selectedIndex == null) {
         if (feedbackEl) {
           feedbackEl.textContent = "";
@@ -1138,23 +1127,22 @@
         }
         explWrap.classList.add("hidden");
         explText.textContent = "";
-        if (explDetails) explDetails.open = false;
       } else {
-        // May napili nang sagot → check kung tama
+        // Check answer
         const selectedText = q.options[selectedIndex];
         const isCorrect = selectedText === q.answer;
 
         if (feedbackEl) {
           if (isCorrect) {
-            feedbackEl.textContent = "Correct! 🎉";
+            feedbackEl.textContent = "Correct!";
             feedbackEl.className = "quiz-feedback correct";
           } else {
-            feedbackEl.textContent = "Mali. Tamang sagot: " + q.answer;
+            feedbackEl.textContent = "Incorrect. Correct answer: " + q.answer + ".";
             feedbackEl.className = "quiz-feedback wrong";
           }
         }
 
-        // Explanation lalabas lang after pumili ng sagot
+        // Explanation always visible after answering (like Numerical)
         if (q.explanation) {
           explWrap.classList.remove("hidden");
           explText.textContent = q.explanation;
@@ -1162,7 +1150,6 @@
           explWrap.classList.add("hidden");
           explText.textContent = "";
         }
-        if (explDetails) explDetails.open = false; // collapsed by default
       }
 
       // Counter + nav buttons
