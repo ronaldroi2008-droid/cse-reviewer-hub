@@ -110,7 +110,7 @@ QUESTION: What will the flowchart print if AGE = 25?`,
 
     // 6
     {
-      question: 
+      question: `
 START
 ↓
 Input TEMP
@@ -279,7 +279,7 @@ QUESTION: If the input value is X = 10, what value will be printed?`,
 
     // 15
     {
-      question: 
+      question: `
 START
 ↓
 Input N
