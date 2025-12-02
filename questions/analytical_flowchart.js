@@ -1,6 +1,6 @@
-// questions/analytical_flowcharts.js
+// questions/analytical_flowchart.js
 // ==========================================
-// ANALYTICAL – FLOWCHART INTERPRETATION (200 ITEMS PLANNED)
+// ANALYTICAL – FLOWCHART INTERPRETATION
 // Levels: Beginner, Intermediate, Advanced, Expert
 // ==========================================
 
@@ -291,20 +291,8 @@ STEP 3: The "Yes" branch prints "TEENAGER". Therefore, the output is "TEENAGER".
     }
   ],
 
-  // ==========================================
-  // Other levels (placeholders for now)
-  // ==========================================
-  intermediate: [
-    // TODO: 50 intermediate items
-  ],
-
-  advanced: [
-    // TODO: 50 advanced items
-  ],
-
-  expert: [
-    // TODO: 50 expert items
-  ]
+  // placeholders para hindi mag-error
+  intermediate: [],
+  advanced: [],
+  expert: []
 };
-// End of analytical_flowcharts.js
-
