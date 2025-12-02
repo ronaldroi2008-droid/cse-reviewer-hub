@@ -101,11 +101,6 @@
       transform: translateY(-2px);
     }
 
-    .subject-btn .icon {
-      font-size: 1.2rem;
-      margin-right: 12px;
-    }
-
     .subject-btn .arrow {
       color: var(--muted);
       font-size: 1.2rem;
@@ -117,7 +112,7 @@
       color: var(--accent);
     }
 
-    /* Numerical is disabled for now style */
+    /* Optional: disabled style kung gusto mong gamitin sa future */
     .subject-btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -153,6 +148,12 @@
 
         <a href="numerical.html" class="subject-btn">
           <span>🧮 &nbsp; Numerical Reasoning</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <!-- ✅ New Analytical Ability Tab -->
+        <a href="analytical.html" class="subject-btn">
+          <span>🧠 &nbsp; Analytical Ability</span>
           <span class="arrow">→</span>
         </a>
       </div>
