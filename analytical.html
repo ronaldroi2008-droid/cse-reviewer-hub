@@ -8,7 +8,6 @@
     :root {
       --bg: #020617;
       --card: #020617;
-      --card-alt: #020617;
       --sidebar: #020617;
       --border: #1e293b;
       --accent: #6366f1;
@@ -253,7 +252,7 @@
       box-shadow: 0 0 0 1px var(--accent-strong);
     }
 
-    .mode-tab:hover:not(.active)) {
+    .mode-tab:hover:not(.active) {
       background: rgba(148, 163, 184, 0.16);
       color: #e5e7eb;
     }
@@ -264,7 +263,6 @@
       text-align: right;
     }
 
-    /* Study panel */
     .panel {
       margin-top: 6px;
     }
@@ -273,6 +271,7 @@
       display: none;
     }
 
+    /* Study mode */
     .lesson-header {
       margin-bottom: 10px;
       border-bottom: 1px solid rgba(15, 23, 42, 0.9);
@@ -338,20 +337,32 @@
       margin-top: 4px;
     }
 
-    /* Quiz panel */
-    .quiz-header {
-      margin-bottom: 10px;
+    /* Quiz mode – like Verbal/Numerical */
+    .quiz-topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
-    .quiz-header h2 {
+    .quiz-main-label h2 {
       margin: 0 0 4px;
       font-size: 1.05rem;
     }
 
-    .quiz-header p {
+    .quiz-main-label p {
       margin: 0;
       font-size: 0.8rem;
       color: var(--muted);
+    }
+
+    .quiz-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
     }
 
     .level-tabs {
@@ -361,8 +372,6 @@
       border-radius: 999px;
       background: #020617;
       border: 1px solid var(--border);
-      margin-bottom: 10px;
-      margin-top: 8px;
       flex-wrap: wrap;
     }
 
@@ -387,92 +396,153 @@
       color: #e5e7eb;
     }
 
-    .questions-box {
-      margin-top: 8px;
-      border-radius: 18px;
-      border: 1px dashed var(--border);
-      padding: 10px 12px 6px;
-      background: rgba(2, 6, 23, 0.9);
-      max-height: 430px;
-      overflow-y: auto;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .question-card {
-      margin-bottom: 8px;
-      border-radius: 14px;
-      border: 1px solid #111827;
-      background: #020617;
-      padding: 8px 10px;
-    }
-
-    .q-header {
-      display: flex;
-      justify-content: space-between;
+    .items-tabs {
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 2px;
-      gap: 8px;
-    }
-
-    .q-num {
-      font-size: 0.76rem;
-      padding: 2px 6px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #c7d2fe;
-    }
-
-    .q-meta {
-      font-size: 0.76rem;
-      color: var(--muted);
-    }
-
-    .q-text {
-      font-size: 0.9rem;
-      margin: 4px 0;
-    }
-
-    .options {
-      margin: 0 0 4px;
-      padding-left: 18px;
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-
-    .options li + li {
-      margin-top: 2px;
-    }
-
-    details.explanation {
+      gap: 6px;
       font-size: 0.78rem;
       color: var(--muted);
     }
 
-    details.explanation summary {
+    .items-label {
+      opacity: 0.9;
+    }
+
+    .items-tab {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      color: var(--muted);
+      min-width: 32px;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .items-tab.active {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #e5e7eb;
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .items-tab:hover:not(.active) {
+      background: rgba(148, 163, 184, 0.16);
+      color: #e5e7eb;
+    }
+
+    .quiz-card {
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 16px 18px 12px;
+    }
+
+    .quiz-question-text {
+      font-size: 0.98rem;
+      margin: 0 0 10px;
+    }
+
+    #quiz-options {
+      margin-bottom: 8px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #020617;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .option-btn.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .quiz-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      gap: 8px;
+    }
+
+    .nav-buttons {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 6px 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn.primary {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #f9fafb;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .quiz-counter {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .explanation-wrapper {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .explanation-wrapper details summary {
       cursor: pointer;
       list-style: none;
     }
 
-    details.explanation summary::-webkit-details-marker {
+    .explanation-wrapper details summary::-webkit-details-marker {
       display: none;
     }
 
-    details.explanation summary::before {
+    .explanation-wrapper details summary::before {
       content: "▸ ";
       font-size: 0.7rem;
       opacity: 0.7;
     }
 
-    details.explanation[open] summary::before {
+    .explanation-wrapper details[open] summary::before {
       content: "▾ ";
-    }
-
-    details.explanation p {
-      margin: 2px 0 0;
     }
   </style>
 </head>
@@ -502,7 +572,7 @@
       <aside class="card sidebar">
         <h2 class="sidebar-title">ANALYTICAL TOPICS</h2>
         <p class="sidebar-note">
-          Piliin ang topic sa ibaba. Sa kanan, maaari kang mag-switch sa Study Mode o Practice Quiz.
+          Piliin ang topic sa ibaba. Sa kanan, pwede kang mag-switch sa Study Mode o Practice Quiz.
         </p>
         <ul id="topic-list" class="topic-list"></ul>
       </aside>
@@ -519,7 +589,7 @@
             </button>
           </div>
           <p class="mode-help">
-            Tip: Unahin ang lesson, tapos mag-practice ng 5–10 questions per topic.
+            Tip: Basahin muna ang lesson, tapos mag-practice ng 10–20 items per topic.
           </p>
         </div>
 
@@ -537,27 +607,58 @@
 
         <!-- PRACTICE QUIZ PANEL -->
         <div id="panel-quiz" class="panel hidden">
-          <div class="quiz-header">
-            <h2>Practice Quiz</h2>
-            <p>
-              Topic: <strong id="quiz-topic-label"></strong> ·
-              Level: <strong id="quiz-level-label">Beginner</strong>
-            </p>
+          <div class="quiz-topbar">
+            <div class="quiz-main-label">
+              <h2>
+                Analytical · <span id="quiz-topic-label"></span>
+              </h2>
+              <p>
+                Level:
+                <strong id="quiz-level-label">Beginner</strong>
+              </p>
+            </div>
+
+            <div class="quiz-controls">
+              <div class="level-tabs">
+                <button class="level-tab active" data-level="beginner">BEGINNER</button>
+                <button class="level-tab" data-level="intermediate">INTERMEDIATE</button>
+                <button class="level-tab" data-level="advanced">ADVANCED</button>
+                <button class="level-tab" data-level="expert">EXPERT</button>
+              </div>
+
+              <div class="items-tabs">
+                <span class="items-label">Items:</span>
+                <button class="items-tab active" data-items="10">10</button>
+                <button class="items-tab" data-items="20">20</button>
+                <button class="items-tab" data-items="30">30</button>
+                <button class="items-tab" data-items="40">40</button>
+                <button class="items-tab" data-items="50">50</button>
+              </div>
+            </div>
           </div>
 
-          <div class="level-tabs">
-            <button class="level-tab active" data-level="beginner">Beginner</button>
-            <button class="level-tab" data-level="intermediate">Intermediate</button>
-            <button class="level-tab" data-level="advanced">Advanced</button>
-            <button class="level-tab" data-level="expert">Expert</button>
-          </div>
+          <div class="quiz-card">
+            <div id="quiz-question-text" class="quiz-question-text">
+              Question text will appear here.
+            </div>
+            <div id="quiz-options"></div>
 
-          <div id="questions-container" class="questions-box">
-            <p class="muted">
-              Practice questions for <strong>Analytical Ability</strong> will appear here.
-              I-load mo lang ang mga JS file na nagse-set ng
-              <code>window.ANALYTICAL_QUESTION_BANK</code> (per topic at level) katulad sa Verbal/Numerical.
-            </p>
+            <div class="explanation-wrapper hidden" id="explanation-wrapper">
+              <details id="quiz-explanation-details">
+                <summary>Show explanation</summary>
+                <p id="quiz-explanation-text"></p>
+              </details>
+            </div>
+
+            <div class="quiz-footer">
+              <div class="nav-buttons">
+                <button id="btn-prev" class="nav-btn" disabled>Previous</button>
+                <button id="btn-next" class="nav-btn primary">Next</button>
+              </div>
+              <div id="question-counter" class="quiz-counter">
+                Question 1 of 10
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -566,18 +667,17 @@
 
   <script>
     // ==========================================
-    // 1. ANALYTICAL TOPICS LIST
+    // 1. TOPIC LIST
     // ==========================================
     const ANALYTICAL_TOPICS = [
       { id: "logical_reasoning",   label: "Logical Reasoning",    tag: "Core" },
       { id: "flowchart",           label: "Flowchart",            tag: "Process" },
       { id: "problem_solving",     label: "Problem Solving",      tag: "Word Problems" },
-      { id: "special_topic",       label: "Special Topic",        tag: "Mixed" },
       { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
     ];
 
     // ==========================================
-    // 2. LESSON CONTENT (Study Mode)
+    // 2. STUDY LESSON CONTENT
     // ==========================================
     const ANALYTICAL_LESSONS = {
       logical_reasoning: {
@@ -714,29 +814,7 @@
         ]
       },
 
-      special_topic: {
-        title: "Special Topic (Venn, Schedules, Codes, etc.)",
-        intro:
-          "Special topic questions cover mixed analytical skills: Venn diagrams, schedules/timetables, coding-decoding, o arrangement puzzles. Goal: ma-organize mo nang maayos ang information.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "For Venn diagrams, label each region and carefully place each group.",
-              "For schedules and timetables, build a timeline and mark start–end times.",
-              "For coding questions, compare examples to find consistent substitution patterns.",
-              "Always convert words into simple symbols (A, B, C; ✓/✗; sets; arrows)."
-            ]
-          },
-          {
-            heading: "Worked example: Simple Venn diagram",
-            bullets: [
-              "Problem: In a group of 50 examinees, 30 passed Math, 28 passed English, and 20 passed both. How many passed at least one of the two subjects?",
-              "Step 1: Use formula: n(M ∪ E) = n(M) + n(E) − n(M ∩ E).",
-              "Step 2: Substitute: 30 + 28 − 20 = 38.",
-              "So, 38 passed at least one of Math or English."
-            ]
-          },
+    
           {
             heading: "Worked example: Code pattern",
             bullets: [
@@ -801,7 +879,10 @@
     // ==========================================
     let currentTopicId = ANALYTICAL_TOPICS[0].id;
     let currentLevel = "beginner";
-    let currentMode = "study";
+    let currentItems = 10;
+    let currentQuestionIndex = 0;
+    let currentQuestionSet = [];
+    let userAnswers = [];
 
     function getTopicLabel(id) {
       const t = ANALYTICAL_TOPICS.find(x => x.id === id);
@@ -813,7 +894,7 @@
     }
 
     // ==========================================
-    // 4. RENDER SIDEBAR TOPICS
+    // 4. SIDEBAR TOPICS
     // ==========================================
     function renderTopics() {
       const list = document.getElementById("topic-list");
@@ -840,7 +921,7 @@
     }
 
     // ==========================================
-    // 5. STUDY MODE: RENDER LESSON
+    // 5. STUDY MODE RENDER
     // ==========================================
     function renderLesson() {
       const lesson = ANALYTICAL_LESSONS[currentTopicId];
@@ -878,9 +959,11 @@
         btn.classList.toggle("active", btn.dataset.topicId === topicId);
       });
 
+      document.getElementById("quiz-topic-label").textContent =
+        getTopicLabel(currentTopicId);
+
       renderLesson();
-      renderQuestions();
-      document.getElementById("quiz-topic-label").textContent = getTopicLabel(currentTopicId);
+      startQuiz();
     }
 
     // ==========================================
@@ -893,7 +976,6 @@
       const quizPanel = document.getElementById("panel-quiz");
 
       studyBtn.addEventListener("click", () => {
-        currentMode = "study";
         studyBtn.classList.add("active");
         quizBtn.classList.remove("active");
         studyPanel.classList.remove("hidden");
@@ -901,7 +983,6 @@
       });
 
       quizBtn.addEventListener("click", () => {
-        currentMode = "quiz";
         quizBtn.classList.add("active");
         studyBtn.classList.remove("active");
         quizPanel.classList.remove("hidden");
@@ -910,7 +991,7 @@
     }
 
     // ==========================================
-    // 7. QUIZ: LEVEL TABS + RENDER QUESTIONS
+    // 7. QUIZ INITIALIZERS
     // ==========================================
     function initLevelTabs() {
       document.querySelectorAll(".level-tab").forEach(tab => {
@@ -920,73 +1001,146 @@
           document.querySelectorAll(".level-tab").forEach(t => {
             t.classList.toggle("active", t.dataset.level === level);
           });
-          document.getElementById("quiz-level-label").textContent = capitalize(level);
-          renderQuestions();
+          document.getElementById("quiz-level-label").textContent =
+            capitalize(level);
+          startQuiz();
         });
       });
     }
 
-    function renderQuestions() {
-      const container = document.getElementById("questions-container");
-      const bank = window.ANALYTICAL_QUESTION_BANK || {};
-      const topicBank = bank[currentTopicId];
-      const questions = topicBank && topicBank[currentLevel];
+    function initItemsTabs() {
+      document.querySelectorAll(".items-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const items = parseInt(btn.dataset.items, 10) || 10;
+          currentItems = items;
+          document.querySelectorAll(".items-tab").forEach(b => {
+            b.classList.toggle("active", b === btn);
+          });
+          startQuiz();
+        });
+      });
+    }
 
-      if (!questions || !questions.length) {
-        container.innerHTML = `
-          <p class="muted">
-            Walang naka-load na questions para sa
-            <strong>${getTopicLabel(currentTopicId)}</strong>
-            – <em>${capitalize(currentLevel)}</em> level.
-            <br /><br />
-            Mag-create ka ng JS file (hal. <code>questions/analytical_${currentTopicId}.js</code>)
-            na nagse-set ng
-            <code>window.ANALYTICAL_QUESTION_BANK["${currentTopicId}"].${currentLevel}</code>
-            katulad ng structure sa Verbal/Numerical question banks.
-          </p>
-        `;
-        return;
-      }
+    function initNavButtons() {
+      const prevBtn = document.getElementById("btn-prev");
+      const nextBtn = document.getElementById("btn-next");
 
-      let html = "";
-      questions.forEach((q, index) => {
-        html += `
-          <div class="question-card">
-            <div class="q-header">
-              <span class="q-num">Q${index + 1}</span>
-              <span class="q-meta">${getTopicLabel(currentTopicId)} · ${capitalize(currentLevel)}</span>
-            </div>
-            <div class="q-text">${q.question}</div>
-            ${
-              Array.isArray(q.options)
-                ? `<ul class="options">
-                    ${q.options.map(opt => `<li>${opt}</li>`).join("")}
-                   </ul>`
-                : ""
-            }
-            ${
-              q.explanation
-                ? `<details class="explanation">
-                     <summary>Show explanation</summary>
-                     <p>${q.explanation}</p>
-                   </details>`
-                : ""
-            }
-          </div>
-        `;
+      prevBtn.addEventListener("click", () => {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex -= 1;
+          renderQuizQuestion();
+        }
       });
 
-      container.innerHTML = html;
+      nextBtn.addEventListener("click", () => {
+        if (currentQuestionIndex < currentQuestionSet.length - 1) {
+          currentQuestionIndex += 1;
+          renderQuizQuestion();
+        }
+      });
     }
 
     // ==========================================
-    // 8. INIT
+    // 8. QUIZ ENGINE
+    // ==========================================
+    function startQuiz() {
+      const bank = window.ANALYTICAL_QUESTION_BANK || {};
+      const topicBank = bank[currentTopicId];
+      const questions = topicBank && topicBank[currentLevel]
+        ? topicBank[currentLevel].slice()
+        : [];
+
+      if (!questions.length) {
+        currentQuestionSet = [];
+        currentQuestionIndex = 0;
+        userAnswers = [];
+        renderQuizQuestion();
+        return;
+      }
+
+      const num = Math.min(currentItems, questions.length);
+      const shuffled = questions.sort(() => Math.random() - 0.5);
+      currentQuestionSet = shuffled.slice(0, num);
+      currentQuestionIndex = 0;
+      userAnswers = new Array(currentQuestionSet.length).fill(null);
+
+      renderQuizQuestion();
+    }
+
+    function selectOption(optionIndex) {
+      userAnswers[currentQuestionIndex] = optionIndex;
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const qTextEl = document.getElementById("quiz-question-text");
+      const optionsEl = document.getElementById("quiz-options");
+      const counterEl = document.getElementById("question-counter");
+      const topicLabelEl = document.getElementById("quiz-topic-label");
+      const levelLabelEl = document.getElementById("quiz-level-label");
+      const explWrap = document.getElementById("explanation-wrapper");
+      const explText = document.getElementById("quiz-explanation-text");
+      const prevBtn = document.getElementById("btn-prev");
+      const nextBtn = document.getElementById("btn-next");
+
+      topicLabelEl.textContent = getTopicLabel(currentTopicId);
+      levelLabelEl.textContent = capitalize(currentLevel);
+
+      if (!currentQuestionSet.length) {
+        qTextEl.textContent =
+          "Walang naka-load na questions para sa topic na ito / level na ito. " +
+          "Siguraduhin na may JS file na nagse-set ng window.ANALYTICAL_QUESTION_BANK.";
+        optionsEl.innerHTML = "";
+        counterEl.textContent = "0 of 0";
+        explWrap.classList.add("hidden");
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
+
+      const q = currentQuestionSet[currentQuestionIndex];
+      qTextEl.textContent = q.question || "Question";
+
+      optionsEl.innerHTML = "";
+      (q.options || []).forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = opt;
+        if (userAnswers[currentQuestionIndex] === idx) {
+          btn.classList.add("selected");
+        }
+        btn.addEventListener("click", () => selectOption(idx));
+        optionsEl.appendChild(btn);
+      });
+
+      if (q.explanation) {
+        explWrap.classList.remove("hidden");
+        explText.textContent = q.explanation;
+      } else {
+        explWrap.classList.add("hidden");
+      }
+
+      counterEl.textContent =
+        "Question " +
+        (currentQuestionIndex + 1) +
+        " of " +
+        currentQuestionSet.length;
+
+      prevBtn.disabled = currentQuestionIndex === 0;
+      nextBtn.disabled = currentQuestionIndex === currentQuestionSet.length - 1;
+    }
+
+    // ==========================================
+    // 9. INIT
     // ==========================================
     renderTopics();
     initModeToggle();
     initLevelTabs();
+    initItemsTabs();
+    initNavButtons();
     selectTopic(currentTopicId);
   </script>
 </body>
 </html>
+
 
