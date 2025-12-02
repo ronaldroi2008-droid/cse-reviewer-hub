@@ -9,12 +9,13 @@ window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
 window.ANALYTICAL_QUESTION_BANK["flowchart"] = {
 
   // ==========================================
-  // LEVEL 1: BEGINNER (Sample 10 items – basic reading of flowcharts)
+  // LEVEL 1: BEGINNER (10 sample items – basic reading of flowcharts)
   // ==========================================
   beginner: [
     // 1
     {
-      diagram: `
+      question: `FLOWCHART 1:
+
 START
   |
   v
@@ -28,8 +29,8 @@ Print "POSITIVE"   Print "NOT POSITIVE"
   |
   v
  END
-      `,
-      question: "Based on the flowchart, what will be the output if N = -3?",
+
+QUESTION: Based on the flowchart, what will be the output if N = -3?`,
       options: ["POSITIVE", "NOT POSITIVE", "ZERO", "NO OUTPUT"],
       answer: "NOT POSITIVE",
       explanation: `STEP 1: The flowchart checks the condition N > 0.
@@ -39,7 +40,8 @@ STEP 3: The "No" branch prints "NOT POSITIVE".`
 
     // 2
     {
-      diagram: `
+      question: `FLOWCHART 2:
+
 START
   |
   v
@@ -53,8 +55,8 @@ Print "CAN VOTE"       Print "CANNOT VOTE"
   |
   v
  END
-      `,
-      question: "According to the flowchart, what will be the output if AGE = 18?",
+
+QUESTION: According to the flowchart, what will be the output if AGE = 18?`,
       options: ["CAN VOTE", "CANNOT VOTE", "NO OUTPUT", "ERROR"],
       answer: "CAN VOTE",
       explanation: `STEP 1: The decision box checks if AGE >= 18.
@@ -64,7 +66,8 @@ STEP 3: The flow follows the "Yes" branch and prints "CAN VOTE".`
 
     // 3
     {
-      diagram: `
+      question: `FLOWCHART 3:
+
 START
   |
   v
@@ -81,8 +84,8 @@ Print X
   |
   v
  END
-      `,
-      question: "What value of X will be printed when this flowchart is executed?",
+
+QUESTION: What value of X will be printed when this flowchart is executed?`,
       options: ["0", "2", "3", "5"],
       answer: "5",
       explanation: `STEP 1: X starts at 0.
@@ -93,7 +96,8 @@ STEP 4: The flowchart prints X, so the output is 5.`
 
     // 4
     {
-      diagram: `
+      question: `FLOWCHART 4:
+
 START
   |
   v
@@ -107,8 +111,8 @@ Print "EVEN"      Print "ODD"
   |
   v
  END
-      `,
-      question: "Which of the following values of N will make the flowchart print \"ODD\"?",
+
+QUESTION: Which of the following values of N will make the flowchart print "ODD"?`,
       options: ["8", "10", "13", "20"],
       answer: "13",
       explanation: `STEP 1: The flowchart prints "ODD" when N is NOT even.
@@ -118,7 +122,8 @@ STEP 3: 13 is the only odd number in the choices, so it will follow the "No" bra
 
     // 5
     {
-      diagram: `
+      question: `FLOWCHART 5:
+
 START
   |
   v
@@ -132,8 +137,8 @@ Print "PASS"    Print "FAIL"
   |
   v
  END
-      `,
-      question: "If the output of the flowchart is \"FAIL\", which of the following could be the value of SCORE?",
+
+QUESTION: If the output of the flowchart is "FAIL", which of the following could be the value of SCORE?`,
       options: ["60", "75", "80", "90"],
       answer: "60",
       explanation: `STEP 1: The flowchart prints "FAIL" when SCORE >= 75 is FALSE.
@@ -143,7 +148,8 @@ STEP 3: Among the choices, only 60 is less than 75, so SCORE = 60 will produce "
 
     // 6
     {
-      diagram: `
+      question: `FLOWCHART 6:
+
 START
   |
   v
@@ -157,8 +163,8 @@ Print "FEVER"   Print "NORMAL"
   |
   v
  END
-      `,
-      question: "Which of the following temperature values will be labeled \"NORMAL\" by the flowchart?",
+
+QUESTION: Which of the following temperature values will be labeled "NORMAL" by the flowchart?`,
       options: ["38.0", "37.5", "37.0", "39.2"],
       answer: "37.0",
       explanation: `STEP 1: The flowchart checks if TEMP > 37.
@@ -168,7 +174,8 @@ STEP 3: Among the options, 37.0 is the only value not greater than 37, so it wil
 
     // 7
     {
-      diagram: `
+      question: `FLOWCHART 7:
+
 START
   |
   v
@@ -188,8 +195,8 @@ Print "WITHIN RANGE"
               |
               v
              END
-      `,
-      question: "Based on the flowchart, what will be the output if N = 0?",
+
+QUESTION: Based on the flowchart, what will be the output if N = 0?`,
       options: ["WITHIN RANGE", "OUT OF RANGE", "NO OUTPUT", "ERROR"],
       answer: "OUT OF RANGE",
       explanation: `STEP 1: For N = 0, the first test is N >= 1. This is FALSE.
@@ -199,7 +206,8 @@ STEP 3: Therefore, the output is "OUT OF RANGE".`
 
     // 8
     {
-      diagram: `
+      question: `FLOWCHART 8:
+
 START
   |
   v
@@ -216,8 +224,8 @@ COUNTER = COUNTER + 1
   |
   v
 (Go back to the decision)
-      `,
-      question: "How many times will the word \"HELLO\" be printed when this flowchart runs?",
+
+QUESTION: How many times will the word "HELLO" be printed when this flowchart runs?`,
       options: ["1", "2", "3", "4"],
       answer: "3",
       explanation: `STEP 1: COUNTER starts at 1.
@@ -231,7 +239,8 @@ STEP 4: Thus, "HELLO" is printed exactly 3 times.`
 
     // 9
     {
-      diagram: `
+      question: `FLOWCHART 9:
+
 START
   |
   v
@@ -248,8 +257,8 @@ Print "ZERO"        Is N > 0 ?
                       |
                       v
                      END
-      `,
-      question: "According to the flowchart, what will be the output if N = -4?",
+
+QUESTION: According to the flowchart, what will be the output if N = -4?`,
       options: ["ZERO", "POSITIVE", "NEGATIVE", "NO OUTPUT"],
       answer: "NEGATIVE",
       explanation: `STEP 1: First decision: Is N = 0?
@@ -262,7 +271,8 @@ So the output is "NEGATIVE".`
 
     // 10
     {
-      diagram: `
+      question: `FLOWCHART 10:
+
 START
   |
   v
@@ -279,8 +289,8 @@ Print "CHILD"        Is AGE < 20 ?
                         |
                         v
                        END
-      `,
-      question: "Based on the flowchart, what will be the output if AGE = 19?",
+
+QUESTION: Based on the flowchart, what will be the output if AGE = 19?`,
       options: ["CHILD", "TEENAGER", "ADULT", "NO OUTPUT"],
       answer: "TEENAGER",
       explanation: `STEP 1: Check if AGE < 13.
@@ -291,7 +301,7 @@ STEP 3: The "Yes" branch prints "TEENAGER". Therefore, the output is "TEENAGER".
     }
   ],
 
-  // placeholders para hindi mag-error
+  // For now, empty placeholders para hindi mag-error
   intermediate: [],
   advanced: [],
   expert: []
