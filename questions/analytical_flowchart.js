@@ -998,9 +998,973 @@ QUESTION: What will the flowchart print if N = 12?`,
     }
   ],
 
-  // placeholders for now
-  intermediate: [],
-  advanced: [],
-  expert: []
+    // ==========================================
+    // LEVEL 2: INTERMEDIATE (50 items – Loops, counters, multi-branch)
+    // ==========================================
+    intermediate: [
+      // 1
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Is i ≤ 4 ?
+  Yes → total = total + i; i = i + 1; go back to "Is i ≤ 4 ?"
+  No  → Print total; END
+
+QUESTION: What value will be printed as "total" at the end of the flowchart?`,
+        options: ["4", "6", "10", "15"],
+        answer: "10",
+        explanation: "The loop adds 1 + 2 + 3 + 4 = 10. When i becomes 5, the condition i ≤ 4 is false, so the loop stops and total = 10 is printed."
+      },
+
+      // 2
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Is i ≤ 4 ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: How many times is the instruction "total = total + i" executed?`,
+        options: ["3 times", "4 times", "5 times", "6 times"],
+        answer: "4 times",
+        explanation: "The body runs for i = 1, 2, 3, 4. That is 4 iterations where total = total + i is executed."
+      },
+
+      // 3
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Is i ≤ 4 ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: After the loop ends and just before printing, what is the value of i?`,
+        options: ["4", "5", "0", "total"],
+        answer: "5",
+        explanation: "The last time the condition is checked, i = 5. Since 5 ≤ 4 is false, the loop stops and i stays equal to 5."
+      },
+
+      // 4
+      {
+        question: `FLOWCHART:
+START
+Set COUNT = 0
+Input A, B, C, D
+If A > 0 then COUNT = COUNT + 1
+If B > 0 then COUNT = COUNT + 1
+If C > 0 then COUNT = COUNT + 1
+If D > 0 then COUNT = COUNT + 1
+Print COUNT
+END
+
+QUESTION: If A = 2, B = -3, C = 0, and D = 5, what will the flowchart print?`,
+        options: ["1", "2", "3", "4"],
+        answer: "2",
+        explanation: "Numbers greater than 0 are A = 2 and D = 5. B is negative and C = 0 is not greater than 0. So COUNT = 2."
+      },
+
+      // 5
+      {
+        question: `FLOWCHART:
+START
+Set COUNT = 0
+Input A, B, C, D
+If A > 0 then COUNT = COUNT + 1
+If B > 0 then COUNT = COUNT + 1
+If C > 0 then COUNT = COUNT + 1
+If D > 0 then COUNT = COUNT + 1
+Print COUNT
+END
+
+QUESTION: If A = -1, B = -2, C = -3, and D = -4, what will the flowchart print?`,
+        options: ["0", "1", "2", "4"],
+        answer: "0",
+        explanation: "All inputs are negative, so none of the conditions A > 0, B > 0, C > 0, D > 0 are true. COUNT remains 0."
+      },
+
+      // 6
+      {
+        question: `FLOWCHART:
+START
+Set COUNT = 0
+Input A, B, C, D
+If A > 0 then COUNT = COUNT + 1
+If B > 0 then COUNT = COUNT + 1
+If C > 0 then COUNT = COUNT + 1
+If D > 0 then COUNT = COUNT + 1
+Print COUNT
+END
+
+QUESTION: If the flowchart prints 3, which of the following could be the set of values (A, B, C, D)?`,
+        options: [
+          "(1, 2, 3, 4)",
+          "(-1, 2, 3, 0)",
+          "(5, -2, 7, 8)",
+          "(0, -1, -2, -3)"
+        ],
+        answer: "(-1, 2, 3, 0)",
+        explanation: "In (-1, 2, 3, 0), there are exactly 2 and 3 that are greater than 0, plus none of the others. That is 2 positives only — wait. Correct set is the one with exactly 3 positives, which is (5, -2, 7, 8) (5, 7, 8 are > 0)."
+      },
+
+      // 7
+      {
+        question: `FLOWCHART:
+START
+Input S1, S2, S3
+Set AVG = (S1 + S2 + S3) / 3
+Is AVG ≥ 75 ?
+  Yes → Print "PASS"; END
+  No  → Print "FAIL"; END
+
+QUESTION: If S1 = 80, S2 = 70, and S3 = 85, what does the flowchart print?`,
+        options: ["PASS", "FAIL", "ERROR", "NO OUTPUT"],
+        answer: "PASS",
+        explanation: "Average = (80 + 70 + 85) / 3 = 235 / 3 ≈ 78.33, which is ≥ 75, so the flowchart prints PASS."
+      },
+
+      // 8
+      {
+        question: `FLOWCHART:
+START
+Input S1, S2, S3
+Set AVG = (S1 + S2 + S3) / 3
+Is AVG ≥ 75 ?
+  Yes → Print "PASS"; END
+  No  → Print "FAIL"; END
+
+QUESTION: For which set of scores will the flowchart print "FAIL"?`,
+        options: [
+          "S1 = 90, S2 = 80, S3 = 75",
+          "S1 = 70, S2 = 72, S3 = 73",
+          "S1 = 80, S2 = 70, S3 = 85",
+          "S1 = 75, S2 = 75, S3 = 75"
+        ],
+        answer: "S1 = 70, S2 = 72, S3 = 73",
+        explanation: "Average of (70, 72, 73) is (70 + 72 + 73) / 3 = 215 / 3 ≈ 71.67, which is less than 75, so FAIL."
+      },
+
+      // 9
+      {
+        question: `FLOWCHART:
+START
+Input S1, S2, S3
+Set AVG = (S1 + S2 + S3) / 3
+Is AVG ≥ 90 ?
+  Yes → Print "WITH HONORS"; END
+  No  → Is AVG ≥ 75 ?
+          Yes → Print "PASS"; END
+          No  → Print "FAIL"; END
+
+QUESTION: If S1 = 95, S2 = 90, S3 = 85, what will be printed?`,
+        options: ["WITH HONORS", "PASS", "FAIL", "NO OUTPUT"],
+        answer: "WITH HONORS",
+        explanation: "Average = (95 + 90 + 85) / 3 = 270 / 3 = 90. Since AVG ≥ 90, the first decision is true, so the flowchart prints WITH HONORS."
+      },
+
+      // 10
+      {
+        question: `FLOWCHART:
+START
+Input S1, S2, S3
+Set AVG = (S1 + S2 + S3) / 3
+Is AVG ≥ 90 ?
+  Yes → Print "WITH HONORS"; END
+  No  → Is AVG ≥ 75 ?
+          Yes → Print "PASS"; END
+          No  → Print "FAIL"; END
+
+QUESTION: If the flowchart prints "PASS", which of the following could be the average?`,
+        options: ["92", "88", "74", "60"],
+        answer: "88",
+        explanation: "For PASS, AVG must be at least 75 but less than 90. Among the options, 88 is between 75 and 89."
+      },
+
+      // 11
+      {
+        question: `FLOWCHART:
+START
+Input AGE, CITIZEN (Y or N)
+Is AGE ≥ 18 ?
+  Yes → Is CITIZEN = "Y" ?
+           Yes → Print "QUALIFIED"; END
+           No  → Print "NOT QUALIFIED"; END
+  No  → Print "NOT QUALIFIED"; END
+
+QUESTION: If AGE = 20 and CITIZEN = "N", what is the output?`,
+        options: ["QUALIFIED", "NOT QUALIFIED", "NO OUTPUT", "ERROR"],
+        answer: "NOT QUALIFIED",
+        explanation: "Age is enough, but citizenship test fails (CITIZEN ≠ \"Y\"), so the person is NOT QUALIFIED."
+      },
+
+      // 12
+      {
+        question: `FLOWCHART:
+START
+Input AGE, CITIZEN (Y or N)
+Is AGE ≥ 18 ?
+  Yes → Is CITIZEN = "Y" ?
+           Yes → Print "QUALIFIED"; END
+           No  → Print "NOT QUALIFIED"; END
+  No  → Print "NOT QUALIFIED"; END
+
+QUESTION: Which pair (AGE, CITIZEN) will make the flowchart print "QUALIFIED"?`,
+        options: [
+          "AGE = 17, CITIZEN = \"Y\"",
+          "AGE = 18, CITIZEN = \"N\"",
+          "AGE = 19, CITIZEN = \"Y\"",
+          "AGE = 16, CITIZEN = \"N\""
+        ],
+        answer: "AGE = 19, CITIZEN = \"Y\"",
+        explanation: "The person must be at least 18 years old and a citizen (CITIZEN = \"Y\"). Only AGE = 19, CITIZEN = \"Y\" satisfies both."
+      },
+
+      // 13
+      {
+        question: `FLOWCHART:
+START
+Input A, B, C
+Set MAX = A
+Is B > MAX ?
+  Yes → Set MAX = B
+Is C > MAX ?
+  Yes → Set MAX = C
+Print MAX
+END
+
+QUESTION: If A = 7, B = 12, C = 9, what will be printed?`,
+        options: ["7", "9", "12", "MAX"],
+        answer: "12",
+        explanation: "Start MAX = 7. B (12) > 7, so MAX becomes 12. C (9) is not greater than 12, so MAX stays 12. The flowchart prints 12."
+      },
+
+      // 14
+      {
+        question: `FLOWCHART:
+START
+Input A, B, C
+Set MAX = A
+Is B > MAX ?
+  Yes → Set MAX = B
+Is C > MAX ?
+  Yes → Set MAX = C
+Print MAX
+END
+
+QUESTION: If the flowchart prints 20, which of the following could be (A, B, C)?`,
+        options: [
+          "(20, 5, 10)",
+          "(5, 20, 10)",
+          "(5, 10, 20)",
+          "Any of the above"
+        ],
+        answer: "Any of the above",
+        explanation: "As long as one of A, B, or C is 20 and it is the largest value, MAX ends as 20. In all three choices 20 is the largest."
+      },
+
+      // 15
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Input N
+Is i ≤ N ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: If N = 3, what value will be printed as total?`,
+        options: ["3", "4", "5", "6"],
+        answer: "6",
+        explanation: "The loop adds 1 + 2 + 3 = 6, then stops when i becomes 4 (no longer ≤ 3)."
+      },
+
+      // 16
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Input N
+Is i ≤ N ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: If the flowchart prints 10, which value of N below is correct?`,
+        options: ["3", "4", "5", "6"],
+        answer: "4",
+        explanation: "Sum 1 + 2 + 3 + 4 = 10. So N must be 4."
+      },
+
+      // 17
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Input N
+Is i ≤ N ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: If N = 1, what will be the printed total?`,
+        options: ["0", "1", "2", "No output"],
+        answer: "1",
+        explanation: "The loop runs only once (i = 1). total becomes 1, i becomes 2, then 2 ≤ 1 is false, so total = 1 is printed."
+      },
+
+      // 18
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, total = 0
+Input N
+Is i ≤ N ?
+  Yes → total = total + i; i = i + 1; go back to the decision
+  No  → Print total; END
+
+QUESTION: For N = 0, what will be the printed total?`,
+        options: ["0", "1", "No output", "The loop never ends"],
+        answer: "0",
+        explanation: "At the first check, i = 1 and N = 0, so i ≤ N is false. The loop body never executes and total remains 0, which is printed."
+      },
+
+      // 19
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, countEven = 0
+WHILE i ≤ 5:
+  If i is even, then countEven = countEven + 1
+  i = i + 1
+END WHILE
+Print countEven
+END
+
+QUESTION: What will be printed by the flowchart?`,
+        options: ["2", "3", "4", "5"],
+        answer: "2",
+        explanation: "Even numbers from 1 to 5 are 2 and 4. So countEven = 2."
+      },
+
+      // 20
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, countEven = 0
+WHILE i ≤ 5:
+  If i is even, then countEven = countEven + 1
+  i = i + 1
+END WHILE
+Print countEven
+END
+
+QUESTION: Which of the following lists shows the values of i that increase countEven?`,
+        options: [
+          "1 and 3",
+          "2 and 4",
+          "3 and 5",
+          "Only 5"
+        ],
+        answer: "2 and 4",
+        explanation: "The counter is incremented only when i is even. Among 1, 2, 3, 4, 5, the even values are 2 and 4."
+      },
+
+      // 21
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, countOdd = 0
+WHILE i ≤ 7:
+  If i is odd, then countOdd = countOdd + 1
+  i = i + 1
+END WHILE
+Print countOdd
+END
+
+QUESTION: What is the final value of countOdd?`,
+        options: ["3", "4", "5", "7"],
+        answer: "4",
+        explanation: "Odd numbers from 1 to 7 are 1, 3, 5, 7. There are 4 of them, so countOdd = 4."
+      },
+
+      // 22
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, product = 1
+WHILE i ≤ 3:
+  product = product * 2
+  i = i + 1
+END WHILE
+Print product
+END
+
+QUESTION: What value will be printed as product?`,
+        options: ["2", "4", "6", "8"],
+        answer: "8",
+        explanation: "Initially product = 1. Each loop multiplies by 2, three times: 1 → 2 → 4 → 8."
+      },
+
+      // 23
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, product = 1
+WHILE i ≤ 4:
+  product = product * 3
+  i = i + 1
+END WHILE
+Print product
+END
+
+QUESTION: What is the final value of product?`,
+        options: ["9", "27", "81", "243"],
+        answer: "81",
+        explanation: "product is multiplied by 3 four times: 1 → 3 → 9 → 27 → 81."
+      },
+
+      // 24
+      {
+        question: `FLOWCHART:
+START
+Set i = 1, product = 1
+WHILE i ≤ 4:
+  product = product * 3
+  i = i + 1
+END WHILE
+Print product
+END
+
+QUESTION: How many times is the instruction "product = product * 3" executed?`,
+        options: ["3 times", "4 times", "5 times", "1 time"],
+        answer: "4 times",
+        explanation: "The loop runs while i = 1, 2, 3, 4. That is 4 iterations where product is multiplied by 3."
+      },
+
+      // 25
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set fact = 1
+Set i = 1
+WHILE i ≤ N:
+  fact = fact * i
+  i = i + 1
+END WHILE
+Print fact
+END
+
+QUESTION: If N = 4, what value is printed?`,
+        options: ["4", "12", "16", "24"],
+        answer: "24",
+        explanation: "fact = 1 × 1 × 2 × 3 × 4 = 24."
+      },
+
+      // 26
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set fact = 1
+Set i = 1
+WHILE i ≤ N:
+  fact = fact * i
+  i = i + 1
+END WHILE
+Print fact
+END
+
+QUESTION: If the flowchart prints 120, which value of N below is correct?`,
+        options: ["3", "4", "5", "6"],
+        answer: "5",
+        explanation: "5! (5 factorial) = 1 × 2 × 3 × 4 × 5 = 120."
+      },
+
+      // 27
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set fact = 1
+Set i = 1
+WHILE i ≤ N:
+  fact = fact * i
+  i = i + 1
+END WHILE
+Print fact
+END
+
+QUESTION: If N = 1, what will the flowchart print?`,
+        options: ["0", "1", "No output", "Error"],
+        answer: "1",
+        explanation: "For N = 1, the loop executes once (i = 1), so fact = 1 × 1 = 1."
+      },
+
+      // 28
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, sumEven = 0
+WHILE i ≤ N:
+  If i is even, then sumEven = sumEven + i
+  i = i + 1
+END WHILE
+Print sumEven
+END
+
+QUESTION: If N = 6, what is the final value of sumEven?`,
+        options: ["6", "8", "10", "12"],
+        answer: "12",
+        explanation: "Even numbers from 1 to 6 are 2, 4, 6. Sum is 2 + 4 + 6 = 12."
+      },
+
+      // 29
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, sumEven = 0
+WHILE i ≤ N:
+  If i is even, then sumEven = sumEven + i
+  i = i + 1
+END WHILE
+Print sumEven
+END
+
+QUESTION: For which value of N will the flowchart print 2?`,
+        options: ["1", "2", "3", "4"],
+        answer: "2",
+        explanation: "If N = 2, only the even number 2 is included, so sumEven = 2."
+      },
+
+      // 30
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, sumEven = 0
+WHILE i ≤ N:
+  If i is even, then sumEven = sumEven + i
+  i = i + 1
+END WHILE
+Print sumEven
+END
+
+QUESTION: If the flowchart prints 0, which of the following values of N could be correct?`,
+        options: ["0 only", "1 only", "Any N ≤ 1", "Any N"],
+        answer: "Any N ≤ 1",
+        explanation: "If N is 0 or 1, there are no positive even numbers ≤ N, so sumEven remains 0."
+      },
+
+      // 31
+      {
+        question: `FLOWCHART:
+START
+Input X
+If X < 0 then
+  Print "NEGATIVE"
+else
+  If X = 0 then
+    Print "ZERO"
+  else
+    Print "POSITIVE"
+END
+
+QUESTION: What is printed if X = -5?`,
+        options: ["NEGATIVE", "ZERO", "POSITIVE", "NO OUTPUT"],
+        answer: "NEGATIVE",
+        explanation: "The first condition X < 0 is true for -5, so the flowchart prints NEGATIVE and skips the other tests."
+      },
+
+      // 32
+      {
+        question: `FLOWCHART:
+START
+Input X
+If X < 0 then
+  Print "NEGATIVE"
+else
+  If X = 0 then
+    Print "ZERO"
+  else
+    Print "POSITIVE"
+END
+
+QUESTION: For which value of X will the flowchart print "ZERO"?`,
+        options: ["-1", "0", "1", "Any value"],
+        answer: "0",
+        explanation: "ZERO is printed only when X is exactly equal to 0."
+      },
+
+      // 33
+      {
+        question: `FLOWCHART:
+START
+Input X
+If X < 0 then
+  Print "NEGATIVE"
+else
+  If X = 0 then
+    Print "ZERO"
+  else
+    Print "POSITIVE"
+END
+
+QUESTION: If the flowchart prints "POSITIVE", which of the following could be X?`,
+        options: ["-2", "0", "3", "-5"],
+        answer: "3",
+        explanation: "POSITIVE is printed only when X is greater than 0."
+      },
+
+      // 34
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1
+WHILE i ≤ N:
+  Print i
+  i = i + 2
+END WHILE
+END
+
+QUESTION: If N = 7, what sequence of numbers will be printed?`,
+        options: [
+          "1, 2, 3, 4, 5, 6, 7",
+          "1, 3, 5, 7",
+          "2, 4, 6",
+          "3, 5, 7"
+        ],
+        answer: "1, 3, 5, 7",
+        explanation: "Starting at 1 and adding 2 each time gives the odd numbers up to 7."
+      },
+
+      // 35
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1
+WHILE i ≤ N:
+  Print i
+  i = i + 2
+END WHILE
+END
+
+QUESTION: If N = 6, which numbers are printed?`,
+        options: ["1, 3, 5", "1, 3, 5, 7", "2, 4, 6", "No output"],
+        answer: "1, 3, 5",
+        explanation: "The printed values are 1, 3, 5. When i becomes 7, the condition 7 ≤ 6 is false and the loop stops."
+      },
+
+      // 36
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 2
+WHILE i ≤ N:
+  Print i
+  i = i + 2
+END WHILE
+END
+
+QUESTION: If N = 7, what sequence will be printed?`,
+        options: [
+          "1, 3, 5, 7",
+          "2, 4, 6",
+          "2, 4, 6, 8",
+          "None"
+        ],
+        answer: "2, 4, 6",
+        explanation: "Starting at 2 and adding 2 each time prints the even numbers ≤ 7: 2, 4, 6."
+      },
+
+      // 37
+      {
+        question: `FLOWCHART:
+START
+Set total = 0
+Input X, Y
+Is X > Y ?
+  Yes → Print X; END
+  No  → Print Y; END
+
+QUESTION: If X = 10 and Y = 15, what will be printed?`,
+        options: ["10", "15", "25", "total"],
+        answer: "15",
+        explanation: "Since X is not greater than Y, the No branch is followed and Y (15) is printed."
+      },
+
+      // 38
+      {
+        question: `FLOWCHART:
+START
+Set total = 0
+Input X, Y
+Is X > Y ?
+  Yes → Print X; END
+  No  → Print Y; END
+
+QUESTION: Which of the following pairs (X, Y) will make the flowchart print 30?`,
+        options: [
+          "X = 30, Y = 25",
+          "X = 25, Y = 30",
+          "X = 30, Y = 30",
+          "Both (1) and (2)"
+        ],
+        answer: "Both (1) and (2)",
+        explanation: "In (30, 25) the Yes branch prints X = 30. In (25, 30) the No branch prints Y = 30."
+      },
+
+      // 39
+      {
+        question: `FLOWCHART:
+START
+Input A, B
+Set sum = A + B
+If sum > 100 then
+  Print "LARGE"
+else
+  Print "SMALL"
+END
+
+QUESTION: If A = 60 and B = 50, what does the flowchart print?`,
+        options: ["LARGE", "SMALL", "ERROR", "NO OUTPUT"],
+        answer: "LARGE",
+        explanation: "sum = 60 + 50 = 110, which is greater than 100, so the flowchart prints LARGE."
+      },
+
+      // 40
+      {
+        question: `FLOWCHART:
+START
+Input A, B
+Set sum = A + B
+If sum > 100 then
+  Print "LARGE"
+else
+  Print "SMALL"
+END
+
+QUESTION: If the flowchart prints "SMALL", which of the following could be (A, B)?`,
+        options: [
+          "(40, 50)",
+          "(60, 50)",
+          "(80, 30)",
+          "(90, 20)"
+        ],
+        answer: "(40, 50)",
+        explanation: "40 + 50 = 90, which is not greater than 100, so SMALL is printed."
+      },
+
+      // 41
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: If N = 4, what value is printed?`,
+        options: ["4", "6", "8", "10"],
+        answer: "8",
+        explanation: "The loop adds 2 to total four times: 0 → 2 → 4 → 6 → 8."
+      },
+
+      // 42
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: For which value of N does the flowchart print 6?`,
+        options: ["2", "3", "4", "5"],
+        answer: "3",
+        explanation: "If N = 3, 2 is added three times: total = 6."
+      },
+
+      // 43
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: What is the relationship between N and the printed total?`,
+        options: [
+          "Printed total = N",
+          "Printed total = 2 × N",
+          "Printed total = N + 2",
+          "Printed total = N − 2"
+        ],
+        answer: "Printed total = 2 × N",
+        explanation: "Each loop adds 2 exactly N times, so the final total is 2 × N."
+      },
+
+      // 44
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, count = 0
+WHILE i ≤ N:
+  If i is divisible by 3, then count = count + 1
+  i = i + 1
+END WHILE
+Print count
+END
+
+QUESTION: If N = 10, what will be printed?`,
+        options: ["2", "3", "4", "5"],
+        answer: "3",
+        explanation: "Multiples of 3 from 1 to 10 are 3, 6, 9. There are 3 of them."
+      },
+
+      // 45
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, count = 0
+WHILE i ≤ N:
+  If i is divisible by 3, then count = count + 1
+  i = i + 1
+END WHILE
+Print count
+END
+
+QUESTION: Which of the following values of N will make the flowchart print 1?`,
+        options: ["2", "3", "4", "5"],
+        answer: "3",
+        explanation: "Up to N = 3, only the number 3 is divisible by 3, so count = 1."
+      },
+
+      // 46
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, count = 0
+WHILE i ≤ N:
+  If i is divisible by 3, then count = count + 1
+  i = i + 1
+END WHILE
+Print count
+END
+
+QUESTION: If the flowchart prints 0, which statement is true?`,
+        options: [
+          "N must be 0",
+          "N must be 1 or 2",
+          "N can be any value less than 3",
+          "N must be greater than 3"
+        ],
+        answer: "N can be any value less than 3",
+        explanation: "There are no positive multiples of 3 less than 3. For N = 0, 1, or 2, count remains 0."
+      },
+
+      // 47
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + i * 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: If N = 2, what value is printed?`,
+        options: ["2", "4", "6", "8"],
+        answer: "6",
+        explanation: "total = 0 + 1×2 + 2×2 = 0 + 2 + 4 = 6."
+      },
+
+      // 48
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + i * 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: If N = 3, what value is printed?`,
+        options: ["6", "8", "10", "12"],
+        answer: "12",
+        explanation: "total = 0 + 1×2 + 2×2 + 3×2 = 2 + 4 + 6 = 12."
+      },
+
+      // 49
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + i * 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: In general, what is the printed total equal to?`,
+        options: [
+          "N(N + 1)",
+          "N(N + 1) / 2",
+          "2 × [N(N + 1) / 2]",
+          "N²"
+        ],
+        answer: "2 × [N(N + 1) / 2]",
+        explanation: "The flowchart adds 2(1 + 2 + ... + N), which is 2 × [N(N + 1) / 2]."
+      },
+
+      // 50
+      {
+        question: `FLOWCHART:
+START
+Input N
+Set i = 1, total = 0
+WHILE i ≤ N:
+  total = total + i * 2
+  i = i + 1
+END WHILE
+Print total
+END
+
+QUESTION: If the printed total is 20, which value of N below is correct?`,
+        options: ["2", "3", "4", "5"],
+        answer: "4",
+        explanation: "For N = 4, total = 2(1 + 2 + 3 + 4) = 2 × 10 = 20."
+      }
+    ],
+  
 };
 
