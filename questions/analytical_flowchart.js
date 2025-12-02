@@ -2181,6 +2181,247 @@ QUESTION: If N = 246, what value will be printed?`,
     answer: "3",
     explanation:
       "Digits are 6, 4, and 2. All three are even, so COUNT = 3."
-  }
-  ]
+     }
+  ],
+
+// ==========================================
+// LEVEL 3: ADVANCED (10 items for now – more complex loops & decisions)
+// ==========================================
+window.ANALYTICAL_QUESTION_BANK["flowchart"].advanced = [
+  // 1
+  {
+    question: `START
+↓
+Set i = 1, sum = 0
+↓
+Is i ≤ 5 ?
+ ├─ Yes →
+ │    sum = sum + (2 × i + 1)
+ │    i = i + 1
+ │    (go back to decision)
+ └─ No  → Print sum → END
+
+QUESTION: What value of sum will be printed at the end of the flowchart?`,
+    options: ["25", "30", "35", "40"],
+    answer: "35",
+    explanation:
+      "The loop adds the values (2×1+1), (2×2+1), (2×3+1), (2×4+1), (2×5+1) = 3 + 5 + 7 + 9 + 11 = 35."
+  },
+
+  // 2
+  {
+    question: `START
+↓
+Set i = 1, total = 0
+↓
+Is i ≤ 4 ?
+ ├─ Yes →
+ │    total = total + i × (i + 1)
+ │    i = i + 1
+ │    (go back to decision)
+ └─ No  → Print total → END
+
+QUESTION: What value of total will be printed at the end of the flowchart?`,
+    options: ["26", "30", "34", "40"],
+    answer: "40",
+    explanation:
+      "total = 1×2 + 2×3 + 3×4 + 4×5 = 2 + 6 + 12 + 20 = 40."
+  },
+
+  // 3
+  {
+    question: `START
+↓
+Input N
+↓
+Set i = 1, COUNT = 0
+↓
+Is i ≤ N ?
+ ├─ Yes →
+ │    Is i divisible by 4 ?
+ │     ├─ Yes →
+ │     │    Is i divisible by 6 ?
+ │     │     ├─ Yes → (no change)
+ │     │     └─ No  → COUNT = COUNT + 1
+ │     └─ No  → (no change)
+ │    i = i + 1
+ │    (go back to decision)
+ └─ No  → Print COUNT → END
+
+QUESTION: If N = 24, what value of COUNT will be printed?`,
+    options: ["2", "3", "4", "5"],
+    answer: "4",
+    explanation:
+      "Numbers from 1 to 24 divisible by 4 but NOT by 6 are 4, 8, 16, and 20, so COUNT = 4."
+  },
+
+  // 4
+  {
+    question: `START
+↓
+Input N
+↓
+Set evenSum = 0, oddSum = 0
+↓
+Is N > 0 ?
+ ├─ Yes →
+ │    digit = N mod 10
+ │    Is digit even ?
+ │     ├─ Yes → evenSum = evenSum + digit
+ │     └─ No  → oddSum = oddSum + digit
+ │    N = N ÷ 10   (integer division)
+ │    (go back to decision)
+ └─ No  → Set result = evenSum − oddSum
+          Print result → END
+
+QUESTION: If N = 7534, what value will be printed?`,
+    options: ["-11", "-7", "4", "11"],
+    answer: "-11",
+    explanation:
+      "Digits are 7, 5, 3, 4. evenSum = 4; oddSum = 7 + 5 + 3 = 15. result = 4 − 15 = -11."
+  },
+
+  // 5
+  {
+    question: `START
+↓
+Input BASIC_SALARY
+↓
+Is BASIC_SALARY < 10000 ?
+ ├─ Yes → BONUS = 0.10 × BASIC_SALARY
+ └─ No
+      ↓
+      Is BASIC_SALARY ≤ 20000 ?
+       ├─ Yes → BONUS = 0.15 × BASIC_SALARY
+       └─ No  → BONUS = 0.20 × BASIC_SALARY
+↓
+Print BONUS
+↓
+END
+
+QUESTION: If BASIC_SALARY = 18 000, what value of BONUS will be printed?`,
+    options: ["1 800", "2 000", "2 700", "3 600"],
+    answer: "2 700",
+    explanation:
+      "18 000 is between 10 000 and 20 000, so BONUS = 0.15 × 18 000 = 2 700."
+  },
+
+  // 6
+  {
+    question: `START
+↓
+Input N
+↓
+Set i = 1, product = 1
+↓
+Is i ≤ N AND product < 50 ?
+ ├─ Yes →
+ │    product = product × 3
+ │    i = i + 1
+ │    (go back to decision)
+ └─ No  → Print product → END
+
+QUESTION: If N = 5, what value of product will be printed?`,
+    options: ["27", "54", "81", "243"],
+    answer: "81",
+    explanation:
+      "Iterations: product = 3, 9, 27, 81. On the next check, product is no longer < 50, so the loop stops and prints 81."
+  },
+
+  // 7
+  {
+    question: `START
+↓
+Input N
+↓
+Set COUNT = 0
+↓
+Is N > 0 ?
+ ├─ Yes →
+ │    digit = N mod 10
+ │    Is digit > 5 ?
+ │     ├─ Yes → COUNT = COUNT + 1
+ │     └─ No  → (no change)
+ │    N = N ÷ 10   (integer division)
+ │    (go back to decision)
+ └─ No  → Print COUNT → END
+
+QUESTION: If N = 592786, what value of COUNT will be printed?`,
+    options: ["2", "3", "4", "5"],
+    answer: "4",
+    explanation:
+      "Digits are 5, 9, 2, 7, 8, 6. Digits greater than 5 are 9, 7, 8, 6 → COUNT = 4."
+  },
+
+  // 8
+  {
+    question: `START
+↓
+Input FIRST, DIFF, N
+↓
+Set term = FIRST
+Set i = 1
+↓
+Is i < N ?
+ ├─ Yes →
+ │    term = term + DIFF
+ │    i = i + 1
+ │    (go back to decision)
+ └─ No  → Print term → END
+
+QUESTION: If FIRST = 4, DIFF = 3, and N = 5, what value will be printed?`,
+    options: ["13", "16", "17", "19"],
+    answer: "16",
+    explanation:
+      "Sequence terms: 4, 7, 10, 13, 16. The 5th term is 16."
+  },
+
+  // 9
+  {
+    question: `START
+↓
+Input N
+↓
+Set STEPS = 0
+↓
+Is N > 0 ?
+ ├─ Yes →
+ │    N = N ÷ 2   (integer division)
+ │    STEPS = STEPS + 1
+ │    (go back to decision)
+ └─ No  → Print STEPS → END
+
+QUESTION: If N = 20 at the start, what value of STEPS will be printed?`,
+    options: ["3", "4", "5", "6"],
+    answer: "5",
+    explanation:
+      "N goes 20 → 10 → 5 → 2 → 1 → 0. This is 5 divisions by 2 before N becomes 0, so STEPS = 5."
+  },
+
+  // 10
+  {
+    question: `START
+↓
+Input UNITS
+↓
+Is UNITS ≤ 50 ?
+ ├─ Yes → BILL = UNITS × 5
+ └─ No
+      ↓
+      Is UNITS ≤ 100 ?
+       ├─ Yes → BILL = 50 × 5 + (UNITS − 50) × 7
+       └─ No  → BILL = 50 × 5 + 50 × 7 + (UNITS − 100) × 10
+↓
+Print BILL
+↓
+END
+
+QUESTION: If UNITS = 120, what value of BILL will be printed?`,
+    options: ["700", "750", "800", "850"],
+    answer: "800",
+    explanation:
+      "For 120 units: first 50 at 5 (250), next 50 at 7 (350), remaining 20 at 10 (200). Total BILL = 250 + 350 + 200 = 800."
+    }
+  ],
+  
 };
