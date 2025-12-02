@@ -1909,7 +1909,7 @@
         currentIndex === questions.length - 1 ? "Finish Quiz" : "Next";
     }
 
-    function finishQuiz() {
+       function finishQuiz() {
       const questions = getQuestionsForCurrent();
       if (!questions.length) return;
 
@@ -1928,6 +1928,7 @@
 
       quizFinished = true;
 
+      // Main score display
       if (resultScoreMain) {
         resultScoreMain.textContent = correct + " / " + total;
       }
@@ -1935,6 +1936,7 @@
         resultScoreText.textContent = "Score: " + percent + "%";
       }
 
+      // Build Review Mistakes list with explanations
       if (mistakeListEl) {
         mistakeListEl.innerHTML = "";
 
@@ -1943,7 +1945,8 @@
           const selected = ans ? ans.selected : null;
           const isCorrect = ans ? ans.correct : false;
 
-          if (isCorrect) return; // only mistakes / blanks
+          // Skip items that were answered correctly
+          if (isCorrect) return;
 
           const item = document.createElement("div");
           item.className = "mistake-item";
@@ -1961,6 +1964,7 @@
           const answersWrap = document.createElement("div");
           answersWrap.className = "mistake-answers";
 
+          // Your answer
           const userP = document.createElement("p");
           userP.classList.add("wrong");
           userP.innerHTML =
@@ -1970,16 +1974,28 @@
               : "<em>Not answered</em>");
           answersWrap.appendChild(userP);
 
+          // Correct answer
           const correctP = document.createElement("p");
           correctP.classList.add("correct");
           correctP.innerHTML =
             "<span class='label'>✓ Correct answer:</span> " + q.answer;
           answersWrap.appendChild(correctP);
 
+          // Explanation (always English – pulled from q.explanation)
+          const explP = document.createElement("p");
+          explP.classList.add("explanation");
+          explP.innerHTML =
+            "<span class='label'>👉 Why:</span> " +
+            (q.explanation && q.explanation.trim().length
+              ? q.explanation
+              : "No explanation is available for this item.");
+          answersWrap.appendChild(explP);
+
           item.appendChild(answersWrap);
           mistakeListEl.appendChild(item);
         });
 
+        // If walang mali
         if (!mistakeListEl.children.length) {
           const p = document.createElement("p");
           p.textContent = "Perfect score! No mistakes to review.";
@@ -1987,6 +2003,7 @@
         }
       }
 
+      // Show result panel, hide quiz card
       if (quizHeaderEl) quizHeaderEl.classList.add("hidden");
       if (quizCardEl) quizCardEl.classList.add("hidden");
       if (resultPanelEl) resultPanelEl.classList.remove("hidden");
