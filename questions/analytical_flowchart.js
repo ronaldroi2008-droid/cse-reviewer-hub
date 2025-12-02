@@ -2421,7 +2421,7 @@ QUESTION: If UNITS = 120, what value of BILL will be printed?`,
     answer: "800",
     explanation:
       "For 120 units: first 50 at 5 (250), next 50 at 7 (350), remaining 20 at 10 (200). Total BILL = 250 + 350 + 200 = 800."
-    }
+ }
   ]
-  
+
 };
