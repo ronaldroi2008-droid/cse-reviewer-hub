@@ -2027,7 +2027,8 @@ STEP 2: Since some garden houses have pools, it is possible that some of those a
       explanation: `A must be before C; B must be after D. In option 1, A is 9 AM, C is 11 AM, D is 2 PM, and B is 4 PM. Both conditions are satisfied.`
     },
 
-    // 144
+    
+     // 144
     {
       question:
         "Three projects (L, M, N) must be done in sequence over three days. L cannot be first. N cannot be last. Which order is possible?",
@@ -2037,8 +2038,8 @@ STEP 2: Since some garden houses have pools, it is possible that some of those a
         "N, L, M",
         "N, M, L"
       ],
-      answer: "M, L, N",
-      explanation: `L cannot be first, N cannot be last. In “M, L, N”, L is second (not first) and N is third (last) — wait, this violates N cannot be last. Correct order is “N, M, L”: N first (not last), L last (allowed). However, L cannot be first, and in “N, M, L” L is last, which is allowed. So the valid order is “N, M, L”.`
+      answer: "N, M, L",
+      explanation: `L cannot be first, so any order starting with L is invalid. N cannot be last, so any order ending with N is invalid. Among the options, only "N, M, L" satisfies both conditions, with N first and L last.`
     },
 
     // 145
@@ -2692,7 +2693,7 @@ All other options violate a rule:
 • Dana & Ben: if Dana joins, Carlo must join, so Dana-Ben alone is impossible.`
   },
 
-  // 35
+   // 35
   {
     question:
       "Three seminars (A, B, C) are scheduled on the same day: morning, afternoon, and evening. A cannot be in the morning. B cannot be in the evening. Which schedule is valid?",
@@ -2702,21 +2703,8 @@ All other options violate a rule:
       "Morning: B, Afternoon: A, Evening: C",
       "Morning: A, Afternoon: C, Evening: B"
     ],
-    answer: "Morning: C, Afternoon: A, Evening: B",
-    explanation: `Constraints:
-• A not in morning.
-• B not in evening.
-Option B:
-- Morning: C (okay)
-- Afternoon: A (not morning) ✔
-- Evening: B (but B cannot be in evening) ✖
-Wait—recheck options carefully:
-Option C:
-- Morning: B (not forbidden; only B cannot be in evening) ✔
-- Afternoon: A (not morning) ✔
-- Evening: C (no restriction) ✔
-Thus the valid schedule is:
-Morning: B, Afternoon: A, Evening: C.`
+    answer: "Morning: B, Afternoon: A, Evening: C",
+    explanation: `A cannot be in the morning, and B cannot be in the evening. In "Morning: B, Afternoon: A, Evening: C", A is in the afternoon (not morning) and B is in the morning (not evening), so this schedule satisfies both rules. The other options put A in the morning or B in the evening, violating a condition.`
   },
 
   // 36
@@ -2749,23 +2737,12 @@ Other options violate one or more of the conditions.`
       "X Y Z",
       "Y X Z",
       "Z X Y",
-      "X Z Y"
+      "Z Y X"
     ],
     answer: "Y X Z",
-    explanation: `Middle position is the second in the sequence.
-Constraint: Y must NOT be in middle; X must be before Z.
-Option B: Y X Z
-- Y is first (not middle) ✔
-- X before Z ✔
-Other options:
-• X Y Z → Y is middle ✖
-• Z X Y → X not before Z ✖
-• X Z Y → Y is last (okay), X before Z (✔) but check: does any rule forbid Z in middle? No. Actually X Z Y is also acceptable:
-- X before Z ✔
-- Y is not middle (Y is last) ✔
-So both B and D seem to satisfy conditions.
-To avoid ambiguity in your app, adjust the question or options (e.g., add another rule).`
+    explanation: `The middle position is the second in the sequence. Y must not be in the middle, and X must come before Z. In "Y X Z", Y is first (not middle) and X comes before Z, so it satisfies both conditions. In "X Y Z", Y is in the middle; in "Z X Y" and "Z Y X", X does not come before Z. Those orders violate at least one rule.`
   },
+
 
   // 38
   {
@@ -2773,21 +2750,14 @@ To avoid ambiguity in your app, adjust the question or options (e.g., add anothe
       "In a small office, each of three employees (A, B, C) works either in the morning or afternoon, not both. A works in the morning. B does not work at the same time as C. Which schedule is possible?",
     options: [
       "Morning: A, B; Afternoon: C",
-      "Morning: A, C; Afternoon: B",
+      "Morning: B, C; Afternoon: A",
       "Morning: A; Afternoon: B, C",
       "Morning: A, B, C"
     ],
     answer: "Morning: A, B; Afternoon: C",
-    explanation: `Constraints:
-• A in morning.
-• B and C cannot be at same time.
-Option A:
-- Morning: A, B
-- Afternoon: C
-Here A is morning, and B is not with C (B morning, C afternoon) ✔
-Option B puts A and C together in morning, B alone in afternoon; B and C not together but allowed. This also satisfies rules, so again there is ambiguity.
-For your actual exam bank, choose one valid schedule and adjust the others to clearly violate the conditions.`
+    explanation: `A must work in the morning, and B and C cannot work at the same time. In "Morning: A, B; Afternoon: C", A is in the morning and B is not with C (B is with A; C is in the afternoon), so both conditions are satisfied. In "Morning: B, C; Afternoon: A", A is not in the morning; in "Morning: A; Afternoon: B, C", B and C work together; and in "Morning: A, B, C", all three work at the same time. These all violate at least one condition.`
   },
+
 
   // 39
   {
@@ -2910,25 +2880,17 @@ Only the case where B is first gives exactly one true statement.`
   // 46
   {
     question:
-      "A barangay health center has three nurses (L, M, N). Only one nurse works the night shift each day. On Monday, exactly one of the following statements is true:\n(1) L worked the night shift.\n(2) M worked the night shift.\n(3) N did not work the night shift.\nWho worked the night shift on Monday?",
-    options: ["L", "M", "N", "Cannot be determined"],
-    answer: "N",
-    explanation: `Try each possibility:
-If L worked:
-- (1) true.
-- (2) false (M did not).
-- (3) “N did not work” is true (since L worked), giving two true statements → not allowed.
-If M worked:
-- (1) false.
-- (2) true.
-- (3) “N did not work” is true (since M worked), again two true.
-If N worked:
-- (1) false.
-- (2) false.
-- (3) “N did not work” is false.
-Exactly zero true? But puzzle says exactly one statement is true; we must interpret that we mis-assigned.
-To make exactly one true, the only consistent assignment is that N worked and one of the statements is reinterpreted. For cleaner exam material, you may want to replace this item with a simpler one where the logic cleanly yields N as the unique solution.`
+      "All night-shift nurses work at the barangay health center. Some staff who work at the barangay health center are volunteers. Which conclusion is valid?",
+    options: [
+      "All volunteers are night-shift nurses.",
+      "Some night-shift nurses may be volunteers.",
+      "No volunteers are night-shift nurses.",
+      "Only volunteers work at the barangay health center."
+    ],
+    answer: "Some night-shift nurses may be volunteers.",
+    explanation: `Night-shift nurses form a subset of staff at the barangay health center. Some staff at the center are volunteers, so it is logically possible that some of those volunteers are also night-shift nurses. The other options claim too much (all or none) or add information not given.`
   },
+
 
   // 47
   {
