@@ -76,7 +76,7 @@ QUESTION: Based on the flowchart, what will be the output if N = 5?`,
 
     // 4
     {
-      question: `FLOWCHART 2:
+      question: `
 START
 ↓
 Input AGE
@@ -93,7 +93,7 @@ QUESTION: What will the flowchart print if AGE = 15?`,
 
     // 5
     {
-      question: `FLOWCHART 2:
+      question: 
 START
 ↓
 Input AGE
@@ -110,7 +110,7 @@ QUESTION: What will the flowchart print if AGE = 25?`,
 
     // 6
     {
-      question: `FLOWCHART 3:
+      question: 
 START
 ↓
 Input TEMP
@@ -127,7 +127,7 @@ QUESTION: Which of the following temperature values will be labeled "FEVER" by t
 
     // 7
     {
-      question: `FLOWCHART 3:
+      question: `
 START
 ↓
 Input TEMP
@@ -144,7 +144,7 @@ QUESTION: What will the flowchart print if TEMP = 36?`,
 
     // 8
     {
-      question: `FLOWCHART 4:
+      question: `
 START
 ↓
 Input SCORE
@@ -178,7 +178,7 @@ QUESTION: What will the flowchart print if SCORE = 70?`,
 
     // 10
     {
-      question: `FLOWCHART 5:
+      question: `
 START
 ↓
 Input SCORE
@@ -199,8 +199,8 @@ QUESTION: What will the flowchart print if SCORE = 92?`,
 
     // 11
     {
-      question: `FLOWCHART 5:
-START
+      question: `
+STAR
 ↓
 Input SCORE
 ↓
@@ -220,7 +220,7 @@ QUESTION: What will the flowchart print if SCORE = 80?`,
 
     // 12
     {
-      question: `FLOWCHART 5:
+      question: `
 START
 ↓
 Input SCORE
@@ -241,7 +241,7 @@ QUESTION: What will the flowchart print if SCORE = 60?`,
 
     // 13
     {
-      question: `FLOWCHART 6:
+      question: `
 START
 ↓
 Input X
@@ -260,7 +260,7 @@ QUESTION: If the input value is X = 3, what value will be printed?`,
 
     // 14
     {
-      question: `FLOWCHART 6:
+      question: `
 START
 ↓
 Input X
@@ -279,7 +279,7 @@ QUESTION: If the input value is X = 10, what value will be printed?`,
 
     // 15
     {
-      question: `FLOWCHART 7:
+      question: 
 START
 ↓
 Input N
@@ -298,7 +298,7 @@ QUESTION: If the input is N = 7, what will the flowchart print?`,
 
     // 16
     {
-      question: `FLOWCHART 8:
+      question: `
 START
 ↓
 Input K
