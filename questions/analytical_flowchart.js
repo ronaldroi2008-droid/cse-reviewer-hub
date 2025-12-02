@@ -93,7 +93,7 @@ QUESTION: What will the flowchart print if AGE = 15?`,
 
     // 5
     {
-      question: 
+      question:  `
 START
 ↓
 Input AGE
