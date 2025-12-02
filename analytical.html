@@ -445,6 +445,12 @@
       margin: 0 0 10px;
     }
 
+    /* IMPORTANT: para gumana layout ng flowchart (respect line breaks) */
+    #quiz-question-text {
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
     #quiz-options {
       margin-bottom: 8px;
     }
@@ -554,7 +560,7 @@
       font-size: 0.8rem;
     }
 
-    /* RESULTS PANEL – Verbal-style, centered */
+    /* RESULTS PANEL */
     #results-panel {
       margin-top: 20px;
       border-radius: 18px;
@@ -841,9 +847,9 @@
     </main>
   </div>
 
-  <!-- Logical Reasoning question bank -->
+  <!-- Question banks -->
   <script src="questions/analytical_logical_reasoning.js"></script>
-    <script src="questions/analytical_flowchart.js"></script>
+  <script src="questions/analytical_flowchart.js"></script>
 
   <script>
     // ==========================================
@@ -1114,25 +1120,9 @@
         .join("");
     }
 
-function renderQuestion(q) {
-  const container = document.getElementById("question-area");
-  container.innerHTML = "";
-
-  // kung may flowchart text, ipakita muna
-  if (q.flowchart) {
-    const pre = document.createElement("pre");
-    pre.textContent = q.flowchart.trim();
-    pre.style.whiteSpace = "pre";
-    pre.style.fontFamily = "monospace";
-    pre.style.marginBottom = "12px";
-    container.appendChild(pre);
-  }
-
-  // existing code mo for question text + options...
-}
-
-
-    
+    // ==========================================
+    // 6. TOPIC SELECT
+    // ==========================================
     function selectTopic(topicId) {
       currentTopicId = topicId;
 
@@ -1148,7 +1138,7 @@ function renderQuestion(q) {
     }
 
     // ==========================================
-    // 6. MODE TOGGLE
+    // 7. MODE TOGGLE
     // ==========================================
     function initModeToggle() {
       const studyBtn = document.getElementById("mode-study");
@@ -1172,7 +1162,7 @@ function renderQuestion(q) {
     }
 
     // ==========================================
-    // 7. QUIZ INITIALIZERS
+    // 8. QUIZ INITIALIZERS
     // ==========================================
     function initLevelTabs() {
       document.querySelectorAll(".level-tab").forEach(tab => {
@@ -1235,7 +1225,7 @@ function renderQuestion(q) {
     }
 
     // ==========================================
-    // 8. QUIZ ENGINE
+    // 9. QUIZ ENGINE
     // ==========================================
     function startQuiz() {
       const quizCard = document.getElementById("quiz-card");
@@ -1319,8 +1309,11 @@ function renderQuestion(q) {
       }
 
       const q = currentQuestionSet[currentQuestionIndex];
+
+      // Question text (flowchart-friendly dahil sa CSS #quiz-question-text)
       qTextEl.textContent = q.question || "Question";
 
+      // Options
       optionsEl.innerHTML = "";
       const selectedIndex = userAnswers[currentQuestionIndex];
 
@@ -1337,6 +1330,7 @@ function renderQuestion(q) {
         optionsEl.appendChild(btn);
       });
 
+      // Feedback + Explanation
       if (selectedIndex == null) {
         if (feedbackEl) {
           feedbackEl.textContent = "";
@@ -1368,12 +1362,14 @@ function renderQuestion(q) {
         }
       }
 
+      // Counter
       counterEl.textContent =
         "Question " +
         (currentQuestionIndex + 1) +
         " of " +
         currentQuestionSet.length;
 
+      // Nav buttons
       prevBtn.disabled = currentQuestionIndex === 0;
 
       if (currentQuestionIndex === currentQuestionSet.length - 1) {
@@ -1384,7 +1380,7 @@ function renderQuestion(q) {
     }
 
     // ==========================================
-    // 9. FINISH & RESULTS
+    // 10. FINISH & RESULTS
     // ==========================================
     function finishQuiz() {
       quizFinished = true;
@@ -1456,7 +1452,7 @@ function renderQuestion(q) {
           return `
           <div class="result-item">
             <div class="result-item-question">
-              Question ${m.number}: ${m.question}
+              Question ${m.number}: ${m.question.replace(/\n/g, " ")}
             </div>
             <p class="result-item-meta">
               <span class="answer-label">✖ You:</span>
@@ -1490,7 +1486,7 @@ function renderQuestion(q) {
     }
 
     // ==========================================
-    // 10. INIT
+    // 11. INIT
     // ==========================================
     renderTopics();
     initModeToggle();
@@ -1502,6 +1498,7 @@ function renderQuestion(q) {
   </script>
 </body>
 </html>
+
 
 
 
