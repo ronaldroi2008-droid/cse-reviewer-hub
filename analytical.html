@@ -544,6 +544,24 @@
     .explanation-wrapper details[open] summary::before {
       content: "▾ ";
     }
+
+    /* Feedback text (Correct / Mali) */
+    .quiz-feedback {
+      margin-top: 4px;
+      font-size: 0.8rem;
+    }
+
+    .quiz-feedback.correct {
+      color: var(--success);
+    }
+
+    .quiz-feedback.wrong {
+      color: var(--danger);
+    }
+
+    .quiz-feedback.muted {
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -641,7 +659,11 @@
             <div id="quiz-question-text" class="quiz-question-text">
               Question text will appear here.
             </div>
+
             <div id="quiz-options"></div>
+
+            <!-- Feedback: Correct / Mali + tamang sagot -->
+            <div id="quiz-feedback" class="quiz-feedback muted"></div>
 
             <div class="explanation-wrapper hidden" id="explanation-wrapper">
               <details id="quiz-explanation-details">
@@ -665,9 +687,8 @@
     </main>
   </div>
 
-
-  <!-- Logical Reasoning question bank -->
-<script src="questions/analytical_logical_reasoning.js"></script>
+  <!-- Logical Reasoning question bank (dapat gumawa ka ng ganitong file) -->
+  <script src="questions/analytical_logical_reasoning.js"></script>
 
   <script>
     // ==========================================
@@ -1065,6 +1086,8 @@
       const levelLabelEl = document.getElementById("quiz-level-label");
       const explWrap = document.getElementById("explanation-wrapper");
       const explText = document.getElementById("quiz-explanation-text");
+      const explDetails = document.getElementById("quiz-explanation-details");
+      const feedbackEl = document.getElementById("quiz-feedback");
       const prevBtn = document.getElementById("btn-prev");
       const nextBtn = document.getElementById("btn-next");
 
@@ -1077,6 +1100,11 @@
         optionsEl.innerHTML = "";
         counterEl.textContent = "0 of 0";
         explWrap.classList.add("hidden");
+        explText.textContent = "";
+        if (feedbackEl) {
+          feedbackEl.textContent = "";
+          feedbackEl.className = "quiz-feedback";
+        }
         prevBtn.disabled = true;
         nextBtn.disabled = true;
         return;
@@ -1085,25 +1113,59 @@
       const q = currentQuestionSet[currentQuestionIndex];
       qTextEl.textContent = q.question || "Question";
 
+      // Build options
       optionsEl.innerHTML = "";
+      const selectedIndex = userAnswers[currentQuestionIndex];
+
       (q.options || []).forEach((opt, idx) => {
         const btn = document.createElement("button");
         btn.className = "option-btn";
         btn.textContent = opt;
-        if (userAnswers[currentQuestionIndex] === idx) {
+
+        if (selectedIndex === idx) {
           btn.classList.add("selected");
         }
+
         btn.addEventListener("click", () => selectOption(idx));
         optionsEl.appendChild(btn);
       });
 
-      if (q.explanation) {
-        explWrap.classList.remove("hidden");
-        explText.textContent = q.explanation;
-      } else {
+      // Default: wala pang feedback at explanation kung wala pang sagot
+      if (selectedIndex == null) {
+        if (feedbackEl) {
+          feedbackEl.textContent = "";
+          feedbackEl.className = "quiz-feedback muted";
+        }
         explWrap.classList.add("hidden");
+        explText.textContent = "";
+        if (explDetails) explDetails.open = false;
+      } else {
+        // May napili nang sagot → check kung tama
+        const selectedText = q.options[selectedIndex];
+        const isCorrect = selectedText === q.answer;
+
+        if (feedbackEl) {
+          if (isCorrect) {
+            feedbackEl.textContent = "Correct! 🎉";
+            feedbackEl.className = "quiz-feedback correct";
+          } else {
+            feedbackEl.textContent = "Mali. Tamang sagot: " + q.answer;
+            feedbackEl.className = "quiz-feedback wrong";
+          }
+        }
+
+        // Explanation lalabas lang after pumili ng sagot
+        if (q.explanation) {
+          explWrap.classList.remove("hidden");
+          explText.textContent = q.explanation;
+        } else {
+          explWrap.classList.add("hidden");
+          explText.textContent = "";
+        }
+        if (explDetails) explDetails.open = false; // collapsed by default
       }
 
+      // Counter + nav buttons
       counterEl.textContent =
         "Question " +
         (currentQuestionIndex + 1) +
@@ -1126,5 +1188,6 @@
   </script>
 </body>
 </html>
+
 
 
