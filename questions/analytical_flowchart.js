@@ -2186,8 +2186,7 @@ QUESTION: If N = 246, what value will be printed?`,
 
 // ==========================================
 // LEVEL 3: ADVANCED (10 items for now – more complex loops & decisions)
-// ==========================================
-window.ANALYTICAL_QUESTION_BANK["flowchart"].advanced = [
+  advanced: [
   // 1
   {
     question: `START
