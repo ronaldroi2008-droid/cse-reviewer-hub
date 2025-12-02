@@ -955,14 +955,13 @@ window.NUMERICAL_QUESTION_BANK["simple_interest"] = {
       answer: "Equal",
       explanation: "STEP 1: A: 2000×0.05×10 = 1000.\nSTEP 2: B: 1000×0.10×10 = 1000."
     },
-  {
-  question: "A father left a will of 100,000 between two sons aged 12 and 14 such that they receive equal amounts at age 18 (at 5% interest). How much is the share of the older son?",
-  options: ["48780", "51220", "50000", "60000"],
-  answer: "51220",
-  explanation: "STEP 1: Son1 (12) inv for 6 yrs. Son2 (14) inv for 4 yrs.\nSTEP 2: x(1 + 0.05×6) = (100000-x)(1 + 0.05×4).\nSTEP 3: 1.3x = (100000-x)1.2.\nSTEP 4: 1.3x = 120000 - 1.2x -> 2.5x = 120000 -> x=48000.\nSTEP 5: Son 2 share = 52000. Wait, math check. 1.3x = 1.2y. x/y = 12/13. Sum parts 25. 100000/25 = 4000. Older (y) = 4000*13 = 52000. My options are slightly off from exact theoretical. Let's fix the question/options to simpler integers: 50000 vs 50000? No. Let's use simpler numbers. Split 2500 between sons. Younger share: 1200, Older: 1300. Options for 100k -> 52,000.",
-  answer: "52000",
-  options: ["48000", "50000", "52000", "54000"]
-},
+    {
+      question: "A father left a will of 100,000 between two sons aged 12 and 14 so that they will receive equal amounts at age 18 if invested at 5% simple interest. How much is the share of the older son?",
+      options: ["48000", "50000", "52000", "54000"],
+      answer: "52000",
+      explanation: "STEP 1: Let x be the share of the younger son (12 years old). His money will earn interest for 6 years.\nSTEP 2: Let y be the share of the older son (14 years old). His money will earn interest for 4 years.\nSTEP 3: At age 18, younger's amount: x(1 + 0.05×6) = 1.30x.\nSTEP 4: Older’s amount: y(1 + 0.05×4) = 1.20y.\nSTEP 5: Condition: 1.30x = 1.20y and x + y = 100000.\nSTEP 6: From 1.30x = 1.20y → y = (13/12)x.\nSTEP 7: Substitute: x + (13/12)x = 100000 → (25/12)x = 100000 → x = 48000.\nSTEP 8: Then y = 100000 − 48000 = 52000. So the older son’s share is 52,000."
+    },
+
     {
       question: "At what rate percent per annum will a sum of money double in 16 years?",
       options: ["6%", "6.25%", "6.5%", "7%"],
