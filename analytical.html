@@ -1114,6 +1114,25 @@
         .join("");
     }
 
+function renderQuestion(q) {
+  const container = document.getElementById("question-area");
+  container.innerHTML = "";
+
+  // kung may flowchart text, ipakita muna
+  if (q.flowchart) {
+    const pre = document.createElement("pre");
+    pre.textContent = q.flowchart.trim();
+    pre.style.whiteSpace = "pre";
+    pre.style.fontFamily = "monospace";
+    pre.style.marginBottom = "12px";
+    container.appendChild(pre);
+  }
+
+  // existing code mo for question text + options...
+}
+
+
+    
     function selectTopic(topicId) {
       currentTopicId = topicId;
 
