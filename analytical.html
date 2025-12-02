@@ -558,7 +558,7 @@
           CSE Reviewer Hub · <span>Analytical Ability</span>
         </h1>
         <p class="page-subtitle">
-          Logical Reasoning • Flowchart • Problem Solving • Special Topic • Cognitive Reasoning
+          Logical Reasoning • Flowchart • Problem Solving • Cognitive Reasoning
         </p>
       </div>
 
@@ -572,7 +572,7 @@
       <aside class="card sidebar">
         <h2 class="sidebar-title">ANALYTICAL TOPICS</h2>
         <p class="sidebar-note">
-          Piliin ang topic sa ibaba. Sa kanan, pwede kang mag-switch sa Study Mode o Practice Quiz.
+          Choose a topic below. On the right, you can switch between Study Mode and Practice Quiz.
         </p>
         <ul id="topic-list" class="topic-list"></ul>
       </aside>
@@ -589,7 +589,7 @@
             </button>
           </div>
           <p class="mode-help">
-            Tip: Basahin muna ang lesson, tapos mag-practice ng 10–20 items per topic.
+            Tip: Read the lesson first, then practice with 10–20 items per topic.
           </p>
         </div>
 
@@ -683,13 +683,13 @@
       logical_reasoning: {
         title: "Logical Reasoning",
         intro:
-          "Logical reasoning questions test your ability to follow rules, analyze statements, and arrive at valid conclusions. Sa CSE, common ang syllogisms, if–then statements, at pattern-type arguments.",
+          "Logical reasoning questions test your ability to follow rules, analyze statements, and arrive at valid conclusions. In the CSE, common types include syllogisms, if–then statements, and pattern-based arguments.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Identify the given facts first. Huwag mag-assume ng hindi sinabi sa problem.",
-              "Watch for words like ALL, SOME, NONE, IF, ONLY IF – sila ang nagdadala ng tunay na meaning.",
+              "Identify the given facts first. Do not assume information that is not stated.",
+              "Watch for words like ALL, SOME, NONE, IF, ONLY IF – these control the real meaning.",
               "A conclusion is valid only if it must be true for every case that satisfies the given statements.",
               "Diagramming (tables, arrows, simple letter codes) helps you see relationships clearly."
             ]
@@ -703,8 +703,8 @@
               "Question: Which conclusion is valid?",
               "Analysis:",
               "• From (1): Teacher → College Graduate.",
-              "• From (2): May ilang nurse na teacher din.",
-              "Conclusion: “Some nurses are college graduates.” – VALID, dahil yung nurses na teachers ay siguradong college graduates."
+              "• From (2): Some nurses are also teachers.",
+              "Conclusion: “Some nurses are college graduates.” This is valid because the nurses who are teachers must be college graduates."
             ]
           },
           {
@@ -712,37 +712,37 @@
             bullets: [
               "Given: “If a person passes the CSE, then the person is eligible for a permanent government position.”",
               "Valid inferences:",
-              "• If Maria passed CSE → she is eligible.",
-              "• Pero kung si Juan ay eligible, hindi automatic na pasado siya sa CSE (baka exempted o ibang basis).",
-              "Mahalaga: Huwag baligtarin ang if–then maliban kung may dagdag na information."
+              "• If Maria passed the CSE, then she is eligible for a permanent position.",
+              "• But if Juan is eligible, it does not automatically mean he passed the CSE (there may be another basis).",
+              "Important: Do not reverse an if–then statement unless additional information allows it."
             ]
           }
         ],
         tips: [
-          "Underline keywords (ALL, SOME, ONLY, MUST, TRUE) bago mag-analisa.",
+          "Underline keywords (ALL, SOME, ONLY, MUST, TRUE) before you analyze.",
           "Draw quick diagrams instead of solving everything in your head.",
-          "If a choice goes beyond the given information, malamang “Cannot be determined” o “Not valid” yan."
+          "If a choice goes beyond the given information, it is usually “Cannot be determined” or “Not valid.”"
         ]
       },
 
       flowchart: {
         title: "Flowchart & Process Diagrams",
         intro:
-          "Flowchart questions ask you to trace step-by-step procedures. Kailangan mong sundan ang arrows, decisions (Yes/No), at processes para makita ang final output.",
+          "Flowchart questions ask you to trace step-by-step procedures. You must follow arrows, decisions (Yes/No), and processes carefully to determine the final output.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
               "Start at the terminal symbol (usually START) and follow the arrows exactly.",
-              "Decision boxes (diamonds) split the path. Piliin ang “YES” o “NO” based sa kondisyon.",
-              "Keep track of variables (counters like i, n, total). Isulat sa scratch paper habang nagbabago sila.",
+              "Decision boxes (diamonds) split the path. Choose the YES or NO branch based on the condition.",
+              "Keep track of variables (counters like i, n, total) on scratch paper as they change.",
               "Stop at the END symbol or when the question tells you which step/output to inspect."
             ]
           },
           {
             heading: "Worked example: Counting loop",
             bullets: [
-              "Sample instruction in a flowchart:",
+              "Sample instructions in a flowchart:",
               "1) Set i = 1, total = 0.",
               "2) Add i to total.",
               "3) Increase i by 1.",
@@ -758,32 +758,32 @@
           {
             heading: "Reading Yes/No branches",
             bullets: [
-              "Kapag may decision box na “Is X > 10?”:",
-              "• Kung condition is TRUE (Yes branch) → sundan mo yung arrow with label “Yes”.",
-              "• Kung FALSE (No branch) → sundan ang “No” arrow.",
-              "Always re-check kung ano ang initial value ng variable bago humusga sa condition."
+              "When a decision box asks “Is X > 10?”:",
+              "• If the condition is TRUE (Yes branch) → follow the arrow labelled “Yes.”",
+              "• If the condition is FALSE (No branch) → follow the arrow labelled “No.”",
+              "Always double-check the current value of the variable before deciding which branch to follow."
             ]
           }
         ],
         tips: [
-          "Gumamit ng maliit na table (Step / i / total / output) habang tinitrace ang flowchart.",
-          "Bilugan ang tanong: “What is the value of … after Step ___?” para alam kung saan titigil.",
-          "Be careful sa off-by-one errors (mali lang ng isang loop, iba na result)."
+          "Use a small table (Step / i / total / output) while tracing the flowchart.",
+          "Circle the question, e.g., “What is the value of … after Step ___?” so you know when to stop.",
+          "Be careful with off-by-one errors; one extra or missing loop will change the final answer."
         ]
       },
 
       problem_solving: {
         title: "Problem Solving (Analytical Word Problems)",
         intro:
-          "Problem-solving items combine basic math, logic, at reading comprehension. Kadalasan may table, schedule, o short story na kailangang i-analyze bago mag-compute.",
+          "Problem-solving items combine basic math, logic, and reading comprehension. Often there is a table, schedule, or short story that you must analyze before computing.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Translate verbal description into equations, tables, or diagrams.",
-              "Identify what is asked (unknown) and what information is given.",
-              "Remove irrelevant data – minsan may extra numbers para lituhin ka.",
-              "Try simple cases or smaller numbers to see the pattern before solving generally."
+              "Translate verbal descriptions into equations, tables, or diagrams.",
+              "Identify what is being asked (the unknown) and what information is given.",
+              "Remove irrelevant data – sometimes extra numbers are included just to confuse you.",
+              "Try simple cases or smaller numbers to see the pattern before solving in general."
             ]
           },
           {
@@ -800,51 +800,32 @@
             heading: "Worked example: Simple number puzzle",
             bullets: [
               "Problem: The sum of two numbers is 30. One number is 4 more than the other. Find the numbers.",
-              "Step 1: Let smaller = x, larger = x + 4.",
+              "Step 1: Let the smaller number be x, so the larger number is x + 4.",
               "Step 2: x + (x + 4) = 30 → 2x + 4 = 30.",
-              "Step 3: 2x = 26 → x = 13, so the other is 17.",
+              "Step 3: 2x = 26 → x = 13, so the other number is 17.",
               "Answer: 13 and 17."
             ]
           }
         ],
         tips: [
-          "Draw quick diagrams (rows, tables, boxes) para makita ang relationships.",
-          "Kung nalilito, subukan ang choices (structured trial and error).",
-          "Always re-read the last sentence of the problem para sure ka na yun talaga ang sinagot mo."
-        ]
-      },
-
-    
-          {
-            heading: "Worked example: Code pattern",
-            bullets: [
-              "Given: “CAT” is coded as 3120 (C=3, A=1, T=20).",
-              "Question: What is the code for “BAT”?",
-              "Step 1: Assign positions in alphabet: B=2, A=1, T=20.",
-              "Step 2: Code becomes 2 1 20 → 2120.",
-              "So “BAT” can be coded as 2120."
-            ]
-          }
-        ],
-        tips: [
-          "Sa Venn questions, laging unahin ilagay ang intersection (both) bago ang “Math only” o “English only”.",
-          "For codes, ilista sa table: Letter | Code value, then fill in missing letters.",
-          "For schedules, convert times to 24-hour format para iwas kalituhan sa AM/PM."
+          "Draw quick diagrams (rows, tables, boxes) so relationships are easier to see.",
+          "If you are stuck, test the answer choices in a structured way.",
+          "Always reread the last sentence of the problem to be sure you answered exactly what is being asked."
         ]
       },
 
       cognitive_reasoning: {
         title: "Cognitive Reasoning",
         intro:
-          "Cognitive reasoning items measure pattern recognition, analogies, classification, at iba pang higher-order thinking skills.",
+          "Cognitive reasoning items measure pattern recognition, analogies, classification, and other higher-order thinking skills.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Analogies compare two pairs: A is to B as C is to __. Hanapin ang relasyon sa unang pair, i-apply sa pangalawa.",
-              "Classification items ask which item does NOT belong in the group (odd one out).",
-              "Series/pattern questions require you to detect rules in numbers, letters, or figures.",
-              "Always test your guessed rule with more than one step to see if consistent."
+              "Analogies compare two pairs: A is to B as C is to __. Find the relationship in the first pair and apply it to the second.",
+              "Classification items ask which item does NOT belong in the group (the “odd one out”).",
+              "Series or pattern questions require you to detect rules in numbers, letters, or figures.",
+              "Always test your suspected rule with more than one step to see if it is consistent."
             ]
           },
           {
@@ -860,16 +841,16 @@
             bullets: [
               "Sequence: 2, 6, 12, 20, ?",
               "Differences: 6 − 2 = 4, 12 − 6 = 6, 20 − 12 = 8.",
-              "Next difference follows pattern +2: 4, 6, 8, 10.",
-              "So next term = 20 + 10 = 30.",
+              "The next difference follows the +2 pattern: 4, 6, 8, 10.",
+              "So the next term = 20 + 10 = 30.",
               "Answer: 30."
             ]
           }
         ],
         tips: [
-          "Sa analogies, i-sentence mo: “A is a type of B”, “A causes B”, “A is opposite of B”, etc., para makita ang relasyon.",
-          "For odd-one-out, hanapin muna ang common property ng tatlong magkakapareho; kung sino ang wala nun, siya ang sagot.",
-          "Kapag may time, balik sa pattern at i-test ang rule sa 2–3 steps para sigurado na tama."
+          "For analogies, say the relationship in a sentence: “A is a type of B”, “A causes B”, “A is the opposite of B”, etc.",
+          "For odd-one-out questions, first find the common property of the three similar items; the one that does not share it is the answer.",
+          "If you have time, go back to the sequence and test your rule for 2–3 more steps to be sure it holds."
         ]
       }
     };
@@ -1088,8 +1069,7 @@
 
       if (!currentQuestionSet.length) {
         qTextEl.textContent =
-          "Walang naka-load na questions para sa topic na ito / level na ito. " +
-          "Siguraduhin na may JS file na nagse-set ng window.ANALYTICAL_QUESTION_BANK.";
+          "No questions are loaded yet for this topic and level. Make sure a JS file sets window.ANALYTICAL_QUESTION_BANK for Analytical Ability.";
         optionsEl.innerHTML = "";
         counterEl.textContent = "0 of 0";
         explWrap.classList.add("hidden");
