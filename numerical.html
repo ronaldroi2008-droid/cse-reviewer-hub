@@ -743,877 +743,881 @@
       { id: "sequences_series",         label: "Sequences & Series (Bonus)",               tag: "Bonus" }
     ];
 
-    const LESSONS = {
-      whole_numbers: {
-        title: "Whole Numbers & Basic Operations",
-        intro:
-          "This topic reviews addition, subtraction, multiplication, and division of whole numbers, plus how to follow the order of operations correctly.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Whole numbers are 0, 1, 2, 3, ... (no fractions or decimals). They are used for counting and basic calculations.",
-              "Addition and subtraction are inverse operations. Multiplication is repeated addition, and division is repeated subtraction or sharing equally.",
-              "Follow the order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)."
-            ]
-          },
-          {
-            heading: "Worked example: 37 + 25",
-            bullets: [
-              "Step 1: Add the ones place → 7 + 5 = 12. Write 2 in the ones place and carry 1 to the tens place.",
-              "Step 2: Add the tens place → 3 + 2 + carried 1 = 6.",
-              "Final answer: 62. Quick estimate: 40 + 30 = 70, so an exact answer of 62 is reasonable (a bit less than the estimate)."
-            ]
-          },
-          {
-            heading: "Worked example: 120 − 45",
-            bullets: [
-              "Step 1: Line up the numbers by place value: 120 − 45.",
-              "Step 2: Borrow from the tens if needed: 0 cannot subtract 5, so borrow 1 ten from 2 (becomes 1), making the ones 10.",
-              "Step 3: 10 − 5 = 5 (ones), 1 − 4 cannot, so borrow 1 hundred from 1 (hundreds). Then 11 − 4 = 7 (tens), and remaining hundreds is 0.",
-              "Answer: 120 − 45 = 75."
-            ]
-          }
-        ],
-        tips: [
-          "Write multi-step operations vertically so digits line up in columns.",
-          "Circle or underline the operation sign (+, −, ×, ÷) to avoid using the wrong operation.",
-          "Do a quick mental estimate before and after solving to check if your answer is reasonable."
+   const LESSONS = {
+  whole_numbers: {
+    title: "Whole Numbers & Basic Operations",
+    intro:
+      "This topic reviews addition, subtraction, multiplication, and division of whole numbers, plus how to follow the order of operations correctly.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Whole numbers are 0, 1, 2, 3, ... (no fractions or decimals). They are used for counting and basic calculations.",
+          "Addition and subtraction are inverse operations. Multiplication is repeated addition, and division is repeated subtraction or sharing equally.",
+          "Follow the order of operations (PEMDAS): Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)."
         ]
       },
-
-      fractions_decimals: {
-        title: "Fractions & Decimals",
-        intro:
-          "This topic covers how to compare, add, subtract, multiply, and divide fractions and decimals, and how to move between fraction and decimal forms.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A fraction a/b represents a ÷ b. The denominator tells into how many equal parts the whole is divided.",
-              "To compare fractions, use a common denominator or convert them to decimals.",
-              "To convert a fraction to a decimal, divide the numerator by the denominator (for example, 3 ÷ 4 = 0.75).",
-              "Decimals are another way of writing fractions with denominators 10, 100, 1000, and so on."
-            ]
-          },
-          {
-            heading: "Worked example: 3/4 + 2/3",
-            bullets: [
-              "Step 1: Find a common denominator. For 4 and 3, the least common multiple (LCM) is 12.",
-              "Step 2: Convert: 3/4 = 9/12 and 2/3 = 8/12.",
-              "Step 3: Add the numerators: 9/12 + 8/12 = 17/12.",
-              "Step 4: Write as a mixed number: 17/12 = 1 5/12."
-            ]
-          },
-          {
-            heading: "Worked example: 0.6 + 0.35",
-            bullets: [
-              "Step 1: Align decimal points: 0.60 + 0.35.",
-              "Step 2: Add the hundredths: 0.60 + 0.35 = 0.95.",
-              "Check: 0.6 is a little more than one-half, 0.35 is about one-third; total near 1.0, so 0.95 makes sense."
-            ]
-          }
-        ],
-        tips: [
-          "When stuck, draw a bar model or number line to visualize fractions.",
-          "Always simplify your final fraction if possible (divide numerator and denominator by a common factor).",
-          "Align decimal points in vertical addition or subtraction to avoid place-value mistakes."
+      {
+        heading: "Worked example: 37 + 25",
+        bullets: [
+          "Step 1: Add the ones place → 7 + 5 = 12. Write 2 in the ones place and carry 1 to the tens place.",
+          "Step 2: Add the tens place → 3 + 2 + carried 1 = 6.",
+          "Final answer: 62. Quick estimate: 40 + 30 = 70, so an exact answer of 62 is reasonable (a bit less than the estimate)."
         ]
       },
-
-      percentages: {
-        title: "Percentages",
-        intro:
-          "This topic focuses on understanding percentages, converting between fractions, decimals, and percentages, and solving 'percent of' word problems.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Percent means 'per hundred'. So 25% means 25 out of 100 or 25/100.",
-              "To convert a percent to a decimal, divide by 100 or move the decimal point two places to the left (e.g., 18% = 0.18).",
-              "To convert a decimal to a percent, multiply by 100 or move the decimal two places to the right (e.g., 0.45 = 45%).",
-              "'x% of y' is translated as (x/100) × y."
-            ]
-          },
-          {
-            heading: "Worked example: Find 20% of 150.",
-            bullets: [
-              "Step 1: Write 20% as a decimal → 20% = 0.20.",
-              "Step 2: Multiply: 0.20 × 150.",
-              "Step 3: 0.2 × 150 = 30.",
-              "So 20% of 150 is 30."
-            ]
-          },
-          {
-            heading: "Worked example: A score of 36 is what percent of 40?",
-            bullets: [
-              "Step 1: Use formula: Percent = (Part / Whole) × 100%.",
-              "Step 2: Part = 36, Whole = 40 → (36/40) × 100%.",
-              "Step 3: 36/40 = 0.9 → 0.9 × 100% = 90%.",
-              "So 36 is 90% of 40."
-            ]
-          }
-        ],
-        tips: [
-          "Remember three basic forms: fraction, decimal, and percent. Practice converting quickly between them.",
-          "For 'percent of' problems, underline the base quantity (the 'of' number).",
-          "Estimate: for example, 10% of a number is easy (divide by 10), then adjust from there."
-        ]
-      },
-
-      ratio_proportion: {
-        title: "Ratio & Proportion",
-        intro:
-          "This topic deals with comparing quantities using ratios and solving for unknowns using proportions (equations of equal ratios).",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A ratio compares two quantities, often written as a:b, a to b, or a/b.",
-              "Ratios may be simplified by dividing both terms by their greatest common divisor.",
-              "A proportion is an equation stating that two ratios are equal, such as a/b = c/d.",
-              "When two ratios form a proportion, you can use cross-multiplication: a × d = b × c."
-            ]
-          },
-          {
-            heading: "Worked example: Simplify the ratio 12:18.",
-            bullets: [
-              "Step 1: Find the greatest common divisor (GCD) of 12 and 18. GCD = 6.",
-              "Step 2: Divide both terms by 6 → 12 ÷ 6 : 18 ÷ 6 = 2 : 3.",
-              "So the simplified ratio is 2 : 3."
-            ]
-          },
-          {
-            heading: "Worked example: If 3/5 = x/20, find x.",
-            bullets: [
-              "Step 1: Recognize this as a proportion: 3/5 = x/20.",
-              "Step 2: Cross-multiply: 3 × 20 = 5 × x.",
-              "Step 3: 60 = 5x, so x = 60 ÷ 5 = 12.",
-              "Therefore, x = 12."
-            ]
-          }
-        ],
-        tips: [
-          "Always simplify ratios before comparing them; it makes patterns easier to see.",
-          "In proportion problems, label your units clearly (e.g., boys:girls, km:hour).",
-          "Use cross-multiplication carefully and show each step to avoid mixing terms."
-        ]
-      },
-
-      simple_interest: {
-        title: "Simple Interest",
-        intro:
-          "This topic covers simple interest on loans and savings, using the standard formula to find interest and the total amount to be paid or received.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Simple interest is calculated only on the original principal, not on accumulated interest.",
-              "Formula: I = P × R × T, where I = interest, P = principal, R = rate per year (in decimal form), T = time in years.",
-              "Total amount (future value) is A = P + I.",
-              "If time is given in months, convert to years (e.g., 6 months = 6/12 = 0.5 year)."
-            ]
-          },
-          {
-            heading: "Worked example: Find the simple interest on ₱8,000 at 6% per year for 2 years.",
-            bullets: [
-              "Step 1: Identify P = 8,000; R = 6% = 0.06; T = 2 years.",
-              "Step 2: Substitute in formula: I = PRT = 8,000 × 0.06 × 2.",
-              "Step 3: 8,000 × 0.06 = 480; then 480 × 2 = 960.",
-              "So the simple interest is ₱960, and the total amount is A = 8,000 + 960 = ₱8,960."
-            ]
-          }
-        ],
-        tips: [
-          "Always convert the percent rate to decimal before using the formula.",
-          "Under exam pressure, write the formula first to avoid plugging numbers wrongly.",
-          "Watch the units for time. If it is in months, convert to years before calculating."
-        ]
-      },
-
-      profit_loss_discount: {
-        title: "Profit, Loss & Discount",
-        intro:
-          "This topic covers basic business math: finding cost price, selling price, profit, loss, and discounts, often in percentage form.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Cost Price (CP): the original price or cost of an item.",
-              "Selling Price (SP): the price at which the item is sold.",
-              "Profit = SP − CP, Loss = CP − SP (when SP < CP).",
-              "Profit% = (Profit / CP) × 100%, Loss% = (Loss / CP) × 100%.",
-              "Discount is the reduction from the marked price. Discount% = (Discount / Marked Price) × 100%."
-            ]
-          },
-          {
-            heading: "Worked example: A shirt costs ₱400 and is sold for ₱460. Find the profit and profit percentage.",
-            bullets: [
-              "Step 1: CP = 400, SP = 460.",
-              "Step 2: Profit = SP − CP = 460 − 400 = ₱60.",
-              "Step 3: Profit% = (60 / 400) × 100% = 0.15 × 100% = 15%.",
-              "So the profit is ₱60, and the profit rate is 15%."
-            ]
-          },
-          {
-            heading: "Worked example: A bag with a marked price of ₱1,200 is sold at a 25% discount. What is the selling price?",
-            bullets: [
-              "Step 1: Discount = 25% of 1,200 = 0.25 × 1,200 = ₱300.",
-              "Step 2: SP = Marked Price − Discount = 1,200 − 300 = ₱900.",
-              "So the selling price after discount is ₱900."
-            ]
-          }
-        ],
-        tips: [
-          "Decide first whether the situation is profit (SP > CP) or loss (SP < CP).",
-          "Base all percentages on the cost price unless the problem clearly says otherwise.",
-          "For discounts, compute the discount amount first, then subtract from the marked price."
-        ]
-      },
-
-      speed_distance_time: {
-        title: "Speed, Distance & Time",
-        intro:
-          "This topic deals with motion problems, using the relationship between speed, distance, and time to solve word problems.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Basic formula: Distance = Speed × Time (D = S × T).",
-              "Rearranged: Speed = Distance ÷ Time, Time = Distance ÷ Speed.",
-              "Always make sure units are consistent (e.g., km/h with hours, m/s with seconds).",
-              "Average speed is total distance divided by total time, not simply the average of two speeds."
-            ]
-          },
-          {
-            heading: "Worked example: A car travels 150 km in 3 hours. What is its speed?",
-            bullets: [
-              "Step 1: Use speed formula: Speed = Distance ÷ Time.",
-              "Step 2: Substitute: Speed = 150 km ÷ 3 h = 50 km/h.",
-              "So the car’s speed is 50 km/h."
-            ]
-          },
-          {
-            heading: "Worked example: At 60 km/h, how long will it take to travel 180 km?",
-            bullets: [
-              "Step 1: Use time formula: Time = Distance ÷ Speed.",
-              "Step 2: Time = 180 ÷ 60 = 3 hours.",
-              "So the trip will take 3 hours."
-            ]
-          }
-        ],
-        tips: [
-          "Draw a simple diagram showing the movement to organize information.",
-          "Write D = S × T at the top of your scratch paper and rearrange as needed.",
-          "Convert all times to the same unit before calculating, especially when mixing minutes and hours."
-        ]
-      },
-
-      work_problems: {
-        title: "Work Problems (Rates of Work)",
-        intro:
-          "This topic covers problems where people or machines work together or alone, using the concept of work rates to find time or amount of work done.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "If a person can finish a job in T days, then the rate of work is 1/T job per day.",
-              "When two or more workers work together, their rates are added.",
-              "Total work completed = (Total rate) × (Time).",
-              "You can set up equations using 'part of the job done' as fractions of 1 whole job."
-            ]
-          },
-          {
-            heading: "Worked example: A can finish a job in 12 days, B in 18 days. How long will it take them working together?",
-            bullets: [
-              "Step 1: A’s rate = 1/12 job per day.",
-              "Step 2: B’s rate = 1/18 job per day.",
-              "Step 3: Combined rate = 1/12 + 1/18.",
-              "Find common denominator (36): 1/12 = 3/36, 1/18 = 2/36 → total = 5/36 job per day.",
-              "Step 4: Time = 1 ÷ (5/36) = 36/5 = 7.2 days.",
-              "So they can finish the job in 7.2 days (about 7 days and 5 hours)."
-            ]
-          }
-        ],
-        tips: [
-          "Always convert 'can finish in T days' into a rate of 1/T.",
-          "Use a table with columns: worker, time alone, rate, and contribution to organize info.",
-          "Check if your answer is reasonable: working together should always be faster than the faster worker alone."
-        ]
-      },
-
-      algebra_linear: {
-        title: "Linear Equations",
-        intro:
-          "This topic introduces simple algebraic equations with one variable and how to solve them using basic operations.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A variable (like x or y) represents an unknown number.",
-              "A linear equation in one variable has the form ax + b = c.",
-              "To solve an equation, perform the same operation on both sides to isolate the variable.",
-              "The goal is to get the variable alone on one side of the equation."
-            ]
-          },
-          {
-            heading: "Worked example: Solve 3x + 5 = 20.",
-            bullets: [
-              "Step 1: Subtract 5 from both sides: 3x + 5 − 5 = 20 − 5 → 3x = 15.",
-              "Step 2: Divide both sides by 3: 3x ÷ 3 = 15 ÷ 3 → x = 5.",
-              "Step 3: Check: 3(5) + 5 = 15 + 5 = 20, which matches the original equation."
-            ]
-          },
-          {
-            heading: "Worked example: Solve 2(x − 4) = 10.",
-            bullets: [
-              "Step 1: Distribute 2: 2x − 8 = 10.",
-              "Step 2: Add 8 to both sides: 2x − 8 + 8 = 10 + 8 → 2x = 18.",
-              "Step 3: Divide both sides by 2: x = 18 ÷ 2 = 9.",
-              "Step 4: Check: 2(9 − 4) = 2 × 5 = 10, correct."
-            ]
-          }
-        ],
-        tips: [
-          "Write each step on a new line to keep the solution clear.",
-          "Whatever you do to one side of the equation, do exactly the same to the other side.",
-          "Always substitute your answer back into the original equation to verify."
-        ]
-      },
-
-      sequences_series: {
-        title: "Sequences & Series",
-        intro:
-          "This topic covers number patterns, especially arithmetic sequences where the difference between consecutive terms is constant.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A sequence is an ordered list of numbers following a pattern.",
-              "In an arithmetic sequence, each term after the first is obtained by adding a fixed number called the common difference (d).",
-              "If a₁ is the first term, then the nth term of an arithmetic sequence is aₙ = a₁ + (n − 1)d.",
-              "A series is the sum of the terms of a sequence."
-            ]
-          },
-          {
-            heading: "Worked example: Find the 10th term of 5, 8, 11, 14, ...",
-            bullets: [
-              "Step 1: Identify first term a₁ = 5.",
-              "Step 2: Common difference d = 8 − 5 = 3.",
-              "Step 3: Use formula aₙ = a₁ + (n − 1)d.",
-              "Step 4: a₁₀ = 5 + (10 − 1)×3 = 5 + 9×3 = 5 + 27 = 32.",
-              "So the 10th term is 32."
-            ]
-          },
-          {
-            heading: "Worked example: Find the sum of the first 5 terms of 2, 4, 6, 8, ...",
-            bullets: [
-              "Step 1: List the first 5 terms: 2, 4, 6, 8, 10.",
-              "Step 2: Add directly: 2 + 4 + 6 + 8 + 10 = 30.",
-              "In higher-level math, you can use the formula Sₙ = n/2 × (first term + last term).",
-              "Here: S₅ = 5/2 × (2 + 10) = 5/2 × 12 = 5 × 6 = 30."
-            ]
-          }
-        ],
-        tips: [
-          "Write out the first few terms to clearly see the pattern.",
-          "Identify whether the pattern is increasing or decreasing and by how much.",
-          "Check your computed nth term by plugging in small values of n (like n = 1 or 2) to see if you get the known terms."
-        ]
-      },
-
-      data_interpretation: {
-        title: "Data Interpretation (Tables & Graphs)",
-        intro:
-          "This topic focuses on reading, understanding, and interpreting numerical data from tables, bar graphs, line graphs, and pie charts.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Read all titles, labels, and legends in a graph or table before answering questions.",
-              "Identify what each axis or row/column represents (e.g., years, categories, amounts).",
-              "Pay attention to units (e.g., pesos, number of people, percentage).",
-              "Most questions ask for totals, differences, or comparisons between data points."
-            ]
-          },
-          {
-            heading: "Worked example: Reading a simple table",
-            bullets: [
-              "Suppose a table shows the number of books sold in 3 months: January–40, February–35, March–45.",
-              "To find the total books sold, add all values: 40 + 35 + 45 = 120.",
-              "To find the month with the highest sales, compare: March (45) is greater than January (40) and February (35)."
-            ]
-          },
-          {
-            heading: "Worked example: Estimating from a bar graph",
-            bullets: [
-              "In a bar graph of students in four sections, check the scale (e.g., each grid line may represent 5 students).",
-              "If one bar reaches the level marked 25, that category has 25 students.",
-              "If another bar is slightly below 30 and above 25, estimate it as around 28–29 students (depending on the scale).",
-              "Use exact values when given; estimate only when exact values are not shown."
-            ]
-          }
-        ],
-        tips: [
-          "Before computing anything, re-read the question and mark the specific data points needed.",
-          "Use your finger or a ruler to trace lines from the axis to the bar/point to avoid misreading values.",
-          "Most errors in data interpretation are reading mistakes, not calculation mistakes — take time to read carefully."
-        ]
-      },
-
-      pemdas: {
-        title: "PEMDAS – Order of Operations",
-        intro:
-          "This topic explains how to evaluate expressions with more than one operation using the correct order: parentheses, exponents, multiplication/division, and addition/subtraction.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "PEMDAS stands for: Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right).",
-              "Always simplify what is inside parentheses or brackets first before doing anything else.",
-              "Multiplication and division are on the same level. Work them from left to right as they appear.",
-              "Addition and subtraction are also on the same level. Work them from left to right as they appear."
-            ]
-          },
-          {
-            heading: "Worked example: 8 + 3 × (10 − 4)",
-            bullets: [
-              "Step 1 – Parentheses: Compute (10 − 4) = 6.",
-              "Step 2 – Rewrite: 8 + 3 × 6.",
-              "Step 3 – Multiplication before addition: 3 × 6 = 18.",
-              "Step 4 – Add: 8 + 18 = 26.",
-              "Final answer: 26."
-            ]
-          },
-          {
-            heading: "Worked example: (248 + 132) ÷ 4 − 15",
-            bullets: [
-              "Step 1 – Parentheses: 248 + 132 = 380.",
-              "Step 2 – Rewrite: 380 ÷ 4 − 15.",
-              "Step 3 – Division before subtraction: 380 ÷ 4 = 95.",
-              "Step 4 – Subtract: 95 − 15 = 80.",
-              "Final answer: 80."
-            ]
-          }
-        ],
-        tips: [
-          "Write each step on a separate line so you can see the order clearly.",
-          "Underline or circle the part you are working on next (parentheses, then exponents, and so on).",
-          "If you are unsure, check by estimating. Your exact answer should be close to your estimate."
-        ]
-      },
-
-      decimals: {
-        title: "Decimals",
-        intro:
-          "This topic reviews how to read, compare, and perform basic operations with decimal numbers.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A decimal uses a point (.) to separate the whole-number part from the fractional part, such as 3.75.",
-              "The first digit to the right of the decimal point is tenths, the next is hundredths, then thousandths, and so on.",
-              "To compare decimals, align the decimal points and compare digits from left to right.",
-              "When adding or subtracting decimals, always line up the decimal points vertically."
-            ]
-          },
-          {
-            heading: "Worked example: 4.35 + 2.7",
-            bullets: [
-              "Step 1: Line up decimal points: 4.35 + 2.70.",
-              "Step 2: Add hundredths: 5 + 0 = 5.",
-              "Step 3: Add tenths: 3 + 7 = 10 → write 0, carry 1 to the ones place.",
-              "Step 4: Add ones: 4 + 2 + 1 (carried) = 7.",
-              "Answer: 7.05."
-            ]
-          },
-          {
-            heading: "Worked example: 6.2 − 3.48",
-            bullets: [
-              "Step 1: Write 6.20 − 3.48 (add a zero to have the same number of decimal places).",
-              "Step 2: Borrow in hundredths: 0 cannot subtract 8, so borrow 1 from tenths (2 becomes 1), making 10 hundredths.",
-              "Step 3: 10 − 8 = 2 hundredths.",
-              "Step 4: In tenths: 1 cannot subtract 4, so borrow 1 from ones (6 becomes 5), making 11 tenths. Then 11 − 4 = 7 tenths.",
-              "Step 5: Ones: 5 − 3 = 2.",
-              "Answer: 2.72."
-            ]
-          }
-        ],
-        tips: [
-          "Always write extra zeros to keep the same number of decimal places when adding or subtracting.",
-          "Think of decimals as money when possible (e.g., 3.75 = ₱3.75) to make them easier to understand.",
-          "When in doubt, convert decimals to fractions to check if your answer is reasonable."
-        ]
-      },
-
-      averages: {
-        title: "Averages (Mean)",
-        intro:
-          "This topic explains how to compute and interpret the average, or arithmetic mean, of a set of numbers.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "The average (mean) of a set of numbers is the sum of all the values divided by how many values there are.",
-              "Average = (Sum of all data) ÷ (Number of data values).",
-              "The average is a central value; some scores will be above it and some below it."
-            ]
-          },
-          {
-            heading: "Worked example: Find the average of 12, 15, 18, and 25.",
-            bullets: [
-              "Step 1: Add the numbers: 12 + 15 + 18 + 25 = 70.",
-              "Step 2: Count how many numbers: there are 4 values.",
-              "Step 3: Divide: 70 ÷ 4 = 17.5.",
-              "So the average is 17.5."
-            ]
-          },
-          {
-            heading: "Worked example: The average of three test scores is 80. Two of the scores are 75 and 85. What is the third score?",
-            bullets: [
-              "Step 1: Use the average formula backwards. Average = Total ÷ Number.",
-              "Step 2: Total score = Average × Number of scores = 80 × 3 = 240.",
-              "Step 3: Add the known scores: 75 + 85 = 160.",
-              "Step 4: Third score = Total − known scores = 240 − 160 = 80.",
-              "So the third score is 80."
-            ]
-          }
-        ],
-        tips: [
-          "Check that your average lies between the smallest and largest values; if not, re-check your work.",
-          "Write the formula before substituting numbers to avoid confusion.",
-          "In word problems, be clear whether the question is asking for the average or for a missing value using the average."
-        ]
-      },
-
-      solving_math_expressions: {
-        title: "Solving Mathematical Expressions",
-        intro:
-          "This topic focuses on simplifying algebraic and numerical expressions by combining like terms and using the order of operations.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "An expression has numbers, variables, and operation signs, but no equality sign (=).",
-              "Combine like terms—terms that have the same variable and exponent (e.g., 3x and 5x).",
-              "Use PEMDAS to decide which part of a complex expression to simplify first.",
-              "Be careful with negative signs; keep them attached to their terms."
-            ]
-          },
-          {
-            heading: "Worked example: Simplify 5x + 3 − 2x + 7.",
-            bullets: [
-              "Step 1: Group like terms: (5x − 2x) + (3 + 7).",
-              "Step 2: Combine x-terms: 5x − 2x = 3x.",
-              "Step 3: Combine constants: 3 + 7 = 10.",
-              "Final expression: 3x + 10."
-            ]
-          },
-          {
-            heading: "Worked example: Simplify 4(2y − 3) + 5.",
-            bullets: [
-              "Step 1: Distribute 4: 4 × 2y = 8y and 4 × (−3) = −12, so you get 8y − 12 + 5.",
-              "Step 2: Combine constants: −12 + 5 = −7.",
-              "Final expression: 8y − 7."
-            ]
-          }
-        ],
-        tips: [
-          "Rewrite expressions neatly and line up like terms before combining.",
-          "Use parentheses to keep negative signs attached when moving terms around.",
-          "After simplifying, check that no further combining of like terms is possible."
-        ]
-      },
-
-      writing_math_expressions: {
-        title: "Writing Mathematical Expressions",
-        intro:
-          "This topic trains you to translate verbal phrases and word statements into correct mathematical expressions and equations.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Identify keywords: 'sum' means addition, 'difference' means subtraction, 'product' means multiplication, 'quotient' means division.",
-              "Phrases like 'more than' and 'less than' can reverse the order of numbers (e.g., '5 more than x' = x + 5).",
-              "Use a variable (x, y, n, etc.) to represent the unknown quantity.",
-              "Word equations can often be written first as expressions, then converted into full equations with '='."
-            ]
-          },
-          {
-            heading: "Worked example: 'Seven more than a number n'",
-            bullets: [
-              "Step 1: Identify the unknown: 'a number n' → variable n.",
-              "Step 2: 'More than' means addition.",
-              "Step 3: 'Seven more than n' means start with n and add 7.",
-              "Expression: n + 7."
-            ]
-          },
-          {
-            heading: "Worked example: 'Twice a number decreased by 9 is 17'",
-            bullets: [
-              "Step 1: 'Twice a number' → 2x.",
-              "Step 2: 'Decreased by 9' means subtract 9 → 2x − 9.",
-              "Step 3: The words 'is 17' tell us this equals 17.",
-              "Equation: 2x − 9 = 17."
-            ]
-          }
-        ],
-        tips: [
-          "Underline the important phrase in the word sentence and decide which operation it suggests.",
-          "Check the order of the words carefully; '6 less than a number' is x − 6, not 6 − x.",
-          "After writing the expression, read it back in words to see if it matches the original sentence."
-        ]
-      },
-
-      number_problems: {
-        title: "Number Problems",
-        intro:
-          "This topic covers word problems that involve unknown numbers, often using place value or relationships like 'the sum of two numbers'.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Translate the relationship between numbers into equations using variables.",
-              "Common patterns: 'sum', 'difference', 'twice', 'three times', 'half', and place-value descriptions like 'tens digit' and 'ones digit'.",
-              "Draw a quick model or table if the description involves two or more related numbers."
-            ]
-          },
-          {
-            heading: "Worked example: The sum of two numbers is 30. One number is 8 more than the other. Find the numbers.",
-            bullets: [
-              "Step 1: Let the smaller number be x. Then the larger number is x + 8.",
-              "Step 2: Their sum is 30 → x + (x + 8) = 30.",
-              "Step 3: Combine like terms: 2x + 8 = 30.",
-              "Step 4: Subtract 8: 2x = 22.",
-              "Step 5: Divide by 2: x = 11, so the other number is 19.",
-              "Answer: The numbers are 11 and 19."
-            ]
-          },
-          {
-            heading: "Worked example: A two-digit number has a tens digit 3 more than the ones digit. The sum of its digits is 11. Find the number.",
-            bullets: [
-              "Step 1: Let the ones digit be x. Then the tens digit is x + 3.",
-              "Step 2: The sum of digits is 11 → x + (x + 3) = 11.",
-              "Step 3: Combine terms: 2x + 3 = 11.",
-              "Step 4: Subtract 3: 2x = 8 → x = 4.",
-              "Step 5: Tens digit = x + 3 = 7, so the number is 74."
-            ]
-          }
-        ],
-        tips: [
-          "Always define your variable clearly (e.g., 'Let x be the smaller number').",
-          "Write the equation directly from the sentence: 'sum of' means '+', 'difference' means '−'.",
-          "Check your final answer by substituting back into the original word problem."
-        ]
-      },
-
-      odd_even_consecutive: {
-        title: "Odd, Even, and Consecutive Integers",
-        intro:
-          "This topic deals with problems involving odd numbers, even numbers, and consecutive integers.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Even integers are divisible by 2 (…, −4, −2, 0, 2, 4, …); odd integers are not divisible by 2 (…, −3, −1, 1, 3, …).",
-              "Three consecutive integers can be written as x, x + 1, x + 2.",
-              "Three consecutive even integers can be written as x, x + 2, x + 4 (x must be even).",
-              "Three consecutive odd integers can be written as x, x + 2, x + 4 (x must be odd)."
-            ]
-          },
-          {
-            heading: "Worked example: The sum of three consecutive integers is 42. Find the integers.",
-            bullets: [
-              "Step 1: Let the integers be x, x + 1, and x + 2.",
-              "Step 2: Sum is 42 → x + (x + 1) + (x + 2) = 42.",
-              "Step 3: Combine like terms: 3x + 3 = 42.",
-              "Step 4: Subtract 3: 3x = 39.",
-              "Step 5: Divide by 3: x = 13.",
-              "So the integers are 13, 14, and 15."
-            ]
-          },
-          {
-            heading: "Worked example: The sum of three consecutive odd integers is 51. Find the integers.",
-            bullets: [
-              "Step 1: Let the odd integers be x, x + 2, and x + 4.",
-              "Step 2: Sum is 51 → x + (x + 2) + (x + 4) = 51.",
-              "Step 3: Combine terms: 3x + 6 = 51.",
-              "Step 4: Subtract 6: 3x = 45.",
-              "Step 5: Divide by 3: x = 15.",
-              "So the integers are 15, 17, and 19."
-            ]
-          }
-        ],
-        tips: [
-          "Decide early whether the integers must be odd, even, or just any consecutive integers.",
-          "Write them using x, x + 1, x + 2 or x, x + 2, x + 4 and form the equation from the word description.",
-          "Verify the parity (odd/even) of your final answers to make sure they fit the problem."
-        ]
-      },
-
-      age_problems: {
-        title: "Age Problems",
-        intro:
-          "This topic covers word problems that compare ages now and in the past or future.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Let a variable represent a person’s present age; express past or future ages by adding or subtracting years.",
-              "Use phrases like 'twice as old', 'three years older', or 'five years younger' to build equations.",
-              "Make a small table with 'Now', 'Past/Future' columns to organize information."
-            ]
-          },
-          {
-            heading: "Worked example: Ana is 4 years older than Ben. In 6 years, the sum of their ages will be 40. How old is Ben now?",
-            bullets: [
-              "Step 1: Let Ben’s present age be x. Then Ana’s present age is x + 4.",
-              "Step 2: In 6 years, Ben will be x + 6 and Ana will be x + 4 + 6 = x + 10.",
-              "Step 3: Their total ages in 6 years is 40 → (x + 6) + (x + 10) = 40.",
-              "Step 4: Combine terms: 2x + 16 = 40.",
-              "Step 5: Subtract 16: 2x = 24 → x = 12.",
-              "So Ben is 12 years old now, and Ana is 16."
-            ]
-          },
-          {
-            heading: "Worked example: A father is now three times as old as his son. In 12 years, he will be twice as old as his son. Find their present ages.",
-            bullets: [
-              "Step 1: Let the son’s present age be x. Then the father’s present age is 3x.",
-              "Step 2: In 12 years, the son will be x + 12 and the father will be 3x + 12.",
-              "Step 3: In 12 years, father is twice the son’s age → 3x + 12 = 2(x + 12).",
-              "Step 4: Expand the right side: 3x + 12 = 2x + 24.",
-              "Step 5: Subtract 2x: x + 12 = 24 → x = 12.",
-              "So the son is 12 years old now and the father is 36."
-            ]
-          }
-        ],
-        tips: [
-          "Always base your variable on the present age unless the problem clearly uses a different time.",
-          "Use a table (Person vs. Age now vs. Age later) to avoid mixing up ages.",
-          "Check your solution by plugging the ages back into the story and seeing if all conditions are satisfied."
-        ]
-      },
-
-      geometry_problems: {
-        title: "Geometry Problems",
-        intro:
-          "This topic includes basic word problems involving perimeter, area, and sometimes simple volume.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Perimeter is the distance around a figure; area is the amount of surface it covers.",
-              "Common formulas: rectangle area = length × width; triangle area = 1/2 × base × height; circle area = πr² (if needed).",
-              "Translate shape descriptions into algebra by labeling sides with variables and using formulas."
-            ]
-          },
-          {
-            heading: "Worked example: A rectangle has a length 5 m longer than its width. If the perimeter is 42 m, find its dimensions.",
-            bullets: [
-              "Step 1: Let width be x meters; length is x + 5 meters.",
-              "Step 2: Perimeter of rectangle: P = 2(length + width) = 42.",
-              "Step 3: Set up equation: 2[(x + 5) + x] = 42.",
-              "Step 4: Simplify inside: (x + 5) + x = 2x + 5, so 2(2x + 5) = 42.",
-              "Step 5: Multiply: 4x + 10 = 42.",
-              "Step 6: Subtract 10: 4x = 32 → x = 8.",
-              "So width = 8 m and length = 13 m."
-            ]
-          },
-          {
-            heading: "Worked example: A rectangular lot is 20 m long and 12 m wide. What is its area, and what is the cost to fence around it if fencing costs ₱150 per meter?",
-            bullets: [
-              "Step 1: Area: A = length × width = 20 × 12 = 240 m².",
-              "Step 2: Perimeter: P = 2(length + width) = 2(20 + 12) = 2 × 32 = 64 m.",
-              "Step 3: Cost of fencing: 64 m × ₱150 per meter = ₱9,600.",
-              "So the area is 240 m² and the total fencing cost is ₱9,600."
-            ]
-          }
-        ],
-        tips: [
-          "Draw a quick sketch and label given dimensions with variables or numbers.",
-          "Write the relevant formula beside your sketch before substituting values.",
-          "Watch the units (meters vs. centimeters, m² vs. m³) to avoid incorrect answers."
-        ]
-      },
-
-      divisibility_rules: {
-        title: "Divisibility Rules",
-        intro:
-          "This topic teaches quick tests to see whether a number is divisible by 2, 3, 5, 9, 10, and other common divisors without doing full division.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A number is divisible by 2 if its last digit is 0, 2, 4, 6, or 8.",
-              "A number is divisible by 5 if its last digit is 0 or 5.",
-              "A number is divisible by 10 if its last digit is 0.",
-              "A number is divisible by 3 if the sum of its digits is divisible by 3.",
-              "A number is divisible by 9 if the sum of its digits is divisible by 9."
-            ]
-          },
-          {
-            heading: "Worked example: Check if 5,436 is divisible by 3 and by 9.",
-            bullets: [
-              "Step 1: Add its digits: 5 + 4 + 3 + 6 = 18.",
-              "Step 2: Since 18 is divisible by 3, 5,436 is divisible by 3.",
-              "Step 3: 18 is also divisible by 9 (18 ÷ 9 = 2), so 5,436 is divisible by 9 as well."
-            ]
-          },
-          {
-            heading: "Worked example: Which of the following numbers is divisible by both 2 and 5: 120, 135, 248, 375?",
-            bullets: [
-              "Step 1: A number divisible by both 2 and 5 must end in 0 (because it must be divisible by 10).",
-              "Step 2: Among the choices, only 120 ends in 0.",
-              "So 120 is divisible by both 2 and 5."
-            ]
-          }
-        ],
-        tips: [
-          "Memorize the basic rules for 2, 3, 5, 9, and 10; they appear very often in tests.",
-          "Use digit-sum rules (for 3 and 9) to quickly check large numbers.",
-          "Divisibility rules are especially useful when simplifying fractions or checking factors."
-        ]
-      },
-
-      multiples_factors: {
-        title: "Multiples and Factors",
-        intro:
-          "This topic explains how to find factors and multiples of whole numbers, as well as common multiples and common factors.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "A factor of a number divides it exactly with no remainder.",
-              "A multiple of a number is obtained by multiplying it by a whole number (e.g., multiples of 4 are 4, 8, 12, 16, …).",
-              "The greatest common factor (GCF) is the largest factor that two numbers share.",
-              "The least common multiple (LCM) is the smallest multiple that two numbers share."
-            ]
-          },
-          {
-            heading: "Worked example: List all factors of 18.",
-            bullets: [
-              "Step 1: Test small numbers: 1 × 18, 2 × 9, 3 × 6.",
-              "Step 2: Collect the unique factors: 1, 2, 3, 6, 9, 18.",
-              "So the factors of 18 are 1, 2, 3, 6, 9, and 18."
-            ]
-          },
-          {
-            heading: "Worked example: Find the LCM of 6 and 8.",
-            bullets: [
-              "Step 1: List multiples of 6: 6, 12, 18, 24, 30, 36, …",
-              "Step 2: List multiples of 8: 8, 16, 24, 32, 40, …",
-              "Step 3: The smallest common multiple appearing in both lists is 24.",
-              "So LCM(6, 8) = 24."
-            ]
-          }
-        ],
-        tips: [
-          "When listing factors, check pairs: if 2 is a factor of 18, then 18 ÷ 2 = 9 is also a factor.",
-          "Use prime factorization for larger numbers to find GCF and LCM efficiently.",
-          "GCF is useful for simplifying fractions; LCM is useful for adding and subtracting fractions with different denominators."
+      {
+        heading: "Worked example: 120 − 45",
+        bullets: [
+          "Step 1: Line up the numbers by place value: 120 − 45.",
+          "Step 2: Borrow from the tens if needed: 0 cannot subtract 5, so borrow 1 ten from 2 (becomes 1), making the ones 10.",
+          "Step 3: 10 − 5 = 5 (ones), 1 − 4 cannot, so borrow 1 hundred from 1 (hundreds). Then 11 − 4 = 7 (tens), and remaining hundreds is 0.",
+          "Answer: 120 − 45 = 75."
         ]
       }
-    };
+    ],
+    tips: [
+      "Write multi-step operations vertically so digits line up in columns.",
+      "Circle or underline the operation sign (+, −, ×, ÷) to avoid using the wrong operation.",
+      "Do a quick mental estimate before and after solving to check if your answer is reasonable."
+    ]
+  },
+
+  // ✅ RENAMED: fractions_decimals  →  fractions
+  fractions: {
+    title: "Fractions & Operations on Fractions",
+    intro:
+      "This topic covers how to compare, add, subtract, multiply, and divide fractions, and how to move between fraction and decimal forms.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A fraction a/b represents a ÷ b. The denominator tells into how many equal parts the whole is divided.",
+          "To compare fractions, use a common denominator or convert them to decimals.",
+          "To convert a fraction to a decimal, divide the numerator by the denominator (for example, 3 ÷ 4 = 0.75).",
+          "Decimals are another way of writing fractions with denominators 10, 100, 1000, and so on."
+        ]
+      },
+      {
+        heading: "Worked example: 3/4 + 2/3",
+        bullets: [
+          "Step 1: Find a common denominator. For 4 and 3, the least common multiple (LCM) is 12.",
+          "Step 2: Convert: 3/4 = 9/12 and 2/3 = 8/12.",
+          "Step 3: Add the numerators: 9/12 + 8/12 = 17/12.",
+          "Step 4: Write as a mixed number: 17/12 = 1 5/12."
+        ]
+      },
+      {
+        heading: "Worked example: 5/6 × 3/4",
+        bullets: [
+          "Step 1: Multiply numerators: 5 × 3 = 15.",
+          "Step 2: Multiply denominators: 6 × 4 = 24.",
+          "Step 3: So 5/6 × 3/4 = 15/24.",
+          "Step 4: Simplify 15/24 by dividing top and bottom by 3 → 5/8."
+        ]
+      }
+    ],
+    tips: [
+      "When stuck, draw a bar model or number line to visualize fractions.",
+      "Always simplify your final fraction if possible (divide numerator and denominator by a common factor).",
+      "When adding or subtracting, be sure to use a common denominator before combining numerators."
+    ]
+  },
+
+  percentages: {
+    title: "Percentages",
+    intro:
+      "This topic focuses on understanding percentages, converting between fractions, decimals, and percentages, and solving 'percent of' word problems.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Percent means 'per hundred'. So 25% means 25 out of 100 or 25/100.",
+          "To convert a percent to a decimal, divide by 100 or move the decimal point two places to the left (e.g., 18% = 0.18).",
+          "To convert a decimal to a percent, multiply by 100 or move the decimal two places to the right (e.g., 0.45 = 45%).",
+          "'x% of y' is translated as (x/100) × y."
+        ]
+      },
+      {
+        heading: "Worked example: Find 20% of 150.",
+        bullets: [
+          "Step 1: Write 20% as a decimal → 20% = 0.20.",
+          "Step 2: Multiply: 0.20 × 150.",
+          "Step 3: 0.2 × 150 = 30.",
+          "So 20% of 150 is 30."
+        ]
+      },
+      {
+        heading: "Worked example: A score of 36 is what percent of 40?",
+        bullets: [
+          "Step 1: Use formula: Percent = (Part / Whole) × 100%.",
+          "Step 2: Part = 36, Whole = 40 → (36/40) × 100%.",
+          "Step 3: 36/40 = 0.9 → 0.9 × 100% = 90%.",
+          "So 36 is 90% of 40."
+        ]
+      }
+    ],
+    tips: [
+      "Remember three basic forms: fraction, decimal, and percent. Practice converting quickly between them.",
+      "For 'percent of' problems, underline the base quantity (the 'of' number).",
+      "Estimate: for example, 10% of a number is easy (divide by 10), then adjust from there."
+    ]
+  },
+
+  ratio_proportion: {
+    title: "Ratio & Proportion",
+    intro:
+      "This topic deals with comparing quantities using ratios and solving for unknowns using proportions (equations of equal ratios).",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A ratio compares two quantities, often written as a:b, a to b, or a/b.",
+          "Ratios may be simplified by dividing both terms by their greatest common divisor.",
+          "A proportion is an equation stating that two ratios are equal, such as a/b = c/d.",
+          "When two ratios form a proportion, you can use cross-multiplication: a × d = b × c."
+        ]
+      },
+      {
+        heading: "Worked example: Simplify the ratio 12:18.",
+        bullets: [
+          "Step 1: Find the greatest common divisor (GCD) of 12 and 18. GCD = 6.",
+          "Step 2: Divide both terms by 6 → 12 ÷ 6 : 18 ÷ 6 = 2 : 3.",
+          "So the simplified ratio is 2 : 3."
+        ]
+      },
+      {
+        heading: "Worked example: If 3/5 = x/20, find x.",
+        bullets: [
+          "Step 1: Recognize this as a proportion: 3/5 = x/20.",
+          "Step 2: Cross-multiply: 3 × 20 = 5 × x.",
+          "Step 3: 60 = 5x, so x = 60 ÷ 5 = 12.",
+          "Therefore, x = 12."
+        ]
+      }
+    ],
+    tips: [
+      "Always simplify ratios before comparing them; it makes patterns easier to see.",
+      "In proportion problems, label your units clearly (e.g., boys:girls, km:hour).",
+      "Use cross-multiplication carefully and show each step to avoid mixing terms."
+    ]
+  },
+
+  simple_interest: {
+    title: "Simple Interest",
+    intro:
+      "This topic covers simple interest on loans and savings, using the standard formula to find interest and the total amount to be paid or received.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Simple interest is calculated only on the original principal, not on accumulated interest.",
+          "Formula: I = P × R × T, where I = interest, P = principal, R = rate per year (in decimal form), T = time in years.",
+          "Total amount (future value) is A = P + I.",
+          "If time is given in months, convert to years (e.g., 6 months = 6/12 = 0.5 year)."
+        ]
+      },
+      {
+        heading: "Worked example: Find the simple interest on ₱8,000 at 6% per year for 2 years.",
+        bullets: [
+          "Step 1: Identify P = 8,000; R = 6% = 0.06; T = 2 years.",
+          "Step 2: Substitute in formula: I = PRT = 8,000 × 0.06 × 2.",
+          "Step 3: 8,000 × 0.06 = 480; then 480 × 2 = 960.",
+          "So the simple interest is ₱960, and the total amount is A = 8,000 + 960 = ₱8,960."
+        ]
+      }
+    ],
+    tips: [
+      "Always convert the percent rate to decimal before using the formula.",
+      "Under exam pressure, write the formula first to avoid plugging numbers wrongly.",
+      "Watch the units for time. If it is in months, convert to years before calculating."
+    ]
+  },
+
+  profit_loss_discount: {
+    title: "Profit, Loss & Discount",
+    intro:
+      "This topic covers basic business math: finding cost price, selling price, profit, loss, and discounts, often in percentage form.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Cost Price (CP): the original price or cost of an item.",
+          "Selling Price (SP): the price at which the item is sold.",
+          "Profit = SP − CP, Loss = CP − SP (when SP < CP).",
+          "Profit% = (Profit / CP) × 100%, Loss% = (Loss / CP) × 100%.",
+          "Discount is the reduction from the marked price. Discount% = (Discount / Marked Price) × 100%."
+        ]
+      },
+      {
+        heading: "Worked example: A shirt costs ₱400 and is sold for ₱460. Find the profit and profit percentage.",
+        bullets: [
+          "Step 1: CP = 400, SP = 460.",
+          "Step 2: Profit = SP − CP = 460 − 400 = ₱60.",
+          "Step 3: Profit% = (60 / 400) × 100% = 0.15 × 100% = 15%.",
+          "So the profit is ₱60, and the profit rate is 15%."
+        ]
+      },
+      {
+        heading: "Worked example: A bag with a marked price of ₱1,200 is sold at a 25% discount. What is the selling price?",
+        bullets: [
+          "Step 1: Discount = 25% of 1,200 = 0.25 × 1,200 = ₱300.",
+          "Step 2: SP = Marked Price − Discount = 1,200 − 300 = ₱900.",
+          "So the selling price after discount is ₱900."
+        ]
+      }
+    ],
+    tips: [
+      "Decide first whether the situation is profit (SP > CP) or loss (SP < CP).",
+      "Base all percentages on the cost price unless the problem clearly says otherwise.",
+      "For discounts, compute the discount amount first, then subtract from the marked price."
+    ]
+  },
+
+  // ✅ RENAMED: speed_distance_time → motion_problems
+  motion_problems: {
+    title: "Motion Problems (Speed, Distance & Time)",
+    intro:
+      "This topic deals with motion problems, using the relationship between speed, distance, and time to solve word problems.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Basic formula: Distance = Speed × Time (D = S × T).",
+          "Rearranged: Speed = Distance ÷ Time, Time = Distance ÷ Speed.",
+          "Always make sure units are consistent (e.g., km/h with hours, m/s with seconds).",
+          "Average speed is total distance divided by total time, not simply the average of two speeds."
+        ]
+      },
+      {
+        heading: "Worked example: A car travels 150 km in 3 hours. What is its speed?",
+        bullets: [
+          "Step 1: Use speed formula: Speed = Distance ÷ Time.",
+          "Step 2: Substitute: Speed = 150 km ÷ 3 h = 50 km/h.",
+          "So the car’s speed is 50 km/h."
+        ]
+      },
+      {
+        heading: "Worked example: At 60 km/h, how long will it take to travel 180 km?",
+        bullets: [
+          "Step 1: Use time formula: Time = Distance ÷ Speed.",
+          "Step 2: Time = 180 ÷ 60 = 3 hours.",
+          "So the trip will take 3 hours."
+        ]
+      }
+    ],
+    tips: [
+      "Draw a simple diagram showing the movement to organize information.",
+      "Write D = S × T at the top of your scratch paper and rearrange as needed.",
+      "Convert all times to the same unit before calculating, especially when mixing minutes and hours."
+    ]
+  },
+
+  work_problems: {
+    title: "Work Problems (Rates of Work)",
+    intro:
+      "This topic covers problems where people or machines work together or alone, using the concept of work rates to find time or amount of work done.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "If a person can finish a job in T days, then the rate of work is 1/T job per day.",
+          "When two or more workers work together, their rates are added.",
+          "Total work completed = (Total rate) × (Time).",
+          "You can set up equations using 'part of the job done' as fractions of 1 whole job."
+        ]
+      },
+      {
+        heading: "Worked example: A can finish a job in 12 days, B in 18 days. How long will it take them working together?",
+        bullets: [
+          "Step 1: A’s rate = 1/12 job per day.",
+          "Step 2: B’s rate = 1/18 job per day.",
+          "Step 3: Combined rate = 1/12 + 1/18.",
+          "Find common denominator (36): 1/12 = 3/36, 1/18 = 2/36 → total = 5/36 job per day.",
+          "Step 4: Time = 1 ÷ (5/36) = 36/5 = 7.2 days.",
+          "So they can finish the job in 7.2 days (about 7 days and 5 hours)."
+        ]
+      }
+    ],
+    tips: [
+      "Always convert 'can finish in T days' into a rate of 1/T.",
+      "Use a table with columns: worker, time alone, rate, and contribution to organize info.",
+      "Check if your answer is reasonable: working together should always be faster than the faster worker alone."
+    ]
+  },
+
+  algebra_linear: {
+    title: "Linear Equations",
+    intro:
+      "This topic introduces simple algebraic equations with one variable and how to solve them using basic operations.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A variable (like x or y) represents an unknown number.",
+          "A linear equation in one variable has the form ax + b = c.",
+          "To solve an equation, perform the same operation on both sides to isolate the variable.",
+          "The goal is to get the variable alone on one side of the equation."
+        ]
+      },
+      {
+        heading: "Worked example: Solve 3x + 5 = 20.",
+        bullets: [
+          "Step 1: Subtract 5 from both sides: 3x + 5 − 5 = 20 − 5 → 3x = 15.",
+          "Step 2: Divide both sides by 3: 3x ÷ 3 = 15 ÷ 3 → x = 5.",
+          "Step 3: Check: 3(5) + 5 = 15 + 5 = 20, which matches the original equation."
+        ]
+      },
+      {
+        heading: "Worked example: Solve 2(x − 4) = 10.",
+        bullets: [
+          "Step 1: Distribute 2: 2x − 8 = 10.",
+          "Step 2: Add 8 to both sides: 2x − 8 + 8 = 10 + 8 → 2x = 18.",
+          "Step 3: Divide both sides by 2: x = 18 ÷ 2 = 9.",
+          "Step 4: Check: 2(9 − 4) = 2 × 5 = 10, correct."
+        ]
+      }
+    ],
+    tips: [
+      "Write each step on a new line to keep the solution clear.",
+      "Whatever you do to one side of the equation, do exactly the same to the other side.",
+      "Always substitute your answer back into the original equation to verify."
+    ]
+  },
+
+  sequences_series: {
+    title: "Sequences & Series",
+    intro:
+      "This topic covers number patterns, especially arithmetic sequences where the difference between consecutive terms is constant.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A sequence is an ordered list of numbers following a pattern.",
+          "In an arithmetic sequence, each term after the first is obtained by adding a fixed number called the common difference (d).",
+          "If a₁ is the first term, then the nth term of an arithmetic sequence is aₙ = a₁ + (n − 1)d.",
+          "A series is the sum of the terms of a sequence."
+        ]
+      },
+      {
+        heading: "Worked example: Find the 10th term of 5, 8, 11, 14, ...",
+        bullets: [
+          "Step 1: Identify first term a₁ = 5.",
+          "Step 2: Common difference d = 8 − 5 = 3.",
+          "Step 3: Use formula aₙ = a₁ + (n − 1)d.",
+          "Step 4: a₁₀ = 5 + (10 − 1)×3 = 5 + 9×3 = 5 + 27 = 32.",
+          "So the 10th term is 32."
+        ]
+      },
+      {
+        heading: "Worked example: Find the sum of the first 5 terms of 2, 4, 6, 8, ...",
+        bullets: [
+          "Step 1: List the first 5 terms: 2, 4, 6, 8, 10.",
+          "Step 2: Add directly: 2 + 4 + 6 + 8 + 10 = 30.",
+          "In higher-level math, you can use the formula Sₙ = n/2 × (first term + last term).",
+          "Here: S₅ = 5/2 × (2 + 10) = 5/2 × 12 = 5 × 6 = 30."
+        ]
+      }
+    ],
+    tips: [
+      "Write out the first few terms to clearly see the pattern.",
+      "Identify whether the pattern is increasing or decreasing and by how much.",
+      "Check your computed nth term by plugging in small values of n (like n = 1 or 2) to see if you get the known terms."
+    ]
+  },
+
+  data_interpretation: {
+    title: "Data Interpretation (Tables & Graphs)",
+    intro:
+      "This topic focuses on reading, understanding, and interpreting numerical data from tables, bar graphs, line graphs, and pie charts.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Read all titles, labels, and legends in a graph or table before answering questions.",
+          "Identify what each axis or row/column represents (e.g., years, categories, amounts).",
+          "Pay attention to units (e.g., pesos, number of people, percentage).",
+          "Most questions ask for totals, differences, or comparisons between data points."
+        ]
+      },
+      {
+        heading: "Worked example: Reading a simple table",
+        bullets: [
+          "Suppose a table shows the number of books sold in 3 months: January–40, February–35, March–45.",
+          "To find the total books sold, add all values: 40 + 35 + 45 = 120.",
+          "To find the month with the highest sales, compare: March (45) is greater than January (40) and February (35)."
+        ]
+      },
+      {
+        heading: "Worked example: Estimating from a bar graph",
+        bullets: [
+          "In a bar graph of students in four sections, check the scale (e.g., each grid line may represent 5 students).",
+          "If one bar reaches the level marked 25, that category has 25 students.",
+          "If another bar is slightly below 30 and above 25, estimate it as around 28–29 students (depending on the scale).",
+          "Use exact values when given; estimate only when exact values are not shown."
+        ]
+      }
+    ],
+    tips: [
+      "Before computing anything, re-read the question and mark the specific data points needed.",
+      "Use your finger or a ruler to trace lines from the axis to the bar/point to avoid misreading values.",
+      "Most errors in data interpretation are reading mistakes, not calculation mistakes — take time to read carefully."
+    ]
+  },
+
+  pemdas: {
+    title: "PEMDAS – Order of Operations",
+    intro:
+      "This topic explains how to evaluate expressions with more than one operation using the correct order: parentheses, exponents, multiplication/division, and addition/subtraction.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "PEMDAS stands for: Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right).",
+          "Always simplify what is inside parentheses or brackets first before doing anything else.",
+          "Multiplication and division are on the same level. Work them from left to right as they appear.",
+          "Addition and subtraction are also on the same level. Work them from left to right as they appear."
+        ]
+      },
+      {
+        heading: "Worked example: 8 + 3 × (10 − 4)",
+        bullets: [
+          "Step 1 – Parentheses: Compute (10 − 4) = 6.",
+          "Step 2 – Rewrite: 8 + 3 × 6.",
+          "Step 3 – Multiplication before addition: 3 × 6 = 18.",
+          "Step 4 – Add: 8 + 18 = 26.",
+          "Final answer: 26."
+        ]
+      },
+      {
+        heading: "Worked example: (248 + 132) ÷ 4 − 15",
+        bullets: [
+          "Step 1 – Parentheses: 248 + 132 = 380.",
+          "Step 2 – Rewrite: 380 ÷ 4 − 15.",
+          "Step 3 – Division before subtraction: 380 ÷ 4 = 95.",
+          "Step 4 – Subtract: 95 − 15 = 80.",
+          "Final answer: 80."
+        ]
+      }
+    ],
+    tips: [
+      "Write each step on a separate line so you can see the order clearly.",
+      "Underline or circle the part you are working on next (parentheses, then exponents, and so on).",
+      "If you are unsure, check by estimating. Your exact answer should be close to your estimate."
+    ]
+  },
+
+  decimals: {
+    title: "Decimals",
+    intro:
+      "This topic reviews how to read, compare, and perform basic operations with decimal numbers.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A decimal uses a point (.) to separate the whole-number part from the fractional part, such as 3.75.",
+          "The first digit to the right of the decimal point is tenths, the next is hundredths, then thousandths, and so on.",
+          "To compare decimals, align the decimal points and compare digits from left to right.",
+          "When adding or subtracting decimals, always line up the decimal points vertically."
+        ]
+      },
+      {
+        heading: "Worked example: 4.35 + 2.7",
+        bullets: [
+          "Step 1: Line up decimal points: 4.35 + 2.70.",
+          "Step 2: Add hundredths: 5 + 0 = 5.",
+          "Step 3: Add tenths: 3 + 7 = 10 → write 0, carry 1 to the ones place.",
+          "Step 4: Add ones: 4 + 2 + 1 (carried) = 7.",
+          "Answer: 7.05."
+        ]
+      },
+      {
+        heading: "Worked example: 6.2 − 3.48",
+        bullets: [
+          "Step 1: Write 6.20 − 3.48 (add a zero to have the same number of decimal places).",
+          "Step 2: Borrow in hundredths: 0 cannot subtract 8, so borrow 1 from tenths (2 becomes 1), making 10 hundredths.",
+          "Step 3: 10 − 8 = 2 hundredths.",
+          "Step 4: In tenths: 1 cannot subtract 4, so borrow 1 from ones (6 becomes 5), making 11 tenths. Then 11 − 4 = 7 tenths.",
+          "Step 5: Ones: 5 − 3 = 2.",
+          "Answer: 2.72."
+        ]
+      }
+    ],
+    tips: [
+      "Always write extra zeros to keep the same number of decimal places when adding or subtracting.",
+      "Think of decimals as money when possible (e.g., 3.75 = ₱3.75) to make them easier to understand.",
+      "When in doubt, convert decimals to fractions to check if your answer is reasonable."
+    ]
+  },
+
+  averages: {
+    title: "Averages (Mean)",
+    intro:
+      "This topic explains how to compute and interpret the average, or arithmetic mean, of a set of numbers.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "The average (mean) of a set of numbers is the sum of all the values divided by how many values there are.",
+          "Average = (Sum of all data) ÷ (Number of data values).",
+          "The average is a central value; some scores will be above it and some below it."
+        ]
+      },
+      {
+        heading: "Worked example: Find the average of 12, 15, 18, and 25.",
+        bullets: [
+          "Step 1: Add the numbers: 12 + 15 + 18 + 25 = 70.",
+          "Step 2: Count how many numbers: there are 4 values.",
+          "Step 3: Divide: 70 ÷ 4 = 17.5.",
+          "So the average is 17.5."
+        ]
+      },
+      {
+        heading: "Worked example: The average of three test scores is 80. Two of the scores are 75 and 85. What is the third score?",
+        bullets: [
+          "Step 1: Use the average formula backwards. Average = Total ÷ Number.",
+          "Step 2: Total score = Average × Number of scores = 80 × 3 = 240.",
+          "Step 3: Add the known scores: 75 + 85 = 160.",
+          "Step 4: Third score = Total − known scores = 240 − 160 = 80.",
+          "So the third score is 80."
+        ]
+      }
+    ],
+    tips: [
+      "Check that your average lies between the smallest and largest values; if not, re-check your work.",
+      "Write the formula before substituting numbers to avoid confusion.",
+      "In word problems, be clear whether the question is asking for the average or for a missing value using the average."
+    ]
+  },
+
+  solving_math_expressions: {
+    title: "Solving Mathematical Expressions",
+    intro:
+      "This topic focuses on simplifying algebraic and numerical expressions by combining like terms and using the order of operations.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "An expression has numbers, variables, and operation signs, but no equality sign (=).",
+          "Combine like terms—terms that have the same variable and exponent (e.g., 3x and 5x).",
+          "Use PEMDAS to decide which part of a complex expression to simplify first.",
+          "Be careful with negative signs; keep them attached to their terms."
+        ]
+      },
+      {
+        heading: "Worked example: Simplify 5x + 3 − 2x + 7.",
+        bullets: [
+          "Step 1: Group like terms: (5x − 2x) + (3 + 7).",
+          "Step 2: Combine x-terms: 5x − 2x = 3x.",
+          "Step 3: Combine constants: 3 + 7 = 10.",
+          "Final expression: 3x + 10."
+        ]
+      },
+      {
+        heading: "Worked example: Simplify 4(2y − 3) + 5.",
+        bullets: [
+          "Step 1: Distribute 4: 4 × 2y = 8y and 4 × (−3) = −12, so you get 8y − 12 + 5.",
+          "Step 2: Combine constants: −12 + 5 = −7.",
+          "Final expression: 8y − 7."
+        ]
+      }
+    ],
+    tips: [
+      "Rewrite expressions neatly and line up like terms before combining.",
+      "Use parentheses to keep negative signs attached when moving terms around.",
+      "After simplifying, check that no further combining of like terms is possible."
+    ]
+  },
+
+  writing_math_expressions: {
+    title: "Writing Mathematical Expressions",
+    intro:
+      "This topic trains you to translate verbal phrases and word statements into correct mathematical expressions and equations.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Identify keywords: 'sum' means addition, 'difference' means subtraction, 'product' means multiplication, 'quotient' means division.",
+          "Phrases like 'more than' and 'less than' can reverse the order of numbers (e.g., '5 more than x' = x + 5).",
+          "Use a variable (x, y, n, etc.) to represent the unknown quantity.",
+          "Word equations can often be written first as expressions, then converted into full equations with '='."
+        ]
+      },
+      {
+        heading: "Worked example: 'Seven more than a number n'",
+        bullets: [
+          "Step 1: Identify the unknown: 'a number n' → variable n.",
+          "Step 2: 'More than' means addition.",
+          "Step 3: 'Seven more than n' means start with n and add 7.",
+          "Expression: n + 7."
+        ]
+      },
+      {
+        heading: "Worked example: 'Twice a number decreased by 9 is 17'",
+        bullets: [
+          "Step 1: 'Twice a number' → 2x.",
+          "Step 2: 'Decreased by 9' means subtract 9 → 2x − 9.",
+          "Step 3: The words 'is 17' tell us this equals 17.",
+          "Equation: 2x − 9 = 17."
+        ]
+      }
+    ],
+    tips: [
+      "Underline the important phrase in the word sentence and decide which operation it suggests.",
+      "Check the order of the words carefully; '6 less than a number' is x − 6, not 6 − x.",
+      "After writing the expression, read it back in words to see if it matches the original sentence."
+    ]
+  },
+
+  number_problems: {
+    title: "Number Problems",
+    intro:
+      "This topic covers word problems that involve unknown numbers, often using place value or relationships like 'the sum of two numbers'.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Translate the relationship between numbers into equations using variables.",
+          "Common patterns: 'sum', 'difference', 'twice', 'three times', 'half', and place-value descriptions like 'tens digit' and 'ones digit'.",
+          "Draw a quick model or table if the description involves two or more related numbers."
+        ]
+      },
+      {
+        heading: "Worked example: The sum of two numbers is 30. One number is 8 more than the other. Find the numbers.",
+        bullets: [
+          "Step 1: Let the smaller number be x. Then the larger number is x + 8.",
+          "Step 2: Their sum is 30 → x + (x + 8) = 30.",
+          "Step 3: Combine like terms: 2x + 8 = 30.",
+          "Step 4: Subtract 8: 2x = 22.",
+          "Step 5: Divide by 2: x = 11, so the other number is 19.",
+          "Answer: The numbers are 11 and 19."
+        ]
+      },
+      {
+        heading: "Worked example: A two-digit number has a tens digit 3 more than the ones digit. The sum of its digits is 11. Find the number.",
+        bullets: [
+          "Step 1: Let the ones digit be x. Then the tens digit is x + 3.",
+          "Step 2: The sum of digits is 11 → x + (x + 3) = 11.",
+          "Step 3: Combine terms: 2x + 3 = 11.",
+          "Step 4: Subtract 3: 2x = 8 → x = 4.",
+          "Step 5: Tens digit = x + 3 = 7, so the number is 74."
+        ]
+      }
+    ],
+    tips: [
+      "Always define your variable clearly (e.g., 'Let x be the smaller number').",
+      "Write the equation directly from the sentence: 'sum of' means '+', 'difference' means '−'.",
+      "Check your final answer by substituting back into the original word problem."
+    ]
+  },
+
+  odd_even_consecutive: {
+    title: "Odd, Even, and Consecutive Integers",
+    intro:
+      "This topic deals with problems involving odd numbers, even numbers, and consecutive integers.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Even integers are divisible by 2 (…, −4, −2, 0, 2, 4, …); odd integers are not divisible by 2 (…, −3, −1, 1, 3, …).",
+          "Three consecutive integers can be written as x, x + 1, x + 2.",
+          "Three consecutive even integers can be written as x, x + 2, x + 4 (x must be even).",
+          "Three consecutive odd integers can be written as x, x + 2, x + 4 (x must be odd)."
+        ]
+      },
+      {
+        heading: "Worked example: The sum of three consecutive integers is 42. Find the integers.",
+        bullets: [
+          "Step 1: Let the integers be x, x + 1, and x + 2.",
+          "Step 2: Sum is 42 → x + (x + 1) + (x + 2) = 42.",
+          "Step 3: Combine like terms: 3x + 3 = 42.",
+          "Step 4: Subtract 3: 3x = 39.",
+          "Step 5: Divide by 3: x = 13.",
+          "So the integers are 13, 14, and 15."
+        ]
+      },
+      {
+        heading: "Worked example: The sum of three consecutive odd integers is 51. Find the integers.",
+        bullets: [
+          "Step 1: Let the odd integers be x, x + 2, and x + 4.",
+          "Step 2: Sum is 51 → x + (x + 2) + (x + 4) = 51.",
+          "Step 3: Combine terms: 3x + 6 = 51.",
+          "Step 4: Subtract 6: 3x = 45.",
+          "Step 5: Divide by 3: x = 15.",
+          "So the integers are 15, 17, and 19."
+        ]
+      }
+    ],
+    tips: [
+      "Decide early whether the integers must be odd, even, or just any consecutive integers.",
+      "Write them using x, x + 1, x + 2 or x, x + 2, x + 4 and form the equation from the word description.",
+      "Verify the parity (odd/even) of your final answers to make sure they fit the problem."
+    ]
+  },
+
+  age_problems: {
+    title: "Age Problems",
+    intro:
+      "This topic covers word problems that compare ages now and in the past or future.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Let a variable represent a person’s present age; express past or future ages by adding or subtracting years.",
+          "Use phrases like 'twice as old', 'three years older', or 'five years younger' to build equations.",
+          "Make a small table with 'Now', 'Past/Future' columns to organize information."
+        ]
+      },
+      {
+        heading: "Worked example: Ana is 4 years older than Ben. In 6 years, the sum of their ages will be 40. How old is Ben now?",
+        bullets: [
+          "Step 1: Let Ben’s present age be x. Then Ana’s present age is x + 4.",
+          "Step 2: In 6 years, Ben will be x + 6 and Ana will be x + 4 + 6 = x + 10.",
+          "Step 3: Their total ages in 6 years is 40 → (x + 6) + (x + 10) = 40.",
+          "Step 4: Combine terms: 2x + 16 = 40.",
+          "Step 5: Subtract 16: 2x = 24 → x = 12.",
+          "So Ben is 12 years old now, and Ana is 16."
+        ]
+      },
+      {
+        heading: "Worked example: A father is now three times as old as his son. In 12 years, he will be twice as old as his son. Find their present ages.",
+        bullets: [
+          "Step 1: Let the son’s present age be x. Then the father’s present age is 3x.",
+          "Step 2: In 12 years, the son will be x + 12 and the father will be 3x + 12.",
+          "Step 3: In 12 years, father is twice the son’s age → 3x + 12 = 2(x + 12).",
+          "Step 4: Expand the right side: 3x + 12 = 2x + 24.",
+          "Step 5: Subtract 2x: x + 12 = 24 → x = 12.",
+          "So the son is 12 years old now and the father is 36."
+        ]
+      }
+    ],
+    tips: [
+      "Always base your variable on the present age unless the problem clearly uses a different time.",
+      "Use a table (Person vs. Age now vs. Age later) to avoid mixing up ages.",
+      "Check your solution by plugging the ages back into the story and seeing if all conditions are satisfied."
+    ]
+  },
+
+  geometry_problems: {
+    title: "Geometry Problems",
+    intro:
+      "This topic includes basic word problems involving perimeter, area, and sometimes simple volume.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "Perimeter is the distance around a figure; area is the amount of surface it covers.",
+          "Common formulas: rectangle area = length × width; triangle area = 1/2 × base × height; circle area = πr² (if needed).",
+          "Translate shape descriptions into algebra by labeling sides with variables and using formulas."
+        ]
+      },
+      {
+        heading: "Worked example: A rectangle has a length 5 m longer than its width. If the perimeter is 42 m, find its dimensions.",
+        bullets: [
+          "Step 1: Let width be x meters; length is x + 5 meters.",
+          "Step 2: Perimeter of rectangle: P = 2(length + width) = 42.",
+          "Step 3: Set up equation: 2[(x + 5) + x] = 42.",
+          "Step 4: Simplify inside: (x + 5) + x = 2x + 5, so 2(2x + 5) = 42.",
+          "Step 5: Multiply: 4x + 10 = 42.",
+          "Step 6: Subtract 10: 4x = 32 → x = 8.",
+          "So width = 8 m and length = 13 m."
+        ]
+      },
+      {
+        heading: "Worked example: A rectangular lot is 20 m long and 12 m wide. What is its area, and what is the cost to fence around it if fencing costs ₱150 per meter?",
+        bullets: [
+          "Step 1: Area: A = length × width = 20 × 12 = 240 m².",
+          "Step 2: Perimeter: P = 2(length + width) = 2(20 + 12) = 2 × 32 = 64 m.",
+          "Step 3: Cost of fencing: 64 m × ₱150 per meter = ₱9,600.",
+          "So the area is 240 m² and the total fencing cost is ₱9,600."
+        ]
+      }
+    ],
+    tips: [
+      "Draw a quick sketch and label given dimensions with variables or numbers.",
+      "Write the relevant formula beside your sketch before substituting values.",
+      "Watch the units (meters vs. centimeters, m² vs. m³) to avoid incorrect answers."
+    ]
+  },
+
+  divisibility_rules: {
+    title: "Divisibility Rules",
+    intro:
+      "This topic teaches quick tests to see whether a number is divisible by 2, 3, 5, 9, 10, and other common divisors without doing full division.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A number is divisible by 2 if its last digit is 0, 2, 4, 6, or 8.",
+          "A number is divisible by 5 if its last digit is 0 or 5.",
+          "A number is divisible by 10 if its last digit is 0.",
+          "A number is divisible by 3 if the sum of its digits is divisible by 3.",
+          "A number is divisible by 9 if the sum of its digits is divisible by 9."
+        ]
+      },
+      {
+        heading: "Worked example: Check if 5,436 is divisible by 3 and by 9.",
+        bullets: [
+          "Step 1: Add its digits: 5 + 4 + 3 + 6 = 18.",
+          "Step 2: Since 18 is divisible by 3, 5,436 is divisible by 3.",
+          "Step 3: 18 is also divisible by 9 (18 ÷ 9 = 2), so 5,436 is divisible by 9 as well."
+        ]
+      },
+      {
+        heading: "Worked example: Which of the following numbers is divisible by both 2 and 5: 120, 135, 248, 375?",
+        bullets: [
+          "Step 1: A number divisible by both 2 and 5 must end in 0 (because it must be divisible by 10).",
+          "Step 2: Among the choices, only 120 ends in 0.",
+          "So 120 is divisible by both 2 and 5."
+        ]
+      }
+    ],
+    tips: [
+      "Memorize the basic rules for 2, 3, 5, 9, and 10; they appear very often in tests.",
+      "Use digit-sum rules (for 3 and 9) to quickly check large numbers.",
+      "Divisibility rules are especially useful when simplifying fractions or checking factors."
+    ]
+  },
+
+  multiples_factors: {
+    title: "Multiples and Factors",
+    intro:
+      "This topic explains how to find factors and multiples of whole numbers, as well as common multiples and common factors.",
+    sections: [
+      {
+        heading: "Key ideas",
+        bullets: [
+          "A factor of a number divides it exactly with no remainder.",
+          "A multiple of a number is obtained by multiplying it by a whole number (e.g., multiples of 4 are 4, 8, 12, 16, …).",
+          "The greatest common factor (GCF) is the largest factor that two numbers share.",
+          "The least common multiple (LCM) is the smallest multiple that two numbers share."
+        ]
+      },
+      {
+        heading: "Worked example: List all factors of 18.",
+        bullets: [
+          "Step 1: Test small numbers: 1 × 18, 2 × 9, 3 × 6.",
+          "Step 2: Collect the unique factors: 1, 2, 3, 6, 9, 18.",
+          "So the factors of 18 are 1, 2, 3, 6, 9, and 18."
+        ]
+      },
+      {
+        heading: "Worked example: Find the LCM of 6 and 8.",
+        bullets: [
+          "Step 1: List multiples of 6: 6, 12, 18, 24, 30, 36, …",
+          "Step 2: List multiples of 8: 8, 16, 24, 32, 40, …",
+          "Step 3: The smallest common multiple appearing in both lists is 24.",
+          "So LCM(6, 8) = 24."
+        ]
+      }
+    ],
+    tips: [
+      "When listing factors, check pairs: if 2 is a factor of 18, then 18 ÷ 2 = 9 is also a factor.",
+      "Use prime factorization for larger numbers to find GCF and LCM efficiently.",
+      "GCF is useful for simplifying fractions; LCM is useful for adding and subtracting fractions with different denominators."
+    ]
+  }
+}; // updated: added motion_problems & fractions
+
 
 
 
