@@ -1002,969 +1002,1183 @@ QUESTION: What will the flowchart print if N = 12?`,
     // LEVEL 2: INTERMEDIATE (50 items – Loops, counters, multi-branch)
     // ==========================================
     intermediate: [
-      // 1
-      {
-        question: `FLOWCHART:
+     {
+    question: `FLOWCHART 1:
 START
+↓
+Set i = 1, sum = 0
+↓
+Is i ≤ 5 ?
+ ├─ Yes → sum = sum + 2 × i → i = i + 1 → (go back to decision)
+ └─ No  → Print sum → END
+
+QUESTION: What value of sum will be printed at the end of the flowchart?`,
+    options: ["10", "20", "30", "40"],
+    answer: "30",
+    explanation:
+      "The loop adds 2×1 + 2×2 + 2×3 + 2×4 + 2×5 = 2(1+2+3+4+5) = 2×15 = 30."
+  },
+
+  // 2
+  {
+    question: `FLOWCHART 2:
+START
+↓
 Set i = 1, total = 0
+↓
 Is i ≤ 4 ?
-  Yes → total = total + i; i = i + 1; go back to "Is i ≤ 4 ?"
-  No  → Print total; END
+ ├─ Yes → total = total + i × i → i = i + 1 → (go back to decision)
+ └─ No  → Print total → END
 
-QUESTION: What value will be printed as "total" at the end of the flowchart?`,
-        options: ["4", "6", "10", "15"],
-        answer: "10",
-        explanation: "The loop adds 1 + 2 + 3 + 4 = 10. When i becomes 5, the condition i ≤ 4 is false, so the loop stops and total = 10 is printed."
-      },
+QUESTION: What value of total will be printed at the end of the flowchart?`,
+    options: ["14", "30", "55", "60"],
+    answer: "30",
+    explanation:
+      "total = 1² + 2² + 3² + 4² = 1 + 4 + 9 + 16 = 30."
+  },
 
-      // 2
-      {
-        question: `FLOWCHART:
+  // 3
+  {
+    question: `FLOWCHART 3:
 START
-Set i = 1, total = 0
-Is i ≤ 4 ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
+↓
+Set i = 2, product = 1
+↓
+Is i ≤ 6 ?
+ ├─ Yes → product = product × i → i = i + 2 → (go back to decision)
+ └─ No  → Print product → END
 
-QUESTION: How many times is the instruction "total = total + i" executed?`,
-        options: ["3 times", "4 times", "5 times", "6 times"],
-        answer: "4 times",
-        explanation: "The body runs for i = 1, 2, 3, 4. That is 4 iterations where total = total + i is executed."
-      },
+QUESTION: What value of product will be printed at the end of the flowchart?`,
+    options: ["24", "36", "48", "72"],
+    answer: "48",
+    explanation:
+      "Values of i: 2, 4, 6. Product = 1 × 2 × 4 × 6 = 48."
+  },
 
-      // 3
-      {
-        question: `FLOWCHART:
+  // 4
+  {
+    question: `FLOWCHART 4:
 START
-Set i = 1, total = 0
-Is i ≤ 4 ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
+↓
+Set i = 1, count = 0
+↓
+Is i ≤ 10 ?
+ ├─ Yes →
+ │    Is i divisible by 3 ?
+ │     ├─ Yes → count = count + 1
+ │     └─ No  → (no change)
+ │    i = i + 1 → (go back to decision)
+ └─ No  → Print count → END
 
-QUESTION: After the loop ends and just before printing, what is the value of i?`,
-        options: ["4", "5", "0", "total"],
-        answer: "5",
-        explanation: "The last time the condition is checked, i = 5. Since 5 ≤ 4 is false, the loop stops and i stays equal to 5."
-      },
+QUESTION: What value of count will be printed at the end of the flowchart?`,
+    options: ["2", "3", "4", "5"],
+    answer: "3",
+    explanation:
+      "Multiples of 3 from 1 to 10 are 3, 6, and 9. So count = 3."
+  },
 
-      // 4
-      {
-        question: `FLOWCHART:
+  // 5
+  {
+    question: `FLOWCHART 5:
 START
+↓
+Set i = 5, total = 0
+↓
+Is i ≥ 1 ?
+ ├─ Yes → total = total + i → i = i − 1 → (go back to decision)
+ └─ No  → Print total → END
+
+QUESTION: What value of total will be printed at the end of the flowchart?`,
+    options: ["10", "12", "15", "20"],
+    answer: "15",
+    explanation:
+      "total = 5 + 4 + 3 + 2 + 1 = 15."
+  },
+
+  // 6
+  {
+    question: `FLOWCHART 6:
+START
+↓
+Input N
+↓
 Set COUNT = 0
-Input A, B, C, D
-If A > 0 then COUNT = COUNT + 1
-If B > 0 then COUNT = COUNT + 1
-If C > 0 then COUNT = COUNT + 1
-If D > 0 then COUNT = COUNT + 1
-Print COUNT
-END
+↓
+Is N > 0 ?
+ ├─ Yes → N = N − 2 → COUNT = COUNT + 1 → (go back to decision)
+ └─ No  → Print COUNT → END
 
-QUESTION: If A = 2, B = -3, C = 0, and D = 5, what will the flowchart print?`,
-        options: ["1", "2", "3", "4"],
-        answer: "2",
-        explanation: "Numbers greater than 0 are A = 2 and D = 5. B is negative and C = 0 is not greater than 0. So COUNT = 2."
-      },
+QUESTION: If N = 7 at the start, what value will be printed?`,
+    options: ["2", "3", "4", "5"],
+    answer: "4",
+    explanation:
+      "N goes 7 → 5 → 3 → 1 → −1. COUNT increases 4 times, so COUNT = 4."
+  },
 
-      // 5
-      {
-        question: `FLOWCHART:
+  // 7
+  {
+    question: `FLOWCHART 7:
 START
-Set COUNT = 0
-Input A, B, C, D
-If A > 0 then COUNT = COUNT + 1
-If B > 0 then COUNT = COUNT + 1
-If C > 0 then COUNT = COUNT + 1
-If D > 0 then COUNT = COUNT + 1
-Print COUNT
-END
-
-QUESTION: If A = -1, B = -2, C = -3, and D = -4, what will the flowchart print?`,
-        options: ["0", "1", "2", "4"],
-        answer: "0",
-        explanation: "All inputs are negative, so none of the conditions A > 0, B > 0, C > 0, D > 0 are true. COUNT remains 0."
-      },
-
-      // 6
-      {
-        question: `FLOWCHART:
-START
-Set COUNT = 0
-Input A, B, C, D
-If A > 0 then COUNT = COUNT + 1
-If B > 0 then COUNT = COUNT + 1
-If C > 0 then COUNT = COUNT + 1
-If D > 0 then COUNT = COUNT + 1
-Print COUNT
-END
-
-QUESTION: If the flowchart prints 3, which of the following could be the set of values (A, B, C, D)?`,
-        options: [
-          "(1, 2, 3, 4)",
-          "(-1, 2, 3, 0)",
-          "(5, -2, 7, 8)",
-          "(0, -1, -2, -3)"
-        ],
-        answer: "(-1, 2, 3, 0)",
-        explanation: "In (-1, 2, 3, 0), there are exactly 2 and 3 that are greater than 0, plus none of the others. That is 2 positives only — wait. Correct set is the one with exactly 3 positives, which is (5, -2, 7, 8) (5, 7, 8 are > 0)."
-      },
-
-      // 7
-      {
-        question: `FLOWCHART:
-START
-Input S1, S2, S3
-Set AVG = (S1 + S2 + S3) / 3
-Is AVG ≥ 75 ?
-  Yes → Print "PASS"; END
-  No  → Print "FAIL"; END
-
-QUESTION: If S1 = 80, S2 = 70, and S3 = 85, what does the flowchart print?`,
-        options: ["PASS", "FAIL", "ERROR", "NO OUTPUT"],
-        answer: "PASS",
-        explanation: "Average = (80 + 70 + 85) / 3 = 235 / 3 ≈ 78.33, which is ≥ 75, so the flowchart prints PASS."
-      },
-
-      // 8
-      {
-        question: `FLOWCHART:
-START
-Input S1, S2, S3
-Set AVG = (S1 + S2 + S3) / 3
-Is AVG ≥ 75 ?
-  Yes → Print "PASS"; END
-  No  → Print "FAIL"; END
-
-QUESTION: For which set of scores will the flowchart print "FAIL"?`,
-        options: [
-          "S1 = 90, S2 = 80, S3 = 75",
-          "S1 = 70, S2 = 72, S3 = 73",
-          "S1 = 80, S2 = 70, S3 = 85",
-          "S1 = 75, S2 = 75, S3 = 75"
-        ],
-        answer: "S1 = 70, S2 = 72, S3 = 73",
-        explanation: "Average of (70, 72, 73) is (70 + 72 + 73) / 3 = 215 / 3 ≈ 71.67, which is less than 75, so FAIL."
-      },
-
-      // 9
-      {
-        question: `FLOWCHART:
-START
-Input S1, S2, S3
-Set AVG = (S1 + S2 + S3) / 3
-Is AVG ≥ 90 ?
-  Yes → Print "WITH HONORS"; END
-  No  → Is AVG ≥ 75 ?
-          Yes → Print "PASS"; END
-          No  → Print "FAIL"; END
-
-QUESTION: If S1 = 95, S2 = 90, S3 = 85, what will be printed?`,
-        options: ["WITH HONORS", "PASS", "FAIL", "NO OUTPUT"],
-        answer: "WITH HONORS",
-        explanation: "Average = (95 + 90 + 85) / 3 = 270 / 3 = 90. Since AVG ≥ 90, the first decision is true, so the flowchart prints WITH HONORS."
-      },
-
-      // 10
-      {
-        question: `FLOWCHART:
-START
-Input S1, S2, S3
-Set AVG = (S1 + S2 + S3) / 3
-Is AVG ≥ 90 ?
-  Yes → Print "WITH HONORS"; END
-  No  → Is AVG ≥ 75 ?
-          Yes → Print "PASS"; END
-          No  → Print "FAIL"; END
-
-QUESTION: If the flowchart prints "PASS", which of the following could be the average?`,
-        options: ["92", "88", "74", "60"],
-        answer: "88",
-        explanation: "For PASS, AVG must be at least 75 but less than 90. Among the options, 88 is between 75 and 89."
-      },
-
-      // 11
-      {
-        question: `FLOWCHART:
-START
-Input AGE, CITIZEN (Y or N)
-Is AGE ≥ 18 ?
-  Yes → Is CITIZEN = "Y" ?
-           Yes → Print "QUALIFIED"; END
-           No  → Print "NOT QUALIFIED"; END
-  No  → Print "NOT QUALIFIED"; END
-
-QUESTION: If AGE = 20 and CITIZEN = "N", what is the output?`,
-        options: ["QUALIFIED", "NOT QUALIFIED", "NO OUTPUT", "ERROR"],
-        answer: "NOT QUALIFIED",
-        explanation: "Age is enough, but citizenship test fails (CITIZEN ≠ \"Y\"), so the person is NOT QUALIFIED."
-      },
-
-      // 12
-      {
-        question: `FLOWCHART:
-START
-Input AGE, CITIZEN (Y or N)
-Is AGE ≥ 18 ?
-  Yes → Is CITIZEN = "Y" ?
-           Yes → Print "QUALIFIED"; END
-           No  → Print "NOT QUALIFIED"; END
-  No  → Print "NOT QUALIFIED"; END
-
-QUESTION: Which pair (AGE, CITIZEN) will make the flowchart print "QUALIFIED"?`,
-        options: [
-          "AGE = 17, CITIZEN = \"Y\"",
-          "AGE = 18, CITIZEN = \"N\"",
-          "AGE = 19, CITIZEN = \"Y\"",
-          "AGE = 16, CITIZEN = \"N\""
-        ],
-        answer: "AGE = 19, CITIZEN = \"Y\"",
-        explanation: "The person must be at least 18 years old and a citizen (CITIZEN = \"Y\"). Only AGE = 19, CITIZEN = \"Y\" satisfies both."
-      },
-
-      // 13
-      {
-        question: `FLOWCHART:
-START
-Input A, B, C
-Set MAX = A
-Is B > MAX ?
-  Yes → Set MAX = B
-Is C > MAX ?
-  Yes → Set MAX = C
-Print MAX
-END
-
-QUESTION: If A = 7, B = 12, C = 9, what will be printed?`,
-        options: ["7", "9", "12", "MAX"],
-        answer: "12",
-        explanation: "Start MAX = 7. B (12) > 7, so MAX becomes 12. C (9) is not greater than 12, so MAX stays 12. The flowchart prints 12."
-      },
-
-      // 14
-      {
-        question: `FLOWCHART:
-START
-Input A, B, C
-Set MAX = A
-Is B > MAX ?
-  Yes → Set MAX = B
-Is C > MAX ?
-  Yes → Set MAX = C
-Print MAX
-END
-
-QUESTION: If the flowchart prints 20, which of the following could be (A, B, C)?`,
-        options: [
-          "(20, 5, 10)",
-          "(5, 20, 10)",
-          "(5, 10, 20)",
-          "Any of the above"
-        ],
-        answer: "Any of the above",
-        explanation: "As long as one of A, B, or C is 20 and it is the largest value, MAX ends as 20. In all three choices 20 is the largest."
-      },
-
-      // 15
-      {
-        question: `FLOWCHART:
-START
+↓
+Input N
+↓
 Set i = 1, total = 0
-Input N
+↓
 Is i ≤ N ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
+ ├─ Yes → total = total + i → i = i + 2 → (go back to decision)
+ └─ No  → Print total → END
 
-QUESTION: If N = 3, what value will be printed as total?`,
-        options: ["3", "4", "5", "6"],
-        answer: "6",
-        explanation: "The loop adds 1 + 2 + 3 = 6, then stops when i becomes 4 (no longer ≤ 3)."
-      },
+QUESTION: If N = 7, what value of total will be printed?`,
+    options: ["12", "14", "16", "18"],
+    answer: "16",
+    explanation:
+      "i takes odd values up to 7: 1, 3, 5, 7. total = 1 + 3 + 5 + 7 = 16."
+  },
 
-      // 16
-      {
-        question: `FLOWCHART:
+  // 8
+  {
+    question: `FLOWCHART 8:
 START
+↓
+Input N
+↓
+Set i = 2, total = 0
+↓
+Is i ≤ N ?
+ ├─ Yes → total = total + i → i = i + 2 → (go back to decision)
+ └─ No  → Print total → END
+
+QUESTION: If N = 8, what value of total will be printed?`,
+    options: ["16", "18", "20", "22"],
+    answer: "20",
+    explanation:
+      "Even numbers up to 8: 2, 4, 6, 8. total = 2 + 4 + 6 + 8 = 20."
+  },
+
+  // 9
+  {
+    question: `FLOWCHART 9:
+START
+↓
+Input N
+↓
+Set i = 1, FACT = 1
+↓
+Is i ≤ N ?
+ ├─ Yes → FACT = FACT × i → i = i + 1 → (go back to decision)
+ └─ No  → Print FACT → END
+
+QUESTION: If N = 4, what value will be printed?`,
+    options: ["12", "16", "24", "32"],
+    answer: "24",
+    explanation:
+      "FACT = 1 × 1 × 2 × 3 × 4 = 24."
+  },
+
+  // 10
+  {
+    question: `FLOWCHART 10:
+START
+↓
+Input N
+↓
 Set i = 1, total = 0
-Input N
+↓
 Is i ≤ N ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
+ ├─ Yes → total = total + i × i → i = i + 1 → (go back to decision)
+ └─ No  → Print total → END
 
-QUESTION: If the flowchart prints 10, which value of N below is correct?`,
-        options: ["3", "4", "5", "6"],
-        answer: "4",
-        explanation: "Sum 1 + 2 + 3 + 4 = 10. So N must be 4."
-      },
+QUESTION: If N = 3, what value of total will be printed?`,
+    options: ["9", "12", "14", "16"],
+    answer: "14",
+    explanation:
+      "total = 1² + 2² + 3² = 1 + 4 + 9 = 14."
+  },
 
-      // 17
-      {
-        question: `FLOWCHART:
+  // 11
+  {
+    question: `FLOWCHART 11:
 START
-Set i = 1, total = 0
+↓
 Input N
-Is i ≤ N ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
+↓
+Set X = N + 2
+↓
+Set X = X × 3
+↓
+Set X = X − 4
+↓
+Print X
+↓
+END
 
-QUESTION: If N = 1, what will be the printed total?`,
-        options: ["0", "1", "2", "No output"],
-        answer: "1",
-        explanation: "The loop runs only once (i = 1). total becomes 1, i becomes 2, then 2 ≤ 1 is false, so total = 1 is printed."
-      },
+QUESTION: If N = 5, what value will be printed?`,
+    options: ["11", "13", "17", "21"],
+    answer: "17",
+    explanation:
+      "X = 5 + 2 = 7; X = 7 × 3 = 21; X = 21 − 4 = 17."
+  },
 
-      // 18
-      {
-        question: `FLOWCHART:
+  // 12
+  {
+    question: `FLOWCHART 12:
 START
-Set i = 1, total = 0
+↓
 Input N
-Is i ≤ N ?
-  Yes → total = total + i; i = i + 1; go back to the decision
-  No  → Print total; END
-
-QUESTION: For N = 0, what will be the printed total?`,
-        options: ["0", "1", "No output", "The loop never ends"],
-        answer: "0",
-        explanation: "At the first check, i = 1 and N = 0, so i ≤ N is false. The loop body never executes and total remains 0, which is printed."
-      },
-
-      // 19
-      {
-        question: `FLOWCHART:
-START
-Set i = 1, countEven = 0
-WHILE i ≤ 5:
-  If i is even, then countEven = countEven + 1
-  i = i + 1
-END WHILE
-Print countEven
+↓
+Set A = N × 2
+↓
+Set B = A + 5
+↓
+Set C = B − N
+↓
+Print C
+↓
 END
 
-QUESTION: What will be printed by the flowchart?`,
-        options: ["2", "3", "4", "5"],
-        answer: "2",
-        explanation: "Even numbers from 1 to 5 are 2 and 4. So countEven = 2."
-      },
+QUESTION: If N = 4, what value will be printed?`,
+    options: ["7", "8", "9", "10"],
+    answer: "9",
+    explanation:
+      "A = 8, B = 8 + 5 = 13, C = 13 − 4 = 9."
+  },
 
-      // 20
-      {
-        question: `FLOWCHART:
+  // 13
+  {
+    question: `FLOWCHART 13:
 START
-Set i = 1, countEven = 0
-WHILE i ≤ 5:
-  If i is even, then countEven = countEven + 1
-  i = i + 1
-END WHILE
-Print countEven
-END
-
-QUESTION: Which of the following lists shows the values of i that increase countEven?`,
-        options: [
-          "1 and 3",
-          "2 and 4",
-          "3 and 5",
-          "Only 5"
-        ],
-        answer: "2 and 4",
-        explanation: "The counter is incremented only when i is even. Among 1, 2, 3, 4, 5, the even values are 2 and 4."
-      },
-
-      // 21
-      {
-        question: `FLOWCHART:
-START
-Set i = 1, countOdd = 0
-WHILE i ≤ 7:
-  If i is odd, then countOdd = countOdd + 1
-  i = i + 1
-END WHILE
-Print countOdd
-END
-
-QUESTION: What is the final value of countOdd?`,
-        options: ["3", "4", "5", "7"],
-        answer: "4",
-        explanation: "Odd numbers from 1 to 7 are 1, 3, 5, 7. There are 4 of them, so countOdd = 4."
-      },
-
-      // 22
-      {
-        question: `FLOWCHART:
-START
-Set i = 1, product = 1
-WHILE i ≤ 3:
-  product = product * 2
-  i = i + 1
-END WHILE
-Print product
-END
-
-QUESTION: What value will be printed as product?`,
-        options: ["2", "4", "6", "8"],
-        answer: "8",
-        explanation: "Initially product = 1. Each loop multiplies by 2, three times: 1 → 2 → 4 → 8."
-      },
-
-      // 23
-      {
-        question: `FLOWCHART:
-START
-Set i = 1, product = 1
-WHILE i ≤ 4:
-  product = product * 3
-  i = i + 1
-END WHILE
-Print product
-END
-
-QUESTION: What is the final value of product?`,
-        options: ["9", "27", "81", "243"],
-        answer: "81",
-        explanation: "product is multiplied by 3 four times: 1 → 3 → 9 → 27 → 81."
-      },
-
-      // 24
-      {
-        question: `FLOWCHART:
-START
-Set i = 1, product = 1
-WHILE i ≤ 4:
-  product = product * 3
-  i = i + 1
-END WHILE
-Print product
-END
-
-QUESTION: How many times is the instruction "product = product * 3" executed?`,
-        options: ["3 times", "4 times", "5 times", "1 time"],
-        answer: "4 times",
-        explanation: "The loop runs while i = 1, 2, 3, 4. That is 4 iterations where product is multiplied by 3."
-      },
-
-      // 25
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set fact = 1
-Set i = 1
-WHILE i ≤ N:
-  fact = fact * i
-  i = i + 1
-END WHILE
-Print fact
-END
-
-QUESTION: If N = 4, what value is printed?`,
-        options: ["4", "12", "16", "24"],
-        answer: "24",
-        explanation: "fact = 1 × 1 × 2 × 3 × 4 = 24."
-      },
-
-      // 26
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set fact = 1
-Set i = 1
-WHILE i ≤ N:
-  fact = fact * i
-  i = i + 1
-END WHILE
-Print fact
-END
-
-QUESTION: If the flowchart prints 120, which value of N below is correct?`,
-        options: ["3", "4", "5", "6"],
-        answer: "5",
-        explanation: "5! (5 factorial) = 1 × 2 × 3 × 4 × 5 = 120."
-      },
-
-      // 27
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set fact = 1
-Set i = 1
-WHILE i ≤ N:
-  fact = fact * i
-  i = i + 1
-END WHILE
-Print fact
-END
-
-QUESTION: If N = 1, what will the flowchart print?`,
-        options: ["0", "1", "No output", "Error"],
-        answer: "1",
-        explanation: "For N = 1, the loop executes once (i = 1), so fact = 1 × 1 = 1."
-      },
-
-      // 28
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 1, sumEven = 0
-WHILE i ≤ N:
-  If i is even, then sumEven = sumEven + i
-  i = i + 1
-END WHILE
-Print sumEven
-END
-
-QUESTION: If N = 6, what is the final value of sumEven?`,
-        options: ["6", "8", "10", "12"],
-        answer: "12",
-        explanation: "Even numbers from 1 to 6 are 2, 4, 6. Sum is 2 + 4 + 6 = 12."
-      },
-
-      // 29
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 1, sumEven = 0
-WHILE i ≤ N:
-  If i is even, then sumEven = sumEven + i
-  i = i + 1
-END WHILE
-Print sumEven
-END
-
-QUESTION: For which value of N will the flowchart print 2?`,
-        options: ["1", "2", "3", "4"],
-        answer: "2",
-        explanation: "If N = 2, only the even number 2 is included, so sumEven = 2."
-      },
-
-      // 30
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 1, sumEven = 0
-WHILE i ≤ N:
-  If i is even, then sumEven = sumEven + i
-  i = i + 1
-END WHILE
-Print sumEven
-END
-
-QUESTION: If the flowchart prints 0, which of the following values of N could be correct?`,
-        options: ["0 only", "1 only", "Any N ≤ 1", "Any N"],
-        answer: "Any N ≤ 1",
-        explanation: "If N is 0 or 1, there are no positive even numbers ≤ N, so sumEven remains 0."
-      },
-
-      // 31
-      {
-        question: `FLOWCHART:
-START
+↓
 Input X
-If X < 0 then
-  Print "NEGATIVE"
-else
-  If X = 0 then
-    Print "ZERO"
-  else
-    Print "POSITIVE"
+↓
+Set Y = X − 1
+↓
+Set Y = Y × 4
+↓
+Set Y = Y ÷ 2
+↓
+Print Y
+↓
 END
 
-QUESTION: What is printed if X = -5?`,
-        options: ["NEGATIVE", "ZERO", "POSITIVE", "NO OUTPUT"],
-        answer: "NEGATIVE",
-        explanation: "The first condition X < 0 is true for -5, so the flowchart prints NEGATIVE and skips the other tests."
-      },
+QUESTION: If X = 6, what value will be printed?`,
+    options: ["8", "10", "12", "14"],
+    answer: "10",
+    explanation:
+      "Y = 6 − 1 = 5; Y = 5 × 4 = 20; Y = 20 ÷ 2 = 10."
+  },
 
-      // 32
-      {
-        question: `FLOWCHART:
+  // 14
+  {
+    question: `FLOWCHART 14:
 START
-Input X
-If X < 0 then
-  Print "NEGATIVE"
-else
-  If X = 0 then
-    Print "ZERO"
-  else
-    Print "POSITIVE"
-END
-
-QUESTION: For which value of X will the flowchart print "ZERO"?`,
-        options: ["-1", "0", "1", "Any value"],
-        answer: "0",
-        explanation: "ZERO is printed only when X is exactly equal to 0."
-      },
-
-      // 33
-      {
-        question: `FLOWCHART:
-START
-Input X
-If X < 0 then
-  Print "NEGATIVE"
-else
-  If X = 0 then
-    Print "ZERO"
-  else
-    Print "POSITIVE"
-END
-
-QUESTION: If the flowchart prints "POSITIVE", which of the following could be X?`,
-        options: ["-2", "0", "3", "-5"],
-        answer: "3",
-        explanation: "POSITIVE is printed only when X is greater than 0."
-      },
-
-      // 34
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 1
-WHILE i ≤ N:
-  Print i
-  i = i + 2
-END WHILE
-END
-
-QUESTION: If N = 7, what sequence of numbers will be printed?`,
-        options: [
-          "1, 2, 3, 4, 5, 6, 7",
-          "1, 3, 5, 7",
-          "2, 4, 6",
-          "3, 5, 7"
-        ],
-        answer: "1, 3, 5, 7",
-        explanation: "Starting at 1 and adding 2 each time gives the odd numbers up to 7."
-      },
-
-      // 35
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 1
-WHILE i ≤ N:
-  Print i
-  i = i + 2
-END WHILE
-END
-
-QUESTION: If N = 6, which numbers are printed?`,
-        options: ["1, 3, 5", "1, 3, 5, 7", "2, 4, 6", "No output"],
-        answer: "1, 3, 5",
-        explanation: "The printed values are 1, 3, 5. When i becomes 7, the condition 7 ≤ 6 is false and the loop stops."
-      },
-
-      // 36
-      {
-        question: `FLOWCHART:
-START
-Input N
-Set i = 2
-WHILE i ≤ N:
-  Print i
-  i = i + 2
-END WHILE
-END
-
-QUESTION: If N = 7, what sequence will be printed?`,
-        options: [
-          "1, 3, 5, 7",
-          "2, 4, 6",
-          "2, 4, 6, 8",
-          "None"
-        ],
-        answer: "2, 4, 6",
-        explanation: "Starting at 2 and adding 2 each time prints the even numbers ≤ 7: 2, 4, 6."
-      },
-
-      // 37
-      {
-        question: `FLOWCHART:
-START
-Set total = 0
-Input X, Y
-Is X > Y ?
-  Yes → Print X; END
-  No  → Print Y; END
-
-QUESTION: If X = 10 and Y = 15, what will be printed?`,
-        options: ["10", "15", "25", "total"],
-        answer: "15",
-        explanation: "Since X is not greater than Y, the No branch is followed and Y (15) is printed."
-      },
-
-      // 38
-      {
-        question: `FLOWCHART:
-START
-Set total = 0
-Input X, Y
-Is X > Y ?
-  Yes → Print X; END
-  No  → Print Y; END
-
-QUESTION: Which of the following pairs (X, Y) will make the flowchart print 30?`,
-        options: [
-          "X = 30, Y = 25",
-          "X = 25, Y = 30",
-          "X = 30, Y = 30",
-          "Both (1) and (2)"
-        ],
-        answer: "Both (1) and (2)",
-        explanation: "In (30, 25) the Yes branch prints X = 30. In (25, 30) the No branch prints Y = 30."
-      },
-
-      // 39
-      {
-        question: `FLOWCHART:
-START
+↓
 Input A, B
-Set sum = A + B
-If sum > 100 then
-  Print "LARGE"
-else
-  Print "SMALL"
+↓
+Set S = A + B
+↓
+Set D = B − A
+↓
+Set R = S × D
+↓
+Print R
+↓
 END
 
-QUESTION: If A = 60 and B = 50, what does the flowchart print?`,
-        options: ["LARGE", "SMALL", "ERROR", "NO OUTPUT"],
-        answer: "LARGE",
-        explanation: "sum = 60 + 50 = 110, which is greater than 100, so the flowchart prints LARGE."
-      },
+QUESTION: If A = 3 and B = 7, what value will be printed?`,
+    options: ["18", "28", "30", "40"],
+    answer: "40",
+    explanation:
+      "S = 3 + 7 = 10; D = 7 − 3 = 4; R = 10 × 4 = 40."
+  },
 
-      // 40
-      {
-        question: `FLOWCHART:
+  // 15
+  {
+    question: `FLOWCHART 15:
 START
+↓
+Input N
+↓
+Set K = N
+↓
+Set K = K + 3
+↓
+Set K = K × K
+↓
+Set K = K − 1
+↓
+Print K
+↓
+END
+
+QUESTION: If N = 2, what value will be printed?`,
+    options: ["16", "20", "24", "25"],
+    answer: "24",
+    explanation:
+      "K = 2 + 3 = 5; K = 5 × 5 = 25; K = 25 − 1 = 24."
+  },
+
+  // 16
+  {
+    question: `FLOWCHART 16:
+START
+↓
+Input P
+↓
+Set Q = P ÷ 2
+↓
+Set R = Q + 5
+↓
+Set S = R × 2
+↓
+Print S
+↓
+END
+
+QUESTION: If P = 10, what value will be printed?`,
+    options: ["10", "15", "20", "25"],
+    answer: "20",
+    explanation:
+      "Q = 10 ÷ 2 = 5; R = 5 + 5 = 10; S = 10 × 2 = 20."
+  },
+
+  // 17
+  {
+    question: `FLOWCHART 17:
+START
+↓
+Input X
+↓
+Set Y = X × 3
+↓
+Set Y = Y − 4
+↓
+Set Z = Y + 2
+↓
+Print Z
+↓
+END
+
+QUESTION: If X = 4, what value will be printed?`,
+    options: ["8", "9", "10", "12"],
+    answer: "10",
+    explanation:
+      "Y = 4 × 3 = 12; Y = 12 − 4 = 8; Z = 8 + 2 = 10."
+  },
+
+  // 18
+  {
+    question: `FLOWCHART 18:
+START
+↓
+Input N
+↓
+Set A = N − 3
+↓
+Set B = A ÷ 2
+↓
+Set C = B + 4
+↓
+Print C
+↓
+END
+
+QUESTION: If N = 9, what value will be printed?`,
+    options: ["5", "6", "7", "8"],
+    answer: "7",
+    explanation:
+      "A = 9 − 3 = 6; B = 6 ÷ 2 = 3; C = 3 + 4 = 7."
+  },
+
+  // 19
+  {
+    question: `FLOWCHART 19:
+START
+↓
+Input N
+↓
+Set total = 0
+↓
+total = total + N
+↓
+total = total + (N + 1)
+↓
+total = total + (N + 2)
+↓
+Print total
+↓
+END
+
+QUESTION: If N = 5, what value will be printed?`,
+    options: ["15", "16", "18", "21"],
+    answer: "18",
+    explanation:
+      "total = 5 + 6 + 7 = 18."
+  },
+
+  // 20
+  {
+    question: `FLOWCHART 20:
+START
+↓
+Input N
+↓
+Set X = 1
+↓
+Set X = X × (N + 1)
+↓
+Set X = X × (N + 2)
+↓
+Print X
+↓
+END
+
+QUESTION: If N = 3, what value will be printed?`,
+    options: ["12", "15", "18", "20"],
+    answer: "20",
+    explanation:
+      "X = 1 × (3 + 1) = 4; X = 4 × (3 + 2) = 4 × 5 = 20."
+  },
+
+  // 21
+  {
+    question: `FLOWCHART 21:
+START
+↓
+Input AGE
+↓
+Is AGE < 13 ?
+ ├─ Yes → Print "CHILD" → END
+ └─ No
+     ↓
+     Is AGE ≤ 19 ?
+      ├─ Yes → Print "TEEN" → END
+      └─ No  → Print "ADULT" → END
+
+QUESTION: If AGE = 17, what will the flowchart print?`,
+    options: ["CHILD", "TEEN", "ADULT", "NONE"],
+    answer: "TEEN",
+    explanation:
+      "17 is not less than 13, but it is ≤ 19, so output is TEEN."
+  },
+
+  // 22
+  {
+    question: `FLOWCHART 22:
+START
+↓
+Input SCORE
+↓
+Is SCORE ≥ 90 ?
+ ├─ Yes → Print "OUTSTANDING" → END
+ └─ No
+     ↓
+     Is SCORE ≥ 75 ?
+      ├─ Yes → Print "PASSED" → END
+      └─ No  → Print "FAILED" → END
+
+QUESTION: If SCORE = 80, what will be printed?`,
+    options: ["OUTSTANDING", "PASSED", "FAILED", "NO RESULT"],
+    answer: "PASSED",
+    explanation:
+      "80 is less than 90 but at least 75, so the result is PASSED."
+  },
+
+  // 23
+  {
+    question: `FLOWCHART 23:
+START
+↓
+Input TEMP
+↓
+Is TEMP ≥ 38 ?
+ ├─ Yes → Print "FEVER" → END
+ └─ No
+     ↓
+     Is TEMP ≥ 36 ?
+      ├─ Yes → Print "NORMAL" → END
+      └─ No  → Print "LOW" → END
+
+QUESTION: If TEMP = 35, what will be printed?`,
+    options: ["FEVER", "NORMAL", "LOW", "NO OUTPUT"],
+    answer: "LOW",
+    explanation:
+      "35 is not ≥ 38 and not ≥ 36, so the flowchart prints LOW."
+  },
+
+  // 24
+  {
+    question: `FLOWCHART 24:
+START
+↓
+Input X
+↓
+Is X < 0 ?
+ ├─ Yes → Print "NEGATIVE" → END
+ └─ No
+     ↓
+     Is X = 0 ?
+      ├─ Yes → Print "ZERO" → END
+      └─ No
+          ↓
+          Is X divisible by 2 ?
+           ├─ Yes → Print "POSITIVE EVEN" → END
+           └─ No  → Print "POSITIVE ODD" → END
+
+QUESTION: If X = 9, what will be printed?`,
+    options: ["NEGATIVE", "ZERO", "POSITIVE EVEN", "POSITIVE ODD"],
+    answer: "POSITIVE ODD",
+    explanation:
+      "9 is positive and not divisible by 2, so it is POSITIVE ODD."
+  },
+
+  // 25
+  {
+    question: `FLOWCHART 25:
+START
+↓
 Input A, B
-Set sum = A + B
-If sum > 100 then
-  Print "LARGE"
-else
-  Print "SMALL"
-END
+↓
+Is A > B ?
+ ├─ Yes → Print "A LARGER" → END
+ └─ No
+     ↓
+     Is B > A ?
+      ├─ Yes → Print "B LARGER" → END
+      └─ No  → Print "EQUAL" → END
 
-QUESTION: If the flowchart prints "SMALL", which of the following could be (A, B)?`,
-        options: [
-          "(40, 50)",
-          "(60, 50)",
-          "(80, 30)",
-          "(90, 20)"
-        ],
-        answer: "(40, 50)",
-        explanation: "40 + 50 = 90, which is not greater than 100, so SMALL is printed."
-      },
+QUESTION: If A = 7 and B = 7, what will be printed?`,
+    options: ["A LARGER", "B LARGER", "EQUAL", "NO OUTPUT"],
+    answer: "EQUAL",
+    explanation:
+      "A is not greater than B and B is not greater than A, so they are equal."
+  },
 
-      // 41
-      {
-        question: `FLOWCHART:
+  // 26
+  {
+    question: `FLOWCHART 26:
 START
-Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + 2
-  i = i + 1
-END WHILE
-Print total
+↓
+Input A, B, C
+↓
+Set MAX = A
+↓
+Is B > MAX ?
+ ├─ Yes → Set MAX = B
+ └─ No  → (no change)
+↓
+Is C > MAX ?
+ ├─ Yes → Set MAX = C
+ └─ No  → (no change)
+↓
+Print MAX
+↓
 END
 
-QUESTION: If N = 4, what value is printed?`,
-        options: ["4", "6", "8", "10"],
-        answer: "8",
-        explanation: "The loop adds 2 to total four times: 0 → 2 → 4 → 6 → 8."
-      },
+QUESTION: If A = 4, B = 9, C = 2, what will be printed?`,
+    options: ["2", "4", "9", "11"],
+    answer: "9",
+    explanation:
+      "MAX starts as 4, becomes 9 after checking B, and stays 9 after checking C."
+  },
 
-      // 42
-      {
-        question: `FLOWCHART:
+  // 27
+  {
+    question: `FLOWCHART 27:
 START
-Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + 2
-  i = i + 1
-END WHILE
-Print total
+↓
+Input A, B, C
+↓
+Set MIN = A
+↓
+Is B < MIN ?
+ ├─ Yes → Set MIN = B
+ └─ No  → (no change)
+↓
+Is C < MIN ?
+ ├─ Yes → Set MIN = C
+ └─ No  → (no change)
+↓
+Print MIN
+↓
 END
 
-QUESTION: For which value of N does the flowchart print 6?`,
-        options: ["2", "3", "4", "5"],
-        answer: "3",
-        explanation: "If N = 3, 2 is added three times: total = 6."
-      },
+QUESTION: If A = 5, B = 1, C = 3, what will be printed?`,
+    options: ["1", "3", "5", "9"],
+    answer: "1",
+    explanation:
+      "The smallest among 5, 1, and 3 is 1."
+  },
 
-      // 43
-      {
-        question: `FLOWCHART:
+  // 28
+  {
+    question: `FLOWCHART 28:
 START
+↓
 Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + 2
-  i = i + 1
-END WHILE
-Print total
-END
+↓
+Is N divisible by 5 ?
+ ├─ Yes →
+ │    Is N divisible by 3 ?
+ │     ├─ Yes → Print "DIVISIBLE BY 15" → END
+ │     └─ No  → Print "DIVISIBLE BY 5" → END
+ └─ No
+     ↓
+     Is N divisible by 3 ?
+      ├─ Yes → Print "DIVISIBLE BY 3" → END
+      └─ No  → Print "NONE" → END
 
-QUESTION: What is the relationship between N and the printed total?`,
-        options: [
-          "Printed total = N",
-          "Printed total = 2 × N",
-          "Printed total = N + 2",
-          "Printed total = N − 2"
-        ],
-        answer: "Printed total = 2 × N",
-        explanation: "Each loop adds 2 exactly N times, so the final total is 2 × N."
-      },
+QUESTION: If N = 20, what will be printed?`,
+    options: ["DIVISIBLE BY 3", "DIVISIBLE BY 5", "DIVISIBLE BY 15", "NONE"],
+    answer: "DIVISIBLE BY 5",
+    explanation:
+      "20 is divisible by 5 but not by 3, so result is DIVISIBLE BY 5."
+  },
 
-      // 44
-      {
-        question: `FLOWCHART:
+  // 29
+  {
+    question: `FLOWCHART 29:
 START
-Input N
-Set i = 1, count = 0
-WHILE i ≤ N:
-  If i is divisible by 3, then count = count + 1
-  i = i + 1
-END WHILE
-Print count
+↓
+Input X
+↓
+Set ABSX = X
+↓
+Is X < 0 ?
+ ├─ Yes → Set ABSX = −X
+ └─ No  → (no change)
+↓
+Print ABSX
+↓
 END
 
-QUESTION: If N = 10, what will be printed?`,
-        options: ["2", "3", "4", "5"],
-        answer: "3",
-        explanation: "Multiples of 3 from 1 to 10 are 3, 6, 9. There are 3 of them."
-      },
+QUESTION: If X = −7, what will be printed?`,
+    options: ["-7", "0", "5", "7"],
+    answer: "7",
+    explanation:
+      "For a negative input, the flowchart multiplies by −1, giving 7."
+  },
 
-      // 45
-      {
-        question: `FLOWCHART:
+  // 30
+  {
+    question: `FLOWCHART 30:
 START
-Input N
-Set i = 1, count = 0
-WHILE i ≤ N:
-  If i is divisible by 3, then count = count + 1
-  i = i + 1
-END WHILE
-Print count
-END
+↓
+Input SCORE
+↓
+Is SCORE ≥ 90 ?
+ ├─ Yes → Print "A" → END
+ └─ No
+     ↓
+     Is SCORE ≥ 80 ?
+      ├─ Yes → Print "B" → END
+      └─ No
+          ↓
+          Is SCORE ≥ 70 ?
+           ├─ Yes → Print "C" → END
+           └─ No  → Print "D" → END
 
-QUESTION: Which of the following values of N will make the flowchart print 1?`,
-        options: ["2", "3", "4", "5"],
-        answer: "3",
-        explanation: "Up to N = 3, only the number 3 is divisible by 3, so count = 1."
-      },
+QUESTION: If SCORE = 75, what will be printed?`,
+    options: ["A", "B", "C", "D"],
+    answer: "C",
+    explanation:
+      "75 is between 70 and 79, so the grade is C."
+  },
 
-      // 46
-      {
-        question: `FLOWCHART:
+  // 31
+  {
+    question: `FLOWCHART 31:
 START
-Input N
-Set i = 1, count = 0
-WHILE i ≤ N:
-  If i is divisible by 3, then count = count + 1
-  i = i + 1
-END WHILE
-Print count
-END
+↓
+Input A, B, C
+↓
+Set SUM = A + B + C
+↓
+Set AVG = SUM ÷ 3
+↓
+Is AVG ≥ 75 ?
+ ├─ Yes → Print "PASSED" → END
+ └─ No  → Print "FAILED" → END
 
-QUESTION: If the flowchart prints 0, which statement is true?`,
-        options: [
-          "N must be 0",
-          "N must be 1 or 2",
-          "N can be any value less than 3",
-          "N must be greater than 3"
-        ],
-        answer: "N can be any value less than 3",
-        explanation: "There are no positive multiples of 3 less than 3. For N = 0, 1, or 2, count remains 0."
-      },
+QUESTION: If A = 60, B = 80, C = 90, what will be printed?`,
+    options: ["PASSED", "FAILED", "AVERAGE", "NO OUTPUT"],
+    answer: "PASSED",
+    explanation:
+      "Average of 60, 80, and 90 is above 75, so the output is PASSED."
+  },
 
-      // 47
-      {
-        question: `FLOWCHART:
+  // 32
+  {
+    question: `FLOWCHART 32:
 START
-Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + i * 2
-  i = i + 1
-END WHILE
-Print total
-END
+↓
+Input A, B
+↓
+Is A ≥ 0 AND B ≥ 0 ?
+ ├─ Yes → Print "BOTH NON-NEGATIVE" → END
+ └─ No
+     ↓
+     Is A < 0 AND B < 0 ?
+      ├─ Yes → Print "BOTH NEGATIVE" → END
+      └─ No  → Print "MIXED" → END
 
-QUESTION: If N = 2, what value is printed?`,
-        options: ["2", "4", "6", "8"],
-        answer: "6",
-        explanation: "total = 0 + 1×2 + 2×2 = 0 + 2 + 4 = 6."
-      },
+QUESTION: If A = −3 and B = 5, what will be printed?`,
+    options: ["BOTH NON-NEGATIVE", "BOTH NEGATIVE", "MIXED", "NO OUTPUT"],
+    answer: "MIXED",
+    explanation:
+      "One value is negative and the other is non-negative, so it is MIXED."
+  },
 
-      // 48
-      {
-        question: `FLOWCHART:
+  // 33
+  {
+    question: `FLOWCHART 33:
 START
-Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + i * 2
-  i = i + 1
-END WHILE
-Print total
-END
+↓
+Input X, Y
+↓
+Is X = 0 OR Y = 0 ?
+ ├─ Yes → Print "ON AXIS" → END
+ └─ No
+     ↓
+     Is X > 0 AND Y > 0 ?
+      ├─ Yes → Print "QUADRANT I" → END
+      └─ No
+          ↓
+          Is X < 0 AND Y > 0 ?
+           ├─ Yes → Print "QUADRANT II" → END
+           └─ No
+               ↓
+               Is X < 0 AND Y < 0 ?
+                ├─ Yes → Print "QUADRANT III" → END
+                └─ No  → Print "QUADRANT IV" → END
 
-QUESTION: If N = 3, what value is printed?`,
-        options: ["6", "8", "10", "12"],
-        answer: "12",
-        explanation: "total = 0 + 1×2 + 2×2 + 3×2 = 2 + 4 + 6 = 12."
-      },
+QUESTION: If X = −2 and Y = 3, what will be printed?`,
+    options: ["ON AXIS", "QUADRANT I", "QUADRANT II", "QUADRANT III"],
+    answer: "QUADRANT II",
+    explanation:
+      "X is negative and Y is positive, so the point lies in Quadrant II."
+  },
 
-      // 49
-      {
-        question: `FLOWCHART:
+  // 34
+  {
+    question: `FLOWCHART 34:
 START
-Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + i * 2
-  i = i + 1
-END WHILE
-Print total
-END
+↓
+Input HOUR  (0–23)
+↓
+Is HOUR < 12 ?
+ ├─ Yes → Print "MORNING" → END
+ └─ No
+     ↓
+     Is HOUR < 18 ?
+      ├─ Yes → Print "AFTERNOON" → END
+      └─ No  → Print "EVENING" → END
 
-QUESTION: In general, what is the printed total equal to?`,
-        options: [
-          "N(N + 1)",
-          "N(N + 1) / 2",
-          "2 × [N(N + 1) / 2]",
-          "N²"
-        ],
-        answer: "2 × [N(N + 1) / 2]",
-        explanation: "The flowchart adds 2(1 + 2 + ... + N), which is 2 × [N(N + 1) / 2]."
-      },
+QUESTION: If HOUR = 15, what will be printed?`,
+    options: ["MORNING", "AFTERNOON", "EVENING", "NO OUTPUT"],
+    answer: "AFTERNOON",
+    explanation:
+      "15 is not less than 12 but is less than 18, so it is AFTERNOON."
+  },
 
-      // 50
-      {
-        question: `FLOWCHART:
+  // 35
+  {
+    question: `FLOWCHART 35:
 START
+↓
 Input N
-Set i = 1, total = 0
-WHILE i ≤ N:
-  total = total + i * 2
-  i = i + 1
-END WHILE
-Print total
+↓
+Is N < 10 ?
+ ├─ Yes → Print "SMALL" → END
+ └─ No
+     ↓
+     Is N ≤ 99 ?
+      ├─ Yes → Print "MEDIUM" → END
+      └─ No  → Print "LARGE" → END
+
+QUESTION: If N = 45, what will be printed?`,
+    options: ["SMALL", "MEDIUM", "LARGE", "NO OUTPUT"],
+    answer: "MEDIUM",
+    explanation:
+      "45 is between 10 and 99, so the result is MEDIUM."
+  },
+
+  // 36
+  {
+    question: `FLOWCHART 36:
+START
+↓
+Input N
+↓
+Is N < 0 ?
+ ├─ Yes → Print "NEGATIVE" → END
+ └─ No
+     ↓
+     Is N = 0 ?
+      ├─ Yes → Print "ZERO" → END
+      └─ No
+          ↓
+          Is N divisible by 2 ?
+           ├─ Yes → Print "POSITIVE EVEN" → END
+           └─ No  → Print "POSITIVE ODD" → END
+
+QUESTION: If N = −6, what will be printed?`,
+    options: ["NEGATIVE", "ZERO", "POSITIVE EVEN", "POSITIVE ODD"],
+    answer: "NEGATIVE",
+    explanation:
+      "Because N is less than 0, the flowchart prints NEGATIVE immediately."
+  },
+
+  // 37
+  {
+    question: `FLOWCHART 37:
+START
+↓
+Input X
+↓
+Is X ≥ 0 AND X ≤ 50 ?
+ ├─ Yes → Print "WITHIN RANGE" → END
+ └─ No  → Print "OUT OF RANGE" → END
+
+QUESTION: If X = 51, what will be printed?`,
+    options: ["WITHIN RANGE", "OUT OF RANGE", "ERROR", "NO OUTPUT"],
+    answer: "OUT OF RANGE",
+    explanation:
+      "51 is greater than 50, so it is OUT OF RANGE."
+  },
+
+  // 38
+  {
+    question: `FLOWCHART 38:
+START
+↓
+Input SALARY
+↓
+Is SALARY < 15000 ?
+ ├─ Yes → Print "LOW" → END
+ └─ No
+     ↓
+     Is SALARY ≤ 30000 ?
+      ├─ Yes → Print "MEDIUM" → END
+      └─ No  → Print "HIGH" → END
+
+QUESTION: If SALARY = 28000, what will be printed?`,
+    options: ["LOW", "MEDIUM", "HIGH", "NO OUTPUT"],
+    answer: "MEDIUM",
+    explanation:
+      "28000 is at least 15000 but not more than 30000, so the output is MEDIUM."
+  },
+
+  // 39
+  {
+    question: `FLOWCHART 39:
+START
+↓
+Input A, B, C
+↓
+Is A = B AND B = C ?
+ ├─ Yes → Print "EQUILATERAL" → END
+ └─ No
+     ↓
+     Is A = B OR B = C OR A = C ?
+      ├─ Yes → Print "ISOSCELES" → END
+      └─ No  → Print "SCALENE" → END
+
+QUESTION: If A = 5, B = 5, C = 7, what will be printed?`,
+    options: ["EQUILATERAL", "ISOSCELES", "SCALENE", "NO OUTPUT"],
+    answer: "ISOSCELES",
+    explanation:
+      "Two sides are equal (5 and 5), but not all three, so the triangle is ISOSCELES."
+  },
+
+  // 40
+  {
+    question: `FLOWCHART 40:
+START
+↓
+Input DAY  (1–7)
+↓
+Is DAY = 1 ?
+ ├─ Yes → Print "MONDAY" → END
+ └─ No
+     ↓
+     Is DAY = 2 ?
+      ├─ Yes → Print "TUESDAY" → END
+      └─ No
+          ↓
+          Is DAY = 3 ?
+           ├─ Yes → Print "WEDNESDAY" → END
+           └─ No  → (other checks for 4–7 or INVALID)
+              ↓
+              (Eventually print the correct day or "INVALID")
+↓
 END
 
-QUESTION: If the printed total is 20, which value of N below is correct?`,
-        options: ["2", "3", "4", "5"],
-        answer: "4",
-        explanation: "For N = 4, total = 2(1 + 2 + 3 + 4) = 2 × 10 = 20."
-      }
-    ],
-  
-};
+QUESTION: If DAY = 3, what will be printed?`,
+    options: ["MONDAY", "TUESDAY", "WEDNESDAY", "INVALID"],
+    answer: "WEDNESDAY",
+    explanation:
+      "The flowchart matches DAY = 3 and prints WEDNESDAY."
+  },
 
+  // 41
+  {
+    question: `FLOWCHART 41:
+START
+↓
+Input A, B, C
+↓
+Set COUNT = 0
+↓
+Is A > 0 ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Is B > 0 ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Is C > 0 ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Print COUNT
+↓
+END
+
+QUESTION: If A = −2, B = 5, C = 7, what will be printed?`,
+    options: ["0", "1", "2", "3"],
+    answer: "2",
+    explanation:
+      "Only B and C are positive, so COUNT = 2."
+  },
+
+  // 42
+  {
+    question: `FLOWCHART 42:
+START
+↓
+Input A, B, C, D
+↓
+Set COUNT = 0
+↓
+Is A even ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Is B even ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Is C even ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Is D even ?
+ ├─ Yes → COUNT = COUNT + 1
+ └─ No  → (no change)
+↓
+Print COUNT
+↓
+END
+
+QUESTION: If A = 2, B = 3, C = 4, D = 5, what will be printed?`,
+    options: ["0", "1", "2", "3"],
+    answer: "2",
+    explanation:
+      "Even numbers among the inputs are 2 and 4, so COUNT = 2."
+  },
+
+  // 43
+  {
+    question: `FLOWCHART 43:
+START
+↓
+Input A, B, C
+↓
+Set SUM = 0
+↓
+Is A > 0 ?
+ ├─ Yes → SUM = SUM + A
+ └─ No  → (no change)
+↓
+Is B > 0 ?
+ ├─ Yes → SUM = SUM + B
+ └─ No  → (no change)
+↓
+Is C > 0 ?
+ ├─ Yes → SUM = SUM + C
+ └─ No  → (no change)
+↓
+Print SUM
+↓
+END
+
+QUESTION: If A = −1, B = 4, C = 6, what will be printed?`,
+    options: ["0", "4", "6", "10"],
+    answer: "10",
+    explanation:
+      "Only B and C are positive, so SUM = 4 + 6 = 10."
+  },
+
+  // 44
+  {
+    question: `FLOWCHART 44:
+START
+↓
+Input N
+↓
+Set i = 1, SUM = 0
+↓
+Is i ≤ N ?
+ ├─ Yes → SUM = SUM + i → i = i + 1 → (go back to decision)
+ └─ No  → Print SUM → END
+
+QUESTION: If N = 5, what value will be printed?`,
+    options: ["10", "12", "14", "15"],
+    answer: "15",
+    explanation:
+      "SUM = 1 + 2 + 3 + 4 + 5 = 15."
+  },
+
+  // 45
+  {
+    question: `FLOWCHART 45:
+START
+↓
+Input N
+↓
+Set i = 1, COUNT = 0
+↓
+Is i ≤ N ?
+ ├─ Yes →
+ │    Is i even ?
+ │     ├─ Yes → COUNT = COUNT + 1
+ │     └─ No  → (no change)
+ │    i = i + 1 → (go back to decision)
+ └─ No  → Print COUNT → END
+
+QUESTION: If N = 6, what value will be printed?`,
+    options: ["2", "3", "4", "6"],
+    answer: "3",
+    explanation:
+      "Even numbers from 1 to 6 are 2, 4, and 6, so COUNT = 3."
+  },
+
+  // 46
+  {
+    question: `FLOWCHART 46:
+START
+↓
+Input N
+↓
+Set i = 1, PRODUCT = 1
+↓
+Is i ≤ N ?
+ ├─ Yes →
+ │    Is i odd ?
+ │     ├─ Yes → PRODUCT = PRODUCT × i
+ │     └─ No  → (no change)
+ │    i = i + 1 → (go back to decision)
+ └─ No  → Print PRODUCT → END
+
+QUESTION: If N = 5, what value will be printed?`,
+    options: ["5", "9", "15", "25"],
+    answer: "15",
+    explanation:
+      "Odd numbers from 1 to 5 are 1, 3, and 5. PRODUCT = 1 × 1 × 3 × 5 = 15."
+  },
+
+  // 47
+  {
+    question: `FLOWCHART 47:
+START
+↓
+Input N
+↓
+Set i = 1, S = 0
+↓
+Is i ≤ N ?
+ ├─ Yes → S = S + 2 × i → i = i + 1 → (go back to decision)
+ └─ No  → Print S → END
+
+QUESTION: If N = 4, what value will be printed?`,
+    options: ["12", "16", "18", "20"],
+    answer: "20",
+    explanation:
+      "S = 2×1 + 2×2 + 2×3 + 2×4 = 2(1+2+3+4) = 2×10 = 20."
+  },
+
+  // 48
+  {
+    question: `FLOWCHART 48:
+START
+↓
+Input N
+↓
+Set i = 1, COUNT = 0
+↓
+Is i ≤ N ?
+ ├─ Yes →
+ │    Is i divisible by 3 OR divisible by 5 ?
+ │     ├─ Yes → COUNT = COUNT + 1
+ │     └─ No  → (no change)
+ │    i = i + 1 → (go back to decision)
+ └─ No  → Print COUNT → END
+
+QUESTION: If N = 10, what value will be printed?`,
+    options: ["3", "4", "5", "6"],
+    answer: "5",
+    explanation:
+      "Numbers from 1 to 10 divisible by 3 or 5 are 3, 5, 6, 9, and 10. COUNT = 5."
+  },
+
+  // 49
+  {
+    question: `FLOWCHART 49:
+START
+↓
+Input N
+↓
+Set SUM = 0
+↓
+Is N > 0 ?
+ ├─ Yes →
+ │    digit = N mod 10
+ │    SUM = SUM + digit
+ │    N = N ÷ 10  (integer division)
+ │    (go back to decision)
+ └─ No  → Print SUM → END
+
+QUESTION: If N = 123, what value will be printed?`,
+    options: ["3", "5", "6", "12"],
+    answer: "6",
+    explanation:
+      "Digits are 3, 2, and 1. SUM = 3 + 2 + 1 = 6."
+  },
+
+  // 50
+  {
+    question: `FLOWCHART 50:
+START
+↓
+Input N
+↓
+Set COUNT = 0
+↓
+Is N > 0 ?
+ ├─ Yes →
+ │    digit = N mod 10
+ │    Is digit even ?
+ │     ├─ Yes → COUNT = COUNT + 1
+ │     └─ No  → (no change)
+ │    N = N ÷ 10  (integer division)
+ │    (go back to decision)
+ └─ No  → Print COUNT → END
+
+QUESTION: If N = 246, what value will be printed?`,
+    options: ["1", "2", "3", "4"],
+    answer: "3",
+    explanation:
+      "Digits are 6, 4, and 2. All three are even, so COUNT = 3."
+  }
+];
