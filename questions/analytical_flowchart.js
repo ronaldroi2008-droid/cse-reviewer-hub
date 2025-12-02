@@ -13,7 +13,7 @@ window.ANALYTICAL_QUESTION_BANK["flowchart"] = {
   beginner: [
     // 1
     {
-      question: `FLOWCHART 1:
+      question: `
 START
 ↓
 Input N
@@ -34,7 +34,7 @@ QUESTION: Based on the flowchart, what will be the output if N = -3?`,
 
     // 2
     {
-      question: `FLOWCHART 1:
+      question: `
 START
 ↓
 Input N
