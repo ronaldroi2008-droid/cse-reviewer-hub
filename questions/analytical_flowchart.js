@@ -2,8 +2,8 @@ window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
 
 window.ANALYTICAL_QUESTION_BANK["flowchart"] = {
 beginner: [
-  {
-    question: `
+{
+  question: `
 FLOWCHART:
 
 START
@@ -20,10 +20,11 @@ Is N > 0 ?
 
 QUESTION: Based on the flowchart, what will be the output if N = -3?
 `,
-    options: ["POSITIVE", "NOT POSITIVE", "ZERO", "NO OUTPUT"],
-    answer: "NOT POSITIVE",
-    explanation: `For N = -3, N > 0 is false, N = 0 is also false, so the flowchart prints "NOT POSITIVE".`
-  }
+  options: ["POSITIVE", "NOT POSITIVE", "ZERO", "NO OUTPUT"],
+  answer: "NOT POSITIVE",
+  explanation: `N = -3 is not > 0 and not equal to 0, so the flowchart prints "NOT POSITIVE".`
+}
+
 ]
 
 };
