@@ -6,7 +6,7 @@
 
 window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
 
-window.ANALYTICAL_QUESTION_BANK["flowcharts"] = {
+window.ANALYTICAL_QUESTION_BANK["flowchart"] = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (Sample 10 items – basic reading of flowcharts)
