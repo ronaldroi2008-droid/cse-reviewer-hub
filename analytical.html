@@ -538,7 +538,7 @@
       color: var(--muted);
     }
 
-    /* Explanation block (auto visible after answer) */
+    /* Explanation block */
     .explanation-wrapper {
       margin-top: 6px;
       font-size: 0.8rem;
@@ -554,29 +554,48 @@
       font-size: 0.8rem;
     }
 
-    /* RESULTS PANEL (Finish screen) */
+    /* RESULTS PANEL – Verbal-style, centered */
     #results-panel {
-      margin-top: 14px;
+      margin-top: 20px;
       border-radius: 18px;
       border: 1px solid #111827;
       background: #020617;
-      padding: 16px 18px 14px;
+      padding: 20px 18px 16px;
     }
 
-    .results-title {
-      margin: 0 0 6px;
-      font-size: 1rem;
+    .results-summary {
+      text-align: center;
+      margin-bottom: 16px;
     }
 
-    .results-score {
-      margin: 0 0 10px;
-      font-size: 0.9rem;
+    .results-heading {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .results-main-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    #results-score-main {
+      font-size: 1.9rem;
+      font-weight: 800;
+    }
+
+    #results-score-percent {
+      font-size: 0.95rem;
       color: var(--muted);
     }
 
     .results-buttons {
       display: flex;
-      gap: 8px;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 12px;
       flex-wrap: wrap;
     }
@@ -585,15 +604,15 @@
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #020617;
-      padding: 6px 14px;
-      font-size: 0.85rem;
+      padding: 8px 18px;
+      font-size: 0.86rem;
       color: var(--muted);
       cursor: pointer;
       transition: all 0.15s ease;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
     }
 
     .results-btn.primary {
@@ -607,6 +626,32 @@
       color: #e5e7eb;
     }
 
+    .results-divider {
+      border: none;
+      border-top: 1px solid #111827;
+      margin: 8px 0 10px;
+    }
+
+    .results-review-title {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e5e7eb;
+    }
+
+    .results-review-title.hidden {
+      display: none;
+    }
+
+    .results-score-text {
+      margin: 0 0 10px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
     .results-list {
       margin: 0;
       padding: 0;
@@ -618,7 +663,7 @@
     }
 
     .result-item {
-      padding: 8px 0;
+      padding: 10px 0;
       border-top: 1px solid #111827;
     }
 
@@ -629,7 +674,7 @@
     .result-item-question {
       font-weight: 600;
       color: #e5e7eb;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     .result-item-meta {
@@ -769,15 +814,23 @@
 
           <!-- RESULTS PANEL (Finish screen) -->
           <div id="results-panel" class="hidden">
-            <h3 class="results-title">Quiz Finished</h3>
-            <p id="results-score" class="results-score">
-              You scored 0 out of 0 questions.
-            </p>
-
-            <div class="results-buttons">
-              <button id="btn-retake" class="results-btn primary">🔁 Retake Quiz</button>
-              <a href="index.html" class="results-btn">🏠 Home</a>
+            <div class="results-summary">
+              <h2 class="results-heading">Quiz Completed!</h2>
+              <div class="results-main-score">
+                <span id="results-score-main">0 / 0</span>
+                <span id="results-score-percent">Score: 0%</span>
+              </div>
+              <div class="results-buttons">
+                <a href="index.html" class="results-btn">🏠 Home</a>
+                <button id="btn-retake" class="results-btn primary">🔁 Retake Quiz</button>
+              </div>
             </div>
+
+            <hr class="results-divider" />
+
+            <h3 id="results-review-title" class="results-review-title hidden">
+              📄 <span>Review Mistakes</span>
+            </h3>
 
             <div id="results-details">
               <!-- Mistakes will be listed here -->
@@ -1147,7 +1200,6 @@
           currentQuestionIndex += 1;
           renderQuizQuestion();
         } else {
-          // Last question -> Finish
           finishQuiz();
         }
       });
@@ -1171,6 +1223,8 @@
       const feedbackEl = document.getElementById("quiz-feedback");
       const explWrap = document.getElementById("explanation-wrapper");
       const explText = document.getElementById("quiz-explanation-text");
+      const reviewTitleEl = document.getElementById("results-review-title");
+      const detailsEl = document.getElementById("results-details");
 
       quizFinished = false;
       if (quizCard) quizCard.classList.remove("hidden");
@@ -1181,6 +1235,8 @@
       }
       if (explWrap) explWrap.classList.add("hidden");
       if (explText) explText.textContent = "";
+      if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
+      if (detailsEl) detailsEl.innerHTML = "";
 
       const bank = window.ANALYTICAL_QUESTION_BANK || {};
       const topicBank = bank[currentTopicId];
@@ -1245,7 +1301,6 @@
       const q = currentQuestionSet[currentQuestionIndex];
       qTextEl.textContent = q.question || "Question";
 
-      // Build options
       optionsEl.innerHTML = "";
       const selectedIndex = userAnswers[currentQuestionIndex];
 
@@ -1262,7 +1317,6 @@
         optionsEl.appendChild(btn);
       });
 
-      // Default feedback / explanation
       if (selectedIndex == null) {
         if (feedbackEl) {
           feedbackEl.textContent = "";
@@ -1294,7 +1348,6 @@
         }
       }
 
-      // Counter + nav buttons
       counterEl.textContent =
         "Question " +
         (currentQuestionIndex + 1) +
@@ -1303,7 +1356,6 @@
 
       prevBtn.disabled = currentQuestionIndex === 0;
 
-      // Change Next button label to "Finish" on last question
       if (currentQuestionIndex === currentQuestionSet.length - 1) {
         nextBtn.textContent = "Finish";
       } else {
@@ -1319,8 +1371,10 @@
 
       const quizCard = document.getElementById("quiz-card");
       const resultsPanel = document.getElementById("results-panel");
-      const scoreEl = document.getElementById("results-score");
+      const scoreMainEl = document.getElementById("results-score-main");
+      const scorePercentEl = document.getElementById("results-score-percent");
       const detailsEl = document.getElementById("results-details");
+      const reviewTitleEl = document.getElementById("results-review-title");
 
       if (quizCard) quizCard.classList.add("hidden");
       if (resultsPanel) resultsPanel.classList.remove("hidden");
@@ -1347,22 +1401,28 @@
         }
       });
 
-      if (scoreEl) {
-        scoreEl.textContent =
-          "You scored " +
-          correctCount +
-          " out of " +
-          currentQuestionSet.length +
-          " questions.";
+      if (scoreMainEl) {
+        scoreMainEl.textContent =
+          correctCount + " / " + currentQuestionSet.length;
+      }
+
+      if (scorePercentEl) {
+        const pct = currentQuestionSet.length
+          ? Math.round((correctCount / currentQuestionSet.length) * 100)
+          : 0;
+        scorePercentEl.textContent = "Score: " + pct + "%";
       }
 
       if (!detailsEl) return;
 
       if (!mistakes.length) {
+        if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
         detailsEl.innerHTML =
           '<p class="no-mistakes">Perfect! You answered all items correctly. Great job!</p>';
         return;
       }
+
+      if (reviewTitleEl) reviewTitleEl.classList.remove("hidden");
 
       const itemsHtml = mistakes
         .map(m => {
@@ -1376,18 +1436,18 @@
           return `
           <div class="result-item">
             <div class="result-item-question">
-              Q${m.number}. ${m.question}
+              Question ${m.number}: ${m.question}
             </div>
             <p class="result-item-meta">
-              <span class="answer-label">Your answer:</span>
+              <span class="answer-label">✖ You:</span>
               ${userAnsText}
             </p>
             <p class="result-item-meta">
-              <span class="answer-label">Correct answer:</span>
+              <span class="answer-label">✔ Correct:</span>
               ${m.correctAnswer}
             </p>
             <p class="result-item-meta">
-              <span class="answer-label">Explanation:</span>
+              <span class="answer-label">👉 Why:</span>
               ${explText}
             </p>
           </div>
@@ -1396,7 +1456,7 @@
         .join("");
 
       detailsEl.innerHTML = `
-        <p class="results-score">
+        <p class="results-score-text">
           Items you need to review (incorrect or unanswered):
         </p>
         <div class="results-list">
@@ -1406,7 +1466,6 @@
     }
 
     function retakeQuiz() {
-      // same topic, level, items – shuffle again
       startQuiz();
     }
 
