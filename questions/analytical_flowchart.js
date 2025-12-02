@@ -2157,6 +2157,7 @@ QUESTION: If N = 123, what value will be printed?`,
   },
 
   // 50
+  // 50
   {
     question: `FLOWCHART 50:
 START
@@ -2181,4 +2182,5 @@ QUESTION: If N = 246, what value will be printed?`,
     explanation:
       "Digits are 6, 4, and 2. All three are even, so COUNT = 3."
   }
-];
+  ]
+};
