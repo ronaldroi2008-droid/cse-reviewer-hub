@@ -837,22 +837,19 @@
     </main>
   </div>
 
-  <!-- Question banks -->
+<!-- Question banks -->
   <script src="questions/general_constitution.js"></script>
   <script src="questions/general_government.js"></script>
-<script src="questions/general_ra6713.js"></script>
+  <script src="questions/general_ra6713.js"></script>
 
-
+  <!-- Main logic for General Knowledge page -->
   <script>
-    // ==========================================
     // 1. TOPIC LIST
-    // ==========================================
     const GENERAL_TOPICS = [
-      { id: "constitution",       label: "Philippine Constitution & Citizenship",          tag: "Core" },
-      { id: "government",         label: "Government Structure & Civil Service",           tag: "Branches" },
-     { id: "ra6713", label: "RA 6713 – Code of Conduct", tag: "Ethics" }
+      { id: "constitution", label: "Philippine Constitution & Citizenship", tag: "Core" },
+      { id: "government",   label: "Government Structure & Civil Service",  tag: "Branches" },
+      { id: "ra6713",       label: "RA 6713 – Code of Conduct",             tag: "Ethics" }
     ];
-
     // ==========================================
     // 2. STUDY LESSON CONTENT
     // ==========================================
@@ -946,20 +943,7 @@
         ]
       },
 
-      philippines_facts: {
-        title: "Philippines: Geography, History & General Facts",
-        intro:
-          "General facts questions ask about the Philippines as a country – its geography, national symbols, important historical events, and key information relevant to public service.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "The Philippines is an archipelago in Southeast Asia composed of thousands of islands, grouped mainly into Luzon, Visayas, and Mindanao.",
-              "The capital city is Manila, and the seat of national government is in the National Capital Region (Metro Manila).",
-              "The national flag, anthem, motto, and other symbols (like the national bird and national flower) are often asked in exams.",
-              "Knowing basic agencies and their roles (e.g., DOH for health, DepEd for basic education) is useful for General Information items."
-            ]
-          },
+      
           {
             heading: "Worked example: Geography",
             bullets: [
