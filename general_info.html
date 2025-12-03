@@ -850,100 +850,146 @@
       { id: "government",   label: "Government Structure & Civil Service",  tag: "Branches" },
       { id: "ra6713",       label: "RA 6713 – Code of Conduct",             tag: "Ethics" }
     ];
-    // ==========================================
-    // 2. STUDY LESSON CONTENT
-    // ==========================================
-    const GENERAL_LESSONS = {
-      constitution: {
-        title: "Philippine Constitution & Citizenship",
-        intro:
-          "General Information questions on the Constitution test your knowledge of basic principles, rights of citizens, and rules on citizenship and public office. You are not expected to be a lawyer, but you must know the essentials.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "The 1987 Philippine Constitution is the fundamental law of the land. All other laws and government actions must follow it.",
-              "It defines the form of government (democratic and republican), the structure of the state, and the powers of each branch.",
-              "The Bill of Rights protects basic rights such as due process, equal protection, freedom of speech, and freedom of religion.",
-              "Citizenship rules explain who are Filipinos by birth, by naturalization, and how citizenship may be lost or reacquired."
-            ]
-          },
-          {
-            heading: "Worked example: Bill of Rights",
-            bullets: [
-              "Sample question: Which right protects a person from being arrested without a legal basis?",
-              "Typical choices: right to due process, right to travel, right to information, right to education.",
-              "Reasoning:",
-              "• The right to due process requires that there is a valid law and proper procedure before a person is arrested or punished.",
-              "• The other rights are important but do not directly address arrest or punishment.",
-              "Correct answer: Right to due process."
-            ]
-          },
-          {
-            heading: "Worked example: Citizenship",
-            bullets: [
-              "Sample question: A person whose mother is a Filipino citizen and father is a foreigner is generally considered ___.",
-              "Choices: a natural-born Filipino, a naturalized citizen, an alien, a dual citizen only by choice.",
-              "Reasoning:",
-              "• Under the Constitution, those whose father or mother is a Filipino are natural-born citizens.",
-              "• No naturalization or special act is needed.",
-              "Correct answer: natural-born Filipino."
-            ]
-          }
-        ],
-        tips: [
-          "Memorize the big picture, not every article: form of government, basic rights, and who are citizens.",
-          "When answering, ask yourself: Which choice directly matches the principle described in the Constitution?",
-          "Eliminate options that talk about a different right (for example, education vs. due process)."
-        ]
-      },
+  <script>
+  // ==========================================
+  // 2. STUDY LESSON CONTENT
+  // ==========================================
+  const GENERAL_LESSONS = {
+    constitution: {
+      title: "Philippine Constitution & Citizenship",
+      intro:
+        "General Information questions on the Constitution test your knowledge of basic principles, rights of citizens, and rules on citizenship and public office. You are not expected to be a lawyer, but you must know the essentials.",
+      sections: [
+        {
+          heading: "Key ideas",
+          bullets: [
+            "The 1987 Philippine Constitution is the fundamental law of the land. All other laws and government actions must follow it.",
+            "It defines the form of government (democratic and republican), the structure of the state, and the powers of each branch.",
+            "The Bill of Rights protects basic rights such as due process, equal protection, freedom of speech, and freedom of religion.",
+            "Citizenship rules explain who are Filipinos by birth, by naturalization, and how citizenship may be lost or reacquired."
+          ]
+        },
+        {
+          heading: "Worked example: Bill of Rights",
+          bullets: [
+            "Sample question: Which right protects a person from being arrested without a legal basis?",
+            "Typical choices: right to due process, right to travel, right to information, right to education.",
+            "Reasoning:",
+            "• The right to due process requires that there is a valid law and proper procedure before a person is arrested or punished.",
+            "• The other rights are important but do not directly address arrest or punishment.",
+            "Correct answer: Right to due process."
+          ]
+        },
+        {
+          heading: "Worked example: Citizenship",
+          bullets: [
+            "Sample question: A person whose mother is a Filipino citizen and father is a foreigner is generally considered ___.",
+            "Choices: a natural-born Filipino, a naturalized citizen, an alien, a dual citizen only by choice.",
+            "Reasoning:",
+            "• Under the Constitution, those whose father or mother is a Filipino are natural-born citizens.",
+            "• No naturalization or special act is needed.",
+            "Correct answer: natural-born Filipino."
+          ]
+        }
+      ],
+      tips: [
+        "Memorize the big picture, not every article: form of government, basic rights, and who are citizens.",
+        "When answering, ask yourself: Which choice directly matches the principle described in the Constitution?",
+        "Eliminate options that talk about a different right (for example, education vs. due process)."
+      ]
+    },
 
-      government: {
-        title: "Government Structure & Civil Service",
-        intro:
-          "This topic covers the three branches of government, their basic powers, and key ideas about public accountability and the civil service system.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "The Philippines has three branches of government: Legislative, Executive, and Judicial.",
-              "Legislative (Congress) makes the laws. It is composed of the Senate and the House of Representatives.",
-              "Executive (headed by the President) implements and enforces the laws through departments and agencies.",
-              "Judicial (Supreme Court and lower courts) interprets the laws and settles disputes.",
-              "The civil service is based on merit and fitness; entrance and promotion should be through competitive examinations as far as practicable."
-            ]
-          },
-          {
-            heading: "Worked example: Branch & function",
-            bullets: [
-              "Sample question: Which branch of government has the power of judicial review (to declare a law unconstitutional)?",
-              "Choices: Executive, Legislative, Judicial, Local Government Units.",
-              "Reasoning:",
-              "• Judicial review is the power of the courts, especially the Supreme Court.",
-              "• Executive executes; Legislative creates laws; LGUs are part of local administration.",
-              "Correct answer: Judicial branch."
-            ]
-          },
-          {
-            heading: "Worked example: Civil service principle",
-            bullets: [
-              "Sample question: Which principle is MOST related to merit and fitness in appointments?",
-              "Choices: seniority rule, political loyalty, competitive examination, length of residency.",
-              "Reasoning:",
-              "• Competitive examination measures merit and fitness objectively.",
-              "• The others may be important in some cases, but not the main constitutional standard.",
-              "Correct answer: competitive examination."
-            ]
-          }
-        ],
-        tips: [
-          "Connect each branch with a keyword: Legislative–Laws, Executive–Execute, Judicial–Judge.",
-          "Remember that public office is a public trust: officials must be accountable, act with integrity, and serve the people.",
-          "Watch for questions that mix levels (national vs. local); focus on what the question is really asking."
-        ]
-      }
-          
-    };
+    government: {
+      title: "Government Structure & Civil Service",
+      intro:
+        "This topic covers the three branches of government, their basic powers, and key ideas about public accountability and the civil service system.",
+      sections: [
+        {
+          heading: "Key ideas",
+          bullets: [
+            "The Philippines has three branches of government: Legislative, Executive, and Judicial.",
+            "Legislative (Congress) makes the laws. It is composed of the Senate and the House of Representatives.",
+            "Executive (headed by the President) implements and enforces the laws through departments and agencies.",
+            "Judicial (Supreme Court and lower courts) interprets the laws and settles disputes.",
+            "The civil service is based on merit and fitness; entrance and promotion should be through competitive examinations as far as practicable."
+          ]
+        },
+        {
+          heading: "Worked example: Branch & function",
+          bullets: [
+            "Sample question: Which branch of government has the power of judicial review (to declare a law unconstitutional)?",
+            "Choices: Executive, Legislative, Judicial, Local Government Units.",
+            "Reasoning:",
+            "• Judicial review is the power of the courts, especially the Supreme Court.",
+            "• Executive executes; Legislative creates laws; LGUs are part of local administration.",
+            "Correct answer: Judicial branch."
+          ]
+        },
+        {
+          heading: "Worked example: Civil service principle",
+          bullets: [
+            "Sample question: Which principle is MOST related to merit and fitness in appointments?",
+            "Choices: seniority rule, political loyalty, competitive examination, length of residency.",
+            "Reasoning:",
+            "• Competitive examination measures merit and fitness objectively.",
+            "• The others may be important in some cases, but not the main constitutional standard.",
+            "Correct answer: competitive examination."
+          ]
+        }
+      ],
+      tips: [
+        "Connect each branch with a keyword: Legislative–Laws, Executive–Execute, Judicial–Judge.",
+        "Remember that public office is a public trust: officials must be accountable, act with integrity, and serve the people.",
+        "Watch for questions that mix levels (national vs. local); focus on what the question is really asking."
+      ]
+    },
+
+    ra6713: {
+      title: "RA 6713 – Code of Conduct & Ethical Standards",
+      intro:
+        "RA 6713 sets the ethical standards for all public officials and employees. In the CSE, questions usually ask about who is covered, the norms of conduct, rules on SALN, conflicts of interest, and gifts or favors.",
+      sections: [
+        {
+          heading: "Key ideas",
+          bullets: [
+            "RA 6713 is the Code of Conduct and Ethical Standards for Public Officials and Employees.",
+            "It covers all public officials and employees, whether elective or appointive, permanent or temporary, in career or non-career service, at national or local level.",
+            "The law emphasizes that public office is a public trust and that officials are at all times accountable to the people.",
+            "It promotes a simple and modest lifestyle and discourages conspicuous or wasteful display of wealth.",
+            "The main norms of conduct are: commitment to public interest, professionalism, justness and sincerity, political neutrality, responsiveness to the public, nationalism and patriotism, commitment to democracy, and simple living."
+          ]
+        },
+        {
+          heading: "Worked example: Norms of conduct",
+          bullets: [
+            "Sample question: An employee treats all clients fairly, explains procedures clearly, and avoids favoritism. Which norm of conduct is MOST shown?",
+            "Typical choices: professionalism, justness and sincerity, political neutrality, simple living.",
+            "Reasoning:",
+            "• Fair and honest treatment of all persons without discrimination is directly related to justness and sincerity.",
+            "• Professionalism is also important but is broader (performance and efficiency in work).",
+            "Correct answer: justness and sincerity."
+          ]
+        },
+        {
+          heading: "Worked example: SALN & unexplained wealth",
+          bullets: [
+            "Sample question: Why are public officials required to file a sworn Statement of Assets, Liabilities and Net Worth (SALN) regularly?",
+            "Typical choices: to increase salary, to detect unexplained wealth, to qualify for travel, to join private clubs.",
+            "Reasoning:",
+            "• SALN is a transparency tool; it allows possible unexplained increases in wealth to be detected.",
+            "• It supports accountability and anti-corruption efforts under RA 6713.",
+            "Correct answer: to detect unexplained wealth and promote transparency and accountability."
+          ]
+        }
+      ],
+      tips: [
+        "Memorize the list of norms of conduct and match them with key keywords (for example: public interest = people first; justness and sincerity = fair and honest treatment; simple living = modest lifestyle).",
+        "When reading a situational question, identify: What value is being shown or violated? Then match it to the correct norm of conduct.",
+        "Remember that conflicts between public and personal interest must always be resolved in favor of public interest, and that SALN and simple living are tools to strengthen public trust."
+      ]
+    }
+  };
+
 
     // ==========================================
     // 3. STATE
