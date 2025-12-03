@@ -1270,7 +1270,7 @@ KEY : LOCK?`,
     },
 
     // 15
-    {
+    
        {
       question: `In a code, every consonant moves two letters forward, and every vowel moves one letter backward.  
 What is the code for "DOG"?`,
