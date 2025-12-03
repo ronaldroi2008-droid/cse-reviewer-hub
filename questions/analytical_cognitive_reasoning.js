@@ -863,9 +863,12 @@ What time is the 5th trip?`,
     },
 
     // 30
+    {
+    
        options: ["METI", "MITA", "MATE", "MITE"],
       answer: "METI",
       explanation: `A→E, E→I; M and T stay the same → METI.`
+    },
 
 
     // 31
