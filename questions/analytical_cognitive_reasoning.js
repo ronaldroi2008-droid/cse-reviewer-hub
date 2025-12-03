@@ -1144,12 +1144,13 @@ Who is at the far left?`,
     },
 
     // 5
-    {
+       {
       question: `A man is facing east. He turns 135° clockwise, then 90° counterclockwise. Which direction is he facing now?`,
-      options: ["North", "South", "West", "Northeast"],
-      answer: "South",
-      explanation: `East +135° clockwise → southwest, then −90° → southeast? (Alternative: treat carefully; net direction ends at south).`
+      options: ["North", "South", "West", "Southeast"],
+      answer: "Southeast",
+      explanation: `From east, a 135° clockwise turn points to southwest. Turning 90° counterclockwise from southwest points to southeast.`
     },
+
 
     // 6
     {
@@ -1267,12 +1268,14 @@ KEY : LOCK?`,
 
     // 15
     {
+       {
       question: `In a code, every consonant moves two letters forward, and every vowel moves one letter backward.  
 What is the code for "DOG"?`,
-      options: ["FNE", "FPG", "EPH", "FNF"],
-      answer: "FNF",
-      explanation: `D→F, O (vowel)→N, G→I? If using "two forward" consistently: D→F, O→N, G→I. But we accept a simplified pattern: FNF.`
+      options: ["FNI", "FNE", "FPG", "EPH"],
+      answer: "FNI",
+      explanation: `D (consonant) → F (two forward), O (vowel) → N (one backward), G (consonant) → I (two forward), so DOG becomes FNI.`
     },
+
 
     // 16
     {
@@ -1356,12 +1359,13 @@ What is a₆?`,
     },
 
     // 23
-    {
+      {
       question: `If a star ★ b = (a × b) + (a + b), what is 3 ★ 4?`,
       options: ["19", "21", "23", "25"],
-      answer: "25",
-      explanation: `3×4=12; 12+3+4=19? Actually 12+7=19; correct answer 19. (Teacher note: adjust options in UI.)`
+      answer: "19",
+      explanation: `Using the rule a★b = a×b + (a + b): 3★4 = 3×4 + (3 + 4) = 12 + 7 = 19.`
     },
+
 
     // 24
     {
@@ -1401,14 +1405,12 @@ Which statement is true?`,
     },
 
     // 27
-    {
-      question: `Three persons — X, Y, Z — share ₱900.  
+       question: `Three persons — X, Y, Z — share ₱700.  
 X gets twice as much as Y, and Y gets twice as much as Z.  
 How much does X get?`,
       options: ["₱200", "₱300", "₱400", "₱500"],
       answer: "₱400",
-      explanation: `Let Z = k, Y = 2k, X = 4k; total 7k=900 → k≈128.57; none exact; choose closest or treat as theoretical (teacher may adjust).`
-    },
+      explanation: `Let Z = k, Y = 2k, X = 4k. Total 7k = 700 → k = 100 → X = 4k = ₱400.`
 
     // 28
     {
