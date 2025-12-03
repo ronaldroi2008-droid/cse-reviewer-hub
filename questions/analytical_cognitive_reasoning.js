@@ -1408,13 +1408,16 @@ Which statement is true?`,
     },
 
     // 27
+    {
        question: `Three persons — X, Y, Z — share ₱700.  
 X gets twice as much as Y, and Y gets twice as much as Z.  
 How much does X get?`,
       options: ["₱200", "₱300", "₱400", "₱500"],
+      ],
       answer: "₱400",
       explanation: `Let Z = k, Y = 2k, X = 4k. Total 7k = 700 → k = 100 → X = 4k = ₱400.`
-
+     ],
+        
     // 28
     {
       question: `Which argument shows circular reasoning?`,
