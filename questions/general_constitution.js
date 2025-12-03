@@ -6,7 +6,7 @@
 
 window.GENERAL_INFO_QUESTION_BANK = window.GENERAL_INFO_QUESTION_BANK || {};
 
-window.GENERAL_INFO_QUESTION_BANK["constitution_citizenship"] = {
+window.GENERAL_INFO_QUESTION_BANK["constitution"] = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (50 items – Basic facts)
