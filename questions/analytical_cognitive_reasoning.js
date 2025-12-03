@@ -36,8 +36,8 @@ window.ANALYTICAL_QUESTION_BANK["cognitive_reasoning"] = {
     },
 
     // 4
-    {
-      question: `If all roses are flowers and some flowers are red, which of the following is always true?`,
+       {
+      question: `If all roses are flowers and some flowers are red, which of the following may be true based on the statements?`,
       options: [
         "All flowers are roses",
         "Some roses are red",
@@ -45,7 +45,7 @@ window.ANALYTICAL_QUESTION_BANK["cognitive_reasoning"] = {
         "All red things are roses"
       ],
       answer: "Some roses are red",
-      explanation: `If all roses are flowers and some flowers are red, then at least some roses belong to the red-flower group.`
+      explanation: `All roses are within the set of flowers, and some flowers are red, so it is possible (though not certain) that some roses are among the red flowers.`
     },
 
     // 5
@@ -91,20 +91,14 @@ window.ANALYTICAL_QUESTION_BANK["cognitive_reasoning"] = {
     },
 
     // 9
-    {
-      question: `Eric is facing east. He turns 90° to his left, then 180° around. Which direction is he facing now?`,
-      options: ["East", "West", "North", "South"],
-      answer: "West",
-      explanation: `From east, left turn → north; 180° from north → south? Wait, correction: 180° from north points to south. So final direction is south.`
-    },
-
-    // 9 (fixed)
+       // 9
     {
       question: `Eric is facing east. He turns 90° to his left, then 90° to his left again. Which direction is he facing now?`,
       options: ["East", "West", "North", "South"],
       answer: "West",
       explanation: `From east, left turn → north; another left turn → west.`
     },
+
 
     // 10
     {
@@ -155,14 +149,7 @@ window.ANALYTICAL_QUESTION_BANK["cognitive_reasoning"] = {
     },
 
     // 16
-    {
-      question: `In a certain code, CAT is written as DBU. How is DOG written in the same code?`,
-      options: ["EPG", "EOH", "DPE", "FPG"],
-      answer: "EPH",
-      explanation: `Each letter is shifted +1: C→D, A→B, T→U. So D→E, O→P, G→H → EPH.`
-    },
-
-    // 16 (fixed to avoid error)
+  
     {
       question: `In a certain code, CAT is written as DBU (each letter is shifted +1). How is DOG written in the same code?`,
       options: ["EPG", "EPH", "DPE", "FPG"],
@@ -234,12 +221,13 @@ What is the relationship of Anna to Carla?`,
     },
 
     // 23
-    {
+       {
       question: `JOHN is coded as KPIO. How is MARY coded using the same pattern?`,
-      options: ["NBXZ", "NBSD", "NBSA", "NBQZ"],
-      answer: "NBSD",
-      explanation: `Each letter +1: J→K, O→P, H→I, N→O. So M→N, A→B, R→S, Y→D gives NBSD.`
+      options: ["NBSZ", "NBSD", "NBSA", "NBQZ"],
+      answer: "NBSZ",
+      explanation: `Each letter shifts +1: J→K, O→P, H→I, N→O. So M→N, A→B, R→S, Y→Z → NBSZ.`
     },
+
 
     // 24
     {
@@ -362,19 +350,7 @@ Which is certainly true?`,
     },
 
     // 34
-    {
-      question: `Which of the following is arranged in alphabetical order?`,
-      options: [
-        "Cat, Cup, Car",
-        "Dog, Duck, Deer",
-        "Ball, Bat, Bag",
-        "Fan, Fanatic, Face"
-      ],
-      answer: "Dog, Duck, Deer",
-      explanation: `Dog (Do), Duck (Du), Deer (De). Alphabetically: Deer, Dog, Duck; so check again.`
-    },
-
-    // 34 (fixed)
+      // 34
     {
       question: `Which of the following is arranged in correct alphabetical order?`,
       options: [
@@ -386,6 +362,7 @@ Which is certainly true?`,
       answer: "Ant, Bat, Cat",
       explanation: `Ant (A), Bat (B), Cat (C) is in proper A–Z order.`
     },
+
 
     // 35
     {
@@ -886,13 +863,10 @@ What time is the 5th trip?`,
     },
 
     // 30
-    {
-      question: `In a code, each vowel is replaced by the next vowel (A→E, E→I, I→O, O→U, U→A), and consonants stay the same.  
-What does "MATE" become?`,
-      options: ["METI", "METI", "METO", "MITE"],
+       options: ["METI", "MITA", "MATE", "MITE"],
       answer: "METI",
       explanation: `A→E, E→I; M and T stay the same → METI.`
-    },
+
 
     // 31
     {
