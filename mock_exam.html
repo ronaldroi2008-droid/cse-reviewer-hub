@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSE Reviewer Hub – Full Mock Exam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --border: #1e293b;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.18);
+      --accent-strong: rgba(79, 70, 229, 0.7);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --success: #22c55e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-shell {
+      max-width: 1200px;
+      margin: 24px auto 32px;
+      padding: 0 16px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .back-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .page-title-block {
+      flex: 1;
+      padding-left: 8px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-title span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    .page-subtitle {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .header-badge {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(99, 102, 241, 0.45);
+      background: var(--accent-soft);
+      font-size: 0.75rem;
+      color: #c7d2fe;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 45px -18px rgba(0, 0, 0, 0.9);
+    }
+
+    .exam-card {
+      padding: 18px 18px 20px;
+    }
+
+    .exam-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .exam-top-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .exam-top-left h2 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .exam-top-left p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .exam-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+    }
+
+    .level-tabs {
+      display: inline-flex;
+      gap: 4px;
+      padding: 3px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .level-tab {
+      border: none;
+      background: transparent;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .level-tab.active {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 0 0 1px var(--accent-strong);
+    }
+
+    .level-tab:hover:not(.active)) {
+      background: rgba(148, 163, 184, 0.16);
+      color: #e5e7eb;
+    }
+
+    .timer-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timer-select {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--muted);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      outline: none;
+    }
+
+    .timer-select:focus {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .timer-display {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .timer-display.warning {
+      border-color: #facc15;
+      color: #facc15;
+    }
+
+    .timer-display.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Config section */
+    #exam-config {
+      margin-top: 8px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px dashed #1f2937;
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    #exam-config p {
+      margin: 0 0 8px;
+    }
+
+    .start-btn {
+      margin-top: 8px;
+      border-radius: 999px;
+      border: 1px solid #6366f1;
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      color: #f9fafb;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .start-btn:hover {
+      box-shadow: 0 14px 30px -16px rgba(79, 70, 229, 0.8);
+    }
+
+    /* Exam panel */
+    #exam-panel {
+      margin-top: 14px;
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 16px 16px 12px;
+    }
+
+    .exam-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .exam-progress {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    .exam-subinfo {
+      font-size: 0.8rem;
+    }
+
+    .question-text {
+      font-size: 0.98rem;
+      margin: 4px 0 10px;
+      white-space: pre-wrap;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #exam-question-text {
+      white-space: pre-wrap;
+    }
+
+    #exam-options {
+      margin-bottom: 8px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #020617;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .option-btn.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .exam-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      gap: 8px;
+    }
+
+    .nav-buttons {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 6px 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn.primary {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #f9fafb;
+    }
+
+    .nav-btn.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .exam-counter {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* RESULTS PANEL */
+    #results-panel {
+      margin-top: 18px;
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 20px 18px 16px;
+    }
+
+    .results-summary {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .results-heading {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .results-main-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    #results-score-main {
+      font-size: 1.9rem;
+      font-weight: 800;
+    }
+
+    #results-score-percent {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .results-extra {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .results-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .results-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 8px 18px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .results-btn.primary {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #f9fafb;
+    }
+
+    .results-btn:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .results-divider {
+      border: none;
+      border-top: 1px solid #111827;
+      margin: 8px 0 10px;
+    }
+
+    .results-review-title {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e5e7eb;
+    }
+
+    .results-review-title.hidden {
+      display: none;
+    }
+
+    .results-score-text {
+      margin: 0 0 10px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .results-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-height: 260px;
+      overflow-y: auto;
+    }
+
+    .result-item {
+      padding: 10px 0;
+      border-top: 1px solid #111827;
+    }
+
+    .result-item:first-child {
+      border-top: none;
+    }
+
+    .result-item-question {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 4px;
+    }
+
+    .result-item-meta {
+      margin: 0;
+      margin-bottom: 2px;
+    }
+
+    .answer-label {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .no-mistakes {
+      font-size: 0.9rem;
+      color: var(--success);
+    }
+
+    .muted-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .exam-controls {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="page-header">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+
+      <div class="page-title-block">
+        <h1 class="page-title">
+          CSE Reviewer Hub · <span>Full Mock Exam (170 Items)</span>
+        </h1>
+        <p class="page-subtitle">
+          Combined Verbal · Numerical · Analytical · General Information (RA 6713, Constitution, Government)
+        </p>
+      </div>
+
+      <div class="header-badge">
+        Timed · 3h 10m Max · 5 Levels
+      </div>
+    </header>
+
+    <main class="card exam-card">
+      <div class="exam-topbar">
+        <div class="exam-top-left">
+          <h2>Mock Exam Settings</h2>
+          <p>
+            Choose difficulty level and timer, then start a 170-item combined practice test similar to the real CSE.
+          </p>
+        </div>
+
+        <div class="exam-controls">
+          <div class="level-tabs" id="level-tabs">
+            <button class="level-tab active" data-level="beginner">BEGINNER</button>
+            <button class="level-tab" data-level="intermediate">INTERMEDIATE</button>
+            <button class="level-tab" data-level="advanced">ADVANCED</button>
+            <button class="level-tab" data-level="expert">EXPERT</button>
+            <button class="level-tab" data-level="mixed">MIXED</button>
+          </div>
+
+          <div class="timer-row">
+            <span>Timer:</span>
+            <select id="timer-select" class="timer-select">
+              <option value="60">60 min (Quick drill)</option>
+              <option value="120">120 min</option>
+              <option value="150">150 min</option>
+              <option value="190" selected>190 min (3h 10m – CSE)</option>
+            </select>
+            <span>Max: 3h 10m</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Config / instructions -->
+      <section id="exam-config">
+        <p>
+          This mock exam will randomly select up to <strong>170 items</strong> from all available topics and question
+          banks you’ve loaded (Verbal, Numerical, Analytical, General Info, RA 6713, etc.).
+        </p>
+        <p>
+          Level controls the difficulty of the questions:
+        </p>
+        <ul>
+          <li><strong>Beginner–Expert</strong>: questions only from that level in all topics.</li>
+          <li><strong>Mixed</strong>: questions pooled from all levels (Beginner to Expert).</li>
+        </ul>
+        <p>
+          The timer will start once you click <strong>Start Mock Exam</strong>. When time is up, your answers will be
+          submitted automatically.
+        </p>
+        <button id="btn-start-exam" class="start-btn">🚀 Start Mock Exam</button>
+      </section>
+
+      <!-- Exam panel -->
+      <section id="exam-panel" class="hidden">
+        <div class="exam-header-row">
+          <div class="exam-progress">
+            <span id="exam-question-counter">Question 1 of 170</span>
+          </div>
+          <div class="exam-subinfo">
+            Level: <strong id="exam-level-label">Beginner</strong> ·
+            Target Items: <strong id="exam-total-label">170</strong>
+          </div>
+          <div class="timer-display" id="timer-display">03:10:00</div>
+        </div>
+
+        <div class="question-text" id="exam-question-text">
+          Question text will appear here.
+        </div>
+
+        <div id="exam-options"></div>
+
+        <div class="exam-footer">
+          <div class="nav-buttons">
+            <button id="exam-btn-prev" class="nav-btn" disabled>Previous</button>
+            <button id="exam-btn-next" class="nav-btn primary">Next</button>
+          </div>
+          <button id="exam-btn-finish" class="nav-btn danger">Finish Exam</button>
+        </div>
+      </section>
+
+      <!-- Results panel -->
+      <section id="results-panel" class="hidden">
+        <div class="results-summary">
+          <h2 class="results-heading">Mock Exam Completed</h2>
+          <div class="results-main-score">
+            <span id="results-score-main">0 / 0</span>
+            <span id="results-score-percent">Score: 0%</span>
+          </div>
+          <div class="results-extra">
+            <span id="results-time-used">Time used: 0 min</span> ·
+            <span id="results-items-answered">Items answered: 0</span>
+          </div>
+          <div class="results-buttons">
+            <a href="index.html" class="results-btn">🏠 Back to Home</a>
+            <button id="results-btn-retake" class="results-btn primary">🔁 Retake Mock Exam</button>
+          </div>
+        </div>
+
+        <hr class="results-divider" />
+
+        <h3 id="results-review-title" class="results-review-title hidden">
+          📄 <span>Review Mistakes</span>
+        </h3>
+
+        <div id="results-details"></div>
+        <p class="muted-note">
+          Note: Questions are randomly selected from your current question banks. Each retake may show a different set.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==========================================
+       QUESTION BANK SCRIPTS
+       (import ALL your question JS files here)
+       ========================================== -->
+
+  <!-- VERBAL -->
+  <!-- Example: adjust based on actual filenames -->
+  <script src="questions/verbal_sentence_structure.js"></script>
+  <script src="questions/verbal_paragraph_organization.js"></script>
+  <script src="questions/verbal_prepositions.js"></script>
+  <!-- etc. -->
+
+  <!-- NUMERICAL -->
+  <script src="questions/numerical_whole_numbers.js"></script>
+  <script src="questions/numerical_pemdas.js"></script>
+  <script src="questions/numerical_decimals.js"></script>
+  <script src="questions/numerical_fractions.js"></script>
+  <script src="questions/numerical_percentages.js"></script>
+  <script src="questions/numerical_ratio_proportion.js"></script>
+  <script src="questions/numerical_averages.js"></script>
+  <script src="questions/numerical_data_interpretation.js"></script>
+  <script src="questions/numerical_algebra_linear.js"></script>
+  <script src="questions/numerical_odd_even_consecutive.js"></script>
+  <script src="questions/numerical_motion_problems.js"></script>
+  <script src="questions/numerical_age_problems.js"></script>
+  <script src="questions/numerical_number_problems.js"></script>
+  <script src="questions/numerical_writing_math_expressions.js"></script>
+  <script src="questions/numerical_solving_math_expressions.js"></script>
+  <script src="questions/numerical_sequences_series.js"></script>
+  <script src="questions/numerical_simple_interest.js"></script>
+  <script src="questions/numerical_divisibility_rules.js"></script>
+  <!-- etc. (add all numerical files you created) -->
+
+  <!-- ANALYTICAL -->
+  <script src="questions/analytical_cognitive_reasoning.js"></script>
+  <script src="questions/analytical_flowchart.js"></script>
+  <!-- etc. -->
+
+  <!-- GENERAL INFORMATION -->
+  <script src="questions/general_constitution.js"></script>
+  <script src="questions/general_government.js"></script>
+  <script src="questions/general_ra6713.js"></script>
+
+  <!-- ==========================================
+       MOCK EXAM LOGIC
+       ========================================== -->
+  <script>
+    const MOCK_TOTAL_ITEMS = 170;
+
+    let currentLevel = "beginner";
+    let examQuestions = [];
+    let examUserAnswers = [];
+    let examCurrentIndex = 0;
+    let examFinished = false;
+
+    let examDurationMinutes = 190;
+    let examTimeRemaining = 0; // seconds
+    let examTimerId = null;
+    let examTimeUsedSeconds = 0;
+
+    // Helper: shuffle array (in-place)
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // Collect questions from all banks based on level
+    function collectQuestionsForLevel(level) {
+      const pool = [];
+
+      function collectFromBank(bank) {
+        if (!bank) return;
+        Object.keys(bank).forEach(topicId => {
+          const topicBank = bank[topicId];
+          if (!topicBank) return;
+
+          if (level === "mixed") {
+            ["beginner", "intermediate", "advanced", "expert"].forEach(lvl => {
+              if (Array.isArray(topicBank[lvl])) {
+                pool.push(...topicBank[lvl]);
+              }
+            });
+          } else {
+            if (Array.isArray(topicBank[level])) {
+              pool.push(...topicBank[level]);
+            }
+          }
+        });
+      }
+
+      collectFromBank(window.VERBAL_QUESTION_BANK);
+      collectFromBank(window.NUMERICAL_QUESTION_BANK);
+      collectFromBank(window.ANALYTICAL_QUESTION_BANK);
+      collectFromBank(window.GENERAL_QUESTION_BANK);
+
+      return pool;
+    }
+
+    function formatTime(secondsTotal) {
+      let remaining = Math.max(0, secondsTotal);
+      const hours = Math.floor(remaining / 3600);
+      remaining -= hours * 3600;
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+
+      if (hours > 0) {
+        return (
+          String(hours).padStart(2, "0") +
+          ":" +
+          String(minutes).padStart(2, "0") +
+          ":" +
+          String(seconds).padStart(2, "0")
+        );
+      } else {
+        return (
+          String(minutes).padStart(2, "0") +
+          ":" +
+          String(seconds).padStart(2, "0")
+        );
+      }
+    }
+
+    function updateTimerDisplay() {
+      const el = document.getElementById("timer-display");
+      if (!el) return;
+      el.textContent = formatTime(examTimeRemaining);
+
+      el.classList.remove("warning", "danger");
+      const totalSeconds = examDurationMinutes * 60;
+      const ratio = totalSeconds > 0 ? examTimeRemaining / totalSeconds : 0;
+
+      if (ratio <= 0.1) {
+        el.classList.add("danger");
+      } else if (ratio <= 0.25) {
+        el.classList.add("warning");
+      }
+    }
+
+    function startTimer() {
+      if (examTimerId) {
+        clearInterval(examTimerId);
+      }
+      examTimeRemaining = examDurationMinutes * 60;
+      examTimeUsedSeconds = 0;
+      updateTimerDisplay();
+
+      examTimerId = setInterval(() => {
+        if (examFinished) {
+          clearInterval(examTimerId);
+          examTimerId = null;
+          return;
+        }
+
+        examTimeRemaining -= 1;
+        examTimeUsedSeconds += 1;
+        if (examTimeRemaining <= 0) {
+          examTimeRemaining = 0;
+          updateTimerDisplay();
+          clearInterval(examTimerId);
+          examTimerId = null;
+          autoFinishExam();
+        } else {
+          updateTimerDisplay();
+        }
+      }, 1000);
+    }
+
+    function initLevelTabs() {
+      const levelTabs = document.querySelectorAll(".level-tab");
+      levelTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const lvl = tab.dataset.level;
+          currentLevel = lvl;
+          levelTabs.forEach(t => {
+            t.classList.toggle("active", t.dataset.level === lvl);
+          });
+        });
+      });
+    }
+
+    function initTimerSelect() {
+      const select = document.getElementById("timer-select");
+      if (!select) return;
+      select.addEventListener("change", () => {
+        const v = parseInt(select.value, 10);
+        if (!isNaN(v)) {
+          examDurationMinutes = v;
+        }
+      });
+      const v = parseInt(select.value, 10);
+      if (!isNaN(v)) {
+        examDurationMinutes = v;
+      }
+    }
+
+    function startExam() {
+      const pool = collectQuestionsForLevel(currentLevel);
+      if (!pool.length) {
+        alert(
+          "No questions found for this level yet. Please make sure your question bank JS files are loaded and have items."
+        );
+        return;
+      }
+
+      const shuffled = shuffleArray(pool.slice());
+      examQuestions = shuffled.slice(0, Math.min(MOCK_TOTAL_ITEMS, shuffled.length));
+      examUserAnswers = new Array(examQuestions.length).fill(null);
+      examCurrentIndex = 0;
+      examFinished = false;
+
+      document.getElementById("exam-total-label").textContent = examQuestions.length;
+      document.getElementById("exam-level-label").textContent =
+        currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
+
+      const configSection = document.getElementById("exam-config");
+      const panelSection = document.getElementById("exam-panel");
+      const resultsSection = document.getElementById("results-panel");
+      if (configSection) configSection.classList.add("hidden");
+      if (panelSection) panelSection.classList.remove("hidden");
+      if (resultsSection) resultsSection.classList.add("hidden");
+
+      startTimer();
+      renderExamQuestion();
+    }
+
+    function renderExamQuestion() {
+      const questionTextEl = document.getElementById("exam-question-text");
+      const optionsEl = document.getElementById("exam-options");
+      const counterEl = document.getElementById("exam-question-counter");
+      const prevBtn = document.getElementById("exam-btn-prev");
+      const nextBtn = document.getElementById("exam-btn-next");
+
+      if (!examQuestions.length) {
+        if (questionTextEl) {
+          questionTextEl.textContent =
+            "No questions loaded. Please check your question banks.";
+        }
+        if (optionsEl) optionsEl.innerHTML = "";
+        if (counterEl) counterEl.textContent = "0 of 0";
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        return;
+      }
+
+      const q = examQuestions[examCurrentIndex];
+      const selectedIndex = examUserAnswers[examCurrentIndex];
+
+      if (questionTextEl) {
+        questionTextEl.textContent = q.question || "Question";
+      }
+
+      if (optionsEl) {
+        optionsEl.innerHTML = "";
+        (q.options || []).forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "option-btn";
+          if (selectedIndex === idx) {
+            btn.classList.add("selected");
+          }
+          btn.textContent = opt;
+          btn.addEventListener("click", () => {
+            if (examFinished) return;
+            examUserAnswers[examCurrentIndex] = idx;
+            renderExamQuestion();
+          });
+          optionsEl.appendChild(btn);
+        });
+      }
+
+      if (counterEl) {
+        counterEl.textContent =
+          "Question " + (examCurrentIndex + 1) + " of " + examQuestions.length;
+      }
+
+      if (prevBtn) {
+        prevBtn.disabled = examCurrentIndex === 0;
+      }
+
+      if (nextBtn) {
+        if (examCurrentIndex === examQuestions.length - 1) {
+          nextBtn.textContent = "Finish";
+        } else {
+          nextBtn.textContent = "Next";
+        }
+      }
+    }
+
+    function goPrev() {
+      if (examFinished) return;
+      if (examCurrentIndex > 0) {
+        examCurrentIndex -= 1;
+        renderExamQuestion();
+      }
+    }
+
+    function goNextOrFinish() {
+      if (examFinished) return;
+      if (examCurrentIndex < examQuestions.length - 1) {
+        examCurrentIndex += 1;
+        renderExamQuestion();
+      } else {
+        finishExam(false);
+      }
+    }
+
+    function autoFinishExam() {
+      finishExam(true);
+    }
+
+    function finishExam(fromTimer) {
+      examFinished = true;
+      if (examTimerId) {
+        clearInterval(examTimerId);
+        examTimerId = null;
+      }
+
+      const panelSection = document.getElementById("exam-panel");
+      const resultsSection = document.getElementById("results-panel");
+      if (panelSection) panelSection.classList.add("hidden");
+      if (resultsSection) resultsSection.classList.remove("hidden");
+
+      let correctCount = 0;
+      const mistakes = [];
+      let answeredCount = 0;
+
+      examQuestions.forEach((q, idx) => {
+        const userIndex = examUserAnswers[idx];
+        const userText =
+          userIndex == null ? null : (q.options && q.options[userIndex]) || null;
+        const isCorrect = userText === q.answer;
+
+        if (userIndex != null) {
+          answeredCount += 1;
+        }
+
+        if (isCorrect) {
+          correctCount += 1;
+        } else {
+          mistakes.push({
+            number: idx + 1,
+            question: q.question || "",
+            userAnswer: userText,
+            correctAnswer: q.answer,
+            explanation: q.explanation || ""
+          });
+        }
+      });
+
+      const scoreMainEl = document.getElementById("results-score-main");
+      const scorePercentEl = document.getElementById("results-score-percent");
+      const timeUsedEl = document.getElementById("results-time-used");
+      const itemsAnsweredEl = document.getElementById("results-items-answered");
+      const reviewTitleEl = document.getElementById("results-review-title");
+      const detailsEl = document.getElementById("results-details");
+
+      if (scoreMainEl) {
+        scoreMainEl.textContent =
+          correctCount + " / " + (examQuestions.length || 0);
+      }
+      if (scorePercentEl) {
+        const pct = examQuestions.length
+          ? Math.round((correctCount / examQuestions.length) * 100)
+          : 0;
+        const extraText = fromTimer ? " (Time up)" : "";
+        scorePercentEl.textContent = "Score: " + pct + "%" + extraText;
+      }
+
+      const usedMinutes = Math.round(examTimeUsedSeconds / 60);
+      if (timeUsedEl) {
+        timeUsedEl.textContent = "Time used: " + usedMinutes + " min";
+      }
+      if (itemsAnsweredEl) {
+        itemsAnsweredEl.textContent =
+          "Items answered: " +
+          answeredCount +
+          " / " +
+          (examQuestions.length || 0);
+      }
+
+      if (!detailsEl) return;
+
+      if (!mistakes.length) {
+        if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
+        detailsEl.innerHTML =
+          '<p class="no-mistakes">Perfect! You answered all items correctly. Great job!</p>';
+        return;
+      }
+
+      if (reviewTitleEl) reviewTitleEl.classList.remove("hidden");
+
+      const itemsHtml = mistakes
+        .map(m => {
+          const userAnsText =
+            m.userAnswer == null
+              ? "<em>No answer selected.</em>"
+              : m.userAnswer;
+          const explText =
+            m.explanation && m.explanation.trim().length
+              ? m.explanation
+              : "No explanation provided for this item.";
+
+          return `
+            <div class="result-item">
+              <div class="result-item-question">
+                Question ${m.number}: ${m.question.replace(/\n/g, " ")}
+              </div>
+              <p class="result-item-meta">
+                <span class="answer-label">✖ You:</span>
+                ${userAnsText}
+              </p>
+              <p class="result-item-meta">
+                <span class="answer-label">✔ Correct:</span>
+                ${m.correctAnswer}
+              </p>
+              <p class="result-item-meta">
+                <span class="answer-label">👉 Why:</span>
+                ${explText}
+              </p>
+            </div>
+          `;
+        })
+        .join("");
+
+      detailsEl.innerHTML = `
+        <p class="results-score-text">
+          Items you need to review (incorrect or unanswered):
+        </p>
+        <div class="results-list">
+          ${itemsHtml}
+        </div>
+      `;
+    }
+
+    function retakeExam() {
+      const configSection = document.getElementById("exam-config");
+      const panelSection = document.getElementById("exam-panel");
+      const resultsSection = document.getElementById("results-panel");
+
+      if (configSection) configSection.classList.remove("hidden");
+      if (panelSection) panelSection.classList.add("hidden");
+      if (resultsSection) resultsSection.classList.add("hidden");
+
+      examQuestions = [];
+      examUserAnswers = [];
+      examCurrentIndex = 0;
+      examFinished = false;
+      examTimeRemaining = 0;
+      examTimeUsedSeconds = 0;
+      if (examTimerId) {
+        clearInterval(examTimerId);
+        examTimerId = null;
+      }
+
+      updateTimerDisplay();
+    }
+
+    function initExamButtons() {
+      const startBtn = document.getElementById("btn-start-exam");
+      const prevBtn = document.getElementById("exam-btn-prev");
+      const nextBtn = document.getElementById("exam-btn-next");
+      const finishBtn = document.getElementById("exam-btn-finish");
+      const retakeBtn = document.getElementById("results-btn-retake");
+
+      if (startBtn) {
+        startBtn.addEventListener("click", () => {
+          startExam();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          goPrev();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          goNextOrFinish();
+        });
+      }
+
+      if (finishBtn) {
+        finishBtn.addEventListener("click", () => {
+          if (
+            confirm(
+              "Are you sure you want to finish the mock exam now? You can review mistakes afterwards."
+            )
+          ) {
+            finishExam(false);
+          }
+        });
+      }
+
+      if (retakeBtn) {
+        retakeBtn.addEventListener("click", () => {
+          retakeExam();
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+      window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
+      window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
+      window.GENERAL_QUESTION_BANK = window.GENERAL_QUESTION_BANK || {};
+
+      initLevelTabs();
+      initTimerSelect();
+      initExamButtons();
+      updateTimerDisplay();
+    });
+  </script>
+</body>
+</html>
