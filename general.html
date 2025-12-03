@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSE Reviewer Hub – General Information</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --card-soft: #0b1220;
+      --border: #1e293b;
+      --accent: #22c55e;  /* Green accent for General Info */
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --accent-hover: #16a34a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --chip-bg: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #052e16 0%, #020617 55%, #000 100%);
+      color: var(--text);
+      padding: 16px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1080px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .header-card {
+      background: radial-gradient(circle at top left, rgba(34,197,94,0.35), transparent 60%),
+                  radial-gradient(circle at top right, rgba(56,189,248,0.15), transparent 55%),
+                  #020617;
+      border-radius: 24px;
+      padding: 20px 20px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .header-main {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .subject-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--muted);
+    }
+
+    .subject-pill span.icon {
+      font-size: 13px;
+    }
+
+    .subject-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #bbf7d0, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subject-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 0.8rem;
+    }
+
+    .meta-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .meta-badge strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    /* Sidebar Topics */
+    .sidebar {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 14px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .sidebar-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .sidebar-tagline {
+      font-size: 0.75rem;
+      color: #6ee7b7;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .topic-btn {
+      width: 100%;
+      text-align: left;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(30, 64, 175, 0.0);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .topic-main {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .topic-label {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .topic-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .topic-chip {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #bbf7d0;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      white-space: nowrap;
+    }
+
+    .topic-btn:hover {
+      border-color: rgba(34, 197, 94, 0.6);
+      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.14), transparent 55%);
+      transform: translateY(-1px);
+    }
+
+    .topic-btn.active {
+      border-color: var(--accent);
+      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.22), transparent 55%);
+      color: #e5e7eb;
+    }
+
+    /* Main Panel */
+    .main-panel {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 14px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .panel-topic-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .panel-topic-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .level-group {
+      display: inline-flex;
+      border-radius: 999px;
+      background: #020617;
+      padding: 2px;
+      border: 1px solid var(--border);
+    }
+
+    .level-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .level-btn.active {
+      background: var(--accent);
+      color: #022c22;
+      font-weight: 600;
+    }
+
+    .mode-group {
+      display: inline-flex;
+      border-radius: 999px;
+      background: #020617;
+      padding: 2px;
+      border: 1px solid var(--border);
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .mode-btn.active {
+      background: var(--accent-soft);
+      color: #bbf7d0;
+      font-weight: 600;
+    }
+
+    .panel-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .panel-secondary {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .question-area {
+      margin-top: 4px;
+      border-radius: 14px;
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+      min-height: 180px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      overflow-y: auto;
+      max-height: 420px;
+    }
+
+    .placeholder {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 24px 8px;
+    }
+
+    .placeholder strong {
+      color: #e5e7eb;
+    }
+
+    .question-item {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed rgba(51, 65, 85, 0.7);
+    }
+
+    .question-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .question-text {
+      margin-bottom: 6px;
+    }
+
+    .question-options {
+      margin-left: 10px;
+      font-size: 0.86rem;
+    }
+
+    .question-options div {
+      margin-bottom: 2px;
+    }
+
+    .question-explanation {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .header-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-meta {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <!-- Header -->
+  <section class="header-card">
+    <div class="header-main">
+      <div class="subject-pill">
+        <span class="icon">🌍</span>
+        <span>General Information</span>
+      </div>
+      <div class="subject-title">General Information Reviewer</div>
+      <p class="subject-sub">
+        Practice important facts about the Philippines – constitution, government,
+        history, symbols, and basic general information. Choose a topic, then pick a level and mode.
+      </p>
+    </div>
+    <div class="header-meta">
+      <div class="meta-badge">
+        <span>Levels:</span> <strong>Beginner – Expert</strong>
+      </div>
+      <div class="meta-badge">
+        <span>Mode:</span> <strong>Study &amp; Quiz</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layout -->
+  <section class="layout">
+    <!-- Sidebar with topics -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">General Information Topics</div>
+        <div class="sidebar-tagline">Tap a topic to begin</div>
+      </div>
+      <div id="general-topic-list" class="topic-list">
+        <!-- Populated by JS -->
+      </div>
+    </aside>
+
+    <!-- Main panel -->
+    <section class="main-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-topic-title" id="panel-topic-title">
+            🌍 Select a topic
+          </div>
+          <div class="panel-topic-sub" id="panel-topic-sub">
+            Then choose a level and Study/Quiz mode.
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
+          <div class="level-group" id="general-level-group">
+            <button class="level-btn active" data-level="beginner">Beginner</button>
+            <button class="level-btn" data-level="intermediate">Intermediate</button>
+            <button class="level-btn" data-level="advanced">Advanced</button>
+            <button class="level-btn" data-level="expert">Expert</button>
+          </div>
+
+          <div class="mode-group" id="general-mode-group">
+            <button class="mode-btn active" data-mode="study">Study</button>
+            <button class="mode-btn" data-mode="quiz">Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-toolbar">
+        <div class="panel-secondary" id="panel-helper-text">
+          Tip: Start with <strong>Beginner</strong> to warm up, then move to higher levels.
+        </div>
+        <div class="panel-secondary">
+          Source: <span style="color:#bbf7d0;">CSE General Information (PH)</span>
+        </div>
+      </div>
+
+      <div id="general-question-panel" class="question-area">
+        <div class="placeholder">
+          <strong>No topic selected yet.</strong><br />
+          Choose a topic on the left to load questions from your
+          <code>GENERAL_QUESTION_BANK</code> files.
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<!-- ============================
+     QUESTION BANK SCRIPTS
+     (Update paths/filenames as needed)
+     ============================ -->
+<!-- Example only – palitan mo ayon sa actual JS files mo -->
+<script src="questions/general_philippine_constitution.js"></script>
+<script src="questions/general_philippine_government.js"></script>
+<script src="questions/general_philippine_history.js"></script>
+<script src="questions/general_national_symbols.js"></script>
+<script src="questions/general_current_affairs.js"></script>
+
+<script>
+  // ==========================
+  // 1. TOPIC LIST
+  // ==========================
+  const GENERAL_TOPICS = [
+    {
+      id: "philippine_constitution",
+      label: "Philippine Constitution & Rights",
+      tag: "Core",
+      hint: "Preamble, basic rights, principles"
+    },
+    {
+      id: "philippine_government",
+      label: "Philippine Government & Structure",
+      tag: "Core",
+      hint: "Branches, positions, basic functions"
+    },
+    {
+      id: "philippine_history",
+      label: "Philippine History & Heroes",
+      tag: "History",
+      hint: "Key events and historical figures"
+    },
+    {
+      id: "national_symbols",
+      label: "National Symbols & Landmarks",
+      tag: "Symbols",
+      hint: "Flag, anthem, emblem, landmarks"
+    },
+    {
+      id: "current_affairs",
+      label: "General & Current Information",
+      tag: "Current",
+      hint: "Basic facts, geography, quick trivia"
+    }
+  ];
+
+  // Assumed global question bank (gaya sa verbal/numerical/clerical):
+  // window.GENERAL_QUESTION_BANK[topicId][level] = [ {question, options, answer, explanation}, ... ]
+
+  const topicListEl = document.getElementById("general-topic-list");
+  const panelTitleEl = document.getElementById("panel-topic-title");
+  const panelSubEl = document.getElementById("panel-topic-sub");
+  const panelHelperTextEl = document.getElementById("panel-helper-text");
+  const questionPanelEl = document.getElementById("general-question-panel");
+
+  let currentTopicId = null;
+  let currentLevel = "beginner";
+  let currentMode = "study";
+
+  function renderTopicButtons() {
+    topicListEl.innerHTML = "";
+    GENERAL_TOPICS.forEach((topic, index) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "topic-btn" + (index === 0 ? " active" : "");
+      btn.dataset.topicId = topic.id;
+
+      const main = document.createElement("div");
+      main.className = "topic-main";
+
+      const label = document.createElement("div");
+      label.className = "topic-label";
+      label.textContent = topic.label;
+
+      const tag = document.createElement("div");
+      tag.className = "topic-tag";
+      tag.textContent = topic.hint;
+
+      main.appendChild(label);
+      main.appendChild(tag);
+
+      const chip = document.createElement("div");
+      chip.className = "topic-chip";
+      chip.textContent = topic.tag;
+
+      btn.appendChild(main);
+      btn.appendChild(chip);
+
+      btn.addEventListener("click", () => {
+        document
+          .querySelectorAll(".topic-btn")
+          .forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentTopicId = topic.id;
+        updateHeaderForTopic(topic);
+        loadGeneralContent();
+      });
+
+      topicListEl.appendChild(btn);
+    });
+
+    // auto-select first topic
+    if (GENERAL_TOPICS.length > 0) {
+      currentTopicId = GENERAL_TOPICS[0].id;
+      updateHeaderForTopic(GENERAL_TOPICS[0]);
+      loadGeneralContent();
+    }
+  }
+
+  function updateHeaderForTopic(topic) {
+    panelTitleEl.textContent = "🌍 " + topic.label;
+    panelSubEl.textContent = topic.hint || "";
+  }
+
+  // ==========================
+  // 2. Levels + Modes
+  // ==========================
+  document.querySelectorAll("#general-level-group .level-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll("#general-level-group .level-btn")
+        .forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentLevel = btn.dataset.level;
+      loadGeneralContent();
+    });
+  });
+
+  document.querySelectorAll("#general-mode-group .mode-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll("#general-mode-group .mode-btn")
+        .forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentMode = btn.dataset.mode;
+      panelHelperTextEl.innerHTML =
+        currentMode === "study"
+          ? "Study mode: All items are shown with the correct answer and explanation."
+          : "Quiz mode: Hide the answer first, try to answer, then check the explanation.";
+      loadGeneralContent();
+    });
+  });
+
+  // ==========================
+  // 3. Load Questions
+  // ==========================
+  function loadGeneralContent() {
+    if (!currentTopicId) return;
+
+    const bank = window.GENERAL_QUESTION_BANK || {};
+    const topicBank = bank[currentTopicId];
+
+    if (!topicBank) {
+      questionPanelEl.innerHTML = `
+        <div class="placeholder">
+          <strong>No questions found for this topic.</strong><br/>
+          Make sure you created <code>window.GENERAL_QUESTION_BANK["${currentTopicId}"]</code>
+          with levels (beginner, intermediate, advanced, expert).
+        </div>
+      `;
+      return;
+    }
+
+    const levelItems = topicBank[currentLevel];
+    if (!levelItems || !Array.isArray(levelItems) || levelItems.length === 0) {
+      questionPanelEl.innerHTML = `
+        <div class="placeholder">
+          <strong>No items found for level: ${currentLevel}.</strong><br/>
+          Add questions under <code>${currentLevel}</code> in your JS file for this topic.
+        </div>
+      `;
+      return;
+    }
+
+    // Render items (simple version – same output for Study/Quiz, pero future-ready ka na)
+    const html = levelItems
+      .map((item, idx) => {
+        const letterChoices = item.options
+          .map((opt, i) => {
+            const letter = String.fromCharCode(65 + i); // A, B, C...
+            return `<div>${letter}. ${opt}</div>`;
+          })
+          .join("");
+
+        return `
+          <div class="question-item">
+            <div class="question-text">
+              <strong>Q${idx + 1}.</strong> ${item.question}
+            </div>
+            <div class="question-options">
+              ${letterChoices}
+            </div>
+            <div class="question-explanation">
+              <strong>Answer:</strong> ${item.answer}<br/>
+              ${item.explanation || ""}
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+
+    questionPanelEl.innerHTML = html;
+  }
+
+  // Init
+  renderTopicButtons();
+</script>
+
+</body>
+</html>
