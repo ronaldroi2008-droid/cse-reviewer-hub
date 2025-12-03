@@ -594,7 +594,7 @@ If Ben is at the left end, who must be at the right end?`,
       question: `A person faces south. He turns 45° clockwise, then 90° counterclockwise. Which direction is he now facing?`,
       options: ["East", "West", "Southwest", "Southeast"],
       answer: "Southeast",
-      explanation: `From south: +45° → southwest? (Actually: clockwise from south → southwest; then 90° counterclockwise → southeast).`
+           explanation: `From south, a 45° clockwise turn points to southwest. From southwest, a 90° counterclockwise turn points to southeast.`
     },
 
     // 6
@@ -863,11 +863,12 @@ What time is the 5th trip?`,
     },
 
     // 30
+     // 30
     {
-    
-       options: ["METI", "MITA", "MATE", "MITE"],
+      question: `In a code language, each vowel is replaced by the next vowel in the sequence A–E–I–O–U (A→E, E→I, I→O, O→U, U→A). Consonants stay the same. How is "MATE" written in this code?`,
+      options: ["METI", "MITA", "MATE", "MITE"],
       answer: "METI",
-      explanation: `A→E, E→I; M and T stay the same → METI.`
+      explanation: `M and T are consonants, so they stay the same. A→E and E→I, so "MATE" becomes "METI".`
     },
 
 
