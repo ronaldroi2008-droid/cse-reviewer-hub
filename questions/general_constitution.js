@@ -1,12 +1,6 @@
-// questions/general_constitution_citizenship.js
-// ==========================================
-// GENERAL INFORMATION – PHILIPPINE CONSTITUTION & CITIZENSHIP (200 ITEMS)
-// Levels: Beginner, Intermediate, Advanced, Expert
-// ==========================================
+window.GENERAL_QUESTION_BANK = window.GENERAL_QUESTION_BANK || {};
 
-window.GENERAL_INFO_QUESTION_BANK = window.GENERAL_INFO_QUESTION_BANK || {};
-
-window.GENERAL_INFO_QUESTION_BANK["constitution"] = {
+window.GENERAL_QUESTION_BANK["constitution"] = {
 
   // ==========================================
   // LEVEL 1: BEGINNER (50 items – Basic facts)
