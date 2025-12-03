@@ -820,7 +820,7 @@
               </div>
               <div class="results-buttons">
                 <a href="index.html" class="results-btn">🏠 Home</a>
-                <button id="btn-retake" class="results-btn primary">🔁 Retake Quiz</button>
+                                <button id="btn-retake" class="results-btn primary">🔁 Retake Quiz</button>
               </div>
             </div>
 
@@ -837,24 +837,20 @@
     </main>
   </div>
 
-<!-- Question banks -->
-<script src="questions/general_constitution.js"></script>
-<script src="questions/general_government.js"></script>
-<script src="questions/general_facts.js"></script>
+  <!-- Question banks -->
+  <script src="questions/general_constitution.js"></script>
+  <script src="questions/general_government.js"></script>
+  <script src="questions/general_facts.js"></script>
 
-<script>
-  // ==========================================
-  // 1. TOPIC LIST
-  // ==========================================
-  const GENERAL_TOPICS = [
-    { id: "constitution",       label: "Philippine Constitution & Citizenship",          tag: "Core" },
-    { id: "government",         label: "Government Structure & Civil Service",           tag: "Branches" },
-    { id: "philippines_facts",  label: "Philippines: Geography & General Facts",         tag: "General" }
-  ];
-
-  // (dito na susunod yung ibang JS logic mo:
-  //  activeTopic, activeLevel, renderStudyView(), renderQuizView(), etc.)
-</script>
+  <script>
+    // ==========================================
+    // 1. TOPIC LIST
+    // ==========================================
+    const GENERAL_TOPICS = [
+      { id: "constitution",       label: "Philippine Constitution & Citizenship",          tag: "Core" },
+      { id: "government",         label: "Government Structure & Civil Service",           tag: "Branches" },
+      { id: "philippines_facts",  label: "Philippines: Geography & General Facts",         tag: "General" }
+    ];
 
     // ==========================================
     // 2. STUDY LESSON CONTENT
