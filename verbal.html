@@ -570,6 +570,8 @@
 
   const IS_PRO_USER = false;
 
+   // 🔒 Locked levels for free users
+    const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
 
     // ==========================================
     // 1. TOPICS + LESSON DATA
@@ -5036,308 +5038,313 @@ synonyms: {
   } 
 }; 
 
-// ==========================================
-  // 2. STATE
-  // ==========================================
-  let currentTopicId   = VERBAL_TOPICS[0]?.id || "prepositions";
-  let currentLevel     = "beginner";
-  let currentItemCount = 10;
-  let currentIndex     = 0;
+// =====================================================
+    // 2. STATE
+    // =====================================================
+    let currentTopicId = VERBAL_TOPICS[0].id;
+    let currentLevel = "beginner";
+    let currentItemCount = 10;
 
-  let currentQuestions = [];
-  let userAnswers      = []; // { selectedIndex, correct }
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let userAnswers = []; // per index: { selectedIndex, isCorrect }
 
-  // ==========================================
-  // 3. DOM REFERENCES
-  // ==========================================
-  const topicListEl          = document.getElementById("topicList");
-  const quizTopicLabelEl     = document.getElementById("quizTopicLabel");
-  const quizLevelLabelEl     = document.getElementById("quizLevelLabel");
-  const quizItemCountLabelEl = document.getElementById("quizItemCountLabel");
+    // =====================================================
+    // 3. DOM REFERENCES
+    // =====================================================
+    const topicListEl         = document.getElementById("topicList");
+    const quizTopicLabelEl    = document.getElementById("quizTopicLabel");
+    const quizLevelLabelEl    = document.getElementById("quizLevelLabel");
+    const quizItemCountLabelEl = document.getElementById("quizItemCountLabel");
+    const quizProgressTextEl  = document.getElementById("quizProgressText");
+    const questionTextEl      = document.getElementById("questionText");
+    const choicesContainerEl  = document.getElementById("choicesContainer");
+    const explanationTextEl   = document.getElementById("explanationText");
+    const nextQuestionBtn     = document.getElementById("nextQuestionBtn");
+    const levelChips          = document.querySelectorAll(".level-chip");
+    const countChips          = document.querySelectorAll(".count-chip");
+    const proBannerEl         = document.getElementById("proBanner");
 
-  const quizProgressTextEl   = document.getElementById("quizProgressText");
-  const questionTextEl       = document.getElementById("questionText");
-  const choicesContainerEl   = document.getElementById("choicesContainer");
-  const explanationTextEl    = document.getElementById("explanationText");
-
-  const levelChips           = document.querySelectorAll(".level-chip");
-  const countChips           = document.querySelectorAll(".count-chip");
-  const proBannerEl          = document.getElementById("proBanner");
-  const nextQuestionBtn      = document.getElementById("nextQuestionBtn");
-
-  // ==========================================
-  // 4. HELPERS
-  // ==========================================
-  function capitalize(text) {
-    if (!text) return "";
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  }
-
-  function getTopicLabel(id) {
-    const t = VERBAL_TOPICS.find((x) => x.id === id);
-    return t ? t.label : "Verbal Topic";
-  }
-
-  function getQuestionsForCurrent() {
-    const bank      = window.VERBAL_QUESTION_BANK || {};
-    const topicBank = bank[currentTopicId] || {};
-    const levelArr  = topicBank[currentLevel] || [];
-    return levelArr.slice(0, currentItemCount);
-  }
-
-  function getChoicesForQuestion(q) {
-    if (Array.isArray(q.choices)) return q.choices;
-    if (Array.isArray(q.options)) return q.options;
-    return [];
-  }
-
-  function getCorrectIndex(q) {
-    if (typeof q.correctIndex === "number") return q.correctIndex;
-
-    const choices = getChoicesForQuestion(q);
-    if (q.answer && choices.length) {
-      const idx = choices.indexOf(q.answer);
-      if (idx !== -1) return idx;
+    // =====================================================
+    // 4. HELPERS
+    // =====================================================
+    function shuffleArray(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
     }
-    return -1; // unknown, pero usually meron na
-  }
 
-  // ==========================================
-  // 5. TOPIC LIST UI
-  // ==========================================
-  function buildTopicList() {
-    if (!topicListEl) return;
-    topicListEl.innerHTML = "";
+    function buildTopicsList() {
+      topicListEl.innerHTML = "";
+      VERBAL_TOPICS.forEach((topic) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "topic-pill";
+        btn.dataset.topicId = topic.id;
 
-    VERBAL_TOPICS.forEach((topic) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "topic-pill";
-      btn.dataset.topicId = topic.id;
+        const labelSpan = document.createElement("span");
+        labelSpan.className = "topic-label";
+        labelSpan.textContent = topic.label;
 
-      const labelSpan = document.createElement("span");
-      labelSpan.className = "topic-label";
-      labelSpan.textContent = topic.label;
+        const tagSpan = document.createElement("span");
+        tagSpan.className = "topic-tag";
+        tagSpan.textContent = topic.tag || "Topic";
 
-      const tagSpan = document.createElement("span");
-      tagSpan.className = "topic-tag";
-      tagSpan.textContent = topic.tag || "Topic";
+        btn.appendChild(labelSpan);
+        btn.appendChild(tagSpan);
 
-      btn.appendChild(labelSpan);
-      btn.appendChild(tagSpan);
+        btn.addEventListener("click", function () {
+          selectTopic(topic.id);
+        });
 
-      btn.addEventListener("click", function () {
-        currentTopicId = topic.id;
-        updateActiveTopicPills();
-        resetQuiz();
+        topicListEl.appendChild(btn);
+      });
+    }
+
+    function updateActiveTopicPill() {
+      const pills = topicListEl.querySelectorAll(".topic-pill");
+      pills.forEach((pill) => {
+        pill.classList.toggle("active", pill.dataset.topicId === currentTopicId);
       });
 
-      topicListEl.appendChild(btn);
-    });
-
-    updateActiveTopicPills();
-  }
-
-  function updateActiveTopicPills() {
-    const pills = topicListEl.querySelectorAll(".topic-pill");
-    pills.forEach((pill) => {
-      const isActive = pill.dataset.topicId === currentTopicId;
-      pill.classList.toggle("active", isActive);
-    });
-
-    if (quizTopicLabelEl) {
-      quizTopicLabelEl.textContent = getTopicLabel(currentTopicId);
-    }
-  }
-
-  // ==========================================
-  // 6. HEADER META + LOCKED LEVELS
-  // ==========================================
-  function updateHeaderMeta() {
-    if (quizTopicLabelEl) {
-      quizTopicLabelEl.textContent = getTopicLabel(currentTopicId);
-    }
-    if (quizLevelLabelEl) {
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-    }
-    if (quizItemCountLabelEl) {
-      quizItemCountLabelEl.textContent = String(currentQuestions.length || 0);
-    }
-  }
-
-  function markLockedLevels() {
-    levelChips.forEach((chip) => {
-      const level = chip.dataset.level;
-      const locked = LOCKED_LEVELS.includes(level);
-      chip.classList.toggle("locked", locked);
-    });
-  }
-
-  // ==========================================
-  // 7. QUIZ RENDERING
-  // ==========================================
-  function resetQuiz() {
-    currentQuestions = getQuestionsForCurrent();
-    userAnswers      = currentQuestions.map(() => null);
-    currentIndex     = 0;
-    updateHeaderMeta();
-    renderQuestion();
-  }
-
-  function renderQuestion() {
-    if (!questionTextEl || !choicesContainerEl) return;
-
-    if (!currentQuestions.length) {
-      questionTextEl.textContent =
-        "No questions are available yet for this topic and level. They will be added soon.";
-      choicesContainerEl.innerHTML = "";
-      if (explanationTextEl) explanationTextEl.textContent = "";
-      if (quizProgressTextEl) quizProgressTextEl.textContent = "0 / 0";
-      if (nextQuestionBtn) nextQuestionBtn.disabled = true;
-      return;
-    }
-
-    const q = currentQuestions[currentIndex];
-    const choices = getChoicesForQuestion(q);
-
-    questionTextEl.textContent = q.question || "";
-    choicesContainerEl.innerHTML = "";
-    if (quizProgressTextEl) {
-      quizProgressTextEl.textContent =
-        "Question " + (currentIndex + 1) + " of " + currentQuestions.length;
-    }
-    if (explanationTextEl) {
-      explanationTextEl.textContent = "";
-    }
-    if (nextQuestionBtn) {
-      nextQuestionBtn.disabled = false;
-    }
-
-    choices.forEach((choiceText, index) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "choice-option";
-      btn.textContent = choiceText;
-
-      btn.addEventListener("click", function () {
-        handleChoiceClick(index);
-      });
-
-      choicesContainerEl.appendChild(btn);
-    });
-
-    // kung nasagutan na dati, ibalik ang kulay + explanation
-    const saved = userAnswers[currentIndex];
-    if (saved && typeof saved.selectedIndex === "number") {
-      applyAnswerStyles(saved.selectedIndex, saved.correct);
-    }
-  }
-
-  function applyAnswerStyles(selectedIndex, isCorrect) {
-    const q = currentQuestions[currentIndex];
-    const correctIdx = getCorrectIndex(q);
-    const buttons = choicesContainerEl.querySelectorAll(".choice-option");
-
-    buttons.forEach((btn, idx) => {
-      btn.classList.remove("selected", "correct", "incorrect");
-      if (idx === selectedIndex) {
-        btn.classList.add("selected");
+      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
+      if (topic) {
+        quizTopicLabelEl.textContent = topic.label;
       }
-      if (idx === correctIdx) {
-        btn.classList.add("correct");
-      }
-      if (idx === selectedIndex && !isCorrect) {
-        btn.classList.add("incorrect");
-      }
-    });
-
-    if (explanationTextEl) {
-      const prefix = isCorrect ? "Correct! " : "Not quite. ";
-      explanationTextEl.textContent =
-        prefix + (q.explanation || "");
     }
-  }
 
-  function handleChoiceClick(selectedIndex) {
-    if (!currentQuestions.length) return;
-    const q = currentQuestions[currentIndex];
-    const correctIdx = getCorrectIndex(q);
-
-    const isCorrect =
-      correctIdx === -1 ? false : selectedIndex === correctIdx;
-
-    userAnswers[currentIndex] = {
-      selectedIndex,
-      correct: isCorrect
-    };
-
-    applyAnswerStyles(selectedIndex, isCorrect);
-  }
-
-  // ==========================================
-  // 8. EVENT HANDLERS
-  // ==========================================
-  function attachEvents() {
-    // Level chips (Beginner / Intermediate / Advanced / Expert)
-    levelChips.forEach((chip) => {
-      chip.addEventListener("click", function () {
+    function markLockedLevels() {
+      levelChips.forEach((chip) => {
         const level = chip.dataset.level;
-        if (!level || level === currentLevel) return;
+        const locked = LOCKED_LEVELS.includes(level);
+        chip.classList.toggle("locked", locked);
+      });
+    }
 
-        // lock for free users
-        if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
-          if (proBannerEl) {
-            proBannerEl.classList.remove("hidden");
-          }
-          return;
+    function loadQuestionsForCurrentSelection() {
+      const topicData = window.VERBAL_QUESTION_BANK[currentTopicId] || {};
+      const levelQuestions = topicData[currentLevel] || [];
+
+      // Shuffle then slice to requested count
+      const shuffled = shuffleArray(levelQuestions);
+      currentQuestions = shuffled.slice(0, currentItemCount);
+      currentIndex = 0;
+      userAnswers = currentQuestions.map(() => null);
+    }
+
+    function updateQuizMeta() {
+      quizLevelLabelEl.textContent = capitalize(currentLevel);
+      quizItemCountLabelEl.textContent = currentQuestions.length.toString();
+
+      if (!currentQuestions.length) {
+        quizProgressTextEl.textContent = "0 / 0";
+      } else {
+        quizProgressTextEl.textContent =
+          "Question " + (currentIndex + 1) + " of " + currentQuestions.length;
+      }
+    }
+
+    function capitalize(text) {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function getCurrentQuestion() {
+      if (!currentQuestions.length) return null;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentQuestions.length) currentIndex = currentQuestions.length - 1;
+      return currentQuestions[currentIndex];
+    }
+
+    function getChoicesAndAnswer(q) {
+      const choices = q.choices || q.options || [];
+      let correctIndex = (typeof q.correctIndex === "number") ? q.correctIndex : null;
+
+      if (correctIndex === null && typeof q.answer !== "undefined") {
+        const answerText = q.answer;
+        const idx = choices.findIndex((c) => c === answerText);
+        correctIndex = idx >= 0 ? idx : null;
+      }
+
+      return { choices, correctIndex };
+    }
+
+    // =====================================================
+    // 5. RENDER QUESTION + ANSWER HANDLING
+    // =====================================================
+    function renderQuestion() {
+      const q = getCurrentQuestion();
+
+      explanationTextEl.textContent = "";
+      choicesContainerEl.innerHTML = "";
+
+      if (!q) {
+        questionTextEl.textContent =
+          "No practice questions are available yet for this topic and level. They will be added soon.";
+        quizProgressTextEl.textContent = "0 / 0";
+        nextQuestionBtn.disabled = true;
+        return;
+      }
+
+      nextQuestionBtn.disabled = false;
+      questionTextEl.textContent = q.question;
+
+      const { choices, correctIndex } = getChoicesAndAnswer(q);
+
+      choices.forEach((choiceText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "choice-option";
+        btn.textContent = choiceText;
+
+        btn.addEventListener("click", function () {
+          handleChoice(idx);
+        });
+
+        choicesContainerEl.appendChild(btn);
+      });
+
+      // If may previous answer, i-restore markings
+      const saved = userAnswers[currentIndex];
+      if (saved && typeof saved.selectedIndex === "number") {
+        applyChoiceStyles(saved.selectedIndex, correctIndex);
+        const isCorrect = !!saved.isCorrect;
+        const explanation = q.explanation || "";
+        explanationTextEl.textContent =
+          (isCorrect ? "Correct! " : "Not quite. ") + explanation;
+      }
+
+      updateQuizMeta();
+    }
+
+    function applyChoiceStyles(selectedIndex, correctIndex) {
+      const buttons = choicesContainerEl.querySelectorAll(".choice-option");
+      buttons.forEach((btn, idx) => {
+        btn.classList.remove("selected", "correct", "incorrect");
+        if (idx === selectedIndex) {
+          btn.classList.add("selected");
         }
-
-        currentLevel = level;
-        levelChips.forEach((c) => {
-          c.classList.toggle("active", c.dataset.level === level);
-        });
-        resetQuiz();
+        if (idx === correctIndex) {
+          btn.classList.add("correct");
+        }
+        if (idx === selectedIndex && idx !== correctIndex) {
+          btn.classList.add("incorrect");
+        }
       });
-    });
+    }
 
-    // Count chips (10 / 20 / 30 / 40 / 50 items)
-    countChips.forEach((chip) => {
-      chip.addEventListener("click", function () {
-        const count = parseInt(chip.dataset.count, 10);
-        if (!count || count === currentItemCount) return;
+    function handleChoice(selectedIndex) {
+      const q = getCurrentQuestion();
+      if (!q) return;
 
-        currentItemCount = count;
-        countChips.forEach((c) => {
-          c.classList.toggle("active", c === chip);
+      const { choices, correctIndex } = getChoicesAndAnswer(q);
+
+      // Kung walang correctIndex sa data, huwag na mag error, treat as no-check
+      if (correctIndex === null || correctIndex < 0 || correctIndex >= choices.length) {
+        explanationTextEl.textContent =
+          (q.explanation && q.explanation.trim().length)
+            ? q.explanation
+            : "No answer key is defined for this item.";
+        return;
+      }
+
+      const isCorrect = selectedIndex === correctIndex;
+
+      userAnswers[currentIndex] = {
+        selectedIndex,
+        isCorrect
+      };
+
+      applyChoiceStyles(selectedIndex, correctIndex);
+
+      const explanation = q.explanation || "";
+      explanationTextEl.textContent =
+        (isCorrect ? "Correct! " : "Not quite. ") + explanation;
+    }
+
+    // =====================================================
+    // 6. EVENTS
+    // =====================================================
+    function selectTopic(topicId) {
+      currentTopicId = topicId;
+      updateActiveTopicPill();
+      loadQuestionsForCurrentSelection();
+      updateQuizMeta();
+      renderQuestion();
+    }
+
+    function attachEvents() {
+      // Level buttons
+      levelChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const level = chip.dataset.level;
+          if (!level) return;
+
+          const locked = LOCKED_LEVELS.includes(level);
+          if (locked && !IS_PRO_USER) {
+            if (proBannerEl) {
+              proBannerEl.classList.remove("hidden");
+            }
+            return;
+          }
+
+          if (level === currentLevel) return;
+
+          currentLevel = level;
+          levelChips.forEach((c) => {
+            c.classList.toggle("active", c.dataset.level === level);
+          });
+
+          loadQuestionsForCurrentSelection();
+          updateQuizMeta();
+          renderQuestion();
         });
-        resetQuiz();
       });
-    });
 
-    // Next Question button
-    if (nextQuestionBtn) {
+      // Item count buttons
+      countChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const count = parseInt(chip.dataset.count, 10);
+          if (!count || count === currentItemCount) return;
+
+          currentItemCount = count;
+          countChips.forEach((c) => {
+            c.classList.toggle("active", c === chip);
+          });
+
+          loadQuestionsForCurrentSelection();
+          updateQuizMeta();
+          renderQuestion();
+        });
+      });
+
+      // Next question
       nextQuestionBtn.addEventListener("click", function () {
         if (!currentQuestions.length) return;
         if (currentIndex < currentQuestions.length - 1) {
           currentIndex += 1;
         } else {
-          // pag last item na, balik sa first
+          // pag tapos na, balik sa first item
           currentIndex = 0;
         }
         renderQuestion();
       });
     }
-  }
 
-  // ==========================================
-  // 9. INIT
-  // ==========================================
-  function initVerbalPage() {
-    buildTopicList();
-    markLockedLevels();
-    resetQuiz();
-    attachEvents();
-  }
+    // =====================================================
+    // 7. INIT
+    // =====================================================
+    function initVerbalPage() {
+      buildTopicsList();
+      markLockedLevels();
+      attachEvents();
+      selectTopic(currentTopicId);
+    }
 
-  initVerbalPage();
-</script>
+    initVerbalPage();
+  </script>
+</body>
+</html>
