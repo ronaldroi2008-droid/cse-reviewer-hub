@@ -709,14 +709,13 @@
 
   <!-- ==========================================
        QUESTION BANK SCRIPTS
-       (import ALL your question JS files here)
        ========================================== -->
 
   <!-- VERBAL -->
   <script src="questions/verbal_sentence_structure.js"></script>
   <script src="questions/verbal_paragraph_organization.js"></script>
   <script src="questions/verbal_prepositions.js"></script>
-  <!-- etc. -->
+  <!-- add other verbal files here if meron pa -->
 
   <!-- NUMERICAL -->
   <script src="questions/numerical_whole_numbers.js"></script>
@@ -743,7 +742,7 @@
   <script src="questions/analytical_flowchart.js"></script>
 
   <!-- CLERICAL (add your actual files here when ready) -->
-  <!-- Example:
+  <!--
   <script src="questions/clerical_filing.js"></script>
   <script src="questions/clerical_coding.js"></script>
   <script src="questions/clerical_office_practices.js"></script>
@@ -949,7 +948,6 @@
         const v = parseInt(select.value, 10);
         if (!isNaN(v)) {
           examDurationMinutes = v;
-          // Reset display to full duration when config is changed
           examTimeRemaining = examDurationMinutes * 60;
           updateTimerDisplay();
         }
@@ -1373,4 +1371,5 @@
   </script>
 </body>
 </html>
+
 
