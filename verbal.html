@@ -17,6 +17,9 @@
       --accent: #6366f1;
       --accent-soft: rgba(79, 70, 229, 0.2);
       --accent-strong: rgba(79, 70, 229, 0.9);
+      --card-alt: #020617;
+      --danger: #f97373;
+      --success: #22c55e;
     }
 
     body {
@@ -49,7 +52,7 @@
       color: #e5e7eb;
     }
 
-       .header-badge {
+    .header-badge {
       font-size: 0.75rem;
       padding: 3px 8px;
       border-radius: 999px;
@@ -57,24 +60,17 @@
       color: #e5e7eb;
     }
 
-    /* 🔹 BACK TO HOME LINK STYLE */
     .back-link {
       display: inline-block;
       margin: 8px 24px 0;
       font-size: 0.85rem;
       color: #9ca3af;
       text-decoration: none;
-      border-radius: 999px;
-      padding: 4px 10px;
-      border: 1px solid transparent;
-      transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.1s;
     }
 
     .back-link:hover {
-      color: #bfdbfe;
-      border-color: var(--border);
-      background: rgba(15, 23, 42, 0.7);
-      transform: translateY(-1px);
+      color: #e5e7eb;
+      text-decoration: underline;
     }
 
     .main {
@@ -83,7 +79,6 @@
       padding: 16px 24px 24px;
       gap: 16px;
     }
-
 
     .sidebar {
       width: 260px;
@@ -332,11 +327,6 @@
       background: rgba(31, 41, 55, 0.95);
     }
 
-    .choice-option.selected {
-      border-color: rgba(129, 140, 248, 0.9);
-      background: rgba(79, 70, 229, 0.35);
-    }
-
     .choice-option.correct {
       border-color: #22c55e;
       background: rgba(22, 163, 74, 0.15);
@@ -404,6 +394,104 @@
       display: none;
     }
 
+    /* RESULT PANEL – same idea as numerical.html */
+
+    .quiz-result {
+      margin-top: 16px;
+      background: var(--card-alt);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+    }
+
+    .quiz-result-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .quiz-result-header h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .result-score-main {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 8px 0 2px;
+    }
+
+    .result-score-sub {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    .quiz-result-actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .result-section-title {
+      font-size: 0.95rem;
+      margin: 0 0 8px;
+      color: #e5e7eb;
+    }
+
+    .mistake-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mistake-item {
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(127, 29, 29, 0.55);
+      border: 1px solid rgba(248, 113, 113, 0.8);
+    }
+
+    .mistake-q-title {
+      font-size: 0.9rem;
+      margin: 0 0 4px;
+      color: #f9fafb;
+      font-weight: 600;
+    }
+
+    .mistake-q-text {
+      font-size: 0.9rem;
+      margin: 0 0 8px;
+      color: #9ca3af;
+    }
+
+    .mistake-answers {
+      font-size: 0.86rem;
+    }
+
+    .mistake-answers p {
+      margin: 0 0 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mistake-answers .wrong {
+      color: var(--danger);
+    }
+
+    .mistake-answers .correct {
+      color: var(--success);
+    }
+
+    .mistake-answers .explanation {
+      color: #9ca3af;
+    }
+
+    .mistake-answers span.label {
+      font-weight: 600;
+    }
+
     @media (max-width: 900px) {
       .main {
         flex-direction: column;
@@ -439,7 +527,7 @@
       <div class="header-badge">Practice Quiz</div>
     </header>
 
-    <!-- 🔹 BACK TO HOME LINK -->
+    <!-- ✅ Back to Home -->
     <a href="index.html" class="back-link">← Back to Home</a>
 
     <main class="main">
@@ -451,10 +539,10 @@
 
       <!-- RIGHT: QUIZ -->
       <section class="content">
-        <div class="quiz-header">
+        <div class="quiz-header" id="quizHeader">
           <div class="quiz-title-block">
             <div class="quiz-title">
-              <span id="quizTopicLabel">Prepositions</span>
+              <span id="quizTopicLabel">Pronouns</span>
             </div>
             <div class="quiz-subtitle">
               Level:
@@ -506,7 +594,7 @@
         </div>
 
         <!-- QUIZ CARD -->
-        <div class="quiz-card">
+        <div class="quiz-card" id="quizCard">
           <div class="quiz-meta-row">
             <span id="quizProgressText">Loading questions…</span>
           </div>
@@ -519,16 +607,44 @@
             <!-- Choices here -->
           </div>
 
-       <div class="quiz-actions">
-  <div id="explanationText" class="explanation">
-    <!-- Explanation here -->
+          <div class="quiz-actions">
+            <div id="explanationText" class="explanation">
+              <!-- Explanation here -->
+            </div>
+            <div class="button-row">
+              <button id="prevBtn" type="button" class="secondary-btn">
+                ← Previous
+              </button>
+              <button id="nextBtn" type="button" class="primary-btn">
+                Next Question ➜
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESULT PANEL (same behavior as numerical) -->
+        <div id="resultPanel" class="quiz-result hidden">
+          <div class="quiz-result-header">
+            <h2>Quiz Completed!</h2>
+            <div id="resultScoreMain" class="result-score-main">0 / 0</div>
+            <div id="resultScoreText" class="result-score-sub">Score: 0%</div>
+            <div class="quiz-result-actions">
+              <button id="resultHomeBtn" type="button" class="secondary-btn">
+                Back to Home
+              </button>
+              <button id="resultRetryBtn" type="button" class="primary-btn">
+                Retake Quiz
+              </button>
+            </div>
+          </div>
+          <div class="quiz-result-body">
+            <h3 class="result-section-title">Review Mistakes</h3>
+            <div id="mistakeList" class="mistake-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-  <div class="button-row">
-    <button id="nextQuestionBtn" type="button" class="secondary-btn">
-      Next Question ➜
-    </button>
-  </div>
-</div>
 
 
   <!-- VERBAL QUESTIONS FILES (lagay mo lahat ng .js mo dito) -->
@@ -5043,11 +5159,10 @@ synonyms: {
     // =====================================================
     let currentTopicId = VERBAL_TOPICS[0].id;
     let currentLevel = "beginner";
+    let currentIndex = 0;
     let currentItemCount = 10;
 
-    let currentQuestions = [];
-    let currentIndex = 0;
-    let userAnswers = []; // per index: { selectedIndex, isCorrect }
+    let userAnswers = []; // per index: { selectedIndex, correct }
 
     // =====================================================
     // 3. DOM REFERENCES
@@ -5060,21 +5175,28 @@ synonyms: {
     const questionTextEl      = document.getElementById("questionText");
     const choicesContainerEl  = document.getElementById("choicesContainer");
     const explanationTextEl   = document.getElementById("explanationText");
-    const nextQuestionBtn     = document.getElementById("nextQuestionBtn");
+    const prevBtn             = document.getElementById("prevBtn");
+    const nextBtn             = document.getElementById("nextBtn");
     const levelChips          = document.querySelectorAll(".level-chip");
     const countChips          = document.querySelectorAll(".count-chip");
     const proBannerEl         = document.getElementById("proBanner");
+    const quizHeaderEl        = document.getElementById("quizHeader");
+    const quizCardEl          = document.getElementById("quizCard");
+
+    const resultPanelEl    = document.getElementById("resultPanel");
+    const resultScoreMain  = document.getElementById("resultScoreMain");
+    const resultScoreText  = document.getElementById("resultScoreText");
+    const mistakeListEl    = document.getElementById("mistakeList");
+    const resultHomeBtn    = document.getElementById("resultHomeBtn");
+    const resultRetryBtn   = document.getElementById("resultRetryBtn");
 
     // =====================================================
     // 4. HELPERS
     // =====================================================
-    function shuffleArray(arr) {
-      const copy = arr.slice();
-      for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-      }
-      return copy;
+
+    function capitalize(text) {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1);
     }
 
     function buildTopicsList() {
@@ -5124,48 +5246,34 @@ synonyms: {
       });
     }
 
-    function loadQuestionsForCurrentSelection() {
-      const topicData = window.VERBAL_QUESTION_BANK[currentTopicId] || {};
-      const levelQuestions = topicData[currentLevel] || [];
+    function getQuestionsForCurrent() {
+      const topicQuestions = QUESTION_BANK[currentTopicId] || {};
+      const levelQuestions = topicQuestions[currentLevel] || [];
+      return levelQuestions.slice(0, currentItemCount);
+    }
 
-      // Shuffle then slice to requested count
-      const shuffled = shuffleArray(levelQuestions);
-      currentQuestions = shuffled.slice(0, currentItemCount);
+    function resetQuizState() {
+      const questions = getQuestionsForCurrent();
+      userAnswers = questions.map(() => null);
       currentIndex = 0;
-      userAnswers = currentQuestions.map(() => null);
+
+      explanationTextEl.textContent = "";
+      quizProgressTextEl.textContent = "";
+
+      if (resultPanelEl) resultPanelEl.classList.add("hidden");
+      if (quizHeaderEl) quizHeaderEl.classList.remove("hidden");
+      if (quizCardEl) quizCardEl.classList.remove("hidden");
     }
 
-    function updateQuizMeta() {
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-      quizItemCountLabelEl.textContent = currentQuestions.length.toString();
+    function normalizeQuestion(q) {
+      // Support both {options, answer} and {choices, correctIndex}
+      const choices = q.options || q.choices || [];
+      let correctIndex = null;
 
-      if (!currentQuestions.length) {
-        quizProgressTextEl.textContent = "0 / 0";
-      } else {
-        quizProgressTextEl.textContent =
-          "Question " + (currentIndex + 1) + " of " + currentQuestions.length;
-      }
-    }
-
-    function capitalize(text) {
-      if (!text) return "";
-      return text.charAt(0).toUpperCase() + text.slice(1);
-    }
-
-    function getCurrentQuestion() {
-      if (!currentQuestions.length) return null;
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= currentQuestions.length) currentIndex = currentQuestions.length - 1;
-      return currentQuestions[currentIndex];
-    }
-
-    function getChoicesAndAnswer(q) {
-      const choices = q.choices || q.options || [];
-      let correctIndex = (typeof q.correctIndex === "number") ? q.correctIndex : null;
-
-      if (correctIndex === null && typeof q.answer !== "undefined") {
-        const answerText = q.answer;
-        const idx = choices.findIndex((c) => c === answerText);
+      if (typeof q.correctIndex === "number") {
+        correctIndex = q.correctIndex;
+      } else if (typeof q.answer !== "undefined") {
+        const idx = choices.findIndex((c) => c === q.answer);
         correctIndex = idx >= 0 ? idx : null;
       }
 
@@ -5173,26 +5281,42 @@ synonyms: {
     }
 
     // =====================================================
-    // 5. RENDER QUESTION + ANSWER HANDLING
+    // 5. RENDER + ANSWER HANDLING (same behavior as numerical)
     // =====================================================
-    function renderQuestion() {
-      const q = getCurrentQuestion();
+
+    function renderQuiz() {
+      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
+      if (topic) quizTopicLabelEl.textContent = topic.label;
+      quizLevelLabelEl.textContent = capitalize(currentLevel);
+
+      const questions = getQuestionsForCurrent();
+
+      if (userAnswers.length !== questions.length) {
+        userAnswers = questions.map(() => null);
+      }
 
       explanationTextEl.textContent = "";
       choicesContainerEl.innerHTML = "";
 
-      if (!q) {
+      quizItemCountLabelEl.textContent = questions.length.toString();
+
+      if (!questions.length) {
         questionTextEl.textContent =
           "No practice questions are available yet for this topic and level. They will be added soon.";
         quizProgressTextEl.textContent = "0 / 0";
-        nextQuestionBtn.disabled = true;
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
         return;
       }
 
-      nextQuestionBtn.disabled = false;
-      questionTextEl.textContent = q.question;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
 
-      const { choices, correctIndex } = getChoicesAndAnswer(q);
+      const currentQ = questions[currentIndex];
+      questionTextEl.textContent = currentQ.question;
+      choicesContainerEl.innerHTML = "";
+
+      const { choices, correctIndex } = normalizeQuestion(currentQ);
 
       choices.forEach((choiceText, idx) => {
         const btn = document.createElement("button");
@@ -5201,52 +5325,51 @@ synonyms: {
         btn.textContent = choiceText;
 
         btn.addEventListener("click", function () {
-          handleChoice(idx);
+          handleAnswer(idx);
         });
 
         choicesContainerEl.appendChild(btn);
       });
 
-      // If may previous answer, i-restore markings
-      const saved = userAnswers[currentIndex];
-      if (saved && typeof saved.selectedIndex === "number") {
-        applyChoiceStyles(saved.selectedIndex, correctIndex);
-        const isCorrect = !!saved.isCorrect;
-        const explanation = q.explanation || "";
+      // Restore previous answer if meron
+      const stored = userAnswers[currentIndex];
+      if (stored && stored.selectedIndex != null) {
+        const buttons = choicesContainerEl.querySelectorAll(".choice-option");
+        buttons.forEach((btn, idx) => {
+          btn.classList.remove("correct", "incorrect");
+          if (idx === correctIndex) {
+            btn.classList.add("correct");
+          }
+          if (idx === stored.selectedIndex && !stored.correct) {
+            btn.classList.add("incorrect");
+          }
+        });
+
+        const prefix = stored.correct ? "Correct! " : "Not quite. ";
         explanationTextEl.textContent =
-          (isCorrect ? "Correct! " : "Not quite. ") + explanation;
+          prefix + (currentQ.explanation || "");
       }
 
-      updateQuizMeta();
+      quizProgressTextEl.textContent =
+        "Question " + (currentIndex + 1) + " of " + questions.length;
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = false;
+      nextBtn.textContent =
+        currentIndex === questions.length - 1 ? "Finish Quiz" : "Next";
     }
 
-    function applyChoiceStyles(selectedIndex, correctIndex) {
-      const buttons = choicesContainerEl.querySelectorAll(".choice-option");
-      buttons.forEach((btn, idx) => {
-        btn.classList.remove("selected", "correct", "incorrect");
-        if (idx === selectedIndex) {
-          btn.classList.add("selected");
-        }
-        if (idx === correctIndex) {
-          btn.classList.add("correct");
-        }
-        if (idx === selectedIndex && idx !== correctIndex) {
-          btn.classList.add("incorrect");
-        }
-      });
-    }
+    function handleAnswer(selectedIndex) {
+      const questions = getQuestionsForCurrent();
+      if (!questions.length) return;
 
-    function handleChoice(selectedIndex) {
-      const q = getCurrentQuestion();
-      if (!q) return;
+      const currentQ = questions[currentIndex];
+      const { choices, correctIndex } = normalizeQuestion(currentQ);
 
-      const { choices, correctIndex } = getChoicesAndAnswer(q);
-
-      // Kung walang correctIndex sa data, huwag na mag error, treat as no-check
       if (correctIndex === null || correctIndex < 0 || correctIndex >= choices.length) {
         explanationTextEl.textContent =
-          (q.explanation && q.explanation.trim().length)
-            ? q.explanation
+          (currentQ.explanation && currentQ.explanation.trim().length)
+            ? currentQ.explanation
             : "No answer key is defined for this item.";
         return;
       }
@@ -5255,33 +5378,138 @@ synonyms: {
 
       userAnswers[currentIndex] = {
         selectedIndex,
-        isCorrect
+        correct: isCorrect
       };
 
-      applyChoiceStyles(selectedIndex, correctIndex);
+      const buttons = choicesContainerEl.querySelectorAll(".choice-option");
+      buttons.forEach((btn, idx) => {
+        btn.classList.remove("correct", "incorrect");
+        if (idx === correctIndex) {
+          btn.classList.add("correct");
+        }
+        if (idx === selectedIndex && !isCorrect) {
+          btn.classList.add("incorrect");
+        }
+      });
 
-      const explanation = q.explanation || "";
+      const prefix = isCorrect ? "Correct! " : "Not quite. ";
       explanationTextEl.textContent =
-        (isCorrect ? "Correct! " : "Not quite. ") + explanation;
+        prefix + (currentQ.explanation || "");
+    }
+
+    function finishQuiz() {
+      const questions = getQuestionsForCurrent();
+      if (!questions.length) return;
+
+      let correct = 0;
+      let answered = 0;
+
+      userAnswers.forEach((ans) => {
+        if (ans && ans.selectedIndex != null) {
+          answered++;
+          if (ans.correct) correct++;
+        }
+      });
+
+      const total = questions.length;
+      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      // Main score display
+      resultScoreMain.textContent = correct + " / " + total;
+      resultScoreText.textContent = "Score: " + percent + "%";
+
+      // Build Review Mistakes list
+      mistakeListEl.innerHTML = "";
+
+      questions.forEach((q, index) => {
+        const ans = userAnswers[index];
+        const selectedIndex = ans ? ans.selectedIndex : null;
+        const { choices, correctIndex } = normalizeQuestion(q);
+        const isCorrect = ans && ans.correct;
+
+        if (isCorrect) return;
+
+        const item = document.createElement("div");
+        item.className = "mistake-item";
+
+        const title = document.createElement("p");
+        title.className = "mistake-q-title";
+        title.textContent = "Question " + (index + 1);
+        item.appendChild(title);
+
+        const qText = document.createElement("p");
+        qText.className = "mistake-q-text";
+        qText.textContent = q.question;
+        item.appendChild(qText);
+
+        const answersWrap = document.createElement("div");
+        answersWrap.className = "mistake-answers";
+
+        // Your answer
+        const userP = document.createElement("p");
+        userP.classList.add("wrong");
+        const userAnswerText =
+          selectedIndex != null && choices[selectedIndex] != null
+            ? choices[selectedIndex]
+            : "Not answered";
+        userP.innerHTML =
+          "<span class='label'>✗ Your answer:</span> " + userAnswerText;
+        answersWrap.appendChild(userP);
+
+        // Correct answer
+        const correctP = document.createElement("p");
+        correctP.classList.add("correct");
+        const correctText =
+          correctIndex != null && choices[correctIndex] != null
+            ? choices[correctIndex]
+            : (q.answer || "");
+        correctP.innerHTML =
+          "<span class='label'>✓ Correct answer:</span> " + correctText;
+        answersWrap.appendChild(correctP);
+
+        // Explanation
+        const explP = document.createElement("p");
+        explP.classList.add("explanation");
+        explP.innerHTML =
+          "<span class='label'>👉 Why:</span> " +
+          (q.explanation && q.explanation.trim().length
+            ? q.explanation
+            : "No explanation is available for this item.");
+        answersWrap.appendChild(explP);
+
+        item.appendChild(answersWrap);
+        mistakeListEl.appendChild(item);
+      });
+
+      if (!mistakeListEl.children.length) {
+        const p = document.createElement("p");
+        p.textContent = "Perfect score! No mistakes to review.";
+        mistakeListEl.appendChild(p);
+      }
+
+      // Show result panel, hide quiz card + header
+      quizHeaderEl.classList.add("hidden");
+      quizCardEl.classList.add("hidden");
+      resultPanelEl.classList.remove("hidden");
     }
 
     // =====================================================
     // 6. EVENTS
     // =====================================================
+
     function selectTopic(topicId) {
       currentTopicId = topicId;
+      resetQuizState();
       updateActiveTopicPill();
-      loadQuestionsForCurrentSelection();
-      updateQuizMeta();
-      renderQuestion();
+      renderQuiz();
     }
 
     function attachEvents() {
-      // Level buttons
+      // Level chips
       levelChips.forEach((chip) => {
         chip.addEventListener("click", function () {
           const level = chip.dataset.level;
-          if (!level) return;
+          if (!level || level === currentLevel) return;
 
           const locked = LOCKED_LEVELS.includes(level);
           if (locked && !IS_PRO_USER) {
@@ -5291,20 +5519,17 @@ synonyms: {
             return;
           }
 
-          if (level === currentLevel) return;
-
           currentLevel = level;
           levelChips.forEach((c) => {
             c.classList.toggle("active", c.dataset.level === level);
           });
 
-          loadQuestionsForCurrentSelection();
-          updateQuizMeta();
-          renderQuestion();
+          resetQuizState();
+          renderQuiz();
         });
       });
 
-      // Item count buttons
+      // Item count chips
       countChips.forEach((chip) => {
         chip.addEventListener("click", function () {
           const count = parseInt(chip.dataset.count, 10);
@@ -5315,23 +5540,47 @@ synonyms: {
             c.classList.toggle("active", c === chip);
           });
 
-          loadQuestionsForCurrentSelection();
-          updateQuizMeta();
-          renderQuestion();
+          resetQuizState();
+          renderQuiz();
         });
       });
 
-      // Next question
-      nextQuestionBtn.addEventListener("click", function () {
-        if (!currentQuestions.length) return;
-        if (currentIndex < currentQuestions.length - 1) {
-          currentIndex += 1;
-        } else {
-          // pag tapos na, balik sa first item
-          currentIndex = 0;
+      // Prev / Next
+      prevBtn.addEventListener("click", function () {
+        const questions = getQuestionsForCurrent();
+        if (!questions.length) return;
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+          renderQuiz();
         }
-        renderQuestion();
       });
+
+      nextBtn.addEventListener("click", function () {
+        const questions = getQuestionsForCurrent();
+        if (!questions.length) return;
+
+        if (currentIndex < questions.length - 1) {
+          currentIndex += 1;
+          renderQuiz();
+        } else {
+          // Last question → finish quiz (same as numerical)
+          finishQuiz();
+        }
+      });
+
+      // Result actions
+      if (resultRetryBtn) {
+        resultRetryBtn.addEventListener("click", function () {
+          resetQuizState();
+          renderQuiz();
+        });
+      }
+
+      if (resultHomeBtn) {
+        resultHomeBtn.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      }
     }
 
     // =====================================================
