@@ -49,12 +49,32 @@
       color: #e5e7eb;
     }
 
-    .header-badge {
+       .header-badge {
       font-size: 0.75rem;
       padding: 3px 8px;
       border-radius: 999px;
       border: 1px solid #4b5563;
       color: #e5e7eb;
+    }
+
+    /* 🔹 BACK TO HOME LINK STYLE */
+    .back-link {
+      display: inline-block;
+      margin: 8px 24px 0;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+
+    .back-link:hover {
+      color: #bfdbfe;
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      transform: translateY(-1px);
     }
 
     .main {
@@ -63,6 +83,7 @@
       padding: 16px 24px 24px;
       gap: 16px;
     }
+
 
     .sidebar {
       width: 260px;
