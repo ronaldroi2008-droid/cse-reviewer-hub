@@ -5214,334 +5214,586 @@ synonyms: {
 }; 
 
 
-// ==========================================
-    // 4. STATE VARIABLES
-    // ==========================================
-    let currentMode = "study";
-    let currentTopicId = VERBAL_TOPICS[0]?.id || "nouns";
-    let currentLevel = "beginner";
+// STATE
+    let currentTopicId = VERBAL_TOPICS[0].id;
+    let currentLevel = "beginner"; // beginner / intermediate / advanced / expert
+    let currentItemCount = 10;
+    let currentQuestions = [];
     let currentIndex = 0;
-    let currentQuestionLimit = 10;
-    let userAnswers = []; 
+    let selectedChoiceIndex = null;
+    let hasAnsweredCurrent = false;
 
-    // DOM Elements
-    const modeTabs = document.querySelectorAll(".mode-tab");
-    const topicListEl = document.getElementById("topicList");
-    const subtitleTopicEl = document.getElementById("subtitleTopic");
-    const studyView = document.getElementById("studyView");
-    const practiceView = document.getElementById("practiceView");
-    
-    const lessonTitleEl = document.getElementById("lessonTitle");
-    const lessonIntroEl = document.getElementById("lessonIntro");
-    const lessonBodyEl = document.getElementById("lessonBody");
-    const tipCardEl = document.getElementById("tipCard");
+    // DOM ELEMENTS
+    let topicListEl;
+    let topicTitleEl;
+    let levelLabelEl;
+    let countLabelEl;
+    let progressTextEl;
+    let questionTextEl;
+    let choicesContainerEl;
+    let explanationEl;
+    let checkAnswerBtn;
+    let nextQuestionBtn;
+    let proBannerEl;
 
-    const quizTopicTitleEl = document.getElementById("quizTopicTitle");
-    const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-    const questionTextEl = document.getElementById("questionText");
-    const optionsListEl = document.getElementById("optionsList");
-    const feedbackEl = document.getElementById("feedback");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const progressTextEl = document.getElementById("progressText");
-    const levelChips = document.querySelectorAll(".level-chip");
-    const countChips = document.querySelectorAll(".count-chip");
+    // Normalize question shape (supports options/answer OR choices/correctIndex)
+    function normalizeQuestion(raw) {
+      const questionText = raw.question || raw.prompt || "";
+      let choices = [];
 
-    // ==========================================
-    // 5. HELPER FUNCTIONS
-    // ==========================================
+      if (Array.isArray(raw.options)) {
+        choices = raw.options.slice();
+      } else if (Array.isArray(raw.choices)) {
+        choices = raw.choices.slice();
+      }
 
-    function capitalize(text) {
-      return text.charAt(0).toUpperCase() + text.slice(1);
+      let correctIndex = 0;
+
+      if (typeof raw.correctIndex === "number") {
+        correctIndex = raw.correctIndex;
+      } else if (typeof raw.answer !== "undefined" && choices.length > 0) {
+        if (typeof raw.answer === "number") {
+          correctIndex = raw.answer;
+        } else {
+          const idx = choices.findIndex(function (c) {
+            return String(c).trim() === String(raw.answer).trim();
+          });
+          correctIndex = idx >= 0 ? idx : 0;
+        }
+      }
+
+      const explanation = raw.explanation || "";
+
+      return {
+        raw: raw,
+        question: questionText,
+        choices: choices,
+        correctIndex: correctIndex,
+        explanation: explanation
+      };
     }
 
-    function buildTopicsList() {
+    function renderTopicsList() {
+      if (!topicListEl) return;
       topicListEl.innerHTML = "";
-      VERBAL_TOPICS.forEach((topic) => {
+
+      VERBAL_TOPICS.forEach(function (topic) {
         const btn = document.createElement("button");
         btn.className = "topic-pill";
-        btn.textContent = topic.label;
-        
-        if (topic.id === currentTopicId) btn.classList.add("active");
-
-        btn.onclick = () => selectTopic(topic.id);
+        if (topic.id === currentTopicId) {
+          btn.classList.add("active");
+        }
+        btn.dataset.topicId = topic.id;
+        btn.innerHTML =
+          '<span class="topic-label">' + topic.label + '</span>' +
+          '<span class="topic-tag">' + topic.tag + "</span>";
         topicListEl.appendChild(btn);
       });
     }
 
-    function updateActiveTopicPill() {
-      const pills = topicListEl.querySelectorAll(".topic-pill");
-      pills.forEach((pill) => {
-        const isActive = pill.textContent === VERBAL_TOPICS.find(t => t.id === currentTopicId).label;
-        pill.classList.toggle("active", isActive);
+    function updateMeta() {
+      const topic = VERBAL_TOPICS.find(function (t) {
+        return t.id === currentTopicId;
       });
-    }
 
-    function renderLesson() {
-      const lesson = LESSONS[currentTopicId] || { title: "Coming Soon", fullHtml: "<p>Content not yet loaded.</p>" };
-      lessonTitleEl.textContent = lesson.title;
-      lessonBodyEl.innerHTML = lesson.fullHtml;
-      tipCardEl.innerHTML = ""; 
-    }
-
-    function getQuestionsForCurrent() {
-      const bank = window.VERBAL_QUESTION_BANK || {};
-      const topicData = bank[currentTopicId];
-      
-      if (!topicData) {
-        return [];
+      if (topic && topicTitleEl) {
+        topicTitleEl.textContent = topic.label;
       }
 
-      const levelQuestions = topicData[currentLevel] || [];
-      const limit = Math.min(currentQuestionLimit, levelQuestions.length);
-      return levelQuestions.slice(0, limit);
+      if (levelLabelEl) {
+        levelLabelEl.textContent =
+          currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
+      }
+
+      if (countLabelEl) {
+        countLabelEl.textContent = String(currentQuestions.length);
+      }
+
+      if (progressTextEl) {
+        if (!currentQuestions.length) {
+          progressTextEl.textContent = "No questions loaded yet.";
+        } else {
+          progressTextEl.textContent =
+            "Question " + (currentIndex + 1) + " of " + currentQuestions.length;
+        }
+      }
     }
 
-    // ==========================================
-    // 6. QUIZ LOGIC (THE FIXED PART)
-    // ==========================================
+    function renderCurrentQuestion() {
+      if (!questionTextEl || !choicesContainerEl) return;
 
-    function renderQuiz() {
-      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
-      quizTopicTitleEl.textContent = topic ? "Verbal · " + topic.label : "Verbal Ability";
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-
-      const questions = getQuestionsForCurrent();
-
-      // 1. RESET UI STATE (Show Quiz elements, Hide Result)
-      feedbackEl.textContent = "";
-      feedbackEl.className = "feedback";
-      
-      document.querySelector(".quiz-header").style.display = "flex";
-      questionTextEl.style.display = "block";
-      optionsListEl.style.display = "flex";
-      feedbackEl.style.display = "block";
-      document.querySelector(".quiz-footer").style.display = "flex";
-      
-      const resContainer = document.getElementById("resultContainer");
-      if(resContainer) resContainer.style.display = "none";
-
-      // 2. Handle Empty Questions
-      if (!questions.length) {
-        questionTextEl.textContent = "No practice questions available for this topic/level yet.";
-        optionsListEl.innerHTML = "";
-        progressTextEl.textContent = "0 / 0";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
+      if (!currentQuestions.length) {
+        questionTextEl.textContent =
+          "No questions available for this topic and level yet.";
+        choicesContainerEl.innerHTML = "";
+        if (explanationEl) {
+          explanationEl.textContent = "";
+        }
+        if (checkAnswerBtn) {
+          checkAnswerBtn.disabled = true;
+        }
+        if (nextQuestionBtn) {
+          nextQuestionBtn.disabled = true;
+        }
+        updateMeta();
         return;
       }
 
-      // 3. Clamp Index
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+      const q = currentQuestions[currentIndex];
+      questionTextEl.innerHTML = q.question || "";
 
-      const currentQ = questions[currentIndex];
-      questionTextEl.textContent = currentQ.question;
-      optionsListEl.innerHTML = "";
-
-      // 4. Check if previously answered
-      const existingAnswer = userAnswers[currentIndex];
-
-      // 5. Render Options
-      currentQ.options.forEach(option => {
-        const li = document.createElement("li");
+      choicesContainerEl.innerHTML = "";
+      q.choices.forEach(function (choiceText, index) {
         const btn = document.createElement("button");
-        btn.className = "option-button";
-        btn.textContent = option;
+        btn.type = "button";
+        btn.className = "choice-option";
+        btn.dataset.index = String(index);
+        btn.textContent = choiceText;
 
-        if (existingAnswer) {
-          btn.disabled = true;
-          if (option === currentQ.answer) btn.classList.add("is-correct");
-          if (option === existingAnswer.selected && !existingAnswer.isCorrect) btn.classList.add("is-incorrect");
-        } else {
-          btn.onclick = () => handleAnswer(option);
-        }
+        btn.addEventListener("click", function () {
+          if (hasAnsweredCurrent) return;
 
-        li.appendChild(btn);
-        optionsListEl.appendChild(li);
+          selectedChoiceIndex = index;
+          const all = choicesContainerEl.querySelectorAll(".choice-option");
+          all.forEach(function (el) {
+            el.classList.remove("selected");
+          });
+          btn.classList.add("selected");
+
+          if (explanationEl) {
+            explanationEl.textContent = "";
+          }
+        });
+
+        choicesContainerEl.appendChild(btn);
       });
 
-      // 6. Show Feedback if Answered
-      if (existingAnswer) {
-         if (existingAnswer.isCorrect) {
-            feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
-            feedbackEl.className = "feedback feedback--correct";
-         } else {
-            feedbackEl.textContent = "Wrong. " + (currentQ.explanation || "");
-            feedbackEl.className = "feedback feedback--incorrect";
-         }
-         nextBtn.disabled = false;
-      } else {
-         nextBtn.disabled = true;
+      if (explanationEl) {
+        explanationEl.textContent = "";
+      }
+      if (checkAnswerBtn) {
+        checkAnswerBtn.disabled = false;
+      }
+      if (nextQuestionBtn) {
+        nextQuestionBtn.disabled = false;
       }
 
-      // 7. Update Progress & Buttons
-      progressTextEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
-      prevBtn.disabled = currentIndex === 0;
-      
-      if (currentIndex === questions.length - 1) {
-         nextBtn.textContent = "Finish Quiz";
+      selectedChoiceIndex = null;
+      hasAnsweredCurrent = false;
+      updateMeta();
+    }
+
+    function showProBanner() {
+      if (!proBannerEl) return;
+      proBannerEl.classList.remove("hidden");
+    }
+
+    function markLockedLevels() {
+      const chips = document.querySelectorAll(".level-chip");
+      chips.forEach(function (chip) {
+        const level = chip.dataset.level;
+        if (!IS_PRO_USER && (level === "advanced" || level === "expert")) {
+          chip.classList.add("locked");
+          chip.setAttribute("aria-disabled", "true");
+        }
+      });
+    }
+
+    function setupLevelSwitching() {
+      const chips = document.querySelectorAll(".level-chip");
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          const level = chip.dataset.level;
+
+          if (chip.classList.contains("locked") && !IS_PRO_USER) {
+            showProBanner();
+            chip.style.transform = "translateY(-1px) scale(0.98)";
+            setTimeout(function () {
+              chip.style.transform = "";
+            }, 120);
+            return;
+          }
+
+          currentLevel = level;
+          chips.forEach(function (c) {
+            c.classList.remove("active");
+          });
+          chip.classList.add("active");
+          loadQuiz();
+        });
+      });
+    }
+
+    function setupCountSwitching() {
+      const chips = document.querySelectorAll(".count-chip");
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          let count = parseInt(chip.dataset.count, 10);
+          if (!count) {
+            count = 10;
+          }
+          currentItemCount = count;
+          chips.forEach(function (c) {
+            c.classList.remove("active");
+          });
+          chip.classList.add("active");
+          loadQuiz();
+        });
+      });
+    }
+
+    function setupTopicSwitching() {
+      if (!topicListEl) return;
+      topicListEl.addEventListener("click", function (event) {
+        const target = event.target;
+        if (!target) return;
+        const pill = target.closest(".topic-pill");
+        if (!pill) return;
+
+        const topicId = pill.dataset.topicId;
+        if (!topicId || topicId === currentTopicId) return;
+
+        currentTopicId = topicId;
+        const pills = topicListEl.querySelectorAll(".topic-pill");
+        pills.forEach(function (p) {
+          p.classList.remove("active");
+        });
+        pill.classList.add("active");
+        loadQuiz();
+      });
+    }
+
+    function loadQuiz() {
+      const topicBank = window.VERBAL_QUESTION_BANK[currentTopicId];
+      if (!topicBank) {
+        currentQuestions = [];
+        currentIndex = 0;
+        renderCurrentQuestion();
+        return;
+      }
+
+      const levelQuestions = topicBank[currentLevel];
+      if (!Array.isArray(levelQuestions)) {
+        currentQuestions = [];
+        currentIndex = 0;
+        renderCurrentQuestion();
+        return;
+      }
+
+      const pool = levelQuestions.slice();
+      pool.sort(function () {
+        return Math.random() - 0.5;
+      });
+
+      let limit = currentItemCount;
+      if (pool.length < limit) {
+        limit = pool.length;
+      }
+
+      currentQuestions = pool.slice(0, limit).map(normalizeQuestion);
+      currentIndex = 0;
+      renderCurrentQuestion();
+    }
+
+    function handleCheckAnswer() {
+      if (!currentQuestions.length) return;
+      if (selectedChoiceIndex === null) {
+        if (explanationEl) {
+          explanationEl.textContent = "Please select an answer first.";
+        }
+        return;
+      }
+      if (hasAnsweredCurrent) return;
+
+      const q = currentQuestions[currentIndex];
+      const buttons = choicesContainerEl.querySelectorAll(".choice-option");
+
+      buttons.forEach(function (btn) {
+        const idx = parseInt(btn.dataset.index, 10);
+        btn.classList.remove("selected");
+        if (idx === q.correctIndex) {
+          btn.classList.add("correct");
+        }
+        if (idx === selectedChoiceIndex && idx !== q.correctIndex) {
+          btn.classList.add("incorrect");
+        }
+      });
+
+      if (explanationEl) {
+        const isCorrect = selectedChoiceIndex === q.correctIndex;
+        const prefix = isCorrect ? "Correct! " : "Incorrect. ";
+        explanationEl.textContent = prefix + (q.explanation || "");
+      }
+
+      hasAnsweredCurrent = true;
+    }
+
+    function handleNextQuestion() {
+      if (!currentQuestions.length) return;
+
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex += 1;
+        renderCurrentQuestion();
       } else {
-         nextBtn.textContent = "Next";
+        if (explanationEl) {
+          explanationEl.textContent =
+            "You have reached the end of this mini-quiz. You can change topic, level, or number of items above to try another set.";
+        }
       }
     }
 
-    function handleAnswer(selected) {
-       const questions = getQuestionsForCurrent();
-       const currentQ = questions[currentIndex];
-       const isCorrect = selected === currentQ.answer;
+    document.addEventListener("DOMContentLoaded", function () {
+      topicListEl = document.getElementById("topicList");
+      topicTitleEl = document.getElementById("quizTopicLabel");
+      levelLabelEl = document.getElementById("quizLevelLabel");
+      countLabelEl = document.getElementById("quizItemCountLabel");
+      progressTextEl = document.getElementById("quizProgressText");
+      questionTextEl = document.getElementById("questionText");
+      choicesContainerEl = document.getElementById("choicesContainer");
+      explanationEl = document.getElementById("explanationText");
+      checkAnswerBtn = document.getElementById("checkAnswerBtn");
+      nextQuestionBtn = document.getElementById("nextQuestionBtn");
+      proBannerEl = document.getElementById("proBanner");
 
-       userAnswers[currentIndex] = {
-          question: currentQ.question,
-          selected: selected,
-          correct: currentQ.answer,
-          explanation: currentQ.explanation,
-          isCorrect: isCorrect
-       };
+      renderTopicsList();
+      markLockedLevels();
+      setupTopicSwitching();
+      setupLevelSwitching();
+      setupCountSwitching();
 
-       renderQuiz(); 
-    }
+      if (checkAnswerBtn) {
+        checkAnswerBtn.addEventListener("click", handleCheckAnswer);
+      }
+      if (nextQuestionBtn) {
+        nextQuestionBtn.addEventListener("click", handleNextQuestion);
+      }
 
-    function finishQuiz() {
-       let score = 0;
-       userAnswers.forEach(a => { if(a && a.isCorrect) score++; });
-       
-       const total = getQuestionsForCurrent().length;
-       const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-
-       let html = `
-         <div style="text-align:center; padding:20px;">
-           <h2>Quiz Completed!</h2>
-           <h1 style="font-size: 3.5rem; margin: 10px 0; color: var(--accent);">${score} / ${total}</h1>
-           <p style="color: var(--muted); font-size: 1.1rem;">Score: ${percentage}%</p>
-           <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
-             <button onclick="location.reload()" class="primary-button" style="background: var(--card-alt); border: 1px solid var(--border);">🏠 Home</button>
-             <button onclick="resetQuiz()" class="primary-button">🔄 Retake Quiz</button>
-          </div>
-         </div>
-         <hr style="border-color: var(--border); margin: 30px 0; opacity: 0.3;">
-         <h3 style="margin-bottom: 20px;">📝 Review Mistakes</h3>
-       `;
-
-       let hasMistakes = false;
-       const questions = getQuestionsForCurrent();
-       
-       questions.forEach((q, index) => {
-          const ans = userAnswers[index];
-          if(!ans || !ans.isCorrect) {
-             hasMistakes = true;
-             const yourAns = ans ? ans.selected : "No Answer";
-             html += `
-               <div style="margin-bottom:15px; padding:15px; border:1px solid rgba(239, 68, 68, 0.3); border-radius:8px; background:rgba(239, 68, 68, 0.1); text-align: left;">
-                  <p style="margin: 0 0 10px; font-weight: bold; color: #fca5a5;">Question ${index+1}: ${q.question}</p>
-                  <div style="font-size: 0.9rem;">
-                    <p style="margin: 5px 0; color: var(--danger);">❌ You: ${yourAns}</p>
-                    <p style="margin: 5px 0; color: var(--success);">✅ Correct: ${q.answer}</p>
-                  </div>
-                  <p style="margin: 10px 0 0; font-size: 0.9rem; color: var(--muted); font-style: italic;">👉 ${q.explanation}</p>
-               </div>
-             `;
-          }
-       });
-
-       if (!hasMistakes) html += `<p style="text-align: center; color: var(--success);">🎉 Amazing! Perfect Score!</p>`;
-
-       // 1. ITAGO ANG QUIZ UI (Hide, don't delete)
-       document.querySelector(".quiz-header").style.display = "none";
-       questionTextEl.style.display = "none";
-       optionsListEl.style.display = "none";
-       feedbackEl.style.display = "none";
-       document.querySelector(".quiz-footer").style.display = "none";
-
-       // 2. SHOW RESULT
-       const quizCard = document.querySelector(".quiz-card");
-       let resDiv = document.getElementById("resultContainer");
-       if (!resDiv) {
-           resDiv = document.createElement("div");
-           resDiv.id = "resultContainer";
-           quizCard.appendChild(resDiv);
-       }
-       resDiv.innerHTML = html;
-       resDiv.style.display = "block";
-       
-       quizCard.scrollIntoView({ behavior: "smooth" });
-    }
-
-    function resetQuiz() {
-       userAnswers = [];
-       currentIndex = 0;
-       // renderQuiz() will handle showing the UI elements again
-       renderQuiz();
-    }
-
-    function selectTopic(id) {
-       currentTopicId = id;
-       currentIndex = 0;
-       userAnswers = [];
-       
-       const topicObj = VERBAL_TOPICS.find(t => t.id === id);
-       subtitleTopicEl.textContent = topicObj ? topicObj.label : "Topic";
-       
-       updateActiveTopicPill();
-       renderLesson();
-       renderQuiz();
-    }
-
-    function switchMode(mode) {
-       currentMode = mode;
-       modeTabs.forEach(t => t.classList.toggle("active", t.dataset.mode === mode));
-       if(mode === "study") {
-          studyView.classList.add("view--active");
-          practiceView.classList.remove("view--active");
-       } else {
-          practiceView.classList.add("view--active");
-          studyView.classList.remove("view--active");
-       }
-    }
-
-    function attachEvents() {
-       modeTabs.forEach(tab => tab.onclick = () => switchMode(tab.dataset.mode));
-
-       levelChips.forEach(chip => {
-          chip.onclick = () => {
-             levelChips.forEach(c => c.classList.remove("active"));
-             chip.classList.add("active");
-             currentLevel = chip.dataset.level;
-             userAnswers = [];
-             currentIndex = 0;
-             renderQuiz();
-          }
-       });
-
-       countChips.forEach(chip => {
-          chip.onclick = () => {
-             countChips.forEach(c => c.classList.remove("active"));
-             chip.classList.add("active");
-             currentQuestionLimit = parseInt(chip.dataset.count);
-             userAnswers = [];
-             currentIndex = 0;
-             renderQuiz();
-          }
-       });
-
-       prevBtn.onclick = () => {
-          if(currentIndex > 0) { currentIndex--; renderQuiz(); }
-       };
-
-       nextBtn.onclick = () => {
-          const q = getQuestionsForCurrent();
-          if(currentIndex === q.length - 1) finishQuiz();
-          else { currentIndex++; renderQuiz(); }
-       };
-    }
-
-    function init() {
-       buildTopicsList();
-       attachEvents();
-       selectTopic(currentTopicId);
-    }
-
-    init();
-    </script>
+      loadQuiz();
+    });
+  </script>
 </body>
 </html>
+Kung gusto mo, sa next step pwede nating i-adjust yung VERBAL_TOPICS IDs para siguradong match sa mga window.VERBAL_QUESTION_BANK["..."] na meron ka na ngayon (prepositions, paragraph_organization, etc.).
+
+
+
+
+
+
+
+You said:
+ano ang gi add mo ba code?
+
+
+ChatGPT said:
+
+Thought for 13s
+Good question 😄 Hindi ko na-explain kanina kung ano exactly yung nadagdag vs sa dati mong idea.
+
+Ito yung main na gi-add / in-update ko sa verbal.html:
+
+1. PRO lock para sa Advanced & Expert
+Bagong constants / logic:
+
+js
+Copy code
+const IS_PRO_USER = false;
+Pag false ⇒ Advanced at Expert naka-lock.
+
+Pag ginawa mong true ⇒ open na lahat ng level para sa paid users.
+
+Functions na related sa lock:
+
+js
+Copy code
+function markLockedLevels() { ... }    // nilalagyan ng .locked class ang advanced/expert
+function showProBanner() { ... }       // pinapakita yung Pro banner
+Sa .level-chip (Advanced/Expert) may class na .locked kapag hindi PRO.
+
+Kapag klinick ang locked level:
+
+hindi magbabago ang level
+
+tatawag ng showProBanner() para lumabas yung "Unlock Advanced & Expert Levels – Upgrade to Pro" banner.
+
+2. Pro Upgrade Banner (yung naka dashed na box)
+Bagong HTML block sa taas ng quiz card:
+
+html
+Copy code
+<div id="proBanner" class="pro-upgrade-banner hidden">
+  <div class="pro-upgrade-text">
+    <strong>Unlock Advanced &amp; Expert Levels</strong>
+    <span>Upgrade to access higher-difficulty Verbal questions.</span>
+  </div>
+  <div class="pro-upgrade-actions">
+    <a href="#" target="_blank" class="pro-upgrade-btn">
+      🔓 Upgrade to Pro
+    </a>
+    <button type="button" class="pro-upgrade-btn secondary"
+      onclick="document.getElementById('proBanner').classList.add('hidden')">
+      Maybe later
+    </button>
+  </div>
+</div>
+Default hidden class ⇒ di kita.
+
+Lumalabas lang kapag:
+
+Non-Pro (IS_PRO_USER = false)
+
+Tapos may nag-click sa Advanced or Expert level chip.
+
+3. Topic list + VERBAL_TOPICS (sidebar)
+Bagong array:
+
+js
+Copy code
+const VERBAL_TOPICS = [
+  { id: "prepositions",            label: "Prepositions",             tag: "Core" },
+  { id: "words_often_confused",   label: "Words Often Confused",     tag: "Core" },
+  { id: "punctuation",            label: "Punctuation",              tag: "Writing" },
+  { id: "sentence_improvement",   label: "Sentence Improvement",     tag: "Writing" },
+  { id: "paragraph_organization", label: "Paragraph Organization",   tag: "Reading" },
+  { id: "reading_comprehension",  label: "Reading Comprehension",    tag: "Reading" }
+];
+Bagong function:
+
+js
+Copy code
+function renderTopicsList() { ... }
+function setupTopicSwitching() { ... }
+Ginagawa yung topic pills sa left (sidebar) gamit yung VERBAL_TOPICS.
+
+Pag nag-click ka ng topic ⇒ set currentTopicId ⇒ tawag loadQuiz().
+
+4. Item count chips (10 / 20 / 30 / 40 / 50 items)
+Bagong state:
+
+js
+Copy code
+let currentItemCount = 10;
+Bagong function:
+
+js
+Copy code
+function setupCountSwitching() { ... }
+Mga button na may data-count="10", "20", etc.
+
+Pag click ⇒ update currentItemCount ⇒ reload quiz.
+
+Sa loadQuiz():
+
+js
+Copy code
+let limit = currentItemCount;
+if (pool.length < limit) {
+  limit = pool.length;
+}
+currentQuestions = pool.slice(0, limit).map(normalizeQuestion);
+5. Question normalizer (para gumana lahat ng style ng question file mo)
+Dahil iba-iba format ng question sa JS files mo (minsan options/answer, minsan choices/correctIndex), nag-add ako ng normalizer:
+
+js
+Copy code
+function normalizeQuestion(raw) {
+  const questionText = raw.question || raw.prompt || "";
+  let choices = [];
+
+  if (Array.isArray(raw.options)) {
+    choices = raw.options.slice();
+  } else if (Array.isArray(raw.choices)) {
+    choices = raw.choices.slice();
+  }
+
+  let correctIndex = 0;
+
+  if (typeof raw.correctIndex === "number") {
+    correctIndex = raw.correctIndex;
+  } else if (typeof raw.answer !== "undefined" && choices.length > 0) {
+    if (typeof raw.answer === "number") {
+      correctIndex = raw.answer;
+    } else {
+      const idx = choices.findIndex(function (c) {
+        return String(c).trim() === String(raw.answer).trim();
+      });
+      correctIndex = idx >= 0 ? idx : 0;
+    }
+  }
+
+  const explanation = raw.explanation || "";
+
+  return {
+    raw: raw,
+    question: questionText,
+    choices: choices,
+    correctIndex: correctIndex,
+    explanation: explanation
+  };
+}
+Para kahit anong style ng question object, magiging pare-pareho format sa UI:
+{ question, choices, correctIndex, explanation }.
+
+6. Load quiz by topic + level (gamit VERBAL_QUESTION_BANK)
+Important na dagdag sa loadQuiz():
+
+js
+Copy code
+const topicBank = window.VERBAL_QUESTION_BANK[currentTopicId];
+if (!topicBank) { ... }
+
+const levelQuestions = topicBank[currentLevel];
+if (!Array.isArray(levelQuestions)) { ... }
+Kinuha niya yung questions sa:
+
+js
+Copy code
+window.VERBAL_QUESTION_BANK[currentTopicId][currentLevel]
+Hindi na gumagamit ng const LESSONS (tinanggal ko totally).
+
+Nagra-randomize:
+
+js
+Copy code
+pool.sort(function () { return Math.random() - 0.5; });
+7. Locked state sa HTML / CSS (Advanced & Expert)
+Sa HTML:
+
+html
+Copy code
+<button class="level-chip active" data-level="beginner">Beginner</button>
+<button class="level-chip" data-level="intermediate">Intermediate</button>
+<button class="level-chip" data-level="advanced">Advanced</button>
+<button class="level-chip" data-level="expert">Expert</button>
+Sa JS (markLockedLevels):
+
+js
+Copy code
+const chips = document.querySelectorAll(".level-chip");
+chips.forEach(function (chip) {
+  const level = chip.dataset.level;
+  if (!IS_PRO_USER && (level === "advanced" || level === "expert")) {
+    chip.classList.add("locked");
+    chip.setAttribute("aria-disabled", "true");
+  }
+});
+Sa CSS:
+
+css
+Copy code
+.level-chip.locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.level-chip.locked::after {
+  content: "Pro";
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  color: #9ca3af;
+  margin-left: 4px;
+  margin-right: -4px;
+}
