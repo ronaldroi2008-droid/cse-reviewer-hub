@@ -9,7 +9,7 @@
       --bg: #020617;       /* Dark Blue-Black */
       --card: #0f172a;     /* Slightly lighter dark */
       --border: #1e293b;   /* Border color */
-      --accent: #6366f1;   /* Indigo Accent (Same as Verbal App) */
+      --accent: #6366f1;   /* Indigo Accent */
       --accent-hover: #4f46e5;
       --text: #f8fafc;
       --muted: #94a3b8;
@@ -104,7 +104,7 @@
     .subject-btn .arrow {
       color: var(--muted);
       font-size: 1.2rem;
-      transition: transform 0.2s;
+      transition: transform 0.2s, color 0.2s;
     }
 
     .subject-btn:hover .arrow {
@@ -125,6 +125,7 @@
       color: #475569;
       border-top: 1px solid #1e293b;
       padding-top: 16px;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -136,7 +137,7 @@
         <span class="app-logo">🦅</span>
         <h1>CSE Reviewer Hub</h1>
         <p class="subtitle">
-          Welcome! Choose a subject below to start your review session.
+          Welcome! Choose a subject, do quick drills in Practice Mode, or try the Full Mock Exam.
         </p>
       </div>
 
@@ -151,25 +152,28 @@
           <span class="arrow">→</span>
         </a>
 
-        <!-- Analytical Ability -->
         <a href="analytical.html" class="subject-btn">
           <span>🧠 &nbsp; Analytical Ability</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- Clerical Ability -->
         <a href="clerical.html" class="subject-btn">
           <span>🗂️ &nbsp; Clerical Ability</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- General Information -->
         <a href="general_info.html" class="subject-btn">
           <span>🌍 &nbsp; General Information</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- ✅ NEW: Full Mock Exam -->
+        <!-- 🔥 Practice Mode (Quick Drills) -->
+        <a href="practice.html" class="subject-btn">
+          <span>🔥 &nbsp; Practice Mode (Quick Drills)</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <!-- 🎯 Full Mock Exam -->
         <a href="mock_exam.html" class="subject-btn">
           <span>🎯 &nbsp; Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
@@ -177,7 +181,8 @@
       </div>
 
       <p class="footer-note">
-        Tip: Review the basic concepts for each subject first, then challenge yourself with the Full Mock Exam.
+        Tip: Start with topic-by-topic review, then use <strong>Practice Mode</strong> for short drills.  
+        When you feel ready, challenge yourself with the <strong>Full Mock Exam (170 items)</strong>.
       </p>
     </div>
   </div>
