@@ -717,14 +717,12 @@
   <script src="questions/error_identification.js"></script>
 
 <script>
-    // Make sure global question bank exists
-    window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+    
 
     const IS_PRO_USER = false;
     const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
 
-    // Para mawala ang "VERBAL_LESSONS is not defined"
-  window.VERBAL_LESSONS = window.VERBAL_LESSONS || {};
+
 
     // ==========================================
     // 1. TOPICS + LESSON DATA
@@ -761,7 +759,7 @@
     // ==========================================
 // 2. LESSONS DATA
 // ==========================================
-window.VERBAL_LESSONS = {
+ const VERBAL_LESSONS = {
   nouns: {
     title: "Nouns – Names of People, Places, Things, and Ideas",
     
@@ -5197,64 +5195,32 @@ synonyms: {
     // ==========================================
     let currentTopicId = VERBAL_TOPICS[0].id;
     let currentLevel = "beginner";
-    let currentItemCount = 10;
-    let currentIndex = 0;
+    let currentItems = 10;
+    let currentQuestionIndex = 0;
+    let currentQuestionSet = [];
     let userAnswers = [];
     let quizFinished = false;
 
-    // DOM refs (i-adjust lang IDs kung iba sa verbal.html mo)
-    const topicListEl       = document.getElementById("topic-list");
-    const lessonTitleEl     = document.getElementById("lesson-title");
-    const lessonPathEl      = document.getElementById("lesson-path");
-    const lessonIntroEl     = document.getElementById("lesson-intro");
-    const lessonBodyEl      = document.getElementById("lesson-body");
-    const tipsListEl        = document.getElementById("tips-list");
-
-    const studyPanel        = document.getElementById("panel-study");
-    const quizPanel         = document.getElementById("panel-quiz");
-    const modeStudyBtn      = document.getElementById("mode-study");
-    const modeQuizBtn       = document.getElementById("mode-quiz");
-
-    const quizTopicLabelEl  = document.getElementById("quiz-topic-label");
-    const quizLevelLabelEl  = document.getElementById("quiz-level-label");
-    const questionTextEl    = document.getElementById("quiz-question-text");
-    const optionsListEl     = document.getElementById("quiz-options");
-    const feedbackEl        = document.getElementById("quiz-feedback");
-    const explanationWrapEl = document.getElementById("explanation-wrapper");
-    const explanationTextEl = document.getElementById("quiz-explanation-text");
-    const prevBtn           = document.getElementById("btn-prev");
-    const nextBtn           = document.getElementById("btn-next");
-    const counterEl         = document.getElementById("question-counter");
-
-    const resultsPanelEl    = document.getElementById("results-panel");
-    const resultScoreMain   = document.getElementById("results-score-main");
-    const resultScorePct    = document.getElementById("results-score-percent");
-    const resultReviewTitle = document.getElementById("results-review-title");
-    const resultDetailsEl   = document.getElementById("results-details");
-    const retakeBtn         = document.getElementById("btn-retake");
-
-    // ==========================================
-    // 4. HELPERS
-    // ==========================================
     function getTopicLabel(id) {
       const t = VERBAL_TOPICS.find(x => x.id === id);
       return t ? t.label : id;
     }
 
     function capitalize(str) {
-      return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     // ==========================================
-    // 5. SIDEBAR TOPICS (same style as Analytical)
+    // 4. SIDEBAR TOPICS
     // ==========================================
     function renderTopics() {
-      topicListEl.innerHTML = "";
+      const list = document.getElementById("topic-list");
+      list.innerHTML = "";
 
       VERBAL_TOPICS.forEach((topic, index) => {
-        const li  = document.createElement("li");
+        const li = document.createElement("li");
         const btn = document.createElement("button");
-        btn.className = "topic-btn" + (index === 0 ? " active" : "");
+        btn.className = "topic-btn" + (topic.id === currentTopicId ? " active" : "");
         btn.dataset.topicId = topic.id;
         btn.innerHTML = `
           <span class="label">
@@ -5267,347 +5233,409 @@ synonyms: {
         `;
         btn.addEventListener("click", () => selectTopic(topic.id));
         li.appendChild(btn);
-        topicListEl.appendChild(li);
+        list.appendChild(li);
       });
     }
 
     // ==========================================
-    // 6. STUDY MODE – RENDER LESSON (simplified tulad ng Analytical)
+    // 5. STUDY MODE RENDER
     // ==========================================
     function renderLesson() {
       const lesson = VERBAL_LESSONS[currentTopicId];
-
-      // DEBUG TIP: para makita mo kung tama id:
-      // console.log("renderLesson:", currentTopicId, lesson);
-
       if (!lesson) {
-        // fallback UI kapag wala pang lesson para sa topic
-        lessonTitleEl.textContent = "Lesson coming soon";
-        lessonPathEl.textContent  = "Verbal Ability · " + getTopicLabel(currentTopicId);
-        lessonIntroEl.textContent =
-          "Wala pa tayong naka-encode na lesson para sa topic na ito. Subukan muna ang Practice Quiz.";
-        lessonBodyEl.innerHTML = "";
-        tipsListEl.innerHTML = "";
+        document.getElementById("lesson-title").textContent = getTopicLabel(currentTopicId);
+        document.getElementById("lesson-path").textContent = "Verbal Ability · " + getTopicLabel(currentTopicId);
+        document.getElementById("lesson-intro").textContent = "Lesson content coming soon. Please check the practice quiz for now.";
+        document.getElementById("lesson-body").innerHTML = "";
+        document.getElementById("tips-list").innerHTML = "";
         return;
       }
 
-      lessonTitleEl.textContent = lesson.title || getTopicLabel(currentTopicId);
-      lessonPathEl.textContent  = "Verbal Ability · " + getTopicLabel(currentTopicId);
-      lessonIntroEl.textContent = lesson.intro || "";
+      document.getElementById("lesson-title").textContent = lesson.title;
+      document.getElementById("lesson-path").textContent = "Verbal Ability · " + getTopicLabel(currentTopicId);
+      document.getElementById("lesson-intro").textContent = lesson.intro;
 
-      // 2 mode: fullHtml OR sections (pareho nating susuportahan)
-      if (lesson.fullHtml) {
-        lessonBodyEl.innerHTML = lesson.fullHtml;
-      } else if (lesson.sections && Array.isArray(lesson.sections)) {
-        lessonBodyEl.innerHTML = lesson.sections
-          .map(
-            section => `
-              <section class="lesson-section">
-                <h3>${section.heading}</h3>
-                <ul>
-                  ${(section.bullets || [])
-                    .map(b => `<li>${b}</li>`)
-                    .join("")}
-                </ul>
-              </section>
-            `
-          )
-          .join("");
-      } else {
-        lessonBodyEl.innerHTML =
-          "<p>Lesson content is being prepared. Check back soon.</p>";
-      }
+      const bodyEl = document.getElementById("lesson-body");
+      bodyEl.innerHTML = lesson.sections
+        .map(
+          section => `
+        <section class="lesson-section">
+          <h3>${section.heading}</h3>
+          <ul>
+            ${section.bullets.map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </section>
+      `
+        )
+        .join("");
 
-      // Tips
-      const tips = lesson.tips || lesson.quickTips || [];
-      tipsListEl.innerHTML = tips.map(t => `<li>${t}</li>`).join("");
+      const tipsEl = document.getElementById("tips-list");
+      tipsEl.innerHTML = (lesson.tips || [])
+        .map(t => `<li>${t}</li>`)
+        .join("");
     }
 
     // ==========================================
-    // 7. QUIZ ENGINE – reuse existing VERBAL_QUESTION_BANK
+    // 6. TOPIC SELECT
     // ==========================================
-    function getQuestionsForCurrent() {
-      const bank         = window.VERBAL_QUESTION_BANK || {};
-      const topicBank    = bank[currentTopicId] || {};
-      const levelQuestions = topicBank[currentLevel] || [];
-      return levelQuestions.slice(0, currentItemCount);
-    }
+    function selectTopic(topicId) {
+      currentTopicId = topicId;
 
-    function resetQuizState() {
-      const questions = getQuestionsForCurrent();
-      userAnswers     = questions.map(() => null);
-      currentIndex    = 0;
-      quizFinished    = false;
-
-      if (feedbackEl) {
-        feedbackEl.textContent = "";
-        feedbackEl.className   = "quiz-feedback muted";
-      }
-      if (explanationWrapEl) {
-        explanationWrapEl.classList.add("hidden");
-        explanationTextEl.textContent = "";
-      }
-      if (resultsPanelEl) {
-        resultsPanelEl.classList.add("hidden");
-      }
-      const quizCard = document.getElementById("quiz-card");
-      if (quizCard) quizCard.classList.remove("hidden");
-    }
-
-    function renderQuiz() {
-      const topic = VERBAL_TOPICS.find(t => t.id === currentTopicId);
-      quizTopicLabelEl.textContent = topic ? topic.label : "Verbal Ability";
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-
-      const questions = getQuestionsForCurrent();
-      if (!questions.length) {
-        questionTextEl.textContent =
-          "No practice questions are available yet for this topic and level.";
-        optionsListEl.innerHTML = "";
-        counterEl.textContent   = "0 of 0";
-        prevBtn.disabled        = true;
-        nextBtn.disabled        = true;
-        return;
-      }
-
-      if (userAnswers.length !== questions.length) {
-        userAnswers = questions.map(() => null);
-      }
-
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
-
-      const q = questions[currentIndex];
-
-      questionTextEl.textContent = q.question;
-      optionsListEl.innerHTML    = "";
-
-      const stored = userAnswers[currentIndex];
-
-      (q.options || []).forEach(option => {
-        const btn = document.createElement("button");
-        btn.type      = "button";
-        btn.className = "option-btn";
-        btn.textContent = option;
-
-        btn.addEventListener("click", () => handleAnswer(option));
-
-        optionsListEl.appendChild(btn);
+      document.querySelectorAll(".topic-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.topicId === topicId);
       });
 
-      // restore state kung nasagot na
-      if (stored && stored.selected != null) {
-        const buttons = optionsListEl.querySelectorAll(".option-btn");
-        buttons.forEach(btn => {
-          if (btn.textContent === q.answer) {
-            btn.classList.add("selected");
-          }
-        });
-      }
+      document.getElementById("quiz-topic-label").textContent = getTopicLabel(currentTopicId);
 
-      counterEl.textContent = "Question " + (currentIndex + 1) + " of " + questions.length;
-      prevBtn.disabled      = currentIndex === 0;
-      nextBtn.textContent   = currentIndex === questions.length - 1 ? "Finish Quiz" : "Next";
+      renderLesson();
+      startQuiz();
     }
 
-    function handleAnswer(selectedOption) {
-      const questions = getQuestionsForCurrent();
-      if (!questions.length || quizFinished) return;
+    // ==========================================
+    // 7. MODE TOGGLE
+    // ==========================================
+    function initModeToggle() {
+      const studyBtn = document.getElementById("mode-study");
+      const quizBtn = document.getElementById("mode-quiz");
+      const studyPanel = document.getElementById("panel-study");
+      const quizPanel = document.getElementById("panel-quiz");
 
-      const q = questions[currentIndex];
-      const isCorrect = selectedOption === q.answer;
+      studyBtn.addEventListener("click", () => {
+        studyBtn.classList.add("active");
+        quizBtn.classList.remove("active");
+        studyPanel.classList.remove("hidden");
+        quizPanel.classList.add("hidden");
+      });
 
-      userAnswers[currentIndex] = {
-        selected: selectedOption,
-        correct:  isCorrect
-      };
+      quizBtn.addEventListener("click", () => {
+        quizBtn.classList.add("active");
+        studyBtn.classList.remove("active");
+        quizPanel.classList.remove("hidden");
+        studyPanel.classList.add("hidden");
+      });
+    }
 
-      const buttons = optionsListEl.querySelectorAll(".option-btn");
-      buttons.forEach(btn => {
-        btn.classList.remove("selected");
-        if (btn.textContent === selectedOption) {
-          btn.classList.add("selected");
+    // ==========================================
+    // 8. QUIZ INITIALIZERS
+    // ==========================================
+    function initLevelTabs() {
+      document.querySelectorAll(".level-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          const level = tab.dataset.level;
+          currentLevel = level;
+          document.querySelectorAll(".level-tab").forEach(t => {
+            t.classList.toggle("active", t.dataset.level === level);
+          });
+          document.getElementById("quiz-level-label").textContent = capitalize(level);
+          startQuiz();
+        });
+      });
+    }
+
+    function initItemsTabs() {
+      document.querySelectorAll(".items-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const items = parseInt(btn.dataset.items, 10) || 10;
+          currentItems = items;
+          document.querySelectorAll(".items-tab").forEach(b => {
+            b.classList.toggle("active", b === btn);
+          });
+          startQuiz();
+        });
+      });
+    }
+
+    function initNavButtons() {
+      const prevBtn = document.getElementById("btn-prev");
+      const nextBtn = document.getElementById("btn-next");
+
+      prevBtn.addEventListener("click", () => {
+        if (quizFinished) return;
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex -= 1;
+          renderQuizQuestion();
         }
       });
 
-      if (isCorrect) {
-        feedbackEl.textContent = "Correct!";
-        feedbackEl.className   = "quiz-feedback correct";
-      } else {
-        feedbackEl.textContent =
-          "Incorrect. Correct answer: " + q.answer + ".";
-        feedbackEl.className = "quiz-feedback wrong";
-      }
+      nextBtn.addEventListener("click", () => {
+        if (quizFinished) return;
+        if (currentQuestionIndex < currentQuestionSet.length - 1) {
+          currentQuestionIndex += 1;
+          renderQuizQuestion();
+        } else {
+          finishQuiz();
+        }
+      });
+    }
 
-      if (q.explanation) {
-        explanationWrapEl.classList.remove("hidden");
-        explanationTextEl.textContent = q.explanation;
-      } else {
-        explanationWrapEl.classList.add("hidden");
-        explanationTextEl.textContent = "";
+    function initResultsButtons() {
+      const retakeBtn = document.getElementById("btn-retake");
+      if (retakeBtn) {
+        retakeBtn.addEventListener("click", () => {
+          retakeQuiz();
+        });
       }
     }
 
-    function finishQuiz() {
-      const questions = getQuestionsForCurrent();
-      if (!questions.length) return;
+    // ==========================================
+    // 9. QUIZ ENGINE
+    // ==========================================
+    function startQuiz() {
+      const quizCard = document.getElementById("quiz-card");
+      const resultsPanel = document.getElementById("results-panel");
+      const feedbackEl = document.getElementById("quiz-feedback");
+      const explWrap = document.getElementById("explanation-wrapper");
+      const explText = document.getElementById("quiz-explanation-text");
+      const reviewTitleEl = document.getElementById("results-review-title");
+      const detailsEl = document.getElementById("results-details");
 
+      quizFinished = false;
+      if (quizCard) quizCard.classList.remove("hidden");
+      if (resultsPanel) resultsPanel.classList.add("hidden");
+      if (feedbackEl) {
+        feedbackEl.textContent = "";
+        feedbackEl.className = "quiz-feedback muted";
+      }
+      if (explWrap) explWrap.classList.add("hidden");
+      if (explText) explText.textContent = "";
+      if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
+      if (detailsEl) detailsEl.innerHTML = "";
+
+      const bank = window.VERBAL_QUESTION_BANK || {};
+      const topicBank = bank[currentTopicId];
+      const questions = topicBank && topicBank[currentLevel]
+        ? topicBank[currentLevel].slice()
+        : [];
+
+      if (!questions.length) {
+        currentQuestionSet = [];
+        currentQuestionIndex = 0;
+        userAnswers = [];
+        renderQuizQuestion();
+        return;
+      }
+
+      const num = Math.min(currentItems, questions.length);
+      const shuffled = questions.sort(() => Math.random() - 0.5);
+      currentQuestionSet = shuffled.slice(0, num);
+      currentQuestionIndex = 0;
+      userAnswers = new Array(currentQuestionSet.length).fill(null);
+
+      renderQuizQuestion();
+    }
+
+    function selectOption(optionIndex) {
+      if (quizFinished) return;
+      userAnswers[currentQuestionIndex] = optionIndex;
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const qTextEl = document.getElementById("quiz-question-text");
+      const optionsEl = document.getElementById("quiz-options");
+      const counterEl = document.getElementById("question-counter");
+      const topicLabelEl = document.getElementById("quiz-topic-label");
+      const levelLabelEl = document.getElementById("quiz-level-label");
+      const explWrap = document.getElementById("explanation-wrapper");
+      const explText = document.getElementById("quiz-explanation-text");
+      const feedbackEl = document.getElementById("quiz-feedback");
+      const prevBtn = document.getElementById("btn-prev");
+      const nextBtn = document.getElementById("btn-next");
+
+      topicLabelEl.textContent = getTopicLabel(currentTopicId);
+      levelLabelEl.textContent = capitalize(currentLevel);
+
+      if (!currentQuestionSet.length) {
+        qTextEl.textContent =
+          "No questions are loaded yet for this topic and level. Make sure a JS file sets window.VERBAL_QUESTION_BANK for Verbal Ability.";
+        optionsEl.innerHTML = "";
+        counterEl.textContent = "0 of 0";
+        if (feedbackEl) {
+          feedbackEl.textContent = "";
+          feedbackEl.className = "quiz-feedback muted";
+        }
+        explWrap.classList.add("hidden");
+        explText.textContent = "";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
+
+      const q = currentQuestionSet[currentQuestionIndex];
+      qTextEl.textContent = q.question || "Question";
+
+      optionsEl.innerHTML = "";
+      const selectedIndex = userAnswers[currentQuestionIndex];
+
+      (q.options || []).forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = opt;
+
+        if (selectedIndex === idx) {
+          btn.classList.add("selected");
+        }
+
+        btn.addEventListener("click", () => selectOption(idx));
+        optionsEl.appendChild(btn);
+      });
+
+      if (selectedIndex == null) {
+        if (feedbackEl) {
+          feedbackEl.textContent = "";
+          feedbackEl.className = "quiz-feedback muted";
+        }
+        explWrap.classList.add("hidden");
+        explText.textContent = "";
+      } else {
+        const selectedText = q.options[selectedIndex];
+        const isCorrect = selectedText === q.answer;
+
+        if (feedbackEl) {
+          if (isCorrect) {
+            feedbackEl.textContent = "Correct!";
+            feedbackEl.className = "quiz-feedback correct";
+          } else {
+            feedbackEl.textContent = "Incorrect. Correct answer: " + q.answer + ".";
+            feedbackEl.className = "quiz-feedback wrong";
+          }
+        }
+
+        if (q.explanation) {
+          explWrap.classList.remove("hidden");
+          explText.textContent = q.explanation;
+        } else {
+          explWrap.classList.add("hidden");
+          explText.textContent = "";
+        }
+      }
+
+      counterEl.textContent =
+        "Question " +
+        (currentQuestionIndex + 1) +
+        " of " +
+        currentQuestionSet.length;
+
+      prevBtn.disabled = currentQuestionIndex === 0;
+
+      if (currentQuestionIndex === currentQuestionSet.length - 1) {
+        nextBtn.textContent = "Finish";
+      } else {
+        nextBtn.textContent = "Next";
+      }
+    }
+
+    // ==========================================
+    // 10. FINISH & RESULTS
+    // ==========================================
+    function finishQuiz() {
       quizFinished = true;
 
       const quizCard = document.getElementById("quiz-card");
-      if (quizCard) quizCard.classList.add("hidden");
-      resultsPanelEl.classList.remove("hidden");
+      const resultsPanel = document.getElementById("results-panel");
+      const scoreMainEl = document.getElementById("results-score-main");
+      const scorePercentEl = document.getElementById("results-score-percent");
+      const detailsEl = document.getElementById("results-details");
+      const reviewTitleEl = document.getElementById("results-review-title");
 
-      let correct = 0;
+      if (quizCard) quizCard.classList.add("hidden");
+      if (resultsPanel) resultsPanel.classList.remove("hidden");
+
+      let correctCount = 0;
       const mistakes = [];
 
-      questions.forEach((q, index) => {
-        const ans = userAnswers[index];
-        const selected = ans ? ans.selected : null;
-        const isCorrect = ans ? ans.correct : false;
+      currentQuestionSet.forEach((q, idx) => {
+        const userIndex = userAnswers[idx];
+        const userText = userIndex == null ? null : (q.options[userIndex] || null);
+        const isCorrect = userText === q.answer;
 
         if (isCorrect) {
-          correct++;
+          correctCount += 1;
         } else {
           mistakes.push({
-            number: index + 1,
+            number: idx + 1,
             question: q.question,
-            userAnswer: selected,
+            userAnswer: userText,
             correctAnswer: q.answer,
             explanation: q.explanation || ""
           });
         }
       });
 
-      resultScoreMain.textContent = correct + " / " + questions.length;
-      const pct = questions.length ? Math.round((correct / questions.length) * 100) : 0;
-      resultScorePct.textContent  = "Score: " + pct + "%";
+      if (scoreMainEl) {
+        scoreMainEl.textContent = correctCount + " / " + currentQuestionSet.length;
+      }
+
+      if (scorePercentEl) {
+        const pct = currentQuestionSet.length
+          ? Math.round((correctCount / currentQuestionSet.length) * 100)
+          : 0;
+        scorePercentEl.textContent = "Score: " + pct + "%";
+      }
+
+      if (!detailsEl) return;
 
       if (!mistakes.length) {
-        resultReviewTitle.classList.add("hidden");
-        resultDetailsEl.innerHTML =
-          '<p class="no-mistakes">Perfect score! No mistakes to review.</p>';
+        if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
+        detailsEl.innerHTML = '<p class="no-mistakes">Perfect! You answered all items correctly. Great job!</p>';
         return;
       }
 
-      resultReviewTitle.classList.remove("hidden");
-      const html = mistakes.map(m => `
-        <div class="result-item">
-          <div class="result-item-question">
-            Question ${m.number}: ${m.question.replace(/\n/g, " ")}
-          </div>
-          <p class="result-item-meta">
-            <span class="answer-label">✖ You:</span>
-            ${m.userAnswer || "<em>No answer selected.</em>"}
-          </p>
-          <p class="result-item-meta">
-            <span class="answer-label">✔ Correct:</span>
-            ${m.correctAnswer}
-          </p>
-          <p class="result-item-meta">
-            <span class="answer-label">👉 Why:</span>
-            ${m.explanation || "No explanation provided."}
-          </p>
-        </div>
-      `).join("");
+      if (reviewTitleEl) reviewTitleEl.classList.remove("hidden");
 
-      resultDetailsEl.innerHTML = `
+      const itemsHtml = mistakes
+        .map(m => {
+          const userAnsText = m.userAnswer == null ? "<em>No answer selected.</em>" : m.userAnswer;
+          const explText = m.explanation && m.explanation.trim().length
+            ? m.explanation
+            : "No explanation provided for this item.";
+
+          return `
+          <div class="result-item">
+            <div class="result-item-question">
+              Question ${m.number}: ${m.question.replace(/\n/g, " ")}
+            </div>
+            <p class="result-item-meta">
+              <span class="answer-label">✖ You:</span>
+              ${userAnsText}
+            </p>
+            <p class="result-item-meta">
+              <span class="answer-label">✔ Correct:</span>
+              ${m.correctAnswer}
+            </p>
+            <p class="result-item-meta">
+              <span class="answer-label">👉 Why:</span>
+              ${explText}
+            </p>
+          </div>
+        `;
+        })
+        .join("");
+
+      detailsEl.innerHTML = `
         <p class="results-score-text">
           Items you need to review (incorrect or unanswered):
         </p>
         <div class="results-list">
-          ${html}
+          ${itemsHtml}
         </div>
       `;
     }
 
-    function selectTopic(topicId) {
-      currentTopicId = topicId;
-      // active pill
-      document.querySelectorAll(".topic-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.topicId === topicId);
-      });
-
-      resetQuizState();
-      renderLesson();
-      renderQuiz();
+    function retakeQuiz() {
+      startQuiz();
     }
 
     // ==========================================
-    // 8. INIT
+    // 11. INIT
     // ==========================================
-    function init() {
-      renderTopics();
-      // mode toggle
-      modeStudyBtn.addEventListener("click", () => {
-        modeStudyBtn.classList.add("active");
-        modeQuizBtn.classList.remove("active");
-        studyPanel.classList.remove("hidden");
-        quizPanel.classList.add("hidden");
-      });
-      modeQuizBtn.addEventListener("click", () => {
-        modeQuizBtn.classList.add("active");
-        modeStudyBtn.classList.remove("active");
-        quizPanel.classList.remove("hidden");
-        studyPanel.classList.add("hidden");
-      });
-
-      // level tabs
-      document.querySelectorAll(".level-tab").forEach(tab => {
-        tab.addEventListener("click", () => {
-          const lvl = tab.dataset.level;
-          if (!lvl) return;
-          currentLevel = lvl;
-          document.querySelectorAll(".level-tab").forEach(t => {
-            t.classList.toggle("active", t.dataset.level === lvl);
-          });
-          renderQuiz();
-        });
-      });
-
-      // items tabs
-      document.querySelectorAll(".items-tab").forEach(tab => {
-        tab.addEventListener("click", () => {
-          const c = parseInt(tab.dataset.items, 10);
-          if (!c) return;
-          currentItemCount = c;
-          document.querySelectorAll(".items-tab").forEach(t => {
-            t.classList.toggle("active", t === tab);
-          });
-          resetQuizState();
-          renderQuiz();
-        });
-      });
-
-      prevBtn.addEventListener("click", () => {
-        const questions = getQuestionsForCurrent();
-        if (!questions.length || currentIndex === 0) return;
-        currentIndex--;
-        renderQuiz();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        const questions = getQuestionsForCurrent();
-        if (!questions.length) return;
-        if (currentIndex < questions.length - 1) {
-          currentIndex++;
-          renderQuiz();
-        } else {
-          finishQuiz();
-        }
-      });
-
-      if (retakeBtn) {
-        retakeBtn.addEventListener("click", () => {
-          resetQuizState();
-          renderQuiz();
-        });
-      }
-
-      selectTopic(currentTopicId);
-    }
-
-    document.addEventListener("DOMContentLoaded", init);
+    renderTopics();
+    initModeToggle();
+    initLevelTabs();
+    initItemsTabs();
+    initNavButtons();
+    initResultsButtons();
+    selectTopic(currentTopicId);
   </script>
 </body>
 </html>
