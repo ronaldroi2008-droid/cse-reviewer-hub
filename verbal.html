@@ -2,707 +2,510 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Verbal Ability</title>
+  <title>CSE Reviewer Hub – Verbal Ability Quiz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #020617;
-      --card: #020617;
-      --card-alt: #0b1220;
-      --border: #1f2937;
-      --accent: #6366f1;
-      --accent-soft: rgba(99, 102, 241, 0.12);
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --danger: #f97373;
-      --success: #22c55e;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
 
-/* --- Pro Upgrade banner + level lock styles --- */
-.pro-upgrade-banner {
-  margin-top: 10px;
-  border-radius: 14px;
-  border: 1px dashed #4b5563;
-  background: rgba(15, 23, 42, 0.95);
-  padding: 8px 10px;
-  font-size: 0.8rem;
-  color: #9ca3af;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.pro-upgrade-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.pro-upgrade-text strong {
-  color: #e5e7eb;
-}
-
-.pro-upgrade-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.pro-upgrade-btn {
-  border-radius: 999px;
-  border: 1px solid #4f46e5;
-  background: linear-gradient(to right, #4f46e5, #6366f1);
-  color: #f9fafb;
-  padding: 5px 12px;
-  font-size: 0.78rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.pro-upgrade-btn.secondary {
-  background: #020617;
-  border-color: #1f2937;
-  color: #9ca3af;
-}
-
-.level-tab.locked {
-  opacity: 0.45;
-  cursor: not-allowed;
-  position: relative;
-}
-
-.level-tab.locked::after {
-  content: "Pro";
-  font-size: 0.65rem;
-  padding: 1px 6px;
-  border-radius: 999px;
-  border: 1px solid #4b5563;
-  color: #9ca3af;
-  margin-left: 4px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-
-    
-
-    * { box-sizing: border-box; }
+    :root {
+      --bg: #020617;
+      --border: #1f2937;
+      --accent: #6366f1;
+      --accent-soft: rgba(79, 70, 229, 0.2);
+      --accent-strong: rgba(79, 70, 229, 0.9);
+    }
 
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
-      color: var(--text);
+      background: var(--bg);
+      color: #e5e7eb;
+    }
+
+    .page {
       min-height: 100vh;
-    }
-
-    .app-shell {
-      max-width: 1120px;
-      margin: 24px auto 40px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), transparent),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.14), transparent),
-        #020617;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.75);
-    }
-
-    .app-header {
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
     }
 
-    .header-main {
+    .header-title {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    .header-title strong {
+      color: #e5e7eb;
+    }
+
+    .header-badge {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      color: #e5e7eb;
+    }
+
+    .main {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex: 1;
+      padding: 16px 24px 24px;
+      gap: 16px;
     }
 
-    .back-button {
-      border: 1px solid var(--border);
-      background: #020617;
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.08s;
+    .sidebar {
+      width: 260px;
+      max-width: 100%;
+      border-right: 1px solid var(--border);
+      padding-right: 16px;
     }
 
-    .back-button:hover {
-      background: var(--accent-soft);
-      color: #f9fafb;
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .app-title {
-      font-size: 1.7rem;
-      margin: 0 0 4px;
-      letter-spacing: 0.03em;
-    }
-
-    .app-subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .badge {
-      align-self: flex-start;
-      padding: 2px 10px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      border: 1px solid rgba(99, 102, 241, 0.4);
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .mode-tabs {
-      display: inline-flex;
-      padding: 4px;
-      border-radius: 999px;
-      background: #020617;
-      border: 1px solid var(--border);
-      margin-bottom: 18px;
-      gap: 4px;
-    }
-
-    .mode-tab {
-      border: none;
-      background: transparent;
-      color: var(--muted);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .mode-tab.active {
-      background: linear-gradient(to right, #6366f1, #4f46e5);
-      color: #f9fafb;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .topics-panel {
-      background: var(--card);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 14px 12px;
-    }
-
-    .panel-title {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
+    .sidebar-title {
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--muted);
+      color: #9ca3af;
+      margin-bottom: 8px;
     }
 
     .topic-list {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      max-height: 520px;
-      overflow-y: auto;
-      padding-right: 4px;
     }
 
     .topic-pill {
       width: 100%;
-      text-align: left;
+      padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 7px 11px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #e5e7eb;
       font-size: 0.9rem;
-      color: var(--muted);
-      cursor: pointer;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 6px;
-      transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
-    }
-
-    .topic-pill span.label {
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .topic-pill span.tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.8;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
     }
 
     .topic-pill:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
+      background: rgba(148, 163, 184, 0.08);
     }
 
     .topic-pill.active {
-      background: linear-gradient(to right, #4f46e5, #6366f1);
-      color: #f9fafb;
-      border-color: transparent;
+      background: rgba(79, 70, 229, 0.14);
+      border-color: rgba(129, 140, 248, 0.8);
     }
 
-    .content-panel {
-      min-height: 420px;
+    .topic-label {
+      font-weight: 500;
     }
 
-    .view {
-      display: none;
+    .topic-tag {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      color: #9ca3af;
     }
 
-    .view--active {
-      display: block;
-    }
-
-    .lesson-card,
-    .quiz-card {
-      background: var(--card-alt);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 16px 18px;
-    }
-
-    .lesson-title {
-      margin: 0 0 6px;
-      font-size: 1.2rem;
-    }
-
-    .lesson-intro {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .lesson-body section + section {
-      margin-top: 10px;
-    }
-
-    /* Extra styling for rich lesson HTML */
-    .lesson-section + .lesson-section {
-      margin-top: 16px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(148, 163, 184, 0.2);
-    }
-
-    .lesson-section h2 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      color: #e5e7eb;
-    }
-
-    .lesson-section h3 {
-      margin: 6px 0 4px;
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
-
-    .lesson-section p {
-      margin: 4px 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .lesson-section ul {
-      margin: 4px 0 0;
-      padding-left: 18px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .lesson-section li + li {
-      margin-top: 2px;
-    }
-
-    .highlight-box {
-      border-radius: 12px;
-      border: 1px solid rgba(129, 140, 248, 0.6);
-      background: rgba(79, 70, 229, 0.15);
-      padding: 8px 10px;
-      margin: 8px 0;
-      font-size: 0.9rem;
-    }
-
-    .lesson-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-      font-size: 0.86rem;
-    }
-
-    .lesson-table th,
-    .lesson-table td {
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 6px 8px;
-      text-align: left;
-    }
-
-    .lesson-table th {
-      background: rgba(30, 64, 175, 0.7);
-      color: #e5e7eb;
-      font-weight: 600;
-    }
-
-    .lesson-table tr:nth-child(even) td {
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .check-list {
-      list-style: disc;
-      padding-left: 18px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .tip-card {
-      margin-top: 12px;
-      border-radius: 13px;
-      padding: 10px 12px;
-      background: rgba(99, 102, 241, 0.12);
-      border: 1px dashed rgba(129, 140, 248, 0.8);
-      font-size: 0.88rem;
-    }
-
-    .tip-card h3 {
-      margin: 0 0 4px;
-      font-size: 0.9rem;
-      color: #c7d2fe;
-    }
-
-    .tip-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #e5e7eb;
-    }
-
-    .tip-card li + li {
-      margin-top: 2px;
+    .content {
+      flex: 1;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .quiz-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 12px;
-      gap: 16px;
-    }
-
-    .quiz-meta {
-      min-width: 0;
-    }
-
-    .quiz-meta .lesson-title {
-      font-size: 1.05rem;
-    }
-
-    .quiz-meta .lesson-intro {
-      font-size: 0.9rem;
-    }
-
-    .level-switcher {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: flex-end;
-    }
-
-    .level-chip {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 4px 9px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
-    }
-
-    .level-chip.active {
-      background: var(--accent);
-      color: #f9fafb;
-      border-color: transparent;
-      transform: translateY(-1px);
-    }
-
-    /* Items count switcher */
-    .count-switcher {
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 4px;
-      justify-content: flex-end;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .count-label {
-      margin-right: 2px;
-    }
-
-    .count-chip {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 3px 8px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      color: var(--muted);
-      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.08s;
-    }
-
-    .count-chip.active {
-      background: var(--accent);
-      color: #f9fafb;
-      border-color: transparent;
-      transform: translateY(-1px);
-    }
-
-    .question-text {
-      font-size: 1.02rem;
-      margin-bottom: 10px;
-    }
-
-    .options-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .option-button {
-      width: 100%;
-      text-align: left;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 8px 12px;
-      font-size: 0.95rem;
-      color: var(--text);
-      cursor: pointer;
-      transition: border-color 0.15s, background 0.15s, transform 0.08s;
-    }
-
-    .option-button:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .option-button.is-correct {
-      border-color: rgba(34, 197, 94, 0.85);
-      background: rgba(22, 163, 74, 0.12);
-    }
-
-    .option-button.is-incorrect {
-      border-color: rgba(248, 113, 113, 0.85);
-      background: rgba(248, 113, 113, 0.12);
-    }
-
-    .feedback {
-      min-height: 24px;
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .feedback.feedback--correct {
-      color: var(--success);
-    }
-
-    .feedback.feedback--incorrect {
-      color: var(--danger);
-    }
-
-    .quiz-footer {
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
     }
 
-    .primary-button {
+    .quiz-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .quiz-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .quiz-subtitle {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .quiz-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+    }
+
+    .level-switcher,
+    .count-switcher {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .level-chip,
+    .count-chip {
       border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #f9fafb;
-      padding: 7px 15px;
+      border: 1px solid #4b5563;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .level-chip:hover,
+    .count-chip:hover {
+      background: rgba(148, 163, 184, 0.15);
+    }
+
+    .level-chip.active,
+    .count-chip.active {
+      background: rgba(79, 70, 229, 0.3);
+      border-color: rgba(129, 140, 248, 0.9);
+    }
+
+    .level-chip.locked {
+      opacity: 0.45;
+      cursor: not-allowed;
+      position: relative;
+    }
+
+    .level-chip.locked::after {
+      content: "Pro";
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      color: #9ca3af;
+      margin-left: 4px;
+      margin-right: -4px;
+    }
+
+    .pro-upgrade-banner {
+      margin-top: 6px;
+      border-radius: 12px;
+      border: 1px dashed rgba(129, 140, 248, 0.7);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .pro-upgrade-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.8rem;
+      color: #cbd5f5;
+    }
+
+    .pro-upgrade-text span {
+      color: #9ca3af;
+    }
+
+    .pro-upgrade-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .pro-upgrade-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(129, 140, 248, 0.9);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      background: rgba(79, 70, 229, 0.95);
+      color: #e5e7eb;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .pro-upgrade-btn.secondary {
+      background: transparent;
+      border-style: dashed;
+    }
+
+    .quiz-card {
+      margin-top: 8px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top left, rgba(79, 70, 229, 0.16), transparent 55%),
+        #020617;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .quiz-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .quiz-meta-row span strong {
+      color: #e5e7eb;
+    }
+
+    .question-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .choice-option {
+      width: 100%;
+      text-align: left;
+      border-radius: 10px;
+      border: 1px solid #374151;
+      padding: 7px 9px;
       font-size: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 0.12s ease, border-color 0.12s ease, transform 0.08s ease;
+    }
+
+    .choice-option:hover {
+      background: rgba(31, 41, 55, 0.95);
+    }
+
+    .choice-option.selected {
+      border-color: rgba(129, 140, 248, 0.9);
+      background: rgba(79, 70, 229, 0.35);
+    }
+
+    .choice-option.correct {
+      border-color: #22c55e;
+      background: rgba(22, 163, 74, 0.15);
+    }
+
+    .choice-option.incorrect {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.16);
+    }
+
+    .quiz-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .explanation {
+      flex: 1;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .explanation strong {
+      color: #e5e7eb;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #e5e7eb;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: background 0.15s, border-color 0.15s, transform 0.1s, opacity 0.15s;
+      gap: 4px;
     }
 
-    .primary-button.secondary {
-      background: transparent;
-      color: var(--muted);
-      border-color: var(--border);
+    .primary-btn {
+      background: rgba(79, 70, 229, 0.98);
+      border-color: rgba(129, 140, 248, 0.95);
     }
 
-    .primary-button:disabled {
+    .secondary-btn {
+      border-color: #4b5563;
+    }
+
+    .primary-btn:disabled,
+    .secondary-btn:disabled {
       opacity: 0.5;
-      cursor: default;
-      transform: none;
+      cursor: not-allowed;
     }
 
-    .primary-button:not(:disabled):hover {
-      transform: translateY(-1px);
-      border-color: #a5b4fc;
-    }
-
-    .progress-text {
-      font-size: 0.85rem;
-      color: var(--muted);
+    .hidden {
+      display: none;
     }
 
     @media (max-width: 900px) {
-      .layout {
-        display: flex;
+      .main {
         flex-direction: column;
       }
-
-      .app-shell {
-        margin: 12px;
-        padding: 14px;
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 10px;
+        margin-bottom: 6px;
       }
-
-      .quiz-header {
+      .quiz-controls {
+        align-items: flex-start;
+      }
+      .pro-upgrade-banner {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
       }
-
-      .level-switcher {
+      .pro-upgrade-actions {
+        width: 100%;
         justify-content: flex-start;
-      }
-
-      .count-switcher {
-        justify-content: flex-start;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .app-title {
-        font-size: 1.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="header-main">
-        <button class="back-button" type="button" onclick="window.location.href='index.html'">
-          ← Back to Home
-        </button>
-        <div>
-          <h1 class="app-title">CSE Reviewer Hub</h1>
-          <p class="app-subtitle">
-            Verbal Ability ·
-            <span id="subtitleTopic">Analogy</span>
-          </p>
-        </div>
+  <div class="page">
+    <header class="header">
+      <div class="header-title">
+        <strong>CSE Reviewer Hub</strong> · Verbal Ability
       </div>
-      <span class="badge">Beta</span>
+      <div class="header-badge">Practice Quiz</div>
     </header>
 
-    <nav class="mode-tabs">
-      <button class="mode-tab active" data-mode="study" type="button">Study Mode</button>
-      <button class="mode-tab" data-mode="practice" type="button">Practice Quiz</button>
-    </nav>
-
-    <main class="layout">
-      <aside class="topics-panel">
-        <h2 class="panel-title">Verbal Topics</h2>
-        <div id="topicList" class="topic-list">
-          <!-- Filled by JS -->
-        </div>
+    <main class="main">
+      <!-- LEFT: TOPIC LIST -->
+      <aside class="sidebar">
+        <div class="sidebar-title">Verbal Topics</div>
+        <div id="topicList" class="topic-list"></div>
       </aside>
 
-      <section class="content-panel">
-        <!-- STUDY MODE -->
-        <div id="studyView" class="view view--active">
-          <div class="lesson-card">
-            <h2 id="lessonTitle" class="lesson-title"></h2>
-            <p id="lessonIntro" class="lesson-intro"></p>
-            <div id="lessonBody" class="lesson-body"></div>
-            <div id="tipCard" class="tip-card"></div>
+      <!-- RIGHT: QUIZ -->
+      <section class="content">
+        <div class="quiz-header">
+          <div class="quiz-title-block">
+            <div class="quiz-title">
+              <span id="quizTopicLabel">Prepositions</span>
+            </div>
+            <div class="quiz-subtitle">
+              Level:
+              <span id="quizLevelLabel">Beginner</span> ·
+              Items:
+              <span id="quizItemCountLabel">0</span>
+            </div>
+          </div>
+
+          <div class="quiz-controls">
+            <div class="level-switcher">
+              <button class="level-chip active" data-level="beginner">Beginner</button>
+              <button class="level-chip" data-level="intermediate">Intermediate</button>
+              <button class="level-chip" data-level="advanced">Advanced</button>
+              <button class="level-chip" data-level="expert">Expert</button>
+            </div>
+            <div class="count-switcher">
+              <button class="count-chip active" data-count="10">10</button>
+              <button class="count-chip" data-count="20">20</button>
+              <button class="count-chip" data-count="30">30</button>
+              <button class="count-chip" data-count="40">40</button>
+              <button class="count-chip" data-count="50">50</button>
+            </div>
+
+            <!-- PRO BANNER (LOCKED LEVELS) -->
+            <div id="proBanner" class="pro-upgrade-banner hidden">
+              <div class="pro-upgrade-text">
+                <strong>Unlock Advanced &amp; Expert Levels</strong>
+                <span>Upgrade to access higher-difficulty Verbal questions.</span>
+              </div>
+              <div class="pro-upgrade-actions">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="pro-upgrade-btn"
+                >
+                  🔓 Upgrade to Pro
+                </a>
+                <button
+                  type="button"
+                  class="pro-upgrade-btn secondary"
+                  onclick="document.getElementById('proBanner').classList.add('hidden')"
+                >
+                  Maybe later
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- PRACTICE QUIZ -->
-        <div id="practiceView" class="view">
-          <div class="quiz-header">
-            <div class="quiz-meta">
-              <h2 id="quizTopicTitle" class="lesson-title"></h2>
-              <p class="lesson-intro">
-                Level:
-                <span id="quizLevelLabel">Beginner</span>
-              </p>
-            </div>
-            <div>
-              <div class="level-switcher">
-                <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
-                <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
-                <button class="level-chip" data-level="advanced" type="button">Advanced</button>
-                <button class="level-chip" data-level="expert" type="button">Expert</button>
-              </div>
-
-              <div class="count-switcher">
-                <span class="count-label">Items:</span>
-                <button class="count-chip active" data-count="10" type="button">10</button>
-                <button class="count-chip" data-count="20" type="button">20</button>
-                <button class="count-chip" data-count="30" type="button">30</button>
-                <button class="count-chip" data-count="40" type="button">40</button>
-                <button class="count-chip" data-count="50" type="button">50</button>
-              </div>
-            </div>
+        <!-- QUIZ CARD -->
+        <div class="quiz-card">
+          <div class="quiz-meta-row">
+            <span id="quizProgressText">Loading questions…</span>
           </div>
 
-          <div class="quiz-card">
-            <div id="questionText" class="question-text"></div>
-            <ul id="optionsList" class="options-list"></ul>
-            <div id="feedback" class="feedback"></div>
-            <div class="quiz-footer">
-              <div>
-                <button id="prevBtn" class="primary-button secondary" type="button">Previous</button>
-                <button id="nextBtn" class="primary-button" type="button">Next</button>
-              </div>
-              <span id="progressText" class="progress-text"></span>
+          <div id="questionText" class="question-text">
+            <!-- Question text here -->
+          </div>
+
+          <div id="choicesContainer" class="choices">
+            <!-- Choices here -->
+          </div>
+
+          <div class="quiz-actions">
+            <div id="explanationText" class="explanation">
+              <!-- Explanation here -->
+            </div>
+            <div class="button-row">
+              <button id="checkAnswerBtn" type="button" class="primary-btn">
+                ✅ Check Answer
+              </button>
+              <button id="nextQuestionBtn" type="button" class="secondary-btn">
+                Next Question ➜
+              </button>
             </div>
           </div>
         </div>
