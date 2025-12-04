@@ -1,9 +1,8 @@
-<!-- Save as stats.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Stats & History</title>
+  <title>CSE Reviewer Hub – Stats & Progress</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -45,7 +44,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
     }
 
     .back-btn {
@@ -70,6 +70,7 @@
 
     .page-title-block {
       flex: 1;
+      min-width: 220px;
       padding-left: 8px;
     }
 
@@ -98,6 +99,7 @@
       background: var(--accent-soft);
       font-size: 0.75rem;
       color: #c7d2fe;
+      white-space: nowrap;
     }
 
     .card {
@@ -111,206 +113,266 @@
       padding: 18px 18px 20px;
     }
 
-    .stats-summary-grid {
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 14px;
       margin-bottom: 14px;
     }
 
-    .summary-item {
-      border-radius: 16px;
+    @media (max-width: 900px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-section {
+      border-radius: 18px;
       border: 1px solid #111827;
       background: #020617;
-      padding: 10px 12px;
-      font-size: 0.85rem;
+      padding: 14px 14px 12px;
     }
 
-    .summary-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .summary-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .summary-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .summary-highlight {
-      color: #a5b4fc;
-    }
-
-    .stats-last-mock {
-      margin: 8px 0 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px dashed #1f2937;
-      background: radial-gradient(circle at top left, #020617 0, #020617 55%);
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .stats-last-mock strong {
-      color: #e5e7eb;
-    }
-
-    .stats-filters {
+    .stat-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-      font-size: 0.82rem;
-      color: var(--muted);
+      margin-bottom: 8px;
     }
 
-    .filter-buttons {
-      display: inline-flex;
-      gap: 6px;
-      padding: 3px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
+    .stat-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
 
-    .filter-btn {
-      border: none;
-      background: transparent;
-      border-radius: 999px;
-      padding: 4px 10px;
+    .stat-subtitle {
+      margin: 0;
       font-size: 0.8rem;
       color: var(--muted);
-      cursor: pointer;
-      transition: all 0.15s ease;
     }
 
-    .filter-btn.active {
-      background: var(--accent);
-      color: #f9fafb;
-      box-shadow: 0 0 0 1px var(--accent-strong);
+    .plan-chip {
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .filter-btn:hover:not(.active) {
-      background: rgba(148, 163, 184, 0.16);
+    .plan-chip.free {
+      background: rgba(15, 23, 42, 0.9);
       color: #e5e7eb;
     }
 
-    .stats-table-wrapper {
-      border-radius: 16px;
-      border: 1px solid #111827;
-      background: #020617;
-      padding: 10px 10px 8px;
-      max-height: 420px;
-      overflow: auto;
+    .plan-chip.pro {
+      background: var(--accent-soft);
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #c7d2fe;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .plan-toggle-btn {
+      margin-top: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .plan-toggle-btn:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .plan-note {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .kpi-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .kpi-pill {
+      flex: 1 1 120px;
+      min-width: 120px;
+      border-radius: 14px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 8px 10px;
       font-size: 0.8rem;
     }
 
-    thead {
+    .kpi-label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .kpi-value {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .kpi-value.good {
+      color: var(--success);
+    }
+
+    .kpi-value.bad {
+      color: var(--danger);
+    }
+
+    .subject-list {
+      list-style: none;
+      margin: 6px 0 0;
+      padding: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .subject-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-top: 1px solid #0b1220;
+    }
+
+    .subject-item:first-child {
+      border-top: none;
+    }
+
+    .subject-name {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .tag-pill {
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .mock-summary {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .mock-score {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .mock-score span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .mock-note-empty {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .recent-section {
+      margin-top: 12px;
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 14px 14px 12px;
+    }
+
+    .recent-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .recent-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .recent-subtitle {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .recent-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .recent-table thead {
+      background: #020617;
       position: sticky;
       top: 0;
-      background: #020617;
-      z-index: 1;
     }
 
-    th, td {
-      padding: 6px 8px;
+    .recent-table th,
+    .recent-table td {
+      padding: 6px 6px;
+      border-bottom: 1px solid #0b1220;
       text-align: left;
-      border-bottom: 1px solid #111827;
     }
 
-    th {
+    .recent-table th {
+      font-weight: 600;
       font-size: 0.78rem;
-      color: #9ca3af;
-      font-weight: 500;
-      white-space: nowrap;
+      color: #cbd5f5;
     }
 
-    tbody tr:hover {
-      background: rgba(30, 64, 175, 0.15);
+    .recent-table tbody tr:hover {
+      background: rgba(15, 23, 42, 0.9);
     }
 
-    .col-mode {
-      white-space: nowrap;
-    }
-
-    .mode-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+    .recent-tag {
       border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 0.72rem;
-      border: 1px solid #1e293b;
+      border: 1px solid #1f2937;
+      padding: 1px 6px;
+      font-size: 0.7rem;
     }
 
-    .mode-mock {
-      border-color: rgba(244, 114, 182, 0.7);
-      background: rgba(244, 114, 182, 0.08);
-      color: #f9a8d4;
-    }
-
-    .mode-practice {
-      border-color: rgba(52, 211, 153, 0.7);
-      background: rgba(52, 211, 153, 0.08);
-      color: #6ee7b7;
-    }
-
-    .score-good {
-      color: #22c55e;
-      font-weight: 600;
-    }
-
-    .score-mid {
-      color: #eab308;
-      font-weight: 600;
-    }
-
-    .score-low {
-      color: #f97373;
-      font-weight: 600;
-    }
-
-    .badge-timer {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.14);
-      font-size: 0.72rem;
-      color: #9ca3af;
-    }
-
-    .badge-timeup {
-      color: #f97373;
+    .recent-tag.timer {
+      border-color: rgba(248, 250, 252, 0.14);
     }
 
     .empty-state {
-      margin-top: 10px;
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #64748b;
       text-align: center;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .page-header {
-        align-items: flex-start;
-      }
     }
   </style>
 </head>
@@ -321,118 +383,152 @@
 
       <div class="page-title-block">
         <h1 class="page-title">
-          CSE Reviewer Hub · <span>Stats & History</span>
+          CSE Reviewer Hub · <span>Stats & Progress</span>
         </h1>
         <p class="page-subtitle">
-          View your Mock Exam and Practice Mode performance over time. Perfect for tracking progress.
+          See your practice history, mock exam performance, and manage your Free / Pro access.
         </p>
       </div>
 
       <div class="header-badge">
-        Mock + Practice · Local Stats (Device Only)
+        Progress Tracker · Local Device Only
       </div>
     </header>
 
     <main class="card stats-card">
-      <!-- SUMMARY -->
-      <section>
-        <div class="stats-summary-grid">
-          <div class="summary-item">
-            <div class="summary-label">Total Attempts</div>
-            <div class="summary-value" id="sum-total-attempts">0</div>
-            <div class="summary-sub">
-              Mock: <span id="sum-mock-count" class="summary-highlight">0</span> ·
-              Practice: <span id="sum-practice-count" class="summary-highlight">0</span>
+      <div class="stats-grid">
+        <!-- LEFT: Plan + Overall Practice -->
+        <div class="stat-section">
+          <div class="stat-header">
+            <div>
+              <h2 class="stat-title">Account & Access</h2>
+              <p class="stat-subtitle">Current plan, and which features are unlocked.</p>
+            </div>
+            <div id="plan-chip" class="plan-chip free">
+              <span id="plan-chip-label">Free Plan</span>
             </div>
           </div>
 
-          <div class="summary-item">
-            <div class="summary-label">Best Mock Score</div>
-            <div class="summary-value" id="sum-best-mock">–</div>
-            <div class="summary-sub" id="sum-best-mock-detail">No mock data yet.</div>
+          <button id="plan-toggle-btn" class="plan-toggle-btn">
+            🔁 Switch Plan (Dev Test)
+          </button>
+
+          <p class="plan-note" id="plan-note-text">
+            Free Plan: Beginner & Intermediate levels unlocked. Advanced, Expert, and Full 170-item Mock Exam are Pro-only.
+          </p>
+
+          <hr style="border:none;border-top:1px solid #111827;margin:10px 0 8px;" />
+
+          <h3 class="stat-title" style="font-size:0.9rem;margin-bottom:4px;">Overall Practice Performance</h3>
+          <p class="stat-subtitle" id="overall-practice-subtitle">
+            Based on your saved practice sessions.
+          </p>
+
+          <div class="kpi-row">
+            <div class="kpi-pill">
+              <span class="kpi-label">Total Sessions</span>
+              <span class="kpi-value" id="kpi-total-sessions">0</span>
+            </div>
+            <div class="kpi-pill">
+              <span class="kpi-label">Total Items Answered</span>
+              <span class="kpi-value" id="kpi-total-items">0</span>
+            </div>
+            <div class="kpi-pill">
+              <span class="kpi-label">Average Score</span>
+              <span class="kpi-value" id="kpi-avg-score">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: By Subject + Last Mock -->
+        <div class="stat-section">
+          <div class="stat-header">
+            <div>
+              <h2 class="stat-title">By Subject</h2>
+              <p class="stat-subtitle">Where you practice the most and your average scores.</p>
+            </div>
           </div>
 
-          <div class="summary-item">
-            <div class="summary-label">Best Practice Score</div>
-            <div class="summary-value" id="sum-best-practice">–</div>
-            <div class="summary-sub" id="sum-best-practice-detail">No practice data yet.</div>
+          <ul class="subject-list" id="subject-stats-list">
+            <!-- Filled by JS -->
+          </ul>
+
+          <hr style="border:none;border-top:1px solid #111827;margin:10px 0 8px;" />
+
+          <div class="stat-header" style="margin-bottom:4px;">
+            <div>
+              <h2 class="stat-title">Mock Exam Snapshot</h2>
+              <p class="stat-subtitle">Last 170-item style mock exam you completed.</p>
+            </div>
           </div>
 
-          <div class="summary-item">
-            <div class="summary-label">Average Practice Score</div>
-            <div class="summary-value" id="sum-avg-practice">–</div>
-            <div class="summary-sub" id="sum-avg-practice-detail">Based on all practice sessions.</div>
+          <div class="mock-summary" id="mock-summary">
+            <div class="mock-score" id="mock-score-main">
+              No mock exam taken yet.
+            </div>
+            <div id="mock-score-extra"></div>
+            <p class="mock-note-empty">
+              Take a Full Mock Exam to see your performance summary here.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent sessions -->
+      <section class="recent-section">
+        <div class="recent-header">
+          <div>
+            <h2 class="recent-title">Recent Practice Sessions</h2>
+            <p class="recent-subtitle">Last 10 sessions saved on this device.</p>
           </div>
         </div>
 
-        <div class="stats-last-mock" id="last-mock-box">
-          <strong>Last Mock Exam:</strong>
-          <span id="last-mock-text">No mock exam taken yet.</span>
-        </div>
-      </section>
-
-      <!-- FILTERS -->
-      <section class="stats-filters">
-        <div>
-          <span>History View:</span>
-        </div>
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">All Attempts</button>
-          <button class="filter-btn" data-filter="mock">Mock Only</button>
-          <button class="filter-btn" data-filter="practice">Practice Only</button>
-        </div>
-      </section>
-
-      <!-- TABLE -->
-      <section>
-        <div class="stats-table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Date &amp; Time</th>
-                <th>Mode</th>
-                <th>Subject</th>
-                <th>Topic</th>
-                <th>Level</th>
-                <th>Score</th>
-                <th>Answered</th>
-                <th>Time Used</th>
-                <th>Timer</th>
-              </tr>
-            </thead>
-            <tbody id="stats-tbody">
-              <!-- rows inserted via JS -->
-            </tbody>
-          </table>
+        <div id="recent-wrapper">
+          <div style="max-height:260px;overflow-y:auto;border-radius:14px;border:1px solid #0b1220;">
+            <table class="recent-table" id="recent-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Subject</th>
+                  <th>Topic</th>
+                  <th>Level</th>
+                  <th>Score</th>
+                  <th>Items</th>
+                  <th>Time</th>
+                  <th>Timer</th>
+                </tr>
+              </thead>
+              <tbody id="recent-tbody">
+                <!-- Rows via JS -->
+              </tbody>
+            </table>
+          </div>
+          <p class="empty-state" id="recent-empty">
+            No practice history yet. Use Practice Mode or subject pages to start drilling questions.
+          </p>
         </div>
 
-        <p id="stats-empty" class="empty-state hidden">
-          No attempts recorded yet. Try taking a <strong>Mock Exam</strong> or a <strong>Practice</strong> set first.
+        <p class="footer-note">
+          All stats are stored only in your browser’s local storage. Clearing browser data will reset your history.
         </p>
       </section>
     </main>
   </div>
 
+  <!-- PLAN JS (shared) -->
+  <script src="plan.js"></script>
+
   <script>
     const PRACTICE_HISTORY_KEY = "CSE_PRACTICE_HISTORY";
-    const LAST_MOCK_KEY = "CSE_MOCK_EXAM_LAST_RESULT";
-
-    let allEntries = [];
-    let currentFilter = "all";
-
-    function capitalizeFirst(str) {
-      if (!str) return "";
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+    const LAST_RESULT_KEY = "CSE_MOCK_EXAM_LAST_RESULT";
 
     function getSubjectLabel(subject) {
       switch (subject) {
-        case "verbal": return "Verbal Ability";
-        case "numerical": return "Numerical Reasoning";
-        case "analytical": return "Analytical Ability";
-        case "clerical": return "Clerical Ability";
-        case "general": return "General Information";
-        case "all": return "All Subjects";
+        case "verbal": return "Verbal";
+        case "numerical": return "Numerical";
+        case "analytical": return "Analytical";
+        case "clerical": return "Clerical";
+        case "general": return "General Info";
         default: return subject || "Unknown";
       }
     }
@@ -444,315 +540,330 @@
         .replace(/\b\w/g, ch => ch.toUpperCase());
     }
 
-    function loadHistory() {
-      const entries = [];
-
-      // Practice history (array)
+    function loadPracticeHistory() {
       try {
-        const rawPractice = localStorage.getItem(PRACTICE_HISTORY_KEY);
-        if (rawPractice) {
-          const parsed = JSON.parse(rawPractice);
-          if (Array.isArray(parsed)) {
-            parsed.forEach(item => {
-              entries.push({
-                mode: item.mode || "practice",
-                timestamp: item.timestamp || null,
-                subject: item.subject || "unknown",
-                topic: item.topic || "all",
-                level: item.level || "beginner",
-                numQuestions: item.numQuestions || 0,
-                correct: item.correct || 0,
-                percent: item.percent || 0,
-                answered: item.answered || 0,
-                timeUsedMinutes: item.timeUsedMinutes || 0,
-                finishedByTimer: !!item.finishedByTimer
-              });
-            });
-          }
-        }
+        const raw = localStorage.getItem(PRACTICE_HISTORY_KEY);
+        if (!raw) return [];
+        const arr = JSON.parse(raw);
+        return Array.isArray(arr) ? arr : [];
       } catch (e) {
         console.warn("Unable to read practice history", e);
+        return [];
       }
+    }
 
-      // Last mock exam (single object)
+    function loadLastMockResult() {
       try {
-        const rawMock = localStorage.getItem(LAST_MOCK_KEY);
-        if (rawMock) {
-          const mock = JSON.parse(rawMock);
-          entries.push({
-            mode: "mock",
-            timestamp: mock.timestamp || null,
-            subject: mock.subject || "all",
-            topic: "all",
-            level: mock.level || "beginner",
-            numQuestions: mock.numQuestions || 0,
-            correct: mock.correct || 0,
-            percent: mock.percent || 0,
-            answered: mock.answered || 0,
-            timeUsedMinutes: mock.timeUsedMinutes || 0,
-            finishedByTimer: !!mock.finishedByTimer
-          });
-        }
+        const raw = localStorage.getItem(LAST_RESULT_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
       } catch (e) {
         console.warn("Unable to read last mock result", e);
+        return null;
+      }
+    }
+
+    function computePracticeAggregates(history) {
+      if (!history.length) {
+        return {
+          totalSessions: 0,
+          totalQuestions: 0,
+          totalAnswered: 0,
+          avgPercent: 0,
+          subjectMap: {}
+        };
       }
 
-      // Sort newest first
-      entries.sort((a, b) => {
+      let totalSessions = history.length;
+      let totalQuestions = 0;
+      let totalAnswered = 0;
+      let sumPercent = 0;
+
+      const subjectMap = {};
+
+      history.forEach(entry => {
+        const subj = entry.subject || "unknown";
+        const percent = typeof entry.percent === "number" ? entry.percent : 0;
+        const nQ = typeof entry.numQuestions === "number" ? entry.numQuestions : 0;
+        const ans = typeof entry.answered === "number" ? entry.answered : 0;
+
+        totalQuestions += nQ;
+        totalAnswered += ans;
+        sumPercent += percent;
+
+        if (!subjectMap[subj]) {
+          subjectMap[subj] = {
+            subject: subj,
+            sessions: 0,
+            totalPercent: 0,
+            totalQuestions: 0
+          };
+        }
+        subjectMap[subj].sessions += 1;
+        subjectMap[subj].totalPercent += percent;
+        subjectMap[subj].totalQuestions += nQ;
+      });
+
+      const avgPercent = totalSessions ? Math.round(sumPercent / totalSessions) : 0;
+
+      return {
+        totalSessions,
+        totalQuestions,
+        totalAnswered,
+        avgPercent,
+        subjectMap
+      };
+    }
+
+    function renderPlanUI() {
+      const plan = (window.CSE_PLAN && window.CSE_PLAN.get()) || "free";
+
+      const chip = document.getElementById("plan-chip");
+      const chipLabel = document.getElementById("plan-chip-label");
+      const note = document.getElementById("plan-note-text");
+      const toggleBtn = document.getElementById("plan-toggle-btn");
+
+      if (chip) {
+        chip.classList.remove("free", "pro");
+        chip.classList.add(plan === "pro" ? "pro" : "free");
+      }
+      if (chipLabel) {
+        chipLabel.textContent = plan === "pro" ? "Pro Plan" : "Free Plan";
+      }
+      if (note) {
+        if (plan === "pro") {
+          note.textContent =
+            "Pro Plan: Advanced & Expert levels unlocked for all subjects, plus Full 170-item Mock Exam.";
+        } else {
+          note.textContent =
+            "Free Plan: Beginner & Intermediate levels unlocked. Advanced, Expert, and Full 170-item Mock Exam are Pro-only.";
+        }
+      }
+      if (toggleBtn) {
+        toggleBtn.textContent =
+          plan === "pro"
+            ? "🔁 Switch to Free (Dev Test)"
+            : "🔁 Switch to Pro (Dev Test)";
+      }
+    }
+
+    function initPlanToggle() {
+      const toggleBtn = document.getElementById("plan-toggle-btn");
+      if (!toggleBtn) return;
+
+      toggleBtn.addEventListener("click", () => {
+        if (!window.CSE_PLAN) return;
+        const current = window.CSE_PLAN.get();
+        const next = current === "pro" ? "free" : "pro";
+        window.CSE_PLAN.set(next);
+        renderPlanUI();
+        alert(
+          "Plan switched to: " +
+            (next === "pro" ? "Pro (Advanced / Expert / Mock unlocked)" : "Free")
+        );
+      });
+    }
+
+    function renderOverallKpis(agg) {
+      const totalSessionsEl = document.getElementById("kpi-total-sessions");
+      const totalItemsEl = document.getElementById("kpi-total-items");
+      const avgScoreEl = document.getElementById("kpi-avg-score");
+      const subtitleEl = document.getElementById("overall-practice-subtitle");
+
+      if (totalSessionsEl) totalSessionsEl.textContent = agg.totalSessions;
+      if (totalItemsEl) totalItemsEl.textContent = agg.totalQuestions;
+
+      if (avgScoreEl) {
+        avgScoreEl.textContent = agg.avgPercent + "%";
+        avgScoreEl.classList.remove("good", "bad");
+        if (agg.avgPercent >= 80) {
+          avgScoreEl.classList.add("good");
+        } else if (agg.avgPercent && agg.avgPercent < 50) {
+          avgScoreEl.classList.add("bad");
+        }
+      }
+
+      if (subtitleEl) {
+        if (!agg.totalSessions) {
+          subtitleEl.textContent = "No practice sessions yet.";
+        } else {
+          subtitleEl.textContent =
+            "Based on " +
+            agg.totalSessions +
+            " session(s) and " +
+            agg.totalQuestions +
+            " question(s) attempted.";
+        }
+      }
+    }
+
+    function renderSubjectStats(subjectMap) {
+      const listEl = document.getElementById("subject-stats-list");
+      if (!listEl) return;
+
+      const ids = Object.keys(subjectMap);
+      listEl.innerHTML = "";
+
+      if (!ids.length) {
+        const li = document.createElement("li");
+        li.className = "subject-item";
+        li.innerHTML =
+          '<span class="subject-name">No data yet</span>' +
+          '<span class="tag-pill">Practice more to see per-subject stats.</span>';
+        listEl.appendChild(li);
+        return;
+      }
+
+      ids.sort();
+
+      ids.forEach(id => {
+        const s = subjectMap[id];
+        const avg = s.sessions ? Math.round(s.totalPercent / s.sessions) : 0;
+        const li = document.createElement("li");
+        li.className = "subject-item";
+        li.innerHTML =
+          '<span class="subject-name">' +
+          getSubjectLabel(id) +
+          "</span>" +
+          '<span class="tag-pill">' +
+          avg +
+          "% · " +
+          s.sessions +
+          " session(s)</span>";
+        listEl.appendChild(li);
+      });
+    }
+
+    function renderMockSummary(mock) {
+      const mainEl = document.getElementById("mock-score-main");
+      const extraEl = document.getElementById("mock-score-extra");
+      const noteEl = document.querySelector(".mock-note-empty");
+
+      if (!mainEl || !extraEl) return;
+
+      if (!mock) {
+        mainEl.textContent = "No mock exam taken yet.";
+        extraEl.textContent = "";
+        if (noteEl) {
+          noteEl.style.display = "block";
+        }
+        return;
+      }
+
+      const correct = mock.correct ?? 0;
+      const total = mock.numQuestions ?? 0;
+      const percent = mock.percent ?? 0;
+      const answered = mock.answered ?? 0;
+      const mins = mock.timeUsedMinutes ?? 0;
+      const byTimer = !!mock.finishedByTimer;
+
+      let dateStr = "";
+      if (mock.timestamp) {
+        const d = new Date(mock.timestamp);
+        dateStr = d.toLocaleString();
+      }
+
+      mainEl.innerHTML =
+        correct +
+        " / " +
+        total +
+        ' <span>(' +
+        percent +
+        "%)</span>";
+
+      let extraText =
+        "Answered " +
+        answered +
+        " item(s) · Time: " +
+        mins +
+        " min";
+      if (byTimer) extraText += " · Finished by timer";
+      if (dateStr) extraText += " · Taken: " + dateStr;
+
+      extraEl.textContent = extraText;
+
+      if (noteEl) {
+        noteEl.style.display = "none";
+      }
+    }
+
+    function renderRecentSessions(history) {
+      const tbody = document.getElementById("recent-tbody");
+      const emptyEl = document.getElementById("recent-empty");
+      if (!tbody || !emptyEl) return;
+
+      tbody.innerHTML = "";
+
+      if (!history.length) {
+        emptyEl.style.display = "block";
+        return;
+      }
+
+      // sort newest first
+      const sorted = history.slice().sort((a, b) => {
         const ta = a.timestamp || 0;
         const tb = b.timestamp || 0;
         return tb - ta;
       });
 
-      return entries;
-    }
+      const limited = sorted.slice(0, 10);
 
-    function renderSummary(entries) {
-      const totalAttemptsEl = document.getElementById("sum-total-attempts");
-      const mockCountEl = document.getElementById("sum-mock-count");
-      const practiceCountEl = document.getElementById("sum-practice-count");
-      const bestMockEl = document.getElementById("sum-best-mock");
-      const bestMockDetailEl = document.getElementById("sum-best-mock-detail");
-      const bestPracticeEl = document.getElementById("sum-best-practice");
-      const bestPracticeDetailEl = document.getElementById("sum-best-practice-detail");
-      const avgPracticeEl = document.getElementById("sum-avg-practice");
-      const avgPracticeDetailEl = document.getElementById("sum-avg-practice-detail");
-      const lastMockBox = document.getElementById("last-mock-box");
-      const lastMockText = document.getElementById("last-mock-text");
-
-      const mockEntries = entries.filter(e => e.mode === "mock");
-      const practiceEntries = entries.filter(e => e.mode === "practice");
-
-      const totalAttempts = entries.length;
-      const mockCount = mockEntries.length;
-      const practiceCount = practiceEntries.length;
-
-      if (totalAttemptsEl) totalAttemptsEl.textContent = totalAttempts;
-      if (mockCountEl) mockCountEl.textContent = mockCount;
-      if (practiceCountEl) practiceCountEl.textContent = practiceCount;
-
-      // Best mock
-      if (mockEntries.length && bestMockEl && bestMockDetailEl) {
-        let best = mockEntries[0];
-        mockEntries.forEach(e => {
-          if (e.percent > best.percent) best = e;
-        });
-        bestMockEl.textContent = best.percent + "%";
-        const subj = getSubjectLabel(best.subject || "all");
-        const lvl = capitalizeFirst(best.level || "beginner");
-        bestMockDetailEl.textContent =
-          subj +
-          " · " +
-          lvl +
-          " · " +
-          best.correct +
-          "/" +
-          best.numQuestions +
-          " correct";
-      } else if (bestMockEl && bestMockDetailEl) {
-        bestMockEl.textContent = "–";
-        bestMockDetailEl.textContent = "No mock data yet.";
-      }
-
-      // Best practice
-      if (practiceEntries.length && bestPracticeEl && bestPracticeDetailEl) {
-        let bestP = practiceEntries[0];
-        practiceEntries.forEach(e => {
-          if (e.percent > bestP.percent) bestP = e;
-        });
-        bestPracticeEl.textContent = bestP.percent + "%";
-        const subj = getSubjectLabel(bestP.subject || "unknown");
-        const lvl = capitalizeFirst(bestP.level || "beginner");
-        bestPracticeDetailEl.textContent =
-          subj +
-          " · " +
-          lvl +
-          " · " +
-          bestP.correct +
-          "/" +
-          bestP.numQuestions +
-          " correct";
-      } else if (bestPracticeEl && bestPracticeDetailEl) {
-        bestPracticeEl.textContent = "–";
-        bestPracticeDetailEl.textContent = "No practice data yet.";
-      }
-
-      // Average practice
-      if (practiceEntries.length && avgPracticeEl && avgPracticeDetailEl) {
-        const totalPct = practiceEntries.reduce((sum, e) => sum + (e.percent || 0), 0);
-        const avg = Math.round(totalPct / practiceEntries.length);
-        avgPracticeEl.textContent = avg + "%";
-        avgPracticeDetailEl.textContent =
-          "From " + practiceEntries.length + " practice session(s).";
-      } else if (avgPracticeEl && avgPracticeDetailEl) {
-        avgPracticeEl.textContent = "–";
-        avgPracticeDetailEl.textContent = "Take more practice sets to build data.";
-      }
-
-      // Last mock box
-      if (lastMockBox && lastMockText) {
-        if (!mockEntries.length) {
-          lastMockText.textContent = "No mock exam taken yet.";
-          return;
-        }
-        const lastMock = mockEntries[0]; // sorted newest first
-        const d = lastMock.timestamp ? new Date(lastMock.timestamp) : null;
-        const when = d ? d.toLocaleString() : "Unknown time";
-        const subj = getSubjectLabel(lastMock.subject || "all");
-        const lvl = capitalizeFirst(lastMock.level || "beginner");
-        const pct = lastMock.percent || 0;
-        const correct = lastMock.correct || 0;
-        const totalQ = lastMock.numQuestions || 0;
-        const mins = lastMock.timeUsedMinutes || 0;
-
-        let extra = lastMock.finishedByTimer ? "Finished by timer" : "Finished manually";
-        lastMockText.textContent =
-          pct +
-          "% (" +
-          correct +
-          "/" +
-          totalQ +
-          " correct), " +
-          subj +
-          " · " +
-          lvl +
-          " · Time: " +
-          mins +
-          " min · " +
-          extra +
-          " · Taken: " +
-          when;
-      }
-    }
-
-    function getScoreClass(percent) {
-      if (percent >= 85) return "score-good";
-      if (percent >= 60) return "score-mid";
-      return "score-low";
-    }
-
-    function renderTable(entries, filter) {
-      const tbody = document.getElementById("stats-tbody");
-      const emptyEl = document.getElementById("stats-empty");
-      if (!tbody || !emptyEl) return;
-
-      let filtered = entries;
-      if (filter === "mock") {
-        filtered = entries.filter(e => e.mode === "mock");
-      } else if (filter === "practice") {
-        filtered = entries.filter(e => e.mode === "practice");
-      }
-
-      tbody.innerHTML = "";
-
-      if (!filtered.length) {
-        emptyEl.classList.remove("hidden");
-        return;
-      }
-
-      emptyEl.classList.add("hidden");
-
-      filtered.forEach(entry => {
+      limited.forEach(entry => {
         const tr = document.createElement("tr");
 
         const d = entry.timestamp ? new Date(entry.timestamp) : null;
-        const when = d ? d.toLocaleString() : "Unknown";
+        const dateStr = d ? d.toLocaleString() : "-";
 
-        const tdWhen = document.createElement("td");
-        tdWhen.textContent = when;
-        tr.appendChild(tdWhen);
+        const subj = getSubjectLabel(entry.subject || "unknown");
+        const topic = makeTopicLabel(entry.topic || "all");
+        const level = (entry.level || "beginner")
+          .replace(/\b\w/g, ch => ch.toUpperCase());
 
-        const tdMode = document.createElement("td");
-        tdMode.className = "col-mode";
-        const spanMode = document.createElement("span");
-        spanMode.classList.add("mode-badge");
-        if (entry.mode === "mock") {
-          spanMode.classList.add("mode-mock");
-          spanMode.textContent = "Mock Exam";
-        } else {
-          spanMode.classList.add("mode-practice");
-          spanMode.textContent = "Practice";
-        }
-        tdMode.appendChild(spanMode);
-        tr.appendChild(tdMode);
+        const percent =
+          typeof entry.percent === "number" ? entry.percent + "%" : "-";
 
-        const tdSubject = document.createElement("td");
-        tdSubject.textContent = getSubjectLabel(entry.subject || "unknown");
-        tr.appendChild(tdSubject);
+        const items =
+          (entry.correct ?? 0) +
+          " / " +
+          (entry.numQuestions ?? 0);
 
-        const tdTopic = document.createElement("td");
-        tdTopic.textContent =
-          entry.mode === "mock" ? "All Topics" : makeTopicLabel(entry.topic || "all");
-        tr.appendChild(tdTopic);
+        const time =
+          (entry.timeUsedMinutes ?? 0) + " min";
 
-        const tdLevel = document.createElement("td");
-        tdLevel.textContent = capitalizeFirst(entry.level || "beginner");
-        tr.appendChild(tdLevel);
+        const timerTag = entry.finishedByTimer
+          ? '<span class="recent-tag timer">Time up</span>'
+          : '<span class="recent-tag timer">Manual</span>';
 
-        const tdScore = document.createElement("td");
-        const pct = entry.percent || 0;
-        const correct = entry.correct || 0;
-        const totalQ = entry.numQuestions || 0;
-        tdScore.innerHTML =
-          '<span class="' +
-          getScoreClass(pct) +
-          '">' +
-          pct +
-          "%</span> (" +
-          correct +
-          "/" +
-          totalQ +
-          ")";
-        tr.appendChild(tdScore);
-
-        const tdAnswered = document.createElement("td");
-        const answered = entry.answered || 0;
-        tdAnswered.textContent = answered + " / " + totalQ;
-        tr.appendChild(tdAnswered);
-
-        const tdTime = document.createElement("td");
-        const mins = entry.timeUsedMinutes || 0;
-        tdTime.textContent = mins + " min";
-        tr.appendChild(tdTime);
-
-        const tdTimer = document.createElement("td");
-        const spanTimer = document.createElement("span");
-        spanTimer.classList.add("badge-timer");
-        if (entry.mode === "mock") {
-          spanTimer.textContent = entry.finishedByTimer ? "Mock · Time up" : "Mock · Manual";
-          if (entry.finishedByTimer) spanTimer.classList.add("badge-timeup");
-        } else {
-          if (entry.finishedByTimer) {
-            spanTimer.textContent = "Practice · Time up";
-            spanTimer.classList.add("badge-timeup");
-          } else {
-            spanTimer.textContent = "Practice";
-          }
-        }
-        tdTimer.appendChild(spanTimer);
-        tr.appendChild(tdTimer);
+        tr.innerHTML =
+          "<td>" + dateStr + "</td>" +
+          "<td>" + subj + "</td>" +
+          "<td>" + topic + "</td>" +
+          "<td>" + level + "</td>" +
+          "<td>" + percent + "</td>" +
+          "<td>" + items + "</td>" +
+          "<td>" + time + "</td>" +
+          "<td>" + timerTag + "</td>";
 
         tbody.appendChild(tr);
       });
-    }
 
-    function initFilterButtons() {
-      const buttons = document.querySelectorAll(".filter-btn");
-      buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          const filter = btn.dataset.filter || "all";
-          currentFilter = filter;
-          buttons.forEach(b => b.classList.toggle("active", b === btn));
-          renderTable(allEntries, currentFilter);
-        });
-      });
+      emptyEl.style.display = "none";
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      allEntries = loadHistory();
-      renderSummary(allEntries);
-      initFilterButtons();
-      renderTable(allEntries, currentFilter);
+      // Plan UI
+      renderPlanUI();
+      initPlanToggle();
+
+      // Stats
+      const history = loadPracticeHistory();
+      const agg = computePracticeAggregates(history);
+      renderOverallKpis(agg);
+      renderSubjectStats(agg.subjectMap);
+
+      const mock = loadLastMockResult();
+      renderMockSummary(mock);
+      renderRecentSessions(history);
     });
   </script>
 </body>
