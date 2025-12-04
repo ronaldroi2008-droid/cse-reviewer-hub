@@ -5236,7 +5236,7 @@ synonyms: {
     const resultHomeBtn    = document.getElementById("resultHomeBtn");
     const resultRetryBtn   = document.getElementById("resultRetryBtn");
 
-    // ==========================================
+        // ==========================================
     // 4. HELPER FUNCTIONS
     // ==========================================
     function capitalize(text) {
@@ -5284,24 +5284,12 @@ synonyms: {
       }
     }
 
- // Kapag wala pang na-define na lesson, huwag mag-crash,
-    // magpakita lang ng "coming soon" message.
-    if (!lesson) {
-      container.innerHTML = `
-        <div class="lesson-card">
-          <h2 class="lesson-title">Lesson coming soon</h2>
-          <p class="lesson-text">
-            Wala pa tayong naka-encode na lesson para sa
-            <strong>${topicId}</strong> – <strong>${levelId}</strong>.<br/>
-            Puwede ka nang mag-take ng quiz habang ginagawa pa natin ang lesson
-            content.
-          </p>
-        </div>
-      `;
-      return;
-    }
+    // ==========================================
+    // 5. LESSON + TIPS RENDERING
+    // ==========================================
 
-  
+    const tipCardEl = document.getElementById("tip-card");
+
     function renderTips(tips) {
       if (!tipCardEl) return;
       tipCardEl.innerHTML = "";
@@ -5324,8 +5312,8 @@ synonyms: {
 
     // FIXED: Now using VERBAL_LESSONS instead of undefined variable
     function renderLesson() {
-      // FIX: Use VERBAL_LESSONS which is now defined
-      const lesson = VERBAL_LESSONS[currentTopicId];
+      const allLessons = window.VERBAL_LESSONS || {};
+      const lesson = allLessons[currentTopicId];
 
       const fallbackSection = {
         heading: "Overview",
@@ -5342,41 +5330,58 @@ synonyms: {
         "Trust your first instinct unless you find clear evidence against it."
       ];
 
+      // Kapag wala pang na-define na lesson, huwag mag-crash,
+      // magpakita lang ng "coming soon" message.
       if (!lesson) {
-        lessonTitleEl.textContent = "Lesson coming soon";
-        lessonIntroEl.textContent =
-          "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
-        lessonBodyEl.innerHTML = "";
+        if (lessonTitleEl) {
+          lessonTitleEl.textContent = "Lesson coming soon";
+        }
+        if (lessonIntroEl) {
+          lessonIntroEl.textContent =
+            "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
+        }
+        if (lessonBodyEl) {
+          lessonBodyEl.innerHTML = "";
 
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = fallbackSection.heading;
-        sectionEl.appendChild(h3);
+          const sectionEl = document.createElement("section");
+          const h3 = document.createElement("h3");
+          h3.textContent = fallbackSection.heading;
+          sectionEl.appendChild(h3);
 
-        const ul = document.createElement("ul");
-        fallbackSection.bullets.forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-        sectionEl.appendChild(ul);
+          const ul = document.createElement("ul");
+          fallbackSection.bullets.forEach((b) => {
+            const li = document.createElement("li");
+            li.textContent = b;
+            ul.appendChild(li);
+          });
+          sectionEl.appendChild(ul);
 
-        lessonBodyEl.appendChild(sectionEl);
+          lessonBodyEl.appendChild(sectionEl);
+        }
+
         renderTips(fallbackTips);
         return;
       }
 
-      lessonTitleEl.textContent = lesson.title;
-      lessonIntroEl.textContent = lesson.intro || "";
-      
-      if (lesson.fullHtml) {
-        lessonBodyEl.innerHTML = lesson.fullHtml;
-      } else {
-        lessonBodyEl.innerHTML = "<p>Lesson content is being prepared. Check back soon.</p>";
+      // May actual lesson data
+      if (lessonTitleEl) {
+        lessonTitleEl.textContent = lesson.title || "Lesson";
+      }
+      if (lessonIntroEl) {
+        lessonIntroEl.textContent = lesson.intro || "";
       }
 
-      // Add CSS for tables in lessons
-      const style = document.createElement('style');
+      if (lessonBodyEl) {
+        if (lesson.fullHtml) {
+          lessonBodyEl.innerHTML = lesson.fullHtml;
+        } else {
+          lessonBodyEl.innerHTML =
+            "<p>Lesson content is being prepared. Check back soon.</p>";
+        }
+      }
+
+      // Add CSS for tables in lessons (once per load is fine)
+      const style = document.createElement("style");
       style.textContent = `
         .lesson-table {
           width: 100%;
@@ -5430,12 +5435,18 @@ synonyms: {
       `;
       document.head.appendChild(style);
 
-      renderTips(lesson.quickTips || [
-        "Read the entire sentence before choosing an answer.",
-        "Eliminate obviously wrong options first.",
-        "Trust your first instinct unless you find clear evidence against it."
-      ]);
+      renderTips(
+        lesson.quickTips || [
+          "Read the entire sentence before choosing an answer.",
+          "Eliminate obviously wrong options first.",
+          "Trust your first instinct unless you find clear evidence against it."
+        ]
+      );
     }
+
+    // ==========================================
+    // 6. QUIZ LOGIC (same behavior as numerical)
+    // ==========================================
 
     function getQuestionsForCurrent() {
       const topicQuestions = window.VERBAL_QUESTION_BANK[currentTopicId] || {};
@@ -5482,7 +5493,8 @@ synonyms: {
       feedbackEl.className = "feedback";
 
       if (!questions.length) {
-        questionTextEl.textContent = "No practice questions are available yet for this topic and level. They will be added soon.";
+        questionTextEl.textContent =
+          "No practice questions are available yet for this topic and level. They will be added soon.";
         optionsListEl.innerHTML = "";
         progressTextEl.textContent = "0 / 0";
         prevBtn.disabled = true;
@@ -5528,7 +5540,8 @@ synonyms: {
           (stored.correct ? "Correct! " : "Not quite. ") +
           (currentQ.explanation || "");
         feedbackEl.className =
-          "feedback " + (stored.correct ? "feedback--correct" : "feedback--incorrect");
+          "feedback " +
+          (stored.correct ? "feedback--correct" : "feedback--incorrect");
       }
 
       progressTextEl.textContent =
@@ -5592,7 +5605,6 @@ synonyms: {
 
       quizFinished = true;
 
-      // Main score display
       if (resultScoreMain) {
         resultScoreMain.textContent = correct + " / " + total;
       }
@@ -5600,7 +5612,6 @@ synonyms: {
         resultScoreText.textContent = "Score: " + percent + "%";
       }
 
-      // Build Review Mistakes list with explanations
       if (mistakeListEl) {
         mistakeListEl.innerHTML = "";
 
@@ -5609,7 +5620,6 @@ synonyms: {
           const selected = ans ? ans.selected : null;
           const isCorrect = ans ? ans.correct : false;
 
-          // Skip items that were answered correctly
           if (isCorrect) return;
 
           const item = document.createElement("div");
@@ -5628,29 +5638,34 @@ synonyms: {
           const answersWrap = document.createElement("div");
           answersWrap.className = "mistake-answers";
 
-          // Your answer
           const userP = document.createElement("p");
           userP.classList.add("wrong");
-          userP.innerHTML = "<span class='label'>✗ Your answer:</span> " + (selected !== null && selected !== undefined ? selected : "<em>Not answered</em>");
+          userP.innerHTML =
+            "<span class='label'>✗ Your answer:</span> " +
+            (selected !== null && selected !== undefined
+              ? selected
+              : "<em>Not answered</em>");
           answersWrap.appendChild(userP);
 
-          // Correct answer
           const correctP = document.createElement("p");
           correctP.classList.add("correct");
-          correctP.innerHTML = "<span class='label'>✓ Correct answer:</span> " + q.answer;
+          correctP.innerHTML =
+            "<span class='label'>✓ Correct answer:</span> " + q.answer;
           answersWrap.appendChild(correctP);
 
-          // Explanation
           const explP = document.createElement("p");
           explP.classList.add("explanation");
-          explP.innerHTML = "<span class='label'>👉 Why:</span> " + (q.explanation && q.explanation.trim().length ? q.explanation : "No explanation available.");
+          explP.innerHTML =
+            "<span class='label'>👉 Why:</span> " +
+            (q.explanation && q.explanation.trim().length
+              ? q.explanation
+              : "No explanation available.");
           answersWrap.appendChild(explP);
 
           item.appendChild(answersWrap);
           mistakeListEl.appendChild(item);
         });
 
-        // If no mistakes
         if (!mistakeListEl.children.length) {
           const p = document.createElement("p");
           p.textContent = "Perfect score! No mistakes to review.";
@@ -5658,11 +5673,14 @@ synonyms: {
         }
       }
 
-      // Show result panel, hide quiz card
       if (quizHeaderEl) quizHeaderEl.classList.add("hidden");
       if (quizCardEl) quizCardEl.classList.add("hidden");
       if (resultPanelEl) resultPanelEl.classList.remove("hidden");
     }
+
+    // ==========================================
+    // 7. MODE & EVENT HANDLERS
+    // ==========================================
 
     function switchMode(mode) {
       currentMode = mode;
@@ -5702,12 +5720,14 @@ synonyms: {
         chip.addEventListener("click", function () {
           const level = chip.dataset.level;
           if (!level || level === currentLevel) return;
-          
+
           if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
-            alert("This level is locked for free users. Upgrade to Pro to access advanced and expert levels.");
+            alert(
+              "This level is locked for free users. Upgrade to Pro to access advanced and expert levels."
+            );
             return;
           }
-          
+
           currentLevel = level;
           resetQuizState();
           levelChips.forEach((c) => {
@@ -5776,8 +5796,8 @@ synonyms: {
       switchMode("study");
     }
 
-    // Initialize when page loads
-    document.addEventListener('DOMContentLoaded', initVerbalPage);
+    document.addEventListener("DOMContentLoaded", initVerbalPage);
+
   </script>
 </body>
 </html>
