@@ -1,3 +1,4 @@
+<!-- Save as mock_exam.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -243,6 +244,11 @@
       margin: 0 0 8px;
     }
 
+    #exam-config ul {
+      margin: 0 0 8px 18px;
+      padding: 0;
+    }
+
     .start-btn {
       margin-top: 8px;
       border-radius: 999px;
@@ -331,11 +337,97 @@
       box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
     }
 
+    /* QUESTION NAVIGATOR */
+    .question-map-wrapper {
+      margin-top: 10px;
+      border-top: 1px solid #111827;
+      padding-top: 8px;
+    }
+
+    .question-map-header {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .question-map-legend {
+      display: flex;
+      gap: 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    .legend-dot.current {
+      background: var(--accent);
+      border-color: var(--accent-strong);
+    }
+
+    .legend-dot.answered {
+      border-color: var(--success);
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .question-map {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .question-map-btn {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      background: #020617;
+      color: #9ca3af;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .question-map-btn:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .question-map-btn.current {
+      background: var(--accent);
+      border-color: var(--accent-strong);
+      color: #f9fafb;
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.8);
+    }
+
+    .question-map-btn.answered {
+      border-color: var(--success);
+      color: #bbf7d0;
+    }
+
     .exam-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 8px;
+      margin-top: 10px;
       gap: 8px;
       flex-wrap: wrap;
     }
@@ -545,59 +637,6 @@
       text-align: left;
     }
 
-    .results-status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      margin-bottom: 6px;
-    }
-
-    .results-status-badge.pass {
-      border: 1px solid var(--success);
-      color: var(--success);
-      background: rgba(34, 197, 94, 0.08);
-    }
-
-    .results-status-badge.fail {
-      border: 1px solid var(--danger);
-      color: var(--danger);
-      background: rgba(239, 68, 68, 0.08);
-    }
-
-    .results-subject-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 8px;
-      margin: 10px 0 6px;
-    }
-
-    .results-subject-card {
-      border-radius: 12px;
-      border: 1px solid #111827;
-      background: #020617;
-      padding: 8px 10px;
-      font-size: 0.8rem;
-    }
-
-    .results-subject-label {
-      font-weight: 600;
-      color: #e5e7eb;
-      margin-bottom: 2px;
-    }
-
-    .results-subject-score {
-      font-size: 0.86rem;
-      margin-bottom: 1px;
-    }
-
-    .results-subject-extra {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
     @media (max-width: 768px) {
       .exam-controls {
         align-items: flex-start;
@@ -719,6 +758,18 @@
 
         <div id="exam-options"></div>
 
+        <!-- Question navigator -->
+        <div class="question-map-wrapper">
+          <div class="question-map-header">
+            <span>Question Navigator</span>
+            <div class="question-map-legend">
+              <span><span class="legend-dot current"></span>Current</span>
+              <span><span class="legend-dot answered"></span>Answered</span>
+            </div>
+          </div>
+          <div id="exam-question-map" class="question-map"></div>
+        </div>
+
         <div class="exam-footer">
           <div class="nav-buttons">
             <button id="exam-btn-prev" class="nav-btn" disabled>Previous</button>
@@ -731,24 +782,19 @@
       <!-- Results panel -->
       <section id="results-panel" class="hidden">
         <div class="results-summary">
-          <h2 class="results-heading" id="results-heading">Mock Exam Completed</h2>
-          <div id="results-status" class="results-status-badge"></div>
-
+          <h2 class="results-heading">Mock Exam Completed</h2>
           <div class="results-main-score">
             <span id="results-score-main">0 / 0</span>
             <span id="results-score-percent">Score: 0%</span>
           </div>
-
           <div class="results-extra">
             <span id="results-time-used">Time used: 0 min</span> ·
             <span id="results-items-answered">Items answered: 0</span>
           </div>
-
-          <div id="results-subject-breakdown"></div>
-
           <div class="results-buttons">
             <a href="index.html" class="results-btn">🏠 Back to Home</a>
             <button id="results-btn-retake" class="results-btn primary">🔁 Retake Mock Exam</button>
+            <a href="stats.html" class="results-btn">📊 View Stats</a>
           </div>
         </div>
 
@@ -837,7 +883,8 @@
     const MOCK_TOTAL_ITEMS_ALL = 170;
     const MOCK_TOTAL_ITEMS_SINGLE_SUBJECT = 60;
     const LAST_RESULT_KEY = "CSE_MOCK_EXAM_LAST_RESULT";
-    const PASSING_PERCENT = 80; // target % to "pass" the mock exam
+    const MOCK_HISTORY_KEY = "CSE_MOCK_EXAM_HISTORY";
+    const MOCK_PASSING_PERCENT = 80; // Passing threshold (e.g., 80%)
 
     let currentLevel = "beginner";
     let currentSubject = "all";
@@ -884,53 +931,44 @@
       }
     }
 
-    // Collect questions from all banks based on level + subject, tagging subject/topic/level
+    // Collect questions from all banks based on level + subject
     function collectQuestionsForLevel(level, subject) {
       const pool = [];
 
-      function collectFromBank(bank, subjectKey) {
+      function collectFromBank(bank) {
         if (!bank) return;
-
         Object.keys(bank).forEach(topicId => {
           const topicBank = bank[topicId];
           if (!topicBank) return;
 
-          const levelsToUse =
-            level === "mixed"
-              ? ["beginner", "intermediate", "advanced", "expert"]
-              : [level];
-
-          levelsToUse.forEach(lvl => {
-            const arr = topicBank[lvl];
-            if (Array.isArray(arr) && arr.length) {
-              arr.forEach(q => {
-                if (!q) return;
-                pool.push({
-                  ...q,
-                  __subject: subjectKey,
-                  __topicId: topicId,
-                  __level: lvl
-                });
-              });
+          if (level === "mixed") {
+            ["beginner", "intermediate", "advanced", "expert"].forEach(lvl => {
+              if (Array.isArray(topicBank[lvl])) {
+                pool.push(...topicBank[lvl]);
+              }
+            });
+          } else {
+            if (Array.isArray(topicBank[level])) {
+              pool.push(...topicBank[level]);
             }
-          });
+          }
         });
       }
 
       if (subject === "all" || subject === "verbal") {
-        collectFromBank(window.VERBAL_QUESTION_BANK, "verbal");
+        collectFromBank(window.VERBAL_QUESTION_BANK);
       }
       if (subject === "all" || subject === "numerical") {
-        collectFromBank(window.NUMERICAL_QUESTION_BANK, "numerical");
+        collectFromBank(window.NUMERICAL_QUESTION_BANK);
       }
       if (subject === "all" || subject === "analytical") {
-        collectFromBank(window.ANALYTICAL_QUESTION_BANK, "analytical");
+        collectFromBank(window.ANALYTICAL_QUESTION_BANK);
       }
       if (subject === "all" || subject === "general") {
-        collectFromBank(window.GENERAL_QUESTION_BANK, "general");
+        collectFromBank(window.GENERAL_QUESTION_BANK);
       }
       if (subject === "all" || subject === "clerical") {
-        collectFromBank(window.CLERICAL_QUESTION_BANK, "clerical");
+        collectFromBank(window.CLERICAL_QUESTION_BANK);
       }
 
       return pool;
@@ -1044,6 +1082,37 @@
       }
     }
 
+    function renderQuestionMap() {
+      const mapEl = document.getElementById("exam-question-map");
+      if (!mapEl) return;
+
+      mapEl.innerHTML = "";
+
+      if (!examQuestions.length) return;
+
+      examQuestions.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = idx + 1;
+        btn.className = "question-map-btn";
+
+        if (idx === examCurrentIndex) {
+          btn.classList.add("current");
+        }
+        if (examUserAnswers[idx] != null) {
+          btn.classList.add("answered");
+        }
+
+        btn.addEventListener("click", () => {
+          if (examFinished) return;
+          examCurrentIndex = idx;
+          renderExamQuestion();
+        });
+
+        mapEl.appendChild(btn);
+      });
+    }
+
     function startExam() {
       const pool = collectQuestionsForLevel(currentLevel, currentSubject);
       if (!pool.length) {
@@ -1098,6 +1167,7 @@
         if (counterEl) counterEl.textContent = "0 of 0";
         if (prevBtn) prevBtn.disabled = true;
         if (nextBtn) nextBtn.disabled = true;
+        renderQuestionMap();
         return;
       }
 
@@ -1142,6 +1212,9 @@
           nextBtn.textContent = "Next";
         }
       }
+
+      // Update question navigator
+      renderQuestionMap();
     }
 
     function goPrev() {
@@ -1170,7 +1243,18 @@
       try {
         localStorage.setItem(LAST_RESULT_KEY, JSON.stringify(data));
       } catch (e) {
-        console.warn("Unable to save mock exam result", e);
+        console.warn("Unable to save mock exam last result", e);
+      }
+    }
+
+    function appendMockHistory(data) {
+      try {
+        const raw = localStorage.getItem(MOCK_HISTORY_KEY);
+        const history = raw ? JSON.parse(raw) : [];
+        history.push(data);
+        localStorage.setItem(MOCK_HISTORY_KEY, JSON.stringify(history));
+      } catch (e) {
+        console.warn("Unable to append mock exam history", e);
       }
     }
 
@@ -1193,8 +1277,7 @@
         const percent = data.percent ?? 0;
         const answered = data.answered ?? 0;
         const mins = data.timeUsedMinutes ?? 0;
-        const passed = data.passed;
-        const finishedByTimer = !!data.finishedByTimer;
+        const passFlag = data.passFlag || "";
 
         let dateStr = "";
         if (data.timestamp) {
@@ -1202,24 +1285,16 @@
           dateStr = d.toLocaleString();
         }
 
-        const statusLabel =
-          typeof passed === "boolean"
-            ? passed
-              ? "PASSED – "
-              : "NOT PASSED – "
-            : "";
-
-        const timerNote = finishedByTimer ? " · Time up" : "";
-
         el.textContent =
           "Last Mock: " +
-          statusLabel +
           correct +
           " / " +
           total +
           " (" +
           percent +
-          "%), " +
+          "%)" +
+          (passFlag ? " – " + passFlag : "") +
+          ", " +
           subjectLabel +
           " · " +
           levelLabel +
@@ -1228,7 +1303,6 @@
           " items · Time: " +
           mins +
           " min" +
-          timerNote +
           (dateStr ? " · Taken: " + dateStr : "");
 
         el.classList.remove("hidden");
@@ -1254,31 +1328,11 @@
       const mistakes = [];
       let answeredCount = 0;
 
-      const subjectStats = {};
-
-      function ensureSubjectStat(key) {
-        if (!subjectStats[key]) {
-          subjectStats[key] = { correct: 0, total: 0, answered: 0 };
-        }
-      }
-
       examQuestions.forEach((q, idx) => {
         const userIndex = examUserAnswers[idx];
         const userText =
           userIndex == null ? null : (q.options && q.options[userIndex]) || null;
         const isCorrect = userText === q.answer;
-
-        const subjKey = q.__subject || "unknown";
-        if (subjKey !== "unknown") {
-          ensureSubjectStat(subjKey);
-          subjectStats[subjKey].total += 1;
-          if (userIndex != null) {
-            subjectStats[subjKey].answered += 1;
-          }
-          if (isCorrect) {
-            subjectStats[subjKey].correct += 1;
-          }
-        }
 
         if (userIndex != null) {
           answeredCount += 1;
@@ -1303,9 +1357,6 @@
       const itemsAnsweredEl = document.getElementById("results-items-answered");
       const reviewTitleEl = document.getElementById("results-review-title");
       const detailsEl = document.getElementById("results-details");
-      const headingEl = document.getElementById("results-heading");
-      const statusEl = document.getElementById("results-status");
-      const subjectBreakdownEl = document.getElementById("results-subject-breakdown");
 
       if (scoreMainEl) {
         scoreMainEl.textContent =
@@ -1316,24 +1367,17 @@
         ? Math.round((correctCount / examQuestions.length) * 100)
         : 0;
 
-      const passed = pct >= PASSING_PERCENT;
-
-      if (headingEl) {
-        headingEl.textContent = passed ? "Result: PASSED" : "Result: Needs Improvement";
+      // Only treat as "real" mock pass/fail if All Subjects at ~full length
+      let passFlag = "";
+      if (currentSubject === "all" && examQuestions.length >= 150) {
+        passFlag = pct >= MOCK_PASSING_PERCENT ? "PASS" : "FAIL";
       }
 
       if (scorePercentEl) {
         const extraText = fromTimer ? " (Time up)" : "";
-        scorePercentEl.textContent = "Score: " + pct + "%" + extraText;
-      }
-
-      if (statusEl) {
-        statusEl.className =
-          "results-status-badge " + (passed ? "pass" : "fail");
-        const timerNote = fromTimer ? " · Time up" : "";
-        statusEl.textContent = passed
-          ? "✅ PASSED – at least " + PASSING_PERCENT + "% target" + timerNote
-          : "🚧 DID NOT PASS – below " + PASSING_PERCENT + "% target" + timerNote;
+        const passText = passFlag ? " – " + passFlag : "";
+        scorePercentEl.textContent =
+          "Score: " + pct + "%" + extraText + passText;
       }
 
       const usedMinutes = Math.round(examTimeUsedSeconds / 60);
@@ -1348,74 +1392,9 @@
           (examQuestions.length || 0);
       }
 
-      if (subjectBreakdownEl) {
-        const labels = {
-          verbal: "Verbal Ability",
-          numerical: "Numerical Reasoning",
-          analytical: "Analytical Ability",
-          clerical: "Clerical Ability",
-          general: "General Information"
-        };
-
-        const keys = Object.keys(subjectStats).filter(
-          k => subjectStats[k].total > 0
-        );
-
-        if (!keys.length) {
-          subjectBreakdownEl.innerHTML = "";
-        } else {
-          let html = '<h3 class="results-review-title">';
-          html += "📊 <span>Score by Subject</span></h3>";
-          html += '<div class="results-subject-grid">';
-
-          keys.forEach(key => {
-            const stat = subjectStats[key];
-            const subPct = stat.total
-              ? Math.round((stat.correct / stat.total) * 100)
-              : 0;
-            const label = labels[key] || getSubjectLabel(key);
-
-            html +=
-              '<div class="results-subject-card">' +
-                '<div class="results-subject-label">' +
-                  label +
-                "</div>" +
-                '<div class="results-subject-score">' +
-                  stat.correct +
-                  " / " +
-                  stat.total +
-                  " (" +
-                  subPct +
-                  "%)" +
-                "</div>" +
-                '<div class="results-subject-extra">' +
-                  "Answered: " +
-                  stat.answered +
-                "</div>" +
-              "</div>";
-          });
-
-          html += "</div>";
-          subjectBreakdownEl.innerHTML = html;
-        }
-      }
-
-      const subjectsForSave = {};
-      Object.keys(subjectStats).forEach(key => {
-        const stat = subjectStats[key];
-        const subPct = stat.total
-          ? Math.round((stat.correct / stat.total) * 100)
-          : 0;
-        subjectsForSave[key] = {
-          correct: stat.correct,
-          total: stat.total,
-          answered: stat.answered,
-          percent: subPct
-        };
-      });
-
-      saveLastMockResult({
+      const resultData = {
         timestamp: Date.now(),
+        mode: "mock",
         subject: currentSubject,
         level: currentLevel,
         numQuestions: examQuestions.length,
@@ -1424,9 +1403,12 @@
         answered: answeredCount,
         timeUsedMinutes: usedMinutes,
         finishedByTimer: !!fromTimer,
-        passed: passed,
-        subjects: subjectsForSave
-      });
+        passFlag: passFlag
+      };
+
+      // Save last + append to history
+      saveLastMockResult(resultData);
+      appendMockHistory(resultData);
 
       if (!detailsEl) return;
 
@@ -1553,6 +1535,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Ensure globals exist so collectQuestionsForLevel won't fail
       window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
       window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
       window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
@@ -1564,9 +1547,11 @@
       initTimerSelect();
       initExamButtons();
 
+      // Initial timer display (show full selected duration)
       examTimeRemaining = examDurationMinutes * 60;
       updateTimerDisplay();
 
+      // Load last result summary in config
       loadLastMockResult();
     });
   </script>
