@@ -5302,14 +5302,47 @@ synonyms: {
       tipCardEl.appendChild(list);
     }
 
+    // FIXED: Now using VERBAL_LESSONS instead of undefined variable
     function renderLesson() {
+      // FIX: Use VERBAL_LESSONS which is now defined
       const lesson = VERBAL_LESSONS[currentTopicId];
+
+      const fallbackSection = {
+        heading: "Overview",
+        bullets: [
+          "Review the basic definition and key properties of this topic.",
+          "Study at least one fully worked example step by step.",
+          "Practice identifying correct usage in sentences."
+        ]
+      };
+
+      const fallbackTips = [
+        "Read the entire sentence before choosing an answer.",
+        "Eliminate obviously wrong options first.",
+        "Trust your first instinct unless you find clear evidence against it."
+      ];
 
       if (!lesson) {
         lessonTitleEl.textContent = "Lesson coming soon";
-        lessonIntroEl.textContent = "We are still building the full lesson notes for this topic.";
-        lessonBodyEl.innerHTML = "<p>Please try the Practice Quiz or check back soon.</p>";
-        renderTips([]);
+        lessonIntroEl.textContent =
+          "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
+        lessonBodyEl.innerHTML = "";
+
+        const sectionEl = document.createElement("section");
+        const h3 = document.createElement("h3");
+        h3.textContent = fallbackSection.heading;
+        sectionEl.appendChild(h3);
+
+        const ul = document.createElement("ul");
+        fallbackSection.bullets.forEach((b) => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          ul.appendChild(li);
+        });
+        sectionEl.appendChild(ul);
+
+        lessonBodyEl.appendChild(sectionEl);
+        renderTips(fallbackTips);
         return;
       }
 
@@ -5322,7 +5355,7 @@ synonyms: {
         lessonBodyEl.innerHTML = "<p>Lesson content is being prepared. Check back soon.</p>";
       }
 
-      // Add some CSS for tables in lessons
+      // Add CSS for tables in lessons
       const style = document.createElement('style');
       style.textContent = `
         .lesson-table {
