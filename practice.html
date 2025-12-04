@@ -1,0 +1,1233 @@
+<!-- Save as practice.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSE Reviewer Hub – Practice Mode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --border: #1e293b;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.18);
+      --accent-strong: rgba(79, 70, 229, 0.7);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --success: #22c55e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-shell {
+      max-width: 1100px;
+      margin: 24px auto 32px;
+      padding: 0 16px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .back-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .page-title-block {
+      flex: 1;
+      padding-left: 8px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-title span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    .page-subtitle {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .header-badge {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(99, 102, 241, 0.45);
+      background: var(--accent-soft);
+      font-size: 0.75rem;
+      color: #c7d2fe;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 45px -18px rgba(0, 0, 0, 0.9);
+    }
+
+    .practice-card {
+      padding: 16px 18px 18px;
+    }
+
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .config-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .config-label {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .config-select {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--muted);
+      padding: 5px 10px;
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    .config-select:focus {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .config-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .start-btn {
+      margin-top: 6px;
+      border-radius: 999px;
+      border: 1px solid #6366f1;
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      color: #f9fafb;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .start-btn:hover {
+      box-shadow: 0 14px 30px -16px rgba(79, 70, 229, 0.8);
+    }
+
+    #practice-panel {
+      margin-top: 14px;
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 16px 16px 12px;
+    }
+
+    .exam-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .exam-progress {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    .exam-subinfo {
+      font-size: 0.8rem;
+    }
+
+    .timer-display {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .timer-display.warning {
+      border-color: #facc15;
+      color: #facc15;
+    }
+
+    .timer-display.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .question-text {
+      font-size: 0.98rem;
+      margin: 4px 0 10px;
+      white-space: pre-wrap;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #practice-question-text {
+      white-space: pre-wrap;
+    }
+
+    #practice-options {
+      margin-bottom: 8px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #020617;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .option-btn.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
+    }
+
+    .exam-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 6px 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn.primary {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #f9fafb;
+    }
+
+    .nav-btn.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    #practice-results-panel {
+      margin-top: 18px;
+      border-radius: 18px;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 18px 16px 16px;
+    }
+
+    .results-summary {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .results-heading {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .results-main-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .results-main-score span:first-child {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .results-extra {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .results-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .results-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 7px 16px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .results-btn.primary {
+      background: #4f46e5;
+      border-color: #6366f1;
+      color: #f9fafb;
+    }
+
+    .results-btn:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .results-divider {
+      border: none;
+      border-top: 1px solid #111827;
+      margin: 8px 0 10px;
+    }
+
+    .results-score-text {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .results-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .result-item {
+      padding: 8px 0;
+      border-top: 1px solid #111827;
+    }
+
+    .result-item:first-child {
+      border-top: none;
+    }
+
+    .result-item-question {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 4px;
+    }
+
+    .result-item-meta {
+      margin: 0;
+      margin-bottom: 2px;
+    }
+
+    .answer-label {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .no-mistakes {
+      font-size: 0.88rem;
+      color: var(--success);
+    }
+
+    .muted-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="page-header">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+
+      <div class="page-title-block">
+        <h1 class="page-title">
+          CSE Reviewer Hub · <span>Practice Mode</span>
+        </h1>
+        <p class="page-subtitle">
+          Quick drills by Subject, Topic, and Level. Perfect for daily practice without a full 170-item exam.
+        </p>
+      </div>
+
+      <div class="header-badge">
+        Flexible · Optional Timer · Saved to Stats
+      </div>
+    </header>
+
+    <main class="card practice-card">
+      <!-- CONFIG -->
+      <section id="practice-config">
+        <div class="config-grid">
+          <div class="config-field">
+            <span class="config-label">Subject</span>
+            <select id="practice-subject" class="config-select">
+              <option value="verbal">Verbal Ability</option>
+              <option value="numerical">Numerical Reasoning</option>
+              <option value="analytical">Analytical Ability</option>
+              <option value="clerical">Clerical Ability</option>
+              <option value="general">General Information</option>
+            </select>
+          </div>
+
+          <div class="config-field">
+            <span class="config-label">Topic</span>
+            <select id="practice-topic" class="config-select">
+              <option value="all">All Topics</option>
+            </select>
+          </div>
+
+          <div class="config-field">
+            <span class="config-label">Level</span>
+            <select id="practice-level" class="config-select">
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+              <option value="expert">Expert</option>
+              <option value="mixed">Mixed (All Levels)</option>
+            </select>
+          </div>
+
+          <div class="config-field">
+            <span class="config-label">Number of Items</span>
+            <select id="practice-items" class="config-select">
+              <option value="10">10 items</option>
+              <option value="20" selected>20 items</option>
+              <option value="30">30 items</option>
+              <option value="50">50 items</option>
+            </select>
+          </div>
+
+          <div class="config-field">
+            <span class="config-label">Timer (Optional)</span>
+            <select id="practice-timer" class="config-select">
+              <option value="0" selected>No timer (free practice)</option>
+              <option value="10">10 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="30">30 minutes</option>
+              <option value="60">60 minutes</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="config-note">
+          Practice pulls questions directly from your existing question banks. Timer is optional; with <strong>No timer</strong>, we simply track how long you took.
+        </p>
+
+        <button id="practice-btn-start" class="start-btn">🔥 Start Practice</button>
+      </section>
+
+      <!-- PRACTICE PANEL -->
+      <section id="practice-panel" class="hidden">
+        <div class="exam-header-row">
+          <div class="exam-progress">
+            <span id="practice-question-counter">Question 1 of 20</span>
+          </div>
+          <div class="exam-subinfo">
+            Subject: <strong id="practice-subject-label">Verbal Ability</strong> ·
+            Topic: <strong id="practice-topic-label">All Topics</strong> ·
+            Level: <strong id="practice-level-label">Beginner</strong>
+          </div>
+          <div class="timer-display" id="practice-timer-display">No Timer</div>
+        </div>
+
+        <div class="question-text" id="practice-question-text">
+          Question text will appear here.
+        </div>
+
+        <div id="practice-options"></div>
+
+        <div class="exam-footer">
+          <div class="nav-buttons">
+            <button id="practice-btn-prev" class="nav-btn" disabled>Previous</button>
+            <button id="practice-btn-next" class="nav-btn primary">Next</button>
+          </div>
+          <button id="practice-btn-finish" class="nav-btn danger">Finish Practice</button>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section id="practice-results-panel" class="hidden">
+        <div class="results-summary">
+          <h2 class="results-heading">Practice Session Completed</h2>
+          <div class="results-main-score">
+            <span id="practice-results-score-main">0 / 0</span>
+            <span id="practice-results-score-percent">Score: 0%</span>
+          </div>
+          <div class="results-extra">
+            <span id="practice-results-time-used">Time used: 0 min</span> ·
+            <span id="practice-results-items-answered">Items answered: 0</span>
+          </div>
+          <div class="results-buttons">
+            <button id="practice-results-btn-retake" class="results-btn primary">🔁 New Practice</button>
+            <a href="stats.html" class="results-btn">📊 View Stats</a>
+          </div>
+        </div>
+
+        <hr class="results-divider" />
+
+        <p class="results-score-text">
+          Items you missed or left blank:
+        </p>
+        <div id="practice-results-details"></div>
+
+        <p class="muted-note">
+          Each practice set is randomly generated from your topic question banks. Repeating the same config can still show different items.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <!-- QUESTION BANK SCRIPTS (same as mock) -->
+  <!-- VERBAL -->
+  <script src="questions/reading_comprehension.js"></script>
+  <script src="questions/paragraph_organization_questions.js"></script>
+  <script src="questions/questions_analogy.js"></script>
+  <script src="questions/questions_antonyms.js"></script>
+  <script src="questions/questions_synonyms.js"></script>
+  <script src="questions/words_often_confused.js"></script>
+  <script src="questions/questions_punctuation.js"></script>
+  <script src="questions/questions_affixes.js"></script>
+  <script src="questions/questions_sentence_structure.js"></script>
+  <script src="questions/sentence_construction.js"></script>
+  <script src="questions/subject_verb_agreement.js"></script>
+  <script src="questions/questions_articles.js"></script>
+  <script src="questions/questions_interjections.js"></script>
+  <script src="questions/questions_conjunctions.js"></script>
+  <script src="questions/questions_prepositions.js"></script>
+  <script src="questions/questions_adverbs.js"></script>
+  <script src="questions/questions_pronouns.js"></script>
+  <script src="questions/questions_tenses.js"></script>
+  <script src="questions/questions_nouns.js"></script>
+  <script src="questions/questions_verbs.js"></script>
+  <script src="questions/questions_gender.js"></script>
+  <script src="questions/questions_adjectives.js"></script>
+  <script src="questions/questions_grammatical_number.js"></script>
+  <script src="questions/error_identification.js"></script>
+
+  <!-- NUMERICAL -->
+  <script src="questions/numerical_whole_numbers.js"></script>
+  <script src="questions/numerical_pemdas.js"></script>
+  <script src="questions/numerical_decimals.js"></script>
+  <script src="questions/numerical_fractions.js"></script>
+  <script src="questions/numerical_percentages.js"></script>
+  <script src="questions/numerical_ratio_proportion.js"></script>
+  <script src="questions/numerical_averages.js"></script>
+  <script src="questions/numerical_data_interpretation.js"></script>
+  <script src="questions/numerical_algebra_linear.js"></script>
+  <script src="questions/numerical_odd_even_consecutive.js"></script>
+  <script src="questions/numerical_motion_problems.js"></script>
+  <script src="questions/numerical_age_problems.js"></script>
+  <script src="questions/numerical_number_problems.js"></script>
+  <script src="questions/numerical_writing_math_expressions.js"></script>
+  <script src="questions/numerical_solving_math_expressions.js"></script>
+  <script src="questions/numerical_sequences_series.js"></script>
+  <script src="questions/numerical_simple_interest.js"></script>
+  <script src="questions/numerical_divisibility_rules.js"></script>
+
+  <!-- ANALYTICAL -->
+  <script src="questions/analytical_cognitive_reasoning.js"></script>
+  <script src="questions/analytical_flowchart.js"></script>
+
+  <!-- CLERICAL -->
+  <script src="questions/clerical_vocabulary.js"></script>
+  <script src="questions/clerical_spelling.js"></script>
+  <script src="questions/clerical_alphabetizing.js"></script>
+
+  <!-- GENERAL INFORMATION -->
+  <script src="questions/general_constitution.js"></script>
+  <script src="questions/general_government.js"></script>
+  <script src="questions/general_ra6713.js"></script>
+
+  <script>
+    const PRACTICE_HISTORY_KEY = "CSE_PRACTICE_HISTORY";
+
+    let practiceQuestions = [];
+    let practiceUserAnswers = [];
+    let practiceCurrentIndex = 0;
+    let practiceFinished = false;
+
+    let practiceTimerId = null;
+    let practiceTimerMode = "none"; // "none" | "countdown" | "elapsed"
+    let practiceDurationMinutes = 0;
+    let practiceTimeRemaining = 0;
+    let practiceTimeUsedSeconds = 0;
+
+    let practiceSubject = "verbal";
+    let practiceTopic = "all";
+    let practiceLevel = "beginner";
+    let practiceItemsCount = 20;
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function capitalizeFirst(str) {
+      if (!str) return "";
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function getSubjectLabel(subject) {
+      switch (subject) {
+        case "verbal": return "Verbal Ability";
+        case "numerical": return "Numerical Reasoning";
+        case "analytical": return "Analytical Ability";
+        case "clerical": return "Clerical Ability";
+        case "general": return "General Information";
+        default: return subject || "Unknown";
+      }
+    }
+
+    function makeTopicLabel(id) {
+      if (!id || id === "all") return "All Topics";
+      return id
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, ch => ch.toUpperCase());
+    }
+
+    function getBankForSubject(subject) {
+      switch (subject) {
+        case "verbal": return window.VERBAL_QUESTION_BANK;
+        case "numerical": return window.NUMERICAL_QUESTION_BANK;
+        case "analytical": return window.ANALYTICAL_QUESTION_BANK;
+        case "clerical": return window.CLERICAL_QUESTION_BANK;
+        case "general": return window.GENERAL_QUESTION_BANK;
+        default: return null;
+      }
+    }
+
+    function populateTopics() {
+      const subjectSel = document.getElementById("practice-subject");
+      const topicSel = document.getElementById("practice-topic");
+      if (!subjectSel || !topicSel) return;
+
+      const subj = subjectSel.value || "verbal";
+      const bank = getBankForSubject(subj) || {};
+
+      const topicIds = Object.keys(bank);
+
+      topicSel.innerHTML = "";
+      const optAll = document.createElement("option");
+      optAll.value = "all";
+      optAll.textContent = "All Topics";
+      topicSel.appendChild(optAll);
+
+      topicIds.forEach(id => {
+        const opt = document.createElement("option");
+        opt.value = id;
+        opt.textContent = makeTopicLabel(id);
+        topicSel.appendChild(opt);
+      });
+
+      practiceTopic = topicSel.value || "all";
+    }
+
+    function collectPracticeQuestions(subject, topicId, level) {
+      const bank = getBankForSubject(subject);
+      if (!bank) return [];
+
+      const pool = [];
+
+      Object.keys(bank).forEach(key => {
+        if (topicId !== "all" && key !== topicId) return;
+        const topicBank = bank[key];
+        if (!topicBank) return;
+
+        if (level === "mixed") {
+          ["beginner", "intermediate", "advanced", "expert"].forEach(lvl => {
+            if (Array.isArray(topicBank[lvl])) {
+              pool.push(...topicBank[lvl]);
+            }
+          });
+        } else {
+          if (Array.isArray(topicBank[level])) {
+            pool.push(...topicBank[level]);
+          }
+        }
+      });
+
+      return pool;
+    }
+
+    function formatTime(secondsTotal) {
+      let remaining = Math.max(0, secondsTotal);
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+      return (
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).padStart(2, "0")
+      );
+    }
+
+    function updatePracticeTimerDisplay() {
+      const el = document.getElementById("practice-timer-display");
+      if (!el) return;
+
+      el.classList.remove("warning", "danger");
+
+      if (practiceTimerMode === "none") {
+        el.textContent = "No Timer · Elapsed: " + formatTime(practiceTimeUsedSeconds);
+        return;
+      }
+
+      if (practiceTimerMode === "elapsed") {
+        el.textContent = "Elapsed: " + formatTime(practiceTimeUsedSeconds);
+        return;
+      }
+
+      // countdown
+      el.textContent = "Remaining: " + formatTime(practiceTimeRemaining);
+
+      const totalSeconds = practiceDurationMinutes * 60;
+      const ratio = totalSeconds > 0 ? practiceTimeRemaining / totalSeconds : 0;
+
+      if (ratio <= 0.1) {
+        el.classList.add("danger");
+      } else if (ratio <= 0.25) {
+        el.classList.add("warning");
+      }
+    }
+
+    function startPracticeTimer() {
+      if (practiceTimerId) {
+        clearInterval(practiceTimerId);
+      }
+      practiceTimeUsedSeconds = 0;
+
+      const timerSel = document.getElementById("practice-timer");
+      const minVal = timerSel ? parseInt(timerSel.value, 10) : 0;
+
+      if (!minVal || minVal <= 0) {
+        practiceTimerMode = "elapsed";
+        practiceDurationMinutes = 0;
+        practiceTimeRemaining = 0;
+      } else {
+        practiceTimerMode = "countdown";
+        practiceDurationMinutes = minVal;
+        practiceTimeRemaining = practiceDurationMinutes * 60;
+      }
+
+      updatePracticeTimerDisplay();
+
+      practiceTimerId = setInterval(() => {
+        if (practiceFinished) {
+          clearInterval(practiceTimerId);
+          practiceTimerId = null;
+          return;
+        }
+
+        practiceTimeUsedSeconds += 1;
+
+        if (practiceTimerMode === "countdown") {
+          practiceTimeRemaining -= 1;
+          if (practiceTimeRemaining <= 0) {
+            practiceTimeRemaining = 0;
+            updatePracticeTimerDisplay();
+            clearInterval(practiceTimerId);
+            practiceTimerId = null;
+            autoFinishPractice(true);
+            return;
+          }
+        }
+
+        updatePracticeTimerDisplay();
+      }, 1000);
+    }
+
+    function renderPracticeQuestion() {
+      const questionTextEl = document.getElementById("practice-question-text");
+      const optionsEl = document.getElementById("practice-options");
+      const counterEl = document.getElementById("practice-question-counter");
+      const prevBtn = document.getElementById("practice-btn-prev");
+      const nextBtn = document.getElementById("practice-btn-next");
+
+      if (!practiceQuestions.length) {
+        if (questionTextEl) {
+          questionTextEl.textContent =
+            "No questions loaded. Please check your question banks.";
+        }
+        if (optionsEl) optionsEl.innerHTML = "";
+        if (counterEl) counterEl.textContent = "0 of 0";
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        return;
+      }
+
+      const q = practiceQuestions[practiceCurrentIndex];
+      const selectedIndex = practiceUserAnswers[practiceCurrentIndex];
+
+      if (questionTextEl) {
+        questionTextEl.textContent = q.question || "Question";
+      }
+
+      if (optionsEl) {
+        optionsEl.innerHTML = "";
+        (q.options || []).forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "option-btn";
+          if (selectedIndex === idx) {
+            btn.classList.add("selected");
+          }
+          btn.textContent = opt;
+          btn.addEventListener("click", () => {
+            if (practiceFinished) return;
+            practiceUserAnswers[practiceCurrentIndex] = idx;
+            renderPracticeQuestion();
+          });
+          optionsEl.appendChild(btn);
+        });
+      }
+
+      if (counterEl) {
+        counterEl.textContent =
+          "Question " +
+          (practiceCurrentIndex + 1) +
+          " of " +
+          practiceQuestions.length;
+      }
+
+      if (prevBtn) {
+        prevBtn.disabled = practiceCurrentIndex === 0;
+      }
+
+      if (nextBtn) {
+        nextBtn.textContent =
+          practiceCurrentIndex === practiceQuestions.length - 1
+            ? "Finish"
+            : "Next";
+      }
+    }
+
+    function startPractice() {
+      const subjectSel = document.getElementById("practice-subject");
+      const topicSel = document.getElementById("practice-topic");
+      const levelSel = document.getElementById("practice-level");
+      const itemsSel = document.getElementById("practice-items");
+
+      practiceSubject = subjectSel ? subjectSel.value : "verbal";
+      practiceTopic = topicSel ? topicSel.value : "all";
+      practiceLevel = levelSel ? levelSel.value : "beginner";
+      practiceItemsCount = itemsSel ? parseInt(itemsSel.value, 10) || 20 : 20;
+
+      const pool = collectPracticeQuestions(
+        practiceSubject,
+        practiceTopic,
+        practiceLevel
+      );
+
+      if (!pool.length) {
+        alert(
+          "No questions found for this configuration yet. Please check your subject/topic question banks."
+        );
+        return;
+      }
+
+      const shuffled = shuffleArray(pool.slice());
+      practiceQuestions = shuffled.slice(
+        0,
+        Math.min(practiceItemsCount, shuffled.length)
+      );
+      practiceUserAnswers = new Array(practiceQuestions.length).fill(null);
+      practiceCurrentIndex = 0;
+      practiceFinished = false;
+
+      // Update labels
+      const subjLabelEl = document.getElementById("practice-subject-label");
+      const topicLabelEl = document.getElementById("practice-topic-label");
+      const levelLabelEl = document.getElementById("practice-level-label");
+
+      if (subjLabelEl) subjLabelEl.textContent = getSubjectLabel(practiceSubject);
+      if (topicLabelEl) topicLabelEl.textContent = makeTopicLabel(practiceTopic);
+      if (levelLabelEl) levelLabelEl.textContent = capitalizeFirst(practiceLevel);
+
+      // Toggle sections
+      const configSection = document.getElementById("practice-config");
+      const panelSection = document.getElementById("practice-panel");
+      const resultsSection = document.getElementById("practice-results-panel");
+      if (configSection) configSection.classList.add("hidden");
+      if (panelSection) panelSection.classList.remove("hidden");
+      if (resultsSection) resultsSection.classList.add("hidden");
+
+      startPracticeTimer();
+      renderPracticeQuestion();
+    }
+
+    function goPracticePrev() {
+      if (practiceFinished) return;
+      if (practiceCurrentIndex > 0) {
+        practiceCurrentIndex -= 1;
+        renderPracticeQuestion();
+      }
+    }
+
+    function goPracticeNextOrFinish() {
+      if (practiceFinished) return;
+      if (practiceCurrentIndex < practiceQuestions.length - 1) {
+        practiceCurrentIndex += 1;
+        renderPracticeQuestion();
+      } else {
+        finishPractice(false);
+      }
+    }
+
+    function autoFinishPractice(fromTimer) {
+      finishPractice(!!fromTimer);
+    }
+
+    function appendPracticeHistory(data) {
+      try {
+        const raw = localStorage.getItem(PRACTICE_HISTORY_KEY);
+        const history = raw ? JSON.parse(raw) : [];
+        history.push(data);
+        localStorage.setItem(PRACTICE_HISTORY_KEY, JSON.stringify(history));
+      } catch (e) {
+        console.warn("Unable to append practice history", e);
+      }
+    }
+
+    function finishPractice(fromTimer) {
+      practiceFinished = true;
+      if (practiceTimerId) {
+        clearInterval(practiceTimerId);
+        practiceTimerId = null;
+      }
+
+      const panelSection = document.getElementById("practice-panel");
+      const resultsSection = document.getElementById("practice-results-panel");
+      if (panelSection) panelSection.classList.add("hidden");
+      if (resultsSection) resultsSection.classList.remove("hidden");
+
+      let correctCount = 0;
+      const mistakes = [];
+      let answeredCount = 0;
+
+      practiceQuestions.forEach((q, idx) => {
+        const userIndex = practiceUserAnswers[idx];
+        const userText =
+          userIndex == null ? null : (q.options && q.options[userIndex]) || null;
+        const isCorrect = userText === q.answer;
+
+        if (userIndex != null) {
+          answeredCount += 1;
+        }
+
+        if (isCorrect) {
+          correctCount += 1;
+        } else {
+          mistakes.push({
+            number: idx + 1,
+            question: q.question || "",
+            userAnswer: userText,
+            correctAnswer: q.answer,
+            explanation: q.explanation || ""
+          });
+        }
+      });
+
+      const scoreMainEl = document.getElementById("practice-results-score-main");
+      const scorePercentEl = document.getElementById(
+        "practice-results-score-percent"
+      );
+      const timeUsedEl = document.getElementById("practice-results-time-used");
+      const itemsAnsweredEl = document.getElementById(
+        "practice-results-items-answered"
+      );
+      const detailsEl = document.getElementById("practice-results-details");
+
+      if (scoreMainEl) {
+        scoreMainEl.textContent =
+          correctCount + " / " + (practiceQuestions.length || 0);
+      }
+
+      const pct = practiceQuestions.length
+        ? Math.round((correctCount / practiceQuestions.length) * 100)
+        : 0;
+
+      if (scorePercentEl) {
+        const extraText = fromTimer ? " (Time up)" : "";
+        scorePercentEl.textContent = "Score: " + pct + "%" + extraText;
+      }
+
+      const usedMinutes = Math.round(practiceTimeUsedSeconds / 60);
+      if (timeUsedEl) {
+        timeUsedEl.textContent = "Time used: " + usedMinutes + " min";
+      }
+      if (itemsAnsweredEl) {
+        itemsAnsweredEl.textContent =
+          "Items answered: " +
+          answeredCount +
+          " / " +
+          (practiceQuestions.length || 0);
+      }
+
+      const historyEntry = {
+        timestamp: Date.now(),
+        mode: "practice",
+        subject: practiceSubject,
+        topic: practiceTopic,
+        level: practiceLevel,
+        numQuestions: practiceQuestions.length,
+        correct: correctCount,
+        percent: pct,
+        answered: answeredCount,
+        timeUsedMinutes: usedMinutes,
+        finishedByTimer: !!fromTimer
+      };
+
+      appendPracticeHistory(historyEntry);
+
+      if (!detailsEl) return;
+
+      if (!mistakes.length) {
+        detailsEl.innerHTML =
+          '<p class="no-mistakes">Nice! You answered all items correctly for this practice set.</p>';
+        return;
+      }
+
+      const itemsHtml = mistakes
+        .map(m => {
+          const userAnsText =
+            m.userAnswer == null
+              ? "<em>No answer selected.</em>"
+              : m.userAnswer;
+          const explText =
+            m.explanation && m.explanation.trim().length
+              ? m.explanation
+              : "No explanation provided for this item.";
+
+          return (
+            '<div class="result-item">' +
+              '<div class="result-item-question">' +
+                "Question " +
+                m.number +
+                ": " +
+                m.question.replace(/\n/g, " ") +
+              "</div>" +
+              '<p class="result-item-meta">' +
+                '<span class="answer-label">✖ You:</span> ' +
+                userAnsText +
+              "</p>" +
+              '<p class="result-item-meta">' +
+                '<span class="answer-label">✔ Correct:</span> ' +
+                m.correctAnswer +
+              "</p>" +
+              '<p class="result-item-meta">' +
+                '<span class="answer-label">👉 Why:</span> ' +
+                explText +
+              "</p>" +
+            "</div>"
+          );
+        })
+        .join("");
+
+      detailsEl.innerHTML =
+        '<div class="results-list">' + itemsHtml + "</div>";
+    }
+
+    function resetPracticeToConfig() {
+      const configSection = document.getElementById("practice-config");
+      const panelSection = document.getElementById("practice-panel");
+      const resultsSection = document.getElementById("practice-results-panel");
+
+      if (configSection) configSection.classList.remove("hidden");
+      if (panelSection) panelSection.classList.add("hidden");
+      if (resultsSection) resultsSection.classList.add("hidden");
+
+      practiceQuestions = [];
+      practiceUserAnswers = [];
+      practiceCurrentIndex = 0;
+      practiceFinished = false;
+      practiceTimerMode = "none";
+      practiceDurationMinutes = 0;
+      practiceTimeRemaining = 0;
+      practiceTimeUsedSeconds = 0;
+
+      if (practiceTimerId) {
+        clearInterval(practiceTimerId);
+        practiceTimerId = null;
+      }
+
+      const timerDisplay = document.getElementById("practice-timer-display");
+      if (timerDisplay) {
+        timerDisplay.textContent = "No Timer";
+        timerDisplay.classList.remove("warning", "danger");
+      }
+    }
+
+    function initPracticeUI() {
+      const subjectSel = document.getElementById("practice-subject");
+      const startBtn = document.getElementById("practice-btn-start");
+      const prevBtn = document.getElementById("practice-btn-prev");
+      const nextBtn = document.getElementById("practice-btn-next");
+      const finishBtn = document.getElementById("practice-btn-finish");
+      const retakeBtn = document.getElementById("practice-results-btn-retake");
+
+      if (subjectSel) {
+        subjectSel.addEventListener("change", () => {
+          populateTopics();
+        });
+      }
+
+      populateTopics();
+
+      if (startBtn) {
+        startBtn.addEventListener("click", () => {
+          startPractice();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          goPracticePrev();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          goPracticeNextOrFinish();
+        });
+      }
+
+      if (finishBtn) {
+        finishBtn.addEventListener("click", () => {
+          if (
+            confirm(
+              "Finish this practice session now? You can review incorrect items afterwards."
+            )
+          ) {
+            finishPractice(false);
+          }
+        });
+      }
+
+      if (retakeBtn) {
+        retakeBtn.addEventListener("click", () => {
+          resetPracticeToConfig();
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Ensure globals exist
+      window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
+      window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
+      window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
+      window.GENERAL_QUESTION_BANK = window.GENERAL_QUESTION_BANK || {};
+      window.CLERICAL_QUESTION_BANK = window.CLERICAL_QUESTION_BANK || {};
+
+      initPracticeUI();
+    });
+  </script>
+</body>
+</html>
