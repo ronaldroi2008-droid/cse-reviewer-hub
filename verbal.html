@@ -5350,8 +5350,7 @@ synonyms: {
     `
   } 
 }; 
-
-<!-- ==============================
+  <!-- ==============================
        3. QUIZ LOGIC
        ============================== -->
   <script>
@@ -5388,7 +5387,11 @@ synonyms: {
 
       // STATE
       const state = {
-        currentTopicId: VERBAL_TOPICS[0] ? VERBAL_TOPICS[0].id : "pronouns",
+        // kung walang VERBAL_TOPICS, fallback sa "pronouns"
+        currentTopicId:
+          typeof VERBAL_TOPICS !== "undefined" && VERBAL_TOPICS[0]
+            ? VERBAL_TOPICS[0].id
+            : "pronouns",
         currentLevel: "beginner",
         currentCount: 10,
         questions: [],
@@ -5396,7 +5399,8 @@ synonyms: {
         answers: {} // index → { choiceIndex, isCorrect }
       };
 
-      const lockedLevels = typeof LOCKED_LEVELS !== "undefined" ? LOCKED_LEVELS : ["advanced", "expert"];
+      // PRO LEVELS (fixed, hindi na kailangan ng global LOCKED_LEVELS)
+      const lockedLevels = ["advanced", "expert"];
 
       // HELPERS
       function isLevelLocked(level) {
@@ -5404,7 +5408,10 @@ synonyms: {
       }
 
       function getQuestionBank(topicId, level) {
-        const bankRoot = window.VERBAL_QUESTION_BANK || {};
+        const bankRoot =
+          typeof window.VERBAL_QUESTION_BANK !== "undefined"
+            ? window.VERBAL_QUESTION_BANK
+            : {};
         const topicBank = bankRoot[topicId];
         if (!topicBank) return [];
         const levelData = topicBank[level];
@@ -5417,8 +5424,10 @@ synonyms: {
         const trimmed = rawList.slice(0, Math.min(limit, rawList.length));
         return trimmed.map((q, idx) => {
           const options = q.choices || q.options || [];
-          let correctIndex = typeof q.correctIndex === "number" ? q.correctIndex : null;
-          let correctAnswer = typeof q.answer !== "undefined" ? q.answer : null;
+          let correctIndex =
+            typeof q.correctIndex === "number" ? q.correctIndex : null;
+          let correctAnswer =
+            typeof q.answer !== "undefined" ? q.answer : null;
 
           if (options.length && correctIndex === null && correctAnswer !== null) {
             correctIndex = options.indexOf(correctAnswer);
@@ -5442,32 +5451,54 @@ synonyms: {
       }
 
       function updateLabels() {
-        const topic = VERBAL_TOPICS.find(t => t.id === state.currentTopicId);
-        quizTopicLabel.textContent = topic ? topic.label : state.currentTopicId;
-        const levelLabel = {
-          beginner: "Beginner",
-          intermediate: "Intermediate",
-          advanced: "Advanced",
-          expert: "Expert"
-        }[state.currentLevel] || state.currentLevel;
+        const topic =
+          typeof VERBAL_TOPICS !== "undefined"
+            ? VERBAL_TOPICS.find(t => t.id === state.currentTopicId)
+            : null;
+
+        quizTopicLabel.textContent = topic
+          ? topic.label
+          : state.currentTopicId;
+
+        const levelLabel =
+          {
+            beginner: "Beginner",
+            intermediate: "Intermediate",
+            advanced: "Advanced",
+            expert: "Expert"
+          }[state.currentLevel] || state.currentLevel;
+
         quizLevelLabel.textContent = levelLabel;
         quizItemCountLabel.textContent = String(state.currentCount);
       }
 
       function updateLessonPanel() {
-        const data = VERBAL_LESSONS[state.currentTopicId];
+        const lessons =
+          typeof VERBAL_LESSONS !== "undefined" ? VERBAL_LESSONS : {};
+        const data = lessons[state.currentTopicId];
+
         if (data) {
           lessonTitleEl.textContent = data.title;
           lessonContentEl.innerHTML = data.html;
         } else {
           lessonTitleEl.textContent = "Lesson Overview";
-          lessonContentEl.textContent = "Walang naka-set na lesson text para sa topic na ito.";
+          lessonContentEl.textContent =
+            "Walang naka-set na lesson text para sa topic na ito.";
         }
       }
 
       // TOPIC LIST UI
       function renderTopicList() {
         topicListEl.innerHTML = "";
+
+        if (typeof VERBAL_TOPICS === "undefined") {
+          const info = document.createElement("div");
+          info.textContent =
+            "Walang VERBAL_TOPICS na naka-define. I-check ang data script.";
+          topicListEl.appendChild(info);
+          return;
+        }
+
         VERBAL_TOPICS.forEach(topic => {
           const btn = document.createElement("button");
           btn.className = "topic-pill";
@@ -5505,7 +5536,10 @@ synonyms: {
       function updateTopicActiveUI() {
         const pills = topicListEl.querySelectorAll(".topic-pill");
         pills.forEach(pill => {
-          pill.classList.toggle("active", pill.dataset.topicId === state.currentTopicId);
+          pill.classList.toggle(
+            "active",
+            pill.dataset.topicId === state.currentTopicId
+          );
         });
         updateLabels();
       }
@@ -5514,18 +5548,33 @@ synonyms: {
       function initLevelChips() {
         levelChips.forEach(chip => {
           const level = chip.dataset.level;
+
           if (isLevelLocked(level)) {
             chip.classList.add("locked");
           }
+
           chip.addEventListener("click", () => {
+            // PRO LOCK
             if (isLevelLocked(level)) {
-              proBanner.classList.remove("hidden");
+              if (proBanner) {
+                proBanner.classList.remove("hidden");
+              } else {
+                alert(
+                  "Advanced at Expert levels ay para sa PRO version. 🙂"
+                );
+              }
               return;
             }
-            proBanner.classList.add("hidden");
+
+            if (proBanner) {
+              proBanner.classList.add("hidden");
+            }
+
             if (state.currentLevel === level) return;
+
             levelChips.forEach(c => c.classList.remove("active"));
             chip.classList.add("active");
+
             state.currentLevel = level;
             state.currentIndex = 0;
             state.answers = {};
@@ -5562,9 +5611,11 @@ synonyms: {
         quizCard.classList.remove("hidden");
 
         if (!normalized.length) {
-          questionTextEl.textContent = "Wala pang questions para sa kombinasyong ito (topic + level).";
+          questionTextEl.textContent =
+            "Wala pang questions para sa kombinasyong ito (topic + level).";
           choicesContainer.innerHTML = "";
-          explanationTextEl.textContent = "I-check kung na-load na ang tamang question file para sa topic na ito.";
+          explanationTextEl.textContent =
+            "I-check kung na-load na ang tamang question file para sa topic na ito.";
           quizProgressText.textContent = "0 of 0";
           prevBtn.disabled = true;
           nextBtn.disabled = true;
@@ -5578,7 +5629,12 @@ synonyms: {
         const q = state.questions[state.currentIndex];
         if (!q) return;
 
-        quizProgressText.textContent = "Question " + (state.currentIndex + 1) + " of " + state.questions.length;
+        quizProgressText.textContent =
+          "Question " +
+          (state.currentIndex + 1) +
+          " of " +
+          state.questions.length;
+
         questionTextEl.textContent = q.question || "Question text missing.";
         choicesContainer.innerHTML = "";
 
@@ -5603,7 +5659,9 @@ synonyms: {
             // show previous selection + correctness
             if (idx === existingAnswer.choiceIndex) {
               btn.classList.add("selected");
-              btn.classList.add(existingAnswer.isCorrect ? "correct" : "incorrect");
+              btn.classList.add(
+                existingAnswer.isCorrect ? "correct" : "incorrect"
+              );
             }
             if (idx === q._correctIndex) {
               btn.classList.add("correct");
@@ -5618,9 +5676,11 @@ synonyms: {
         });
 
         if (existingAnswer) {
-          explanationTextEl.textContent = q.explanation || "No explanation provided.";
+          explanationTextEl.textContent =
+            q.explanation || "No explanation provided.";
         } else {
-          explanationTextEl.textContent = "Kapag pumili ka ng sagot, lalabas dito ang step-by-step explanation.";
+          explanationTextEl.textContent =
+            "Kapag pumili ka ng sagot, lalabas dito ang step-by-step explanation.";
         }
 
         updateNavButtons();
@@ -5634,7 +5694,9 @@ synonyms: {
         state.answers[state.currentIndex] = { choiceIndex, isCorrect };
 
         // Re-render answers with correct/incorrect styling
-        const choiceButtons = Array.from(choicesContainer.querySelectorAll(".choice-btn"));
+        const choiceButtons = Array.from(
+          choicesContainer.querySelectorAll(".choice-btn")
+        );
         choiceButtons.forEach((btn, idx) => {
           btn.classList.remove("selected", "correct", "incorrect");
           if (idx === choiceIndex) {
@@ -5646,7 +5708,8 @@ synonyms: {
           }
         });
 
-        explanationTextEl.textContent = q.explanation || "No explanation provided.";
+        explanationTextEl.textContent =
+          q.explanation || "No explanation provided.";
         updateNavButtons();
       }
 
@@ -5705,26 +5768,34 @@ synonyms: {
 
         resultScoreMain.textContent = correct + " / " + total;
 
-        const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const percent =
+          total > 0 ? Math.round((correct / total) * 100) : 0;
         let remark;
         if (percent >= 90) {
           remark = "Excellent! Pang-topnotcher ang level mo sa topic na ito.";
         } else if (percent >= 75) {
           remark = "Pasado! Konting practice pa para mas tumibay.";
         } else if (percent >= 50) {
-          remark = "Okay na simula. Balikan ang lesson at weak spots.";
+          remark =
+            "Okay na simula. Balikan ang lesson at weak spots.";
         } else {
-          remark = "Huwag ma-discourage. Basahin ulit ang lesson at ulitin ang set.";
+          remark =
+            "Huwag ma-discourage. Basahin ulit ang lesson at ulitin ang set.";
         }
 
-        resultScoreText.textContent = "Score: " + percent + "% – " + remark;
+        resultScoreText.textContent =
+          "Score: " +
+          percent +
+          "% – " +
+          remark;
 
         // Build mistakes list
         mistakeListEl.innerHTML = "";
         if (!mistakes.length) {
           const li = document.createElement("li");
           li.className = "mistake-item";
-          li.textContent = "Perfect! Wala kang maling sagot sa set na ito.";
+          li.textContent =
+            "Perfect! Wala kang maling sagot sa set na ito.";
           mistakeListEl.appendChild(li);
         } else {
           mistakes.forEach(entry => {
@@ -5734,21 +5805,26 @@ synonyms: {
 
             const qText = document.createElement("div");
             qText.className = "mistake-item-question";
-            qText.textContent = question.question || "Question text missing.";
+            qText.textContent =
+              question.question || "Question text missing.";
 
             const yourAns = document.createElement("div");
             yourAns.className = "mistake-item-your";
-            const yourText = question._options[answer.choiceIndex] ?? "(no answer)";
+            const yourText =
+              question._options[answer.choiceIndex] ?? "(no answer)";
             yourAns.textContent = "Your answer: " + yourText;
 
             const correctAns = document.createElement("div");
             correctAns.className = "mistake-item-correct";
-            const correctText = question._options[question._correctIndex] ?? "(none)";
-            correctAns.textContent = "Correct answer: " + correctText;
+            const correctText =
+              question._options[question._correctIndex] ?? "(none)";
+            correctAns.textContent =
+              "Correct answer: " + correctText;
 
             const expl = document.createElement("div");
             expl.className = "mistake-item-explanation";
-            expl.textContent = question.explanation || "No explanation provided.";
+            expl.textContent =
+              question.explanation || "No explanation provided.";
 
             li.appendChild(qText);
             li.appendChild(yourAns);
