@@ -7,840 +7,687 @@
   <style>
     :root {
       --bg: #020617;
-      --bg-soft: #020617;
       --card: #020617;
-      --sidebar: #020617;
-      --border: #1e293b;
+      --card-alt: #0b1220;
+      --border: #1f2937;
       --accent: #6366f1;
-      --accent-soft: rgba(99, 102, 241, 0.18);
-      --accent-strong: rgba(79, 70, 229, 0.18);
-      --accent-text: #e5e7eb;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+      --text: #f9fafb;
+      --muted: #9ca3af;
       --danger: #f97373;
       --success: #22c55e;
-      --radius-lg: 14px;
-      --radius-xl: 18px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
     }
 
     body {
+      margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1220 0, #020617 45%, #000 100%);
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-      padding: 24px;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    .page-shell {
-      max-width: 1240px;
-      width: 100%;
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.08) 0, transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.1) 0, transparent 45%),
-                  rgba(15, 23, 42, 0.97);
-      border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+    .app-shell {
+      max-width: 1120px;
+      margin: 24px auto 40px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent),
+        #020617;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.75);
     }
 
-    header {
-      padding: 18px 22px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    .app-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
-      backdrop-filter: blur(18px);
-    }
-
-    .title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      margin-bottom: 8px;
     }
 
     .app-title {
-      font-size: 1.2rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #c7d2fe;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .app-title span.logo-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #4f46e5, #22d3ee);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+      font-size: 1.7rem;
+      margin: 0 0 4px;
+      letter-spacing: 0.03em;
     }
 
     .app-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    .header-pill {
-      padding: 6px 12px;
+    .badge {
+      align-self: flex-start;
+      padding: 2px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(94, 234, 212, 0.5);
-      background: radial-gradient(circle at top, rgba(94, 234, 212, 0.15) 0, transparent 55%);
-      font-size: 0.78rem;
-      color: #a5f3fc;
+      font-size: 0.8rem;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      background: var(--accent-soft);
+      color: #a5b4fc;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+
+    .back-link:hover {
+      color: #c7d2fe;
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      transform: translateY(-1px);
+    }
+
+    .mode-tabs {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      padding: 4px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      gap: 4px;
     }
 
-    .header-pill span.dot {
-      width: 6px;
-      height: 6px;
+    .mode-tab {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 6px 14px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 10px rgba(34,197,94,0.6);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .mode-tab.active {
+      background: linear-gradient(to right, #6366f1, #4f46e5);
+      color: #f9fafb;
     }
 
     .layout {
       display: grid;
-      grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
-      min-height: 520px;
-      max-height: calc(100vh - 110px);
+      grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: flex-start;
     }
 
-    /* SIDEBAR */
-    .sidebar {
-      border-right: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 18px 16px;
-      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.35) 0, transparent 58%),
-                  radial-gradient(circle at bottom, rgba(15, 23, 42, 0.95) 0, rgba(15, 23, 42, 1) 52%);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .topics-panel {
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 14px 12px;
     }
 
-    .sidebar-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sidebar-heading h2 {
+    .panel-title {
+      margin: 0 0 10px;
       font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #cbd5f5;
-    }
-
-    .sidebar-heading span.badge {
-      font-size: 0.7rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(129, 140, 248, 0.9);
-      background: rgba(30, 64, 175, 0.85);
-      color: #e0e7ff;
-      text-transform: uppercase;
       letter-spacing: 0.08em;
+      color: var(--muted);
     }
 
     .topic-list {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      padding-right: 4px;
+      max-height: 520px;
       overflow-y: auto;
-      max-height: 260px;
-      padding-bottom: 4px;
+      padding-right: 4px;
     }
 
     .topic-pill {
       width: 100%;
       text-align: left;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: radial-gradient(circle at left, rgba(15, 23, 42, 0.9) 0, #020617 85%);
-      padding: 8px 10px;
-      font-size: 0.8rem;
-      color: #e5e7eb;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 7px 11px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all 0.18s ease-out;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+    }
+
+    .topic-pill span.label {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .topic-pill span.tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
     }
 
     .topic-pill:hover {
-      border-color: rgba(129, 140, 248, 0.9);
-      background: radial-gradient(circle at left, rgba(79, 70, 229, 0.35) 0, #020617 95%);
+      border-color: var(--accent);
       transform: translateY(-1px);
     }
 
     .topic-pill.active {
-      border-color: rgba(96, 165, 250, 0.95);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.8);
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.18));
+      background: linear-gradient(to right, #6366f1, #4f46e5);
+      color: #f9fafb;
+      border-color: transparent;
     }
 
-    .topic-label {
-      font-weight: 500;
+    .content-panel {
+      min-height: 420px;
     }
 
-    .topic-tag {
-      font-size: 0.7rem;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      color: #c4d3ff;
-      white-space: nowrap;
-    }
-
-    .lesson-card {
-      margin-top: 6px;
-      border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.16) 0, transparent 56%),
-                  rgba(15, 23, 42, 0.95);
-      padding: 10px 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.8rem;
-    }
-
-    .lesson-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .lesson-header h3 {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #bfdbfe;
-    }
-
-    .lesson-chip {
-      font-size: 0.7rem;
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(94, 234, 212, 0.6);
-      color: #a5f3fc;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .lesson-body {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      max-height: 170px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    .lesson-body b {
-      color: #e5e7eb;
-    }
-
-    /* MAIN CONTENT */
-    .main {
-      padding: 16px 18px 18px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .info-pill {
-      font-size: 0.76rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.8);
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .info-pill strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .info-pill span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.85);
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .chip-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-right: 4px;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-      cursor: pointer;
-      transition: all 0.15s ease-out;
-      white-space: nowrap;
-    }
-
-    .chip:hover {
-      border-color: rgba(129, 140, 248, 0.9);
-      background: rgba(30, 64, 175, 0.85);
-    }
-
-    .chip.active {
-      border-color: rgba(59, 130, 246, 0.95);
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(56, 189, 248, 0.9));
-      color: #e5e7eb;
-      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.85);
-    }
-
-    .chip.locked {
-      border-style: dashed;
-      border-color: rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.7);
-      color: rgba(156, 163, 175, 0.85);
-      position: relative;
-    }
-
-    .chip.locked::after {
-      content: "🔒";
-      font-size: 0.7rem;
-      margin-left: 3px;
-    }
-
-    .pro-banner {
-      margin-top: 8px;
-      padding: 7px 10px;
-      font-size: 0.78rem;
-      border-radius: 12px;
-      border: 1px dashed rgba(250, 204, 21, 0.75);
-      background: rgba(120, 53, 15, 0.85);
-      color: #fef3c7;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .pro-banner strong {
-      color: #facc15;
-    }
-
-    .pro-banner.hidden {
+    .view {
       display: none;
     }
 
-    /* QUIZ CARD */
+    .view--active {
+      display: block;
+    }
+
+    .lesson-card,
     .quiz-card {
-      margin-top: 6px;
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.18) 0, transparent 55%),
-                  radial-gradient(circle at bottom, rgba(15, 23, 42, 0.98) 0, #020617 68%);
-      padding: 12px 13px 13px 13px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-height: 260px;
+      background: var(--card-alt);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
     }
 
-    .quiz-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
+    .lesson-title {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
     }
 
-    #quizProgressText {
-      font-size: 0.86rem;
-      color: #bfdbfe;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+    .lesson-intro {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
-    .quiz-header-badge {
-      font-size: 0.75rem;
-      padding: 3px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(94, 234, 212, 0.8);
-      color: #a5f3fc;
-      background: rgba(15, 23, 42, 0.9);
+    .lesson-body section + section {
+      margin-top: 10px;
     }
 
-    .question-text {
-      margin-top: 4px;
-      font-size: 0.94rem;
-      line-height: 1.5;
+    .lesson-body h3 {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
       color: #e5e7eb;
     }
 
-    .choices {
-      margin-top: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .lesson-body ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .choice-btn {
-      width: 100%;
-      text-align: left;
-      border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: rgba(15, 23, 42, 0.95);
-      padding: 7px 9px;
-      font-size: 0.86rem;
-      color: #e5e7eb;
-      cursor: pointer;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      transition: all 0.16s ease-out;
-    }
-
-    .choice-btn:hover {
-      border-color: rgba(129, 140, 248, 0.95);
-      background: rgba(30, 64, 175, 0.85);
-      transform: translateY(-1px);
-    }
-
-    .choice-index {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.76rem;
-      color: #9ca3af;
+    .lesson-body li + li {
       margin-top: 2px;
-      flex-shrink: 0;
     }
 
-    .choice-text {
-      flex: 1;
+    .tip-card {
+      margin-top: 12px;
+      border-radius: 13px;
+      padding: 10px 12px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px dashed rgba(99, 102, 241, 0.5);
+      font-size: 0.88rem;
     }
 
-    .choice-btn.selected {
-      border-color: rgba(59, 130, 246, 0.98);
-      background: radial-gradient(circle at left, rgba(37, 99, 235, 0.9) 0, rgba(15, 23, 42, 1) 65%);
-      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
-    }
-
-    .choice-btn.correct {
-      border-color: rgba(34, 197, 94, 0.95);
-      background: radial-gradient(circle at left, rgba(22, 163, 74, 0.85) 0, rgba(15, 23, 42, 1) 70%);
-    }
-
-    .choice-btn.incorrect {
-      border-color: rgba(239, 68, 68, 0.95);
-      background: radial-gradient(circle at left, rgba(127, 29, 29, 0.9) 0, rgba(15, 23, 42, 1) 70%);
-    }
-
-    .choice-btn.correct .choice-index {
-      border-color: rgba(187, 247, 208, 0.9);
-      background: rgba(22, 163, 74, 0.9);
-      color: #ecfdf5;
-    }
-
-    .choice-btn.incorrect .choice-index {
-      border-color: rgba(254, 202, 202, 0.9);
-      background: rgba(185, 28, 28, 0.85);
-      color: #fef2f2;
-    }
-
-    .quiz-footer {
-      margin-top: 8px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) auto;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    .explanation-box {
-      border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.96);
-      padding: 8px 9px;
-      font-size: 0.78rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .explanation-title {
-      font-size: 0.77rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+    .tip-card h3 {
+      margin: 0 0 4px;
+      font-size: 0.9rem;
       color: #a5b4fc;
     }
 
-    .explanation-text {
-      color: var(--text-muted);
-      line-height: 1.4;
-      white-space: pre-line;
+    .tip-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #e5e7eb;
     }
 
-    .nav-buttons {
+    .tip-card li + li {
+      margin-top: 2px;
+    }
+
+    .quiz-header {
       display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: stretch;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 16px;
     }
 
-    .nav-btn {
-      border-radius: 999px;
-      border: none;
-      padding: 6px 14px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      cursor: pointer;
-      background: linear-gradient(135deg, #4f46e5, #22d3ee);
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.16s ease-out;
-      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.9);
+    .quiz-meta {
+      min-width: 0;
     }
 
-    .nav-btn.secondary {
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      box-shadow: none;
+    .quiz-meta .lesson-title {
+      font-size: 1.05rem;
     }
 
-    .nav-btn:hover:not(:disabled) {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.9);
-      filter: brightness(1.05);
-    }
-
-    .nav-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.45;
-      box-shadow: none;
-      transform: none;
-    }
-
-    .nav-btn span.chevron {
+    .quiz-meta .lesson-intro {
       font-size: 0.9rem;
     }
 
-    /* RESULT PANEL */
-    .result-panel {
-      margin-top: 10px;
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at top left, rgba(22, 163, 74, 0.15) 0, transparent 52%),
-                  radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.14) 0, transparent 60%),
-                  rgba(15, 23, 42, 0.98);
-      padding: 12px 13px 14px 13px;
+    .level-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .level-chip {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 4px 9px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+    }
+
+    .level-chip.active {
+      background: var(--accent);
+      color: #f9fafb;
+      border-color: transparent;
+      transform: translateY(-1px);
+    }
+
+    /* Items row (10 / 20 / 30 / 40 / 50) */
+    .items-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .items-label {
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .items-chip {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+    }
+
+    .items-chip.active {
+      background: var(--accent);
+      color: #f9fafb;
+      border-color: transparent;
+      transform: translateY(-1px);
+    }
+
+    .question-text {
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    .options-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-button {
+      width: 100%;
+      text-align: left;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 8px 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.08s;
+    }
+
+    .option-button:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .option-button.is-correct {
+      border-color: rgba(34, 197, 94, 0.85);
+      background: rgba(22, 163, 74, 0.12);
+    }
+
+    .option-button.is-incorrect {
+      border-color: rgba(248, 113, 113, 0.85);
+      background: rgba(248, 113, 113, 0.12);
+    }
+
+    .feedback {
+      min-height: 24px;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .feedback.feedback--correct {
+      color: var(--success);
+    }
+
+    .feedback.feedback--incorrect {
+      color: var(--danger);
+    }
+
+    .quiz-footer {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button {
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #f9fafb;
+      padding: 7px 15px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s, opacity 0.15s;
+    }
+
+    .primary-button.secondary {
+      background: transparent;
+      color: var(--muted);
+      border-color: var(--border);
+    }
+
+    .primary-button:disabled {
+      opacity: 0.5;
+      cursor: default;
+      transform: none;
+    }
+
+    .primary-button:not(:disabled):hover {
+      transform: translateY(-1px);
+      border-color: #818cf8;
+    }
+
+    .progress-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* RESULT VIEW (Quiz Completed + Review Mistakes) */
+    .hidden {
+      display: none;
+    }
+
+    .quiz-result {
+      margin-top: 16px;
+      background: var(--card-alt);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+    }
+
+    .quiz-result-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .quiz-result-header h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .result-score-main {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 8px 0 2px;
+    }
+
+    .result-score-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .quiz-result-actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .result-section-title {
+      font-size: 0.95rem;
+      margin: 0 0 8px;
+      color: #e5e7eb;
+    }
+
+    .mistake-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .result-panel.hidden {
-      display: none;
-    }
-
-    .result-score-main {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: #bbf7d0;
-    }
-
-    .result-score-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .result-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .mistake-section {
-      margin-top: 6px;
-      border-top: 1px dashed rgba(148, 163, 184, 0.7);
-      padding-top: 6px;
-    }
-
-    .mistake-section h3 {
-      font-size: 0.86rem;
-      color: #fee2e2;
-      margin-bottom: 4px;
-    }
-
-    .mistake-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      max-height: 160px;
-      overflow-y: auto;
-      font-size: 0.78rem;
-    }
-
     .mistake-item {
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding: 6px 7px;
-      background: rgba(15, 23, 42, 0.96);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(127, 29, 29, 0.55);
+      border: 1px solid rgba(248, 113, 113, 0.8);
     }
 
-    .mistake-item-question {
-      color: #e5e7eb;
-      margin-bottom: 2px;
+    .mistake-q-title {
+      font-size: 0.9rem;
+      margin: 0 0 4px;
+      color: #f9fafb;
+      font-weight: 600;
     }
 
-    .mistake-item-your {
-      color: #fecaca;
+    .mistake-q-text {
+      font-size: 0.9rem;
+      margin: 0 0 8px;
+      color: var(--muted);
     }
 
-    .mistake-item-correct {
-      color: #bbf7d0;
+    .mistake-answers {
+      font-size: 0.86rem;
     }
 
-    .mistake-item-explanation {
-      color: var(--text-muted);
-      margin-top: 2px;
-      white-space: pre-line;
+    .mistake-answers p {
+      margin: 0 0 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* SCROLLBARS */
-    .topic-list::-webkit-scrollbar,
-    .lesson-body::-webkit-scrollbar,
-    .mistake-list::-webkit-scrollbar {
-      width: 5px;
+    .mistake-answers .wrong {
+      color: var(--danger);
     }
 
-    .topic-list::-webkit-scrollbar-thumb,
-    .lesson-body::-webkit-scrollbar-thumb,
-    .mistake-list::-webkit-scrollbar-thumb {
-      background: rgba(148, 163, 184, 0.6);
-      border-radius: 999px;
+    .mistake-answers .correct {
+      color: var(--success);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
-      body {
-        padding: 10px;
-      }
+    .mistake-answers .explanation {
+      color: var(--muted);
+    }
+
+    .mistake-answers span.label {
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
       .layout {
-        grid-template-columns: minmax(0, 1fr);
-        max-height: none;
+        display: flex;
+        flex-direction: column;
       }
-      .sidebar {
-        border-right: none;
-        border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+
+      .app-shell {
+        margin: 12px;
+        padding: 14px;
+      }
+
+      .quiz-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .level-switcher {
+        justify-content: flex-start;
+      }
+
+      .items-row {
+        justify-content: flex-start;
       }
     }
 
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .quiz-footer {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .lesson-card {
-        max-height: 210px;
+    @media (max-width: 600px) {
+      .app-title {
+        font-size: 1.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header>
-      <div class="title-block">
-        <div class="app-title">
-          <span class="logo-dot"></span>
-          CSE Reviewer Hub
-        </div>
-        <div class="app-subtitle">Verbal Ability · Topic Practice + Teacher-Style Explanations</div>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1 class="app-title">CSE Reviewer Hub</h1>
+        <p class="app-subtitle">
+          Verbal Ability ·
+          <span id="subtitleTopic">Nouns & Pronouns</span>
+        </p>
       </div>
-      <div class="header-pill">
-        <span class="dot"></span>
-        <span>Practice mode · Instant feedback per item</span>
-      </div>
+      <span class="badge">Practice Mode</span>
     </header>
 
-    <div class="layout">
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <div class="sidebar-heading">
-          <h2>Verbal Topics</h2>
-          <span class="badge">Drill by topic</span>
-        </div>
+    <a href="index.html" class="back-link">← Back to Home</a>
 
+    <nav class="mode-tabs">
+      <button class="mode-tab active" data-mode="study" type="button">Study Mode</button>
+      <button class="mode-tab" data-mode="practice" type="button">Practice Quiz</button>
+    </nav>
+
+    <main class="layout">
+      <aside class="topics-panel">
+        <h2 class="panel-title">Verbal Topics</h2>
         <div id="topicList" class="topic-list">
           <!-- Filled by JS -->
         </div>
-
-        <div class="lesson-card">
-          <div class="lesson-header">
-            <h3 id="lessonTitle">Lesson Overview</h3>
-            <span class="lesson-chip">Lesson · Summary</span>
-          </div>
-          <div id="lessonContent" class="lesson-body">
-            Pili muna ng topic sa kaliwa para makita ang mabilis na lesson.  
-            Pag ready ka na, pili ka ng level at number of items sa kanan para mag-quiz.
-          </div>
-        </div>
       </aside>
 
-      <!-- MAIN CONTENT -->
-      <main class="main">
-        <!-- TOP ROW: LEVEL + COUNT -->
-        <div class="pill-row">
-          <div class="info-pill">
-            <span class="dot"></span>
-            <span>Topic: <strong id="quizTopicLabel">—</strong></span>
-          </div>
-          <div class="info-pill">
-            <span>Level: <strong id="quizLevelLabel">Beginner</strong></span>
-          </div>
-          <div class="info-pill">
-            <span>Items: <strong id="quizItemCountLabel">10</strong></span>
+      <section class="content-panel">
+        <!-- STUDY MODE -->
+        <div id="studyView" class="view view--active">
+          <div class="lesson-card">
+            <h2 id="lessonTitle" class="lesson-title"></h2>
+            <p id="lessonIntro" class="lesson-intro"></p>
+            <div id="lessonBody" class="lesson-body"></div>
+            <div id="tipCard" class="tip-card"></div>
           </div>
         </div>
 
-        <div class="chip-row">
-          <span class="chip-label">Level</span>
-          <button class="chip level-chip active" data-level="beginner">Beginner</button>
-          <button class="chip level-chip" data-level="intermediate">Intermediate</button>
-          <button class="chip level-chip" data-level="advanced">Advanced</button>
-          <button class="chip level-chip" data-level="expert">Expert</button>
-        </div>
-
-        <div class="chip-row">
-          <span class="chip-label">Items</span>
-          <button class="chip count-chip active" data-count="10">10</button>
-          <button class="chip count-chip" data-count="20">20</button>
-          <button class="chip count-chip" data-count="30">30</button>
-          <button class="chip count-chip" data-count="40">40</button>
-          <button class="chip count-chip" data-count="50">50</button>
-        </div>
-
-        <div id="proBanner" class="pro-banner hidden">
-          <strong>Advanced &amp; Expert</strong> levels are locked in the free version.  
-          Unlock <strong>Pro Mode</strong> to practice higher-difficulty CSE items.
-        </div>
-
-        <!-- QUIZ CARD -->
-        <section id="quizCard" class="quiz-card">
-          <div class="quiz-header-row">
-            <div id="quizProgressText">Question 1 of 10</div>
-            <div class="quiz-header-badge">Instant feedback ON</div>
-          </div>
-
-          <div class="question-text" id="questionText">
-            Pili muna ng topic sa kaliwa, tapos pumili ng level at items para magsimula.
-          </div>
-
-          <div id="choicesContainer" class="choices">
-            <!-- Choices injected by JS -->
-          </div>
-
-          <div class="quiz-footer">
-            <div class="explanation-box">
-              <div class="explanation-title">Teacher's Explanation</div>
-              <div id="explanationText" class="explanation-text">
-                Kapag pumili ka ng sagot, lalabas dito ang step-by-step explanation.
+        <!-- PRACTICE QUIZ -->
+        <div id="practiceView" class="view">
+          <div id="quizHeader" class="quiz-header">
+            <div class="quiz-meta">
+              <h2 id="quizTopicTitle" class="lesson-title"></h2>
+              <p class="lesson-intro">
+                Level:
+                <span id="quizLevelLabel">Beginner</span>
+              </p>
+            </div>
+            <div>
+              <div class="level-switcher">
+                <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
+                <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
+                <button class="level-chip" data-level="advanced" type="button">Advanced</button>
+                <button class="level-chip" data-level="expert" type="button">Expert</button>
+              </div>
+              <div class="items-row">
+                <span class="items-label">Items:</span>
+                <button type="button" class="items-chip active" data-count="10">10</button>
+                <button type="button" class="items-chip" data-count="20">20</button>
+                <button type="button" class="items-chip" data-count="30">30</button>
+                <button type="button" class="items-chip" data-count="40">40</button>
+                <button type="button" class="items-chip" data-count="50">50</button>
               </div>
             </div>
-            <div class="nav-buttons">
-              <button id="prevBtn" class="nav-btn secondary" disabled>
-                <span class="chevron">◀</span>
-                Previous
-              </button>
-              <button id="nextBtn" class="nav-btn">
-                Next
-                <span class="chevron">▶</span>
-              </button>
+          </div>
+
+          <div id="quizCard" class="quiz-card">
+            <div id="questionText" class="question-text"></div>
+            <ul id="optionsList" class="options-list"></ul>
+            <div id="feedback" class="feedback"></div>
+            <div class="quiz-footer">
+              <div>
+                <button id="prevBtn" class="primary-button secondary" type="button">Previous</button>
+                <button id="nextBtn" class="primary-button" type="button">Next</button>
+              </div>
+              <span id="progressText" class="progress-text"></span>
             </div>
           </div>
-        </section>
 
-        <!-- RESULT PANEL -->
-        <section id="resultPanel" class="result-panel hidden">
-          <h2>Quiz Result</h2>
-          <div id="resultScoreMain" class="result-score-main">0 / 10</div>
-          <div id="resultScoreText" class="result-score-text">
-            Tapusin muna ang set para makita ang summary.
+          <!-- RESULT PANEL (Quiz Completed) -->
+          <div id="resultPanel" class="quiz-result hidden">
+            <div class="quiz-result-header">
+              <h2>Quiz Completed!</h2>
+              <div id="resultScoreMain" class="result-score-main">0 / 0</div>
+              <div id="resultScoreText" class="result-score-sub">Score: 0%</div>
+              <div class="quiz-result-actions">
+                <button id="resultHomeBtn" type="button" class="primary-button secondary">Home</button>
+                <button id="resultRetryBtn" type="button" class="primary-button">Retake Quiz</button>
+              </div>
+            </div>
+            <div class="quiz-result-body">
+              <h3 class="result-section-title">Review Mistakes</h3>
+              <div id="mistakeList" class="mistake-list">
+                <!-- Filled by JS -->
+              </div>
+            </div>
           </div>
-
-          <div class="result-actions">
-            <button id="resultHomeBtn" class="nav-btn secondary">
-              Back to topics
-            </button>
-            <button id="resultRetryBtn" class="nav-btn">
-              Retry same set
-            </button>
-          </div>
-
-          <div class="mistake-section">
-            <h3>Review Mistakes</h3>
-            <ul id="mistakeList" class="mistake-list">
-              <!-- Filled by JS -->
-            </ul>
-          </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
   </div>
 
 
@@ -5350,525 +5197,528 @@ synonyms: {
     `
   } 
 }; 
-  <!-- ==============================
-       3. QUIZ LOGIC
-       ============================== -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // ELEMENTS
-      const topicListEl = document.getElementById("topicList");
-      const quizTopicLabel = document.getElementById("quizTopicLabel");
-      const quizLevelLabel = document.getElementById("quizLevelLabel");
-      const quizItemCountLabel = document.getElementById("quizItemCountLabel");
+ // ==========================================
+    // 4. STATE + DOM REFERENCES
+    // ==========================================
+    let currentMode = "study";
+    let currentTopicId = VERBAL_TOPICS[0].id;
+    let currentLevel = "beginner";
+    let currentIndex = 0;
+    let currentItemCount = 10;
 
-      const lessonTitleEl = document.getElementById("lessonTitle");
-      const lessonContentEl = document.getElementById("lessonContent");
+    let userAnswers = [];
+    let quizFinished = false;
 
-      const levelChips = Array.from(document.querySelectorAll(".level-chip"));
-      const countChips = Array.from(document.querySelectorAll(".count-chip"));
-      const proBanner = document.getElementById("proBanner");
+    const modeTabs        = document.querySelectorAll(".mode-tab");
+    const topicListEl     = document.getElementById("topicList");
+    const subtitleTopicEl = document.getElementById("subtitleTopic");
 
-      const quizCard = document.getElementById("quizCard");
-      const resultPanel = document.getElementById("resultPanel");
+    const studyView    = document.getElementById("studyView");
+    const practiceView = document.getElementById("practiceView");
 
-      const quizProgressText = document.getElementById("quizProgressText");
-      const questionTextEl = document.getElementById("questionText");
-      const choicesContainer = document.getElementById("choicesContainer");
-      const explanationTextEl = document.getElementById("explanationText");
+    const lessonTitleEl = document.getElementById("lessonTitle");
+    const lessonIntroEl = document.getElementById("lessonIntro");
+    const lessonBodyEl  = document.getElementById("lessonBody");
+    const tipCardEl     = document.getElementById("tipCard");
 
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
+    const quizHeaderEl     = document.getElementById("quizHeader");
+    const quizCardEl       = document.getElementById("quizCard");
+    const quizTopicTitleEl = document.getElementById("quizTopicTitle");
+    const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+    const questionTextEl   = document.getElementById("questionText");
+    const optionsListEl    = document.getElementById("optionsList");
+    const feedbackEl       = document.getElementById("feedback");
+    const prevBtn          = document.getElementById("prevBtn");
+    const nextBtn          = document.getElementById("nextBtn");
+    const progressTextEl   = document.getElementById("progressText");
+    const levelChips       = document.querySelectorAll(".level-chip");
+    const itemChips        = document.querySelectorAll(".items-chip");
 
-      const mistakeListEl = document.getElementById("mistakeList");
-      const resultScoreMain = document.getElementById("resultScoreMain");
-      const resultScoreText = document.getElementById("resultScoreText");
-      const resultHomeBtn = document.getElementById("resultHomeBtn");
-      const resultRetryBtn = document.getElementById("resultRetryBtn");
+    const resultPanelEl    = document.getElementById("resultPanel");
+    const resultScoreMain  = document.getElementById("resultScoreMain");
+    const resultScoreText  = document.getElementById("resultScoreText");
+    const mistakeListEl    = document.getElementById("mistakeList");
+    const resultHomeBtn    = document.getElementById("resultHomeBtn");
+    const resultRetryBtn   = document.getElementById("resultRetryBtn");
 
-      // STATE
-      const state = {
-        // kung walang VERBAL_TOPICS, fallback sa "pronouns"
-        currentTopicId:
-          typeof VERBAL_TOPICS !== "undefined" && VERBAL_TOPICS[0]
-            ? VERBAL_TOPICS[0].id
-            : "pronouns",
-        currentLevel: "beginner",
-        currentCount: 10,
-        questions: [],
-        currentIndex: 0,
-        answers: {} // index → { choiceIndex, isCorrect }
+    // ==========================================
+    // 5. HELPERS
+    // ==========================================
+    function capitalize(text) {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function buildTopicsList() {
+      topicListEl.innerHTML = "";
+      VERBAL_TOPICS.forEach((topic) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "topic-pill";
+        btn.dataset.topicId = topic.id;
+
+        const labelSpan = document.createElement("span");
+        labelSpan.className = "label";
+        labelSpan.textContent = topic.label;
+
+        const tagSpan = document.createElement("span");
+        tagSpan.className = "tag";
+        tagSpan.textContent = topic.tag || "Topic";
+
+        btn.appendChild(labelSpan);
+        btn.appendChild(tagSpan);
+
+        btn.addEventListener("click", function () {
+          selectTopic(topic.id);
+        });
+
+        topicListEl.appendChild(btn);
+      });
+    }
+
+    function updateActiveTopicPill() {
+      const pills = topicListEl.querySelectorAll(".topic-pill");
+      pills.forEach((pill) => {
+        const isActive = pill.dataset.topicId === currentTopicId;
+        pill.classList.toggle("active", isActive);
+      });
+
+      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
+      if (topic && subtitleTopicEl) {
+        subtitleTopicEl.textContent = topic.label;
+      }
+    }
+
+    function renderTips(tips) {
+      if (!tipCardEl) return;
+      tipCardEl.innerHTML = "";
+
+      const heading = document.createElement("h3");
+      heading.textContent = "Quick exam tips";
+      tipCardEl.appendChild(heading);
+
+      const list = document.createElement("ul");
+      (tips || []).forEach((tip) => {
+        const li = document.createElement("li");
+        li.textContent = tip;
+        list.appendChild(li);
+      });
+
+      tipCardEl.appendChild(list);
+    }
+
+    function renderLesson() {
+      const lesson = VERBAL_LESSONS[currentTopicId];
+
+      const fallbackSection = {
+        heading: "Overview",
+        bullets: [
+          "Review the basic definition and key properties of this topic.",
+          "Study at least one fully worked example step by step.",
+          "Practice identifying correct usage in sentences."
+        ]
       };
 
-      // PRO LEVELS (fixed, hindi na kailangan ng global LOCKED_LEVELS)
-      const lockedLevels = ["advanced", "expert"];
+      const fallbackTips = [
+        "Read the entire sentence before choosing an answer.",
+        "Eliminate obviously wrong options first.",
+        "Trust your first instinct unless you find clear evidence against it."
+      ];
 
-      // HELPERS
-      function isLevelLocked(level) {
-        return lockedLevels.includes(level);
-      }
+      if (!lesson) {
+        lessonTitleEl.textContent = "Lesson coming soon";
+        lessonIntroEl.textContent =
+          "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
+        lessonBodyEl.innerHTML = "";
 
-      function getQuestionBank(topicId, level) {
-        const bankRoot =
-          typeof window.VERBAL_QUESTION_BANK !== "undefined"
-            ? window.VERBAL_QUESTION_BANK
-            : {};
-        const topicBank = bankRoot[topicId];
-        if (!topicBank) return [];
-        const levelData = topicBank[level];
-        if (Array.isArray(levelData)) return levelData;
-        if (Array.isArray(topicBank)) return topicBank; // fallback
-        return [];
-      }
+        const sectionEl = document.createElement("section");
+        const h3 = document.createElement("h3");
+        h3.textContent = fallbackSection.heading;
+        sectionEl.appendChild(h3);
 
-      function normalizeQuestions(rawList, limit) {
-        const trimmed = rawList.slice(0, Math.min(limit, rawList.length));
-        return trimmed.map((q, idx) => {
-          const options = q.choices || q.options || [];
-          let correctIndex =
-            typeof q.correctIndex === "number" ? q.correctIndex : null;
-          let correctAnswer =
-            typeof q.answer !== "undefined" ? q.answer : null;
-
-          if (options.length && correctIndex === null && correctAnswer !== null) {
-            correctIndex = options.indexOf(correctAnswer);
-          }
-          if (options.length && correctAnswer === null && correctIndex !== null) {
-            correctAnswer = options[correctIndex];
-          }
-          if (options.length && correctIndex === null && correctAnswer === null) {
-            correctIndex = 0;
-            correctAnswer = options[0];
-          }
-
-          return {
-            ...q,
-            __index: idx,
-            _options: options,
-            _correctIndex: correctIndex,
-            _correctAnswer: correctAnswer
-          };
-        });
-      }
-
-      function updateLabels() {
-        const topic =
-          typeof VERBAL_TOPICS !== "undefined"
-            ? VERBAL_TOPICS.find(t => t.id === state.currentTopicId)
-            : null;
-
-        quizTopicLabel.textContent = topic
-          ? topic.label
-          : state.currentTopicId;
-
-        const levelLabel =
-          {
-            beginner: "Beginner",
-            intermediate: "Intermediate",
-            advanced: "Advanced",
-            expert: "Expert"
-          }[state.currentLevel] || state.currentLevel;
-
-        quizLevelLabel.textContent = levelLabel;
-        quizItemCountLabel.textContent = String(state.currentCount);
-      }
-
-      function updateLessonPanel() {
-        const lessons =
-          typeof VERBAL_LESSONS !== "undefined" ? VERBAL_LESSONS : {};
-        const data = lessons[state.currentTopicId];
-
-        if (data) {
-          lessonTitleEl.textContent = data.title;
-          lessonContentEl.innerHTML = data.html;
-        } else {
-          lessonTitleEl.textContent = "Lesson Overview";
-          lessonContentEl.textContent =
-            "Walang naka-set na lesson text para sa topic na ito.";
-        }
-      }
-
-      // TOPIC LIST UI
-      function renderTopicList() {
-        topicListEl.innerHTML = "";
-
-        if (typeof VERBAL_TOPICS === "undefined") {
-          const info = document.createElement("div");
-          info.textContent =
-            "Walang VERBAL_TOPICS na naka-define. I-check ang data script.";
-          topicListEl.appendChild(info);
-          return;
-        }
-
-        VERBAL_TOPICS.forEach(topic => {
-          const btn = document.createElement("button");
-          btn.className = "topic-pill";
-          btn.dataset.topicId = topic.id;
-
-          const labelSpan = document.createElement("span");
-          labelSpan.className = "topic-label";
-          labelSpan.textContent = topic.label;
-
-          const tagSpan = document.createElement("span");
-          tagSpan.className = "topic-tag";
-          tagSpan.textContent = topic.tag || "";
-
-          btn.appendChild(labelSpan);
-          btn.appendChild(tagSpan);
-
-          if (topic.id === state.currentTopicId) {
-            btn.classList.add("active");
-          }
-
-          btn.addEventListener("click", () => {
-            if (state.currentTopicId === topic.id) return;
-            state.currentTopicId = topic.id;
-            state.currentIndex = 0;
-            state.answers = {};
-            updateTopicActiveUI();
-            updateLessonPanel();
-            loadQuestions();
-          });
-
-          topicListEl.appendChild(btn);
-        });
-      }
-
-      function updateTopicActiveUI() {
-        const pills = topicListEl.querySelectorAll(".topic-pill");
-        pills.forEach(pill => {
-          pill.classList.toggle(
-            "active",
-            pill.dataset.topicId === state.currentTopicId
-          );
-        });
-        updateLabels();
-      }
-
-      // LEVEL / COUNT CHIPS
-      function initLevelChips() {
-        levelChips.forEach(chip => {
-          const level = chip.dataset.level;
-
-          if (isLevelLocked(level)) {
-            chip.classList.add("locked");
-          }
-
-          chip.addEventListener("click", () => {
-            // PRO LOCK
-            if (isLevelLocked(level)) {
-              if (proBanner) {
-                proBanner.classList.remove("hidden");
-              } else {
-                alert(
-                  "Advanced at Expert levels ay para sa PRO version. 🙂"
-                );
-              }
-              return;
-            }
-
-            if (proBanner) {
-              proBanner.classList.add("hidden");
-            }
-
-            if (state.currentLevel === level) return;
-
-            levelChips.forEach(c => c.classList.remove("active"));
-            chip.classList.add("active");
-
-            state.currentLevel = level;
-            state.currentIndex = 0;
-            state.answers = {};
-            updateLabels();
-            loadQuestions();
-          });
-        });
-      }
-
-      function initCountChips() {
-        countChips.forEach(chip => {
-          const count = parseInt(chip.dataset.count, 10);
-          chip.addEventListener("click", () => {
-            if (state.currentCount === count) return;
-            countChips.forEach(c => c.classList.remove("active"));
-            chip.classList.add("active");
-            state.currentCount = count;
-            state.currentIndex = 0;
-            state.answers = {};
-            updateLabels();
-            loadQuestions();
-          });
-        });
-      }
-
-      // QUIZ CORE
-      function loadQuestions() {
-        const raw = getQuestionBank(state.currentTopicId, state.currentLevel);
-        const normalized = normalizeQuestions(raw, state.currentCount);
-        state.questions = normalized;
-        state.currentIndex = 0;
-        state.answers = {};
-        resultPanel.classList.add("hidden");
-        quizCard.classList.remove("hidden");
-
-        if (!normalized.length) {
-          questionTextEl.textContent =
-            "Wala pang questions para sa kombinasyong ito (topic + level).";
-          choicesContainer.innerHTML = "";
-          explanationTextEl.textContent =
-            "I-check kung na-load na ang tamang question file para sa topic na ito.";
-          quizProgressText.textContent = "0 of 0";
-          prevBtn.disabled = true;
-          nextBtn.disabled = true;
-          return;
-        }
-
-        renderCurrentQuestion();
-      }
-
-      function renderCurrentQuestion() {
-        const q = state.questions[state.currentIndex];
-        if (!q) return;
-
-        quizProgressText.textContent =
-          "Question " +
-          (state.currentIndex + 1) +
-          " of " +
-          state.questions.length;
-
-        questionTextEl.textContent = q.question || "Question text missing.";
-        choicesContainer.innerHTML = "";
-
-        const existingAnswer = state.answers[state.currentIndex];
-
-        q._options.forEach((opt, idx) => {
-          const btn = document.createElement("button");
-          btn.className = "choice-btn";
-
-          const indexCircle = document.createElement("div");
-          indexCircle.className = "choice-index";
-          indexCircle.textContent = String.fromCharCode(65 + idx); // A, B, C...
-
-          const textSpan = document.createElement("div");
-          textSpan.className = "choice-text";
-          textSpan.textContent = opt;
-
-          btn.appendChild(indexCircle);
-          btn.appendChild(textSpan);
-
-          if (existingAnswer) {
-            // show previous selection + correctness
-            if (idx === existingAnswer.choiceIndex) {
-              btn.classList.add("selected");
-              btn.classList.add(
-                existingAnswer.isCorrect ? "correct" : "incorrect"
-              );
-            }
-            if (idx === q._correctIndex) {
-              btn.classList.add("correct");
-            }
-          }
-
-          btn.addEventListener("click", () => {
-            handleChoiceClick(idx);
-          });
-
-          choicesContainer.appendChild(btn);
-        });
-
-        if (existingAnswer) {
-          explanationTextEl.textContent =
-            q.explanation || "No explanation provided.";
-        } else {
-          explanationTextEl.textContent =
-            "Kapag pumili ka ng sagot, lalabas dito ang step-by-step explanation.";
-        }
-
-        updateNavButtons();
-      }
-
-      function handleChoiceClick(choiceIndex) {
-        const q = state.questions[state.currentIndex];
-        if (!q) return;
-
-        const isCorrect = choiceIndex === q._correctIndex;
-        state.answers[state.currentIndex] = { choiceIndex, isCorrect };
-
-        // Re-render answers with correct/incorrect styling
-        const choiceButtons = Array.from(
-          choicesContainer.querySelectorAll(".choice-btn")
-        );
-        choiceButtons.forEach((btn, idx) => {
-          btn.classList.remove("selected", "correct", "incorrect");
-          if (idx === choiceIndex) {
-            btn.classList.add("selected");
-            btn.classList.add(isCorrect ? "correct" : "incorrect");
-          }
-          if (idx === q._correctIndex) {
-            btn.classList.add("correct");
-          }
-        });
-
-        explanationTextEl.textContent =
-          q.explanation || "No explanation provided.";
-        updateNavButtons();
-      }
-
-      function updateNavButtons() {
-        const total = state.questions.length;
-        const idx = state.currentIndex;
-
-        prevBtn.disabled = idx === 0 || total === 0;
-
-        const hasAnsweredCurrent = !!state.answers[idx];
-        nextBtn.disabled = total === 0 || !hasAnsweredCurrent;
-
-        if (idx === total - 1) {
-          nextBtn.textContent = "Finish";
-        } else {
-          nextBtn.textContent = "Next";
-        }
-      }
-
-      function goPrev() {
-        if (state.currentIndex === 0) return;
-        state.currentIndex -= 1;
-        renderCurrentQuestion();
-      }
-
-      function goNextOrFinish() {
-        const total = state.questions.length;
-        if (!total) return;
-
-        const idx = state.currentIndex;
-        const hasAnsweredCurrent = !!state.answers[idx];
-        if (!hasAnsweredCurrent) return;
-
-        if (idx < total - 1) {
-          state.currentIndex += 1;
-          renderCurrentQuestion();
-        } else {
-          // last item → compute result
-          showResults();
-        }
-      }
-
-      function showResults() {
-        const total = state.questions.length;
-        let correct = 0;
-        const mistakes = [];
-
-        state.questions.forEach((q, idx) => {
-          const ans = state.answers[idx];
-          if (ans && ans.isCorrect) {
-            correct += 1;
-          } else if (ans) {
-            mistakes.push({ question: q, answer: ans });
-          }
-        });
-
-        resultScoreMain.textContent = correct + " / " + total;
-
-        const percent =
-          total > 0 ? Math.round((correct / total) * 100) : 0;
-        let remark;
-        if (percent >= 90) {
-          remark = "Excellent! Pang-topnotcher ang level mo sa topic na ito.";
-        } else if (percent >= 75) {
-          remark = "Pasado! Konting practice pa para mas tumibay.";
-        } else if (percent >= 50) {
-          remark =
-            "Okay na simula. Balikan ang lesson at weak spots.";
-        } else {
-          remark =
-            "Huwag ma-discourage. Basahin ulit ang lesson at ulitin ang set.";
-        }
-
-        resultScoreText.textContent =
-          "Score: " +
-          percent +
-          "% – " +
-          remark;
-
-        // Build mistakes list
-        mistakeListEl.innerHTML = "";
-        if (!mistakes.length) {
+        const ul = document.createElement("ul");
+        fallbackSection.bullets.forEach((b) => {
           const li = document.createElement("li");
-          li.className = "mistake-item";
-          li.textContent =
-            "Perfect! Wala kang maling sagot sa set na ito.";
-          mistakeListEl.appendChild(li);
-        } else {
-          mistakes.forEach(entry => {
-            const { question, answer } = entry;
-            const li = document.createElement("li");
-            li.className = "mistake-item";
+          li.textContent = b;
+          ul.appendChild(li);
+        });
+        sectionEl.appendChild(ul);
 
-            const qText = document.createElement("div");
-            qText.className = "mistake-item-question";
-            qText.textContent =
-              question.question || "Question text missing.";
+        lessonBodyEl.appendChild(sectionEl);
+        renderTips(fallbackTips);
+        return;
+      }
 
-            const yourAns = document.createElement("div");
-            yourAns.className = "mistake-item-your";
-            const yourText =
-              question._options[answer.choiceIndex] ?? "(no answer)";
-            yourAns.textContent = "Your answer: " + yourText;
+      lessonTitleEl.textContent = lesson.title;
+      lessonIntroEl.textContent = lesson.intro;
+      lessonBodyEl.innerHTML = "";
 
-            const correctAns = document.createElement("div");
-            correctAns.className = "mistake-item-correct";
-            const correctText =
-              question._options[question._correctIndex] ?? "(none)";
-            correctAns.textContent =
-              "Correct answer: " + correctText;
+      (lesson.sections || []).forEach((section) => {
+        const sectionEl = document.createElement("section");
+        const h3 = document.createElement("h3");
+        h3.textContent = section.heading;
+        sectionEl.appendChild(h3);
 
-            const expl = document.createElement("div");
-            expl.className = "mistake-item-explanation";
-            expl.textContent =
-              question.explanation || "No explanation provided.";
+        const ul = document.createElement("ul");
+        (section.bullets || []).forEach((b) => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          ul.appendChild(li);
+        });
 
-            li.appendChild(qText);
-            li.appendChild(yourAns);
-            li.appendChild(correctAns);
-            li.appendChild(expl);
+        sectionEl.appendChild(ul);
+        lessonBodyEl.appendChild(sectionEl);
+      });
 
-            mistakeListEl.appendChild(li);
-          });
+      renderTips(lesson.tips || fallbackTips);
+    }
+
+    function getQuestionsForCurrent() {
+      const topicQuestions = QUESTION_BANK[currentTopicId] || {};
+      const levelQuestions = topicQuestions[currentLevel] || [];
+      return levelQuestions.slice(0, currentItemCount);
+    }
+
+    function resetQuizState() {
+      const questions = getQuestionsForCurrent();
+      userAnswers = questions.map(() => null);
+      currentIndex = 0;
+      quizFinished = false;
+
+      if (feedbackEl) {
+        feedbackEl.textContent = "";
+        feedbackEl.className = "feedback";
+      }
+      if (progressTextEl) {
+        progressTextEl.textContent = "";
+      }
+      if (resultPanelEl) {
+        resultPanelEl.classList.add("hidden");
+      }
+      if (quizHeaderEl) {
+        quizHeaderEl.classList.remove("hidden");
+      }
+      if (quizCardEl) {
+        quizCardEl.classList.remove("hidden");
+      }
+    }
+
+    function renderQuiz() {
+      const topic = VERBAL_TOPICS.find((t) => t.id === currentTopicId);
+      quizTopicTitleEl.textContent = topic ? topic.label : "Verbal Ability";
+      quizLevelLabelEl.textContent = capitalize(currentLevel);
+
+      const questions = getQuestionsForCurrent();
+
+      if (userAnswers.length !== questions.length) {
+        userAnswers = questions.map(() => null);
+      }
+
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+
+      if (!questions.length) {
+        questionTextEl.textContent =
+          "No practice questions are available yet for this topic and level. They will be added soon.";
+        optionsListEl.innerHTML = "";
+        progressTextEl.textContent = "0 / 0";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
+
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+
+      const currentQ = questions[currentIndex];
+      questionTextEl.textContent = currentQ.question;
+      optionsListEl.innerHTML = "";
+
+      currentQ.options.forEach((option) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option-button";
+        btn.textContent = option;
+
+        btn.addEventListener("click", function () {
+          handleAnswer(option);
+        });
+
+        li.appendChild(btn);
+        optionsListEl.appendChild(li);
+      });
+
+      const stored = userAnswers[currentIndex];
+      if (stored && stored.selected != null) {
+        const buttons = optionsListEl.querySelectorAll(".option-button");
+        buttons.forEach((btn) => {
+          if (btn.textContent === currentQ.answer) {
+            btn.classList.add("is-correct");
+          }
+          if (btn.textContent === stored.selected && !stored.correct) {
+            btn.classList.add("is-incorrect");
+          }
+        });
+
+        feedbackEl.textContent =
+          (stored.correct ? "Correct! " : "Not quite. ") +
+          (currentQ.explanation || "");
+        feedbackEl.className =
+          "feedback " + (stored.correct ? "feedback--correct" : "feedback--incorrect");
+      }
+
+      progressTextEl.textContent =
+        "Question " + (currentIndex + 1) + " of " + questions.length;
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = false;
+      nextBtn.textContent =
+        currentIndex === questions.length - 1 ? "Finish Quiz" : "Next";
+    }
+
+    function handleAnswer(selectedOption) {
+      const questions = getQuestionsForCurrent();
+      if (!questions.length) return;
+      if (quizFinished) return;
+
+      const currentQ = questions[currentIndex];
+      const isCorrect = selectedOption === currentQ.answer;
+
+      userAnswers[currentIndex] = {
+        selected: selectedOption,
+        correct: isCorrect
+      };
+
+      const buttons = optionsListEl.querySelectorAll(".option-button");
+      buttons.forEach((btn) => {
+        btn.classList.remove("is-correct", "is-incorrect");
+        if (btn.textContent === currentQ.answer) {
+          btn.classList.add("is-correct");
         }
+        if (btn.textContent === selectedOption && !isCorrect) {
+          btn.classList.add("is-incorrect");
+        }
+      });
 
-        resultPanel.classList.remove("hidden");
-        // scroll to result
-        resultPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (isCorrect) {
+        feedbackEl.textContent =
+          "Correct! " + (currentQ.explanation || "");
+        feedbackEl.className = "feedback feedback--correct";
+      } else {
+        feedbackEl.textContent =
+          "Not quite. " + (currentQ.explanation || "");
+        feedbackEl.className = "feedback feedback--incorrect";
+      }
+    }
+
+    function finishQuiz() {
+      const questions = getQuestionsForCurrent();
+      if (!questions.length) return;
+
+      let correct = 0;
+      let answered = 0;
+
+      userAnswers.forEach((ans) => {
+        if (ans && ans.selected != null) {
+          answered++;
+          if (ans.correct) correct++;
+        }
+      });
+
+      const total = questions.length;
+      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      quizFinished = true;
+
+      // Main score display
+      if (resultScoreMain) {
+        resultScoreMain.textContent = correct + " / " + total;
+      }
+      if (resultScoreText) {
+        resultScoreText.textContent = "Score: " + percent + "%";
       }
 
-      function resetToTopicSelect() {
-        state.currentIndex = 0;
-        state.answers = {};
-        resultPanel.classList.add("hidden");
-        renderCurrentQuestion();
-        quizCard.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Build Review Mistakes list with explanations
+      if (mistakeListEl) {
+        mistakeListEl.innerHTML = "";
+
+        questions.forEach((q, index) => {
+          const ans = userAnswers[index];
+          const selected = ans ? ans.selected : null;
+          const isCorrect = ans ? ans.correct : false;
+
+          // Skip items that were answered correctly
+          if (isCorrect) return;
+
+          const item = document.createElement("div");
+          item.className = "mistake-item";
+
+          const title = document.createElement("p");
+          title.className = "mistake-q-title";
+          title.textContent = "Question " + (index + 1);
+          item.appendChild(title);
+
+          const qText = document.createElement("p");
+          qText.className = "mistake-q-text";
+          qText.textContent = q.question;
+          item.appendChild(qText);
+
+          const answersWrap = document.createElement("div");
+          answersWrap.className = "mistake-answers";
+
+          // Your answer
+          const userP = document.createElement("p");
+          userP.classList.add("wrong");
+          userP.innerHTML =
+            "<span class='label'>✗ Your answer:</span> " +
+            (selected !== null && selected !== undefined
+              ? selected
+              : "<em>Not answered</em>");
+          answersWrap.appendChild(userP);
+
+          // Correct answer
+          const correctP = document.createElement("p");
+          correctP.classList.add("correct");
+          correctP.innerHTML =
+            "<span class='label'>✓ Correct answer:</span> " + q.answer;
+          answersWrap.appendChild(correctP);
+
+          // Explanation (always English – pulled from q.explanation)
+          const explP = document.createElement("p");
+          explP.classList.add("explanation");
+          explP.innerHTML =
+            "<span class='label'>👉 Why:</span> " +
+            (q.explanation && q.explanation.trim().length
+              ? q.explanation
+              : "No explanation is available for this item.");
+          answersWrap.appendChild(explP);
+
+          item.appendChild(answersWrap);
+          mistakeListEl.appendChild(item);
+        });
+
+        // If walang mali
+        if (!mistakeListEl.children.length) {
+          const p = document.createElement("p");
+          p.textContent = "Perfect score! No mistakes to review.";
+          mistakeListEl.appendChild(p);
+        }
       }
 
-      function retrySameSet() {
-        state.currentIndex = 0;
-        state.answers = {};
-        resultPanel.classList.add("hidden");
-        renderCurrentQuestion();
+      // Show result panel, hide quiz card
+      if (quizHeaderEl) quizHeaderEl.classList.add("hidden");
+      if (quizCardEl) quizCardEl.classList.add("hidden");
+      if (resultPanelEl) resultPanelEl.classList.remove("hidden");
+    }
+
+    function switchMode(mode) {
+      currentMode = mode;
+
+      modeTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.mode === mode);
+      });
+
+      if (mode === "study") {
+        studyView.classList.add("view--active");
+        practiceView.classList.remove("view--active");
+      } else {
+        practiceView.classList.add("view--active");
+        studyView.classList.remove("view--active");
+      }
+    }
+
+    function selectTopic(topicId) {
+      currentTopicId = topicId;
+      resetQuizState();
+      updateActiveTopicPill();
+      renderLesson();
+      renderQuiz();
+    }
+
+    function attachEvents() {
+      modeTabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const mode = tab.dataset.mode;
+          if (mode && mode !== currentMode) {
+            switchMode(mode);
+          }
+        });
+      });
+
+      levelChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const level = chip.dataset.level;
+          if (!level || level === currentLevel) return;
+          currentLevel = level;
+          resetQuizState();
+          levelChips.forEach((c) => {
+            c.classList.toggle("active", c.dataset.level === level);
+          });
+          renderQuiz();
+        });
+      });
+
+      itemChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const count = parseInt(chip.dataset.count, 10);
+          if (!count || count === currentItemCount) return;
+
+          currentItemCount = count;
+          resetQuizState();
+
+          itemChips.forEach((c) => {
+            c.classList.toggle("active", c === chip);
+          });
+
+          renderQuiz();
+        });
+      });
+
+      prevBtn.addEventListener("click", function () {
+        const questions = getQuestionsForCurrent();
+        if (!questions.length) return;
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+          renderQuiz();
+        }
+      });
+
+      nextBtn.addEventListener("click", function () {
+        const questions = getQuestionsForCurrent();
+        if (!questions.length) return;
+
+        if (currentIndex < questions.length - 1) {
+          currentIndex += 1;
+          renderQuiz();
+        } else {
+          finishQuiz();
+        }
+      });
+
+      if (resultRetryBtn) {
+        resultRetryBtn.addEventListener("click", function () {
+          resetQuizState();
+          renderQuiz();
+          switchMode("practice");
+        });
       }
 
-      // EVENT LISTENERS
-      prevBtn.addEventListener("click", goPrev);
-      nextBtn.addEventListener("click", goNextOrFinish);
-      resultHomeBtn.addEventListener("click", resetToTopicSelect);
-      resultRetryBtn.addEventListener("click", retrySameSet);
+      if (resultHomeBtn) {
+        resultHomeBtn.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      }
+    }
 
-      // INIT
-      renderTopicList();
-      updateTopicActiveUI();
-      updateLessonPanel();
-      initLevelChips();
-      initCountChips();
-      loadQuestions();
-    });
+    function initVerbalPage() {
+      buildTopicsList();
+      attachEvents();
+      selectTopic(currentTopicId);
+      switchMode("study");
+    }
+
+    initVerbalPage();
   </script>
 </body>
 </html>
