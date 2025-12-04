@@ -806,6 +806,32 @@
       }
     }
 
+    // Normalize different question formats into { question, options, answer, explanation }
+    function normalizeQuestion(q) {
+      if (!q || typeof q !== "object") return q;
+
+      const clone = { ...q };
+
+      // If walang "options" pero may "choices", gamitin natin iyon.
+      if (!Array.isArray(clone.options) && Array.isArray(clone.choices)) {
+        clone.options = clone.choices.slice();
+      }
+
+      // Kung walang "answer" pero may correctIndex + options,
+      // kunin natin ang tamang sagot mula sa options array.
+      if (
+        (clone.answer == null || clone.answer === "") &&
+        typeof clone.correctIndex === "number" &&
+        Array.isArray(clone.options) &&
+        clone.correctIndex >= 0 &&
+        clone.correctIndex < clone.options.length
+      ) {
+        clone.answer = clone.options[clone.correctIndex];
+      }
+
+      return clone;
+    }
+
     // Collect questions from all banks based on level + subject
     function collectQuestionsForLevel(level, subject) {
       const pool = [];
@@ -816,15 +842,30 @@
           const topicBank = bank[topicId];
           if (!topicBank) return;
 
+          // CASE 1: topicBank is a FLAT ARRAY (no levels)
+          // e.g. window.VERBAL_QUESTION_BANK["prepositions"] = [ ... ]
+          if (Array.isArray(topicBank)) {
+            topicBank.forEach(q => {
+              pool.push(normalizeQuestion(q));
+            });
+            return;
+          }
+
+          // CASE 2: topicBank is an OBJECT WITH LEVELS
+          // e.g. { beginner: [...], intermediate: [...], advanced: [...], expert: [...] }
           if (level === "mixed") {
             ["beginner", "intermediate", "advanced", "expert"].forEach(lvl => {
               if (Array.isArray(topicBank[lvl])) {
-                pool.push(...topicBank[lvl]);
+                topicBank[lvl].forEach(q => {
+                  pool.push(normalizeQuestion(q));
+                });
               }
             });
           } else {
             if (Array.isArray(topicBank[level])) {
-              pool.push(...topicBank[level]);
+              topicBank[level].forEach(q => {
+                pool.push(normalizeQuestion(q));
+              });
             }
           }
         });
