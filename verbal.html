@@ -723,6 +723,8 @@
     const IS_PRO_USER = false;
     const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
 
+    // Para mawala ang "VERBAL_LESSONS is not defined"
+  window.VERBAL_LESSONS = window.VERBAL_LESSONS || {};
 
     // ==========================================
     // 1. TOPICS + LESSON DATA
@@ -5282,6 +5284,24 @@ synonyms: {
       }
     }
 
+ // Kapag wala pang na-define na lesson, huwag mag-crash,
+    // magpakita lang ng "coming soon" message.
+    if (!lesson) {
+      container.innerHTML = `
+        <div class="lesson-card">
+          <h2 class="lesson-title">Lesson coming soon</h2>
+          <p class="lesson-text">
+            Wala pa tayong naka-encode na lesson para sa
+            <strong>${topicId}</strong> – <strong>${levelId}</strong>.<br/>
+            Puwede ka nang mag-take ng quiz habang ginagawa pa natin ang lesson
+            content.
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+  
     function renderTips(tips) {
       if (!tipCardEl) return;
       tipCardEl.innerHTML = "";
