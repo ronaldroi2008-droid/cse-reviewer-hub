@@ -162,6 +162,7 @@
       color: var(--muted);
       cursor: pointer;
       transition: all 0.15s ease;
+      position: relative;
     }
 
     .level-tab.active {
@@ -170,9 +171,21 @@
       box-shadow: 0 0 0 1px var(--accent-strong);
     }
 
-    .level-tab:hover:not(.active)) {
+    .level-tab:hover:not(.active) {
       background: rgba(148, 163, 184, 0.16);
       color: #e5e7eb;
+    }
+
+    /* FREE vs PRO locked state */
+    .level-tab.locked {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .level-tab.locked::after {
+      content: "🔒";
+      margin-left: 4px;
+      font-size: 0.7rem;
     }
 
     .timer-row {
@@ -527,6 +540,24 @@
       text-align: center;
     }
 
+    /* Summary breakdown */
+    .results-topic-summary {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .results-topic-summary h4 {
+      margin: 6px 0 4px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .results-topic-summary ul {
+      margin: 0 0 4px;
+      padding-left: 18px;
+    }
+
     @media (max-width: 768px) {
       .exam-controls {
         align-items: flex-start;
@@ -544,7 +575,7 @@
           CSE Reviewer Hub · <span>Full Mock Exam (170 Items)</span>
         </h1>
         <p class="page-subtitle">
-          Combined Verbal · Numerical · Analytical · General Information (RA 6713, Constitution, Government)
+          Combined Verbal · Numerical · Analytical · Clerical · General Information (RA 6713, Constitution, Government)
         </p>
       </div>
 
@@ -588,7 +619,7 @@
       <section id="exam-config">
         <p>
           This mock exam will randomly select up to <strong>170 items</strong> from all available topics and question
-          banks you’ve loaded (Verbal, Numerical, Analytical, General Info, RA 6713, etc.).
+          banks you’ve loaded (Verbal, Numerical, Analytical, Clerical, General Info, RA 6713, etc.).
         </p>
         <p>
           Level controls the difficulty of the questions:
@@ -670,7 +701,6 @@
        ========================================== -->
 
   <!-- VERBAL -->
-  <!-- Example: adjust based on actual filenames -->
   <script src="questions/verbal_sentence_structure.js"></script>
   <script src="questions/verbal_paragraph_organization.js"></script>
   <script src="questions/verbal_prepositions.js"></script>
@@ -695,12 +725,15 @@
   <script src="questions/numerical_sequences_series.js"></script>
   <script src="questions/numerical_simple_interest.js"></script>
   <script src="questions/numerical_divisibility_rules.js"></script>
-  <!-- etc. (add all numerical files you created) -->
+  <!-- etc. -->
 
   <!-- ANALYTICAL -->
   <script src="questions/analytical_cognitive_reasoning.js"></script>
   <script src="questions/analytical_flowchart.js"></script>
   <!-- etc. -->
+
+  <!-- CLERICAL (placeholder; add your actual file) -->
+  <!-- <script src="questions/clerical_xxx.js"></script> -->
 
   <!-- GENERAL INFORMATION -->
   <script src="questions/general_constitution.js"></script>
@@ -712,6 +745,10 @@
        ========================================== -->
   <script>
     const MOCK_TOTAL_ITEMS = 170;
+
+    // FREE vs PRO flag (set to true kapag PRO user via Gumroad check)
+    const IS_PRO_USER = false;
+    const PRO_LEVELS = ["advanced", "expert", "mixed"];
 
     let currentLevel = "beginner";
     let examQuestions = [];
@@ -734,35 +771,43 @@
     }
 
     // Collect questions from all banks based on level
+    // and auto-tag with subject/topic/level metadata
     function collectQuestionsForLevel(level) {
       const pool = [];
 
-      function collectFromBank(bank) {
+      function collectFromBank(bank, subjectLabel) {
         if (!bank) return;
         Object.keys(bank).forEach(topicId => {
           const topicBank = bank[topicId];
           if (!topicBank) return;
 
+          function tagAndPush(arr, levelName) {
+            if (!Array.isArray(arr)) return;
+            arr.forEach(q => {
+              pool.push({
+                ...q,
+                __subject: subjectLabel,
+                __topicId: topicId,
+                __level: levelName
+              });
+            });
+          }
+
           if (level === "mixed") {
             ["beginner", "intermediate", "advanced", "expert"].forEach(lvl => {
-              if (Array.isArray(topicBank[lvl])) {
-                pool.push(...topicBank[lvl]);
-              }
+              tagAndPush(topicBank[lvl], lvl);
             });
           } else {
-            if (Array.isArray(topicBank[level])) {
-              pool.push(...topicBank[level]);
-            }
+            tagAndPush(topicBank[level], level);
           }
         });
       }
 
-      collectFromBank(window.VERBAL_QUESTION_BANK);
-      collectFromBank(window.NUMERICAL_QUESTION_BANK);
-      collectFromBank(window.ANALYTICAL_QUESTION_BANK);
-      collectFromBank(window.GENERAL_QUESTION_BANK);
-      collectFromBank(window.CLERICAL_QUESTION_BANK);
-
+      collectFromBank(window.VERBAL_QUESTION_BANK, "Verbal Ability");
+      collectFromBank(window.NUMERICAL_QUESTION_BANK, "Numerical Reasoning");
+      collectFromBank(window.ANALYTICAL_QUESTION_BANK, "Analytical Ability");
+      collectFromBank(window.CLERICAL_QUESTION_BANK, "Clerical Ability");
+      collectFromBank(window.GENERAL_QUESTION_BANK, "General Information");
 
       return pool;
     }
@@ -839,8 +884,18 @@
     function initLevelTabs() {
       const levelTabs = document.querySelectorAll(".level-tab");
       levelTabs.forEach(tab => {
+        const lvl = tab.dataset.level;
+
+        // mark locked levels for FREE users
+        if (!IS_PRO_USER && PRO_LEVELS.includes(lvl)) {
+          tab.classList.add("locked");
+        }
+
         tab.addEventListener("click", () => {
-          const lvl = tab.dataset.level;
+          if (!IS_PRO_USER && PRO_LEVELS.includes(lvl)) {
+            alert("This level is available in the PRO version of CSE Reviewer Hub.");
+            return;
+          }
           currentLevel = lvl;
           levelTabs.forEach(t => {
             t.classList.toggle("active", t.dataset.level === lvl);
@@ -994,6 +1049,10 @@
       const mistakes = [];
       let answeredCount = 0;
 
+      // NEW: summary maps
+      const summaryBySubject = {};
+      const summaryByTopic = {};
+
       examQuestions.forEach((q, idx) => {
         const userIndex = examUserAnswers[idx];
         const userText =
@@ -1004,6 +1063,23 @@
           answeredCount += 1;
         }
 
+        const subject = q.__subject || "Other";
+        const topic = q.__topicId || "Unknown topic";
+
+        if (!summaryBySubject[subject]) {
+          summaryBySubject[subject] = { total: 0, correct: 0 };
+        }
+        if (!summaryByTopic[topic]) {
+          summaryByTopic[topic] = { total: 0, correct: 0 };
+        }
+
+        summaryBySubject[subject].total += 1;
+        summaryByTopic[topic].total += 1;
+        if (isCorrect) {
+          summaryBySubject[subject].correct += 1;
+          summaryByTopic[topic].correct += 1;
+        }
+
         if (isCorrect) {
           correctCount += 1;
         } else {
@@ -1012,7 +1088,9 @@
             question: q.question || "",
             userAnswer: userText,
             correctAnswer: q.answer,
-            explanation: q.explanation || ""
+            explanation: q.explanation || "",
+            subject,
+            topic
           });
         }
       });
@@ -1050,10 +1128,47 @@
 
       if (!detailsEl) return;
 
+      // Build summary HTML (subject + topic)
+      function buildSummaryHtml() {
+        let html = '<div class="results-topic-summary">';
+
+        const subjectKeys = Object.keys(summaryBySubject);
+        if (subjectKeys.length) {
+          html += "<h4>Performance by Subject</h4><ul>";
+          subjectKeys.forEach(sub => {
+            const s = summaryBySubject[sub];
+            const pct = s.total ? Math.round((s.correct / s.total) * 100) : 0;
+            html += `<li>${sub}: ${s.correct}/${s.total} (${pct}%)</li>`;
+          });
+          html += "</ul>";
+        }
+
+        const topicKeys = Object.keys(summaryByTopic);
+        if (topicKeys.length) {
+          // sort topics by total items desc
+          const sortedTopics = topicKeys.sort(
+            (a, b) => summaryByTopic[b].total - summaryByTopic[a].total
+          );
+          html += "<h4>Performance by Topic</h4><ul>";
+          sortedTopics.forEach(topic => {
+            const t = summaryByTopic[topic];
+            const pct = t.total ? Math.round((t.correct / t.total) * 100) : 0;
+            html += `<li>${topic}: ${t.correct}/${t.total} (${pct}%)</li>`;
+          });
+          html += "</ul>";
+        }
+
+        html += "</div>";
+        return html;
+      }
+
+      const summaryHtml = buildSummaryHtml();
+
       if (!mistakes.length) {
         if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
         detailsEl.innerHTML =
-          '<p class="no-mistakes">Perfect! You answered all items correctly. Great job!</p>';
+          '<p class="no-mistakes">Perfect! You answered all items correctly. Great job!</p>' +
+          summaryHtml;
         return;
       }
 
@@ -1099,6 +1214,7 @@
         <div class="results-list">
           ${itemsHtml}
         </div>
+        ${summaryHtml}
       `;
     }
 
@@ -1174,6 +1290,7 @@
       window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
       window.ANALYTICAL_QUESTION_BANK = window.ANALYTICAL_QUESTION_BANK || {};
       window.GENERAL_QUESTION_BANK = window.GENERAL_QUESTION_BANK || {};
+      window.CLERICAL_QUESTION_BANK = window.CLERICAL_QUESTION_BANK || {};
 
       initLevelTabs();
       initTimerSelect();
