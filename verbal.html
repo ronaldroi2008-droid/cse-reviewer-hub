@@ -5198,8 +5198,10 @@ synonyms: {
     `
   } 
 }; 
- // ==========================================
-    // 4. STATE + DOM REFERENCES
+
+
+  // ==========================================
+    // 3. STATE + DOM REFERENCES
     // ==========================================
     let currentMode = "study";
     let currentTopicId = VERBAL_TOPICS[0].id;
@@ -5243,7 +5245,7 @@ synonyms: {
     const resultRetryBtn   = document.getElementById("resultRetryBtn");
 
     // ==========================================
-    // 5. HELPERS
+    // 4. HELPER FUNCTIONS
     // ==========================================
     function capitalize(text) {
       if (!text) return "";
@@ -5294,12 +5296,14 @@ synonyms: {
       if (!tipCardEl) return;
       tipCardEl.innerHTML = "";
 
+      if (!tips || tips.length === 0) return;
+
       const heading = document.createElement("h3");
-      heading.textContent = "Quick exam tips";
+      heading.textContent = "Quick Exam Tips";
       tipCardEl.appendChild(heading);
 
       const list = document.createElement("ul");
-      (tips || []).forEach((tip) => {
+      tips.forEach((tip) => {
         const li = document.createElement("li");
         li.textContent = tip;
         list.appendChild(li);
@@ -5311,71 +5315,87 @@ synonyms: {
     function renderLesson() {
       const lesson = VERBAL_LESSONS[currentTopicId];
 
-      const fallbackSection = {
-        heading: "Overview",
-        bullets: [
-          "Review the basic definition and key properties of this topic.",
-          "Study at least one fully worked example step by step.",
-          "Practice identifying correct usage in sentences."
-        ]
-      };
-
-      const fallbackTips = [
-        "Read the entire sentence before choosing an answer.",
-        "Eliminate obviously wrong options first.",
-        "Trust your first instinct unless you find clear evidence against it."
-      ];
-
       if (!lesson) {
         lessonTitleEl.textContent = "Lesson coming soon";
-        lessonIntroEl.textContent =
-          "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
-        lessonBodyEl.innerHTML = "";
-
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = fallbackSection.heading;
-        sectionEl.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        fallbackSection.bullets.forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-        sectionEl.appendChild(ul);
-
-        lessonBodyEl.appendChild(sectionEl);
-        renderTips(fallbackTips);
+        lessonIntroEl.textContent = "We are still building the full lesson notes for this topic.";
+        lessonBodyEl.innerHTML = "<p>Please try the Practice Quiz or check back soon.</p>";
+        renderTips([]);
         return;
       }
 
       lessonTitleEl.textContent = lesson.title;
-      lessonIntroEl.textContent = lesson.intro;
-      lessonBodyEl.innerHTML = "";
+      lessonIntroEl.textContent = lesson.intro || "";
+      
+      if (lesson.fullHtml) {
+        lessonBodyEl.innerHTML = lesson.fullHtml;
+      } else {
+        lessonBodyEl.innerHTML = "<p>Lesson content is being prepared. Check back soon.</p>";
+      }
 
-      (lesson.sections || []).forEach((section) => {
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = section.heading;
-        sectionEl.appendChild(h3);
+      // Add some CSS for tables in lessons
+      const style = document.createElement('style');
+      style.textContent = `
+        .lesson-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 10px 0;
+          font-size: 0.9rem;
+        }
+        .lesson-table th, .lesson-table td {
+          border: 1px solid var(--border);
+          padding: 8px;
+          text-align: left;
+        }
+        .lesson-table th {
+          background: rgba(99, 102, 241, 0.1);
+          color: #a5b4fc;
+        }
+        .highlight-box {
+          background: rgba(99, 102, 241, 0.08);
+          border: 1px solid rgba(99, 102, 241, 0.3);
+          border-radius: 8px;
+          padding: 12px;
+          margin: 12px 0;
+        }
+        .alert-box {
+          background: rgba(248, 113, 113, 0.1);
+          border: 1px solid rgba(248, 113, 113, 0.3);
+          border-radius: 8px;
+          padding: 12px;
+          margin: 12px 0;
+          color: #fca5a5;
+        }
+        .check-list {
+          list-style-type: none;
+          padding-left: 0;
+        }
+        .check-list li:before {
+          content: "✓ ";
+          color: var(--success);
+          margin-right: 8px;
+        }
+        .two-column-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        @media (max-width: 768px) {
+          .two-column-list {
+            grid-template-columns: 1fr;
+          }
+        }
+      `;
+      document.head.appendChild(style);
 
-        const ul = document.createElement("ul");
-        (section.bullets || []).forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-
-        sectionEl.appendChild(ul);
-        lessonBodyEl.appendChild(sectionEl);
-      });
-
-      renderTips(lesson.tips || fallbackTips);
+      renderTips(lesson.quickTips || [
+        "Read the entire sentence before choosing an answer.",
+        "Eliminate obviously wrong options first.",
+        "Trust your first instinct unless you find clear evidence against it."
+      ]);
     }
 
     function getQuestionsForCurrent() {
-      const topicQuestions = QUESTION_BANK[currentTopicId] || {};
+      const topicQuestions = window.VERBAL_QUESTION_BANK[currentTopicId] || {};
       const levelQuestions = topicQuestions[currentLevel] || [];
       return levelQuestions.slice(0, currentItemCount);
     }
@@ -5419,8 +5439,7 @@ synonyms: {
       feedbackEl.className = "feedback";
 
       if (!questions.length) {
-        questionTextEl.textContent =
-          "No practice questions are available yet for this topic and level. They will be added soon.";
+        questionTextEl.textContent = "No practice questions are available yet for this topic and level. They will be added soon.";
         optionsListEl.innerHTML = "";
         progressTextEl.textContent = "0 / 0";
         prevBtn.disabled = true;
@@ -5503,12 +5522,10 @@ synonyms: {
       });
 
       if (isCorrect) {
-        feedbackEl.textContent =
-          "Correct! " + (currentQ.explanation || "");
+        feedbackEl.textContent = "Correct! " + (currentQ.explanation || "");
         feedbackEl.className = "feedback feedback--correct";
       } else {
-        feedbackEl.textContent =
-          "Not quite. " + (currentQ.explanation || "");
+        feedbackEl.textContent = "Not quite. " + (currentQ.explanation || "");
         feedbackEl.className = "feedback feedback--incorrect";
       }
     }
@@ -5571,35 +5588,26 @@ synonyms: {
           // Your answer
           const userP = document.createElement("p");
           userP.classList.add("wrong");
-          userP.innerHTML =
-            "<span class='label'>✗ Your answer:</span> " +
-            (selected !== null && selected !== undefined
-              ? selected
-              : "<em>Not answered</em>");
+          userP.innerHTML = "<span class='label'>✗ Your answer:</span> " + (selected !== null && selected !== undefined ? selected : "<em>Not answered</em>");
           answersWrap.appendChild(userP);
 
           // Correct answer
           const correctP = document.createElement("p");
           correctP.classList.add("correct");
-          correctP.innerHTML =
-            "<span class='label'>✓ Correct answer:</span> " + q.answer;
+          correctP.innerHTML = "<span class='label'>✓ Correct answer:</span> " + q.answer;
           answersWrap.appendChild(correctP);
 
-          // Explanation (always English – pulled from q.explanation)
+          // Explanation
           const explP = document.createElement("p");
           explP.classList.add("explanation");
-          explP.innerHTML =
-            "<span class='label'>👉 Why:</span> " +
-            (q.explanation && q.explanation.trim().length
-              ? q.explanation
-              : "No explanation is available for this item.");
+          explP.innerHTML = "<span class='label'>👉 Why:</span> " + (q.explanation && q.explanation.trim().length ? q.explanation : "No explanation available.");
           answersWrap.appendChild(explP);
 
           item.appendChild(answersWrap);
           mistakeListEl.appendChild(item);
         });
 
-        // If walang mali
+        // If no mistakes
         if (!mistakeListEl.children.length) {
           const p = document.createElement("p");
           p.textContent = "Perfect score! No mistakes to review.";
@@ -5651,6 +5659,12 @@ synonyms: {
         chip.addEventListener("click", function () {
           const level = chip.dataset.level;
           if (!level || level === currentLevel) return;
+          
+          if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+            alert("This level is locked for free users. Upgrade to Pro to access advanced and expert levels.");
+            return;
+          }
+          
           currentLevel = level;
           resetQuizState();
           levelChips.forEach((c) => {
@@ -5719,7 +5733,8 @@ synonyms: {
       switchMode("study");
     }
 
-    initVerbalPage();
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', initVerbalPage);
   </script>
 </body>
 </html>
