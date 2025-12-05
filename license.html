@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – License / Activate PRO</title>
+  <title>CSE Reviewer Hub – Activate PRO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -14,8 +14,9 @@
       --accent-hover: #4f46e5;
       --text: #f8fafc;
       --muted: #94a3b8;
-      --danger: #f97373;
       --success: #22c55e;
+      --danger: #f87171;
+      --info: #38bdf8;
     }
 
     * { box-sizing: border-box; }
@@ -31,426 +32,480 @@
       color: var(--text);
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .shell {
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
       padding: 20px;
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.86);
+      background: rgba(15, 23, 42, 0.9);
       backdrop-filter: blur(12px);
       border-radius: 24px;
       border: 1px solid var(--border);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      padding: 28px 22px 24px;
+      padding: 24px 22px 24px;
     }
 
-    .header {
+    .card-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px;
-      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 8px;
     }
 
-    .title-block h1 {
-      margin: 0 0 4px;
-      font-size: 1.3rem;
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.9);
+      transition: all 0.16s ease;
+    }
+
+    .back-link:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(30, 64, 175, 0.6);
+    }
+
+    .title-block {
+      flex: 1;
+      text-align: right;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
       background: linear-gradient(to right, #818cf8, #c7d2fe);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
     }
 
-    .title-block p {
-      margin: 0;
+    .subtitle {
+      margin: 4px 0 0;
       font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .badge {
-      font-size: 0.75rem;
-      border-radius: 999px;
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 4px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #cbd5f5;
-      background: rgba(15, 23, 42, 0.9);
-      white-space: nowrap;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
     }
 
-    .field-group {
-      margin-bottom: 14px;
-      text-align: left;
+    .status-pill[data-type="active"] {
+      border-color: rgba(34, 197, 94, 0.8);
+      background: rgba(22, 163, 74, 0.1);
+      color: #bbf7d0;
+    }
+
+    .status-pill[data-type="inactive"] {
+      border-color: rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+    }
+
+    .device-id-line {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .device-id-line code {
+      font-size: 0.76rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid #1e293b;
+    }
+
+    .status-details {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .status-details code {
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid #1e293b;
+    }
+
+    form {
+      margin-top: 8px;
     }
 
     .field-label {
       display: block;
-      font-size: 0.85rem;
-      margin-bottom: 4px;
+      font-size: 0.82rem;
       color: var(--muted);
+      margin-bottom: 4px;
     }
 
-    .field-label strong {
-      color: #e5e7eb;
+    .input-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
-    .input {
-      width: 100%;
-      border-radius: 999px;
+    .input-row input {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 12px;
       border: 1px solid var(--border);
       background: #020617;
       color: var(--text);
-      padding: 10px 14px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
     }
 
-    .input:focus {
+    .input-row input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.6);
-      background: #020617;
     }
 
-    .help-text {
-      margin: 4px 0 0;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .btn {
-      flex: 1;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      color: var(--muted);
-      padding: 10px 14px;
+    .btn-primary {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: none;
+      background: var(--accent);
+      color: #e5e7eb;
       font-size: 0.9rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.15s ease;
+      white-space: nowrap;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 6px;
-      text-decoration: none;
+      transition: background 0.16s ease, transform 0.1s ease;
     }
 
-    .btn.primary {
-      background: var(--accent);
-      border-color: var(--accent-hover);
-      color: #f8fafc;
-      font-weight: 500;
-    }
-
-    .btn:hover:not(:disabled) {
-      border-color: var(--accent);
-      color: #e5e7eb;
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
       transform: translateY(-1px);
     }
 
-    .btn:disabled {
+    .btn-primary:disabled {
       opacity: 0.6;
       cursor: default;
       transform: none;
     }
 
+    .hint-text {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
     .status-box {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      border-radius: 14px;
-      padding: 10px 12px;
-      border: 1px solid #1e293b;
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .status-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.86rem;
-    }
-
-    .status-text {
-      margin: 0;
-      font-size: 0.82rem;
-      color: var(--muted);
-      white-space: pre-line;
-    }
-
-    .status-box.ok {
-      border-color: rgba(34, 197, 94, 0.6);
-      background: rgba(22, 163, 74, 0.08);
-    }
-
-    .status-box.error {
-      border-color: rgba(248, 113, 113, 0.8);
-      background: rgba(248, 113, 113, 0.06);
-    }
-
-    .pill-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
       margin-top: 10px;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .pill {
-      border-radius: 999px;
+      padding: 8px 10px;
+      border-radius: 12px;
       border: 1px solid #1e293b;
-      padding: 4px 8px;
-      background: rgba(15, 23, 42, 0.9);
-      white-space: nowrap;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      background: rgba(15, 23, 42, 0.85);
+      display: none;
     }
 
-    .pill span {
-      opacity: 0.85;
+    .status-box[data-status="info"] {
+      display: block;
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(8, 47, 73, 0.9);
+      color: #e0f2fe;
     }
 
-    .back-link {
-      margin-top: 18px;
-      text-align: center;
-      font-size: 0.85rem;
+    .status-box[data-status="success"] {
+      display: block;
+      border-color: rgba(34, 197, 94, 0.8);
+      background: rgba(22, 163, 74, 0.2);
+      color: #bbf7d0;
     }
 
-    .back-link a {
-      color: var(--muted);
-      text-decoration: none;
+    .status-box[data-status="error"] {
+      display: block;
+      border-color: rgba(248, 113, 113, 0.8);
+      background: rgba(127, 29, 29, 0.9);
+      color: #fecaca;
     }
 
-    .back-link a:hover {
-      color: var(--accent);
-      text-decoration: underline;
+    .footer-note {
+      margin-top: 16px;
+      font-size: 0.75rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      padding-top: 10px;
+      line-height: 1.4;
+    }
+
+    .footer-note strong {
+      color: #cbd5f5;
     }
   </style>
 </head>
 <body>
   <div class="shell">
     <div class="card">
-      <div class="header">
+      <div class="card-header">
+        <a href="index.html" class="back-link">← Back to Home</a>
         <div class="title-block">
-          <h1>Activate PRO Access</h1>
-          <p>Enter your Gumroad license key to unlock Advanced, Expert & Full Mock Exam.</p>
-        </div>
-        <div class="badge" id="currentStatusBadge">
-          FREE MODE
+          <h1>Activate PRO</h1>
+          <p class="subtitle">Enter your Gumroad license key to unlock CSE Reviewer Hub – PRO.</p>
         </div>
       </div>
 
-      <div class="field-group">
-        <label class="field-label" for="licenseKey">
-          <strong>License Key</strong><br />
-          <span>(From your Gumroad receipt / download page)</span>
+      <div class="status-pill" id="status-badge" data-type="inactive">
+        <span>🔓 FREE mode on this device</span>
+      </div>
+
+      <div class="device-id-line">
+        Device ID (for 5-device limit): <code id="device-id">loading…</code>
+      </div>
+
+      <div class="status-details" id="status-details">
+        Enter your license key below to activate PRO on this browser.
+      </div>
+
+      <form id="license-form">
+        <label for="license-key-input" class="field-label">
+          Gumroad License Key
         </label>
-        <input
-          id="licenseKey"
-          class="input"
-          type="text"
-          autocomplete="off"
-          placeholder="e.g. XXXX-YYYY-ZZZZ-1234"
-        />
-        <p class="help-text">
-          Paste exactly as shown in Gumroad. One key is valid for up to 5 devices (browsers).
-        </p>
-      </div>
-
-      <div class="btn-row">
-        <button id="activateBtn" class="btn primary">
-          🔑 Activate PRO
-        </button>
-        <a href="index.html" class="btn">
-          ← Back to Home
-        </a>
-      </div>
-
-      <div id="statusBox" class="status-box">
-        <div class="status-title">Status</div>
-        <p id="statusText" class="status-text">
-          Enter your license key and click “Activate PRO”.
-        </p>
-      </div>
-
-      <div class="pill-row">
-        <div class="pill">
-          <strong>Device ID:</strong> <span id="deviceIdLabel">–</span>
+        <div class="input-row">
+          <input
+            id="license-key-input"
+            type="text"
+            placeholder="Paste your license key here"
+            autocomplete="off"
+          />
+          <button type="submit" class="btn-primary" id="activate-btn">
+            <span>Activate PRO</span>
+          </button>
         </div>
-        <div class="pill">
-          <strong>Mode:</strong> <span id="modeLabel">FREE</span>
-        </div>
+      </form>
+
+      <p class="hint-text" id="pro-hint">
+        After activation, this device will unlock Advanced &amp; Expert levels and the Full Mock Exam (170 items).
+      </p>
+
+      <div class="status-box" id="status-box" data-status="">
+        <span id="status-text"></span>
       </div>
 
-      <div class="back-link">
-        <a href="index.html">← Return to CSE Reviewer Hub Home</a>
-      </div>
+      <p class="footer-note">
+        <strong>Note:</strong> The license is counted per device/browser.  
+        Maximum of <strong>5 devices</strong> per license key. If you change browser or device,
+        you may need to re-enter the same key.
+      </p>
     </div>
   </div>
 
   <script>
     // ==========================================
-    // CONFIG – palitan mo ito ng actual API URL mo sa Render
+    // CONFIG – API URL (palitan kung iba ang URL)
     // ==========================================
-    const LICENSE_API_URL = "https://YOUR-LICENSE-API-URL.onrender.com/api/activate";
-
-    const MAX_DEVICES = 5; // pang display lang; backend pa rin ang final authority
+    const LICENSE_API_URL = "https://cse-license-api.onrender.com/api/activate";
+    // halimbawa lang ito – palitan sa actual Render URL mo kung iba
 
     // ==========================================
-    // DEVICE ID HELPER (1 browser = 1 device)
+    // DEVICE ID HELPER (1 license = up to 5 devices)
     // ==========================================
     function getOrCreateDeviceId() {
-      let id = localStorage.getItem("cse_device_id");
-      if (!id) {
-        if (window.crypto && crypto.randomUUID) {
-          id = crypto.randomUUID();
-        } else {
-          id =
-            "dev_" +
-            Math.random().toString(36).slice(2) +
-            Date.now().toString(36);
+      try {
+        let id = localStorage.getItem("cse_device_id");
+        if (!id) {
+          let raw = "";
+          if (window.crypto && crypto.randomUUID) {
+            raw = crypto.randomUUID();
+          } else {
+            raw =
+              Date.now().toString(36) +
+              "-" +
+              Math.random().toString(36).slice(2);
+          }
+          id = "dev_" + raw;
+          localStorage.setItem("cse_device_id", id);
         }
-        localStorage.setItem("cse_device_id", id);
+        return id;
+      } catch (err) {
+        // fallback kung disabled ang localStorage
+        return "dev_fallback";
       }
-      return id;
     }
 
-    // ==========================================
-    // UI HELPERS
-    // ==========================================
-    function setStatus(type, text) {
-      const box = document.getElementById("statusBox");
-      const txt = document.getElementById("statusText");
-      box.classList.remove("ok", "error");
-      if (type === "ok") box.classList.add("ok");
-      if (type === "error") box.classList.add("error");
-      txt.textContent = text;
+    function maskLicenseKey(key) {
+      if (!key || key.length <= 6) return key || "";
+      return key.slice(0, 4) + "••••" + key.slice(-2);
     }
 
-    function refreshBadges() {
-      const badge = document.getElementById("currentStatusBadge");
-      const modeLabel = document.getElementById("modeLabel");
+    function updateStatusUI() {
       const isPro = localStorage.getItem("cse_is_pro") === "true";
+      const statusBadge = document.getElementById("status-badge");
+      const statusDetails = document.getElementById("status-details");
+      const proHint = document.getElementById("pro-hint");
+
+      const storedKey = localStorage.getItem("cse_license_key") || "";
+      const devicesUsed = localStorage.getItem("cse_devices_used");
+      const devicesMax = localStorage.getItem("cse_devices_max");
 
       if (isPro) {
-        badge.textContent = "PRO ACTIVE";
-        badge.style.borderColor = "rgba(34,197,94,0.8)";
-        badge.style.color = "#bbf7d0";
-        modeLabel.textContent = "PRO";
-      } else {
-        badge.textContent = "FREE MODE";
-        badge.style.borderColor = "rgba(148,163,184,0.6)";
-        badge.style.color = "#cbd5f5";
-        modeLabel.textContent = "FREE";
-      }
+        statusBadge.dataset.type = "active";
+        statusBadge.innerHTML = "✅ PRO Activated on this device";
 
-      const devLabel = document.getElementById("deviceIdLabel");
-      devLabel.textContent = getOrCreateDeviceId().slice(0, 8) + "…";
+        let extraInfo = "This browser is already activated for PRO.";
+        if (storedKey) {
+          extraInfo +=
+            "<br/>License: <code>" + maskLicenseKey(storedKey) + "</code>";
+        }
+        if (devicesUsed && devicesMax) {
+          extraInfo +=
+            " · Devices used: " + devicesUsed + "/" + devicesMax;
+        }
+
+        statusDetails.innerHTML = extraInfo;
+        proHint.textContent =
+          "You can now use Advanced & Expert levels and the Full Mock Exam on this device.";
+      } else {
+        statusBadge.dataset.type = "inactive";
+        statusBadge.innerHTML = "🔓 FREE mode on this device";
+        statusDetails.textContent =
+          "Enter your Gumroad license key below to activate PRO on this browser.";
+        proHint.textContent =
+          "After activation, this device will unlock Advanced & Expert levels and the Full Mock Exam (170 items).";
+      }
     }
 
-    // ==========================================
-    // ACTIVATE FLOW
-    // ==========================================
-    async function activateLicense() {
-      const btn = document.getElementById("activateBtn");
-      const input = document.getElementById("licenseKey");
-      const rawKey = (input.value || "").trim();
-
-      if (!rawKey) {
-        setStatus("error", "Please enter your license key from Gumroad.");
-        input.focus();
-        return;
-      }
-
+    document.addEventListener("DOMContentLoaded", () => {
       const deviceId = getOrCreateDeviceId();
 
-      btn.disabled = true;
-      btn.textContent = "⏳ Checking license…";
-      setStatus("info", "Contacting license server…");
+      const deviceIdEl = document.getElementById("device-id");
+      const formEl = document.getElementById("license-form");
+      const inputEl = document.getElementById("license-key-input");
+      const btnEl = document.getElementById("activate-btn");
+      const statusBox = document.getElementById("status-box");
+      const statusText = document.getElementById("status-text");
 
-      try {
-        const res = await fetch(LICENSE_API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            licenseKey: rawKey,
-            deviceId
-          })
-        });
-
-        if (!res.ok) {
-          throw new Error("Server error: " + res.status);
-        }
-
-        const data = await res.json();
-
-        if (data.ok) {
-          // mark as PRO sa browser na ito
-          localStorage.setItem("cse_is_pro", "true");
-          localStorage.setItem("cse_license_key", rawKey);
-          setStatus(
-            "ok",
-            "License activated successfully on this device.\n\n" +
-              "You now have PRO access (Advanced, Expert, Full Mock Exam).\n" +
-              "You can close this page and go back to Home."
-          );
-          refreshBadges();
-          btn.textContent = "✅ PRO Activated";
-        } else {
-          if (data.code === "device_limit") {
-            setStatus(
-              "error",
-              "This license key has already been used on the maximum number of devices (" +
-                MAX_DEVICES +
-                ").\n\n" +
-                "If you think this is a mistake, please contact the seller."
-            );
-          } else if (data.code === "invalid_key") {
-            setStatus(
-              "error",
-              "Invalid or inactive license key.\n\n" +
-                "Please double-check your Gumroad receipt or contact the seller."
-            );
-          } else {
-            setStatus(
-              "error",
-              data.message ||
-                "License activation failed. Please try again or contact support."
-            );
-          }
-          btn.textContent = "🔑 Activate PRO";
-        }
-      } catch (err) {
-        console.error(err);
-        setStatus(
-          "error",
-          "Could not reach the license server.\n\n" +
-            "Check your internet connection, then try again."
-        );
-        btn.textContent = "🔑 Activate PRO";
-      } finally {
-        btn.disabled = false;
+      if (deviceIdEl) {
+        const shortId =
+          deviceId.length > 14
+            ? deviceId.slice(0, 10) + "…"
+            : deviceId;
+        deviceIdEl.textContent = shortId;
       }
-    }
 
-    // ==========================================
-    // INIT
-    // ==========================================
-    document.addEventListener("DOMContentLoaded", () => {
-      refreshBadges();
-      const btn = document.getElementById("activateBtn");
-      btn.addEventListener("click", activateLicense);
+      updateStatusUI();
 
-      const input = document.getElementById("licenseKey");
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          activateLicense();
-        }
-      });
+      function showStatus(type, message) {
+        if (!statusBox || !statusText) return;
+        statusBox.dataset.status = type;
+        statusText.textContent = message;
+      }
+
+      if (formEl) {
+        formEl.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const licenseKey = (inputEl.value || "").trim();
+
+          if (!licenseKey) {
+            showStatus("error", "Please enter your Gumroad license key.");
+            return;
+          }
+
+          btnEl.disabled = true;
+          showStatus("info", "Activating license… please wait.");
+
+          try {
+            const response = await fetch(LICENSE_API_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                licenseKey,
+                deviceId
+              })
+            });
+
+            const data = await response.json().catch(() => null);
+
+            if (!response.ok || !data) {
+              showStatus(
+                "error",
+                (data && data.message) ||
+                  "Activation failed. Please try again later."
+              );
+              btnEl.disabled = false;
+              return;
+            }
+
+            if (data.ok && data.isPro) {
+              // Save PRO flags & info to localStorage
+              localStorage.setItem("cse_is_pro", "true");
+              localStorage.setItem("cse_license_key", licenseKey);
+
+              if (
+                typeof data.devicesUsed === "number" &&
+                typeof data.maxDevices === "number"
+              ) {
+                localStorage.setItem(
+                  "cse_devices_used",
+                  String(data.devicesUsed)
+                );
+                localStorage.setItem(
+                  "cse_devices_max",
+                  String(data.maxDevices)
+                );
+              }
+
+              const msg =
+                data.message ||
+                "License activated! This device is now PRO.";
+              const extra =
+                data.devicesUsed && data.maxDevices
+                  ? ` Devices used: ${data.devicesUsed}/${data.maxDevices}.`
+                  : "";
+
+              showStatus("success", msg + extra);
+              updateStatusUI();
+            } else {
+              showStatus(
+                "error",
+                data.message || "License not valid or already at device limit."
+              );
+            }
+          } catch (err) {
+            showStatus(
+              "error",
+              "Network error. Please check your internet connection and try again."
+            );
+          } finally {
+            btnEl.disabled = false;
+          }
+        });
+      }
     });
   </script>
 </body>
