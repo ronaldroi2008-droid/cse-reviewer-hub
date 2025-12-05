@@ -1,4 +1,4 @@
-  <!-- Save as general_info.html -->
+<!-- Save as general_info.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -395,12 +395,6 @@
       color: #e5e7eb;
     }
 
-    /* PRO-LOCKED LEVEL TABS */
-    .level-tab.locked {
-      opacity: 0.7;
-      border-style: dashed;
-    }
-
     .items-tabs {
       display: inline-flex;
       align-items: center;
@@ -775,9 +769,8 @@
               <div class="level-tabs">
                 <button class="level-tab active" data-level="beginner">BEGINNER</button>
                 <button class="level-tab" data-level="intermediate">INTERMEDIATE</button>
-                <!-- PRO-LOCKED LEVELS -->
-                <button class="level-tab locked" data-level="advanced">ADVANCED 🔒 PRO</button>
-                <button class="level-tab locked" data-level="expert">EXPERT 🔒 PRO</button>
+                <button class="level-tab" data-level="advanced">ADVANCED</button>
+                <button class="level-tab" data-level="expert">EXPERT</button>
               </div>
 
               <div class="items-tabs">
@@ -854,16 +847,18 @@
     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-    const IS_PRO_USER = false; // set to true for PRO build
+    const IS_PRO_USER = false;              // set to true sa PRO build
     const LOCKED_LEVELS = ["advanced", "expert"];
 
+    // ==========================================
     // 1. TOPIC LIST
+    // ==========================================
     const GENERAL_TOPICS = [
       { id: "constitution", label: "Philippine Constitution & Citizenship", tag: "Core" },
       { id: "government",   label: "Government Structure & Civil Service",  tag: "Branches" },
-      { id: "ra6713",       label: "RA 6713 – Code of Conduct",             tag: "Ethics" }
+      { id: "ra6713",       label: "RA 6713 – Code of Conduct",            tag: "Ethics" }
     ];
-  
+
     // ==========================================
     // 2. STUDY LESSON CONTENT
     // ==========================================
@@ -1003,7 +998,6 @@
       }
     };
 
-
     // ==========================================
     // 3. STATE
     // ==========================================
@@ -1129,15 +1123,16 @@
     // ==========================================
     function initLevelTabs() {
       const levelTabs = document.querySelectorAll(".level-tab");
+
       levelTabs.forEach(tab => {
         tab.addEventListener("click", () => {
           const level = tab.dataset.level;
 
           // PRO alert kapag advanced/expert at free user
-          if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+          if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
             alert(
               "Advanced and Expert levels are available in the PRO version.\n\n" +
-              "Beginner and Intermediate levels are fully available in the free General Information Reviewer."
+              "Beginner and Intermediate are fully available in the free General Information Reviewer."
             );
             return;
           }
