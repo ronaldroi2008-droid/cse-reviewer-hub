@@ -1478,13 +1478,18 @@ function markLockedLevels() {
     // ==========================================
     // 11. INIT
     // ==========================================
-    renderTopics();
-    initModeToggle();
-    initLevelTabs();
-    initItemsTabs();
-    initNavButtons();
-    initResultsButtons();
-    selectTopic(currentTopicId);
+  // ==========================================
+// 11. INIT
+// ==========================================
+renderTopics();
+initModeToggle();
+initLevelTabs();
+markLockedLevels();     
+initItemsTabs();
+initNavButtons();
+initResultsButtons();
+selectTopic(currentTopicId);
+
   </script>
 </body>
 </html>
