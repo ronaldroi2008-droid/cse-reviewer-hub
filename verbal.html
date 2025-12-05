@@ -719,8 +719,12 @@
 <script>
     
 
-    const IS_PRO_USER = false;
-    const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
+ // ==========================================
+    // 0. PRO CONFIG
+    // ==========================================
+
+const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+const LOCKED_LEVELS = ["advanced", "expert"];
 
 
 
