@@ -692,13 +692,15 @@ advanced: [
       question: "Which collective noun best completes the sentence? 'A ___ of ships sailed into the harbor.'",
       options: ["flock", "pack", "fleet", "herd"],
       answer: "fleet",
-      explanation: '"Fleet" is the collective noun for ships."
+            explanation: '"Fleet" is the collective noun for ships.'
+
     },
     {
       question: "Which collective noun best completes the sentence? 'He found a ___ of keys on the table.'",
       options: ["herd", "bunch", "swarm", "gang"],
       answer: "bunch",
-      explanation: '"Bunch" is commonly used for a group of keys."
+      explanation: '"Bunch" is commonly used for a group of keys.'
+
     },
 
     // 11-20: Concrete, Abstract, and Material Nouns
@@ -951,7 +953,8 @@ advanced: [
       question: "Which is the best way to join these nouns?",
       options: ["car sports", "sports car", "sport car", "cars sports"],
       answer: "sports car",
-      explanation: '"Sports car" is the correct noun + noun phrase."
+          explanation: '"Sports car" is the correct noun + noun phrase.'
+
     },
     {
       question: "Which phrase is correctly written?",
