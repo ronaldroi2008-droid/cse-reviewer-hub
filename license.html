@@ -1,8 +1,9 @@
+<!-- Save as license.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Activate PRO</title>
+  <title>CSE Reviewer Hub – License / Activate PRO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -32,248 +33,426 @@
 
     .shell {
       width: 100%;
-      max-width: 450px;
+      max-width: 480px;
       padding: 20px;
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.86);
+      backdrop-filter: blur(12px);
       border-radius: 24px;
       border: 1px solid var(--border);
-      padding: 26px 22px 24px;
-      box-shadow: 0 24px 50px -16px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      padding: 28px 22px 24px;
     }
 
-    h1 {
-      margin: 0 0 6px;
-      font-size: 1.5rem;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 10px;
+    }
+
+    .title-block h1 {
+      margin: 0 0 4px;
+      font-size: 1.3rem;
+      background: linear-gradient(to right, #818cf8, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
     }
 
-    .subtitle {
-      margin: 0 0 18px;
-      font-size: 0.9rem;
+    .title-block p {
+      margin: 0;
+      font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.4;
     }
 
-    label {
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #cbd5f5;
+      background: rgba(15, 23, 42, 0.9);
+      white-space: nowrap;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .field-label {
       display: block;
       font-size: 0.85rem;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: var(--muted);
     }
 
-    input[type="text"] {
+    .field-label strong {
+      color: #e5e7eb;
+    }
+
+    .input {
       width: 100%;
-      padding: 10px 12px;
-      border-radius: 12px;
+      border-radius: 999px;
       border: 1px solid var(--border);
       background: #020617;
       color: var(--text);
+      padding: 10px 14px;
       font-size: 0.95rem;
       outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
-    input[type="text"]:focus {
+    .input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.6);
+      background: #020617;
+    }
+
+    .help-text {
+      margin: 4px 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
     .btn-row {
       display: flex;
       gap: 10px;
-      margin-top: 14px;
-      margin-bottom: 10px;
+      margin-top: 12px;
     }
 
-    button, a.btn-link {
+    .btn {
+      flex: 1;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #020617;
       color: var(--muted);
-      padding: 8px 16px;
+      padding: 10px 14px;
       font-size: 0.9rem;
       cursor: pointer;
-      text-decoration: none;
+      transition: all 0.15s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      transition: all 0.15s ease;
-      flex: 1;
+      text-decoration: none;
     }
 
-    button.primary {
+    .btn.primary {
       background: var(--accent);
       border-color: var(--accent-hover);
-      color: #f9fafb;
+      color: #f8fafc;
+      font-weight: 500;
     }
 
-    button.primary:hover {
-      background: var(--accent-hover);
-    }
-
-    button:hover:not(:disabled),
-    a.btn-link:hover {
+    .btn:hover:not(:disabled) {
       border-color: var(--accent);
       color: #e5e7eb;
+      transform: translateY(-1px);
     }
 
-    button:disabled {
+    .btn:disabled {
       opacity: 0.6;
       cursor: default;
+      transform: none;
     }
 
-    .status {
-      font-size: 0.82rem;
-      min-height: 1.4em;
-    }
-
-    .status.error {
-      color: var(--danger);
-    }
-
-    .status.success {
-      color: var(--success);
-    }
-
-    .hint {
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.35;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.75rem;
-      border-radius: 999px;
-      padding: 3px 8px;
-      border: 1px solid rgba(99, 102, 241, 0.6);
+    .status-box {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      border-radius: 14px;
+      padding: 10px 12px;
+      border: 1px solid #1e293b;
       background: rgba(15, 23, 42, 0.9);
-      margin-bottom: 12px;
-      color: #c7d2fe;
+    }
+
+    .status-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.86rem;
+    }
+
+    .status-text {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: pre-line;
+    }
+
+    .status-box.ok {
+      border-color: rgba(34, 197, 94, 0.6);
+      background: rgba(22, 163, 74, 0.08);
+    }
+
+    .status-box.error {
+      border-color: rgba(248, 113, 113, 0.8);
+      background: rgba(248, 113, 113, 0.06);
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid #1e293b;
+      padding: 4px 8px;
+      background: rgba(15, 23, 42, 0.9);
+      white-space: nowrap;
+    }
+
+    .pill span {
+      opacity: 0.85;
+    }
+
+    .back-link {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .back-link a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="shell">
     <div class="card">
-      <div class="badge">🔑 License Activation</div>
-      <h1>CSE Reviewer Hub – PRO</h1>
-      <p class="subtitle">
-        Paste your Gumroad license key below to unlock Advanced, Expert, and the Full Mock Exam
-        on this device.
-      </p>
-
-      <label for="license-key">License key from Gumroad</label>
-      <input id="license-key" type="text" placeholder="ex: XXXX-XXXX-XXXX-XXXX" />
-
-      <div class="btn-row">
-        <button id="btn-activate" class="primary">Activate PRO</button>
-        <a href="index.html" class="btn-link">← Back to Home</a>
+      <div class="header">
+        <div class="title-block">
+          <h1>Activate PRO Access</h1>
+          <p>Enter your Gumroad license key to unlock Advanced, Expert & Full Mock Exam.</p>
+        </div>
+        <div class="badge" id="currentStatusBadge">
+          FREE MODE
+        </div>
       </div>
 
-      <div id="status" class="status"></div>
+      <div class="field-group">
+        <label class="field-label" for="licenseKey">
+          <strong>License Key</strong><br />
+          <span>(From your Gumroad receipt / download page)</span>
+        </label>
+        <input
+          id="licenseKey"
+          class="input"
+          type="text"
+          autocomplete="off"
+          placeholder="e.g. XXXX-YYYY-ZZZZ-1234"
+        />
+        <p class="help-text">
+          Paste exactly as shown in Gumroad. One key is valid for up to 5 devices (browsers).
+        </p>
+      </div>
 
-      <p class="hint">
-        Note: The license will be stored only in this browser (using localStorage).
-        If you switch device or browser, you may need to re-enter the same key.
-      </p>
+      <div class="btn-row">
+        <button id="activateBtn" class="btn primary">
+          🔑 Activate PRO
+        </button>
+        <a href="index.html" class="btn">
+          ← Back to Home
+        </a>
+      </div>
+
+      <div id="statusBox" class="status-box">
+        <div class="status-title">Status</div>
+        <p id="statusText" class="status-text">
+          Enter your license key and click “Activate PRO”.
+        </p>
+      </div>
+
+      <div class="pill-row">
+        <div class="pill">
+          <strong>Device ID:</strong> <span id="deviceIdLabel">–</span>
+        </div>
+        <div class="pill">
+          <strong>Mode:</strong> <span id="modeLabel">FREE</span>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="index.html">← Return to CSE Reviewer Hub Home</a>
+      </div>
     </div>
   </div>
 
   <script>
     // ==========================================
-    // GUMROAD LICENSE CONFIG
+    // CONFIG – palitan mo ito ng actual API URL mo sa Render
     // ==========================================
-    const PRODUCT_PERMALINK = "cse-reviewer-hub-pro"; // ← palitan sa actual permalink mo
-    const MAX_VERIFICATIONS = 5;                      // ilang beses pwede i-activate ang key
-    const LOCAL_PRO_FLAG_KEY = "cse_is_pro";
-    const LOCAL_LICENSE_KEY = "cse_license_key";
+    const LICENSE_API_URL = "https://YOUR-LICENSE-API-URL.onrender.com/api/activate";
 
-    const input = document.getElementById("license-key");
-    const btn = document.getElementById("btn-activate");
-    const statusEl = document.getElementById("status");
+    const MAX_DEVICES = 5; // pang display lang; backend pa rin ang final authority
 
-    async function verifyGumroadLicense(licenseKey) {
-      const body = new URLSearchParams();
-      body.append("product_permalink", PRODUCT_PERMALINK);
-      body.append("license_key", licenseKey.trim());
-      body.append("increment_uses_count", "true"); // bilangin sa Gumroad
-
-      const res = await fetch("https://api.gumroad.com/v2/licenses/verify", {
-        method: "POST",
-        body
-      });
-
-      const data = await res.json();
-      return data;
+    // ==========================================
+    // DEVICE ID HELPER (1 browser = 1 device)
+    // ==========================================
+    function getOrCreateDeviceId() {
+      let id = localStorage.getItem("cse_device_id");
+      if (!id) {
+        if (window.crypto && crypto.randomUUID) {
+          id = crypto.randomUUID();
+        } else {
+          id =
+            "dev_" +
+            Math.random().toString(36).slice(2) +
+            Date.now().toString(36);
+        }
+        localStorage.setItem("cse_device_id", id);
+      }
+      return id;
     }
 
-    function setStatus(message, type) {
-      statusEl.textContent = message;
-      statusEl.className = "status " + (type || "");
+    // ==========================================
+    // UI HELPERS
+    // ==========================================
+    function setStatus(type, text) {
+      const box = document.getElementById("statusBox");
+      const txt = document.getElementById("statusText");
+      box.classList.remove("ok", "error");
+      if (type === "ok") box.classList.add("ok");
+      if (type === "error") box.classList.add("error");
+      txt.textContent = text;
     }
 
-    btn.addEventListener("click", async () => {
-      const key = (input.value || "").trim();
+    function refreshBadges() {
+      const badge = document.getElementById("currentStatusBadge");
+      const modeLabel = document.getElementById("modeLabel");
+      const isPro = localStorage.getItem("cse_is_pro") === "true";
 
-      if (!key) {
-        setStatus("Please paste your license key from Gumroad.", "error");
+      if (isPro) {
+        badge.textContent = "PRO ACTIVE";
+        badge.style.borderColor = "rgba(34,197,94,0.8)";
+        badge.style.color = "#bbf7d0";
+        modeLabel.textContent = "PRO";
+      } else {
+        badge.textContent = "FREE MODE";
+        badge.style.borderColor = "rgba(148,163,184,0.6)";
+        badge.style.color = "#cbd5f5";
+        modeLabel.textContent = "FREE";
+      }
+
+      const devLabel = document.getElementById("deviceIdLabel");
+      devLabel.textContent = getOrCreateDeviceId().slice(0, 8) + "…";
+    }
+
+    // ==========================================
+    // ACTIVATE FLOW
+    // ==========================================
+    async function activateLicense() {
+      const btn = document.getElementById("activateBtn");
+      const input = document.getElementById("licenseKey");
+      const rawKey = (input.value || "").trim();
+
+      if (!rawKey) {
+        setStatus("error", "Please enter your license key from Gumroad.");
+        input.focus();
         return;
       }
 
+      const deviceId = getOrCreateDeviceId();
+
       btn.disabled = true;
-      setStatus("Verifying license, please wait...", "");
+      btn.textContent = "⏳ Checking license…";
+      setStatus("info", "Contacting license server…");
 
       try {
-        const data = await verifyGumroadLicense(key);
+        const res = await fetch(LICENSE_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            licenseKey: rawKey,
+            deviceId
+          })
+        });
 
-        // 1) invalid / di match sa product
-        if (!data.success) {
-          setStatus(data.message || "Invalid license key. Please check and try again.", "error");
-          btn.disabled = false;
-          return;
+        if (!res.ok) {
+          throw new Error("Server error: " + res.status);
         }
 
-        // 2) safety net: sobra na sa allowed activations
-        if (typeof data.uses === "number" && data.uses > MAX_VERIFICATIONS) {
+        const data = await res.json();
+
+        if (data.ok) {
+          // mark as PRO sa browser na ito
+          localStorage.setItem("cse_is_pro", "true");
+          localStorage.setItem("cse_license_key", rawKey);
           setStatus(
-            "This license key has already been activated too many times. " +
-            "If you think this is a mistake, please contact the seller.",
-            "error"
+            "ok",
+            "License activated successfully on this device.\n\n" +
+              "You now have PRO access (Advanced, Expert, Full Mock Exam).\n" +
+              "You can close this page and go back to Home."
           );
-          btn.disabled = false;
-          return;
+          refreshBadges();
+          btn.textContent = "✅ PRO Activated";
+        } else {
+          if (data.code === "device_limit") {
+            setStatus(
+              "error",
+              "This license key has already been used on the maximum number of devices (" +
+                MAX_DEVICES +
+                ").\n\n" +
+                "If you think this is a mistake, please contact the seller."
+            );
+          } else if (data.code === "invalid_key") {
+            setStatus(
+              "error",
+              "Invalid or inactive license key.\n\n" +
+                "Please double-check your Gumroad receipt or contact the seller."
+            );
+          } else {
+            setStatus(
+              "error",
+              data.message ||
+                "License activation failed. Please try again or contact support."
+            );
+          }
+          btn.textContent = "🔑 Activate PRO";
         }
-
-        // 3) OK → save locally
-        localStorage.setItem(LOCAL_PRO_FLAG_KEY, "true");
-        localStorage.setItem(LOCAL_LICENSE_KEY, key.trim());
-
-        setStatus("PRO successfully activated on this device! Redirecting to Home...", "success");
-
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1200);
       } catch (err) {
         console.error(err);
         setStatus(
-          "Network error while verifying license. Please check your internet and try again.",
-          "error"
+          "error",
+          "Could not reach the license server.\n\n" +
+            "Check your internet connection, then try again."
         );
+        btn.textContent = "🔑 Activate PRO";
+      } finally {
         btn.disabled = false;
       }
-    });
-
-    // Kung dati nang activated, simple UX: prefill message
-    if (localStorage.getItem(LOCAL_PRO_FLAG_KEY) === "true") {
-      setStatus("This device is already activated as PRO. You can start reviewing.", "success");
     }
+
+    // ==========================================
+    // INIT
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+      refreshBadges();
+      const btn = document.getElementById("activateBtn");
+      btn.addEventListener("click", activateLicense);
+
+      const input = document.getElementById("licenseKey");
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          activateLicense();
+        }
+      });
+    });
   </script>
 </body>
 </html>
+
