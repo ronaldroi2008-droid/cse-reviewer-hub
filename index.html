@@ -173,11 +173,9 @@
           <span class="arrow">→</span>
         </a>
 
-        <!-- 🎯 Full Mock Exam – PRO locked sa free -->
-        <a href="mock_exam.html"
-           class="subject-btn"
-           data-feature="full-mock">
-          <span class="feature-title">🎯 &nbsp; Full Mock Exam (170 Items)</span>
+        <!-- 🎯 Full Mock Exam (PRO-locked for free users) -->
+        <a href="mock_exam.html" class="subject-btn" id="mockExamLink">
+          <span id="mockExamLabel">🎯 &nbsp; Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -189,50 +187,39 @@
     </div>
   </div>
 
-  <!-- PRO lock logic for Full Mock Exam -->
   <script>
-    // Set to false for FREE build, true for PRO build
-    const IS_PRO_USER = false;
+    // ==========================================
+    // 0. PRO CONFIG
+    // ==========================================
+    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    const LOCKED_LEVELS = ["advanced", "expert"]; // ginagamit sa ibang pages (verbal, numerical, etc.)
 
+    // ==========================================
+    // 1. INIT – Lock Full Mock Exam for FREE users
+    // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
-      const mockLink = document.querySelector('[data-feature="full-mock"]');
-      if (!mockLink) return;
+      const mockExamLink = document.getElementById("mockExamLink");
+      const mockExamLabel = document.getElementById("mockExamLabel");
 
-      // Hanapin yung title sa loob ng button
-      const titleEl =
-        mockLink.querySelector(".feature-title") ||
-        mockLink.querySelector("span") ||
-        mockLink;
+      if (!mockExamLink || !mockExamLabel) return;
 
-      // I-save ang base label para di ma-duplicate ang 🔒 PRO
-      const baseText =
-        titleEl.dataset.baseLabel || titleEl.textContent.trim();
-
-      if (!titleEl.dataset.baseLabel) {
-        titleEl.dataset.baseLabel = baseText;
-      }
-
-      // Kung FREE user, lagyan ng 🔒 PRO icon sa label
       if (!IS_PRO_USER) {
-        titleEl.innerHTML =
-          baseText +
-          ' <span style="font-size:0.7rem; opacity:0.85;">🔒 PRO</span>';
-      } else {
-        // Kung PRO, normal lang ang label
-        titleEl.textContent = baseText;
-      }
+        // FREE user → lagyan ng 🔒 PRO label at i-block ang click
+        mockExamLabel.innerHTML =
+          '🎯 &nbsp; Full Mock Exam (170 Items) ' +
+          '<span style="font-size:0.75rem; opacity:0.85;">🔒 PRO</span>';
 
-      // Click handler: alert + block navigation kapag FREE
-      mockLink.addEventListener("click", (e) => {
-        if (!IS_PRO_USER) {
+        mockExamLink.addEventListener("click", (e) => {
           e.preventDefault();
           alert(
-            "The Full Mock Exam (170 items with timer) is available in the PRO version.\n\n" +
-            "Beginner and topic-based reviewers are fully available in the free CSE Reviewer Hub."
+            "The Full Mock Exam (170 items) is available in the PRO version.\n\n" +
+            "You can still fully use all subject reviewers and Practice Mode for free."
           );
-        }
-        // Kung IS_PRO_USER = true, tuloy lang papuntang mock_exam.html
-      });
+        });
+      } else {
+        // PRO user → normal label, walang lock
+        mockExamLabel.innerHTML = "🎯 &nbsp; Full Mock Exam (170 Items)";
+      }
     });
   </script>
 
