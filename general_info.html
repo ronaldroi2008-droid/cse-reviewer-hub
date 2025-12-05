@@ -1148,6 +1148,33 @@
       });
     }
 
+    // Mark locked levels with 🔒 PRO label for free users
+function markLockedLevels() {
+  const levelTabs = document.querySelectorAll(".level-tab");
+
+  levelTabs.forEach(tab => {
+    const level = tab.dataset.level;
+
+    // i-save ang original label (BEGINNER, INTERMEDIATE, etc.)
+    const baseLabel =
+      tab.dataset.baseLabel ||
+      tab.textContent.replace("🔒", "").replace("PRO", "").trim();
+
+    if (!tab.dataset.baseLabel) {
+      tab.dataset.baseLabel = baseLabel;
+    }
+
+    if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
+      // may lock icon kung free user
+      tab.innerHTML = `${baseLabel} <span style="font-size:0.7rem;opacity:0.85;">🔒 PRO</span>`;
+    } else {
+      // walang lock icon kung PRO user
+      tab.textContent = baseLabel;
+    }
+  });
+}
+
+
     function initItemsTabs() {
       document.querySelectorAll(".items-tab").forEach(btn => {
         btn.addEventListener("click", () => {
