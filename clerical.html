@@ -386,6 +386,12 @@
       transition: all 0.15s ease;
     }
 
+    /* LOCKED PRO LEVELS (Advanced & Expert) */
+    .level-tab.locked {
+      opacity: 0.7;
+      border-style: dashed;
+    }
+
     .level-tab.active {
       background: var(--accent);
       color: white;
@@ -775,8 +781,9 @@
               <div class="level-tabs">
                 <button class="level-tab active" data-level="beginner">BEGINNER</button>
                 <button class="level-tab" data-level="intermediate">INTERMEDIATE</button>
-                <button class="level-tab" data-level="advanced">ADVANCED</button>
-                <button class="level-tab" data-level="expert">EXPERT</button>
+                <!-- PRO-LOCKED LEVELS -->
+                <button class="level-tab locked" data-level="advanced">ADVANCED 🔒 PRO</button>
+                <button class="level-tab locked" data-level="expert">EXPERT 🔒 PRO</button>
               </div>
 
               <div class="items-tabs">
@@ -854,6 +861,12 @@
   <script src="questions/clerical_alphabetizing.js"></script>
 
   <script>
+    // ==========================================
+    // 0. PRO CONFIG (toggle here)
+    // ==========================================
+    const IS_PRO_USER = false; // palitan sa true sa PRO build
+    const LOCKED_LEVELS = ["advanced", "expert"];
+
     // ==========================================
     // 1. TOPIC LIST (CLERICAL)
     // ==========================================
@@ -1113,11 +1126,22 @@
     // 8. QUIZ INITIALIZERS
     // ==========================================
     function initLevelTabs() {
-      document.querySelectorAll(".level-tab").forEach(tab => {
+      const levelTabs = document.querySelectorAll(".level-tab");
+      levelTabs.forEach(tab => {
         tab.addEventListener("click", () => {
           const level = tab.dataset.level;
+
+          // PRO alert kapag advanced/expert at free user
+          if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+            alert(
+              "Advanced and Expert levels are available in the PRO version.\n\n" +
+              "Beginner and Intermediate levels are fully available in the free Clerical Reviewer."
+            );
+            return;
+          }
+
           currentLevel = level;
-          document.querySelectorAll(".level-tab").forEach(t => {
+          levelTabs.forEach(t => {
             t.classList.toggle("active", t.dataset.level === level);
           });
           document.getElementById("quiz-level-label").textContent =
