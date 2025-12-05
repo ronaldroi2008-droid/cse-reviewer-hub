@@ -2106,10 +2106,14 @@
           if (!level || level === currentLevel) return;
 
           // 🔒 Block locked levels (Advanced, Expert)
-          if (LOCKED_LEVELS.includes(level)) {
-            alert("This level is locked for now. Please focus on Beginner and Intermediate first.");
+       if (LOCKED_LEVELS.includes(level)) {
+            alert(
+              "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
+              "Beginner and Intermediate are available in the free version."
+            );
             return;
           }
+
 
           currentLevel = level;
           resetQuizState();
