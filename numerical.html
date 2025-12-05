@@ -306,6 +306,7 @@
       color: var(--muted);
       cursor: pointer;
       transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+      position: relative;
     }
 
     .level-chip.active {
@@ -313,6 +314,18 @@
       color: #f9fafb;
       border-color: transparent;
       transform: translateY(-1px);
+    }
+
+    /* 🔒 Locked levels (Advanced & Expert) */
+    .level-chip.locked {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .level-chip.locked::after {
+      content: "🔒";
+      margin-left: 4px;
+      font-size: 0.8rem;
     }
 
     /* Items row (10 / 20 / 30 / 40 / 50) */
@@ -551,8 +564,6 @@
 .mistake-answers .explanation {
   color: var(--muted);
 }
-
-    
 
     .mistake-answers span.label {
       font-weight: 600;
