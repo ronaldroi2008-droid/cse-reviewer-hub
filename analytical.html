@@ -1173,40 +1173,42 @@
     // ==========================================
     // 8. QUIZ INITIALIZERS
     // ==========================================
-    function initLevelTabs() {
-      document.querySelectorAll(".level-tab").forEach(tab => {
-        const level = tab.dataset.level;
+  function initLevelTabs() {
+  document.querySelectorAll(".level-tab").forEach(tab => {
+    const level = tab.dataset.level;
 
-        // mark locked levels visually + add 🔒
-        if (LOCKED_LEVELS.includes(level)) {
-          tab.classList.add("locked");
-          if (!tab.textContent.includes("🔒")) {
-            tab.textContent = tab.textContent + " 🔒";
-          }
-        }
-
-        tab.addEventListener("click", () => {
-          const levelClicked = tab.dataset.level;
-          if (!levelClicked) return;
-
-          // block if locked
-          if (LOCKED_LEVELS.includes(levelClicked)) {
-            alert(
-              "Advanced and Expert levels are locked for now.\nYou can practice Beginner and Intermediate items."
-            );
-            return;
-          }
-
-          currentLevel = levelClicked;
-          document.querySelectorAll(".level-tab").forEach(t => {
-            t.classList.toggle("active", t.dataset.level === levelClicked);
-          });
-          document.getElementById("quiz-level-label").textContent =
-            capitalize(levelClicked);
-          startQuiz();
-        });
-      });
+    // mark locked levels visually + add 🔒
+    if (LOCKED_LEVELS.includes(level)) {
+      tab.classList.add("locked");
+      if (!tab.textContent.includes("🔒")) {
+        tab.textContent = tab.textContent + " 🔒";
+      }
     }
+
+    tab.addEventListener("click", () => {
+      const levelClicked = tab.dataset.level;
+      if (!levelClicked) return;
+
+      // 🔒 kapag locked (Advanced / Expert) – show Upgrade to PRO message
+      if (LOCKED_LEVELS.includes(levelClicked)) {
+        alert(
+          "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
+          "Beginner and Intermediate are available in the free version."
+        );
+        return;
+      }
+
+      // normal behavior for Beginner / Intermediate
+      currentLevel = levelClicked;
+      document.querySelectorAll(".level-tab").forEach(t => {
+        t.classList.toggle("active", t.dataset.level === levelClicked);
+      });
+      document.getElementById("quiz-level-label").textContent =
+        capitalize(levelClicked);
+      startQuiz();
+    });
+  });
+}
 
     function initItemsTabs() {
       document.querySelectorAll(".items-tab").forEach(btn => {
