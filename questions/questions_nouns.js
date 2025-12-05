@@ -692,8 +692,7 @@ advanced: [
       question: "Which collective noun best completes the sentence? 'A ___ of ships sailed into the harbor.'",
       options: ["flock", "pack", "fleet", "herd"],
       answer: "fleet",
-            explanation: '"Fleet" is the collective noun for ships.'
-
+      explanation: '"Fleet" is the collective noun for ships.'
     },
     {
       question: "Which collective noun best completes the sentence? 'He found a ___ of keys on the table.'",
