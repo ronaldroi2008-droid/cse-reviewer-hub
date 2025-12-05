@@ -396,6 +396,12 @@
       color: #e5e7eb;
     }
 
+    /* 🔒 Locked level style */
+    .level-tab.locked {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
     .items-tabs {
       display: inline-flex;
       align-items: center;
@@ -848,8 +854,7 @@
   </div>
 
   <!-- Question banks -->
-
-   <script src="questions/analytical_cognitive_reasoning.js"></script>
+  <script src="questions/analytical_cognitive_reasoning.js"></script>
   <script src="questions/analytical_logical_reasoning.js"></script>
   <script src="questions/analytical_flowchart.js"></script>
 
@@ -862,6 +867,9 @@
       { id: "flowchart",           label: "Flowchart",            tag: "Process" },
       { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
     ];
+
+    // 🔒 Locked levels (same idea as sa iba)
+    const LOCKED_LEVELS = ["advanced", "expert"];
 
     // ==========================================
     // 2. STUDY LESSON CONTENT
@@ -1167,14 +1175,34 @@
     // ==========================================
     function initLevelTabs() {
       document.querySelectorAll(".level-tab").forEach(tab => {
+        const level = tab.dataset.level;
+
+        // mark locked levels visually + add 🔒
+        if (LOCKED_LEVELS.includes(level)) {
+          tab.classList.add("locked");
+          if (!tab.textContent.includes("🔒")) {
+            tab.textContent = tab.textContent + " 🔒";
+          }
+        }
+
         tab.addEventListener("click", () => {
-          const level = tab.dataset.level;
-          currentLevel = level;
+          const levelClicked = tab.dataset.level;
+          if (!levelClicked) return;
+
+          // block if locked
+          if (LOCKED_LEVELS.includes(levelClicked)) {
+            alert(
+              "Advanced and Expert levels are locked for now.\nYou can practice Beginner and Intermediate items."
+            );
+            return;
+          }
+
+          currentLevel = levelClicked;
           document.querySelectorAll(".level-tab").forEach(t => {
-            t.classList.toggle("active", t.dataset.level === level);
+            t.classList.toggle("active", t.dataset.level === levelClicked);
           });
           document.getElementById("quiz-level-label").textContent =
-            capitalize(level);
+            capitalize(levelClicked);
           startQuiz();
         });
       });
