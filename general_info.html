@@ -1166,7 +1166,7 @@ function markLockedLevels() {
 
     if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
       // may lock icon kung free user
-      tab.innerHTML = `${baseLabel} <span style="font-size:0.7rem;opacity:0.85;">🔒 PRO</span>`;
+      tab.innerHTML = `${baseLabel} <span style="font-size:0.7rem;opacity:0.85;">🔒</span>`;
     } else {
       // walang lock icon kung PRO user
       tab.textContent = baseLabel;
