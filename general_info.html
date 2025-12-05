@@ -847,8 +847,10 @@
     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-    const IS_PRO_USER = false;              // set to true sa PRO build
-    const LOCKED_LEVELS = ["advanced", "expert"];
+
+const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+const LOCKED_LEVELS = ["advanced", "expert"];
+
 
     // ==========================================
     // 1. TOPIC LIST
