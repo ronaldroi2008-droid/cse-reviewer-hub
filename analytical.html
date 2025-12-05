@@ -868,8 +868,12 @@
       { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
     ];
 
-    // 🔒 Locked levels (same idea as sa iba)
-    const LOCKED_LEVELS = ["advanced", "expert"];
+ // ==========================================
+    // 0. PRO CONFIG
+    // ==========================================
+
+const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+const LOCKED_LEVELS = ["advanced", "expert"];
 
     // ==========================================
     // 2. STUDY LESSON CONTENT
