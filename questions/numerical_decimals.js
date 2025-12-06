@@ -678,12 +678,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "14.08",
       explanation: "8.448 ÷ 0.6 = 84.48 ÷ 6 = 14.08."
     },
-    {
-      question: "Evaluate: 0.375 × 0.24.",
-      options: ["0.09", "0.09,0", "0.090", "0.9"],
-      answer: "0.09",
-      explanation: "375 × 24 = 9000; five decimal places give 0.09000 or 0.09."
-    },
+   {
+  question: "Evaluate: 0.375 × 0.24.",
+  options: ["0.09", "0.009", "0.9", "0.19"],
+  answer: "0.09",
+  explanation: "375 × 24 = 9000; five decimal places give 0.09000 or 0.09."
+},
+
     {
       question: "Evaluate: 6.32 ÷ 0.08.",
       options: ["0.79", "79", "7.9", "0.079"],
