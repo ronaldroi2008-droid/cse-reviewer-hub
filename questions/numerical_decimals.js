@@ -240,12 +240,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "4.25 m",
       explanation: "2.50 + 1.75 = 4.25 meters."
     },
-    {
-      question: "Which number is equal to 3 and five tenths?",
-      options: ["3.05", "3.5", "3.05", "3.15"],
-      answer: "3.5",
-      explanation: "Five tenths is 0.5, so 3 and five tenths is 3.5."
-    },
+ {
+  question: "Which number is equal to 3 and five tenths?",
+  options: ["3.05", "3.5", "3.55", "3.15"],
+  answer: "3.5",
+  explanation: "Five tenths is 0.5, so 3 and five tenths is 3.5."
+},
+
     {
       question: "Which decimal shows 'two and nine hundredths'?",
       options: ["2.9", "2.09", "2.90", "2.009"],
