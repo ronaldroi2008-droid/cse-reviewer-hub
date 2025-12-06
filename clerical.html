@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Analytical Ability</title>
+  <title>CSE Reviewer Hub – Clerical Ability</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -386,6 +386,11 @@
       transition: all 0.15s ease;
     }
 
+    .level-tab.locked {
+      opacity: 0.7;
+      border-style: dashed;
+    }
+
     .level-tab.active {
       background: var(--accent);
       color: white;
@@ -394,12 +399,6 @@
     .level-tab:hover:not(.active) {
       background: rgba(148, 163, 184, 0.16);
       color: #e5e7eb;
-    }
-
-    /* 🔒 Locked level style */
-    .level-tab.locked {
-      opacity: 0.55;
-      cursor: not-allowed;
     }
 
     .items-tabs {
@@ -451,7 +450,6 @@
       margin: 0 0 10px;
     }
 
-    /* IMPORTANT: para gumana layout ng flowchart (respect line breaks) */
     #quiz-question-text {
       white-space: pre-wrap;
       font-family: monospace;
@@ -532,7 +530,6 @@
       color: var(--muted);
     }
 
-    /* Feedback text */
     .quiz-feedback {
       margin-top: 4px;
       font-size: 0.8rem;
@@ -550,7 +547,6 @@
       color: var(--muted);
     }
 
-    /* Explanation block */
     .explanation-wrapper {
       margin-top: 6px;
       font-size: 0.8rem;
@@ -714,10 +710,10 @@
 
       <div class="page-title-block">
         <h1 class="page-title">
-          CSE Reviewer Hub · <span>Analytical Ability</span>
+          CSE Reviewer Hub · <span>Clerical Ability</span>
         </h1>
         <p class="page-subtitle">
-          Logical Reasoning · Flowchart · Problem Solving · Cognitive Reasoning
+          Vocabulary · Spelling · Alphabetizing / Filing
         </p>
       </div>
 
@@ -729,7 +725,7 @@
     <main class="main-layout">
       <!-- Sidebar: topics -->
       <aside class="card sidebar">
-        <h2 class="sidebar-title">ANALYTICAL TOPICS</h2>
+        <h2 class="sidebar-title">CLERICAL TOPICS</h2>
         <p class="sidebar-note">
           Choose a topic below. On the right, you can switch between Study Mode and Practice Quiz.
         </p>
@@ -748,7 +744,7 @@
             </button>
           </div>
           <p class="mode-help">
-            Tip: Read the lesson first, then practice with 10–20 items per topic.
+            Tip: Review the clerical rules first, then practice with 10–20 items per topic.
           </p>
         </div>
 
@@ -756,7 +752,7 @@
         <div id="panel-study" class="panel">
           <header class="lesson-header">
             <h2 id="lesson-title">Lesson title</h2>
-            <p id="lesson-path">Analytical Ability · Topic</p>
+            <p id="lesson-path">Clerical Ability · Topic</p>
           </header>
           <p id="lesson-intro"></p>
           <div id="lesson-body"></div>
@@ -769,7 +765,7 @@
           <div class="quiz-topbar">
             <div class="quiz-main-label">
               <h2>
-                Analytical · <span id="quiz-topic-label"></span>
+                Clerical · <span id="quiz-topic-label"></span>
               </h2>
               <p>
                 Level:
@@ -804,10 +800,8 @@
 
             <div id="quiz-options"></div>
 
-            <!-- Feedback: Correct / Incorrect -->
             <div id="quiz-feedback" class="quiz-feedback muted"></div>
 
-            <!-- Explanation – auto visible after answering -->
             <div class="explanation-wrapper hidden" id="explanation-wrapper">
               <div class="explanation-title">Explanation</div>
               <p id="quiz-explanation-text"></p>
@@ -824,7 +818,7 @@
             </div>
           </div>
 
-          <!-- RESULTS PANEL (Finish screen) -->
+          <!-- RESULTS PANEL -->
           <div id="results-panel" class="hidden">
             <div class="results-summary">
               <h2 class="results-heading">Quiz Completed!</h2>
@@ -844,213 +838,156 @@
               📄 <span>Review Mistakes</span>
             </h3>
 
-            <div id="results-details">
-              <!-- Mistakes will be listed here -->
-            </div>
+            <div id="results-details"></div>
           </div>
         </div>
       </section>
     </main>
   </div>
 
-  <!-- Question banks -->
-  <script src="questions/analytical_cognitive_reasoning.js"></script>
-  <script src="questions/analytical_logical_reasoning.js"></script>
-  <script src="questions/analytical_flowchart.js"></script>
+  <!-- Question banks (make sure these exist) -->
+  <script src="questions/clerical_vocabulary.js"></script>
+  <script src="questions/clerical_spelling.js"></script>
+  <script src="questions/clerical_alphabetizing.js"></script>
 
   <script>
-    // ==========================================
-    // 1. TOPIC LIST
-    // ==========================================
-    const ANALYTICAL_TOPICS = [
-      { id: "logical_reasoning",   label: "Logical Reasoning",    tag: "Core" },
-      { id: "flowchart",           label: "Flowchart",            tag: "Process" },
-      { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
-    ];
-
     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
     const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-    const BASE_LOCKED_LEVELS = ["advanced", "expert"];
-    // kung PRO user, walang locked; kung free, Advanced at Expert lang ang locked
-    const LOCKED_LEVELS = IS_PRO_USER ? [] : BASE_LOCKED_LEVELS;
+    const LOCKED_LEVELS = ["advanced", "expert"];
 
     // ==========================================
-    // 2. STUDY LESSON CONTENT
+    // 1. TOPIC LIST (CLERICAL)
     // ==========================================
-    const ANALYTICAL_LESSONS = {
-      logical_reasoning: {
-        title: "Logical Reasoning",
+    const CLERICAL_TOPICS = [
+      { id: "vocabulary",    label: "Vocabulary",    tag: "Words" },
+      { id: "spelling",      label: "Spelling",      tag: "Accuracy" },
+      { id: "alphabetizing", label: "Alphabetizing", tag: "Filing" }
+    ];
+
+    // ==========================================
+    // 2. STUDY LESSON CONTENT (CLERICAL)
+    // ==========================================
+    const CLERICAL_LESSONS = {
+      vocabulary: {
+        title: "Vocabulary",
         intro:
-          "Logical reasoning questions test your ability to follow rules, analyze statements, and arrive at valid conclusions. In the CSE, common types include syllogisms, if–then statements, and pattern-based arguments.",
+          "Vocabulary questions test how well you understand word meanings, synonyms, antonyms, and how words are used in sentences. In clerical work, choosing the correct word avoids confusion and errors in documents.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Identify the given facts first. Do not assume information that is not stated.",
-              "Watch for words like ALL, SOME, NONE, IF, ONLY IF – these control the real meaning.",
-              "A conclusion is valid only if it must be true for every case that satisfies the given statements.",
-              "Diagramming (tables, arrows, simple letter codes) helps you see relationships clearly."
+              "Look at context. The words before and after often tell you the meaning.",
+              "Watch for common pairs in government and office usage, like attach vs. enclose, accept vs. except.",
+              "For synonyms, pick the word that is closest in meaning in that specific sentence, not just generally similar.",
+              "For antonyms, read the whole sentence and make sure the opposite still fits the idea."
             ]
           },
           {
-            heading: "Worked example: Syllogism",
+            heading: "Worked example: Synonyms",
             bullets: [
-              "Statements:",
-              "1) All teachers are college graduates.",
-              "2) Some nurses are teachers.",
-              "Question: Which conclusion is valid?",
-              "Analysis:",
-              "• From (1): Teacher → College Graduate.",
-              "• From (2): Some nurses are also teachers.",
-              "Conclusion: “Some nurses are college graduates.” This is valid because the nurses who are teachers must be college graduates."
+              "Sentence: The supervisor gave a BRIEF explanation.",
+              "Choices: short, wide, angry, official.",
+              "The word brief in this context means short.",
+              "So the correct answer is short."
             ]
           },
           {
-            heading: "Worked example: If–Then statement",
+            heading: "Worked example: Word usage",
             bullets: [
-              "Given: “If a person passes the CSE, then the person is eligible for a permanent government position.”",
-              "Valid inferences:",
-              "• If Maria passed the CSE, then she is eligible for a permanent position.",
-              "• But if Juan is eligible, it does not automatically mean he passed the CSE (there may be another basis).",
-              "Important: Do not reverse an if–then statement unless additional information allows it."
+              "Sentence: Please ______ the document to your email.",
+              "Choices: attach, attack, attend, attain.",
+              "In office communication, attach is the correct verb for sending a file with an email.",
+              "The other options do not match the meaning in this clerical context."
             ]
           }
         ],
         tips: [
-          "Underline keywords (ALL, SOME, ONLY, MUST, TRUE) before you analyze.",
-          "Draw quick diagrams instead of solving everything in your head.",
-          "If a choice goes beyond the given information, it is usually “Cannot be determined” or “Not valid.”"
+          "Underline clue words in the sentence before checking the options.",
+          "If two choices look similar, reread the sentence and test each option in place.",
+          "Improve your vocabulary by reading official memos, government forms, and sample CSE items regularly."
         ]
       },
 
-      flowchart: {
-        title: "Flowchart & Process Diagrams",
+      spelling: {
+        title: "Spelling",
         intro:
-          "Flowchart questions ask you to trace step-by-step procedures. You must follow arrows, decisions (Yes/No), and processes carefully to determine the final output.",
+          "Spelling questions focus on common word forms used in letters, memos, and reports. Correct spelling is important in clerical work because errors can look unprofessional and may change the meaning of a message.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Start at the terminal symbol (usually START) and follow the arrows exactly.",
-              "Decision boxes (diamonds) split the path. Choose the YES or NO branch based on the condition.",
-              "Keep track of variables (counters like i, n, total) on scratch paper as they change.",
-              "Stop at the END symbol or when the question tells you which step/output to inspect."
+              "Know the usual spelling of common office words like receive, separate, committee, accommodate.",
+              "Watch for silent letters and doubled consonants, such as government, recommend, occasion.",
+              "Be careful with pairs that sound similar but have different spelling and meaning (for example: advise vs. advice).",
+              "If a word looks wrong in more than one way, it is probably not the correct answer."
             ]
           },
           {
-            heading: "Worked example: Counting loop",
+            heading: "Worked example: Correct spelling",
             bullets: [
-              "Sample instructions in a flowchart:",
-              "1) Set i = 1, total = 0.",
-              "2) Add i to total.",
-              "3) Increase i by 1.",
-              "4) If i ≤ 3, go back to Step 2; otherwise STOP.",
-              "Tracing:",
-              "• Start: i = 1, total = 0 → add → total = 1.",
-              "• i becomes 2 → add → total = 3.",
-              "• i becomes 3 → add → total = 6.",
-              "• i becomes 4 → 4 ≤ 3? No → STOP.",
-              "Final output: total = 6."
+              "Which is correctly spelled?",
+              "Choices: recieve, receive, receeve, receve.",
+              "The correct spelling is receive (remember the rule: i before e, except after c)."
             ]
           },
           {
-            heading: "Reading Yes/No branches",
+            heading: "Worked example: Error spotting",
             bullets: [
-              "When a decision box asks “Is X > 10?”:",
-              "• If the condition is TRUE (Yes branch) → follow the arrow labelled “Yes.”",
-              "• If the condition is FALSE (No branch) → follow the arrow labelled “No.”",
-              "Always double-check the current value of the variable before deciding which branch to follow."
+              "Sentence: The comittee will review the proposal tomorrow.",
+              "The error is comittee; correct spelling is committee.",
+              "Always check long words for missing or extra letters."
             ]
           }
         ],
         tips: [
-          "Use a small table (Step / i / total / output) while tracing the flowchart.",
-          "Circle the question, e.g., “What is the value of … after Step ___?” so you know when to stop.",
-          "Be careful with off-by-one errors; one extra or missing loop will change the final answer."
+          "Make your own list of words you often misspell and review them regularly.",
+          "When two options look similar, compare each letter slowly from left to right.",
+          "Practice by copying sentences from sample clerical exams and checking spelling with a dictionary."
         ]
       },
 
-      problem_solving: {
-        title: "Problem Solving (Analytical Word Problems)",
+      alphabetizing: {
+        title: "Alphabetizing and Filing",
         intro:
-          "Problem-solving items combine basic math, logic, and reading comprehension. Often there is a table, schedule, or short story that you must analyze before computing.",
+          "Alphabetizing questions test how well you can arrange names, titles, and terms in correct order. This skill is essential for filing documents and finding records quickly in an office.",
         sections: [
           {
             heading: "Key ideas",
             bullets: [
-              "Translate verbal descriptions into equations, tables, or diagrams.",
-              "Identify what is being asked (the unknown) and what information is given.",
-              "Remove irrelevant data – sometimes extra numbers are included just to confuse you.",
-              "Try simple cases or smaller numbers to see the pattern before solving in general."
+              "Compare words letter by letter from left to right: look at the first letter, then the second, and so on.",
+              "If the first few letters are the same, continue until you find a difference, then decide which comes first.",
+              "For personal names, the usual rule is to arrange by last name, then by first name, then by middle initial.",
+              "Ignore punctuation like periods and commas when alphabetizing abbreviations and initials."
             ]
           },
           {
-            heading: "Worked example: Seating arrangement",
+            heading: "Worked example: Simple words",
             bullets: [
-              "Problem (simplified): Four friends A, B, C, D sit in a row. A is not at either end. B sits immediately to the right of A. Who can sit at the leftmost seat?",
-              "Step 1: Possible positions for A (not at ends): seat 2 or seat 3.",
-              "Case 1: A at seat 2 → B at seat 3. Leftmost seat (1) can be C or D.",
-              "Case 2: A at seat 3 → B at seat 4. Leftmost seat (1) can be C or D.",
-              "Conclusion: Either C or D can be at the leftmost seat."
+              "Arrange in alphabetical order: office, official, officer.",
+              "Compare letter by letter:",
+              "offi-ce, offi-cial, offi-cer.",
+              "The order by the next different letter is: officer, office, official."
             ]
           },
           {
-            heading: "Worked example: Simple number puzzle",
+            heading: "Worked example: Names for filing",
             bullets: [
-              "Problem: The sum of two numbers is 30. One number is 4 more than the other. Find the numbers.",
-              "Step 1: Let the smaller number be x, so the larger number is x + 4.",
-              "Step 2: x + (x + 4) = 30 → 2x + 4 = 30.",
-              "Step 3: 2x = 26 → x = 13, so the other number is 17.",
-              "Answer: 13 and 17."
+              "Which name comes first in filing?",
+              "A. Cruz, Maria L.",
+              "B. Cruz, Manuel A.",
+              "C. Cruz, Marissa D.",
+              "All last names are Cruz, so compare first names: Maria, Manuel, Marissa.",
+              "Alphabetical order of first names: Manuel, Maria, Marissa.",
+              "So the first entry is Cruz, Manuel A."
             ]
           }
         ],
         tips: [
-          "Draw quick diagrams (rows, tables, boxes) so relationships are easier to see.",
-          "If you are stuck, test the answer choices in a structured way.",
-          "Always reread the last sentence of the problem to be sure you answered exactly what is being asked."
-        ]
-      },
-
-      cognitive_reasoning: {
-        title: "Cognitive Reasoning",
-        intro:
-          "Cognitive reasoning items measure pattern recognition, analogies, classification, and other higher-order thinking skills.",
-        sections: [
-          {
-            heading: "Key ideas",
-            bullets: [
-              "Analogies compare two pairs: A is to B as C is to __. Find the relationship in the first pair and apply it to the second.",
-              "Classification items ask which item does NOT belong in the group (the “odd one out”).",
-              "Series or pattern questions require you to detect rules in numbers, letters, or figures.",
-              "Always test your suspected rule with more than one step to see if it is consistent."
-            ]
-          },
-          {
-            heading: "Worked example: Word analogy",
-            bullets: [
-              "SUN : DAY :: MOON : __",
-              "Relationship: The sun is associated with the day; the moon is associated with the night.",
-              "So the missing word is NIGHT."
-            ]
-          },
-          {
-            heading: "Worked example: Number pattern",
-            bullets: [
-              "Sequence: 2, 6, 12, 20, ?",
-              "Differences: 6 − 2 = 4, 12 − 6 = 6, 20 − 12 = 8.",
-              "The next difference follows the +2 pattern: 4, 6, 8, 10.",
-              "So the next term = 20 + 10 = 30.",
-              "Answer: 30."
-            ]
-          }
-        ],
-        tips: [
-          "For analogies, say the relationship in a sentence: “A is a type of B”, “A causes B”, “A is the opposite of B”, etc.",
-          "For odd-one-out questions, first find the common property of the three similar items; the one that does not share it is the answer.",
-          "If you have time, go back to the sequence and test your rule for 2–3 more steps to be sure it holds."
+          "Write the first two or three letters of each word in a small column to compare quickly.",
+          "Remember that a shorter word can come before a longer word if the common part is identical (for example: man comes before manage).",
+          "Practice with actual lists of names or terms, such as a phone list or directory."
         ]
       }
     };
@@ -1058,7 +995,7 @@
     // ==========================================
     // 3. STATE
     // ==========================================
-    let currentTopicId = ANALYTICAL_TOPICS[0].id;
+    let currentTopicId = CLERICAL_TOPICS[0].id;
     let currentLevel = "beginner";
     let currentItems = 10;
     let currentQuestionIndex = 0;
@@ -1067,7 +1004,7 @@
     let quizFinished = false;
 
     function getTopicLabel(id) {
-      const t = ANALYTICAL_TOPICS.find(x => x.id === id);
+      const t = CLERICAL_TOPICS.find(x => x.id === id);
       return t ? t.label : id;
     }
 
@@ -1082,7 +1019,7 @@
       const list = document.getElementById("topic-list");
       list.innerHTML = "";
 
-      ANALYTICAL_TOPICS.forEach((topic, index) => {
+      CLERICAL_TOPICS.forEach((topic, index) => {
         const li = document.createElement("li");
         const btn = document.createElement("button");
         btn.className = "topic-btn" + (index === 0 ? " active" : "");
@@ -1106,12 +1043,12 @@
     // 5. STUDY MODE RENDER
     // ==========================================
     function renderLesson() {
-      const lesson = ANALYTICAL_LESSONS[currentTopicId];
+      const lesson = CLERICAL_LESSONS[currentTopicId];
       if (!lesson) return;
 
       document.getElementById("lesson-title").textContent = lesson.title;
       document.getElementById("lesson-path").textContent =
-        "Analytical Ability · " + getTopicLabel(currentTopicId);
+        "Clerical Ability · " + getTopicLabel(currentTopicId);
       document.getElementById("lesson-intro").textContent = lesson.intro;
 
       const bodyEl = document.getElementById("lesson-body");
@@ -1179,37 +1116,38 @@
     // 8. QUIZ INITIALIZERS
     // ==========================================
     function initLevelTabs() {
-      document.querySelectorAll(".level-tab").forEach(tab => {
+      const levelTabs = document.querySelectorAll(".level-tab");
+
+      levelTabs.forEach(tab => {
         const level = tab.dataset.level;
 
-        // mark locked levels visually + add 🔒 (ONLY if not PRO)
-        if (LOCKED_LEVELS.includes(level)) {
+        // Mark locked visually only for FREE users
+        if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
           tab.classList.add("locked");
           if (!tab.textContent.includes("🔒")) {
-            tab.textContent = tab.textContent + " 🔒";
+            tab.textContent = tab.textContent + " 🔒 PRO";
           }
         }
 
         tab.addEventListener("click", () => {
-          const levelClicked = tab.dataset.level;
-          if (!levelClicked) return;
+          const lvl = tab.dataset.level;
+          if (!lvl) return;
 
-          // 🔒 kapag locked (Advanced / Expert) – show Upgrade to PRO message
-          if (LOCKED_LEVELS.includes(levelClicked)) {
+          // Block Advanced / Expert for FREE users
+          if (LOCKED_LEVELS.includes(lvl) && !IS_PRO_USER) {
             alert(
-              "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
-              "Beginner and Intermediate are available in the free version."
+              "Advanced and Expert levels are available in the PRO version.\n\n" +
+              "Beginner and Intermediate levels are fully available in the free Clerical Reviewer."
             );
             return;
           }
 
-          // normal behavior for unlocked levels
-          currentLevel = levelClicked;
-          document.querySelectorAll(".level-tab").forEach(t => {
-            t.classList.toggle("active", t.dataset.level === levelClicked);
+          currentLevel = lvl;
+          levelTabs.forEach(t => {
+            t.classList.toggle("active", t.dataset.level === lvl);
           });
           document.getElementById("quiz-level-label").textContent =
-            capitalize(levelClicked);
+            capitalize(lvl);
           startQuiz();
         });
       });
@@ -1284,7 +1222,7 @@
       if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
       if (detailsEl) detailsEl.innerHTML = "";
 
-      const bank = window.ANALYTICAL_QUESTION_BANK || {};
+      const bank = window.CLERICAL_QUESTION_BANK || {};
       const topicBank = bank[currentTopicId];
       const questions = topicBank && topicBank[currentLevel]
         ? topicBank[currentLevel].slice()
@@ -1330,7 +1268,7 @@
 
       if (!currentQuestionSet.length) {
         qTextEl.textContent =
-          "No questions are loaded yet for this topic and level. Make sure a JS file sets window.ANALYTICAL_QUESTION_BANK for Analytical Ability.";
+          "No questions are loaded yet for this topic and level. Make sure a JS file sets window.CLERICAL_QUESTION_BANK for Clerical Ability.";
         optionsEl.innerHTML = "";
         counterEl.textContent = "0 of 0";
         if (feedbackEl) {
@@ -1346,10 +1284,8 @@
 
       const q = currentQuestionSet[currentQuestionIndex];
 
-      // Question text (flowchart-friendly dahil sa CSS #quiz-question-text)
       qTextEl.textContent = q.question || "Question";
 
-      // Options
       optionsEl.innerHTML = "";
       const selectedIndex = userAnswers[currentQuestionIndex];
 
@@ -1366,7 +1302,6 @@
         optionsEl.appendChild(btn);
       });
 
-      // Feedback + Explanation
       if (selectedIndex == null) {
         if (feedbackEl) {
           feedbackEl.textContent = "";
@@ -1398,14 +1333,12 @@
         }
       }
 
-      // Counter
       counterEl.textContent =
         "Question " +
         (currentQuestionIndex + 1) +
         " of " +
         currentQuestionSet.length;
 
-      // Nav buttons
       prevBtn.disabled = currentQuestionIndex === 0;
 
       if (currentQuestionIndex === currentQuestionSet.length - 1) {
