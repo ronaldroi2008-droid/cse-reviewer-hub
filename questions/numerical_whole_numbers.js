@@ -185,12 +185,12 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "60",
       explanation: "The digit 6 is in the tens place, so its value is $6 \times 10 = 60$."
     },
-    {
-      question: "How many hundreds are in the number 9,876?",
-      options: ["8", "9", "7", "6"],
-      answer: "8",
-      explanation: "The digit 8 is in the hundreds place."
-    },
+     {
+    question: "What digit is in the hundreds place in the number 9,876?",
+options: ["8", "9", "7", "6"],
+answer: "8",
+explanation: "The digit 8 is in the hundreds place."
+  },
 
     // 10 ROUNDING QUESTIONS
     {
