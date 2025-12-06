@@ -2503,7 +2503,7 @@ STEP 5: So the car overtakes the train 2 hours after the car starts.`
         STEP 5: They meet 192 km from A.`
     },
 
-    // 49
+        // 49
     {
       question: "A runner travels 3 km at 12 km/h, then 2 km at 8 km/h, and finally 5 km at 10 km/h. What is the runner's average speed for the entire 10 km distance?",
       options: [
@@ -2513,40 +2513,31 @@ STEP 5: So the car overtakes the train 2 hours after the car starts.`
         "10.5 km/h"
       ],
       answer: "10 km/h",
-      explanation: `
-        STEP 1: Time for each part:
-          - 3 km at 12 km/h → 3/12 = 0.25 h
-          - 2 km at 8 km/h  → 2/8 = 0.25 h
-          - 5 km at 10 km/h → 5/10 = 0.5 h
-        STEP 2: Total distance = 3 + 2 + 5 = 10 km.
-        STEP 3: Total time = 0.25 + 0.25 + 0.5 = 1 hour.
-        STEP 4: Average speed = total distance ÷ total time
-          = 10 ÷ 1 = 10 km/h.`
+      explanation: `STEP 1: Total distance = 3 + 2 + 5 = 10 km.
+STEP 2: Compute the time for each part.
+  • Time₁ = 3 ÷ 12 = 0.25 h
+  • Time₂ = 2 ÷ 8  = 0.25 h
+  • Time₃ = 5 ÷ 10 = 0.5 h
+STEP 3: Total time = 0.25 + 0.25 + 0.5 = 1 hour.
+STEP 4: Average speed = Total distance ÷ Total time = 10 ÷ 1 = 10 km/h.`
     },
 
     // 50
     {
-      question: "A bus increases its speed from 45 km/h to 60 km/h and, as a result, takes 1 hour less to cover the distance between towns A and B. What was the original time taken at 45 km/h?",
+      question: "A car travels 150 km at 75 km/h and then 210 km at 70 km/h. What is the car's average speed for the entire trip?",
       options: [
-        "3 hours",
-        "3.5 hours",
-        "4 hours",
-        "4.5 hours"
+        "70 km/h",
+        "71 km/h",
+        "72 km/h",
+        "73.5 km/h"
       ],
-      answer: "4 hours",
-      explanation: `
-        STEP 1: Let distance be d km.
-        STEP 2: Time at 45 km/h = d/45, time at 60 km/h = d/60.
-        STEP 3: Time saved = 1 hour:
-          d/45 - d/60 = 1.
-        STEP 4: Compute:
-          d(1/45 - 1/60) = d( (4 - 3)/180 ) = d/180 = 1
-          → d = 180 km.
-        STEP 5: Original time at 45 km/h:
-          = 180 ÷ 45 = 4 hours.
-        STEP 6: So the original travel time is 4 hours.`
+      answer: "72 km/h",
+      explanation: `STEP 1: Compute the time for each part.
+Time₁ = 150 ÷ 75 = 2 hours.
+Time₂ = 210 ÷ 70 = 3 hours.
+STEP 2: Total distance = 150 + 210 = 360 km.
+STEP 3: Total time = 2 + 3 = 5 hours.
+STEP 4: Average speed = Total distance ÷ Total time = 360 ÷ 5 = 72 km/h.`
     }
   ]
-
 };
-
