@@ -494,10 +494,10 @@ STEP 5: 3x + 1200 − 2x = 1680 ⇒ x + 1200 = 1680 ⇒ x = 480 km`
     {
       question: "Two trains from stations A and B, 220 km apart, meet after 2 hours. One train is 20 km/h faster than the other. What are their speeds?",
       options: ["50 km/h & 70 km/h", "45 km/h & 65 km/h", "40 km/h & 60 km/h", "55 km/h & 75 km/h"],
-      answer: "50 km/h & 60 km/h",
+      answer: "45 km/h & 65 km/h",
       explanation: `STEP 1: Let slower speed = x, faster = x + 20
 STEP 2: (x + x + 20) × 2 = 220 ⇒ 2x + 20 = 110 ⇒ 2x = 90 ⇒ x = 45
-STEP 3: Speeds = 45 km/h and 65 km/h (none in options – correct pair is 45 & 65, but not listed)`
+STEP 3: Speeds = 45 km/h and 65 km/h `
     },
     // Tip: You can fix the options here later to match 45 & 65.
     {
