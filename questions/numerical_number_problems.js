@@ -312,19 +312,7 @@ beginner: [
       answer: "29",
       explanation: "Let x be the number. The equation is x - 7 = 22. So x = 22 + 7 = 29."
     },
-    // ADDED 2 MORE QUESTIONS TO COMPLETE 50 ITEMS
-    {
-      question: "8 times a number is 72. What is the number?",
-      options: ["8", "9", "10", "11"],
-      answer: "9",
-      explanation: "Let x be the number. The equation is 8x = 72. So x = 72 ÷ 8 = 9."
-    },
-    {
-      question: "The sum of a number and 14 is 37. What is the number?",
-      options: ["21", "23", "25", "27"],
-      answer: "23",
-      explanation: "Let x be the number. The equation is x + 14 = 37. So x = 37 - 14 = 23."
-    }
+  
   ],
 
   // ==========================================
