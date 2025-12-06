@@ -645,12 +645,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "16.245",
       explanation: "Align decimals: 12.500 + 3.745 = 16.245."
     },
-    {
-      question: "Evaluate: 9.804 − 3.29.",
-      options: ["6.514", "6.504", "6.5140", "7.514"],
-      answer: "6.514",
-      explanation: "9.804 − 3.290 = 6.514."
-    },
+   {
+  question: "Evaluate: 9.804 − 3.29.",
+  options: ["6.514", "6.504", "6.541", "7.514"],
+  answer: "6.514",
+  explanation: "9.804 − 3.290 = 6.514."
+},
+
     {
       question: "Evaluate: 4.36 × 1.2.",
       options: ["5.232", "5.332", "4.512", "5.2320"],
