@@ -467,8 +467,6 @@
       color: var(--muted);
     }
 
-    /* RESULT VIEW (Quiz Completed + Review Mistakes) */
-
     .hidden {
       display: none;
     }
@@ -561,9 +559,9 @@
       color: var(--success);
     }
 
-.mistake-answers .explanation {
-  color: var(--muted);
-}
+    .mistake-answers .explanation {
+      color: var(--muted);
+    }
 
     .mistake-answers span.label {
       font-weight: 600;
@@ -707,7 +705,7 @@
   <!-- External numerical question files -->
   <script src="questions/numerical_sequences_series.js"></script>
   <script src="questions/numerical_profit_loss_discount.js"></script>
-  <script src="questions/numerical_simple_interests.js"></script>
+  <script src="questions/numerical_simple_interest.js"></script>
   <script src="questions/numerical_multiples_factors.js"></script>
   <script src="questions/numerical_divisibility_rules.js"></script>
   <script src="questions/numerical_geometry_problems.js"></script>
@@ -729,19 +727,16 @@
   <script src="questions/numerical_odd_even_consecutive.js"></script>
 
   <script>
-
-
-   // ==========================================
+    // ==========================================
     // 0. PRO CONFIG
     // ==========================================
+    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    // Kung hindi PRO → lock Advanced at Expert; kung PRO → unlock lahat
+    const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
 
-const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-const LOCKED_LEVELS = ["advanced", "expert"];
-    
     // ==========================================
     // 1. TOPIC + LESSON DATA (NUMERICAL)
     // ==========================================
-
     const NUMERICAL_TOPICS = [
       { id: "whole_numbers",            label: "Integers / Whole Numbers",                 tag: "Core" },
       { id: "pemdas",                   label: "PEMDAS (Order of Operations)",             tag: "Core" },
@@ -1638,7 +1633,7 @@ const LOCKED_LEVELS = ["advanced", "expert"];
           "GCF is useful for simplifying fractions; LCM is useful for adding and subtracting fractions with different denominators."
         ]
       }
-    }; // updated: added motion_problems & fractions
+    };
 
     // ==========================================
     // 2. QUESTION BANK – from external files
@@ -1649,7 +1644,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
     // ==========================================
     // 3. STATE + DOM REFERENCES
     // ==========================================
-
     let currentMode = "study";
     let currentTopicId = NUMERICAL_TOPICS[0].id;
     let currentLevel = "beginner";
@@ -1658,9 +1652,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
 
     let userAnswers = [];
     let quizFinished = false;
-
-    // 🔒 Global locked levels (same idea as Verbal page)
-    const LOCKED_LEVELS = ["advanced", "expert"];
 
     const modeTabs        = document.querySelectorAll(".mode-tab");
     const topicListEl     = document.getElementById("topicList");
@@ -1697,7 +1688,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
     // ==========================================
     // 4. HELPERS
     // ==========================================
-
     function capitalize(text) {
       if (!text) return "";
       return text.charAt(0).toUpperCase() + text.slice(1);
@@ -1950,7 +1940,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
 
       quizFinished = true;
 
-      // Main score display
       if (resultScoreMain) {
         resultScoreMain.textContent = correct + " / " + total;
       }
@@ -1958,7 +1947,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
         resultScoreText.textContent = "Score: " + percent + "%";
       }
 
-      // Build Review Mistakes list with explanations
       if (mistakeListEl) {
         mistakeListEl.innerHTML = "";
 
@@ -1967,7 +1955,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
           const selected = ans ? ans.selected : null;
           const isCorrect = ans ? ans.correct : false;
 
-          // Skip items that were answered correctly
           if (isCorrect) return;
 
           const item = document.createElement("div");
@@ -1986,7 +1973,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
           const answersWrap = document.createElement("div");
           answersWrap.className = "mistake-answers";
 
-          // Your answer
           const userP = document.createElement("p");
           userP.classList.add("wrong");
           userP.innerHTML =
@@ -1996,14 +1982,12 @@ const LOCKED_LEVELS = ["advanced", "expert"];
               : "<em>Not answered</em>");
           answersWrap.appendChild(userP);
 
-          // Correct answer
           const correctP = document.createElement("p");
           correctP.classList.add("correct");
           correctP.innerHTML =
             "<span class='label'>✓ Correct answer:</span> " + q.answer;
           answersWrap.appendChild(correctP);
 
-          // Explanation
           const explP = document.createElement("p");
           explP.classList.add("explanation");
           explP.innerHTML =
@@ -2017,7 +2001,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
           mistakeListEl.appendChild(item);
         });
 
-        // If walang mali
         if (!mistakeListEl.children.length) {
           const p = document.createElement("p");
           p.textContent = "Perfect score! No mistakes to review.";
@@ -2025,7 +2008,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
         }
       }
 
-      // Show result panel, hide quiz card
       if (quizHeaderEl) quizHeaderEl.classList.add("hidden");
       if (quizCardEl) quizCardEl.classList.add("hidden");
       if (resultPanelEl) resultPanelEl.classList.remove("hidden");
@@ -2114,15 +2096,14 @@ const LOCKED_LEVELS = ["advanced", "expert"];
           const level = chip.dataset.level;
           if (!level || level === currentLevel) return;
 
-          // 🔒 Block locked levels (Advanced, Expert)
-       if (LOCKED_LEVELS.includes(level)) {
+          // 🔒 Block locked levels (Advanced, Expert) for non-PRO
+          if (LOCKED_LEVELS.includes(level)) {
             alert(
               "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
               "Beginner and Intermediate are available in the free version."
             );
             return;
           }
-
 
           currentLevel = level;
           resetQuizState();
@@ -2197,5 +2178,6 @@ const LOCKED_LEVELS = ["advanced", "expert"];
   </script>
 </body>
 </html>
+
 
 
