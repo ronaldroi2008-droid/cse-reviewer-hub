@@ -783,12 +783,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "Cara",
       explanation: "Totals: Ana:165, Ben:166, Cara:175; Cara has the highest."
     },
-    {
-      question: "A table shows test scores in Math and English for three students:\n\nStudent | Math | English\nDan     | 82   | 85\nEva     | 88   | 79\nFinn    | 75   | 90\n\nWhat is Ben's total score?",
-      options: ["160", "165", "167", "170"],
-      answer: "167",
-      explanation: "82 + 85 = 167."
-    },
+   {
+  question: "A table shows test scores in Math and English for three students:\n\nStudent | Math | English\nDan     | 82   | 85\nEva     | 88   | 79\nFinn    | 75   | 90\n\nWhat is Dan's total score?",
+  options: ["160", "165", "167", "170"],
+  answer: "167",
+  explanation: "Dan's total score is 82 + 85 = 167."
+},
+
     {
       question: "A line graph shows the number of visitors to a museum over six days:\n\nMon: 40\nTue: 50\nWed: 45\nThu: 60\nFri: 55\nSat: 70\n\nOn which day did the number of visitors first exceed 50?",
       options: ["Tuesday", "Wednesday", "Thursday", "Friday"],
