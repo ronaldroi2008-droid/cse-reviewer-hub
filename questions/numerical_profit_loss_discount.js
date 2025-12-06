@@ -981,12 +981,13 @@ window.NUMERICAL_QUESTION_BANK["profit_loss_discount"] = {
       answer: "22.22%",
       explanation: "CP for 1000g = 100. He charges 110. He gives goods worth 90. Profit 20 on cost 90. 20/90 = 22.22%."
     },
-    {
+       {
       question: "Seller cheats 10% in buying and 10% in selling (weight). Gain?",
       options: ["20%", "21%", "22.22%", "25%"],
-      answer: "21%",
-      explanation: "Common formula (1.1 * 1.1) - 1 = 21% gain."
+      answer: "22.22%",
+      explanation: "Overall gain% when a dealer cheats x% in buying and x% in selling by weight is ((100 + x) / (100 - x) - 1) × 100. For x = 10: ((110 / 90) - 1) × 100 = (20 / 90) × 100 ≈ 22.22%."
     },
+
     {
       question: "Uses 1.2kg weight instead of 1kg when buying. Gain?",
       options: ["10%", "15%", "20%", "25%"],
