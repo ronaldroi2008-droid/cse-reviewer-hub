@@ -843,12 +843,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "1,800",
       explanation: "11,800 − 10,000 = 1,800."
     },
-    {
-      question: "A line graph shows the population of a town over four years:\n\nYear 1: 12,000\nYear 2: 12,600\nYear 3: 13,200\nYear 4: 14,000\n\nWhat is the average yearly increase?",
-      options: ["550", "600", "650", "700"],
-      answer: "667",
-      explanation: "Total increase 2,000 over 3 intervals gives 2,000 ÷ 3 = 667."
-    },
+  {
+  question: "A line graph shows the population of a town over four years:\n\nYear 1: 12,000\nYear 2: 12,600\nYear 3: 13,200\nYear 4: 14,000\n\nWhat is the average yearly increase?",
+  options: ["550", "600", "650", "667"],
+  answer: "667",
+  explanation: "Total increase is 2,000 over 3 intervals, so 2,000 ÷ 3 ≈ 667."
+},
+
     {
       question: "A bar graph shows the number of books borrowed from a library:\n\nFiction: 120\nNon-fiction: 80\nReference: 50\n\nWhat percentage of books borrowed were Fiction? (Total = 250)",
       options: ["40%", "45%", "48%", "50%"],
