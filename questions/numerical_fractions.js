@@ -847,12 +847,13 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       answer: "1/4",
       explanation: "2/3 = 8/12. The other is 11/12 − 8/12 = 3/12 = 1/4."
     },
-    {
-      question: "One number is 3/4 of another. If the larger number is 24, what is the smaller number?",
-      options: ["16", "17", "18", "20"],
-      answer: "18",
-      explanation: "Let the smaller number be x. Then (3/4)x = 24. Multiply both sides by 4/3: x = 24 × 4/3 = 96/3 = 32? Wait, check: 24 × 3/4 = 18, so smaller is 18. Reverse thinking: if smaller is 18, 3/4 of 24 is 18, so 18 is the smaller number."
-    },
+  {
+  question: "One number is 3/4 of another. If the larger number is 24, what is the smaller number?",
+  options: ["16", "17", "18", "20"],
+  answer: "18",
+  explanation: "The smaller number is 3/4 of the larger number. Compute 3/4 × 24 = 72/4 = 18. So the smaller number is 18."
+},
+
     {
       question: "Simplify: (2/3 of 27) ÷ 5/6.",
       options: ["7 1/5", "8 2/5", "9 1/5", "10 1/5"],
