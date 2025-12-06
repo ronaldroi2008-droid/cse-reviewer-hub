@@ -396,12 +396,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "140",
       explanation: "40 + 55 + 45 = 140 passengers."
     },
-    {
-      question: "A bar chart shows the number of emails received:\n\nMon: 8\nTue: 6\nWed: 10\nThu: 6\n\nOn which day were the fewest emails received?",
-      options: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      answer: "Tuesday and Thursday",
-      explanation: "Both Tuesday and Thursday show 6 emails, the fewest."
-    },
+ {
+  question: "A bar chart shows the number of emails received:\n\nMon: 8\nTue: 6\nWed: 10\nThu: 6\n\nOn which day were the fewest emails received?",
+  options: ["Monday", "Tuesday", "Wednesday", "Tuesday and Thursday"],
+  answer: "Tuesday and Thursday",
+  explanation: "Both Tuesday and Thursday show 6 emails, the fewest."
+},
+
     {
       question: "A bar chart shows the number of emails received:\n\nMon: 7\nTue: 5\nWed: 9\nThu: 5\n\nHow many more emails were received on Wednesday than on Tuesday?",
       options: ["2", "3", "4", "5"],
