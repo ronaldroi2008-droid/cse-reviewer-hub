@@ -235,20 +235,22 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "432",
       explanation: `STEP 1: Last three digits are 432.\nSTEP 2: 432 ÷ 8 = 54.\nSTEP 3: So 432 is divisible by 8.`
     },
-    // 33 -- FIXED: make only 462 correct
-    {
-      question: "Which number is divisible by 11?",
-      options: ["275", "342", "452", "462"],
-      answer: "462",
-      explanation: `STEP 1: For 462, (4 + 2) − 6 = 0.\nSTEP 2: Result 0 is a multiple of 11.\nSTEP 3: So 462 is divisible by 11.`
-    },
-    // 34
-    {
-      question: "Which of the following is divisible by 9?",
-      options: ["342", "459", "517", "683"],
-      answer: "459",
-      explanation: `STEP 1: Sum of digits of 459 = 4+5+9 = 18.\nSTEP 2: 18 is divisible by 9.\nSTEP 3: So 459 is divisible by 9.`
-    },
+  // 33 -- FIXED: make only 462 correct
+{
+  question: "Which number is divisible by 11?",
+  options: ["274", "342", "452", "462"],
+  answer: "462",
+  explanation: `STEP 1: For 462, (4 + 2) − 6 = 0.\nSTEP 2: Result 0 is a multiple of 11.\nSTEP 3: So 462 is divisible by 11.`
+},
+
+   // 34
+{
+  question: "Which of the following is divisible by 9?",
+  options: ["343", "459", "517", "683"],
+  answer: "459",
+  explanation: `STEP 1: Sum of digits of 459 = 4+5+9 = 18.\nSTEP 2: 18 is divisible by 9.\nSTEP 3: So 459 is divisible by 9.`
+},
+
     // 35
     {
       question: "Which of these is divisible by 3?",
@@ -306,12 +308,14 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       explanation: `STEP 1: 3+2+7 = 12, divisible by 3.\nSTEP 2: 12 is not divisible by 9.\nSTEP 3: So 327 is divisible by 3 but not by 9.`
     },
     // 43
-    {
-      question: "Which number is divisible by 5 and 10?",
-      options: ["150", "275", "345", "460"],
-      answer: "150",
-      explanation: `STEP 1: Divisible by 10 → last digit 0.\nSTEP 2: 150 ends in 0 and is also divisible by 5.\nSTEP 3: So 150 is divisible by both 5 and 10.`
-    },
+  // 43
+{
+  question: "Which number is divisible by 5 and 10?",
+  options: ["150", "275", "345", "461"],
+  answer: "150",
+  explanation: `STEP 1: Divisible by 10 → last digit 0.\nSTEP 2: 150 ends in 0 and is also divisible by 5.\nSTEP 3: So 150 is divisible by both 5 and 10.`
+},
+
     // 44
     {
       question: "Which number is divisible by 8?",
@@ -319,13 +323,15 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "504",
       explanation: `STEP 1: Last three digits: 504.\nSTEP 2: 504 ÷ 8 = 63.\nSTEP 3: So 504 is divisible by 8.`
     },
-    // 45
-    {
-      question: "Which number is divisible by 11?",
-      options: ["374", "418", "506", "594"],
-      answer: "594",
-      explanation: `STEP 1: For 594: (5 + 4) − 9 = 0.\nSTEP 2: 0 is a multiple of 11.\nSTEP 3: So 594 is divisible by 11.`
-    },
+
+  // 45
+{
+  question: "Which number is divisible by 11?",
+  options: ["375", "419", "507", "594"],
+  answer: "594",
+  explanation: `STEP 1: For 594: (5 + 4) − 9 = 0.\nSTEP 2: 0 is a multiple of 11.\nSTEP 3: So 594 is divisible by 11.`
+},
+
     // 46
     {
       question: "Which number is divisible by 2?",
@@ -334,12 +340,13 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       explanation: `STEP 1: Check last digit.\nSTEP 2: 924 ends in 4, an even digit.\nSTEP 3: So 924 is divisible by 2.`
     },
     // 47
-    {
-      question: "Which number is divisible by 3?",
-      options: ["618", "724", "815", "927"],
-      answer: "927",
-      explanation: `STEP 1: Sum of digits: 9+2+7=18\nSTEP 2: 18 is divisible by 3\nSTEP 3: So 927 is divisible by 3.`
-    },
+{
+  question: "Which number is divisible by 3?",
+  options: ["619", "724", "815", "927"],
+  answer: "927",
+  explanation: `STEP 1: Sum of digits: 9+2+7=18\nSTEP 2: 18 is divisible by 3\nSTEP 3: So 927 is divisible by 3.`
+},
+
     // 48
     {
       question: "Which number is divisible by 9?",
@@ -396,12 +403,13 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       explanation: `STEP 1: 1+4+4=9, divisible by 3.\nSTEP 2: Last two digits 44 → 44 ÷ 4 = 11.\nSTEP 3: So 144 is divisible by 12.`
     },
     // 5
-    {
-      question: "Which number is divisible by 8 but not by 16?",
-      options: ["200", "128", "192", "264"],
-      answer: "200",
-      explanation: `STEP 1: Last three digits 200 → 200 ÷ 8 = 25, so divisible by 8.\nSTEP 2: 200 ÷ 16 = 12.5, not an integer.\nSTEP 3: Thus, 200 is divisible by 8 but not by 16.`
-    },
+{
+  question: "Which number is divisible by 8 but not by 16?",
+  options: ["200", "128", "192", "260"],
+  answer: "200",
+  explanation: `STEP 1: Last three digits 200 → 200 ÷ 8 = 25, so divisible by 8.\nSTEP 2: 200 ÷ 16 = 12.5, not an integer.\nSTEP 3: Thus, 200 is divisible by 8 but not by 16.`
+},
+
     // 6 -- FIXED: only 270 is correct (others changed)
     {
       question: "Which number is divisible by 9 and 5?",
@@ -409,13 +417,14 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "270",
       explanation: `STEP 1: Divisible by 5 → last digit 0 or 5 (270 ends in 0).\nSTEP 2: Sum of digits 2+7+0=9, divisible by 9.\nSTEP 3: So 270 is divisible by both 9 and 5.`
     },
-    // 7
-    {
-      question: "Which of the following is divisible by 11?",
-      options: ["374", "429", "506", "618"],
-      answer: "429",
-      explanation: `STEP 1: For 429: (4 + 9) − 2 = 11.\nSTEP 2: 11 is a multiple of 11.\nSTEP 3: So 429 is divisible by 11.`
-    },
+// 7
+{
+  question: "Which of the following is divisible by 11?",
+  options: ["373", "429", "507", "618"],
+  answer: "429",
+  explanation: `STEP 1: For 429: (4 + 9) − 2 = 11.\nSTEP 2: 11 is a multiple of 11.\nSTEP 3: So 429 is divisible by 11.`
+},
+
     // 8
     {
       question: "Which number is divisible by 3 but not by 5?",
@@ -444,13 +453,14 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "147",
       explanation: `STEP 1: 147 ÷ 7 = 21.\nSTEP 2: So 147 is divisible by 7.`
     },
-    // 12 -- FIXED: only 225 is the 25-multiple kept
-    {
-      question: "Which of these numbers is divisible by 25?",
-      options: ["226", "175", "225", "241"],
-      answer: "225",
-      explanation: `STEP 1: Divisible by 25 → last two digits are 00, 25, 50, or 75.\nSTEP 2: 225 ends in 25.\nSTEP 3: So 225 is divisible by 25.`
-    },
+ // 12 -- FIXED: only 225 is the 25-multiple kept
+{
+  question: "Which of these numbers is divisible by 25?",
+  options: ["226", "176", "225", "241"],
+  answer: "225",
+  explanation: `STEP 1: Divisible by 25 → last two digits are 00, 25, 50, or 75.\nSTEP 2: 225 ends in 25.\nSTEP 3: So 225 is divisible by 25.`
+},
+
     // 13
     {
       question: "Which number is divisible by both 2 and 9?",
@@ -458,13 +468,14 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "162",
       explanation: `STEP 1: 162 is even → divisible by 2.\nSTEP 2: 1+6+2=9, divisible by 9.\nSTEP 3: So 162 is divisible by 18.`
     },
-    // 14
-    {
-      question: "Which number is divisible by 15?",
-      options: ["120", "135", "151", "167"],
-      answer: "150",
-      explanation: `STEP 1: A number is divisible by 15 if it is divisible by 3 and 5.\nSTEP 2: 150 ends in 0 (divisible by 5) and 1+5+0=6 (divisible by 3).\nSTEP 3: So 150 is divisible by 15.`
-    },
+   // 14
+{
+  question: "Which number is divisible by 15?",
+  options: ["124", "137", "150", "167"],
+  answer: "150",
+  explanation: `STEP 1: A number is divisible by 15 if it is divisible by both 3 and 5.\nSTEP 2: 150 ends in 0 (divisible by 5) and 1+5+0=6 (divisible by 3).\nSTEP 3: So 150 is divisible by 15.`
+},
+
     // 15 -- FIXED: only 160 is the 40-multiple kept
     {
       question: "Which number is divisible by 8 and 5? (thus by 40)",
@@ -521,13 +532,14 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "196",
       explanation: `STEP 1: 196 ÷ 7 = 28.\nSTEP 2: So 196 is divisible by 7.\nSTEP 3: Others are not exact multiples of 7.`
     },
-    // 23 -- FIXED: only 572 kept as 11-multiple
-    {
-      question: "Which number is divisible by 11?",
-      options: ["572", "583", "584", "605"],
-      answer: "572",
-      explanation: `STEP 1: For 572: (5+2) − 7 = 0.\nSTEP 2: 0 is a multiple of 11.\nSTEP 3: So 572 is divisible by 11.`
-    },
+  // 23 -- FIXED: only 572 kept as 11-multiple
+{
+  question: "Which number is divisible by 11?",
+  options: ["572", "584", "586", "607"],
+  answer: "572",
+  explanation: `STEP 1: For 572: (5+2) − 7 = 0.\nSTEP 2: 0 is a multiple of 11.\nSTEP 3: So 572 is divisible by 11.`
+},
+
     // 24 -- FIXED: only 156 kept as 12-multiple
     {
       question: "Which number is divisible by 4 and 6? (thus by 12)",
@@ -1667,13 +1679,21 @@ window.NUMERICAL_QUESTION_BANK["divisibility_rules"] = {
       answer: "19",
       explanation: `STEP 1: Check 19:\n- 19 ÷ 4 = 4 remainder 3 (Yes)\n- 19 ÷ 7 = 2 remainder 5 (Yes)\nSTEP 2: 19 works.`
     },
-    // 35
-    {
-      question: "Which of the following is a common multiple of 12, 18, and 20?",
-      options: ["60", "90", "180", "360"],
-      answer: "360",
-      explanation: `STEP 1: LCM(12, 18, 20) = 180.\nSTEP 2: 360 is a multiple of 180 (180 × 2).\nSTEP 3: 60 and 90 are too small.`
-    },
+   // 35
+{
+  question: "Which of the following is the least common multiple (LCM) of 12, 18, and 20?",
+  options: ["60", "90", "180", "360"],
+  answer: "180",
+  explanation: `
+        STEP 1: Prime factorization:
+          - 12 = 2² × 3
+          - 18 = 2 × 3²
+          - 20 = 2² × 5
+        STEP 2: LCM = 2² × 3² × 5 = 4 × 9 × 5 = 180.
+        STEP 3: So 180 is the least common multiple. 60 and 90 are too small, and 360 is just a larger common multiple.
+      `
+},
+
     // 36
     {
       question: "A certain 4-digit number is divisible by 9 and 11. Which of the following is definitely true?",
