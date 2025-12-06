@@ -855,12 +855,13 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   explanation: "The smaller number is 3/4 of the larger number. Compute 3/4 × 24 = 72/4 = 18. So the smaller number is 18."
 },
 
-    {
-      question: "Simplify: (2/3 of 27) ÷ 5/6.",
-      options: ["7 1/5", "8 2/5", "9 1/5", "10 1/5"],
-      answer: "8 3/5",
-      explanation: "2/3 of 27 is 18. Then 18 ÷ 5/6 = 18 × 6/5 = 108/5 = 21 3/5."
-    },
+  {
+  question: "Simplify: (2/3 of 27) ÷ 5/6.",
+  options: ["7 1/5", "8 2/5", "9 1/5", "21 3/5"],
+  answer: "21 3/5",
+  explanation: "First find 2/3 of 27: (2/3) × 27 = 18. Then divide by 5/6: 18 ÷ (5/6) = 18 × 6/5 = 108/5 = 21 3/5."
+},
+
     {
       question: "What is 5/8 of 2 2/5?",
       options: ["1 1/4", "1 1/2", "1 3/5", "1 3/4"],
