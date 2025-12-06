@@ -1621,11 +1621,14 @@ window.NUMERICAL_QUESTION_BANK["age_problems"] = {
     },
 
     // 50
-    {
+        {
       question: "Two years from now, the age of a man will be three times the age of his son. Four years ago, the man's age was 5 times his son's age. How old is the son now?",
       options: ["8 years", "9 years", "10 years", "11 years"],
       answer: "10 years",
       explanation: `STEP 1: Let present ages be M and S.\nSTEP 2: Two years from now: M + 2 = 3(S + 2).\nSTEP 3: Four years ago: M - 4 = 5(S - 4).\nSTEP 4: Solving these equations gives S = 10.\nSTEP 5: The son is 10 years old now.`
     }
-  ];
+  ]
+};
+
+  
 
