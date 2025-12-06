@@ -770,13 +770,15 @@ window.NUMERICAL_QUESTION_BANK["averages"] = {
       answer: "10.86",
       explanation: "Original sum = 10 × 6 = 60. New sum = 60 + 16 = 76. Average = 76 ÷ 7 ≈ 10.86."
     },
-    // 4 - CORRECTED
-    {
-      question: "The average of 8 numbers is 14. If one more number x is added, the new average becomes 15. Find x.",
-      options: ["21", "22", "23", "28"],
-      answer: "28",
-      explanation: "Old sum = 14 × 8 = 112. New sum = 15 × 9 = 135. Added number x = 135 − 112 = 23."
-    },
+    // 4 
+  
+{
+  question: "The average of 8 numbers is 14. If one more number x is added, the new average becomes 15. Find x.",
+  options: ["21", "22", "23", "28"],
+  answer: "23",
+  explanation: "Old sum = 14 × 8 = 112. New sum = 15 × 9 = 135. Added number x = 135 − 112 = 23."
+},
+
     // 5
     {
       question: "The average of 10 numbers is 30. When one number is removed, the new average becomes 29. What number was removed?",
@@ -799,12 +801,14 @@ window.NUMERICAL_QUESTION_BANK["averages"] = {
       explanation: "Original sum = 40 × 5 = 200. New sum = 200 + 50 = 250. New average = 250 ÷ 6 ≈ 41.67."
     },
     // 8
-    {
-      question: "The average weight of 4 men is 70 kg. Another man joins the group and the new average becomes 72 kg. What is the weight of the new man?",
-      options: ["75 kg", "78 kg", "80 kg", "82 kg"],
-      answer: "78 kg",
-      explanation: "Old sum = 70 × 4 = 280 kg. New sum = 72 × 5 = 360 kg. New man weight = 360 − 280 = 78 kg."
-    },
+  // 8
+{
+  question: "The average weight of 4 men is 70 kg. Another man joins the group and the new average becomes 72 kg. What is the weight of the new man?",
+  options: ["75 kg", "78 kg", "80 kg", "82 kg"],
+  answer: "80 kg",
+  explanation: "Old sum = 70 × 4 = 280 kg. New sum = 72 × 5 = 360 kg. New man's weight = 360 − 280 = 80 kg."
+},
+
     // 9
     {
       question: "The average of 3 numbers is 15. If a fourth number is added and the average becomes 16, what is the fourth number?",
@@ -1297,13 +1301,14 @@ window.NUMERICAL_QUESTION_BANK["averages"] = {
       answer: "35",
       explanation: "For 5 consecutive odd numbers, the middle one is the average: 31. Numbers are 27, 29, 31, 33, 35. Largest is 35."
     },
-    // 27 - CORRECTED
-    {
-      question: "The average salary of 6 employees is 25 thousand pesos. An employee with 31 thousand pesos salary leaves and a new employee joins. The new average becomes 24 thousand pesos. What is the salary of the new employee?",
-      options: ["17 thousand", "18 thousand", "19 thousand", "25 thousand"],
-      answer: "19 thousand",
-      explanation: "Original sum = 25 × 6 = 150. After one leaves, sum = 150 − 31 = 119. New sum = 24 × 6 = 144. New employee salary = 144 − 119 = 25 thousand."
-    },
+    // 27 
+{
+  question: "The average salary of 6 employees is 25 thousand pesos. An employee with 31 thousand pesos salary leaves and a new employee joins. The new average becomes 24 thousand pesos. What is the salary of the new employee?",
+  options: ["17 thousand", "18 thousand", "19 thousand", "25 thousand"],
+  answer: "25 thousand",
+  explanation: "Original sum = 25 × 6 = 150. After one leaves, sum = 150 − 31 = 119. New sum = 24 × 6 = 144. New employee salary = 144 − 119 = 25 thousand."
+},
+
     // 28
     {
       question: "The average of 4 numbers is 15. If one number is 9, what is the average of the other three numbers?",
