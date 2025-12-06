@@ -458,12 +458,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "85",
       explanation: "25 + 32 + 28 = 85 customers."
     },
-    {
-      question: "A bar graph shows daily water consumption (in liters):\n\nMon: 2\nTue: 2.5\nWed: 3\nThu: 2\n\nOn which day was the least water consumed?",
-      options: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      answer: "Monday and Thursday",
-      explanation: "Both Monday and Thursday show 2 liters."
-    },
+   {
+  question: "A bar graph shows daily water consumption (in liters):\n\nMon: 2\nTue: 2.5\nWed: 3\nThu: 2\n\nOn which day was the least water consumed?",
+  options: ["Monday", "Tuesday", "Wednesday", "Monday and Thursday"],
+  answer: "Monday and Thursday",
+  explanation: "Both Monday and Thursday show 2 liters."
+},
+
     {
       question: "A bar graph shows daily water consumption (in liters):\n\nMon: 1.5\nTue: 2\nWed: 2.5\nThu: 1.5\n\nWhat is the total water consumed over the four days?",
       options: ["7", "7.5", "8", "8.5"],
