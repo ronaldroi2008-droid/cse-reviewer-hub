@@ -703,12 +703,13 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       answer: "17/12",
       explanation: "LCM of 3 and 4 is 12. 2/3 = 8/12, 3/4 = 9/12. Sum = 17/12 = 1 5/12."
     },
-    {
-      question: "What is 5/6 + 7/8?",
-      options: ["1 19/24", "1 11/24", "1 7/8", "2"],
-      answer: "1 19/24",
-      explanation: "LCM of 6 and 8 is 24. 5/6 = 20/24, 7/8 = 21/24. Sum = 41/24 = 1 17/24."
-    },
+  {
+  question: "What is 5/6 + 7/8?",
+  options: ["1 17/24", "1 11/24", "1 7/8", "2"],
+  answer: "1 17/24",
+  explanation: "LCM of 6 and 8 is 24. 5/6 = 20/24 and 7/8 = 21/24. Their sum is 41/24, which is 1 17/24."
+},
+
     {
       question: "What is 2/3 of (4 1/2 − 1 3/4)?",
       options: ["1 1/3", "1 5/6", "2", "2 1/6"],
