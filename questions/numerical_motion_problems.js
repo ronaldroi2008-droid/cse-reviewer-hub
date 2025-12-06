@@ -628,13 +628,24 @@ CORRECT:
 STEP 1: Let train length = L; total distance = L + 1500
 STEP 2: (L + 1500)/12.5 = 120 ⇒ L + 1500 = 1500 ⇒ L = 0 (problem is inconsistent; better replace this item later)`
     },
-    {
-      question: "Two cars start from the same point at 8 AM at 40 km/h and 50 km/h. After how long will they be 100 km apart if they travel in opposite directions?",
-      options: ["1 hour", "1.2 hours", "1.5 hours", "2 hours"],
-      answer: "1 hour",
-      explanation: `STEP 1: Relative speed = 40 + 50 = 90 km/h
-STEP 2: Time = 100 ÷ 90 ≈ 1.11 hours ≈ 1 hour 7 minutes`
-    },
+   {
+  question:
+    "Two cars start from the same point at 8:00 AM. One travels at 40 km/h and the other at 50 km/h in opposite directions. After how long will they be 100 km apart?",
+  options: [
+    "1.11 hours (≈ 1 hour 7 minutes)",
+    "1 hour",
+    "1.5 hours",
+    "2 hours"
+  ],
+  answer: "1.11 hours (≈ 1 hour 7 minutes)",
+  explanation: `STEP 1: Since they move in opposite directions, add their speeds.
+Relative speed = 40 + 50 = 90 km/h.
+STEP 2: Use Time = Distance ÷ Speed.
+Time = 100 ÷ 90 ≈ 1.11 hours.
+STEP 3: Convert 0.11 hours to minutes: 0.11 × 60 ≈ 6.7 minutes.
+So they will be 100 km apart after about 1 hour and 7 minutes.`
+},
+
     {
       question: "A train 150 m long is running at 90 km/h. How long will it take to cross a platform 250 m long?",
       options: ["14 s", "15 s", "16 s", "17 s"],
