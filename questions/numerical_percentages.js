@@ -321,7 +321,7 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
     // 44
     {
       question: "Which is the largest value?",
-      options: ["25%", "0.3", "1/5", "30%"],
+      options: ["25%", "0.28", "1/5", "30%"],
       answer: "30%",
       explanation: "Convert all: 25% = 0.25, 0.3 = 0.30, 1/5 = 0.2, 30% = 0.30. The largest is 30% (0.30)."
     },
@@ -800,12 +800,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "8% of 25,000 is 2,000 → 27,000. 10% of 27,000 is 2,700 → 29,700."
     },
     // 11
-    {
-      question: "In a class, 40% are boys and 30 girls are present. How many students are in the class?",
-      options: ["60", "70", "75", "80"],
-      answer: "75",
-      explanation: "If 40% are boys, 60% are girls. 60% of total = 30 → 0.6N = 30 → N = 50? Wait: 30 ÷ 0.6 = 50. Correction: If 40% are boys and there are 30 boys, then 0.4N = 30 → N = 75."
-    },
+   {
+  question: "In a class, 40% of the students are boys. If there are 30 boys, how many students are there in the class?",
+  options: ["60", "70", "75", "80"],
+  answer: "75",
+  explanation: "40% of the total number of students equals 30. So 0.4N = 30 → N = 30 ÷ 0.4 = 75. Therefore, there are 75 students in the class."
+},
+
     // 12
     {
       question: "In a class of 50 students, 30% are boys. How many boys are there?",
@@ -954,12 +955,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "0.6x = 72 → x = 72 ÷ 0.6 = 120."
     },
     // 33
-    {
-      question: "A student scored 42 marks, which is 70% of the test. What was the total possible score?",
-      options: ["80", "85", "90", "100"],
-      answer: "60",
-      explanation: "0.7T = 42 → T = 42 ÷ 0.7 = 60."
-    },
+   {
+  question: "A student scored 42 marks, which is 70% of the test. What was the total possible score?",
+  options: ["50", "60", "70", "80"],
+  answer: "60",
+  explanation: "0.7T = 42 → T = 42 ÷ 0.7 = 60. So the total possible score is 60."
+},
+
     // 34
     {
       question: "A shopkeeper gives 5% discount for cash on a ₱2,000 item. How much does the customer pay?",
@@ -1163,12 +1165,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "Opponent got 48%. Difference is 4% of total. 4% of T = 1,200 → 0.04T = 1,200 → T = 1,200 ÷ 0.04 = 30,000."
     },
     // 12
-    {
-      question: "A class of 40 students has 60% girls. 25% of the boys and 10% of the girls are absent. How many students are present?",
-      options: ["33", "34", "35", "36"],
-      answer: "34",
-      explanation: "Girls: 60% of 40 = 24. Boys: 16. Absent girls: 10% of 24 = 2.4 ≈ 2. Absent boys: 25% of 16 = 4. Present = 40 - (2 + 4) = 34."
-    },
+   {
+  question: "A class of 40 students has 50% girls. 20% of the boys and 10% of the girls are absent. How many students are present?",
+  options: ["33", "34", "35", "36"],
+  answer: "34",
+  explanation: "Girls: 50% of 40 = 20. Boys: 20. Absent girls: 10% of 20 = 2. Absent boys: 20% of 20 = 4. Total absent = 2 + 4 = 6. Present = 40 − 6 = 34."
+},
+
     // 13
     {
       question: "A shopkeeper marks an item 40% above cost and offers a 25% discount on the marked price. What is his net percent profit?",
@@ -1401,12 +1404,13 @@ window.NUMERICAL_QUESTION_BANK["percentages"] = {
       explanation: "40% of 70 = 28. 28 - 8 = 20. x% of 50 = 20 → x/100 × 50 = 20 → x = 40."
     },
     // 46
-    {
-      question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 35 marks more than passing. Maximum marks are:",
-      options: ["300", "350", "400", "450"],
-      answer: "350",
-      explanation: "Let max marks = M. Passing marks = 0.55M + 15 = 0.7M - 35 → 0.15M = 50 → M = 50 ÷ 0.15 = 333.33 ≈ 350 (closest option). Check: 55% of 350 = 192.5 + 15 = 207.5 passing marks; 70% of 350 = 245 - 35 = 210 passing marks (close enough)."
-    },
+   {
+  question: "A student scores 55% and fails by 15 marks, while another scores 70% and gets 30 marks more than the passing mark. What are the maximum marks?",
+  options: ["300", "350", "400", "450"],
+  answer: "300",
+  explanation: "Let the maximum marks be M and the passing mark be P.\nFirst student: 55% of M is 15 marks less than P, so 0.55M = P − 15.\nSecond student: 70% of M is 30 marks more than P, so 0.70M = P + 30.\nSubtract the first equation from the second:\n0.70M − 0.55M = (P + 30) − (P − 15)\n0.15M = 45 → M = 45 ÷ 0.15 = 300.\nTherefore, the maximum marks are 300."
+},
+
     // 47
     {
       question: "If the price of sugar increases by 20%, by what percent should consumption be reduced to keep expenditure same?",
