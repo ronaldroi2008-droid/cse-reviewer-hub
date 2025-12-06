@@ -616,18 +616,19 @@ STEP 3: Time = 220 ÷ (25/9) = 220 × 9/25 = 79.2 s`
 STEP 2: Upstream speed = 8 ÷ 2 = 4 km/h
 STEP 3: River speed = (8 − 4) ÷ 2 = 2 km/h`
     },
-    {
-      question: "A train takes 2 minutes to pass a 1.5 km long tunnel at 45 km/h. What is the length of the train?",
-      options: ["100 m", "200 m", "300 m", "400 m"],
-      answer: "100 m",
-      explanation: `STEP 1: Speed = 45 km/h = 12.5 m/s
-STEP 2: Time = 2 minutes = 120 s
-STEP 3: Total distance covered = 12.5 × 120 = 1500 m
-STEP 4: Tunnel length = 1500 m, so train length = 1500 − 1500 = 0 m (this is impossible, so adjust)
-CORRECT:
-STEP 1: Let train length = L; total distance = L + 1500
-STEP 2: (L + 1500)/12.5 = 120 ⇒ L + 1500 = 1500 ⇒ L = 0 (problem is inconsistent; better replace this item later)`
-    },
+   {
+  question: "A train takes 1 minute to pass through a tunnel 650 m long at 45 km/h. What is the length of the train?",
+  options: ["100 m", "200 m", "300 m", "400 m"],
+  answer: "100 m",
+  explanation: `STEP 1: Convert 45 km/h to m/s:
+45 × (1000 ÷ 3600) = 12.5 m/s.
+STEP 2: Time = 1 minute = 60 s.
+STEP 3: Total distance covered while in the tunnel
+= speed × time = 12.5 × 60 = 750 m.
+STEP 4: This total distance = train length + tunnel length:
+train + 650 = 750 ⇒ train length = 750 − 650 = 100 m.`
+},
+
    {
   question:
     "Two cars start from the same point at 8:00 AM. One travels at 40 km/h and the other at 50 km/h in opposite directions. After how long will they be 100 km apart?",
