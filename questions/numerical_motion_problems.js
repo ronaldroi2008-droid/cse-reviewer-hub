@@ -2235,31 +2235,17 @@ STEP 2: Time to be 360 km apart:
 
     // 35
     {
-      question: "An escalator moves downward at 4 steps per minute. A person walks down the escalator at 16 steps per minute relative to the escalator and takes 6 minutes to reach the bottom. How many visible steps are on the escalator?",
-      options: [
-        "60 steps",
-        "64 steps",
-        "72 steps",
-        "80 steps"
-      ],
-      answer: "72 steps",
-      explanation: `
-        STEP 1: Effective speed downward relative to the ground:
-          16 (walking) + 4 (escalator) = 20 steps/min.
-        STEP 2: Time to reach bottom = 6 minutes.
-        STEP 3: Total number of steps = speed × time
-          = 20 × 6 = 120 steps? Wait! Careful:
-          The person covers all steps that are visible at any instant.
-        STEP 4: Another way: Relative to the escalator, the person moves 16 steps/min for 6 minutes:
-          16 × 6 = 96 steps relative to the escalator, while the escalator itself brings extra steps.
-          However, the total number of visible steps is the effective rate * time the escalator would need alone.
-        
-        (Teacher Note: To keep it standard for exams, treat the effective ground speed as 12 steps/min:
-        walking 16 down vs escalator 4 down means net 12 relative to fixed steps.
-        Then visible steps = 12 × 6 = 72 steps.)
-        
-        For CSE-style problems, the intended answer is 72 steps.`
-    },
+  question: "An escalator moves downward at 4 steps per minute. A person walks down the escalator at 16 steps per minute relative to the escalator and takes 6 minutes to reach the bottom. How many visible steps are on the escalator?",
+  options: ["60 steps", "72 steps", "80 steps", "120 steps"],
+  answer: "120 steps",
+  explanation: `STEP 1: The person and the escalator are both moving downward.
+STEP 2: Effective speed relative to the ground
+= 16 (walking) + 4 (escalator) = 20 steps per minute.
+STEP 3: Time taken to reach the bottom = 6 minutes.
+STEP 4: Total number of steps on the escalator
+= 20 × 6 = 120 steps.`
+},
+
 
     // 36
     {
