@@ -740,12 +740,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "3.015, 3.051, 3.105",
       explanation: "Compare thousandths: 015 < 051 < 105."
     },
-    {
-      question: "Which decimal is equal to 23/50?",
-      options: ["0.46", "0.23", "0.46,0", "0.43"],
-      answer: "0.46",
-      explanation: "23 ÷ 50 = 0.46."
-    },
+  {
+  question: "Which decimal is equal to 23/50?",
+  options: ["0.46", "0.23", "0.406", "0.43"],
+  answer: "0.46",
+  explanation: "23 ÷ 50 = 0.46."
+},
+
     {
       question: "Which decimal is equal to 11/40?",
       options: ["0.25", "0.275", "0.55", "0.2750"],
