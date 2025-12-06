@@ -984,11 +984,12 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       explanation: "Exponents: $15^2 = 225$ and $5^2 = 25$. Subtraction: $225 - 25 = 200$."
     },
     {
-      question: "What is the remainder when $1,500$ is divided by 11?",
-      options: ["6", "0", "1", "4"],
-      answer: "6",
-      explanation: "$1,500 \div 11 = 136$ with a remainder of 6 ($11 \times 136 = 1496$). "
-    },
+  question: "What is the remainder when $1,500$ is divided by 11?",
+  options: ["6", "0", "1", "4"],
+  answer: "4",
+  explanation: "$1,500 \\div 11 = 136$ with a remainder of 4 because $11 \\times 136 = 1,496$ and $1,500 - 1,496 = 4$."
+},
+
     {
       question: "Evaluate: $12 \times 12 \div 4 \times 3$.",
       options: ["108", "9", "12", "36"],
