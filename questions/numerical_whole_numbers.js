@@ -871,12 +871,13 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "29",
       explanation: "Parentheses: $100 \div 10 = 10$. Multiplication: $3 \times 10 = 30$. Subtraction: $30 - 1 = 29$."
     },
-    {
-      question: "The number 20 is equal to $\_\_\_$.",
-      options: ["$2^2 \times 5$", "$2 \times 10$", "$4 \times 5$", "$2^3 \times 5$"],
-      answer: "$2^2 \times 5$",
-      explanation: "Prime factorization of 20 is $2 \times 2 \times 5 = 2^2 \times 5$."
-    },
+ {
+  question: "The prime factorization of 20 is $\\_\\_\\_$.",
+  options: ["$2^2 \\times 5$", "$2 \\times 10$", "$4 \\times 5$", "$2^3 \\times 5$"],
+  answer: "$2^2 \\times 5$",
+  explanation: "The prime factorization of 20 is $2 \\times 2 \\times 5 = 2^2 \\times 5$."
+},
+
     {
       question: "How many whole numbers are between 5 and 15 (not including 5 and 15)?",
       options: ["9", "10", "11", "15"],
@@ -1063,12 +1064,13 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "6",
       explanation: "The GCF of 42, 60, and 90 is 6."
     },
-    {
-      question: "Find the LCM of 3, 4, and 5.",
-      options: ["60", "12", "20", "30"],
-      answer: "60",
-      explanation: "Since they are all prime, the LCM is their product: $3 \times 4 \times 5 = 60$."
-    },
+  {
+  question: "Find the LCM of 3, 4, and 5.",
+  options: ["60", "12", "20", "30"],
+  answer: "60",
+  explanation: "Use prime factorization: $3 = 3$, $4 = 2^2$, $5 = 5$. The LCM is $2^2 \\times 3 \\times 5 = 60$."
+},
+
     {
       question: "Evaluate: $7 \times (9 - 3^2) + 12$.",
       options: ["12", "0", "10", "21"],
