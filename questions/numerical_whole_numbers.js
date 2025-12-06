@@ -931,12 +931,13 @@ explanation: "The digit 8 is in the hundreds place."
   expert: [
     // 50 EXPERT QUESTIONS (Multi-step complex problems, large arithmetic)
    
-    {
-      question: "Evaluate: $(10 + 2) \times (12 - 4) \div 3$.",
-      options: ["32", "16", "24", "40"],
-      answer: "32",
-      explanation: "Parentheses: $10 + 2 = 12$ and $12 - 4 = 8$. $12 \times 8 = 96$. $96 \div 3 = 32$."
-    },
+  {
+  question: "Evaluate: $(10 + 2) \\times (12 - 4) \\div 3$.",
+  options: ["32", "16", "24", "40"],
+  answer: "32",
+  explanation: "Parentheses: $10 + 2 = 12$ and $12 - 4 = 8$. $12 \\times 8 = 96$. $96 \\div 3 = 32$."
+},
+
     {
       question: "A carpenter bought 5 boxes of nails with 100 nails each. He used 320 nails. How many nails are left?",
       options: ["180", "500", "220", "120"],
