@@ -2411,33 +2411,22 @@ STEP 4: Total number of steps on the escalator
     },
 
     // 44
-    {
-      question: "A bus traveling at 50 km/h reaches its destination 30 minutes late. If it travels at 60 km/h, it arrives 20 minutes early. What is the distance to the destination?",
-      options: [
-        "200 km",
-        "220 km",
-        "240 km",
-        "2500 km"
-      ],
-      answer: "2500 km",
-      explanation: `
-        STEP 1: Let distance be d km and scheduled time be T hours.
-        STEP 2: At 50 km/h, actual time = T + 0.5, so d/50 = T + 0.5.
-        STEP 3: At 60 km/h, actual time = T - 1/3, so d/60 = T - 1/3.
-        STEP 4: Subtract the second equation from the first:
-          d/50 - d/60 = (T + 0.5) - (T - 1/3)
-          d(1/50 - 1/60) = 0.5 + 1/3 = 5/6.
-        STEP 5: Compute left side:
-          1/50 - 1/60 = (6 - 5)/300 = 1/300
-          So d/300 = 5/6 → d = 300 × (5/6) = 250 km? Careful!
-          Correct denominator: LCM is 3000, not 300.
-          
-          Recompute:
-          1/50 = 60/3000, 1/60 = 50/3000
-          Difference = 10/3000 = 1/300.
-          So d/300 = 5/6 → d = 2500 km.
-        STEP 6: The distance is 2500 km.`
-    },
+   {
+  question: "A bus traveling at 50 km/h reaches its destination 30 minutes late. If it travels at 60 km/h, it arrives 20 minutes early. What is the distance to the destination?",
+  options: ["200 km", "220 km", "240 km", "250 km"],
+  answer: "250 km",
+  explanation: `STEP 1: Let distance be d km and scheduled time be T hours.
+STEP 2: At 50 km/h (late by 30 minutes = 0.5 h):
+d ÷ 50 = T + 0.5.
+STEP 3: At 60 km/h (20 minutes early = 1/3 h):
+d ÷ 60 = T − 1/3.
+STEP 4: Subtract the second equation from the first:
+d/50 − d/60 = (T + 0.5) − (T − 1/3)
+⇒ d(1/50 − 1/60) = 0.5 + 1/3 = 5/6.
+STEP 5: 1/50 − 1/60 = (6 − 5)/300 = 1/300
+⇒ d/300 = 5/6 ⇒ d = 300 × 5/6 = 250 km.`
+},
+
 
     // 45
     {
