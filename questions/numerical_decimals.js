@@ -653,11 +653,12 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
 },
 
     {
-      question: "Evaluate: 4.36 × 1.2.",
-      options: ["5.232", "5.332", "4.512", "5.2320"],
-      answer: "5.232",
-      explanation: "436 × 12 = 5232; with three decimal places we get 5.232."
-    },
+  question: "Evaluate: 4.36 × 1.2.",
+  options: ["5.232", "5.332", "4.512", "5.23"],
+  answer: "5.232",
+  explanation: "436 × 12 = 5232; with three decimal places we get 5.232."
+},
+
     {
       question: "Evaluate: 7.25 × 0.08.",
       options: ["0.58", "0.6", "0.58,0", "0.580"],
