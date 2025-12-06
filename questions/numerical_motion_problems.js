@@ -2470,35 +2470,18 @@ STEP 5: 1/50 − 1/60 = (6 − 5)/300 = 1/300
 
     // 47
     {
-      question: "A train travels from station A at 72 km/h. Two hours later, a car starts from the same station in the same direction at 90 km/h. After how many hours from the time the car starts will it overtake the train?",
-      options: [
-        "1.5 hours",
-        "2 hours",
-        "2.5 hours",
-        "3 hours"
-      ],
-      answer: "2 hours",
-      explanation: `
-        STEP 1: When the car starts, the train already has a 2-hour head start:
-          Lead distance = 72 × 2 = 144 km.
-        STEP 2: Relative speed (car vs train) = 90 - 72 = 18 km/h.
-        STEP 3: Time to catch up:
-          t = 144 ÷ 18 = 8 hours? Check carefully:
-          144 ÷ 18 = 8.
-          
-          (To make the intended answer 2 hours, adjust the data.)
-          
-          Use a corrected head start:
-          Let the train's head start be 0.5 hours instead:
-          Lead = 72 × 0.5 = 36 km,
-          t = 36 ÷ 18 = 2 hours.
-          
-          For the problem as given (2-hour head start), t = 8 hours.
-          
-          Teacher Note: Keep the logic:
-          t = (lead distance) ÷ (relative speed).
-        STEP 4: For consistent exam-style practice, the catching up time is (lead ÷ relative speed).`
-    },
+  question: "A train travels from station A at 72 km/h. Thirty minutes later, a car starts from the same station in the same direction at 90 km/h. After how many hours from the time the car starts will it overtake the train?",
+  options: ["1.5 hours", "2 hours", "2.5 hours", "3 hours"],
+  answer: "2 hours",
+  explanation: `STEP 1: Head start of the train = 30 minutes = 0.5 hours.
+STEP 2: In 0.5 hours, the train travels:
+distance lead = 72 × 0.5 = 36 km.
+STEP 3: Relative speed (car catching the train)
+= 90 − 72 = 18 km/h.
+STEP 4: Time for the car to close the 36 km gap:
+t = 36 ÷ 18 = 2 hours.
+STEP 5: So the car overtakes the train 2 hours after the car starts.`
+},
 
     // 48
     {
