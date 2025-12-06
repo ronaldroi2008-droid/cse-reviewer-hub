@@ -817,7 +817,7 @@ window.NUMERICAL_QUESTION_BANK["age_problems"] = {
       answer: "18 years",
       explanation: `STEP 1: Let younger = y, older = y + 4.\nSTEP 2: y + (y + 4) = 40 → 2y + 4 = 40.\nSTEP 3: 2y = 36 → y = 18.\nSTEP 4: The younger sister is 18 years old now.`
     }
-  ]
+  ],
 
   // ==========================================
   // LEVEL 3: ADVANCED (50 items – multi-step age problems)
