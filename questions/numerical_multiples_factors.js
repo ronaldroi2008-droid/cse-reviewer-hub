@@ -941,314 +941,318 @@ window.NUMERICAL_QUESTION_BANK["multiples_factors"] = {
     }
   ],
 
-   // ==========================================
+    // ==========================================
   // LEVEL 4: EXPERT (50 items – Advanced Logic, Optimization, Large #s)
   // ==========================================
   expert: [
     // 1-10: Reverse Engineering LCM/GCF
     {
-      question: "The LCM of two numbers is 120 and their GCF is 10. Which of the following CANNOT be the sum of the numbers?",
-      options: ["70", "130", "110", "80"],
-      answer: "80",
-      explanation: "STEP 1: Let numbers be 10a, 10b. 10a × 10b = 120 × 10 → 100ab = 1200 → ab=12.\nSTEP 2: Pairs (a,b) coprime: (1,12) or (3,4).\nSTEP 3: Numbers: (10,120) Sum 130. OR (30,40) Sum 70.\nSTEP 4: 80 is not possible."
+      question: "The LCM of two numbers is 120 and their GCF is 10. Which of the following CAN be the sum of the two numbers?",
+      options: ["40", "70", "80", "90"],
+      answer: "70",
+      explanation: "STEP 1: Let the numbers be 10a and 10b so that their GCF is 10.\nSTEP 2: Then LCM(10a, 10b) = 10ab. We know 10ab = 120, so ab = 12.\nSTEP 3: The coprime factor pairs of 12 are (1, 12) and (3, 4).\nSTEP 4: So the numbers can be (10, 120) with sum 130, or (30, 40) with sum 70.\nSTEP 5: Among the choices, only 70 can be the sum."
     },
     {
       question: "The GCF of two numbers is 13 and their product is 2028. How many such pairs exist?",
       options: ["1", "2", "3", "4"],
       answer: "2",
-      explanation: "STEP 1: 13a × 13b = 2028 → 169ab = 2028 → ab=12.\nSTEP 2: Coprime pairs for 12: (1,12) and (3,4).\nSTEP 3: 2 pairs."
+      explanation: "STEP 1: Let the numbers be 13a and 13b.\nSTEP 2: 13a × 13b = 2028 → 169ab = 2028 → ab = 12.\nSTEP 3: The coprime factor pairs of 12 are (1, 12) and (3, 4).\nSTEP 4: So there are 2 such pairs."
     },
     {
       question: "Three numbers have ratios 3:4:5 and their LCM is 2400. Their GCF is:",
       options: ["20", "40", "60", "80"],
       answer: "40",
-      explanation: "STEP 1: Let numbers be 3x, 4x, 5x.\nSTEP 2: LCM(3,4,5)x = 60x.\nSTEP 3: 60x = 2400 → x=40."
+      explanation: "STEP 1: Let the numbers be 3x, 4x, and 5x.\nSTEP 2: LCM(3, 4, 5) × x = 60x.\nSTEP 3: 60x = 2400 → x = 40.\nSTEP 4: The GCF is x = 40."
     },
     {
       question: "Find the smallest number which leaves remainder 3 when divided by 12 and remainder 7 when divided by 16.",
       options: ["39", "43", "51", "55"],
       answer: "39",
-      explanation: "STEP 1: Number = 12a + 3 = 16b + 7\nSTEP 2: 12a + 3 = 16b + 7 → 12a - 16b = 4 → 3a - 4b = 1\nSTEP 3: Try a=3,b=2: 12×3+3=39, 16×2+7=39 ✓"
+      explanation: "STEP 1: Let the number be N.\nSTEP 2: N = 12a + 3 = 16b + 7.\nSTEP 3: 12a + 3 = 16b + 7 → 12a - 16b = 4 → 3a - 4b = 1.\nSTEP 4: Try a = 3, b = 2: 3(3) - 4(2) = 9 - 8 = 1.\nSTEP 5: N = 12×3 + 3 = 39 and 16×2 + 7 = 39, so 39 works."
     },
     {
       question: "What is the smallest number divisible by 6, 8, and 12 that is also a multiple of 7?",
       options: ["72", "168", "252", "336"],
       answer: "168",
-      explanation: "STEP 1: LCM(6,8,12) = 24.\nSTEP 2: Multiples of 24: 24,48,72,96,120,144,168...\nSTEP 3: 168 ÷ 7 = 24 ✓"
+      explanation: "STEP 1: LCM(6, 8, 12) = 24.\nSTEP 2: We need the smallest multiple of 24 that is also divisible by 7.\nSTEP 3: LCM(24, 7) = 168.\nSTEP 4: So 168 is the smallest such number."
     },
     {
-      question: "Number of ordered pairs of positive integers (x,y) such that LCM(x,y) = 20?",
+      question: "Number of ordered pairs of positive integers (x, y) such that LCM(x, y) = 20?",
       options: ["8", "10", "14", "15"],
       answer: "15",
-      explanation: "STEP 1: 20 = 2² × 5¹\nSTEP 2: Formula: (2a+1)(2b+1) = (2×2+1)(2×1+1) = 5×3 = 15"
+      explanation: "STEP 1: 20 = 2² × 5¹.\nSTEP 2: For LCM(x, y) = 2² × 5¹, the exponents for each prime in x and y range from 0 up to the LCM's exponent, but at least one must have the maximum for each prime.\nSTEP 3: The total number of ordered pairs is (2e₁ + 1)(2e₂ + 1) = (2×2 + 1)(2×1 + 1) = 5 × 3 = 15."
     },
     {
       question: "Find the largest number that divides 62, 132, and 237 leaving the same remainder in each case.",
       options: ["15", "35", "25", "45"],
       answer: "35",
-      explanation: "STEP 1: Differences: 132-62=70, 237-132=105, 237-62=175\nSTEP 2: GCF(70,105,175) = 35"
+      explanation: "STEP 1: If the same remainder is left, then the differences are multiples of the required number.\nSTEP 2: Differences: 132 − 62 = 70, 237 − 132 = 105, 237 − 62 = 175.\nSTEP 3: GCF(70, 105, 175) = 35.\nSTEP 4: So 35 is the largest such number."
     },
     {
       question: "Which is the smallest 5-digit number divisible by 12, 15, and 18?",
       options: ["10000", "10020", "10080", "10100"],
       answer: "10080",
-      explanation: "STEP 1: LCM(12,15,18) = 180\nSTEP 2: 10000 ÷ 180 = 55.55...\nSTEP 3: 56 × 180 = 10080"
+      explanation: "STEP 1: Find LCM(12, 15, 18).\nSTEP 2: 12 = 2² × 3, 15 = 3 × 5, 18 = 2 × 3².\nSTEP 3: LCM = 2² × 3² × 5 = 180.\nSTEP 4: 10000 ÷ 180 ≈ 55.55, so take 56.\nSTEP 5: 56 × 180 = 10080, the smallest 5-digit multiple."
     },
     {
       question: "How many factors of 2⁴ × 3³ × 5² are perfect squares?",
       options: ["6", "8", "12", "16"],
       answer: "12",
-      explanation: "STEP 1: Square powers must be even: 2^(0,2,4)=3 options, 3^(0,2)=2 options, 5^(0,2)=2 options\nSTEP 2: 3 × 2 × 2 = 12"
+      explanation: "STEP 1: Perfect squares have even exponents.\nSTEP 2: Exponents options: for 2⁴ → 0, 2, 4 (3 choices); for 3³ → 0, 2 (2 choices); for 5² → 0, 2 (2 choices).\nSTEP 3: Total perfect square factors: 3 × 2 × 2 = 12."
     },
     {
       question: "Sum of even factors of 24:",
       options: ["48", "56", "60", "36"],
       answer: "56",
-      explanation: "STEP 1: Factors: 1,2,3,4,6,8,12,24\nSTEP 2: Even factors: 2,4,6,8,12,24\nSTEP 3: Sum = 2+4+6+8+12+24 = 56"
+      explanation: "STEP 1: Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.\nSTEP 2: Even factors: 2, 4, 6, 8, 12, 24.\nSTEP 3: Sum = 2 + 4 + 6 + 8 + 12 + 24 = 56."
     },
+
     // 11-20: Complex Word Problems
     {
       question: "A gardener has 44 apple trees, 66 banana trees, and 110 mango trees. He wants equal trees per row of same type. Minimum rows?",
       options: ["10", "11", "22", "20"],
       answer: "10",
-      explanation: "STEP 1: GCF(44,66,110) = 22 trees per row\nSTEP 2: Rows: 44/22 + 66/22 + 110/22 = 2 + 3 + 5 = 10"
+      explanation: "STEP 1: Find GCF(44, 66, 110) to maximize trees per row.\nSTEP 2: GCF = 22 trees per row.\nSTEP 3: Number of rows: 44/22 + 66/22 + 110/22 = 2 + 3 + 5 = 10."
     },
     {
-      question: "What is the least multiple of 7 which when divided by 6, 9, 15, 18 leaves remainder 4?",
+      question: "What is the least multiple of 7 which, when divided by 6, 9, 15, and 18, leaves a remainder of 4?",
       options: ["364", "454", "74", "94"],
       answer: "364",
-      explanation: "STEP 1: LCM(6,9,15,18) = 90\nSTEP 2: Number = 90k + 4\nSTEP 3: Test k=4: 90×4+4=364, 364÷7=52 ✓"
+      explanation: "STEP 1: The number leaves remainder 4, so it is of the form 90k + 4 where 90 = LCM(6, 9, 15, 18).\nSTEP 2: We need 90k + 4 to be divisible by 7.\nSTEP 3: Try k = 4: 90×4 + 4 = 364.\nSTEP 4: 364 ÷ 7 = 52, so 364 works."
     },
     {
-      question: "Product of GCF and LCM of two numbers is 24. Difference is 2. The numbers are:",
+      question: "The product of two numbers is 24 and their difference is 2. The numbers are:",
       options: ["4, 6", "2, 12", "8, 10", "6, 8"],
       answer: "4, 6",
-      explanation: "STEP 1: Let numbers be x and y\nSTEP 2: xy=24, x-y=2\nSTEP 3: Solve: 6×4=24, 6-4=2"
+      explanation: "STEP 1: Let the two numbers be x and y.\nSTEP 2: We are told that xy = 24 and |x − y| = 2.\nSTEP 3: Test factor pairs of 24: (1, 24), (2, 12), (3, 8), (4, 6).\nSTEP 4: Only 4 and 6 differ by 2, and 4 × 6 = 24.\nSTEP 5: Therefore, the numbers are 4 and 6."
     },
     {
       question: "Find the number of zeros at the end of 25!",
       options: ["4", "5", "6", "8"],
       answer: "6",
-      explanation: "STEP 1: Count factors of 5: 25/5=5, 25/25=1\nSTEP 2: Total = 5 + 1 = 6"
+      explanation: "STEP 1: Number of zeros depends on number of factors of 10.\nSTEP 2: 10 = 2 × 5, and there are more 2s than 5s.\nSTEP 3: Count factors of 5: ⌊25/5⌋ = 5, ⌊25/25⌋ = 1.\nSTEP 4: Total zeros = 5 + 1 = 6."
     },
     {
       question: "Which of these is NOT a factor of 12! (12 factorial)?",
       options: ["13", "14", "100", "12"],
       answer: "13",
-      explanation: "STEP 1: 12! = product 1 to 12\nSTEP 2: 13 is prime > 12, so not a factor"
+      explanation: "STEP 1: 12! is the product of all integers from 1 to 12.\nSTEP 2: Any integer ≤ 12 is a factor of 12!.\nSTEP 3: 13 is greater than 12, so it cannot be a factor of 12!."
     },
     {
       question: "If n is an integer, n(n+1)(n+2) is always divisible by:",
       options: ["4", "6", "8", "12"],
       answer: "6",
-      explanation: "STEP 1: Product of 3 consecutive integers divisible by 3! = 6"
+      explanation: "STEP 1: Any three consecutive integers include a multiple of 2 and a multiple of 3.\nSTEP 2: Therefore, their product is divisible by 2 × 3 = 6."
     },
     {
       question: "Find n if GCF(n, 45) = 15 and LCM(n, 45) = 90.",
       options: ["15", "30", "60", "75"],
       answer: "30",
-      explanation: "STEP 1: n × 45 = 15 × 90\nSTEP 2: 45n = 1350 → n = 30"
+      explanation: "STEP 1: Use the identity: n × 45 = GCF × LCM = 15 × 90.\nSTEP 2: 45n = 1350 → n = 1350 ÷ 45 = 30.\nSTEP 3: Check: GCF(30, 45) = 15 and LCM(30, 45) = 90."
     },
     {
       question: "What is the smallest number to subtract from 3000 to make it divisible by 19?",
       options: ["11", "17", "9", "5"],
       answer: "17",
-      explanation: "STEP 1: 3000 ÷ 19 = 157 remainder 17\nSTEP 2: Subtract 17"
+      explanation: "STEP 1: Divide 3000 by 19.\nSTEP 2: 19 × 157 = 2983, remainder 17.\nSTEP 3: Subtract the remainder: 3000 − 17 = 2983, which is divisible by 19."
     },
     {
-      question: "Six bells toll at intervals 2,4,6,8,10,12 sec. In 30 min, how many times together?",
+      question: "Six bells toll at intervals of 2, 4, 6, 8, 10, and 12 seconds. If they all toll together now, how many times will they toll together in 30 minutes?",
       options: ["15", "16", "20", "21"],
       answer: "16",
-      explanation: "STEP 1: LCM(2,4,6,8,10,12) = 120 sec = 2 min\nSTEP 2: 30 ÷ 2 = 15, plus start = 16"
+      explanation: "STEP 1: Find LCM(2, 4, 6, 8, 10, 12).\nSTEP 2: LCM = 120 seconds = 2 minutes.\nSTEP 3: In 30 minutes, they coincide every 2 minutes.\nSTEP 4: Number of coincidences: 30/2 + 1 = 15 + 1 = 16 (including the start)."
     },
     {
       question: "Which number is a factor of 1000000007?",
       options: ["3", "9", "1", "5"],
       answer: "1",
-      explanation: "STEP 1: 1 is factor of every number"
+      explanation: "STEP 1: 1 is a factor of every integer.\nSTEP 2: So 1 is certainly a factor of 1000000007."
     },
+
     // 21-30: Factors Logic
     {
       question: "Total number of factors of 10800?",
       options: ["48", "60", "72", "64"],
       answer: "60",
-      explanation: "STEP 1: 10800 = 2⁴ × 3³ × 5²\nSTEP 2: (4+1)(3+1)(2+1) = 5×4×3 = 60"
+      explanation: "STEP 1: 10800 = 2⁴ × 3³ × 5².\nSTEP 2: Number of factors = (4+1)(3+1)(2+1) = 5 × 4 × 3 = 60."
     },
     {
-      question: "The sum of digits of smallest positive number divisible by 9 and 11:",
+      question: "The sum of digits of the smallest positive number divisible by 9 and 11:",
       options: ["9", "11", "18", "2"],
       answer: "18",
-      explanation: "STEP 1: LCM(9,11) = 99\nSTEP 2: Sum digits: 9 + 9 = 18"
+      explanation: "STEP 1: LCM(9, 11) = 99.\nSTEP 2: 99 is the smallest positive number divisible by both.\nSTEP 3: Sum of digits = 9 + 9 = 18."
     },
     {
       question: "If x is prime, how many factors does x² have?",
       options: ["2", "3", "4", "5"],
       answer: "3",
-      explanation: "STEP 1: Factors: 1, x, x²"
+      explanation: "STEP 1: Let x be prime.\nSTEP 2: Factors of x² are: 1, x, x².\nSTEP 3: So there are 3 factors."
     },
     {
       question: "Product of all factors of 12 is:",
       options: ["144", "1728", "12³", "12⁶"],
       answer: "1728",
-      explanation: "STEP 1: 6 factors → 3 pairs multiplying to 12\nSTEP 2: 12³ = 1728"
+      explanation: "STEP 1: Factors of 12: 1, 2, 3, 4, 6, 12 (6 factors).\nSTEP 2: For a number with d factors, the product of factors is n^(d/2).\nSTEP 3: So product = 12^(6/2) = 12³ = 1728."
     },
     {
       question: "Smallest number with exactly 5 factors?",
       options: ["16", "36", "10", "6"],
       answer: "16",
-      explanation: "STEP 1: Prime⁴ form\nSTEP 2: 2⁴ = 16 (factors: 1,2,4,8,16)"
+      explanation: "STEP 1: A number with exactly 5 factors must be of the form p⁴ where p is prime.\nSTEP 2: Smallest such number: 2⁴ = 16.\nSTEP 3: Factors of 16: 1, 2, 4, 8, 16 (5 factors)."
     },
     {
-      question: "How many multiples of 5 between 10 and 100 inclusive?",
+      question: "How many multiples of 5 are there between 10 and 100 inclusive?",
       options: ["18", "19", "20", "21"],
       answer: "19",
-      explanation: "STEP 1: Sequence: 10,15,...,100\nSTEP 2: (100-10)/5 + 1 = 18 + 1 = 19"
+      explanation: "STEP 1: Sequence: 10, 15, ..., 100.\nSTEP 2: Use formula for number of terms: ((last − first)/step) + 1.\nSTEP 3: ((100 − 10)/5) + 1 = 90/5 + 1 = 18 + 1 = 19."
     },
     {
       question: "The GCF of two consecutive even numbers is always:",
       options: ["1", "2", "4", "Depends"],
       answer: "2",
-      explanation: "STEP 1: Example: 2,4 (GCF=2), 10,12 (GCF=2)"
+      explanation: "STEP 1: Let the numbers be 2n and 2n+2.\nSTEP 2: Factor out 2: 2n and 2(n+1).\nSTEP 3: n and n+1 are consecutive integers, hence coprime.\nSTEP 4: So the GCF is 2."
     },
     {
-      question: "If a number divisible by 8, remainder when divided by 4 is:",
+      question: "If a number is divisible by 8, the remainder when it is divided by 4 is:",
       options: ["0", "2", "4", "Unknown"],
       answer: "0",
-      explanation: "STEP 1: 8 divisible by 4"
+      explanation: "STEP 1: If a number is divisible by 8, it can be written as 8k.\nSTEP 2: 8k ÷ 4 = 2k with no remainder.\nSTEP 3: So the remainder is 0."
     },
     {
       question: "Largest 3-digit number divisible by 16?",
       options: ["992", "996", "998", "990"],
       answer: "992",
-      explanation: "STEP 1: 1000 ÷ 16 = 62.5\nSTEP 2: 62 × 16 = 992"
+      explanation: "STEP 1: Largest 3-digit number is 999.\nSTEP 2: 999 ÷ 16 ≈ 62.43, so take 62.\nSTEP 3: 62 × 16 = 992, the largest 3-digit multiple of 16."
     },
     {
       question: "The number 111111 is divisible by:",
       options: ["3, 7, 11, 13, 37", "3, 5, 9", "2, 11", "17"],
       answer: "3, 7, 11, 13, 37",
-      explanation: "STEP 1: 111111 = 111 × 1001 = 3×37 × 7×11×13"
+      explanation: "STEP 1: 111111 = 111 × 1001.\nSTEP 2: 111 = 3 × 37 and 1001 = 7 × 11 × 13.\nSTEP 3: So 111111 is divisible by 3, 7, 11, 13, and 37."
     },
+
     // 31-40: Number Theory
     {
       question: "If GCF of x and y is 15, which CANNOT be their LCM?",
       options: ["45", "60", "150", "100"],
       answer: "100",
-      explanation: "STEP 1: LCM must be multiple of GCF\nSTEP 2: 100 not divisible by 15"
+      explanation: "STEP 1: The LCM must be a multiple of the GCF.\nSTEP 2: 45, 60, and 150 are all multiples of 15.\nSTEP 3: 100 is not a multiple of 15.\nSTEP 4: Therefore, 100 cannot be their LCM."
     },
     {
-      question: "A number has prime factors 2, 3, 5. Which is NOT guaranteed factor?",
+      question: "A number has prime factors 2, 3, and 5. Which is NOT guaranteed to be a factor?",
       options: ["6", "10", "15", "20"],
       answer: "20",
-      explanation: "STEP 1: 20 needs 2²×5, only one 2 guaranteed"
+      explanation: "STEP 1: If the prime factors are 2, 3, and 5, the number is of the form 2ᵃ × 3ᵇ × 5ᶜ with a, b, c ≥ 1.\nSTEP 2: 6 = 2 × 3, 10 = 2 × 5, 15 = 3 × 5 will always divide such a number.\nSTEP 3: 20 = 2² × 5 requires at least two factors of 2, which is not guaranteed.\nSTEP 4: So 20 is not guaranteed to be a factor."
     },
     {
       question: "Find the sum of all factors of 20.",
       options: ["40", "42", "36", "20"],
       answer: "42",
-      explanation: "STEP 1: Factors: 1,2,4,5,10,20\nSTEP 2: Sum = 1+2+4+5+10+20 = 42"
+      explanation: "STEP 1: Factors of 20: 1, 2, 4, 5, 10, 20.\nSTEP 2: Sum = 1 + 2 + 4 + 5 + 10 + 20 = 42."
     },
     {
       question: "Total number of prime factors (counting multiplicity) in 6¹⁰ × 7¹⁷ × 11²⁷?",
       options: ["3", "54", "64", "2"],
       answer: "64",
-      explanation: "STEP 1: Prime factorization: 2¹⁰ × 3¹⁰ × 7¹⁷ × 11²⁷\nSTEP 2: Sum exponents: 10+10+17+27 = 64"
+      explanation: "STEP 1: 6¹⁰ = (2 × 3)¹⁰ = 2¹⁰ × 3¹⁰.\nSTEP 2: So the product is 2¹⁰ × 3¹⁰ × 7¹⁷ × 11²⁷.\nSTEP 3: Total prime factors with multiplicity = 10 + 10 + 17 + 27 = 64."
     },
     {
-      question: "If N is perfect number, sum of all factors including N is:",
+      question: "If N is a perfect number, the sum of all its factors including N is:",
       options: ["N", "2N", "N+1", "3N"],
       answer: "2N",
-      explanation: "STEP 1: Perfect number: sum proper divisors = N\nSTEP 2: Total sum = N + N = 2N"
+      explanation: "STEP 1: By definition, for a perfect number N, the sum of its proper divisors (excluding N) equals N.\nSTEP 2: Sum of all factors including N = N + N = 2N."
     },
     {
-      question: "Smallest number to divide 3600 to make perfect cube?",
+      question: "Smallest number to divide 3600 to make it a perfect cube?",
       options: ["9", "50", "300", "450"],
       answer: "450",
-      explanation: "STEP 1: 3600 = 2⁴ × 3² × 5²\nSTEP 2: For cube, divide by 2¹ × 3² × 5² = 450"
+      explanation: "STEP 1: 3600 = 2⁴ × 3² × 5².\nSTEP 2: For a perfect cube, exponents must be multiples of 3.\nSTEP 3: Reduce exponents to nearest multiple of 3 below: 4 → 3 (subtract 1); 2 → 0 (subtract 2) for both 3 and 5.\nSTEP 4: Divide by 2¹ × 3² × 5² = 2 × 9 × 25 = 450."
     },
     {
-      question: "Least soldiers to form hollow square 10,15,20 deep?",
+      question: "What is the least perfect square that is divisible by 10, 15, and 20?",
       options: ["900", "400", "1600", "3600"],
       answer: "900",
-      explanation: "STEP 1: LCM(10,15,20) = 60\nSTEP 2: Make square: multiply by 15 → 900"
+      explanation: "STEP 1: Find the LCM of 10, 15, and 20.\n- 10 = 2 × 5\n- 15 = 3 × 5\n- 20 = 2² × 5\nSo LCM = 2² × 3 × 5 = 60.\nSTEP 2: For a perfect square, all exponents in the prime factorization must be even.\nSTEP 3: 60 = 2² × 3 × 5. Multiply by 3 × 5 to make the exponents of 3 and 5 even: 60 × 15 = 900.\nSTEP 4: 900 = 30², so it is the least perfect square divisible by 10, 15, and 20."
     },
     {
-      question: "If divisible by 12 and 21, divisible by:",
+      question: "If a number is divisible by both 12 and 21, it must be divisible by:",
       options: ["252", "84", "42", "36"],
       answer: "84",
-      explanation: "STEP 1: LCM(12,21) = 84"
+      explanation: "STEP 1: We need LCM(12, 21).\nSTEP 2: 12 = 2² × 3, 21 = 3 × 7.\nSTEP 3: LCM = 2² × 3 × 7 = 84.\nSTEP 4: So the number must be divisible by 84."
     },
     {
-      question: "How many multiples of 7 between 100 and 200?",
+      question: "How many multiples of 7 are there between 100 and 200?",
       options: ["14", "15", "13", "16"],
       answer: "14",
-      explanation: "STEP 1: First: 105, Last: 196\nSTEP 2: (196-105)/7 + 1 = 13 + 1 = 14"
+      explanation: "STEP 1: First multiple of 7 ≥ 100 is 105.\nSTEP 2: Last multiple of 7 ≤ 200 is 196.\nSTEP 3: Number of terms = ((196 − 105)/7) + 1 = 91/7 + 1 = 13 + 1 = 14."
     },
     {
-      question: "If LCM(a,b)=r and GCF(a,b)=s, then LCM(r,s) is:",
+      question: "If LCM(a, b) = r and GCF(a, b) = s, then LCM(r, s) is:",
       options: ["r", "s", "rs", "1"],
       answer: "r",
-      explanation: "STEP 1: s divides r\nSTEP 2: LCM of factor and multiple is the multiple"
+      explanation: "STEP 1: For any two numbers a and b, GCF(a, b) divides LCM(a, b).\nSTEP 2: So s divides r.\nSTEP 3: LCM of a number and its factor is the larger number, so LCM(r, s) = r."
     },
+
     // 41-50: Final Challenges
     {
       question: "Sum of distinct prime factors of 2310:",
       options: ["20", "25", "28", "30"],
       answer: "28",
-      explanation: "STEP 1: 2310 = 2×3×5×7×11\nSTEP 2: Sum = 2+3+5+7+11 = 28"
+      explanation: "STEP 1: 2310 = 2 × 3 × 5 × 7 × 11.\nSTEP 2: Sum = 2 + 3 + 5 + 7 + 11 = 28."
     },
-   {
+    {
       question: "Which number has the most factors?",
       options: ["72", "120", "100", "24"],
       answer: "120",
-      explanation: "STEP 1: 72 (2³×3²) has (3+1)(2+1)=12 factors.\nSTEP 2: 100 (2²×5²) has 9 factors. 24 (2³×3) has 8 factors.\nSTEP 3: 120 (2³×3×5) has (3+1)(1+1)(1+1) = 16 factors. 120 has the most."
+      explanation: "STEP 1: 72 = 2³ × 3² → (3+1)(2+1) = 12 factors.\nSTEP 2: 120 = 2³ × 3 × 5 → (3+1)(1+1)(1+1) = 16 factors.\nSTEP 3: 100 = 2² × 5² → 9 factors. 24 = 2³ × 3 → 8 factors.\nSTEP 4: 120 has the most factors."
     },
     {
-      question: "Least multiple of 13 leaving remainder 2 when divided by 4,5,6,7,8:",
+      question: "Least multiple of 13 leaving remainder 2 when divided by 4, 5, 6, 7, and 8:",
       options: ["2522", "842", "2520", "840"],
       answer: "2522",
-      explanation: "STEP 1: LCM(4,5,6,7,8)=840\nSTEP 2: 840k+2 divisible by 13: k=3 → 2522"
+      explanation: "STEP 1: The number leaves remainder 2 when divided by 4, 5, 6, 7, and 8, so it is of the form 840k + 2, where 840 = LCM(4, 5, 6, 7, 8).\nSTEP 2: We need 840k + 2 to be divisible by 13.\nSTEP 3: Try k = 3: 840×3 + 2 = 2522.\nSTEP 4: 2522 ÷ 13 = 194, so it works."
     },
     {
-      question: "GCF of 2¹⁰⁰-1 and 2¹²⁰-1 is:",
-      options: ["2¹⁰-1", "2²⁰-1", "2⁵-1", "1"],
-      answer: "2²⁰-1",
-      explanation: "STEP 1: Formula: GCF(a^m-1,a^n-1)=a^GCF(m,n)-1\nSTEP 2: GCF(100,120)=20 → 2²⁰-1"
+      question: "GCF of 2¹⁰⁰ − 1 and 2¹²⁰ − 1 is:",
+      options: ["2¹⁰ − 1", "2²⁰ − 1", "2⁵ − 1", "1"],
+      answer: "2²⁰ − 1",
+      explanation: "STEP 1: Use the identity GCF(aᵐ − 1, aⁿ − 1) = a^GCF(m, n) − 1.\nSTEP 2: GCF(100, 120) = 20.\nSTEP 3: So GCF(2¹⁰⁰ − 1, 2¹²⁰ − 1) = 2²⁰ − 1."
     },
     {
       question: "Number of factors of 3600 that are multiples of 12:",
       options: ["20", "24", "18", "15"],
       answer: "18",
-      explanation: "STEP 1: 3600÷12=300=2²×3¹×5²\nSTEP 2: Factors: (2+1)(1+1)(2+1)=3×2×3=18"
+      explanation: "STEP 1: Let the factor be 12k. For 12k to divide 3600, k must divide 3600 ÷ 12 = 300.\nSTEP 2: 300 = 2² × 3 × 5².\nSTEP 3: Number of factors of 300 = (2+1)(1+1)(2+1) = 3 × 2 × 3 = 18."
     },
     {
-      question: "Find x if LCM(x,18)=36 and GCF(x,18)=2.",
+      question: "Find x if LCM(x, 18) = 36 and GCF(x, 18) = 2.",
       options: ["2", "4", "6", "8"],
       answer: "4",
-      explanation: "STEP 1: x×18=36×2=72\nSTEP 2: x=72÷18=4"
+      explanation: "STEP 1: Use the formula x × 18 = LCM × GCF = 36 × 2.\nSTEP 2: x × 18 = 72 → x = 72 ÷ 18 = 4.\nSTEP 3: Check: GCF(4, 18) = 2, LCM(4, 18) = 36."
     },
     {
-      question: "The numbers 112,133,135 are:",
+      question: "The numbers 112, 133, and 135 are:",
       options: ["All prime", "All composite", "Coprime", "None"],
       answer: "All composite",
-      explanation: "STEP 1: 112(even),133(7×19),135(ends5)"
+      explanation: "STEP 1: 112 is even so composite.\nSTEP 2: 133 = 7 × 19, composite.\nSTEP 3: 135 ends in 5 and equals 5 × 27, so composite.\nSTEP 4: All three numbers are composite."
     },
     {
       question: "Difference between LCM and GCF of 10 and 15?",
       options: ["20", "25", "30", "15"],
       answer: "25",
-      explanation: "STEP 1: LCM=30, GCF=5\nSTEP 2: 30-5=25"
+      explanation: "STEP 1: GCF(10, 15) = 5.\nSTEP 2: LCM(10, 15) = 30.\nSTEP 3: Difference = 30 − 5 = 25."
     },
     {
-      question: "If A=2³×3¹⁰×5 and B=2⁵×3×7, GCF(A,B) is:",
-      options: ["2³×3", "2⁵×3¹⁰", "2³×3×5×7", "6"],
-      answer: "2³×3",
-      explanation: "STEP 1: Lowest powers: 2³ and 3¹"
+      question: "If A = 2³ × 3¹⁰ × 5 and B = 2⁵ × 3 × 7, GCF(A, B) is:",
+      options: ["2³ × 3", "2⁵ × 3¹⁰", "2³ × 3 × 5 × 7", "6"],
+      answer: "2³ × 3",
+      explanation: "STEP 1: Take the minimum exponents of common primes.\nSTEP 2: For 2: min(3, 5) = 3. For 3: min(10, 1) = 1.\nSTEP 3: 5 and 7 are not common.\nSTEP 4: So GCF(A, B) = 2³ × 3."
     },
     {
       question: "Find the largest number which divides 200 and 300 leaving remainders 8 and 12 respectively.",
       options: ["24", "48", "72", "96"], // Updated options to include 96
       answer: "96",
-      explanation: "STEP 1: Subtract remainders: 200-8=192, 300-12=288.\nSTEP 2: Find GCF(192, 288).\nSTEP 3: 192 = 96 × 2, 288 = 96 × 3. The GCF is 96."
+      explanation: "STEP 1: Subtract the remainders: 200 − 8 = 192 and 300 − 12 = 288.\nSTEP 2: The required number must divide both 192 and 288.\nSTEP 3: GCF(192, 288) = 96, since 192 = 96 × 2 and 288 = 96 × 3.\nSTEP 4: Therefore, 96 is the largest such number."
     }
   ]
 };
