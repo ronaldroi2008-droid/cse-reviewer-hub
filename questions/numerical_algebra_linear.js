@@ -612,12 +612,13 @@ window.NUMERICAL_QUESTION_BANK["algebra_linear"] = {
       answer: "11",
       explanation: "Multiply by 6: 2(2x + 5) − 3(x − 1) = 24 → 4x + 10 − 3x + 3 = 24 → x + 13 = 24 → x = 11."
     },
-    {
-      question: "Solve for x: 7(x − 3) + 2 = 3(x + 1) + 10",
-      options: ["6", "7", "8", "9"],
-      answer: "8",
-      explanation: "7x − 21 + 2 = 3x + 1 + 10 → 7x − 19 = 3x + 11 → 4x = 30 → x = 7.5 (not in options). Let me recalculate: 7x − 21 + 2 = 3x + 3 + 10 → 7x − 19 = 3x + 13 → 4x = 32 → x = 8."
-    }
+     {
+  question: "Solve for x: 7(x − 3) + 2 = 3(x + 1) + 10",
+  options: ["6", "7", "8", "9"],
+  answer: "8",
+  explanation: "Expand both sides: 7(x − 3) + 2 = 3(x + 1) + 10 → 7x − 21 + 2 = 3x + 3 + 10 → 7x − 19 = 3x + 13 → 7x − 3x = 13 + 19 → 4x = 32 → x = 8."
+}
+
   ],
 
   // ==========================================
