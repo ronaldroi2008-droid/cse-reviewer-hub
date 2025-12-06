@@ -718,7 +718,7 @@
       </div>
 
       <div class="header-badge">
-         PRO Access
+        PRO Access
       </div>
     </header>
 
@@ -1013,6 +1013,21 @@
     }
 
     // ==========================================
+    // 3.1 SHUFFLE OPTIONS PER QUESTION
+    // ==========================================
+    function getShuffledOptions(q) {
+      if (!q) return [];
+      // If no shuffled version yet (or length changed), create it once
+      if (
+        !Array.isArray(q._shuffledOptions) ||
+        q._shuffledOptions.length !== (q.options || []).length
+      ) {
+        q._shuffledOptions = (q.options || []).slice().sort(() => Math.random() - 0.5);
+      }
+      return q._shuffledOptions;
+    }
+
+    // ==========================================
     // 4. SIDEBAR TOPICS
     // ==========================================
     function renderTopics() {
@@ -1242,6 +1257,13 @@
       currentQuestionIndex = 0;
       userAnswers = new Array(currentQuestionSet.length).fill(null);
 
+      // Clear any previous shuffled options so each new quiz reshuffles
+      currentQuestionSet.forEach(q => {
+        if (q && q._shuffledOptions) {
+          delete q._shuffledOptions;
+        }
+      });
+
       renderQuizQuestion();
     }
 
@@ -1283,13 +1305,14 @@
       }
 
       const q = currentQuestionSet[currentQuestionIndex];
+      const optionsArray = getShuffledOptions(q);
 
       qTextEl.textContent = q.question || "Question";
 
       optionsEl.innerHTML = "";
       const selectedIndex = userAnswers[currentQuestionIndex];
 
-      (q.options || []).forEach((opt, idx) => {
+      optionsArray.forEach((opt, idx) => {
         const btn = document.createElement("button");
         btn.className = "option-btn";
         btn.textContent = opt;
@@ -1310,7 +1333,7 @@
         explWrap.classList.add("hidden");
         explText.textContent = "";
       } else {
-        const selectedText = q.options[selectedIndex];
+        const selectedText = optionsArray[selectedIndex];
         const isCorrect = selectedText === q.answer;
 
         if (feedbackEl) {
@@ -1368,9 +1391,10 @@
       const mistakes = [];
 
       currentQuestionSet.forEach((q, idx) => {
+        const optionsArray = getShuffledOptions(q);
         const userIndex = userAnswers[idx];
         const userText =
-          userIndex == null ? null : (q.options[userIndex] || null);
+          userIndex == null ? null : (optionsArray[userIndex] || null);
         const isCorrect = userText === q.answer;
 
         if (isCorrect) {
@@ -1467,4 +1491,5 @@
   </script>
 </body>
 </html>
+
 
