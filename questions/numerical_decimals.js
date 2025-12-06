@@ -953,12 +953,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
   // LEVEL 4: EXPERT (50 items)
   // ==========================================
   expert: [
-    {
-      question: "A student scored 87.5, 92.25, 88.75, and 90.5 on four tests. What is the average score?",
-      options: ["89.75", "89.75%", "89.75 ", "89.5"],
-      answer: "89.75",
-      explanation: "Total = 87.5 + 92.25 + 88.75 + 90.5 = 359; average = 359 ÷ 4 = 89.75."
-    },
+   {
+  question: "A student scored 87.5, 92.25, 88.75, and 90.5 on four tests. What is the average score?",
+  options: ["89.75", "89.75%", "89.57", "89.5"],
+  answer: "89.75",
+  explanation: "Total = 87.5 + 92.25 + 88.75 + 90.5 = 359; average = 359 ÷ 4 = 89.75."
+},
+
     {
       question: "A runner completes 3 laps of 1.75 km, 2.4 km, and 1.95 km. What total distance does he run?",
       options: ["6.1 km", "6.05 km", "6.2 km", "5.9 km"],
