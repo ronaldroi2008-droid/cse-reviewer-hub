@@ -289,12 +289,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "0.56 < 0.8",
       explanation: "56 hundredths is less than 8 tenths (0.8)."
     },
-    {
-      question: "Which decimal represents the same value as 7 and 3 tenths?",
-      options: ["7.03", "7.3", "7.30", "7.33"],
-      answer: "7.3",
-      explanation: "Three tenths is 0.3, so 7 and 3 tenths is 7.3."
-    },
+  {
+  question: "Which decimal represents the same value as 7 and 3 tenths?",
+  options: ["7.03", "7.3", "7.33", "7.303"],
+  answer: "7.3",
+  explanation: "Three tenths is 0.3, so 7 and 3 tenths is 7.3."
+},
+
     {
       question: "What is 0.25 written as a fraction?",
       options: ["1/4", "1/25", "25/10", "25/100"],
