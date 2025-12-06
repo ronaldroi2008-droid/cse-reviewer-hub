@@ -296,30 +296,31 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
   explanation: "Three tenths is 0.3, so 7 and 3 tenths is 7.3."
 },
 
-    {
-      question: "What is 0.25 written as a fraction?",
-      options: ["1/4", "1/25", "25/10", "25/100"],
-      answer: "1/4",
-      explanation: "0.25 = 25/100 = 1/4."
-    },
-    {
-      question: "What is 0.6 written as a fraction?",
-      options: ["6/10", "1/6", "3/5", "6/100"],
-      answer: "3/5",
-      explanation: "0.6 = 6/10 = 3/5."
-    },
-    {
-      question: "What is 0.125 as a fraction?",
-      options: ["1/8", "1/125", "125/1000", "1/4"],
-      answer: "1/8",
-      explanation: "0.125 = 125/1000 = 1/8."
-    },
-    {
-      question: "What is 0.8 as a fraction?",
-      options: ["4/5", "8/10", "2/5", "1/8"],
-      answer: "4/5",
-      explanation: "0.8 = 8/10 = 4/5."
-    }
+   {
+  question: "What is 0.25 written as a fraction in simplest form?",
+  options: ["1/4", "1/25", "25/10", "25/100"],
+  answer: "1/4",
+  explanation: "0.25 = 25/100 = 1/4."
+},
+{
+  question: "What is 0.6 written as a fraction in simplest form?",
+  options: ["6/10", "1/6", "3/5", "6/100"],
+  answer: "3/5",
+  explanation: "0.6 = 6/10 = 3/5."
+},
+{
+  question: "What is 0.125 as a fraction in simplest form?",
+  options: ["1/8", "1/125", "125/1000", "1/4"],
+  answer: "1/8",
+  explanation: "0.125 = 125/1000 = 1/8."
+},
+{
+  question: "What is 0.8 as a fraction in simplest form?",
+  options: ["4/5", "8/10", "2/5", "1/8"],
+  answer: "4/5",
+  explanation: "0.8 = 8/10 = 4/5."
+}
+
   ],
 
   // ==========================================
