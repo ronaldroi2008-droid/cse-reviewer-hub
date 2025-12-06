@@ -717,12 +717,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "1.0",
       explanation: "Hundredths digit is 9 and the next digit is 9, so it rounds up to 1.00."
     },
-    {
-      question: "Express 0.0045 in words.",
-      options: ["Forty-five hundredths", "Four and five tenths", "Forty-five thousandths", "Four thousand five hundredths"],
-      answer: "Forty-five thousandths",
-      explanation: "0.0045 has 45 in the ten-thousandths place, but the first nonzero digit is in the thousandths position: 45 thousandths."
-    },
+   {
+  question: "Express 0.0045 in words.",
+  options: ["Forty-five hundredths", "Four and five tenths", "Forty-five thousandths", "Forty-five ten-thousandths"],
+  answer: "Forty-five ten-thousandths",
+  explanation: "0.0045 has 45 in the ten-thousandths place, so it is read as 'forty-five ten-thousandths'."
+},
+
     {
       question: "Which is greater: 0.507 or 0.570?",
       options: ["0.507", "0.570", "They are equal", "Cannot be compared"],
