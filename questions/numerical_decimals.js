@@ -747,12 +747,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
   explanation: "23 ÷ 50 = 0.46."
 },
 
-    {
-      question: "Which decimal is equal to 11/40?",
-      options: ["0.25", "0.275", "0.55", "0.2750"],
-      answer: "0.275",
-      explanation: "11 ÷ 40 = 0.275."
-    },
+   {
+  question: "Which decimal is equal to 11/40?",
+  options: ["0.25", "0.275", "0.55", "0.0275"],
+  answer: "0.275",
+  explanation: "11 ÷ 40 = 0.275."
+},
+
     {
       question: "Compute: (2.75 + 3.65) ÷ 2.",
       options: ["3.2", "3.7", "3.8", "3.3"],
