@@ -1205,12 +1205,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "600 L",
       explanation: "Total = 500+600+550+650+700 = 3,000; 3,000 ÷5 = 600 L."
     },
-    {
-      question: "A line graph shows the volume of water in a tank (in liters) at the end of each hour:\n\nHour 1: 450\nHour 2: 550\nHour 3: 500\nHour 4: 600\nHour 5: 650\n\nAt which hour is the volume exactly equal to the average?",
-      options: ["Hour 1", "Hour 2", "Hour 3", "Hour 4"],
-      answer: "Hour 3",
-      explanation: "The average is 550 L, and Hour 2 also has 550 L."
-    },
+   {
+  question: "A line graph shows the volume of water in a tank (in liters) at the end of each hour:\n\nHour 1: 450\nHour 2: 550\nHour 3: 500\nHour 4: 600\nHour 5: 650\n\nAt which hour is the volume exactly equal to the average?",
+  options: ["Hour 1", "Hour 2", "Hour 3", "Hour 4"],
+  answer: "Hour 2",
+  explanation: "The average volume is 550 L, and Hour 2 shows exactly 550 L."
+},
+
     {
       question: "A table shows the annual revenue of a company in three regions (in millions):\n\nRegion | Year 1 | Year 2\nNorth  | 30     | 36\nSouth  | 25     | 35\nEast   | 20     | 24\n\nWhich region had the highest percentage growth from Year 1 to Year 2?",
       options: ["North", "South", "East", "North and South"],
