@@ -592,7 +592,7 @@ STEP 2: Train length = 10 × 25 = 250 m`
     },
     {
       question: "A person travels 600 km by train at 80 km/h, 800 km by ship at 40 km/h, and 500 km by plane at 400 km/h. What is the average speed for the whole journey?",
-      options: ["65.22 km/h", "68.33 km/h", "72.45 km/h", "75.67 km/h"],
+      options: ["65.22 km/h", "66.09 km/h", "72.45 km/h", "75.67 km/h"],
       answer: "66.09 km/h",
       explanation: `STEP 1: Time (train) = 600/80 = 7.5 h
 STEP 2: Time (ship) = 800/40 = 20 h
