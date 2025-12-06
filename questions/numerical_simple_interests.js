@@ -499,12 +499,13 @@ window.NUMERICAL_QUESTION_BANK["simple_interest"] = {
       answer: "1000",
       explanation: "STEP 1: 12.5% = 0.125.\nSTEP 2: I = 8000 × 0.125 = 1000."
     },
-    {
-      question: "If P = 1000 and r = 5%, how much is the interest per month (assuming simple interest)?",
-      options: ["4.16", "5", "50", "41.6"],
-      answer: "4.16",
-      explanation: "STEP 1: Yearly interest = 1000 × 0.05 = 50.\nSTEP 2: Monthly interest = 50 / 12 ≈ 4.16."
-    },
+  {
+  question: "If P = 1000 and r = 5%, how much is the interest per month (assuming simple interest)?",
+  options: ["4.17", "5", "50", "41.67"],
+  answer: "4.17",
+  explanation: "STEP 1: Yearly interest = 1000 × 0.05 = 50.\nSTEP 2: Monthly interest = 50 ÷ 12 ≈ 4.17 (rounded to two decimal places)."
+},
+
     {
       question: "Which investments give 120 interest: 1000 at 12% for 1 year OR 2000 at 6% for 1 year?",
       options: ["First investment only", "Second investment only", "Both investments", "Neither"],
