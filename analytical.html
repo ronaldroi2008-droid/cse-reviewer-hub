@@ -868,12 +868,13 @@
       { id: "cognitive_reasoning", label: "Cognitive Reasoning",  tag: "Thinking Skills" }
     ];
 
- // ==========================================
+    // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-
-const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-const LOCKED_LEVELS = ["advanced", "expert"];
+    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    const BASE_LOCKED_LEVELS = ["advanced", "expert"];
+    // kung PRO user, walang locked; kung free, Advanced at Expert lang ang locked
+    const LOCKED_LEVELS = IS_PRO_USER ? [] : BASE_LOCKED_LEVELS;
 
     // ==========================================
     // 2. STUDY LESSON CONTENT
@@ -1177,42 +1178,42 @@ const LOCKED_LEVELS = ["advanced", "expert"];
     // ==========================================
     // 8. QUIZ INITIALIZERS
     // ==========================================
-  function initLevelTabs() {
-  document.querySelectorAll(".level-tab").forEach(tab => {
-    const level = tab.dataset.level;
+    function initLevelTabs() {
+      document.querySelectorAll(".level-tab").forEach(tab => {
+        const level = tab.dataset.level;
 
-    // mark locked levels visually + add 🔒
-    if (LOCKED_LEVELS.includes(level)) {
-      tab.classList.add("locked");
-      if (!tab.textContent.includes("🔒")) {
-        tab.textContent = tab.textContent + " 🔒";
-      }
-    }
+        // mark locked levels visually + add 🔒 (ONLY if not PRO)
+        if (LOCKED_LEVELS.includes(level)) {
+          tab.classList.add("locked");
+          if (!tab.textContent.includes("🔒")) {
+            tab.textContent = tab.textContent + " 🔒";
+          }
+        }
 
-    tab.addEventListener("click", () => {
-      const levelClicked = tab.dataset.level;
-      if (!levelClicked) return;
+        tab.addEventListener("click", () => {
+          const levelClicked = tab.dataset.level;
+          if (!levelClicked) return;
 
-      // 🔒 kapag locked (Advanced / Expert) – show Upgrade to PRO message
-      if (LOCKED_LEVELS.includes(levelClicked)) {
-        alert(
-          "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
-          "Beginner and Intermediate are available in the free version."
-        );
-        return;
-      }
+          // 🔒 kapag locked (Advanced / Expert) – show Upgrade to PRO message
+          if (LOCKED_LEVELS.includes(levelClicked)) {
+            alert(
+              "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
+              "Beginner and Intermediate are available in the free version."
+            );
+            return;
+          }
 
-      // normal behavior for Beginner / Intermediate
-      currentLevel = levelClicked;
-      document.querySelectorAll(".level-tab").forEach(t => {
-        t.classList.toggle("active", t.dataset.level === levelClicked);
+          // normal behavior for unlocked levels
+          currentLevel = levelClicked;
+          document.querySelectorAll(".level-tab").forEach(t => {
+            t.classList.toggle("active", t.dataset.level === levelClicked);
+          });
+          document.getElementById("quiz-level-label").textContent =
+            capitalize(levelClicked);
+          startQuiz();
+        });
       });
-      document.getElementById("quiz-level-label").textContent =
-        capitalize(levelClicked);
-      startQuiz();
-    });
-  });
-}
+    }
 
     function initItemsTabs() {
       document.querySelectorAll(".items-tab").forEach(btn => {
@@ -1533,6 +1534,7 @@ const LOCKED_LEVELS = ["advanced", "expert"];
   </script>
 </body>
 </html>
+
 
 
 
