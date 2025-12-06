@@ -966,12 +966,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "6.1 km",
       explanation: "1.75 + 2.4 + 1.95 = 6.10 km."
     },
-    {
-      question: "A machine produces 12.5 meters of cloth per minute. How many meters will it produce in 18.4 minutes?",
-      options: ["230 m", "230.0 m", "230.5 m", "231 m"],
-      answer: "230 m",
-      explanation: "12.5 × 18.4 = 230.0 meters."
-    },
+  {
+  question: "A machine produces 12.5 meters of cloth per minute. How many meters will it produce in 18.4 minutes?",
+  options: ["230 m", "229.5 m", "230.5 m", "231 m"],
+  answer: "230 m",
+  explanation: "12.5 × 18.4 = 230.0 meters."
+},
+
     {
       question: "An athlete drinks 0.35 L of water every 20 minutes. How much will he drink in 1.5 hours?",
       options: ["1.2 L", "1.3 L", "1.4 L", "1.575 L"],
