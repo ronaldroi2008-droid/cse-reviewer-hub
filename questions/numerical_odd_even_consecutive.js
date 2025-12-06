@@ -237,12 +237,13 @@ window.NUMERICAL_QUESTION_BANK["odd_even_consecutive"] = {
       explanation: "Consecutive integers differ by 1. Only 8 and 9 differ by 1."
     },
     // 33
-    {
-      question: "Which of the following are consecutive odd integers?",
-      options: ["7 and 9", "8 and 10", "9 and 11", "10 and 12"],
-      answer: "7 and 9",
-      explanation: "Consecutive odd integers are odd and differ by 2. 7 and 9 fit this description."
-    },
+{
+  question: "Which of the following are consecutive odd integers?",
+  options: ["7 and 9", "8 and 10", "9 and 10", "10 and 12"],
+  answer: "7 and 9",
+  explanation: "Consecutive odd integers are odd and differ by 2. 7 and 9 fit this description."
+ },
+
     // 34
     {
       question: "Which of the following are consecutive even integers?",
