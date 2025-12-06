@@ -794,12 +794,13 @@ window.NUMERICAL_QUESTION_BANK["simple_interest"] = {
       answer: "5%",
       explanation: "STEP 1: I₁ = 1000 × 0.05 = 50.\nSTEP 2: Total interest = 150, so I₂ = 100.\nSTEP 3: 100 = 2000 × x → x = 100/2000 = 0.05 = 5%."
     },
-    {
-      question: "Find the difference between ordinary and exact interest on 7300 at 5% for 100 days.",
-      options: ["1", "1.37", "5", "10"],
-      answer: "1.37",
-      explanation: "STEP 1: Ordinary: I₁ = 7300 × 0.05 × (100/360) ≈ 101.38.\nSTEP 2: Exact: I₂ = 7300 × 0.05 × (100/365) = 100.\nSTEP 3: Difference ≈ 101.38 − 100 ≈ 1.38 (about 1.37 in exact math)."
-    },
+  {
+  question: "Find the difference between ordinary and exact interest on 7300 at 5% for 100 days.",
+  options: ["1.39", "1", "5", "10"],
+  answer: "1.39",
+  explanation: "STEP 1: Ordinary interest: I₁ = 7300 × 0.05 × (100 ÷ 360) ≈ 101.39.\nSTEP 2: Exact interest: I₂ = 7300 × 0.05 × (100 ÷ 365) = 100.\nSTEP 3: Difference ≈ 101.39 − 100 = 1.39."
+},
+
     {
       question: "The simple interest on a sum for 5 years is one-fifth of the sum. What is the rate?",
       options: ["2%", "4%", "5%", "10%"],
