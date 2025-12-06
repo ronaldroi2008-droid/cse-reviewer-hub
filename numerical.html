@@ -726,7 +726,7 @@
   <script src="questions/numerical_algebra_linear.js"></script>
   <script src="questions/numerical_odd_even_consecutive.js"></script>
 
-  <script>
+    <script>
     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
@@ -1641,6 +1641,14 @@
     window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
     const QUESTION_BANK = window.NUMERICAL_QUESTION_BANK;
 
+    // 👉 helper: shuffle array para random ang posisyon ng options
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
     // ==========================================
     // 3. STATE + DOM REFERENCES
     // ==========================================
@@ -1649,6 +1657,9 @@
     let currentLevel = "beginner";
     let currentIndex = 0;
     let currentItemCount = 10;
+
+    // 👉 dito natin i-store ang naka-shuffle na questions
+    let currentQuestions = [];
 
     let userAnswers = [];
     let quizFinished = false;
@@ -1817,14 +1828,32 @@
       renderTips(lesson.tips || fallbackTips);
     }
 
-    function getQuestionsForCurrent() {
+    // 👉 Build / shuffle questions for current topic+level+itemCount
+    function buildCurrentQuestions() {
       const topicQuestions = QUESTION_BANK[currentTopicId] || {};
       const levelQuestions = topicQuestions[currentLevel] || [];
-      return levelQuestions.slice(0, currentItemCount);
+      const base = levelQuestions.slice(0, currentItemCount);
+
+      currentQuestions = base.map((q) => {
+        // clone para di ma-mutate ang original bank
+        const cloned = { ...q };
+        cloned.options = Array.isArray(q.options) ? q.options.slice() : [];
+        shuffleArray(cloned.options); // randomize options para iba-ibang letter ang tama
+        return cloned;
+      });
+    }
+
+    function getQuestionsForCurrent() {
+      if (!currentQuestions || !currentQuestions.length) {
+        buildCurrentQuestions();
+      }
+      return currentQuestions;
     }
 
     function resetQuizState() {
+      buildCurrentQuestions();
       const questions = getQuestionsForCurrent();
+
       userAnswers = questions.map(() => null);
       currentIndex = 0;
       quizFinished = false;
@@ -2176,8 +2205,7 @@
 
     initNumericalPage();
   </script>
-</body>
-</html>
+
 
 
 
