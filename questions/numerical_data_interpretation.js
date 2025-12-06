@@ -421,12 +421,13 @@ window.NUMERICAL_QUESTION_BANK["data_interpretation"] = {
       answer: "5",
       explanation: "Max 8 − Min 3 = 5."
     },
-    {
-      question: "A table shows the number of pens sold:\n\nDay | Pens\nMon | 14\nTue | 9\nWed | 11\nThu | 16\n\nOn which day were more than 10 pens but fewer than 15 pens sold?",
-      options: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      answer: "Wednesday",
-      explanation: "Wednesday has 11, which is between 10 and 15."
-    },
+  {
+  question: "A table shows the number of pens sold:\n\nDay | Pens\nMon | 10\nTue | 9\nWed | 11\nThu | 16\n\nOn which day were more than 10 pens but fewer than 15 pens sold?",
+  options: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+  answer: "Wednesday",
+  explanation: "Wednesday has 11, which is between 10 and 15."
+},
+
     {
       question: "A table shows the number of pencils sold:\n\nDay | Pencils\nMon | 12\nTue | 7\nWed | 9\nThu | 14\n\nHow many pencils were sold from Monday to Thursday in total?",
       options: ["40", "41", "42", "43"],
