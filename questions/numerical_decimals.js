@@ -802,12 +802,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       answer: "₱2599.25",
       explanation: "1250.50 + 1349.75 = 2599.25."
     },
-    {
-      question: "A steel bar is 8.375 m long. It is cut into 5 equal pieces. What is the length of each piece?",
-      options: ["1.675 m", "1.6750 m", "1.6755 m", "1.65 m"],
-      answer: "1.675 m",
-      explanation: "8.375 ÷ 5 = 1.675 meters."
-    },
+   {
+  question: "A steel bar is 8.375 m long. It is cut into 5 equal pieces. What is the length of each piece?",
+  options: ["1.675 m", "1.67 m", "1.6755 m", "1.65 m"],
+  answer: "1.675 m",
+  explanation: "8.375 ÷ 5 = 1.675 meters."
+},
+
     {
       question: "If 1 US dollar is equal to ₱55.75, how many pesos is 3.5 dollars?",
       options: ["₱195.13", "₱195.15", "₱195.25", "₱194.75"],
