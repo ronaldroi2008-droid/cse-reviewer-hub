@@ -682,10 +682,10 @@ STEP 4: So L : P = 8v : 10v = 4 : 5`
     {
       question: "Two stations A and B are 180 km apart. Two trains start at the same time toward each other and meet after 2 hours. One is 20 km/h faster than the other. What are their speeds?",
       options: ["40 km/h & 60 km/h", "35 km/h & 55 km/h", "45 km/h & 65 km/h", "50 km/h & 70 km/h"],
-      answer: "40 km/h & 50 km/h",
+      answer: "35 km/h & 55 km/h",
       explanation: `STEP 1: Let slower speed = x, faster speed = x + 20
 STEP 2: (x + x + 20) × 2 = 180 ⇒ 2x + 20 = 90 ⇒ 2x = 70 ⇒ x = 35
-STEP 3: Speeds = 35 km/h and 55 km/h (true pair not in options; you can adjust options later)`
+STEP 3: Speeds = 35 km/h and 55 km/h `
     },
     {
       question: "A man rows 12 km upstream and 28 km downstream in 5 hours. He also rows 21 km upstream and 21 km downstream in 7 hours. What is the speed of the stream?",
