@@ -986,11 +986,12 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
       explanation: "850.75 × 1.125 = 956.09375 ≈ ₱956.09"
     },
     {
-      question: "A car travels 68.4 km using 4.5 liters of fuel. What is its fuel consumption in km per liter (to the nearest hundredth)?",
-      options: ["15.2", "15.18", "15.16", "15.20"],
-      answer: "15.2",
-      explanation: "68.4 ÷ 4.5 ≈ 15.2 km per liter."
-    },
+  question: "A car travels 68.4 km using 4.5 liters of fuel. What is its fuel consumption in km per liter (to the nearest hundredth)?",
+  options: ["15.2", "15.18", "15.16", "15.12"],
+  answer: "15.2",
+  explanation: "68.4 ÷ 4.5 ≈ 15.2 km per liter."
+},
+
     {
       question: "The mass of a container is 2.75 kg when empty and 8.46 kg when filled with sand. What is the mass of the sand?",
       options: ["5.71 kg", "5.81 kg", "5.61 kg", "5.51 kg"],
