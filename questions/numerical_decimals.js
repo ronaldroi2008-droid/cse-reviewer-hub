@@ -659,12 +659,13 @@ window.NUMERICAL_QUESTION_BANK["decimals"] = {
   explanation: "436 × 12 = 5232; with three decimal places we get 5.232."
 },
 
-    {
-      question: "Evaluate: 7.25 × 0.08.",
-      options: ["0.58", "0.6", "0.58,0", "0.580"],
-      answer: "0.58",
-      explanation: "725 × 8 = 5800; four decimal places give 0.5800 or 0.58."
-    },
+   {
+  question: "Evaluate: 7.25 × 0.08.",
+  options: ["0.58", "0.6", "0.058", "0.75"],
+  answer: "0.58",
+  explanation: "725 × 8 = 5800; four decimal places give 0.5800 or 0.58."
+},
+
     {
       question: "Evaluate: 15.6 ÷ 0.4.",
       options: ["3.9", "39", "4.9", "0.39"],
