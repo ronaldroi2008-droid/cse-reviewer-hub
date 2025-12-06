@@ -804,12 +804,13 @@ window.NUMERICAL_QUESTION_BANK["whole_numbers"] = {
       answer: "9",
       explanation: "Exponent: $2^3 = 8$. Parentheses: $10 - 8 = 2$. Multiplication: $2 \times 2 = 4$. Addition: $4 + 5 = 9$."
     },
-    {
-      question: "Which number is both a multiple of 6 and a factor of 30?",
-      options: ["30", "6", "12", "60"],
-      answer: "30",
-      explanation: "Multiples of 6: 6, 12, 18, 24, 30... Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. The common number is 30."
-    },
+ {
+  question: "Which number is both a multiple of 6 and a factor of 30?",
+  options: ["30", "12", "18", "24"],
+  answer: "30",
+  explanation: "Multiples of 6: 6, 12, 18, 24, 30... Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Among the choices, only 30 is both a multiple of 6 and a factor of 30."
+},
+
     {
       question: "Evaluate: $5 \times (4 \times 2 + 1)$.",
       options: ["45", "30", "41", "9"],
