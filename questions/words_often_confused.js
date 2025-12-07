@@ -1006,65 +1006,66 @@ window.VERBAL_QUESTION_BANK["words_often_confused"] = {
     },
 
     // 161-170: Imply vs Infer
+       // 161-170: Imply vs Infer (FIXED FOR GRAMMAR & SPELLING)
     {
       question: "What are you trying to ____ with that statement?",
       options: ["imply", "infer"],
       answer: "imply",
-      explanation: "Rule: Speaker vs Listener. 'Imply' means to suggest. Explanation: The speaker is suggesting something."
+      explanation: "Rule: Speaker vs listener. The speaker or writer IMPLIES (suggests); the listener or reader INFERS (concludes)."
     },
     {
       question: "From her tone, I ____ that she was angry.",
       options: ["imply", "infer"],
       answer: "infer",
-      explanation: "Rule: Deduction. 'Infer' means to deduce. Explanation: The listener is drawing a conclusion."
+      explanation: "We INFER (draw a conclusion) from someone’s tone or words."
     },
     {
-      question: "The data ____s a correlation between the variables.",
+      question: "The data ____ a correlation between the variables.",
       options: ["imply", "infer"],
       answer: "imply",
-      explanation: "Rule: Suggestion. Explanation: The data suggests a relationship."
+      explanation: "Here, the EVIDENCE (the data) implies or suggests a correlation. The examiner or reader later INFERS conclusions from it."
     },
     {
       question: "What can we ____ from these results?",
       options: ["imply", "infer"],
       answer: "infer",
-      explanation: "Rule: Conclusion. Explanation: Drawing conclusions from results."
+      explanation: "We INFERR conclusions from results, evidence, or behavior."
     },
     {
       question: "I didn't mean to ____ that you were wrong.",
       options: ["imply", "infer"],
       answer: "imply",
-      explanation: "Rule: Suggestion. Explanation: Not intending to suggest something."
+      explanation: "The speaker IMPLIES something indirectly; they do not directly say it."
     },
     {
       question: "Readers can ____ the author's meaning from context.",
       options: ["imply", "infer"],
       answer: "infer",
-      explanation: "Rule: Deduction. Explanation: Readers deduce meaning."
+      explanation: "Readers INFERR the meaning — they draw a conclusion from context clues."
     },
     {
-      question: "His smile ____ed that he approved.",
-      options: ["imply", "infer"],
-      answer: "imply",
-      explanation: "Rule: Suggestion. Explanation: The smile suggested approval."
+      question: "His smile ____ that he approved.",
+      options: ["implies", "infers"],
+      answer: "implies",
+      explanation: "The smile (source) IMPLIES approval; the observer INFERS approval. Subject is singular ('smile'), so 'implies' is correct."
     },
     {
       question: "From the evidence, we ____ that he was innocent.",
       options: ["imply", "infer"],
       answer: "infer",
-      explanation: "Rule: Conclusion. Explanation: Drawing a conclusion from evidence."
+      explanation: "We INFERR innocence from the evidence. The evidence itself implies; we infer."
     },
     {
-      question: "The report ____s several possible solutions.",
-      options: ["imply", "infer"],
-      answer: "imply",
-      explanation: "Rule: Suggestion. Explanation: The report suggests solutions."
+      question: "The report ____ several possible solutions.",
+      options: ["implies", "infers"],
+      answer: "implies",
+      explanation: "The report (source) IMPLIES or suggests solutions; it does not INFERR anything."
     },
     {
       question: "It's dangerous to ____ too much from limited data.",
       options: ["imply", "infer"],
       answer: "infer",
-      explanation: "Rule: Deduction. Explanation: Drawing extensive conclusions."
+      explanation: "We INFERR from data. Over-interpreting limited data is risky."
     },
 
     // 171-180: Comprise vs Compose
@@ -1198,12 +1199,13 @@ window.VERBAL_QUESTION_BANK["words_often_confused"] = {
       answer: "discreet",
       explanation: "Rule: Spelling Nuance. 'Discreet' means careful/secretive. Explanation: Need for confidentiality requires discretion."
     },
-    {
-      question: "The data is divided into ____ categories.",
+      {
+      question: "The data are divided into ____ categories.",
       options: ["discrete", "discreet"],
       answer: "discrete",
-      explanation: "Rule: Distinct Parts. 'Discrete' means separate. Explanation: Categories are distinct from each other."
+      explanation: "Rule: Distinct Parts. 'Discrete' means separate. In formal English, 'data' is treated as plural, so we say 'data are divided'."
     },
+
     {
       question: "She is an ____ scientist in her field.",
       options: ["imminent", "eminent"],
