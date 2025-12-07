@@ -482,7 +482,7 @@ window.GENERAL_QUESTION_BANK["constitution"] = {
 
     // 44
     {
-      question: "What is the system of government where power is shared between the national government and local government units?",
+      question: "What is the system of government of the Philippines, where powers are centralized in the national government but local autonomy is recognized?",
       options: ["Unitary system", "Federal system", "Parliamentary system", "Monarchy"],
       answer: "Unitary system",
       explanation: "The Philippines has a unitary system where powers are centralized but local autonomy is recognized."
