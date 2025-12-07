@@ -968,12 +968,13 @@ window.VERBAL_QUESTION_BANK["subject_verb_agreement"] = {
       answer: "is",
       explanation: "Diseases ending in 's' are singular. Is."
     },
-    {
-      question: "Gymnastics ____ require strength.",
-      options: ["do", "does", "doing", "done"],
-      answer: "does",
-      explanation: "Activity/Sport = Singular. Does."
-    },
+   {
+  question: "Gymnastics ____ strength.",
+  options: ["require", "requires", "requiring", "required"],
+  answer: "requires",
+  explanation: "Although it ends in 's', 'Gymnastics' is treated as singular. So we say 'Gymnastics requires strength.'"
+},
+
     {
       question: "Politics ____ a dirty game.",
       options: ["is", "are", "were", "be"],
