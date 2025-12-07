@@ -862,1079 +862,620 @@ beginner: [
    `
   }
 ], 
-
 // ==========================================
 // LEVEL 2: INTERMEDIATE (50 items – three-person & rate problems)
 // ==========================================
 intermediate: [
+  // 1
   {
-    question: "Brownie can dig a 2m hole in 3 hours. Blackie can dig a hole with the same depth in 5 hours. Whittle can do the same job in only 2 hours. How long will it take if all three of them dig a 2m hole together?",
+    question: "Brownie can dig a 2m hole in 3 hours. Blackie can dig the same hole in 5 hours. Whittle can do it in only 2 hours. How long will it take if all three work together?",
     options: ["0.77 hours", "0.88 hours", "0.97 hours", "1.05 hours"],
     answer: "0.97 hours",
     explanation: `
-      STEP 1: Find individual rates:
-      - Brownie's rate: 1 hole ÷ 3 hours = 1/3 hole/hour
-      - Blackie's rate: 1 hole ÷ 5 hours = 1/5 hole/hour
-      - Whittle's rate: 1 hole ÷ 2 hours = 1/2 hole/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/3 + 1/5 + 1/2
-      
-      STEP 3: Find common denominator (30):
-      = 10/30 + 6/30 + 15/30 = 31/30 hole/hour
-      
-      STEP 4: Calculate time together:
-      Time = 1 hole ÷ (31/30 hole/hour) = 30/31 hours ≈ 0.97 hours
-    `
+STEP 1: Find each person's rate (work/hour):
+- Brownie: 1/3, Blackie: 1/5, Whittle: 1/2.
+
+STEP 2: Equalize denominators (LCD = 30):
+1/3 = 10/30, 1/5 = 6/30, 1/2 = 15/30.
+Add: 10/30 + 6/30 + 15/30 = 31/30 hole/hour.
+
+STEP 3: Time = 1 ÷ (31/30) = 30/31 ≈ 0.97 hour (~58 minutes).`
   },
+
+  // 2
   {
-    question: "Juliet can harvest 500 corns in 7 hours. Romel can harvest the same amount of corn in 11 hours. If Will was to do the same task, it would take him 9 hours. If all three work together, how long will it take?",
-    options: ["2.8 hours", "3.1 hours", "3.4 hours", "3.7 hours"],
-    answer: "3.1 hours",
-    explanation: `
-      STEP 1: Find individual rates:
-      - Juliet's rate: 500 corns ÷ 7 hours ≈ 71.43 corns/hour
-      - Romel's rate: 500 corns ÷ 11 hours ≈ 45.45 corns/hour
-      - Will's rate: 500 corns ÷ 9 hours ≈ 55.56 corns/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 71.43 + 45.45 + 55.56 = 172.44 corns/hour
-      
-      STEP 3: Calculate time for 500 corns:
-      Time = 500 corns ÷ 172.44 corns/hour ≈ 2.9 hours
-    `
-  },
-  {
-    question: "A, B, and C can complete a work in 10, 12, and 15 days respectively. They start working together but after 2 days, A leaves. How many more days will B and C take to complete the work?",
-    options: ["3 days", "4 days", "5 days", "6 days"],
-    answer: "4 days",
-    explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/10 work/day
-      - B's rate: 1/12 work/day
-      - C's rate: 1/15 work/day
-      
-      STEP 2: Find combined rate of all three:
-      Combined rate = 1/10 + 1/12 + 1/15 = 6/60 + 5/60 + 4/60 = 15/60 = 1/4 work/day
-      
-      STEP 3: Work done in first 2 days:
-      Work done = 2 days × 1/4 work/day = 1/2 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 1/2 = 1/2 work
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/12 + 1/15 = 5/60 + 4/60 = 9/60 = 3/20 work/day
-      
-      STEP 6: Time for remaining work:
-      Time = (1/2) ÷ (3/20) = (1/2) × (20/3) = 10/3 ≈ 3.33 days ≈ 4 days
-    `
-  },
-  {
-    question: "Three workers can complete a job in 8, 12, and 24 hours respectively. How long will they take working together?",
-    options: ["4 hours", "5 hours", "6 hours", "7 hours"],
-    answer: "4 hours",
-    explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/8 job/hour
-      - Second worker: 1/12 job/hour
-      - Third worker: 1/24 job/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/8 + 1/12 + 1/24
-      
-      STEP 3: Find common denominator (24):
-      = 3/24 + 2/24 + 1/24 = 6/24 = 1/4 job/hour
-      
-      STEP 4: Calculate time together:
-      Time = 1 job ÷ (1/4 job/hour) = 4 hours
-    `
-  },
-  {
-    question: "A can do a piece of work in 8 days, B in 12 days, and C in 16 days. They all work together for 2 days, then C leaves. How long will A and B take to finish the remaining work?",
+    question: "Three painters can finish a wall in 6, 9, and 18 days respectively. How long together?",
     options: ["2 days", "3 days", "4 days", "5 days"],
     answer: "3 days",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/8 work/day
-      - B's rate: 1/12 work/day
-      - C's rate: 1/16 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/8 + 1/12 + 1/16 = 6/48 + 4/48 + 3/48 = 13/48 work/day
-      
-      STEP 3: Work done in 2 days:
-      Work done = 2 × 13/48 = 26/48 = 13/24 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 13/24 = 11/24 work
-      
-      STEP 5: A and B combined rate:
-      A+B rate = 1/8 + 1/12 = 3/24 + 2/24 = 5/24 work/day
-      
-      STEP 6: Time for A and B to finish:
-      Time = (11/24) ÷ (5/24) = 11/5 = 2.2 days ≈ 3 days
-    `
+1/6 + 1/9 + 1/18 = 3/18 + 2/18 + 1/18 = 6/18 = 1/3 → Time = 3 days.`
   },
+
+  // 3
   {
-    question: "Three taps can fill a tank in 10, 15, and 30 minutes respectively. If all three are opened together, how long will it take to fill the tank?",
-    options: ["4 minutes", "5 minutes", "6 minutes", "7 minutes"],
-    answer: "5 minutes",
+    question: "Machines A, B, C can pack 1,200 boxes in 4, 6, and 12 hours respectively. Time together?",
+    options: ["1 hour", "2 hours", "3 hours", "4 hours"],
+    answer: "2 hours",
     explanation: `
-      STEP 1: Find individual rates:
-      - First tap: 1/10 tank/minute
-      - Second tap: 1/15 tank/minute
-      - Third tap: 1/30 tank/minute
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/10 + 1/15 + 1/30
-      
-      STEP 3: Find common denominator (30):
-      = 3/30 + 2/30 + 1/30 = 6/30 = 1/5 tank/minute
-      
-      STEP 4: Calculate time together:
-      Time = 1 tank ÷ (1/5 tank/minute) = 5 minutes
-    `
+1/4 + 1/6 + 1/12 = 3/12 + 2/12 + 1/12 = 6/12 = 1/2 → Time = 2 hours.`
   },
+
+  // 4
   {
-    question: "A, B, and C can do a work in 6, 8, and 12 days respectively. They start working together but after 2 days, B leaves. How many more days will A and C take to complete the work?",
-    options: ["1 day", "2 days", "3 days", "4 days"],
-    answer: "2 days",
+    question: "Three water pumps fill a tank in 10, 15, and 30 hours respectively. Time together?",
+    options: ["4h", "5h", "6h", "7h"],
+    answer: "5h",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/6 work/day
-      - B's rate: 1/8 work/day
-      - C's rate: 1/12 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/6 + 1/8 + 1/12 = 4/24 + 3/24 + 2/24 = 9/24 = 3/8 work/day
-      
-      STEP 3: Work done in 2 days:
-      Work done = 2 × 3/8 = 6/8 = 3/4 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 3/4 = 1/4 work
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4 work/day
-      
-      STEP 6: Time for A and C to finish:
-      Time = (1/4) ÷ (1/4) = 1 day
-    `
+1/10 + 1/15 + 1/30 = 3/30 + 2/30 + 1/30 = 6/30 = 1/5 → Time = 5 hours.`
   },
+
+  // 5
   {
-    question: "Three machines can produce 1000 units in 4, 5, and 10 hours respectively. How long will they take to produce 1000 units working together?",
-    options: ["1.8 hours", "2.0 hours", "2.2 hours", "2.4 hours"],
-    answer: "2.0 hours",
+    question: "Typists A, B, and C can type in 12, 18, and 36 days respectively. How long together?",
+    options: ["4", "5", "6", "7"],
+    answer: "6",
     explanation: `
-      STEP 1: Find individual rates:
-      - First machine: 1000 units ÷ 4 hours = 250 units/hour
-      - Second machine: 1000 units ÷ 5 hours = 200 units/hour
-      - Third machine: 1000 units ÷ 10 hours = 100 units/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 250 + 200 + 100 = 550 units/hour
-      
-      STEP 3: Calculate time for 1000 units:
-      Time = 1000 units ÷ 550 units/hour = 1.82 hours ≈ 2.0 hours
-    `
+1/12 + 1/18 + 1/36 = 3/36 + 2/36 + 1/36 = 6/36 = 1/6 → 6 days.`
   },
+
+  // 6
   {
-    question: "A, B, and C can complete a task in 9, 12, and 18 hours respectively. They work together for 3 hours, then B leaves. How long will A and C take to finish the remaining work?",
-    options: ["2 hours", "3 hours", "4 hours", "5 hours"],
-    answer: "3 hours",
+    question: "Gardeners clean a park in 6, 8, and 24 days. How long all together?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/9 task/hour
-      - B's rate: 1/12 task/hour
-      - C's rate: 1/18 task/hour
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/9 + 1/12 + 1/18 = 4/36 + 3/36 + 2/36 = 9/36 = 1/4 task/hour
-      
-      STEP 3: Work done in 3 hours:
-      Work done = 3 × 1/4 = 3/4 task
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 3/4 = 1/4 task
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/9 + 1/18 = 2/18 + 1/18 = 3/18 = 1/6 task/hour
-      
-      STEP 6: Time for A and C to finish:
-      Time = (1/4) ÷ (1/6) = (1/4) × 6 = 6/4 = 1.5 hours ≈ 2 hours
-    `
+1/6 + 1/8 + 1/24 = 4/24 + 3/24 + 1/24 = 8/24 = 1/3 → 3 days.`
   },
+
+  // 7
   {
-    question: "Three workers can build a wall in 5, 6, and 10 days respectively. How long will they take working together?",
-    options: ["2.2 days", "2.4 days", "2.6 days", "2.8 days"],
-    answer: "2.4 days",
+    question: "A, B, C can finish a roof in 5, 10, 20 days. Time together?",
+    options: ["2.3", "2.6", "2.9", "3.2"],
+    answer: "2.9",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/5 wall/day
-      - Second worker: 1/6 wall/day
-      - Third worker: 1/10 wall/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/5 + 1/6 + 1/10
-      
-      STEP 3: Find common denominator (30):
-      = 6/30 + 5/30 + 3/30 = 14/30 = 7/15 wall/day
-      
-      STEP 4: Calculate time together:
-      Time = 1 wall ÷ (7/15 wall/day) = 15/7 days ≈ 2.14 days ≈ 2.2 days
-    `
+1/5 + 1/10 + 1/20 = 4/20 + 2/20 + 1/20 = 7/20 → Time = 20/7 = 2.86 ≈ 2.9 days.`
   },
+
+  // 8
   {
-    question: "A, B, and C can do a work in 15, 20, and 30 days respectively. They start together but after 5 days, A leaves. How many more days will B and C take?",
-    options: ["5 days", "6 days", "7 days", "8 days"],
-    answer: "7 days",
+    question: "Technicians A, B, C can repair a machine in 3, 4, and 6 hours. Time together?",
+    options: ["1.0", "1.3", "1.5", "2.0"],
+    answer: "1.3",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/15 work/day
-      - B's rate: 1/20 work/day
-      - C's rate: 1/30 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/15 + 1/20 + 1/30 = 4/60 + 3/60 + 2/60 = 9/60 = 3/20 work/day
-      
-      STEP 3: Work done in 5 days:
-      Work done = 5 × 3/20 = 15/20 = 3/4 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 3/4 = 1/4 work
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/20 + 1/30 = 3/60 + 2/60 = 5/60 = 1/12 work/day
-      
-      STEP 6: Time for B and C to finish:
-      Time = (1/4) ÷ (1/12) = (1/4) × 12 = 3 days
-    `
+1/3 + 1/4 + 1/6 = 4/12 + 3/12 + 2/12 = 9/12 = 3/4 → Time = 4/3 = 1.33h ≈ 1.3h.`
   },
+
+  // 9
   {
-    question: "Three pipes can fill a tank in 6, 8, and 12 hours respectively. If all three are opened together, how long will it take to fill half the tank?",
-    options: ["1.6 hours", "1.8 hours", "2.0 hours", "2.2 hours"],
-    answer: "1.6 hours",
+    question: "Printers finish a brochure in 7, 14, 21 days. How long together?",
+    options: ["3.2", "3.5", "3.8", "4.2"],
+    answer: "3.8",
     explanation: `
-      STEP 1: Find individual rates:
-      - First pipe: 1/6 tank/hour
-      - Second pipe: 1/8 tank/hour
-      - Third pipe: 1/12 tank/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/6 + 1/8 + 1/12 = 4/24 + 3/24 + 2/24 = 9/24 = 3/8 tank/hour
-      
-      STEP 3: Time for half tank:
-      Time = (1/2) ÷ (3/8) = (1/2) × (8/3) = 4/3 ≈ 1.33 hours ≈ 1.6 hours
-    `
+1/7 + 1/14 + 1/21 = 6/42 + 3/42 + 2/42 = 11/42 → Time = 42/11 = 3.82 days ≈ 3.8 days.`
   },
+
+  // 10
   {
-    question: "A, B, and C can complete a project in 20, 25, and 30 days respectively. They work together for 4 days, then C leaves. How long will A and B take to finish?",
-    options: ["8 days", "9 days", "10 days", "11 days"],
-    answer: "9 days",
+    question: "A, B, C (8,12,24 days) work 2 days then A leaves. More days for B,C?",
+    options: ["2", "3", "4", "5"],
+    answer: "4",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/20 project/day
-      - B's rate: 1/25 project/day
-      - C's rate: 1/30 project/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/20 + 1/25 + 1/30 = 15/300 + 12/300 + 10/300 = 37/300 project/day
-      
-      STEP 3: Work done in 4 days:
-      Work done = 4 × 37/300 = 148/300 = 37/75 project
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/75 = 38/75 project
-      
-      STEP 5: A and B combined rate:
-      A+B rate = 1/20 + 1/25 = 5/100 + 4/100 = 9/100 project/day
-      
-      STEP 6: Time for A and B to finish:
-      Time = (38/75) ÷ (9/100) = (38/75) × (100/9) = 3800/675 ≈ 5.63 days ≈ 6 days
-    `
+Combined rate: 1/8 + 1/12 + 1/24 = 6/24 = 1/4 job/day.
+2 days = 2 × 1/4 = 1/2 done.
+Remaining: 1/2.
+B+C rate: 1/12 + 1/24 = 2/24 + 1/24 = 3/24 = 1/8 job/day.
+Time = (1/2) ÷ (1/8) = 4 days.`
   },
+
+  // 11
   {
-    question: "Three workers can paint a house in 8, 10, and 12 hours respectively. How long will they take working together?",
-    options: ["3.2 hours", "3.4 hours", "3.6 hours", "3.8 hours"],
-    answer: "3.6 hours",
+    question: "A, B, C (8,12,24 days) work 2 days then C leaves. More days for A,B?",
+    options: ["2.4", "2.8", "3", "3.5"],
+    answer: "2.4",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/8 house/hour
-      - Second worker: 1/10 house/hour
-      - Third worker: 1/12 house/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/8 + 1/10 + 1/12
-      
-      STEP 3: Find common denominator (120):
-      = 15/120 + 12/120 + 10/120 = 37/120 house/hour
-      
-      STEP 4: Calculate time together:
-      Time = 1 house ÷ (37/120 house/hour) = 120/37 ≈ 3.24 hours ≈ 3.2 hours
-    `
+2 days = 1/2 done (from Q10).
+Remaining: 1/2.
+A+B rate: 1/8 + 1/12 = 3/24 + 2/24 = 5/24 job/day.
+Time = (1/2) ÷ (5/24) = 12/5 = 2.4 days.`
   },
+
+  // 12
   {
-    question: "A, B, and C can do a work in 12, 16, and 24 days respectively. They start together but after 3 days, A and B leave. How long will C take to complete the remaining work?",
-    options: ["9 days", "10 days", "11 days", "12 days"],
-    answer: "11 days",
+    question: "A,B,C (8,12,24 days) work 3 days then A leaves. How many more days for B,C?",
+    options: ["1", "1.5", "2", "2.5"],
+    answer: "2",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/12 work/day
-      - B's rate: 1/16 work/day
-      - C's rate: 1/24 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/12 + 1/16 + 1/24 = 4/48 + 3/48 + 2/48 = 9/48 = 3/16 work/day
-      
-      STEP 3: Work done in 3 days:
-      Work done = 3 × 3/16 = 9/16 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 9/16 = 7/16 work
-      
-      STEP 5: C's rate alone:
-      C's rate = 1/24 work/day
-      
-      STEP 6: Time for C to finish:
-      Time = (7/16) ÷ (1/24) = (7/16) × 24 = 10.5 days ≈ 11 days
-    `
+3 days = 3 × 1/4 = 3/4 done.
+Remaining: 1/4.
+B+C rate = 1/8 job/day (from Q10).
+Time = (1/4) ÷ (1/8) = 2 days.`
   },
+
+  // 13
   {
-    question: "Three machines can produce 500 items in 3, 4, and 6 hours respectively. How long will they take to produce 1000 items working together?",
-    options: ["2.4 hours", "2.6 hours", "2.8 hours", "3.0 hours"],
-    answer: "2.8 hours",
+    question: "A,B,C (10,15,30 days) work 3 days then B leaves. More days A,C?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
     explanation: `
-      STEP 1: Find individual rates:
-      - First machine: 500 items ÷ 3 hours = 166.67 items/hour
-      - Second machine: 500 items ÷ 4 hours = 125 items/hour
-      - Third machine: 500 items ÷ 6 hours = 83.33 items/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 166.67 + 125 + 83.33 = 375 items/hour
-      
-      STEP 3: Calculate time for 1000 items:
-      Time = 1000 items ÷ 375 items/hour = 2.67 hours ≈ 2.7 hours
-    `
+Combined rate: 1/10 + 1/15 + 1/30 = 6/30 = 1/5 job/day.
+3 days = 3 × 1/5 = 3/5 done.
+Remaining: 2/5.
+A+C rate: 1/10 + 1/30 = 4/30 = 2/15 job/day.
+Time = (2/5) ÷ (2/15) = (2/5) × (15/2) = 3 days.`
   },
+
+  // 14
   {
-    question: "A, B, and C can complete a task in 18, 24, and 36 hours respectively. They work together for 6 hours, then A leaves. How long will B and C take to finish?",
-    options: ["6 hours", "7 hours", "8 hours", "9 hours"],
-    answer: "8 hours",
+    question: "A,B,C (10,15,30 days) work 3 days then slowest leaves. How many more days?",
+    options: ["2.0", "2.4", "2.8", "3.0"],
+    answer: "2.4",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/18 task/hour
-      - B's rate: 1/24 task/hour
-      - C's rate: 1/36 task/hour
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/18 + 1/24 + 1/36 = 4/72 + 3/72 + 2/72 = 9/72 = 1/8 task/hour
-      
-      STEP 3: Work done in 6 hours:
-      Work done = 6 × 1/8 = 6/8 = 3/4 task
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 3/4 = 1/4 task
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/24 + 1/36 = 3/72 + 2/72 = 5/72 task/hour
-      
-      STEP 6: Time for B and C to finish:
-      Time = (1/4) ÷ (5/72) = (1/4) × (72/5) = 18/5 = 3.6 hours ≈ 4 hours
-    `
+3 days = 3/5 done (from Q13).
+Remaining: 2/5.
+A+B rate: 1/10 + 1/15 = 5/30 = 1/6 job/day.
+Time = (2/5) ÷ (1/6) = (2/5) × 6 = 12/5 = 2.4 days.`
   },
+
+  // 15
   {
-    question: "Three workers can construct a building in 30, 40, and 60 days respectively. How long will they take working together?",
-    options: ["12 days", "13 days", "14 days", "15 days"],
-    answer: "13 days",
+    question: "A,B,C (10,15,30 days) work 2 days then fastest leaves. More days?",
+    options: ["3.6", "4.0", "4.5", "6.0"],
+    answer: "6.0",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/30 building/day
-      - Second worker: 1/40 building/day
-      - Third worker: 1/60 building/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/30 + 1/40 + 1/60 = 4/120 + 3/120 + 2/120 = 9/120 = 3/40 building/day
-      
-      STEP 3: Calculate time together:
-      Time = 1 building ÷ (3/40 building/day) = 40/3 ≈ 13.33 days ≈ 13 days
-    `
+2 days = 2 × 1/5 = 2/5 done.
+Remaining: 3/5.
+B+C rate: 1/15 + 1/30 = 3/30 = 1/10 job/day.
+Time = (3/5) ÷ (1/10) = (3/5) × 10 = 6 days.`
   },
+
+  // 16
   {
-    question: "A, B, and C can do a work in 25, 30, and 50 days respectively. They start together but after 5 days, B leaves. How many more days will A and C take?",
-    options: ["10 days", "11 days", "12 days", "13 days"],
-    answer: "11 days",
+    question: "A,B,C (10,15,30 days) work 2 days then slowest leaves. More days A,B?",
+    options: ["3.2", "3.6", "4.0", "4.5"],
+    answer: "3.6",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/25 work/day
-      - B's rate: 1/30 work/day
-      - C's rate: 1/50 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/25 + 1/30 + 1/50 = 6/150 + 5/150 + 3/150 = 14/150 = 7/75 work/day
-      
-      STEP 3: Work done in 5 days:
-      Work done = 5 × 7/75 = 35/75 = 7/15 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 7/15 = 8/15 work
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/25 + 1/50 = 2/50 + 1/50 = 3/50 work/day
-      
-      STEP 6: Time for A and C to finish:
-      Time = (8/15) ÷ (3/50) = (8/15) × (50/3) = 400/45 ≈ 8.89 days ≈ 9 days
-    `
+2 days = 2/5 done.
+Remaining: 3/5.
+A+B rate = 1/6 job/day (from Q14).
+Time = (3/5) ÷ (1/6) = (3/5) × 6 = 18/5 = 3.6 days.`
   },
+
+  // 17
   {
-    question: "Three taps can fill a tank in 12, 15, and 20 minutes respectively. If all three are opened together, how long will it take to fill 2/3 of the tank?",
-    options: ["4 minutes", "5 minutes", "6 minutes", "7 minutes"],
-    answer: "5 minutes",
+    question: "Three workers (6,9,18 days) start; after 2 days fastest leaves. More days?",
+    options: ["1.2", "1.5", "2", "3"],
+    answer: "2",
     explanation: `
-      STEP 1: Find individual rates:
-      - First tap: 1/12 tank/minute
-      - Second tap: 1/15 tank/minute
-      - Third tap: 1/20 tank/minute
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/12 + 1/15 + 1/20 = 5/60 + 4/60 + 3/60 = 12/60 = 1/5 tank/minute
-      
-      STEP 3: Time for 2/3 tank:
-      Time = (2/3) ÷ (1/5) = (2/3) × 5 = 10/3 ≈ 3.33 minutes ≈ 4 minutes
-    `
+Combined rate: 1/6 + 1/9 + 1/18 = 6/18 = 1/3 job/day.
+2 days = 2 × 1/3 = 2/3 done.
+Remaining: 1/3.
+Remaining workers (9,18): 1/9 + 1/18 = 3/18 = 1/6 job/day.
+Time = (1/3) ÷ (1/6) = 2 days.`
   },
+
+  // 18
   {
-    question: "A, B, and C can complete a job in 14, 21, and 28 days respectively. They work together for 4 days, then A leaves. How long will B and C take to finish?",
-    options: ["6 days", "7 days", "8 days", "9 days"],
-    answer: "7 days",
+    question: "Three workers (6,9,18 days) work 1 day then slowest leaves. More days?",
+    options: ["2", "2.4", "3", "4"],
+    answer: "2.4",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/14 job/day
-      - B's rate: 1/21 job/day
-      - C's rate: 1/28 job/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/14 + 1/21 + 1/28 = 6/84 + 4/84 + 3/84 = 13/84 job/day
-      
-      STEP 3: Work done in 4 days:
-      Work done = 4 × 13/84 = 52/84 = 13/21 job
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 13/21 = 8/21 job
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/21 + 1/28 = 4/84 + 3/84 = 7/84 = 1/12 job/day
-      
-      STEP 6: Time for B and C to finish:
-      Time = (8/21) ÷ (1/12) = (8/21) × 12 = 96/21 ≈ 4.57 days ≈ 5 days
-    `
+1 day = 1 × 1/3 = 1/3 done.
+Remaining: 2/3.
+Remaining workers (6,9): 1/6 + 1/9 = 5/18 job/day.
+Time = (2/3) ÷ (5/18) = (2/3) × (18/5) = 12/5 = 2.4 days.`
   },
+
+  // 19
   {
-    question: "Three workers can build a wall in 8, 12, and 16 hours respectively. How long will they take to build 3 walls working together?",
-    options: ["10 hours", "11 hours", "12 hours", "13 hours"],
-    answer: "12 hours",
+    question: "Three cleaners (12,18,36 days) work 2 days then fastest leaves. More days?",
+    options: ["6", "7", "8", "9"],
+    answer: "8",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/8 wall/hour
-      - Second worker: 1/12 wall/hour
-      - Third worker: 1/16 wall/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/8 + 1/12 + 1/16 = 6/48 + 4/48 + 3/48 = 13/48 wall/hour
-      
-      STEP 3: Calculate time for 3 walls:
-      Time = 3 walls ÷ (13/48 wall/hour) = 3 × 48/13 = 144/13 ≈ 11.08 hours ≈ 11 hours
-    `
+Combined rate: 1/12 + 1/18 + 1/36 = 6/36 = 1/6 job/day.
+2 days = 2 × 1/6 = 1/3 done.
+Remaining: 2/3.
+Remaining workers (18,36): 1/18 + 1/36 = 3/36 = 1/12 job/day.
+Time = (2/3) ÷ (1/12) = (2/3) × 12 = 8 days.`
   },
+
+  // 20
   {
-    question: "A, B, and C can do a work in 20, 25, and 30 days respectively. They start together but after 6 days, B and C leave. How long will A take to complete the remaining work?",
-    options: ["8 days", "9 days", "10 days", "11 days"],
-    answer: "9 days",
+    question: "Plumbers (12,18,36 days) work 3 days then slowest leaves. More days?",
+    options: ["3.0", "3.6", "4.5", "6.0"],
+    answer: "3.6",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/20 work/day
-      - B's rate: 1/25 work/day
-      - C's rate: 1/30 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/20 + 1/25 + 1/30 = 15/300 + 12/300 + 10/300 = 37/300 work/day
-      
-      STEP 3: Work done in 6 days:
-      Work done = 6 × 37/300 = 222/300 = 37/50 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/50 = 13/50 work
-      
-      STEP 5: A's rate alone:
-      A's rate = 1/20 work/day
-      
-      STEP 6: Time for A to finish:
-      Time = (13/50) ÷ (1/20) = (13/50) × 20 = 260/50 = 5.2 days ≈ 6 days
-    `
+3 days = 3 × 1/6 = 1/2 done.
+Remaining: 1/2.
+Remaining workers (12,18): 1/12 + 1/18 = 5/36 job/day.
+Time = (1/2) ÷ (5/36) = (1/2) × (36/5) = 18/5 = 3.6 days.`
   },
+
+  // 21
   {
-    question: "Three machines can produce 800 units in 4, 5, and 8 hours respectively. How long will they take to produce 1600 units working together?",
-    options: ["4.4 hours", "4.6 hours", "4.8 hours", "5.0 hours"],
-    answer: "4.8 hours",
+    question: "Same plumbers; after 3 days fastest leaves. More days?",
+    options: ["4.5", "5", "6", "7"],
+    answer: "6",
     explanation: `
-      STEP 1: Find individual rates:
-      - First machine: 800 units ÷ 4 hours = 200 units/hour
-      - Second machine: 800 units ÷ 5 hours = 160 units/hour
-      - Third machine: 800 units ÷ 8 hours = 100 units/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 200 + 160 + 100 = 460 units/hour
-      
-      STEP 3: Calculate time for 1600 units:
-      Time = 1600 units ÷ 460 units/hour = 3.48 hours ≈ 3.5 hours
-    `
+3 days = 1/2 done (from Q20).
+Remaining: 1/2.
+Remaining workers (18,36): 1/18 + 1/36 = 1/12 job/day.
+Time = (1/2) ÷ (1/12) = 6 days.`
   },
+
+  // 22
   {
-    question: "A, B, and C can complete a task in 16, 20, and 24 hours respectively. They work together for 5 hours, then B leaves. How long will A and C take to finish?",
-    options: ["4 hours", "5 hours", "6 hours", "7 hours"],
-    answer: "5 hours",
+    question: "Three workers (6,8,24 days) finish two jobs. How long?",
+    options: ["4", "5", "6", "7"],
+    answer: "6",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/16 task/hour
-      - B's rate: 1/20 task/hour
-      - C's rate: 1/24 task/hour
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/16 + 1/20 + 1/24 = 15/240 + 12/240 + 10/240 = 37/240 task/hour
-      
-      STEP 3: Work done in 5 hours:
-      Work done = 5 × 37/240 = 185/240 = 37/48 task
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/48 = 11/48 task
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/16 + 1/24 = 3/48 + 2/48 = 5/48 task/hour
-      
-      STEP 6: Time for A and C to finish:
-      Time = (11/48) ÷ (5/48) = 11/5 = 2.2 hours ≈ 3 hours
-    `
+Combined rate: 1/6 + 1/8 + 1/24 = 8/24 = 1/3 job/day.
+1 job = 3 days.
+2 jobs = 6 days.`
   },
+
+  // 23
   {
-    question: "Three workers can paint a fence in 6, 8, and 10 hours respectively. How long will they take working together?",
-    options: ["2.4 hours", "2.6 hours", "2.8 hours", "3.0 hours"],
-    answer: "2.8 hours",
+    question: "Three printers (8,12,24 days) half job. How long?",
+    options: ["1", "2", "3", "4"],
+    answer: "2",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/6 fence/hour
-      - Second worker: 1/8 fence/hour
-      - Third worker: 1/10 fence/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/6 + 1/8 + 1/10 = 20/120 + 15/120 + 12/120 = 47/120 fence/hour
-      
-      STEP 3: Calculate time together:
-      Time = 1 fence ÷ (47/120 fence/hour) = 120/47 ≈ 2.55 hours ≈ 2.6 hours
-    `
+Combined rate = 1/4 job/day (from Q10).
+Time for 1/2 job = (1/2) ÷ (1/4) = 2 days.`
   },
+
+  // 24
   {
-    question: "A, B, and C can do a work in 22, 33, and 44 days respectively. They start together but after 4 days, A leaves. How many more days will B and C take?",
-    options: ["8 days", "9 days", "10 days", "11 days"],
-    answer: "10 days",
+    question: "Carpenters (10,15,30 days) 3 identical sheds together. Time?",
+    options: ["12", "13", "14", "15"],
+    answer: "15",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/22 work/day
-      - B's rate: 1/33 work/day
-      - C's rate: 1/44 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/22 + 1/33 + 1/44 = 6/132 + 4/132 + 3/132 = 13/132 work/day
-      
-      STEP 3: Work done in 4 days:
-      Work done = 4 × 13/132 = 52/132 = 13/33 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 13/33 = 20/33 work
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/33 + 1/44 = 4/132 + 3/132 = 7/132 work/day
-      
-      STEP 6: Time for B and C to finish:
-      Time = (20/33) ÷ (7/132) = (20/33) × (132/7) = 2640/231 ≈ 11.43 days ≈ 11 days
-    `
+Combined rate = 1/5 job/day (from Q4).
+1 shed = 5 days.
+3 sheds = 15 days.`
   },
+
+  // 25
   {
-    question: "Three pipes can fill a tank in 9, 12, and 18 hours respectively. If all three are opened together, how long will it take to fill 5/6 of the tank?",
-    options: ["4 hours", "5 hours", "6 hours", "7 hours"],
-    answer: "5 hours",
+    question: "Taps (8,12,24 hours) fill 3 tanks. Time?",
+    options: ["8", "10", "12", "14"],
+    answer: "12",
     explanation: `
-      STEP 1: Find individual rates:
-      - First pipe: 1/9 tank/hour
-      - Second pipe: 1/12 tank/hour
-      - Third pipe: 1/18 tank/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/9 + 1/12 + 1/18 = 4/36 + 3/36 + 2/36 = 9/36 = 1/4 tank/hour
-      
-      STEP 3: Time for 5/6 tank:
-      Time = (5/6) ÷ (1/4) = (5/6) × 4 = 20/6 ≈ 3.33 hours ≈ 4 hours
-    `
+Combined rate = 1/4 tank/hour (from Q10).
+1 tank = 4 hours.
+3 tanks = 12 hours.`
   },
+
+  // 26
   {
-    question: "A, B, and C can complete a project in 24, 30, and 40 days respectively. They work together for 6 days, then C leaves. How long will A and B take to finish?",
-    options: ["8 days", "9 days", "10 days", "11 days"],
-    answer: "9 days",
+    question: "Pumps (6,9,18 hours) half pool. Time?",
+    options: ["1", "1.5", "2", "2.5"],
+    answer: "1.5",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/24 project/day
-      - B's rate: 1/30 project/day
-      - C's rate: 1/40 project/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/24 + 1/30 + 1/40 = 5/120 + 4/120 + 3/120 = 12/120 = 1/10 project/day
-      
-      STEP 3: Work done in 6 days:
-      Work done = 6 × 1/10 = 6/10 = 3/5 project
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 3/5 = 2/5 project
-      
-      STEP 5: A and B combined rate:
-      A+B rate = 1/24 + 1/30 = 5/120 + 4/120 = 9/120 = 3/40 project/day
-      
-      STEP 6: Time for A and B to finish:
-      Time = (2/5) ÷ (3/40) = (2/5) × (40/3) = 80/15 ≈ 5.33 days ≈ 6 days
-    `
+Combined rate = 1/3 pool/hour (from Q17).
+Full pool = 3 hours.
+Half pool = 1.5 hours.`
   },
+
+  // 27
   {
-    question: "Three workers can construct a road in 25, 30, and 50 days respectively. How long will they take working together?",
-    options: ["10 days", "11 days", "12 days", "13 days"],
-    answer: "11 days",
+    question: "Three workers (12,18,36 days) 2 floors. Time?",
+    options: ["6", "8", "10", "12"],
+    answer: "12",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/25 road/day
-      - Second worker: 1/30 road/day
-      - Third worker: 1/50 road/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/25 + 1/30 + 1/50 = 6/150 + 5/150 + 3/150 = 14/150 = 7/75 road/day
-      
-      STEP 3: Calculate time together:
-      Time = 1 road ÷ (7/75 road/day) = 75/7 ≈ 10.71 days ≈ 11 days
-    `
+Combined rate = 1/6 floor/day (from Q19).
+1 floor = 6 days.
+2 floors = 12 days.`
   },
+
+  // 28
   {
-    question: "A, B, and C can do a work in 28, 35, and 42 days respectively. They start together but after 7 days, B leaves. How many more days will A and C take?",
-    options: ["9 days", "10 days", "11 days", "12 days"],
-    answer: "10 days",
+    question: "Machines (5,10,20 days) 40% of job. Time?",
+    options: ["1", "1.1", "1.2", "1.3"],
+    answer: "1.1",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/28 work/day
-      - B's rate: 1/35 work/day
-      - C's rate: 1/42 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/28 + 1/35 + 1/42 = 15/420 + 12/420 + 10/420 = 37/420 work/day
-      
-      STEP 3: Work done in 7 days:
-      Work done = 7 × 37/420 = 259/420 = 37/60 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/60 = 23/60 work
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/28 + 1/42 = 3/84 + 2/84 = 5/84 work/day
-      
-      STEP 6: Time for A and C to finish:
-      Time = (23/60) ÷ (5/84) = (23/60) × (84/5) = 1932/300 = 6.44 days ≈ 7 days
-    `
+Combined rate = 7/20 job/day (from Q7).
+Time for 40% = 0.4 ÷ (7/20) = 0.4 × (20/7) = 8/7 ≈ 1.14 days ≈ 1.1 days.`
   },
+
+  // 29
   {
-    question: "Three machines can produce 1200 units in 3, 4, and 6 hours respectively. How long will they take to produce 2400 units working together?",
-    options: ["3.2 hours", "3.4 hours", "3.6 hours", "3.8 hours"],
-    answer: "3.6 hours",
+    question: "Cleaners (6,8,24 days) do 2/3 job. Time?",
+    options: ["1", "2", "3", "4"],
+    answer: "2",
     explanation: `
-      STEP 1: Find individual rates:
-      - First machine: 1200 units ÷ 3 hours = 400 units/hour
-      - Second machine: 1200 units ÷ 4 hours = 300 units/hour
-      - Third machine: 1200 units ÷ 6 hours = 200 units/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 400 + 300 + 200 = 900 units/hour
-      
-      STEP 3: Calculate time for 2400 units:
-      Time = 2400 units ÷ 900 units/hour = 2.67 hours ≈ 2.7 hours
-    `
+Combined rate = 1/3 job/day (from Q6).
+Time for 2/3 job = (2/3) ÷ (1/3) = 2 days.`
   },
+
+  // 30
   {
-    question: "A, B, and C can complete a task in 32, 40, and 48 hours respectively. They work together for 8 hours, then A leaves. How long will B and C take to finish?",
-    options: ["10 hours", "11 hours", "12 hours", "13 hours"],
-    answer: "11 hours",
+    question: "A,B,C produce 1000 items (8,12,24h). Time?",
+    options: ["3", "4", "5", "6"],
+    answer: "4",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/32 task/hour
-      - B's rate: 1/40 task/hour
-      - C's rate: 1/48 task/hour
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/32 + 1/40 + 1/48 = 15/480 + 12/480 + 10/480 = 37/480 task/hour
-      
-      STEP 3: Work done in 8 hours:
-      Work done = 8 × 37/480 = 296/480 = 37/60 task
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/60 = 23/60 task
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/40 + 1/48 = 12/480 + 10/480 = 22/480 = 11/240 task/hour
-      
-      STEP 6: Time for B and C to finish:
-      Time = (23/60) ÷ (11/240) = (23/60) × (240/11) = 5520/660 = 8.36 hours ≈ 9 hours
-    `
+Same as Q10: Combined rate = 1/4 job/hour.
+Time = 1 ÷ (1/4) = 4 hours.`
   },
+
+  // 31
   {
-    question: "Three workers can build a house in 45, 60, and 90 days respectively. How long will they take working together?",
-    options: ["18 days", "19 days", "20 days", "21 days"],
-    answer: "20 days",
+    question: "Machines (10,15,30h) produce 2k items. Time?",
+    options: ["8", "9", "10", "12"],
+    answer: "10",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/45 house/day
-      - Second worker: 1/60 house/day
-      - Third worker: 1/90 house/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/45 + 1/60 + 1/90 = 4/180 + 3/180 + 2/180 = 9/180 = 1/20 house/day
-      
-      STEP 3: Calculate time together:
-      Time = 1 house ÷ (1/20 house/day) = 20 days
-    `
+Combined rate = 1/5 job/hour (from Q4).
+1k items = 5 hours.
+2k items = 10 hours.`
   },
+
+  // 32
   {
-    question: "A, B, and C can do a work in 36, 48, and 54 days respectively. They start together but after 9 days, C leaves. How many more days will A and B take?",
-    options: ["12 days", "13 days", "14 days", "15 days"],
-    answer: "13 days",
+    question: "Printers (6,9,18h) 3 manuals. Time?",
+    options: ["6", "7", "8", "9"],
+    answer: "9",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/36 work/day
-      - B's rate: 1/48 work/day
-      - C's rate: 1/54 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/36 + 1/48 + 1/54 = 12/432 + 9/432 + 8/432 = 29/432 work/day
-      
-      STEP 3: Work done in 9 days:
-      Work done = 9 × 29/432 = 261/432 = 29/48 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 29/48 = 19/48 work
-      
-      STEP 5: A and B combined rate:
-      A+B rate = 1/36 + 1/48 = 4/144 + 3/144 = 7/144 work/day
-      
-      STEP 6: Time for A and B to finish:
-      Time = (19/48) ÷ (7/144) = (19/48) × (144/7) = 2736/336 = 8.14 days ≈ 9 days
-    `
+Combined rate = 1/3 manual/hour (from Q17).
+1 manual = 3 hours.
+3 manuals = 9 hours.`
   },
+
+  // 33
   {
-    question: "Three pipes can fill a tank in 10, 15, and 20 hours respectively. If all three are opened together, how long will it take to fill 3/4 of the tank?",
-    options: ["4.5 hours", "5.0 hours", "5.5 hours", "6.0 hours"],
-    answer: "5.0 hours",
+    question: "Taps (10,15,30h) 3 tanks. Time?",
+    options: ["12", "13", "14", "15"],
+    answer: "15",
     explanation: `
-      STEP 1: Find individual rates:
-      - First pipe: 1/10 tank/hour
-      - Second pipe: 1/15 tank/hour
-      - Third pipe: 1/20 tank/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/10 + 1/15 + 1/20 = 6/60 + 4/60 + 3/60 = 13/60 tank/hour
-      
-      STEP 3: Time for 3/4 tank:
-      Time = (3/4) ÷ (13/60) = (3/4) × (60/13) = 180/52 ≈ 3.46 hours ≈ 4 hours
-    `
+Combined rate = 1/5 tank/hour (from Q4).
+1 tank = 5 hours.
+3 tanks = 15 hours.`
   },
+
+  // 34
   {
-    question: "A, B, and C can complete a project in 42, 56, and 70 days respectively. They work together for 7 days, then B leaves. How long will A and C take to finish?",
-    options: ["14 days", "15 days", "16 days", "17 days"],
-    answer: "15 days",
+    question: "Students (12,18,36h) half survey. Time?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/42 project/day
-      - B's rate: 1/56 project/day
-      - C's rate: 1/70 project/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/42 + 1/56 + 1/70 = 20/840 + 15/840 + 12/840 = 47/840 project/day
-      
-      STEP 3: Work done in 7 days:
-      Work done = 7 × 47/840 = 329/840 = 47/120 project
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 47/120 = 73/120 project
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/42 + 1/70 = 5/210 + 3/210 = 8/210 = 4/105 project/day
-      
-      STEP 6: Time for A and C to finish:
-      Time = (73/120) ÷ (4/105) = (73/120) × (105/4) = 7665/480 ≈ 15.97 days ≈ 16 days
-    `
+Combined rate = 1/6 survey/hour (from Q19).
+Full survey = 6 hours.
+Half survey = 3 hours.`
   },
+
+  // 35
   {
-    question: "Three workers can paint a building in 50, 60, and 75 days respectively. How long will they take working together?",
-    options: ["18 days", "19 days", "20 days", "21 days"],
-    answer: "20 days",
+    question: "Juliet 7h, Romel 11h, Will 9h. Together?",
+    options: ["2.5", "2.7", "2.9", "3.2"],
+    answer: "2.9",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/50 building/day
-      - Second worker: 1/60 building/day
-      - Third worker: 1/75 building/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/50 + 1/60 + 1/75 = 6/300 + 5/300 + 4/300 = 15/300 = 1/20 building/day
-      
-      STEP 3: Calculate time together:
-      Time = 1 building ÷ (1/20 building/day) = 20 days
-    `
+1/7 + 1/11 + 1/9 = 0.1429 + 0.0909 + 0.1111 = 0.3449 job/hour.
+Time = 1 ÷ 0.3449 ≈ 2.9 hours.`
   },
+
+  // 36
   {
-    question: "A, B, and C can do a work in 44, 55, and 66 days respectively. They start together but after 8 days, A leaves. How many more days will B and C take?",
-    options: ["16 days", "17 days", "18 days", "19 days"],
-    answer: "17 days",
+    question: "A,B,C (6,9,18 days) two projects. Time?",
+    options: ["5", "6", "7", "8"],
+    answer: "6",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/44 work/day
-      - B's rate: 1/55 work/day
-      - C's rate: 1/66 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/44 + 1/55 + 1/66 = 15/660 + 12/660 + 10/660 = 37/660 work/day
-      
-      STEP 3: Work done in 8 days:
-      Work done = 8 × 37/660 = 296/660 = 74/165 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 74/165 = 91/165 work
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/55 + 1/66 = 6/330 + 5/330 = 11/330 = 1/30 work/day
-      
-      STEP 6: Time for B and C to finish:
-      Time = (91/165) ÷ (1/30) = (91/165) × 30 = 2730/165 = 16.55 days ≈ 17 days
-    `
+Combined rate = 1/3 project/day (from Q17).
+1 project = 3 days.
+2 projects = 6 days.`
   },
+
+  // 37
   {
-    question: "Three machines can produce 1500 units in 2, 3, and 5 hours respectively. How long will they take to produce 3000 units working together?",
-    options: ["2.5 hours", "2.7 hours", "2.9 hours", "3.1 hours"],
-    answer: "2.9 hours",
+    question: "Mechanics (12,18,36 days) 4 days. What fraction done?",
+    options: ["1/2", "2/3", "3/4", "5/6"],
+    answer: "2/3",
     explanation: `
-      STEP 1: Find individual rates:
-      - First machine: 1500 units ÷ 2 hours = 750 units/hour
-      - Second machine: 1500 units ÷ 3 hours = 500 units/hour
-      - Third machine: 1500 units ÷ 5 hours = 300 units/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 750 + 500 + 300 = 1550 units/hour
-      
-      STEP 3: Calculate time for 3000 units:
-      Time = 3000 units ÷ 1550 units/hour = 1.94 hours ≈ 2.0 hours
-    `
+Combined rate = 1/6 job/day (from Q19).
+4 days = 4 × 1/6 = 2/3 done.`
   },
+
+  // 38
   {
-    question: "A, B, and C can complete a task in 48, 60, and 72 hours respectively. They work together for 12 hours, then B leaves. How long will A and C take to finish?",
-    options: ["12 hours", "13 hours", "14 hours", "15 hours"],
-    answer: "13 hours",
+    question: "Painters (10,15,30 days) 4 days. What fraction finished?",
+    options: ["3/5", "2/5", "4/5", "1/2"],
+    answer: "4/5",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/48 task/hour
-      - B's rate: 1/60 task/hour
-      - C's rate: 1/72 task/hour
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/48 + 1/60 + 1/72 = 15/720 + 12/720 + 10/720 = 37/720 task/hour
-      
-      STEP 3: Work done in 12 hours:
-      Work done = 12 × 37/720 = 444/720 = 37/60 task
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/60 = 23/60 task
-      
-      STEP 5: A and C combined rate:
-      A+C rate = 1/48 + 1/72 = 3/144 + 2/144 = 5/144 task/hour
-      
-      STEP 6: Time for A and C to finish:
-      Time = (23/60) ÷ (5/144) = (23/60) × (144/5) = 3312/300 = 11.04 hours ≈ 12 hours
-    `
+Combined rate = 1/5 job/day (from Q4).
+4 days = 4 × 1/5 = 4/5 done.`
   },
+
+  // 39
   {
-    question: "Three workers can construct a bridge in 60, 75, and 100 days respectively. How long will they take working together?",
-    options: ["25 days", "26 days", "27 days", "28 days"],
-    answer: "27 days",
+    question: "Pipes (6,9,18h) fill 2 tanks. Time?",
+    options: ["4", "5", "6", "7"],
+    answer: "6",
     explanation: `
-      STEP 1: Find individual rates:
-      - First worker: 1/60 bridge/day
-      - Second worker: 1/75 bridge/day
-      - Third worker: 1/100 bridge/day
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/60 + 1/75 + 1/100 = 5/300 + 4/300 + 3/300 = 12/300 = 1/25 bridge/day
-      
-      STEP 3: Calculate time together:
-      Time = 1 bridge ÷ (1/25 bridge/day) = 25 days
-    `
+Combined rate = 1/3 tank/hour (from Q17).
+1 tank = 3 hours.
+2 tanks = 6 hours.`
   },
+
+  // 40
   {
-    question: "A, B, and C can do a work in 52, 65, and 78 days respectively. They start together but after 10 days, C leaves. How many more days will A and B take?",
-    options: ["18 days", "19 days", "20 days", "21 days"],
-    answer: "19 days",
+    question: "Workers (8,12,24 days) 3 days then fastest continues alone. Total?",
+    options: ["4", "5", "6", "7"],
+    answer: "5",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/52 work/day
-      - B's rate: 1/65 work/day
-      - C's rate: 1/78 work/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/52 + 1/65 + 1/78 = 15/780 + 12/780 + 10/780 = 37/780 work/day
-      
-      STEP 3: Work done in 10 days:
-      Work done = 10 × 37/780 = 370/780 = 37/78 work
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 37/78 = 41/78 work
-      
-      STEP 5: A and B combined rate:
-      A+B rate = 1/52 + 1/65 = 5/260 + 4/260 = 9/260 work/day
-      
-      STEP 6: Time for A and B to finish:
-      Time = (41/78) ÷ (9/260) = (41/78) × (260/9) = 10660/702 ≈ 15.18 days ≈ 16 days
-    `
+3 days = 3 × 1/4 = 3/4 done.
+Remaining: 1/4.
+Fastest (8 days) rate = 1/8 job/day.
+Time = (1/4) ÷ (1/8) = 2 days.
+Total = 3 + 2 = 5 days.`
   },
+
+  // 41
   {
-    question: "Three pipes can fill a tank in 8, 12, and 16 hours respectively. If all three are opened together, how long will it take to fill 7/8 of the tank?",
-    options: ["5 hours", "6 hours", "7 hours", "8 hours"],
-    answer: "6 hours",
+    question: "Three carpenters can finish 60 chairs in 10, 12, and 15 hours respectively. How long will they take to make 120 chairs together?",
+    options: ["6", "8", "10", "12"],
+    answer: "8",
     explanation: `
-      STEP 1: Find individual rates:
-      - First pipe: 1/8 tank/hour
-      - Second pipe: 1/12 tank/hour
-      - Third pipe: 1/16 tank/hour
-      
-      STEP 2: Combine their rates:
-      Combined rate = 1/8 + 1/12 + 1/16 = 6/48 + 4/48 + 3/48 = 13/48 tank/hour
-      
-      STEP 3: Time for 7/8 tank:
-      Time = (7/8) ÷ (13/48) = (7/8) × (48/13) = 336/104 ≈ 3.23 hours ≈ 4 hours
-    `
+Rates per hour:
+A = 60/10 = 6 chairs/hr
+B = 60/12 = 5 chairs/hr
+C = 60/15 = 4 chairs/hr
+Total = 15 chairs/hr.
+For 120 chairs: Time = 120 ÷ 15 = 8 hours.`
   },
+
+  // 42
   {
-    question: "A, B, and C can complete a project in 54, 72, and 90 days respectively. They work together for 9 days, then A leaves. How long will B and C take to finish?",
-    options: ["18 days", "19 days", "20 days", "21 days"],
-    answer: "19 days",
+    question: "A, B, and C can do a job in 18, 27, and 54 days. They all work 6 days then C leaves. How long for A and B to finish?",
+    options: ["3", "4", "5", "6"],
+    answer: "4",
     explanation: `
-      STEP 1: Find individual rates:
-      - A's rate: 1/54 project/day
-      - B's rate: 1/72 project/day
-      - C's rate: 1/90 project/day
-      
-      STEP 2: Combined rate of all three:
-      Combined rate = 1/54 + 1/72 + 1/90 = 20/1080 + 15/1080 + 12/1080 = 47/1080 project/day
-      
-      STEP 3: Work done in 9 days:
-      Work done = 9 × 47/1080 = 423/1080 = 47/120 project
-      
-      STEP 4: Remaining work:
-      Remaining = 1 - 47/120 = 73/120 project
-      
-      STEP 5: B and C combined rate:
-      B+C rate = 1/72 + 1/90 = 5/360 + 4/360 = 9/360 = 1/40 project/day
-      
-      STEP 6: Time for B and C to finish:
-      Time = (73/120) ÷ (1/40) = (73/120) × 40 = 2920/120 = 24.33 days ≈ 25 days
-    `
+1/18 + 1/27 + 1/54 = 6/54 = 1/9 job/day.
+In 6 days they finish 6/9 = 2/3 of the job.
+Remaining = 1/3.
+A + B = 1/18 + 1/27 = 5/54 job/day.
+Time = (1/3) ÷ (5/54) = 3.6 ≈ 4 days.`
   },
+
+  // 43
   {
-    question: "A, B, and C can complete a work in 14, 21, and 28 days respectively. They work together for 5 days, then B leaves. How long will A and C take to finish?",
-    options: ["4 days", "5 days", "6 days", "7 days"],
-    answer: "5 days",
+    question: "Three plumbers can fix a building's water system in 20, 24, and 40 days. How long together?",
+    options: ["8", "9", "10", "11"],
+    answer: "9",
     explanation: `
-      STEP 1: Individual rates:
-      - A: 1/14, B: 1/21, C: 1/28 work/day
-      
-      STEP 2: Combined rate of all three = 1/14 + 1/21 + 1/28 = 6/84 + 4/84 + 3/84 = 13/84 work/day
-      
-      STEP 3: Work done in 5 days = 5 × 13/84 = 65/84 work
-      
-      STEP 4: Remaining work = 1 - 65/84 = 19/84 work
-      
-      STEP 5: A and C combined rate = 1/14 + 1/28 = 2/28 + 1/28 = 3/28 work/day
-      
-      STEP 6: Time = (19/84) ÷ (3/28) = (19/84) × (28/3) = 532/252 ≈ 2.11 days ≈ 3 days
-    `
+1/20 + 1/24 + 1/40 = 14/120 = 7/60 job/day.
+Time = 60/7 = 8.57 ≈ 9 days.`
   },
+
+  // 44
   {
-    question: "Three workers can paint a house in 10, 12, and 15 days respectively. They work together for 3 days, then the fastest worker leaves. How long will the remaining two take to finish?",
-    options: ["3 days", "4 days", "5 days", "6 days"],
-    answer: "4 days",
+    question: "A, B, and C can fill a pool in 30, 45, and 60 minutes respectively. If all are opened, how long to fill it?",
+    options: ["12", "13", "14", "15"],
+    answer: "14",
     explanation: `
-      STEP 1: Individual rates:
-      - Fast: 1/10, Medium: 1/12, Slow: 1/15 work/day
-      
-      STEP 2: Combined rate of all three = 1/10 + 1/12 + 1/15 = 6/60 + 5/60 + 4/60 = 15/60 = 1/4 work/day
-      
-      STEP 3: Work done in 3 days = 3 × 1/4 = 3/4 work
-      
-      STEP 4: Remaining work = 1 - 3/4 = 1/4 work
-      
-      STEP 5: Medium and Slow combined rate = 1/12 + 1/15 = 5/60 + 4/60 = 9/60 = 3/20 work/day
-      
-      STEP 6: Time = (1/4) ÷ (3/20) = (1/4) × (20/3) = 20/12 ≈ 1.67 days ≈ 2 days
-    `
+1/30 + 1/45 + 1/60 = 13/180 pool/min.
+Time = 180/13 = 13.8 ≈ 14 minutes.`
   },
+
+  // 45
+  // 45
   {
-    question: "A, B, and C can do a work in 20, 25, and 30 days respectively. They start together but after 6 days, A leaves. How many more days will B and C take?",
-    options: ["7 days", "8 days", "9 days", "10 days"],
-    answer: "8 days",
+    question: "Three people can do a job in 10, 15, and 30 days. After 3 days C leaves. How long for A and B?",
+    options: ["2", "3", "4", "5"],
+    answer: "2",
     explanation: `
-      STEP 1: Individual rates:
-      - A: 1/20, B: 1/25, C: 1/30 work/day
-      
-      STEP 2: Combined rate of all three = 1/20 + 1/25 + 1/30 = 15/300 + 12/300 + 10/300 = 37/300 work/day
-      
-      STEP 3: Work done in 6 days = 6 × 37/300 = 222/300 = 37/50 work
-      
-      STEP 4: Remaining work = 1 - 37/50 = 13/50 work
-      
-      STEP 5: B and C combined rate = 1/25 + 1/30 = 6/150 + 5/150 = 11/150 work/day
-      
-      STEP 6: Time = (13/50) ÷ (11/150) = (13/50) × (150/11) = 1950/550 ≈ 3.55 days ≈ 4 days
-    `
+STEP 1: Find the combined daily rate of A, B, and C.
+- A: 1/10 job/day
+- B: 1/15 job/day
+- C: 1/30 job/day
+
+STEP 2: Add their rates:
+1/10 + 1/15 + 1/30
+= 3/30 + 2/30 + 1/30
+= 6/30
+= 1/5 job per day
+
+STEP 3: Work done in the first 3 days (all three working):
+Work done = 3 × (1/5) = 3/5 of the job
+
+STEP 4: Remaining work:
+Total - done = 1 - 3/5 = 2/5 of the job
+
+STEP 5: Rate of A and B together (after C leaves):
+A + B = 1/10 + 1/15
+= 3/30 + 2/30
+= 5/30
+= 1/6 job per day
+
+STEP 6: Time for A and B to finish the remaining 2/5:
+Time = (2/5) ÷ (1/6)
+= (2/5) × (6/1)
+= 12/5
+= 2.4 days
+
+So it will take about 2.4 days. The closest whole number in the choices is 2 days.`
   },
+
+
+  // 46
   {
-    question: "Three machines can produce 800 units in 6, 8, and 10 hours respectively. How long will they take to produce 1600 units working together?",
-    options: ["4.8 hours", "5.0 hours", "5.2 hours", "5.4 hours"],
-    answer: "5.0 hours",
+    question: "A, B, and C can finish a job in 12, 15, and 20 hours respectively. How long together?",
+    options: ["4", "5", "6", "7"],
+    answer: "5",
     explanation: `
-      STEP 1: Individual rates:
-      - Machine A: 800/6 ≈ 133.33 units/hour
-      - Machine B: 800/8 = 100 units/hour
-      - Machine C: 800/10 = 80 units/hour
-      
-      STEP 2: Combined rate = 133.33 + 100 + 80 = 313.33 units/hour
-      
-      STEP 3: Time for 1600 units = 1600 ÷ 313.33 ≈ 5.11 hours ≈ 5.1 hours
-    `
+1/12 + 1/15 + 1/20 = 12/60 = 1/5 job/hr.
+Time = 1 ÷ (1/5) = 5 hours.`
   },
+
+  // 47
   {
-    question: "A, B, and C can complete a project in 24, 30, and 36 days respectively. They work together for 8 days, then C leaves. How long will A and B take to finish?",
-    options: ["6 days", "7 days", "8 days", "9 days"],
-    answer: "7 days",
+    question: "Three workers can complete a project in 25, 30, and 75 days. How long together?",
+    options: ["10", "11", "12", "13"],
+    answer: "12",
     explanation: `
-      STEP 1: Individual rates:
-      - A: 1/24, B: 1/30, C: 1/36 project/day
-      
-      STEP 2: Combined rate of all three = 1/24 + 1/30 + 1/36 = 15/360 + 12/360 + 10/360 = 37/360 project/day
-      
-      STEP 3: Work done in 8 days = 8 × 37/360 = 296/360 = 37/45 project
-      
-      STEP 4: Remaining work = 1 - 37/45 = 8/45 project
-      
-      STEP 5: A and B combined rate = 1/24 + 1/30 = 5/120 + 4/120 = 9/120 = 3/40 project/day
-      
-      STEP 6: Time = (8/45) ÷ (3/40) = (8/45) × (40/3) = 320/135 ≈ 2.37 days ≈ 3 days
-    `
+1/25 + 1/30 + 1/75 = 13/150 job/day.
+Time = 150/13 = 11.5 ≈ 12 days.`
+  },
+
+  // 48
+  {
+    question: "A, B, and C can dig a trench in 15, 20, and 25 hours. They work 4 hours then A leaves. How long for B and C?",
+    options: ["4", "5", "6", "7"],
+    answer: "4",
+    explanation: `
+1/15 + 1/20 + 1/25 = 47/300 trench/hr.
+4 h → 4 × 47/300 = 188/300 = 47/75 done.
+Remaining = 28/75.
+B + C = 1/20 + 1/25 = 9/100 trench/hr.
+Time = (28/75) ÷ (9/100) = 4.15 ≈ 4 hours.`
+  },
+
+  // 49
+  // 49
+  {
+    question: "Three engineers can design a plan in 9, 12, and 15 days. If they work together for 3 days, what fraction of the work remains?",
+    options: ["13/60", "1/4", "1/3", "1/5"],
+    answer: "13/60",
+    explanation: `
+STEP 1: Find each engineer's daily work rate.
+- Engineer A: 1/9 of the job per day
+- Engineer B: 1/12 of the job per day
+- Engineer C: 1/15 of the job per day
+
+STEP 2: Add their rates to get the combined rate:
+1/9 + 1/12 + 1/15
+
+Find a common denominator (LCM of 9, 12, 15 = 180):
+
+1/9  = 20/180
+1/12 = 15/180
+1/15 = 12/180
+
+So combined rate = 20/180 + 15/180 + 12/180
+= 47/180 of the job per day
+
+STEP 3: Work done in 3 days:
+Work done = 3 × (47/180)
+= 141/180
+Simplify: divide top and bottom by 3 → 47/60
+
+So after 3 days, they have finished 47/60 of the job.
+
+STEP 4: Find the remaining fraction:
+Remaining = 1 - 47/60
+= 60/60 - 47/60
+= 13/60
+
+So, 13/60 of the work is still not finished.`
+  },
+
+
+  // 50
+  {
+    question: "A, B, and C can complete a task in 10, 12, and 15 hours respectively. After working 2 hours, C leaves. How long for A and B to finish?",
+    options: ["3", "4", "5", "6"],
+    answer: "3",
+    explanation: `
+1/10 + 1/12 + 1/15 = 1/4 job/hr.
+2 h → 2 × 1/4 = 1/2 done.
+A + B = 1/10 + 1/12 = 11/60 job/hr.
+Time = (1/2) ÷ (11/60) = 2.73 ≈ 3 hours.`
   }
 ],
 
