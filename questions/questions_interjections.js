@@ -241,7 +241,18 @@ window.VERBAL_QUESTION_BANK["interjections"] = {
     { question: "Which sound represents a clock?", options: ["Tick-tock", "Ding-dong", "Beep", "Honk"], answer: "Tick-tock", explanation: "'Tick-tock' mimics the rhythmic mechanical sound of a clock." },
 
     // 31-40: Linguistic Categories (Super Technical)
-    { question: "Interjections are part of which word class category?", options: ["Open Class", "Closed Class", "Verbs", "Pronouns"], answer: "Open Class", explanation: "They are 'Open Class' because we can easily invent new interjections (like 'D'oh!' or 'Meh') compared to pronouns which rarely change." },
+    {
+  question: "Which statement about interjections is TRUE?",
+  options: [
+    "New interjections can easily enter the language",
+    "They always agree with the subject in number and person",
+    "They must show tense like regular verbs",
+    "They have to follow normal word order in the sentence"
+  ],
+  answer: "New interjections can easily enter the language",
+  explanation: "Languages constantly create new interjections (for example 'D'oh!', 'Meh', 'Yo'), even though interjections are a small special word class."
+},
+
     { question: "An interjection that mimics a sound is called:", options: ["Onomatopoeic", "Alphabetic", "Numeric", "Symbiotic"], answer: "Onomatopoeic", explanation: "Onomatopoeic words (like 'Bang' or 'Meow') are words that sound like what they describe." },
     { question: "Primary Interjections are words that:", options: ["Are only used as interjections (e.g., Ouch)", "Are nouns used as interjections", "Are verbs", "Are adjectives"], answer: "Are only used as interjections (e.g., Ouch)", explanation: "Primary interjections (like 'Ouch', 'Phew', 'Oops') have no other meaning. Secondary interjections (like 'Good heavens') come from other words." },
     { question: "Secondary Interjections are:", options: ["Words from other classes used as interjections (e.g., 'Help!')", "Sounds like 'Ouch'", "Numbers", "Letters"], answer: "Words from other classes used as interjections (e.g., 'Help!')", explanation: "These are Nouns, Verbs, or Adjectives (e.g., 'Great!', 'Help!', 'Fire!') that function as exclamations." },
