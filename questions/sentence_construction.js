@@ -941,315 +941,1124 @@ window.VERBAL_QUESTION_BANK["sentence_construction"] = {
     }
   ],
 
+    expert: [
+    // 151-160: Sentence Improvement – Choose the best version
+    {
+      question: "Which sentence is the best and most correct?",
+      options: [
+        "Because of the heavy rain, so the game was cancelled.",
+        "Because it was heavy raining, the game was cancelled.",
+        "Because of the heavy rain, the game was cancelled.",
+        "Because the heavy rain, the game was cancelled."
+      ],
+      answer: "Because of the heavy rain, the game was cancelled.",
+      explanation: "Use 'Because of' + noun phrase (the heavy rain). Do not add 'so' in the result clause and avoid 'heavy raining'."
+    },
+    {
+      question: "Choose the sentence with correct structure.",
+      options: [
+        "He not only passed the exam but also he got a medal.",
+        "He not only passed the exam but also got a medal.",
+        "He not only passed the exam but got also a medal.",
+        "He passed not only the exam but also he got a medal."
+      ],
+      answer: "He not only passed the exam but also got a medal.",
+      explanation: "In 'not only... but also' structures, keep the verb pattern parallel: 'passed' and 'got'. Do not repeat 'he' after 'but also'."
+    },
+    {
+      question: "Which sentence has correct subject-verb agreement?",
+      options: [
+        "The list of names are on the table.",
+        "The list of names is on the table.",
+        "The lists of names is on the table.",
+        "The list of names are in the table."
+      ],
+      answer: "The list of names is on the table.",
+      explanation: "The true subject is 'list', which is singular, so we use the singular verb 'is'."
+    },
+    {
+      question: "Combine the ideas correctly: She studied hard. She failed the test.",
+      options: [
+        "She studied hard, so she failed the test.",
+        "She studied hard, yet she failed the test.",
+        "She studied hard, because she failed the test.",
+        "She studied hard, for she failed the test."
+      ],
+      answer: "She studied hard, yet she failed the test.",
+      explanation: "'Yet' shows contrast: it is surprising that she failed even though she studied hard."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "All of the boys must bring his own lunch.",
+        "All of the boys must bring their own lunch.",
+        "All of the boys must brings their own lunch.",
+        "All of the boys must brought their own lunch."
+      ],
+      answer: "All of the boys must bring their own lunch.",
+      explanation: "The subject 'boys' is plural, so we use the plural pronoun 'their' and the base form 'bring' after 'must'."
+    },
+    {
+      question: "Choose the sentence without a double negative.",
+      options: [
+        "I don't need no help.",
+        "I don't need any help.",
+        "I don't need no any help.",
+        "I no need any help."
+      ],
+      answer: "I don't need any help.",
+      explanation: "In standard English, avoid double negatives. Use 'don't' with 'any', not with 'no'."
+    },
+    {
+      question: "Complete the sentence correctly: 'By the time we arrived, the show ____.'",
+      options: [
+        "finished",
+        "had finished",
+        "has finished",
+        "was finish"
+      ],
+      answer: "had finished",
+      explanation: "Use the past perfect 'had finished' to show an action completed before another past action."
+    },
+    {
+      question: "Which sentence shows good parallel structure?",
+      options: [
+        "The job requires attention to detail, patience, and working fast.",
+        "The job requires to pay attention to detail, patience, and working fast.",
+        "The job requires attention to detail, patience, and the ability to work fast.",
+        "The job requires attention to detail, to be patient, and working fast."
+      ],
+      answer: "The job requires attention to detail, patience, and the ability to work fast.",
+      explanation: "All items in the list should be noun phrases: 'attention', 'patience', 'the ability'. This keeps the structure parallel."
+    },
+    {
+      question: "Choose the correct conditional sentence.",
+      options: [
+        "If I will have enough money, I would buy that laptop.",
+        "If I have enough money, I would buy that laptop.",
+        "If I had enough money, I would buy that laptop.",
+        "If I would have enough money, I buy that laptop."
+      ],
+      answer: "If I had enough money, I would buy that laptop.",
+      explanation: "Second conditional for unreal present situations: 'If' + past simple, 'would' + base verb."
+    },
+    {
+      question: "Which sentence uses the tenses correctly?",
+      options: [
+        "When I was a child, I use to walk to school.",
+        "When I was a child, I used to walk to school.",
+        "When I was a child, I was used to walk to school.",
+        "When I was a child, I am used to walk to school."
+      ],
+      answer: "When I was a child, I used to walk to school.",
+      explanation: "'Used to' + base verb shows a past habit that no longer happens."
+    },
+
+    // 161-170: Common error recognition (choose the correct sentence)
+    {
+      question: "Which sentence has no error?",
+      options: [
+        "She is married with a doctor.",
+        "She is married to a doctor.",
+        "She is marry to a doctor.",
+        "She is marrying with a doctor."
+      ],
+      answer: "She is married to a doctor.",
+      explanation: "We say 'married to someone', not 'married with someone'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I look forward to meet you.",
+        "I am looking forward to meet you.",
+        "I look forward to meeting you.",
+        "I am looking forward meeting you."
+      ],
+      answer: "I look forward to meeting you.",
+      explanation: "After 'look forward to', use a gerund: 'to meeting', not the base form."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "He insisted to pay the bill.",
+        "He insisted on paying the bill.",
+        "He insisted for paying the bill.",
+        "He insisted that to pay the bill."
+      ],
+      answer: "He insisted on paying the bill.",
+      explanation: "'Insist on' is followed by a gerund: 'insisted on paying'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She said me the answer.",
+        "She told to me the answer.",
+        "She told me the answer.",
+        "She said me the answer to."
+      ],
+      answer: "She told me the answer.",
+      explanation: "Use 'tell someone something' or 'say something to someone'. 'Told me the answer' is correct."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I prefer coffee than tea.",
+        "I prefer coffee to tea.",
+        "I prefer coffee over than tea.",
+        "I prefer coffee instead tea."
+      ],
+      answer: "I prefer coffee to tea.",
+      explanation: "After 'prefer', use 'to': 'prefer A to B'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Despite of the rain, we went out.",
+        "In spite the rain, we went out.",
+        "Despite the rain, we went out.",
+        "Despite the rain, but we went out."
+      ],
+      answer: "Despite the rain, we went out.",
+      explanation: "Use 'Despite' + noun ('the rain') without 'of'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She is good in math.",
+        "She is good on math.",
+        "She is good at math.",
+        "She is good with math at."
+      ],
+      answer: "She is good at math.",
+      explanation: "The correct preposition is 'good at' for abilities."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We discussed about the problem.",
+        "We discussed the problem.",
+        "We discussed on the problem.",
+        "We discussed for the problem."
+      ],
+      answer: "We discussed the problem.",
+      explanation: "'Discuss' is a transitive verb; do not use 'about' after it."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "He is used to get up early.",
+        "He used to getting up early.",
+        "He is used to getting up early.",
+        "He used to getting up early now."
+      ],
+      answer: "He is used to getting up early.",
+      explanation: "'Be used to' is followed by a noun or gerund: 'used to getting up early'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "He denied to steal the money.",
+        "He denied stealing the money.",
+        "He denied for stealing the money.",
+        "He denied that to steal the money."
+      ],
+      answer: "He denied stealing the money.",
+      explanation: "After 'deny', use a gerund: 'denied stealing'."
+    },
+
+    // 171-180: Combining and transforming sentences
+    {
+      question: "Join the ideas correctly: It was raining. We went to the park.",
+      options: [
+        "Although it was raining, we went to the park.",
+        "Because it was raining, we went to the park.",
+        "It was raining so we went to the park.",
+        "It was raining and we went not to the park."
+      ],
+      answer: "Although it was raining, we went to the park.",
+      explanation: "'Although' shows contrast: we still went to the park even though it was raining."
+    },
+    {
+      question: "Join the ideas using 'in order to': She studied hard. She wanted to pass the exam.",
+      options: [
+        "She studied hard in order to pass the exam.",
+        "She studied hard in order pass the exam.",
+        "She studied hard in order that pass the exam.",
+        "She studied hard in order passing the exam."
+      ],
+      answer: "She studied hard in order to pass the exam.",
+      explanation: "Use 'in order to' + base verb to show purpose."
+    },
+    {
+      question: "Combine correctly using 'because': We stayed at home. It was raining.",
+      options: [
+        "We stayed at home because it was raining.",
+        "Because was raining, we stayed at home.",
+        "We stayed at home because was raining.",
+        "Because it was raining so we stayed at home."
+      ],
+      answer: "We stayed at home because it was raining.",
+      explanation: "Keep a full clause after 'because': 'because it was raining'. Do not add 'so' in the second clause."
+    },
+    {
+      question: "Join the ideas correctly: He left early. He wanted to catch the bus.",
+      options: [
+        "He left early so that he could catch the bus.",
+        "He left early so he can catch the bus.",
+        "He left early in order that he catch the bus.",
+        "He left early and he catch the bus."
+      ],
+      answer: "He left early so that he could catch the bus.",
+      explanation: "'So that' + 'could' shows purpose in the past."
+    },
+    {
+      question: "Combine using a relative clause: The man lives next door. He is a doctor.",
+      options: [
+        "The man who lives next door is a doctor.",
+        "The man which lives next door is a doctor.",
+        "The man where lives next door is a doctor.",
+        "The man lives next door who is a doctor."
+      ],
+      answer: "The man who lives next door is a doctor.",
+      explanation: "Use 'who' for people and place the clause directly after the noun it describes."
+    },
+    {
+      question: "Combine using a relative clause: I bought a watch. It was very expensive.",
+      options: [
+        "I bought a watch who was very expensive.",
+        "I bought a watch which was very expensive.",
+        "I bought a watch where was very expensive.",
+        "I bought a watch it was very expensive."
+      ],
+      answer: "I bought a watch which was very expensive.",
+      explanation: "Use 'which' or 'that' for things; 'which was very expensive' describes the watch."
+    },
+    {
+      question: "Join the ideas using 'while': I was cooking. My brother was washing the dishes.",
+      options: [
+        "While I was cooking, my brother was washing the dishes.",
+        "While I was cooking, my brother washing the dishes.",
+        "While cooking, my brother was washing the dishes.",
+        "While my brother was washing the dishes, I cooking."
+      ],
+      answer: "While I was cooking, my brother was washing the dishes.",
+      explanation: "Use 'while' + past continuous for two actions happening at the same time."
+    },
+    {
+      question: "Change to passive voice: 'They built the bridge in 2010.'",
+      options: [
+        "The bridge is built in 2010.",
+        "The bridge was built in 2010.",
+        "The bridge has built in 2010.",
+        "The bridge was build in 2010."
+      ],
+      answer: "The bridge was built in 2010.",
+      explanation: "Past simple active becomes past simple passive: 'was built'."
+    },
+    {
+      question: "Change to active voice: 'The letter was sent by Maria.'",
+      options: [
+        "Maria sends the letter.",
+        "Maria is sending the letter.",
+        "Maria sent the letter.",
+        "Maria has sent the letter."
+      ],
+      answer: "Maria sent the letter.",
+      explanation: "Past simple passive ('was sent') becomes past simple active ('sent')."
+    },
+    {
+      question: "Choose the correct first conditional sentence.",
+      options: [
+        "If you will work hard, you will succeed.",
+        "If you work hard, you will succeed.",
+        "If you worked hard, you will succeed.",
+        "If you work hard, you would succeed."
+      ],
+      answer: "If you work hard, you will succeed.",
+      explanation: "First conditional: 'If' + present simple, 'will' + base verb."
+    },
+
+    // 181-190: Pronoun reference, agreement, and clarity
+    {
+      question: "Which sentence is clearest?",
+      options: [
+        "When Anna met Lisa, she smiled.",
+        "When she met Lisa, Anna smiled.",
+        "When Anna met Lisa, Anna smiled politely.",
+        "When Anna met her, she smiled."
+      ],
+      answer: "When Anna met Lisa, Anna smiled politely.",
+      explanation: "Repeating 'Anna' removes pronoun ambiguity and makes the sentence clear."
+    },
+    {
+      question: "Which sentence uses the reflexive pronoun correctly?",
+      options: [
+        "He hurt itself while playing basketball.",
+        "He hurt himself while playing basketball.",
+        "He hurt hisself while playing basketball.",
+        "He hurt him while playing basketball."
+      ],
+      answer: "He hurt himself while playing basketball.",
+      explanation: "Use 'himself' as the reflexive form of 'he'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "The teacher which taught us English has retired.",
+        "The teacher who taught us English has retired.",
+        "The teacher whom taught us English has retired.",
+        "The teacher whose taught us English has retired."
+      ],
+      answer: "The teacher who taught us English has retired.",
+      explanation: "Use 'who' as the subject pronoun referring to a person."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Between you and I, this is a secret.",
+        "Between you and me, this is a secret.",
+        "Between I and you, this is a secret.",
+        "Between me and you, this is a secret are."
+      ],
+      answer: "Between you and me, this is a secret.",
+      explanation: "After a preposition like 'between', use object pronouns: 'you and me'."
+    },
+    {
+      question: "Which sentence keeps the same point of view?",
+      options: [
+        "If one wants to succeed, you must work hard.",
+        "If you want to succeed, one must work hard.",
+        "If you want to succeed, you must work hard.",
+        "If one wants to succeed, you must working hard."
+      ],
+      answer: "If you want to succeed, you must work hard.",
+      explanation: "Do not mix 'one' and 'you' in the same sentence; keep the pronoun consistent."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "This is the book who I told you about.",
+        "This is the book which I told you about.",
+        "This is the book that I told you about.",
+        "This is the book where I told you about."
+      ],
+      answer: "This is the book that I told you about.",
+      explanation: "Use 'that' or 'which' for things. In exams, 'that' is commonly used in defining relative clauses."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Please give this form to whoever is in charge.",
+        "Please give this form to whomever is in charge.",
+        "Please give this form to who is in charge.",
+        "Please give this form to whom is in charge."
+      ],
+      answer: "Please give this form to whoever is in charge.",
+      explanation: "'Whoever' is the subject of 'is in charge', so the subject form is correct."
+    },
+    {
+      question: "Which sentence has correct subject-verb agreement?",
+      options: [
+        "None of the chairs are broken.",
+        "None of the chairs is broken.",
+        "None of the chair are broken.",
+        "None of the chair is broken."
+      ],
+      answer: "None of the chairs is broken.",
+      explanation: "In formal exams, 'none' is often treated as singular: 'none is'. The noun after 'of' is plural: 'chairs'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Either of these roads lead to town.",
+        "Either of these roads leads to town.",
+        "Either of these road leads to town.",
+        "Either of these road lead to town."
+      ],
+      answer: "Either of these roads leads to town.",
+      explanation: "'Either' is singular, so use the singular verb 'leads'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Everyone in the class were given a copy.",
+        "Everyone in the class was given a copy.",
+        "Everyone in the class are given a copy.",
+        "Everyone in the class have given a copy."
+      ],
+      answer: "Everyone in the class was given a copy.",
+      explanation: "'Everyone' is singular, so we use the singular verb 'was'."
+    },
+
+    // 191-200: Mixed grammar (tenses, prepositions, connectors)
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "By next year, she will work here for ten years.",
+        "By next year, she will have worked here for ten years.",
+        "By next year, she has worked here for ten years.",
+        "By next year, she is working here for ten years."
+      ],
+      answer: "By next year, she will have worked here for ten years.",
+      explanation: "Use future perfect ('will have worked') to show an action that will be completed by a future time."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I live in this town since 2010.",
+        "I am living in this town since 2010.",
+        "I have lived in this town since 2010.",
+        "I have been live in this town since 2010."
+      ],
+      answer: "I have lived in this town since 2010.",
+      explanation: "Use present perfect with 'since' to show an action that started in the past and continues to the present."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We have been waiting since an hour.",
+        "We were waiting for an hour now.",
+        "We have waited since one hour.",
+        "We have been waiting for an hour."
+      ],
+      answer: "We have been waiting for an hour.",
+      explanation: "Use 'for' with a period of time. Present perfect continuous shows that the action started in the past and is still happening."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She just has finished her homework.",
+        "She has just finished her homework.",
+        "She has finished just her homework.",
+        "She has finished her homework just."
+      ],
+      answer: "She has just finished her homework.",
+      explanation: "In present perfect, place 'just' between 'has' and the past participle."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We are interested on buying a house.",
+        "We are interested to buy a house.",
+        "We are interested in buying a house.",
+        "We are interested for buying a house."
+      ],
+      answer: "We are interested in buying a house.",
+      explanation: "The correct pattern is 'interested in' + gerund."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "He is responsible of organizing the meeting.",
+        "He is responsible for organizing the meeting.",
+        "He is responsible to organizing the meeting.",
+        "He is responsible on organizing the meeting."
+      ],
+      answer: "He is responsible for organizing the meeting.",
+      explanation: "Use 'responsible for' + gerund or noun."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She arrived to the airport on time.",
+        "She arrived at the airport on time.",
+        "She arrived in the airport on time.",
+        "She arrived on the airport at time."
+      ],
+      answer: "She arrived at the airport on time.",
+      explanation: "Use 'arrive at' for small places like stations or airports, and 'on time' for punctuality."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We will go to the beach if it will not rain.",
+        "We will go to the beach if it does not rain.",
+        "We go to the beach if it will not rain.",
+        "We go to the beach if it does not raining."
+      ],
+      answer: "We will go to the beach if it does not rain.",
+      explanation: "In first conditional, use present simple ('does not rain') in the 'if' clause and 'will' in the main clause."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I would have called you if I would know your number.",
+        "I would call you if I had known your number.",
+        "I would have called you if I had known your number.",
+        "I will have called you if I had known your number."
+      ],
+      answer: "I would have called you if I had known your number.",
+      explanation: "Third conditional: 'would have' + past participle with 'if' + past perfect."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "As soon we reached the station, the train left.",
+        "As soon as we reached the station, the train left.",
+        "As soon as we reach the station, the train left.",
+        "As soon as we reached the station, the train had left."
+      ],
+      answer: "As soon as we reached the station, the train left.",
+      explanation: "Use 'as soon as' + past simple for two quick past actions happening one after the other."
   expert: [
-    // 151-160: Cleft Sentences (Emphasis)
+    // 151-160: Sentence Improvement – Choose the best version
     {
-      question: "Rewrite for emphasis: 'John stole the cake.'",
-      options: ["It was John who stole the cake.", "John was the one stealing cake.", "The cake was stolen by John.", "John stole it, the cake."],
-      answer: "It was John who stole the cake.",
-      explanation: "Rule: It-Cleft. Structure 'It was X who...' is used to emphasize the agent (John)."
+      question: "Which sentence is the best and most correct?",
+      options: [
+        "Because of the heavy rain, so the game was cancelled.",
+        "Because it was heavy raining, the game was cancelled.",
+        "Because of the heavy rain, the game was cancelled.",
+        "Because the heavy rain, the game was cancelled."
+      ],
+      answer: "Because of the heavy rain, the game was cancelled.",
+      explanation: "Use 'Because of' + noun phrase (the heavy rain). Do not add 'so' in the result clause and avoid 'heavy raining'."
     },
     {
-      question: "Rewrite: 'I want money.'",
-      options: ["What I want is money.", "Money is what I want.", "It is money that I want.", "All of the above"],
-      answer: "All of the above",
-      explanation: "Rule: Cleft Variety. All options are valid cleft sentences (Wh-cleft and It-cleft) that emphasize the object 'money'."
+      question: "Choose the sentence with correct structure.",
+      options: [
+        "He not only passed the exam but also he got a medal.",
+        "He not only passed the exam but also got a medal.",
+        "He not only passed the exam but got also a medal.",
+        "He passed not only the exam but also he got a medal."
+      ],
+      answer: "He not only passed the exam but also got a medal.",
+      explanation: "In 'not only... but also' structures, keep the verb pattern parallel: 'passed' and 'got'. Do not repeat 'he' after 'but also'."
     },
     {
-      question: "Which is a correct Wh-cleft?",
-      options: ["What I need is a break.", "A break is what I need.", "What is a break I need.", "I need a break is what."],
-      answer: "What I need is a break.",
-      explanation: "Rule: Wh-Cleft. Structure: Wh-Clause (What I need) + Be (is) + Complement (a break)."
+      question: "Which sentence has correct subject-verb agreement?",
+      options: [
+        "The list of names are on the table.",
+        "The list of names is on the table.",
+        "The lists of names is on the table.",
+        "The list of names are in the table."
+      ],
+      answer: "The list of names is on the table.",
+      explanation: "The true subject is 'list', which is singular, so we use the singular verb 'is'."
     },
     {
-      question: "Complete: 'It was in 1999 ____ we met.'",
-      options: ["when", "that", "where", "which"],
-      answer: "that",
-      explanation: "Rule: It-Cleft connectors. When emphasizing time phrases in It-Clefts, 'that' is the standard connector."
+      question: "Combine the ideas correctly: She studied hard. She failed the test.",
+      options: [
+        "She studied hard, so she failed the test.",
+        "She studied hard, yet she failed the test.",
+        "She studied hard, because she failed the test.",
+        "She studied hard, for she failed the test."
+      ],
+      answer: "She studied hard, yet she failed the test.",
+      explanation: "'Yet' shows contrast: it is surprising that she failed even though she studied hard."
     },
     {
-      question: "Emphasis on action: 'He screamed.' → 'What he did ____.'",
-      options: ["is scream", "was scream", "was screamed", "was to scream"],
-      answer: "was to scream",
-      explanation: "Rule: Pseudo-cleft. The usual pattern is 'What he did was to scream.' (The version 'What he did was scream.' also exists in modern English, but 'was to scream' is the safest choice for exams.)"
+      question: "Which sentence is correct?",
+      options: [
+        "All of the boys must bring his own lunch.",
+        "All of the boys must bring their own lunch.",
+        "All of the boys must brings their own lunch.",
+        "All of the boys must brought their own lunch."
+      ],
+      answer: "All of the boys must bring their own lunch.",
+      explanation: "The subject 'boys' is plural, so we use the plural pronoun 'their' and the base form 'bring' after 'must'."
     },
     {
-      question: "Choose the correct emphasis: 'I did lock the door.'",
-      options: ["I locked the door.", "I did lock the door.", "Locked the door I did.", "It was locked by me."],
-      answer: "I did lock the door.",
-      explanation: "Rule: Emphatic Do. Using the auxiliary 'did' in a positive sentence adds strong emphasis."
+      question: "Choose the sentence without a double negative.",
+      options: [
+        "I don't need no help.",
+        "I don't need any help.",
+        "I don't need no any help.",
+        "I no need any help."
+      ],
+      answer: "I don't need any help.",
+      explanation: "In standard English, avoid double negatives. Use 'don't' with 'any', not with 'no'."
     },
     {
-      question: "Rewrite: 'The rain caused the flood.'",
-      options: ["It was the rain that caused the flood.", "The rain it was that caused the flood.", "What caused the flood the rain.", "The flood caused by rain."],
-      answer: "It was the rain that caused the flood.",
-      explanation: "Rule: It-Cleft. Emphasizes the subject 'the rain'."
+      question: "Complete the sentence correctly: 'By the time we arrived, the show ____.'",
+      options: [
+        "finished",
+        "had finished",
+        "has finished",
+        "was finish"
+      ],
+      answer: "had finished",
+      explanation: "Use the past perfect 'had finished' to show an action completed before another past action."
     },
     {
-      question: "Which sentence emphasizes the place?",
-      options: ["It was in London that we met.", "We met in London.", "London was where we met.", "Both A and C"],
-      answer: "Both A and C",
-      explanation: "Rule: Place Emphasis. Both It-Cleft (A) and Wh-Cleft (C) focus on the location."
+      question: "Which sentence shows good parallel structure?",
+      options: [
+        "The job requires attention to detail, patience, and working fast.",
+        "The job requires to pay attention to detail, patience, and working fast.",
+        "The job requires attention to detail, patience, and the ability to work fast.",
+        "The job requires attention to detail, to be patient, and working fast."
+      ],
+      answer: "The job requires attention to detail, patience, and the ability to work fast.",
+      explanation: "All items in the list should be noun phrases: 'attention', 'patience', 'the ability'. This keeps the structure parallel."
     },
     {
-      question: "Complete: 'All I want ____ a little respect.'",
-      options: ["is", "are", "were", "am"],
-      answer: "is",
-      explanation: "Rule: Cleft Agreement. 'All' (meaning 'The only thing') acts as a singular subject, taking 'is'."
+      question: "Choose the correct conditional sentence.",
+      options: [
+        "If I will have enough money, I would buy that laptop.",
+        "If I have enough money, I would buy that laptop.",
+        "If I had enough money, I would buy that laptop.",
+        "If I would have enough money, I buy that laptop."
+      ],
+      answer: "If I had enough money, I would buy that laptop.",
+      explanation: "Second conditional for unreal present situations: 'If' + past simple, 'would' + base verb."
     },
     {
-      question: "Emphasis: 'He arrived at 6.' -> 'It wasn't until 6 ____.'",
-      options: ["when he arrived", "that he arrived", "did he arrive", "he arrived"],
-      answer: "that he arrived",
-      explanation: "Rule: Negative Cleft. Structure: It wasn't until + Time + that + Clause."
-    },
-
-    // 161-170: Subjunctive Mood
-    {
-      question: "Correct: 'I suggest that he ____ a doctor.'",
-      options: ["sees", "see", "saw", "is seeing"],
-      answer: "see",
-      explanation: "Rule: Mandative Subjunctive. After verbs of suggestion/demand, use the Base Form (see) for all persons."
-    },
-    {
-      question: "Correct: 'It is essential that she ____ on time.'",
-      options: ["be", "is", "was", "are"],
-      answer: "be",
-      explanation: "Rule: Subjunctive Adjectives. After 'essential/vital/important', use the Base Form 'be'."
-    },
-    {
-      question: "Correct: 'God ____ the Queen.'",
-      options: ["saves", "save", "saved", "saving"],
-      answer: "save",
-      explanation: "Rule: Formulaic Subjunctive. In traditional phrases expressing a wish, use the Base Form (God save...)."
-    },
-    {
-      question: "Correct: 'If need ____, I will go.'",
-      options: ["be", "is", "was", "are"],
-      answer: "be",
-      explanation: "Rule: Fixed Subjunctive Phrases. 'If need be' is an idiomatic expression."
-    },
-    {
-      question: "Correct: 'I insist that John ____ immediately.'",
-      options: ["leaves", "leave", "left", "leaving"],
-      answer: "leave",
-      explanation: "Rule: Mandative Subjunctive. Insist + That + Base Form (leave)."
-    },
-    {
-      question: "Which sentence uses the subjunctive correctly?",
-      options: ["I wish I was taller.", "I wish I were taller.", "I wish I am taller.", "I wish I be taller."],
-      answer: "I wish I were taller.",
-      explanation: "Rule: Past Subjunctive. In hypothetical wishes, 'were' is the formally correct form for 'to be' for all subjects."
-    },
-    {
-      question: "Correct: 'Be that as it ____.'",
-      options: ["may", "might", "can", "will"],
-      answer: "may",
-      explanation: "Rule: Fixed Subjunctive Phrases. 'Be that as it may' means 'Even if that is true'."
-    },
-    {
-      question: "Correct: 'It is vital that the evidence ____ kept safe.'",
-      options: ["is", "be", "was", "are"],
-      answer: "be",
-      explanation: "Rule: Passive Subjunctive. Vital + that + be + past participle (be kept)."
-    },
-    {
-      question: "Correct: 'Far ____ it from me to criticize.'",
-      options: ["be", "is", "was", "are"],
-      answer: "be",
-      explanation: "Rule: Fixed Subjunctive Phrases. 'Far be it from me' is an idiomatic expression."
-    },
-    {
-      question: "Correct: 'I demand that he ____ punished.'",
-      options: ["is", "be", "was", "will be"],
-      answer: "be",
-      explanation: "Rule: Mandative Subjunctive. Demand + that + be (passive base form)."
+      question: "Which sentence uses the tenses correctly?",
+      options: [
+        "When I was a child, I use to walk to school.",
+        "When I was a child, I used to walk to school.",
+        "When I was a child, I was used to walk to school.",
+        "When I was a child, I am used to walk to school."
+      ],
+      answer: "When I was a child, I used to walk to school.",
+      explanation: "'Used to' + base verb shows a past habit that no longer happens."
     },
 
-    // 171-180: Inversion (Conditionals without 'If')
+    // 161-170: Common error recognition (choose the correct sentence)
     {
-      question: "Rewrite: 'If I were you...'",
-      options: ["Were I you...", "Was I you...", "Am I you...", "If I was you..."],
-      answer: "Were I you...",
-      explanation: "Rule: Conditional Inversion. Drop 'if' and invert 'were' and the subject."
+      question: "Which sentence has no error?",
+      options: [
+        "She is married with a doctor.",
+        "She is married to a doctor.",
+        "She is marry to a doctor.",
+        "She is marrying with a doctor."
+      ],
+      answer: "She is married to a doctor.",
+      explanation: "We say 'married to someone', not 'married with someone'."
     },
     {
-      question: "Rewrite: 'If he had known...'",
-      options: ["Had known he...", "Had he known...", "Has he known...", "Did he know..."],
-      answer: "Had he known...",
-      explanation: "Rule: Conditional Inversion (3rd). Drop 'if', move 'Had' to the front."
+      question: "Which sentence is correct?",
+      options: [
+        "I look forward to meet you.",
+        "I am looking forward to meet you.",
+        "I look forward to meeting you.",
+        "I am looking forward meeting you."
+      ],
+      answer: "I look forward to meeting you.",
+      explanation: "After 'look forward to', use a gerund: 'to meeting', not the base form."
     },
     {
-      question: "Rewrite: 'If it should rain...'",
-      options: ["Should it rain...", "Should rain it...", "If it rain...", "Were it rain..."],
-      answer: "Should it rain...",
-      explanation: "Rule: Conditional Inversion (1st). Use 'Should' + Subject + Verb for formal possibilities."
+      question: "Which sentence is correct?",
+      options: [
+        "He insisted to pay the bill.",
+        "He insisted on paying the bill.",
+        "He insisted for paying the bill.",
+        "He insisted that to pay the bill."
+      ],
+      answer: "He insisted on paying the bill.",
+      explanation: "'Insist on' is followed by a gerund: 'insisted on paying'."
     },
     {
-      question: "Which is correct?",
-      options: ["Had I seen him, I would have stopped.", "Have I seen him, I would have stopped.", "Had I seen him, I will stop.", "Did I see him, I would stop."],
-      answer: "Had I seen him, I would have stopped.",
-      explanation: "Rule: Inverted Third Conditional. 'Had I seen' matches 'Would have stopped'."
+      question: "Which sentence is correct?",
+      options: [
+        "She said me the answer.",
+        "She told to me the answer.",
+        "She told me the answer.",
+        "She said me the answer to."
+      ],
+      answer: "She told me the answer.",
+      explanation: "Use 'tell someone something' or 'say something to someone'. 'Told me the answer' is correct."
     },
     {
-      question: "Complete: '____, I would help you.'",
-      options: ["Were I rich", "Was I rich", "Am I rich", "If I am rich"],
-      answer: "Were I rich",
-      explanation: "Rule: Inverted Second Conditional. Use 'Were' + Subject + Adjective."
+      question: "Which sentence is correct?",
+      options: [
+        "I prefer coffee than tea.",
+        "I prefer coffee to tea.",
+        "I prefer coffee over than tea.",
+        "I prefer coffee instead tea."
+      ],
+      answer: "I prefer coffee to tea.",
+      explanation: "After 'prefer', use 'to': 'prefer A to B'."
     },
     {
-      question: "Complete: '____ you need help, please call me.'",
-      options: ["Had", "Should", "Were", "Did"],
-      answer: "Should",
-      explanation: "Rule: Inverted First Conditional. 'Should you need' = 'If you happen to need'."
+      question: "Which sentence is correct?",
+      options: [
+        "Despite of the rain, we went out.",
+        "In spite the rain, we went out.",
+        "Despite the rain, we went out.",
+        "Despite the rain, but we went out."
+      ],
+      answer: "Despite the rain, we went out.",
+      explanation: "Use 'Despite' + noun ('the rain') without 'of'."
     },
     {
-      question: "Which is correct?",
-      options: ["Were he to find out, he would be angry.", "Was he to find out, he would be angry.", "If he find out, he would be angry.", "Had he to find out, he would be angry."],
-      answer: "Were he to find out, he would be angry.",
-      explanation: "Rule: 'Were to' Structure. Used for hypothetical future scenarios. Inverted form: 'Were he to find out'."
+      question: "Which sentence is correct?",
+      options: [
+        "She is good in math.",
+        "She is good on math.",
+        "She is good at math.",
+        "She is good with math at."
+      ],
+      answer: "She is good at math.",
+      explanation: "The correct preposition is 'good at' for abilities."
     },
     {
-      question: "Rewrite: 'If we had not missed the bus...'",
-      options: ["Had not we missed...", "Had we not missed...", "Hadn't we missed...", "Did we not miss..."],
-      answer: "Had we not missed...",
-      explanation: "Rule: Negative Inversion. The word 'not' must remain after the subject. 'Had we not missed'."
+      question: "Which sentence is correct?",
+      options: [
+        "We discussed about the problem.",
+        "We discussed the problem.",
+        "We discussed on the problem.",
+        "We discussed for the problem."
+      ],
+      answer: "We discussed the problem.",
+      explanation: "'Discuss' is a transitive verb; do not use 'about' after it."
     },
     {
-      question: "Complete: '____ for your help, I would have failed.'",
-      options: ["Had it not been", "Had not it been", "Were it not", "If it was not"],
-      answer: "Had it not been",
-      explanation: "Rule: Fixed Inversion Phrase. 'Had it not been for' means 'If it hadn't been for'."
+      question: "Which sentence is correct?",
+      options: [
+        "He is used to get up early.",
+        "He used to getting up early.",
+        "He is used to getting up early.",
+        "He used to getting up early now."
+      ],
+      answer: "He is used to getting up early.",
+      explanation: "'Be used to' is followed by a noun or gerund: 'used to getting up early'."
     },
     {
-      question: "Complete: '____ for his age, he would join the army.'",
-      options: ["Were it not", "Had it not been", "Was it not", "If it isn't"],
-      answer: "Were it not",
-      explanation: "Rule: Fixed Inversion Phrase. 'Were it not for' refers to a present obstacle."
-    },
-
-    // 181-190: Ambiguity and Clarity
-    {
-      question: "Why is this ambiguous? 'I saw the man with the telescope.'",
-      options: ["It is not ambiguous.", "Did I use the telescope, or did the man have it?", "Telescopes are for stars.", "The man cannot hold a telescope."],
-      answer: "Did I use the telescope, or did the man have it?",
-      explanation: "Rule: Structural Ambiguity. The prepositional phrase 'with the telescope' could attach to the Verb (saw) or the Object (man)."
-    },
-    {
-      question: "Disambiguate: 'Flying planes can be dangerous.' (Meaning: Being a pilot is dangerous)",
-      options: ["To fly planes can be dangerous.", "Planes that are flying can be dangerous.", "The act of flying planes can be dangerous.", "Both A and C"],
-      answer: "Both A and C",
-      explanation: "Rule: Gerund vs Participle. Clarifying that 'flying' is an action (gerund) removes the ambiguity."
-    },
-    {
-      question: "Which sentence avoids ambiguity? 'He fed her dog biscuits.'",
-      options: ["He fed dog biscuits to her.", "He fed her biscuits for dogs.", "He gave her dog some biscuits.", "It depends on if she is a dog."],
-      answer: "He gave her dog some biscuits.",
-      explanation: "Rule: Object Ambiguity. The original is unclear: did he feed the woman biscuits, or feed the dog? Option C specifies the recipient."
-    },
-    {
-      question: "Why is 'Visiting relatives can be annoying' ambiguous?",
-      options: ["Relatives who visit are annoying vs Going to visit them is annoying.", "Relatives are always annoying.", "It is grammatically incorrect.", "Annoying is the wrong word."],
-      answer: "Relatives who visit are annoying vs Going to visit them is annoying.",
-      explanation: "Rule: Syntactic Ambiguity. 'Visiting' can be interpreted as a Gerund (Subject = The act) or a Participle (Subject = The relatives)."
-    },
-    {
-      question: "Remove the 'Squinting Modifier': 'Cycling uphill quickly tires me.'",
-      options: ["Cycling uphill tires me quickly.", "Cycling quickly uphill tires me.", "Quickly cycling uphill tires me.", "All change the emphasis."],
-      answer: "Cycling uphill tires me quickly.",
-      explanation: "Rule: Squinting Modifier. 'Quickly' could modify 'cycling' or 'tires'. Placing it at the end clarifies it modifies 'tires'."
-    },
-    {
-      question: "Correct the 'Garden Path' sentence: 'The old man the boat.'",
-      options: ["The old man is on the boat.", "The old people operate the boat.", "The man on the boat is old.", "The boat is manned by the old."],
-      answer: "The old people operate the boat.",
-      explanation: "Rule: Part of Speech Confusion. 'Man' is a verb here (to operate). 'The old' is the collective noun subject."
-    },
-    {
-      question: "Which is the clearest?",
-      options: ["John told his father he was rich.", "John told his father that John was rich.", "John told his father, 'I am rich.'", "John told his father that he is rich."],
-      answer: "John told his father, 'I am rich.'",
-      explanation: "Rule: Pronoun Reference. Direct speech removes the ambiguity of who 'he' refers to."
-    },
-    {
-      question: "Which is most concise?",
-      options: ["Due to the fact that it was raining, we stayed in.", "We stayed in because it was raining.", "On account of the rain, we stayed in.", "Owing to the fact of rain, we stayed in."],
-      answer: "We stayed in because it was raining.",
-      explanation: "Rule: Conciseness. Avoid wordy phrases like 'Due to the fact that' when a simple conjunction 'because' suffices."
-    },
-    {
-      question: "Which sentence has the best flow?",
-      options: ["He plays the piano well, and the guitar is also played well by him.", "He plays the piano well, and he also plays the guitar well.", "He plays piano well; the guitar is good too.", "Well he plays the piano and guitar."],
-      answer: "He plays the piano well, and he also plays the guitar well.",
-      explanation: "Rule: Active/Passive Consistency. Maintaining Active Voice in both clauses creates better rhythm and flow."
-    },
-    {
-      question: "Avoid the split infinitive if strictly formal: 'To boldly go.'",
-      options: ["To go boldly.", "Boldly to go.", "To go bold.", "To went boldly."],
-      answer: "To go boldly.",
-      explanation: "Rule: Split Infinitives. In strict formal grammar, avoid placing an adverb between 'to' and the verb."
+      question: "Which sentence is correct?",
+      options: [
+        "He denied to steal the money.",
+        "He denied stealing the money.",
+        "He denied for stealing the money.",
+        "He denied that to steal the money."
+      ],
+      answer: "He denied stealing the money.",
+      explanation: "After 'deny', use a gerund: 'denied stealing'."
     },
 
-    // 191-200: Advanced Grammar Nuances
+    // 171-180: Combining and transforming sentences
     {
-      question: "Correct: 'The data ____ collected yesterday.'",
-      options: ["was", "were", "is", "are"],
-      answer: "were",
-      explanation: "Rule: Foreign Plurals. In academic English, 'data' is the plural of 'datum', so it requires the plural verb 'were'."
+      question: "Join the ideas correctly: It was raining. We went to the park.",
+      options: [
+        "Although it was raining, we went to the park.",
+        "Because it was raining, we went to the park.",
+        "It was raining so we went to the park.",
+        "It was raining and we went not to the park."
+      ],
+      answer: "Although it was raining, we went to the park.",
+      explanation: "'Although' shows contrast: we still went to the park even though it was raining."
     },
     {
-      question: "Correct: 'A number of students ____ absent.'",
-      options: ["is", "are", "was", "has"],
-      answer: "are",
-      explanation: "Rule: Quantifiers. 'A number of' is a quantifier meaning 'Many', taking a plural verb."
+      question: "Join the ideas using 'in order to': She studied hard. She wanted to pass the exam.",
+      options: [
+        "She studied hard in order to pass the exam.",
+        "She studied hard in order pass the exam.",
+        "She studied hard in order that pass the exam.",
+        "She studied hard in order passing the exam."
+      ],
+      answer: "She studied hard in order to pass the exam.",
+      explanation: "Use 'in order to' + base verb to show purpose."
     },
     {
-      question: "Correct: 'None of the pies ____ left.'",
-      options: ["is", "are", "was", "Both A and B"],
-      answer: "Both A and B",
-      explanation: "Rule: None. 'None' can take singular or plural verbs depending on context, though singular is traditionally preferred. Both are accepted."
+      question: "Combine correctly using 'because': We stayed at home. It was raining.",
+      options: [
+        "We stayed at home because it was raining.",
+        "Because was raining, we stayed at home.",
+        "We stayed at home because was raining.",
+        "Because it was raining so we stayed at home."
+      ],
+      answer: "We stayed at home because it was raining.",
+      explanation: "Keep a full clause after 'because': 'because it was raining'. Do not add 'so' in the second clause."
     },
     {
-      question: "Which is correct?",
-      options: ["Between you and I, he is wrong.", "Between you and me, he is wrong.", "Between we, he is wrong.", "Between I and you, he is wrong."],
-      answer: "Between you and me, he is wrong.",
-      explanation: "Rule: Prepositions. Prepositions (Between) are always followed by Object Pronouns (me, him, her), not Subject Pronouns (I)."
+      question: "Join the ideas correctly: He left early. He wanted to catch the bus.",
+      options: [
+        "He left early so that he could catch the bus.",
+        "He left early so he can catch the bus.",
+        "He left early in order that he catch the bus.",
+        "He left early and he catch the bus."
+      ],
+      answer: "He left early so that he could catch the bus.",
+      explanation: "'So that' + 'could' shows purpose in the past."
     },
     {
-      question: "Correct: 'She looks like she is rich.' (Strict grammar)",
-      options: ["She looks as if she were rich.", "She looks like she were rich.", "She looks like rich.", "She looks as she is rich."],
-      answer: "She looks as if she were rich.",
-      explanation: "Rule: Comparative Clauses. In formal English, 'as if' + subjunctive is preferred over 'like' for hypothetical comparisons."
+      question: "Combine using a relative clause: The man lives next door. He is a doctor.",
+      options: [
+        "The man who lives next door is a doctor.",
+        "The man which lives next door is a doctor.",
+        "The man where lives next door is a doctor.",
+        "The man lives next door who is a doctor."
+      ],
+      answer: "The man who lives next door is a doctor.",
+      explanation: "Use 'who' for people and place the clause directly after the noun it describes."
     },
     {
-      question: "Correct: 'I have less friends than you.'",
-      options: ["I have fewer friends than you.", "I have lesser friends than you.", "I have least friends than you.", "I have less friends."],
-      answer: "I have fewer friends than you.",
-      explanation: "Rule: Countable vs Uncountable. Use 'fewer' for countable nouns (friends) and 'less' for uncountable nouns."
+      question: "Combine using a relative clause: I bought a watch. It was very expensive.",
+      options: [
+        "I bought a watch who was very expensive.",
+        "I bought a watch which was very expensive.",
+        "I bought a watch where was very expensive.",
+        "I bought a watch it was very expensive."
+      ],
+      answer: "I bought a watch which was very expensive.",
+      explanation: "Use 'which' or 'that' for things; 'which was very expensive' describes the watch."
     },
     {
-      question: "Correct: 'Try and come early.' (Formal)",
-      options: ["Try to come early.", "Try come early.", "Try for coming early.", "Trying to come early."],
-      answer: "Try to come early.",
-      explanation: "Rule: Try + Infinitive. Strictly speaking, you 'try TO' do something, not 'try AND'."
+      question: "Join the ideas using 'while': I was cooking. My brother was washing the dishes.",
+      options: [
+        "While I was cooking, my brother was washing the dishes.",
+        "While I was cooking, my brother washing the dishes.",
+        "While cooking, my brother was washing the dishes.",
+        "While my brother was washing the dishes, I cooking."
+      ],
+      answer: "While I was cooking, my brother was washing the dishes.",
+      explanation: "Use 'while' + past continuous for two actions happening at the same time."
     },
     {
-      question: "Which uses the Oxford Comma?",
-      options: ["Red, white and blue.", "Red, white, and blue.", "Red white, and blue.", "Red, white, and, blue."],
-      answer: "Red, white, and blue.",
-      explanation: "Rule: Oxford Comma. It is the comma placed before the final conjunction (and) in a list of three or more items."
+      question: "Change to passive voice: 'They built the bridge in 2010.'",
+      options: [
+        "The bridge is built in 2010.",
+        "The bridge was built in 2010.",
+        "The bridge has built in 2010.",
+        "The bridge was build in 2010."
+      ],
+      answer: "The bridge was built in 2010.",
+      explanation: "Past simple active becomes past simple passive: 'was built'."
     },
     {
-      question: "Correct: 'Whom shall I say is calling?'",
-      options: ["Who shall I say is calling?", "Whom shall I say is calling?", "To whom is calling?", "Who whom is calling?"],
-      answer: "Who shall I say is calling?",
-      explanation: "Rule: Who vs Whom. The pronoun is the Subject of the verb 'is calling', so it must be 'Who'."
+      question: "Change to active voice: 'The letter was sent by Maria.'",
+      options: [
+        "Maria sends the letter.",
+        "Maria is sending the letter.",
+        "Maria sent the letter.",
+        "Maria has sent the letter."
+      ],
+      answer: "Maria sent the letter.",
+      explanation: "Past simple passive ('was sent') becomes past simple active ('sent')."
     },
     {
-      question: "Correct: 'I am good ____ math.'",
-      options: ["in", "at", "on", "with"],
-      answer: "at",
-      explanation: "Rule: Collocations. The correct preposition for ability is 'Good at'."
+      question: "Choose the correct first conditional sentence.",
+      options: [
+        "If you will work hard, you will succeed.",
+        "If you work hard, you will succeed.",
+        "If you worked hard, you will succeed.",
+        "If you work hard, you would succeed."
+      ],
+      answer: "If you work hard, you will succeed.",
+      explanation: "First conditional: 'If' + present simple, 'will' + base verb."
+    },
+
+    // 181-190: Pronoun reference, agreement, and clarity
+    {
+      question: "Which sentence is clearest?",
+      options: [
+        "When Anna met Lisa, she smiled.",
+        "When she met Lisa, Anna smiled.",
+        "When Anna met Lisa, Anna smiled politely.",
+        "When Anna met her, she smiled."
+      ],
+      answer: "When Anna met Lisa, Anna smiled politely.",
+      explanation: "Repeating 'Anna' removes pronoun ambiguity and makes the sentence clear."
+    },
+    {
+      question: "Which sentence uses the reflexive pronoun correctly?",
+      options: [
+        "He hurt itself while playing basketball.",
+        "He hurt himself while playing basketball.",
+        "He hurt hisself while playing basketball.",
+        "He hurt him while playing basketball."
+      ],
+      answer: "He hurt himself while playing basketball.",
+      explanation: "Use 'himself' as the reflexive form of 'he'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "The teacher which taught us English has retired.",
+        "The teacher who taught us English has retired.",
+        "The teacher whom taught us English has retired.",
+        "The teacher whose taught us English has retired."
+      ],
+      answer: "The teacher who taught us English has retired.",
+      explanation: "Use 'who' as the subject pronoun referring to a person."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Between you and I, this is a secret.",
+        "Between you and me, this is a secret.",
+        "Between I and you, this is a secret.",
+        "Between me and you, this is a secret are."
+      ],
+      answer: "Between you and me, this is a secret.",
+      explanation: "After a preposition like 'between', use object pronouns: 'you and me'."
+    },
+    {
+      question: "Which sentence keeps the same point of view?",
+      options: [
+        "If one wants to succeed, you must work hard.",
+        "If you want to succeed, one must work hard.",
+        "If you want to succeed, you must work hard.",
+        "If one wants to succeed, you must working hard."
+      ],
+      answer: "If you want to succeed, you must work hard.",
+      explanation: "Do not mix 'one' and 'you' in the same sentence; keep the pronoun consistent."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "This is the book who I told you about.",
+        "This is the book which I told you about.",
+        "This is the book that I told you about.",
+        "This is the book where I told you about."
+      ],
+      answer: "This is the book that I told you about.",
+      explanation: "Use 'that' or 'which' for things. In exams, 'that' is commonly used in defining relative clauses."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Please give this form to whoever is in charge.",
+        "Please give this form to whomever is in charge.",
+        "Please give this form to who is in charge.",
+        "Please give this form to whom is in charge."
+      ],
+      answer: "Please give this form to whoever is in charge.",
+      explanation: "'Whoever' is the subject of 'is in charge', so the subject form is correct."
+    },
+    {
+      question: "Which sentence has correct subject-verb agreement?",
+      options: [
+        "None of the chairs are broken.",
+        "None of the chairs is broken.",
+        "None of the chair are broken.",
+        "None of the chair is broken."
+      ],
+      answer: "None of the chairs is broken.",
+      explanation: "In formal exams, 'none' is often treated as singular: 'none is'. The noun after 'of' is plural: 'chairs'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Either of these roads lead to town.",
+        "Either of these roads leads to town.",
+        "Either of these road leads to town.",
+        "Either of these road lead to town."
+      ],
+      answer: "Either of these roads leads to town.",
+      explanation: "'Either' is singular, so use the singular verb 'leads'."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "Everyone in the class were given a copy.",
+        "Everyone in the class was given a copy.",
+        "Everyone in the class are given a copy.",
+        "Everyone in the class have given a copy."
+      ],
+      answer: "Everyone in the class was given a copy.",
+      explanation: "'Everyone' is singular, so we use the singular verb 'was'."
+    },
+
+    // 191-200: Mixed grammar (tenses, prepositions, connectors)
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "By next year, she will work here for ten years.",
+        "By next year, she will have worked here for ten years.",
+        "By next year, she has worked here for ten years.",
+        "By next year, she is working here for ten years."
+      ],
+      answer: "By next year, she will have worked here for ten years.",
+      explanation: "Use future perfect ('will have worked') to show an action that will be completed by a future time."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I live in this town since 2010.",
+        "I am living in this town since 2010.",
+        "I have lived in this town since 2010.",
+        "I have been live in this town since 2010."
+      ],
+      answer: "I have lived in this town since 2010.",
+      explanation: "Use present perfect with 'since' to show an action that started in the past and continues to the present."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We have been waiting since an hour.",
+        "We were waiting for an hour now.",
+        "We have waited since one hour.",
+        "We have been waiting for an hour."
+      ],
+      answer: "We have been waiting for an hour.",
+      explanation: "Use 'for' with a period of time. Present perfect continuous shows that the action started in the past and is still happening."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She just has finished her homework.",
+        "She has just finished her homework.",
+        "She has finished just her homework.",
+        "She has finished her homework just."
+      ],
+      answer: "She has just finished her homework.",
+      explanation: "In present perfect, place 'just' between 'has' and the past participle."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We are interested on buying a house.",
+        "We are interested to buy a house.",
+        "We are interested in buying a house.",
+        "We are interested for buying a house."
+      ],
+      answer: "We are interested in buying a house.",
+      explanation: "The correct pattern is 'interested in' + gerund."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "He is responsible of organizing the meeting.",
+        "He is responsible for organizing the meeting.",
+        "He is responsible to organizing the meeting.",
+        "He is responsible on organizing the meeting."
+      ],
+      answer: "He is responsible for organizing the meeting.",
+      explanation: "Use 'responsible for' + gerund or noun."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "She arrived to the airport on time.",
+        "She arrived at the airport on time.",
+        "She arrived in the airport on time.",
+        "She arrived on the airport at time."
+      ],
+      answer: "She arrived at the airport on time.",
+      explanation: "Use 'arrive at' for small places like stations or airports, and 'on time' for punctuality."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "We will go to the beach if it will not rain.",
+        "We will go to the beach if it does not rain.",
+        "We go to the beach if it will not rain.",
+        "We go to the beach if it does not raining."
+      ],
+      answer: "We will go to the beach if it does not rain.",
+      explanation: "In first conditional, use present simple ('does not rain') in the 'if' clause and 'will' in the main clause."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "I would have called you if I would know your number.",
+        "I would call you if I had known your number.",
+        "I would have called you if I had known your number.",
+        "I will have called you if I had known your number."
+      ],
+      answer: "I would have called you if I had known your number.",
+      explanation: "Third conditional: 'would have' + past participle with 'if' + past perfect."
+    },
+    {
+      question: "Which sentence is correct?",
+      options: [
+        "As soon we reached the station, the train left.",
+        "As soon as we reached the station, the train left.",
+        "As soon as we reach the station, the train left.",
+        "As soon as we reached the station, the train had left."
+      ],
+      answer: "As soon as we reached the station, the train left.",
+      explanation: "Use 'as soon as' + past simple for two quick past actions happening one after the other."
     }
   ]
 };
