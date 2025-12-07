@@ -2102,7 +2102,7 @@ Leak rate = 1/8 − 1/12
 
 STEP 4: Time for the leak alone to empty a full tank:
 time = 1 ÷ (1/24) = 24 hours.`
-  }
+  },
   // 26
   {
     question: "Two pipes A and B can fill a tank in 18 minutes and 27 minutes respectively. A waste pipe C can empty the full tank in 54 minutes. If all three pipes are opened together when the tank is empty, how long will it take to fill the tank?",
