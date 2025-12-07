@@ -1198,7 +1198,7 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       answer: "Ruthlessness",
       explanation: "Clemency is mercy. Ruthlessness is lack of pity."
     },
-    {
+       {
       question: "Choose the antonym for: COGENT",
       options: ["Strong", "Unconvincing", "Clear", "Good"],
       answer: "Unconvincing",
@@ -1215,6 +1215,18 @@ window.VERBAL_QUESTION_BANK["antonyms"] = {
       options: ["Pacify", "Agitate", "Peace", "Calm"],
       answer: "Agitate",
       explanation: "Conciliate is to soothe. Agitate is to disturb/anger."
+    },
+    {
+      question: "Choose the antonym for: CREDULOUS",
+      options: ["Gullible", "Naive", "Trusting", "Skeptical"],
+      answer: "Skeptical",
+      explanation: "Credulous means too ready to believe things. Skeptical means inclined to doubt them."
+    },
+    {
+      question: "Choose the antonym for: DELETERIOUS",
+      options: ["Harmful", "Risky", "Dangerous", "Beneficial"],
+      answer: "Beneficial",
+      explanation: "Deleterious means harmful or damaging. Beneficial means helpful or good."
     }
   ] // END OF EXPERT
-}; // END OF ANTONYMS OBJECT
+}; // END OF ANTONYMS OBJECT// PAKI CHECK
