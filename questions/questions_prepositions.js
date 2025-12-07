@@ -181,7 +181,19 @@ window.VERBAL_QUESTION_BANK["prepositions"] = {
     { question: "Which sentence is CORRECT in formal written English?", options: ["She has been working here since five years.", "She has been working here for five years.", "She has been working here during five years.", "She has been working here from five years."], answer: "She has been working here for five years.", explanation: "Use FOR + period of time: for five years. 'Since' needs a starting point (since 2018)." },
     { question: "Which sentence uses BY and UNTIL correctly?", options: ["I will stay in the office by 7:00 p.m. and then go home.", "I will stay in the office until 7:00 p.m. and then go home.", "I will finish the work until 7:00 p.m.", "I will finish the work until 7:00 p.m. and stay there by then."], answer: "I will stay in the office until 7:00 p.m. and then go home.", explanation: "Stay UNTIL 7:00 p.m. (continue up to that time). 'Finish until' is incorrect; we say finish BY 7:00 p.m." },
     { question: "Which sentence is the best choice for formal writing?", options: ["There were many books off of the table.", "There were many books off the table.", "There were many books on the table.", "There were many books from the table."], answer: "There were many books on the table.", explanation: "ON the table is the natural preposition here. 'Off of' is informal and not needed in exams." },
-    { question: "No sooner ___ the announcement than people started to complain.", options: ["was made", "it was made", "had made", "had it been made"], answer: "had it been made", explanation: "With 'No sooner' at the beginning, we use inversion: No sooner had it been made than..." },
+
+    {
+      question: "No sooner ___ than people started to complain.",
+      options: [
+        "was the announcement made",
+        "it was made",
+        "had made the announcement",
+        "had the announcement been made"
+      ],
+      answer: "had the announcement been made",
+      explanation: "With 'No sooner' at the beginning, we usually use inversion with the past perfect: 'No sooner had the announcement been made than people started to complain.'"
+    },
+
     { question: "Hardly ___ the meeting when the fire alarm rang.", options: ["had we started", "we had started", "had started we", "we have started"], answer: "had we started", explanation: "Hardly had we started... is the correct inverted structure (negative adverb + auxiliary + subject)." },
     { question: "Scarcely ___ the report when the manager asked for changes.", options: ["we had submitted", "had we submitted", "we submitted", "submitted we"], answer: "had we submitted", explanation: "Scarcely had we submitted... follows the same inversion pattern as hardly and no sooner." },
     { question: "Choose the sentence where ONLY is placed correctly for the meaning 'I did nothing except sign the document.'", options: ["Only I signed the document.", "I only signed the document.", "I signed only the document.", "I signed the only document."], answer: "I only signed the document.", explanation: "I only signed the document focuses on the action: signing was the only thing you did." },
