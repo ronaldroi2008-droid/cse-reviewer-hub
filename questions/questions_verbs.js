@@ -204,7 +204,13 @@ window.VERBAL_QUESTION_BANK["verbs"] = {
     { question: "Find the error: 'The committee decide that the event be postponed.'", options: ["The committee", "decide", "that the event", "be postponed"], answer: "decide", explanation: "Subject-verb agreement: committee decides (or decided)." },
     { question: "Find the error: 'By the time you read this, I already took my flight.'", options: ["By the time", "you read this", "I", "already took my flight"], answer: "already took my flight", explanation: "Use future perfect: will have taken." },
     { question: "Find the error: 'He likes to jog, swimming, and to read.'", options: ["He likes", "to jog", "swimming", "and to read"], answer: "swimming", explanation: "Parallelism error. Use 'to swim' to match." },
-    { question: "Find the error: 'Rarely is such dedication seen.'", options: ["Rarely", "is", "such dedication", "seen"], answer: "is", explanation: "If past context implies 'was' or 'has been'. Assuming present context, 'is' might be okay, but 'has... been' is standard for experience." },
+   { 
+  question: "Find the error: 'Rarely such dedication is seen.'", 
+  options: ["Rarely", "such dedication", "is", "seen"], 
+  answer: "is", 
+  explanation: "With 'rarely' at the beginning, we need inversion: 'Rarely is such dedication seen.' The verb should come before the subject." 
+},
+
     { question: "Find the error: 'He came to the office without having finish his report.'", options: ["He came", "to the office", "without", "having finish his report"], answer: "having finish his report", explanation: "Use 'finished' (past participle) after having." },
     { question: "Find the error: 'They appear to has studied the problem.'", options: ["They appear", "to", "has studied", "the problem"], answer: "has studied", explanation: "Infinitive uses base form 'have': to have studied." },
     { question: "Find the error: 'Next month I will be working here for a year.'", options: ["Next month", "I will", "be working here", "for a year"], answer: "be working here", explanation: "Use 'will have been working' (future perfect continuous)." },
