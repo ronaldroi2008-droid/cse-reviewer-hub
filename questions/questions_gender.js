@@ -233,7 +233,13 @@ window.VERBAL_QUESTION_BANK["gender"] = {
     { question: "Feminine of 'Viceroy'?", options: ["Vicereine", "Queen", "Countess", "Lady"], answer: "Vicereine", explanation: "Vicereine." },
     { question: "Masculine of 'Abbess'?", options: ["Abbot", "Monk", "Priest", "Bishop"], answer: "Abbot", explanation: "Abbot." },
     { question: "Feminine of 'Prior'?", options: ["Prioress", "Nun", "Sister", "Mother"], answer: "Prioress", explanation: "Prioress." },
-    { question: "Masculine of 'Spinster' (Historically)?", options: ["Spinner", "Bachelor", "Weaver", "Husband"], answer: "Spinner", explanation: "Spinner." },
+   { 
+  question: "Masculine of 'Spinster' (in traditional grammar)?", 
+  options: ["Spinner", "Bachelor", "Weaver", "Husband"], 
+  answer: "Bachelor", 
+  explanation: "In traditional grammar pairs, 'Bachelor' (unmarried man) corresponds to 'Spinster' (unmarried woman)." 
+},
+
     { question: "Feminine of 'Prosecutor'?", options: ["Prosecutrix", "Prosecuter", "Lawyer", "Attorney"], answer: "Prosecutrix", explanation: "Prosecutrix." },
     { question: "Masculine of 'Aviatrix'?", options: ["Aviator", "Pilot", "Flyer", "Captain"], answer: "Aviator", explanation: "Aviator." },
     { question: "Feminine of 'Equerry'?", options: ["None/Equerry", "Equerress", "Lady", "Dame"], answer: "None/Equerry", explanation: "Equerry (gender neutral)." },
