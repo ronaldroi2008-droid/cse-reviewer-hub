@@ -5193,12 +5193,17 @@ synonyms: {
   } 
 }; 
 
-  // ==========================================
+<script>
+// ==========================================
 // 3. PAGE STATE + HELPERS
 // ==========================================
 
+// Dito naka-set ang Gumroad link (pwede mong palitan kung magbago)
+const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
+
 let currentMode = "study";
-let currentTopicId = VERBAL_TOPICS[0]?.id || "";
+// HUWAG nang tawagin agad ang VERBAL_TOPICS dito (TDZ error kung nasa baba pa siya).
+let currentTopicId = "";
 let currentLevel = "beginner";
 let currentItemsCount = 10;
 
@@ -5219,6 +5224,7 @@ function renderTopics() {
   topicListEl.innerHTML = "";
 
   VERBAL_TOPICS.forEach((topic, index) => {
+    // Kung wala pang currentTopicId, gawing first topic
     if (!currentTopicId && index === 0) {
       currentTopicId = topic.id;
     }
@@ -5351,7 +5357,7 @@ function setupItemChips() {
   });
 }
 
-// Level chips with PRO alert
+// Level chips with PRO alert → now uses PRO modal
 function setupLevelChips() {
   const levelChips = document.querySelectorAll(".level-chip");
   const quizLevelLabelEl = document.getElementById("quizLevelLabel");
@@ -5362,10 +5368,7 @@ function setupLevelChips() {
 
       // PRO alert kapag advanced/expert at free user
       if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
-        alert(
-          "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
-          "Beginner and Intermediate are available in the free version."
-        );
+        openProModal();
         return;
       }
 
@@ -5384,7 +5387,6 @@ function setupLevelChips() {
   });
 }
 
-
 // Build quiz questions based on topic + level + items
 function buildQuizQuestions() {
   const quizCardEl = document.getElementById("quizCard");
@@ -5396,7 +5398,9 @@ function buildQuizQuestions() {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  const bank = window.VERBAL_QUESTION_BANK && window.VERBAL_QUESTION_BANK[currentTopicId];
+  const bank =
+    window.VERBAL_QUESTION_BANK &&
+    window.VERBAL_QUESTION_BANK[currentTopicId];
 
   if (!bank || !bank[currentLevel] || !bank[currentLevel].length) {
     quizQuestions = [];
@@ -5469,7 +5473,9 @@ function renderCurrentQuestion() {
       const optText = q.options[idx];
 
       if (idx === existing.selectedIndex) {
-        btn.classList.add(existing.isCorrect ? "is-correct" : "is-incorrect");
+        btn.classList.add(
+          existing.isCorrect ? "is-correct" : "is-incorrect"
+        );
       }
       if (!existing.isCorrect && optText === q.answer) {
         btn.classList.add("is-correct");
@@ -5477,7 +5483,8 @@ function renderCurrentQuestion() {
     });
 
     feedbackEl.textContent =
-      (existing.isCorrect ? "Correct! " : "Incorrect. ") + (q.explanation || "");
+      (existing.isCorrect ? "Correct! " : "Incorrect. ") +
+      (q.explanation || "");
     feedbackEl.classList.toggle("feedback--correct", existing.isCorrect);
     feedbackEl.classList.toggle("feedback--incorrect", !existing.isCorrect);
   }
@@ -5492,7 +5499,7 @@ function handleOptionClick(index) {
 
   userAnswers[currentQuestionIndex] = {
     selectedIndex: index,
-    isCorrect
+    isCorrect: isCorrect,
   };
 
   const buttons = document.querySelectorAll(".option-button");
@@ -5521,7 +5528,9 @@ function updateProgressText() {
     progressTextEl.textContent = "";
     return;
   }
-  progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
+  progressTextEl.textContent = `Question ${
+    currentQuestionIndex + 1
+  } of ${quizQuestions.length}`;
 }
 
 // Next/Prev button states
@@ -5668,6 +5677,44 @@ function setupNavButtonsHandlers() {
 }
 
 // ==========================================
+// PRO MODAL HELPERS
+// ==========================================
+function openProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "flex";
+}
+
+function closeProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "none";
+}
+
+function setupProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+
+  const closeBtn = document.getElementById("pro-modal-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeProModal);
+  }
+
+  // I-set / i-sync ang Gumroad link sa anchor
+  const gumroadLink = document.getElementById("pro-gumroad-link");
+  if (gumroadLink && GUMROAD_URL) {
+    gumroadLink.href = GUMROAD_URL;
+  }
+
+  // Click outside card to close
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeProModal();
+    }
+  });
+}
+
+// ==========================================
 // INIT
 // ==========================================
 function initVerbalPage() {
@@ -5686,12 +5733,13 @@ function initVerbalPage() {
   setupLevelChips();
   setupNavButtonsHandlers();
   setupResultButtons();
+  setupProModal(); // init ng PRO modal
 
   // Default: Study Mode na loaded na; Practice will build quiz on first click
 }
 
 document.addEventListener("DOMContentLoaded", initVerbalPage);
+</script>
 
-  </script>
 </body>
 </html>
