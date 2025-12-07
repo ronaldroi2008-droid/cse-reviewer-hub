@@ -11,64 +11,314 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   beginner: [
     // 1-10: Masculine
-    { question: "Which word is a masculine noun?", options: ["Mother", "Father", "Sister", "Aunt"], answer: "Father", explanation: "'Father' is a male parent." },
-    { question: "Select the masculine noun:", options: ["Queen", "King", "Princess", "Lady"], answer: "King", explanation: "'King' is a male ruler." },
-    { question: "Which noun refers to a male?", options: ["Niece", "Uncle", "Daughter", "Grandma"], answer: "Uncle", explanation: "'Uncle' refers to the brother of your parent (male)." },
-    { question: "Find the masculine noun:", options: ["Son", "Daughter", "Wife", "Mother"], answer: "Son", explanation: "'Son' is a male child." },
-    { question: "Which word is masculine?", options: ["Widow", "Widower", "Bride", "Girl"], answer: "Widower", explanation: "'Widower' is a man whose wife has died." },
-    { question: "Select the male animal:", options: ["Hen", "Cow", "Bull", "Duck"], answer: "Bull", explanation: "'Bull' is the specific term for a male bovine." },
-    { question: "Which is masculine?", options: ["Boy", "Girl", "Lady", "Madam"], answer: "Boy", explanation: "'Boy' is a young male." },
-    { question: "Find the masculine noun:", options: ["Husband", "Wife", "Mother", "Madam"], answer: "Husband", explanation: "'Husband' is a male spouse." },
-    { question: "Which noun is masculine?", options: ["Actor", "Actress", "Heroine", "Waitress"], answer: "Actor", explanation: "'Actor' is the masculine form." },
-    { question: "Select the masculine word:", options: ["Gentleman", "Lady", "Woman", "Madam"], answer: "Gentleman", explanation: "'Gentleman' refers to a polite man." },
+    {
+      question: "Which word is a masculine noun?",
+      options: ["Mother", "Father", "Sister", "Aunt"],
+      answer: "Father",
+      explanation: "'Father' is a male parent."
+    },
+    {
+      question: "Select the masculine noun:",
+      options: ["Queen", "King", "Princess", "Lady"],
+      answer: "King",
+      explanation: "'King' is a male ruler."
+    },
+    {
+      question: "Which noun refers to a male?",
+      options: ["Niece", "Uncle", "Daughter", "Grandma"],
+      answer: "Uncle",
+      explanation: "'Uncle' refers to a male relative, the brother of your parent."
+    },
+    {
+      question: "Find the masculine noun:",
+      options: ["Son", "Daughter", "Wife", "Mother"],
+      answer: "Son",
+      explanation: "'Son' is a male child."
+    },
+    {
+      question: "Which word is masculine?",
+      options: ["Widow", "Widower", "Bride", "Girl"],
+      answer: "Widower",
+      explanation: "'Widower' is a man whose wife has died."
+    },
+    {
+      question: "Select the male animal:",
+      options: ["Hen", "Cow", "Bull", "Duck"],
+      answer: "Bull",
+      explanation: "'Bull' is the specific term for a male bovine."
+    },
+    {
+      question: "Which is masculine?",
+      options: ["Boy", "Girl", "Lady", "Madam"],
+      answer: "Boy",
+      explanation: "'Boy' is a young male."
+    },
+    {
+      question: "Find the masculine noun:",
+      options: ["Husband", "Wife", "Mother", "Madam"],
+      answer: "Husband",
+      explanation: "'Husband' is a male spouse."
+    },
+    {
+      question: "Which noun is masculine?",
+      options: ["Actor", "Actress", "Heroine", "Waitress"],
+      answer: "Actor",
+      explanation: "'Actor' is the traditional masculine form."
+    },
+    {
+      question: "Select the masculine word:",
+      options: ["Gentleman", "Lady", "Woman", "Madam"],
+      answer: "Gentleman",
+      explanation: "'Gentleman' refers to a polite man."
+    },
 
     // 11-20: Feminine
-    { question: "Which word is a feminine noun?", options: ["Brother", "Uncle", "Sister", "Father"], answer: "Sister", explanation: "'Sister' is a female sibling." },
-    { question: "Select the feminine noun:", options: ["Rooster", "Hen", "Bull", "Drake"], answer: "Hen", explanation: "'Hen' is a female chicken." },
-    { question: "Which noun refers to a female?", options: ["Nephew", "Niece", "Son", "King"], answer: "Niece", explanation: "'Niece' is the daughter of a sibling (female)." },
-    { question: "Find the feminine noun:", options: ["Grandfather", "Grandmother", "Uncle", "Dad"], answer: "Grandmother", explanation: "'Grandmother' is a female grandparent." },
-    { question: "Which word is feminine?", options: ["Prince", "Princess", "Duke", "Lord"], answer: "Princess", explanation: "'Princess' is a female royal." },
-    { question: "Select the female animal:", options: ["Lion", "Lioness", "Tiger", "Leopard"], answer: "Lioness", explanation: "'Lioness' is the female lion." },
-    { question: "Which is feminine?", options: ["Lad", "Lass", "Boy", "Man"], answer: "Lass", explanation: "'Lass' is a girl or young woman." },
-    { question: "Find the feminine noun:", options: ["Landlord", "Landlady", "Man", "Sir"], answer: "Landlady", explanation: "'Landlady' is a woman who owns property." },
-    { question: "Which noun is feminine?", options: ["Hero", "Heroine", "Actor", "Waiter"], answer: "Heroine", explanation: "'Heroine' is a female hero." },
-    { question: "Select the feminine word:", options: ["Monk", "Nun", "Priest", "Friar"], answer: "Nun", explanation: "'Nun' is a female member of a religious order." },
+    {
+      question: "Which word is a feminine noun?",
+      options: ["Brother", "Uncle", "Sister", "Father"],
+      answer: "Sister",
+      explanation: "'Sister' is a female sibling."
+    },
+    {
+      question: "Select the feminine noun:",
+      options: ["Rooster", "Hen", "Bull", "Drake"],
+      answer: "Hen",
+      explanation: "'Hen' is a female chicken."
+    },
+    {
+      question: "Which noun refers to a female?",
+      options: ["Nephew", "Niece", "Son", "King"],
+      answer: "Niece",
+      explanation: "'Niece' is the daughter of a brother or sister."
+    },
+    {
+      question: "Find the feminine noun:",
+      options: ["Grandfather", "Grandmother", "Uncle", "Dad"],
+      answer: "Grandmother",
+      explanation: "'Grandmother' is a female grandparent."
+    },
+    {
+      question: "Which word is feminine?",
+      options: ["Prince", "Princess", "Duke", "Lord"],
+      answer: "Princess",
+      explanation: "'Princess' is a female royal."
+    },
+    {
+      question: "Select the female animal:",
+      options: ["Lion", "Lioness", "Tiger", "Leopard"],
+      answer: "Lioness",
+      explanation: "'Lioness' is the female lion."
+    },
+    {
+      question: "Which is feminine?",
+      options: ["Lad", "Lass", "Boy", "Man"],
+      answer: "Lass",
+      explanation: "'Lass' is a girl or young woman."
+    },
+    {
+      question: "Find the feminine noun:",
+      options: ["Landlord", "Landlady", "Man", "Sir"],
+      answer: "Landlady",
+      explanation: "'Landlady' is a woman who owns or rents out property."
+    },
+    {
+      question: "Which noun is feminine?",
+      options: ["Hero", "Heroine", "Actor", "Waiter"],
+      answer: "Heroine",
+      explanation: "'Heroine' is a female hero."
+    },
+    {
+      question: "Select the feminine word:",
+      options: ["Monk", "Nun", "Priest", "Friar"],
+      answer: "Nun",
+      explanation: "'Nun' is a female member of a religious order."
+    },
 
     // 21-30: Neuter (Objects)
-    { question: "Which noun is neuter gender?", options: ["Baby", "Table", "Mother", "Rooster"], answer: "Table", explanation: "'Table' is a non-living object." },
-    { question: "Select the neuter noun:", options: ["Computer", "Teacher", "Doctor", "Nurse"], answer: "Computer", explanation: "'Computer' is a machine (Neuter)." },
-    { question: "Which word is neuter?", options: ["Boy", "School", "Girl", "Man"], answer: "School", explanation: "'School' is a place or building." },
-    { question: "Find the neuter noun:", options: ["Tree", "Cat", "Dog", "Horse"], answer: "Tree", explanation: "Plants like 'Tree' are considered neuter." },
-    { question: "Which is neuter?", options: ["Phone", "Father", "Aunt", "Son"], answer: "Phone", explanation: "'Phone' is an inanimate object." },
-    { question: "Select the neuter noun:", options: ["Ball", "Player", "Coach", "Referee"], answer: "Ball", explanation: "'Ball' is an object." },
-    { question: "Which word refers to a thing?", options: ["Chair", "Student", "Principal", "Janitor"], answer: "Chair", explanation: "'Chair' is a thing (Neuter)." },
-    { question: "Find the neuter noun:", options: ["River", "Swimmer", "Fish", "Crab"], answer: "River", explanation: "'River' is a geographical feature (Neuter)." },
-    { question: "Which noun has no gender?", options: ["Book", "Author", "Writer", "Poet"], answer: "Book", explanation: "'Book' is an object." },
-    { question: "Select the neuter noun:", options: ["Car", "Driver", "Mechanic", "Passenger"], answer: "Car", explanation: "'Car' is a vehicle (Neuter)." },
+    {
+      question: "Which noun is neuter gender?",
+      options: ["Baby", "Table", "Mother", "Rooster"],
+      answer: "Table",
+      explanation: "'Table' is a non-living object and is treated as neuter."
+    },
+    {
+      question: "Select the neuter noun:",
+      options: ["Computer", "Teacher", "Doctor", "Nurse"],
+      answer: "Computer",
+      explanation: "'Computer' is a machine, so it is neuter."
+    },
+    {
+      question: "Which word is neuter?",
+      options: ["Boy", "School", "Girl", "Man"],
+      answer: "School",
+      explanation: "'School' is a place, not a person, so it is neuter."
+    },
+    {
+      question: "Find the neuter noun:",
+      options: ["Tree", "Cat", "Dog", "Horse"],
+      answer: "Tree",
+      explanation: "Plants like 'tree' are treated as neuter."
+    },
+    {
+      question: "Which is neuter?",
+      options: ["Phone", "Father", "Aunt", "Son"],
+      answer: "Phone",
+      explanation: "'Phone' is an inanimate object."
+    },
+    {
+      question: "Select the neuter noun:",
+      options: ["Ball", "Player", "Coach", "Referee"],
+      answer: "Ball",
+      explanation: "'Ball' is an object and therefore neuter."
+    },
+    {
+      question: "Which word refers to a thing?",
+      options: ["Chair", "Student", "Principal", "Janitor"],
+      answer: "Chair",
+      explanation: "'Chair' is a thing, so it is neuter."
+    },
+    {
+      question: "Find the neuter noun:",
+      options: ["River", "Swimmer", "Fish", "Crab"],
+      answer: "River",
+      explanation: "'River' is a natural feature and is neuter."
+    },
+    {
+      question: "Which noun has no gender?",
+      options: ["Book", "Author", "Writer", "Poet"],
+      answer: "Book",
+      explanation: "'Book' is an object and is neuter."
+    },
+    {
+      question: "Select the neuter noun:",
+      options: ["Car", "Driver", "Mechanic", "Passenger"],
+      answer: "Car",
+      explanation: "'Car' is a vehicle and is neuter."
+    },
 
     // 31-40: Common Gender
-    { question: "Which noun is common gender?", options: ["King", "Queen", "Teacher", "Boy"], answer: "Teacher", explanation: "A 'Teacher' can be either male or female." },
-    { question: "Select the common noun:", options: ["Mother", "Parent", "Father", "Sister"], answer: "Parent", explanation: "'Parent' covers both Mother and Father." },
-    { question: "Which word implies either gender?", options: ["Doctor", "Actress", "Nun", "Monk"], answer: "Doctor", explanation: "A 'Doctor' can be male or female." },
-    { question: "Find the common gender noun:", options: ["Friend", "Boyfriend", "Girlfriend", "Husband"], answer: "Friend", explanation: "'Friend' is gender-neutral." },
-    { question: "Which is common gender?", options: ["Baby", "Boy", "Man", "Woman"], answer: "Baby", explanation: "A 'Baby' can be a boy or a girl." },
-    { question: "Select the common noun:", options: ["Student", "Headmaster", "Headmistress", "King"], answer: "Student", explanation: "'Student' applies to anyone studying." },
-    { question: "Which word is common gender?", options: ["Cousin", "Uncle", "Aunt", "Niece"], answer: "Cousin", explanation: "'Cousin' can be male or female." },
-    { question: "Find the common gender noun:", options: ["Guest", "Hostess", "Landlady", "Waiter"], answer: "Guest", explanation: "'Guest' applies to any visitor." },
-    { question: "Which is common gender?", options: ["Neighbor", "Man", "Gentleman", "Lady"], answer: "Neighbor", explanation: "Your 'Neighbor' could be a man or a woman." },
-    { question: "Select the common noun:", options: ["Enemy", "King", "Prince", "Duke"], answer: "Enemy", explanation: "An 'Enemy' can be of any gender." },
+    {
+      question: "Which noun is common gender?",
+      options: ["King", "Queen", "Teacher", "Boy"],
+      answer: "Teacher",
+      explanation: "A 'teacher' can be either male or female."
+    },
+    {
+      question: "Select the common noun:",
+      options: ["Mother", "Parent", "Father", "Sister"],
+      answer: "Parent",
+      explanation: "'Parent' can mean either a mother or a father."
+    },
+    {
+      question: "Which word implies either gender?",
+      options: ["Doctor", "Actress", "Nun", "Monk"],
+      answer: "Doctor",
+      explanation: "A 'doctor' may be male or female."
+    },
+    {
+      question: "Find the common gender noun:",
+      options: ["Friend", "Boyfriend", "Girlfriend", "Husband"],
+      answer: "Friend",
+      explanation: "'Friend' can refer to a person of any gender."
+    },
+    {
+      question: "Which is common gender?",
+      options: ["Baby", "Boy", "Man", "Woman"],
+      answer: "Baby",
+      explanation: "A 'baby' can be a boy or a girl."
+    },
+    {
+      question: "Select the common noun:",
+      options: ["Student", "Headmaster", "Headmistress", "King"],
+      answer: "Student",
+      explanation: "'Student' applies to any learner, male or female."
+    },
+    {
+      question: "Which word is common gender?",
+      options: ["Cousin", "Uncle", "Aunt", "Niece"],
+      answer: "Cousin",
+      explanation: "A 'cousin' may be male or female."
+    },
+    {
+      question: "Find the common gender noun:",
+      options: ["Guest", "Hostess", "Landlady", "Waiter"],
+      answer: "Guest",
+      explanation: "A 'guest' can be any visitor, regardless of gender."
+    },
+    {
+      question: "Which is common gender?",
+      options: ["Neighbor", "Man", "Gentleman", "Lady"],
+      answer: "Neighbor",
+      explanation: "Your 'neighbor' may be a man or a woman."
+    },
+    {
+      question: "Select the common noun:",
+      options: ["Enemy", "King", "Prince", "Duke"],
+      answer: "Enemy",
+      explanation: "An 'enemy' can be of any gender."
+    },
 
     // 41-50: Basic Matching
-    { question: "What is the feminine of 'Boy'?", options: ["Girl", "Woman", "Lady", "Aunt"], answer: "Girl", explanation: "The opposite of Boy is Girl." },
-    { question: "What is the masculine of 'Mother'?", options: ["Father", "Uncle", "Grandpa", "Brother"], answer: "Father", explanation: "The partner of Mother is Father." },
-    { question: "What is the feminine of 'Husband'?", options: ["Wife", "Spouse", "Partner", "Girl"], answer: "Wife", explanation: "The partner of Husband is Wife." },
-    { question: "What is the masculine of 'Sister'?", options: ["Brother", "Cousin", "Father", "Uncle"], answer: "Brother", explanation: "The male sibling is a Brother." },
-    { question: "What is the feminine of 'King'?", options: ["Queen", "Princess", "Duchess", "Lady"], answer: "Queen", explanation: "King rules with a Queen." },
-    { question: "What is the masculine of 'Aunt'?", options: ["Uncle", "Father", "Nephew", "Brother"], answer: "Uncle", explanation: "Aunt corresponds to Uncle." },
-    { question: "What is the feminine of 'Son'?", options: ["Daughter", "Niece", "Sister", "Mother"], answer: "Daughter", explanation: "Son is male offspring; Daughter is female." },
-    { question: "What is the masculine of 'Grandmother'?", options: ["Grandfather", "Father", "Uncle", "Brother"], answer: "Grandfather", explanation: "Grandmother pairs with Grandfather." },
-    { question: "What is the feminine of 'Man'?", options: ["Woman", "Girl", "Lady", "Person"], answer: "Woman", explanation: "Man pairs with Woman." },
-    { question: "What is the masculine of 'Madam'?", options: ["Sir", "Mister", "Boy", "Man"], answer: "Sir", explanation: "Madam pairs with Sir." }
+    {
+      question: "What is the feminine of 'Boy'?",
+      options: ["Girl", "Woman", "Lady", "Aunt"],
+      answer: "Girl",
+      explanation: "The opposite of 'boy' is 'girl'."
+    },
+    {
+      question: "What is the masculine of 'Mother'?",
+      options: ["Father", "Uncle", "Grandpa", "Brother"],
+      answer: "Father",
+      explanation: "The male parent is called 'father'."
+    },
+    {
+      question: "What is the feminine of 'Husband'?",
+      options: ["Wife", "Spouse", "Partner", "Girl"],
+      answer: "Wife",
+      explanation: "The female spouse is called 'wife'."
+    },
+    {
+      question: "What is the masculine of 'Sister'?",
+      options: ["Brother", "Cousin", "Father", "Uncle"],
+      answer: "Brother",
+      explanation: "The male sibling is called 'brother'."
+    },
+    {
+      question: "What is the feminine of 'King'?",
+      options: ["Queen", "Princess", "Duchess", "Lady"],
+      answer: "Queen",
+      explanation: "A king rules with a queen as his female counterpart."
+    },
+    {
+      question: "What is the masculine of 'Aunt'?",
+      options: ["Uncle", "Father", "Nephew", "Brother"],
+      answer: "Uncle",
+      explanation: "The male counterpart of 'aunt' is 'uncle'."
+    },
+    {
+      question: "What is the feminine of 'Son'?",
+      options: ["Daughter", "Niece", "Sister", "Mother"],
+      answer: "Daughter",
+      explanation: "A 'son' is a male child; a 'daughter' is a female child."
+    },
+    {
+      question: "What is the masculine of 'Grandmother'?",
+      options: ["Grandfather", "Father", "Uncle", "Brother"],
+      answer: "Grandfather",
+      explanation: "The male grandparent is called 'grandfather'."
+    },
+    {
+      question: "What is the feminine of 'Man'?",
+      options: ["Woman", "Girl", "Lady", "Person"],
+      answer: "Woman",
+      explanation: "The usual opposite of 'man' is 'woman'."
+    },
+    {
+      question: "What is the masculine of 'Madam'?",
+      options: ["Sir", "Mister", "Boy", "Man"],
+      answer: "Sir",
+      explanation: "'Madam' is formally paired with 'Sir'."
+    }
   ],
 
   // ============================================================
@@ -76,64 +326,314 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   intermediate: [
     // 1-10: Animal Genders
-    { question: "What is the feminine of 'Bull'?", options: ["Cow", "Heifer", "Mare", "Sow"], answer: "Cow", explanation: "A 'Bull' is a male bovine, and a 'Cow' is the female." },
-    { question: "What is the masculine of 'Hen'?", options: ["Rooster", "Drake", "Gander", "Ram"], answer: "Rooster", explanation: "A 'Hen' is a female chicken. The male is a 'Rooster'." },
-    { question: "What is the feminine of 'Horse' (stallion)?", options: ["Mare", "Ewe", "Vixen", "Doe"], answer: "Mare", explanation: "The male is a Stallion; the female is a 'Mare'." },
-    { question: "What is the masculine of 'Duck'?", options: ["Drake", "Goose", "Gander", "Swan"], answer: "Drake", explanation: "'Duck' is female. The male is called a 'Drake'." },
-    { question: "What is the feminine of 'Fox'?", options: ["Vixen", "Sow", "Ewe", "Doe"], answer: "Vixen", explanation: "A female fox is called a 'Vixen'." },
-    { question: "What is the masculine of 'Goose'?", options: ["Gander", "Drake", "Rooster", "Bull"], answer: "Gander", explanation: "Goose is female; the male is a 'Gander'." },
-    { question: "What is the feminine of 'Ram' (Sheep)?", options: ["Ewe", "Sow", "Doe", "Mare"], answer: "Ewe", explanation: "Ram is male; 'Ewe' (pronounced 'you') is female." },
-    { question: "What is the masculine of 'Sow' (Pig)?", options: ["Boar", "Bull", "Ram", "Drake"], answer: "Boar", explanation: "Sow is female; the male is a 'Boar'." },
-    { question: "What is the feminine of 'Tiger'?", options: ["Tigress", "Tigeress", "Tigra", "Tigris"], answer: "Tigress", explanation: "We add '-ess': 'Tigress'." },
-    { question: "What is the masculine of 'Lioness'?", options: ["Lion", "Tiger", "Leopard", "Cat"], answer: "Lion", explanation: "Lioness is female; 'Lion' is male." },
+    {
+      question: "What is the feminine of 'Bull'?",
+      options: ["Cow", "Heifer", "Mare", "Sow"],
+      answer: "Cow",
+      explanation: "A 'bull' is a male bovine; the adult female is called a 'cow'."
+    },
+    {
+      question: "What is the masculine of 'Hen'?",
+      options: ["Rooster", "Drake", "Gander", "Ram"],
+      answer: "Rooster",
+      explanation: "A 'hen' is a female chicken; the male chicken is a 'rooster'."
+    },
+    {
+      question: "What is the feminine of 'Horse' (stallion)?",
+      options: ["Mare", "Ewe", "Vixen", "Doe"],
+      answer: "Mare",
+      explanation: "The male horse is a stallion; the adult female horse is a 'mare'."
+    },
+    {
+      question: "What is the masculine of 'Duck'?",
+      options: ["Drake", "Goose", "Gander", "Swan"],
+      answer: "Drake",
+      explanation: "In this pair, 'duck' is female and 'drake' is the male."
+    },
+    {
+      question: "What is the feminine of 'Fox'?",
+      options: ["Vixen", "Sow", "Ewe", "Doe"],
+      answer: "Vixen",
+      explanation: "A female fox is called a 'vixen'."
+    },
+    {
+      question: "What is the masculine of 'Goose'?",
+      options: ["Gander", "Drake", "Rooster", "Bull"],
+      answer: "Gander",
+      explanation: "'Goose' is the female; the male bird is called a 'gander'."
+    },
+    {
+      question: "What is the feminine of 'Ram' (Sheep)?",
+      options: ["Ewe", "Sow", "Doe", "Mare"],
+      answer: "Ewe",
+      explanation: "A 'ram' is a male sheep; the female sheep is an 'ewe'."
+    },
+    {
+      question: "What is the masculine of 'Sow' (Pig)?",
+      options: ["Boar", "Bull", "Ram", "Drake"],
+      answer: "Boar",
+      explanation: "A 'sow' is a female pig; the male pig is a 'boar'."
+    },
+    {
+      question: "What is the feminine of 'Tiger'?",
+      options: ["Tigress", "Tigeress", "Tigra", "Tigris"],
+      answer: "Tigress",
+      explanation: "We form the feminine by adding '-ess': 'tiger' → 'tigress'."
+    },
+    {
+      question: "What is the masculine of 'Lioness'?",
+      options: ["Lion", "Tiger", "Leopard", "Cat"],
+      answer: "Lion",
+      explanation: "'Lioness' is the female; the male is simply 'lion'."
+    },
 
     // 11-20: Human Roles
-    { question: "What is the feminine of 'Bachelor'?", options: ["Spinster", "Wife", "Widow", "Lady"], answer: "Spinster", explanation: "'Bachelor' is an unmarried man; 'Spinster' is the historical term for an unmarried woman." },
-    { question: "What is the masculine of 'Witch'?", options: ["Wizard", "Warlock", "Sorcerer", "Magician"], answer: "Wizard", explanation: "A female magic-user is a Witch; the male is a 'Wizard' (or Warlock)." },
-    { question: "What is the feminine of 'Monk'?", options: ["Nun", "Priestess", "Sister", "Lady"], answer: "Nun", explanation: "Monk (male) pairs with 'Nun' (female)." },
-    { question: "What is the masculine of 'Bride'?", options: ["Bridegroom", "Groom", "Husband", "Bachelor"], answer: "Bridegroom", explanation: "The male is 'Bridegroom' or Groom." },
-    { question: "What is the feminine of 'Count'?", options: ["Countess", "Princess", "Duchess", "Baroness"], answer: "Countess", explanation: "Count -> 'Countess'." },
-    { question: "What is the masculine of 'Hostess'?", options: ["Host", "Waiter", "Steward", "Manager"], answer: "Host", explanation: "Hostess is female; 'Host' is male." },
-    { question: "What is the feminine of 'God'?", options: ["Goddess", "Angel", "Saint", "Spirit"], answer: "Goddess", explanation: "God -> Goddess." },
-    { question: "What is the masculine of 'Empress'?", options: ["Emperor", "King", "Tsar", "Sultan"], answer: "Emperor", explanation: "Empress -> Emperor." },
-    { question: "What is the feminine of 'Master'?", options: ["Mistress", "Miss", "Mrs", "Lady"], answer: "Mistress", explanation: "Master pairs with 'Mistress'." },
-    { question: "What is the masculine of 'Widow'?", options: ["Widower", "Bachelor", "Single", "Husband"], answer: "Widower", explanation: "We add '-er' to the female 'Widow' to get 'Widower'." },
+    {
+      question: "What is the feminine of 'Bachelor'?",
+      options: ["Spinster", "Wife", "Widow", "Lady"],
+      answer: "Spinster",
+      explanation: "Traditionally, 'bachelor' is an unmarried man and 'spinster' an unmarried woman."
+    },
+    {
+      question: "What is the masculine of 'Witch'?",
+      options: ["Wizard", "Warlock", "Sorcerer", "Magician"],
+      answer: "Wizard",
+      explanation: "A female magic-user is a witch; the common male term is 'wizard'."
+    },
+    {
+      question: "What is the feminine of 'Monk'?",
+      options: ["Nun", "Priestess", "Sister", "Lady"],
+      answer: "Nun",
+      explanation: "A 'monk' is male; the religious female counterpart is a 'nun'."
+    },
+    {
+      question: "What is the masculine of 'Bride'?",
+      options: ["Bridegroom", "Groom", "Husband", "Bachelor"],
+      answer: "Bridegroom",
+      explanation: "The traditional male term paired with 'bride' is 'bridegroom' (or simply 'groom')."
+    },
+    {
+      question: "What is the feminine of 'Count'?",
+      options: ["Countess", "Princess", "Duchess", "Baroness"],
+      answer: "Countess",
+      explanation: "The female title corresponding to 'count' is 'countess'."
+    },
+    {
+      question: "What is the masculine of 'Hostess'?",
+      options: ["Host", "Waiter", "Steward", "Manager"],
+      answer: "Host",
+      explanation: "'Hostess' is female; the male term is 'host'."
+    },
+    {
+      question: "What is the feminine of 'God'?",
+      options: ["Goddess", "Angel", "Saint", "Spirit"],
+      answer: "Goddess",
+      explanation: "The feminine form of 'god' is 'goddess'."
+    },
+    {
+      question: "What is the masculine of 'Empress'?",
+      options: ["Emperor", "King", "Tsar", "Sultan"],
+      answer: "Emperor",
+      explanation: "The male ruler parallel to 'empress' is 'emperor'."
+    },
+    {
+      question: "What is the feminine of 'Master'?",
+      options: ["Mistress", "Miss", "Mrs", "Lady"],
+      answer: "Mistress",
+      explanation: "In old usage, 'master' pairs with 'mistress' as the feminine."
+    },
+    {
+      question: "What is the masculine of 'Widow'?",
+      options: ["Widower", "Bachelor", "Single", "Husband"],
+      answer: "Widower",
+      explanation: "A 'widow' has lost her husband; a 'widower' has lost his wife."
+    },
 
     // 21-30: Titles
-    { question: "What is the feminine of 'Waiter'?", options: ["Waitress", "Server", "Stewardess", "Maid"], answer: "Waitress", explanation: "Waiter -> Waitress." },
-    { question: "What is the masculine of 'Stewardess'?", options: ["Steward", "Pilot", "Waiter", "Host"], answer: "Steward", explanation: "Stewardess -> Steward." },
-    { question: "What is the feminine of 'Duke'?", options: ["Duchess", "Countess", "Princess", "Lady"], answer: "Duchess", explanation: "Duke -> Duchess." },
-    { question: "What is the masculine of 'Lady'?", options: ["Lord", "Gentleman", "Sir", "Knight"], answer: "Lord", explanation: "In nobility: Lady -> Lord." },
-    { question: "What is the feminine of 'Nephew'?", options: ["Niece", "Cousin", "Sister", "Aunt"], answer: "Niece", explanation: "Nephew -> Niece." },
-    { question: "What is the masculine of 'Landlady'?", options: ["Landlord", "Owner", "Master", "Host"], answer: "Landlord", explanation: "Landlady -> Landlord." },
-    { question: "What is the feminine of 'Headmaster'?", options: ["Headmistress", "Principal", "Teacher", "Lady"], answer: "Headmistress", explanation: "Headmaster -> Headmistress." },
-    { question: "What is the masculine of 'Policewoman'?", options: ["Policeman", "Police officer", "Cop", "Sergeant"], answer: "Policeman", explanation: "Policewoman -> Policeman." },
-    { question: "What is the feminine of 'Salesman'?", options: ["Saleswoman", "Saleslady", "Both A and B", "Seller"], answer: "Both A and B", explanation: "Saleswoman and Saleslady are both used." },
-    { question: "What is the masculine of 'Spokeswoman'?", options: ["Spokesman", "Speaker", "Talker", "Reporter"], answer: "Spokesman", explanation: "Spokeswoman -> Spokesman." },
+    {
+      question: "What is the feminine of 'Waiter'?",
+      options: ["Waitress", "Server", "Stewardess", "Maid"],
+      answer: "Waitress",
+      explanation: "The traditional feminine form is 'waitress'."
+    },
+    {
+      question: "What is the masculine of 'Stewardess'?",
+      options: ["Steward", "Pilot", "Waiter", "Host"],
+      answer: "Steward",
+      explanation: "'Stewardess' is female; the matching male term is 'steward'."
+    },
+    {
+      question: "What is the feminine of 'Duke'?",
+      options: ["Duchess", "Countess", "Princess", "Lady"],
+      answer: "Duchess",
+      explanation: "The female title paired with 'duke' is 'duchess'."
+    },
+    {
+      question: "What is the masculine of 'Lady'?",
+      options: ["Lord", "Gentleman", "Sir", "Knight"],
+      answer: "Lord",
+      explanation: "In nobility, 'lady' corresponds to 'lord'."
+    },
+    {
+      question: "What is the feminine of 'Nephew'?",
+      options: ["Niece", "Cousin", "Sister", "Aunt"],
+      answer: "Niece",
+      explanation: "A 'nephew' is a brother's or sister's son; a 'niece' is their daughter."
+    },
+    {
+      question: "What is the masculine of 'Landlady'?",
+      options: ["Landlord", "Owner", "Master", "Host"],
+      answer: "Landlord",
+      explanation: "'Landlady' is a female property owner; 'landlord' is the male counterpart."
+    },
+    {
+      question: "What is the feminine of 'Headmaster'?",
+      options: ["Headmistress", "Principal", "Teacher", "Lady"],
+      answer: "Headmistress",
+      explanation: "'Headmaster' is male; 'headmistress' is the female form."
+    },
+    {
+      question: "What is the masculine of 'Policewoman'?",
+      options: ["Policeman", "Police officer", "Cop", "Sergeant"],
+      answer: "Policeman",
+      explanation: "'Policewoman' is female; 'policeman' is the male form."
+    },
+    {
+      question: "What is the feminine of 'Salesman'?",
+      options: ["Saleswoman", "Saleslady", "Both A and B", "Seller"],
+      answer: "Both A and B",
+      explanation: "Both 'saleswoman' and 'saleslady' can be used as feminine forms."
+    },
+    {
+      question: "What is the masculine of 'Spokeswoman'?",
+      options: ["Spokesman", "Speaker", "Talker", "Reporter"],
+      answer: "Spokesman",
+      explanation: "'Spokeswoman' pairs with 'spokesman' as the male form."
+    },
 
     // 31-40: Pronouns (Basic)
-    { question: "The boy lost ___ ball.", options: ["his", "her", "its", "their"], answer: "his", explanation: "'Boy' is masculine -> his." },
-    { question: "The girl finished ___ homework.", options: ["her", "his", "its", "their"], answer: "her", explanation: "'Girl' is feminine -> her." },
-    { question: "The dog wagged ___ tail.", options: ["its", "his", "her", "their"], answer: "its", explanation: "Animals (unspecified gender) -> its." },
-    { question: "The teacher asked the student to bring ___ book.", options: ["his or her", "its", "it", "she"], answer: "his or her", explanation: "'Student' is common gender -> his or her." },
-    { question: "My mother loves ___ garden.", options: ["her", "his", "its", "their"], answer: "her", explanation: "Mother -> her." },
-    { question: "The king wore ___ crown.", options: ["his", "her", "its", "their"], answer: "his", explanation: "King -> his." },
-    { question: "The car has lost ___ shine.", options: ["its", "his", "her", "their"], answer: "its", explanation: "Car (object) -> its." },
-    { question: "The baby is crying for ___ mother.", options: ["its", "his", "her", "their"], answer: "its", explanation: "Baby (unspecified) -> its." },
-    { question: "Every girl must clean ___ room.", options: ["her", "his", "its", "their"], answer: "her", explanation: "Every girl -> her." },
-    { question: "Every boy must bring ___ lunch.", options: ["his", "her", "its", "their"], answer: "his", explanation: "Every boy -> his." },
+    {
+      question: "The boy lost ___ ball.",
+      options: ["his", "her", "its", "their"],
+      answer: "his",
+      explanation: "We use 'his' as the possessive pronoun for 'boy'."
+    },
+    {
+      question: "The girl finished ___ homework.",
+      options: ["her", "his", "its", "their"],
+      answer: "her",
+      explanation: "We use 'her' as the possessive pronoun for 'girl'."
+    },
+    {
+      question: "The dog wagged ___ tail.",
+      options: ["its", "his", "her", "their"],
+      answer: "its",
+      explanation: "For an animal of unknown sex, we often use 'its'."
+    },
+    {
+      question: "The teacher asked the student to bring ___ book.",
+      options: ["his or her", "its", "it", "she"],
+      answer: "his or her",
+      explanation: "'Student' can be male or female, so 'his or her' is used in traditional grammar."
+    },
+    {
+      question: "My mother loves ___ garden.",
+      options: ["her", "his", "its", "their"],
+      answer: "her",
+      explanation: "'Mother' is feminine, so we use 'her'."
+    },
+    {
+      question: "The king wore ___ crown.",
+      options: ["his", "her", "its", "their"],
+      answer: "his",
+      explanation: "'King' is masculine, so the possessive pronoun is 'his'."
+    },
+    {
+      question: "The car has lost ___ shine.",
+      options: ["its", "his", "her", "their"],
+      answer: "its",
+      explanation: "A car is an object, so we use 'its'."
+    },
+    {
+      question: "The baby is crying for ___ mother.",
+      options: ["its", "his", "her", "their"],
+      answer: "its",
+      explanation: "When the baby's sex is not specified, traditional grammar uses 'its'."
+    },
+    {
+      question: "Every girl must clean ___ room.",
+      options: ["her", "his", "its", "their"],
+      answer: "her",
+      explanation: "We use 'her' with 'every girl'."
+    },
+    {
+      question: "Every boy must bring ___ lunch.",
+      options: ["his", "her", "its", "their"],
+      answer: "his",
+      explanation: "We use 'his' with 'every boy'."
+    },
 
     // 41-50: Context
-    { question: "Which word is masculine? 'The mare and the stallion ran.'", options: ["mare", "stallion", "ran", "the"], answer: "stallion", explanation: "Stallion is the male horse." },
-    { question: "Which word is feminine? 'The ewe and the ram grazed.'", options: ["ewe", "ram", "grazed", "the"], answer: "ewe", explanation: "Ewe is the female sheep." },
-    { question: "Identify the neuter noun: 'He put the computer on the desk.'", options: ["He", "computer", "desk", "Both B and C"], answer: "Both B and C", explanation: "Computer and desk are both objects." },
-    { question: "Identify the common noun: 'The doctor called the nurse.'", options: ["doctor", "nurse", "Both A and B", "called"], answer: "Both A and B", explanation: "Both Doctor and Nurse are common gender." },
-    { question: "In 'The ship struck an iceberg', ships are sometimes referred to as:", options: ["he", "she", "it", "they"], answer: "she", explanation: "Ships are historically personified as 'she'." },
-    { question: "Gender-neutral for 'Fireman'?", options: ["Firefighter", "Firewoman", "Fire person", "Burner"], answer: "Firefighter", explanation: "Firefighter is the standard neutral term." },
-    { question: "Gender-neutral for 'Policeman'?", options: ["Police officer", "Cop", "Guard", "Detective"], answer: "Police officer", explanation: "Police officer is neutral." },
-    { question: "Gender-neutral for 'Mailman'?", options: ["Mail carrier", "Postman", "Mail boy", "Letter man"], answer: "Mail carrier", explanation: "Mail carrier is neutral." },
-    { question: "Gender-neutral for 'Stewardess'?", options: ["Flight attendant", "Plane server", "Air host", "Flyer"], answer: "Flight attendant", explanation: "Flight attendant is neutral." },
-    { question: "Gender-neutral for 'Chairman'?", options: ["Chairperson", "Chair", "Both A and B", "Chairlady"], answer: "Both A and B", explanation: "Chairperson or Chair." }
+    {
+      question: "Which word is masculine? 'The mare and the stallion ran.'",
+      options: ["mare", "stallion", "ran", "the"],
+      answer: "stallion",
+      explanation: "A 'stallion' is a male horse."
+    },
+    {
+      question: "Which word is feminine? 'The ewe and the ram grazed.'",
+      options: ["ewe", "ram", "grazed", "the"],
+      answer: "ewe",
+      explanation: "An 'ewe' is a female sheep."
+    },
+    {
+      question: "Identify the neuter noun: 'He put the computer on the desk.'",
+      options: ["He", "computer", "desk", "Both B and C"],
+      answer: "Both B and C",
+      explanation: "'Computer' and 'desk' are both objects and therefore neuter."
+    },
+    {
+      question: "Identify the common gender noun: 'The doctor called the nurse.'",
+      options: ["doctor", "nurse", "Both A and B", "called"],
+      answer: "Both A and B",
+      explanation: "Both 'doctor' and 'nurse' can refer to males or females."
+    },
+    {
+      question: "In 'The ship struck an iceberg', ships are sometimes referred to as:",
+      options: ["he", "she", "it", "they"],
+      answer: "she",
+      explanation: "By tradition, ships are often personified and called 'she'."
+    },
+    {
+      question: "Gender-neutral term for 'Fireman'?",
+      options: ["Firefighter", "Firewoman", "Fire person", "Burner"],
+      answer: "Firefighter",
+      explanation: "'Firefighter' is the standard gender-neutral term."
+    },
+    {
+      question: "Gender-neutral term for 'Policeman'?",
+      options: ["Police officer", "Cop", "Guard", "Detective"],
+      answer: "Police officer",
+      explanation: "'Police officer' is a widely accepted gender-neutral title."
+    },
+    {
+      question: "Gender-neutral term for 'Mailman'?",
+      options: ["Mail carrier", "Postman", "Mail boy", "Letter man"],
+      answer: "Mail carrier",
+      explanation: "'Mail carrier' is a neutral term that can refer to any gender."
+    },
+    {
+      question: "Gender-neutral term for 'Stewardess'?",
+      options: ["Flight attendant", "Plane server", "Air host", "Flyer"],
+      answer: "Flight attendant",
+      explanation: "'Flight attendant' is the neutral, modern term."
+    },
+    {
+      question: "Gender-neutral term for 'Chairman'?",
+      options: ["Chairperson", "Chair", "Both A and B", "Chairlady"],
+      answer: "Both A and B",
+      explanation: "Both 'chairperson' and 'chair' can be used for any gender."
+    }
   ],
 
   // ============================================================
@@ -141,70 +641,314 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   advanced: [
     // 1-10: Gender-Neutral Language
-    { question: "The student lost ____ book. (Gender unknown)", options: ["his", "her", "their", "its"], answer: "their", explanation: "Singular 'their' is the standard neutral choice." },
-    { question: "If anyone calls, tell ____ I am busy.", options: ["him", "her", "them", "it"], answer: "them", explanation: "'Anyone' pairs with 'them'." },
-    { question: "Every passenger must hold ____ ticket.", options: ["his", "her", "their", "its"], answer: "their", explanation: "Use 'their' to be inclusive." },
-    { question: "Somebody left ____ umbrella here.", options: ["his", "her", "their", "its"], answer: "their", explanation: "'Somebody' pairs with 'their'." },
-    { question: "A good leader listens to ____ team.", options: ["his", "her", "their", "its"], answer: "their", explanation: "Leaders can be any gender -> their." },
-    { question: "Each candidate must submit ____ resume.", options: ["his", "his or her", "their", "All of the above"], answer: "All of the above", explanation: "All are valid depending on formality, 'their' is modern." },
-    { question: "Who dropped ____ wallet?", options: ["his", "her", "their", "its"], answer: "their", explanation: "Unknown owner -> their." },
-    { question: "No one should lose ____ hope.", options: ["his", "her", "their", "its"], answer: "their", explanation: "No one -> their." },
-    { question: "The parent brought ____ child to school.", options: ["his", "her", "their", "its"], answer: "their", explanation: "Parent -> their." },
-    { question: "Usually, a doctor cares for ____ patients.", options: ["his", "her", "their", "its"], answer: "their", explanation: "Doctor -> their." },
+    {
+      question: "The student lost ____ book. (Gender unknown)",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "When the student's gender is unknown, 'their' is a natural gender-neutral pronoun."
+    },
+    {
+      question: "If anyone calls, tell ____ I am busy.",
+      options: ["him", "her", "them", "it"],
+      answer: "them",
+      explanation: "Indefinite pronouns like 'anyone' are often followed by the singular 'them'."
+    },
+    {
+      question: "Every passenger must hold ____ ticket.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "To include all genders, we can say: 'Every passenger must hold their ticket.'"
+    },
+    {
+      question: "Somebody left ____ umbrella here.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "We do not know the person's gender, so 'their umbrella' is used."
+    },
+    {
+      question: "A good leader listens to ____ team.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "A leader may be male or female, so 'their team' is inclusive."
+    },
+    {
+      question: "Each candidate must submit ____ resume.",
+      options: ["his", "his or her", "their", "All of the above"],
+      answer: "All of the above",
+      explanation: "Traditional style uses 'his' or 'his or her'; modern style often prefers 'their'."
+    },
+    {
+      question: "Who dropped ____ wallet?",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "We do not know who it was, so 'their' is the inclusive choice."
+    },
+    {
+      question: "No one should lose ____ hope.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "We often pair 'no one' with 'their' to avoid assuming gender."
+    },
+    {
+      question: "The parent brought ____ child to school.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "'Parent' can be any gender, so 'their child' is gender-neutral."
+    },
+    {
+      question: "Usually, a doctor cares for ____ patients.",
+      options: ["his", "her", "their", "its"],
+      answer: "their",
+      explanation: "Since doctors can be any gender, 'their patients' is inclusive."
+    },
 
     // 11-20: Modern Usage
-    { question: "Which term is preferred over 'Stewardess'?", options: ["Flight attendant", "Air lady", "Plane host", "Steward"], answer: "Flight attendant", explanation: "Flight attendant." },
-    { question: "Instead of 'Policeman', use:", options: ["Cop", "Police officer", "Patrolman", "Guard"], answer: "Police officer", explanation: "Police officer." },
-    { question: "Instead of 'Mailman', use:", options: ["Mail carrier", "Postman", "Mail boy", "Letter man"], answer: "Mail carrier", explanation: "Mail carrier." },
-    { question: "Instead of 'Fireman', use:", options: ["Firefighter", "Fire person", "Burner", "Rescuer"], answer: "Firefighter", explanation: "Firefighter." },
-    { question: "The term 'Actor' is now often used for:", options: ["Males only", "Females only", "Both males and females", "Neither"], answer: "Both males and females", explanation: "Actor is becoming common for both." },
-    { question: "Neutral form of 'Mankind'?", options: ["Humankind", "Man", "Humanity", "Both A and C"], answer: "Both A and C", explanation: "Humankind or Humanity." },
-    { question: "Instead of 'Man-made', use:", options: ["Synthetic", "Artificial", "Manufactured", "All of the above"], answer: "All of the above", explanation: "All are good neutral alternatives." },
-    { question: "Instead of 'Chairman', use:", options: ["Chairperson", "Chair", "Head", "All of the above"], answer: "All of the above", explanation: "Chairperson or Chair." },
-    { question: "Instead of 'Forefathers', use:", options: ["Ancestors", "Dads", "Old men", "History"], answer: "Ancestors", explanation: "Ancestors." },
-    { question: "Instead of 'Businessman', use:", options: ["Business person", "Executive", "Business professional", "All of the above"], answer: "All of the above", explanation: "Business person/professional." },
+    {
+      question: "Which term is preferred over 'Stewardess'?",
+      options: ["Flight attendant", "Air lady", "Plane host", "Steward"],
+      answer: "Flight attendant",
+      explanation: "'Flight attendant' is the standard modern, gender-neutral title."
+    },
+    {
+      question: "Instead of 'Policeman', use:",
+      options: ["Cop", "Police officer", "Patrolman", "Guard"],
+      answer: "Police officer",
+      explanation: "'Police officer' clearly describes the role without mentioning gender."
+    },
+    {
+      question: "Instead of 'Mailman', use:",
+      options: ["Mail carrier", "Postman", "Mail boy", "Letter man"],
+      answer: "Mail carrier",
+      explanation: "'Mail carrier' is a neutral term for the person delivering mail."
+    },
+    {
+      question: "Instead of 'Fireman', use:",
+      options: ["Firefighter", "Fire person", "Burner", "Rescuer"],
+      answer: "Firefighter",
+      explanation: "'Firefighter' names the job without referring to gender."
+    },
+    {
+      question: "The term 'Actor' is now often used for:",
+      options: ["Males only", "Females only", "Both males and females", "Neither"],
+      answer: "Both males and females",
+      explanation: "In modern usage, 'actor' can refer to performers of any gender."
+    },
+    {
+      question: "Neutral form of 'Mankind'?",
+      options: ["Humankind", "Man", "Humanity", "Both A and C"],
+      answer: "Both A and C",
+      explanation: "'Humankind' and 'humanity' both avoid suggesting only males."
+    },
+    {
+      question: "Instead of 'Man-made', use:",
+      options: ["Synthetic", "Artificial", "Manufactured", "All of the above"],
+      answer: "All of the above",
+      explanation: "'Synthetic', 'artificial', or 'manufactured' are all neutral alternatives."
+    },
+    {
+      question: "Instead of 'Chairman', use:",
+      options: ["Chairperson", "Chair", "Head", "All of the above"],
+      answer: "All of the above",
+      explanation: "Any of 'chairperson', 'chair', or 'head' may be used without gender reference."
+    },
+    {
+      question: "Instead of 'Forefathers', use:",
+      options: ["Ancestors", "Dads", "Old men", "History"],
+      answer: "Ancestors",
+      explanation: "'Ancestors' is neutral and includes both male and female ancestors."
+    },
+    {
+      question: "Instead of 'Businessman', use:",
+      options: ["Business person", "Executive", "Business professional", "All of the above"],
+      answer: "All of the above",
+      explanation: "All these alternatives can describe a person in business without naming gender."
+    },
 
     // 21-30: Personification
-    { question: "In poetry, the 'Sun' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Masculine", explanation: "Sun = Masculine." },
-    { question: "In poetry, the 'Moon' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Feminine", explanation: "Moon = Feminine." },
-    { question: "In poetry, 'Nature' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Feminine", explanation: "Mother Nature = Feminine." },
-    { question: "In poetry, 'Death' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Masculine", explanation: "Death = Masculine." },
-    { question: "In poetry, 'Earth' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Feminine", explanation: "Mother Earth = Feminine." },
-    { question: "In poetry, 'War' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Masculine", explanation: "War = Masculine." },
-    { question: "In poetry, 'Spring' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Feminine", explanation: "Spring = Feminine." },
-    { question: "In poetry, 'Time' is:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Masculine", explanation: "Father Time = Masculine." },
-    { question: "Ships/boats are traditionally:", options: ["He", "She", "It", "They"], answer: "She", explanation: "Ships = She." },
-    { question: "Countries (affectionately) are:", options: ["Masculine", "Feminine", "Neuter", "Common"], answer: "Feminine", explanation: "Countries = She (Motherland)." },
+    {
+      question: "In poetry, the 'Sun' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Masculine",
+      explanation: "In traditional English poetry, the sun is often personified as 'he'."
+    },
+    {
+      question: "In poetry, the 'Moon' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Feminine",
+      explanation: "The moon is often personified as 'she' or as a feminine figure."
+    },
+    {
+      question: "In poetry, 'Nature' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Feminine",
+      explanation: "Nature is frequently called 'Mother Nature', so it is treated as feminine."
+    },
+    {
+      question: "In poetry, 'Death' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Masculine",
+      explanation: "Death is often pictured as a male figure, such as the 'grim reaper'."
+    },
+    {
+      question: "In poetry, 'Earth' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Feminine",
+      explanation: "The Earth is commonly personified as 'Mother Earth', which is feminine."
+    },
+    {
+      question: "In poetry, 'War' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Masculine",
+      explanation: "War is often imagined as a fierce male spirit in literature."
+    },
+    {
+      question: "In poetry, 'Spring' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Feminine",
+      explanation: "Spring is sometimes pictured as a young maiden, so it is treated as feminine."
+    },
+    {
+      question: "In poetry, 'Time' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Masculine",
+      explanation: "Time is personified as 'Father Time', which is masculine."
+    },
+    {
+      question: "Ships/boats are traditionally:",
+      options: ["He", "She", "It", "They"],
+      answer: "She",
+      explanation: "By long tradition, ships and boats are referred to as 'she'."
+    },
+    {
+      question: "Countries (affectionately) are:",
+      options: ["Masculine", "Feminine", "Neuter", "Common"],
+      answer: "Feminine",
+      explanation: "People often speak of their country as 'the motherland' or 'she'."
+    },
 
     // 31-40: Specific Animals
-    { question: "Feminine of 'Boar'?", options: ["Sow", "Doe", "Mare", "Hen"], answer: "Sow", explanation: "Sow." },
-    { question: "Masculine of 'Doe'?", options: ["Buck", "Bull", "Ram", "Stallion"], answer: "Buck", explanation: "Buck." },
-    { question: "Masculine of 'Ewe'?", options: ["Ram", "Buck", "Boar", "Bull"], answer: "Ram", explanation: "Ram." },
-    { question: "Feminine of 'Colt'?", options: ["Filly", "Mare", "Foal", "Doe"], answer: "Filly", explanation: "Filly." },
-    { question: "Masculine of 'Filly'?", options: ["Colt", "Foal", "Stallion", "Gelding"], answer: "Colt", explanation: "Colt." },
-    { question: "Neutral term for 'Ram/Ewe'?", options: ["Sheep", "Goat", "Lamb", "Flock"], answer: "Sheep", explanation: "Sheep." },
-   { 
-  question: "Neutral term for 'Bull/Cow'?", 
-  options: ["Cattle", "Oxen", "Bovine", "All of the above"], 
-  answer: "Cattle", 
-  explanation: "'Cattle' is the standard neutral collective term for bulls and cows. ('Bovine' is usually used as an adjective.)" 
-},
-
-    { question: "Feminine of 'Dog' (technical)?", options: ["Bitch", "Dam", "Queen", "Sow"], answer: "Bitch", explanation: "Bitch." },
-    { question: "Masculine of 'Bitch'?", options: ["Dog", "Sire", "Hound", "Wolf"], answer: "Dog", explanation: "Dog." },
-    { question: "What is a 'Gelding'?", options: ["Male horse (castrated)", "Female horse", "Young horse", "Wild horse"], answer: "Male horse (castrated)", explanation: "Castrated male horse." },
+    {
+      question: "Feminine of 'Boar'?",
+      options: ["Sow", "Doe", "Mare", "Hen"],
+      answer: "Sow",
+      explanation: "A 'boar' is a male pig; the female pig is called a 'sow'."
+    },
+    {
+      question: "Masculine of 'Doe'?",
+      options: ["Buck", "Bull", "Ram", "Stallion"],
+      answer: "Buck",
+      explanation: "A 'doe' is a female deer; the male deer is called a 'buck'."
+    },
+    {
+      question: "Masculine of 'Ewe'?",
+      options: ["Ram", "Buck", "Boar", "Bull"],
+      answer: "Ram",
+      explanation: "An 'ewe' is a female sheep; the male sheep is called a 'ram'."
+    },
+    {
+      question: "Feminine of 'Colt'?",
+      options: ["Filly", "Mare", "Foal", "Doe"],
+      answer: "Filly",
+      explanation: "A 'colt' is a young male horse; the young female horse is a 'filly'."
+    },
+    {
+      question: "Masculine of 'Filly'?",
+      options: ["Colt", "Foal", "Stallion", "Gelding"],
+      answer: "Colt",
+      explanation: "A 'filly' is a young female horse; the young male horse is a 'colt'."
+    },
+    {
+      question: "Neutral term for 'Ram/Ewe'?",
+      options: ["Sheep", "Goat", "Lamb", "Flock"],
+      answer: "Sheep",
+      explanation: "'Ram' and 'ewe' are male and female; the general name for the animal is 'sheep'."
+    },
+    {
+      question: "Neutral term for 'Bull/Cow'?",
+      options: ["Cattle", "Oxen", "Bovine", "All of the above"],
+      answer: "Cattle",
+      explanation: "'Bull' and 'cow' are male and female; together they are usually called 'cattle'."
+    },
+    {
+      question: "Feminine of 'Dog' (technical)?",
+      options: ["Bitch", "Dam", "Queen", "Sow"],
+      answer: "Bitch",
+      explanation: "In technical animal terminology, the female dog is called a 'bitch'."
+    },
+    {
+      question: "Masculine of 'Bitch'?",
+      options: ["Dog", "Sire", "Hound", "Wolf"],
+      answer: "Dog",
+      explanation: "In this pair, 'bitch' is the female; 'dog' is the usual word for the male."
+    },
+    {
+      question: "What is a 'Gelding'?",
+      options: ["Male horse (castrated)", "Female horse", "Young horse", "Wild horse"],
+      answer: "Male horse (castrated)",
+      explanation: "A 'gelding' is a male horse that has been castrated."
+    },
 
     // 41-50: Titles
-    { question: "Feminine of 'Czar'?", options: ["Czarina", "Queen", "Empress", "Duchess"], answer: "Czarina", explanation: "Czarina." },
-    { question: "Masculine of 'Sultana'?", options: ["Sultan", "King", "Prince", "Rajah"], answer: "Sultan", explanation: "Sultan." },
-    { question: "Feminine of 'Maharajah'?", options: ["Maharani", "Princess", "Rani", "Lady"], answer: "Maharani", explanation: "Maharani." },
-    { question: "Masculine of 'Signora'?", options: ["Signor", "Sir", "Monsieur", "Senor"], answer: "Signor", explanation: "Signor." },
-    { question: "Feminine of 'Fiancé'?", options: ["Fiancée", "Bride", "Wife", "Betrothed"], answer: "Fiancée", explanation: "Fiancée (two e's)." },
-    { question: "Masculine of 'Blonde'?", options: ["Blond", "Brunette", "Dark", "Fair"], answer: "Blond", explanation: "Blond (no e)." },
-    { question: "Feminine of 'Executor'?", options: ["Executrix", "Executer", "Executioner", "Executor"], answer: "Executrix", explanation: "Executrix." },
-    { question: "Masculine of 'Testatrix'?", options: ["Testator", "Testament", "Tester", "Testy"], answer: "Testator", explanation: "Testator." },
-    { question: "Feminine of 'Administrator'?", options: ["Administratrix", "Admin", "Secretary", "Boss"], answer: "Administratrix", explanation: "Administratrix." },
-    { question: "Masculine of 'Belle'?", options: ["Beau", "Boy", "Handsome", "Gent"], answer: "Beau", explanation: "Beau." }
+    {
+      question: "Feminine of 'Czar'?",
+      options: ["Czarina", "Queen", "Empress", "Duchess"],
+      answer: "Czarina",
+      explanation: "The female title corresponding to 'czar' is 'czarina'."
+    },
+    {
+      question: "Masculine of 'Sultana'?",
+      options: ["Sultan", "King", "Prince", "Rajah"],
+      answer: "Sultan",
+      explanation: "'Sultana' is the female title; 'sultan' is the male ruler."
+    },
+    {
+      question: "Feminine of 'Maharajah'?",
+      options: ["Maharani", "Princess", "Rani", "Lady"],
+      answer: "Maharani",
+      explanation: "The wife or female counterpart of a maharajah is a 'maharani'."
+    },
+    {
+      question: "Masculine of 'Signora'?",
+      options: ["Signor", "Sir", "Monsieur", "Senor"],
+      answer: "Signor",
+      explanation: "In Italian, 'signora' is for a woman and 'signor' is for a man."
+    },
+    {
+      question: "Feminine of 'Fiancé'?",
+      options: ["Fiancée", "Bride", "Wife", "Betrothed"],
+      answer: "Fiancée",
+      explanation: "'Fiancé' is a man who is engaged; 'fiancée' (two e's) is a woman who is engaged."
+    },
+    {
+      question: "Masculine of 'Blonde'?",
+      options: ["Blond", "Brunette", "Dark", "Fair"],
+      answer: "Blond",
+      explanation: "'Blonde' is often used for a fair-haired woman; 'blond' (without e) is used for a man."
+    },
+    {
+      question: "Feminine of 'Executor'?",
+      options: ["Executrix", "Executer", "Executioner", "Executor"],
+      answer: "Executrix",
+      explanation: "'Executrix' is the traditional feminine form of 'executor'."
+    },
+    {
+      question: "Masculine of 'Testatrix'?",
+      options: ["Testator", "Testament", "Tester", "Testy"],
+      answer: "Testator",
+      explanation: "A 'testator' is a man who makes a will; 'testatrix' is the older feminine form."
+    },
+    {
+      question: "Feminine of 'Administrator'?",
+      options: ["Administratrix", "Admin", "Secretary", "Boss"],
+      answer: "Administratrix",
+      explanation: "'Administratrix' is the traditional feminine form of 'administrator'."
+    },
+    {
+      question: "Masculine of 'Belle'?",
+      options: ["Beau", "Boy", "Handsome", "Gent"],
+      answer: "Beau",
+      explanation: "A 'belle' is a beautiful woman; her male admirer or counterpart can be called a 'beau'."
+    }
   ],
 
   // ============================================================
@@ -212,73 +956,317 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   expert: [
     // 1-15: Obscure Animals
-    { question: "Masculine of 'Pen' (Swan)?", options: ["Cob", "Drake", "Gander", "Buck"], answer: "Cob", explanation: "Cob." },
-    { question: "Feminine of 'Cob'?", options: ["Pen", "Hen", "Sow", "Goose"], answer: "Pen", explanation: "Pen." },
-    { question: "Masculine of 'Jill' (Ferret)?", options: ["Hob", "Jack", "Tom", "Buck"], answer: "Hob", explanation: "Hob." },
-    { question: "Feminine of 'Tod' (Fox)?", options: ["Vixen", "Sow", "Doe", "Jill"], answer: "Vixen", explanation: "Vixen." },
-    { question: "Masculine of 'Tabby' (Cat)?", options: ["Tom", "Gib", "Jack", "Boar"], answer: "Tom", explanation: "Tom." },
-    { question: "Feminine of 'Hart' (Red Deer)?", options: ["Hind", "Doe", "Roe", "Sow"], answer: "Hind", explanation: "Hind." },
-    { question: "Masculine of 'Hind'?", options: ["Hart", "Stag", "Buck", "Bull"], answer: "Hart", explanation: "Hart." },
-    { question: "Masculine of 'Jenny' (Donkey)?", options: ["Jack", "Tom", "Dick", "Harry"], answer: "Jack", explanation: "Jack." },
-    { question: "Feminine of 'Billy' (Goat)?", options: ["Nanny", "Doe", "Sow", "Ewe"], answer: "Nanny", explanation: "Nanny." },
-    { question: "Masculine of 'Nanny' (Goat)?", options: ["Billy", "Buck", "Ram", "Bull"], answer: "Billy", explanation: "Billy." },
-    { question: "Gender of a 'Drone' (Bee)?", options: ["Male", "Female", "Neuter", "Common"], answer: "Male", explanation: "Male." },
-    { question: "Feminine of 'Tiercel' (Hawk)?", options: ["Formel", "Hen", "Sow", "Pen"], answer: "Formel", explanation: "Formel." },
-    { question: "Masculine of 'Cygnet'?", options: ["None (Young Swan)", "Cob", "Pen", "Drake"], answer: "None (Young Swan)", explanation: "Cygnet is young (neutral)." },
-    { question: "Feminine of 'Buck' (Rabbit)?", options: ["Doe", "Sow", "Hen", "Vixen"], answer: "Doe", explanation: "Doe." },
-    { question: "Masculine of 'Queen' (Cat)?", options: ["Tom", "King", "Sire", "Jack"], answer: "Tom", explanation: "Tom." },
+    {
+      question: "Masculine of 'Pen' (Swan)?",
+      options: ["Drake", "Cob", "Gander", "Buck"],
+      answer: "Cob",
+      explanation: "A female swan is called a 'pen'; the male swan is called a 'cob'."
+    },
+    {
+      question: "Feminine of 'Cob'?",
+      options: ["Hen", "Sow", "Pen", "Goose"],
+      answer: "Pen",
+      explanation: "A 'cob' is a male swan; the female swan is called a 'pen'."
+    },
+    {
+      question: "Masculine of 'Jill' (Ferret)?",
+      options: ["Jack", "Tom", "Buck", "Hob"],
+      answer: "Hob",
+      explanation: "A female ferret is a 'jill'; the male ferret is called a 'hob'."
+    },
+    {
+      question: "Feminine of 'Tod' (Fox)?",
+      options: ["Vixen", "Sow", "Doe", "Jill"],
+      answer: "Vixen",
+      explanation: "A 'tod' is a male fox; the female fox is called a 'vixen'."
+    },
+    {
+      question: "Masculine of 'Tabby' (Cat)?",
+      options: ["Gib", "Jack", "Tom", "Boar"],
+      answer: "Tom",
+      explanation: "In traditional usage, the male cat is often called a 'tom'."
+    },
+    {
+      question: "Feminine of 'Hart' (Red Deer)?",
+      options: ["Doe", "Roe", "Sow", "Hind"],
+      answer: "Hind",
+      explanation: "A 'hart' is an old term for a male red deer; the female is a 'hind'."
+    },
+    {
+      question: "Masculine of 'Hind'?",
+      options: ["Stag", "Hart", "Buck", "Bull"],
+      answer: "Hart",
+      explanation: "A 'hind' is a female red deer; the male is called a 'hart'."
+    },
+    {
+      question: "Masculine of 'Jenny' (Donkey)?",
+      options: ["Jack", "Tom", "Dick", "Harry"],
+      answer: "Jack",
+      explanation: "A 'jenny' is a female donkey; the male donkey is called a 'jack'."
+    },
+    {
+      question: "Feminine of 'Billy' (Goat)?",
+      options: ["Doe", "Sow", "Nanny", "Ewe"],
+      answer: "Nanny",
+      explanation: "A 'billy' is a male goat; the female goat is called a 'nanny'."
+    },
+    {
+      question: "Masculine of 'Nanny' (Goat)?",
+      options: ["Buck", "Ram", "Bull", "Billy"],
+      answer: "Billy",
+      explanation: "A 'nanny' is a female goat; the male goat is called a 'billy'."
+    },
+    {
+      question: "Gender of a 'Drone' (Bee)?",
+      options: ["Female", "Male", "Neuter", "Common"],
+      answer: "Male",
+      explanation: "In a hive, a 'drone' is a male bee."
+    },
+    {
+      question: "Feminine of 'Tiercel' (Hawk)?",
+      options: ["Hen", "Sow", "Formel", "Pen"],
+      answer: "Formel",
+      explanation: "A 'tiercel' is a male hawk; the female hawk can be called a 'formel'."
+    },
+    {
+      question: "Masculine of 'Cygnet'?",
+      options: ["Cob", "Pen", "Drake", "None (Young Swan)"],
+      answer: "None (Young Swan)",
+      explanation: "'Cygnet' is the word for a young swan and does not indicate male or female."
+    },
+    {
+      question: "Feminine of 'Buck' (Rabbit)?",
+      options: ["Doe", "Sow", "Hen", "Vixen"],
+      answer: "Doe",
+      explanation: "A 'buck' is a male rabbit; the female rabbit is called a 'doe'."
+    },
+    {
+      question: "Masculine of 'Queen' (Cat)?",
+      options: ["King", "Sire", "Tom", "Jack"],
+      answer: "Tom",
+      explanation: "A breeding female cat may be called a 'queen'; the male cat is called a 'tom'."
+    },
 
     // 16-30: Archaic & Foreign
-    { question: "Masculine of 'Marquise'?", options: ["Marquis", "Duke", "Earl", "Baron"], answer: "Marquis", explanation: "Marquis." },
-    { question: "Feminine of 'Viceroy'?", options: ["Vicereine", "Queen", "Countess", "Lady"], answer: "Vicereine", explanation: "Vicereine." },
-    { question: "Masculine of 'Abbess'?", options: ["Abbot", "Monk", "Priest", "Bishop"], answer: "Abbot", explanation: "Abbot." },
-    { question: "Feminine of 'Prior'?", options: ["Prioress", "Nun", "Sister", "Mother"], answer: "Prioress", explanation: "Prioress." },
-   { 
-  question: "Masculine of 'Spinster' (in traditional grammar)?", 
-  options: ["Spinner", "Bachelor", "Weaver", "Husband"], 
-  answer: "Bachelor", 
-  explanation: "In traditional grammar pairs, 'Bachelor' (unmarried man) corresponds to 'Spinster' (unmarried woman)." 
-},
-
-    { question: "Feminine of 'Prosecutor'?", options: ["Prosecutrix", "Prosecuter", "Lawyer", "Attorney"], answer: "Prosecutrix", explanation: "Prosecutrix." },
-    { question: "Masculine of 'Aviatrix'?", options: ["Aviator", "Pilot", "Flyer", "Captain"], answer: "Aviator", explanation: "Aviator." },
-    { question: "Feminine of 'Equerry'?", options: ["None/Equerry", "Equerress", "Lady", "Dame"], answer: "None/Equerry", explanation: "Equerry (gender neutral)." },
-    { question: "Masculine of 'Prima Donna'?", options: ["Primo Uomo", "Tenor", "Singer", "Star"], answer: "Primo Uomo", explanation: "Primo Uomo." },
-    { question: "Feminine of 'Alumnus'?", options: ["Alumna", "Alumni", "Alumnae", "Graduate"], answer: "Alumna", explanation: "Alumna." },
-    { question: "Plural Masculine of 'Alumnus'?", options: ["Alumni", "Alumnus", "Alumnas", "Alumnae"], answer: "Alumni", explanation: "Alumni." },
-    { question: "Plural Feminine of 'Alumna'?", options: ["Alumnae", "Alumnas", "Alumni", "Alumnus"], answer: "Alumnae", explanation: "Alumnae." },
-   { 
-  question: "Feminine of 'Sorcerer'?", 
-  options: ["Sorceress", "Witch", "Wizard", "Warlock"], 
-  answer: "Sorceress", 
-  explanation: "The traditional feminine form of 'sorcerer' is 'sorceress'." 
-},
-
-    { question: "Feminine of 'Prophet'?", options: ["Prophetess", "Seer", "Visionary", "Lady"], answer: "Prophetess", explanation: "Prophetess." },
-    { question: "Masculine of 'Diva'?", options: ["Divo", "Singer", "Tenor", "Star"], answer: "Divo", explanation: "Divo." },
+    {
+      question: "Masculine of 'Marquise'?",
+      options: ["Duke", "Earl", "Marquis", "Baron"],
+      answer: "Marquis",
+      explanation: "A 'marquise' is a noblewoman; the male title is 'marquis'."
+    },
+    {
+      question: "Feminine of 'Viceroy'?",
+      options: ["Queen", "Countess", "Lady", "Vicereine"],
+      answer: "Vicereine",
+      explanation: "The female counterpart of a 'viceroy' can be called a 'vicereine'."
+    },
+    {
+      question: "Masculine of 'Abbess'?",
+      options: ["Abbot", "Monk", "Priest", "Bishop"],
+      answer: "Abbot",
+      explanation: "An 'abbess' leads a convent of nuns; the male leader is an 'abbot'."
+    },
+    {
+      question: "Feminine of 'Prior'?",
+      options: ["Prioress", "Nun", "Sister", "Mother"],
+      answer: "Prioress",
+      explanation: "The female head of a convent corresponding to a 'prior' is a 'prioress'."
+    },
+    {
+      question: "Masculine of 'Spinster' (in traditional grammar)?",
+      options: ["Spinner", "Weaver", "Bachelor", "Husband"],
+      answer: "Bachelor",
+      explanation: "In traditional grammar pairs, an unmarried man is a 'bachelor' and an unmarried woman a 'spinster'."
+    },
+    {
+      question: "Feminine of 'Prosecutor'?",
+      options: ["Prosecuter", "Lawyer", "Attorney", "Prosecutrix"],
+      answer: "Prosecutrix",
+      explanation: "'Prosecutrix' is the older feminine form of 'prosecutor'."
+    },
+    {
+      question: "Masculine of 'Aviatrix'?",
+      options: ["Pilot", "Aviator", "Flyer", "Captain"],
+      answer: "Aviator",
+      explanation: "An 'aviatrix' is a female pilot; the traditional male term is 'aviator'."
+    },
+    {
+      question: "Feminine of 'Equerry'?",
+      options: ["Equerress", "Lady", "None/Equerry", "Dame"],
+      answer: "None/Equerry",
+      explanation: "'Equerry' is now used for both men and women, so it has no special feminine form."
+    },
+    {
+      question: "Masculine of 'Prima Donna'?",
+      options: ["Tenor", "Primo Uomo", "Singer", "Star"],
+      answer: "Primo Uomo",
+      explanation: "In opera, the male equivalent of the 'prima donna' can be called 'primo uomo'."
+    },
+    {
+      question: "Feminine of 'Alumnus'?",
+      options: ["Alumni", "Alumnae", "Graduate", "Alumna"],
+      answer: "Alumna",
+      explanation: "A male graduate is an 'alumnus'; a female graduate is an 'alumna'."
+    },
+    {
+      question: "Plural masculine of 'Alumnus'?",
+      options: ["Alumnus", "Alumni", "Alumnas", "Alumnae"],
+      answer: "Alumni",
+      explanation: "The Latin plural of 'alumnus' (masculine) is 'alumni'."
+    },
+    {
+      question: "Plural feminine of 'Alumna'?",
+      options: ["Alumnas", "Alumni", "Alumnae", "Alumnus"],
+      answer: "Alumnae",
+      explanation: "The Latin plural of 'alumna' (feminine) is 'alumnae'."
+    },
+    {
+      question: "Feminine of 'Sorcerer'?",
+      options: ["Witch", "Sorceress", "Wizard", "Warlock"],
+      answer: "Sorceress",
+      explanation: "The traditional feminine form of 'sorcerer' is 'sorceress'."
+    },
+    {
+      question: "Feminine of 'Prophet'?",
+      options: ["Seer", "Visionary", "Lady", "Prophetess"],
+      answer: "Prophetess",
+      explanation: "A female prophet can be called a 'prophetess' in older usage."
+    },
+    {
+      question: "Masculine of 'Diva'?",
+      options: ["Singer", "Tenor", "Divo", "Star"],
+      answer: "Divo",
+      explanation: "A celebrated male singer may be called a 'divo' (male form of 'diva')."
+    },
 
     // 31-40: Complex Agreement
-    { question: "Agreement: 'Neither the manager nor the employees could find ____ keys.'", options: ["their", "his", "her", "its"], answer: "their", explanation: "Agree with closest noun (employees) -> their." },
-    { question: "Agreement: 'Neither the employees nor the manager could find ____ keys.'", options: ["his or her", "their", "its", "our"], answer: "his or her", explanation: "Agree with closest noun (manager) -> his or her." },
-    { question: "Agreement: 'The jury gave ____ verdict.'", options: ["its", "their", "his", "her"], answer: "its", explanation: "Unit -> its." },
-    { question: "Agreement: 'The jury were divided in ____ opinions.'", options: ["their", "its", "his", "her"], answer: "their", explanation: "Divided -> their." },
-    { question: "'Gentle reader' addresses:", options: ["Both genders", "Men only", "Women only", "Critics"], answer: "Both genders", explanation: "Everyone." },
-    { question: "Which is an 'Epicene' noun?", options: ["Teacher", "King", "Queen", "Boy"], answer: "Teacher", explanation: "Teacher (one form for both)." },
-    { question: "Gender of 'Baby' (unknown sex)?", options: ["Neuter (It)", "Masculine", "Feminine", "Common"], answer: "Neuter (It)", explanation: "It." },
-    { question: "'Man is mortal' refers to:", options: ["Generic masculine (Humanity)", "Specific masculine", "Neuter", "Adjective"], answer: "Generic masculine (Humanity)", explanation: "Humanity." },
-    { question: "Which avoids bias?", options: ["A nurse must be patient with her patients.", "A nurse must be patient with his patients.", "Nurses must be patient with their patients.", "A nurse must be patient with its patients."], answer: "Nurses must be patient with their patients.", explanation: "Pluralizing (Nurses/their) is best." },
-    { question: "Pronoun 'One' is:", options: ["Gender neutral", "Masculine", "Feminine", "Neuter"], answer: "Gender neutral", explanation: "Gender neutral." },
+    {
+      question: "Agreement: 'Neither the manager nor the employees could find ____ keys.'",
+      options: ["their", "his", "her", "its"],
+      answer: "their",
+      explanation: "The nearer subject is 'employees' (plural), so 'their keys' is natural."
+    },
+    {
+      question: "Agreement: 'Neither the employees nor the manager could find ____ keys.'",
+      options: ["their", "his or her", "its", "our"],
+      answer: "his or her",
+      explanation: "Here the nearer subject is 'manager' (singular), so we use 'his or her'."
+    },
+    {
+      question: "Agreement: 'The jury gave ____ verdict.'",
+      options: ["their", "his", "its", "her"],
+      answer: "its",
+      explanation: "When we treat 'jury' as one unit, we use the singular pronoun 'its'."
+    },
+    {
+      question: "Agreement: 'The jury were divided in ____ opinions.'",
+      options: ["its", "his", "her", "their"],
+      answer: "their",
+      explanation: "Here 'jury' is seen as individuals, so we use the plural 'their opinions'."
+    },
+    {
+      question: "'Gentle reader' addresses:",
+      options: ["Men only", "Both genders", "Women only", "Critics"],
+      answer: "Both genders",
+      explanation: "The phrase 'gentle reader' is a polite form of address to all readers."
+    },
+    {
+      question: "Which is an 'epicene' noun?",
+      options: ["King", "Queen", "Teacher", "Boy"],
+      answer: "Teacher",
+      explanation: "An epicene noun like 'teacher' has one form for both sexes."
+    },
+    {
+      question: "Gender of 'Baby' (unknown sex)?",
+      options: ["Masculine", "Feminine", "Common", "Neuter (It)"],
+      answer: "Neuter (It)",
+      explanation: "In traditional grammar, if we do not know whether the baby is a boy or a girl, we may refer to the baby as 'it', which is treated as neuter."
+    },
+    {
+      question: "'Man is mortal' refers to:",
+      options: ["Specific masculine", "Neuter", "Generic masculine (Humanity)", "Adjective"],
+      answer: "Generic masculine (Humanity)",
+      explanation: "Here 'man' stands for 'human beings in general', not only males."
+    },
+    {
+      question: "Which avoids bias?",
+      options: [
+        "A nurse must be patient with his patients.",
+        "Nurses must be patient with their patients.",
+        "A nurse must be patient with her patients.",
+        "A nurse must be patient with its patients."
+      ],
+      answer: "Nurses must be patient with their patients.",
+      explanation: "Using the plural 'nurses' and 'their' avoids assuming that all nurses are male or female."
+    },
+    {
+      question: "Pronoun 'one' is:",
+      options: ["Masculine", "Feminine", "Neuter", "Gender neutral"],
+      answer: "Gender neutral",
+      explanation: "The pronoun 'one' can refer to any person and does not mark gender."
+    },
 
     // 41-50: Trivia
-    { question: "Suffix '-ess' origin?", options: ["French/Latin", "German", "Greek", "Spanish"], answer: "French/Latin", explanation: "French/Latin." },
-    { question: "Suffix '-ster' (Spinster) original gender?", options: ["Feminine", "Masculine", "Neuter", "Common"], answer: "Feminine", explanation: "Feminine." },
-    { question: "Word applied metaphorically to males?", options: ["Siren", "Bull", "Ram", "Stag"], answer: "Siren", explanation: "Siren." },
-    { question: "'Widower' is unique because:", options: ["It derives from the feminine form", "It is shorter", "No feminine", "Latin"], answer: "It derives from the feminine form", explanation: "Male derived from female base." },
-    { question: "English gender type?", options: ["Natural Gender", "Grammatical Gender", "Common Gender", "No Gender"], answer: "Natural Gender", explanation: "Natural Gender (biological)." },
-    { question: "Ship name treated as masculine?", options: ["The Bismarck", "The Titanic", "The Queen Mary", "The Elizabeth"], answer: "The Bismarck", explanation: "The Bismarck." },
-    { question: "Masculine of 'Amazon'?", options: ["No specific equivalent", "Warrior", "Soldier", "Spartan"], answer: "No specific equivalent", explanation: "None." },
-    { question: "'Hero' today is:", options: ["Common gender", "Masculine only", "Neuter", "Archaic"], answer: "Common gender", explanation: "Common gender." },
-    { question: "Feminine of 'Tsar'?", options: ["Tsarina", "Tsara", "Queen", "Duchess"], answer: "Tsarina", explanation: "Tsarina." },
-    { question: "Why is Justice a woman?", options: ["Roman Goddess Justitia", "Greek God Zeus", "Random", "Judges"], answer: "Roman Goddess Justitia", explanation: "Justitia." }
+    {
+      question: "Suffix '-ess' (as in 'princess') came mainly from:",
+      options: ["German", "French/Latin", "Greek", "Spanish"],
+      answer: "French/Latin",
+      explanation: "Many feminine endings in '-ess' in English came through French from Latin."
+    },
+    {
+      question: "Suffix '-ster' (as in 'spinster') was originally:",
+      options: ["Masculine", "Neuter", "Feminine", "Common"],
+      answer: "Feminine",
+      explanation: "Historically, '-ster' was a feminine agent ending, as in 'spinster'."
+    },
+    {
+      question: "Which word is sometimes applied metaphorically to males, even though it is female in origin?",
+      options: ["Bull", "Ram", "Stag", "Siren"],
+      answer: "Siren",
+      explanation: "A 'siren' is a female figure in myth, but the word can be used figuratively for seductive males too."
+    },
+    {
+      question: "'Widower' is unusual because:",
+      options: ["It is shorter", "No feminine form exists", "It derives from the feminine form", "It comes from Latin"],
+      answer: "It derives from the feminine form",
+      explanation: "The male form 'widower' is built from the base 'widow', which is originally feminine."
+    },
+    {
+      question: "English mainly uses which type of gender system?",
+      options: ["Grammatical gender", "Common gender", "No gender", "Natural gender"],
+      answer: "Natural gender",
+      explanation: "English usually follows natural gender, based on real-world sex rather than word endings."
+    },
+    {
+      question: "Which ship name below is treated as masculine by its name, even though ships are usually 'she'?",
+      options: ["The Titanic", "The Bismarck", "The Queen Mary", "The Elizabeth"],
+      answer: "The Bismarck",
+      explanation: "The warship 'Bismarck' is named after a male statesman, though ships are still referred to as 'she'."
+    },
+    {
+      question: "Masculine of 'Amazon'?",
+      options: ["Warrior", "Soldier", "No specific equivalent", "Spartan"],
+      answer: "No specific equivalent",
+      explanation: "There is no exact male counterpart to 'Amazon' in traditional usage."
+    },
+    {
+      question: "'Hero' today is often treated as:",
+      options: ["Masculine only", "Common gender", "Neuter", "Archaic"],
+      answer: "Common gender",
+      explanation: "In modern English, 'hero' is sometimes used for any brave person, not only males."
+    },
+    {
+      question: "Feminine of 'Tsar'?",
+      options: ["Tsara", "Queen", "Duchess", "Tsarina"],
+      answer: "Tsarina",
+      explanation: "The female title corresponding to 'tsar' is 'tsarina'."
+    },
+    {
+      question: "Why is Justice often shown as a woman with scales?",
+      options: ["Greek God Zeus", "Random choice", "Roman Goddess Justitia", "Because of judges"],
+      answer: "Roman Goddess Justitia",
+      explanation: "The image comes from the Roman goddess Justitia, who symbolizes justice."
+    }
   ]
 };
+
