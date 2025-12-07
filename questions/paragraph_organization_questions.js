@@ -761,7 +761,7 @@ window.VERBAL_QUESTION_BANK["paragraph_organization"] = {
       explanation: "Correct Order: 2-3-4-1.\nTopic -> Material -> Foundation -> Feature."
     },
     {
-      question: "Arrange the following:\n1. This helps identifying the suspect.\n2. Forensic science solves crimes.\n3. Experts analyze fingerprints and DNA.\n4. Evidence is collected from the scene.",
+      question: "Arrange the following:\n1. This helps identify the suspect.\n2. Forensic science solves crimes.\n3. Experts analyze fingerprints and DNA.\n4. Evidence is collected from the scene.",
       options: ["2-4-3-1", "1-2-3-4", "2-3-4-1", "4-2-3-1"],
       answer: "2-4-3-1",
       explanation: "Correct Order: 2-4-3-1.\nTopic -> Step 1 -> Step 2 -> Result."
