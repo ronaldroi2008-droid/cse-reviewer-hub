@@ -141,7 +141,13 @@ window.VERBAL_QUESTION_BANK["tenses"] = {
     { question: "Which sentence is grammatically correct?", options: ["Being late, the meeting was missed by him.", "Being late, he missed the meeting.", "He missed the meeting, being late.", "He being late, missed the meeting."], answer: "Being late, he missed the meeting.", explanation: "Correct modifier." },
     { question: "Choose the correct verb: 'No sooner ___ the alarm rang than everyone rushed outside.'", options: ["had", "has", "have", "having"], answer: "had", explanation: "Inversion (No sooner had...)." },
     { question: "Which sentence is correct?", options: ["The data was analyzed by the team.", "The data were analyzed by the team.", "The data are analyze by the team.", "The data is analyzing by the team."], answer: "The data were analyzed by the team.", explanation: "Formal agreement (data plural)." },
-    { question: "Choose the correct verb form: 'I wish I ___ the courage to speak up earlier.'", options: ["have", "had", "will have", "having"], answer: "had", explanation: "Wish + Past Perfect for past regret." },
+    { 
+  question: "I wish I ___ the courage to speak up earlier.", 
+  options: ["have", "had", "will have", "having"], 
+  answer: "had", 
+  explanation: "We use 'wish' + past simple ('had') to talk about something we regret or that was not true in the past."
+},
+
     { question: "Which sentence correctly uses the perfect infinitive?", options: ["He pretended to have saw the movie.", "He pretended to have seen the movie.", "He pretended to had seen the movie.", "He pretended having seen the movie."], answer: "He pretended to have seen the movie.", explanation: "Perfect infinitive." },
     { question: "Choose the correct verb: 'If only he ___ more careful, the accident could have been avoided.'", options: ["is", "was", "had been", "has been"], answer: "had been", explanation: "Regret (If only + Past Perfect)." },
     { question: "Which sentence is correct?", options: ["He denied that he has taken the money.", "He denied that he had taken the money.", "He denies that he had taken the money.", "He deny that he has taken the money."], answer: "He denied that he had taken the money.", explanation: "Sequence of tenses." },
@@ -203,7 +209,13 @@ window.VERBAL_QUESTION_BANK["tenses"] = {
     { question: "Find the error: 'The committee decide that the event be postponed.'", options: ["The committee", "decide", "that the event", "be postponed"], answer: "decide", explanation: "Subject singular: 'decides' (or 'decided')." },
     { question: "Find the error: 'By the time you read this, I already took my flight.'", options: ["By the time", "you read this", "I", "already took my flight"], answer: "already took my flight", explanation: "Future perfect required: 'will have taken'." },
     { question: "Find the error: 'He likes to jog, swimming, and to read.'", options: ["He likes", "to jog", "swimming", "and to read"], answer: "swimming", explanation: "Parallelism: 'to swim'." },
-    { question: "Find the error: 'Rarely is such dedication seen.'", options: ["Rarely", "is", "such dedication", "seen"], answer: "is", explanation: "Context usually implies 'has... been' seen." },
+   { 
+  question: "Find the error: 'Rarely we see such dedication.'",
+  options: ["Rarely", "we see", "such dedication", "no error"],
+  answer: "we see",
+  explanation: "After 'rarely' at the beginning, we use inversion: 'Rarely do we see such dedication.' So 'we see' should be 'do we see'."
+},
+
     { question: "Find the error: 'He came to the office without having finish his report.'", options: ["He came", "to the office", "without", "having finish his report"], answer: "having finish his report", explanation: "Needs participle: 'finished'." },
     { question: "Find the error: 'They appear to has studied the problem.'", options: ["They appear", "to", "has studied", "the problem"], answer: "has studied", explanation: "Infinitive requires base: 'have'." },
     { question: "Find the error: 'Next month I will be working here for a year.'", options: ["Next month", "I will", "be working here", "for a year"], answer: "be working here", explanation: "Duration requires 'will have been working'." },
