@@ -1339,8 +1339,8 @@ Time = (1/3) ÷ (5/54) = 3.6 ≈ 4 days.`
     options: ["8", "9", "10", "11"],
     answer: "9",
     explanation: `
-1/20 + 1/24 + 1/40 = 14/120 = 7/60 job/day.
-Time = 60/7 = 8.57 ≈ 9 days.`
+1/20 + 1/24 + 1/40 = 6/120 + 5/120 + 3/120 = 14/120 = 7/60 job/day.
+Time = 60/7 ≈ 8.57 ≈ 9 days.`
   },
 
   // 44
@@ -1414,6 +1414,7 @@ Time = 150/13 = 11.5 ≈ 12 days.`
   },
 
   // 48
+  
   {
     question: "A, B, and C can dig a trench in 15, 20, and 25 hours. They work 4 hours then A leaves. How long for B and C?",
     options: ["4", "5", "6", "7"],
@@ -1423,10 +1424,11 @@ Time = 150/13 = 11.5 ≈ 12 days.`
 4 h → 4 × 47/300 = 188/300 = 47/75 done.
 Remaining = 28/75.
 B + C = 1/20 + 1/25 = 9/100 trench/hr.
-Time = (28/75) ÷ (9/100) = 4.15 ≈ 4 hours.`
+Time = (28/75) ÷ (9/100) = (28/75) × (100/9) = 2800/675 = 4.15 ≈ 4 hours.`
   },
 
-  // 49
+
+  
   // 49
   {
     question: "Three engineers can design a plan in 9, 12, and 15 days. If they work together for 3 days, what fraction of the work remains?",
@@ -2852,18 +2854,19 @@ STEP 6: d/12 = 2/3 ⇒ d = 8 days.`
       },
 
       // 5
+      
       {
         question: "A, B, and C can complete a work in 12, 15, and 20 days respectively. They all work together for 3 days, and then C leaves. How many more days will A and B take to finish the remaining work?",
-        options: ["2 days", "2.5 days", "2.67 days", "3 days"],
-        answer: "2.67 days (approximately)",
+        options: ["1.7 days", "2.0 days", "2.5 days", "3.0 days"],
+        answer: "1.7 days",
         explanation: `STEP 1: A's rate = 1/12, B's rate = 1/15, C's rate = 1/20.
 STEP 2: Combined rate of A, B, and C = 1/12 + 1/15 + 1/20 = 1/4 of the work per day.
 STEP 3: In 3 days they finish 3 × 1/4 = 3/4 of the work.
 STEP 4: Remaining work = 1 - 3/4 = 1/4.
 STEP 5: Rate of A and B together = 1/12 + 1/15 = 9/60 = 3/20.
-STEP 6: Time = (1/4) ÷ (3/20) = (1/4) × (20/3) = 5/3 ≈ 1.67 days.
-[Teacher note: If you prefer a cleaner number, you may round to 1.7 days or adjust options.]`
+STEP 6: Time = (1/4) ÷ (3/20) = (1/4) × (20/3) = 5/3 ≈ 1.67 days ≈ 1.7 days.`
       },
+
 
       // 6
       {
@@ -2917,18 +2920,19 @@ STEP 6: Therefore A alone takes 24 days.`
       },
 
       // 10
+        
       {
         question: "A and B can do a job in 6 days, B and C in 8 days, and C and A in 12 days. In how many days will A, B, and C working together complete the job?",
         options: ["4 days", "5.33 days", "6 days", "7.5 days"],
-        answer: "5.33 days (approximately)",
+        answer: "6 days",
         explanation: `STEP 1: Let rates be a, b, c.
 STEP 2: a + b = 1/6, b + c = 1/8, c + a = 1/12.
 STEP 3: Add all: 2(a + b + c) = 1/6 + 1/8 + 1/12 = 1/3.
 STEP 4: So a + b + c = 1/6.
 STEP 5: Combined rate of A, B, and C = 1/6 of the work per day.
-STEP 6: Time = 1 ÷ (1/6) = 6 days.
-[Teacher note: If you prefer, you can keep this one as a slightly easier expert item.]`
+STEP 6: Time = 1 ÷ (1/6) = 6 days.`
       },
+
 
       // 11
       {
