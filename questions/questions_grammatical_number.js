@@ -35,9 +35,9 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
     { question: "What is the plural of 'class'?", options: ["classes", "classs", "classies", "clases"], answer: "classes", explanation: "Words ending in 'ss' add '-es'." },
 
     // 21-30: Plurals ending in -y
-    { question: "What is the plural of 'baby'?", options: ["babys", "babies", "babyes", "babys"], answer: "babies", explanation: "If a word ends in a consonant + y, change 'y' to 'i' and add 'es'." },
+    { question: "What is the plural of 'baby'?", options: ["babys", "babies", "babyes", "babeys"], answer: "babies", explanation: "Rule: consonant + y → change 'y' to 'i' and add 'es' (baby → babies)." },
     { question: "What is the plural of 'city'?", options: ["citys", "cities", "cityes", "citties"], answer: "cities", explanation: "Consonant + y (t+y) becomes 'ies'." },
-    { question: "What is the plural of 'boy'?", options: ["boies", "boys", "boyes", "boies"], answer: "boys", explanation: "If a word ends in a vowel + y (o+y), just add 's'." },
+    { question: "What is the plural of 'boy'?", options: ["boies", "boys", "boyes", "boyies"], answer: "boys", explanation: "Rule: vowel + y → just add 's' (boy → boys)." },
     { question: "What is the plural of 'toy'?", options: ["toys", "toies", "toyes", "toyies"], answer: "toys", explanation: "Vowel + y (o+y), just add 's'." },
     { question: "What is the plural of 'lady'?", options: ["ladys", "ladies", "ladyes", "ladees"], answer: "ladies", explanation: "Consonant + y (d+y) becomes 'ies'." },
     { question: "What is the plural of 'party'?", options: ["partys", "parties", "partyes", "partees"], answer: "parties", explanation: "Consonant + y becomes 'ies'." },
@@ -97,12 +97,12 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
     { question: "What is the plural of 'deer'?", options: ["deers", "deer", "deeres", "doer"], answer: "deer", explanation: "Deer stays the same." },
     { question: "What is the plural of 'fish' (general)?", options: ["fishs", "fishes", "fish", "fishies"], answer: "fish", explanation: "Fish usually stays the same (Fishes is used for different species)." },
     { question: "What is the plural of 'salmon'?", options: ["salmons", "salmon", "salmones", "salmen"], answer: "salmon", explanation: "Salmon stays the same." },
-    { question: "What is the plural of 'tuna'?", options: ["tunas", "tuna", "tunae", "tunes"], answer: "tuna", explanation: "Tuna usually stays the same in context of food/fishing." },
+    { question: "What is the plural of 'tuna'?", options: ["tunas", "tuna", "tunae", "tunes"], answer: "tuna", explanation: "In general use, 'tuna' is a zero plural (one tuna, two tuna). 'Tunas' can be used for kinds of tuna." },
     { question: "What is the plural of 'moose'?", options: ["mooses", "meese", "moose", "moos"], answer: "moose", explanation: "Moose stays the same." },
     { question: "What is the plural of 'aircraft'?", options: ["aircrafts", "aircraft", "aircraftes", "air-crafts"], answer: "aircraft", explanation: "Aircraft stays the same." },
     { question: "What is the plural of 'series'?", options: ["serieses", "series", "serie", "seri"], answer: "series", explanation: "Series is the same in singular and plural." },
     { question: "What is the plural of 'species'?", options: ["specieses", "specie", "species", "speci"], answer: "species", explanation: "Species is the same in singular and plural." },
-    { question: "What is the plural of 'shrimp'?", options: ["shrimps", "shrimp", "shrimpes", "shramps"], answer: "shrimp", explanation: "Shrimp is often used as a zero plural." },
+    { question: "What is the plural of 'shrimp'?", options: ["shrimps", "shrimp", "shrimpes", "shramps"], answer: "shrimp", explanation: "'Shrimp' is commonly a zero plural (one shrimp, two shrimp). 'Shrimps' is sometimes used for different species." },
     { question: "Which is correct?", options: ["Two sheeps", "Two sheep", "Two sheepses", "Two ship"], answer: "Two sheep", explanation: "Sheep never takes an 's'." },
     { question: "Which is correct?", options: ["Many deers", "Many deer", "Many doer", "Much deer"], answer: "Many deer", explanation: "Deer never takes an 's'." },
     { question: "Which is correct?", options: ["A herd of mooses", "A herd of moose", "A herd of meese", "A herd of moos"], answer: "A herd of moose", explanation: "Moose is always moose." },
@@ -245,7 +245,7 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
     { question: "Here ___ the buses.", options: ["come", "comes", "coming", "came"], answer: "come", explanation: "Subject 'buses' -> 'come'." },
     { question: "Three miles ___ a long way.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Distance as unit -> 'is'." },
     { question: "Fifty pesos ___ not enough.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Money as unit -> 'is'." },
-    { question: "Two hours ___ passed.", options: ["has", "have", "is", "are"], answer: "has", explanation: "Time as unit -> 'has'." },
+    { question: "Two hours ___ passed.", options: ["has", "have", "is", "are"], answer: "have", explanation: "Subject 'hours' is plural here, so we say 'Two hours have passed.'." },
     { question: "Statistics (the subject) ___ difficult.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Field of study -> 'is'." },
     { question: "Statistics (the data) ___ misleading.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Facts/Data -> 'are'." },
     { question: "A pair of shoes ___ stolen.", options: ["was", "were", "are", "have"], answer: "was", explanation: "Subject is 'pair' -> 'was'." },
@@ -258,3 +258,4 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
     { question: "The Chinese ___ diligent.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'The Chinese' = Chinese people -> 'are'." }
   ]
 };
+
