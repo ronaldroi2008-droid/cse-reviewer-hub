@@ -63,7 +63,12 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
     { question: "Correct order:", options: ["wooden old chair", "old wooden chair", "chair old wooden", "wooden chair old"], answer: "old wooden chair", explanation: "Age before Material." },
     { question: "Correct phrase:", options: ["Chinese interesting story", "interesting Chinese story", "story Chinese interesting", "story interesting Chinese"], answer: "interesting Chinese story", explanation: "Opinion before Origin." },
     { question: "Natural order:", options: ["plastic small bottle", "small plastic bottle", "bottle small plastic", "plastic bottle small"], answer: "small plastic bottle", explanation: "Size before Material." },
-    { question: "Correct phrase:", options: ["expensive new phone", "new expensive phone", "phone expensive new", "expensive phone new"], answer: "new expensive phone", explanation: "Age before Price/Opinion." },
+    {
+      question: "Correct phrase:",
+      options: ["expensive new phone", "new expensive phone", "phone expensive new", "expensive phone new"],
+      answer: "expensive new phone",
+      explanation: "Opinion (expensive) comes before age (new)."
+    },
     { question: "Usage of 'enough':", options: ["enough tall", "tall enough", "enough is tall", "tall is enough"], answer: "tall enough", explanation: "Adj + enough." },
     { question: "Usage of 'too':", options: ["too hot", "hot too", "too is hot", "hot too much"], answer: "too hot", explanation: "Too + Adj." },
     { question: "Adjectives in 'The sky is blue and clear':", options: ["None", "One", "Two", "Three"], answer: "Two", explanation: "Blue, Clear." },
@@ -130,7 +135,12 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   // LEVEL 3: ADVANCED (50 Items) - Nuances & Context
   // ============================================================
   advanced: [
-    { question: "Find the error: 'She looked happily after her sick mother.'", options: ["She", "looked", "happily", "after her sick mother"], answer: "happily", explanation: "If meaning 'seemed', linking verb requires adjective." },
+    {
+      question: "Find the error: 'The flowers (A) / smelled (B) / sweetly (C) / in the garden (D).'",
+      options: ["The flowers", "smelled", "sweetly", "in the garden"],
+      answer: "sweetly",
+      explanation: "With sense verbs like 'smelled' as linking verbs, use an adjective: 'smelled sweet'."
+    },
     { question: "Linking verb 'look':", options: ["looked carefully", "looked tired", "looked around", "looked through"], answer: "looked tired", explanation: "Links to adjective." },
     { question: "After 'remain':", options: ["remained quietly", "remained quiet", "remained quietlier", "remained quietful"], answer: "remained quiet", explanation: "Linking verb." },
     { question: "After 'appear':", options: ["appeared suddenly", "appeared nervous", "appeared quickly", "appeared quietly"], answer: "appeared nervous", explanation: "Links to adjective." },
@@ -140,18 +150,33 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
     { question: "After 'grow':", options: ["grew angrily", "grew angry", "grew angryly", "grew more angrily"], answer: "grew angry", explanation: "Became angry." },
     { question: "After 'turn':", options: ["turned red", "turned quickly", "turned redly", "turned more quickly"], answer: "turned red", explanation: "Became red." },
     { question: "Correct sentence:", options: ["gone sour", "gone sourly", "gone sourer", "gone most sour"], answer: "gone sour", explanation: "Linking verb." },
-    { question: "Best order:", options: ["long old narrow road", "old long narrow road", "narrow old long road", "long narrow old road"], answer: "old long narrow road", explanation: "Age-Dimension." },
+    {
+      question: "Best order:",
+      options: ["long old narrow road", "old long narrow road", "narrow old long road", "long narrow old road"],
+      answer: "long narrow old road",
+      explanation: "Dimension (long, narrow) usually comes before age (old)."
+    },
     { question: "Standard order:", options: ["German small red car", "small red German car", "red German small car", "German red small car"], answer: "small red German car", explanation: "Size-Color-Origin." },
     { question: "Natural phrase:", options: ["interesting new Filipino movie", "new interesting Filipino movie", "Filipino new interesting movie", "interesting Filipino new movie"], answer: "interesting new Filipino movie", explanation: "Opinion-Age-Origin." },
     { question: "Correct order:", options: ["beautiful big old stone church", "big old beautiful stone church", "old beautiful big stone church", "beautiful stone big old church"], answer: "beautiful big old stone church", explanation: "Opinion-Size-Age-Material." },
-    { question: "Multiple adjectives:", options: ["small black stray dog", "stray black small dog", "black small stray dog", "stray small black dog"], answer: "stray small black dog", explanation: "Type-Size-Color." },
+    {
+      question: "Multiple adjectives:",
+      options: ["small black stray dog", "stray black small dog", "black small stray dog", "stray small black dog"],
+      answer: "small black stray dog",
+      explanation: "Size (small) + Color (black) + Type (stray)."
+    },
     { question: "Best order:", options: ["wooden lovely round table", "lovely round wooden table", "round wooden lovely table", "wooden round lovely table"], answer: "lovely round wooden table", explanation: "Opinion-Shape-Material." },
     { question: "Natural phrase:", options: ["cotton white comfortable shirt", "comfortable white cotton shirt", "white comfortable cotton shirt", "cotton comfortable white shirt"], answer: "comfortable white cotton shirt", explanation: "Opinion-Color-Material." },
     { question: "Correct phrase:", options: ["old French famous song", "famous old French song", "French famous old song", "famous French old song"], answer: "famous old French song", explanation: "Opinion-Age-Origin." },
     { question: "Usual order:", options: ["delicious small round cake", "small delicious round cake", "delicious round small cake", "round small delicious cake"], answer: "delicious small round cake", explanation: "Opinion-Size-Shape." },
     { question: "Best phrase:", options: ["heavy big old metal box", "big heavy old metal box", "old big heavy metal box", "metal heavy old big box"], answer: "big heavy old metal box", explanation: "Size-Weight-Age-Material." },
     { question: "Logically correct:", options: ["Between Maria, Ana, Liza, Maria is taller", "Between Maria, Ana, Liza, Maria is taller", "Among Maria, Ana, Liza, Maria is the tallest", "Among Maria, Ana, Liza, Maria is taller"], answer: "Among Maria, Ana, Liza, Maria is the tallest", explanation: "3+ items." },
-    { question: "Illogical comparison:", options: ["better than previous", "better than previous one", "better than previous policy", "Both B and C"], answer: "Both B and C", explanation: "Must compare noun to noun." },
+    {
+      question: "Illogical comparison:",
+      options: ["better than previous", "better than previous one", "better than previous policy", "Both B and C"],
+      answer: "better than previous",
+      explanation: "Option A is incomplete. We must compare noun to noun (e.g., 'better than the previous one' or 'better than the previous policy')."
+    },
     { question: "Correct sentence:", options: ["more better", "much better", "very more better", "betterest"], answer: "much better", explanation: "Intensifier." },
     { question: "Formal English:", options: ["most safe", "safer", "more safe", "safe"], answer: "safer", explanation: "Standard comparative." },
     { question: "Less vs Fewer:", options: ["less people", "fewer traffic", "fewer tasks", "less tasks"], answer: "fewer tasks", explanation: "Countable." },
@@ -183,10 +208,10 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   ],
 
   // ============================================================
-  // LEVEL 4: EXPERT (50 Items) - Error ID (Segmented) & Improvement
+  // LEVEL 4: EXPERT (55 Items) - Error ID & Improvement
   // ============================================================
   expert: [
-    // 1-10: Error Identification (Segmented)
+    // 1-15: Error Identification (Segmented)
     { 
       question: "Find the error: 'The CEO is (A) / the most smartest (B) / leader in (C) / the industry (D).'", 
       options: ["The CEO is", "the most smartest", "leader in", "the industry"], 
@@ -322,8 +347,13 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
     { question: "Correct: 'highest'", options: ["most highest", "highest", "higher", "more higher"], answer: "highest", explanation: "Superlative." },
     { question: "Correct: 'a few'", options: ["few passed", "a few passed", "every passed", "many passed"], answer: "a few passed", explanation: "Positive quantity." },
     { question: "Collocation: 'quite boring'", options: ["quite boring", "quite long", "quite and rather", "boring quite"], answer: "quite boring", explanation: "Standard." },
-    { question: "Adjective phrase: 'in blue shirt'", options: ["in blue shirt", "in blue", "blue shirt", "with blue"], answer: "in blue shirt", explanation: "Modifier." },
-    { question: "Correct: 'such a nice'", options: ["so a nice", "such a nice", "such nice", "so nice"], answer: "such a nice", explanation: "Pattern." },
+    {
+      question: "Adjective phrase: 'in a blue shirt'",
+      options: ["in a blue shirt", "in blue", "blue shirt", "with blue"],
+      answer: "in a blue shirt",
+      explanation: "Prepositional phrase functioning as an adjective."
+    },
+    { question: "Correct: 'such a nice'", options: ["so a nice", "such a nice", "such nice", "so nice"], answer: "such a nice", explanation: "Pattern: such a + adj." },
     { question: "Correct: 'many people'", options: ["much people", "many water", "many people", "much people"], answer: "many people", explanation: "Countable." }
   ]
 };
