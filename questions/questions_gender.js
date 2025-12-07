@@ -183,7 +183,13 @@ window.VERBAL_QUESTION_BANK["gender"] = {
     { question: "Feminine of 'Colt'?", options: ["Filly", "Mare", "Foal", "Doe"], answer: "Filly", explanation: "Filly." },
     { question: "Masculine of 'Filly'?", options: ["Colt", "Foal", "Stallion", "Gelding"], answer: "Colt", explanation: "Colt." },
     { question: "Neutral term for 'Ram/Ewe'?", options: ["Sheep", "Goat", "Lamb", "Flock"], answer: "Sheep", explanation: "Sheep." },
-    { question: "Neutral term for 'Bull/Cow'?", options: ["Cattle", "Oxen", "Bovine", "All of the above"], answer: "All of the above", explanation: "Cattle/Bovine." },
+   { 
+  question: "Neutral term for 'Bull/Cow'?", 
+  options: ["Cattle", "Oxen", "Bovine", "All of the above"], 
+  answer: "Cattle", 
+  explanation: "'Cattle' is the standard neutral collective term for bulls and cows. ('Bovine' is usually used as an adjective.)" 
+},
+
     { question: "Feminine of 'Dog' (technical)?", options: ["Bitch", "Dam", "Queen", "Sow"], answer: "Bitch", explanation: "Bitch." },
     { question: "Masculine of 'Bitch'?", options: ["Dog", "Sire", "Hound", "Wolf"], answer: "Dog", explanation: "Dog." },
     { question: "What is a 'Gelding'?", options: ["Male horse (castrated)", "Female horse", "Young horse", "Wild horse"], answer: "Male horse (castrated)", explanation: "Castrated male horse." },
