@@ -1353,44 +1353,44 @@ Time = 60/7 = 8.57 ≈ 9 days.`
 Time = 180/13 = 13.8 ≈ 14 minutes.`
   },
 
+
   // 45
-  // 45
-  {
-    question: "Three people can do a job in 10, 15, and 30 days. After 3 days C leaves. How long for A and B?",
-    options: ["2", "3", "4", "5"],
-    answer: "2",
-    explanation: `
-STEP 1: Find the combined daily rate of A, B, and C.
+{
+  question: "Three people can do a job in 10, 15, and 30 days. After 3 days C leaves. How long will A and B take to finish the remaining work?",
+  options: ["2.0 days", "2.4 days", "3.0 days", "3.5 days"],
+  answer: "2.4 days",
+  explanation: `
+STEP 1: Daily rates:
 - A: 1/10 job/day
 - B: 1/15 job/day
 - C: 1/30 job/day
 
-STEP 2: Add their rates:
+STEP 2: Combined rate of A, B, and C:
 1/10 + 1/15 + 1/30
 = 3/30 + 2/30 + 1/30
 = 6/30
 = 1/5 job per day
 
-STEP 3: Work done in the first 3 days (all three working):
-Work done = 3 × (1/5) = 3/5 of the job
+STEP 3: Work done in the first 3 days:
+Work = 3 × (1/5) = 3/5 of the job
 
 STEP 4: Remaining work:
-Total - done = 1 - 3/5 = 2/5 of the job
+1 − 3/5 = 2/5 of the job
 
-STEP 5: Rate of A and B together (after C leaves):
-A + B = 1/10 + 1/15
+STEP 5: Rate of A and B together:
+1/10 + 1/15
 = 3/30 + 2/30
 = 5/30
 = 1/6 job per day
 
-STEP 6: Time for A and B to finish the remaining 2/5:
+STEP 6: Time to finish the remaining 2/5:
 Time = (2/5) ÷ (1/6)
-= (2/5) × (6/1)
+= (2/5) × 6
 = 12/5
 = 2.4 days
+`
+},
 
-So it will take about 2.4 days. The closest whole number in the choices is 2 days.`
-  },
 
 
   // 46
