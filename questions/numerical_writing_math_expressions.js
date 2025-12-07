@@ -163,6 +163,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
       answer: "10x",
       explanation: "'Ten times a number' means multiply by 10: 10x."
     },
+
     // 26-50 (New items)
     {
       question: "Which expression represents 'a number x multiplied by 7'?",
@@ -471,6 +472,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
       answer: "2 + 2x",
       explanation: "Twice a number is 2x; 'sum of 2 and' gives 2 + 2x."
     },
+
     // 26-50 (New items)
     {
       question: "Which expression represents 'five less than twice a number x'?",
@@ -492,9 +494,9 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the sum of three times x and twice x'?",
-      options: ["3x + 2x", "3x × 2x", "3(x + 2x)", "5x"],
+      options: ["3x + 2x", "3x × 2x", "3(x + 2x)", "6x"],
       answer: "3x + 2x",
-      explanation: "Three times x is 3x, twice x is 2x; sum is 3x + 2x."
+      explanation: "Three times x is 3x, twice x is 2x; the sum is 3x + 2x."
     },
     {
       question: "Which expression represents 'the difference between five times x and 3'?",
@@ -528,7 +530,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the sum of twice x and three times x'?",
-      options: ["2x + 3x", "2x × 3x", "5x", "6x"],
+      options: ["2x + 3x", "2x × 3x", "5x^2", "6x"],
       answer: "2x + 3x",
       explanation: "Twice x is 2x, three times x is 3x; sum is 2x + 3x."
     },
@@ -570,7 +572,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the difference between four times x and twice x'?",
-      options: ["4x - 2x", "2x - 4x", "4(x - 2x)", "2x"],
+      options: ["4x - 2x", "2x - 4x", "4(x - 2x)", "6x"],
       answer: "4x - 2x",
       explanation: "Four times x is 4x, twice x is 2x; difference is 4x - 2x."
     },
@@ -588,7 +590,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'twice the product of 3 and x'?",
-      options: ["2(3x)", "2 × 3 + x", "3(2x)", "6x"],
+      options: ["2(3x)", "2x + 3", "3x + 2x", "6 + x"],
       answer: "2(3x)",
       explanation: "'Twice the product' means 2 times (3x)."
     },
@@ -617,7 +619,6 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
       explanation: "Quotient of x and 2 is x ÷ 2; 'three more' means +3."
     }
   ],
-
 
   // ==========================================
   // LEVEL 3: ADVANCED (50 items – Exponents & multi-step)
@@ -726,10 +727,10 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
       explanation: "Square is x^2; 'three times the number' is 3x, so x^2 - 3x."
     },
     {
-      question: "Which expression represents 'three times the square of x plus 2'?",
-      options: ["3(x^2 + 2)", "3x^2 + 2", "(3x)^2 + 2", "x^2 + 6"],
+      question: "Which expression represents 'three times the sum of the square of x and 2'?",
+      options: ["3x^2 + 2", "3(x^2 + 2)", "(3x^2 + 2)^2", "3x^2 + 6"],
       answer: "3(x^2 + 2)",
-      explanation: "'Three times the quantity (x^2 + 2)' is written 3(x^2 + 2)."
+      explanation: "'Three times the sum' means 3 times (x^2 + 2)."
     },
     {
       question: "Which expression represents 'the square of the difference of x and 5'?",
@@ -775,10 +776,11 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the sum of twice the square of x and 3'?",
-      options: ["2x^2 + 3", "2(x^2 + 3)", "(2x)^2 + 3", "x^2 + 2 + 3"],
+      options: ["2x^2 + 3", "2(x^2 + 3)", "(2x^2 + 3)^2", "x^2 + 2 + 3"],
       answer: "2x^2 + 3",
       explanation: "Twice the square is 2x^2, then add 3: 2x^2 + 3."
     },
+
     // 26-50 (New items)
     {
       question: "Which expression represents 'the cube of the sum of x and 1'?",
@@ -926,11 +928,12 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the product of the square of x and the cube of x'?",
-      options: ["x^2 × x^3", "x^2 + x^3", "x^5", "x^6"],
+      options: ["x^2 × x^3", "x^2 + x^3", "x^6", "x^3 + x"],
       answer: "x^2 × x^3",
       explanation: "'Product of the square and cube' means multiply x^2 and x^3."
     }
   ],
+
   // ==========================================
   // LEVEL 4: EXPERT (50 items – Complex worded expressions)
   // ==========================================
@@ -1086,10 +1089,11 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
       answer: "5x^2 + (x - 2) ÷ 2",
       explanation: "Five times the square is 5x^2; 'half the difference' is (x - 2) ÷ 2; we add them."
     },
+
     // 26-50 (New items)
     {
       question: "Which expression represents 'the product of the sum of x and 2 and the difference of x and 2'?",
-      options: ["(x + 2)(x - 2)", "x + 2 × x - 2", "(x + 2) + (x - 2)", "x^2 - 4"],
+      options: ["(x + 2)(x - 2)", "x + 2 × x - 2", "(x + 2) + (x - 2)", "x^2 + 4"],
       answer: "(x + 2)(x - 2)",
       explanation: "'Product of the sum and difference' means multiply (x + 2) and (x - 2)."
     },
@@ -1101,9 +1105,9 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the quotient of the cube of x and the square of x'?",
-      options: ["x^3 ÷ x^2", "x^3 - x^2", "(x^3 ÷ x)^2", "x"],
+      options: ["x^3 ÷ x^2", "x^3 - x^2", "(x^3 ÷ x)^2", "x^5"],
       answer: "x^3 ÷ x^2",
-      explanation: "Divide x^3 by x^2: x^3 ÷ x^2."
+      explanation: "We write the quotient as x^3 ÷ x^2."
     },
     {
       question: "Which expression represents 'twice the difference between the cube of x and the square of x'?",
@@ -1119,7 +1123,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'five times the product of the square of x and 2'?",
-      options: ["5(2x^2)", "5x^2 × 2", "10x^2", "5x^4"],
+      options: ["5(2x^2)", "5x^2 + 2", "10x^2 + 1", "5x^4"],
       answer: "5(2x^2)",
       explanation: "'Five times the product' means 5 times (2x^2)."
     },
@@ -1137,7 +1141,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the product of the sum of x and y and the difference of x and y'?",
-      options: ["(x + y)(x - y)", "x + y × x - y", "x^2 - y^2", "x^2 + y^2"],
+      options: ["(x + y)(x - y)", "x + y × x - y", "x^2 + y^2", "x^2 - y"],
       answer: "(x + y)(x - y)",
       explanation: "'Product of the sum and difference' means multiply (x + y) and (x - y)."
     },
@@ -1155,7 +1159,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'twice the product of the square of x and 3'?",
-      options: ["2(3x^2)", "2x^2 × 3", "6x^2", "2x^4"],
+      options: ["2(3x^2)", "6x^2 + 2", "2x^2 + 3", "2x^4"],
       answer: "2(3x^2)",
       explanation: "'Twice the product' means 2 times (3x^2)."
     },
@@ -1179,13 +1183,13 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the product of twice x and the square of x'?",
-      options: ["(2x)(x^2)", "2x × x^2", "2x^3", "2x^2"],
+      options: ["(2x)(x^2)", "2x + x^2", "2x^3 + x", "2x^2"],
       answer: "(2x)(x^2)",
       explanation: "'Product of twice x and the square' means multiply 2x and x^2."
     },
     {
       question: "Which expression represents 'three more than the product of the square of x and the cube of x'?",
-      options: ["x^2 × x^3 + 3", "x^5 + 3", "(x^2 × x^3) + 3", "x^6 + 3"],
+      options: ["x^2 × x^3 + 3", "x^2 + x^3 + 3", "x^5 - 3", "x^3 + 3"],
       answer: "x^2 × x^3 + 3",
       explanation: "Product is x^2 × x^3, then add 3."
     },
@@ -1203,7 +1207,7 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'four times the quotient of the cube of x and the square of x'?",
-      options: ["4(x^3 ÷ x^2)", "4x^3 ÷ x^2", "4x", "4x^3 - x^2"],
+      options: ["4(x^3 ÷ x^2)", "4x^3 ÷ x", "4x^2", "4x^3 - x^2"],
       answer: "4(x^3 ÷ x^2)",
       explanation: "'Four times the quotient' means 4 times (x^3 ÷ x^2)."
     },
@@ -1215,13 +1219,13 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     },
     {
       question: "Which expression represents 'the product of the sum of x and 2 and the sum of x and 3'?",
-      options: ["(x + 2)(x + 3)", "x + 2 × x + 3", "x^2 + 5x + 6", "x^2 + 6"],
+      options: ["(x + 2)(x + 3)", "x + 2 × x + 3", "x^2 + 5x + 3", "x^2 + 6"],
       answer: "(x + 2)(x + 3)",
       explanation: "'Product of the sums' means multiply (x + 2) and (x + 3)."
     },
     {
       question: "Which expression represents 'five less than the product of the square of x and the cube of x'?",
-      options: ["x^2 × x^3 - 5", "x^5 - 5", "(x^2 × x^3) - 5", "x^6 - 5"],
+      options: ["x^2 × x^3 - 5", "x^2 + x^3 - 5", "x^6 - 5", "x^5 + 5"],
       answer: "x^2 × x^3 - 5",
       explanation: "Product is x^2 × x^3, then subtract 5."
     },
@@ -1239,3 +1243,4 @@ window.NUMERICAL_QUESTION_BANK["writing_math_expressions"] = {
     }
   ]
 };
+
