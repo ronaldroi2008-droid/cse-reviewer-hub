@@ -619,614 +619,1200 @@ window.VERBAL_QUESTION_BANK["reading_comprehension"] = {
   ],
 
   // ============================================================
-  // LEVEL 3: ADVANCED (50 Items) - Inference & Vocabulary
+  // LEVEL 3: ADVANCED (50 Items) - CSE-style Inference & Main Idea
   // ============================================================
   advanced: [
+    // 1
     {
-      question: "Passage: The invention of the steam engine revolutionized transportation. Before this, travel was limited by the endurance of horses. Suddenly, people could travel great distances in a fraction of the time.\n\nQuestion: What can be inferred about travel before the steam engine?",
-      options: ["It was fast", "It was slow and limited", "It was non-existent", "It was expensive"],
-      answer: "It was slow and limited",
-      explanation: "Inferred from 'limited by endurance of horses' and 'fraction of the time' contrast."
+      question: "Passage: Memo: All division chiefs are requested to submit their consolidated quarterly reports on or before April 15. Late submissions will delay the preparation of the regional performance summary, which is due to central office by April 20.\n\nQuestion: Why is it important to submit reports on or before April 15?",
+      options: [
+        "To give more time for field work",
+        "To avoid delaying the regional summary",
+        "To extend the deadline to April 30",
+        "To lessen the number of reports"
+      ],
+      answer: "To avoid delaying the regional summary",
+      explanation: "The memo clearly states that late submissions will delay the regional performance summary."
     },
+    // 2
     {
-      question: "Passage: His frugality was legendary. He would walk five miles to save bus fare and wore the same coat for twenty years.\n\nQuestion: What does 'frugality' mean in this context?",
-      options: ["Generosity", "Laziness", "Thriftiness", "Wealth"],
-      answer: "Thriftiness",
-      explanation: "Saving bus fare and wearing old clothes are examples of being thrifty/frugal."
+      question: "Passage: Announcement: Due to scheduled maintenance, the online application system will be unavailable from 1:00 AM to 5:00 AM on Saturday. Users are advised to save their work and log out before 1:00 AM to avoid data loss.\n\nQuestion: What is the main purpose of the announcement?",
+      options: [
+        "To promote the online system",
+        "To warn users about temporary unavailability",
+        "To encourage users to work at night",
+        "To advertise a new feature"
+      ],
+      answer: "To warn users about temporary unavailability",
+      explanation: "The announcement informs users about system downtime and advises them to log out."
     },
+    // 3
     {
-      question: "Passage: The manager's voice was icy. 'I expected better from you,' she said, staring at the error-filled report.\n\nQuestion: What is the tone of the manager?",
-      options: ["Cheerful", "Disappointed/Cold", "Confused", "Encouraging"],
-      answer: "Disappointed/Cold",
-      explanation: "'Icy voice' and 'expected better' indicate disappointment and coldness."
+      question: "Passage: Many government agencies now use digital documents instead of printed ones. This reduces paper consumption and saves storage space. However, it also requires employees to be familiar with basic computer skills.\n\nQuestion: Which statement best summarizes the passage?",
+      options: [
+        "Digital documents solve all office problems.",
+        "Using digital documents has both benefits and requirements.",
+        "Printed documents are better than digital documents.",
+        "Employees no longer need to read documents."
+      ],
+      answer: "Using digital documents has both benefits and requirements.",
+      explanation: "The passage mentions advantages (less paper, space) and a requirement (computer skills)."
     },
+    // 4
     {
-      question: "Passage: Antibiotics treat bacterial infections. However, overuse can lead to resistance, making germs harder to kill.\n\nQuestion: What is the danger of using too many antibiotics?",
-      options: ["They become expensive", "Bacteria become resistant", "They kill viruses", "They work too fast"],
-      answer: "Bacteria become resistant",
-      explanation: "The text explicitly states 'lead to resistance'."
+      question: "Passage: The barangay held a clean-up drive along the river. Volunteers collected plastic bottles, wrappers, and other trash. After several hours, the riverbank looked much cleaner, and residents promised to dispose of their garbage properly.\n\nQuestion: What can be inferred about the barangay before the clean-up drive?",
+      options: [
+        "It had no river",
+        "The riverbank was dirty",
+        "The residents always disposed of garbage properly",
+        "There was no plastic waste"
+      ],
+      answer: "The riverbank was dirty",
+      explanation: "The clean-up drive and collected trash imply the area was dirty before."
     },
+    // 5
     {
-      question: "Passage: While print media is declining, digital news consumption is soaring. Advertisers are shifting their budgets accordingly.\n\nQuestion: Where are advertisers likely moving their money?",
-      options: ["To newspapers", "To digital platforms", "To radio", "To billboards"],
-      answer: "To digital platforms",
-      explanation: "Since digital news is soaring, budgets shift 'accordingly' to digital."
+      question: "Passage: Notice: The elevator is temporarily out of service due to technical inspection. Please use the stairways located at both ends of the hallway. We apologize for the inconvenience.\n\nQuestion: What is the tone of the notice?",
+      options: ["Angry", "Apologetic", "Playful", "Threatening"],
+      answer: "Apologetic",
+      explanation: "The phrase 'We apologize for the inconvenience' shows an apologetic tone."
     },
+    // 6
     {
-      question: "Passage: The diplomat was known for his tact. He could deliver bad news without making enemies.\n\nQuestion: What is a synonym for 'tact'?",
-      options: ["Rudeness", "Diplomacy/Sensitivity", "Honesty", "Speed"],
-      answer: "Diplomacy/Sensitivity",
-      explanation: "The context 'deliver bad news without making enemies' defines tact."
+      question: "Passage: During the seminar, the speaker emphasized the importance of time management. She said that even small delays, if repeated daily, can result in major backlogs by the end of the month.\n\nQuestion: What is the main point of the speaker?",
+      options: [
+        "Seminars are important for employees.",
+        "Backlogs cannot be avoided.",
+        "Small daily delays can grow into big problems.",
+        "Delays are acceptable if work is hard."
+      ],
+      answer: "Small daily delays can grow into big problems.",
+      explanation: "The speaker connects small delays with major backlogs."
     },
+    // 7
     {
-      question: "Passage: The ancient city was buried under ash for centuries. Excavations revealed a frozen moment in time.\n\nQuestion: What preserved the city?",
-      options: ["Water", "Ash", "Sand", "Ice"],
-      answer: "Ash",
-      explanation: "The text says 'buried under ash'."
+      question: "Passage: Mr. Santos always arrives at the office before 8:00 AM, even though the official time-in is 8:30 AM. He uses the extra time to review his tasks for the day.\n\nQuestion: What can we infer about Mr. Santos?",
+      options: [
+        "He dislikes his work.",
+        "He is a punctual and prepared employee.",
+        "He often forgets his tasks.",
+        "He wants to leave early."
+      ],
+      answer: "He is a punctual and prepared employee.",
+      explanation: "Arriving early and reviewing tasks show punctuality and preparation."
     },
+    // 8
     {
-      question: "Passage: Renewable energy sources like wind and solar are intermittent. This means we need battery storage for cloudy or calm days.\n\nQuestion: Why is battery storage needed?",
-      options: ["Renewables are expensive", "Energy is constant", "Sources are not always available", "Batteries create energy"],
-      answer: "Sources are not always available",
-      explanation: "Intermittent means not continuous (cloudy/calm days)."
+      question: "Passage: The orientation for new employees covered office policies, leave benefits, and code of conduct. At the end, participants signed a form to confirm that they understood the guidelines.\n\nQuestion: Why were participants asked to sign a form?",
+      options: [
+        "To check their handwriting",
+        "To confirm their understanding of the guidelines",
+        "To punish latecomers",
+        "To record their ID numbers"
+      ],
+      answer: "To confirm their understanding of the guidelines",
+      explanation: "The form is for acknowledging they understood the orientation topics."
     },
+    // 9
     {
-      question: "Passage: The senator's speech was verbose. He spoke for an hour but said very little of substance.\n\nQuestion: What does 'verbose' mean?",
-      options: ["Loud", "Wordy", "Angry", "Intelligent"],
-      answer: "Wordy",
-      explanation: "Speaking for an hour but saying little implies wordiness."
+      question: "Passage: In recent years, more people have chosen to commute by bicycle instead of using cars. This reduces traffic congestion and helps improve air quality in the city.\n\nQuestion: Which of the following is an advantage of using bicycles mentioned in the passage?",
+      options: [
+        "Bicycles are faster than cars.",
+        "Bicycles reduce traffic and improve air quality.",
+        "Bicycles require no maintenance.",
+        "Bicycles are always safe."
+      ],
+      answer: "Bicycles reduce traffic and improve air quality.",
+      explanation: "The passage explicitly states these two benefits."
     },
+    // 10
     {
-      question: "Passage: In a democracy, power resides with the people. In a dictatorship, it is concentrated in one person.\n\nQuestion: What is the primary difference mentioned?",
-      options: ["The economy", "The source of power", "The military", "The laws"],
-      answer: "The source of power",
-      explanation: "The text contrasts where power resides (people vs one person)."
+      question: "Passage: The scholarship program is open to students who maintain a grade point average of at least 90%. Applicants must also submit a recommendation letter from their adviser.\n\nQuestion: Who is eligible to apply for the scholarship?",
+      options: [
+        "Any student from the school",
+        "Students with at least 90% average and a recommendation letter",
+        "Students with perfect attendance only",
+        "Students who join school clubs"
+      ],
+      answer: "Students with at least 90% average and a recommendation letter",
+      explanation: "Both conditions are specified in the passage."
     },
+    // 11
     {
-      question: "Passage: The flora of the region is unique. Botanists visit to study plants found nowhere else.\n\nQuestion: What does 'flora' refer to?",
-      options: ["Animals", "Weather", "Plants", "Rocks"],
-      answer: "Plants",
-      explanation: "Context clues: 'Botanists' and 'study plants'."
+      question: "Passage: When the typhoon warning was raised to Signal No. 3, classes were immediately suspended. Parents were advised to pick up their children as soon as possible.\n\nQuestion: What can be inferred about the weather situation?",
+      options: [
+        "It was very dangerous.",
+        "It was sunny and calm.",
+        "There was only light rain.",
+        "The storm had already passed."
+      ],
+      answer: "It was very dangerous.",
+      explanation: "Signal No. 3 and suspension of classes indicate a serious weather situation."
     },
+    // 12
     {
-      question: "Passage: Despite the heavy criticism, the artist remained stoic. He continued painting without emotion.\n\nQuestion: What does 'stoic' mean?",
-      options: ["Angry", "Unemotional/Calm", "Sad", "Excited"],
-      answer: "Unemotional/Calm",
-      explanation: "'Continued painting without emotion' defines stoic."
+      question: "Passage: Official Announcement: Effective next month, all employees must wear their identification cards at all times within the office premises. Security personnel are authorized to remind and report those who do not comply.\n\nQuestion: What is the main reason for this policy?",
+      options: [
+        "To improve office security and identification",
+        "To punish forgetful employees",
+        "To make ID cards more expensive",
+        "To reduce visitors in the office"
+      ],
+      answer: "To improve office security and identification",
+      explanation: "Wearing IDs helps security personnel identify people in the workplace."
     },
+    // 13
     {
-      question: "Passage: Inflation reduces purchasing power. A dollar today buys less than it did ten years ago.\n\nQuestion: What is the effect of inflation?",
-      options: ["Money becomes more valuable", "You can buy less with the same money", "Prices go down", "Savings increase"],
-      answer: "You can buy less with the same money",
-      explanation: "Text says 'A dollar today buys less'."
+      question: "Passage: During the pandemic, many offices adopted a work-from-home arrangement. While this reduced commuting time, some employees found it difficult to separate work and personal life.\n\nQuestion: Which statement is supported by the passage?",
+      options: [
+        "Work-from-home has only benefits.",
+        "Work-from-home has both advantages and challenges.",
+        "Work-from-home is worse than office work in all ways.",
+        "Employees prefer commuting."
+      ],
+      answer: "Work-from-home has both advantages and challenges.",
+      explanation: "The passage mentions both a benefit (less commuting) and a difficulty (work–life boundary)."
     },
+    // 14
     {
-      question: "Passage: The protagonist was an anti-hero. He lacked traditional heroic qualities like morality and courage.\n\nQuestion: How is the protagonist described?",
-      options: ["A perfect hero", "Flawed/Lacking morals", "A villain", "A side character"],
-      answer: "Flawed/Lacking morals",
-      explanation: "The text says he 'lacked traditional heroic qualities'."
+      question: "Passage: The barangay captain reminded residents that segregation of waste is required. Biodegradable waste should be placed in green containers, while non-biodegradable waste should be placed in yellow containers.\n\nQuestion: Where should plastic wrappers be placed?",
+      options: [
+        "In green containers",
+        "In yellow containers",
+        "In blue containers",
+        "In any container"
+      ],
+      answer: "In yellow containers",
+      explanation: "Plastic wrappers are non-biodegradable and belong in yellow containers."
     },
+    // 15
     {
-      question: "Passage: Some bacteria are aerobic, meaning they require oxygen. Others are anaerobic and die in the presence of oxygen.\n\nQuestion: What does an anaerobic bacterium need?",
-      options: ["Oxygen", "No oxygen", "Sunlight", "Water"],
-      answer: "No oxygen",
-      explanation: "Text says they 'die in the presence of oxygen'."
+      question: "Passage: Grace scanned the bulletin board and saw her name under the list of successful examinees. Her hands trembled as she called her parents to share the news.\n\nQuestion: How is Grace feeling?",
+      options: ["Disappointed", "Angry", "Relieved and happy", "Confused"],
+      answer: "Relieved and happy",
+      explanation: "Seeing her name on the successful list and calling her parents shows joy and relief."
     },
+    // 16
     {
-      question: "Passage: The CEO's decision was unilateral. He did not consult the board or the employees.\n\nQuestion: What does 'unilateral' mean?",
-      options: ["One-sided", "Democratic", "Collaborative", "Slow"],
-      answer: "One-sided",
-      explanation: "Not consulting others implies a one-sided decision."
+      question: "Passage: Job Posting: We are looking for a clerk with strong attention to detail and basic knowledge of spreadsheet software. Previous government experience is an advantage but not required.\n\nQuestion: Which applicant best fits the job description?",
+      options: [
+        "Someone who hates computers",
+        "Someone who is careless but fast",
+        "Someone who is careful and knows spreadsheets",
+        "Someone who refuses to work with others"
+      ],
+      answer: "Someone who is careful and knows spreadsheets",
+      explanation: "The job requires attention to detail and spreadsheet knowledge."
     },
+    // 17
     {
-      question: "Passage: E-books are convenient, but bibliophiles still prefer the smell and feel of physical pages.\n\nQuestion: Who is a 'bibliophile'?",
-      options: ["A technology expert", "A book lover", "A writer", "A librarian"],
-      answer: "A book lover",
-      explanation: "Context: Someone who loves the physical aspects of books."
+      question: "Passage: Many patients fail to complete their prescribed antibiotics once they feel better. This behavior can lead to stronger bacteria that are harder to treat in the future.\n\nQuestion: What is the warning given in the passage?",
+      options: [
+        "Do not take antibiotics.",
+        "Stop antibiotics once you feel better.",
+        "Incomplete antibiotic use can create stronger bacteria.",
+        "All bacteria are harmless."
+      ],
+      answer: "Incomplete antibiotic use can create stronger bacteria.",
+      explanation: "The passage explains the risk of not completing prescriptions."
     },
+    // 18
     {
-      question: "Passage: The desert is an arid landscape. Water is scarce, and vegetation is sparse.\n\nQuestion: What does 'arid' mean?",
-      options: ["Cold", "Dry", "Wet", "Forest"],
-      answer: "Dry",
-      explanation: "Context clues: 'Water is scarce'."
+      question: "Passage: Liza prefers reading printed books, while her younger brother enjoys reading on a tablet. Both, however, agree that reading helps them relax after a busy day.\n\nQuestion: What is the common belief of Liza and her brother?",
+      options: [
+        "Reading is boring.",
+        "Reading helps them relax.",
+        "Tablets are better than books.",
+        "Only printed books are useful."
+      ],
+      answer: "Reading helps them relax.",
+      explanation: "Despite different formats, they both see reading as relaxing."
     },
+    // 19
     {
-      question: "Passage: The negotiations reached an impasse. Neither side was willing to compromise.\n\nQuestion: What is an 'impasse'?",
-      options: ["An agreement", "A deadlock/Standstill", "A success", "A start"],
-      answer: "A deadlock/Standstill",
-      explanation: "Context: 'Neither side was willing to compromise'."
+      question: "Passage: The community health center offers free blood pressure checks every Monday morning. Many senior citizens line up early to take advantage of the service.\n\nQuestion: Why do many senior citizens arrive early?",
+      options: [
+        "To avoid the heat and long lines",
+        "To pay their bills",
+        "To attend a party",
+        "To apply for a passport"
+      ],
+      answer: "To avoid the heat and long lines",
+      explanation: "Arriving early is usually to secure a place and avoid long waiting time."
     },
+    // 20
     {
-      question: "Passage: Artificial Intelligence can process data faster than humans. However, it lacks emotional intelligence and empathy.\n\nQuestion: What is a limitation of AI?",
-      options: ["Speed", "Accuracy", "Emotional intelligence", "Memory"],
-      answer: "Emotional intelligence",
-      explanation: "The text explicitly states 'it lacks emotional intelligence'."
+      question: "Passage: While working on the report, Ana noticed several numbers that did not match the source document. Instead of ignoring them, she checked again and corrected the errors.\n\nQuestion: What quality does Ana show?",
+      options: [
+        "Carelessness",
+        "Honesty and thoroughness",
+        "Laziness",
+        "Impatience"
+      ],
+      answer: "Honesty and thoroughness",
+      explanation: "She double-checks and corrects errors rather than ignoring them."
     },
+    // 21
     {
-      question: "Passage: The law is ambiguous. Lawyers can interpret it in many different ways.\n\nQuestion: What does 'ambiguous' mean?",
-      options: ["Clear", "Strict", "Open to interpretation", "Unfair"],
-      answer: "Open to interpretation",
-      explanation: "Context: 'interpret it in many different ways'."
+      question: "Passage: The school canteen posted a reminder that outside food is not allowed, except for students with medical conditions who have written permission.\n\nQuestion: Which student may bring outside food?",
+      options: [
+        "Any student who wants to save money",
+        "A student with written permission for medical reasons",
+        "A student who dislikes canteen food",
+        "A student who is late"
+      ],
+      answer: "A student with written permission for medical reasons",
+      explanation: "The exception is clearly stated for medical conditions with written permission."
     },
+    // 22
     {
-      question: "Passage: His argument was fallacious. It was based on incorrect assumptions and flawed logic.\n\nQuestion: What does 'fallacious' mean?",
-      options: ["Strong", "False/Flawed", "True", "Convincing"],
-      answer: "False/Flawed",
-      explanation: "Context: 'incorrect assumptions and flawed logic'."
+      question: "Passage: Ramon spends an hour each night reviewing his notes, even when there is no scheduled quiz. He believes that studying a little every day is better than cramming.\n\nQuestion: What habit does Ramon practice?",
+      options: [
+        "Last-minute studying",
+        "Consistent daily review",
+        "Skipping review",
+        "Relying only on group work"
+      ],
+      answer: "Consistent daily review",
+      explanation: "He reviews notes every night, not just before quizzes."
     },
+    // 23
     {
-      question: "Passage: The chemical is volatile. It evaporates quickly and can explode easily.\n\nQuestion: What does 'volatile' mean?",
-      options: ["Stable", "Unstable/Explosive", "Liquid", "Safe"],
-      answer: "Unstable/Explosive",
-      explanation: "Context: 'evaporates quickly and can explode'."
+      question: "Passage: The notice said that water would be interrupted from 8:00 AM to 5:00 PM for pipe repairs. Residents were advised to store enough water beforehand.\n\nQuestion: What should residents do before 8:00 AM?",
+      options: [
+        "Complain to the barangay",
+        "Store enough water",
+        "Ignore the notice",
+        "Open all faucets"
+      ],
+      answer: "Store enough water",
+      explanation: "They need water during the interruption, so they must store it earlier."
     },
+    // 24
     {
-      question: "Passage: She was a novice at chess. She barely knew how the pieces moved.\n\nQuestion: What is a 'novice'?",
-      options: ["Expert", "Beginner", "Teacher", "Winner"],
-      answer: "Beginner",
-      explanation: "Context: 'barely knew how the pieces moved'."
+      question: "Passage: In the library, Carla chose a seat near the window where it was bright and quiet. She turned off her phone to avoid distractions while reviewing.\n\nQuestion: What can be concluded about Carla?",
+      options: [
+        "She likes noisy places.",
+        "She wants to focus on her review.",
+        "She prefers chatting with friends.",
+        "She dislikes the library."
+      ],
+      answer: "She wants to focus on her review.",
+      explanation: "Choosing a quiet spot and turning off her phone shows a desire to concentrate."
     },
+    // 25
     {
-      question: "Passage: The evidence corroborated the witness's story. It confirmed he was telling the truth.\n\nQuestion: What does 'corroborated' mean?",
-      options: ["Contradicted", "Confirmed/Supported", "Ignored", "Changed"],
-      answer: "Confirmed/Supported",
-      explanation: "Context: 'confirmed he was telling the truth'."
+      question: "Passage: Public parks provide a place for families to relax, children to play, and communities to hold events. They also offer trees and open spaces that improve air quality.\n\nQuestion: What is the main idea of the passage?",
+      options: [
+        "Public parks are only for children.",
+        "Public parks are useful for rest, activities, and the environment.",
+        "Public parks should be replaced with buildings.",
+        "Public parks are expensive to maintain."
+      ],
+      answer: "Public parks are useful for rest, activities, and the environment.",
+      explanation: "The passage lists several uses and benefits of parks."
     },
+    // 26
     {
-      question: "Passage: The regime was totalitarian. The government controlled every aspect of public and private life.\n\nQuestion: What characterizes a totalitarian regime?",
-      options: ["Freedom", "Total control", "Democracy", "Anarchy"],
-      answer: "Total control",
-      explanation: "Context: 'controlled every aspect'."
+      question: "Passage: The supervisor praised the team for finishing the project ahead of schedule but reminded them that accuracy is more important than speed.\n\nQuestion: What was the supervisor's main reminder?",
+      options: [
+        "Speed is everything.",
+        "Accuracy is more important than speed.",
+        "They should work slower next time.",
+        "The schedule was too short."
+      ],
+      answer: "Accuracy is more important than speed.",
+      explanation: "Despite praise for speed, the emphasis is on accuracy."
     },
+    // 27
     {
-      question: "Passage: The weather was erratic. One minute it was sunny, the next it was hailing.\n\nQuestion: What does 'erratic' mean?",
-      options: ["Predictable", "Unpredictable/Inconsistent", "Beautiful", "Dangerous"],
-      answer: "Unpredictable/Inconsistent",
-      explanation: "Context: Changing rapidly from sun to hail."
+      question: "Passage: During the dry season, many areas experience water shortages. Simple practices like turning off the faucet while brushing teeth and fixing leaks can help conserve water.\n\nQuestion: Which action helps conserve water according to the passage?",
+      options: [
+        "Taking longer showers",
+        "Leaving the faucet running",
+        "Fixing leaks",
+        "Watering plants at noon"
+      ],
+      answer: "Fixing leaks",
+      explanation: "The passage gives fixing leaks as a water-saving practice."
     },
+    // 28
     {
-      question: "Passage: He was known for his altruism. He donated half his salary to charity every month.\n\nQuestion: What is 'altruism'?",
-      options: ["Greed", "Selflessness", "Wealth", "Fame"],
-      answer: "Selflessness",
-      explanation: "Donating half salary shows concern for others (selflessness)."
+      question: "Passage: The barangay newsletter is delivered once a month. It contains announcements, schedules for medical missions, and reminders about local ordinances.\n\nQuestion: What is the newsletter mainly for?",
+      options: [
+        "Entertainment only",
+        "Spreading community information",
+        "Selling products",
+        "Advertising businesses only"
+      ],
+      answer: "Spreading community information",
+      explanation: "It contains announcements, schedules, and reminders for residents."
     },
+    // 29
     {
-      question: "Passage: The solution is ephemeral. It will only solve the problem for a short time.\n\nQuestion: What does 'ephemeral' mean?",
-      options: ["Permanent", "Short-lived", "Effective", "Expensive"],
-      answer: "Short-lived",
-      explanation: "Context: 'only solve... for a short time'."
+      question: "Passage: When the lights suddenly went out, Ana calmly took out her flashlight and helped guide her co-workers down the stairs.\n\nQuestion: Which word best describes Ana's behavior?",
+      options: ["Panicky", "Calm and helpful", "Careless", "Angry"],
+      answer: "Calm and helpful",
+      explanation: "She calmly used a flashlight and guided others."
     },
+    // 30
     {
-      question: "Passage: The debate was contentious. The candidates shouted and interrupted each other.\n\nQuestion: What does 'contentious' mean?",
-      options: ["Peaceful", "Argumentative/Heated", "Boring", "Short"],
-      answer: "Argumentative/Heated",
-      explanation: "Context: Shouting and interrupting."
+      question: "Passage: The office implemented a 'no plastic' policy in meetings. Instead of bottled water, pitchers and glasses are now used.\n\nQuestion: What is the purpose of this policy?",
+      options: [
+        "To save electricity",
+        "To reduce plastic waste",
+        "To shorten meetings",
+        "To make water more expensive"
+      ],
+      answer: "To reduce plastic waste",
+      explanation: "Replacing bottled water with pitchers minimizes plastic use."
     },
+    // 31
     {
-      question: "Passage: Her explanation was lucid. Everyone understood the complex topic immediately.\n\nQuestion: What does 'lucid' mean?",
-      options: ["Confusing", "Clear", "Long", "Wrong"],
-      answer: "Clear",
-      explanation: "Context: 'Everyone understood... immediately'."
+      question: "Passage: A poster on the wall states: \"Report any damaged office equipment immediately to the Administrative Unit.\" Below it is a list of telephone numbers.\n\nQuestion: What are employees expected to do when they see damaged equipment?",
+      options: [
+        "Repair it themselves",
+        "Ignore it",
+        "Report it to the Administrative Unit",
+        "Throw it away"
+      ],
+      answer: "Report it to the Administrative Unit",
+      explanation: "The poster clearly instructs them to report."
     },
+    // 32
     {
-      question: "Passage: The judge was impartial. He did not favor either side.\n\nQuestion: What does 'impartial' mean?",
-      options: ["Biased", "Fair/Neutral", "Strict", "Angry"],
-      answer: "Fair/Neutral",
-      explanation: "Context: 'did not favor either side'."
+      question: "Passage: During the training, participants were reminded to turn off their microphones when not speaking to avoid background noise during the online session.\n\nQuestion: Why should microphones be turned off when not speaking?",
+      options: [
+        "To save internet data",
+        "To avoid background noise",
+        "To end the meeting early",
+        "To hide the participants"
+      ],
+      answer: "To avoid background noise",
+      explanation: "The passage directly states this reason."
     },
+    // 33
     {
-      question: "Passage: The stench was repugnant. People covered their noses and walked away.\n\nQuestion: What does 'repugnant' mean?",
-      options: ["Pleasant", "Disgusting/Offensive", "Sweet", "Strong"],
-      answer: "Disgusting/Offensive",
-      explanation: "Context: People covering noses."
+      question: "Passage: The teacher gave the class a short story to read and asked them to underline unfamiliar words. Afterward, they looked up the meanings in a dictionary.\n\nQuestion: What skill is the teacher developing?",
+      options: [
+        "Guessing without reading",
+        "Vocabulary and dictionary use",
+        "Skipping difficult words",
+        "Copying from classmates"
+      ],
+      answer: "Vocabulary and dictionary use",
+      explanation: "Underlining unfamiliar words and using a dictionary improves vocabulary."
     },
+    // 34
     {
-      question: "Passage: The project is viable. We have the money and the technology to do it.\n\nQuestion: What does 'viable' mean?",
-      options: ["Impossible", "Feasible/Possible", "Expensive", "Risky"],
-      answer: "Feasible/Possible",
-      explanation: "Context: Having resources implies it can be done."
+      question: "Passage: A company policy states that employees must inform their supervisor at least one day in advance when filing a leave of absence, except in emergencies.\n\nQuestion: Which situation is an exception to the one-day notice?",
+      options: [
+        "Planned vacation",
+        "Sudden illness",
+        "Travel for leisure",
+        "Personal errands"
+      ],
+      answer: "Sudden illness",
+      explanation: "Sudden illness can be considered an emergency."
     },
+    // 35
     {
-      question: "Passage: He acts with impunity. He breaks the rules because he knows he won't be punished.\n\nQuestion: What does 'impunity' mean?",
-      options: ["Fear", "Exemption from punishment", "Carefulness", "Guilt"],
-      answer: "Exemption from punishment",
-      explanation: "Context: 'knows he won't be punished'."
+      question: "Passage: The local government launched a tree-planting activity along the highway to reduce noise and provide shade.\n\nQuestion: What are two purposes of planting trees mentioned in the passage?",
+      options: [
+        "To reduce noise and provide shade",
+        "To block the road and cause traffic",
+        "To remove all signs",
+        "To replace electric posts"
+      ],
+      answer: "To reduce noise and provide shade",
+      explanation: "The passage mentions these two purposes explicitly."
     },
+    // 36
     {
-      question: "Passage: The rumors were ubiquitous. You could hear them in every coffee shop and office.\n\nQuestion: What does 'ubiquitous' mean?",
-      options: ["Rare", "Everywhere", "Secret", "False"],
-      answer: "Everywhere",
-      explanation: "Context: 'hear them in every coffee shop'."
+      question: "Passage: Paolo always waits for the last week before starting his projects. As a result, he often feels stressed and sometimes misses the deadline.\n\nQuestion: What behavior causes Paolo's stress?",
+      options: [
+        "Starting early",
+        "Over-preparing",
+        "Procrastinating or delaying work",
+        "Asking for help"
+      ],
+      answer: "Procrastinating or delaying work",
+      explanation: "He waits until the last week, which is procrastination."
     },
+    // 37
     {
-      question: "Passage: The politician was pragmatic. He focused on practical solutions rather than ideals.\n\nQuestion: What does 'pragmatic' mean?",
-      options: ["Idealistic", "Practical", "Dreamy", "Dishonest"],
-      answer: "Practical",
-      explanation: "Context: 'focused on practical solutions'."
+      question: "Passage: The notice on the door reads: \"Please knock and wait for a response before entering. Some transactions require privacy.\" \n\nQuestion: Why is it important to knock first?",
+      options: [
+        "To test the door",
+        "To check the time",
+        "To respect privacy",
+        "To make noise"
+      ],
+      answer: "To respect privacy",
+      explanation: "Privacy is mentioned as the reason for the instruction."
     },
+    // 38
     {
-      question: "Passage: The water is potable. It is safe to drink from the tap.\n\nQuestion: What does 'potable' mean?",
-      options: ["Dirty", "Drinkable", "Cold", "Salty"],
-      answer: "Drinkable",
-      explanation: "Context: 'safe to drink'."
+      question: "Passage: Many senior high school graduates are unsure whether to work immediately or pursue further studies. Career guidance counselors help them weigh their options by explaining possible paths and requirements.\n\nQuestion: What is the role of career guidance counselors according to the passage?",
+      options: [
+        "To choose a course for the students",
+        "To make students work immediately",
+        "To help students understand their options",
+        "To force students to study abroad"
+      ],
+      answer: "To help students understand their options",
+      explanation: "Counselors explain possible paths and requirements."
     },
+    // 39
     {
-      question: "Passage: Her mood is volatile. She can be happy one moment and furious the next.\n\nQuestion: What does 'volatile' mean in this context?",
-      options: ["Stable", "Unpredictable/Changeable", "Happy", "Angry"],
-      answer: "Unpredictable/Changeable",
-      explanation: "Context: Changing emotions rapidly."
+      question: "Passage: The security guard politely reminded the visitor to sign the logbook before entering the building. The visitor smiled and followed the instruction.\n\nQuestion: What can be said about the visitor?",
+      options: [
+        "He ignored the guard.",
+        "He refused to sign.",
+        "He cooperated with the security procedure.",
+        "He argued loudly."
+      ],
+      answer: "He cooperated with the security procedure.",
+      explanation: "He smiled and followed the instruction."
     },
+    // 40
     {
-      question: "Passage: The contract became void. It was no longer legally binding.\n\nQuestion: What does 'void' mean?",
-      options: ["Valid", "Invalid/Empty", "New", "Signed"],
-      answer: "Invalid/Empty",
-      explanation: "Context: 'no longer legally binding'."
+      question: "Passage: A student wrote a complaint email using all capital letters and many exclamation marks. The school administrator replied, reminding the student to use respectful language in written communication.\n\nQuestion: What lesson is highlighted in the administrator's reply?",
+      options: [
+        "Emails should always be short.",
+        "Capital letters are required.",
+        "Respectful language is important in written communication.",
+        "Complaints are not allowed."
+      ],
+      answer: "Respectful language is important in written communication.",
+      explanation: "The reply focuses on respectful language, not on banning complaints."
     },
+    // 41
     {
-      question: "Passage: The soldier showed valor. He ran into fire to save his friend.\n\nQuestion: What does 'valor' mean?",
-      options: ["Cowardice", "Bravery", "Speed", "Strength"],
-      answer: "Bravery",
-      explanation: "Running into fire to save someone implies bravery."
+      question: "Passage: Marvin noticed that his electric bill increased after he started using an air conditioner every afternoon. He decided to set a schedule and use it only during the hottest hours.\n\nQuestion: What conclusion did Marvin likely reach?",
+      options: [
+        "The electric bill is unrelated to appliance use.",
+        "Using the air conditioner more increases electricity cost.",
+        "Only lights affect the electric bill.",
+        "Electricity is always cheap."
+      ],
+      answer: "Using the air conditioner more increases electricity cost.",
+      explanation: "He linked his increased usage to the higher bill."
     },
+    // 42
     {
-      question: "Passage: The economy is stagnant. There has been no growth for three years.\n\nQuestion: What does 'stagnant' mean?",
-      options: ["Moving", "Still/Not growing", "Booming", "Falling"],
-      answer: "Still/Not growing",
-      explanation: "Context: 'no growth'."
+      question: "Passage: The barangay organized an information drive about proper handwashing and cough etiquette to prevent the spread of illness.\n\nQuestion: What is the main goal of the information drive?",
+      options: [
+        "To teach residents cooking skills",
+        "To prevent the spread of illness",
+        "To collect barangay fees",
+        "To plan a fiesta"
+      ],
+      answer: "To prevent the spread of illness",
+      explanation: "Handwashing and cough etiquette are health measures."
     },
+    // 43
     {
-      question: "Passage: The comments were benign. They were meant to help, not hurt.\n\nQuestion: What does 'benign' mean?",
-      options: ["Harmful", "Harmless/Gentle", "Rude", "Loud"],
-      answer: "Harmless/Gentle",
-      explanation: "Context: 'not hurt'."
+      question: "Passage: The office set up a suggestion box where employees can anonymously submit ideas for improving services.\n\nQuestion: Why might the suggestions be anonymous?",
+      options: [
+        "To increase fear",
+        "To protect employees who want to give honest feedback",
+        "To punish employees",
+        "To reveal their identities"
+      ],
+      answer: "To protect employees who want to give honest feedback",
+      explanation: "Anonymity encourages open and honest suggestions."
     },
+    // 44
     {
-      question: "Passage: He was a meticulous worker. He checked every detail three times.\n\nQuestion: What does 'meticulous' mean?",
-      options: ["Lazy", "Careful/Thorough", "Fast", "Careless"],
-      answer: "Careful/Thorough",
-      explanation: "Context: Checking details three times."
+      question: "Passage: During the fire drill, employees were instructed to walk quickly but not run, and to avoid using the elevators.\n\nQuestion: Why are elevators not used during a fire drill?",
+      options: [
+        "They are too slow.",
+        "They might stop working or become dangerous during a fire.",
+        "They are only for managers.",
+        "They cause noise."
+      ],
+      answer: "They might stop working or become dangerous during a fire.",
+      explanation: "Elevators are unsafe in fire situations."
     },
+    // 45
     {
-      question: "Passage: The loud noise was jarring. It shook everyone up.\n\nQuestion: What does 'jarring' mean?",
-      options: ["Soothing", "Shocking/Disturbing", "Quiet", "Musical"],
-      answer: "Shocking/Disturbing",
-      explanation: "Context: 'shook everyone up'."
+      question: "Passage: The cooperative offers loans with lower interest rates to its members compared to commercial banks.\n\nQuestion: What advantage do cooperative members have?",
+      options: [
+        "They cannot borrow money.",
+        "They receive higher interest on loans.",
+        "They can borrow money at lower interest rates.",
+        "They must pay more fees."
+      ],
+      answer: "They can borrow money at lower interest rates.",
+      explanation: "This benefit is clearly stated in the passage."
     },
+    // 46
     {
-      question: "Passage: The student was diligent. He never missed an assignment.\n\nQuestion: What does 'diligent' mean?",
-      options: ["Lazy", "Hardworking", "Smart", "Late"],
-      answer: "Hardworking",
-      explanation: "Never missing assignments implies diligence."
+      question: "Passage: Lea noticed that whenever she drank coffee late at night, she found it difficult to fall asleep. She decided to drink only water after 6:00 PM.\n\nQuestion: What relationship did Lea observe?",
+      options: [
+        "Coffee helps her sleep.",
+        "Coffee at night makes it harder for her to sleep.",
+        "Water keeps her awake.",
+        "Time does not affect sleep."
+      ],
+      answer: "Coffee at night makes it harder for her to sleep.",
+      explanation: "Her difficulty sleeping is linked to drinking coffee late."
     },
+    // 47
     {
-      question: "Passage: The view was panoramic. We could see the whole city from the top.\n\nQuestion: What does 'panoramic' mean?",
-      options: ["Narrow", "Wide view", "Dark", "Blurry"],
-      answer: "Wide view",
-      explanation: "Context: 'see the whole city'."
+      question: "Passage: The barangay hall posted a sign: \"Please line up properly. First-come, first-served.\" \n\nQuestion: What system is used to serve clients?",
+      options: [
+        "Random selection",
+        "First-come, first-served basis",
+        "Highest-paying first",
+        "Friends of staff first"
+      ],
+      answer: "First-come, first-served basis",
+      explanation: "The rule is clearly written on the sign."
     },
+    // 48
     {
-      question: "Passage: The ending was ambiguous. We didn't know if the hero survived.\n\nQuestion: What does 'ambiguous' mean here?",
-      options: ["Clear", "Unclear", "Happy", "Sad"],
-      answer: "Unclear",
-      explanation: "Context: 'didn't know if...'."
+      question: "Passage: The new employee manual explains that government workers are expected to act with integrity, avoid conflicts of interest, and serve the public fairly.\n\nQuestion: Which value is emphasized in the manual?",
+      options: [
+        "Self-interest",
+        "Integrity and fairness",
+        "Favoring relatives",
+        "Personal gain"
+      ],
+      answer: "Integrity and fairness",
+      explanation: "The passage mentions acting with integrity and serving the public fairly."
     },
+    // 49
     {
-      question: "Passage: The toxins are lethal. One drop can kill a human.\n\nQuestion: What does 'lethal' mean?",
-      options: ["Safe", "Deadly", "Tasty", "Weak"],
-      answer: "Deadly",
-      explanation: "Context: 'can kill'."
+      question: "Passage: During enrollment, the school prioritizes returning students in the first two days, and opens remaining slots to new students afterward.\n\nQuestion: Who is served first during enrollment?",
+      options: [
+        "New students",
+        "Visitors",
+        "Returning students",
+        "Teachers' relatives"
+      ],
+      answer: "Returning students",
+      explanation: "The passage clearly states they are prioritized in the first two days."
     },
+    // 50
     {
-      question: "Passage: He felt apathy towards the election. He didn't care who won.\n\nQuestion: What is 'apathy'?",
-      options: ["Interest", "Lack of interest", "Anger", "Joy"],
-      answer: "Lack of interest",
-      explanation: "Context: 'didn't care'."
+      question: "Passage: The local tourism office installed signboards showing directions to landmarks in both the local language and English.\n\nQuestion: Why were the signboards written in two languages?",
+      options: [
+        "To confuse visitors",
+        "To help both local residents and foreign tourists",
+        "To promote English only",
+        "To make signs longer"
+      ],
+      answer: "To help both local residents and foreign tourists",
+      explanation: "Using two languages makes the signs understandable to more people."
     }
   ],
 
   // ============================================================
-  // LEVEL 4: EXPERT (50 Items) - Abstract Concepts & Complex Analysis
+  // LEVEL 4: EXPERT (50 Items) - Longer Passages, Deeper Inference
   // ============================================================
   expert: [
+    // 1
     {
-      question: "Passage: Existentialism posits that individuals are free and responsible for their own development through acts of the will. It argues that life has no inherent meaning provided by the universe.\n\nQuestion: According to the text, where does life's meaning come from?",
-      options: ["The universe", "God", "The individual", "Society"],
-      answer: "The individual",
-      explanation: "Inference: If the universe provides no meaning and individuals are responsible, meaning comes from the individual."
+      question: "Passage: In many offices, people complain that meetings consume too much time but produce few concrete decisions. Often, agendas are unclear, participants arrive unprepared, and discussions go in circles. Yet, meetings remain necessary for coordinating tasks and sharing information. The challenge is not to remove meetings entirely, but to make them more focused and purposeful.\n\nQuestion: What is the main problem described in the passage?",
+      options: [
+        "People dislike their co-workers.",
+        "Meetings take time but lack clear results.",
+        "Meetings are no longer necessary.",
+        "Offices should avoid coordination."
+      ],
+      answer: "Meetings take time but lack clear results.",
+      explanation: "The passage highlights that meetings consume time without producing concrete decisions."
     },
+    // 2
     {
-      question: "Passage: The concept of 'Tabula Rasa' suggests that humans are born without built-in mental content. Therefore, all knowledge comes from experience or perception.\n\nQuestion: Which idea does 'Tabula Rasa' oppose?",
-      options: ["Learning from experience", "Innate knowledge", "Education", "Observation"],
-      answer: "Innate knowledge",
-      explanation: "If born without content, it opposes the idea of innate (built-in) knowledge."
+      question: "Passage: A new government program offers livelihood training for out-of-school youth. Some residents criticize the program, saying that it will not solve unemployment overnight. However, supporters argue that giving young people skills in baking, repair work, and basic entrepreneurship can gradually reduce joblessness in the community.\n\nQuestion: Which statement best reflects the supporters' view?",
+      options: [
+        "The program is useless because it is slow.",
+        "Skills training can slowly help reduce unemployment.",
+        "Only cash assistance can solve unemployment.",
+        "Youth should not be involved in business."
+      ],
+      answer: "Skills training can slowly help reduce unemployment.",
+      explanation: "Supporters believe skills and training will gradually lessen joblessness."
     },
+    // 3
     {
-      question: "Passage: In Machiavelli's view, it is better for a leader to be feared than loved, if one cannot be both. Fear is maintained by the dread of punishment, which never fails.\n\nQuestion: Why does Machiavelli prefer fear?",
-      options: ["It is morally right", "Love is fickle; fear is reliable", "He hated people", "It is easier"],
-      answer: "Love is fickle; fear is reliable",
-      explanation: "Inference: 'Fear is maintained... never fails' implies reliability compared to love."
+      question: "Passage: In a survey of commuters, many respondents said they preferred using public transportation if it was reliable and safe. They pointed out that heavy traffic and lack of parking made private car use stressful and expensive.\n\nQuestion: What condition would make commuters more willing to use public transportation?",
+      options: [
+        "If it is reliable and safe",
+        "If parking is free",
+        "If fuel prices are low",
+        "If cars become cheaper"
+      ],
+      answer: "If it is reliable and safe",
+      explanation: "The survey reveals that reliability and safety increase willingness to use public transport."
     },
+    // 4
     {
-      question: "Passage: The utilitarian principle states that the best action is the one that maximizes overall happiness. However, critics argue this can justify harming a minority for the benefit of the majority.\n\nQuestion: What is a criticism of utilitarianism?",
-      options: ["It promotes sadness", "It ignores the majority", "It can harm minorities", "It is too religious"],
-      answer: "It can harm minorities",
-      explanation: "The text explicitly mentions the criticism: 'justify harming a minority'."
+      question: "Passage: A memo reminded staff that government property, such as laptops and projectors, should not be used for personal business. Although some employees think it is harmless to use office equipment after hours, such practice may create unfair advantages and blur the line between official and private activities.\n\nQuestion: Why is using government property for personal business discouraged?",
+      options: [
+        "Because the equipment is old",
+        "Because it may lead to unfair and improper use",
+        "Because employees work too slowly",
+        "Because personal business is always illegal"
+      ],
+      answer: "Because it may lead to unfair and improper use",
+      explanation: "The memo highlights unfair advantages and blurred boundaries as reasons."
     },
+    // 5
     {
-      question: "Passage: Quantum entanglement describes a phenomenon where particles remain connected so that the state of one affects the other, regardless of distance. Einstein called this 'spooky action at a distance'.\n\nQuestion: What did Einstein find strange?",
-      options: ["Particles are small", "Connection across distance", "Physics is wrong", "Ghosts exist"],
-      answer: "Connection across distance",
-      explanation: "'Spooky action at a distance' refers to the connection regardless of distance."
+      question: "Passage: During a disaster drill, some employees treated the activity as a break and continued chatting instead of listening to instructions. The safety officer reminded everyone that drills are not mere formalities; they are practiced so people will know what to do in an actual emergency.\n\nQuestion: What mistaken attitude toward drills is shown in the passage?",
+      options: [
+        "They are chances to learn.",
+        "They are serious safety activities.",
+        "They are just breaks or formalities.",
+        "They are more important than real emergencies."
+      ],
+      answer: "They are just breaks or formalities.",
+      explanation: "Employees treated the drill lightly, as if it were only a break."
     },
+    // 6
     {
-      question: "Passage: Revisionist history challenges established narratives. While often necessary to correct biases, it can be controversial when it appears to be politically motivated rather than fact-based.\n\nQuestion: When is revisionist history considered controversial?",
-      options: ["When it is new", "When it corrects bias", "When it is politically motivated", "When it is written by victors"],
-      answer: "When it is politically motivated",
-      explanation: "The text explicitly states 'controversial when... politically motivated'."
+      question: "Passage: Some employees believe that as long as they finish their tasks, it does not matter if they arrive late. However, constant tardiness affects teamwork. When one person is late, meetings cannot start on time, and others are forced to wait, wasting valuable working hours.\n\nQuestion: What is the main argument against the employees' belief?",
+      options: [
+        "Finishing tasks is not important.",
+        "Tardiness only affects the late person.",
+        "Constant tardiness disrupts the work of others.",
+        "Late workers should work from home."
+      ],
+      answer: "Constant tardiness disrupts the work of others.",
+      explanation: "The passage explains that others are forced to wait and meetings are delayed."
     },
+    // 7
     {
-      question: "Passage: The paradox of tolerance states that if a society is tolerant without limit, its ability to be tolerant will be seized or destroyed by the intolerant.\n\nQuestion: What does the paradox suggest regarding intolerance?",
-      options: ["It should be tolerated", "It should not be tolerated", "It creates peace", "It is natural"],
-      answer: "It should not be tolerated",
-      explanation: "Inference: To preserve tolerance, society cannot tolerate the intolerant."
+      question: "Passage: Online learning has made education more accessible to people who live far from schools. Nonetheless, it also exposes the unequal access to gadgets and stable internet connection. Students from low-income families may be left behind not because they lack ability, but because they lack resources.\n\nQuestion: What inequality is highlighted in the passage?",
+      options: [
+        "Difference in students' intelligence",
+        "Difference in access to devices and internet",
+        "Difference in teachers' salaries",
+        "Difference in school buildings"
+      ],
+      answer: "Difference in access to devices and internet",
+      explanation: "The passage points to gadgets and internet as the key inequality."
     },
+    // 8
     {
-      question: "Passage: Fiscal policy involves government spending and tax. Monetary policy involves managing the money supply and interest rates. Both aim to stabilize the economy.\n\nQuestion: Which is a tool of monetary policy?",
-      options: ["Taxes", "Government spending", "Interest rates", "Infrastructure"],
-      answer: "Interest rates",
-      explanation: "The text links 'interest rates' to Monetary policy."
+      question: "Passage: A barangay councilor proposed a curfew for minors, arguing that it would reduce incidents of youth-related disturbances at night. Critics worry that such a policy might unfairly target working students or those who help their parents in night markets.\n\nQuestion: What concern do critics raise about the curfew?",
+      options: [
+        "It might be too strict on all residents.",
+        "It might unfairly affect minors with legitimate reasons to be outside.",
+        "It will make streets too quiet.",
+        "It will increase youth disturbances."
+      ],
+      answer: "It might unfairly affect minors with legitimate reasons to be outside.",
+      explanation: "Critics focus on working students and helpers who may be out for valid reasons."
     },
+    // 9
     {
-      question: "Passage: Post-modernism challenges the idea of objective truth. It argues that reality is constructed through language and culture, making all interpretations relative.\n\nQuestion: What does post-modernism reject?",
-      options: ["Language", "Culture", "Objective truth", "Art"],
-      answer: "Objective truth",
-      explanation: "The text states it 'challenges the idea of objective truth'."
+      question: "Passage: The department’s new evaluation system includes not only individual performance, but also teamwork, punctuality, and adherence to ethical standards. This means that an employee who is technically skilled but consistently rude or dishonest may still receive a low overall rating.\n\nQuestion: What is the implication of the new evaluation system?",
+      options: [
+        "Only technical skills matter.",
+        "Behavior and ethics are part of performance.",
+        "Rudeness is acceptable if you are skilled.",
+        "Teamwork is not important."
+      ],
+      answer: "Behavior and ethics are part of performance.",
+      explanation: "The passage adds teamwork and ethical standards to the criteria."
     },
+    // 10
     {
-      question: "Passage: The Socratic Method is a form of cooperative argumentative dialogue. It relies on asking and answering questions to stimulate critical thinking and draw out ideas.\n\nQuestion: What is the core technique of the Socratic Method?",
-      options: ["Lecturing", "Asking questions", "Reading books", "Memorization"],
-      answer: "Asking questions",
-      explanation: "The text says 'relies on asking and answering questions'."
+      question: "Passage: A reading comprehension test asked examinees to identify the main idea and supporting details of a passage. Many respondents copied entire sentences from the text without explaining their relevance, which resulted in low scores.\n\nQuestion: What common mistake did the respondents make?",
+      options: [
+        "They wrote too briefly.",
+        "They copied without showing understanding.",
+        "They used their own words only.",
+        "They skipped the main idea."
+      ],
+      answer: "They copied without showing understanding.",
+      explanation: "They copied sentences without explaining why those were the main ideas."
     },
+    // 11
     {
-      question: "Passage: Entropy is the measure of disorder in a system. The Second Law of Thermodynamics states that the total entropy of an isolated system can never decrease over time.\n\nQuestion: What happens to disorder in an isolated system?",
-      options: ["It decreases", "It stays the same", "It increases (or never decreases)", "It disappears"],
-      answer: "It increases (or never decreases)",
-      explanation: "Entropy (disorder) 'can never decrease', implying it tends to increase."
+      question: "Passage: An office installed CCTV cameras in hallways and common areas to increase security and deter theft. Management clarified that the cameras would not be placed inside comfort rooms or private offices.\n\nQuestion: What is management trying to balance with this decision?",
+      options: [
+        "Security and privacy",
+        "Cost and profit",
+        "Lighting and ventilation",
+        "Work and vacation"
+      ],
+      answer: "Security and privacy",
+      explanation: "Cameras improve security while avoiding sensitive private areas."
     },
+    // 12
     {
-      question: "Passage: Cultural relativity is the idea that a person's beliefs should be understood based on their own culture, rather than be judged against the criteria of another.\n\nQuestion: How should we judge other cultures according to this?",
-      options: ["By our own standards", "By their own standards", "By international law", "By religious texts"],
-      answer: "By their own standards",
-      explanation: "The text says 'based on their own culture'."
+      question: "Passage: The teacher asked her students to read a news article from two different sources. Although the basic facts were the same, the headlines and tone were slightly different. She then asked the class why the same event might be presented differently.\n\nQuestion: What skill is the teacher encouraging?",
+      options: [
+        "Memorizing dates only",
+        "Accepting any article without question",
+        "Comparing sources and evaluating bias",
+        "Ignoring all news"
+      ],
+      answer: "Comparing sources and evaluating bias",
+      explanation: "The activity asks students to notice differences in presentation."
     },
+    // 13
     {
-      question: "Passage: A laissez-faire economy is one where the government does not intervene in the market. Proponents argue this leads to efficiency, while critics cite the risk of monopolies.\n\nQuestion: What is a risk of laissez-faire?",
-      options: ["Efficiency", "Government control", "Monopolies", "High taxes"],
-      answer: "Monopolies",
-      explanation: "The text says 'critics cite the risk of monopolies'."
+      question: "Passage: A barangay health worker noticed that attendance in free health seminars was low. When she interviewed residents, many said the topics were important but the schedule conflicted with their work hours.\n\nQuestion: Based on the passage, what is the most practical solution to increase attendance?",
+      options: [
+        "Cancel all seminars",
+        "Hold seminars only on weekday mornings",
+        "Adjust the schedule to times convenient for residents",
+        "Force residents to attend"
+      ],
+      answer: "Adjust the schedule to times convenient for residents",
+      explanation: "The main barrier is timing, so adjusting schedules is a reasonable solution."
     },
+    // 14
     {
-      question: "Passage: Nihilism is the rejection of all religious and moral principles, often in the belief that life is meaningless. It is associated with extreme pessimism.\n\nQuestion: What is the central belief of Nihilism?",
-      options: ["Life is beautiful", "Life is meaningless", "God exists", "Morality is absolute"],
-      answer: "Life is meaningless",
-      explanation: "The text states 'belief that life is meaningless'."
+      question: "Passage: Some people believe that government offices are always slow and inefficient. However, studies show that many delays occur because requirements submitted by clients are incomplete or incorrect.\n\nQuestion: What is one factor contributing to delays according to the passage?",
+      options: [
+        "Always lazy government workers",
+        "Incorrect or incomplete client requirements",
+        "Lack of chairs in offices",
+        "High salaries of employees"
+      ],
+      answer: "Incorrect or incomplete client requirements",
+      explanation: "The passage directly points to clients’ incomplete documents."
     },
+    // 15
     {
-      question: "Passage: The placebo effect occurs when a patient experiences a real improvement in their condition after being given a treatment with no therapeutic value, simply because they believe it will help.\n\nQuestion: What causes the improvement in the placebo effect?",
-      options: ["The medicine", "The patient's belief", "The doctor's skill", "Time"],
-      answer: "The patient's belief",
-      explanation: "The text says 'simply because they believe it will help'."
+      question: "Passage: The senior citizen queue at a government office is meant to prioritize the elderly and persons with disabilities. Occasionally, younger relatives try to take advantage of the line by claiming to transact for their older family members.\n\nQuestion: What problem does the passage describe?",
+      options: [
+        "Senior citizens are not allowed to line up.",
+        "Some people abuse benefits meant for vulnerable groups.",
+        "Young people never help their elders.",
+        "Queues are unnecessary."
+      ],
+      answer: "Some people abuse benefits meant for vulnerable groups.",
+      explanation: "Younger relatives misuse the priority lane system."
     },
+    // 16
     {
-      question: "Passage: Confirmation bias is the tendency to search for, interpret, and recall information in a way that confirms one's preexisting beliefs or hypotheses.\n\nQuestion: What does a person with confirmation bias do?",
-      options: ["Seeks opposing views", "Ignores beliefs", "Favors supporting information", "Conducts fair research"],
-      answer: "Favors supporting information",
-      explanation: "The text says 'confirms one's preexisting beliefs'."
+      question: "Passage: A farmer who used to rely solely on one crop decided to plant vegetables and raise poultry as well. When a storm destroyed most of his rice, he still had income from eggs and vegetables.\n\nQuestion: What lesson can be drawn from the farmer's experience?",
+      options: [
+        "Farming is always risky and hopeless.",
+        "Focusing on one source of income is best.",
+        "Diversifying sources of income can reduce risk.",
+        "Farmers should rely only on livestock."
+      ],
+      answer: "Diversifying sources of income can reduce risk.",
+      explanation: "Having multiple sources helped him survive the storm losses."
     },
+    // 17
     {
-      question: "Passage: A 'Straw Man' fallacy involves misrepresenting an opponent's argument to make it easier to attack. It avoids engaging with the actual point being made.\n\nQuestion: What characterizes a Straw Man argument?",
-      options: ["Strong logic", "Personal insults", "Distortion of the opponent's view", "Fact-based rebuttal"],
-      answer: "Distortion of the opponent's view",
-      explanation: "The text says 'misrepresenting an opponent's argument'."
+      question: "Passage: The office intranet included a section for frequently asked questions (FAQs). After the FAQ page was posted, the number of repetitive emails sent to the HR department significantly decreased.\n\nQuestion: What effect did the FAQ page have?",
+      options: [
+        "It increased confusion.",
+        "It reduced repetitive questions sent to HR.",
+        "It prevented employees from sending any email.",
+        "It removed the HR department."
+      ],
+      answer: "It reduced repetitive questions sent to HR.",
+      explanation: "The passage states this effect clearly."
     },
+    // 18
     {
-      question: "Passage: Occam's Razor is a problem-solving principle. It suggests that the simplest explanation is usually the correct one.\n\nQuestion: According to Occam's Razor, which explanation is preferred?",
-      options: ["The most complex", "The most scientific", "The simplest", "The longest"],
-      answer: "The simplest",
-      explanation: "The text says 'simplest explanation is usually the correct one'."
+      question: "Passage: A public information campaign on proper waste disposal uses posters, radio announcements, and community meetings. Officials hope that repeating the message through different channels will lead to long-term change in behavior.\n\nQuestion: What strategy is being used in the campaign?",
+      options: [
+        "Using only one mode of communication",
+        "Relying on punishment alone",
+        "Delivering consistent messages through multiple channels",
+        "Ignoring the public"
+      ],
+      answer: "Delivering consistent messages through multiple channels",
+      explanation: "Posters, radio, and meetings represent multiple channels."
     },
+    // 19
     {
-      question: "Passage: In literature, a motif is a recurring element that has symbolic significance in a story. It helps produce the theme or mood.\n\nQuestion: How does a motif differ from a theme?",
-      options: ["Motif is the main idea", "Motif is a recurring element", "Motif is a character", "There is no difference"],
-      answer: "Motif is a recurring element",
-      explanation: "Text defines motif as a 'recurring element' that helps produce the theme."
+      question: "Passage: When a rumor spread that the office would soon close, some employees began to panic and look for new jobs. Management later clarified that only one satellite branch would be relocated, not the entire office.\n\nQuestion: What does this situation show about rumors?",
+      options: [
+        "Rumors always tell the truth.",
+        "Rumors can cause unnecessary fear if not verified.",
+        "Rumors should always be ignored.",
+        "Rumors are issued officially."
+      ],
+      answer: "Rumors can cause unnecessary fear if not verified.",
+      explanation: "Employees panicked before management clarified the true situation."
     },
+    // 20
     {
-      question: "Passage: The tragedy of the commons is an economic problem. It occurs when individuals neglect the well-being of society in the pursuit of personal gain, depleting a shared resource.\n\nQuestion: What causes the tragedy of the commons?",
-      options: ["Government regulation", "Self-interest", "Too many resources", "Cooperation"],
-      answer: "Self-interest",
-      explanation: "Text says 'pursuit of personal gain'."
+      question: "Passage: A training facilitator noticed that whenever she invited participants to share their ideas, the same few people answered. To encourage quieter participants, she introduced small group discussions before asking for answers in plenary.\n\nQuestion: What is the facilitator trying to achieve with small group discussions?",
+      options: [
+        "To shorten the training",
+        "To limit the number of speakers",
+        "To give more participants a chance to speak",
+        "To avoid any sharing"
+      ],
+      answer: "To give more participants a chance to speak",
+      explanation: "Small groups can help shy participants share before speaking in plenary."
     },
+    // 21
     {
-      question: "Passage: Cognitive dissonance causes discomfort. To resolve this, people often reject new information that conflicts with their existing beliefs.\n\nQuestion: How do people often handle conflicting information?",
-      options: ["They accept it", "They reject it", "They research it", "They ignore their beliefs"],
-      answer: "They reject it",
-      explanation: "Text says 'people often reject new information'."
+      question: "Passage: An exam question asked: \"What is the main idea of the passage?\" Many test takers chose a sentence that appeared at the beginning, even though it was only an example, not the central point.\n\nQuestion: What common misconception about main ideas is shown here?",
+      options: [
+        "The main idea is always in the title.",
+        "The main idea is always at the end.",
+        "The main idea is always the first sentence.",
+        "The main idea can never be paraphrased."
+      ],
+      answer: "The main idea is always the first sentence.",
+      explanation: "Students assumed the first sentence automatically contained the main idea."
     },
+    // 22
     {
-      question: "Passage: Ubiquitous computing is a concept where computing is made to appear anytime and everywhere. It is often referred to as pervasive computing.\n\nQuestion: What is a synonym for ubiquitous computing?",
-      options: ["Cloud computing", "Pervasive computing", "Mobile computing", "Desktop computing"],
-      answer: "Pervasive computing",
-      explanation: "Text explicitly says 'referred to as pervasive computing'."
+      question: "Passage: A barangay captain proudly reported that the community's crime rate had gone down after streetlights were installed in dark alleys. While it is difficult to prove a direct cause, residents say they now feel safer walking at night.\n\nQuestion: Which statement is most reasonable based on the passage?",
+      options: [
+        "Streetlights definitely eliminated all crime.",
+        "Streetlights may have contributed to a safer environment.",
+        "Streetlights have no effect on safety.",
+        "Crime increased after streetlights."
+      ],
+      answer: "Streetlights may have contributed to a safer environment.",
+      explanation: "The report and residents’ feelings support this reasonable conclusion."
     },
+    // 23
     {
-      question: "Passage: The Dunning-Kruger effect is a cognitive bias. People with low ability at a task overestimate their ability. Conversely, experts often underestimate their competence.\n\nQuestion: Who tends to overestimate their ability?",
-      options: ["Experts", "People with low ability", "Teachers", "Students"],
-      answer: "People with low ability",
-      explanation: "Text says 'People with low ability... overestimate'."
+      question: "Passage: A policy on official travel requires employees to submit liquidations within five working days after returning from a trip. This ensures transparency and allows the office to update its financial records promptly.\n\nQuestion: What is the purpose of the five-day liquidation requirement?",
+      options: [
+        "To delay financial reports",
+        "To confuse employees",
+        "To ensure transparency and timely financial updates",
+        "To prevent official travel"
+      ],
+      answer: "To ensure transparency and timely financial updates",
+      explanation: "The passage directly states these reasons."
     },
+    // 24
     {
-      question: "Passage: Schrödinger's cat is a thought experiment. It illustrates the paradox of quantum superposition, where a cat may be simultaneously both alive and dead.\n\nQuestion: What is the state of the cat in the experiment?",
-      options: ["Alive", "Dead", "Both alive and dead", "Neither"],
-      answer: "Both alive and dead",
-      explanation: "Text says 'simultaneously both alive and dead'."
+      question: "Passage: Some people think that if an information is printed, it must be true. However, errors can appear in books, newspapers, and websites. Critical reading means checking sources, dates, and evidence before fully believing a claim.\n\nQuestion: What quality does critical reading require?",
+      options: [
+        "Believing everything printed",
+        "Never reading anything",
+        "Questioning and verifying information",
+        "Memorizing all details"
+      ],
+      answer: "Questioning and verifying information",
+      explanation: "The passage emphasizes checking sources, dates, and evidence."
     },
+    // 25
     {
-      question: "Passage: Technocracy is a system of governance where decision-makers are selected on the basis of their expertise in a given area of responsibility, particularly scientific knowledge.\n\nQuestion: Who rules in a technocracy?",
-      options: ["The wealthy", "The military", "Experts/Scientists", "The people"],
-      answer: "Experts/Scientists",
-      explanation: "Text says 'selected on the basis of their expertise... scientific knowledge'."
+      question: "Passage: A job applicant claimed to be \"proficient\" in spreadsheet software, but during the exam, he struggled with basic formulas. The panel realized that some applicants exaggerate their skills in resumes.\n\nQuestion: What lesson does the panel learn from this experience?",
+      options: [
+        "Resumes are always accurate.",
+        "Skill tests are unnecessary.",
+        "Claims in resumes should be verified through testing.",
+        "Spreadsheets are unimportant."
+      ],
+      answer: "Claims in resumes should be verified through testing.",
+      explanation: "The applicant's struggle showed the need for verification."
     },
+    // 26
     {
-      question: "Passage: Dogmatism is the expression of an opinion as if it were a fact. It refuses to consider other viewpoints.\n\nQuestion: What is a trait of a dogmatic person?",
-      options: ["Open-mindedness", "Closed-mindedness", "Curiosity", "Scientific"],
-      answer: "Closed-mindedness",
-      explanation: "Text says 'refuses to consider other viewpoints'."
+      question: "Passage: A proposal to build a small park in an empty lot received mixed reactions. Some residents welcomed the idea of green space and a playground for children. Others worried about noise and maintenance costs.\n\nQuestion: Which statement best describes the community's reaction?",
+      options: [
+        "Everyone supports the park.",
+        "Everyone opposes the park.",
+        "Residents have both positive and negative views.",
+        "No one cares about the park."
+      ],
+      answer: "Residents have both positive and negative views.",
+      explanation: "The passage mentions welcoming and worrying reactions."
     },
+    // 27
     {
-      question: "Passage: Hedonism is the pursuit of pleasure. It argues that pleasure is the highest good and proper aim of human life.\n\nQuestion: What is the goal of Hedonism?",
-      options: ["Knowledge", "Pleasure", "Power", "Virtue"],
-      answer: "Pleasure",
-      explanation: "Text says 'pleasure is the highest good'."
+      question: "Passage: The office encourages employees to suggest improvements to processes. However, when suggestions are ignored without explanation, employees may stop sharing their ideas.\n\nQuestion: What consequence may result from ignoring suggestions?",
+      options: [
+        "Employees become more active.",
+        "Employees stop giving ideas.",
+        "Processes automatically improve.",
+        "More suggestions are submitted."
+      ],
+      answer: "Employees stop giving ideas.",
+      explanation: "Feeling ignored discourages future participation."
     },
+    // 28
     {
-      question: "Passage: A pyrrhic victory is a victory that inflicts such a devastating toll on the victor that it is tantamount to defeat.\n\nQuestion: Is a pyrrhic victory desirable?",
-      options: ["Yes, it is a win", "No, the cost is too high", "Yes, if you survive", "No, because you lose"],
-      answer: "No, the cost is too high",
-      explanation: "Text says it is 'tantamount to defeat' due to the toll."
+      question: "Passage: A student who once failed an exam decided to treat the failure as feedback. He reviewed his errors, asked his teacher for advice, and adjusted his study habits. On the next exam, his score improved significantly.\n\nQuestion: What attitude toward failure does the student demonstrate?",
+      options: [
+        "Failure is permanent.",
+        "Failure is a reason to give up.",
+        "Failure can be used as a learning opportunity.",
+        "Failure has no value."
+      ],
+      answer: "Failure can be used as a learning opportunity.",
+      explanation: "He uses the failure to improve his future performance."
     },
+    // 29
     {
-      question: "Passage: Solipsism is the philosophical idea that only one's own mind is sure to exist.\n\nQuestion: What does a solipsist doubt?",
-      options: ["Their own mind", "The existence of the external world", "Logic", "Math"],
-      answer: "The existence of the external world",
-      explanation: "If *only* one's mind is sure, everything else (external world) is doubtful."
+      question: "Passage: A health advisory warned that posting personal information, such as full address and daily routine, on social media can make people vulnerable to crime. Users are encouraged to adjust privacy settings and think carefully before sharing.\n\nQuestion: What is the main message of the advisory?",
+      options: [
+        "Social media should be banned.",
+        "Sharing personal details online can pose risks.",
+        "Everyone must share their daily routine.",
+        "Privacy settings are useless."
+      ],
+      answer: "Sharing personal details online can pose risks.",
+      explanation: "The advisory warns about vulnerability to crime due to oversharing."
     },
+    // 30
     {
-      question: "Passage: The Bystander Effect states that individuals are less likely to offer help to a victim when other people are present.\n\nQuestion: When are you less likely to help?",
-      options: ["When alone", "When in a group", "When angry", "When skilled"],
-      answer: "When in a group",
-      explanation: "Text says 'when other people are present'."
+      question: "Passage: A neighborhood association observed that areas with community gardens experienced less vandalism. They theorized that when residents feel ownership of a shared space, they are more likely to protect it.\n\nQuestion: What is the association's theory?",
+      options: [
+        "Gardens are only for decoration.",
+        "Residents ignore shared spaces.",
+        "A sense of ownership encourages people to care for shared spaces.",
+        "Vandalism cannot be reduced."
+      ],
+      answer: "A sense of ownership encourages people to care for shared spaces.",
+      explanation: "The passage links community gardens and reduced vandalism through ownership."
     },
+    // 31
     {
-      question: "Passage: Meritocracy is a political system in which economic goods and/or political power are vested in individual people on the basis of talent, effort, and achievement.\n\nQuestion: How do you succeed in a meritocracy?",
-      options: ["Wealth", "Family connections", "Talent and effort", "Luck"],
-      answer: "Talent and effort",
-      explanation: "Text says 'basis of talent, effort, and achievement'."
+      question: "Passage: In many offices, workers expect IT staff to solve all technology-related issues immediately. However, IT teams often have limited personnel and must prioritize critical problems that affect larger operations.\n\nQuestion: What misunderstanding about IT staff does the passage address?",
+      options: [
+        "They do not have any work.",
+        "They can fix all problems instantly.",
+        "They should not prioritize tasks.",
+        "They are responsible only for emails."
+      ],
+      answer: "They can fix all problems instantly.",
+      explanation: "The passage explains that IT must prioritize due to limited resources."
     },
+    // 32
     {
-      question: "Passage: Xenophobia is the fear or hatred of that which is perceived to be foreign or strange.\n\nQuestion: What is the target of xenophobia?",
-      options: ["Spiders", "Heights", "Foreigners/Strangers", "The dark"],
-      answer: "Foreigners/Strangers",
-      explanation: "Text says 'foreign or strange'."
+      question: "Passage: A government office placed a suggestion box in a corner where few people pass by. Although management was proud of installing the box, almost no suggestions were received.\n\nQuestion: What factor likely contributed to the low number of suggestions?",
+      options: [
+        "Citizens had no ideas.",
+        "The box was placed in an inconvenient and unnoticed location.",
+        "The box was too big.",
+        "The office had too many visitors."
+      ],
+      answer: "The box was placed in an inconvenient and unnoticed location.",
+      explanation: "Location affects whether people see and use the box."
     },
+    // 33
     {
-      question: "Passage: Nepotism is the practice among those with power or influence of favoring relatives or friends, especially by giving them jobs.\n\nQuestion: Hiring your brother instead of a qualified stranger is an example of?",
-      options: ["Meritocracy", "Nepotism", "Democracy", "Altruism"],
-      answer: "Nepotism",
-      explanation: "Text defines nepotism as 'favoring relatives'."
+      question: "Passage: When a new policy is introduced, some employees quickly read the memo and ask questions if they are confused. Others ignore it and later claim they were not informed.\n\nQuestion: According to the passage, what behavior leads to misunderstanding of policies?",
+      options: [
+        "Reading memos carefully",
+        "Clarifying instructions",
+        "Ignoring memos and not asking questions",
+        "Taking notes during meetings"
+      ],
+      answer: "Ignoring memos and not asking questions",
+      explanation: "Not reading or clarifying results in misunderstanding."
     },
+    // 34
     {
-      question: "Passage: A demagogue is a political leader who seeks support by appealing to the desires and prejudices of ordinary people rather than by using rational argument.\n\nQuestion: How does a demagogue gain power?",
-      options: ["Logic", "Rational argument", "Emotion and prejudice", "Military force"],
-      answer: "Emotion and prejudice",
-      explanation: "Text says 'appealing to desires and prejudices'."
+      question: "Passage: A commuter compared the cost of using a private car and taking public transportation. When he considered fuel, parking fees, and maintenance, he realized that driving daily was more expensive than he had thought.\n\nQuestion: What realization did the commuter arrive at?",
+      options: [
+        "Driving is always cheaper.",
+        "Public transport has no cost.",
+        "The true cost of driving includes more than just fuel.",
+        "Cost is not important."
+      ],
+      answer: "The true cost of driving includes more than just fuel.",
+      explanation: "He recognized parking and maintenance as additional expenses."
     },
+    // 35
     {
-      question: "Passage: Ephemeral art is art that is temporary. It is not meant to last forever, like sand sculptures or ice carvings.\n\nQuestion: What is a characteristic of ephemeral art?",
-      options: ["Permanent", "Temporary", "Expensive", "Digital"],
-      answer: "Temporary",
-      explanation: "Text says 'art that is temporary'."
+      question: "Passage: A teacher noticed that students who explained lessons to their classmates mastered the material better than those who only listened. She encouraged peer teaching as part of her strategy.\n\nQuestion: What principle of learning is illustrated in the passage?",
+      options: [
+        "Teaching others can deepen one's understanding.",
+        "Listening is the only way to learn.",
+        "Group work is always ineffective.",
+        "Only teachers should speak in class."
+      ],
+      answer: "Teaching others can deepen one's understanding.",
+      explanation: "Students who explained lessons learned more deeply."
     },
+    // 36
     {
-      question: "Passage: The glass ceiling is a metaphor used to represent an invisible barrier that prevents a given demographic from rising beyond a certain level in a hierarchy.\n\nQuestion: Is the glass ceiling a physical object?",
-      options: ["Yes", "No, it's a metaphor", "It is made of glass", "It is a window"],
-      answer: "No, it's a metaphor",
-      explanation: "Text says 'metaphor used to represent'."
+      question: "Passage: An environmental group distributed reusable bags at a market. At first, people accepted them politely but continued to ask for plastic bags. Only after the market started charging for plastic did most shoppers begin using the reusable ones.\n\nQuestion: What factor actually changed shoppers' behavior?",
+      options: [
+        "Free reusable bags alone",
+        "Charging a fee for plastic bags",
+        "Posters on the walls",
+        "Radio advertisements"
+      ],
+      answer: "Charging a fee for plastic bags",
+      explanation: "Behavior shifted after there was a cost to using plastic."
     },
+    // 37
     {
-      question: "Passage: Euphemism is a mild or indirect word or expression substituted for one considered to be too harsh or blunt.\n\nQuestion: Saying 'passed away' instead of 'died' is an example of?",
-      options: ["Insult", "Euphemism", "Lie", "Metaphor"],
-      answer: "Euphemism",
-      explanation: "It substitutes a harsh word (died) with a mild one."
+      question: "Passage: A local health official reported that handwashing facilities in schools reduced absenteeism due to common colds and diarrhea. She cautioned, however, that facilities alone are not enough; students must also be consistently reminded to use them.\n\nQuestion: What additional requirement is needed besides facilities?",
+      options: [
+        "Closing schools",
+        "Reminding students to practice handwashing regularly",
+        "Removing soap from bathrooms",
+        "Limiting water supply"
+      ],
+      answer: "Reminding students to practice handwashing regularly",
+      explanation: "The official notes that reminders and habits are needed."
     },
+    // 38
     {
-      question: "Passage: Procrastination is the action of delaying or postponing something. It is often linked to anxiety about the task.\n\nQuestion: Why might someone procrastinate?",
-      options: ["They are lazy", "Anxiety about the task", "They have no time", "They finished it"],
-      answer: "Anxiety about the task",
-      explanation: "Text links it to 'anxiety about the task'."
+      question: "Passage: A leadership workshop stressed that giving clear instructions is not enough; leaders must also listen to feedback from their team. Otherwise, they may miss important information from the frontlines.\n\nQuestion: According to the passage, what might happen if leaders do not listen?",
+      options: [
+        "They will always be correct.",
+        "They may miss important information from their team.",
+        "Their team will work harder.",
+        "Communication will improve automatically."
+      ],
+      answer: "They may miss important information from their team.",
+      explanation: "Lack of listening means losing input from people on the ground."
     },
+    // 39
     {
-      question: "Passage: The uncanny valley suggests that humanoid objects which appear almost, but not exactly, like real human beings elicit feelings of eeriness and revulsion.\n\nQuestion: When do robots look scary?",
-      options: ["When they look like machines", "When they look almost human", "When they talk", "When they are broken"],
-      answer: "When they look almost human",
-      explanation: "Text says 'almost, but not exactly, like real human beings'."
+      question: "Passage: An announcement stated that starting next month, all official communications will be sent through email instead of printed memos. Employees without regular access to email were advised to coordinate with their supervisors.\n\nQuestion: What potential problem does the announcement anticipate?",
+      options: [
+        "Employees will stop reading.",
+        "Some employees may not have regular email access.",
+        "There will be no internet in the office.",
+        "Printed memos are always better."
+      ],
+      answer: "Some employees may not have regular email access.",
+      explanation: "The advice to coordinate shows concern about access."
     },
+    // 40
     {
-      question: "Passage: Pareto Principle states that for many outcomes, roughly 80% of consequences come from 20% of causes.\n\nQuestion: What is another name for this?",
-      options: ["50/50 Rule", "80/20 Rule", "Golden Rule", "Law of Averages"],
-      answer: "80/20 Rule",
-      explanation: "Text mentions 80% and 20%."
+      question: "Passage: A barangay placed trash bins in public areas, but they quickly overflowed because collection was not scheduled frequently. Residents began to complain that the bins themselves became sources of foul smell.\n\nQuestion: What problem did the barangay fail to address?",
+      options: [
+        "Placing bins in public areas",
+        "Choosing bin colors",
+        "Planning regular garbage collection",
+        "Informing residents that bins exist"
+      ],
+      answer: "Planning regular garbage collection",
+      explanation: "Overflow and smell show inadequate collection schedule."
     },
+    // 41
     {
-      question: "Passage: Circular reporting is a situation where a piece of information appears to come from multiple independent sources, but in reality comes from only one source.\n\nQuestion: Why is circular reporting misleading?",
-      options: ["It is false", "It looks like multiple sources", "It is circular", "It is boring"],
-      answer: "It looks like multiple sources",
-      explanation: "Text says 'appears to come from multiple independent sources'."
+      question: "Passage: When reviewing a contract, a careful reader checks not only the main paragraphs but also the footnotes and small-print sections. Important conditions, such as penalties and hidden fees, may be found there.\n\nQuestion: What is the main advice of the passage?",
+      options: [
+        "Ignore small print in contracts.",
+        "Rely only on verbal explanations.",
+        "Read all parts of a contract, including small print.",
+        "Sign contracts immediately."
+      ],
+      answer: "Read all parts of a contract, including small print.",
+      explanation: "Footnotes and small print may contain important conditions."
     },
+    // 42
     {
-      question: "Passage: Cognitive dissonance is the mental discomfort experienced by a person who holds two or more contradictory beliefs, ideas, or values.\n\nQuestion: What causes the discomfort?",
-      options: ["Physical pain", "Contradictory beliefs", "Loud noises", "Hunger"],
-      answer: "Contradictory beliefs",
-      explanation: "Text says 'holds two or more contradictory beliefs'."
+      question: "Passage: A student preparing for the Civil Service Exam divided his review time into short, regular sessions instead of one long session the day before the test. He also practiced answering sample questions under time pressure.\n\nQuestion: Which study strategy is illustrated?",
+      options: [
+        "Cramming and no practice",
+        "Spaced practice and simulation of exam conditions",
+        "Ignoring time limits",
+        "Memorizing without review"
+      ],
+      answer: "Spaced practice and simulation of exam conditions",
+      explanation: "He reviews regularly and practices under time pressure."
     },
+    // 43
     {
-      question: "Passage: Gaslighting is a form of psychological manipulation in which a person seeks to sow seeds of doubt in a targeted individual, making them question their own memory or sanity.\n\nQuestion: What is the goal of gaslighting?",
-      options: ["To light a fire", "To make someone doubt reality", "To make someone happy", "To teach a lesson"],
-      answer: "To make someone doubt reality",
-      explanation: "Text says 'question their own memory or sanity'."
+      question: "Passage: In a public hearing, one resident argued against building a new health center, saying, \"We have lived without it for years, so we do not need it now.\" The chairperson responded that past survival does not mean improvements are unnecessary.\n\nQuestion: What faulty reasoning did the resident use?",
+      options: [
+        "If something did not exist before, it is never needed.",
+        "Health services are always free.",
+        "All changes are bad.",
+        "Only rich people get sick."
+      ],
+      answer: "If something did not exist before, it is never needed.",
+      explanation: "The resident assumes that because they survived without it, it is unnecessary."
     },
+    // 44
     {
-      question: "Passage: Stockholm syndrome is a condition in which hostages develop a psychological alliance with their captors during captivity.\n\nQuestion: Who develops feelings for whom?",
-      options: ["Captors for hostages", "Hostages for captors", "Police for hostages", "None"],
-      answer: "Hostages for captors",
-      explanation: "Text says 'hostages develop... alliance with their captors'."
+      question: "Passage: A company that promotes \"work–life balance\" encourages employees to take their full lunch break and discourages sending work emails late at night, except in emergencies.\n\nQuestion: What is the company trying to prevent?",
+      options: [
+        "Employees enjoying their work",
+        "Employees resting on weekends",
+        "Work intruding too much into personal time",
+        "Employees taking vacations"
+      ],
+      answer: "Work intruding too much into personal time",
+      explanation: "Limiting late-night emails protects personal time."
     },
+    // 45
     {
-      question: "Passage: The Streisand effect is a phenomenon whereby an attempt to hide, remove, or censor a piece of information has the unintended consequence of publicizing the information more widely.\n\nQuestion: What happens when you try to hide information?",
-      options: ["It disappears", "It becomes more popular", "It stays secret", "It is forgotten"],
-      answer: "It becomes more popular",
-      explanation: "Text says 'publicizing the information more widely'."
+      question: "Passage: A barangay captain noticed that community assemblies were poorly attended when scheduled on weekday afternoons. Attendance improved when meetings were moved to Saturday mornings.\n\nQuestion: What can be inferred about residents' schedules?",
+      options: [
+        "They are always free in the afternoon.",
+        "They are likely busy on weekday afternoons.",
+        "They dislike assemblies.",
+        "They work only on weekends."
+      ],
+      answer: "They are likely busy on weekday afternoons.",
+      explanation: "Higher attendance on Saturday implies weekday conflict."
     },
+    // 46
     {
-      question: "Passage: Occam's Razor suggests that among competing hypotheses, the one with the fewest assumptions should be selected.\n\nQuestion: Which explanation is usually best?",
-      options: ["The complex one", "The simple one", "The longest one", "The newest one"],
-      answer: "The simple one",
-      explanation: "Fewest assumptions implies simplicity."
+      question: "Passage: A workplace safety poster says: \"Reporting near-misses helps prevent future accidents.\" A near-miss is an incident where no one is hurt, but there was a real possibility of harm.\n\nQuestion: Why is reporting near-misses important?",
+      options: [
+        "Because only serious accidents matter",
+        "Because near-misses show where problems could lead to real accidents",
+        "Because workers should be punished",
+        "Because reports increase paperwork only"
+      ],
+      answer: "Because near-misses show where problems could lead to real accidents",
+      explanation: "They reveal weak points in safety before actual harm occurs."
     },
+    // 47
     {
-      question: "Passage: Murphy's Law is an adage or epigram that is typically stated as: 'Anything that can go wrong will go wrong.'\n\nQuestion: What implies pessimism?",
-      options: ["Cole's Law", "Murphy's Law", "Newton's Law", "Moore's Law"],
-      answer: "Murphy's Law",
-      explanation: "The quote 'Anything that can go wrong will go wrong' is pessimistic."
+      question: "Passage: When a rumor about layoffs started spreading, one employee decided to ask her supervisor directly instead of guessing. The supervisor clarified that there were no plans for layoffs, only a reassigning of tasks.\n\nQuestion: What positive behavior did the employee demonstrate?",
+      options: [
+        "Spreading the rumor further",
+        "Jumping to conclusions",
+        "Seeking information from a reliable source",
+        "Ignoring all information"
+      ],
+      answer: "Seeking information from a reliable source",
+      explanation: "She asked her supervisor instead of relying on rumors."
     },
+    // 48
     {
-      question: "Passage: The mandate of heaven was the divine source of authority and the right to rule of China's early kings and emperors.\n\nQuestion: Who gave the right to rule?",
-      options: ["The people", "The army", "The divine/Heaven", "The previous king"],
-      answer: "The divine/Heaven",
-      explanation: "Text says 'divine source of authority'."
+      question: "Passage: A public poster about dengue fever lists symptoms such as high fever, severe headache, and pain behind the eyes. It also urges residents to remove stagnant water where mosquitoes breed.\n\nQuestion: What is the dual purpose of the poster?",
+      options: [
+        "To sell medicine and raise taxes",
+        "To inform about symptoms and promote prevention",
+        "To advertise hospitals",
+        "To scare children"
+      ],
+      answer: "To inform about symptoms and promote prevention",
+      explanation: "It lists symptoms and suggests removing stagnant water."
     },
+    // 49
     {
-      question: "Passage: Filibuster is a political procedure where one or more members of parliament or congress debate over a proposed piece of legislation so as to delay or entirely prevent a decision.\n\nQuestion: What is the purpose of a filibuster?",
-      options: ["To pass laws", "To delay decisions", "To fight", "To leave early"],
-      answer: "To delay decisions",
-      explanation: "Text says 'delay or entirely prevent a decision'."
+      question: "Passage: A regional director sends a memo congratulating employees for meeting their performance targets despite limited resources. She adds that the real challenge is to maintain quality of service while improving systems, not just to increase numbers.\n\nQuestion: What does the director emphasize as the real challenge?",
+      options: [
+        "Reducing service quality",
+        "Counting more outputs only",
+        "Maintaining quality while improving systems",
+        "Ignoring performance targets"
+      ],
+      answer: "Maintaining quality while improving systems",
+      explanation: "She stresses quality of service, not just quantity."
     },
+    // 50
     {
-      question: "Passage: Gerrymandering is a practice intended to establish an unfair political advantage for a particular party or group by manipulating district boundaries.\n\nQuestion: What is manipulated in gerrymandering?",
-      options: ["Votes", "District boundaries", "Money", "Media"],
-      answer: "District boundaries",
-      explanation: "Text explicitly says 'manipulating district boundaries'."
+      question: "Passage: A Civil Service Exam reviewer explains that in reading comprehension, there may be more than one statement that is true, but only one that directly answers the question. Test takers must read all options carefully before choosing.\n\nQuestion: What key advice does the reviewer give?",
+      options: [
+        "Choose the longest option.",
+        "Pick the first true statement you see.",
+        "Select the option that directly answers the question, even if others are true.",
+        "Ignore the question and focus on the passage only."
+      ],
+      answer: "Select the option that directly answers the question, even if others are true.",
+      explanation: "The reviewer highlights the difference between true and directly relevant options."
     }
   ]
 };
+
