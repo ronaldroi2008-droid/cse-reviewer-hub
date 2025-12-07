@@ -247,7 +247,13 @@ window.VERBAL_QUESTION_BANK["gender"] = {
     { question: "Feminine of 'Alumnus'?", options: ["Alumna", "Alumni", "Alumnae", "Graduate"], answer: "Alumna", explanation: "Alumna." },
     { question: "Plural Masculine of 'Alumnus'?", options: ["Alumni", "Alumnus", "Alumnas", "Alumnae"], answer: "Alumni", explanation: "Alumni." },
     { question: "Plural Feminine of 'Alumna'?", options: ["Alumnae", "Alumnas", "Alumni", "Alumnus"], answer: "Alumnae", explanation: "Alumnae." },
-    { question: "Masculine of 'Sorcerer'?", options: ["Sorcerer", "Witch", "Wizard", "Warlock"], answer: "Sorcerer", explanation: "Sorcerer." },
+   { 
+  question: "Feminine of 'Sorcerer'?", 
+  options: ["Sorceress", "Witch", "Wizard", "Warlock"], 
+  answer: "Sorceress", 
+  explanation: "The traditional feminine form of 'sorcerer' is 'sorceress'." 
+},
+
     { question: "Feminine of 'Prophet'?", options: ["Prophetess", "Seer", "Visionary", "Lady"], answer: "Prophetess", explanation: "Prophetess." },
     { question: "Masculine of 'Diva'?", options: ["Divo", "Singer", "Tenor", "Star"], answer: "Divo", explanation: "Divo." },
 
