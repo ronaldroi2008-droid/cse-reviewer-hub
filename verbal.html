@@ -243,82 +243,6 @@
       margin-top: 2px;
     }
 
-    /* Extra helpers for lesson HTML (from lessons data) */
-    .lesson-section {
-      margin-bottom: 12px;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .lesson-section h2 {
-      font-size: 1rem;
-      margin: 0 0 4px;
-      color: #e5e7eb;
-    }
-
-    .lesson-section h3 {
-      font-size: 0.95rem;
-      margin: 6px 0 3px;
-      color: #e5e7eb;
-    }
-
-    .lesson-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 6px;
-      font-size: 0.85rem;
-    }
-
-    .lesson-table th,
-    .lesson-table td {
-      border: 1px solid var(--border);
-      padding: 4px 6px;
-      text-align: left;
-    }
-
-    .highlight-box {
-      margin-top: 8px;
-      padding: 8px 10px;
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px dashed var(--accent);
-      font-size: 0.86rem;
-    }
-
-    .two-column-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .two-column-list ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .check-list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .lesson-block {
-      margin-bottom: 12px;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .lesson-block h2 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-      color: #e5e7eb;
-    }
-
-    .lesson-block h3 {
-      margin: 6px 0 4px;
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
-
     .tip-card {
       margin-top: 12px;
       border-radius: 13px;
@@ -389,14 +313,6 @@
       color: #f9fafb;
       border-color: transparent;
       transform: translateY(-1px);
-    }
-
-    /* Locked levels (Advanced/Expert) for Free users */
-    .level-chip.level-chip--locked {
-      border-style: dashed;
-      border-color: rgba(148, 163, 184, 0.9);
-      background: #020617;
-      color: #9ca3af;
     }
 
     /* Items row (10 / 20 / 30 / 40 / 50) */
@@ -639,93 +555,6 @@
       font-weight: 600;
     }
 
-    /* PRO Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 50;
-    }
-
-    .modal.is-visible {
-      display: flex;
-    }
-
-    .modal-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.82);
-      backdrop-filter: blur(4px);
-    }
-
-    .modal-card {
-      position: relative;
-      background: #020617;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 18px 20px;
-      max-width: 420px;
-      width: calc(100% - 32px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
-      z-index: 1;
-    }
-
-    .modal-title {
-      margin: 0 0 6px;
-      font-size: 1.1rem;
-    }
-
-    .modal-text,
-    .modal-context-text,
-    .modal-note {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin: 0 0 8px;
-    }
-
-    .modal-note {
-      font-size: 0.8rem;
-      opacity: 0.85;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 8px;
-      margin: 10px 0 6px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 7px 14px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      transition: border-color 0.15s, transform 0.1s, background 0.15s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #f9fafb;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--muted);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: #818cf8;
-    }
-
     @media (max-width: 900px) {
       .layout {
         display: flex;
@@ -765,7 +594,7 @@
         <h1 class="app-title">CSE Reviewer Hub</h1>
         <p class="app-subtitle">
           Verbal Ability ·
-          <span id="subtitleTopic">Nouns &amp; Pronouns</span>
+          <span id="subtitleTopic">Nouns & Pronouns</span>
         </p>
       </div>
       <span class="badge"></span>
@@ -811,8 +640,8 @@
               <div class="level-switcher">
                 <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
                 <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
-                <button class="level-chip level-chip--locked" data-level="advanced" type="button">Advanced</button>
-                <button class="level-chip level-chip--locked" data-level="expert" type="button">Expert</button>
+                <button class="level-chip" data-level="advanced" type="button">Advanced</button>
+                <button class="level-chip" data-level="expert" type="button">Expert</button>
               </div>
               <div class="items-row">
                 <span class="items-label">Items:</span>
@@ -861,39 +690,6 @@
     </main>
   </div>
 
-  <!-- PRO MODAL -->
-  <div id="pro-modal" class="modal">
-    <div class="modal-backdrop"></div>
-    <div class="modal-card">
-      <h2 class="modal-title">🔒 PRO Feature Locked</h2>
-      <p class="modal-text">
-        This level is available for <strong>PRO users</strong> only.
-        Unlock PRO to access Advanced &amp; Expert questions for all topics.
-      </p>
-      <p id="pro-modal-context" class="modal-context-text"></p>
-
-      <div class="modal-actions">
-        <a
-          id="pro-gumroad-link"
-          href="https://7329689874364.gumroad.com/l/cvpax"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >
-          🚀 Get Lifetime Access on Gumroad
-        </a>
-
-        <button id="pro-modal-close" type="button" class="btn btn-secondary">
-          Maybe later
-        </button>
-      </div>
-
-      <p class="modal-note">
-        Already purchased? Just enter your <strong>Gumroad license key</strong> on the home screen to unlock all PRO content.
-      </p>
-    </div>
-  </div>
-
   <!-- VERBAL QUESTIONS FILES -->
   <script src="questions/reading_comprehension.js"></script>
   <script src="questions/paragraph_organization_questions.js"></script>
@@ -904,7 +700,7 @@
   <script src="questions/questions_punctuation.js"></script>
   <script src="questions/questions_affixes.js"></script>
   <script src="questions/questions_sentence_structure.js"></script>
-  <script src="questions/sentence_construction.js"></script>
+  <script src="questions/sentence_construction.js"></script> 
   <script src="questions/subject_verb_agreement.js"></script>
   <script src="questions/questions_articles.js"></script>
   <script src="questions/questions_interjections.js"></script>
@@ -920,14 +716,16 @@
   <script src="questions/questions_grammatical_number.js"></script>
   <script src="questions/error_identification.js"></script>
 
-  <!-- MAIN LOGIC – LESSONS DATA HIWALAY (window.VERBAL_LESSONS) -->
-    <script>
+<script>
+    
 
-     // ==========================================
+ // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-    const LOCKED_LEVELS = ["advanced", "expert"]; // PRO-only levels    
+
+const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+const LOCKED_LEVELS = ["advanced", "expert"];
+
 
 
     // ==========================================
@@ -3311,198 +3109,199 @@
     ]
   },
 
+affixes: {
+  title: "Affixes",
+  level: "Verbal Ability",
+  fullHtml: `
+    <h2>Affixes</h2>
+    <p>
+      An <strong>affix</strong> is a group of letters added to a <strong>root word</strong> to change its
+      meaning or its grammatical function. Affixes are like attachments you add
+      before or after a word:
+    </p>
+    <ul>
+      <li><code>happy</code> → <code>unhappy</code></li>
+      <li><code>kind</code> → <code>kindness</code></li>
+      <li><code>play</code> → <code>replay</code>, <code>player</code>, <code>playful</code></li>
+    </ul>
+    <p>
+      Affixes help you change:
+    </p>
+    <ul>
+      <li><strong>Meaning</strong> (happy → <em>un</em>happy)</li>
+      <li><strong>Part of speech</strong> (kind → kindness; act → action → active)</li>
+      <li><strong>Grammar form</strong> (walk → walked; big → bigger)</li>
+    </ul>
 
-  affixes: {
-    title: "Affixes",
-    level: "Verbal Ability",
-    fullHtml: `
-      <h2>Affixes</h2>
-      <p>
-        An <strong>affix</strong> is a group of letters added to a <strong>root word</strong> to change its
-        meaning or its grammatical function. Affixes are like attachments you add
-        before or after a word:
-      </p>
-      <ul>
-        <li><code>happy</code> → <code>unhappy</code></li>
-        <li><code>kind</code> → <code>kindness</code></li>
-        <li><code>play</code> → <code>replay</code>, <code>player</code>, <code>playful</code></li>
-      </ul>
-      <p>
-        Affixes help you change:
-      </p>
-      <ul>
-        <li><strong>Meaning</strong> (happy → <em>un</em>happy)</li>
-        <li><strong>Part of speech</strong> (kind → kindness; act → action → active)</li>
-        <li><strong>Grammar form</strong> (walk → walked; big → bigger)</li>
-      </ul>
+    <h3>1. Types of Affixes</h3>
 
-      <h3>1. Types of Affixes</h3>
+    <h4>1.1 Prefixes</h4>
+    <p>
+      A <strong>prefix</strong> is added <strong>before</strong> the root word.
+    </p>
+    <p><strong>Pattern:</strong> prefix + root</p>
+    <ul>
+      <li><code>un</code> + <code>happy</code> → <strong>unhappy</strong></li>
+      <li><code>re</code> + <code>write</code> → <strong>rewrite</strong></li>
+    </ul>
+    <p>
+      Prefixes usually change the <strong>meaning</strong>, but keep the same
+      <strong>part of speech</strong>.
+    </p>
+    <ul>
+      <li><code>happy</code> (adjective) → <code>unhappy</code> (adjective)</li>
+      <li><code>do</code> (verb) → <code>redo</code> (verb)</li>
+    </ul>
 
-      <h4>1.1 Prefixes</h4>
-      <p>
-        A <strong>prefix</strong> is added <strong>before</strong> the root word.
-      </p>
-      <p><strong>Pattern:</strong> prefix + root</p>
-      <ul>
-        <li><code>un</code> + <code>happy</code> → <strong>unhappy</strong></li>
-        <li><code>re</code> + <code>write</code> → <strong>rewrite</strong></li>
-      </ul>
-      <p>
-        Prefixes usually change the <strong>meaning</strong>, but keep the same
-        <strong>part of speech</strong>.
-      </p>
-      <ul>
-        <li><code>happy</code> (adjective) → <code>unhappy</code> (adjective)</li>
-        <li><code>do</code> (verb) → <code>redo</code> (verb)</li>
-      </ul>
+    <h4>1.2 Suffixes</h4>
+    <p>
+      A <strong>suffix</strong> is added <strong>after</strong> the root word.
+    </p>
+    <p><strong>Pattern:</strong> root + suffix</p>
+    <ul>
+      <li><code>kind</code> + <code>ness</code> → <strong>kindness</strong></li>
+      <li><code>beauty</code> + <code>ful</code> → <strong>beautiful</strong></li>
+    </ul>
+    <p>
+      Suffixes often change the <strong>part of speech</strong> and sometimes the
+      <strong>grammar form</strong> (tense, plural, comparison).
+    </p>
 
-      <h4>1.2 Suffixes</h4>
-      <p>
-        A <strong>suffix</strong> is added <strong>after</strong> the root word.
-      </p>
-      <p><strong>Pattern:</strong> root + suffix</p>
-      <ul>
-        <li><code>kind</code> + <code>ness</code> → <strong>kindness</strong></li>
-        <li><code>beauty</code> + <code>ful</code> → <strong>beautiful</strong></li>
-      </ul>
-      <p>
-        Suffixes often change the <strong>part of speech</strong> and sometimes the
-        <strong>grammar form</strong> (tense, plural, comparison).
-      </p>
+    <h4>1.3 Other Affixes (for awareness)</h4>
+    <p>
+      English also has <strong>infixes</strong> (inside the word, rare in formal English)
+      and <strong>circumfixes</strong> (at the beginning and end, not really common in modern English).
+      For exams, focus on <strong>prefixes</strong> and <strong>suffixes</strong>.
+    </p>
 
-      <h4>1.3 Other Affixes (for awareness)</h4>
-      <p>
-        English also has <strong>infixes</strong> (inside the word, rare in formal English)
-        and <strong>circumfixes</strong> (at the beginning and end, not really common in modern English).
-        For exams, focus on <strong>prefixes</strong> and <strong>suffixes</strong>.
-      </p>
+    <h3>2. Derivational vs. Inflectional Affixes</h3>
 
-      <h3>2. Derivational vs. Inflectional Affixes</h3>
+    <h4>2.1 Derivational Affixes</h4>
+    <p>
+      <strong>Derivational affixes</strong> create a <strong>new word</strong> with a new meaning and often
+      a different part of speech.
+    </p>
+    <ul>
+      <li><code>happy</code> → <code>unhappy</code> (meaning changes)</li>
+      <li><code>happy</code> (adj) → <code>happiness</code> (noun)</li>
+      <li><code>create</code> (verb) → <code>creation</code> (noun)</li>
+      <li><code>beauty</code> (noun) → <code>beautiful</code> (adjective)</li>
+    </ul>
+    <p><strong>Key idea:</strong> Derivational = <em>derives a new word</em>.</p>
 
-      <h4>2.1 Derivational Affixes</h4>
-      <p>
-        <strong>Derivational affixes</strong> create a <strong>new word</strong> with a new meaning and often
-        a different part of speech.
-      </p>
-      <ul>
-        <li><code>happy</code> → <code>unhappy</code> (meaning changes)</li>
-        <li><code>happy</code> (adj) → <code>happiness</code> (noun)</li>
-        <li><code>create</code> (verb) → <code>creation</code> (noun)</li>
-        <li><code>beauty</code> (noun) → <code>beautiful</code> (adjective)</li>
-      </ul>
-      <p><strong>Key idea:</strong> Derivational = <em>derives a new word</em>.</p>
+    <h4>2.2 Inflectional Affixes</h4>
+    <p>
+      <strong>Inflectional affixes</strong> do <em>not</em> create a new dictionary word. They keep the same
+      basic meaning but change the <strong>form</strong> for grammar:
+      tense, plural, comparison, etc.
+    </p>
+    <p>Common inflectional suffixes:</p>
+    <ul>
+      <li><strong>-s / -es</strong> (plural or 3rd person singular): cat → cats; she walks</li>
+      <li><strong>-ed</strong> (past tense): walk → walked</li>
+      <li><strong>-ing</strong> (continuous/gerund): read → reading</li>
+      <li><strong>-er / -est</strong> (comparison): tall → taller → tallest</li>
+    </ul>
+    <p><strong>Key idea:</strong> Inflectional = <em>same word, new form</em>.</p>
 
-      <h4>2.2 Inflectional Affixes</h4>
-      <p>
-        <strong>Inflectional affixes</strong> do <em>not</em> create a new dictionary word. They keep the same
-        basic meaning but change the <strong>form</strong> for grammar:
-        tense, plural, comparison, etc.
-      </p>
-      <p>Common inflectional suffixes:</p>
-      <ul>
-        <li><strong>-s / -es</strong> (plural or 3rd person singular): cat → cats; she walks</li>
-        <li><strong>-ed</strong> (past tense): walk → walked</li>
-        <li><strong>-ing</strong> (continuous/gerund): read → reading</li>
-        <li><strong>-er / -est</strong> (comparison): tall → taller → tallest</li>
-      </ul>
-      <p><strong>Key idea:</strong> Inflectional = <em>same word, new form</em>.</p>
+    <h3>3. Common Prefixes</h3>
+    <p>Below are some very common prefixes and their meanings:</p>
+    <ul>
+      <li><strong>un-</strong> = not, opposite of (unhappy, unfair)</li>
+      <li><strong>in- / im- / il- / ir-</strong> = not (incorrect, impossible, illegal, irregular)</li>
+      <li><strong>dis-</strong> = not, opposite, reverse (disagree, disconnect)</li>
+      <li><strong>re-</strong> = again, back (redo, rewrite, return)</li>
+      <li><strong>pre-</strong> = before (preview, pretest)</li>
+      <li><strong>mis-</strong> = wrongly, badly (misunderstand, misbehave)</li>
+      <li><strong>over-</strong> = too much (overeat, overconfident)</li>
+      <li><strong>under-</strong> = too little, below (underpaid, underestimate)</li>
+      <li><strong>sub-</strong> = under, below (subway, submarine)</li>
+      <li><strong>super-</strong> = above, beyond (superstar, superhuman)</li>
+      <li><strong>inter-</strong> = between, among (international, interact)</li>
+      <li><strong>trans-</strong> = across, through (transport, transmit)</li>
+      <li><strong>bi-</strong> = two (bicycle, bilingual)</li>
+      <li><strong>tri-</strong> = three (triangle, tripod)</li>
+      <li><strong>co- / com- / con-</strong> = with, together (cooperate, connect)</li>
+    </ul>
+    <p>
+      <strong>Exam tip:</strong> Many antonyms (opposites) are formed with prefixes like
+      <em>un-, in-, im-, il-, ir-, dis-, mis-</em>.
+    </p>
 
-      <h3>3. Common Prefixes</h3>
-      <p>Below are some very common prefixes and their meanings:</p>
-      <ul>
-        <li><strong>un-</strong> = not, opposite of (unhappy, unfair)</li>
-        <li><strong>in- / im- / il- / ir-</strong> = not (incorrect, impossible, illegal, irregular)</li>
-        <li><strong>dis-</strong> = not, opposite, reverse (disagree, disconnect)</li>
-        <li><strong>re-</strong> = again, back (redo, rewrite, return)</li>
-        <li><strong>pre-</strong> = before (preview, pretest)</li>
-        <li><strong>mis-</strong> = wrongly, badly (misunderstand, misbehave)</li>
-        <li><strong>over-</strong> = too much (overeat, overconfident)</li>
-        <li><strong>under-</strong> = too little, below (underpaid, underestimate)</li>
-        <li><strong>sub-</strong> = under, below (subway, submarine)</li>
-        <li><strong>super-</strong> = above, beyond (superstar, superhuman)</li>
-        <li><strong>inter-</strong> = between, among (international, interact)</li>
-        <li><strong>trans-</strong> = across, through (transport, transmit)</li>
-        <li><strong>bi-</strong> = two (bicycle, bilingual)</li>
-        <li><strong>tri-</strong> = three (triangle, tripod)</li>
-        <li><strong>co- / com- / con-</strong> = with, together (cooperate, connect)</li>
-      </ul>
-      <p>
-        <strong>Exam tip:</strong> Many antonyms (opposites) are formed with prefixes like
-        <em>un-, in-, im-, il-, ir-, dis-, mis-</em>.
-      </p>
+    <h3>4. Common Suffixes</h3>
 
-      <h3>4. Common Suffixes</h3>
+    <h4>4.1 Noun-forming Suffixes</h4>
+    <ul>
+      <li><strong>-er / -or</strong> = person who does something (teach → teacher, act → actor)</li>
+      <li><strong>-ist</strong> = person who does or believes in (art → artist, science → scientist)</li>
+      <li><strong>-ness</strong> = state or quality (kind → kindness, happy → happiness)</li>
+      <li><strong>-ment</strong> = result or action (move → movement, develop → development)</li>
+      <li><strong>-tion / -sion / -ion</strong> = action or process (create → creation, decide → decision)</li>
+      <li><strong>-ity / -ty</strong> = state or condition (safe → safety, active → activity)</li>
+      <li><strong>-ance / -ence</strong> = state or quality (perform → performance, exist → existence)</li>
+    </ul>
 
-      <h4>4.1 Noun-forming Suffixes</h4>
-      <ul>
-        <li><strong>-er / -or</strong> = person who does something (teach → teacher, act → actor)</li>
-        <li><strong>-ist</strong> = person who does or believes in (art → artist, science → scientist)</li>
-        <li><strong>-ness</strong> = state or quality (kind → kindness, happy → happiness)</li>
-        <li><strong>-ment</strong> = result or action (move → movement, develop → development)</li>
-        <li><strong>-tion / -sion / -ion</strong> = action or process (create → creation, decide → decision)</li>
-        <li><strong>-ity / -ty</strong> = state or condition (safe → safety, active → activity)</li>
-        <li><strong>-ance / -ence</strong> = state or quality (perform → performance, exist → existence)</li>
-      </ul>
+    <h4>4.2 Adjective-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ful</strong> = full of (beauty → beautiful, joy → joyful)</li>
+      <li><strong>-less</strong> = without (hope → hopeless, care → careless)</li>
+      <li><strong>-ous / -ious</strong> = full of (danger → dangerous, mystery → mysterious)</li>
+      <li><strong>-ive</strong> = having a quality (act → active, create → creative)</li>
+      <li><strong>-al</strong> = relating to (nation → national, logic → logical)</li>
+      <li><strong>-y</strong> = having, characterized by (noise → noisy, rain → rainy)</li>
+      <li><strong>-ic</strong> = relating to (poet → poetic, history → historic)</li>
+    </ul>
 
-      <h4>4.2 Adjective-forming Suffixes</h4>
-      <ul>
-        <li><strong>-ful</strong> = full of (beauty → beautiful, joy → joyful)</li>
-        <li><strong>-less</strong> = without (hope → hopeless, care → careless)</li>
-        <li><strong>-ous / -ious</strong> = full of (danger → dangerous, mystery → mysterious)</li>
-        <li><strong>-ive</strong> = having a quality (act → active, create → creative)</li>
-        <li><strong>-al</strong> = relating to (nation → national, logic → logical)</li>
-        <li><strong>-y</strong> = having, characterized by (noise → noisy, rain → rainy)</li>
-        <li><strong>-ic</strong> = relating to (poet → poetic, history → historic)</li>
-      </ul>
+    <h4>4.3 Verb-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ize / -ise</strong> (modern → modernize, real → realize)</li>
+      <li><strong>-en</strong> (dark → darken, strength → strengthen)</li>
+      <li><strong>-ify</strong> (simple → simplify, beauty → beautify)</li>
+    </ul>
 
-      <h4>4.3 Verb-forming Suffixes</h4>
-      <ul>
-        <li><strong>-ize / -ise</strong> (modern → modernize, real → realize)</li>
-        <li><strong>-en</strong> (dark → darken, strength → strengthen)</li>
-        <li><strong>-ify</strong> (simple → simplify, beauty → beautify)</li>
-      </ul>
+    <h4>4.4 Adverb-forming Suffixes</h4>
+    <ul>
+      <li><strong>-ly</strong> (quick → quickly, slow → slowly, happy → happily)</li>
+    </ul>
 
-      <h4>4.4 Adverb-forming Suffixes</h4>
-      <ul>
-        <li><strong>-ly</strong> (quick → quickly, slow → slowly, happy → happily)</li>
-      </ul>
+    <h3>5. Using Affixes to Guess Meaning (Exam Strategy)</h3>
+    <p>When you see a difficult word in a test:</p>
+    <ol>
+      <li>
+        <strong>Break the word</strong> into prefix + root + suffix.  
+        Example: <code>unhappiness</code> = un- (not) + happy + -ness (state) → state of not being happy.
+      </li>
+      <li>
+        <strong>Use what you know</strong>. If you know the root and the affix, you can often guess the meaning.
+      </li>
+      <li>
+        <strong>Watch negative prefixes</strong>: un-, in-, im-, il-, ir-, dis-, mis-, non-.
+      </li>
+      <li>
+        <strong>Check part of speech</strong>:
+        <ul>
+          <li>-ness, -tion, -ment, -ity → usually nouns</li>
+          <li>-ful, -less, -ous, -ive, -al → usually adjectives</li>
+          <li>-ly → usually adverbs (from adjectives)</li>
+        </ul>
+      </li>
+    </ol>
 
-      <h3>5. Using Affixes to Guess Meaning (Exam Strategy)</h3>
-      <p>When you see a difficult word in a test:</p>
-      <ol>
-        <li>
-          <strong>Break the word</strong> into prefix + root + suffix.
-          Example: <code>unhappiness</code> = un- (not) + happy + -ness (state) → state of not being happy.
-        </li>
-        <li>
-          <strong>Use what you know</strong>. If you know the root and the affix, you can often guess the meaning.
-        </li>
-        <li>
-          <strong>Watch negative prefixes</strong>: un-, in-, im-, il-, ir-, dis-, mis-, non-.
-        </li>
-        <li>
-          <strong>Check part of speech</strong>:
-          <ul>
-            <li>-ness, -tion, -ment, -ity → usually nouns</li>
-            <li>-ful, -less, -ous, -ive, -al → usually adjectives</li>
-            <li>-ly → usually adverbs (from adjectives)</li>
-          </ul>
-        </li>
-      </ol>
+    <h3>6. Spelling Notes with Suffixes</h3>
+    <ul>
+      <li><strong>Drop silent -e</strong>: love → loving; use → usable</li>
+      <li><strong>Double the final consonant</strong> (CVC words): run → running; big → bigger</li>
+      <li><strong>-y → -i</strong> (after a consonant): happy → happiness; easy → easier</li>
+    </ul>
 
-      <h3>6. Spelling Notes with Suffixes</h3>
-      <ul>
-        <li><strong>Drop silent -e</strong>: love → loving; use → usable</li>
-        <li><strong>Double the final consonant</strong> (CVC words): run → running; big → bigger</li>
-        <li><strong>-y → -i</strong> (after a consonant): happy → happiness; easy → easier</li>
-      </ul>
+    <p>
+      Mastering affixes will help you understand new words, guess meanings in context,
+      and choose the correct word forms in sentence completion questions.
+    </p>
+  `
+},
 
-      <p>
-        Mastering affixes will help you understand new words, guess meanings in context,
-        and choose the correct word forms in sentence completion questions.
-      </p>
-    `
-  },
+
 interjections: {
     title: "Interjections – Expressing Sudden Emotion",
     level: "Verbal Ability · Grammar · Interjections",
@@ -5395,513 +5194,553 @@ synonyms: {
 }; 
 
 
-    // ==========================================
-    // 2. DOM REFERENCES
-    // ==========================================
-    const subtitleTopicEl = document.getElementById("subtitleTopic");
-    const badgeEl = document.querySelector(".badge");
-    const topicListEl = document.getElementById("topicList");
+// ==========================================
+// 3. PAGE STATE + HELPERS
+// ==========================================
 
-    const modeTabs = document.querySelectorAll(".mode-tab");
-    const studyView = document.getElementById("studyView");
-    const practiceView = document.getElementById("practiceView");
+// Dito naka-set ang Gumroad link (pwede mong palitan kung magbago)
+const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
-    const lessonTitleEl = document.getElementById("lessonTitle");
-    const lessonIntroEl = document.getElementById("lessonIntro");
-    const lessonBodyEl = document.getElementById("lessonBody");
-    const tipCardEl = document.getElementById("tipCard");
+let currentMode = "study";
+// HUWAG nang tawagin agad ang VERBAL_TOPICS dito (TDZ error kung nasa baba pa siya).
+let currentTopicId = "";
+let currentLevel = "beginner";
+let currentItemsCount = 10;
 
-    const quizTopicTitleEl = document.getElementById("quizTopicTitle");
-    const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-    const levelChips = document.querySelectorAll(".level-chip");
-    const itemsChips = document.querySelectorAll(".items-chip");
+let quizQuestions = [];
+let currentQuestionIndex = 0;
+let userAnswers = [];
 
+// Helper: kuha ng topic label
+function getTopicLabel(id) {
+  const t = VERBAL_TOPICS.find((x) => x.id === id);
+  return t ? t.label : "Verbal Topic";
+}
+
+// Render ng topic buttons sa sidebar
+function renderTopics() {
+  const topicListEl = document.getElementById("topicList");
+  const subtitleTopicEl = document.getElementById("subtitleTopic");
+  topicListEl.innerHTML = "";
+
+  VERBAL_TOPICS.forEach((topic, index) => {
+    // Kung wala pang currentTopicId, gawing first topic
+    if (!currentTopicId && index === 0) {
+      currentTopicId = topic.id;
+    }
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "topic-pill";
+    btn.dataset.topicId = topic.id;
+    btn.innerHTML = `
+      <span class="label">${topic.label}</span>
+      <span class="tag">${topic.tag}</span>
+    `;
+
+    if (topic.id === currentTopicId) {
+      btn.classList.add("active");
+      subtitleTopicEl.textContent = topic.label;
+    }
+
+    btn.addEventListener("click", () => {
+      if (currentTopicId === topic.id) return;
+      currentTopicId = topic.id;
+
+      // Active state sa pills
+      document.querySelectorAll(".topic-pill").forEach((p) => {
+        p.classList.toggle("active", p.dataset.topicId === topic.id);
+      });
+
+      subtitleTopicEl.textContent = topic.label;
+
+      if (currentMode === "study") {
+        loadLesson(topic.id);
+      } else {
+        startQuiz();
+      }
+    });
+
+    topicListEl.appendChild(btn);
+  });
+}
+
+// Load lesson content sa Study Mode
+function loadLesson(topicId) {
+  const lessonTitleEl = document.getElementById("lessonTitle");
+  const lessonIntroEl = document.getElementById("lessonIntro");
+  const lessonBodyEl = document.getElementById("lessonBody");
+  const tipCardEl = document.getElementById("tipCard");
+
+  const lesson = VERBAL_LESSONS[topicId];
+  const label = getTopicLabel(topicId);
+
+  if (!lesson) {
+    lessonTitleEl.textContent = label;
+    lessonIntroEl.textContent =
+      "Lesson content for this topic is coming soon. You can still practice using the Practice Quiz tab.";
+    lessonBodyEl.innerHTML = "";
+    tipCardEl.innerHTML = "";
+    return;
+  }
+
+  lessonTitleEl.textContent = lesson.title || label;
+  lessonIntroEl.textContent = lesson.intro || "";
+  lessonBodyEl.innerHTML = lesson.fullHtml || "";
+
+  if (lesson.quickTips && Array.isArray(lesson.quickTips) && lesson.quickTips.length) {
+    tipCardEl.innerHTML = `
+      <h3>Quick Tips for the Exam</h3>
+      <ul>
+        ${lesson.quickTips.map((tip) => `<li>${tip}</li>`).join("")}
+      </ul>
+    `;
+  } else {
+    tipCardEl.innerHTML = "";
+  }
+}
+
+// Mark locked levels (Advanced / Expert)
+function markLockedLevels() {
+  const chips = document.querySelectorAll(".level-chip");
+  chips.forEach((chip) => {
+    const level = chip.dataset.level;
+    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.trim();
+
+    if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+      chip.classList.add("locked");
+      chip.textContent = chip.dataset.levelLabel + " 🔒";
+    }
+  });
+}
+
+// Mode tabs: Study / Practice
+function setupModeTabs() {
+  const modeTabs = document.querySelectorAll(".mode-tab");
+  const studyView = document.getElementById("studyView");
+  const practiceView = document.getElementById("practiceView");
+
+  modeTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const mode = tab.dataset.mode;
+      if (mode === currentMode) return;
+      currentMode = mode;
+
+      modeTabs.forEach((t) =>
+        t.classList.toggle("active", t.dataset.mode === mode)
+      );
+
+      if (mode === "study") {
+        studyView.classList.add("view--active");
+        practiceView.classList.remove("view--active");
+        loadLesson(currentTopicId);
+      } else {
+        studyView.classList.remove("view--active");
+        practiceView.classList.add("view--active");
+        startQuiz();
+      }
+    });
+  });
+}
+
+// Item count (10 / 20 / 30 / 40 / 50)
+function setupItemChips() {
+  const itemChips = document.querySelectorAll(".items-chip");
+  itemChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      currentItemsCount = parseInt(chip.dataset.count, 10) || 10;
+      itemChips.forEach((c) => c.classList.toggle("active", c === chip));
+      if (currentMode === "practice") {
+        startQuiz();
+      }
+    });
+  });
+}
+
+// Level chips with PRO alert → now uses PRO modal
+function setupLevelChips() {
+  const levelChips = document.querySelectorAll(".level-chip");
+  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+
+  levelChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const level = chip.dataset.level;
+
+      // PRO alert kapag advanced/expert at free user
+      if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+        openProModal();
+        return;
+      }
+
+      currentLevel = level;
+      levelChips.forEach((c) => c.classList.toggle("active", c === chip));
+
+      const label =
+        chip.dataset.levelLabel ||
+        chip.textContent.replace("🔒", "").trim();
+      quizLevelLabelEl.textContent = label;
+
+      if (currentMode === "practice") {
+        startQuiz();
+      }
+    });
+  });
+}
+
+// Build quiz questions based on topic + level + items
+function buildQuizQuestions() {
+  const quizCardEl = document.getElementById("quizCard");
+  const resultPanelEl = document.getElementById("resultPanel");
+  const questionTextEl = document.getElementById("questionText");
+  const optionsListEl = document.getElementById("optionsList");
+  const feedbackEl = document.getElementById("feedback");
+  const progressTextEl = document.getElementById("progressText");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const bank =
+    window.VERBAL_QUESTION_BANK &&
+    window.VERBAL_QUESTION_BANK[currentTopicId];
+
+  if (!bank || !bank[currentLevel] || !bank[currentLevel].length) {
+    quizQuestions = [];
+    userAnswers = [];
+
+    questionTextEl.textContent =
+      "Question bank for this topic and level is still under construction. Please try a different level or topic.";
+    optionsListEl.innerHTML = "";
+    feedbackEl.textContent = "";
+    feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
+    progressTextEl.textContent = "";
+
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+
+    quizCardEl.style.display = "block";
+    resultPanelEl.classList.add("hidden");
+    return;
+  }
+
+  const available = bank[currentLevel];
+  const count = Math.min(currentItemsCount, available.length);
+
+  quizQuestions = available.slice(0, count);
+  currentQuestionIndex = 0;
+  userAnswers = new Array(quizQuestions.length).fill(null);
+
+  prevBtn.disabled = true;
+  nextBtn.disabled = false;
+
+  quizCardEl.style.display = "block";
+  resultPanelEl.classList.add("hidden");
+
+  renderCurrentQuestion();
+  updateProgressText();
+  updateNavButtons();
+}
+
+// Render current question + options
+function renderCurrentQuestion() {
+  const questionTextEl = document.getElementById("questionText");
+  const optionsListEl = document.getElementById("optionsList");
+  const feedbackEl = document.getElementById("feedback");
+
+  const q = quizQuestions[currentQuestionIndex];
+  if (!q) return;
+
+  questionTextEl.innerHTML = q.question;
+  optionsListEl.innerHTML = "";
+  feedbackEl.textContent = "";
+  feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
+
+  q.options.forEach((opt, index) => {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "option-button";
+    btn.textContent = opt;
+    btn.addEventListener("click", () => handleOptionClick(index));
+    li.appendChild(btn);
+    optionsListEl.appendChild(li);
+  });
+
+  // Kung may nauna nang sagot (pag nag-Previous ka), ibalik ang state
+  const existing = userAnswers[currentQuestionIndex];
+  if (existing) {
+    const buttons = optionsListEl.querySelectorAll(".option-button");
+    buttons.forEach((btn, idx) => {
+      btn.classList.remove("is-correct", "is-incorrect");
+      const optText = q.options[idx];
+
+      if (idx === existing.selectedIndex) {
+        btn.classList.add(
+          existing.isCorrect ? "is-correct" : "is-incorrect"
+        );
+      }
+      if (!existing.isCorrect && optText === q.answer) {
+        btn.classList.add("is-correct");
+      }
+    });
+
+    feedbackEl.textContent =
+      (existing.isCorrect ? "Correct! " : "Incorrect. ") +
+      (q.explanation || "");
+    feedbackEl.classList.toggle("feedback--correct", existing.isCorrect);
+    feedbackEl.classList.toggle("feedback--incorrect", !existing.isCorrect);
+  }
+}
+
+// Option click = auto check (walang Check Answer button)
+function handleOptionClick(index) {
+  const feedbackEl = document.getElementById("feedback");
+  const q = quizQuestions[currentQuestionIndex];
+  const selectedText = q.options[index];
+  const isCorrect = selectedText === q.answer;
+
+  userAnswers[currentQuestionIndex] = {
+    selectedIndex: index,
+    isCorrect: isCorrect,
+  };
+
+  const buttons = document.querySelectorAll(".option-button");
+  buttons.forEach((btn, idx) => {
+    btn.classList.remove("is-correct", "is-incorrect");
+    const optText = q.options[idx];
+
+    if (idx === index) {
+      btn.classList.add(isCorrect ? "is-correct" : "is-incorrect");
+    }
+    if (!isCorrect && optText === q.answer) {
+      btn.classList.add("is-correct");
+    }
+  });
+
+  feedbackEl.textContent =
+    (isCorrect ? "Correct! " : "Incorrect. ") + (q.explanation || "");
+  feedbackEl.classList.toggle("feedback--correct", isCorrect);
+  feedbackEl.classList.toggle("feedback--incorrect", !isCorrect);
+}
+
+// Progress text
+function updateProgressText() {
+  const progressTextEl = document.getElementById("progressText");
+  if (!quizQuestions.length) {
+    progressTextEl.textContent = "";
+    return;
+  }
+  progressTextEl.textContent = `Question ${
+    currentQuestionIndex + 1
+  } of ${quizQuestions.length}`;
+}
+
+// Next/Prev button states
+function updateNavButtons() {
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  prevBtn.disabled = currentQuestionIndex === 0;
+
+  if (!quizQuestions.length) {
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Next";
+    return;
+  }
+
+  nextBtn.disabled = false;
+  nextBtn.textContent =
+    currentQuestionIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
+}
+
+// Finish quiz + result panel
+function finishQuiz() {
+  const quizCardEl = document.getElementById("quizCard");
+  const resultPanelEl = document.getElementById("resultPanel");
+  const resultScoreMainEl = document.getElementById("resultScoreMain");
+  const resultScoreTextEl = document.getElementById("resultScoreText");
+  const mistakeListEl = document.getElementById("mistakeList");
+
+  let correctCount = 0;
+  quizQuestions.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    if (ans && ans.isCorrect) correctCount++;
+  });
+
+  const total = quizQuestions.length || 0;
+  const percent = total ? Math.round((correctCount / total) * 100) : 0;
+
+  resultScoreMainEl.textContent = `${correctCount} / ${total}`;
+  resultScoreTextEl.textContent = `Score: ${percent}%`;
+
+  // Build mistake list
+  mistakeListEl.innerHTML = "";
+  quizQuestions.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    if (ans && ans.isCorrect) return;
+
+    const item = document.createElement("div");
+    item.className = "mistake-item";
+
+    const userAnswerText =
+      ans && typeof ans.selectedIndex === "number"
+        ? q.options[ans.selectedIndex]
+        : "No answer";
+
+    item.innerHTML = `
+      <p class="mistake-q-title">Question ${idx + 1}</p>
+      <p class="mistake-q-text">${q.question}</p>
+      <div class="mistake-answers">
+        <p class="wrong"><span class="label">Your answer:</span> ${userAnswerText}</p>
+        <p class="correct"><span class="label">Correct answer:</span> ${q.answer}</p>
+        ${
+          q.explanation
+            ? `<p class="explanation"><span class="label">Explanation:</span> ${q.explanation}</p>`
+            : ""
+        }
+      </div>
+    `;
+    mistakeListEl.appendChild(item);
+  });
+
+  quizCardEl.style.display = "none";
+  resultPanelEl.classList.remove("hidden");
+}
+
+// Result buttons (Retake / Home)
+function setupResultButtons() {
+  const resultRetryBtn = document.getElementById("resultRetryBtn");
+  const resultHomeBtn = document.getElementById("resultHomeBtn");
+
+  resultRetryBtn.addEventListener("click", () => {
     const quizCardEl = document.getElementById("quizCard");
-    const questionTextEl = document.getElementById("questionText");
-    const optionsListEl = document.getElementById("optionsList");
-    const feedbackEl = document.getElementById("feedback");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const progressTextEl = document.getElementById("progressText");
-
     const resultPanelEl = document.getElementById("resultPanel");
-    const resultScoreMainEl = document.getElementById("resultScoreMain");
-    const resultScoreTextEl = document.getElementById("resultScoreText");
-    const mistakeListEl = document.getElementById("mistakeList");
-    const resultHomeBtn = document.getElementById("resultHomeBtn");
-    const resultRetryBtn = document.getElementById("resultRetryBtn");
+    resultPanelEl.classList.add("hidden");
+    quizCardEl.style.display = "block";
+    startQuiz();
+  });
 
-    const proModalEl = document.getElementById("pro-modal");
-    const proModalCloseBtn = document.getElementById("pro-modal-close");
-    const proModalContextEl = document.getElementById("pro-modal-context");
+  resultHomeBtn.addEventListener("click", () => {
+    // Back to main index
+    window.location.href = "index.html";
+  });
+}
 
-    // ==========================================
-    // 3. STATE
-    // ==========================================
-    let currentMode = "study"; // "study" | "practice"
-    let currentTopicId = VERBAL_TOPICS[0]?.id || null;
-    let currentLevel = "beginner"; // beginner, intermediate, advanced, expert
-    let itemsToUse = 10;
+// Start quiz for current topic/level/items
+function startQuiz() {
+  const quizTopicTitleEl = document.getElementById("quizTopicTitle");
+  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
 
-    let quizQuestions = [];
-    let currentIndex = 0;
-    let userAnswers = []; // { selected, isCorrect, correctAnswer, question }
-    let quizCompleted = false;
+  quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
 
-    // ==========================================
-    // 4. HELPERS
-    // ==========================================
-    function capitalize(str) {
-      if (!str) return "";
-      return str.charAt(0).toUpperCase() + str.slice(1);
+  const currentLevelChip = document.querySelector(
+    `.level-chip[data-level="${currentLevel}"]`
+  );
+  if (currentLevelChip) {
+    const label =
+      currentLevelChip.dataset.levelLabel ||
+      currentLevelChip.textContent.replace("🔒", "").trim();
+    quizLevelLabelEl.textContent = label;
+  } else {
+    quizLevelLabelEl.textContent =
+      currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
+  }
+
+  buildQuizQuestions();
+}
+
+// Prev/Next button handlers
+function setupNavButtonsHandlers() {
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  prevBtn.addEventListener("click", () => {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      renderCurrentQuestion();
+      updateProgressText();
+      updateNavButtons();
     }
+  });
 
-    function getTopicLabel(topicId) {
-      const t = VERBAL_TOPICS.find((x) => x.id === topicId);
-      return t ? t.label : topicId;
+  nextBtn.addEventListener("click", () => {
+    if (!quizQuestions.length) return;
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+      currentQuestionIndex++;
+      renderCurrentQuestion();
+      updateProgressText();
+      updateNavButtons();
+    } else {
+      // Last question → finish quiz
+      finishQuiz();
     }
+  });
+}
 
-    function updateBadge() {
-      if (!badgeEl) return;
-      badgeEl.textContent = IS_PRO_USER ? "PRO Unlocked" : "Free Version";
+// ==========================================
+// PRO MODAL HELPERS
+// ==========================================
+function openProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "flex";
+}
+
+function closeProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "none";
+}
+
+function setupProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+
+  const closeBtn = document.getElementById("pro-modal-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeProModal);
+  }
+
+  // I-set / i-sync ang Gumroad link sa anchor
+  const gumroadLink = document.getElementById("pro-gumroad-link");
+  if (gumroadLink && GUMROAD_URL) {
+    gumroadLink.href = GUMROAD_URL;
+  }
+
+  // Click outside card to close
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeProModal();
     }
+  });
+}
+
+// ==========================================
+// INIT
+// ==========================================
+function initVerbalPage() {
+  // Badge text (optional)
+  const badgeEl = document.querySelector(".badge");
+  if (badgeEl) {
+    badgeEl.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
+  }
+
+  renderTopics();
+  loadLesson(currentTopicId);
+
+  setupModeTabs();
+  setupItemChips();
+  markLockedLevels();
+  setupLevelChips();
+  setupNavButtonsHandlers();
+  setupResultButtons();
+  setupProModal(); // init ng PRO modal
+
+  // Default: Study Mode na loaded na; Practice will build quiz on first click
+}
+
+document.addEventListener("DOMContentLoaded", initVerbalPage);
+</script>
 
-    function setActiveModeTab() {
-      modeTabs.forEach((tab) => {
-        tab.classList.toggle("active", tab.dataset.mode === currentMode);
-      });
-    }
-
-    function getQuestionBankForTopic(topicId) {
-      const bank = window.VERBAL_QUESTION_BANK || {};
-      return bank[topicId] || null;
-    }
-
-    // PRO modal helpers
-    function openProModal(level) {
-      if (!proModalEl) {
-        alert("This level is available for PRO users only. Purchase PRO to unlock Advanced and Expert questions.");
-        return;
-      }
-      const topicLabel = getTopicLabel(currentTopicId);
-      if (proModalContextEl) {
-        proModalContextEl.textContent = `You tried to open the ${capitalize(level)} level for "${topicLabel}". This level is available for PRO users only.`;
-      }
-      proModalEl.classList.add("is-visible");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeProModal() {
-      if (!proModalEl) return;
-      proModalEl.classList.remove("is-visible");
-      document.body.style.overflow = "";
-    }
-
-    // Lock state on level chips (for Free vs PRO)
-    function refreshLevelLockState() {
-      levelChips.forEach((chip) => {
-        const level = chip.dataset.level;
-        if (!level) return;
-        if (LOCKED_LEVELS.includes(level)) {
-          if (IS_PRO_USER) {
-            chip.classList.remove("level-chip--locked");
-            chip.textContent = capitalize(level);
-          } else {
-            chip.classList.add("level-chip--locked");
-            chip.textContent = `${capitalize(level)} 🔒`;
-          }
-        }
-      });
-    }
-
-    // ==========================================
-    // 5. STUDY MODE – LESSONS
-    // NOTE: Use window.VERBAL_LESSONS (defined in separate file / script)
-    // ==========================================
-    function loadLessonForTopic(topicId) {
-      const label = getTopicLabel(topicId);
-      subtitleTopicEl.textContent = label;
-      lessonTitleEl.textContent = label;
-
-      const allLessons = window.VERBAL_LESSONS || {};
-      const data = allLessons[topicId];
-
-      if (!data) {
-        lessonIntroEl.textContent = "Lesson content for this topic will be added soon.";
-        lessonBodyEl.innerHTML = "";
-        tipCardEl.innerHTML = "";
-        tipCardEl.style.display = "none";
-        return;
-      }
-
-      lessonTitleEl.textContent = data.title || label;
-      lessonIntroEl.textContent = data.intro || "";
-      lessonBodyEl.innerHTML = data.fullHtml || "";
-
-      if (Array.isArray(data.quickTips) && data.quickTips.length > 0) {
-        const tipsHtml = [
-          "<h3>Quick Exam Tips</h3>",
-          "<ul>",
-          ...data.quickTips.map((tip) => `<li>${tip}</li>`),
-          "</ul>"
-        ].join("");
-        tipCardEl.innerHTML = tipsHtml;
-        tipCardEl.style.display = "block";
-      } else {
-        tipCardEl.innerHTML = "";
-        tipCardEl.style.display = "none";
-      }
-    }
-
-    // ==========================================
-    // 6. PRACTICE MODE – QUIZ ENGINE
-    // ==========================================
-    function resetQuizState() {
-      quizQuestions = [];
-      userAnswers = [];
-      currentIndex = 0;
-      quizCompleted = false;
-      feedbackEl.textContent = "";
-      feedbackEl.className = "feedback";
-      resultPanelEl.classList.add("hidden");
-      mistakeListEl.innerHTML = "";
-    }
-
-    function initQuiz() {
-      resetQuizState();
-
-      const topicBank = getQuestionBankForTopic(currentTopicId);
-      if (
-        !topicBank ||
-        !topicBank[currentLevel] ||
-        !Array.isArray(topicBank[currentLevel]) ||
-        topicBank[currentLevel].length === 0
-      ) {
-        questionTextEl.textContent = "No questions available yet for this topic and level.";
-        optionsListEl.innerHTML = "";
-        progressTextEl.textContent = "";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-        return;
-      }
-
-      const allQuestions = topicBank[currentLevel];
-      const total = Math.min(itemsToUse, allQuestions.length);
-      quizQuestions = allQuestions.slice(0, total);
-      userAnswers = new Array(quizQuestions.length).fill(null);
-
-      prevBtn.disabled = false;
-      nextBtn.disabled = false;
-
-      renderQuestion();
-    }
-
-    function setFeedback(answerObj) {
-      if (!answerObj) return;
-      feedbackEl.className = "feedback";
-      if (answerObj.isCorrect) {
-        feedbackEl.classList.add("feedback--correct");
-        feedbackEl.textContent = "Correct!";
-      } else {
-        feedbackEl.classList.add("feedback--incorrect");
-        const explanationText = answerObj.question.explanation
-          ? `Correct answer: ${answerObj.correctAnswer}. ${answerObj.question.explanation}`
-          : `Correct answer: ${answerObj.correctAnswer}.`;
-        feedbackEl.textContent = explanationText;
-      }
-    }
-
-    function renderQuestion() {
-      if (!quizQuestions || quizQuestions.length === 0) return;
-
-      const q = quizQuestions[currentIndex];
-      quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-
-      questionTextEl.textContent = `Q${currentIndex + 1}. ${q.question}`;
-
-      optionsListEl.innerHTML = "";
-      feedbackEl.textContent = "";
-      feedbackEl.className = "feedback";
-
-      const saved = userAnswers[currentIndex];
-
-      if (Array.isArray(q.options)) {
-        q.options.forEach((opt) => {
-          const li = document.createElement("li");
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "option-button";
-          btn.textContent = opt;
-
-          btn.addEventListener("click", () => handleOptionClick(opt));
-
-          if (saved) {
-            if (opt === q.answer) {
-              btn.classList.add("is-correct");
-            }
-            if (opt === saved.selected && !saved.isCorrect) {
-              btn.classList.add("is-incorrect");
-            }
-          }
-
-          li.appendChild(btn);
-          optionsListEl.appendChild(li);
-        });
-      }
-
-      if (saved) {
-        setFeedback(saved);
-      }
-
-      prevBtn.disabled = currentIndex === 0;
-      progressTextEl.textContent = `Question ${currentIndex + 1} of ${quizQuestions.length}`;
-      nextBtn.textContent = currentIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
-    }
-
-    function handleOptionClick(selected) {
-      if (!quizQuestions || quizQuestions.length === 0) return;
-
-      const q = quizQuestions[currentIndex];
-      const correct = q.answer;
-      const isCorrect = selected === correct;
-
-      userAnswers[currentIndex] = {
-        selected,
-        isCorrect,
-        correctAnswer: correct,
-        question: q
-      };
-
-      const buttons = optionsListEl.querySelectorAll(".option-button");
-      buttons.forEach((btn) => {
-        const value = btn.textContent;
-        btn.classList.remove("is-correct", "is-incorrect");
-        if (value === correct) {
-          btn.classList.add("is-correct");
-        } else if (value === selected) {
-          btn.classList.add("is-incorrect");
-        }
-      });
-
-      setFeedback(userAnswers[currentIndex]);
-    }
-
-    function finishQuiz() {
-      quizCompleted = true;
-
-      const total = quizQuestions.length;
-      const correctCount = userAnswers.filter((a) => a && a.isCorrect).length;
-      const percent = total ? Math.round((correctCount / total) * 100) : 0;
-
-      resultScoreMainEl.textContent = `${correctCount} / ${total}`;
-      resultScoreTextEl.textContent = `Score: ${percent}%`;
-
-      mistakeListEl.innerHTML = "";
-      userAnswers.forEach((ans, index) => {
-        if (!ans || ans.isCorrect) return;
-
-        const item = document.createElement("div");
-        item.className = "mistake-item";
-
-        const title = document.createElement("p");
-        title.className = "mistake-q-title";
-        title.textContent = `Question ${index + 1}`;
-        item.appendChild(title);
-
-        const text = document.createElement("p");
-        text.className = "mistake-q-text";
-        text.textContent = ans.question.question;
-        item.appendChild(text);
-
-        const meta = document.createElement("div");
-        meta.className = "mistake-answers";
-
-        const yourAns = document.createElement("p");
-        yourAns.innerHTML = `<span class="label">Your answer:</span> <span class="wrong">${ans.selected ?? "(no answer)"}</span>`;
-        meta.appendChild(yourAns);
-
-        const correctAns = document.createElement("p");
-        correctAns.innerHTML = `<span class="label">Correct:</span> <span class="correct">${ans.correctAnswer}</span>`;
-        meta.appendChild(correctAns);
-
-        if (ans.question.explanation) {
-          const exp = document.createElement("p");
-          exp.className = "explanation";
-          exp.textContent = ans.question.explanation;
-          meta.appendChild(exp);
-        }
-
-        item.appendChild(meta);
-        mistakeListEl.appendChild(item);
-      });
-
-      resultPanelEl.classList.remove("hidden");
-      resultPanelEl.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    // ==========================================
-    // 7. UI HANDLERS (MODE, TOPIC, LEVEL, ITEMS)
-    // ==========================================
-    function renderTopics() {
-      topicListEl.innerHTML = "";
-      VERBAL_TOPICS.forEach((topic) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "topic-pill";
-        btn.dataset.topicId = topic.id;
-
-        const labelSpan = document.createElement("span");
-        labelSpan.className = "label";
-        labelSpan.textContent = topic.label;
-        btn.appendChild(labelSpan);
-
-        const tagSpan = document.createElement("span");
-        tagSpan.className = "tag";
-        tagSpan.textContent = topic.tag;
-        btn.appendChild(tagSpan);
-
-        if (topic.id === currentTopicId) {
-          btn.classList.add("active");
-        }
-
-        btn.addEventListener("click", () => {
-          if (topic.id === currentTopicId) return;
-          currentTopicId = topic.id;
-
-          document.querySelectorAll(".topic-pill").forEach((el) => {
-            el.classList.toggle("active", el === btn);
-          });
-
-          resultPanelEl.classList.add("hidden");
-          currentIndex = 0;
-          userAnswers = [];
-          quizCompleted = false;
-
-          if (currentMode === "study") {
-            loadLessonForTopic(currentTopicId);
-          } else {
-            initQuiz();
-          }
-        });
-
-        topicListEl.appendChild(btn);
-      });
-    }
-
-    // Mode tabs
-    modeTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const mode = tab.dataset.mode;
-        if (!mode || mode === currentMode) return;
-        currentMode = mode;
-        setActiveModeTab();
-        if (currentMode === "study") {
-          studyView.classList.add("view--active");
-          practiceView.classList.remove("view--active");
-          loadLessonForTopic(currentTopicId);
-        } else {
-          practiceView.classList.add("view--active");
-          studyView.classList.remove("view--active");
-          initQuiz();
-        }
-      });
-    });
-
-    // Level chips (Beginner / Intermediate / Advanced / Expert)
-    levelChips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const level = chip.dataset.level;
-        if (!level || level === currentLevel) return;
-
-        if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
-          openProModal(level);
-          return;
-        }
-
-        currentLevel = level;
-        levelChips.forEach((c) => {
-          c.classList.toggle("active", c === chip);
-        });
-        quizLevelLabelEl.textContent = capitalize(level);
-        initQuiz();
-      });
-    });
-
-    // Items chips (10 / 20 / 30 / 40 / 50)
-    itemsChips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const count = Number(chip.dataset.count || "10");
-        if (!count || count === itemsToUse) return;
-        itemsToUse = count;
-        itemsChips.forEach((c) => {
-          c.classList.toggle("active", c === chip);
-        });
-        initQuiz();
-      });
-    });
-
-    // Prev / Next buttons
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex -= 1;
-        renderQuestion();
-      }
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if (!quizQuestions || quizQuestions.length === 0) return;
-
-      if (currentIndex < quizQuestions.length - 1) {
-        currentIndex += 1;
-        renderQuestion();
-      } else {
-        finishQuiz();
-      }
-    });
-
-    // Result actions
-    resultRetryBtn.addEventListener("click", () => {
-      initQuiz();
-      resultPanelEl.classList.add("hidden");
-    });
-
-    resultHomeBtn.addEventListener("click", () => {
-      currentMode = "study";
-      setActiveModeTab();
-      studyView.classList.add("view--active");
-      practiceView.classList.remove("view--active");
-      resultPanelEl.classList.add("hidden");
-      loadLessonForTopic(currentTopicId);
-    });
-
-    // PRO modal events
-    if (proModalCloseBtn) {
-      proModalCloseBtn.addEventListener("click", () => {
-        closeProModal();
-      });
-    }
-
-    if (proModalEl) {
-      proModalEl.addEventListener("click", (event) => {
-        if (event.target === proModalEl || event.target.classList.contains("modal-backdrop")) {
-          closeProModal();
-        }
-      });
-    }
-
-    // ==========================================
-    // 8. INIT
-    // ==========================================
-    function initPage() {
-      updateBadge();
-      renderTopics();
-      setActiveModeTab();
-      refreshLevelLockState();
-      loadLessonForTopic(currentTopicId);
-    }
-
-    initPage();
-  </script>
 </body>
 </html>
+
