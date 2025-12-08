@@ -391,6 +391,14 @@
       transform: translateY(-1px);
     }
 
+    /* Locked levels (Advanced/Expert) for Free users */
+    .level-chip.level-chip--locked {
+      border-style: dashed;
+      border-color: rgba(148, 163, 184, 0.9);
+      background: #020617;
+      color: #9ca3af;
+    }
+
     /* Items row (10 / 20 / 30 / 40 / 50) */
     .items-row {
       display: flex;
@@ -631,6 +639,93 @@
       font-weight: 600;
     }
 
+    /* PRO Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .modal.is-visible {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-card {
+      position: relative;
+      background: #020617;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      max-width: 420px;
+      width: calc(100% - 32px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+      z-index: 1;
+    }
+
+    .modal-title {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .modal-text,
+    .modal-context-text,
+    .modal-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .modal-note {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0 6px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.1s, background 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #f9fafb;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #818cf8;
+    }
+
     @media (max-width: 900px) {
       .layout {
         display: flex;
@@ -716,8 +811,8 @@
               <div class="level-switcher">
                 <button class="level-chip active" data-level="beginner" type="button">Beginner</button>
                 <button class="level-chip" data-level="intermediate" type="button">Intermediate</button>
-                <button class="level-chip" data-level="advanced" type="button">Advanced</button>
-                <button class="level-chip" data-level="expert" type="button">Expert</button>
+                <button class="level-chip level-chip--locked" data-level="advanced" type="button">Advanced</button>
+                <button class="level-chip level-chip--locked" data-level="expert" type="button">Expert</button>
               </div>
               <div class="items-row">
                 <span class="items-label">Items:</span>
@@ -766,6 +861,39 @@
     </main>
   </div>
 
+  <!-- PRO MODAL -->
+  <div id="pro-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <h2 class="modal-title">🔒 PRO Feature Locked</h2>
+      <p class="modal-text">
+        This level is available for <strong>PRO users</strong> only.
+        Unlock PRO to access Advanced &amp; Expert questions for all topics.
+      </p>
+      <p id="pro-modal-context" class="modal-context-text"></p>
+
+      <div class="modal-actions">
+        <a
+          id="pro-gumroad-link"
+          href="https://7329689874364.gumroad.com/l/cvpax"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          🚀 Get Lifetime Access on Gumroad
+        </a>
+
+        <button id="pro-modal-close" type="button" class="btn btn-secondary">
+          Maybe later
+        </button>
+      </div>
+
+      <p class="modal-note">
+        Already purchased? Just enter your <strong>Gumroad license key</strong> on the home screen to unlock all PRO content.
+      </p>
+    </div>
+  </div>
+
   <!-- VERBAL QUESTIONS FILES -->
   <script src="questions/reading_comprehension.js"></script>
   <script src="questions/paragraph_organization_questions.js"></script>
@@ -793,15 +921,13 @@
   <script src="questions/error_identification.js"></script>
 
   <!-- MAIN LOGIC – LESSONS DATA HIWALAY (window.VERBAL_LESSONS) -->
-  <script>
+    <script>
 
- // ==========================================
+     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-
-const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-const LOCKED_LEVELS = ["advanced", "expert"];
-
+    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    const LOCKED_LEVELS = ["advanced", "expert"]; // PRO-only levels    
 
 
     // ==========================================
@@ -5270,7 +5396,7 @@ synonyms: {
 }; 
 
 
-// ==========================================
+    // ==========================================
     // 2. DOM REFERENCES
     // ==========================================
     const subtitleTopicEl = document.getElementById("subtitleTopic");
@@ -5305,6 +5431,10 @@ synonyms: {
     const mistakeListEl = document.getElementById("mistakeList");
     const resultHomeBtn = document.getElementById("resultHomeBtn");
     const resultRetryBtn = document.getElementById("resultRetryBtn");
+
+    const proModalEl = document.getElementById("pro-modal");
+    const proModalCloseBtn = document.getElementById("pro-modal-close");
+    const proModalContextEl = document.getElementById("pro-modal-context");
 
     // ==========================================
     // 3. STATE
@@ -5346,6 +5476,43 @@ synonyms: {
     function getQuestionBankForTopic(topicId) {
       const bank = window.VERBAL_QUESTION_BANK || {};
       return bank[topicId] || null;
+    }
+
+    // PRO modal helpers
+    function openProModal(level) {
+      if (!proModalEl) {
+        alert("This level is available for PRO users only. Purchase PRO to unlock Advanced and Expert questions.");
+        return;
+      }
+      const topicLabel = getTopicLabel(currentTopicId);
+      if (proModalContextEl) {
+        proModalContextEl.textContent = `You tried to open the ${capitalize(level)} level for "${topicLabel}". This level is available for PRO users only.`;
+      }
+      proModalEl.classList.add("is-visible");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeProModal() {
+      if (!proModalEl) return;
+      proModalEl.classList.remove("is-visible");
+      document.body.style.overflow = "";
+    }
+
+    // Lock state on level chips (for Free vs PRO)
+    function refreshLevelLockState() {
+      levelChips.forEach((chip) => {
+        const level = chip.dataset.level;
+        if (!level) return;
+        if (LOCKED_LEVELS.includes(level)) {
+          if (IS_PRO_USER) {
+            chip.classList.remove("level-chip--locked");
+            chip.textContent = capitalize(level);
+          } else {
+            chip.classList.add("level-chip--locked");
+            chip.textContent = `${capitalize(level)} 🔒`;
+          }
+        }
+      });
     }
 
     // ==========================================
@@ -5405,7 +5572,12 @@ synonyms: {
       resetQuizState();
 
       const topicBank = getQuestionBankForTopic(currentTopicId);
-      if (!topicBank || !topicBank[currentLevel] || !Array.isArray(topicBank[currentLevel]) || topicBank[currentLevel].length === 0) {
+      if (
+        !topicBank ||
+        !topicBank[currentLevel] ||
+        !Array.isArray(topicBank[currentLevel]) ||
+        topicBank[currentLevel].length === 0
+      ) {
         questionTextEl.textContent = "No questions available yet for this topic and level.";
         optionsListEl.innerHTML = "";
         progressTextEl.textContent = "";
@@ -5447,7 +5619,6 @@ synonyms: {
       quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
       quizLevelLabelEl.textContent = capitalize(currentLevel);
 
-      // Some questions might contain simple HTML/newlines; use textContent to stay safe
       questionTextEl.textContent = `Q${currentIndex + 1}. ${q.question}`;
 
       optionsListEl.innerHTML = "";
@@ -5503,7 +5674,6 @@ synonyms: {
         question: q
       };
 
-      // Update option button styles
       const buttons = optionsListEl.querySelectorAll(".option-button");
       buttons.forEach((btn) => {
         const value = btn.textContent;
@@ -5646,7 +5816,7 @@ synonyms: {
         if (!level || level === currentLevel) return;
 
         if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
-          alert("This level is available for PRO users only.");
+          openProModal(level);
           return;
         }
 
@@ -5706,6 +5876,21 @@ synonyms: {
       loadLessonForTopic(currentTopicId);
     });
 
+    // PRO modal events
+    if (proModalCloseBtn) {
+      proModalCloseBtn.addEventListener("click", () => {
+        closeProModal();
+      });
+    }
+
+    if (proModalEl) {
+      proModalEl.addEventListener("click", (event) => {
+        if (event.target === proModalEl || event.target.classList.contains("modal-backdrop")) {
+          closeProModal();
+        }
+      });
+    }
+
     // ==========================================
     // 8. INIT
     // ==========================================
@@ -5713,7 +5898,7 @@ synonyms: {
       updateBadge();
       renderTopics();
       setActiveModeTab();
-      // Default: Study mode first topic
+      refreshLevelLockState();
       loadLessonForTopic(currentTopicId);
     }
 
