@@ -1,4 +1,3 @@
-<!-- Save as general_info.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -385,6 +384,11 @@
       transition: all 0.15s ease;
     }
 
+    .level-tab.locked {
+      opacity: 0.7;
+      border-style: dashed;
+    }
+
     .level-tab.active {
       background: var(--accent);
       color: white;
@@ -693,6 +697,163 @@
       font-size: 0.9rem;
       color: var(--success);
     }
+
+    /* =========================================== */
+    /* PRO MODAL STYLES (ADDED) */
+    /* =========================================== */
+    .pro-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .pro-modal-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 20px;
+      border: 1px solid #334155;
+      max-width: 500px;
+      width: 100%;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    }
+
+    .pro-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 24px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .pro-modal-close:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
+    }
+
+    .pro-modal-header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .pro-modal-header h2 {
+      margin: 0 0 8px;
+      color: #f8fafc;
+      font-size: 1.5rem;
+    }
+
+    .pro-modal-header p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .pro-features {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 24px;
+      border: 1px solid #334155;
+    }
+
+    .pro-features h3 {
+      margin: 0 0 12px;
+      color: #e2e8f0;
+      font-size: 1.1rem;
+    }
+
+    .pro-features ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .pro-features li {
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .pro-features li:before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .pro-cta {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .pro-upgrade-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #6366f1, #4f46e5);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .pro-upgrade-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    .pro-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .pro-already {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #334155;
+    }
+
+    .pro-already a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .pro-already a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .pro-modal-card {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -709,8 +870,8 @@
         </p>
       </div>
 
-      <div class="header-badge">
-         PRO Access
+      <div id="proBadge" class="header-badge">
+        <!-- PRO Access / Free Plan -->
       </div>
     </header>
 
@@ -837,6 +998,45 @@
     </main>
   </div>
 
+  <!-- =========================================== -->
+  <!-- PRO MODAL (ADDED) -->
+  <!-- =========================================== -->
+  <div id="pro-modal" class="pro-modal" style="display: none;">
+    <div class="pro-modal-card">
+      <button id="pro-modal-close" class="pro-modal-close">×</button>
+      
+      <div class="pro-modal-header">
+        <h2>🔒 Unlock Advanced Content</h2>
+        <p>Access expert-level questions and advanced topics with PRO</p>
+      </div>
+      
+      <div class="pro-modal-content">
+        <div class="pro-features">
+          <h3>🚀 What you get with PRO:</h3>
+          <ul>
+            <li><strong>Advanced & Expert Level</strong> questions</li>
+            <li><strong>Full access</strong> to all general information topics</li>
+            <li><strong>Unlimited practice</strong> with detailed explanations</li>
+            <li><strong>Priority updates</strong> and new content</li>
+            <li><strong>Ad-free experience</strong></li>
+          </ul>
+        </div>
+        
+        <div class="pro-cta">
+          <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax" 
+             target="_blank" class="pro-upgrade-btn">
+            🚀 Upgrade to PRO Now
+          </a>
+          <p class="pro-note">One-time payment • Lifetime access</p>
+        </div>
+        
+        <div class="pro-already">
+          <p>Already purchased? <a href="#" id="pro-refresh-link">Refresh page</a> after payment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Question banks -->
   <script src="questions/general_constitution.js"></script>
   <script src="questions/general_government.js"></script>
@@ -845,12 +1045,84 @@
   <!-- Main logic for General Knowledge page -->
   <script>
     // ==========================================
-    // 0. PRO CONFIG
+    // 0. PRO CONFIG (UPDATED)
     // ==========================================
+    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    const BASE_LOCKED_LEVELS = ["advanced", "expert"];
+    const LOCKED_LEVELS = IS_PRO_USER ? [] : BASE_LOCKED_LEVELS;
+    const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
-const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-const LOCKED_LEVELS = ["advanced", "expert"];
+    // ==========================================
+    // PRO MODAL FUNCTIONS (ADDED)
+    // ==========================================
+    function openProModal() {
+      const proModal = document.getElementById("pro-modal");
+      if (proModal) {
+        proModal.style.display = "flex";
+      }
+    }
 
+    function closeProModal() {
+      const proModal = document.getElementById("pro-modal");
+      if (proModal) {
+        proModal.style.display = "none";
+      }
+    }
+
+    function setupProModal() {
+      const proModalClose = document.getElementById("pro-modal-close");
+      const proGumroadLink = document.getElementById("pro-gumroad-link");
+      const proRefreshLink = document.getElementById("pro-refresh-link");
+      const proModal = document.getElementById("pro-modal");
+
+      if (proModalClose) {
+        proModalClose.addEventListener("click", closeProModal);
+      }
+
+      if (proGumroadLink && GUMROAD_URL) {
+        proGumroadLink.href = GUMROAD_URL;
+      }
+
+      if (proRefreshLink) {
+        proRefreshLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          location.reload();
+        });
+      }
+
+      if (proModal) {
+        proModal.addEventListener("click", (event) => {
+          if (event.target === proModal) {
+            closeProModal();
+          }
+        });
+      }
+    }
+
+    function markLockedLevels() {
+      const proBadge = document.getElementById("proBadge");
+      if (proBadge) {
+        proBadge.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
+      }
+      
+      const levelTabs = document.querySelectorAll(".level-tab");
+      levelTabs.forEach((tab) => {
+        const level = tab.dataset.level;
+        const locked = LOCKED_LEVELS.includes(level);
+        tab.classList.toggle("locked", locked);
+        
+        // Save original text for restoration
+        if (!tab.dataset.originalText) {
+          tab.dataset.originalText = tab.textContent.trim();
+        }
+        
+        if (locked) {
+          tab.textContent = tab.dataset.originalText + " 🔒";
+        } else {
+          tab.textContent = tab.dataset.originalText;
+        }
+      });
+    }
 
     // ==========================================
     // 1. TOPIC LIST
@@ -1121,61 +1393,33 @@ const LOCKED_LEVELS = ["advanced", "expert"];
     }
 
     // ==========================================
-    // 8. QUIZ INITIALIZERS
+    // 8. QUIZ INITIALIZERS (UPDATED)
     // ==========================================
     function initLevelTabs() {
       const levelTabs = document.querySelectorAll(".level-tab");
 
       levelTabs.forEach(tab => {
         tab.addEventListener("click", () => {
-          const level = tab.dataset.level;
+          const levelClicked = tab.dataset.level;
+          if (!levelClicked) return;
 
-          // PRO alert kapag advanced/expert at free user
-          if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
-            alert(
-              "Advanced and Expert levels are available in the PRO version.\n\n" +
-              "Beginner and Intermediate are fully available in the free General Information Reviewer."
-            );
+          // 🔒 Check if level is locked
+          if (LOCKED_LEVELS.includes(levelClicked)) {
+            openProModal(); // Open PRO modal instead of alert
             return;
           }
 
-          currentLevel = level;
+          // normal behavior for unlocked levels
+          currentLevel = levelClicked;
           levelTabs.forEach(t => {
-            t.classList.toggle("active", t.dataset.level === level);
+            t.classList.toggle("active", t.dataset.level === levelClicked);
           });
           document.getElementById("quiz-level-label").textContent =
-            capitalize(level);
+            capitalize(levelClicked);
           startQuiz();
         });
       });
     }
-
-    // Mark locked levels with 🔒 PRO label for free users
-function markLockedLevels() {
-  const levelTabs = document.querySelectorAll(".level-tab");
-
-  levelTabs.forEach(tab => {
-    const level = tab.dataset.level;
-
-    // i-save ang original label (BEGINNER, INTERMEDIATE, etc.)
-    const baseLabel =
-      tab.dataset.baseLabel ||
-      tab.textContent.replace("🔒", "").replace("PRO", "").trim();
-
-    if (!tab.dataset.baseLabel) {
-      tab.dataset.baseLabel = baseLabel;
-    }
-
-    if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
-      // may lock icon kung free user
-      tab.innerHTML = `${baseLabel} <span style="font-size:0.7rem;opacity:0.85;">🔒</span>`;
-    } else {
-      // walang lock icon kung PRO user
-      tab.textContent = baseLabel;
-    }
-  });
-}
-
 
     function initItemsTabs() {
       document.querySelectorAll(".items-tab").forEach(btn => {
@@ -1478,20 +1722,17 @@ function markLockedLevels() {
     }
 
     // ==========================================
-    // 11. INIT
+    // 11. INITIALIZATION (UPDATED)
     // ==========================================
-  // ==========================================
-// 11. INIT
-// ==========================================
-renderTopics();
-initModeToggle();
-initLevelTabs();
-markLockedLevels();     
-initItemsTabs();
-initNavButtons();
-initResultsButtons();
-selectTopic(currentTopicId);
-
+    renderTopics();
+    initModeToggle();
+    setupProModal(); // ADDED: Setup PRO modal
+    markLockedLevels(); // ADDED: Mark locked levels
+    initLevelTabs();
+    initItemsTabs();
+    initNavButtons();
+    initResultsButtons();
+    selectTopic(currentTopicId);
   </script>
 </body>
 </html>
