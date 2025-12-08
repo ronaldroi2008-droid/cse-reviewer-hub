@@ -1825,7 +1825,7 @@ const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
       }
     };
 
-    // ==========================================
+// ==========================================
 // 2. STATE VARIABLES
 // ==========================================
 let currentMode = "study";
@@ -1896,30 +1896,76 @@ function loadLesson(topicId) {
   const lessonBodyEl = document.getElementById("lessonBody");
   const tipCardEl = document.getElementById("tipCard");
 
-  // Simplified lesson content (placeholder)
-  const label = getTopicLabel(topicId);
-  lessonTitleEl.textContent = label;
-  lessonIntroEl.textContent = "This topic covers essential numerical concepts for the Civil Service Exam.";
-  lessonBodyEl.innerHTML = "<p>Lesson content is being developed. Use Practice Quiz to test your knowledge.</p>";
-  tipCardEl.innerHTML = `
-    <h3>Quick Tips for the Exam</h3>
-    <ul>
-      <li>Read each problem carefully and underline key numbers</li>
-      <li>Use scratch paper for calculations</li>
-      <li>Check your work before finalizing answers</li>
-    </ul>
-  `;
+  // Check if we have lesson data for this topic
+  const lesson = LESSONS[topicId];
+  
+  if (lesson) {
+    // Use actual lesson data
+    lessonTitleEl.textContent = lesson.title;
+    lessonIntroEl.textContent = lesson.intro;
+    
+    // Build lesson sections
+    lessonBodyEl.innerHTML = "";
+    lesson.sections.forEach((section, index) => {
+      const sectionEl = document.createElement("section");
+      if (index > 0) {
+        sectionEl.style.marginTop = "10px";
+      }
+      
+      const heading = document.createElement("h3");
+      heading.textContent = section.heading;
+      sectionEl.appendChild(heading);
+      
+      const ul = document.createElement("ul");
+      section.bullets.forEach(bullet => {
+        const li = document.createElement("li");
+        li.textContent = bullet;
+        ul.appendChild(li);
+      });
+      sectionEl.appendChild(ul);
+      
+      lessonBodyEl.appendChild(sectionEl);
+    });
+    
+    // Build tip card
+    if (lesson.tips && lesson.tips.length > 0) {
+      tipCardEl.innerHTML = `
+        <h3>Quick Tips for the Exam</h3>
+        <ul>
+          ${lesson.tips.map(tip => `<li>${tip}</li>`).join('')}
+        </ul>
+      `;
+    } else {
+      tipCardEl.innerHTML = "";
+    }
+  } else {
+    // Fallback if no lesson data
+    const label = getTopicLabel(topicId);
+    lessonTitleEl.textContent = label;
+    lessonIntroEl.textContent = "This topic covers essential numerical concepts for the Civil Service Exam.";
+    lessonBodyEl.innerHTML = "<p>Lesson content is being developed. Use Practice Quiz to test your knowledge.</p>";
+    tipCardEl.innerHTML = `
+      <h3>Quick Tips for the Exam</h3>
+      <ul>
+        <li>Read each problem carefully and underline key numbers</li>
+        <li>Use scratch paper for calculations</li>
+        <li>Check your work before finalizing answers</li>
+      </ul>
+    `;
+  }
 }
 
 function markLockedLevels() {
   const chips = document.querySelectorAll(".level-chip");
   chips.forEach((chip) => {
     const level = chip.dataset.level;
-    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.trim();
+    chip.dataset.originalText = chip.textContent.trim();
 
     if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+      // Clear any existing lock emoji and add only one
+      const originalText = chip.dataset.originalText.replace(" 🔒", "");
+      chip.textContent = originalText + " 🔒";
       chip.classList.add("locked");
-      chip.textContent = chip.dataset.levelLabel + " 🔒";
     }
   });
 }
@@ -1980,12 +2026,17 @@ function setupLevelChips() {
       }
 
       currentLevel = level;
-      levelChips.forEach((c) => c.classList.toggle("active", c === chip));
+      levelChips.forEach((c) => {
+        c.classList.toggle("active", c === chip);
+        // Restore original text for all chips
+        if (c.dataset.originalText) {
+          c.textContent = c.dataset.originalText;
+        }
+      });
 
-      const label =
-        chip.dataset.levelLabel ||
-        chip.textContent.replace("🔒", "").trim();
-      quizLevelLabelEl.textContent = label;
+      // Get label without lock emoji
+      const originalText = chip.dataset.originalText || chip.textContent.replace(" 🔒", "").trim();
+      quizLevelLabelEl.textContent = originalText;
 
       if (currentMode === "practice") {
         startQuiz();
@@ -2232,7 +2283,7 @@ function startQuiz() {
   );
   if (currentLevelChip) {
     const label =
-      currentLevelChip.dataset.levelLabel ||
+      currentLevelChip.dataset.originalText || 
       currentLevelChip.textContent.replace("🔒", "").trim();
     quizLevelLabelEl.textContent = label;
   } else {
