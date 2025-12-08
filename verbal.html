@@ -243,6 +243,82 @@
       margin-top: 2px;
     }
 
+    /* Extra helpers for lesson HTML (from lessons data) */
+    .lesson-section {
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .lesson-section h2 {
+      font-size: 1rem;
+      margin: 0 0 4px;
+      color: #e5e7eb;
+    }
+
+    .lesson-section h3 {
+      font-size: 0.95rem;
+      margin: 6px 0 3px;
+      color: #e5e7eb;
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      font-size: 0.85rem;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      border: 1px solid var(--border);
+      padding: 4px 6px;
+      text-align: left;
+    }
+
+    .highlight-box {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed var(--accent);
+      font-size: 0.86rem;
+    }
+
+    .two-column-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .two-column-list ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .check-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .lesson-block {
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .lesson-block h2 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: #e5e7eb;
+    }
+
+    .lesson-block h3 {
+      margin: 6px 0 4px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
     .tip-card {
       margin-top: 12px;
       border-radius: 13px;
@@ -594,7 +670,7 @@
         <h1 class="app-title">CSE Reviewer Hub</h1>
         <p class="app-subtitle">
           Verbal Ability ·
-          <span id="subtitleTopic">Nouns & Pronouns</span>
+          <span id="subtitleTopic">Nouns &amp; Pronouns</span>
         </p>
       </div>
       <span class="badge"></span>
@@ -700,7 +776,7 @@
   <script src="questions/questions_punctuation.js"></script>
   <script src="questions/questions_affixes.js"></script>
   <script src="questions/questions_sentence_structure.js"></script>
-  <script src="questions/sentence_construction.js"></script> 
+  <script src="questions/sentence_construction.js"></script>
   <script src="questions/subject_verb_agreement.js"></script>
   <script src="questions/questions_articles.js"></script>
   <script src="questions/questions_interjections.js"></script>
@@ -716,8 +792,8 @@
   <script src="questions/questions_grammatical_number.js"></script>
   <script src="questions/error_identification.js"></script>
 
-<script>
-    
+  <!-- MAIN LOGIC – LESSONS DATA HIWALAY (window.VERBAL_LESSONS) -->
+  <script>
 
  // ==========================================
     // 0. PRO CONFIG
@@ -5195,551 +5271,453 @@ synonyms: {
 
 
 // ==========================================
-// 3. PAGE STATE + HELPERS
-// ==========================================
+    // 2. DOM REFERENCES
+    // ==========================================
+    const subtitleTopicEl = document.getElementById("subtitleTopic");
+    const badgeEl = document.querySelector(".badge");
+    const topicListEl = document.getElementById("topicList");
 
-// Dito naka-set ang Gumroad link (pwede mong palitan kung magbago)
-const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
+    const modeTabs = document.querySelectorAll(".mode-tab");
+    const studyView = document.getElementById("studyView");
+    const practiceView = document.getElementById("practiceView");
 
-let currentMode = "study";
-// HUWAG nang tawagin agad ang VERBAL_TOPICS dito (TDZ error kung nasa baba pa siya).
-let currentTopicId = "";
-let currentLevel = "beginner";
-let currentItemsCount = 10;
+    const lessonTitleEl = document.getElementById("lessonTitle");
+    const lessonIntroEl = document.getElementById("lessonIntro");
+    const lessonBodyEl = document.getElementById("lessonBody");
+    const tipCardEl = document.getElementById("tipCard");
 
-let quizQuestions = [];
-let currentQuestionIndex = 0;
-let userAnswers = [];
+    const quizTopicTitleEl = document.getElementById("quizTopicTitle");
+    const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+    const levelChips = document.querySelectorAll(".level-chip");
+    const itemsChips = document.querySelectorAll(".items-chip");
 
-// Helper: kuha ng topic label
-function getTopicLabel(id) {
-  const t = VERBAL_TOPICS.find((x) => x.id === id);
-  return t ? t.label : "Verbal Topic";
-}
+    const quizCardEl = document.getElementById("quizCard");
+    const questionTextEl = document.getElementById("questionText");
+    const optionsListEl = document.getElementById("optionsList");
+    const feedbackEl = document.getElementById("feedback");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const progressTextEl = document.getElementById("progressText");
 
-// Render ng topic buttons sa sidebar
-function renderTopics() {
-  const topicListEl = document.getElementById("topicList");
-  const subtitleTopicEl = document.getElementById("subtitleTopic");
-  topicListEl.innerHTML = "";
+    const resultPanelEl = document.getElementById("resultPanel");
+    const resultScoreMainEl = document.getElementById("resultScoreMain");
+    const resultScoreTextEl = document.getElementById("resultScoreText");
+    const mistakeListEl = document.getElementById("mistakeList");
+    const resultHomeBtn = document.getElementById("resultHomeBtn");
+    const resultRetryBtn = document.getElementById("resultRetryBtn");
 
-  VERBAL_TOPICS.forEach((topic, index) => {
-    // Kung wala pang currentTopicId, gawing first topic
-    if (!currentTopicId && index === 0) {
-      currentTopicId = topic.id;
+    // ==========================================
+    // 3. STATE
+    // ==========================================
+    let currentMode = "study"; // "study" | "practice"
+    let currentTopicId = VERBAL_TOPICS[0]?.id || null;
+    let currentLevel = "beginner"; // beginner, intermediate, advanced, expert
+    let itemsToUse = 10;
+
+    let quizQuestions = [];
+    let currentIndex = 0;
+    let userAnswers = []; // { selected, isCorrect, correctAnswer, question }
+    let quizCompleted = false;
+
+    // ==========================================
+    // 4. HELPERS
+    // ==========================================
+    function capitalize(str) {
+      if (!str) return "";
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "topic-pill";
-    btn.dataset.topicId = topic.id;
-    btn.innerHTML = `
-      <span class="label">${topic.label}</span>
-      <span class="tag">${topic.tag}</span>
-    `;
-
-    if (topic.id === currentTopicId) {
-      btn.classList.add("active");
-      subtitleTopicEl.textContent = topic.label;
+    function getTopicLabel(topicId) {
+      const t = VERBAL_TOPICS.find((x) => x.id === topicId);
+      return t ? t.label : topicId;
     }
 
-    btn.addEventListener("click", () => {
-      if (currentTopicId === topic.id) return;
-      currentTopicId = topic.id;
+    function updateBadge() {
+      if (!badgeEl) return;
+      badgeEl.textContent = IS_PRO_USER ? "PRO Unlocked" : "Free Version";
+    }
 
-      // Active state sa pills
-      document.querySelectorAll(".topic-pill").forEach((p) => {
-        p.classList.toggle("active", p.dataset.topicId === topic.id);
+    function setActiveModeTab() {
+      modeTabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.mode === currentMode);
       });
-
-      subtitleTopicEl.textContent = topic.label;
-
-      if (currentMode === "study") {
-        loadLesson(topic.id);
-      } else {
-        startQuiz();
-      }
-    });
-
-    topicListEl.appendChild(btn);
-  });
-}
-
-// Load lesson content sa Study Mode
-function loadLesson(topicId) {
-  const lessonTitleEl = document.getElementById("lessonTitle");
-  const lessonIntroEl = document.getElementById("lessonIntro");
-  const lessonBodyEl = document.getElementById("lessonBody");
-  const tipCardEl = document.getElementById("tipCard");
-
-  const lesson = VERBAL_LESSONS[topicId];
-  const label = getTopicLabel(topicId);
-
-  if (!lesson) {
-    lessonTitleEl.textContent = label;
-    lessonIntroEl.textContent =
-      "Lesson content for this topic is coming soon. You can still practice using the Practice Quiz tab.";
-    lessonBodyEl.innerHTML = "";
-    tipCardEl.innerHTML = "";
-    return;
-  }
-
-  lessonTitleEl.textContent = lesson.title || label;
-  lessonIntroEl.textContent = lesson.intro || "";
-  lessonBodyEl.innerHTML = lesson.fullHtml || "";
-
-  if (lesson.quickTips && Array.isArray(lesson.quickTips) && lesson.quickTips.length) {
-    tipCardEl.innerHTML = `
-      <h3>Quick Tips for the Exam</h3>
-      <ul>
-        ${lesson.quickTips.map((tip) => `<li>${tip}</li>`).join("")}
-      </ul>
-    `;
-  } else {
-    tipCardEl.innerHTML = "";
-  }
-}
-
-// Mark locked levels (Advanced / Expert)
-function markLockedLevels() {
-  const chips = document.querySelectorAll(".level-chip");
-  chips.forEach((chip) => {
-    const level = chip.dataset.level;
-    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.trim();
-
-    if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
-      chip.classList.add("locked");
-      chip.textContent = chip.dataset.levelLabel + " 🔒";
     }
-  });
-}
 
-// Mode tabs: Study / Practice
-function setupModeTabs() {
-  const modeTabs = document.querySelectorAll(".mode-tab");
-  const studyView = document.getElementById("studyView");
-  const practiceView = document.getElementById("practiceView");
+    function getQuestionBankForTopic(topicId) {
+      const bank = window.VERBAL_QUESTION_BANK || {};
+      return bank[topicId] || null;
+    }
 
-  modeTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const mode = tab.dataset.mode;
-      if (mode === currentMode) return;
-      currentMode = mode;
+    // ==========================================
+    // 5. STUDY MODE – LESSONS
+    // NOTE: Use window.VERBAL_LESSONS (defined in separate file / script)
+    // ==========================================
+    function loadLessonForTopic(topicId) {
+      const label = getTopicLabel(topicId);
+      subtitleTopicEl.textContent = label;
+      lessonTitleEl.textContent = label;
 
-      modeTabs.forEach((t) =>
-        t.classList.toggle("active", t.dataset.mode === mode)
-      );
+      const allLessons = window.VERBAL_LESSONS || {};
+      const data = allLessons[topicId];
 
-      if (mode === "study") {
-        studyView.classList.add("view--active");
-        practiceView.classList.remove("view--active");
-        loadLesson(currentTopicId);
-      } else {
-        studyView.classList.remove("view--active");
-        practiceView.classList.add("view--active");
-        startQuiz();
-      }
-    });
-  });
-}
-
-// Item count (10 / 20 / 30 / 40 / 50)
-function setupItemChips() {
-  const itemChips = document.querySelectorAll(".items-chip");
-  itemChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      currentItemsCount = parseInt(chip.dataset.count, 10) || 10;
-      itemChips.forEach((c) => c.classList.toggle("active", c === chip));
-      if (currentMode === "practice") {
-        startQuiz();
-      }
-    });
-  });
-}
-
-// Level chips with PRO alert → now uses PRO modal
-function setupLevelChips() {
-  const levelChips = document.querySelectorAll(".level-chip");
-  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-
-  levelChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const level = chip.dataset.level;
-
-      // PRO alert kapag advanced/expert at free user
-      if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
-        openProModal();
+      if (!data) {
+        lessonIntroEl.textContent = "Lesson content for this topic will be added soon.";
+        lessonBodyEl.innerHTML = "";
+        tipCardEl.innerHTML = "";
+        tipCardEl.style.display = "none";
         return;
       }
 
-      currentLevel = level;
-      levelChips.forEach((c) => c.classList.toggle("active", c === chip));
+      lessonTitleEl.textContent = data.title || label;
+      lessonIntroEl.textContent = data.intro || "";
+      lessonBodyEl.innerHTML = data.fullHtml || "";
 
-      const label =
-        chip.dataset.levelLabel ||
-        chip.textContent.replace("🔒", "").trim();
-      quizLevelLabelEl.textContent = label;
-
-      if (currentMode === "practice") {
-        startQuiz();
+      if (Array.isArray(data.quickTips) && data.quickTips.length > 0) {
+        const tipsHtml = [
+          "<h3>Quick Exam Tips</h3>",
+          "<ul>",
+          ...data.quickTips.map((tip) => `<li>${tip}</li>`),
+          "</ul>"
+        ].join("");
+        tipCardEl.innerHTML = tipsHtml;
+        tipCardEl.style.display = "block";
+      } else {
+        tipCardEl.innerHTML = "";
+        tipCardEl.style.display = "none";
       }
-    });
-  });
-}
-
-// Build quiz questions based on topic + level + items
-function buildQuizQuestions() {
-  const quizCardEl = document.getElementById("quizCard");
-  const resultPanelEl = document.getElementById("resultPanel");
-  const questionTextEl = document.getElementById("questionText");
-  const optionsListEl = document.getElementById("optionsList");
-  const feedbackEl = document.getElementById("feedback");
-  const progressTextEl = document.getElementById("progressText");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  const bank =
-    window.VERBAL_QUESTION_BANK &&
-    window.VERBAL_QUESTION_BANK[currentTopicId];
-
-  if (!bank || !bank[currentLevel] || !bank[currentLevel].length) {
-    quizQuestions = [];
-    userAnswers = [];
-
-    questionTextEl.textContent =
-      "Question bank for this topic and level is still under construction. Please try a different level or topic.";
-    optionsListEl.innerHTML = "";
-    feedbackEl.textContent = "";
-    feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
-    progressTextEl.textContent = "";
-
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
-
-    quizCardEl.style.display = "block";
-    resultPanelEl.classList.add("hidden");
-    return;
-  }
-
-  const available = bank[currentLevel];
-  const count = Math.min(currentItemsCount, available.length);
-
-  quizQuestions = available.slice(0, count);
-  currentQuestionIndex = 0;
-  userAnswers = new Array(quizQuestions.length).fill(null);
-
-  prevBtn.disabled = true;
-  nextBtn.disabled = false;
-
-  quizCardEl.style.display = "block";
-  resultPanelEl.classList.add("hidden");
-
-  renderCurrentQuestion();
-  updateProgressText();
-  updateNavButtons();
-}
-
-// Render current question + options
-function renderCurrentQuestion() {
-  const questionTextEl = document.getElementById("questionText");
-  const optionsListEl = document.getElementById("optionsList");
-  const feedbackEl = document.getElementById("feedback");
-
-  const q = quizQuestions[currentQuestionIndex];
-  if (!q) return;
-
-  questionTextEl.innerHTML = q.question;
-  optionsListEl.innerHTML = "";
-  feedbackEl.textContent = "";
-  feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
-
-  q.options.forEach((opt, index) => {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "option-button";
-    btn.textContent = opt;
-    btn.addEventListener("click", () => handleOptionClick(index));
-    li.appendChild(btn);
-    optionsListEl.appendChild(li);
-  });
-
-  // Kung may nauna nang sagot (pag nag-Previous ka), ibalik ang state
-  const existing = userAnswers[currentQuestionIndex];
-  if (existing) {
-    const buttons = optionsListEl.querySelectorAll(".option-button");
-    buttons.forEach((btn, idx) => {
-      btn.classList.remove("is-correct", "is-incorrect");
-      const optText = q.options[idx];
-
-      if (idx === existing.selectedIndex) {
-        btn.classList.add(
-          existing.isCorrect ? "is-correct" : "is-incorrect"
-        );
-      }
-      if (!existing.isCorrect && optText === q.answer) {
-        btn.classList.add("is-correct");
-      }
-    });
-
-    feedbackEl.textContent =
-      (existing.isCorrect ? "Correct! " : "Incorrect. ") +
-      (q.explanation || "");
-    feedbackEl.classList.toggle("feedback--correct", existing.isCorrect);
-    feedbackEl.classList.toggle("feedback--incorrect", !existing.isCorrect);
-  }
-}
-
-// Option click = auto check (walang Check Answer button)
-function handleOptionClick(index) {
-  const feedbackEl = document.getElementById("feedback");
-  const q = quizQuestions[currentQuestionIndex];
-  const selectedText = q.options[index];
-  const isCorrect = selectedText === q.answer;
-
-  userAnswers[currentQuestionIndex] = {
-    selectedIndex: index,
-    isCorrect: isCorrect,
-  };
-
-  const buttons = document.querySelectorAll(".option-button");
-  buttons.forEach((btn, idx) => {
-    btn.classList.remove("is-correct", "is-incorrect");
-    const optText = q.options[idx];
-
-    if (idx === index) {
-      btn.classList.add(isCorrect ? "is-correct" : "is-incorrect");
     }
-    if (!isCorrect && optText === q.answer) {
-      btn.classList.add("is-correct");
+
+    // ==========================================
+    // 6. PRACTICE MODE – QUIZ ENGINE
+    // ==========================================
+    function resetQuizState() {
+      quizQuestions = [];
+      userAnswers = [];
+      currentIndex = 0;
+      quizCompleted = false;
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+      resultPanelEl.classList.add("hidden");
+      mistakeListEl.innerHTML = "";
     }
-  });
 
-  feedbackEl.textContent =
-    (isCorrect ? "Correct! " : "Incorrect. ") + (q.explanation || "");
-  feedbackEl.classList.toggle("feedback--correct", isCorrect);
-  feedbackEl.classList.toggle("feedback--incorrect", !isCorrect);
-}
+    function initQuiz() {
+      resetQuizState();
 
-// Progress text
-function updateProgressText() {
-  const progressTextEl = document.getElementById("progressText");
-  if (!quizQuestions.length) {
-    progressTextEl.textContent = "";
-    return;
-  }
-  progressTextEl.textContent = `Question ${
-    currentQuestionIndex + 1
-  } of ${quizQuestions.length}`;
-}
+      const topicBank = getQuestionBankForTopic(currentTopicId);
+      if (!topicBank || !topicBank[currentLevel] || !Array.isArray(topicBank[currentLevel]) || topicBank[currentLevel].length === 0) {
+        questionTextEl.textContent = "No questions available yet for this topic and level.";
+        optionsListEl.innerHTML = "";
+        progressTextEl.textContent = "";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
 
-// Next/Prev button states
-function updateNavButtons() {
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
+      const allQuestions = topicBank[currentLevel];
+      const total = Math.min(itemsToUse, allQuestions.length);
+      quizQuestions = allQuestions.slice(0, total);
+      userAnswers = new Array(quizQuestions.length).fill(null);
 
-  prevBtn.disabled = currentQuestionIndex === 0;
+      prevBtn.disabled = false;
+      nextBtn.disabled = false;
 
-  if (!quizQuestions.length) {
-    nextBtn.disabled = true;
-    nextBtn.textContent = "Next";
-    return;
-  }
+      renderQuestion();
+    }
 
-  nextBtn.disabled = false;
-  nextBtn.textContent =
-    currentQuestionIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
-}
+    function setFeedback(answerObj) {
+      if (!answerObj) return;
+      feedbackEl.className = "feedback";
+      if (answerObj.isCorrect) {
+        feedbackEl.classList.add("feedback--correct");
+        feedbackEl.textContent = "Correct!";
+      } else {
+        feedbackEl.classList.add("feedback--incorrect");
+        const explanationText = answerObj.question.explanation
+          ? `Correct answer: ${answerObj.correctAnswer}. ${answerObj.question.explanation}`
+          : `Correct answer: ${answerObj.correctAnswer}.`;
+        feedbackEl.textContent = explanationText;
+      }
+    }
 
-// Finish quiz + result panel
-function finishQuiz() {
-  const quizCardEl = document.getElementById("quizCard");
-  const resultPanelEl = document.getElementById("resultPanel");
-  const resultScoreMainEl = document.getElementById("resultScoreMain");
-  const resultScoreTextEl = document.getElementById("resultScoreText");
-  const mistakeListEl = document.getElementById("mistakeList");
+    function renderQuestion() {
+      if (!quizQuestions || quizQuestions.length === 0) return;
 
-  let correctCount = 0;
-  quizQuestions.forEach((q, idx) => {
-    const ans = userAnswers[idx];
-    if (ans && ans.isCorrect) correctCount++;
-  });
+      const q = quizQuestions[currentIndex];
+      quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
+      quizLevelLabelEl.textContent = capitalize(currentLevel);
 
-  const total = quizQuestions.length || 0;
-  const percent = total ? Math.round((correctCount / total) * 100) : 0;
+      // Some questions might contain simple HTML/newlines; use textContent to stay safe
+      questionTextEl.textContent = `Q${currentIndex + 1}. ${q.question}`;
 
-  resultScoreMainEl.textContent = `${correctCount} / ${total}`;
-  resultScoreTextEl.textContent = `Score: ${percent}%`;
+      optionsListEl.innerHTML = "";
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
 
-  // Build mistake list
-  mistakeListEl.innerHTML = "";
-  quizQuestions.forEach((q, idx) => {
-    const ans = userAnswers[idx];
-    if (ans && ans.isCorrect) return;
+      const saved = userAnswers[currentIndex];
 
-    const item = document.createElement("div");
-    item.className = "mistake-item";
+      if (Array.isArray(q.options)) {
+        q.options.forEach((opt) => {
+          const li = document.createElement("li");
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "option-button";
+          btn.textContent = opt;
 
-    const userAnswerText =
-      ans && typeof ans.selectedIndex === "number"
-        ? q.options[ans.selectedIndex]
-        : "No answer";
+          btn.addEventListener("click", () => handleOptionClick(opt));
 
-    item.innerHTML = `
-      <p class="mistake-q-title">Question ${idx + 1}</p>
-      <p class="mistake-q-text">${q.question}</p>
-      <div class="mistake-answers">
-        <p class="wrong"><span class="label">Your answer:</span> ${userAnswerText}</p>
-        <p class="correct"><span class="label">Correct answer:</span> ${q.answer}</p>
-        ${
-          q.explanation
-            ? `<p class="explanation"><span class="label">Explanation:</span> ${q.explanation}</p>`
-            : ""
+          if (saved) {
+            if (opt === q.answer) {
+              btn.classList.add("is-correct");
+            }
+            if (opt === saved.selected && !saved.isCorrect) {
+              btn.classList.add("is-incorrect");
+            }
+          }
+
+          li.appendChild(btn);
+          optionsListEl.appendChild(li);
+        });
+      }
+
+      if (saved) {
+        setFeedback(saved);
+      }
+
+      prevBtn.disabled = currentIndex === 0;
+      progressTextEl.textContent = `Question ${currentIndex + 1} of ${quizQuestions.length}`;
+      nextBtn.textContent = currentIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
+    }
+
+    function handleOptionClick(selected) {
+      if (!quizQuestions || quizQuestions.length === 0) return;
+
+      const q = quizQuestions[currentIndex];
+      const correct = q.answer;
+      const isCorrect = selected === correct;
+
+      userAnswers[currentIndex] = {
+        selected,
+        isCorrect,
+        correctAnswer: correct,
+        question: q
+      };
+
+      // Update option button styles
+      const buttons = optionsListEl.querySelectorAll(".option-button");
+      buttons.forEach((btn) => {
+        const value = btn.textContent;
+        btn.classList.remove("is-correct", "is-incorrect");
+        if (value === correct) {
+          btn.classList.add("is-correct");
+        } else if (value === selected) {
+          btn.classList.add("is-incorrect");
         }
-      </div>
-    `;
-    mistakeListEl.appendChild(item);
-  });
+      });
 
-  quizCardEl.style.display = "none";
-  resultPanelEl.classList.remove("hidden");
-}
-
-// Result buttons (Retake / Home)
-function setupResultButtons() {
-  const resultRetryBtn = document.getElementById("resultRetryBtn");
-  const resultHomeBtn = document.getElementById("resultHomeBtn");
-
-  resultRetryBtn.addEventListener("click", () => {
-    const quizCardEl = document.getElementById("quizCard");
-    const resultPanelEl = document.getElementById("resultPanel");
-    resultPanelEl.classList.add("hidden");
-    quizCardEl.style.display = "block";
-    startQuiz();
-  });
-
-  resultHomeBtn.addEventListener("click", () => {
-    // Back to main index
-    window.location.href = "index.html";
-  });
-}
-
-// Start quiz for current topic/level/items
-function startQuiz() {
-  const quizTopicTitleEl = document.getElementById("quizTopicTitle");
-  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-
-  quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
-
-  const currentLevelChip = document.querySelector(
-    `.level-chip[data-level="${currentLevel}"]`
-  );
-  if (currentLevelChip) {
-    const label =
-      currentLevelChip.dataset.levelLabel ||
-      currentLevelChip.textContent.replace("🔒", "").trim();
-    quizLevelLabelEl.textContent = label;
-  } else {
-    quizLevelLabelEl.textContent =
-      currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
-  }
-
-  buildQuizQuestions();
-}
-
-// Prev/Next button handlers
-function setupNavButtonsHandlers() {
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  prevBtn.addEventListener("click", () => {
-    if (currentQuestionIndex > 0) {
-      currentQuestionIndex--;
-      renderCurrentQuestion();
-      updateProgressText();
-      updateNavButtons();
+      setFeedback(userAnswers[currentIndex]);
     }
-  });
 
-  nextBtn.addEventListener("click", () => {
-    if (!quizQuestions.length) return;
+    function finishQuiz() {
+      quizCompleted = true;
 
-    if (currentQuestionIndex < quizQuestions.length - 1) {
-      currentQuestionIndex++;
-      renderCurrentQuestion();
-      updateProgressText();
-      updateNavButtons();
-    } else {
-      // Last question → finish quiz
-      finishQuiz();
+      const total = quizQuestions.length;
+      const correctCount = userAnswers.filter((a) => a && a.isCorrect).length;
+      const percent = total ? Math.round((correctCount / total) * 100) : 0;
+
+      resultScoreMainEl.textContent = `${correctCount} / ${total}`;
+      resultScoreTextEl.textContent = `Score: ${percent}%`;
+
+      mistakeListEl.innerHTML = "";
+      userAnswers.forEach((ans, index) => {
+        if (!ans || ans.isCorrect) return;
+
+        const item = document.createElement("div");
+        item.className = "mistake-item";
+
+        const title = document.createElement("p");
+        title.className = "mistake-q-title";
+        title.textContent = `Question ${index + 1}`;
+        item.appendChild(title);
+
+        const text = document.createElement("p");
+        text.className = "mistake-q-text";
+        text.textContent = ans.question.question;
+        item.appendChild(text);
+
+        const meta = document.createElement("div");
+        meta.className = "mistake-answers";
+
+        const yourAns = document.createElement("p");
+        yourAns.innerHTML = `<span class="label">Your answer:</span> <span class="wrong">${ans.selected ?? "(no answer)"}</span>`;
+        meta.appendChild(yourAns);
+
+        const correctAns = document.createElement("p");
+        correctAns.innerHTML = `<span class="label">Correct:</span> <span class="correct">${ans.correctAnswer}</span>`;
+        meta.appendChild(correctAns);
+
+        if (ans.question.explanation) {
+          const exp = document.createElement("p");
+          exp.className = "explanation";
+          exp.textContent = ans.question.explanation;
+          meta.appendChild(exp);
+        }
+
+        item.appendChild(meta);
+        mistakeListEl.appendChild(item);
+      });
+
+      resultPanelEl.classList.remove("hidden");
+      resultPanelEl.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  });
-}
 
-// ==========================================
-// PRO MODAL HELPERS
-// ==========================================
-function openProModal() {
-  const modal = document.getElementById("pro-modal");
-  if (!modal) return;
-  modal.style.display = "flex";
-}
+    // ==========================================
+    // 7. UI HANDLERS (MODE, TOPIC, LEVEL, ITEMS)
+    // ==========================================
+    function renderTopics() {
+      topicListEl.innerHTML = "";
+      VERBAL_TOPICS.forEach((topic) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "topic-pill";
+        btn.dataset.topicId = topic.id;
 
-function closeProModal() {
-  const modal = document.getElementById("pro-modal");
-  if (!modal) return;
-  modal.style.display = "none";
-}
+        const labelSpan = document.createElement("span");
+        labelSpan.className = "label";
+        labelSpan.textContent = topic.label;
+        btn.appendChild(labelSpan);
 
-function setupProModal() {
-  const modal = document.getElementById("pro-modal");
-  if (!modal) return;
+        const tagSpan = document.createElement("span");
+        tagSpan.className = "tag";
+        tagSpan.textContent = topic.tag;
+        btn.appendChild(tagSpan);
 
-  const closeBtn = document.getElementById("pro-modal-close");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeProModal);
-  }
+        if (topic.id === currentTopicId) {
+          btn.classList.add("active");
+        }
 
-  // I-set / i-sync ang Gumroad link sa anchor
-  const gumroadLink = document.getElementById("pro-gumroad-link");
-  if (gumroadLink && GUMROAD_URL) {
-    gumroadLink.href = GUMROAD_URL;
-  }
+        btn.addEventListener("click", () => {
+          if (topic.id === currentTopicId) return;
+          currentTopicId = topic.id;
 
-  // Click outside card to close
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeProModal();
+          document.querySelectorAll(".topic-pill").forEach((el) => {
+            el.classList.toggle("active", el === btn);
+          });
+
+          resultPanelEl.classList.add("hidden");
+          currentIndex = 0;
+          userAnswers = [];
+          quizCompleted = false;
+
+          if (currentMode === "study") {
+            loadLessonForTopic(currentTopicId);
+          } else {
+            initQuiz();
+          }
+        });
+
+        topicListEl.appendChild(btn);
+      });
     }
-  });
-}
 
-// ==========================================
-// INIT
-// ==========================================
-function initVerbalPage() {
-  // Badge text (optional)
-  const badgeEl = document.querySelector(".badge");
-  if (badgeEl) {
-    badgeEl.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
-  }
+    // Mode tabs
+    modeTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const mode = tab.dataset.mode;
+        if (!mode || mode === currentMode) return;
+        currentMode = mode;
+        setActiveModeTab();
+        if (currentMode === "study") {
+          studyView.classList.add("view--active");
+          practiceView.classList.remove("view--active");
+          loadLessonForTopic(currentTopicId);
+        } else {
+          practiceView.classList.add("view--active");
+          studyView.classList.remove("view--active");
+          initQuiz();
+        }
+      });
+    });
 
-  renderTopics();
-  loadLesson(currentTopicId);
+    // Level chips (Beginner / Intermediate / Advanced / Expert)
+    levelChips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const level = chip.dataset.level;
+        if (!level || level === currentLevel) return;
 
-  setupModeTabs();
-  setupItemChips();
-  markLockedLevels();
-  setupLevelChips();
-  setupNavButtonsHandlers();
-  setupResultButtons();
-  setupProModal(); // init ng PRO modal
+        if (!IS_PRO_USER && LOCKED_LEVELS.includes(level)) {
+          alert("This level is available for PRO users only.");
+          return;
+        }
 
-  // Default: Study Mode na loaded na; Practice will build quiz on first click
-}
+        currentLevel = level;
+        levelChips.forEach((c) => {
+          c.classList.toggle("active", c === chip);
+        });
+        quizLevelLabelEl.textContent = capitalize(level);
+        initQuiz();
+      });
+    });
 
-document.addEventListener("DOMContentLoaded", initVerbalPage);
-</script>
+    // Items chips (10 / 20 / 30 / 40 / 50)
+    itemsChips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const count = Number(chip.dataset.count || "10");
+        if (!count || count === itemsToUse) return;
+        itemsToUse = count;
+        itemsChips.forEach((c) => {
+          c.classList.toggle("active", c === chip);
+        });
+        initQuiz();
+      });
+    });
 
+    // Prev / Next buttons
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (!quizQuestions || quizQuestions.length === 0) return;
+
+      if (currentIndex < quizQuestions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    });
+
+    // Result actions
+    resultRetryBtn.addEventListener("click", () => {
+      initQuiz();
+      resultPanelEl.classList.add("hidden");
+    });
+
+    resultHomeBtn.addEventListener("click", () => {
+      currentMode = "study";
+      setActiveModeTab();
+      studyView.classList.add("view--active");
+      practiceView.classList.remove("view--active");
+      resultPanelEl.classList.add("hidden");
+      loadLessonForTopic(currentTopicId);
+    });
+
+    // ==========================================
+    // 8. INIT
+    // ==========================================
+    function initPage() {
+      updateBadge();
+      renderTopics();
+      setActiveModeTab();
+      // Default: Study mode first topic
+      loadLessonForTopic(currentTopicId);
+    }
+
+    initPage();
+  </script>
 </body>
 </html>
