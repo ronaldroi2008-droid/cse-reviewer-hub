@@ -567,6 +567,155 @@
       font-weight: 600;
     }
 
+    /* PRO MODAL STYLES */
+    .pro-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .pro-modal-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 20px;
+      border: 1px solid #334155;
+      max-width: 500px;
+      width: 100%;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    }
+
+    .pro-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 24px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .pro-modal-close:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
+    }
+
+    .pro-modal-header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .pro-modal-header h2 {
+      margin: 0 0 8px;
+      color: #f8fafc;
+      font-size: 1.5rem;
+    }
+
+    .pro-modal-header p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .pro-features {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 24px;
+      border: 1px solid #334155;
+    }
+
+    .pro-features h3 {
+      margin: 0 0 12px;
+      color: #e2e8f0;
+      font-size: 1.1rem;
+    }
+
+    .pro-features ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .pro-features li {
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .pro-features li:before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .pro-cta {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .pro-upgrade-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #2563eb, #4f46e5);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .pro-upgrade-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .pro-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .pro-already {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #334155;
+    }
+
+    .pro-already a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .pro-already a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 900px) {
       .layout {
         display: flex;
@@ -596,6 +745,10 @@
       .app-title {
         font-size: 1.4rem;
       }
+      
+      .pro-modal-card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -609,7 +762,7 @@
           <span id="subtitleTopic">Whole Numbers &amp; Operations</span>
         </p>
       </div>
-      <span class="badge"> PRO Access</span>
+      <span class="badge" id="badgeEl"></span>
     </header>
 
     <a href="index.html" class="back-link">← Back to Home</a>
@@ -702,6 +855,43 @@
     </main>
   </div>
 
+  <!-- PRO MODAL -->
+  <div id="pro-modal" class="pro-modal" style="display: none;">
+    <div class="pro-modal-card">
+      <button id="pro-modal-close" class="pro-modal-close">×</button>
+      
+      <div class="pro-modal-header">
+        <h2>🔒 Unlock Advanced Content</h2>
+        <p>Access expert-level questions and advanced topics with PRO</p>
+      </div>
+      
+      <div class="pro-modal-content">
+        <div class="pro-features">
+          <h3>🚀 What you get with PRO:</h3>
+          <ul>
+            <li><strong>Advanced & Expert Level</strong> questions</li>
+            <li><strong>Full access</strong> to all numerical ability topics</li>
+            <li><strong>Unlimited practice</strong> with detailed explanations</li>
+            <li><strong>Priority updates</strong> and new content</li>
+            <li><strong>Ad-free experience</strong></li>
+          </ul>
+        </div>
+        
+        <div class="pro-cta">
+          <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax" 
+             target="_blank" class="pro-upgrade-btn">
+            🚀 Upgrade to PRO Now
+          </a>
+          <p class="pro-note">One-time payment • Lifetime access</p>
+        </div>
+        
+        <div class="pro-already">
+          <p>Already purchased? <a href="#" id="pro-refresh-link">Refresh page</a> after payment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- External numerical question files -->
   <script src="questions/numerical_sequences_series.js"></script>
   <script src="questions/numerical_profit_loss_discount.js"></script>
@@ -726,13 +916,13 @@
   <script src="questions/numerical_algebra_linear.js"></script>
   <script src="questions/numerical_odd_even_consecutive.js"></script>
 
-    <script>
-    // ==========================================
-    // 0. PRO CONFIG
-    // ==========================================
-    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-    // Kung hindi PRO → lock Advanced at Expert; kung PRO → unlock lahat
-    const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
+<script>
+// ==========================================
+// 0. PRO CONFIG
+// ==========================================
+const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+const LOCKED_LEVELS = ["advanced", "expert"];
+const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
     // ==========================================
     // 1. TOPIC + LESSON DATA (NUMERICAL)
@@ -1636,576 +1826,520 @@
     };
 
     // ==========================================
-    // 2. QUESTION BANK – from external files
-    // ==========================================
-    window.NUMERICAL_QUESTION_BANK = window.NUMERICAL_QUESTION_BANK || {};
-    const QUESTION_BANK = window.NUMERICAL_QUESTION_BANK;
+// 2. STATE VARIABLES
+// ==========================================
+let currentMode = "study";
+let currentTopicId = "";
+let currentLevel = "beginner";
+let currentItemsCount = 10;
 
-    // 👉 helper: shuffle array para random ang posisyon ng options
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
+let quizQuestions = [];
+let currentQuestionIndex = 0;
+let userAnswers = [];
+
+// ==========================================
+// 3. HELPERS
+// ==========================================
+function getTopicLabel(id) {
+  const t = NUMERICAL_TOPICS.find((x) => x.id === id);
+  return t ? t.label : "Numerical Topic";
+}
+
+function renderTopics() {
+  const topicListEl = document.getElementById("topicList");
+  const subtitleTopicEl = document.getElementById("subtitleTopic");
+  topicListEl.innerHTML = "";
+
+  NUMERICAL_TOPICS.forEach((topic, index) => {
+    if (!currentTopicId && index === 0) {
+      currentTopicId = topic.id;
     }
 
-    // ==========================================
-    // 3. STATE + DOM REFERENCES
-    // ==========================================
-    let currentMode = "study";
-    let currentTopicId = NUMERICAL_TOPICS[0].id;
-    let currentLevel = "beginner";
-    let currentIndex = 0;
-    let currentItemCount = 10;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "topic-pill";
+    btn.dataset.topicId = topic.id;
+    btn.innerHTML = `
+      <span class="label">${topic.label}</span>
+      <span class="tag">${topic.tag}</span>
+    `;
 
-    // 👉 dito natin i-store ang naka-shuffle na questions
-    let currentQuestions = [];
-
-    let userAnswers = [];
-    let quizFinished = false;
-
-    const modeTabs        = document.querySelectorAll(".mode-tab");
-    const topicListEl     = document.getElementById("topicList");
-    const subtitleTopicEl = document.getElementById("subtitleTopic");
-
-    const studyView    = document.getElementById("studyView");
-    const practiceView = document.getElementById("practiceView");
-
-    const lessonTitleEl = document.getElementById("lessonTitle");
-    const lessonIntroEl = document.getElementById("lessonIntro");
-    const lessonBodyEl  = document.getElementById("lessonBody");
-    const tipCardEl     = document.getElementById("tipCard");
-
-    const quizHeaderEl     = document.getElementById("quizHeader");
-    const quizCardEl       = document.getElementById("quizCard");
-    const quizTopicTitleEl = document.getElementById("quizTopicTitle");
-    const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-    const questionTextEl   = document.getElementById("questionText");
-    const optionsListEl    = document.getElementById("optionsList");
-    const feedbackEl       = document.getElementById("feedback");
-    const prevBtn          = document.getElementById("prevBtn");
-    const nextBtn          = document.getElementById("nextBtn");
-    const progressTextEl   = document.getElementById("progressText");
-    const levelChips       = document.querySelectorAll(".level-chip");
-    const itemChips        = document.querySelectorAll(".items-chip");
-
-    const resultPanelEl    = document.getElementById("resultPanel");
-    const resultScoreMain  = document.getElementById("resultScoreMain");
-    const resultScoreText  = document.getElementById("resultScoreText");
-    const mistakeListEl    = document.getElementById("mistakeList");
-    const resultHomeBtn    = document.getElementById("resultHomeBtn");
-    const resultRetryBtn   = document.getElementById("resultRetryBtn");
-
-    // ==========================================
-    // 4. HELPERS
-    // ==========================================
-    function capitalize(text) {
-      if (!text) return "";
-      return text.charAt(0).toUpperCase() + text.slice(1);
+    if (topic.id === currentTopicId) {
+      btn.classList.add("active");
+      subtitleTopicEl.textContent = topic.label;
     }
 
-    function buildTopicsList() {
-      topicListEl.innerHTML = "";
-      NUMERICAL_TOPICS.forEach((topic) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "topic-pill";
-        btn.dataset.topicId = topic.id;
+    btn.addEventListener("click", () => {
+      if (currentTopicId === topic.id) return;
+      currentTopicId = topic.id;
 
-        const labelSpan = document.createElement("span");
-        labelSpan.className = "label";
-        labelSpan.textContent = topic.label;
-
-        const tagSpan = document.createElement("span");
-        tagSpan.className = "tag";
-        tagSpan.textContent = topic.tag || "Topic";
-
-        btn.appendChild(labelSpan);
-        btn.appendChild(tagSpan);
-
-        btn.addEventListener("click", function () {
-          selectTopic(topic.id);
-        });
-
-        topicListEl.appendChild(btn);
-      });
-    }
-
-    function updateActiveTopicPill() {
-      const pills = topicListEl.querySelectorAll(".topic-pill");
-      pills.forEach((pill) => {
-        const isActive = pill.dataset.topicId === currentTopicId;
-        pill.classList.toggle("active", isActive);
+      document.querySelectorAll(".topic-pill").forEach((p) => {
+        p.classList.toggle("active", p.dataset.topicId === topic.id);
       });
 
-      const topic = NUMERICAL_TOPICS.find((t) => t.id === currentTopicId);
-      if (topic && subtitleTopicEl) {
-        subtitleTopicEl.textContent = topic.label;
-      }
-    }
+      subtitleTopicEl.textContent = topic.label;
 
-    function renderTips(tips) {
-      if (!tipCardEl) return;
-      tipCardEl.innerHTML = "";
-
-      const heading = document.createElement("h3");
-      heading.textContent = "Quick exam tips";
-      tipCardEl.appendChild(heading);
-
-      const list = document.createElement("ul");
-      (tips || []).forEach((tip) => {
-        const li = document.createElement("li");
-        li.textContent = tip;
-        list.appendChild(li);
-      });
-
-      tipCardEl.appendChild(list);
-    }
-
-    function renderLesson() {
-      const lesson = LESSONS[currentTopicId];
-
-      const fallbackSection = {
-        heading: "Overview",
-        bullets: [
-          "Review the basic definition and key properties of this topic.",
-          "Study at least one fully worked example step by step.",
-          "Practice moving from word problems to mathematical expressions."
-        ]
-      };
-
-      const fallbackTips = [
-        "Underline what the question is really asking before computing.",
-        "Write your steps clearly so you can see and fix mistakes.",
-        "Do a quick estimate to check if your final answer is reasonable."
-      ];
-
-      if (!lesson) {
-        lessonTitleEl.textContent = "Lesson coming soon";
-        lessonIntroEl.textContent =
-          "We are still building the full lesson notes for this topic. For now, review your basic rules and try the Practice Quiz.";
-        lessonBodyEl.innerHTML = "";
-
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = fallbackSection.heading;
-        sectionEl.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        fallbackSection.bullets.forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-        sectionEl.appendChild(ul);
-
-        lessonBodyEl.appendChild(sectionEl);
-        renderTips(fallbackTips);
-        return;
-      }
-
-      lessonTitleEl.textContent = lesson.title;
-      lessonIntroEl.textContent = lesson.intro;
-      lessonBodyEl.innerHTML = "";
-
-      (lesson.sections || []).forEach((section) => {
-        const sectionEl = document.createElement("section");
-        const h3 = document.createElement("h3");
-        h3.textContent = section.heading;
-        sectionEl.appendChild(h3);
-
-        const ul = document.createElement("ul");
-        (section.bullets || []).forEach((b) => {
-          const li = document.createElement("li");
-          li.textContent = b;
-          ul.appendChild(li);
-        });
-
-        sectionEl.appendChild(ul);
-        lessonBodyEl.appendChild(sectionEl);
-      });
-
-      renderTips(lesson.tips || fallbackTips);
-    }
-
-    // 👉 Build / shuffle questions for current topic+level+itemCount
-    function buildCurrentQuestions() {
-      const topicQuestions = QUESTION_BANK[currentTopicId] || {};
-      const levelQuestions = topicQuestions[currentLevel] || [];
-      const base = levelQuestions.slice(0, currentItemCount);
-
-      currentQuestions = base.map((q) => {
-        // clone para di ma-mutate ang original bank
-        const cloned = { ...q };
-        cloned.options = Array.isArray(q.options) ? q.options.slice() : [];
-        shuffleArray(cloned.options); // randomize options para iba-ibang letter ang tama
-        return cloned;
-      });
-    }
-
-    function getQuestionsForCurrent() {
-      if (!currentQuestions || !currentQuestions.length) {
-        buildCurrentQuestions();
-      }
-      return currentQuestions;
-    }
-
-    function resetQuizState() {
-      buildCurrentQuestions();
-      const questions = getQuestionsForCurrent();
-
-      userAnswers = questions.map(() => null);
-      currentIndex = 0;
-      quizFinished = false;
-
-      if (feedbackEl) {
-        feedbackEl.textContent = "";
-        feedbackEl.className = "feedback";
-      }
-      if (progressTextEl) {
-        progressTextEl.textContent = "";
-      }
-      if (resultPanelEl) {
-        resultPanelEl.classList.add("hidden");
-      }
-      if (quizHeaderEl) {
-        quizHeaderEl.classList.remove("hidden");
-      }
-      if (quizCardEl) {
-        quizCardEl.classList.remove("hidden");
-      }
-    }
-
-    function renderQuiz() {
-      const topic = NUMERICAL_TOPICS.find((t) => t.id === currentTopicId);
-      quizTopicTitleEl.textContent = topic ? topic.label : "Numerical Ability";
-      quizLevelLabelEl.textContent = capitalize(currentLevel);
-
-      const questions = getQuestionsForCurrent();
-
-      if (userAnswers.length !== questions.length) {
-        userAnswers = questions.map(() => null);
-      }
-
-      feedbackEl.textContent = "";
-      feedbackEl.className = "feedback";
-
-      if (!questions.length) {
-        questionTextEl.textContent =
-          "No practice questions are available yet for this topic and level. They will be added soon.";
-        optionsListEl.innerHTML = "";
-        progressTextEl.textContent = "0 / 0";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-        return;
-      }
-
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= questions.length) currentIndex = questions.length - 1;
-
-      const currentQ = questions[currentIndex];
-      questionTextEl.textContent = currentQ.question;
-      optionsListEl.innerHTML = "";
-
-      currentQ.options.forEach((option) => {
-        const li = document.createElement("li");
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "option-button";
-        btn.textContent = option;
-
-        btn.addEventListener("click", function () {
-          handleAnswer(option);
-        });
-
-        li.appendChild(btn);
-        optionsListEl.appendChild(li);
-      });
-
-      const stored = userAnswers[currentIndex];
-      if (stored && stored.selected != null) {
-        const buttons = optionsListEl.querySelectorAll(".option-button");
-        buttons.forEach((btn) => {
-          if (btn.textContent === currentQ.answer) {
-            btn.classList.add("is-correct");
-          }
-          if (btn.textContent === stored.selected && !stored.correct) {
-            btn.classList.add("is-incorrect");
-          }
-        });
-
-        feedbackEl.textContent =
-          (stored.correct ? "Correct! " : "Not quite. ") +
-          (currentQ.explanation || "");
-        feedbackEl.className =
-          "feedback " + (stored.correct ? "feedback--correct" : "feedback--incorrect");
-      }
-
-      progressTextEl.textContent =
-        "Question " + (currentIndex + 1) + " of " + questions.length;
-
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = false;
-      nextBtn.textContent =
-        currentIndex === questions.length - 1 ? "Finish Quiz" : "Next";
-    }
-
-    function finishQuiz() {
-      const questions = getQuestionsForCurrent();
-      if (!questions.length) return;
-
-      let correct = 0;
-      let answered = 0;
-
-      userAnswers.forEach((ans) => {
-        if (ans && ans.selected != null) {
-          answered++;
-          if (ans.correct) correct++;
-        }
-      });
-
-      const total = questions.length;
-      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
-
-      quizFinished = true;
-
-      if (resultScoreMain) {
-        resultScoreMain.textContent = correct + " / " + total;
-      }
-      if (resultScoreText) {
-        resultScoreText.textContent = "Score: " + percent + "%";
-      }
-
-      if (mistakeListEl) {
-        mistakeListEl.innerHTML = "";
-
-        questions.forEach((q, index) => {
-          const ans = userAnswers[index];
-          const selected = ans ? ans.selected : null;
-          const isCorrect = ans ? ans.correct : false;
-
-          if (isCorrect) return;
-
-          const item = document.createElement("div");
-          item.className = "mistake-item";
-
-          const title = document.createElement("p");
-          title.className = "mistake-q-title";
-          title.textContent = "Question " + (index + 1);
-          item.appendChild(title);
-
-          const qText = document.createElement("p");
-          qText.className = "mistake-q-text";
-          qText.textContent = q.question;
-          item.appendChild(qText);
-
-          const answersWrap = document.createElement("div");
-          answersWrap.className = "mistake-answers";
-
-          const userP = document.createElement("p");
-          userP.classList.add("wrong");
-          userP.innerHTML =
-            "<span class='label'>✗ Your answer:</span> " +
-            (selected !== null && selected !== undefined
-              ? selected
-              : "<em>Not answered</em>");
-          answersWrap.appendChild(userP);
-
-          const correctP = document.createElement("p");
-          correctP.classList.add("correct");
-          correctP.innerHTML =
-            "<span class='label'>✓ Correct answer:</span> " + q.answer;
-          answersWrap.appendChild(correctP);
-
-          const explP = document.createElement("p");
-          explP.classList.add("explanation");
-          explP.innerHTML =
-            "<span class='label'>👉 Why:</span> " +
-            (q.explanation && q.explanation.trim().length
-              ? q.explanation
-              : "No explanation is available for this item.");
-          answersWrap.appendChild(explP);
-
-          item.appendChild(answersWrap);
-          mistakeListEl.appendChild(item);
-        });
-
-        if (!mistakeListEl.children.length) {
-          const p = document.createElement("p");
-          p.textContent = "Perfect score! No mistakes to review.";
-          mistakeListEl.appendChild(p);
-        }
-      }
-
-      if (quizHeaderEl) quizHeaderEl.classList.add("hidden");
-      if (quizCardEl) quizCardEl.classList.add("hidden");
-      if (resultPanelEl) resultPanelEl.classList.remove("hidden");
-    }
-
-    function handleAnswer(selectedOption) {
-      const questions = getQuestionsForCurrent();
-      if (!questions.length) return;
-      if (quizFinished) return;
-
-      const currentQ = questions[currentIndex];
-      const isCorrect = selectedOption === currentQ.answer;
-
-      userAnswers[currentIndex] = {
-        selected: selectedOption,
-        correct: isCorrect
-      };
-
-      const buttons = optionsListEl.querySelectorAll(".option-button");
-      buttons.forEach((btn) => {
-        btn.classList.remove("is-correct", "is-incorrect");
-        if (btn.textContent === currentQ.answer) {
-          btn.classList.add("is-correct");
-        }
-        if (btn.textContent === selectedOption && !isCorrect) {
-          btn.classList.add("is-incorrect");
-        }
-      });
-
-      if (isCorrect) {
-        feedbackEl.textContent =
-          "Correct! " + (currentQ.explanation || "");
-        feedbackEl.className = "feedback feedback--correct";
+      if (currentMode === "study") {
+        loadLesson(topic.id);
       } else {
-        feedbackEl.textContent =
-          "Not quite. " + (currentQ.explanation || "");
-        feedbackEl.className = "feedback feedback--incorrect";
+        startQuiz();
       }
-    }
+    });
 
-    function switchMode(mode) {
+    topicListEl.appendChild(btn);
+  });
+}
+
+function loadLesson(topicId) {
+  const lessonTitleEl = document.getElementById("lessonTitle");
+  const lessonIntroEl = document.getElementById("lessonIntro");
+  const lessonBodyEl = document.getElementById("lessonBody");
+  const tipCardEl = document.getElementById("tipCard");
+
+  // Simplified lesson content (placeholder)
+  const label = getTopicLabel(topicId);
+  lessonTitleEl.textContent = label;
+  lessonIntroEl.textContent = "This topic covers essential numerical concepts for the Civil Service Exam.";
+  lessonBodyEl.innerHTML = "<p>Lesson content is being developed. Use Practice Quiz to test your knowledge.</p>";
+  tipCardEl.innerHTML = `
+    <h3>Quick Tips for the Exam</h3>
+    <ul>
+      <li>Read each problem carefully and underline key numbers</li>
+      <li>Use scratch paper for calculations</li>
+      <li>Check your work before finalizing answers</li>
+    </ul>
+  `;
+}
+
+function markLockedLevels() {
+  const chips = document.querySelectorAll(".level-chip");
+  chips.forEach((chip) => {
+    const level = chip.dataset.level;
+    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.trim();
+
+    if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+      chip.classList.add("locked");
+      chip.textContent = chip.dataset.levelLabel + " 🔒";
+    }
+  });
+}
+
+function setupModeTabs() {
+  const modeTabs = document.querySelectorAll(".mode-tab");
+  const studyView = document.getElementById("studyView");
+  const practiceView = document.getElementById("practiceView");
+
+  modeTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const mode = tab.dataset.mode;
+      if (mode === currentMode) return;
       currentMode = mode;
 
-      modeTabs.forEach((tab) => {
-        tab.classList.toggle("active", tab.dataset.mode === mode);
-      });
+      modeTabs.forEach((t) =>
+        t.classList.toggle("active", t.dataset.mode === mode)
+      );
 
       if (mode === "study") {
         studyView.classList.add("view--active");
         practiceView.classList.remove("view--active");
+        loadLesson(currentTopicId);
       } else {
-        practiceView.classList.add("view--active");
         studyView.classList.remove("view--active");
+        practiceView.classList.add("view--active");
+        startQuiz();
       }
+    });
+  });
+}
+
+function setupItemChips() {
+  const itemChips = document.querySelectorAll(".items-chip");
+  itemChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      currentItemsCount = parseInt(chip.dataset.count, 10) || 10;
+      itemChips.forEach((c) => c.classList.toggle("active", c === chip));
+      if (currentMode === "practice") {
+        startQuiz();
+      }
+    });
+  });
+}
+
+function setupLevelChips() {
+  const levelChips = document.querySelectorAll(".level-chip");
+  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+
+  levelChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const level = chip.dataset.level;
+
+      // PRO modal kapag advanced/expert at free user
+      if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
+        openProModal();
+        return;
+      }
+
+      currentLevel = level;
+      levelChips.forEach((c) => c.classList.toggle("active", c === chip));
+
+      const label =
+        chip.dataset.levelLabel ||
+        chip.textContent.replace("🔒", "").trim();
+      quizLevelLabelEl.textContent = label;
+
+      if (currentMode === "practice") {
+        startQuiz();
+      }
+    });
+  });
+}
+
+function buildQuizQuestions() {
+  const quizCardEl = document.getElementById("quizCard");
+  const resultPanelEl = document.getElementById("resultPanel");
+  const questionTextEl = document.getElementById("questionText");
+  const optionsListEl = document.getElementById("optionsList");
+  const feedbackEl = document.getElementById("feedback");
+  const progressTextEl = document.getElementById("progressText");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const bank =
+    window.NUMERICAL_QUESTION_BANK &&
+    window.NUMERICAL_QUESTION_BANK[currentTopicId];
+
+  if (!bank || !bank[currentLevel] || !bank[currentLevel].length) {
+    quizQuestions = [];
+    userAnswers = [];
+
+    questionTextEl.textContent =
+      "Question bank for this topic and level is still under construction. Please try a different level or topic.";
+    optionsListEl.innerHTML = "";
+    feedbackEl.textContent = "";
+    feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
+    progressTextEl.textContent = "";
+
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+
+    quizCardEl.style.display = "block";
+    resultPanelEl.classList.add("hidden");
+    return;
+  }
+
+  const available = bank[currentLevel];
+  const count = Math.min(currentItemsCount, available.length);
+
+  quizQuestions = available.slice(0, count);
+  currentQuestionIndex = 0;
+  userAnswers = new Array(quizQuestions.length).fill(null);
+
+  prevBtn.disabled = true;
+  nextBtn.disabled = false;
+
+  quizCardEl.style.display = "block";
+  resultPanelEl.classList.add("hidden");
+
+  renderCurrentQuestion();
+  updateProgressText();
+  updateNavButtons();
+}
+
+function renderCurrentQuestion() {
+  const questionTextEl = document.getElementById("questionText");
+  const optionsListEl = document.getElementById("optionsList");
+  const feedbackEl = document.getElementById("feedback");
+
+  const q = quizQuestions[currentQuestionIndex];
+  if (!q) return;
+
+  questionTextEl.innerHTML = q.question;
+  optionsListEl.innerHTML = "";
+  feedbackEl.textContent = "";
+  feedbackEl.classList.remove("feedback--correct", "feedback--incorrect");
+
+  q.options.forEach((opt, index) => {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "option-button";
+    btn.textContent = opt;
+    btn.addEventListener("click", () => handleOptionClick(index));
+    li.appendChild(btn);
+    optionsListEl.appendChild(li);
+  });
+
+  const existing = userAnswers[currentQuestionIndex];
+  if (existing) {
+    const buttons = optionsListEl.querySelectorAll(".option-button");
+    buttons.forEach((btn, idx) => {
+      btn.classList.remove("is-correct", "is-incorrect");
+      const optText = q.options[idx];
+
+      if (idx === existing.selectedIndex) {
+        btn.classList.add(
+          existing.isCorrect ? "is-correct" : "is-incorrect"
+        );
+      }
+      if (!existing.isCorrect && optText === q.answer) {
+        btn.classList.add("is-correct");
+      }
+    });
+
+    feedbackEl.textContent =
+      (existing.isCorrect ? "Correct! " : "Incorrect. ") +
+      (q.explanation || "");
+    feedbackEl.classList.toggle("feedback--correct", existing.isCorrect);
+    feedbackEl.classList.toggle("feedback--incorrect", !existing.isCorrect);
+  }
+}
+
+function handleOptionClick(index) {
+  const feedbackEl = document.getElementById("feedback");
+  const q = quizQuestions[currentQuestionIndex];
+  const selectedText = q.options[index];
+  const isCorrect = selectedText === q.answer;
+
+  userAnswers[currentQuestionIndex] = {
+    selectedIndex: index,
+    isCorrect: isCorrect,
+  };
+
+  const buttons = document.querySelectorAll(".option-button");
+  buttons.forEach((btn, idx) => {
+    btn.classList.remove("is-correct", "is-incorrect");
+    const optText = q.options[idx];
+
+    if (idx === index) {
+      btn.classList.add(isCorrect ? "is-correct" : "is-incorrect");
     }
-
-    // 🔒 Mark locked level chips visually
-    function markLockedLevels() {
-      levelChips.forEach((chip) => {
-        const level = chip.dataset.level;
-        const locked = LOCKED_LEVELS.includes(level);
-        chip.classList.toggle("locked", locked);
-      });
+    if (!isCorrect && optText === q.answer) {
+      btn.classList.add("is-correct");
     }
+  });
 
-    function selectTopic(topicId) {
-      currentTopicId = topicId;
-      resetQuizState();
-      updateActiveTopicPill();
-      renderLesson();
-      renderQuiz();
-    }
+  feedbackEl.textContent =
+    (isCorrect ? "Correct! " : "Incorrect. ") + (q.explanation || "");
+  feedbackEl.classList.toggle("feedback--correct", isCorrect);
+  feedbackEl.classList.toggle("feedback--incorrect", !isCorrect);
+}
 
-    function attachEvents() {
-      modeTabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-          const mode = tab.dataset.mode;
-          if (mode && mode !== currentMode) {
-            switchMode(mode);
-          }
-        });
-      });
+function updateProgressText() {
+  const progressTextEl = document.getElementById("progressText");
+  if (!quizQuestions.length) {
+    progressTextEl.textContent = "";
+    return;
+  }
+  progressTextEl.textContent = `Question ${
+    currentQuestionIndex + 1
+  } of ${quizQuestions.length}`;
+}
 
-      levelChips.forEach((chip) => {
-        chip.addEventListener("click", function () {
-          const level = chip.dataset.level;
-          if (!level || level === currentLevel) return;
+function updateNavButtons() {
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-          // 🔒 Block locked levels (Advanced, Expert) for non-PRO
-          if (LOCKED_LEVELS.includes(level)) {
-            alert(
-              "Upgrade to PRO to unlock Advanced and Expert levels.\n\n" +
-              "Beginner and Intermediate are available in the free version."
-            );
-            return;
-          }
+  prevBtn.disabled = currentQuestionIndex === 0;
 
-          currentLevel = level;
-          resetQuizState();
-          levelChips.forEach((c) => {
-            c.classList.toggle("active", c.dataset.level === level);
-          });
-          renderQuiz();
-        });
-      });
+  if (!quizQuestions.length) {
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Next";
+    return;
+  }
 
-      itemChips.forEach((chip) => {
-        chip.addEventListener("click", function () {
-          const count = parseInt(chip.dataset.count, 10);
-          if (!count || count === currentItemCount) return;
+  nextBtn.disabled = false;
+  nextBtn.textContent =
+    currentQuestionIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
+}
 
-          currentItemCount = count;
-          resetQuizState();
+function finishQuiz() {
+  const quizCardEl = document.getElementById("quizCard");
+  const resultPanelEl = document.getElementById("resultPanel");
+  const resultScoreMainEl = document.getElementById("resultScoreMain");
+  const resultScoreTextEl = document.getElementById("resultScoreText");
+  const mistakeListEl = document.getElementById("mistakeList");
 
-          itemChips.forEach((c) => {
-            c.classList.toggle("active", c === chip);
-          });
+  let correctCount = 0;
+  quizQuestions.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    if (ans && ans.isCorrect) correctCount++;
+  });
 
-          renderQuiz();
-        });
-      });
+  const total = quizQuestions.length || 0;
+  const percent = total ? Math.round((correctCount / total) * 100) : 0;
 
-      prevBtn.addEventListener("click", function () {
-        const questions = getQuestionsForCurrent();
-        if (!questions.length) return;
-        if (currentIndex > 0) {
-          currentIndex -= 1;
-          renderQuiz();
+  resultScoreMainEl.textContent = `${correctCount} / ${total}`;
+  resultScoreTextEl.textContent = `Score: ${percent}%`;
+
+  mistakeListEl.innerHTML = "";
+  quizQuestions.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    if (ans && ans.isCorrect) return;
+
+    const item = document.createElement("div");
+    item.className = "mistake-item";
+
+    const userAnswerText =
+      ans && typeof ans.selectedIndex === "number"
+        ? q.options[ans.selectedIndex]
+        : "No answer";
+
+    item.innerHTML = `
+      <p class="mistake-q-title">Question ${idx + 1}</p>
+      <p class="mistake-q-text">${q.question}</p>
+      <div class="mistake-answers">
+        <p class="wrong"><span class="label">Your answer:</span> ${userAnswerText}</p>
+        <p class="correct"><span class="label">Correct answer:</span> ${q.answer}</p>
+        ${
+          q.explanation
+            ? `<p class="explanation"><span class="label">Explanation:</span> ${q.explanation}</p>`
+            : ""
         }
-      });
+      </div>
+    `;
+    mistakeListEl.appendChild(item);
+  });
 
-      nextBtn.addEventListener("click", function () {
-        const questions = getQuestionsForCurrent();
-        if (!questions.length) return;
+  quizCardEl.style.display = "none";
+  resultPanelEl.classList.remove("hidden");
+}
 
-        if (currentIndex < questions.length - 1) {
-          currentIndex += 1;
-          renderQuiz();
-        } else {
-          finishQuiz();
-        }
-      });
+function setupResultButtons() {
+  const resultRetryBtn = document.getElementById("resultRetryBtn");
+  const resultHomeBtn = document.getElementById("resultHomeBtn");
 
-      if (resultRetryBtn) {
-        resultRetryBtn.addEventListener("click", function () {
-          resetQuizState();
-          renderQuiz();
-          switchMode("practice");
-        });
-      }
+  resultRetryBtn.addEventListener("click", () => {
+    const quizCardEl = document.getElementById("quizCard");
+    const resultPanelEl = document.getElementById("resultPanel");
+    resultPanelEl.classList.add("hidden");
+    quizCardEl.style.display = "block";
+    startQuiz();
+  });
 
-      if (resultHomeBtn) {
-        resultHomeBtn.addEventListener("click", function () {
-          window.location.href = "index.html";
-        });
-      }
+  resultHomeBtn.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+}
+
+function startQuiz() {
+  const quizTopicTitleEl = document.getElementById("quizTopicTitle");
+  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+
+  quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
+
+  const currentLevelChip = document.querySelector(
+    `.level-chip[data-level="${currentLevel}"]`
+  );
+  if (currentLevelChip) {
+    const label =
+      currentLevelChip.dataset.levelLabel ||
+      currentLevelChip.textContent.replace("🔒", "").trim();
+    quizLevelLabelEl.textContent = label;
+  } else {
+    quizLevelLabelEl.textContent =
+      currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
+  }
+
+  buildQuizQuestions();
+}
+
+function setupNavButtonsHandlers() {
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  prevBtn.addEventListener("click", () => {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      renderCurrentQuestion();
+      updateProgressText();
+      updateNavButtons();
     }
+  });
 
-    function initNumericalPage() {
-      buildTopicsList();
-      attachEvents();
-      markLockedLevels(); // 🔒 apply lock styling
-      selectTopic(currentTopicId);
-      switchMode("study");
+  nextBtn.addEventListener("click", () => {
+    if (!quizQuestions.length) return;
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+      currentQuestionIndex++;
+      renderCurrentQuestion();
+      updateProgressText();
+      updateNavButtons();
+    } else {
+      finishQuiz();
     }
+  });
+}
 
-    initNumericalPage();
-  </script>
+// ==========================================
+// PRO MODAL FUNCTIONS
+// ==========================================
+function openProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "flex";
+}
 
+function closeProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "none";
+}
+
+function setupProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+
+  const closeBtn = document.getElementById("pro-modal-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeProModal);
+  }
+
+  const gumroadLink = document.getElementById("pro-gumroad-link");
+  if (gumroadLink && GUMROAD_URL) {
+    gumroadLink.href = GUMROAD_URL;
+  }
+
+  const refreshLink = document.getElementById("pro-refresh-link");
+  if (refreshLink) {
+    refreshLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      location.reload();
+    });
+  }
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeProModal();
+    }
+  });
+}
+
+// ==========================================
+// INITIALIZATION
+// ==========================================
+function initNumericalPage() {
+  const badgeEl = document.getElementById("badgeEl");
+  if (badgeEl) {
+    badgeEl.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
+  }
+
+  renderTopics();
+  loadLesson(currentTopicId);
+
+  setupModeTabs();
+  setupItemChips();
+  markLockedLevels();
+  setupLevelChips();
+  setupNavButtonsHandlers();
+  setupResultButtons();
+  setupProModal();
+}
+
+document.addEventListener("DOMContentLoaded", initNumericalPage);
+</script>
+
+</body>
+</html>
 
 
 
