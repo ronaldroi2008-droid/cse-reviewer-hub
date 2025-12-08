@@ -1959,55 +1959,19 @@ function markLockedLevels() {
   const chips = document.querySelectorAll(".level-chip");
   chips.forEach((chip) => {
     const level = chip.dataset.level;
-    chip.dataset.originalText = chip.textContent.trim();
-
+    // Store original text WITHOUT any lock emoji
+    const currentText = chip.textContent.trim();
+    chip.dataset.originalText = currentText.replace(/🔒/g, '').trim();
+    
     if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
-      // Clear any existing lock emoji and add only one
-      const originalText = chip.dataset.originalText.replace(" 🔒", "");
-      chip.textContent = originalText + " 🔒";
+      // Set text to original text + ONE lock emoji
+      chip.textContent = chip.dataset.originalText + " 🔒";
       chip.classList.add("locked");
+    } else {
+      // Ensure no lock emoji for unlocked levels
+      chip.textContent = chip.dataset.originalText;
+      chip.classList.remove("locked");
     }
-  });
-}
-
-function setupModeTabs() {
-  const modeTabs = document.querySelectorAll(".mode-tab");
-  const studyView = document.getElementById("studyView");
-  const practiceView = document.getElementById("practiceView");
-
-  modeTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const mode = tab.dataset.mode;
-      if (mode === currentMode) return;
-      currentMode = mode;
-
-      modeTabs.forEach((t) =>
-        t.classList.toggle("active", t.dataset.mode === mode)
-      );
-
-      if (mode === "study") {
-        studyView.classList.add("view--active");
-        practiceView.classList.remove("view--active");
-        loadLesson(currentTopicId);
-      } else {
-        studyView.classList.remove("view--active");
-        practiceView.classList.add("view--active");
-        startQuiz();
-      }
-    });
-  });
-}
-
-function setupItemChips() {
-  const itemChips = document.querySelectorAll(".items-chip");
-  itemChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      currentItemsCount = parseInt(chip.dataset.count, 10) || 10;
-      itemChips.forEach((c) => c.classList.toggle("active", c === chip));
-      if (currentMode === "practice") {
-        startQuiz();
-      }
-    });
   });
 }
 
@@ -2028,14 +1992,14 @@ function setupLevelChips() {
       currentLevel = level;
       levelChips.forEach((c) => {
         c.classList.toggle("active", c === chip);
-        // Restore original text for all chips
+        // Restore original text for all chips (without lock emoji)
         if (c.dataset.originalText) {
           c.textContent = c.dataset.originalText;
         }
       });
 
-      // Get label without lock emoji
-      const originalText = chip.dataset.originalText || chip.textContent.replace(" 🔒", "").trim();
+      // Get label from original text
+      const originalText = chip.dataset.originalText || chip.textContent.replace(/🔒/g, '').trim();
       quizLevelLabelEl.textContent = originalText;
 
       if (currentMode === "practice") {
