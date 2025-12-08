@@ -2291,28 +2291,29 @@
 
     // 🔒 Mark locked level chips visually
     function markLockedLevels() {
-      const proBadge = document.getElementById("proBadge");
-      if (proBadge) {
-        proBadge.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
-      }
-      
-      levelChips.forEach((chip) => {
-        const level = chip.dataset.level;
-        const locked = LOCKED_LEVELS.includes(level);
-        chip.classList.toggle("locked", locked);
-        
-        // Save original text for restoration
-        if (!chip.dataset.originalText) {
-          chip.dataset.originalText = chip.textContent.trim();
-        }
-        
-        if (locked) {
-          chip.textContent = chip.dataset.originalText + " 🔒";
-        } else {
-          chip.textContent = chip.dataset.originalText;
-        }
-      });
+  const proBadge = document.getElementById("proBadge");
+  if (proBadge) {
+    proBadge.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
+  }
+  
+  levelChips.forEach((chip) => {
+    const level = chip.dataset.level;
+    const locked = LOCKED_LEVELS.includes(level);
+    chip.classList.toggle("locked", locked);
+    
+    // Save original text for restoration
+    if (!chip.dataset.originalText) {
+      chip.dataset.originalText = chip.textContent.trim();
     }
+    
+    if (locked) {
+      chip.textContent = chip.dataset.originalText + " 🔒";
+    } else {
+      chip.textContent = chip.dataset.originalText;
+    }
+  });
+}
+
 
     function selectTopic(topicId) {
       currentTopicId = topicId;
