@@ -1824,7 +1824,6 @@ const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
         ]
       }
     };
-
 // ==========================================
 // 2. STATE VARIABLES
 // ==========================================
@@ -1972,6 +1971,47 @@ function markLockedLevels() {
       chip.textContent = chip.dataset.originalText;
       chip.classList.remove("locked");
     }
+  });
+}
+
+function setupModeTabs() {
+  const modeTabs = document.querySelectorAll(".mode-tab");
+  const studyView = document.getElementById("studyView");
+  const practiceView = document.getElementById("practiceView");
+
+  modeTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const mode = tab.dataset.mode;
+      if (mode === currentMode) return;
+      currentMode = mode;
+
+      modeTabs.forEach((t) =>
+        t.classList.toggle("active", t.dataset.mode === mode)
+      );
+
+      if (mode === "study") {
+        studyView.classList.add("view--active");
+        practiceView.classList.remove("view--active");
+        loadLesson(currentTopicId);
+      } else {
+        studyView.classList.remove("view--active");
+        practiceView.classList.add("view--active");
+        startQuiz();
+      }
+    });
+  });
+}
+
+function setupItemChips() {
+  const itemChips = document.querySelectorAll(".items-chip");
+  itemChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      currentItemsCount = parseInt(chip.dataset.count, 10) || 10;
+      itemChips.forEach((c) => c.classList.toggle("active", c === chip));
+      if (currentMode === "practice") {
+        startQuiz();
+      }
+    });
   });
 }
 
@@ -2341,6 +2381,7 @@ function initNumericalPage() {
   renderTopics();
   loadLesson(currentTopicId);
 
+  // Initialize these functions
   setupModeTabs();
   setupItemChips();
   markLockedLevels();
@@ -2351,10 +2392,4 @@ function initNumericalPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initNumericalPage);
-</script>
-
-</body>
-</html>
-
-
 
