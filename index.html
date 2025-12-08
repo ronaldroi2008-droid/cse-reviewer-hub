@@ -9,7 +9,7 @@
       --bg: #020617;       /* Dark Blue-Black */
       --card: #0f172a;     /* Slightly lighter dark */
       --border: #1e293b;   /* Border color */
-      --accent: #6366f1;   /* Indigo Accent (Same as Verbal App) */
+      --accent: #6366f1;   /* Indigo Accent */
       --accent-hover: #4f46e5;
       --text: #f8fafc;
       --muted: #94a3b8;
@@ -95,6 +95,7 @@
       transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .subject-btn:hover {
@@ -103,15 +104,10 @@
       transform: translateY(-2px);
     }
 
-    .subject-btn .icon {
-      font-size: 1.2rem;
-      margin-right: 12px;
-    }
-
     .subject-btn .arrow {
       color: var(--muted);
       font-size: 1.2rem;
-      transition: transform 0.2s;
+      transition: transform 0.2s, color 0.2s;
     }
 
     .subject-btn:hover .arrow {
@@ -119,18 +115,7 @@
       color: var(--accent);
     }
 
-    /* Exam button styling */
-    .exam-btn {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      margin-top: 8px;
-    }
-
-    .exam-btn:hover {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(79, 70, 229, 0.2) 100%);
-      border-color: var(--accent);
-    }
-
+    /* Optional: disabled style kung gusto mong gamitin sa future */
     .subject-btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -143,6 +128,7 @@
       color: #475569;
       border-top: 1px solid #1e293b;
       padding-top: 16px;
+      line-height: 1.4;
     }
 
     /* =========================================== */
@@ -264,8 +250,8 @@
 
     .pro-upgrade-btn {
       display: inline-block;
-      background: linear-gradient(to right, #fbbf24, #f59e0b);
-      color: #1c1917;
+      background: linear-gradient(to right, #6366f1, #4f46e5);
+      color: white;
       text-decoration: none;
       padding: 14px 28px;
       border-radius: 999px;
@@ -274,17 +260,12 @@
       border: none;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
     }
 
     .pro-upgrade-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.4);
+      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
     }
 
     .pro-note {
@@ -323,7 +304,7 @@
         <span class="app-logo">⭐⭐⭐</span>
         <h1>CSE Reviewer Hub</h1>
         <p class="subtitle">
-          Welcome! Choose a subject below to start your review session.
+          Welcome! Choose a subject, do quick drills in Practice Mode, or try the Full Mock Exam.
         </p>
       </div>
 
@@ -344,23 +325,37 @@
         </a>
 
         <a href="clerical.html" class="subject-btn">
-          <span>📋 &nbsp; Clerical Ability</span>
+          <span>🗂️ &nbsp; Clerical Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="general_info.html" class="subject-btn">
-          <span>🏛️ &nbsp; General Information</span>
+          <span>🌍 &nbsp; General Information</span>
           <span class="arrow">→</span>
         </a>
 
-        <button id="fullExamBtn" class="subject-btn exam-btn">
-          <span>📝 &nbsp; Full Mock Exam</span>
+        <!-- 🔥 Practice Mode (Quick Drills) -->
+        <a href="practice.html" class="subject-btn">
+          <span>🔥 &nbsp; Practice Mode (Quick Drills)</span>
           <span class="arrow">→</span>
-        </button>
+        </a>
+
+        <!-- 🎯 Full Mock Exam (PRO-locked for free users) -->
+        <a href="#" class="subject-btn" id="mockExamLink">
+          <span id="mockExamLabel">🎯 &nbsp; Full Mock Exam (170 Items)</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <!-- 🔑 License / Activate PRO -->
+        <a href="license.html" class="subject-btn">
+          <span>🔑 &nbsp; Enter License / Activate PRO</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
 
       <p class="footer-note">
-        Tip: Review consistent grammar rules first before taking the practice quizzes.
+        Tip: Start with topic-by-topic review, then use <strong>Practice Mode</strong> for short drills.  
+        When you feel ready, challenge yourself with the <strong>Full Mock Exam (170 items)</strong>.
       </p>
     </div>
   </div>
@@ -374,29 +369,28 @@
       
       <div class="pro-modal-header">
         <div class="stars-logo">⭐⭐⭐</div>
-        <h2>Unlock Full Mock Exam Experience</h2>
-        <p>Get access to complete timed simulations with PRO</p>
+        <h2>🔒 Unlock Full Mock Exam</h2>
+        <p>Access the complete 170-item timed simulation with PRO</p>
       </div>
       
       <div class="pro-modal-content">
         <div class="pro-features">
           <h3>🚀 What you get with PRO:</h3>
           <ul>
-            <li><strong>Full-length timed mock exams</strong> (all subjects)</li>
-            <li><strong>Adaptive difficulty</strong> - questions adjust to your skill level</li>
-            <li><strong>Detailed performance analytics</strong> and progress tracking</li>
-            <li><strong>Expert-level questions</strong> across all CSE subjects</li>
-            <li><strong>Priority support</strong> and regular content updates</li>
-            <li><strong>Ad-free experience</strong> and offline access</li>
+            <li><strong>Full Mock Exam (170 items)</strong> – Timed simulation</li>
+            <li><strong>Advanced & Expert Level</strong> questions</li>
+            <li><strong>Detailed performance analytics</strong> and review</li>
+            <li><strong>Priority updates</strong> and new content</li>
+            <li><strong>Ad-free experience</strong></li>
           </ul>
         </div>
         
         <div class="pro-cta">
           <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax" 
              target="_blank" class="pro-upgrade-btn">
-            ⭐ Upgrade to PRO Now
+            🚀 Upgrade to PRO Now
           </a>
-          <p class="pro-note">One-time payment • Lifetime access • 30-day money-back guarantee</p>
+          <p class="pro-note">One-time payment • Lifetime access</p>
         </div>
         
         <div class="pro-already">
@@ -408,92 +402,89 @@
 
   <script>
     // ==========================================
-    // CONFIGURATION
+    // 0. PRO CONFIG
     // ==========================================
     const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
     const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
     // ==========================================
-    // DOM ELEMENTS
+    // 1. INIT – Full Mock Exam Handling
     // ==========================================
-    const fullExamBtn = document.getElementById("fullExamBtn");
-    
-    // PRO Modal elements
-    const proModal = document.getElementById("pro-modal");
-    const proModalClose = document.getElementById("pro-modal-close");
-    const proGumroadLink = document.getElementById("pro-gumroad-link");
-    const proRefreshLink = document.getElementById("pro-refresh-link");
+    document.addEventListener("DOMContentLoaded", () => {
+      const mockExamLink = document.getElementById("mockExamLink");
+      const mockExamLabel = document.getElementById("mockExamLabel");
 
-    // ==========================================
-    // INITIALIZATION
-    // ==========================================
-    function initializePage() {
-      setupEventListeners();
+      // PRO Modal elements
+      const proModal = document.getElementById("pro-modal");
+      const proModalClose = document.getElementById("pro-modal-close");
+      const proGumroadLink = document.getElementById("pro-gumroad-link");
+      const proRefreshLink = document.getElementById("pro-refresh-link");
+
+      if (!mockExamLink || !mockExamLabel) return;
+
+      // Update label based on user status
+      if (!IS_PRO_USER) {
+        // FREE user → lagyan ng 🔒 PRO label
+        mockExamLabel.innerHTML =
+          '🎯 &nbsp; Full Mock Exam (170 Items) ' +
+          '<span style="font-size:0.75rem; opacity:0.85;">🔒 PRO</span>';
+      }
+
+      // Setup PRO modal
+      function setupProModal() {
+        if (proModalClose) {
+          proModalClose.addEventListener("click", closeProModal);
+        }
+
+        if (proGumroadLink && GUMROAD_URL) {
+          proGumroadLink.href = GUMROAD_URL;
+        }
+
+        if (proRefreshLink) {
+          proRefreshLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            location.reload();
+          });
+        }
+
+        if (proModal) {
+          proModal.addEventListener("click", (event) => {
+            if (event.target === proModal) {
+              closeProModal();
+            }
+          });
+        }
+      }
+
+      function openProModal() {
+        if (proModal) {
+          proModal.style.display = "flex";
+        }
+      }
+
+      function closeProModal() {
+        if (proModal) {
+          proModal.style.display = "none";
+        }
+      }
+
+      // Setup mock exam link click handler
+      mockExamLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        if (!IS_PRO_USER) {
+          // Free user - open PRO modal
+          openProModal();
+        } else {
+          // PRO user - redirect to mock exam page
+          window.location.href = "mock_exam.html";
+        }
+      });
+
+      // Initialize modal
       setupProModal();
-    }
-
-    // ==========================================
-    // EVENT LISTENERS
-    // ==========================================
-    function setupEventListeners() {
-      // Full Exam button
-      if (fullExamBtn) {
-        fullExamBtn.addEventListener("click", () => {
-          if (IS_PRO_USER) {
-            // PRO user - redirect to full mock exam page
-            window.location.href = "full_mock_exam.html";
-          } else {
-            // Free user - show PRO modal
-            openProModal();
-          }
-        });
-      }
-    }
-
-    // ==========================================
-    // PRO MODAL FUNCTIONS
-    // ==========================================
-    function openProModal() {
-      if (proModal) {
-        proModal.style.display = "flex";
-      }
-    }
-
-    function closeProModal() {
-      if (proModal) {
-        proModal.style.display = "none";
-      }
-    }
-
-    function setupProModal() {
-      if (proModalClose) {
-        proModalClose.addEventListener("click", closeProModal);
-      }
-
-      if (proGumroadLink && GUMROAD_URL) {
-        proGumroadLink.href = GUMROAD_URL;
-      }
-
-      if (proRefreshLink) {
-        proRefreshLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          location.reload();
-        });
-      }
-
-      if (proModal) {
-        proModal.addEventListener("click", (event) => {
-          if (event.target === proModal) {
-            closeProModal();
-          }
-        });
-      }
-    }
-
-    // ==========================================
-    // INITIALIZE PAGE
-    // ==========================================
-    document.addEventListener("DOMContentLoaded", initializePage);
+    });
   </script>
+
 </body>
 </html>
