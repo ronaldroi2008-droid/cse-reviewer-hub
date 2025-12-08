@@ -1,269 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSE Reviewer Hub - Full Mock Exam</title>
+  <meta charset="UTF-8" />
+  <title>CSE Reviewer Hub – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #020617;
-      --card: #020617;
-      --border: #1f2937;
-      --accent: #2563eb;
-      --accent-soft: rgba(37, 99, 235, 0.12);
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --danger: #f97373;
-      --success: #22c55e;
+      --bg: #020617;       /* Dark Blue-Black */
+      --card: #0f172a;     /* Slightly lighter dark */
+      --border: #1e293b;   /* Border color */
+      --accent: #6366f1;   /* Indigo Accent (Same as Verbal App) */
+      --accent-hover: #4f46e5;
+      --text: #f8fafc;
+      --muted: #94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
-      color: var(--text);
       min-height: 100vh;
-    }
-
-    .app-shell {
-      max-width: 1200px;
-      margin: 24px auto 40px;
-      padding: 20px;
-    }
-
-    /* Header Styles */
-    .page-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      text-decoration: none;
-    }
-
-    .back-btn:hover {
-      border-color: var(--accent);
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #020617 60%, #000 100%);
       color: var(--text);
-      background: rgba(15, 23, 42, 1);
     }
 
-    .page-title-block {
-      flex: 1;
-      text-align: center;
+    .shell {
+      width: 100%;
+      max-width: 480px;
+      padding: 20px;
     }
 
-    .page-title {
-      margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(to right, #60a5fa, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .page-subtitle {
-      margin: 4px 0 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .header-badge {
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid rgba(37, 99, 235, 0.45);
-      background: var(--accent-soft);
-      font-size: 0.8rem;
-      color: #bfdbfe;
-    }
-
-    /* Exam Card */
-    .exam-card {
-      background: rgba(15, 23, 42, 0.95);
+    .card {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
       border-radius: 24px;
       border: 1px solid var(--border);
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-    }
-
-    .exam-header {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      padding: 32px 24px;
       text-align: center;
-      margin-bottom: 24px;
     }
 
-    .exam-header h2 {
-      margin: 0 0 12px;
-      font-size: 1.8rem;
+    .logo-area {
+      margin-bottom: 20px;
     }
 
-    .exam-header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 600px;
-      margin: 0 auto;
+    .app-logo {
+      font-size: 3rem;
+      margin-bottom: 8px;
+      display: block;
+      color: #fbbf24;
+      text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
     }
 
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .feature-box {
-      background: rgba(30, 41, 59, 0.6);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid #1f2937;
-      transition: all 0.2s ease;
-    }
-
-    .feature-box:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .feature-box h3 {
+    h1 {
       margin: 0 0 8px;
-      font-size: 1.1rem;
-      color: #e5e7eb;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #818cf8, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
 
-    .feature-box p {
-      margin: 0;
-      font-size: 0.9rem;
+    .subtitle {
+      margin: 0 0 32px;
+      font-size: 0.95rem;
       color: var(--muted);
       line-height: 1.5;
     }
 
-    /* Mode Selection */
-    .mode-selection {
-      text-align: center;
+    .menu-grid {
+      display: grid;
+      gap: 12px;
       margin-bottom: 24px;
     }
 
-    .mode-selection h3 {
-      margin: 0 0 16px;
-      font-size: 1.2rem;
-      color: #e5e7eb;
-    }
-
-    .mode-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .mode-btn {
-      padding: 14px 28px;
-      border-radius: 999px;
-      border: 2px solid var(--border);
-      background: transparent;
-      color: var(--text);
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .subject-btn {
       display: flex;
       align-items: center;
-      gap: 8px;
-      min-width: 180px;
-      justify-content: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .mode-btn:hover {
+    .subject-btn:hover {
       border-color: var(--accent);
-      background: rgba(37, 99, 235, 0.1);
-    }
-
-    .mode-btn.pro {
-      background: linear-gradient(to right, #2563eb, #4f46e5);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
-    }
-
-    .mode-btn.pro:hover {
+      background: rgba(99, 102, 241, 0.1);
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
     }
 
-    .mode-btn:disabled {
+    .subject-btn .icon {
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+
+    .subject-btn .arrow {
+      color: var(--muted);
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .subject-btn:hover .arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+
+    /* Exam button styling */
+    .exam-btn {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      margin-top: 8px;
+    }
+
+    .exam-btn:hover {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(79, 70, 229, 0.2) 100%);
+      border-color: var(--accent);
+    }
+
+    .subject-btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      filter: grayscale(1);
     }
 
-    .mode-btn:disabled:hover {
-      transform: none;
-      border-color: var(--border);
-      background: transparent;
-    }
-
-    /* Upgrade Prompt */
-    .upgrade-prompt {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid #334155;
-      text-align: center;
+    .footer-note {
       margin-top: 24px;
-    }
-
-    .upgrade-prompt h3 {
-      margin: 0 0 12px;
-      color: #fbbf24;
-      font-size: 1.1rem;
-    }
-
-    .upgrade-prompt p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .upgrade-btn {
-      display: inline-block;
-      background: linear-gradient(to right, #fbbf24, #f59e0b);
-      color: #1c1917;
-      text-decoration: none;
-      padding: 10px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-    }
-
-    .upgrade-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+      font-size: 0.8rem;
+      color: #475569;
+      border-top: 1px solid #1e293b;
+      padding-top: 16px;
     }
 
     /* =========================================== */
@@ -429,43 +308,6 @@
       text-decoration: underline;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .app-shell {
-        padding: 16px;
-      }
-
-      .page-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-      }
-
-      .back-btn {
-        align-self: flex-start;
-      }
-
-      .page-title {
-        font-size: 1.5rem;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mode-buttons {
-        flex-direction: column;
-      }
-
-      .mode-btn {
-        width: 100%;
-      }
-
-      .exam-card {
-        padding: 20px;
-      }
-    }
-
     @media (max-width: 600px) {
       .pro-modal-card {
         padding: 20px;
@@ -474,93 +316,53 @@
   </style>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="page-header">
-      <a href="index.html" class="back-btn">
-        ← Back to Home
-      </a>
 
-      <div class="page-title-block">
-        <h1 class="page-title">Full Mock Exam</h1>
-        <p class="page-subtitle">
-          Simulate the actual CSE experience with timed tests across all subjects
+  <div class="shell">
+    <div class="card">
+      <div class="logo-area">
+        <span class="app-logo">⭐⭐⭐</span>
+        <h1>CSE Reviewer Hub</h1>
+        <p class="subtitle">
+          Welcome! Choose a subject below to start your review session.
         </p>
       </div>
 
-      <div id="proBadge" class="header-badge">
-        <!-- PRO Access / Free Plan -->
+      <div class="menu-grid">
+        <a href="verbal.html" class="subject-btn">
+          <span>📚 &nbsp; Verbal Ability</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="numerical.html" class="subject-btn">
+          <span>🧮 &nbsp; Numerical Reasoning</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="analytical.html" class="subject-btn">
+          <span>🧠 &nbsp; Analytical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="clerical.html" class="subject-btn">
+          <span>📋 &nbsp; Clerical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="general_info.html" class="subject-btn">
+          <span>🏛️ &nbsp; General Information</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <button id="fullExamBtn" class="subject-btn exam-btn">
+          <span>📝 &nbsp; Full Mock Exam</span>
+          <span class="arrow">→</span>
+        </button>
       </div>
-    </header>
 
-    <main>
-      <div class="exam-card">
-        <div class="exam-header">
-          <h2>Ready for the Challenge?</h2>
-          <p>
-            Test your knowledge across all CSE subjects with our full-length mock exams. 
-            Choose between the free practice mode or unlock the complete PRO simulation.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-box">
-            <div class="feature-icon">⏱️</div>
-            <h3>Timed Simulation</h3>
-            <p>Experience the real exam pressure with our built-in timer that mimics actual CSE time constraints.</p>
-          </div>
-
-          <div class="feature-box">
-            <div class="feature-icon">📊</div>
-            <h3>Detailed Analytics</h3>
-            <p>Get comprehensive performance reports showing your strengths and areas for improvement.</p>
-          </div>
-
-          <div class="feature-box">
-            <div class="feature-icon">🎯</div>
-            <h3>Adaptive Difficulty</h3>
-            <p>Questions adjust based on your performance to provide the most effective practice.</p>
-          </div>
-        </div>
-
-        <div class="mode-selection">
-          <h3>Choose Your Exam Mode</h3>
-          <div class="mode-buttons">
-            <button id="freeModeBtn" class="mode-btn">
-              🆓 Free Practice Mode
-            </button>
-            <button id="proModeBtn" class="mode-btn pro">
-              ⭐ PRO Full Simulation
-            </button>
-          </div>
-        </div>
-
-        <div id="freeModeContent" class="hidden">
-          <div class="upgrade-prompt">
-            <h3>🎯 Free Practice Mode Features</h3>
-            <p>
-              In Free Mode, you get access to beginner-level questions from all subjects 
-              with basic analytics. Upgrade to PRO for the complete exam experience!
-            </p>
-            <button id="startFreeExam" class="upgrade-btn">
-              Start Free Practice
-            </button>
-          </div>
-        </div>
-
-        <div id="proModeContent" class="hidden">
-          <div class="upgrade-prompt">
-            <h3>🚀 Unlock Full Simulation</h3>
-            <p>
-              PRO mode includes timed exams, adaptive difficulty, detailed analytics, 
-              and expert-level questions across all subjects.
-            </p>
-            <button id="unlockProBtn" class="upgrade-btn">
-              🚀 Upgrade to PRO Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
+      <p class="footer-note">
+        Tip: Review consistent grammar rules first before taking the practice quizzes.
+      </p>
+    </div>
   </div>
 
   <!-- =========================================== -->
@@ -614,14 +416,8 @@
     // ==========================================
     // DOM ELEMENTS
     // ==========================================
-    const proBadge = document.getElementById("proBadge");
-    const freeModeBtn = document.getElementById("freeModeBtn");
-    const proModeBtn = document.getElementById("proModeBtn");
-    const freeModeContent = document.getElementById("freeModeContent");
-    const proModeContent = document.getElementById("proModeContent");
-    const startFreeExam = document.getElementById("startFreeExam");
-    const unlockProBtn = document.getElementById("unlockProBtn");
-
+    const fullExamBtn = document.getElementById("fullExamBtn");
+    
     // PRO Modal elements
     const proModal = document.getElementById("pro-modal");
     const proModalClose = document.getElementById("pro-modal-close");
@@ -632,22 +428,6 @@
     // INITIALIZATION
     // ==========================================
     function initializePage() {
-      // Update badge based on user status
-      if (proBadge) {
-        proBadge.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
-      }
-
-      // Show/hide mode content based on user status
-      if (IS_PRO_USER) {
-        // PRO user - show both modes enabled
-        freeModeContent.classList.remove("hidden");
-        proModeContent.classList.remove("hidden");
-      } else {
-        // Free user - show free mode by default
-        freeModeContent.classList.remove("hidden");
-        proModeContent.classList.add("hidden");
-      }
-
       setupEventListeners();
       setupProModal();
     }
@@ -656,80 +436,17 @@
     // EVENT LISTENERS
     // ==========================================
     function setupEventListeners() {
-      // Mode selection buttons
-      if (freeModeBtn) {
-        freeModeBtn.addEventListener("click", () => {
-          selectMode("free");
+      // Full Exam button
+      if (fullExamBtn) {
+        fullExamBtn.addEventListener("click", () => {
+          if (IS_PRO_USER) {
+            // PRO user - redirect to full mock exam page
+            window.location.href = "full_mock_exam.html";
+          } else {
+            // Free user - show PRO modal
+            openProModal();
+          }
         });
-      }
-
-      if (proModeBtn) {
-        proModeBtn.addEventListener("click", () => {
-          selectMode("pro");
-        });
-      }
-
-      // Start free exam button
-      if (startFreeExam) {
-        startFreeExam.addEventListener("click", () => {
-          startFreeMockExam();
-        });
-      }
-
-      // Unlock PRO button
-      if (unlockProBtn) {
-        unlockProBtn.addEventListener("click", () => {
-          openProModal();
-        });
-      }
-    }
-
-    // ==========================================
-    // MODE SELECTION
-    // ==========================================
-    function selectMode(mode) {
-      if (mode === "free") {
-        freeModeContent.classList.remove("hidden");
-        proModeContent.classList.add("hidden");
-        
-        // Update button states
-        freeModeBtn.style.borderColor = "#2563eb";
-        freeModeBtn.style.background = "rgba(37, 99, 235, 0.1)";
-        proModeBtn.style.borderColor = "var(--border)";
-        proModeBtn.style.background = "transparent";
-      } else if (mode === "pro") {
-        if (IS_PRO_USER) {
-          // PRO user can access pro mode
-          freeModeContent.classList.add("hidden");
-          proModeContent.classList.remove("hidden");
-          
-          // Update button states
-          freeModeBtn.style.borderColor = "var(--border)";
-          freeModeBtn.style.background = "transparent";
-          proModeBtn.style.borderColor = "transparent";
-          proModeBtn.style.background = "linear-gradient(to right, #2563eb, #4f46e5)";
-        } else {
-          // Free user - show PRO modal
-          openProModal();
-        }
-      }
-    }
-
-    // ==========================================
-    // MOCK EXAM FUNCTIONS
-    // ==========================================
-    function startFreeMockExam() {
-      // For now, show an alert. You can replace this with actual exam start logic
-      alert("Starting Free Mock Exam...\n\nThis would redirect to a free exam page with limited features.");
-      // In production, you would redirect to: window.location.href = "free_mock_exam.html";
-    }
-
-    function startProMockExam() {
-      if (IS_PRO_USER) {
-        alert("Starting PRO Mock Exam...\n\nFull features unlocked!");
-        // In production, you would redirect to: window.location.href = "pro_mock_exam.html";
-      } else {
-        openProModal();
       }
     }
 
