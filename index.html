@@ -115,11 +115,18 @@
       color: var(--accent);
     }
 
-    /* Optional: disabled style kung gusto mong gamitin sa future */
-    .subject-btn.disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      filter: grayscale(1);
+    .subject-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pro-tag {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
     }
 
     .footer-note {
@@ -310,58 +317,62 @@
 
       <div class="menu-grid">
         <a href="verbal.html" class="subject-btn">
-          <span>📚 &nbsp; Verbal Ability</span>
+          <span class="subject-label">📚 &nbsp; Verbal Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="numerical.html" class="subject-btn">
-          <span>🧮 &nbsp; Numerical Reasoning</span>
+          <span class="subject-label">🧮 &nbsp; Numerical Reasoning</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="analytical.html" class="subject-btn">
-          <span>🧠 &nbsp; Analytical Ability</span>
+          <span class="subject-label">🧠 &nbsp; Analytical Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="clerical.html" class="subject-btn">
-          <span>🗂️ &nbsp; Clerical Ability</span>
+          <span class="subject-label">🗂️ &nbsp; Clerical Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="general_info.html" class="subject-btn">
-          <span>🌍 &nbsp; General Information</span>
+          <span class="subject-label">🌍 &nbsp; General Information</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- 🔥 Practice Mode (Quick Drills) -->
-        <a href="practice.html" class="subject-btn">
-          <span>🔥 &nbsp; Practice Mode (Quick Drills)</span>
+        <!-- 🔥 Practice Mode (Quick Drills) – PRO-locked -->
+        <a href="practice.html" class="subject-btn" id="practiceModeLink">
+          <span class="subject-label" id="practiceModeLabel">
+            🔥 &nbsp; Practice Mode (Quick Drills)
+          </span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- 🎯 Full Mock Exam (PRO-locked for free users) -->
+        <!-- 🎯 Full Mock Exam – PRO-locked -->
         <a href="#" class="subject-btn" id="mockExamLink">
-          <span id="mockExamLabel">🎯 &nbsp; Full Mock Exam (170 Items)</span>
+          <span class="subject-label" id="mockExamLabel">
+            🎯 &nbsp; Full Mock Exam (170 Items)
+          </span>
           <span class="arrow">→</span>
         </a>
 
         <!-- 🔑 License / Activate PRO -->
         <a href="license.html" class="subject-btn">
-          <span>🔑 &nbsp; Enter License / Activate PRO</span>
+          <span class="subject-label">🔑 &nbsp; Enter License / Activate PRO</span>
           <span class="arrow">→</span>
         </a>
       </div>
 
       <p class="footer-note">
-        Tip: Start with topic-by-topic review, then use <strong>Practice Mode</strong> for short drills.  
-        When you feel ready, challenge yourself with the <strong>Full Mock Exam (170 items)</strong>.
+        Tip: Start with topic-by-topic review, then use <strong>Practice Mode</strong> for short drills,
+        then challenge yourself with the <strong>Full Mock Exam (170 items)</strong> once you're ready.
       </p>
     </div>
   </div>
 
   <!-- =========================================== -->
-  <!-- PRO MODAL -->
+  <!-- PRO MODAL (shared for Practice + Mock Exam) -->
   <!-- =========================================== -->
   <div id="pro-modal" class="pro-modal" style="display: none;">
     <div class="pro-modal-card">
@@ -369,15 +380,16 @@
       
       <div class="pro-modal-header">
         <div class="stars-logo">⭐⭐⭐</div>
-        <h2>🔒 Unlock Full Mock Exam</h2>
-        <p>Access the complete 170-item timed simulation with PRO</p>
+        <h2>🔒 Unlock PRO Features</h2>
+        <p>Access Practice Mode quick drills and the full 170-item Mock Exam with PRO.</p>
       </div>
       
       <div class="pro-modal-content">
         <div class="pro-features">
           <h3>🚀 What you get with PRO:</h3>
           <ul>
-            <li><strong>Full Mock Exam (170 items)</strong> – Timed simulation</li>
+            <li><strong>Practice Mode (Quick Drills)</strong> – topic-based timed sets</li>
+            <li><strong>Full Mock Exam (170 items)</strong> – timed CSE-style simulation</li>
             <li><strong>Advanced & Expert Level</strong> questions</li>
             <li><strong>Detailed performance analytics</strong> and review</li>
             <li><strong>Priority updates</strong> and new content</li>
@@ -387,14 +399,14 @@
         
         <div class="pro-cta">
           <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax" 
-             target="_blank" class="pro-upgrade-btn">
+             target="_blank" rel="noopener noreferrer" class="pro-upgrade-btn">
             🚀 Upgrade to PRO Now
           </a>
           <p class="pro-note">One-time payment • Lifetime access</p>
         </div>
         
         <div class="pro-already">
-          <p>Already purchased? <a href="#" id="pro-refresh-link">Refresh page</a> after payment.</p>
+          <p>Already purchased? <a href="#" id="pro-refresh-link">Refresh this page</a> after activating your license.</p>
         </div>
       </div>
     </div>
@@ -408,9 +420,11 @@
     const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
     // ==========================================
-    // 1. INIT – Full Mock Exam Handling
+    // 1. INIT – Protected links (Practice + Mock)
     // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
+      const practiceLink = document.getElementById("practiceModeLink");
+      const practiceLabel = document.getElementById("practiceModeLabel");
       const mockExamLink = document.getElementById("mockExamLink");
       const mockExamLabel = document.getElementById("mockExamLabel");
 
@@ -420,14 +434,20 @@
       const proGumroadLink = document.getElementById("pro-gumroad-link");
       const proRefreshLink = document.getElementById("pro-refresh-link");
 
-      if (!mockExamLink || !mockExamLabel) return;
-
-      // Update label based on user status
+      // Add PRO tag for free users
       if (!IS_PRO_USER) {
-        // FREE user → lagyan ng 🔒 PRO label
-        mockExamLabel.innerHTML =
-          '🎯 &nbsp; Full Mock Exam (170 Items) ' +
-          '<span style="font-size:0.75rem; opacity:0.85;">🔒 PRO</span>';
+        if (practiceLabel) {
+          practiceLabel.insertAdjacentHTML(
+            "beforeend",
+            ' <span class="pro-tag">🔒 PRO</span>'
+          );
+        }
+        if (mockExamLabel) {
+          mockExamLabel.insertAdjacentHTML(
+            "beforeend",
+            ' <span class="pro-tag">🔒 PRO</span>'
+          );
+        }
       }
 
       // Setup PRO modal
@@ -468,20 +488,29 @@
         }
       }
 
-      // Setup mock exam link click handler
-      mockExamLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        
+      function handleProtectedClick(event, targetUrl) {
+        event.preventDefault();
         if (!IS_PRO_USER) {
-          // Free user - open PRO modal
           openProModal();
         } else {
-          // PRO user - redirect to mock exam page
-          window.location.href = "mock_exam.html";
+          window.location.href = targetUrl;
         }
-      });
+      }
 
-      // Initialize modal
+      // Attach click handlers
+      if (practiceLink) {
+        practiceLink.addEventListener("click", (e) =>
+          handleProtectedClick(e, "practice.html")
+        );
+      }
+
+      if (mockExamLink) {
+        mockExamLink.addEventListener("click", (e) =>
+          handleProtectedClick(e, "mock_exam.html") // palitan kung iba filename
+        );
+      }
+
+      // Initialize modal behavior
       setupProModal();
     });
   </script>
