@@ -13,24 +13,23 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // ==========================================
   beginner: [
     {
-    question: "In the fraction 3/5, what is the numerator?",
-    options: ["3", "5", "8", "1"],
-    answer: "3",
-    explanation: "The numerator is the top number of the fraction. In 3/5, the top number is 3."
-  },
-  {
-    question: "In the fraction 7/9, what is the denominator?",
-    options: ["7", "9", "16", "2"],
-    answer: "9",
-    explanation: "The denominator is the bottom number of the fraction. In 7/9, the bottom number is 9."
-  },
-  {
-    question: "Which fraction represents 'three-fourths'?",
-    options: ["1/3", "2/3", "3/4", "4/3"],
-    answer: "3/4",
-    explanation: "Three-fourths means 3 parts out of 4 equal parts, written as 3/4."
-  },
-
+      question: "In the fraction 3/5, what is the numerator?",
+      options: ["3", "5", "8", "1"],
+      answer: "3",
+      explanation: "The numerator is the top number of the fraction. In 3/5, the top number is 3."
+    },
+    {
+      question: "In the fraction 7/9, what is the denominator?",
+      options: ["7", "9", "16", "2"],
+      answer: "9",
+      explanation: "The denominator is the bottom number of the fraction. In 7/9, the bottom number is 9."
+    },
+    {
+      question: "Which fraction represents 'three-fourths'?",
+      options: ["1/3", "2/3", "3/4", "4/3"],
+      answer: "3/4",
+      explanation: "Three-fourths means 3 parts out of 4 equal parts, written as 3/4."
+    },
     {
       question: "Which fraction represents 'three out of four equal parts'?",
       options: ["3/4", "4/3", "1/4", "2/3"],
@@ -179,7 +178,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       question: "What is 5/9 − 2/9?",
       options: ["3/9", "7/9", "3/18", "1/9"],
       answer: "3/9",
-      explanation: "Same denominator 9, 5 − 2 = 3, so 3/9 (which simplifies to 1/3)."
+      explanation: "Same denominator 9, 5 − 2 = 3, so 3/9."
     },
     {
       question: "What is 2/3 + 1/3?",
@@ -221,7 +220,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       question: "A cake is cut into 10 equal slices. If you eat 4 slices, what fraction of the cake is left?",
       options: ["6/10", "4/10", "2/5", "3/10"],
       answer: "6/10",
-      explanation: "You ate 4, so 6 are left: 6/10, which can simplify to 3/5."
+      explanation: "You ate 4, so 6 are left: 6/10."
     },
     {
       question: "Which fraction shows 'one out of five'?",
@@ -281,7 +280,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       question: "If you shade 2 parts of a shape divided into 6 equal parts, what fraction is shaded?",
       options: ["2/3", "1/3", "2/6", "1/6"],
       answer: "2/6",
-      explanation: "You shaded 2 out of 6 parts, so the fraction is 2/6 (which simplifies to 1/3)."
+      explanation: "You shaded 2 out of 6 parts, so the fraction is 2/6."
     },
     {
       question: "If you shade 4 parts of a rectangle divided into 8 equal parts, what fraction is shaded?",
@@ -339,9 +338,9 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     },
     {
       question: "What is 5/6 − 1/6?",
-      options: ["4/6", "5/5", "1/5", "4/3"],
-      answer: "4/6",
-      explanation: "Same denominator 6, 5 − 1 = 4, so 4/6, which simplifies to 2/3."
+      options: ["2/3", "5/5", "1/5", "4/3"],
+      answer: "2/3",
+      explanation: "Same denominator 6, 5 − 1 = 4, so 4/6 simplifies to 2/3."
     },
     {
       question: "What is 7/9 − 2/9?",
@@ -369,7 +368,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     },
     {
       question: "What is 2/3 + 1/6?",
-      options: ["3/6", "4/6", "5/6", "1/2"],
+      options: ["1/2", "2/3", "5/6", "2/5"],
       answer: "5/6",
       explanation: "LCM of 3 and 6 is 6. 2/3 = 4/6, 1/6 stays 1/6. 4/6 + 1/6 = 5/6."
     },
@@ -381,14 +380,14 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     },
     {
       question: "What is 5/6 − 1/3?",
-      options: ["4/6", "3/6", "1/2", "2/3"],
+      options: ["1/2", "2/3", "1/3", "2/5"],
       answer: "1/2",
       explanation: "1/3 = 2/6, 5/6 − 2/6 = 3/6, which simplifies to 1/2."
     },
     {
       question: "What is 7/10 − 1/5?",
-      options: ["6/10", "5/10", "3/10", "2/5"],
-      answer: "5/10",
+      options: ["1/2", "3/10", "2/5", "4/10"],
+      answer: "1/2",
       explanation: "1/5 = 2/10, 7/10 − 2/10 = 5/10, which simplifies to 1/2."
     },
     {
@@ -489,14 +488,14 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     },
     {
       question: "What is 2/9 + 4/9?",
-      options: ["6/9", "2/3", "4/9", "8/9"],
-      answer: "6/9",
+      options: ["6/9", "5/9", "4/9", "8/9"],
+      answer: "2/3",
       explanation: "2/9 + 4/9 = 6/9, which simplifies to 2/3."
     },
     {
       question: "What is 5/8 − 1/8?",
-      options: ["4/8", "1/4", "3/8", "6/8"],
-      answer: "4/8",
+      options: ["1/2", "3/8", "6/8", "4/8"],
+      answer: "1/2",
       explanation: "5/8 − 1/8 = 4/8, which simplifies to 1/2."
     },
     {
@@ -531,8 +530,8 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     },
     {
       question: "A ribbon is 5/6 meter long. If you cut off 1/6 meter, how much is left?",
-      options: ["2/6 m", "4/6 m", "5/6 m", "1/3 m"],
-      answer: "4/6 m",
+      options: ["2/3 m", "4/6 m", "5/6 m", "1/3 m"],
+      answer: "2/3 m",
       explanation: "5/6 − 1/6 = 4/6, which simplifies to 2/3 meter."
     },
     {
@@ -625,7 +624,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // LEVEL 3: ADVANCED (50 items - Mixed Numbers & Complex Operations)
   // ==========================================
   advanced: [
-            {
+    {
       question: "A tank contains 2 1/2 liters of water, which is 5/8 of its full capacity. What is the full capacity of the tank?",
       options: ["3 liters", "4 liters", "5 liters", "6 liters"],
       answer: "4 liters",
@@ -635,7 +634,7 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       question: "Evaluate: (1 2/3 + 3/4) × 3/5.",
       options: ["1 1/4", "1 3/10", "1 9/20", "1 1/2"],
       answer: "1 9/20",
-      explanation: "Convert 1 2/3 to 5/3. Add 5/3 and 3/4. The LCD of 3 and 4 is 12, so 5/3 = 20/12 and 3/4 = 9/12. Sum = 29/12. Now multiply by 3/5: (29/12) × (3/5) = 87/60 = 29/20 = 1 9/20."
+      explanation: "Convert 1 2/3 to 5/3. Add 5/3 and 3/4. The LCD of 3 and 4 is 12, so 5/3 = 20/12 and 3/4 = 9/12. Sum = 29/12 = 2 5/12. Now multiply by 3/5: (29/12) × (3/5) = 87/60 = 29/20 = 1 9/20."
     },
     {
       question: "Convert the improper fraction 9/4 to a mixed number.",
@@ -700,16 +699,15 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
     {
       question: "What is 2/3 + 3/4?",
       options: ["17/12", "13/12", "5/7", "1 1/2"],
-      answer: "17/12",
+      answer: "1 5/12",
       explanation: "LCM of 3 and 4 is 12. 2/3 = 8/12, 3/4 = 9/12. Sum = 17/12 = 1 5/12."
     },
-  {
-  question: "What is 5/6 + 7/8?",
-  options: ["1 17/24", "1 11/24", "1 7/8", "2"],
-  answer: "1 17/24",
-  explanation: "LCM of 6 and 8 is 24. 5/6 = 20/24 and 7/8 = 21/24. Their sum is 41/24, which is 1 17/24."
-},
-
+    {
+      question: "What is 5/6 + 7/8?",
+      options: ["1 17/24", "1 11/24", "1 7/8", "2"],
+      answer: "1 17/24",
+      explanation: "LCM of 6 and 8 is 24. 5/6 = 20/24 and 7/8 = 21/24. Their sum is 41/24, which is 1 17/24."
+    },
     {
       question: "What is 2/3 of (4 1/2 − 1 3/4)?",
       options: ["1 1/3", "1 5/6", "2", "2 1/6"],
@@ -848,20 +846,18 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       answer: "1/4",
       explanation: "2/3 = 8/12. The other is 11/12 − 8/12 = 3/12 = 1/4."
     },
-  {
-  question: "One number is 3/4 of another. If the larger number is 24, what is the smaller number?",
-  options: ["16", "17", "18", "20"],
-  answer: "18",
-  explanation: "The smaller number is 3/4 of the larger number. Compute 3/4 × 24 = 72/4 = 18. So the smaller number is 18."
-},
-
-  {
-  question: "Simplify: (2/3 of 27) ÷ 5/6.",
-  options: ["7 1/5", "8 2/5", "9 1/5", "21 3/5"],
-  answer: "21 3/5",
-  explanation: "First find 2/3 of 27: (2/3) × 27 = 18. Then divide by 5/6: 18 ÷ (5/6) = 18 × 6/5 = 108/5 = 21 3/5."
-},
-
+    {
+      question: "One number is 3/4 of another. If the larger number is 24, what is the smaller number?",
+      options: ["16", "17", "18", "20"],
+      answer: "18",
+      explanation: "The smaller number is 3/4 of the larger number. Compute 3/4 × 24 = 72/4 = 18. So the smaller number is 18."
+    },
+    {
+      question: "Simplify: (2/3 of 27) ÷ 5/6.",
+      options: ["7 1/5", "8 2/5", "9 1/5", "21 3/5"],
+      answer: "21 3/5",
+      explanation: "First find 2/3 of 27: (2/3) × 27 = 18. Then divide by 5/6: 18 ÷ (5/6) = 18 × 6/5 = 108/5 = 21 3/5."
+    },
     {
       question: "What is 5/8 of 2 2/5?",
       options: ["1 1/4", "1 1/2", "1 3/5", "1 3/4"],
@@ -929,7 +925,8 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
       explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
     }
   ],
- // ==========================================
+
+  // ==========================================
   // LEVEL 4: EXPERT (50 Items)
   // ==========================================
   expert: [
