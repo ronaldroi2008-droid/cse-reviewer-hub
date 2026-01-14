@@ -56,9 +56,7 @@
       margin-bottom: 10px;
     }
 
-    .back-link:hover {
-      color: var(--accent);
-    }
+    .back-link:hover { color: var(--accent); }
 
     h1 {
       margin: 4px 0 4px;
@@ -151,17 +149,9 @@
       min-height: 18px;
     }
 
-    .status.info {
-      color: var(--muted);
-    }
-
-    .status.error {
-      color: var(--danger);
-    }
-
-    .status.success {
-      color: var(--success);
-    }
+    .status.info { color: var(--muted); }
+    .status.error { color: var(--danger); }
+    .status.success { color: var(--success); }
 
     .device-info {
       font-size: 0.78rem;
@@ -225,9 +215,11 @@
   </div>
 
   <script>
+    // Your license API (backend). If backend is down (expired Postgres),
+    // this page will fail gracefully and FREE mode still works.
     const API_BASE = "https://cse-license-api.onrender.com";
 
-    // Reusable deviceId (same idea as sa PromptWizard)
+    // Reusable deviceId
     function getDeviceId() {
       try {
         let id = localStorage.getItem("cse_device_id");
@@ -241,9 +233,14 @@
         }
         return id;
       } catch (e) {
-        // Kung disabled ang localStorage, fallback
         return "no-storage-" + Date.now();
       }
+    }
+
+    // ✅ Offline-safe: if already activated before, allow user to proceed even if server is down
+    function getCachedPro() {
+      return localStorage.getItem("cse_is_pro") === "true" &&
+             !!localStorage.getItem("cse_license_key");
     }
 
     async function activatePro(event) {
@@ -270,28 +267,26 @@
       btn.disabled = true;
 
       try {
+        // ✅ timeout so it doesn't hang when server is down
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), 4000); // 4s timeout
+
         const resp = await fetch(API_BASE + "/verify-license", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            licenseKey: rawKey,
-            deviceId: deviceId,
-          }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ licenseKey: rawKey, deviceId }),
+          signal: ctrl.signal
         });
 
-        // Kung mismatched CORS / 500, etc.
+        clearTimeout(t);
+
+        // Non-200 (CORS, 500, etc.)
         if (!resp.ok) {
           let msg = "Activation failed. Please double-check your license key.";
           try {
             const errData = await resp.json();
-            if (errData && errData.error) {
-              msg = errData.error;
-            }
-          } catch (_) {
-            // ignore JSON error
-          }
+            if (errData && errData.error) msg = errData.error;
+          } catch (_) {}
           statusEl.textContent = msg;
           statusEl.className = "status error";
           return;
@@ -300,7 +295,6 @@
         const data = await resp.json();
 
         if (!data.ok) {
-          // Special message kapag device limit na
           if (data.error === "Device limit reached for this license.") {
             statusEl.textContent =
               "Device limit reached for this license (max " +
@@ -310,48 +304,48 @@
             statusEl.textContent = data.error || "Invalid license key.";
           }
           statusEl.className = "status error";
+
           if (data.currentDevices && data.maxDevices) {
             deviceInfoEl.textContent =
-              "Registered devices: " +
-              data.currentDevices.length +
-              " / " +
-              data.maxDevices;
+              "Registered devices: " + data.currentDevices.length + " / " + data.maxDevices;
           }
           return;
         }
 
-        // ✅ Success – save PRO flag + license key locally
+        // ✅ Success – save locally (cached PRO)
         try {
           localStorage.setItem("cse_is_pro", "true");
           localStorage.setItem("cse_license_key", rawKey);
           localStorage.setItem("cse_device_id", deviceId);
-        } catch (_) {
-          // ignore storage error
-        }
+        } catch (_) {}
 
-        statusEl.textContent = "✅ PRO Activated on this device. You can now access Advanced, Expert, and the Full Mock Exam.";
+        statusEl.textContent =
+          "✅ PRO Activated on this device. You can now access Advanced, Expert, and the Full Mock Exam.";
         statusEl.className = "status success";
 
         if (typeof data.usedDevices === "number" && typeof data.maxDevices === "number") {
           const remaining = data.remainingDevices ?? (data.maxDevices - data.usedDevices);
           deviceInfoEl.textContent =
-            "This key is now active on " +
-            data.usedDevices +
-            " / " +
-            data.maxDevices +
-            " devices. Remaining slots: " +
-            remaining +
-            ".";
+            "This key is now active on " + data.usedDevices + " / " + data.maxDevices +
+            " devices. Remaining slots: " + remaining + ".";
         }
 
-        // Optional: slight delay then balik sa home
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1500);
+        setTimeout(() => { window.location.href = "index.html"; }, 1200);
       } catch (err) {
         console.error("Activation error:", err);
+
+        // ✅ If already PRO on this device, proceed even if server is down
+        if (getCachedPro()) {
+          statusEl.textContent =
+            "⚠️ License server is currently unavailable, but this device is already PRO-activated. You can continue using PRO features offline.";
+          statusEl.className = "status success";
+          setTimeout(() => { window.location.href = "index.html"; }, 1200);
+          return;
+        }
+
+        // ✅ Otherwise: allow FREE mode, and show a friendly message
         statusEl.textContent =
-          "Network error. Please check your internet connection and try again.";
+          "Network/server is unavailable (license server may be down). You can still use the FREE version offline. Try activation again when online.";
         statusEl.className = "status error";
       } finally {
         btn.disabled = false;
@@ -360,16 +354,18 @@
 
     document.getElementById("licenseForm").addEventListener("submit", activatePro);
 
-    // On load: kung PRO na, ipakita message
+    // On load: if PRO already, show message
     (function initStatus() {
       const statusEl = document.getElementById("status");
       const isPro = localStorage.getItem("cse_is_pro") === "true";
       if (isPro) {
-        statusEl.textContent = "This device is already PRO-activated. You can use all Advanced, Expert, and Mock Exam features.";
+        statusEl.textContent =
+          "This device is already PRO-activated. You can use all Advanced, Expert, and Mock Exam features.";
         statusEl.className = "status success";
       }
     })();
   </script>
 </body>
 </html>
+
 
