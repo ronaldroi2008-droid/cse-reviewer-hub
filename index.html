@@ -395,9 +395,7 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    .trial-input::placeholder {
-      color: #64748b;
-    }
+    .trial-input::placeholder { color: #64748b; }
 
     .trial-input:focus {
       border-color: #6366f1;
@@ -492,12 +490,8 @@
 
         <!-- PRO vs FREE TRIAL tabs -->
         <div class="access-tabs">
-          <button class="access-tab active" data-mode="pro">
-            PRO Access
-          </button>
-          <button class="access-tab" data-mode="trial">
-            Free Trial Key
-          </button>
+          <button class="access-tab active" data-mode="pro">PRO Access</button>
+          <button class="access-tab" data-mode="trial">Free Trial Key</button>
         </div>
 
         <!-- TRIAL banner (shown only if trial is active) -->
@@ -558,14 +552,13 @@
           <p>Paid PRO ka na? <a href="license.html">Enter your PRO license key here</a>.</p>
           <p style="margin-top:6px;">Na-activate mo na dati? <a href="#" id="pro-refresh-link">Refresh page</a>.</p>
         </div>
-
       </div>
     </div>
   </div>
 
   <script>
     // ======================================================
-    // 0) DEVICE ID (stable per browser)
+    // 0) DEVICE ID (stable per browser) - kept for compatibility
     // ======================================================
     const DEVICE_KEY = "cse_device_id";
     let deviceId = localStorage.getItem(DEVICE_KEY);
@@ -575,12 +568,12 @@
     }
 
     // ======================================================
-    // 1) LICENSE CONFIG
+    // 1) LICENSE CONFIG (OFFLINE-FIRST)
+    //    IMPORTANT: Home page should NOT call the license server.
+    //    License verification happens only in license.html.
     // ======================================================
-    const LICENSE_VERIFY_URL = "https://cse-license-server.onrender.com/api/license/verify";
     const STORAGE_LICENSE_KEY = "cse_license_key";
     const STORAGE_IS_PRO = "cse_is_pro";
-    const STORAGE_LAST_VERIFY_MS = "cse_last_verify_ms";
     const STORAGE_ACCESS_KIND = "cse_access_kind";     // "pro" | "trial" | "free"
     const STORAGE_EXPIRES_AT = "cse_expires_at";       // ISO
     const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
@@ -598,94 +591,29 @@
       return Date.now() > t;
     }
 
-    async function verifyLicenseKey(key) {
-      const res = await fetch(LICENSE_VERIFY_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key, device_id: deviceId })
-      });
-      return res.json();
-    }
-
-    async function getAccessState() {
+    // ✅ OFFLINE-ONLY access state (no server calls)
+    function getAccessStateOfflineOnly() {
       const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-      const savedKey = (localStorage.getItem(STORAGE_LICENSE_KEY) || "").trim();
+      const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || (legacyPro ? "pro" : "free");
+      const exp  = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
 
-      // Cache 5 mins
-      const lastMs = parseInt(localStorage.getItem(STORAGE_LAST_VERIFY_MS) || "0", 10);
-      const cachedKind = localStorage.getItem(STORAGE_ACCESS_KIND) || "";
-      const cachedExp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
-      if (savedKey && lastMs && (Date.now() - lastMs) < 5 * 60 * 1000 && cachedKind) {
-        if (cachedKind === "trial" && isExpired(cachedExp)) {
-          return { ok: false, kind: "free", expires_at: cachedExp, reason: "expired_cache" };
-        }
-        return {
-          ok: (cachedKind === "pro" || cachedKind === "trial"),
-          kind: cachedKind,
-          expires_at: cachedExp,
-          source: "cache"
-        };
-      }
-
-      if (!savedKey) {
-        return {
-          ok: legacyPro,
-          kind: legacyPro ? "pro" : "free",
-          expires_at: null,
-          source: "legacy_or_free"
-        };
-      }
-
-      try {
-        const data = await verifyLicenseKey(savedKey);
-        localStorage.setItem(STORAGE_LAST_VERIFY_MS, String(Date.now()));
-
-        if (data && data.ok) {
-          const kind = data.kind || "pro";
-          const exp = data.expires_at || "";
-
-          localStorage.setItem(STORAGE_ACCESS_KIND, kind);
-          localStorage.setItem(STORAGE_EXPIRES_AT, exp);
-
-          // keep old compatibility (trial counts as unlocked)
-          localStorage.setItem(STORAGE_IS_PRO, "true");
-
-          if (kind === "trial" && exp && isExpired(exp)) {
-            localStorage.setItem(STORAGE_IS_PRO, "false");
-            localStorage.setItem(STORAGE_ACCESS_KIND, "free");
-            return { ok: false, kind: "free", expires_at: exp, reason: "expired" };
-          }
-
-          return { ok: true, kind, expires_at: exp, source: "server" };
-        }
-
+      // Trial expiry check
+      if (kind === "trial" && exp && isExpired(exp)) {
         localStorage.setItem(STORAGE_IS_PRO, "false");
         localStorage.setItem(STORAGE_ACCESS_KIND, "free");
-
-        if (data && data.reason === "not_found") {
-          localStorage.removeItem(STORAGE_LICENSE_KEY);
-        }
-
-        return {
-          ok: false,
-          kind: "free",
-          expires_at: data?.expires_at || null,
-          reason: data?.reason || "invalid"
-        };
-      } catch (err) {
-        return {
-          ok: legacyPro,
-          kind: legacyPro ? "pro" : "free",
-          expires_at: null,
-          reason: "network_error"
-        };
+        return { ok: false, kind: "free", expires_at: exp, reason: "expired_local", source: "local" };
       }
+
+      if (kind === "pro") return { ok: true, kind: "pro", expires_at: null, source: "local" };
+      if (kind === "trial") return { ok: true, kind: "trial", expires_at: exp, source: "local" };
+
+      return { ok: false, kind: "free", expires_at: null, source: "local" };
     }
 
     // ======================================================
     // 2) INIT
     // ======================================================
-    document.addEventListener("DOMContentLoaded", async () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const mockExamLink = document.getElementById("mockExamLink");
       const mockExamLabel = document.getElementById("mockExamLabel");
       const practiceLink = document.getElementById("practiceLink");
@@ -705,7 +633,6 @@
       const accessTabs = document.querySelectorAll(".access-tab");
       const proContent = document.getElementById("proContent");
       const trialContent = document.getElementById("trialContent");
-      const trialKeyInput = document.getElementById("trialKeyInput");
       const trialActivateBtn = document.getElementById("trialActivateBtn");
       const trialMessage = document.getElementById("trialMessage");
 
@@ -735,10 +662,6 @@
           licenseStatus.innerHTML =
             `<span class="pill pill-trial">⏳ TRIAL</span>` +
             `<span style="margin-left:8px;color:#cbd5e1;">Until: ${fmtManila(expiresAt)}</span>`;
-        } else if (kind === "network") {
-          licenseStatus.innerHTML =
-            `<span class="pill pill-free">⚠️ OFFLINE</span>` +
-            `<span style="margin-left:8px;color:#94a3b8;">Using saved access</span>`;
         } else {
           licenseStatus.innerHTML =
             `<span class="pill pill-free">🔒 FREE</span>` +
@@ -791,8 +714,7 @@
         } else if (mode === "trial") {
           if (modalTitle) modalTitle.textContent = "⏳ Enter Trial Key";
           if (modalSubtitle) {
-            modalSubtitle.textContent =
-              "Activate your FREE trial access using the key we sent.";
+            modalSubtitle.textContent = "Activate your FREE trial access using the key we sent.";
           }
         }
       }
@@ -837,67 +759,26 @@
           }
         }
 
-        // by default, kapag locked, PRO tab view muna
+        // default: show PRO tab first
         switchTab("pro");
       }
 
-      // Activate trial key inside modal
-      if (trialActivateBtn && trialKeyInput && trialMessage) {
-        trialActivateBtn.addEventListener("click", async () => {
-          const key = trialKeyInput.value.trim();
-          if (!key) {
-            trialMessage.textContent = "Pakilagay muna ang trial key.";
-            trialMessage.style.color = "#fca5a5";
-            return;
-          }
-
-          trialActivateBtn.disabled = true;
-          trialActivateBtn.textContent = "Checking…";
-          trialMessage.textContent = "";
-
-          try {
-            const data = await verifyLicenseKey(key);
-            if (data && data.ok && (data.kind === "trial" || data.kind === "pro")) {
-              localStorage.setItem(STORAGE_LICENSE_KEY, key);
-              localStorage.setItem(STORAGE_ACCESS_KIND, data.kind || "trial");
-              localStorage.setItem(STORAGE_EXPIRES_AT, data.expires_at || "");
-              localStorage.setItem(STORAGE_LAST_VERIFY_MS, String(Date.now()));
-              localStorage.setItem(STORAGE_IS_PRO, "true"); // compatibility
-
-              setStatusPill(data.kind, data.expires_at);
-              setMockLabel(data.kind);
-              setPracticeLabel(data.kind);
-
-              trialMessage.textContent =
-                data.kind === "trial"
-                  ? `✅ Trial activated! Valid until ${fmtManila(data.expires_at)}. Redirecting…`
-                  : "✅ PRO activated! Redirecting to Mock Exam…";
-              trialMessage.style.color = "#4ade80";
-
-              setTimeout(() => {
-                closeProModal();
-                window.location.href = "mock_exam.html";
-              }, 900);
-            } else {
-              trialMessage.textContent =
-                "❌ Invalid or expired trial key. Pakicheck ulit yung code.";
-              trialMessage.style.color = "#fca5a5";
-            }
-          } catch (err) {
-            console.error("Trial activation error:", err);
-            trialMessage.textContent =
-              "⚠️ Network error. Pakisubukan ulit mamaya.";
-            trialMessage.style.color = "#fde68a";
-          } finally {
-            trialActivateBtn.disabled = false;
-            trialActivateBtn.textContent = "Activate Trial";
-          }
+      // ✅ IMPORTANT CHANGE:
+      // Trial activation should happen in license.html (single entry point for server calls).
+      if (trialActivateBtn && trialMessage) {
+        trialActivateBtn.addEventListener("click", () => {
+          trialMessage.textContent = "Opening activation page…";
+          trialMessage.style.color = "#fde68a";
+          setTimeout(() => {
+            window.location.href = "license.html";
+          }, 350);
         });
       }
 
-      const access = await getAccessState();
+      // Get access state locally (no server)
+      const access = getAccessStateOfflineOnly();
 
-      // compute unlocked precisely (trial must not be expired)
+      // Compute unlocked precisely (trial must not be expired)
       const unlockedNow =
         access.ok &&
         (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
@@ -905,15 +786,11 @@
       const uiKind = unlockedNow ? access.kind : "free";
 
       // status UI
-      if (access.reason === "network_error") {
-        setStatusPill("network");
-      } else {
-        setStatusPill(uiKind, access.expires_at);
-      }
+      setStatusPill(uiKind, access.expires_at);
       setMockLabel(uiKind);
       setPracticeLabel(uiKind);
 
-      // CLICK HANDLERS
+      // CLICK HANDLERS (use cached local state)
       if (mockExamLink) {
         mockExamLink.addEventListener("click", (e) => {
           e.preventDefault();
