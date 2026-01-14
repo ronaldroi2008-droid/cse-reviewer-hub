@@ -775,6 +775,17 @@
         });
       }
 
+      // ✅ PRO SYNC FIX:
+      // If legacy PRO flag is true, force access_kind=pro so Home + Mock Exam unlock correctly.
+      (function syncLegacyProToKind(){
+        const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
+        const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "";
+        if (legacyPro && kind !== "pro") {
+          localStorage.setItem(STORAGE_ACCESS_KIND, "pro");
+          localStorage.removeItem(STORAGE_EXPIRES_AT);
+        }
+      })();
+
       // Get access state locally (no server)
       const access = getAccessStateOfflineOnly();
 
@@ -797,9 +808,10 @@
 
           const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
           const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
+          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
 
           const unlockedCached =
-            (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
+            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
 
           if (unlockedCached) {
             window.location.href = "mock_exam.html";
@@ -816,9 +828,10 @@
 
           const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
           const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
+          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
 
           const unlockedCached =
-            (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
+            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
 
           if (unlockedCached) {
             window.location.href = "practice.html";
