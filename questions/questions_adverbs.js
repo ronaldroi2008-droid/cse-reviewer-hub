@@ -4,7 +4,7 @@
 window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 
 // 2. Inject Data
-window.VERBAL_QUESTION_BANK["adverb"] = {
+window.VERBAL_QUESTION_BANK["adverbs"] = {
   // ============================================================
   // LEVEL 1: BEGINNER (50 Items) - Basic Identification & Types
   // ============================================================
