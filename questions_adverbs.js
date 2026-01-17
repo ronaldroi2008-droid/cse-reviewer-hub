@@ -5,61 +5,61 @@ const ADVERB_QUESTIONS = {
       question: "In 'He runs quickly', identify the adverb.", 
       choices: ["He", "runs", "quickly", "is"], 
       correctIndex: 2, 
-      explanation: "The word 'quickly' describes **how** the action happens. It modifies the verb 'runs'. Words that answer 'how' and end in -ly are usually adverbs." 
+      explanation: "The intended meaning is to describe how the action is done. The word 'quickly' tells how he runs and modifies the verb 'runs'. Words that describe how an action happens are adverbs. The other choices are a subject, a verb, and a linking verb."
     },
     { 
       question: "In 'She sings loudly', identify the adverb.", 
       choices: ["She", "sings", "loudly", "song"], 
       correctIndex: 2, 
-      explanation: "'Loudly' is the adverb because it describes the verb 'sings'. It answers the question: 'How does she sing?'" 
+      explanation: "The sentence describes the manner of singing. 'Loudly' answers the question 'How does she sing?' and modifies the verb 'sings'. Therefore, 'loudly' is the adverb."
     },
     { 
       question: "In 'They played happily', identify the adverb.", 
       choices: ["They", "played", "happily", "game"], 
       correctIndex: 2, 
-      explanation: "'Happily' describes the manner/feeling of the action 'played'. Adjectives describe nouns (happy kids), but adverbs describe verbs (played happily)." 
+      explanation: "The meaning focuses on how the action was done. 'Happily' modifies the verb 'played' by describing the manner or feeling of the action. Adverbs describe verbs, not nouns."
     },
     { 
       question: "In 'Go inside now', identify the adverb.", 
       choices: ["Go", "inside", "now", "Both B and C"], 
       correctIndex: 3, 
-      explanation: "This sentence has two adverbs. 'Inside' is an adverb of **Place** (Where?), and 'now' is an adverb of **Time** (When?)." 
+      explanation: "The sentence contains two words that modify the verb 'go'. 'Inside' tells where to go (adverb of place), and 'now' tells when to go (adverb of time). Since both modify the verb, both are adverbs."
     },
     { 
       question: "In 'He never lies', identify the adverb.", 
       choices: ["He", "never", "lies", "is"], 
       correctIndex: 1, 
-      explanation: "'Never' is an adverb of **Frequency**. It tells us **how often** he lies (which is at no time)." 
+      explanation: "The sentence expresses how often the action happens. 'Never' modifies the verb 'lies' by showing frequency (at no time). Words that answer 'how often' are adverbs of frequency."
     },
     { 
       question: "In 'It is very cold', identify the adverb.", 
       choices: ["It", "is", "very", "cold"], 
       correctIndex: 2, 
-      explanation: "Here, 'cold' is an adjective. The word 'very' describes **how cold** it is. Adverbs can modify adjectives to show intensity." 
+      explanation: "The adjective 'cold' describes the subject. The word 'very' modifies the adjective 'cold' by showing degree or intensity. Adverbs can modify adjectives, so 'very' is the adverb."
     },
     { 
       question: "In 'She eats slowly', identify the adverb.", 
       choices: ["She", "eats", "slowly", "food"], 
       correctIndex: 2, 
-      explanation: "'Slowly' describes the action 'eats'. It tells us the manner in which she is eating." 
+      explanation: "The sentence describes how the action is performed. 'Slowly' modifies the verb 'eats' by describing the manner of eating. Therefore, it is the adverb."
     },
     { 
       question: "In 'We met yesterday', identify the adverb.", 
       choices: ["We", "met", "yesterday", "us"], 
       correctIndex: 2, 
-      explanation: "'Yesterday' is an adverb of **Time**. It answers the question: 'When did we meet?'" 
+      explanation: "The word 'yesterday' tells when the action happened. It modifies the verb 'met' by expressing time. Words that answer 'when' are adverbs of time."
     },
     { 
       question: "In 'Look up', identify the adverb.", 
       choices: ["Look", "up", "you", "none"], 
       correctIndex: 1, 
-      explanation: "'Up' is an adverb of **Place/Direction**. It tells you **where** to look." 
+      explanation: "The verb 'look' needs direction. The word 'up' tells where to look and modifies the verb. In this sentence, 'up' functions as an adverb of direction."
     },
     { 
       question: "In 'I am fully prepared', identify the adverb.", 
       choices: ["I", "am", "fully", "prepared"], 
       correctIndex: 2, 
-      explanation: "'Prepared' is an adjective describing 'I'. 'Fully' is an adverb that tells us **to what extent** I am prepared (100%)." 
+      explanation: "The word 'prepared' describes a state, functioning like an adjective. 'Fully' modifies 'prepared' by showing degree or completeness. Adverbs can modify adjectives, so 'fully' is the adverb."
     },
 
     // --- 11-20: Classification (Types of Adverbs) ---
@@ -67,61 +67,61 @@ const ADVERB_QUESTIONS = {
       question: "What type of adverb is 'tomorrow'?", 
       choices: ["Manner", "Time", "Place", "Degree"], 
       correctIndex: 1, 
-      explanation: "'Tomorrow' answers the question **'When?'**, so it is an Adverb of Time." 
+      explanation: "'Tomorrow' answers the question 'When does the action happen?' Words that express time are classified as adverbs of time."
     },
     { 
       question: "What type of adverb is 'here'?", 
       choices: ["Manner", "Time", "Place", "Frequency"], 
       correctIndex: 2, 
-      explanation: "'Here' answers the question **'Where?'**, so it is an Adverb of Place." 
+      explanation: "'Here' answers the question 'Where?' It indicates location, so it is an adverb of place."
     },
     { 
       question: "What type of adverb is 'beautifully'?", 
       choices: ["Manner", "Time", "Place", "Degree"], 
       correctIndex: 0, 
-      explanation: "'Beautifully' answers the question **'How?'** (in what way), so it is an Adverb of Manner." 
+      explanation: "'Beautifully' describes how an action is done. Words that answer 'how' describe manner, making it an adverb of manner."
     },
     { 
       question: "What type of adverb is 'always'?", 
       choices: ["Manner", "Time", "Frequency", "Degree"], 
       correctIndex: 2, 
-      explanation: "'Always' answers the question **'How often?'**, so it is an Adverb of Frequency." 
+      explanation: "'Always' tells how often an action happens. Words that show repetition or regularity are adverbs of frequency."
     },
     { 
       question: "What type of adverb is 'outside'?", 
       choices: ["Manner", "Time", "Place", "Degree"], 
       correctIndex: 2, 
-      explanation: "'Outside' tells us the location or **where** an action is happening, making it an Adverb of Place." 
+      explanation: "'Outside' tells where an action takes place. It answers the question 'Where?' and is therefore an adverb of place."
     },
     { 
       question: "What type of adverb is 'carefully'?", 
       choices: ["Manner", "Time", "Place", "Frequency"], 
       correctIndex: 0, 
-      explanation: "'Carefully' describes the manner **(how)** something is done, so it is an Adverb of Manner." 
+      explanation: "'Carefully' explains how an action is performed. Words that describe how something is done are adverbs of manner."
     },
     { 
       question: "What type of adverb is 'soon'?", 
       choices: ["Manner", "Time", "Place", "Degree"], 
       correctIndex: 1, 
-      explanation: "'Soon' indicates a time in the near future (answering **'When?'**), so it is an Adverb of Time." 
+      explanation: "'Soon' refers to a point in time in the near future. Words that answer 'when' are adverbs of time."
     },
     { 
       question: "What type of adverb is 'everywhere'?", 
       choices: ["Manner", "Time", "Place", "Frequency"], 
       correctIndex: 2, 
-      explanation: "'Everywhere' refers to all locations (answering **'Where?'**), so it is an Adverb of Place." 
+      explanation: "'Everywhere' refers to all locations. It answers 'where' and is classified as an adverb of place."
     },
     { 
       question: "What type of adverb is 'rarely'?", 
       choices: ["Manner", "Time", "Frequency", "Place"], 
       correctIndex: 2, 
-      explanation: "'Rarely' means 'not often'. It answers **'How often?'**, so it is an Adverb of Frequency." 
+      explanation: "'Rarely' shows how often something happens. It expresses frequency, so it is an adverb of frequency."
     },
     { 
       question: "What type of adverb is 'quite'?", 
       choices: ["Manner", "Time", "Place", "Degree"], 
       correctIndex: 3, 
-      explanation: "'Quite' shows intensity or **how much** (e.g., quite good). This makes it an Adverb of Degree." 
+      explanation: "'Quite' modifies an adjective or another adverb by showing intensity. Words that show degree or extent are adverbs of degree."
     },
 
     // --- 21-30: Fill in the blank (Basic Forms) ---
@@ -129,61 +129,61 @@ const ADVERB_QUESTIONS = {
       question: "She walked ______ down the street.", 
       choices: ["slow", "slowly", "slower", "slowest"], 
       correctIndex: 1, 
-      explanation: "We need to modify the verb 'walked'. Adjectives (slow) describe nouns. Adverbs (slowly) describe verbs. **How did she walk? Slowly.**" 
+      explanation: "The sentence describes how the action 'walked' was done. Words that describe how a verb is performed must be adverbs. 'Slowly' modifies the verb 'walked'. The other choices are adjective or comparative/superlative forms that do not fit."
     },
     { 
       question: "He speaks English ______.", 
       choices: ["fluent", "fluently", "fluency", "most fluent"], 
       correctIndex: 1, 
-      explanation: "We are describing the action 'speaks'. Therefore, we need the adverb form 'fluently', not the adjective 'fluent'." 
+      explanation: "The word must describe the action 'speaks'. 'Fluently' is the adverb form that modifies the verb. 'Fluent' is an adjective, and 'fluency' is a noun."
     },
     { 
       question: "The dog barked ______.", 
       choices: ["loud", "loudly", "loudness", "louder"], 
       correctIndex: 1, 
-      explanation: "The word must describe the verb 'barked'. Adverbs of manner usually end in -ly, so 'loudly' is correct." 
+      explanation: "The sentence focuses on how the barking happened. 'Loudly' modifies the verb 'barked' and describes manner. The other choices are an adjective, a noun, and a comparative form."
     },
     { 
       question: "Please hold the glass ______.", 
       choices: ["careful", "carefully", "care", "caring"], 
       correctIndex: 1, 
-      explanation: "You are modifying the action 'hold'. How should you hold it? 'Carefully' (Adverb)." 
+      explanation: "The command tells how the action 'hold' should be done. 'Carefully' modifies the verb and shows manner. 'Careful' is an adjective and cannot modify a verb directly."
     },
     { 
       question: "She answered ______.", 
       choices: ["correct", "correctly", "correction", "corrects"], 
       correctIndex: 1, 
-      explanation: "We need an adverb to describe 'answered'. 'Correctly' tells us she answered in a correct manner." 
+      explanation: "The sentence describes how she answered. 'Correctly' modifies the verb 'answered'. The other choices are an adjective, a noun, and a verb."
     },
     { 
       question: "The sun shines ______.", 
       choices: ["bright", "brightly", "brightness", "brighter"], 
       correctIndex: 1, 
-      explanation: "Since 'shines' is a verb of action here, we use the adverb 'brightly' to describe how it shines." 
+      explanation: "Here, 'shines' is an action verb. 'Brightly' modifies the verb by describing how the sun shines. 'Bright' would describe a noun, not the action."
     },
     { 
       question: "He waited ______ for his turn.", 
       choices: ["patient", "patiently", "patience", "patients"], 
       correctIndex: 1, 
-      explanation: "He is performing the action of 'waiting'. We need the adverb 'patiently' to describe his behavior." 
+      explanation: "The word must describe how he waited. 'Patiently' modifies the verb 'waited'. The other options are an adjective, a noun, and a plural noun."
     },
     { 
       question: "The rain fell ______.", 
       choices: ["heavy", "heavily", "heavier", "heaviest"], 
       correctIndex: 1, 
-      explanation: "We are describing 'fell'. The adjective is 'heavy' (ends in y). To make it an adverb, change 'y' to 'i' and add 'ly' = **heavily**." 
+      explanation: "The sentence describes the manner of falling. 'Heavily' modifies the verb 'fell'. 'Heavy' is an adjective and cannot directly modify a verb."
     },
     { 
       question: "They lived ______ ever after.", 
       choices: ["happy", "happily", "happiness", "happier"], 
       correctIndex: 1, 
-      explanation: "Describes how they 'lived'. Happy (adj) -> Happily (adv). Change y to i + ly." 
+      explanation: "The sentence describes how they lived. 'Happily' modifies the verb 'lived'. The adjective 'happy' describes nouns, not actions."
     },
     { 
       question: "Drive ______!", 
       choices: ["safe", "safely", "safety", "saver"], 
       correctIndex: 1, 
-      explanation: "This is a command to perform the action 'drive' in a specific way. We use the adverb 'safely'." 
+      explanation: "This is a command describing how to drive. 'Safely' modifies the verb 'drive'. 'Safe' is an adjective and cannot modify a verb directly."
     },
 
     // --- 31-40: Adjective vs Adverb Distinction ---
@@ -191,61 +191,61 @@ const ADVERB_QUESTIONS = {
       question: "He is a ______ driver.", 
       choices: ["careful", "carefully"], 
       correctIndex: 0, 
-      explanation: "Here, we are describing the noun 'driver'. Adjectives describe nouns. So, we use the adjective 'careful'." 
+      explanation: "The word describes the noun 'driver'. Adjectives describe nouns, so 'careful' is correct. 'Carefully' is an adverb and cannot describe a noun."
     },
     { 
       question: "He drives ______.", 
       choices: ["careful", "carefully"], 
       correctIndex: 1, 
-      explanation: "Here, we are describing the verb 'drives'. Adverbs describe verbs. So, we use the adverb 'carefully'." 
+      explanation: "The word describes the action 'drives'. Adverbs describe verbs, so 'carefully' is correct."
     },
     { 
       question: "She has a ______ voice.", 
       choices: ["loud", "loudly"], 
       correctIndex: 0, 
-      explanation: "'Voice' is a noun. We use the adjective 'loud' to describe a noun." 
+      explanation: "The word describes the noun 'voice'. Adjectives describe nouns, so 'loud' is correct."
     },
     { 
       question: "She speaks ______.", 
       choices: ["loud", "loudly"], 
       correctIndex: 1, 
-      explanation: "'Speaks' is an action verb. We use the adverb 'loudly' to describe how she speaks." 
+      explanation: "The sentence describes how she speaks. 'Loudly' modifies the verb 'speaks' and shows manner."
     },
     { 
       question: "This math problem is ______.", 
       choices: ["easy", "easily"], 
       correctIndex: 0, 
-      explanation: "The verb 'is' acts as a linking verb here, connecting the subject 'problem' to its description. We use the adjective 'easy'." 
+      explanation: "'Is' is a linking verb connecting the subject to a description. Linking verbs are followed by adjectives, so 'easy' is correct."
     },
     { 
       question: "I can solve it ______.", 
       choices: ["easy", "easily"], 
       correctIndex: 1, 
-      explanation: "'Solve' is an action verb. To describe how you solve something, use the adverb 'easily'." 
+      explanation: "The word describes how the action 'solve' is done. 'Easily' modifies the verb and is the correct adverb form."
     },
     { 
       question: "Be ______.", 
       choices: ["quiet", "quietly"], 
       correctIndex: 0, 
-      explanation: "After the verb 'be', we describe the subject (you). Therefore, use the adjective 'quiet'." 
+      explanation: "After the linking verb 'be', we describe the subject. 'Quiet' is an adjective describing the person."
     },
     { 
       question: "Work ______.", 
       choices: ["quiet", "quietly"], 
       correctIndex: 1, 
-      explanation: "'Work' is an action. To describe how to work, use the adverb 'quietly'." 
+      explanation: "The word describes how the action 'work' is done. 'Quietly' modifies the verb and shows manner."
     },
     { 
       question: "The test was ______.", 
       choices: ["bad", "badly"], 
       correctIndex: 0, 
-      explanation: "'Was' is a linking verb. It links 'test' to an adjective. 'Bad' is the adjective. (Note: 'Badly' is an adverb)." 
+      explanation: "'Was' is a linking verb. Linking verbs take adjectives, not adverbs. 'Bad' describes the test."
     },
     { 
       question: "The team played ______.", 
       choices: ["bad", "badly"], 
       correctIndex: 1, 
-      explanation: "'Played' is an action. We need an adverb to say they played poorly. The adverb form is 'badly'." 
+      explanation: "The word describes how the team played. 'Badly' modifies the verb 'played' and shows manner."
     },
 
     // --- 41-50: Spelling & Formation ---
@@ -253,64 +253,63 @@ const ADVERB_QUESTIONS = {
       question: "Adverb form of 'happy'?", 
       choices: ["happyly", "happily", "happely", "happly"], 
       correctIndex: 1, 
-      explanation: "Spelling Rule: If an adjective ends in 'y', change the 'y' to 'i' before adding 'ly'. Happy -> Happily." 
+      explanation: "When an adjective ends in 'y', change 'y' to 'i' and add 'ly'. Happy → happily. The other spellings are incorrect."
     },
     { 
       question: "Adverb form of 'terrible'?", 
       choices: ["terribly", "terriblely", "terriby", "terriblly"], 
       correctIndex: 0, 
-      explanation: "Spelling Rule: If an adjective ends in 'le' (terrible), drop the 'e' and add 'y'. Terrible -> Terribly." 
+      explanation: "For adjectives ending in 'le', drop the 'e' and add 'y'. Terrible → terribly."
     },
     { 
       question: "Adverb form of 'gentle'?", 
       choices: ["gently", "gentlely", "gentlyly", "gentily"], 
       correctIndex: 0, 
-      explanation: "Spelling Rule: Ends in 'le' (gentle). Drop the 'e' and add 'y'. Gentle -> Gently." 
+      explanation: "Adjectives ending in 'le' form adverbs by dropping 'e' and adding 'y'. Gentle → gently."
     },
     { 
       question: "Adverb form of 'basic'?", 
       choices: ["basicly", "basically", "basicaly", "basiclly"], 
       correctIndex: 1, 
-      explanation: "Spelling Rule: If an adjective ends in 'ic', add '-ally'. Basic -> Basically." 
+      explanation: "Adjectives ending in 'ic' usually add '-ally'. Basic → basically."
     },
     { 
       question: "Adverb form of 'tragic'?", 
       choices: ["tragicly", "tragically", "tragicaly", "tragicy"], 
       correctIndex: 1, 
-      explanation: "Spelling Rule: Ends in 'ic'. Add '-ally'. Tragic -> Tragically." 
+      explanation: "Adjectives ending in 'ic' take '-ally' to form adverbs. Tragic → tragically."
     },
     { 
       question: "Adverb form of 'full'?", 
       choices: ["fully", "fuly", "fullly", "fullley"], 
       correctIndex: 0, 
-      explanation: "Spelling Rule: Even though 'full' ends in 'l', we usually just add 'y' or 'ly' depending on the root. Correct spelling is 'fully'." 
+      explanation: "The correct spelling drops one 'l' before adding 'y'. Full → fully."
     },
     { 
       question: "Adverb form of 'angry'?", 
       choices: ["angryly", "angrily", "angrely", "angry"], 
       correctIndex: 1, 
-      explanation: "Ends in 'y'. Change 'y' to 'i' + 'ly'. Angry -> Angrily." 
+      explanation: "Adjectives ending in 'y' change 'y' to 'i' before adding 'ly'. Angry → angrily."
     },
     { 
       question: "Adverb form of 'fast'?", 
       choices: ["fast", "fastly", "faster", "fastest"], 
       correctIndex: 0, 
-      explanation: "Irregular Adverb! 'Fast' describes both the noun and the verb. **There is no such word as 'fastly'.** He runs fast." 
+      explanation: "'Fast' is an irregular (flat) adverb. It has the same form as the adjective. 'Fastly' is incorrect."
     },
     { 
       question: "Adverb form of 'good'?", 
       choices: ["goodly", "well", "good", "goodest"], 
       correctIndex: 1, 
-      explanation: "Irregular Adverb! The adjective is 'good'. The adverb is 'well'. (e.g., You did a good job / You did well)." 
+      explanation: "'Good' is an adjective. Its adverb form is irregular: good → well."
     },
     { 
       question: "Adverb form of 'hard' (meaning 'with effort')?", 
       choices: ["hard", "hardly", "harder", "hardest"], 
       correctIndex: 0, 
-      explanation: "Irregular! 'Hard' means with effort. 'Hardly' means 'almost not'. If you work with effort, you work **hard**." 
-     }
-  ], 
-
+      explanation: "'Hard' means 'with effort' and functions as an adverb without -ly. 'Hardly' has a different meaning ('almost not'), so it is incorrect here."
+    }
+  ],
 
   intermediate: [
     // --- 51-60: Good vs Well (Common Confusion) ---
@@ -318,61 +317,61 @@ const ADVERB_QUESTIONS = {
       question: "She plays the piano ______.", 
       choices: ["good", "well", "better", "best"], 
       correctIndex: 1, 
-      explanation: "We describe the action 'plays'. Since it's a verb, we use the adverb 'well'. ('Good' is an adjective)." 
+      explanation: "The sentence describes how the action 'plays' is performed. Words that describe verbs must be adverbs. 'Well' is the adverb form of 'good'. 'Good' is an adjective and cannot modify a verb."
     },
     { 
       question: "Her piano playing is ______.", 
       choices: ["good", "well", "better", "best"], 
       correctIndex: 0, 
-      explanation: "Here we describe the noun phrase 'piano playing' using the linking verb 'is'. Adjectives describe nouns, so use 'good'." 
+      explanation: "The word describes the noun phrase 'piano playing'. After the linking verb 'is', we use an adjective. 'Good' is the correct adjective. 'Well' is usually an adverb, except when referring to health."
     },
     { 
       question: "I don't feel ______ today.", 
       choices: ["good", "well", "nice", "fine"], 
       correctIndex: 1, 
-      explanation: "Special Rule: When talking about **health**, 'well' is used as an adjective. 'I don't feel well' means I am not healthy." 
+      explanation: "When talking about health or physical condition, 'well' functions as an adjective. 'I don't feel well' means I am not healthy."
     },
     { 
       question: "He did a ______ job.", 
       choices: ["good", "well"], 
       correctIndex: 0, 
-      explanation: "'Job' is a noun. Adjectives describe nouns. So, 'good job' is correct." 
+      explanation: "The word describes the noun 'job'. Adjectives describe nouns, so 'good job' is correct. 'Well' cannot describe a noun in this context."
     },
     { 
       question: "The team played ______ yesterday.", 
       choices: ["good", "well"], 
       correctIndex: 1, 
-      explanation: "'Played' is an action verb. Adverbs describe verbs. So, 'played well' is correct." 
+      explanation: "The sentence describes how the team played. Since 'played' is a verb, it must be modified by an adverb. 'Well' is the correct adverb."
     },
     { 
       question: "It looks ______.", 
       choices: ["good", "well"], 
       correctIndex: 0, 
-      explanation: "'Looks' is a linking verb referring to appearance. We use the adjective 'good' (e.g., That looks good/tasty)." 
+      explanation: "'Looks' is a linking verb referring to appearance. Linking verbs are followed by adjectives, so 'good' is correct."
     },
     { 
       question: "She speaks English ______.", 
       choices: ["good", "well"], 
       correctIndex: 1, 
-      explanation: "We are modifying the verb 'speaks'. How does she speak? She speaks **well**." 
+      explanation: "The sentence describes how she speaks. 'Well' modifies the verb 'speaks'. 'Good' is an adjective and cannot modify a verb."
     },
     { 
       question: "He is a ______ student.", 
       choices: ["good", "well"], 
       correctIndex: 0, 
-      explanation: "'Student' is a noun. Use the adjective 'good' to describe him." 
+      explanation: "The word describes the noun 'student'. Adjectives describe nouns, so 'good' is correct."
     },
     { 
       question: "Did you sleep ______?", 
       choices: ["good", "well"], 
       correctIndex: 1, 
-      explanation: "We are modifying the action 'sleep'. Use the adverb 'well'. (Sleep well)." 
+      explanation: "The sentence asks about how the action 'sleep' happened. 'Well' is the adverb that modifies the verb."
     },
     { 
       question: "The food tastes ______.", 
       choices: ["good", "well"], 
       correctIndex: 0, 
-      explanation: "'Tastes' is a linking verb describing the food. Use the adjective 'good'." 
+      explanation: "'Tastes' is a linking verb that describes the food. Linking verbs take adjectives, so 'good' is correct."
     },
 
     // --- 61-70: Comparison of Adverbs ---
@@ -380,123 +379,123 @@ const ADVERB_QUESTIONS = {
       question: "He runs ______ than me.", 
       choices: ["fast", "faster", "fastly", "more fast"], 
       correctIndex: 1, 
-      explanation: "When comparing two actions with short adverbs (like fast), add '-er'. **Faster** is correct. (Fastly does not exist)." 
+      explanation: "The sentence compares two actions. 'Fast' is a short (one-syllable) adverb, so its comparative form is made by adding '-er'. 'Faster' is correct. 'Fastly' is not a word."
     },
     { 
       question: "She works ______ than her brother.", 
       choices: ["hard", "harder", "hardly", "more hard"], 
       correctIndex: 1, 
-      explanation: "For one-syllable adverbs like 'hard', add '-er' to make the comparative form: **harder**." 
+      explanation: "'Hard' is a one-syllable adverb. To compare two actions, add '-er'. 'Harder' is correct. 'Hardly' changes the meaning to 'almost not'."
     },
     { 
       question: "Please speak ______.", 
       choices: ["more clearly", "clearlier", "most clearly", "clear"], 
       correctIndex: 0, 
-      explanation: "For adverbs ending in '-ly', we usually use **more** to compare. 'More clearly' is the correct form." 
+      explanation: "'Clearly' ends in '-ly'. Adverbs ending in '-ly' form comparatives using 'more', not '-er'. Therefore, 'more clearly' is correct."
     },
     { 
       question: "He arrived ______ than expected.", 
       choices: ["early", "earlier", "more early", "earliest"], 
       correctIndex: 1, 
-      explanation: "Early ends in 'y'. Change 'y' to 'i' and add 'er'. **Earlier** is the comparative form." 
+      explanation: "The sentence compares two times. 'Early' ends in 'y', so the comparative form changes 'y' to 'i' and adds '-er': earlier."
     },
     { 
       question: "Of all the runners, he ran ______.", 
       choices: ["fastest", "faster", "most fast", "fastly"], 
       correctIndex: 0, 
-      explanation: "This compares more than two people ('of all'). We use the **superlative** form. Fast -> **Fastest**." 
+      explanation: "'Of all' shows comparison among more than two people. This requires the superlative form. 'Fastest' is the correct superlative of 'fast'."
     },
     { 
       question: "She sings ______ of all.", 
       choices: ["beautifully", "more beautifully", "most beautifully", "beauty"], 
       correctIndex: 2, 
-      explanation: "Superlative for -ly adverbs uses 'most'. Since we are comparing her to 'all', she sings **most beautifully**." 
+      explanation: "The sentence compares her with everyone else. For '-ly' adverbs, the superlative form uses 'most'. Therefore, 'most beautifully' is correct."
     },
     { 
       question: "He drives ______ than his father.", 
       choices: ["carefully", "more carefully", "most carefully", "carefuller"], 
       correctIndex: 1, 
-      explanation: "Comparing two people (him vs father). For 'carefully', we use **more carefully**." 
+      explanation: "The sentence compares two people. 'Carefully' ends in '-ly', so the comparative form uses 'more'. 'More carefully' is correct."
     },
     { 
-      question: "Who woke up ______?", 
-      choices: ["earlier", "earliest", "early", "more early"], 
-      correctIndex: 1, 
-      explanation: "Usually, 'Who woke up earliest?' implies looking for the #1 person in a group. If comparing only two, 'earlier' is used." 
+      question: "Among all the students, who woke up ______?", 
+      choices: ["early", "earlier", "earliest", "more early"], 
+      correctIndex: 2, 
+      explanation: "'Among all' signals comparison of more than two people. The superlative form must be used. The correct answer is 'earliest'."
     },
     { 
       question: "I did ______ on the test than I thought.", 
       choices: ["badly", "worse", "worst", "badder"], 
       correctIndex: 1, 
-      explanation: "The adverb 'badly' has an irregular comparative form. Badly -> **Worse** -> Worst. Since we use 'than', it is comparative." 
+      explanation: "'Badly' has an irregular comparative form. Badly → worse → worst. Because 'than' is used, the comparative 'worse' is required."
     },
     { 
       question: "He treats her ______ than anyone else.", 
       choices: ["better", "best", "gooder", "well"], 
       correctIndex: 0, 
-      explanation: "The adverb 'well' has an irregular comparative form. Well -> **Better** -> Best." 
+      explanation: "'Well' has an irregular comparative form: well → better → best. Since the sentence compares two behaviors, 'better' is correct."
     },
 
     // --- 71-80: Placement (Where to put the adverb) ---
     { 
-      question: "Choose the correct order:", 
+      question: "Choose the best sentence:", 
       choices: ["I always am late.", "I am always late.", "Always I am late.", "I am late always."], 
       correctIndex: 1, 
-      explanation: "Rule: Frequency adverbs (always, never, usually) come **AFTER** the verb 'to be' (am, is, are, was, were)." 
+      explanation: "Frequency adverbs usually come after the verb 'be'. 'Always' modifies the state 'am late', so the correct placement is: I am always late."
     },
     { 
-      question: "Choose the correct order:", 
-      choices: ["He often plays tennis.", "He plays often tennis.", "He plays tennis often.", "Often he plays tennis."], 
+      question: "Choose the best sentence:", 
+      choices: ["He often plays tennis.", "He plays often tennis.", "He often plays tennis often.", "He plays tennis often often."], 
       correctIndex: 0, 
-      explanation: "Rule: Frequency adverbs come **BEFORE** main action verbs (like 'plays', 'eats', 'runs')." 
+      explanation: "Frequency adverbs normally come before the main verb. 'Often' modifies 'plays', so 'He often plays tennis' is the correct standard form."
     },
     { 
-      question: "Choose the correct order:", 
-      choices: ["We usually go to the park.", "We go usually to the park.", "We go to the park usually.", "Usually we go to the park."], 
+      question: "Choose the best sentence:", 
+      choices: ["We usually go to the park.", "We go usually to the park.", "We go to the park usually.", "We go to usually the park."], 
       correctIndex: 0, 
-      explanation: "The most natural position is before the main verb 'go'. 'We usually go...'" 
+      explanation: "'Usually' modifies the verb 'go'. The standard placement for frequency adverbs is before the main verb."
     },
     { 
-      question: "Choose the correct order:", 
+      question: "Choose the best sentence:", 
       choices: ["She doesn't always eat breakfast.", "She always doesn't eat breakfast.", "She doesn't eat always breakfast.", "She eats always breakfast."], 
       correctIndex: 0, 
-      explanation: "In negative sentences, the adverb goes between the auxiliary ('doesn't') and the main verb ('eat')." 
+      explanation: "In negative sentences, the frequency adverb is placed between the auxiliary and the main verb. does not + always + eat."
     },
     { 
-      question: "Choose the correct order:", 
+      question: "Choose the best sentence:", 
       choices: ["I have never been to Japan.", "I never have been to Japan.", "I have been never to Japan.", "I have been to Japan never."], 
       correctIndex: 0, 
-      explanation: "Rule: In 'have + past participle' (perfect tenses), the adverb goes in the middle. 'I have **never** been...'" 
+      explanation: "In perfect tenses, the adverb comes between the auxiliary 'have' and the past participle. have + never + been."
     },
     { 
-      question: "Choose the correct order:", 
-      choices: ["They rarely watch TV.", "They watch rarely TV.", "Rarely they watch TV.", "They watch TV rarely."], 
+      question: "Choose the best sentence:", 
+      choices: ["They rarely watch TV.", "They watch rarely TV.", "They rarely watch TV on weekdays.", "They watch TV rarely on weekdays rarely."], 
       correctIndex: 0, 
-      explanation: "Standard rule: Adverb ('rarely') before the main verb ('watch')." 
+      explanation: "'Rarely' modifies the verb 'watch'. The standard position is before the main verb."
     },
     { 
-      question: "Choose the correct order:", 
+      question: "Choose the best sentence:", 
       choices: ["He is seldom angry.", "He seldom is angry.", "He is angry seldom.", "Seldom he is angry."], 
       correctIndex: 0, 
-      explanation: "Remember the 'to be' rule? The adverb 'seldom' comes **AFTER** 'is'." 
+      explanation: "With the verb 'be', frequency adverbs usually come after it. 'Seldom' modifies the state 'is angry'."
     },
     { 
-      question: "Choose the correct order:", 
+      question: "Choose the best sentence:", 
       choices: ["Do you often visit?", "Do often you visit?", "You do visit often?", "Visit you often?"], 
       correctIndex: 0, 
-      explanation: "In questions, the order is: Auxiliary (Do) + Subject (you) + Adverb (often) + Verb (visit)." 
+      explanation: "In questions, the order is auxiliary + subject + adverb + main verb. Do + you + often + visit."
     },
     { 
-      question: "Choose the correct order:", 
-      choices: ["She sometimes cooks.", "She cooks sometimes.", "Sometimes she cooks.", "All are acceptable."], 
-      correctIndex: 3, 
-      explanation: "'Sometimes' is a flexible adverb. It can go at the beginning, middle, or end of a sentence comfortably." 
-    },
-    { 
-      question: "Choose the correct order:", 
-      choices: ["My dad usually works late.", "My dad works usually late.", "Usually works my dad late.", "My dad works late usually."], 
+      question: "Choose the best sentence:", 
+      choices: ["She sometimes cooks.", "She cooks sometimes sometimes.", "Sometimes cooks she.", "She cooks sometimes always."], 
       correctIndex: 0, 
-      explanation: "Best placement is before the main verb 'works'." 
+      explanation: "'Sometimes' modifies the verb 'cooks'. The middle position before the main verb is the standard and clearest form."
+    },
+    { 
+      question: "Choose the best sentence:", 
+      choices: ["My dad usually works late.", "My dad works usually late.", "Usually works my dad late.", "My dad works late usually usually."], 
+      correctIndex: 0, 
+      explanation: "'Usually' modifies the verb 'works'. The standard position is before the main verb."
     },
 
     // --- 81-90: Hard vs Hardly, Late vs Lately (Tricky Pairs) ---
@@ -504,61 +503,61 @@ const ADVERB_QUESTIONS = {
       question: "He works ______.", 
       choices: ["hard", "hardly"], 
       correctIndex: 0, 
-      explanation: "'Hard' means with effort or energy. 'Hardly' means 'almost not'. He works **hard** (with effort)." 
+      explanation: "The intended meaning is that he works with effort. 'Hard' modifies the verb 'works' and means 'with effort'. 'Hardly' means 'almost not', which changes the meaning."
     },
     { 
       question: "He ______ works.", 
       choices: ["hard", "hardly"], 
       correctIndex: 1, 
-      explanation: "Here, the meaning is negative. 'He **hardly** works' means he is lazy or does almost no work." 
+      explanation: "The meaning is negative: he almost does not work. 'Hardly' is a negative adverb meaning 'almost not' and modifies the verb 'works'. Using 'hard' would mean he works with effort, which is the opposite meaning."
     },
     { 
       question: "I haven't seen him ______.", 
       choices: ["late", "lately"], 
       correctIndex: 1, 
-      explanation: "'Lately' means **recently**. 'Late' means not on time. The sentence means 'I haven't seen him recently'." 
+      explanation: "The sentence means 'I have not seen him recently'. 'Lately' modifies the verb phrase and means 'recently'. 'Late' means 'not on time', which does not fit the meaning."
     },
     { 
       question: "The bus arrived ______.", 
       choices: ["late", "lately"], 
       correctIndex: 0, 
-      explanation: "We mean 'not on time'. The correct adverb is **late**. (e.g., better late than never)." 
+      explanation: "The meaning is 'not on time'. 'Late' modifies the verb 'arrived' and expresses delay. 'Lately' means 'recently' and does not describe punctuality."
     },
     { 
       question: "She can ______ see without her glasses.", 
       choices: ["hard", "hardly"], 
       correctIndex: 1, 
-      explanation: "She can 'almost not' see. We use **hardly**. 'She can hardly see' = Her vision is very bad." 
+      explanation: "The sentence means she almost cannot see. 'Hardly' expresses near-negation and modifies the verb 'see'. 'Hard' would mean 'with effort', which is not the intended meaning."
     },
     { 
       question: "He hit the ball ______.", 
       choices: ["hard", "hardly"], 
       correctIndex: 0, 
-      explanation: "He used force. We use **hard**." 
+      explanation: "The meaning is that he used force. 'Hard' modifies the verb 'hit' and means 'with force'. 'Hardly' would mean 'almost not hit', which is incorrect."
     },
     { 
       question: "Have you been busy ______?", 
       choices: ["late", "lately"], 
       correctIndex: 1, 
-      explanation: "Meaning: Have you been busy **recently**? Use **lately**." 
+      explanation: "The question asks about recent time. 'Lately' modifies the verb phrase and means 'recently'. 'Late' refers to being not on time, which does not fit."
     },
     { 
       question: "He stayed up ______.", 
       choices: ["late", "lately"], 
       correctIndex: 0, 
-      explanation: "He stayed up until a time far into the night. We use **late**." 
+      explanation: "The sentence describes time of night. 'Late' modifies the verb phrase 'stayed up' and means until a late hour. 'Lately' means 'recently' and changes the meaning."
     },
     { 
       question: "There is ______ any food left.", 
       choices: ["hard", "hardly"], 
       correctIndex: 1, 
-      explanation: "'Hardly any' is a common phrase meaning 'very little' or 'almost none'." 
+      explanation: "'Hardly' is a negative adverb meaning 'almost none'. It modifies the quantity implied by 'any food'. 'Hard' does not express quantity or negation."
     },
     { 
       question: "She tries ______ to succeed.", 
       choices: ["hard", "hardly"], 
       correctIndex: 0, 
-      explanation: "She tries with effort. She tries **hard**." 
+      explanation: "The meaning is that she makes strong effort. 'Hard' modifies the verb 'tries' and means 'with effort'. 'Hardly' would mean 'almost does not try', which is incorrect."
     },
 
     // --- 91-100: Intensifiers (Very, Too, Enough) ---
@@ -566,64 +565,63 @@ const ADVERB_QUESTIONS = {
       question: "The soup is ______ hot to eat.", 
       choices: ["very", "too", "enough", "much"], 
       correctIndex: 1, 
-      explanation: "'Too' has a negative meaning. It means 'excessive' or 'more than wanted'. It's so hot that you cannot eat it." 
+      explanation: "The meaning is that the heat prevents eating. 'Too' expresses excess beyond what is acceptable. 'Very hot' does not automatically mean impossible to eat."
     },
     { 
       question: "He is strong ______ to lift it.", 
       choices: ["very", "too", "enough", "so"], 
       correctIndex: 2, 
-      explanation: "Rule: 'Enough' comes **AFTER** the adjective. Strong enough, good enough, old enough." 
+      explanation: "'Enough' expresses sufficiency and comes after the adjective it modifies. 'Strong enough' means his strength is sufficient to lift it."
     },
     { 
       question: "She is ______ tired.", 
       choices: ["very", "enough", "much", "many"], 
       correctIndex: 0, 
-      explanation: "'Very' is a standard intensifier before an adjective to mean 'a high degree'." 
+      explanation: "'Very' intensifies the adjective 'tired'. 'Enough' would require a following purpose, and 'much/many' do not modify adjectives this way."
     },
     { 
       question: "It is ______ cold today.", 
       choices: ["very", "enough", "much", "many"], 
       correctIndex: 0, 
-      explanation: "'Very' modifies the adjective 'cold'. 'Much' is usually used with comparatives (much colder), not base adjectives." 
+      explanation: "'Very' modifies base adjectives like 'cold'. 'Much' is normally used with comparatives (much colder), not with base adjectives."
     },
     { 
       question: "He is not old ______ to drive.", 
       choices: ["very", "too", "enough", "much"], 
       correctIndex: 2, 
-      explanation: "Again, the rule is Adjective + Enough. 'Old enough'." 
+      explanation: "The structure is adjective + enough + infinitive. 'Old enough to drive' expresses sufficient age. The other options do not fit this pattern."
     },
     { 
       question: "The box is ______ heavy for me to lift.", 
       choices: ["very", "too", "enough", "so"], 
       correctIndex: 1, 
-      explanation: "Pattern: 'Too' + Adjective + 'for/to'. It means it is impossible to lift because of the weight." 
+      explanation: "'Too + adjective + for/to' expresses excess that makes an action impossible. 'Too heavy for me to lift' matches the meaning."
     },
     { 
       question: "He ran fast ______ to win.", 
       choices: ["very", "too", "enough", "so"], 
       correctIndex: 2, 
-      explanation: "Adverb + Enough. 'Fast enough' means sufficiently fast to achieve the goal." 
+      explanation: "'Enough' follows the adverb it modifies. 'Fast enough' means sufficiently fast to achieve the result."
     },
     { 
       question: "I am ______ happy for you.", 
       choices: ["so", "too", "enough", "such"], 
       correctIndex: 0, 
-      explanation: "'So' is used to emphasize an adjective. 'I am so happy' is natural. 'Such' needs a noun (such a happy day)." 
+      explanation: "'So' intensifies an adjective without adding a negative meaning. 'Too happy' would suggest excess, which is not intended here."
     },
     { 
       question: "It was ______ a good movie.", 
       choices: ["so", "such", "very", "too"], 
       correctIndex: 1, 
-      explanation: "Rule: Use **Such** before 'a/an + Adjective + Noun'. Such a good movie. (Use 'So' if there is no noun: The movie was so good)." 
+      explanation: "'Such' is used before 'a/an + adjective + noun'. 'Such a good movie' is the correct structure."
     },
     { 
       question: "The tea is ______ sweet.", 
       choices: ["very", "enough", "much", "many"], 
       correctIndex: 0, 
-      explanation: "Simple intensifier. 'Very sweet' means it has a lot of sugar." 
+      explanation: "'Very' modifies adjectives directly. 'Enough' would need a following purpose, and 'much/many' do not modify adjectives in this way."
     }
-  ], 
-
+  ],
 
   advanced: [
     // --- 101-110: Inversion (Advanced Grammar) ---
@@ -631,61 +629,61 @@ const ADVERB_QUESTIONS = {
       question: "______ have I seen such a mess.", 
       choices: ["Never", "Always", "Often", "Usually"], 
       correctIndex: 0, 
-      explanation: "This is called **Negative Inversion**. When a sentence starts with a negative adverb (Never, Rarely), the verb comes before the subject. 'Never have I...'" 
+      explanation: "The intended meaning is that at no time has this happened. When a negative adverb (never) begins a sentence, subject–auxiliary inversion is required. 'Never have I seen…' follows this rule. The other choices are not negative and do not trigger inversion."
     },
     { 
       question: "Rarely ______ to the cinema.", 
       choices: ["we go", "do we go", "we do go", "go we"], 
       correctIndex: 1, 
-      explanation: "'Rarely' is negative. It triggers inversion. We need an auxiliary verb (do) before the subject. Correct: 'Rarely **do we** go'." 
+      explanation: "'Rarely' is a negative adverb. When it starts the sentence, the auxiliary 'do' must come before the subject. 'Rarely do we go…' is the correct inverted form."
     },
     { 
       question: "Seldom ______ such talent.", 
       choices: ["one sees", "does one see", "sees one", "one does see"], 
       correctIndex: 1, 
-      explanation: "'Seldom' (meaning almost never) requires inversion at the start of a sentence. 'Seldom **does one** see'." 
+      explanation: "'Seldom' has a negative meaning. Sentence-initial negative adverbs require inversion using an auxiliary. 'Does one see' is the correct structure."
     },
     { 
       question: "Hardly ______ arrived when it rained.", 
       choices: ["had I", "I had", "have I", "I have"], 
       correctIndex: 0, 
-      explanation: "Pattern: 'Hardly + had + Subject + Past Participle'. This means one event happened immediately after another. 'Hardly **had I** arrived...'" 
+      explanation: "The pattern is 'Hardly + had + subject + past participle'. This structure shows that one action happened immediately before another. 'Hardly had I arrived…' follows the required form."
     },
     { 
       question: "Little ______ that he was watching.", 
       choices: ["did she know", "she knew", "she did know", "knew she"], 
       correctIndex: 0, 
-      explanation: "'Little' here acts as a negative adverb meaning 'she didn't know'. It forces inversion: 'Little **did she** know'." 
+      explanation: "'Little' here means 'not at all'. As a negative adverb at the beginning, it triggers inversion. 'Did she know' correctly places the auxiliary before the subject."
     },
     { 
       question: "Nowhere ______ find a better offer.", 
       choices: ["you will", "will you", "you can", "can"], 
       correctIndex: 1, 
-      explanation: "'Nowhere' is a negative location adverb. When starting a sentence, use inversion: 'Nowhere **will you** find...'." 
+      explanation: "'Nowhere' is a negative adverb of place. When it begins a sentence, inversion is required. 'Will you find…' is the correct inverted form."
     },
     { 
       question: "On no account ______ be opened.", 
       choices: ["should this door", "this door should", "this door", "door should"], 
       correctIndex: 0, 
-      explanation: "'On no account' is a strong negative phrase. It requires the verb 'should' to come before the subject 'this door'." 
+      explanation: "'On no account' is a strong negative expression. It requires inversion with a modal auxiliary. 'Should this door be opened' follows the rule."
     },
     { 
       question: "Not only ______ sing, but he also dances.", 
       choices: ["he does", "does he", "he can", "he is"], 
       correctIndex: 1, 
-      explanation: "Pattern: 'Not only + Auxiliary + Subject'. Correct: 'Not only **does he** sing...'." 
+      explanation: "'Not only' at the beginning triggers inversion in the first clause. The auxiliary 'does' must come before the subject: 'Not only does he sing…'."
     },
     { 
       question: "Scarcely ______ down when the phone rang.", 
       choices: ["I sat", "did I sit", "had I sat", "was I sitting"], 
       correctIndex: 2, 
-      explanation: "Similar to 'Hardly', 'Scarcely' uses the Past Perfect tense inverted. 'Scarcely **had I** sat...'." 
+      explanation: "'Scarcely' is similar to 'hardly' and uses the inverted past perfect pattern. 'Scarcely had I sat down…' is the correct structure."
     },
     { 
       question: "Under no circumstances ______ leave.", 
       choices: ["you should", "should you", "you must", "are you"], 
       correctIndex: 1, 
-      explanation: "'Under no circumstances' is a negative condition. It triggers inversion: 'should you'." 
+      explanation: "'Under no circumstances' is a negative condition. It requires inversion with a modal auxiliary. 'Should you leave' follows the rule."
     },
 
     // --- 111-120: Placement of "Only" (Logic/Meaning) ---
@@ -693,61 +691,61 @@ const ADVERB_QUESTIONS = {
       question: "Meaning: 'No one else but John went.'", 
       choices: ["Only John went.", "John went only.", "John only went.", "John went."], 
       correctIndex: 0, 
-      explanation: "Placement matters! 'Only' limits the word directly after it. To say 'No one else', we place it before 'John'. **Only John**." 
+      explanation: "The meaning limits the subject. 'Only' must be placed directly before 'John' to show that no one else went. Other placements limit the action or add ambiguity."
     },
     { 
       question: "Meaning: 'I merely looked at him (didn't talk).'", 
       choices: ["Only I looked at him.", "I only looked at him.", "I looked at him only.", "I looked only at him."], 
       correctIndex: 1, 
-      explanation: "We want to limit the action 'looked'. So we put 'only' before the verb. 'I **only looked** at him'." 
+      explanation: "The meaning limits the action itself. 'Only' is placed before the verb 'looked' to show that no other action (like speaking) happened."
     },
     { 
       question: "Meaning: 'She eats nothing but vegetables.'", 
       choices: ["She only eats vegetables.", "She eats only vegetables.", "Only she eats vegetables.", "She eats vegetables only."], 
       correctIndex: 1, 
-      explanation: "She eats [vegetables and nothing else]. 'Only' should be close to 'vegetables'. 'She eats **only vegetables**'." 
+      explanation: "The meaning limits the object of eating. 'Only' must be placed directly before 'vegetables' to show exclusivity of food."
     },
     { 
-      question: "Place 'only' correctly: 'He lent me five pesos.' (Meaning: No more than 5).", 
+      question: "Place 'only' correctly: 'He lent me five pesos.' (Meaning: no more than five.)", 
       choices: ["Only he lent me five pesos.", "He lent me only five pesos.", "He only lent me five pesos.", "He lent me five pesos only."], 
       correctIndex: 1, 
-      explanation: "We are limiting the amount. 'Only' goes before 'five pesos'. 'He lent me **only five pesos**'." 
+      explanation: "The meaning limits the amount. 'Only' must be placed before 'five pesos'. Other placements limit the subject or the action instead."
     },
     { 
       question: "Meaning: 'It happens on Sundays and no other day.'", 
       choices: ["It only happens on Sundays.", "It happens only on Sundays.", "Only it happens on Sundays.", "It happens on Sundays only."], 
       correctIndex: 1, 
-      explanation: "We are strictly limiting the day. 'It happens **only on Sundays**'." 
+      explanation: "The meaning limits the time. 'Only' must be placed directly before the time expression 'on Sundays'. Other placements change what is being limited."
     },
     { 
       question: "The meeting lasted ______ an hour.", 
       choices: ["only", "alone", "single", "justly"], 
       correctIndex: 0, 
-      explanation: "'Only' is used to show that an amount or time is small or limited. 'Only an hour'." 
+      explanation: "'Only' limits duration and means 'no more than'. The other words do not express limitation of time."
     },
     { 
       question: "______ three students passed.", 
       choices: ["Only", "Justly", "Merely", "Alone"], 
       correctIndex: 0, 
-      explanation: "We use 'Only' to indicate a small number. 'Only three students'." 
+      explanation: "'Only' correctly limits the number. 'Merely' could work stylistically, but 'only' is the standard exam-safe choice."
     },
     { 
       question: "I have ______ two hands.", 
       choices: ["only", "alone", "merely", "single"], 
       correctIndex: 0, 
-      explanation: "Used to state a fact about quantity limitation. 'I have only two hands'." 
+      explanation: "'Only' limits quantity. 'Alone' describes isolation, not number."
     },
     { 
       question: "She is the ______ one who knows.", 
       choices: ["only", "alone", "lonely", "solely"], 
       correctIndex: 0, 
-      explanation: "Here, 'only' acts as an adjective meaning 'sole' or 'single'. 'The **only** one'." 
+      explanation: "'Only' functions as an adjective meaning 'sole'. The other options do not correctly describe uniqueness in this structure."
     },
     { 
       question: "He did it ______ for the money.", 
       choices: ["only", "alone", "lonely", "solitary"], 
       correctIndex: 0, 
-      explanation: "Meaning he had no other reason. 'Only for the money'." 
+      explanation: "'Only' limits the reason. It shows there was no other motivation."
     },
 
     // --- 121-130: Conjunctive Adverbs (Connectors) ---
@@ -755,61 +753,61 @@ const ADVERB_QUESTIONS = {
       question: "It rained hard; ______, we played soccer.", 
       choices: ["however", "therefore", "moreover", "consequently"], 
       correctIndex: 0, 
-      explanation: "'However' shows contrast. Raining usually stops soccer, but **however**, we played anyway." 
+      explanation: "'However' shows contrast between expectation and result. Rain usually stops play, but the opposite happened."
     },
     { 
       question: "He didn't study; ______, he failed.", 
       choices: ["however", "therefore", "nevertheless", "otherwise"], 
       correctIndex: 1, 
-      explanation: "'Therefore' shows result/effect. He didn't study -> Result: He failed." 
+      explanation: "'Therefore' shows cause and effect. Not studying directly caused failure."
     },
     { 
       question: "The rent is high; ______, the location is bad.", 
       choices: ["therefore", "moreover", "consequently", "thus"], 
       correctIndex: 1, 
-      explanation: "'Moreover' adds another point (usually another negative point here). High rent + Bad location." 
+      explanation: "'Moreover' adds another point of the same type. Both facts are negative and cumulative."
     },
     { 
       question: "Run fast; ______, you will be late.", 
       choices: ["otherwise", "therefore", "however", "besides"], 
       correctIndex: 0, 
-      explanation: "'Otherwise' means 'if not' or 'or else'. Run fast, or else you will be late." 
+      explanation: "'Otherwise' means 'if not'. It warns of a consequence if the instruction is not followed."
     },
     { 
       question: "I love milk; ______, I am allergic to it.", 
       choices: ["consequently", "however", "therefore", "moreover"], 
       correctIndex: 1, 
-      explanation: "Contrast logic. I love it, BUT (however) I can't drink it." 
+      explanation: "'However' introduces a contrast between liking milk and being unable to consume it."
     },
     { 
-      question: "Select correct punctuation:", 
+      question: "Select the correct punctuation:", 
       choices: ["He is sick, therefore he is absent.", "He is sick; therefore, he is absent.", "He is sick therefore, he is absent.", "He is sick; therefore he is absent."], 
       correctIndex: 1, 
-      explanation: "Punctuation Rule: Semicolon (;) before the connector, and Comma (,) after it. **; therefore,**" 
+      explanation: "When joining two independent clauses with a conjunctive adverb, use a semicolon before it and a comma after it."
     },
     { 
-      question: "Select correct punctuation:", 
+      question: "Select the correct punctuation:", 
       choices: ["I tried hard; however, I failed.", "I tried hard, however I failed.", "I tried hard however, I failed.", "I tried hard; however I failed."], 
       correctIndex: 0, 
-      explanation: "Punctuation Rule: Use a semicolon before 'however' and a comma after it when connecting two independent sentences." 
+      explanation: "A semicolon is required before 'however' to link independent clauses, and a comma follows the conjunctive adverb."
     },
     { 
       question: "He is rich; ______, he is unhappy.", 
       choices: ["nevertheless", "consequently", "therefore", "additionally"], 
       correctIndex: 0, 
-      explanation: "'Nevertheless' means 'in spite of that'. He is rich, but despite that, he is unhappy." 
+      explanation: "'Nevertheless' shows contrast and unexpected outcome despite the first clause."
     },
     { 
       question: "We have no money; ______, we can't buy it.", 
       choices: ["however", "consequently", "nevertheless", "otherwise"], 
       correctIndex: 1, 
-      explanation: "'Consequently' means 'as a result'. No money -> Result: Can't buy." 
+      explanation: "'Consequently' expresses result. Having no money leads directly to inability to buy."
     },
     { 
       question: "It was cold; ______, we went swimming.", 
       choices: ["therefore", "besides", "nonetheless", "consequently"], 
       correctIndex: 2, 
-      explanation: "'Nonetheless' is a synonym for 'nevertheless' or 'even so'. It shows unexpected action despite the cold." 
+      explanation: "'Nonetheless' shows that the action happened despite the condition."
     },
 
     // --- 131-140: Degree (Intensity) ---
@@ -817,61 +815,61 @@ const ADVERB_QUESTIONS = {
       question: "I ______ agree with you.", 
       choices: ["completely", "very", "too", "much"], 
       correctIndex: 0, 
-      explanation: "We use 'completely' or 'totally' with the verb 'agree'. We don't usually say 'very agree'." 
+      explanation: "'Agree' is a verb that takes degree adverbs like 'completely' or 'fully'. 'Very' does not normally modify verbs directly."
     },
     { 
       question: "It was ______ ridiculous.", 
       choices: ["utterly", "very", "much", "many"], 
       correctIndex: 0, 
-      explanation: "'Ridiculous' is already a strong word (extreme adjective). With extreme words, we use 'utterly' or 'absolutely', not 'very'." 
+      explanation: "'Ridiculous' is an extreme adjective. Extreme adjectives take adverbs like 'utterly' or 'absolutely', not 'very'."
     },
     { 
       question: "She is ______ prettier than her sister.", 
       choices: ["much", "very", "too", "so"], 
       correctIndex: 0, 
-      explanation: "When modifying a comparative adjective (prettier), we use **much**, **far**, or **a lot**. 'Much prettier'." 
+      explanation: "Comparatives are intensified by 'much', 'far', or 'a lot'. 'Very' does not modify comparative forms."
     },
     { 
       question: "He is ______ the best player.", 
       choices: ["by far", "very", "too", "so"], 
       correctIndex: 0, 
-      explanation: "With superlatives (the best), we use **by far**. 'By far the best'." 
+      explanation: "Superlatives are intensified by expressions like 'by far'. 'Very' is not used with superlatives."
     },
     { 
       question: "I am ______ sorry.", 
       choices: ["terribly", "terrible", "much", "many"], 
       correctIndex: 0, 
-      explanation: "Collocation (words that go together). We say 'terribly sorry' to mean 'very sorry'." 
+      explanation: "'Terribly' is a common collocation meaning 'very'. It correctly modifies the adjective 'sorry'."
     },
     { 
       question: "It is ______ freezing outside.", 
       choices: ["absolutely", "very", "too", "fairly"], 
       correctIndex: 0, 
-      explanation: "'Freezing' is an ungradable/extreme adjective. You cannot be 'a little bit freezing'. Use **absolutely**." 
+      explanation: "'Freezing' is an extreme adjective. It requires an intensifier like 'absolutely', not 'very'."
     },
     { 
       question: "The movie was ______ hilarious.", 
       choices: ["absolutely", "very", "slightly", "fairly"], 
       correctIndex: 0, 
-      explanation: "'Hilarious' means very funny. It is extreme. Use **absolutely** hilarious." 
+      explanation: "'Hilarious' is an extreme adjective. 'Absolutely' correctly intensifies it."
     },
     { 
       question: "I was ______ exhausted.", 
       choices: ["totally", "very", "quite", "fairly"], 
       correctIndex: 0, 
-      explanation: "'Exhausted' means very tired. Use **totally** or **completely**." 
+      explanation: "'Exhausted' is an extreme adjective. 'Totally' correctly expresses full degree."
     },
     { 
       question: "It is ______ hot (meaning 'a little').", 
       choices: ["rather", "too", "utterly", "completely"], 
       correctIndex: 0, 
-      explanation: "'Rather' or 'fairly' indicates a moderate degree. It's hotter than usual, but not extreme." 
+      explanation: "'Rather' expresses a moderate degree. The other choices express excess or completeness."
     },
     { 
       question: "She is ______ shorter than him.", 
       choices: ["slightly", "very", "too", "quite"], 
       correctIndex: 0, 
-      explanation: "'Slightly' means a small amount. It modifies the comparative 'shorter'." 
+      explanation: "'Slightly' correctly modifies a comparative adjective to show small difference."
     },
 
     // --- 141-150: Viewpoint & Comment Adverbs ---
@@ -879,61 +877,61 @@ const ADVERB_QUESTIONS = {
       question: "______, he didn't get the job.", 
       choices: ["Unfortunately", "Unfortunate", "Happy", "Badly"], 
       correctIndex: 0, 
-      explanation: "This is a Comment Adverb. It gives the speaker's opinion on the whole sentence. It was unlucky/sad that he didn't get it." 
+      explanation: "'Unfortunately' comments on the entire situation and expresses the speaker's judgment. Comment adverbs modify whole sentences."
     },
     { 
       question: "______, it will rain today.", 
       choices: ["Presumably", "Presume", "Sure", "Definite"], 
       correctIndex: 0, 
-      explanation: "'Presumably' means 'it is likely' or 'I assume'. Use the adverb form to modify the whole sentence." 
+      explanation: "'Presumably' expresses assumption about the whole statement. The other options are not adverbs."
     },
     { 
       question: "______, I don't care.", 
       choices: ["Frankly", "Frank", "Honest", "True"], 
       correctIndex: 0, 
-      explanation: "'Frankly' means 'to be honest'. It introduces a blunt statement." 
+      explanation: "'Frankly' introduces the speaker's attitude toward the statement. It modifies the entire sentence."
     },
     { 
       question: "______, he arrived on time.", 
       choices: ["Surprisingly", "Surprising", "Surprise", "Shock"], 
       correctIndex: 0, 
-      explanation: "It was a surprise to the speaker. 'Surprisingly' modifies the event." 
+      explanation: "'Surprisingly' comments on the unexpected nature of the event."
     },
     { 
       question: "______, there are no free seats.", 
       choices: ["Regrettably", "Regret", "Sorry", "Sad"], 
       correctIndex: 0, 
-      explanation: "'Regrettably' is a formal way to say 'Unfortunately' or 'I am sorry to say'." 
+      explanation: "'Regrettably' is a formal comment adverb expressing negative evaluation of the situation."
     },
     { 
       question: "______, she is the best candidate.", 
       choices: ["Undoubtedly", "Doubt", "Sure", "Uncertain"], 
       correctIndex: 0, 
-      explanation: "'Undoubtedly' means 'without a doubt'. It shows certainty." 
+      explanation: "'Undoubtedly' expresses certainty about the whole statement."
     },
     { 
       question: "______, we need to cut costs.", 
       choices: ["Basically", "Basic", "Base", "Basis"], 
       correctIndex: 0, 
-      explanation: "'Basically' is used to summarize the most important point." 
+      explanation: "'Basically' summarizes the core idea of the statement."
     },
     { 
       question: "______, I prefer tea.", 
       choices: ["Personally", "Person", "Private", "Self"], 
       correctIndex: 0, 
-      explanation: "'Personally' indicates that this is just the speaker's own opinion." 
+      explanation: "'Personally' signals that the statement is the speaker's own viewpoint."
     },
     { 
       question: "______, he is right.", 
       choices: ["Technically", "Technical", "Technique", "Tech"], 
       correctIndex: 0, 
-      explanation: "'Technically' means according to the strict facts or rules, even if it feels wrong generally." 
+      explanation: "'Technically' shows correctness according to strict rules, even if contextually debatable."
     },
     { 
       question: "______, it was a disaster.", 
       choices: ["Essentially", "Essential", "Essence", "Real"], 
       correctIndex: 0, 
-      explanation: "'Essentially' means 'basically' or 'at its core'." 
+      explanation: "'Essentially' summarizes the true nature of the situation."
     }
   ],
 
@@ -943,61 +941,61 @@ const ADVERB_QUESTIONS = {
       question: "He threw the ball ______.", 
       choices: ["high", "highly"], 
       correctIndex: 0, 
-      explanation: "Use **high** for physical height/distance (e.g., jumping high). Use **highly** only for figurative meaning (e.g., highly recommended)." 
+      explanation: "The meaning refers to physical height or distance. 'High' modifies the verb 'threw' to show direction or height. 'Highly' is used for degree or figurative meaning, not physical height."
     },
     { 
       question: "He is ______ respected.", 
       choices: ["high", "highly"], 
       correctIndex: 1, 
-      explanation: "Here, we are not talking about altitude. We mean 'very' respected. In this figurative sense, we use **highly**." 
+      explanation: "The meaning is figurative, not physical. 'Highly' modifies the adjective 'respected' and means 'very'. 'High' cannot express degree."
     },
     { 
       question: "I dove ______ into the ocean.", 
       choices: ["deep", "deeply"], 
       correctIndex: 0, 
-      explanation: "We are talking about physical depth in the water. Use **deep**. (Use 'deeply' for emotions, like 'deeply hurt')." 
+      explanation: "The meaning refers to physical depth. 'Deep' modifies the verb 'dove' to show distance downward. 'Deeply' is used for emotions or abstract meanings."
     },
     { 
       question: "I was ______ moved by the movie.", 
       choices: ["deep", "deeply"], 
       correctIndex: 1, 
-      explanation: "This describes an emotion/feeling, not physical depth. Therefore, we use **deeply**." 
+      explanation: "The sentence describes emotional intensity. 'Deeply' modifies the verb phrase and expresses degree. 'Deep' is used only for physical depth."
     },
     { 
       question: "The bird flew ______.", 
       choices: ["low", "lowly"], 
       correctIndex: 0, 
-      explanation: "For physical height, use **low**. ('Lowly' is an adjective meaning humble/low status, e.g., 'a lowly servant')." 
+      explanation: "The meaning is physical height. 'Low' modifies the verb 'flew'. 'Lowly' is an adjective meaning humble or of low status."
     },
     { 
       question: "He bowed ______.", 
       choices: ["low", "lowly"], 
       correctIndex: 0, 
-      explanation: "He physically bent his body down. Use the adverb **low**." 
+      explanation: "The meaning refers to physical movement downward. 'Low' modifies the verb 'bowed'. 'Lowly' does not describe physical motion."
     },
     { 
       question: "She arrived ______.", 
       choices: ["late", "lately"], 
       correctIndex: 0, 
-      explanation: "Common Trap! **Late** means 'not on time'. **Lately** means 'recently'. She was not on time, so she arrived **late**." 
+      explanation: "The meaning is 'not on time'. 'Late' modifies the verb 'arrived'. 'Lately' means 'recently' and changes the meaning."
     },
     { 
       question: "I haven't eaten ______.", 
       choices: ["late", "lately"], 
       correctIndex: 1, 
-      explanation: "The meaning here is 'in the near past' or 'recently'. The correct word is **lately**." 
+      explanation: "The meaning is 'recently'. 'Lately' modifies the verb phrase to express recent time. 'Late' refers to punctuality."
     },
     { 
       question: "Stand ______.", 
       choices: ["clear", "clearly"], 
       correctIndex: 0, 
-      explanation: "Here, 'clear' is a Flat Adverb meaning 'away from' something (Stand clear of the doors). 'Clearly' means 'understandably'." 
+      explanation: "'Clear' is a flat adverb meaning 'away from'. It modifies the verb 'stand'. 'Clearly' means 'in an understandable way', which is not intended."
     },
     { 
       question: "Speak ______.", 
       choices: ["clear", "clearly"], 
       correctIndex: 1, 
-      explanation: "We are describing the manner of speaking (to be understood). Use **clearly**." 
+      explanation: "The sentence describes manner of speaking. 'Clearly' modifies the verb 'speak' and means 'in a way that can be understood'."
     },
 
     // --- 161-170: Meaning Shift with -ly ---
@@ -1005,61 +1003,61 @@ const ADVERB_QUESTIONS = {
       question: "He works ______.", 
       choices: ["hard", "hardly"], 
       correctIndex: 0, 
-      explanation: "Careful! **Hard** means 'with effort'. **Hardly** means 'almost not'. If he is a good worker, he works **hard**." 
+      explanation: "The meaning is that he works with effort. 'Hard' modifies the verb 'works'. 'Hardly' means 'almost not', which changes the meaning."
     },
     { 
       question: "He ______ works.", 
       choices: ["hardly", "hard"], 
       correctIndex: 0, 
-      explanation: "Position clue: The adverb is before the verb. This implies frequency/negation. 'He **hardly** works' means he is lazy (almost never works)." 
+      explanation: "The meaning is near-negation. 'Hardly' means 'almost not' and modifies the verb 'works'. 'Hard' would mean 'with effort'."
     },
     { 
       question: "The eagle flies ______.", 
       choices: ["high", "highly"], 
       correctIndex: 0, 
-      explanation: "Physical altitude = **high**. (Highly is for degree, like 'highly likely')." 
+      explanation: "The meaning refers to altitude. 'High' modifies the verb 'flies'. 'Highly' expresses degree, not physical height."
     },
     { 
       question: "It is ______ probable.", 
       choices: ["high", "highly"], 
       correctIndex: 1, 
-      explanation: "We are expressing the *degree* of probability (meaning 'very'). Use **highly**." 
+      explanation: "The meaning expresses degree of probability. 'Highly' modifies the adjective 'probable'. 'High' cannot modify adjectives this way."
     },
     { 
       question: "He sat ______ to me.", 
       choices: ["close", "closely"], 
       correctIndex: 0, 
-      explanation: "For physical distance (nearness), use **close**. 'Don't stand so close'." 
+      explanation: "The meaning refers to physical distance. 'Close' modifies the verb 'sat'. 'Closely' means 'carefully' or 'attentively'."
     },
     { 
       question: "Listen ______.", 
       choices: ["close", "closely"], 
       correctIndex: 1, 
-      explanation: "This means 'pay attention carefully'. The correct adverb is **closely**." 
+      explanation: "The meaning is 'pay careful attention'. 'Closely' modifies the verb 'listen' and expresses manner."
     },
     { 
       question: "The door was ______ open.", 
       choices: ["wide", "widely"], 
       correctIndex: 0, 
-      explanation: "For physical width/extent, use **wide**. 'Wide open'." 
+      explanation: "The meaning refers to physical extent. 'Wide' modifies the adjective 'open'. 'Widely' is used for distribution or figurative meaning."
     },
     { 
       question: "He is ______ known.", 
       choices: ["wide", "widely"], 
       correctIndex: 1, 
-      explanation: "When talking about range or number of people, use **widely**. 'Widely known' = Known by many." 
+      explanation: "The meaning refers to how many people know him. 'Widely' modifies the adjective 'known' to show extent."
     },
     { 
       question: "You are ______ right.", 
       choices: ["dead", "deadly"], 
       correctIndex: 0, 
-      explanation: "Idiom Alert: 'Dead' here is an adverb meaning 'completely' or 'absolutely'. 'Dead right' or 'Dead wrong'." 
+      explanation: "'Dead' is an idiomatic flat adverb meaning 'completely'. 'Deadly' is an adjective meaning 'causing death'."
     },
     { 
       question: "It is a ______ weapon.", 
       choices: ["dead", "deadly"], 
       correctIndex: 1, 
-      explanation: "Here we need an Adjective to describe 'weapon'. **Deadly** means 'lethal' or 'causing death'." 
+      explanation: "The word describes the noun 'weapon'. 'Deadly' is an adjective meaning 'capable of causing death'."
     },
 
     // --- 171-180: Imposter Adjectives (Ending in -ly) ---
@@ -1067,61 +1065,61 @@ const ADVERB_QUESTIONS = {
       question: "She is a ______ person.", 
       choices: ["lovely", "lovelily"], 
       correctIndex: 0, 
-      explanation: "TRICK QUESTION! 'Lovely' ends in -ly, but it is actually an **Adjective** describing the noun 'person'. 'Lovelily' is not a word." 
+      explanation: "'Lovely' is an adjective describing the noun 'person'. 'Lovelily' is not standard English."
     },
     { 
       question: "He behaved in a ______ manner.", 
       choices: ["friendly", "friendlily"], 
       correctIndex: 0, 
-      explanation: "Grammar Tip: 'Friendly' is an adjective. It sounds awkward to say 'friendlily', so we say 'in a **friendly** manner'." 
+      explanation: "'Friendly' is an adjective. When no natural adverb exists, English uses 'in a + adjective + manner'."
     },
     { 
       question: "I feel ______.", 
       choices: ["lonely", "lone"], 
       correctIndex: 0, 
-      explanation: "'Lonely' is an adjective describing a feeling/state. Even though it ends in -ly, it is not an adverb here." 
+      explanation: "'Lonely' is an adjective describing emotional state. 'Lone' describes physical singularity, not feeling."
     },
     { 
       question: "It was a ______ meeting.", 
       choices: ["timely", "timelily"], 
       correctIndex: 0, 
-      explanation: "'Timely' is an adjective that means 'happening at the correct time'. It modifies the noun 'meeting'." 
+      explanation: "'Timely' is an adjective meaning 'at the right time'. 'Timelily' is not a standard word."
     },
     { 
       question: "That looks ______.", 
       choices: ["ugly", "uglily"], 
       correctIndex: 0, 
-      explanation: "'Looks' is a linking verb, so we need an Adjective. **Ugly** is the adjective. 'Uglily' is not a word." 
+      explanation: "'Looks' is a linking verb. Linking verbs are followed by adjectives, not adverbs."
     },
     { 
       question: "He is a ______ man.", 
       choices: ["kindly", "kindlily"], 
       correctIndex: 0, 
-      explanation: "TRICK QUESTION! Even though it ends in -ly, **kindly** is an adjective here meaning 'gentle' or 'warm-hearted'. It describes the noun 'man'." 
+      explanation: "'Kindly' is an adjective here meaning kind or gentle. 'Kindlily' is not used in modern English."
     },
     { 
       question: "It was a ______ error.", 
       choices: ["costly", "costlily"], 
       correctIndex: 0, 
-      explanation: "**Costly** is an adjective meaning 'expensive'. It describes the noun 'error'." 
+      explanation: "'Costly' is an adjective meaning expensive. 'Costlily' is not standard English."
     },
     { 
       question: "Daily is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "It can be both! Adjective: 'A daily paper'. Adverb: 'I exercise daily'." 
+      explanation: "'Daily' can describe a noun (a daily routine) or modify a verb (I exercise daily)."
     },
     { 
       question: "Early is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "It can be both! Adjective: 'An early bird'. Adverb: 'He arrived early'." 
+      explanation: "'Early' functions as both an adjective and an adverb depending on use."
     },
     { 
       question: "Fast is an ______.", 
       choices: ["Adjective only", "Adverb only", "Both"], 
       correctIndex: 2, 
-      explanation: "It can be both! Adjective: 'A fast car'. Adverb: 'He runs fast'. (Never say 'fastly')." 
+      explanation: "'Fast' is a flat form used as both adjective and adverb. 'Fastly' is incorrect."
     },
 
     // --- 181-190: Adverbial Objectives & Nouns as Adverbs ---
@@ -1129,61 +1127,61 @@ const ADVERB_QUESTIONS = {
       question: "Let's go ______.", 
       choices: ["home", "to home"], 
       correctIndex: 0, 
-      explanation: "Grammar Rule: When 'Home' is used with verbs of movement (go, come), it acts as an adverb. Do NOT use 'to'." 
+      explanation: "'Home' functions as an adverb with verbs of motion. Adding 'to' is incorrect."
     },
     { 
       question: "I waited ______.", 
       choices: ["two hours", "for two hours", "Both are correct"], 
       correctIndex: 2, 
-      explanation: "Duration of time can be expressed with or without the preposition 'for'. Both are grammatically correct." 
+      explanation: "Time duration can be expressed with or without 'for'. Both forms are grammatically correct."
     },
     { 
       question: "He ran ______.", 
       choices: ["three miles", "for three miles", "Both are correct"], 
       correctIndex: 2, 
-      explanation: "Noun phrases indicating distance (three miles) can function as adverbs modifying the verb." 
+      explanation: "Distance expressions can function directly as adverbial phrases with or without 'for'."
     },
     { 
       question: "See you ______.", 
       choices: ["next week", "on next week"], 
       correctIndex: 0, 
-      explanation: "Time Rule: Do not use prepositions (on, in, at) before 'next', 'last', 'this', or 'every'. Correct: **Next week**." 
+      explanation: "Prepositions are not used before 'next', 'last', 'this', or 'every' in time expressions."
     },
     { 
       question: "We met ______.", 
       choices: ["last night", "on last night"], 
       correctIndex: 0, 
-      explanation: "Time Rule: Never use 'on' before 'last night'. Correct: **Last night**." 
+      explanation: "'Last night' functions as an adverbial time expression without a preposition."
     },
     { 
       question: "Do it ______.", 
       choices: ["this way", "on this way"], 
       correctIndex: 0, 
-      explanation: "'This way' is an adverbial phrase indicating manner. It does not require a preposition." 
+      explanation: "'This way' is an adverbial phrase indicating manner. No preposition is needed."
     },
     { 
       question: "They went ______.", 
       choices: ["abroad", "to abroad"], 
       correctIndex: 0, 
-      explanation: "**Abroad** is an adverb of place. It already includes the concept of destination, so 'to' is wrong." 
+      explanation: "'Abroad' is an adverb of place and does not take a preposition."
     },
     { 
       question: "Go ______.", 
       choices: ["upstairs", "to upstairs"], 
       correctIndex: 0, 
-      explanation: "**Upstairs** is an adverb telling you where to go. Do not use 'to'." 
+      explanation: "'Upstairs' functions as an adverb of place and does not require 'to'."
     },
     { 
       question: "Come ______.", 
       choices: ["inside", "to inside"], 
       correctIndex: 0, 
-      explanation: "**Inside** functions as an adverb of place here. No preposition is needed." 
+      explanation: "'Inside' is an adverb of place here and does not need a preposition."
     },
     { 
       question: "He went ______.", 
       choices: ["downtown", "to downtown"], 
       correctIndex: 0, 
-      explanation: "**Downtown** is an adverb. You simply 'go downtown'. Using 'to' is a common mistake." 
+      explanation: "'Downtown' functions as an adverb of place. Adding 'to' is incorrect."
     },
 
     // --- 191-200: Double Negatives & Redundancy ---
@@ -1191,61 +1189,61 @@ const ADVERB_QUESTIONS = {
       question: "I can't see ______.", 
       choices: ["nothing", "anything"], 
       correctIndex: 1, 
-      explanation: "**Double Negative Rule:** 'Can't' is already negative. If you add 'nothing', it becomes a double negative. Correct: 'I can't see **anything**'." 
+      explanation: "'Can't' is already negative. Using 'nothing' would create a double negative. 'Anything' avoids this."
     },
     { 
       question: "He hardly ______ speaks.", 
       choices: ["never", "ever"], 
       correctIndex: 1, 
-      explanation: "**Hardly** is a negative adverb (meaning almost not). Using 'never' creates a double negative. Correct: 'Hardly **ever**'." 
+      explanation: "'Hardly' already expresses negation. 'Ever' is used to avoid a double negative."
     },
     { 
       question: "I rarely ______ eat there.", 
       choices: ["don't", "ever"], 
       correctIndex: 1, 
-      explanation: "**Rarely** is negative. Saying 'rarely don't' is incorrect logic. The correct phrasing is 'I rarely **ever** eat there'." 
+      explanation: "'Rarely' is negative in meaning. Adding 'don't' would be a double negative."
     },
     { 
       question: "Return back is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "**Redundancy Alert:** 'Return' means 'go back'. Adding 'back' is repetitive. Just say 'Return'." 
+      explanation: "'Return' already means 'go back'. Adding 'back' repeats the meaning."
     },
     { 
       question: "Repeat again is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "**Redundancy Alert:** 'Repeat' means 'do again'. Adding 'again' is repetitive. Just say 'Repeat'." 
+      explanation: "'Repeat' already means 'do again'. Adding 'again' is unnecessary."
     },
     { 
       question: "Proceed forward is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "'Proceed' means to move forward. Adding 'forward' is unnecessary." 
+      explanation: "'Proceed' already implies forward movement."
     },
     { 
       question: "Revert back is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "A classic email mistake! 'Revert' means to go back to a previous state. 'Back' is redundant. Just say 'Revert'." 
+      explanation: "'Revert' means to return to a previous state. 'Back' repeats the meaning."
     },
     { 
       question: "Sufficient enough is ______.", 
       choices: ["correct", "redundant"], 
       correctIndex: 1, 
-      explanation: "Redundant. Choose one: 'It is sufficient' OR 'It is enough'. Do not use both." 
+      explanation: "'Sufficient' and 'enough' express the same idea. Using both is repetitive."
     },
     { 
       question: "Scarcely ______ (meaning 'almost no one').", 
       choices: ["anyone", "no one"], 
       correctIndex: 0, 
-      explanation: "**Scarcely** implies negativity. Using 'no one' makes a double negative. Correct: 'Scarcely **anyone**'." 
+      explanation: "'Scarcely' is already negative. Using 'no one' would create a double negative."
     },
     { 
       question: "Barely ______ (meaning 'almost nothing').", 
       choices: ["anything", "nothing"], 
       correctIndex: 0, 
-      explanation: "**Barely** implies negativity. Using 'nothing' is a double negative error. Correct: 'Barely **anything**'." 
+      explanation: "'Barely' expresses near-negation. 'Anything' avoids a double negative."
     }
   ]
 };
