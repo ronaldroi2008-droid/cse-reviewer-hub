@@ -161,6 +161,133 @@
     }
 
     /* =========================================== */
+    /* TOPICS MENU & LESSONS INTEGRATION */
+    /* =========================================== */
+    .topics-menu {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin: 16px 0;
+      scrollbar-width: none;
+      text-align: left;
+    }
+
+    .topics-menu::-webkit-scrollbar {
+      display: none;
+    }
+
+    .topic-btn {
+      flex: 0 0 auto;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: .88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .topic-btn:hover {
+      background: var(--border);
+      border-color: var(--muted);
+    }
+
+    .topic-btn.active {
+      background: linear-gradient(to right, var(--accent-hover), var(--accent));
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    .lesson {
+      display: none;
+      text-align: left;
+    }
+
+    .lesson.active {
+      display: block;
+    }
+
+    .lesson-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .lesson-card h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+
+    .lesson-card p {
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin: 0 0 16px 0;
+    }
+
+    .quiz-box {
+      margin-top: 20px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .quiz-box h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: #fbbf24;
+    }
+
+    .quiz-box p {
+      margin-bottom: 12px;
+    }
+
+    .choices {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .choices button {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .choices button:hover {
+      background: #334155;
+      border-color: var(--muted);
+    }
+
+    /* Quiz feedback classes */
+    .choices button.correct {
+      background: rgba(16, 185, 129, 0.2) !important;
+      border-color: #10b981 !important;
+      color: #10b981;
+    }
+
+    .choices button.incorrect {
+      background: rgba(239, 68, 68, 0.2) !important;
+      border-color: #ef4444 !important;
+      color: #ef4444;
+    }
+
+    /* =========================================== */
     /* MODAL STYLES */
     /* =========================================== */
     .pro-modal {
@@ -418,7 +545,7 @@
   <div class="shell">
     <div class="card">
       <div class="logo-area">
-        <span class="app-logo">⭐⭐⭐</span>
+        <span class="app-logo"></span>
         <h1>CSE Reviewer Hub</h1>
         <p class="subtitle">
           Welcome! Choose a subject, do quick drills in Practice Mode, or try the Full Mock Exam.
@@ -428,45 +555,96 @@
 
       <div class="menu-grid">
         <a href="verbal.html" class="subject-btn">
-          <span>📚 &nbsp; Verbal Ability</span>
+          <span> &nbsp; Verbal Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="numerical.html" class="subject-btn">
-          <span>🧮 &nbsp; Numerical Reasoning</span>
+          <span> &nbsp; Numerical Reasoning</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="analytical.html" class="subject-btn">
-          <span>🧠 &nbsp; Analytical Ability</span>
+          <span> &nbsp; Analytical Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="clerical.html" class="subject-btn">
-          <span>🗂️ &nbsp; Clerical Ability</span>
+          <span> &nbsp; Clerical Ability</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="general_info.html" class="subject-btn">
-          <span>🌍 &nbsp; General Information</span>
-          <span class="arrow">→</span>
+          <span> &nbsp; General Information</span>
+          <span class="arrow">--></span>
         </a>
 
         <!-- LOCKED PRACTICE MODE (same behavior as Mock Exam) -->
         <a href="#" class="subject-btn" id="practiceLink">
-          <span id="practiceLabel">🔥 &nbsp; Practice Mode (Quick Drills)</span>
+          <span id="practiceLabel"> &nbsp; Practice Mode (Quick Drills)</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="#" class="subject-btn" id="mockExamLink">
-          <span id="mockExamLabel">🎯 &nbsp; Full Mock Exam (170 Items)</span>
+          <span id="mockExamLabel"> &nbsp; Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="license.html" class="subject-btn">
-          <span>🔑 &nbsp; Enter License / Activate PRO</span>
+          <span> &nbsp; Enter License / Activate PRO</span>
           <span class="arrow">→</span>
         </a>
+      </div>
+
+      <!-- =================================== -->
+      <!-- TOPICS MENU (INTEGRATED)            -->
+      <!-- =================================== -->
+      <div class="topics-menu">
+        <button class="topic-btn active" onclick="showLesson('nouns', this)">Nouns</button>
+        <button class="topic-btn" onclick="showLesson('pronouns', this)">Pronouns</button>
+        <button class="topic-btn" onclick="showLesson('verbs', this)">Verbs</button>
+        <button class="topic-btn" onclick="showLesson('adjectives', this)">Adjectives</button>
+      </div>
+
+      <!-- =================================== -->
+      <!-- LESSONS CONTAINER (INTEGRATED)      -->
+      <!-- =================================== -->
+      <div id="nouns" class="lesson active">
+        <div class="lesson-card">
+          <h2>Nouns</h2>
+          <p>A noun is the name of a person, place, thing, or idea.</p>
+          
+          <div class="quiz-box">
+            <h3>Quick Check</h3>
+            <p>Which word is a noun?</p>
+            <div class="choices">
+              <button onclick="checkAnswer(this, true)">Maria</button>
+              <button onclick="checkAnswer(this, false)">Run</button>
+              <button onclick="checkAnswer(this, false)">Blue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pronouns" class="lesson">
+        <div class="lesson-card">
+          <h2>Pronouns</h2>
+          <p>Pronouns replace nouns to avoid repetition (e.g., He, She, They, It).</p>
+        </div>
+      </div>
+
+      <div id="verbs" class="lesson">
+        <div class="lesson-card">
+          <h2>Verbs</h2>
+          <p>Verbs express actions, states, or relations (e.g., Run, Sleep, Is, Become).</p>
+        </div>
+      </div>
+
+      <div id="adjectives" class="lesson">
+        <div class="lesson-card">
+          <h2>Adjectives</h2>
+          <p>Adjectives describe or modify nouns and pronouns (e.g., Blue, Tall, Beautiful).</p>
+        </div>
       </div>
 
       <p class="footer-note">
@@ -484,8 +662,8 @@
       <button id="pro-modal-close" class="pro-modal-close">×</button>
 
       <div class="pro-modal-header">
-        <div class="stars-logo">⭐⭐⭐</div>
-        <h2 id="modalTitle">🔒 Unlock Full Mock Exam</h2>
+        <div class="stars-logo"></div>
+        <h2 id="modalTitle"> Unlock Full Mock Exam</h2>
         <p id="modalSubtitle">Access the complete 170-item timed simulation</p>
 
         <!-- PRO vs FREE TRIAL tabs -->
@@ -502,7 +680,7 @@
         <!-- PRO CONTENT -->
         <div id="proContent">
           <div class="pro-features">
-            <h3>🚀 What you get:</h3>
+            <h3> What you get:</h3>
             <ul>
               <li><strong>Full Mock Exam (170 items)</strong> – Timed simulation</li>
               <li><strong>Advanced & Expert Level</strong> questions</li>
@@ -515,12 +693,12 @@
           <div class="pro-cta">
             <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax"
                target="_blank" class="pro-upgrade-btn">
-              🚀 Upgrade to PRO (Lifetime)
+               Upgrade to PRO (Lifetime)
             </a>
 
             <!-- Trial-only secondary button (for active trial) -->
             <button id="trialContinueBtn" class="pro-secondary-btn" style="display:none;">
-              ✅ Continue with Trial
+               Continue with Trial
             </button>
 
             <p class="pro-note">One-time payment • Lifetime access</p>
@@ -569,8 +747,6 @@
 
     // ======================================================
     // 1) LICENSE CONFIG (OFFLINE-FIRST)
-    //    IMPORTANT: Home page should NOT call the license server.
-    //    License verification happens only in license.html.
     // ======================================================
     const STORAGE_LICENSE_KEY = "cse_license_key";
     const STORAGE_IS_PRO = "cse_is_pro";
@@ -591,13 +767,11 @@
       return Date.now() > t;
     }
 
-    // ✅ OFFLINE-ONLY access state (no server calls)
     function getAccessStateOfflineOnly() {
       const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
       const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || (legacyPro ? "pro" : "free");
       const exp  = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
 
-      // Trial expiry check
       if (kind === "trial" && exp && isExpired(exp)) {
         localStorage.setItem(STORAGE_IS_PRO, "false");
         localStorage.setItem(STORAGE_ACCESS_KIND, "free");
@@ -611,7 +785,46 @@
     }
 
     // ======================================================
-    // 2) INIT
+    // 2) SHOW LESSONS & QUIZ LOGIC
+    // ======================================================
+    function showLesson(id, button) {
+      // Hide all active lessons
+      document.querySelectorAll('.lesson').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      // Show selected lesson
+      const selectedLesson = document.getElementById(id);
+      if (selectedLesson) {
+        selectedLesson.classList.add('active');
+      }
+
+      // Remove active buttons highlight
+      document.querySelectorAll('.topic-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Activate clicked button
+      button.classList.add('active');
+    }
+
+    function checkAnswer(btn, isCorrect) {
+      // Find brothers/sisters buttons to reset states
+      const container = btn.parentElement;
+      container.querySelectorAll('button').forEach(b => {
+        b.classList.remove('correct', 'incorrect');
+      });
+
+      // Inject visual feedback
+      if (isCorrect) {
+        btn.classList.add('correct');
+      } else {
+        btn.classList.add('incorrect');
+      }
+    }
+
+    // ======================================================
+    // 3) CORE UI INITIALIZATION
     // ======================================================
     document.addEventListener("DOMContentLoaded", () => {
       const mockExamLink = document.getElementById("mockExamLink");
@@ -657,14 +870,14 @@
       function setStatusPill(kind, expiresAt){
         if (!licenseStatus) return;
         if (kind === "pro") {
-          licenseStatus.innerHTML = `<span class="pill pill-pro">✅ PRO • Lifetime</span>`;
+          licenseStatus.innerHTML = `<span class="pill pill-pro"> PRO • Lifetime</span>`;
         } else if (kind === "trial") {
           licenseStatus.innerHTML =
-            `<span class="pill pill-trial">⏳ TRIAL</span>` +
+            `<span class="pill pill-trial"> TRIAL</span>` +
             `<span style="margin-left:8px;color:#cbd5e1;">Until: ${fmtManila(expiresAt)}</span>`;
         } else {
           licenseStatus.innerHTML =
-            `<span class="pill pill-free">🔒 FREE</span>` +
+            `<span class="pill pill-free"> FREE</span>` +
             `<span style="margin-left:8px;color:#94a3b8;">Mock Exam locked</span>`;
         }
       }
@@ -673,13 +886,13 @@
         if (!mockExamLabel) return;
         if (kind === "pro") {
           mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
+            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> PRO</span>`;
         } else if (kind === "trial") {
           mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
+            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> TRIAL</span>`;
         } else {
           mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
+            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> LOCKED</span>`;
         }
       }
 
@@ -687,17 +900,16 @@
         if (!practiceLabel) return;
         if (kind === "pro") {
           practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
+            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> PRO</span>`;
         } else if (kind === "trial") {
           practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
+            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> TRIAL</span>`;
         } else {
           practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
+            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> LOCKED</span>`;
         }
       }
 
-      // Switch between PRO / TRIAL tab in modal
       function switchTab(mode) {
         if (!accessTabs || !accessTabs.length) return;
 
@@ -709,10 +921,10 @@
         if (trialContent) trialContent.style.display = (mode === "trial") ? "block" : "none";
 
         if (mode === "pro") {
-          if (modalTitle) modalTitle.textContent = "🔒 Unlock Full Mock Exam";
+          if (modalTitle) modalTitle.textContent = " Unlock Full Mock Exam";
           if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
         } else if (mode === "trial") {
-          if (modalTitle) modalTitle.textContent = "⏳ Enter Trial Key";
+          if (modalTitle) modalTitle.textContent = " Enter Trial Key";
           if (modalSubtitle) {
             modalSubtitle.textContent = "Activate your FREE trial access using the key we sent.";
           }
@@ -729,24 +941,21 @@
       }
 
       function renderModalFor(kind, expiresAt){
-        // reset banner + trial button
         if (accessBanner) { accessBanner.style.display = "none"; accessBanner.textContent = ""; }
         if (trialContinueBtn) trialContinueBtn.style.display = "none";
 
-        // default header if opening from locked state
-        if (modalTitle) modalTitle.textContent = "🔒 Unlock Full Mock Exam";
+        if (modalTitle) modalTitle.textContent = " Unlock Full Mock Exam";
         if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
 
-        // TRIAL modal (user already has active trial)
         if (kind === "trial" && expiresAt && !isExpired(expiresAt)) {
-          if (modalTitle) modalTitle.textContent = "⏳ Trial Active";
+          if (modalTitle) modalTitle.textContent = " Trial Active";
           if (modalSubtitle) {
             modalSubtitle.textContent = "You can access the Mock Exam during your trial period.";
           }
           if (accessBanner) {
             accessBanner.style.display = "block";
             accessBanner.innerHTML =
-              `⏳ <strong>Trial is active</strong><br>` +
+              ` <strong>Trial is active</strong><br>` +
               `Valid until: <strong>${fmtManila(expiresAt)}</strong><br>` +
               `<span style="opacity:.9">Upgrade anytime for lifetime PRO.</span>`;
           }
@@ -758,13 +967,9 @@
             };
           }
         }
-
-        // default: show PRO tab first
         switchTab("pro");
       }
 
-      // ✅ IMPORTANT CHANGE:
-      // Trial activation should happen in license.html (single entry point for server calls).
       if (trialActivateBtn && trialMessage) {
         trialActivateBtn.addEventListener("click", () => {
           trialMessage.textContent = "Opening activation page…";
@@ -775,8 +980,6 @@
         });
       }
 
-      // ✅ PRO SYNC FIX:
-      // If legacy PRO flag is true, force access_kind=pro so Home + Mock Exam unlock correctly.
       (function syncLegacyProToKind(){
         const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
         const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "";
@@ -786,32 +989,24 @@
         }
       })();
 
-      // Get access state locally (no server)
       const access = getAccessStateOfflineOnly();
-
-      // Compute unlocked precisely (trial must not be expired)
       const unlockedNow =
         access.ok &&
         (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
 
       const uiKind = unlockedNow ? access.kind : "free";
 
-      // status UI
       setStatusPill(uiKind, access.expires_at);
       setMockLabel(uiKind);
       setPracticeLabel(uiKind);
 
-      // CLICK HANDLERS (use cached local state)
       if (mockExamLink) {
         mockExamLink.addEventListener("click", (e) => {
           e.preventDefault();
-
           const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
           const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
           const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
+          const unlockedCached = legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
 
           if (unlockedCached) {
             window.location.href = "mock_exam.html";
@@ -825,13 +1020,10 @@
       if (practiceLink) {
         practiceLink.addEventListener("click", (e) => {
           e.preventDefault();
-
           const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
           const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
           const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
+          const unlockedCached = legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
 
           if (unlockedCached) {
             window.location.href = "practice.html";
