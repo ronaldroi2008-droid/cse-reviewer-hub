@@ -115,6 +115,95 @@
       margin-bottom: 24px;
     }
 
+    /* ====== Accordion Subject Card Component ====== */
+    .subject-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--bg);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .subject-card:hover {
+      border-color: var(--accent);
+    }
+
+    .subject-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .subject-header .arrow {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    /* Kapag active ang card, iikot pababa ang arrow icon */
+    .subject-card.active .subject-header .arrow {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .subject-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background: rgba(15, 23, 42, 0.4);
+      text-align: left;
+    }
+
+    .lesson-list {
+      padding: 4px 20px 16px;
+    }
+
+    .lesson-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    }
+
+    .lesson-item:last-child {
+      border-bottom: none;
+    }
+
+    .lesson-item span {
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+
+    /* Small link design within the dropdown */
+    .mini-quiz-btn {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #c7d2fe;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+
+    .mini-quiz-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: transparent;
+    }
+
+    /* ====== Standard Action Buttons ====== */
     .subject-btn {
       display: flex;
       align-items: center;
@@ -129,8 +218,6 @@
       font-size: 1rem;
       font-weight: 500;
       transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
       cursor: pointer;
       text-align: left;
     }
@@ -430,32 +517,114 @@
       </div>
 
       <div class="menu-grid">
-        <a href="verbal.html" class="subject-btn">
-          <span>📚 &nbsp; Verbal Ability</span>
-          <span class="arrow">→</span>
-        </a>
+        
+        <!-- VERBAL ACCORDION CARD -->
+        <div class="subject-card">
+          <button class="subject-header" onclick="toggleAccordion(this)">
+            <span>📚 &nbsp; Verbal Ability</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="subject-content">
+            <div class="lesson-list">
+              <div class="lesson-item">
+                <span>Adverbs</span>
+                <a href="verbal.html?topic=adverbs" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+              <div class="lesson-item">
+                <span>Nouns &amp; Grammar</span>
+                <a href="verbal.html?topic=nouns" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+              <div class="lesson-item">
+                <span>Paragraph Organization</span>
+                <a href="verbal.html?topic=paragraph" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a href="numerical.html" class="subject-btn">
-          <span>🧮 &nbsp; Numerical Reasoning</span>
-          <span class="arrow">→</span>
-        </a>
+        <!-- NUMERICAL ACCORDION CARD -->
+        <div class="subject-card">
+          <button class="subject-header" onclick="toggleAccordion(this)">
+            <span>🧮 &nbsp; Numerical Reasoning</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="subject-content">
+            <div class="lesson-list">
+              <div class="lesson-item">
+                <span>Basic Operations</span>
+                <a href="numerical.html?topic=basic" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+              <div class="lesson-item">
+                <span>Word Problems</span>
+                <a href="numerical.html?topic=word_problems" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a href="analytical.html" class="subject-btn">
-          <span>🧠 &nbsp; Analytical Ability</span>
-          <span class="arrow">→</span>
-        </a>
+        <!-- ANALYTICAL ACCORDION CARD -->
+        <div class="subject-card">
+          <button class="subject-header" onclick="toggleAccordion(this)">
+            <span>🧠 &nbsp; Analytical Ability</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="subject-content">
+            <div class="lesson-list">
+              <div class="lesson-list">
+                <div class="lesson-item">
+                  <span>Word Association</span>
+                  <a href="analytical.html?topic=association" class="mini-quiz-btn">Practice Quiz</a>
+                </div>
+                <div class="lesson-item">
+                  <span>Logic &amp; Patterns</span>
+                  <a href="analytical.html?topic=logic" class="mini-quiz-btn">Practice Quiz</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a href="clerical.html" class="subject-btn">
-          <span>🗂️ &nbsp; Clerical Ability</span>
-          <span class="arrow">→</span>
-        </a>
+        <!-- CLERICAL ACCORDION CARD -->
+        <div class="subject-card">
+          <button class="subject-header" onclick="toggleAccordion(this)">
+            <span>🗂️ &nbsp; Clerical Ability</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="subject-content">
+            <div class="lesson-list">
+              <div class="lesson-item">
+                <span>Filing Systems</span>
+                <a href="clerical.html?topic=filing" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+              <div class="lesson-item">
+                <span>Spelling &amp; Checking</span>
+                <a href="clerical.html?topic=checking" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a href="general_info.html" class="subject-btn">
-          <span>🌍 &nbsp; General Information</span>
-          <span class="arrow">--></span>
-        </a>
+        <!-- GENERAL INFO ACCORDION CARD -->
+        <div class="subject-card">
+          <button class="subject-header" onclick="toggleAccordion(this)">
+            <span>🌍 &nbsp; General Information</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="subject-content">
+            <div class="lesson-list">
+              <div class="lesson-item">
+                <span>Philippine Constitution</span>
+                <a href="general_info.html?topic=constitution" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+              <div class="lesson-item">
+                <span>Code of Conduct (RA 6713)</span>
+                <a href="general_info.html?topic=ra6713" class="mini-quiz-btn">Practice Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <!-- GINAWANG BUTTON COMPLIANT PARA SA MODALS -->
+        <!-- GLOBAL MAIN DRILL & EXAM ACTIONS -->
         <button class="subject-btn" id="practiceLink">
           <span id="practiceLabel">🔥 &nbsp; Practice Mode (Quick Drills)</span>
           <span class="arrow">→</span>
@@ -506,7 +675,7 @@
             <h3>🚀 What you get:</h3>
             <ul>
               <li><strong>Full Mock Exam (170 items)</strong> – Timed simulation</li>
-              <li><strong>Advanced & Expert Level</strong> questions</li>
+              <li><strong>Advanced &amp; Expert Level</strong> questions</li>
               <li><strong>Detailed performance analytics</strong> and review</li>
               <li><strong>Priority updates</strong> and new content</li>
               <li><strong>Ad-free experience</strong></li>
@@ -514,8 +683,7 @@
           </div>
 
           <div class="pro-cta">
-            <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax"
-               target="_blank" class="pro-upgrade-btn">
+            <a id="pro-gumroad-link" href="#" target="_blank" class="pro-upgrade-btn">
               🚀 Upgrade to PRO (Lifetime)
             </a>
 
@@ -557,6 +725,29 @@
   </div>
 
   <script>
+    // ✅ NEW ACCORDION UI LOGIC FOR MOBILE SCOPE
+    function toggleAccordion(headerEl) {
+      const currentCard = headerEl.parentElement;
+      const currentContent = currentCard.querySelector(".subject-content");
+      const isAlreadyActive = currentCard.classList.contains("active");
+
+      // Isara ang lahat ng iba para malinis tingnan sa cellphone at hindi mahaba ang scroll
+      document.querySelectorAll(".subject-card").forEach(card => {
+        card.classList.remove("active");
+        const content = card.querySelector(".subject-content");
+        if (content) content.style.maxHeight = null;
+      });
+
+      // Kung hindi pa bukas ang pinindot, buksan natin ngayon
+      if (!isAlreadyActive) {
+        currentCard.classList.add("active");
+        currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+      }
+    }
+
+    // =============================================================
+    // EXISTING CENTRAL LICENSE ENGINE LOGIC
+    // =============================================================
     const DEVICE_KEY = "cse_device_id";
     let deviceId = localStorage.getItem(DEVICE_KEY);
     if (!deviceId) {
@@ -637,7 +828,6 @@
         });
       }
 
-      // ✅ PINAGSAMANG RE-RENDER LOGIC PARA SA KAAYUSAN NG CODE (DRY)
       function updateUIState(kind, expiresAt) {
         if (!licenseStatus) return;
         
@@ -685,7 +875,6 @@
         if (accessBanner) { accessBanner.style.display = "none"; accessBanner.textContent = ""; }
         if (trialContinueBtn) trialContinueBtn.style.display = "none";
 
-        // ✅ INAYOS NA TABS LOGIC: Kapag active trial, dalhin ang user sa Trial Tab at huwag i-force sa PRO
         if (kind === "trial" && expiresAt && !isExpired(expiresAt)) {
           if (modalTitle) modalTitle.textContent = "⏳ Trial Active";
           if (modalSubtitle) modalSubtitle.textContent = "You can access the Mock Exam during your trial period.";
@@ -726,14 +915,12 @@
         }
       })();
 
-      // Initializing the state using centralized execution engine
       const access = getAccessStateOfflineOnly();
       const unlockedNow = access.ok && (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
       const uiKind = unlockedNow ? access.kind : "free";
 
       updateUIState(uiKind, access.expires_at);
 
-      // ✅ PINAKALIGTAS NA ROUTING LOGIC GAMIT ANG RE-EVALUATED CENTRAL FUNCTION
       function handleFeatureAccess(e, targetPage) {
         e.preventDefault();
         const currentAccess = getAccessStateOfflineOnly();
@@ -753,4 +940,3 @@
   </script>
 </body>
 </html>
-
