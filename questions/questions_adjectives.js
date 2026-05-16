@@ -316,56 +316,306 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   // LEVEL 2: INTERMEDIATE (50 Items) - Comparisons & Order
   // ============================================================
   intermediate: [
-    { question: "Correct after linking verb 'smells':", options: ["smells nicely", "smells nice", "is smelling nicely", "smells quick"], answer: "smells nice", explanation: "Adj describes subject." },
-    { question: "Correct adverb usage:", options: ["spoke clear", "spoke clearly", "clear spoke", "spoke more clear"], answer: "spoke clearly", explanation: "Modifies verb." },
-    { question: "Formal English:", options: ["feel badly", "feel bad", "feel badlier", "feel more bad"], answer: "feel bad", explanation: "Linking verb 'feel'." },
-    { question: "Usage of 'well' as adjective:", options: ["plays well", "is well (healthy)", "finished well", "writes well"], answer: "is well (healthy)", explanation: "Well = healthy (Adj)." },
-    { question: "Error ID: 'The food tastes wonderfully.'", options: ["The", "food", "tastes", "wonderfully"], answer: "wonderfully", explanation: "Should be 'wonderful'." },
-    { question: "Correct sentence:", options: ["sounded loudly", "sounded loud", "loud sounded", "is loudily"], answer: "sounded loud", explanation: "Linking verb." },
-    { question: "Hard as adverb:", options: ["works hard", "works hardly", "is a hardly worker", "is hardly worker"], answer: "works hard", explanation: "Hard = with effort." },
-    { question: "After 'seem':", options: ["seem clearly", "seem clear", "seem clearerly", "seem more clearly"], answer: "seem clear", explanation: "Linking verb." },
-    { question: "Adjectives in 'cold and empty room':", options: ["room", "felt", "cold", "cold and empty"], answer: "cold and empty", explanation: "Compound adjective." },
-    { question: "Correct use of 'fast':", options: ["fastly runner", "runs fast", "runs fastly", "runs more fastly"], answer: "runs fast", explanation: "Fast is both adj and adv." },
-    { question: "Natural order:", options: ["leather small black bag", "small black leather bag", "black small leather bag", "leather black small bag"], answer: "small black leather bag", explanation: "Size-Color-Material." },
-    { question: "Correct order:", options: ["metal old box", "old metal box", "box old metal", "metal box old"], answer: "old metal box", explanation: "Age-Material." },
-    { question: "Natural phrase:", options: ["blue beautiful long dress", "long blue beautiful dress", "beautiful long blue dress", "beautiful blue long dress"], answer: "beautiful long blue dress", explanation: "Opinion-Size-Color." },
-    { question: "Best order:", options: ["round small wooden table", "small wooden round table", "small round wooden table", "wooden small round table"], answer: "small round wooden table", explanation: "Size-Shape-Material." },
-    { question: "Proper adjective usage:", options: ["spicy food", "Japanese food", "delicious food", "cheap food"], answer: "Japanese food", explanation: "Capitalized origin." },
-    { question: "Quantitative adjective:", options: ["few", "quick", "blue", "silent"], answer: "few", explanation: "Describes amount." },
-    { question: "Demonstrative adjective:", options: ["This is yours", "These books", "There is mine", "Here is hers"], answer: "These books", explanation: "Modifies 'books'." },
-    { question: "Possessive adjective:", options: ["hers notebook", "her notebook", "she notebook", "she's notebook"], answer: "her notebook", explanation: "Her + Noun." },
-    { question: "Interrogative adjective:", options: ["What did you say?", "Which color?", "Who called?", "When arrived?"], answer: "Which color?", explanation: "Modifies noun." },
-    { question: "Proper adjective phrase:", options: ["spanish restaurant", "Spanish restaurant", "restaurant spanish", "restaurant Spain"], answer: "Spanish restaurant", explanation: "Capitalized." },
-    { question: "Comparative of 'busy':", options: ["more busy", "busiest", "busier", "most busy"], answer: "busier", explanation: "y -> ier." },
-    { question: "Superlative of 'busy':", options: ["busier", "busiest", "most busy", "more busy"], answer: "busiest", explanation: "y -> iest." },
-    { question: "Comparative of 'good':", options: ["gooder", "more good", "better", "best"], answer: "better", explanation: "Irregular." },
-    { question: "Superlative of 'bad':", options: ["badder", "worse", "worst", "most bad"], answer: "worst", explanation: "Irregular." },
-    { question: "Correct comparative:", options: ["more easier", "easier than", "easiest than", "more easy than"], answer: "easier than", explanation: "No 'more'." },
-    { question: "Correct superlative:", options: ["most tallest", "tallest", "taller", "more tallest"], answer: "tallest", explanation: "No 'most'." },
-    { question: "With 'ever seen':", options: ["more exciting", "most exciting", "excitingest", "more excited"], answer: "most exciting", explanation: "Superlative." },
-    { question: "Comparing two:", options: ["the shortest", "the shorter", "short", "most short"], answer: "the shorter", explanation: "Two items = Comparative." },
-    { question: "Correct sentence:", options: ["more difficult of the two", "most difficult of the two", "more difficult test of the two", "difficultest"], answer: "more difficult test of the two", explanation: "Comparative for two." },
-    { question: "Degrees of 'little':", options: ["little, littler, littlest", "little, less, least", "little, lesser, lessest", "little, more little, most little"], answer: "little, less, least", explanation: "Irregular." },
-    { question: "Usage of 'enough':", options: ["enough big", "big enough", "enough is big", "big enough is"], answer: "big enough", explanation: "Adj + enough." },
-    { question: "Usage of 'too':", options: ["too difficult", "difficult too", "too is difficult", "difficult too much"], answer: "too difficult", explanation: "Too + Adj." },
-    { question: "Usage of 'quite':", options: ["quite boring", "boring quite", "quite lecture", "boringly quite"], answer: "quite boring", explanation: "Quite + Adj." },
-    { question: "Usage of 'rather':", options: ["rather interesting", "interesting rather", "rather movie", "interestingly rather"], answer: "rather interesting", explanation: "Rather + Adj." },
-    { question: "Usage of 'fairly':", options: ["fairly easy", "easy fairly", "fairly task", "easyfairly"], answer: "fairly easy", explanation: "Fairly + Adj." },
-    { question: "Best sentence:", options: ["enough strong", "strong enough", "enough is strong", "strong enough is"], answer: "strong enough", explanation: "Adj + enough." },
-    { question: "Expressing excess:", options: ["very hot", "too hot", "hot enough", "enough hot"], answer: "too hot", explanation: "Excessive." },
-    { question: "Natural 'quite':", options: ["quite surprising", "surprising quite", "quite result", "surprising quitely"], answer: "quite surprising", explanation: "Quite + Adj." },
-    { question: "Informal 'pretty':", options: ["pretty difficult", "difficult pretty", "pretty exam", "difficult prettily"], answer: "pretty difficult", explanation: "Means 'fairly'." },
-    { question: "Incorrect 'enough':", options: ["old enough", "light enough", "easy enough", "enough patient"], answer: "enough patient", explanation: "Should be 'patient enough'." },
-    { question: "Correct comparison:", options: ["elder of the three", "eldest of the three", "elder of three", "more elder"], answer: "eldest of the three", explanation: "Superlative for 3+." },
-    { question: "Correct usage:", options: ["older than me", "older of the class", "oldest than me", "more older"], answer: "older than me", explanation: "Comparative." },
-    { question: "Find error: 'most cheapest'", options: ["This is", "the most", "cheapest", "in store"], answer: "cheapest", explanation: "Double superlative." },
-    { question: "Correct usage:", options: ["more qualified", "most qualified", "more qualifieder", "qualifiedest"], answer: "most qualified", explanation: "Superlative." },
-    { question: "Standard English:", options: ["lesser of two", "least of two", "less of two", "most less"], answer: "lesser of two", explanation: "Adjective form." },
-    { question: "Correct usage:", options: ["advice useful", "useful advice", "an useful advice", "advices useful"], answer: "useful advice", explanation: "Adj + Uncountable Noun." },
-    { question: "Correct article:", options: ["an unique", "a unique", "very unique", "most unique"], answer: "a unique", explanation: "Consonant sound /y/." },
-    { question: "Avoid double comparison:", options: ["more narrower", "narrower", "most narrowest", "most narrower"], answer: "narrower", explanation: "Single comparative." },
-    { question: "Placement of 'almost':", options: ["almost late", "late almost", "almost was", "late for"], answer: "almost late", explanation: "Before adjective." },
-    { question: "Multiple adjectives:", options: ["rainy cold night", "cold rainy night", "night cold rainy", "cold night rainy"], answer: "cold rainy night", explanation: "Temp before Weather." }
+    {
+    "question": "Which of the following correctly uses a modifier after the linking verb 'smells'?",
+    "options": ["The flower smells nicely.", "The flower smells nice.", "The flower is smelling nicely.", "The flower smells quick."],
+    "answer": "The flower smells nice.",
+    "explanation": "In this context, 'smells' functions as a sensory linking verb rather than an action verb. Linking verbs connect the subject to a state of being or description, which requires a predicate adjective ('nice') to modify the subject noun, not an adverb ('nicely')."
+  },
+  {
+    "question": "Identify the sentence that shows correct adverbial modifier usage:",
+    "options": ["He spoke clear during the meeting.", "He spoke clearly during the meeting.", "He clear spoke during the meeting.", "He spoke more clear during the meeting."],
+    "answer": "He spoke clearly during the meeting.",
+    "explanation": "The word 'spoke' is an action verb. Action verbs describe what the subject is doing and must be modified by an adverb ('clearly') to show the manner of the action, instead of a plain adjective ('clear')."
+  },
+  {
+    "question": "Which sentence follows formal English standards when using a linking verb to express an emotional or physical state?",
+    "options": ["I feel badly about the mistake.", "I feel bad about the mistake.", "I feel badlier about the mistake.", "I feel more bad about the mistake."],
+    "answer": "I feel bad about the mistake.",
+    "explanation": "'Feel' operates as a linking verb when describing a person's internal state or emotions. Grammatically, linking verbs must be followed by an adjective ('bad'). Using the adverb 'badly' after 'feel' is a common error; 'badly' would mean your physical sense of touch is impaired."
+  },
+  {
+    "question": "In which sentence is the word 'well' functioning strictly as a predicate adjective?",
+    "options": ["She plays the piano well.", "The patient is now well.", "He finished the project well.", "The author writes well."],
+    "answer": "The patient is now well.",
+    "explanation": "While 'well' is typically used as an adverb to modify action verbs (as seen in 'plays well' or 'writes well'), it functions as an adjective only when it refers specifically to someone's health or wellness after a linking verb like 'is'."
+  },
+  {
+    "question": "Identify the grammatical error in this sentence: 'The chef prepared a soup that tastes wonderfully.'",
+    "options": ["prepared", "that", "tastes", "wonderfully"],
+    "answer": "wonderfully",
+    "explanation": "The verb 'tastes' is a sensory linking verb that connects the subject ('soup') to its quality. It must be followed by the predicate adjective 'wonderful' instead of the adverb 'wonderfully', because the soup itself is not actively performing the action of tasting."
+  },
+  {
+    "question": "Which sentence correctly pairs the linking verb 'sounded' with its proper modifier?",
+    "options": ["The alarm sounded loudly.", "The idea sounded loud.", "The proposal sounded loudily.", "The alarm was sound loudly."],
+    "answer": "The idea sounded loud.",
+    "explanation": "When 'sound' is used to express an impression or opinion (e.g., an idea), it functions as a linking verb and requires an adjective ('loud'). Note: If 'sounded' refers to the physical production of noise by an object, 'sounded loudly' can be used as an action-adverb pair, but as a strict linking structure, 'sounded loud' is the core adjective pattern."
+  },
+  {
+    "question": "In which sentence is the word 'hard' functioning as an adverb modifying an action?",
+    "options": ["She works hard to support her family.", "She hardly works during the weekend.", "She is a hardly worker in the office.", "She is a hard worker."],
+    "answer": "She works hard to support her family.",
+    "explanation": "The word 'hard' is flat modifier—it can be both an adjective and an adverb without changing its form. In 'works hard', it is an adverb modifying the action verb 'works'. The word 'hardly' is a completely different adverb that means 'scarcely' or 'almost not'."
+  },
+  {
+    "question": "Choose the option that correctly completes the sentence following the linking verb 'seem': 'The instructions ________.'",
+    "options": ["seem clearly", "seem clear", "seem clearerly", "seem more clearly"],
+    "answer": "seem clear",
+    "explanation": "The verb 'seem' is a pure linking verb that indicates an appearance or impression. It cannot take an adverbial modifier; instead, it must be paired with a predicate adjective ('clear') to describe the condition of the subject 'instructions'."
+  },
+  {
+    "question": "In the sentence 'The cold and empty room felt intimidating,' what grammatical feature is represented by 'cold and empty'?",
+    "options": ["A singular adverb phrase", "A compound predicate verb", "A compound adjective modifier", "A dangling participle clause"],
+    "answer": "A compound adjective modifier",
+    "explanation": "The words 'cold' and 'empty' are two distinct adjectives joined by the coordinating conjunction 'and'. Together, they form a compound adjective phrase that modifies the single noun 'room'."
+  },
+  {
+    "question": "Which sentence demonstrates the correct adverbial form of the word 'fast'?",
+    "options": ["He is a fastly runner.", "The athlete runs fast.", "The athlete runs fastly.", "He runs more fastly than others."],
+    "answer": "The athlete runs fast.",
+    "explanation": "The word 'fast' is an irregular modifier that shares the exact same form for both its adjective and adverb duties. The word 'fastly' does not exist in standard English. Therefore, when modifying the action verb 'runs', the correct form remains 'fast'."
+  },
+  {
+    "question": "Which phrase demonstrates the correct standard order of cumulative adjectives?",
+    "options": ["a leather small black bag", "a small black leather bag", "a black small leather bag", "a leather black small bag"],
+    "answer": "a small black leather bag",
+    "explanation": "The Royal Order of Adjectives in English dictates that cumulative modifiers must follow a specific sequence before the noun: Size ('small') comes first, followed by Color ('black'), and finally Material ('leather')."
+  },
+  {
+    "question": "Arrange the modifiers in the correct sequence: 'They found an _______ in the attic.'",
+    "options": ["metal old box", "old metal box", "box old metal", "metal box old"],
+    "answer": "old metal box",
+    "explanation": "When using multiple adjectives, an adjective describing Age ('old') must always precede an adjective that describes the composition or Material ('metal') of the object noun."
+  },
+  {
+    "question": "Select the option that follows the natural order of adjectives: 'She wore a _______.'",
+    "options": ["blue beautiful long dress", "long blue beautiful dress", "beautiful long blue dress", "beautiful blue long dress"],
+    "answer": "beautiful long blue dress",
+    "explanation": "The natural sequence of adjectives requires a subjective Opinion ('beautiful') to be placed before physical properties. For the physical properties, Size ('long') always comes before Color ('blue')."
+  },
+  {
+    "question": "What is the most grammatically natural adjective order for describing a table?",
+    "options": ["a round small wooden table", "a small wooden round table", "a small round wooden table", "a wooden small round table"],
+    "answer": "a small round wooden table",
+    "explanation": "Following the standard order of adjectives, physical measurements like Size ('small') must come before Shape ('round'), which in turn must be placed before the Material ('wooden')."
+  },
+  {
+    "question": "Which of the following sentences contains a proper adjective that requires capitalization?",
+    "options": ["We ordered some highly spicy food.", "We thoroughly enjoyed the Japanese food.", "They served us some delicious food.", "The restaurant offered cheap food."],
+    "answer": "We thoroughly enjoyed the Japanese food.",
+    "explanation": "A proper adjective is an adjective derived from a proper noun. The word 'Japanese' is derived from the proper noun 'Japan' (a specific country) and must always be capitalized when modifying a common noun like 'food'."
+  },
+  {
+    "question": "Which word functions as an indefinite quantitative adjective in the sentence: 'We have few options left.'?",
+    "options": ["few", "options", "left", "have"],
+    "answer": "few",
+    "explanation": "The word 'few' is an indefinite quantitative adjective because it tells us the general amount or quantity of the noun 'options' without giving an exact numerical value."
+  },
+  {
+    "question": "Identify the sentence where the underlined word is functioning as a demonstrative adjective rather than a pronoun:",
+    "options": ["This is yours.", "These books belong to me.", "There is mine over the counter.", "Here is hers."],
+    "answer": "These books belong to me.",
+    "explanation": "For a word to be a demonstrative adjective, it must directly precede and modify a noun (e.g., 'These books'). If it stands alone without a noun following it immediately (e.g., 'This is yours'), it functions as a demonstrative pronoun."
+  },
+  {
+    "question": "Which phrase correctly uses a possessive adjective to show ownership of a notebook?",
+    "options": ["hers notebook", "her notebook", "she notebook", "she's notebook"],
+    "answer": "her notebook",
+    "explanation": "The word 'her' is the correct singular possessive adjective used to modify a noun ('notebook'). 'Hers' is a possessive pronoun that stands alone, 'she' is a subject pronoun, and 'she's' is a contraction for 'she is'."
+  },
+  {
+    "question": "Identify the sentence that utilizes an interrogative adjective:",
+    "options": ["What did you say about the project?", "Which color do you prefer for the walls?", "Who called you so early this morning?", "When arrived the package at the station?"],
+    "answer": "Which color do you prefer for the walls?",
+    "explanation": "The word 'Which' acts as an interrogative adjective here because it is placed directly before the noun 'color' to modify it within a question. In 'What did you say?', 'What' stands alone as an interrogative pronoun."
+  },
+  {
+    "question": "Which phrase demonstrates the correct capitalization and structure for a proper adjective phrase?",
+    "options": ["We went to a spanish restaurant.", "We went to a Spanish restaurant.", "We went to a restaurant spanish.", "We went to a restaurant Spain."],
+    "answer": "We went to a Spanish restaurant.",
+    "explanation": "Proper adjectives derived from countries ('Spain') must maintain capitalization ('Spanish') and follow standard English syntax by being placed *before* the noun they modify ('restaurant')."
+  },
+  {
+    "question": "What is the correct comparative degree form of the adjective 'busy' when comparing two entities?",
+    "options": ["more busy", "busiest", "busier", "most busy"],
+    "answer": "busier",
+    "explanation": "For two-syllable adjectives that end in a consonant followed by the letter '-y', the grammatical rule for the comparative degree requires you to change the '-y' to an '-i' and add the suffix '-er' ('busier')."
+  },
+  {
+    "question": "What is the correct superlative degree form of the adjective 'busy' when evaluating three or more entities?",
+    "options": ["busier", "busiest", "most busy", "more busy"],
+    "answer": "busiest",
+    "explanation": "To form the superlative degree of a two-syllable adjective ending in '-y', drop the '-y', replace it with an '-i', and add the suffix '-est'. This results in 'busiest'."
+  },
+  {
+    "question": "Which word represents the irregular comparative form of the positive adjective 'good'?",
+    "options": ["gooder", "more good", "better", "best"],
+    "answer": "better",
+    "explanation": "The adjective 'good' is completely irregular and does not follow the standard rules of adding suffixes like '-er' or modifiers like 'more'. Its comparative form shifts entirely to the word 'better'."
+  },
+  {
+    "question": "Which word represents the irregular superlative form of the positive adjective 'bad'?",
+    "options": ["badder", "worse", "worst", "most bad"],
+    "answer": "worst",
+    "explanation": "The adjective 'bad' undergoes an irregular base change across its degrees of comparison. Its positive form is 'bad', its comparative form is 'worse', and its superlative form is 'worst'."
+  },
+  {
+    "question": "Identify the option that avoids redundancy in a comparative sentence structure:",
+    "options": ["This task is more easier than the last one.", "This task is easier than the last one.", "This task is easiest than the last one.", "This task is more easy than the last one."],
+    "answer": "This task is easier than the last one.",
+    "explanation": "The word 'easier' is already a fully inflected comparative adjective. Adding the modifier 'more' in front of it creates a double comparative error, which is redundant and ungrammatical."
+  },
+  {
+    "question": "Which option demonstrates a correct superlative phrase without structural redundancy?",
+    "options": ["He is the most tallest player on the team.", "He is the tallest player on the team.", "He is the taller player on the team.", "He is the more tallest player on the team."],
+    "answer": "He is the tallest player on the team.",
+    "explanation": "The suffix '-est' already establishes the superlative degree for the short adjective 'tall'. Combining it with the word 'most' results in a double superlative error. 'Most' must be omitted."
+  },
+  {
+    "question": "Choose the correct modifier to complete a superlative sentence tracking an lifetime event: 'That was the ________ movie I have ever seen.'",
+    "options": ["more exciting", "most exciting", "excitingest", "more excited"],
+    "answer": "most exciting",
+    "explanation": "The phrase 'I have ever seen' implies a comparison across all movies ever viewed (three or more entities). Because 'exciting' is a multi-syllable adjective, it must use the periphrastic superlative modifier 'most'."
+  },
+  {
+    "question": "When directly comparing exactly two items or people, which form is grammatically required?",
+    "options": ["the shortest", "the shorter", "short", "most short"],
+    "answer": "the shorter",
+    "explanation": "A strict rule in formal English dictates that when comparing exactly two entities, the comparative degree ('-er' or 'more') must be used alongside a definite article. The superlative degree is reserved for three or more items."
+  },
+  {
+    "question": "Select the sentence that correctly applies the rule of comparing exactly two tests:",
+    "options": ["This exam was the more difficult of the two.", "This exam was the most difficult of the two.", "This exam was the more difficult test of the two.", "This exam was the difficultest of the two."],
+    "answer": "This exam was the more difficult of the two.",
+    "explanation": "Because the sentence explicitly limits the comparison scope to exactly 'the two', using the superlative 'most difficult' is incorrect. The comparative structure 'more difficult' is required."
+  },
+  {
+    "question": "What is the correct sequence of irregular degrees of comparison for the quantitative adjective 'little' (amount)?",
+    "options": ["little, littler, littlest", "little, less, least", "little, lesser, lessest", "little, more little, most little"],
+    "answer": "little, less, less",
+    "explanation": "When referring to an uncountable amount or quantity, the adjective 'little' follows an irregular comparison path: its positive base is 'little', its comparative is 'less', and its superlative is 'least'."
+  },
+  {
+    "question": "Which option shows the correct structural placement of the modifier 'enough' when paired with an adjective?",
+    "options": ["The room is enough big for the gathering.", "The room is big enough for the gathering.", "The room is enough is big for the gathering.", "The room is big enough is for the gathering."],
+    "answer": "The room is big enough for the gathering.",
+    "explanation": "Unlike other intensifying adverbs, the rule for 'enough' dictates that it must be placed immediately *after* the adjective or adverb it modifies (Adjective + Enough)."
+  },
+  {
+    "question": "Which option shows the correct structural placement of the intensifying adverb 'too'?",
+    "options": ["The exam was too difficult for the students.", "The exam was difficult too for the students.", "The exam was too is difficult for the students.", "The exam was difficult too much for the students."],
+    "answer": "The exam was too difficult for the students.",
+    "explanation": "The adverb 'too' indicates an excessive degree and follows standard modifier syntax, meaning it must be placed directly *before* the adjective it intends to modify (Too + Adjective)."
+  },
+  {
+    "question": "Select the correct pattern for using the moderating adverb 'quite':",
+    "options": ["The lecture was quite boring.", "The lecture was boring quite.", "It was a quite lecture.", "The lecture was boringly quite."],
+    "answer": "The lecture was quite boring.",
+    "explanation": "The sub-modifier or adverb of degree 'quite' must precede the predicate adjective ('boring') it is evaluating within a standard predicate structure."
+  },
+  {
+    "question": "Choose the correct sentence using the degree modifier 'rather':",
+    "options": ["The findings were rather interesting.", "The findings were interesting rather.", "It was a rather movie.", "The findings were interestingly rather."],
+    "answer": "The findings were rather interesting.",
+    "explanation": "The word 'rather' acts as an adverb of degree that softens or intensifies an adjective. It must be positioned right before the adjective 'interesting' to modify it correctly."
+  },
+  {
+    "question": "Which sentence demonstrates the proper syntax for the adverb of degree 'fairly'?",
+    "options": ["The assignment was fairly easy.", "The assignment was easy fairly.", "It was a fairly task.", "The assignment was easyfairly."],
+    "answer": "The assignment was fairly easy.",
+    "explanation": "The modifier 'fairly' functions as an adverb of degree meaning 'moderately'. It must follow standard syntax by sitting directly in front of the adjective 'easy' it qualifies."
+  },
+  {
+    "question": "Which of the following options displays the correct structure for indicating sufficient physical capability?",
+    "options": ["He is enough strong to lift the crate.", "He is strong enough to lift the crate.", "He is enough is strong to lift the crate.", "He is strong enough is to lift the crate."],
+    "answer": "He is strong enough to lift the crate.",
+    "explanation": "This reinforces the 'Adjective + Enough' rule. 'Enough' must trail the adjective 'strong' to be grammatically acceptable when acting as an adverbial modifier."
+  },
+  {
+    "question": "If you want to express an unbearable or problematic excess of temperature, which modifier phrase is appropriate?",
+    "options": ["The tea is very hot.", "The tea is too hot.", "The tea is hot enough.", "The tea is enough hot."],
+    "answer": "The tea is too hot.",
+    "explanation": "While 'very' simply intensifies a condition, 'too' carries a negative connotation of excess that creates an obstacle or problem (e.g., it cannot be drunk yet). Therefore, 'too hot' expresses excess."
+  },
+  {
+    "question": "Identify the natural phrasing for utilizing 'quite' in an attributive or predicate style:",
+    "options": ["The results were quite surprising.", "The results were surprising quite.", "It was a quite result.", "The results were surprising quitely."],
+    "answer": "The results were quite surprising.",
+    "explanation": "The modifier 'quite' is placed immediately before the adjective 'surprising' to indicate a significant but indefinite degree of that quality."
+  },
+  {
+    "question": "When used informally as an adverb of degree meaning 'fairly' or 'moderately', how should 'pretty' be positioned?",
+    "options": ["The examination was pretty difficult.", "The examination was difficult pretty.", "It was a pretty exam.", "The examination was difficult prettily."],
+    "answer": "The examination was pretty difficult.",
+    "explanation": "In casual or colloquial English, 'pretty' serves as a degree modifier equivalent to 'rather'. It must be positioned directly preceding the adjective 'difficult'."
+  },
+  {
+    "question": "Identify the option that contains an incorrect word order involving 'enough':",
+    "options": ["He is old enough to vote.", "The light is bright enough.", "The pattern is easy enough.", "She is enough patient with the children."],
+    "answer": "She is enough patient with the children.",
+    "explanation": "The phrase 'enough patient' violates the positional rules of the language. Because 'patient' is an adjective, 'enough' must follow it, making the correct form 'patient enough'."
+  },
+  {
+    "question": "When comparing the ages of exactly three siblings, which term is grammatically required?",
+    "options": ["He is the elder of the three.", "He is the eldest of the three.", "He is the elder of three.", "He is the more elder."],
+    "answer": "He is the eldest of the three.",
+    "explanation": "The terms 'elder' and 'eldest' are specialized age descriptors. 'Elder' is a comparative form restricted to comparing exactly two family members. For three or more family members, the superlative form 'eldest' must be used."
+  },
+  {
+    "options": ["She is older than me.", "She is older of the class.", "She is oldest than me.", "She is more older."],
+    "question": "Which sentence demonstrates standard comparative usage involving the word 'older'?",
+    "answer": "She is older than me.",
+    "explanation": "The standard comparative adjective 'older' must be followed by the conjunction 'than' to connect the two entities being compared. Note: While 'older than I (am)' is preferred in formal writing, 'older than me' is universally recognized in standard objective comparison patterns."
+  },
+  {
+    "question": "Identify the word that creates a double superlative error in this sentence: 'This is the most cheapest item in the entire store.'",
+    "options": ["This is", "the most", "cheapest", "in store"],
+    "answer": "the most",
+    "explanation": "The adjective 'cheap' forms its superlative degree naturally by adding the suffix '-est' ('cheapest'). Placing 'most' in front of an already inflected superlative word creates an ungrammatical double superlative error."
+  },
+  {
+    "question": "Choose the correct superlative form for a long adjective: 'She is the ________ candidate for the position.'",
+    "options": ["more qualified", "most qualified", "more qualifieder", "qualifiedest"],
+    "answer": "most qualified",
+    "explanation": "The adjective 'qualified' has three syllables. Multi-syllable adjectives do not accept comparative or superlative suffixes; instead, they require the standalone word 'most' to form the superlative degree."
+  },
+  {
+    "question": "Which idiomatic phrase is correct when referring to an option or choice between exactly two things?",
+    "options": ["It was the lesser of the two evils.", "It was the least of the two evils.", "It was the less of the two evils.", "It was the most less of the two evils."],
+    "answer": "It was the lesser of the two evils.",
+    "explanation": "The phrase 'lesser of the two' is a fixed English idiom that correctly uses the comparative adjective form 'lesser' when evaluating a choice limited to exactly two items."
+  },
+  {
+    "question": "Which option displays the correct pairing of an adjective with an uncountable abstract noun?",
+    "options": ["He gave me some advice useful.", "He gave me some useful advice.", "He gave me an useful advice.", "He gave me some useful advices."],
+    "answer": "He gave me some useful advice.",
+    "explanation": "Adjectives must precede the nouns they modify ('useful advice'). Furthermore, because 'advice' is an uncountable noun, it cannot take the indefinite article 'an' or be pluralized into 'advices'."
+  },
+  {
+    "question": "Which option pairs the correct indefinite article with the absolute adjective 'unique'?",
+    "options": ["an unique opportunity", "a unique opportunity", "very unique opportunity", "most unique opportunity"],
+    "answer": "a unique opportunity",
+    "explanation": "The choice between the articles 'a' and 'an' depends on the initial sound of the following word, not the letter. The word 'unique' begins with a consonant sound (/yoo/), which requires the indefinite article 'a'."
+  },
+  {
+    "question": "Identify the option that successfully avoids a double comparison defect:",
+    "options": ["The passage became more narrower.", "The passage became narrower.", "The passage became most narrowest.", "The passage became most narrower."],
+    "answer": "The passage became narrower.",
+    "explanation": "The word 'narrower' is the correct singular comparative form. Combining it with 'more' or 'most' introduces a structural redundancy that violates standard English comparison principles."
+  },
+  {
+    "question": "What is the correct placement for the limiting adverb 'almost' when modifying a predicate adjective clause?",
+    "options": ["We were almost late for the flight.", "We were late almost for the flight.", "We almost was late for the flight.", "We were late for almost the flight."],
+    "answer": "We were almost late for the flight.",
+    "explanation": "Limiting adverbs or adverbs of degree like 'almost' must be positioned directly in front of the specific adjective ('late') that they are qualifying or limiting."
+  },
+  {
+    "question": "Choose the sentence that follows the correct standard adjective order regarding weather conditions:",
+    "options": ["It was a rainy cold night.", "It was a cold rainy night.", "It was a night cold rainy.", "It was a cold night rainy."],
+    "answer": "It was a cold rainy night.",
+    "explanation": "In standard English modifier grouping, general physical sensations or temperature descriptions ('cold') are systematically placed before specific weather states or environmental conditions ('rainy')."
+  }
   ],
 
   // ============================================================
