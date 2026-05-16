@@ -316,56 +316,306 @@ window.VERBAL_QUESTION_BANK["prepositions"] = {
   // 2. INTERMEDIATE – since/for, by/until, collocations
   // ==========================================
   intermediate: [
-    { question: "She has worked in this company ___ 2015.", options: ["for", "since", "from", "during"], answer: "since", explanation: "Use SINCE with a starting point in time: since 2015, since last week." },
-    { question: "I have known him ___ many years.", options: ["since", "for", "from", "during"], answer: "for", explanation: "Use FOR with a period of time: for many years, for two hours." },
-    { question: "We waited ___ 10:00 p.m., but he never came.", options: ["by", "until", "for", "since"], answer: "until", explanation: "UNTIL shows continuation up to a time. You waited and then stopped at 10:00 p.m." },
-    { question: "Please finish this report ___ Friday.", options: ["until", "by", "for", "during"], answer: "by", explanation: "BY shows a deadline: finish it any time before or at Friday." },
-    { question: "We usually travel abroad ___ summer.", options: ["in", "on", "at", "during"], answer: "during", explanation: "We can say in summer (general) or during summer (within that period). Here 'during summer' emphasizes the whole season." },
-    { question: "She fell asleep ___ the movie.", options: ["while", "during", "for", "since"], answer: "during", explanation: "Use DURING + noun: during the movie, during the meeting. 'While' must be followed by a clause." },
-    { question: "___ I was cooking, the phone rang.", options: ["During", "While", "For", "Since"], answer: "While", explanation: "WHILE is followed by a subject and verb: while I was cooking." },
-    { question: "There is a strong friendship ___ the three classmates.", options: ["between", "among", "inside", "within"], answer: "among", explanation: "AMONG is used for relationships inside a group, especially three or more people." },
-    { question: "This agreement is ___ the company and the union.", options: ["among", "between", "around", "inside"], answer: "between", explanation: "BETWEEN is still used with two parties or clearly separate groups." },
-    { question: "They walked slowly ___ the narrow street.", options: ["along", "through", "over", "past"], answer: "along", explanation: "ALONG means following the direction or length of something: along the street." },
-    { question: "He drove ___ the tunnel carefully.", options: ["along", "through", "over", "past"], answer: "through", explanation: "THROUGH is used when you move inside something from one side to another: through the tunnel." },
-    { question: "We walked ___ the museum without stopping.", options: ["along", "through", "over", "across"], answer: "through", explanation: "Walking inside many rooms of the museum is best expressed by THROUGH the museum." },
-    { question: "He ran ___ the street to catch the bus.", options: ["across", "along", "through", "between"], answer: "across", explanation: "ACROSS shows crossing from one side to the other: across the street." },
-    { question: "The train passed ___ several small towns.", options: ["along", "through", "between", "within"], answer: "through", explanation: "When something moves inside areas or regions, we can say it goes THROUGH them." },
-    { question: "She apologized ___ arriving late.", options: ["to", "for", "about", "of"], answer: "for", explanation: "We apologize FOR something (for being late) and apologize TO someone (to the teacher)." },
-    { question: "He apologized ___ his colleagues for the mistake.", options: ["to", "for", "at", "about"], answer: "to", explanation: "Here we need the person, so we use apologize TO + person." },
-    { question: "The project depends ___ the results of the survey.", options: ["of", "on", "to", "from"], answer: "on", explanation: "The collocation is depend ON something: depends on the results." },
-    { question: "Did you agree ___ the final decision?", options: ["to", "on", "with", "about"], answer: "on", explanation: "We agree WITH a person or idea, and we agree ON something after discussion." },
-    { question: "They finally agreed ___ a new schedule.", options: ["with", "on", "to", "about"], answer: "on", explanation: "Agree ON is used when people reach a decision or plan: agreed on a schedule." },
-    { question: "The manager is responsible ___ the monthly budget.", options: ["for", "of", "to", "about"], answer: "for", explanation: "Responsible FOR something is the standard pattern." },
-    { question: "She is in charge ___ the HR department.", options: ["of", "for", "with", "on"], answer: "of", explanation: "In charge OF is the normal preposition: in charge of the team." },
-    { question: "He is capable ___ handling difficult clients.", options: ["in", "for", "of", "with"], answer: "of", explanation: "Capable OF doing something is the correct pattern." },
-    { question: "We are waiting ___ the results of the exam.", options: ["to", "for", "on", "at"], answer: "for", explanation: "Wait FOR something or someone is the natural English expression." },
-    { question: "The children are afraid ___ the dark.", options: ["of", "for", "about", "from"], answer: "of", explanation: "Afraid OF is the usual collocation: afraid of the dark." },
-    { question: "She is proud ___ her achievements.", options: ["of", "for", "about", "with"], answer: "of", explanation: "Proud OF something: proud of her work, proud of her achievements." },
-    { question: "He is famous ___ his powerful speeches.", options: ["of", "for", "about", "with"], answer: "for", explanation: "Famous FOR something: famous for his skills, famous for his songs." },
-    { question: "She is married ___ a lawyer.", options: ["with", "to", "at", "by"], answer: "to", explanation: "Married TO someone is correct in formal English: married to a lawyer." },
-    { question: "We complained ___ the noise coming from next door.", options: ["for", "about", "of", "on"], answer: "about", explanation: "Complain ABOUT something is the standard collocation." },
-    { question: "He suffers ___ allergies every spring.", options: ["of", "from", "with", "by"], answer: "from", explanation: "Suffer FROM an illness or condition is the usual phrase." },
-    { question: "The students are working ___ a group project.", options: ["on", "in", "for", "to"], answer: "on", explanation: "Work ON something: work on a project, work on a report." },
-    { question: "I am looking forward ___ meeting you.", options: ["to", "for", "on", "at"], answer: "to", explanation: "Look forward TO + -ing is the fixed expression: looking forward to meeting you." },
-    { question: "We are interested ___ applying for the program.", options: ["to", "in", "on", "for"], answer: "in", explanation: "Interested IN + noun/gerund: interested in the job, interested in applying." },
-    { question: "She insisted ___ paying for the meal.", options: ["in", "on", "at", "for"], answer: "on", explanation: "Insist ON + -ing: insisted on paying, insisted on going." },
-    { question: "They succeeded ___ solving the problem.", options: ["to", "on", "in", "at"], answer: "in", explanation: "Succeed IN + -ing form: succeeded in solving the problem." },
-    { question: "We must concentrate ___ our main objectives.", options: ["in", "on", "for", "at"], answer: "on", explanation: "Concentrate ON something: concentrate on your work." },
-    { question: "He apologized ___ me for his rude behavior.", options: ["to", "for", "at", "about"], answer: "to", explanation: "Again, apologize TO + person, FOR + thing. Here the blank is for the person." },
-    { question: "She divided the cake ___ the children.", options: ["between", "among", "around", "within"], answer: "among", explanation: "Divide AMONG a group of people; divide BETWEEN two people is also common." },
-    { question: "The conference will take place ___ the first week of June.", options: ["during", "in", "at", "on"], answer: "during", explanation: "DURING the first week of June emphasizes that it happens at some time within that week." },
-    { question: "He has been absent ___ three days.", options: ["since", "during", "for", "from"], answer: "for", explanation: "FOR three days expresses duration; 'since three days' is incorrect." },
-    { question: "He has been absent ___ Monday.", options: ["for", "since", "during", "by"], answer: "since", explanation: "SINCE Monday shows the starting point of his absence." },
-    { question: "The new policy is effective ___ January 1.", options: ["since", "from", "by", "on"], answer: "from", explanation: "Effective FROM January 1 means it starts operating on that date." },
-    { question: "He walked ___ me without saying hello.", options: ["past", "over", "along", "across"], answer: "past", explanation: "PAST shows movement from one side of someone/something to the other side: walked past me." },
-    { question: "She leaned ___ the wall and closed her eyes.", options: ["in", "on", "at", "over"], answer: "on", explanation: "Lean ON something: lean on the wall, lean on the table." },
-    { question: "They sat ___ the shade of a big tree.", options: ["under", "below", "beneath", "over"], answer: "under", explanation: "UNDER the shade is the most common beginner-friendly choice, though 'in the shade' is also natural." },
-    { question: "The plane flew ___ the clouds.", options: ["over", "on", "above", "through"], answer: "through", explanation: "If you imagine moving inside the clouds, THROUGH the clouds is natural. 'Over the clouds' suggests higher than them." },
-    { question: "He lives ___ walking distance of the school.", options: ["on", "in", "within", "inside"], answer: "within", explanation: "WITHIN walking distance means inside the range of walking." },
-    { question: "We must stay ___ the limits of the budget.", options: ["inside", "within", "in", "under"], answer: "within", explanation: "WITHIN the limits is the common expression meaning 'not beyond'." },
-    { question: "He disappeared ___ the crowd.", options: ["in", "into", "among", "between"], answer: "among", explanation: "Among the crowd suggests he became part of the group and could not be seen clearly." },
-    { question: "She walked carefully ___ the wet floor.", options: ["on", "over", "through", "along"], answer: "on", explanation: "ON the wet floor is correct because she is on its surface." },
-    { question: "They sat quietly ___ the back row of the auditorium.", options: ["in", "at", "on", "behind"], answer: "in", explanation: "IN the back row refers to a specific row of seats; people sit in a row, in a line." }
+   {
+    "question": "She has worked continuously in this operations firm _______ 2015.",
+    "options": ["for", "since", "from", "during"],
+    "answer": "since",
+    "explanation": "We use 'since' with the present perfect tense to indicate the specific starting point of an action or state that continues up to the present moment (e.g., since 2015, since last month)."
+  },
+  {
+    "question": "The senior board members have known the newly appointed director _______ many years.",
+    "options": ["since", "for", "from", "during"],
+    "answer": "for",
+    "explanation": "We use 'for' to measure the duration or length of a period of time (e.g., for many years, for three hours, for a decade) rather than its starting point."
+  },
+  {
+    "question": "The monitoring team waited patiently _______ 10:00 p.m., but the delivery truck never arrived.",
+    "options": ["by", "until", "for", "since"],
+    "answer": "until",
+    "explanation": "The preposition 'until' is used to show the continuous state or duration of an action up to a specific endpoints in time, meaning the action stopped at that hour."
+  },
+  {
+    "question": "Please ensure that you finish compiling this branch inventory report _______ Friday afternoon.",
+    "options": ["until", "by", "for", "during"],
+    "answer": "by",
+    "explanation": "We use 'by' to establish a definitive deadline, meaning the task must be completed at or any time before the specified time limit (not later than Friday)."
+  },
+  {
+    "question": "Our administrative team usually schedules trips to travel abroad _______ the summer break.",
+    "options": ["in", "on", "at", "during"],
+    "answer": "during",
+    "explanation": "While 'in summer' works broadly, 'during the summer break' is preferred here because it highlights an event or a specific period of time from its beginning to its end."
+  },
+  {
+    "question": "She was so exhausted from the shift that she fell asleep _______ the corporate video presentation.",
+    "options": ["while", "during", "for", "since"],
+    "answer": "during",
+    "explanation": "We use 'during' followed directly by a noun phrase (during the movie/presentation) to show when something happens. 'While' requires a full clause containing a subject and a verb."
+  },
+  {
+    "question": "_______ I was drafting the quarterly operational strategy, the area manager called my phone.",
+    "options": ["During", "While", "For", "Since"],
+    "answer": "While",
+    "explanation": "The conjunction 'while' is utilized to introduce a time clause representing an ongoing action that is occurring simultaneously with another event (Subject + Verb: While I was drafting)."
+  },
+  {
+    "question": "There is a remarkably strong professional friendship _______ the three original business partners.",
+    "options": ["between", "among", "inside", "within"],
+    "answer": "among",
+    "explanation": "We use 'among' when referring to collective relationships, distributions, or connections existing within a group of three or more distinct entities or people."
+  },
+  {
+    "question": "This binding legal agreement is strictly executed _______ the parent company and the labor union.",
+    "options": ["among", "between", "around", "inside"],
+    "answer": "between",
+    "explanation": "We use 'between' when naming distinct, separate individual parties, even if they represent large collective groups, as long as there are exactly two opposing sides or options."
+  },
+  {
+    "question": "The security guards walked slowly _______ the narrow street to inspect the storefronts.",
+    "options": ["along", "through", "over", "past"],
+    "answer": "along",
+    "explanation": "The preposition 'along' means following the linear path or parallel direction of a road, street, corridor, or river bank."
+  },
+  {
+    "question": "The logistics personnel drove the delivery vehicle _______ the dark tunnel carefully.",
+    "options": ["along", "through", "over", "past"],
+    "answer": "through",
+    "explanation": "The preposition 'through' implies entering a three-dimensional or enclosed structure at one end and exiting it from the opposite end (e.g., through a tunnel, tube, or pipe)."
+  },
+  {
+    "question": "The inspection committee walked directly _______ the new warehouse without stopping.",
+    "options": ["along", "through", "over", "across"],
+    "answer": "through",
+    "explanation": "Moving across the interior space of an enclosed building containing multiple sections or rooms is best described using the preposition 'through'."
+  },
+  {
+    "question": "The supervisor ran quickly _______ the busy street to catch the arriving public shuttle.",
+    "options": ["across", "along", "through", "between"],
+    "answer": "across",
+    "explanation": "The word 'across' represents movement from one side of a flat open surface, line, or barrier directly to the opposing side (e.g., across the street, across the field)."
+  },
+  {
+    "question": "The regional delivery train passed smoothly _______ several small agricultural towns.",
+    "options": ["along", "through", "between", "within"],
+    "answer": "through",
+    "explanation": "When an object travels completely inside and across the geographical boundaries of an area, territory, or town, we say it passes 'through' it."
+  },
+  {
+    "question": "The administrative assistant sincerely apologized _______ arriving late to the staff meeting.",
+    "options": ["to", "for", "about", "of"],
+    "answer": "for",
+    "explanation": "The standard verb pattern dictates that you apologize 'to' a person for courtesy, but you apologize 'for' the specific misdeed or action committed."
+  },
+  {
+    "question": "He apologized immediately _______ his colleagues for the typographical mistake in the report.",
+    "options": ["to", "for", "at", "about"],
+    "answer": "to",
+    "explanation": "Since 'his colleagues' indicates the specific recipients of the apology, the sentence requires the personal directional preposition 'to'."
+  },
+  {
+    "question": "The success of the franchise project depends heavily _______ the results of the market survey.",
+    "options": ["of", "on", "to", "from"],
+    "answer": "on",
+    "explanation": "The verb 'depend' is a dependent verb structure that must always be followed by the preposition 'on' (or 'upon' in highly formal contexts) before the object."
+  },
+  {
+    "question": "Did the members of the committee finally agree _______ the details of the proposed contract?",
+    "options": ["to", "on", "with", "about"],
+    "answer": "on",
+    "explanation": "We use the idiom 'agree on' when multiple individuals reach a mutual consensus, decision, plan, or resolution after an administrative discussion."
+  },
+  {
+    "question": "After hours of deliberation, they finally agreed _______ a new store expansion schedule.",
+    "options": ["with", "on", "to", "about"],
+    "answer": "on",
+    "explanation": "Reaching a shared conclusion or compromise regarding a matter or an abstract arrangement always uses the prepositional phrase 'agreed on'."
+  },
+  {
+    "question": "The operations manager is entirely responsible _______ managing the monthly branch budget.",
+    "options": ["for", "of", "to", "about"],
+    "answer": "for",
+    "explanation": "The adjective 'responsible' forms a standard collocation with the preposition 'for' when introducing a duty, role, or asset under one's control."
+  },
+  {
+    "question": "She has been appointed as the supervisor in charge _______ the entire human resource department.",
+    "options": ["of", "for", "with", "on"],
+    "answer": "of",
+    "explanation": "The compound idiom 'in charge' always requires the fixed preposition 'of' to indicate leadership or authority over a department, team, or project."
+  },
+  {
+    "question": "Our seasoned customer service lead is highly capable _______ handling difficult corporate clients.",
+    "options": ["in", "for", "of", "with"],
+    "answer": "of",
+    "explanation": "The descriptive adjective 'capable' must always be paired with the dependent preposition 'of' followed by a noun or a gerund (e.g., capable of handling)."
+  },
+  {
+    "question": "The applicants are standing by, waiting _______ the official results of the civil service exam.",
+    "options": ["to", "for", "on", "at"],
+    "answer": "for",
+    "explanation": "The transitive verb 'wait' requires the objective modifier preposition 'for' when specifying the goal or the object being anticipated."
+  },
+  {
+    "question": "The children are visibly afraid _______ the sudden dark when the power goes out.",
+    "options": ["of", "for", "about", "from"],
+    "answer": "of",
+    "explanation": "The correct dependent preposition that follows the emotional state adjective 'afraid' is exclusively 'of'."
+  },
+  {
+    "question": "The company president is exceptionally proud _______ her team's operational achievements.",
+    "options": ["of", "for", "about", "with"],
+    "answer": "of",
+    "explanation": "The predicate adjective 'proud' conventionally links to its cause or object via the fixed preposition 'of' (proud of someone/something)."
+  },
+  {
+    "question": "The prominent public official is famous _______ his powerful motivational speeches.",
+    "options": ["of", "for", "about", "with"],
+    "answer": "for",
+    "explanation": "The descriptive term 'famous' takes the preposition 'for' to introduce the specific trait, skill, or reason that brought someone recognition."
+  },
+  {
+    "question": "The operations supervisor mentioned that he is happily married _______ a corporate lawyer.",
+    "options": ["with", "to", "at", "by"],
+    "answer": "to",
+    "explanation": "In standard formal English grammar, the passive verb or adjective 'married' is always paired with the preposition 'to' (e.g., married to someone, not married with someone)."
+  },
+  {
+    "question": "The office staff formally complained _______ the loud noise coming from the adjacent room.",
+    "options": ["for", "about", "of", "on"],
+    "answer": "about",
+    "explanation": "To state the specific grievance, problem, or source of dissatisfaction after the verb 'complain', formal syntax employs the preposition 'about'."
+  },
+  {
+    "question": "The warehouse foreman suffers severely _______ seasonal dust allergies every spring.",
+    "options": ["of", "from", "with", "by"],
+    "answer": "from",
+    "explanation": "The medical and condition verb 'suffer' mandates the use of the fixed preposition 'from' when expressing the source of physical pain or illness."
+  },
+  {
+    "question": "The newly hired interns are diligently working _______ a collaborative group project.",
+    "options": ["on", "in", "for", "to"],
+    "answer": "on",
+    "explanation": "The phrase 'work on' is an idiomatic combination used when an individual is actively dedicating effort, refining, or building a specific assignment or task."
+  },
+  {
+    "question": "The entire administrative board is looking forward _______ meeting you in person.",
+    "options": ["to", "for", "on", "at"],
+    "answer": "to",
+    "explanation": "The phrasal verb phrase 'look forward to' is a fixed idiom where 'to' acts as a preposition, which must be followed by a noun or a gerund ending in -ing."
+  },
+  {
+    "question": "Many business professionals are interested _______ applying for the leadership program.",
+    "options": ["to", "in", "on", "for"],
+    "answer": "in",
+    "explanation": "The state-of-mind modifier 'interested' strictly requires the dependent preposition 'in' to articulate an active curiosity or involvement."
+  },
+  {
+    "question": "The generous manager firmly insisted _______ paying for the team's celebratory meal.",
+    "options": ["in", "on", "at", "for"],
+    "answer": "on",
+    "explanation": "The assertive action verb 'insist' must be followed by the fixed preposition 'on' before a noun phrase or a gerund object (insisted on paying)."
+  },
+  {
+    "question": "The operations team finally succeeded _______ solving the complex database problem.",
+    "options": ["to", "on", "in", "at"],
+    "answer": "in",
+    "explanation": "The accomplishment verb 'succeed' takes the dependent preposition 'in' to establish the specific field or task where victory was achieved."
+  },
+  {
+    "question": "We must strictly concentrate _______ our main objectives for this fiscal quarter.",
+    "options": ["in", "on", "for", "at"],
+    "answer": "on",
+    "explanation": "The focus verb 'concentrate' requires the preposition 'on' to denote the target or topic toward which attention is being directed."
+  },
+  {
+    "question": "The manager apologized _______ me for his uncharacteristic behavior during the conflict.",
+    "options": ["to", "for", "at", "about"],
+    "answer": "to",
+    "explanation": "This repeats the baseline structure where 'apologize' is directly connected to the human entity affected via the personal preposition 'to'."
+  },
+  {
+    "question": "The supervisor evenly divided the remaining cake _______ all the office children.",
+    "options": ["between", "among", "around", "within"],
+    "answer": "among",
+    "explanation": "Since the cake is being distributed among a collective group ('all the office children') consisting of more than two individuals, 'among' is the grammatically correct choice."
+  },
+  {
+    "question": "The national conference will take place _______ the first week of June.",
+    "options": ["during", "in", "at", "on"],
+    "answer": "during",
+    "explanation": "The preposition 'during' emphasizes that the event will happen throughout or at some specific point inside that distinct, continuous block of time."
+  },
+  {
+    "question": "The key account supervisor has been absent _______ three consecutive days.",
+    "options": ["since", "during", "for", "from"],
+    "answer": "for",
+    "explanation": "To state the total sum of units or time elapsed during an absence, the duration modifier 'for' is required (for three days)."
+  },
+  {
+    "question": "The auditing clerk has been noted as absent _______ Monday morning.",
+    "options": ["for", "since", "during", "by"],
+    "answer": "since",
+    "explanation": "Because 'Monday morning' represents a precise calendar starting point of a continuous state, the correct structural element is 'since'."
+  },
+  {
+    "question": "The newly amended corporate policy is deemed effective _______ January 1.",
+    "options": ["since", "from", "by", "on"],
+    "answer": "from",
+    "explanation": "In regulatory and official contexts, the idiom 'effective from' is used to define the exact starting date from which a rule, law, or policy begins to apply."
+  },
+  {
+    "question": "The busy executive walked directly _______ me without even saying hello.",
+    "options": ["past", "over", "along", "across"],
+    "answer": "past",
+    "explanation": "The preposition 'past' indicates moving from one side of an object or person to the other side, moving beyond that specific location or entity."
+  },
+  {
+    "question": "She was feeling faint, so she leaned _______ the concrete wall and closed her eyes.",
+    "options": ["in", "on", "at", "over"],
+    "answer": "on",
+    "explanation": "To lean 'on' or 'against' a vertical surface means you are placing weight on it for physical support or rest."
+  },
+  {
+    "question": "They sat quietly _______ the shade of a big acacia tree to escape the direct heat.",
+    "options": ["under", "in", "beneath", "over"],
+    "answer": "in",
+    "explanation": "Grammatically, we sit 'in the shade' because shade is a three-dimensional area of reduced light, not a physical object you can sit directly under. (Note: You sit *under a tree*, but *in the shade* of a tree)."
+  },
+  {
+    "question": "The commercial plane flew directly _______ the heavy clouds during the storm.",
+    "options": ["over", "on", "above", "through"],
+    "answer": "through",
+    "explanation": "Because the aircraft is moving inside and passing from one side of the cloud formation to the other, the correct spatial preposition is 'through'."
+  },
+  {
+    "question": "The property listing states that the apartment is located _______ walking distance of the school.",
+    "options": ["on", "in", "within", "inside"],
+    "answer": "within",
+    "explanation": "The preposition 'within' means inside the boundary or maximum limits of a specific distance, range, or territory (e.g., within walking distance)."
+  },
+  {
+    "question": "To avoid financial audits, we must ensure expenses stay _______ the limits of the approved budget.",
+    "options": ["inside", "within", "in", "under"],
+    "answer": "within",
+    "explanation": "The phrase 'within the limits' is an administrative idiom that indicates compliance by staying inside a predetermined boundary or ceiling."
+  },
+  {
+    "question": "The suspect quickly disappeared _______ the thick crowd of morning commuters.",
+    "options": ["in", "into", "among", "between"],
+    "answer": "among",
+    "explanation": "The preposition 'among' fits here as it shows the person became surrounded by or a mixed part of a larger group of people, making them difficult to distinguish."
+  },
+  {
+    "question": "She walked very carefully _______ the wet floor to avoid slipping.",
+    "options": ["on", "over", "through", "along"],
+    "answer": "on",
+    "explanation": "Since the person is stepping directly on top of the physical surface area, the standard structural preposition required is 'on'."
+  },
+  {
+    "question": "The VIP delegates sat quietly _______ the back row of the university auditorium.",
+    "options": ["in", "at", "on", "behind"],
+    "answer": "in",
+    "explanation": "We say 'in a row' or 'in the back row' because a row is viewed as a straight line or structured sequence where entities are positioned inside it."
+  } 
   ],
 
   // ==========================================
