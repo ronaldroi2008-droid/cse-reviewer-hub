@@ -917,184 +917,184 @@ window.VERBAL_QUESTION_BANK["error_identification"] = {
 
   expert: [
     {
-      question: "Identify the error: 'I have / less / friends / than you.'",
-      options: ["I have", "less", "friends", "No error"],
-      answer: "less",
-      explanation: "Rule: Quantifiers. Friends are countable. Use 'fewer'."
-    },
-    {
-      question: "Identify the error: 'The / amount / of people / was huge.'",
-      options: ["The", "amount", "of people", "No error"],
-      answer: "amount",
-      explanation: "Rule: Quantifiers. 'Amount' is for uncountable. 'Number' is for countable. Use 'number'."
-    },
-    {
-      question: "Identify the error: 'He / has / much / books.'",
-      options: ["He", "has", "much", "No error"],
-      answer: "much",
-      explanation: "Rule: Quantifiers. Books are countable. Use 'many'."
-    },
-    {
-      question: "Identify the error: 'She / gave / me / a few advice.'",
-      options: ["She", "gave", "me", "a few advice"],
-      answer: "a few advice",
-      explanation: "Rule: Countability. Advice is uncountable. Use 'some advice'."
-    },
-    {
-      question: "Identify the error: 'We / need / less / calories.'",
-      options: ["We", "need", "less", "No error"],
-      answer: "less",
-      explanation: "Rule: Quantifiers. Calories are countable. Use 'fewer'."
-    },
-    {
-      question: "Identify the error: 'There / are / less / days in February.'",
-      options: ["There", "are", "less", "No error"],
-      answer: "less",
-      explanation: "Rule: Quantifiers. Days are countable. Use 'fewer'."
-    },
-    {
-      question: "Identify the error: 'He / wants / a little / fries.'",
-      options: ["He", "wants", "a little", "No error"],
-      answer: "a little",
-      explanation: "Rule: Quantifiers. Fries are countable. Use 'a few'."
-    },
-    {
-      question: "Identify the error: 'Look at / all / the / equipments.'",
-      options: ["Look at", "all", "the", "equipments"],
-      answer: "equipments",
-      explanation: "Rule: Uncountable Nouns. Equipment has no plural form. Remove 's'."
-    },
-    {
-      question: "Identify the error: 'The / news / are / bad.'",
-      options: ["The", "news", "are", "No error"],
-      answer: "are",
-      explanation: "Rule: Uncountable Nouns. 'News' ends in S but is singular. Use 'is'."
-    },
-    {
-      question: "Identify the error: 'I / have / many / homeworks.'",
-      options: ["I", "have", "many", "homeworks"],
-      answer: "homeworks",
-      explanation: "Rule: Uncountable Nouns. Homework is uncountable. Use 'much homework'."
-    },
-    {
-      question: "Identify the error: 'She / is / the / more smart student.'",
-      options: ["She", "is", "the", "more smart student"],
-      answer: "more smart student",
-      explanation: "Rule: Comparison Form. One-syllable adjectives take -er/-est. Use 'smarter' or 'smartest'."
-    },
-    {
-      question: "Identify the error: 'He / is / the / most perfect fit.'",
-      options: ["He", "is", "the", "most perfect fit"],
-      answer: "most perfect fit",
-      explanation: "Rule: Absolute Adjectives. 'Perfect' is absolute. Remove 'most'."
-    },
-    {
-      question: "Identify the error: 'This / is / more / better.'",
-      options: ["This", "is", "more", "No error"],
-      answer: "more",
-      explanation: "Rule: Double Comparative. 'Better' is already comparative. Remove 'more'."
-    },
-    {
-      question: "Identify the error: 'He / is / the / most unique person.'",
-      options: ["He", "is", "the", "most unique person"],
-      answer: "most unique person",
-      explanation: "Rule: Absolute Adjectives. 'Unique' means one of a kind. Remove 'most'."
-    },
-    {
-      question: "Identify the error: 'Of the / two / boys, / he is the tallest.'",
-      options: ["Of the", "two", "boys,", "he is the tallest"],
-      answer: "he is the tallest",
-      explanation: "Rule: Comparing Two. Use 'taller' for two items."
-    },
-    {
-      question: "Identify the error: 'She / is / more / prettier than her sister.'",
-      options: ["She", "is", "more", "prettier than her sister"],
-      answer: "more",
-      explanation: "Rule: Double Comparative. 'Prettier' is comparative. Remove 'more'."
-    },
-    {
-      question: "Identify the error: 'This / square / is / rounder than that one.'",
-      options: ["This", "square", "is", "rounder than that one"],
-      answer: "rounder than that one",
-      explanation: "Rule: Logical Comparison. Squares cannot be round."
-    },
-    {
-      question: "Identify the error: 'My / house / is / the same with yours.'",
-      options: ["My", "house", "is", "the same with yours"],
-      answer: "the same with yours",
-      explanation: "Rule: Idiom. The correct phrase is 'the same as yours'."
-    },
-    {
-      question: "Identify the error: 'He / is / senior / than me.'",
-      options: ["He", "is", "senior", "than me"],
-      answer: "than me",
-      explanation: "Rule: Latin Comparatives. Senior takes 'to', not 'than'."
-    },
-    {
-      question: "Identify the error: 'This / painting / is / superior than that one.'",
-      options: ["This", "painting", "is", "superior than that one"],
-      answer: "superior than that one",
-      explanation: "Rule: Latin Comparatives. Use 'superior to'."
-    },
-    {
-      question: "Identify the error: 'Being / rainy, / we / stayed home.'",
-      options: ["Being", "rainy,", "we", "No error"],
-      answer: "Being",
-      explanation: "Rule: Dangling Participle. 'Being rainy' implies 'We were rainy'. Fix: 'Since it was rainy'."
-    },
-    {
-      question: "Identify the error: 'At / the / age / of four, my father died.'",
-      options: ["At", "the", "age", "of four, my father died"],
-      answer: "of four, my father died",
-      explanation: "Rule: Dangling Modifier. This implies the father died when *he* was four. Fix: 'When I was four'."
-    },
-    {
-      question: "Identify the error: 'Cycling / uphill, / the / view was amazing.'",
-      options: ["Cycling", "uphill,", "the", "No error"],
-      answer: "the",
-      explanation: "Rule: Dangling Modifier. The view was not cycling. Fix: 'Cycling uphill, I thought...'."
-    },
-    {
-      question: "Identify the error: 'Students / who study / often / get good grades.'",
-      options: ["Students", "who study", "often", "get good grades"],
-      answer: "often",
-      explanation: "Rule: Squinting Modifier. Does 'often' modify 'study' or 'get'? Ambiguous."
-    },
-    {
-      question: "Identify the error: 'Running / quickly / improves / health.'",
-      options: ["Running", "quickly", "improves", "No error"],
-      answer: "quickly",
-      explanation: "Rule: Squinting Modifier. Is the running done quickly? Or does it quickly improve health?"
-    },
-    {
-      question: "Identify the error: 'After / biting / the postman, / the police took the dog away.'",
-      options: ["After", "biting", "the postman,", "the police took the dog away"],
-      answer: "the police took the dog away",
-      explanation: "Rule: Dangling Modifier. Implies the police bit the postman."
-    },
-    {
-      question: "Identify the error: 'Lying / in the sun, / the heat / was oppressive.'",
-      options: ["Lying", "in the sun,", "the heat", "No error"],
-      answer: "the heat",
-      explanation: "Rule: Dangling Modifier. The heat was not lying in the sun."
-    },
-    {
-      question: "Identify the error: 'While / reading / the book, / the phone rang.'",
-      options: ["While", "reading", "the book,", "No error"],
-      answer: "the phone rang.",
-      explanation: "Rule: Dangling Modifier. The phone was not reading."
-    },
-    {
-      question: "Identify the error: 'To / please / the boss, / work must be done.'",
-      options: ["To", "please", "the boss,", "work must be done"],
-      answer: "work must be done",
-      explanation: "Rule: Dangling Infinitive. 'Work' cannot please. A person must be the subject."
-    },
-    {
-      question: "Identify the error: 'Without / knowing / his name, / it was hard to introduce him.'",
-      options: ["Without", "knowing", "his name,", "it was hard to introduce him"],
-      answer: "it was hard to introduce him",
-      explanation: "Rule: Dangling Modifier. 'It' did not know his name."
-    }
-  ]
+    "question": "Identify the error: 'I have / less / friends / than you.'",
+    "options": ["I have", "less", "friends", "No error"],
+    "answer": "less",
+    "explanation": "The sentence reads: 'I have less friends than you.' There is a strict rule governing quantifiers based on noun countability. The word 'friends' is a plural countable noun. The quantifier 'less' is strictly reserved for uncountable nouns or mass quantities (e.g., less water, less time). For plural countable nouns, the correct comparative quantifier to use is 'fewer'. Corrected sentence: 'I have fewer friends than you.'"
+  },
+  {
+    "question": "Identify the error: 'The / amount / of people / was huge.'",
+    "options": ["The", "amount", "of people", "No error"],
+    "answer": "amount",
+    "explanation": "The sentence reads: 'The amount of people was huge.' The noun 'people' consists of individual countable human beings. In formal English, the quantifier 'amount' must only modify mass or uncountable nouns (e.g., the amount of traffic, the amount of money). When referring to a collection of individual countable units, the correct noun to use is 'number'. Corrected sentence: 'The number of people was huge.'"
+  },
+  {
+    "question": "Identify the error: 'He / has / much / books.'",
+    "options": ["He", "has", "much", "No error"],
+    "answer": "much",
+    "explanation": "The sentence reads: 'He has much books.' The word 'books' is a plural countable noun. The quantifier 'much' is an adjective of quantity that is only paired with singular uncountable or mass nouns (e.g., much appreciation, much wealth). To modify a plural countable item, the proper adjective of number to choose is 'many'. Corrected sentence: 'He has many books.'"
+  },
+  {
+    "question": "Identify the error: 'She / gave / me / a few advice.'",
+    "options": ["She", "gave", "me", "a few advice"],
+    "answer": "a few advice",
+    "explanation": "The sentence reads: 'She gave me a few advice.' In English, the noun 'advice' is strictly non-count or uncountable, meaning it cannot be quantified directly by numbers or plural modifiers like 'a few'. To express a small quantity of an uncountable noun, you should use descriptors like 'some advice' or a counter phrase like 'a few pieces of advice'. Corrected sentence: 'She gave me some advice.'"
+  },
+  {
+    "question": "Identify the error: 'We / need / less / calories.'",
+    "options": ["We", "need", "less", "No error"],
+    "answer": "less",
+    "explanation": "The sentence reads: 'We need less calories.' Even though calories are associated with a bulk measurement of energy, the noun 'calories' is grammatically a plural countable noun ending in '-s'. Therefore, applying the uncountable modifier 'less' to it is grammatically incorrect; it must be swapped with the countable equivalent 'fewer'. Corrected sentence: 'We need fewer calories.'"
+  },
+  {
+    "question": "Identify the error: 'There / are / less / days in February.'",
+    "options": ["There", "are", "less", "No error"],
+    "answer": "less",
+    "explanation": "The sentence reads: 'There are less days in February.' The noun 'days' is a distinct, plural countable unit of time. While 'less' is often used informally for periods of time or distances, formal grammar standards demand the quantifier 'fewer' when modifying a explicitly plural countable noun like 'days'. Corrected sentence: 'There are fewer days in February.'"
+  },
+  {
+    "question": "Identify the error: 'He / wants / a little / fries.'",
+    "options": ["He", "wants", "a little", "No error"],
+    "answer": "a little",
+    "explanation": "The sentence reads: 'He wants a little fries.' The noun 'fries' is plural and countable. The modifier phrase 'a little' is restricted to singular non-count nouns (e.g., a little ketchup). When talking about a small quantity of a plural countable item, you must use the modifier 'a few'. Corrected sentence: 'He wants a few fries.'"
+  },
+  {
+    "question": "Identify the error: 'Look at / all / the / equipments.'",
+    "options": ["Look at", "all", "the", "equipments"],
+    "answer": "equipments",
+    "explanation": "The sentence reads: 'Look at all the equipments.' The noun 'equipment' is a non-count mass noun that represents a collective category of tools. Because it is uncountable, it cannot take a plural suffix '-s' or be counted individually. To fix this, simply drop the '-s' to restore its proper non-count form. Corrected sentence: 'Look at all the equipment.'"
+  },
+  {
+    "question": "Identify the error: 'The / news / are / bad.'",
+    "options": ["The", "news", "are", "No error"],
+    "answer": "are",
+    "explanation": "The sentence reads: 'The news are bad.' Although the noun 'news' terminates with the letter '-s', it is a singular uncountable noun rather than a plural item. Uncountable nouns always require a singular verb to maintain proper subject-verb agreement, which means the plural copula 'are' must be replaced with 'is'. Corrected sentence: 'The news is bad.'"
+  },
+  {
+    "question": "Identify the error: 'I / have / many / homeworks.'",
+    "options": ["I", "have", "many", "homeworks"],
+    "answer": "homeworks",
+    "explanation": "The sentence reads: 'I have many homeworks.' The word 'homework' belongs to the class of uncountable abstract nouns in English. It cannot be pluralized with an '-s', nor can it be paired with the countable quantifier 'many'. The correct phrasing requires switching to an uncountable quantifier or adding a count phrase. Corrected sentence: 'I have a lot of homework.'"
+  },
+  {
+    "question": "Identify the error: 'She / is / the / more smart student.'",
+    "options": ["She", "is", "the", "more smart student"],
+    "answer": "more smart student",
+    "explanation": "The sentence reads: 'She is the more smart student.' Under regular rules of comparison, most one-syllable adjectives form their comparative and superlative forms using the suffixes '-er' or '-est'. Combining the periphrastic modifier 'more' with the base monosyllabic adjective 'smart' creates an ungrammatical form. Depending on context, it must be 'smarter' or 'the smartest'. Corrected sentence: 'She is the smartest student.'"
+  },
+  {
+    "question": "Identify the error: 'He / is / the / most perfect fit.'",
+    "options": ["He", "is", "the", "most perfect fit"],
+    "answer": "most perfect fit",
+    "explanation": "The sentence reads: 'He is the most perfect fit.' The adjective 'perfect' belongs to a class known as absolute or ungradable adjectives. Something is either completely perfect or it is not; it cannot exist in degrees. Therefore, using comparative or superlative modifiers like 'more' or 'most' with an absolute adjective is a logical error. The word 'most' should be removed. Corrected sentence: 'He is the perfect fit.'"
+  },
+  {
+    "question": "Identify the error: 'This / is / more / better.'",
+    "options": ["This", "is", "more", "No error"],
+    "answer": "more",
+    "explanation": "The sentence reads: 'This is more better.' The word 'better' is already the fully formed irregular comparative version of the adjective 'good'. Adding the modifier word 'more' directly in front of an existing comparative form creates a double comparative error, which is redundant. The word 'more' must be completely deleted. Corrected sentence: 'This is better.'"
+  },
+  {
+    "question": "Identify the error: 'He / is / the / most unique person.'",
+    "options": ["He", "is", "the", "most unique person"],
+    "answer": "most unique person",
+    "explanation": "The sentence reads: 'He is the most unique person.' The word 'unique' is an absolute modifier that literally translates to 'being the only one of its kind'. Because its definition represents an absolute state, it cannot be modified by degrees of comparison. Adding 'most' creates a semantic contradiction, so it should be dropped. Corrected sentence: 'He is a unique person.'"
+  },
+  {
+    "question": "Identify the error: 'Of the / two / boys, / he is the tallest.'",
+    "options": ["Of the", "two", "boys,", "he is the tallest"],
+    "answer": "he is the tallest",
+    "explanation": "The sentence reads: 'Of the two boys, he is the tallest.' In formal grammar, when a direct comparison is drawn specifically between exactly two entities, you must use the comparative degree ('-er'). The superlative degree ('-est') is strictly reserved for comparing three or more entities. Thus, 'the tallest' should be updated to 'the taller'. Corrected sentence: 'Of the two boys, he is the taller.'"
+  },
+  {
+    "question": "Identify the error: 'She / is / more / prettier than her sister.'",
+    "options": ["She", "is", "more", "prettier than her sister"],
+    "answer": "more",
+    "explanation": "The sentence reads: 'She is more prettier than her sister.' The adjective 'pretty' forms its comparative degree by changing the '-y' to '-i' and adding the suffix '-er' ('prettier'). Including the word 'more' alongside an inflected comparative adjective results in a double comparative error. The word 'more' must be deleted. Corrected sentence: 'She is prettier than her sister.'"
+  },
+  {
+    "question": "Identify the error: 'This / square / is / rounder than that one.'",
+    "options": ["This", "square", "is", "rounder than that one"],
+    "answer": "rounder than that one",
+    "explanation": "The sentence reads: 'This square is rounder than that one.' This represents a logical comparison error involving geometric absolutes. By definition, a 'square' is a shape with four straight, equal sides and right angles, meaning it cannot possess any degree of roundness. Describing a square as 'rounder' is logically impossible. The properties of the shapes must be rephrased accurately."
+  },
+  {
+    "question": "Identify the error: 'My / house / is / the same with yours.'",
+    "options": ["My", "house", "is", "the same with yours"],
+    "answer": "the same with yours",
+    "explanation": "The sentence reads: 'My house is the same with yours.' This is a prepositional idiom error. In English, comparisons demonstrating complete identity or matching characteristics require the fixed idiomatic phrasal construction 'the same as'. Replacing 'as' with 'with' breaks the standard idiom. Corrected sentence: 'My house is the same as yours.'"
+  },
+  {
+    "question": "Identify the error: 'He / is / senior / than me.'",
+    "options": ["He", "is", "senior", "than me"],
+    "answer": "than me",
+    "explanation": "The sentence reads: 'He is senior than me.' The adjective 'senior' is a Latin comparative term. Unlike native English comparative adjectives that utilize the conjunction 'than' to perform comparisons, comparative adjectives borrowed from Latin (such as senior, junior, superior, inferior) are idiomatically paired with the preposition 'to'. Corrected sentence: 'He is senior to me.'"
+  },
+  {
+    "question": "Identify the error: 'This / painting / is / superior than that one.'",
+    "options": ["This", "painting", "is", "superior than that one"],
+    "answer": "superior than that one",
+    "explanation": "The sentence reads: 'This painting is superior than that one.' The word 'superior' is a comparative descriptor of Latin origin. It inherently contains a comparative value and does not follow the standard rule of being paired with 'than'. To establish a correct comparison, it must be paired with the preposition 'to'. Corrected sentence: 'This painting is superior to that one.'"
+  },
+  {
+    "question": "Identify the error: 'Being / rainy, / we / stayed home.'",
+    "options": ["Being", "rainy,", "we", "No error"],
+    "answer": "Being",
+    "explanation": "The sentence reads: 'Being rainy, we stayed home.' This sentence contains a dangling participle error. An introductory participial modifier naturally attributes its action or state to the subject of the main clause that immediately follows the comma. Here, it implies that 'we' were rainy. To fix this, an independent dummy subject 'it' must be introduced to describe the weather. Corrected sentence: 'Since it was rainy, we stayed home.'"
+  },
+  {
+    "question": "Identify the error: 'At / the / age / of four, my father died.'",
+    "options": ["At the age of four, / my father / died. / No error", "At", "the", "age", "of four, my father died"],
+    "answer": "of four, my father died",
+    "explanation": "The sentence reads: 'At the age of four, my father died.' This is a classic dangling modifier error. The introductory prepositional phrase 'At the age of four' lacks a clear subject within itself, so it attaches syntactically to the closest main subject, which is 'my father'. This absurdly suggests that the father was four years old when he passed away. The clause must be rewritten to explicitly state who was four. Corrected sentence: 'When I was four, my father died.'"
+  },
+  {
+    "question": "Identify the error: 'Cycling / uphill, / the / view was amazing.'",
+    "options": ["Cycling", "uphill,", "the", "No error"],
+    "answer": "the",
+    "explanation": "The sentence reads: 'Cycling uphill, the view was amazing.' The introductory modifier 'Cycling uphill' describes a continuous physical action. Because the main subject placed after the comma is 'the view', the sentence structurally implies that the scenery itself was cycling up the hill. A logical human subject must be introduced to perform the action. Corrected sentence: 'Cycling uphill, I found the view amazing.'"
+  },
+  {
+    "question": "Identify the error: 'Students / who study / often / get good grades.'",
+    "options": ["Students", "who study", "often", "get good grades"],
+    "answer": "often",
+    "explanation": "The sentence reads: 'Students who study often get good grades.' The adverb 'often' is an example of a squinting or ambiguous modifier. Because it is positioned directly between the verb phrase 'who study' and the main predicate 'get good grades', it is impossible to determine whether it means students who study *frequently* get grades, or that students who study will *frequently* obtain good grades. Relocating the adverb resolves the ambiguity. Corrected sentence: 'Students who often study get good grades.'"
+  },
+  {
+    "question": "Identify the error: 'Running / quickly / improves / health.'",
+    "options": ["Running", "quickly", "improves", "No error"],
+    "answer": "quickly",
+    "explanation": "The sentence reads: 'Running quickly improves health.' The placement of the adverb 'quickly' creates a squinting modifier defect. It sits precariously between the gerund 'Running' and the active verb 'improves'. As a result, the sentence could mean either that running at a high speed improves health, or that the act of running brings about rapid improvements to health. Punctuation or reordering is required to clarify the exact intent."
+  },
+  {
+    "question": "Identify the error: 'After / biting / the postman, / the police took the dog away.'",
+    "options": ["After", "biting", "the postman,", "the police took the dog away"],
+    "answer": "the police took the dog away",
+    "explanation": "The sentence reads: 'After biting the postman, the police took the dog away.' This contains a dangling modifier. The opening phrase 'After biting the postman' must modify the agent performing the biting action. Because 'the police' is the subject of the main clause, the structure implies that the police officers bit the postman. The sentence must be rearranged so 'the dog' is the immediate subject following the modifier. Corrected sentence: 'After biting the postman, the dog was taken away by the police.'"
+  },
+  {
+    "question": "Identify the error: 'Lying / in the sun, / the heat / was oppressive.'",
+    "options": ["Lying", "in the sun,", "the heat", "No error"],
+    "answer": "the heat",
+    "explanation": "The sentence reads: 'Lying in the sun, the heat was oppressive.' The introductory participial phrase 'Lying in the sun' describes an action that requires a living agent capable of reclining. However, the subject following the comma is 'the heat'. This dangling modifier erroneously attributes the act of sunbathing to the ambient temperature. The main clause must open with a person. Corrected sentence: 'Lying in the sun, I found the heat oppressive.'"
+  },
+  {
+    "question": "Identify the error: 'While / reading / the book, / the phone rang.'",
+    "options": ["While", "reading", "the book,", "No error"],
+    "answer": "the phone rang.",
+    "explanation": "The sentence reads: 'While reading the book, the phone rang.' This sentence contains a dangling modifier error. The elliptical adverbial clause 'While reading the book' omits the subject, meaning it automatically targets the main clause subject, which is 'the phone'. This implies that the telephone was actively reading the book while it rang. A proper subject must be explicitly stated in the clause. Corrected sentence: 'While I was reading the book, the phone rang.'"
+  },
+  {
+    "question": "Identify the error: 'To / please / the boss, / work must be done.'",
+    "options": ["To", "please", "the boss,", "work must be done"],
+    "answer": "work must be done",
+    "explanation": "The sentence reads: 'To please the boss, work must be done.' This sentence suffers from a dangling infinitive modifier error. The introductory phrase 'To please the boss' outlines a conscious purpose or intent, which can only be carried out by a person. Because the subject of the sentence is the passive noun 'work', the intent is left unattached to a logical doer. The main clause must use an active agent. Corrected sentence: 'To please the boss, you must do the work.'"
+  },
+  {
+    "question": "Identify the error: 'Without / knowing / his name, / it was hard to introduce him.'",
+    "options": ["Without", "knowing", "his name,", "it was hard to introduce him"],
+    "answer": "it was hard to introduce him",
+    "explanation": "The sentence reads: 'Without knowing his name, it was hard to introduce him.' The introductory gerund phrase 'Without knowing his name' describes a state of knowledge belonging to a person. However, the main clause employs an expletive or dummy subject construction starting with 'it'. Since 'it' cannot possess knowledge, the modifier is left dangling. The sentence must be reframed to include a logical human subject. Corrected sentence: 'Without knowing his name, I found it hard to introduce him.'"
+  }
+]
 };
