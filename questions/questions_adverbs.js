@@ -317,314 +317,306 @@ window.VERBAL_QUESTION_BANK["adverbs"] = {
   // ============================================================
   intermediate: [
     // 51-60: Good vs Well (Common Confusion)
-    {
-      question: "She plays the piano ______.",
-      options: ["good", "well", "better", "best"],
-      answer: "well",
-      explanation: "Words that describe verbs must be adverbs. 'Well' is the adverb form of 'good'."
-    },
-    {
-      question: "Her piano playing is ______.",
-      options: ["good", "well", "better", "best"],
-      answer: "good",
-      explanation: "The word describes the noun phrase 'piano playing'. After linking verb 'is', we use an adjective."
-    },
-    {
-      question: "I don't feel ______ today.",
-      options: ["good", "well", "nice", "fine"],
-      answer: "well",
-      explanation: "When talking about health or physical condition, 'well' functions as an adjective."
-    },
-    {
-      question: "He did a ______ job.",
-      options: ["good", "well"],
-      answer: "good",
-      explanation: "The word describes the noun 'job'. Adjectives describe nouns."
-    },
-    {
-      question: "The team played ______ yesterday.",
-      options: ["good", "well"],
-      answer: "well",
-      explanation: "'Played' is a verb, so it must be modified by an adverb."
-    },
-    {
-      question: "It looks ______.",
-      options: ["good", "well"],
-      answer: "good",
-      explanation: "'Looks' is a linking verb referring to appearance. Linking verbs are followed by adjectives."
-    },
-    {
-      question: "She speaks English ______.",
-      options: ["good", "well"],
-      answer: "well",
-      explanation: "'Well' modifies the verb 'speaks'."
-    },
-    {
-      question: "He is a ______ student.",
-      options: ["good", "well"],
-      answer: "good",
-      explanation: "The word describes the noun 'student'. Adjectives describe nouns."
-    },
-    {
-      question: "Did you sleep ______?",
-      options: ["good", "well"],
-      answer: "well",
-      explanation: "'Well' is the adverb that modifies the verb 'sleep'."
-    },
-    {
-      question: "The food tastes ______.",
-      options: ["good", "well"],
-      answer: "good",
-      explanation: "'Tastes' is a linking verb that describes the food. Linking verbs take adjectives."
-    },
-
-    // 61-70: Comparison of Adverbs
-    {
-      question: "He runs ______ than me.",
-      options: ["fast", "faster", "fastly", "more fast"],
-      answer: "faster",
-      explanation: "'Fast' is a short adverb, so its comparative form is made by adding '-er'."
-    },
-    {
-      question: "She works ______ than her brother.",
-      options: ["hard", "harder", "hardly", "more hard"],
-      answer: "harder",
-      explanation: "'Hard' is a one-syllable adverb. To compare two actions, add '-er'."
-    },
-    {
-      question: "Please speak ______.",
-      options: ["more clearly", "clearlier", "most clearly", "clear"],
-      answer: "more clearly",
-      explanation: "Adverbs ending in '-ly' form comparatives using 'more', not '-er'."
-    },
-    {
-      question: "He arrived ______ than expected.",
-      options: ["early", "earlier", "more early", "earliest"],
-      answer: "earlier",
-      explanation: "'Early' ends in 'y', so the comparative form changes 'y' to 'i' and adds '-er'."
-    },
-    {
-      question: "Of all the runners, he ran ______.",
-      options: ["fastest", "faster", "most fast", "fastly"],
-      answer: "fastest",
-      explanation: "'Of all' shows comparison among more than two people. This requires the superlative form."
-    },
-    {
-      question: "She sings ______ of all.",
-      options: ["beautifully", "more beautifully", "most beautifully", "beauty"],
-      answer: "most beautifully",
-      explanation: "For '-ly' adverbs, the superlative form uses 'most'."
-    },
-    {
-      question: "He drives ______ than his father.",
-      options: ["carefully", "more carefully", "most carefully", "carefuller"],
-      answer: "more carefully",
-      explanation: "'Carefully' ends in '-ly', so the comparative form uses 'more'."
-    },
-    {
-      question: "Among all the students, who woke up ______?",
-      options: ["early", "earlier", "earliest", "more early"],
-      answer: "earliest",
-      explanation: "'Among all' signals comparison of more than two people. The superlative form must be used."
-    },
-    {
-      question: "I did ______ on the test than I thought.",
-      options: ["badly", "worse", "worst", "badder"],
-      answer: "worse",
-      explanation: "'Badly' has an irregular comparative form. Badly → worse → worst."
-    },
-    {
-      question: "He treats her ______ than anyone else.",
-      options: ["better", "best", "gooder", "well"],
-      answer: "better",
-      explanation: "'Well' has an irregular comparative form: well → better → best."
-    },
-
-    // 71-80: Placement (Where to put the adverb)
-    {
-      question: "Choose the best sentence:",
-      options: ["I always am late.", "I am always late.", "Always I am late.", "I am late always."],
-      answer: "I am always late.",
-      explanation: "Frequency adverbs usually come after the verb 'be'."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["He often plays tennis.", "He plays often tennis.", "He often plays tennis often.", "He plays tennis often often."],
-      answer: "He often plays tennis.",
-      explanation: "Frequency adverbs normally come before the main verb."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["We usually go to the park.", "We go usually to the park.", "We go to the park usually.", "We go to usually the park."],
-      answer: "We usually go to the park.",
-      explanation: "'Usually' modifies the verb 'go'. The standard placement for frequency adverbs is before the main verb."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["She doesn't always eat breakfast.", "She always doesn't eat breakfast.", "She doesn't eat always breakfast.", "She eats always breakfast."],
-      answer: "She doesn't always eat breakfast.",
-      explanation: "In negative sentences, the frequency adverb is placed between the auxiliary and the main verb."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["I have never been to Japan.", "I never have been to Japan.", "I have been never to Japan.", "I have been to Japan never."],
-      answer: "I have never been to Japan.",
-      explanation: "In perfect tenses, the adverb comes between the auxiliary 'have' and the past participle."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["They rarely watch TV.", "They watch rarely TV.", "They rarely watch TV on weekdays.", "They watch TV rarely on weekdays rarely."],
-      answer: "They rarely watch TV.",
-      explanation: "'Rarely' modifies the verb 'watch'. The standard position is before the main verb."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["He is seldom angry.", "He seldom is angry.", "He is angry seldom.", "Seldom he is angry."],
-      answer: "He is seldom angry.",
-      explanation: "With the verb 'be', frequency adverbs usually come after it."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["Do you often visit?", "Do often you visit?", "You do visit often?", "Visit you often?"],
-      answer: "Do you often visit?",
-      explanation: "In questions, the order is auxiliary + subject + adverb + main verb."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["She sometimes cooks.", "She cooks sometimes sometimes.", "Sometimes cooks she.", "She cooks sometimes always."],
-      answer: "She sometimes cooks.",
-      explanation: "'Sometimes' modifies the verb 'cooks'. The middle position before the main verb is standard."
-    },
-    {
-      question: "Choose the best sentence:",
-      options: ["My dad usually works late.", "My dad works usually late.", "Usually works my dad late.", "My dad works late usually usually."],
-      answer: "My dad usually works late.",
-      explanation: "'Usually' modifies the verb 'works'. The standard position is before the main verb."
-    },
-
-    // 81-90: Hard vs Hardly, Late vs Lately (Tricky Pairs)
-    {
-      question: "He works ______.",
-      options: ["hard", "hardly"],
-      answer: "hard",
-      explanation: "The intended meaning is that he works with effort. 'Hard' modifies the verb 'works'."
-    },
-    {
-      question: "He ______ works.",
-      options: ["hard", "hardly"],
-      answer: "hardly",
-      explanation: "The meaning is negative: he almost does not work. 'Hardly' means 'almost not'."
-    },
-    {
-      question: "I haven't seen him ______.",
-      options: ["late", "lately"],
-      answer: "lately",
-      explanation: "The sentence means 'I have not seen him recently'. 'Lately' means 'recently'."
-    },
-    {
-      question: "The bus arrived ______.",
-      options: ["late", "lately"],
-      answer: "late",
-      explanation: "The meaning is 'not on time'. 'Late' modifies the verb 'arrived'."
-    },
-    {
-      question: "She can ______ see without her glasses.",
-      options: ["hard", "hardly"],
-      answer: "hardly",
-      explanation: "The sentence means she almost cannot see. 'Hardly' expresses near-negation."
-    },
-    {
-      question: "He hit the ball ______.",
-      options: ["hard", "hardly"],
-      answer: "hard",
-      explanation: "The meaning is that he used force. 'Hard' modifies the verb 'hit'."
-    },
-    {
-      question: "Have you been busy ______?",
-      options: ["late", "lately"],
-      answer: "lately",
-      explanation: "The question asks about recent time. 'Lately' means 'recently'."
-    },
-    {
-      question: "He stayed up ______.",
-      options: ["late", "lately"],
-      answer: "late",
-      explanation: "The sentence describes time of night. 'Late' means until a late hour."
-    },
-    {
-      question: "There is ______ any food left.",
-      options: ["hard", "hardly"],
-      answer: "hardly",
-      explanation: "'Hardly' is a negative adverb meaning 'almost none'."
-    },
-    {
-      question: "She tries ______ to succeed.",
-      options: ["hard", "hardly"],
-      answer: "hard",
-      explanation: "The meaning is that she makes strong effort. 'Hard' means 'with effort'."
-    },
-
-    // 91-100: Intensifiers (Very, Too, Enough)
-    {
-      question: "The soup is ______ hot to eat.",
-      options: ["very", "too", "enough", "much"],
-      answer: "too",
-      explanation: "'Too' expresses excess beyond what is acceptable."
-    },
-    {
-      question: "He is strong ______ to lift it.",
-      options: ["very", "too", "enough", "so"],
-      answer: "enough",
-      explanation: "'Enough' expresses sufficiency and comes after the adjective it modifies."
-    },
-    {
-      question: "She is ______ tired.",
-      options: ["very", "enough", "much", "many"],
-      answer: "very",
-      explanation: "'Very' intensifies the adjective 'tired'."
-    },
-    {
-      question: "It is ______ cold today.",
-      options: ["very", "enough", "much", "many"],
-      answer: "very",
-      explanation: "'Very' modifies base adjectives like 'cold'."
-    },
-    {
-      question: "He is not old ______ to drive.",
-      options: ["very", "too", "enough", "much"],
-      answer: "enough",
-      explanation: "The structure is adjective + enough + infinitive."
-    },
-    {
-      question: "The box is ______ heavy for me to lift.",
-      options: ["very", "too", "enough", "so"],
-      answer: "too",
-      explanation: "'Too + adjective + for/to' expresses excess that makes an action impossible."
-    },
-    {
-      question: "He ran fast ______ to win.",
-      options: ["very", "too", "enough", "so"],
-      answer: "enough",
-      explanation: "'Enough' follows the adverb it modifies."
-    },
-    {
-      question: "I am ______ happy for you.",
-      options: ["so", "too", "enough", "such"],
-      answer: "so",
-      explanation: "'So' intensifies an adjective without adding a negative meaning."
-    },
-    {
-      question: "It was ______ a good movie.",
-      options: ["so", "such", "very", "too"],
-      answer: "such",
-      explanation: "'Such' is used before 'a/an + adjective + noun'."
-    },
-    {
-      question: "The tea is ______ sweet.",
-      options: ["very", "enough", "much", "many"],
-      answer: "very",
-      explanation: "'Very' modifies adjectives directly."
-    }
+  {
+    "question": "Complete the statement with the correct modifier: 'She plays the piano ______ during the company's annual recital.'",
+    "options": ["good", "well", "better", "best"],
+    "answer": "well",
+    "explanation": "The word modifies the active verb phrase 'plays the piano'. Since adverbs are required to modify actions, 'well' (the irregular adverb form of 'good') is the correct choice."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'The music instructor noted that her piano playing is ______.'",
+    "options": ["good", "well", "better", "best"],
+    "answer": "good",
+    "explanation": "The word follows the static linking verb 'is' and modifies the noun phrase 'piano playing'. Linking verbs require a predicate adjective rather than an adverb to describe the subject."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'I don't feel ______ today, so I may request a sick leave.'",
+    "options": ["good", "well", "nice", "fine"],
+    "answer": "well",
+    "explanation": "When referring specifically to health, physical well-being, or medical condition after a linking verb like 'feel', standard formal English uses 'well' as a predicate adjective."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'The operations supervisor did a ______ job organizing the facility warehouse.'",
+    "options": ["good", "well"],
+    "answer": "good",
+    "explanation": "The modifier directly precedes and describes the common noun 'job'. Under standard syntax rules, adjectives modify nouns, making 'good' the correct selection."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'The retail station team played ______ during yesterday's corporate sports fest.'",
+    "options": ["good", "well"],
+    "answer": "well",
+    "explanation": "The modifier qualifies the active past-tense verb 'played'. An adverb of manner is required to describe how an action was performed, which dictates the use of 'well'."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'The newly updated franchise audit dashboard looks ______.'",
+    "options": ["good", "well"],
+    "answer": "good",
+    "explanation": "The word 'looks' functions here as a sensory linking verb regarding appearance. Linking verbs must be followed by a predicate adjective ('good') to modify the subject."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'She speaks English ______ when communicating with international vendors.'",
+    "options": ["good", "well"],
+    "answer": "well",
+    "explanation": "The word modifies the action verb 'speaks'. Because it describes the manner of speaking, the adverb 'well' is grammatically mandatory."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'He is recognized as a ______ student in the administrative training program.'",
+    "options": ["good", "well"],
+    "answer": "good",
+    "explanation": "The word serves as an attributive modifier for the class noun 'student'. Adjectives are structurally required to qualify nouns, making 'good' correct."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'Did you sleep ______ before taking the mock examination?'",
+    "options": ["good", "well"],
+    "answer": "well",
+    "explanation": "The question asks about the quality of the action 'sleep'. Because 'sleep' is an active verb, it must be modified by the adverb 'well'."
+  },
+  {
+    "question": "Complete the statement with the correct modifier: 'The specialty food brand item tastes ______.'",
+    "options": ["good", "well"],
+    "answer": "good",
+    "explanation": "In this context, 'tastes' functions as a sensory linking verb describing the state of the food. Linking verbs link the subject to an adjective ('good') rather than an adverb."
+  },
+  {
+    "question": "Complete the comparison: 'The new delivery courier runs ______ than the previous one.'",
+    "options": ["fast", "faster", "fastly", "more fast"],
+    "answer": "faster",
+    "explanation": "The word 'fast' is a short, single-syllable adverb. To form the comparative degree when comparing two actions, append the suffix '-er' directly to the root word."
+  },
+  {
+    "question": "Complete the comparison: 'She works ______ than her brother to meet the store quotas.'",
+    "options": ["hard", "harder", "hardly", "more hard"],
+    "answer": "harder",
+    "explanation": "The word 'hard' functions as a one-syllable adverb of manner. The comparative degree for single-syllable modifiers is formed by adding the suffix '-er'."
+  },
+  {
+    "question": "Complete the comparison: 'To ensure accuracy in the minutes, please speak ______.'",
+    "options": ["more clearly", "clearlier", "most clearly", "clear"],
+    "answer": "more clearly",
+    "explanation": "Adverbs that are formed by adding the '-ly' suffix to an adjective create their comparative form by placing the word 'more' before the adverb."
+  },
+  {
+    "question": "Complete the comparison: 'The site inspector arrived ______ than expected this morning.'",
+    "options": ["early", "earlier", "more early", "earliest"],
+    "answer": "earlier",
+    "explanation": "The adverb 'early' concludes with a '-y'. To form its comparative degree, change the terminal '-y' to an '-i' and add the suffix '-er'."
+  },
+  {
+    "question": "Complete the comparison: 'Of all the regional runners who competed, he ran ______.'",
+    "options": ["fastest", "faster", "most fast", "fastly"],
+    "answer": "fastest",
+    "explanation": "The phrase 'Of all' indicates a comparison involving more than two entities. This environment demands the superlative degree, which for the short adverb 'fast' is 'fastest'."
+  },
+  {
+    "question": "Complete the comparison: 'She sings ______ of all the participants in the cultural exhibition.'",
+    "options": ["beautifully", "more beautifully", "most beautifully", "beauty"],
+    "answer": "most beautifully",
+    "explanation": "When using a multi-syllable adverb ending in '-ly' in a superlative context (comparing more than two actions), place the modifier 'most' before the adverb."
+  },
+  {
+    "question": "Complete the comparison: 'He drives ______ than his father when traversing the construction zones.'",
+    "options": ["carefully", "more carefully", "most carefully", "carefuller"],
+    "answer": "more carefully",
+    "explanation": "To compare the driving actions of two distinct individuals using the '-ly' adverb 'carefully', the comparative word 'more' must precede it."
+  },
+  {
+    "question": "Complete the comparison: 'Among all the trainees at the station, who woke up ______?'",
+    "options": ["early", "earlier", "earliest", "more early"],
+    "answer": "earliest",
+    "explanation": "The prepositional phrase 'Among all' indicates a superlative comparison of three or more subjects. The superlative form of 'early' shifts the '-y' to '-i' and appends '-est' to form 'earliest'."
+  },
+  {
+    "question": "Complete the comparison: 'Due to minor oversights, I did ______ on the diagnostic test than I thought.'",
+    "options": ["badly", "worse", "worst", "badder"],
+    "answer": "worse",
+    "explanation": "The adverb 'badly' possesses an irregular comparative structure. The levels shift from the positive 'badly' to the comparative 'worse', and finally to the superlative 'worst'."
+  },
+  {
+    "question": "Complete the comparison: 'Because of his leadership style, he treats her ______ than anyone else on the team.'",
+    "options": ["better", "best", "gooder", "well"],
+    "answer": "better",
+    "explanation": "The irregular adverb 'well' forms its comparative degree using 'better' when evaluating and comparing two operational methods or actions."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["I always am late.", "I am always late.", "Always I am late.", "I am late always."],
+    "answer": "I am always late.",
+    "explanation": "Adverbs of frequency (such as 'always', 'never', 'seldom') occupy a highly specific structural position: they must be placed directly after the principal verb 'be' (am, is, are, was, were)."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["He often plays tennis.", "He plays often tennis.", "He often plays tennis often.", "He plays tennis often often."],
+    "answer": "He often plays tennis.",
+    "explanation": "Adverbs of frequency are conventionally positioned directly before the main action verb ('plays') and should never separate a transitive verb from its direct object ('tennis')."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["We usually go to the park.", "We go usually to the park.", "We go to the park usually.", "We go to usually the park."],
+    "answer": "We usually go to the park.",
+    "explanation": "The frequency modifier 'usually' alters the action verb 'go'. Standard syntactic placement requires the frequency adverb to rest immediately prior to the main action verb."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["She doesn't always eat breakfast.", "She always doesn't eat breakfast.", "She doesn't eat always breakfast.", "She eats always breakfast."],
+    "answer": "She doesn't always eat breakfast.",
+    "explanation": "In a negative sentence structure, the adverb of frequency must sit directly between the negative auxiliary contraction ('doesn't') and the principal action verb ('eat')."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["I have never been to Japan.", "I never have been to Japan.", "I have been never to Japan.", "I have been to Japan never."],
+    "answer": "I have never been to Japan.",
+    "explanation": "When dealing with compound or perfect tenses, the adverb should be nestled in the middle position, separating the auxiliary verb ('have') from the past participle ('been')."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["They rarely watch TV.", "They watch rarely TV.", "They rarely watch TV on weekdays.", "They watch TV rarely on weekdays rarely."],
+    "answer": "They rarely watch TV.",
+    "explanation": "The frequency adverb 'rarely' modifies the active verb 'watch'. Syntactic principles dictate that it should be placed right before the main action verb."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["He is seldom angry.", "He seldom is angry.", "He is angry seldom.", "Seldom he is angry."],
+    "answer": "He is seldom angry.",
+    "explanation": "When modifying a sentence where the primary verb is a form of 'be' ('is'), the adverb of frequency must be placed directly after that verb."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax in an interrogative form:",
+    "options": ["Do you often visit?", "Do often you visit?", "You do visit often?", "Visit you often?"],
+    "answer": "Do you often visit?",
+    "explanation": "For interrogative structures (questions), the correct word order formula is: Auxiliary Verb ('Do') + Subject Pronoun ('you') + Adverb of Frequency ('often') + Main Action Verb ('visit')."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["She sometimes cooks.", "She cooks sometimes sometimes.", "Sometimes cooks she.", "She cooks sometimes always."],
+    "answer": "She sometimes cooks.",
+    "explanation": "The adverb 'sometimes' modifies 'cooks'. Placing it in the mid-position directly before the single main action verb represents standard, flawless syntax."
+  },
+  {
+    "question": "Select the sentence that reflects correct grammatical word order and syntax:",
+    "options": ["My dad usually works late.", "My dad works usually late.", "Usually works my dad late.", "My dad works late usually usually."],
+    "answer": "My dad usually works late.",
+    "explanation": "The frequency adverb 'usually' modifies the main action verb 'works'. It is properly positioned immediately preceding that verb."
+  },
+  {
+    "question": "Choose the proper term based on context: 'He is dedicated to his role and works ______.'",
+    "options": ["hard", "hardly"],
+    "answer": "hard",
+    "explanation": "The sentence indicates that the subject exerts significant effort. The adverb 'hard' directly modifies 'works' to mean 'with diligence'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'He has absenteeism issues and ______ works.'",
+    "options": ["hard", "hardly"],
+    "answer": "hardly",
+    "explanation": "The adverb 'hardly' is a negative modifier that means 'scarcely' or 'almost not at all'. Placing it before 'works' indicates he almost never performs his duties."
+  },
+  {
+    "question": "Choose the proper term based on context: 'I am out of touch with the project team; I haven't seen him ______.'",
+    "options": ["late", "lately"],
+    "answer": "lately",
+    "explanation": "The sentence refers to a recent span of time. The adverb 'lately' explicitly means 'recently' or 'in the near past'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'Due to severe traffic along the delivery route, the bus arrived ______.'",
+    "options": ["late", "lately"],
+    "answer": "late",
+    "explanation": "The sentence indicates missing the scheduled timeline. The adverb 'late' modifies 'arrived' to mean 'past the designated or expected time'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'The lighting is poor, so she can ______ see without her glasses.'",
+    "options": ["hard", "hardly"],
+    "answer": "hardly",
+    "explanation": "The contextual intent is near-negation, implying she is almost unable to see. 'Hardly' is the correct adverb used to convey 'barely' or 'scarcely'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'With great physical momentum, he hit the ball ______.'",
+    "options": ["hard", "hardly"],
+    "answer": "hard",
+    "explanation": "The sentence details an action executed with substantial physical power or force, which requires the adverb 'hard'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'Have you been busy ______ with the franchise audit rollout?'",
+    "options": ["late", "lately"],
+    "answer": "lately",
+    "explanation": "The query investigates activities occurring within a recent timeframe. The adverb 'lately' accurately translates to 'recently'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'To complete the financial statements, he stayed up ______.'",
+    "options": ["late", "lately"],
+    "answer": "late",
+    "explanation": "The statement describes remaining awake into the advanced hours of the night or morning, which is expressed by the adverb 'late'."
+  },
+  {
+    "question": "Choose the proper term based on context: 'We need to replenish the warehouse pantry because there is ______ any food left.'",
+    "options": ["hard", "hardly"],
+    "answer": "hardly",
+    "explanation": "The phrase 'hardly any' is a standard idiom in English meaning 'almost none' or an extremely scarce amount."
+  },
+  {
+    "question": "Choose the proper term based on context: 'She wants a management promotion, so she tries ______ to succeed.'",
+    "options": ["hard", "hardly"],
+    "answer": "hard",
+    "explanation": "The context implies making a strong, concentrated effort. The adverb 'hard' is used here to modify the verb 'tries' to mean 'with great energy'."
+  },
+  {
+    "question": "Select the correct intensifier: 'The supervisor warned that the soup is ______ hot to eat safely right now.'",
+    "options": ["very", "too", "enough", "much"],
+    "answer": "too",
+    "explanation": "The word 'too' is an adverb of degree that explicitly denotes excess or a negative extremity, indicating that the heat surpasses a manageable or functional limit."
+  },
+  {
+    "question": "Select the correct intensifier: 'The warehouse specialist is strong ______ to lift the heavy machinery crate.'",
+    "options": ["very", "too", "enough", "so"],
+    "answer": "enough",
+    "explanation": "The adverb 'enough' denotes sufficiency to satisfy a requirement. Unlike other intensifiers, 'enough' must be placed directly *after* the adjective ('strong') it modifies."
+  },
+  {
+    "question": "Select the correct intensifier: 'After managing a double shift, she is ______ tired.'",
+    "options": ["very", "enough", "much", "many"],
+    "answer": "very",
+    "explanation": "The adverb of degree 'very' is the standard modifier used to heighten or intensify a base adjective like 'tired' without introducing negative structural limitations."
+  },
+  {
+    "question": "Select the correct intensifier: 'Ensure you wear a heavy jacket because it is ______ cold today.'",
+    "options": ["very", "enough", "much", "many"],
+    "answer": "very",
+    "explanation": "The word 'very' acts as a direct intensifier for the non-comparative adjective 'cold' to show a high degree of intensity."
+  },
+  {
+    "question": "Select the correct intensifier: 'According to traffic regulations, he is not old ______ to drive a commercial vehicle.'",
+    "options": ["very", "too", "enough", "much"],
+    "answer": "enough",
+    "explanation": "In negative sentences expressing a lack of required capacity, the structural formula demands: Adjective ('old') + Adverb of Degree ('enough') + Infinitival Phrase ('to drive')."
+  },
+  {
+    "question": "Select the correct intensifier: 'The shipping box is ______ heavy for me to lift without a forklift.'",
+    "options": ["very", "too", "enough", "so"],
+    "answer": "too",
+    "explanation": "The correlative structure 'too + adjective + for someone to do something' signals an excessive state that produces an impossible or restrictive outcome."
+  },
+  {
+    "question": "Select the correct intensifier: 'He maintained his stamina and ran fast ______ to win the field track event.'",
+    "options": ["very", "too", "enough", "so"],
+    "answer": "enough",
+    "explanation": "The adverb 'enough' signifies a sufficient level of capability. It must follow the adverb of manner ('fast') that it is modifying."
+  },
+  {
+    "question": "Select the correct intensifier: 'I received your excellent evaluation scores, and I am ______ happy for you.'",
+    "options": ["so", "too", "enough", "such"],
+    "answer": "so",
+    "explanation": "The intensifier 'so' increases the emotional emphasis of the adjective 'happy' in an affirmative manner without implying any obstructive excess."
+  },
+  {
+    "question": "Select the correct modifier: 'The training coordinator remarked that it was ______ a good movie.'",
+    "options": ["so", "such", "very", "too"],
+    "answer": "such",
+    "explanation": "The pre-determiner 'such' is uniquely used to add emphasis before a noun phrase that follows the construction: 'such + a/an + adjective + singular countable noun'."
+  },
+  {
+    "question": "Select the correct intensifier: 'The quality control inspector noted that the tea is ______ sweet.'",
+    "options": ["very", "enough", "much", "many"],
+    "answer": "very",
+    "explanation": "The adverb 'very' is positioned immediately before the descriptive adjective 'sweet' to intensify its baseline property directly."
+  }
   ],
 
   // ============================================================
