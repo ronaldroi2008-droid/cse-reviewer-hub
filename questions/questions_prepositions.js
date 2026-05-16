@@ -938,67 +938,525 @@ window.VERBAL_QUESTION_BANK["prepositions"] = {
   // 4. EXPERT (50 Items)
   // ==========================================
   expert: [
-    { question: "Which sentence is CORRECT in formal written English?", options: ["She has been working here since five years.", "She has been working here for five years.", "She has been working here during five years.", "She has been working here from five years."], answer: "She has been working here for five years.", explanation: "Use FOR + period of time: for five years. 'Since' needs a starting point (since 2018)." },
-    { question: "Which sentence uses BY and UNTIL correctly?", options: ["I will stay in the office by 7:00 p.m. and then go home.", "I will stay in the office until 7:00 p.m. and then go home.", "I will finish the work until 7:00 p.m.", "I will finish the work until 7:00 p.m. and stay there by then."], answer: "I will stay in the office until 7:00 p.m. and then go home.", explanation: "Stay UNTIL 7:00 p.m. (continue up to that time). 'Finish until' is incorrect; we say finish BY 7:00 p.m." },
-    { question: "Which sentence is the best choice for formal writing?", options: ["There were many books off of the table.", "There were many books off the table.", "There were many books on the table.", "There were many books from the table."], answer: "There were many books on the table.", explanation: "ON the table is the natural preposition here. 'Off of' is informal and not needed in exams." },
-
-    {
-      question: "No sooner ___ than people started to complain.",
-      options: [
-        "was the announcement made",
-        "it was made",
-        "had made the announcement",
-        "had the announcement been made"
-      ],
-      answer: "had the announcement been made",
-      explanation: "With 'No sooner' at the beginning, we usually use inversion with the past perfect: 'No sooner had the announcement been made than people started to complain.'"
-    },
-
-    { question: "Hardly ___ the meeting when the fire alarm rang.", options: ["had we started", "we had started", "had started we", "we have started"], answer: "had we started", explanation: "Hardly had we started... is the correct inverted structure (negative adverb + auxiliary + subject)." },
-    { question: "Scarcely ___ the report when the manager asked for changes.", options: ["we had submitted", "had we submitted", "we submitted", "submitted we"], answer: "had we submitted", explanation: "Scarcely had we submitted... follows the same inversion pattern as hardly and no sooner." },
-    { question: "Choose the sentence where ONLY is placed correctly for the meaning 'I did nothing except sign the document.'", options: ["Only I signed the document.", "I only signed the document.", "I signed only the document.", "I signed the only document."], answer: "I only signed the document.", explanation: "I only signed the document focuses on the action: signing was the only thing you did." },
-    { question: "Which underlined preposition is WRONG? 'I have been responsible for the budget since January and will stay in this role for at least another year by now.'", options: ["for (responsible for)", "since (since January)", "for (for at least another year)", "by (by now)"], answer: "by (by now)", explanation: "'By now' normally refers to the present moment and does not fit with 'for at least another year'. We simply say 'for at least another year.'" },
-    { question: "Which sentence is MOST acceptable in a formal exam context?", options: ["Each of the employees is responsible for his or her own performance.", "Each of the employees is responsible for their own performance.", "Each of the employees are responsible for his or her own performance.", "Each of the employees are responsible for their own performance."], answer: "Each of the employees is responsible for his or her own performance.", explanation: "In strict formal grammar, 'Each' is singular, so we use 'is' and 'his or her'." },
-    { question: "Choose the sentence that uses BETWEEN and AMONG in the clearest standard way.", options: ["The differences among the two plans are minor, but the choice between the team is difficult.", "The differences between the two plans are minor, but the choice among them is difficult.", "The differences between the two plans are minor, but the choice between them is difficult.", "The differences among the two plans are minor, but the choice among them is difficult."], answer: "The differences between the two plans are minor, but the choice between them is difficult.", explanation: "With two specific items, BETWEEN is preferred for both the differences and the choice." },
-    { question: "Which sentence is correct?", options: ["The report is divided in three main parts.", "The report is divided into three main parts.", "The report is divided to three main parts.", "The report is divided on three main parts."], answer: "The report is divided into three main parts.", explanation: "Divide INTO parts is the correct expression: divided into three main parts." },
-    { question: "Select the sentence that is free from preposition error.", options: ["We will discuss about the new policy in the meeting.", "We will discuss on the new policy in the meeting.", "We will discuss the new policy in the meeting.", "We will discuss regarding the new policy in the meeting."], answer: "We will discuss the new policy in the meeting.", explanation: "Again, discuss takes a direct object: discuss the new policy, without any preposition." },
-    { question: "Identify the error: 'The committee is composed by ten members.'", options: ["committee", "is composed", "by", "ten members"], answer: "by", explanation: "We say composed OF ten members, not composed by ten members." },
-    { question: "Which sentence is correct?", options: ["We arrived to the office late because of traffic.", "We arrived in the office late because of traffic.", "We arrived at the office late because of traffic.", "We arrived on the office late because of traffic."], answer: "We arrived at the office late because of traffic.", explanation: "Arrive AT a small place or building: arrived at the office, at the station." },
-    { question: "Choose the sentence that uses OF correctly.", options: ["The reason of the delay was not explained.", "The cause of the delay was not explained.", "The reason of why it happened is unclear.", "The reason of this is because of traffic."], answer: "The cause of the delay was not explained.", explanation: "We say the cause OF something. For 'reason', we usually say the reason FOR something." },
-    { question: "Which sentence is BEST in formal English?", options: ["He emphasized on the need for cooperation.", "He emphasized the need for cooperation.", "He emphasized about the need for cooperation.", "He emphasized for the need of cooperation."], answer: "He emphasized the need for cooperation.", explanation: "Emphasize takes a direct object: emphasized the need. No preposition is required." },
-    { question: "Select the correct sentence:", options: ["She is married with a pilot.", "She is married of a pilot.", "She is married to a pilot.", "She is married by a pilot."], answer: "She is married to a pilot.", explanation: "Married TO someone is the standard pattern: married to a pilot." },
-    { question: "Which sentence uses DURING and WHILE correctly?", options: ["During I was sleeping, the phone rang.", "While the night, it rained heavily.", "During the night, it rained heavily.", "While the rain, we stayed at home."], answer: "During the night, it rained heavily.", explanation: "During + noun: during the night. While + clause: while I was sleeping." },
-    { question: "Select the correct preposition: 'They were accused ___ cheating in the exam.'", options: ["for", "of", "about", "with"], answer: "of", explanation: "Accuse someone OF something: accused of cheating." },
-    { question: "Select the correct preposition: 'He was charged ___ theft.'", options: ["for", "of", "with", "about"], answer: "with", explanation: "Charged WITH a crime is the legal expression: charged with theft." },
-    { question: "Which sentence is correct?", options: ["The meeting will be held on the 3rd floor, at Room 302.", "The meeting will be held in the 3rd floor, at Room 302.", "The meeting will be held at the 3rd floor, in Room 302.", "The meeting will be held to the 3rd floor, in Room 302."], answer: "The meeting will be held on the 3rd floor, at Room 302.", explanation: "We usually say on the 3rd floor, in Room 302, or at Room 302. The sentence with 'on the 3rd floor, at Room 302' is acceptable in many exam contexts." },
-    { question: "Select the sentence with the correct preposition:", options: ["According with the report, sales increased last year.", "According to the report, sales increased last year.", "According by the report, sales increased last year.", "According from the report, sales increased last year."], answer: "According to the report, sales increased last year.", explanation: "We always say according TO something: according to the report." },
-    { question: "Which sentence uses DESPITE correctly?", options: ["Despite of the rain, the game continued.", "Despite the rain, the game continued.", "Despite of raining, the game continued.", "Despite that it rained, the game continued."], answer: "Despite the rain, the game continued.", explanation: "Despite is followed directly by a noun or -ing form, without 'of': despite the rain, despite raining." },
-    { question: "Which sentence uses IN SPITE OF correctly?", options: ["In spite of it was raining, the game continued.", "In spite of the rain, the game continued.", "In spite of raining, the game continued it.", "In spite the rain, the game continued."], answer: "In spite of the rain, the game continued.", explanation: "In spite of + noun/-ing is correct: in spite of the rain." },
-    { question: "Identify the correct sentence:", options: ["She is responsible of monitoring attendance.", "She is responsible to monitoring attendance.", "She is responsible for monitoring attendance.", "She is responsible at monitoring attendance."], answer: "She is responsible for monitoring attendance.", explanation: "Responsible FOR something is the correct collocation." },
-    { question: "Select the correct sentence:", options: ["The trainees are capable in handling complaints.", "The trainees are capable of handling complaints.", "The trainees are capable for handling complaints.", "The trainees are capable at handling complaints."], answer: "The trainees are capable of handling complaints.", explanation: "Capable OF + -ing is the proper structure: capable of handling complaints." },
-    { question: "Which sentence is correct in standard English?", options: ["He explained me the procedure in detail.", "He explained the procedure to me in detail.", "He explained about the procedure to me in detail.", "He explained of the procedure to me in detail."], answer: "He explained the procedure to me in detail.", explanation: "Explain something TO someone is the correct pattern: explained the procedure to me." },
-    { question: "Which sentence is best for formal writing?", options: ["The manager was angry to the staff about the delay.", "The manager was angry with the staff about the delay.", "The manager was angry for the staff about the delay.", "The manager was angry on the staff about the delay."], answer: "The manager was angry with the staff about the delay.", explanation: "Angry WITH a person and angry ABOUT a situation is the common pattern." },
-    { question: "Choose the correct preposition: 'The town is located ___ the coast.'", options: ["at", "on", "in", "over"], answer: "on", explanation: "Towns near the sea are usually said to be ON the coast." },
-    { question: "Select the sentence that is free from preposition error:", options: ["We must prevent them from to make the same mistake.", "We must prevent them to make the same mistake.", "We must prevent them from making the same mistake.", "We must prevent them making the same mistake from."], answer: "We must prevent them from making the same mistake.", explanation: "Prevent someone FROM doing something is correct: prevent them from making the same mistake." },
-    { question: "Which sentence uses AMONG correctly?", options: ["He divided the money among his two sons.", "He divided the money among his three sons.", "He divided the money among his each son.", "He divided the money among his both sons."], answer: "He divided the money among his three sons.", explanation: "Among is most natural with three or more people; between is usually used with two." },
-    { question: "Which sentence correctly uses a gerund after a preposition?", options: ["She is interested in learn more about budgeting.", "She is interested in learning more about budgeting.", "She is interested to learning more about budgeting.", "She is interested on learning more about budgeting."], answer: "She is interested in learning more about budgeting.", explanation: "After a preposition, we use the -ing form: interested in learning." },
-    { question: "Choose the best sentence:", options: ["Thank you for your kind assistance to.", "Thank you of your kind assistance.", "Thank you for your kind assistance.", "Thank you with your kind assistance."], answer: "Thank you for your kind assistance.", explanation: "Thank you FOR something is the correct structure: for your assistance." },
-    { question: "Which sentence is correct?", options: ["She was accused for stealing office supplies.", "She was accused of stealing office supplies.", "She was accused about stealing office supplies.", "She was accused to stealing office supplies."], answer: "She was accused of stealing office supplies.", explanation: "Accused OF doing something is the standard legal expression." },
-    { question: "Identify the correct formal phrase:", options: ["in accordance to the law", "in accordance with the law", "in accordance of the law", "in accordance by the law."], answer: "in accordance with the law", explanation: "In accordance WITH the law is the correct fixed expression." },
-    { question: "Choose the correct preposition: 'The changes will take effect ___ January 1.'", options: ["from", "on", "in", "at"], answer: "on", explanation: "Take effect ON a specific date: on January 1." },
-    { question: "Which sentence is grammatically correct?", options: ["She took care for the children while their parents were away.", "She took care of the children while their parents were away.", "She took care with the children while their parents were away.", "She took care about the children while their parents were away."], answer: "She took care of the children while their parents were away.", explanation: "Take care OF someone is the correct expression." },
-    { question: "Select the correct sentence:", options: ["He was satisfied from the results of the survey.", "He was satisfied with the results of the survey.", "He was satisfied about the results of the survey.", "He was satisfied on the results of the survey."], answer: "He was satisfied with the results of the survey.", explanation: "Satisfied WITH something is the natural collocation." },
-    { question: "Which sentence correctly uses BESIDE vs. BESIDES?", options: ["Beside the higher salary, the job offers good benefits.", "Besides the higher salary, the job offers good benefits.", "Besides the river, there is a small house.", "Beside, the higher salary the job offers good benefits."], answer: "Besides the higher salary, the job offers good benefits.", explanation: "Besides (with s) means 'in addition to'. Beside (without s) means 'next to'." },
-    { question: "Choose the correct sentence:", options: ["The supervisor is angry about to the new policy.", "The supervisor is angry to the new policy.", "The supervisor is angry about the new policy.", "The supervisor is angry on the new policy."], answer: "The supervisor is angry about the new policy.", explanation: "We are angry ABOUT a situation: angry about the new policy." },
-    { question: "Which sentence is correct?", options: ["He is independent of his parents financially.", "He is independent from his parents financially.", "Both A and B can be correct in many contexts.", "Neither A nor B is ever correct."], answer: "Both A and B can be correct in many contexts.", explanation: "Independent OF and independent FROM are both used; many exam keys accept either." },
-    { question: "Select the correct preposition: 'The factory is located ___ the outskirts of the city.'", options: ["on", "at", "in", "by"], answer: "in", explanation: "IN the outskirts of the city is the usual phrasing, meaning inside that area." },
-    { question: "Which sentence correctly uses OVER vs. ABOVE?", options: ["The helicopter is flying above the city at the moment.", "The helicopter is flying over the city at the moment.", "Both sentences can be acceptable in this context.", "Neither sentence is acceptable."], answer: "Both sentences can be acceptable in this context.", explanation: "Both 'flying over the city' and 'flying above the city' can be used; most often 'over' is preferred, but both are possible." },
-    { question: "Choose the sentence with correct preposition:", options: ["We must abide to the rules at all times.", "We must abide with the rules at all times.", "We must abide by the rules at all times.", "We must abide on the rules at all times."], answer: "We must abide by the rules at all times.", explanation: "Abide BY the rules is the fixed expression in formal English." },
-    { question: "Select the correct sentence:", options: ["The office is open from 8 a.m. to 5 p.m.", "The office is open since 8 a.m. to 5 p.m.", "The office is open for 8 a.m. to 5 p.m.", "The office is open during 8 a.m. to 5 p.m."], answer: "The office is open from 8 a.m. to 5 p.m.", explanation: "From...to... is the natural way to show opening hours: from 8 a.m. to 5 p.m." },
-    { question: "Which sentence uses UNTIL correctly?", options: ["I will be here by you finish the report.", "I will be here until you finish the report.", "I will be here since you finish the report.", "I will be here for you finish the report."], answer: "I will be here until you finish the report.", explanation: "Until + clause shows continuation up to that time: until you finish the report." },
-    { question: "Select the correct sentence:", options: ["The success of the program is due of careful planning.", "The success of the program is due from careful planning.", "The success of the program is due to careful planning.", "The success of the program is due by careful planning."], answer: "The success of the program is due to careful planning.", explanation: "Due TO something is the standard phrase: due to careful planning." },
-    { question: "Choose the best sentence:", options: ["Because of the traffic, we arrived late.", "Due to of the traffic, we arrived late.", "Due of the traffic, we arrived late.", "Because the traffic, we arrived late."], answer: "Because of the traffic, we arrived late.", explanation: "Because of + noun is correct. 'Due to of' and 'due of' are incorrect." },
-    { question: "Select the sentence free from preposition error:", options: ["We emphasized on the importance of time management.", "We emphasized the importance of time management.", "We emphasized about the importance of time management.", "We emphasized for the importance of time management."], answer: "We emphasized the importance of time management.", explanation: "Emphasize takes a direct object: emphasized the importance, with no preposition." },
-    { question: "Choose the sentence that is most appropriate in formal writing:", options: ["The incident resulted to a long investigation.", "The incident resulted with a long investigation.", "The incident resulted in a long investigation.", "The incident resulted on a long investigation."], answer: "The incident resulted in a long investigation.", explanation: "Result IN something is the correct pattern: resulted in a long investigation." }
-  ]
+  {
+    "question": "Which sentence is CORRECT in formal written English according to standard grammatical structures?",
+    "options": [
+      "She has been working continuously in this operations firm since five years.",
+      "She has been working continuously in this operations firm for five years.",
+      "She has been working continuously in this operations firm during five years.",
+      "She has been working continuously in this operations firm from five years."
+    ],
+    "answer": "She has been working continuously in this operations firm for five years.",
+    "explanation": "We use the preposition 'for' to denote the total duration or length of a period of time (e.g., for five years). The preposition 'since' is reserved exclusively for pinpointing a specific starting moment in time (e.g., since 2021)."
+  },
+  {
+    "question": "Which of the following sentences utilizes the time prepositions 'BY' and 'UNTIL' correctly?",
+    "options": [
+      "I will stay in the office by 7:00 p.m. and then go home to rest.",
+      "I will stay in the office until 7:00 p.m. and then go home to rest.",
+      "I will finish compiling the dynamic branch inventory report until 7:00 p.m.",
+      "I will finish compiling the dynamic branch inventory report until 7:00 p.m. and stay there by then."
+    ],
+    "answer": "I will stay in the office until 7:00 p.m. and then go home to rest.",
+    "explanation": "The preposition 'until' indicates that an ongoing action or continuous state remains in progress up to a specific endpoints in time (e.g., staying until 7:00 p.m.). Conversely, 'by' indicates a definitive deadline for a single, non-continuous action, meaning it must happen at or before that limit (e.g., finish the report by 7:00 p.m.)."
+  },
+  {
+    "question": "Which sentence serves as the most flawless and concise choice for a formal administrative writing context?",
+    "options": [
+      "There were many updated corporate ledger books off of the table.",
+      "There were many updated corporate ledger books off the table.",
+      "There were many updated corporate ledger books on the table.",
+      "There were many updated corporate ledger books from the table."
+    ],
+    "answer": "There were many updated corporate ledger books on the table.",
+    "explanation": "The preposition 'on' clearly and correctly expresses physical contact with a supporting surface. In formal registers, phrases like 'off of' are considered colloquial and redundant; the simple preposition 'off' or 'on' is preferred depending on the directional context."
+  },
+  {
+    "question": "Complete the formal inversion sentence: \"No sooner _______ than the staff members started to complain.\"",
+    "options": [
+      "was the operational announcement made",
+      "it was made the operational announcement",
+      "had made the operational announcement",
+      "had the operational announcement been made"
+    ],
+    "answer": "had the operational announcement been made",
+    "explanation": "When an introductory negative or restrictive adverbial phrase like 'No sooner' is placed at the beginning of a sentence for emphasis, formal grammar requires subject-auxiliary inversion. Because 'no sooner' pairs with 'than' to describe successive past events, the past perfect auxiliary 'had' must precede the passive subject 'the announcement' (had the announcement been made)."
+  },
+  {
+    "question": "Hardly _______ the board meeting when the emergency fire alarm rang throughout the building.",
+    "options": [
+      "had we started",
+      "we had started",
+      "had started we",
+      "we have started"
+    ],
+    "answer": "had we started",
+    "explanation": "Similar to 'no sooner', the negative adverb 'Hardly' at the beginning of a sentence mandates an inverted word order structure: Negative Adverb + Auxiliary Verb (had) + Subject (we) + Main Verb (started)."
+  },
+  {
+    "question": "Scarcely _______ the branch audit report when the area manager demanded immediate structural changes.",
+    "options": [
+      "we had submitted",
+      "had we submitted",
+      "we submitted",
+      "submitted we"
+    ],
+    "answer": "had we submitted",
+    "explanation": "The restrictive modifier 'Scarcely' requires negative inversion to maintain formal rhetorical styling. The past perfect auxiliary 'had' must step in front of the subject pronoun 'we' (Scarcely had we submitted...)."
+  },
+  {
+    "question": "Choose the sentence where the restrictive modifier 'ONLY' is placed correctly to convey the precise meaning: \"I did absolutely nothing except sign the legal document.\"",
+    "options": [
+      "Only I signed the legal document.",
+      "I only signed the legal document.",
+      "I signed only the legal document.",
+      "I signed the only legal document."
+    ],
+    "answer": "I only signed the legal document.",
+    "explanation": "To accurately modify an entire action or verb phrase, 'only' should immediately precede the verb it qualifies. Placing it as 'I only signed' clarifies that signing was the single action performed, whereas placing it elsewhere shifts the modification to the subject 'I' or the object 'the document'."
+  },
+  {
+    "question": "Identify which underlined prepositional phrase is structurally WRONG in the following administrative sentence: \"I have been responsible for the budget since January and will stay in this role for at least another year by now.\"",
+    "options": [
+      "for (responsible for)",
+      "since (since January)",
+      "for (for at least another year)",
+      "by (by now)"
+    ],
+    "answer": "by (by now)",
+    "explanation": "The idiom 'by now' refers to an action that should have already taken place relative to the current present moment. It is temporally incompatible with a future-facing duration phrase like 'for at least another year'. The sentence should simply omit 'by now' or use a definitive endpoint."
+  },
+  {
+    "question": "Which sentence is MOST acceptable and perfectly aligned with strict pronoun-antecedent agreement in a formal exam context?",
+    "options": [
+      "Each of the employees is responsible for his or her own operational performance.",
+      "Each of the employees is responsible for their own operational performance.",
+      "Each of the employees are responsible for his or her own operational performance.",
+      "Each of the employees are responsible for their own operational performance."
+    ],
+    "answer": "Each of the employees is responsible for his or her own operational performance.",
+    "explanation": "The distributive pronoun 'Each' functions as a grammatically singular subject, despite being followed by the plural prepositional modifier 'of the employees'. Therefore, it strictly demands the singular verb 'is' and the singular, gender-inclusive pronoun pair 'his or her' to ensure perfect formal concord."
+  },
+  {
+    "question": "Choose the sentence that utilizes the prepositions 'BETWEEN' and 'AMONG' in the clearest standard way according to traditional grammar principles.",
+    "options": [
+      "The differences among the two plans are minor, but the choice between the operations team is difficult.",
+      "The differences between the two plans are minor, but the choice among them is difficult.",
+      "The differences between the two plans are minor, but the choice between them is difficult.",
+      "The differences among the two plans are minor, but the choice among them is difficult."
+    ],
+    "answer": "The differences between the two plans are minor, but the choice between them is difficult.",
+    "explanation": "We use 'between' when contrasting or choosing between exactly two distinct, named alternatives or items (the two plans). If there were three or more options, 'among' would be deployed to represent the collective group."
+  },
+  {
+    "question": "Which sentence represents the correct prepositional assignment for structural division?",
+    "options": [
+      "The comprehensive branch evaluation report is divided in three main parts.",
+      "The comprehensive branch evaluation report is divided into three main parts.",
+      "The comprehensive branch evaluation report is divided to three main parts.",
+      "The comprehensive branch evaluation report is divided on three main parts."
+    ],
+    "answer": "The comprehensive branch evaluation report is divided into three main parts.",
+    "explanation": "The verb 'divide' requires the directional preposition 'into' when expressing a physical or conceptual separation of a single holistic item into multiple component pieces, sections, or distinct categories."
+  },
+  {
+    "question": "Select the sentence that is completely free from any redundant or erroneous prepositional placement.",
+    "options": [
+      "We will discuss about the new regulatory policy in the staff meeting.",
+      "We will discuss on the new regulatory policy in the staff meeting.",
+      "We will discuss the new regulatory policy in the staff meeting.",
+      "We will discuss regarding the new regulatory policy in the staff meeting."
+    ],
+    "answer": "We will discuss the new regulatory policy in the staff meeting.",
+    "explanation": "The verb 'discuss' is a transitive operational verb that acts directly upon its object. Adding prepositions like 'about', 'on', or 'regarding' creates a severe grammatical error because the definition of 'discuss' already incorporates the meaning 'to talk about'."
+  },
+  {
+    "question": "Identify the precise location of the error in this corporate directive: \"The special investigative committee is composed by ten senior board members.\"",
+    "options": ["committee", "is composed", "by", "ten senior board members"],
+    "answer": "by",
+    "explanation": "The passive adjectival construction 'composed' must always be paired with the fixed dependent preposition 'of' when enumerating structural components. The use of 'by' is an incorrect agentive substitution."
+  },
+  {
+    "question": "Which sentence reflects the correct situational usage of space prepositions upon arrival?",
+    "options": [
+      "We arrived to the administrative office late because of the severe highway traffic.",
+      "We arrived in the administrative office late because of the severe highway traffic.",
+      "We arrived at the administrative office late because of the severe highway traffic.",
+      "We arrived on the administrative office late because of the severe highway traffic."
+    ],
+    "answer": "We arrived at the administrative office late because of the severe highway traffic.",
+    "explanation": "We use the verb pattern 'arrive at' when reaching a specific localized point, address, building, or workplace (e.g., at the office, at the station). We reserve 'arrive in' for large geographical boundaries like cities, countries, or territories (e.g., arrived in Manila)."
+  },
+  {
+    "question": "Choose the sentence that distinguishes the causal use of the preposition 'OF' correctly from other relational words.",
+    "options": [
+      "The reason of the severe logistical delay was not explicitly explained by the team.",
+      "The cause of the severe logistical delay was not explicitly explained by the team.",
+      "The reason of why it happened remains completely unclear to the supervisor.",
+      "The reason of this operational issue is because of poor site traffic control."
+    ],
+    "answer": "The cause of the severe logistical delay was not explicitly explained by the team.",
+    "explanation": "The noun 'cause' naturally collocates with the preposition 'of' to define the source of an outcome (cause of the delay). Conversely, the noun 'reason' strictly pairs with the preposition 'for' in formal English (the reason for the delay)."
+  },
+  {
+    "question": "Which sentence stands as the absolute BEST choice for a highly formal or academic English register?",
+    "options": [
+      "The keynote speaker emphasized on the critical need for inter-departmental cooperation.",
+      "The keynote speaker emphasized the critical need for inter-departmental cooperation.",
+      "The keynote speaker emphasized about the critical need for inter-departmental cooperation.",
+      "The keynote speaker emphasized for the critical need of inter-departmental cooperation."
+    ],
+    "answer": "The keynote speaker emphasized the critical need for inter-departmental cooperation.",
+    "explanation": "In its verb form, 'emphasize' is a fully transitive element that connects directly to its direct object without any buffer preposition. (Note: The preposition 'on' is only used when 'emphasis' functions as a noun, such as 'to place emphasis on something')."
+  },
+  {
+    "question": "Select the correct sentence conforming to standard relational collocations:",
+    "options": [
+      "The senior operations supervisor mentioned that she is married with a commercial pilot.",
+      "The senior operations supervisor mentioned that she is married of a commercial pilot.",
+      "The senior operations supervisor mentioned that she is married to a commercial pilot.",
+      "The senior operations supervisor mentioned that she is married by a commercial pilot."
+    ],
+    "answer": "The senior operations supervisor mentioned that she is married to a commercial pilot.",
+    "explanation": "In standard English grammar, the adjectival state or passive predicate 'married' must always take the target preposition 'to' when naming the spouse. Using 'married with' is a direct structural error."
+  },
+  {
+    "question": "Which sentence correctly demonstrates the distinct grammatical boundaries of 'DURING' and 'WHILE'?",
+    "options": [
+      "During I was sleeping in the staff lounge, the phone rang continuously.",
+      "While the entire night shift, it rained heavily across the station area.",
+      "During the entire night shift, it rained heavily across the station area.",
+      "While the severe tropical rain, we stayed safely at home."
+    ],
+    "answer": "During the entire night shift, it rained heavily across the station area.",
+    "explanation": "The word 'during' functions as a true preposition and must always be followed by a noun or a noun phrase acting as its object (during the shift). The word 'while' functions as a subordinating conjunction and must always introduce a full dependent clause containing both a subject and a verb (while I was sleeping)."
+  },
+  {
+    "question": "Select the correct dependent preposition: \"The branch staff members were formally accused _______ cheating in the internal verification exam.\"",
+    "options": ["for", "of", "about", "with"],
+    "answer": "of",
+    "explanation": "The specific verb-object idiom requires 'accuse someone of' a transgression. Substituting 'for' or 'with' breaks the mandatory structural collocation required in professional testing formats."
+  },
+  {
+    "question": "Select the correct dependent preposition: \"The terminal warehouse foreman was officially charged _______ theft of company property.\"",
+    "options": ["for", "of", "with", "about"],
+    "answer": "with",
+    "explanation": "While 'accused' takes the preposition 'of', the formal legal and disciplinary verb 'charged' strictly requires the instrumental preposition 'with' to connect to the specific offense or crime."
+  },
+  {
+    "question": "Which sentence represents the most precise hierarchical use of location prepositions regarding building spaces?",
+    "options": [
+      "The emergency management meeting will be held on the 3rd floor, in Room 302.",
+      "The emergency management meeting will be held in the 3rd floor, at Room 302.",
+      "The emergency management meeting will be held at the 3rd floor, in Room 302.",
+      "The emergency management meeting will be held to the 3rd floor, in Room 302."
+    ],
+    "answer": "The emergency management meeting will be held on the 3rd floor, in Room 302.",
+    "explanation": "We use the surface preposition 'on' for vertical levels or specific horizontal divisions of a structure (on the 3rd floor) and the interior containment preposition 'in' for fully enclosed structural rooms (in Room 302)."
+  },
+  {
+    "question": "Select the sentence that utilizes the correct relational multi-word preposition:",
+    "options": [
+      "According with the final audit report, retail station sales increased last year.",
+      "According to the final audit report, retail station sales increased last year.",
+      "According by the report, retail station sales increased last year.",
+      "According from the report, sales increased last year."
+    ],
+    "answer": "According to the final audit report, retail station sales increased last year.",
+    "explanation": "The idiomatic phrase indicating attribution or source reference is an absolute fixed structure: 'according to'. The variant 'according with' is an erroneous blend with the separate verb phrase 'to accord with'."
+  },
+  {
+    "question": "Which sentence uses the concessive word 'DESPITE' correctly according to modern formal syntax rules?",
+    "options": [
+      "Despite of the torrential rain, the logistical tracking operations continued.",
+      "Despite the torrential rain, the logistical tracking operations continued.",
+      "Despite of raining heavily, the logistical tracking operations continued.",
+      "Despite that it rained heavily, the logistical tracking operations continued."
+    ],
+    "answer": "Despite the torrential rain, the logistical tracking operations continued.",
+    "explanation": "The word 'despite' functions directly as a preposition and must be followed immediately by its noun object without adding 'of'. Including 'of' creates a hybrid error with the synonym phrase 'in spite of'."
+  },
+  {
+    "question": "Which sentence uses the three-word concessive phrase 'IN SPITE OF' correctly?",
+    "options": [
+      "In spite of it was raining heavily, the logistical tracking operations continued.",
+      "In spite of the torrential rain, the logistical tracking operations continued.",
+      "In spite of raining heavily, the logistical tracking operations continued it.",
+      "In spite the torrential rain, the logistical tracking operations continued."
+    ],
+    "answer": "In spite of the torrential rain, the logistical tracking operations continued.",
+    "explanation": "The compound preposition 'in spite of' must be treated as a unified structural unit followed directly by a noun phrase object (the torrential rain). It cannot directly introduce a full verbal clause unless adjusted via 'the fact that'."
+  },
+  {
+    "question": "Identify the correct sentence containing accurate adjective-preposition link patterns:",
+    "options": [
+      "She is entirely responsible of monitoring administrative attendance records.",
+      "She is entirely responsible to monitoring administrative attendance records.",
+      "She is entirely responsible for monitoring administrative attendance records.",
+      "She is entirely responsible at monitoring administrative attendance records."
+    ],
+    "answer": "She is entirely responsible for monitoring administrative attendance records.",
+    "explanation": "The descriptor 'responsible' dictates a mandatory pairing with the causal preposition 'for' when introducing a functional duty, process, or asset assignment."
+  },
+  {
+    "question": "Select the correct sentence adhering to standard gerund modifier patterns:",
+    "options": [
+      "The newly trained station personnel are fully capable in handling customer complaints.",
+      "The newly trained station personnel are fully capable of handling customer complaints.",
+      "The newly trained station personnel are fully capable for handling customer complaints.",
+      "The newly trained station personnel are fully capable at handling customer complaints."
+    ],
+    "answer": "The newly trained station personnel are fully capable of handling customer complaints.",
+    "explanation": "The descriptive term 'capable' must always link to its respective action or gerund through the invariant preposition 'of' (capable of handling). Substituting other connectors like 'in' or 'for' violates standard collocation rules."
+  },
+  {
+    "question": "Which sentence represents the correct syntactic framework for the communicative verb 'EXPLAIN' in standard English?",
+    "options": [
+      "The shift supervisor thoroughly explained me the standard operating procedure in detail.",
+      "The shift supervisor thoroughly explained the standard operating procedure to me in detail.",
+      "The shift supervisor thoroughly explained about the standard operating procedure to me in detail.",
+      "The shift supervisor thoroughly explained of the standard operating procedure to me in detail."
+    ],
+    "answer": "The shift supervisor thoroughly explained the standard operating procedure to me in detail.",
+    "explanation": "The verb 'explain' cannot take an indirect human object immediately after it without a preposition. The correct syntactic pattern is `Explain + The Thing (Direct Object) + To + The Person (Indirect Object)`. Furthermore, adding 'about' or 'of' right after 'explain' is redundant."
+  },
+  {
+    "question": "Which sentence presents the most appropriate and refined prepositional choice for formal administrative correspondence?",
+    "options": [
+      "The operations manager was angry to the office staff about the sudden shipment delay.",
+      "The operations manager was angry with the office staff about the sudden shipment delay.",
+      "The operations manager was angry for the office staff about the sudden shipment delay.",
+      "The operations manager was angry on the office staff about the sudden shipment delay."
+    ],
+    "answer": "The operations manager was angry with the office staff about the sudden shipment delay.",
+    "explanation": "According to traditional formal English conventions, a person is 'angry with' (or occasionally 'angry at') an individual or human collective, but 'angry about' an abstract event, choice, or operational situation."
+  },
+  {
+    "question": "Choose the correct preposition to denote geographic proximity to a linear landmark: \"The small coastal municipality is situated _______ the western coast.\"",
+    "options": ["at", "on", "in", "over"],
+    "answer": "on",
+    "explanation": "When referencing geographic locations situated directly alongside long, linear borders, coastlines, rivers, or pathways, formal grammar employs the preposition 'on' (on the coast)."
+  },
+  {
+    "question": "Select the sentence that is completely free from any structural or infinitive preposition error:",
+    "options": [
+      "We must work diligently to prevent them from to make the same operational mistake.",
+      "We must work diligently to prevent them to make the same operational mistake.",
+      "We must work diligently to prevent them from making the same operational mistake.",
+      "We must work diligently to prevent them making the same operational mistake from."
+    ],
+    "answer": "We must work diligently to prevent them from making the same operational mistake.",
+    "explanation": "The verb 'prevent' requires the specific idiomatic structure: `Prevent + Someone + From + Gerund (-ing verb form)`. Combining 'from' with a base infinitive ('from to make') or omitting 'from' entirely disrupts this framework."
+  },
+  {
+    "question": "Which sentence uses the distribution modifier 'AMONG' correctly based on numerical groups?",
+    "options": [
+      "The founder evenly divided the station capital among his two sons.",
+      "The founder evenly divided the station capital among his three sons.",
+      "The founder evenly divided the station capital among his each son.",
+      "The founder evenly divided the station capital among his both sons."
+    ],
+    "answer": "The founder evenly divided the station capital among his three sons.",
+    "explanation": "The preposition 'among' is correctly utilized when referring to relationships, distributions, or divisions occurring within a group consisting of three or more distinct entities. For exactly two distinct entities, 'between' must be used."
+  },
+  {
+    "question": "Which sentence correctly demonstrates the rule requiring a gerund after a standard preposition?",
+    "options": [
+      "The operations clerk is deeply interested in learn more about corporate budgeting.",
+      "The operations clerk is deeply interested in learning more about corporate budgeting.",
+      "The operations clerk is deeply interested to learning more about corporate budgeting.",
+      "The operations clerk is deeply interested on learning more about corporate budgeting."
+    ],
+    "answer": "The operations clerk is deeply interested in learning more about corporate budgeting.",
+    "explanation": "The descriptor 'interested' requires the dependent preposition 'in'. Furthermore, any verb that follows a true preposition must be formatted as a gerund, which is a noun-like verb form ending in '-ing'."
+  },
+  {
+    "question": "Choose the best and most appropriate sentence for formal corporate gratitude:",
+    "options": [
+      "Thank you for your kind assistance to.",
+      "Thank you of your kind assistance.",
+      "Thank you for your kind assistance.",
+      "Thank you with your kind assistance."
+    ],
+    "answer": "Thank you for your kind assistance.",
+    "explanation": "The expression of gratitude follows a fixed relational framework where you thank an individual 'for' the specific benefit, action, or service provided (thank you for your assistance)."
+  },
+  {
+    "question": "Which sentence represents the proper legal and grammatical combination for an accusation?",
+    "options": [
+      "She was formally accused for stealing confidential office supplies.",
+      "She was formally accused of stealing confidential office supplies.",
+      "She was formally accused about stealing confidential office supplies.",
+      "She was formally accused to stealing confidential office supplies."
+    ],
+    "answer": "She was formally accused of stealing confidential office supplies.",
+    "explanation": "This reinforces the invariant verbal pattern: `Accuse + Someone + Of + Action/Noun`. Utilizing 'for' or 'about' represents a common colloquial error that is marked incorrect on professional exams."
+  },
+  {
+    "question": "Identify the correct formal multi-word preposition used to denote regulatory compliance:",
+    "options": [
+      "The franchise dashboard was structured in accordance to the law.",
+      "The franchise dashboard was structured in accordance with the law.",
+      "The franchise dashboard was structured in accordance of the law.",
+      "The franchise dashboard was structured in accordance by the law."
+    ],
+    "answer": "The franchise dashboard was structured in accordance with the law.",
+    "explanation": "The phrase indicating harmony, conformity, or formal legal agreement is an absolute fixed compound idiom: 'in accordance with'. Do not confuse it with 'according to'."
+  },
+  {
+    "question": "Choose the correct time preposition for specific calendar benchmarks: \"The newly updated branch guidelines will take effect _______ January 1.\"",
+    "options": ["from", "on", "in", "at"],
+    "answer": "on",
+    "explanation": "We use the preposition 'on' before specific calendar dates (on January 1) and specific days of the week. 'In' is used for general months and years without a date, while 'at' is used for precise clock times."
+  },
+  {
+    "question": "Which sentence is grammatically flawless regarding custodial responsibility phrases?",
+    "options": [
+      "She took excellent care for the children while their parents were travelling away.",
+      "She took excellent care of the children while their parents were travelling away.",
+      "She took excellent care with the children while their parents were travelling away.",
+      "She took excellent care about the children while their parents were travelling away."
+    ],
+    "answer": "She took excellent care of the children while their parents were travelling away.",
+    "explanation": "The idiom meaning to attend to, guard, or preserve the well-being of someone requires the specific construction 'take care of'. The alternative phrase 'care for' exists as a verb, but when 'care' is a noun object of 'take', it demands 'of'."
+  },
+  {
+    "question": "Select the correct sentence that demonstrates accurate adjectival target collocations:",
+    "options": [
+      "The regional auditor was thoroughly satisfied from the results of the survey.",
+      "The regional auditor was thoroughly satisfied with the results of the survey.",
+      "The regional auditor was thoroughly satisfied about the results of the survey.",
+      "The regional auditor was thoroughly satisfied on the results of the survey."
+    ],
+    "answer": "The regional auditor was thoroughly satisfied with the results of the survey.",
+    "explanation": "The predicate modifier 'satisfied' links to the instrument, item, or evidence that fulfills a requirement using the preposition 'with' (satisfied with the results)."
+  },
+  {
+    "question": "Which sentence correctly demonstrates the semantic difference between 'BESIDE' and 'BESIDES'?",
+    "options": [
+      "Beside the higher basic salary package, the management job offers excellent health benefits.",
+      "Besides the higher basic salary package, the management job offers excellent health benefits.",
+      "Besides the winding river, there is a small administrative guard house.",
+      "Beside, the higher basic salary package the management job offers excellent health benefits."
+    ],
+    "answer": "Besides the higher basic salary package, the management job offers excellent health benefits.",
+    "explanation": "The word 'besides' (with an 's') is an adverbial preposition meaning 'in addition to' or 'apart from' (e.g., besides the salary). The word 'beside' (without an 's') strictly means 'next to' or 'at the side of' a physical landmark (e.g., beside the river)."
+  },
+  {
+    "question": "Choose the correct sentence regarding abstract emotional targets:",
+    "options": [
+      "The terminal supervisor is completely angry about to the sudden changes in the policy.",
+      "The terminal supervisor is completely angry to the sudden changes in the policy.",
+      "The terminal supervisor is completely angry about the sudden changes in the policy.",
+      "The terminal supervisor is completely angry on the sudden changes in the policy."
+    ],
+    "answer": "The terminal supervisor is completely angry about the sudden changes in the policy.",
+    "explanation": "As established by formal syntactical patterns, individuals express irritation or anger 'about' an event, abstract situation, policy choice, or development."
+  },
+  {
+    "question": "Which sentence represents the most pristine selection for formal written registers regarding personal autonomy?",
+    "options": [
+      "He manages his own retail branch now and is completely independent of his parents financially.",
+      "He manages his own retail branch now and is completely independent from his parents financially.",
+      "Both sentences A and B are equally acceptable in high-level formal examinations.",
+      "Neither sentence A nor sentence B conforms to standard formal english syntax."
+    ],
+    "answer": "He manages his own retail branch now and is completely independent of his parents financially.",
+    "explanation": "In ultra-formal grammatical standards, when 'independent' implies a status of self-sufficiency, liberty, or not drawing reliance upon an entity/source of funding, it takes the preposition 'of' (independent of support). 'Independent from' is traditionally reserved for geographical or political separation from an administrative body."
+  },
+  {
+    "question": "Select the correct spatial preposition for specific urban perimeter boundaries: \"The new assembly warehouse is located _______ the outskirts of the city.\"",
+    "options": ["on", "at", "in", "by"],
+    "answer": "on",
+    "explanation": "The noun 'outskirts' represents a peripheral edge or a surrounding surface zone of a city, and standard English idioms strictly mandate the use of the preposition 'on' (on the outskirts)."
+  },
+  {
+    "question": "Which sentence correctly uses the spatial altitude prepositions 'OVER' and 'ABOVE' based on targeted motion?",
+    "options": [
+      "The logistical tracking helicopter is flying above the city at the present moment.",
+      "The logistical tracking helicopter is flying over the city at the present moment.",
+      "Both sentences are equally correct and interchangeable in this physical context.",
+      "Neither sentence is acceptable under standard formal English grammar rules."
+    ],
+    "answer": "The logistical tracking helicopter is flying over the city at the present moment.",
+    "explanation": "While both words signify a position higher than an object, 'over' is specifically preferred when describing continuous movement or a trajectory across an area from one side to another. 'Above' simply implies a stationary altitude relative to something else."
+  },
+  {
+    "question": "Choose the sentence that contains the correct archaic formal compliance idiom:",
+    "options": [
+      "To ensure order, we must make sure all personnel abide to the rules at all times.",
+      "To ensure order, we must make sure all personnel abide with the rules at all times.",
+      "To ensure order, we must make sure all personnel abide by the rules at all times.",
+      "To ensure order, we must make sure all personnel abide on the rules at all times."
+    ],
+    "answer": "To ensure order, we must make sure all personnel abide by the rules at all times.",
+    "explanation": "The formal compliance verb 'abide' forms an invariant multi-word idiom with the preposition 'by' to mean obeying, respecting, or faithfully conforming to a set of laws or guidelines."
+  },
+  {
+    "question": "Select the correct sentence demonstrating traditional binary range setups:",
+    "options": [
+      "The main administrative office is open from 8:00 a.m. to 5:00 p.m. daily.",
+      "The main administrative office is open since 8:00 a.m. to 5:00 p.m. daily.",
+      "The main administrative office is open for 8:00 a.m. to 5:00 p.m. daily.",
+      "The main administrative office is open during 8:00 a.m. to 5:00 p.m. daily."
+    ],
+    "answer": "The main administrative office is open from 8:00 a.m. to 5:00 p.m. daily.",
+    "explanation": "To define a clear, continuous temporal or spatial span with an explicit starting point and a final closing boundary, formal grammar relies on the correlative prepositional framework 'from... to...'."
+  },
+  {
+    "question": "Which sentence uses the subordinating adverb 'UNTIL' correctly to introduce a situational time limit clause?",
+    "options": [
+      "I will remain stationed at this office branch by you finish compiling the final report.",
+      "I will remain stationed at this office branch until you finish compiling the final report.",
+      "I will remain stationed at this office branch since you finish compiling the final report.",
+      "I will remain stationed at this office branch for you finish compiling the final report."
+    ],
+    "answer": "I will remain stationed at this office branch until you finish compiling the final report.",
+    "explanation": "The word 'until' functions as a proper connective element showing that a continuous state of remaining at a location will persist up to the exact moment the secondary clause action occurs (until you finish)."
+  },
+  {
+    "question": "Select the correct sentence showing the appropriate causal linking phrase:",
+    "options": [
+      "The definitive success of the program is completely due of careful operational planning.",
+      "The definitive success of the program is completely due from careful operational planning.",
+      "The definitive success of the program is completely due to careful operational planning.",
+      "The definitive success of the program is completely due by careful operational planning."
+    ],
+    "answer": "The definitive success of the program is completely due to careful operational planning.",
+    "explanation": "The adjectival phrase meaning 'attributable to' or 'caused by' is a fixed grammatical collocation that must always use the preposition 'to' (due to something)."
+  },
+  {
+    "question": "Choose the sentence that represents accurate structural causality without multi-word cross contamination:",
+    "options": [
+      "Because of the severe highway traffic, we arrived late to the warehouse audit.",
+      "Due to of the severe highway traffic, we arrived late to the warehouse audit.",
+      "Due of the severe highway traffic, we arrived late to the warehouse audit.",
+      "Because the severe highway traffic, we arrived late to the warehouse audit."
+    ],
+    "answer": "Because of the severe highway traffic, we arrived late to the warehouse audit.",
+    "explanation": "The multi-word preposition 'because of' correctly introduces a noun phrase cause (the traffic). Mixing it into fragments like 'due to of' or 'due of' is grammatically invalid. If you use 'due to', it should ideally follow a form of the linking verb 'be' or modify a noun directly in formal contexts."
+  },
+  {
+    "question": "Select the sentence that is entirely free from redundant or unnecessary prepositional attachment after a transitive structure:",
+    "options": [
+      "In the audit module, we emphasized on the immense importance of strategic time management.",
+      "In the audit module, we emphasized the immense importance of strategic time management.",
+      "In the audit module, we emphasized about the immense importance of strategic time management.",
+      "In the audit module, we emphasized for the immense importance of strategic time management."
+    ],
+    "answer": "In the audit module, we emphasized the immense importance of strategic time management.",
+    "explanation": "This reinforces the transitive nature of the verb 'emphasize'. It acts directly upon 'the importance' as its direct object. Avoid appending 'on', 'about', or 'for' to keep the phrase clean and grammatically sound."
+  },
+  {
+    "question": "Choose the sentence that is most appropriate and semantically precise in a formal administrative context:",
+    "options": [
+      "The severe system warehouse incident resulted to a long external investigation.",
+      "The severe system warehouse incident resulted with a long external investigation.",
+      "The severe system warehouse incident resulted in a long external investigation.",
+      "The severe system warehouse incident resulted on a long external investigation."
+    ],
+    "answer": "The severe system warehouse incident resulted in a long external investigation.",
+    "explanation": "The phrasal verb pattern meaning to cause or produce an ultimate outcome or end state requires the specific fixed preposition 'in' (resulted in an investigation). Using 'resulted to' is an ungrammatical form often confused with 'led to'."
+  }
+]
 };
