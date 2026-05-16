@@ -109,6 +109,25 @@
       color: #e2e8f0;
     }
 
+    /* TOPICS TOGGLE STYLES */
+    .topics-toggle {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 16px;
+      background: #111827;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      cursor: pointer;
+      border: 1px solid #1e293b;
+    }
+
+    .topics-toggle:hover {
+      background: #1e293b;
+    }
+
     /* INILAGAY ANG GRID VIEW DITO */
     .menu-grid {
       display: grid;
@@ -441,8 +460,13 @@
 
       /* DINAGDAG AT INALIS ANG STICKY AT FLOATING PROPERTIES */
       .menu-grid {
+        display: none; /* Hide default view on mobile */
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+      }
+
+      .menu-grid.show {
+        display: grid; /* Reveal when triggered by the button */
       }
 
       .subject-btn {
@@ -475,7 +499,13 @@
         <p id="licenseStatus" class="status-line">Checking access…</p>
       </div>
 
-      <div class="menu-grid">
+      <!-- TOGGLE TRIGGER BUTTON -->
+      <button class="topics-toggle" onclick="toggleTopics()">
+        ☰ Topics
+      </button>
+
+      <!-- UPDATED GRID VIEW ASSIGNED WITH UNIQUE ELEMENT ID -->
+      <div class="menu-grid" id="topicsMenu">
         <a href="verbal.html" class="subject-btn">
           <span> &nbsp; Verbal Ability</span>
           <span class="arrow">→</span>
@@ -892,6 +922,16 @@
         });
       }
     });
+  </script>
+
+  <!-- TOGGLE MENU JAVASCRIPT LOGIC -->
+  <script>
+    function toggleTopics(){
+      document
+        .getElementById("topicsMenu")
+        .classList
+        .toggle("show");
+    }
   </script>
 
 </body>
