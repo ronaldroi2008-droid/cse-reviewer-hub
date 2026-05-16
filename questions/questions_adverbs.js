@@ -624,314 +624,306 @@ window.VERBAL_QUESTION_BANK["adverbs"] = {
   // ============================================================
   advanced: [
     // 101-110: Inversion (Advanced Grammar)
-    {
-      question: "______ have I seen such a mess.",
-      options: ["Never", "Always", "Often", "Usually"],
-      answer: "Never",
-      explanation: "When a negative adverb (never) begins a sentence, subject–auxiliary inversion is required."
-    },
-    {
-      question: "Rarely ______ to the cinema.",
-      options: ["we go", "do we go", "we do go", "go we"],
-      answer: "do we go",
-      explanation: "When 'rarely' starts the sentence, the auxiliary 'do' must come before the subject."
-    },
-    {
-      question: "Seldom ______ such talent.",
-      options: ["one sees", "does one see", "sees one", "one does see"],
-      answer: "does one see",
-      explanation: "Sentence-initial negative adverbs require inversion using an auxiliary."
-    },
-    {
-      question: "Hardly ______ arrived when it rained.",
-      options: ["had I", "I had", "have I", "I have"],
-      answer: "had I",
-      explanation: "The pattern is 'Hardly + had + subject + past participle'."
-    },
-    {
-      question: "Little ______ that he was watching.",
-      options: ["did she know", "she knew", "she did know", "knew she"],
-      answer: "did she know",
-      explanation: "As a negative adverb at the beginning, 'little' triggers inversion."
-    },
-    {
-      question: "Nowhere ______ find a better offer.",
-      options: ["you will", "will you", "you can", "can"],
-      answer: "will you",
-      explanation: "'Nowhere' is a negative adverb of place. When it begins a sentence, inversion is required."
-    },
-    {
-      question: "On no account ______ be opened.",
-      options: ["should this door", "this door should", "this door", "door should"],
-      answer: "should this door",
-      explanation: "'On no account' is a strong negative expression that requires inversion."
-    },
-    {
-      question: "Not only ______ sing, but he also dances.",
-      options: ["he does", "does he", "he can", "he is"],
-      answer: "does he",
-      explanation: "'Not only' at the beginning triggers inversion in the first clause."
-    },
-    {
-      question: "Scarcely ______ down when the phone rang.",
-      options: ["I sat", "did I sit", "had I sat", "was I sitting"],
-      answer: "had I sat",
-      explanation: "'Scarcely' uses the inverted past perfect pattern."
-    },
-    {
-      question: "Under no circumstances ______ leave.",
-      options: ["you should", "should you", "you must", "are you"],
-      answer: "should you",
-      explanation: "'Under no circumstances' requires inversion with a modal auxiliary."
-    },
-
-    // 111-120: Placement of "Only" (Logic/Meaning)
-    {
-      question: "Meaning: 'No one else but John went.'",
-      options: ["Only John went.", "John went only.", "John only went.", "John went."],
-      answer: "Only John went.",
-      explanation: "'Only' must be placed directly before 'John' to show that no one else went."
-    },
-    {
-      question: "Meaning: 'I merely looked at him (didn't talk).'",
-      options: ["Only I looked at him.", "I only looked at him.", "I looked at him only.", "I looked only at him."],
-      answer: "I only looked at him.",
-      explanation: "'Only' is placed before the verb 'looked' to show that no other action happened."
-    },
-    {
-      question: "Meaning: 'She eats nothing but vegetables.'",
-      options: ["She only eats vegetables.", "She eats only vegetables.", "Only she eats vegetables.", "She eats vegetables only."],
-      answer: "She eats only vegetables.",
-      explanation: "'Only' must be placed directly before 'vegetables' to show exclusivity of food."
-    },
-    {
-      question: "Place 'only' correctly: 'He lent me five pesos.' (Meaning: no more than five.)",
-      options: ["Only he lent me five pesos.", "He lent me only five pesos.", "He only lent me five pesos.", "He lent me five pesos only."],
-      answer: "He lent me only five pesos.",
-      explanation: "The meaning limits the amount. 'Only' must be placed before 'five pesos'."
-    },
-    {
-      question: "Meaning: 'It happens on Sundays and no other day.'",
-      options: ["It only happens on Sundays.", "It happens only on Sundays.", "Only it happens on Sundays.", "It happens on Sundays only."],
-      answer: "It happens only on Sundays.",
-      explanation: "'Only' must be placed directly before the time expression 'on Sundays'."
-    },
-    {
-      question: "The meeting lasted ______ an hour.",
-      options: ["only", "alone", "single", "justly"],
-      answer: "only",
-      explanation: "'Only' limits duration and means 'no more than'."
-    },
-    {
-      question: "______ three students passed.",
-      options: ["Only", "Justly", "Merely", "Alone"],
-      answer: "Only",
-      explanation: "'Only' correctly limits the number."
-    },
-    {
-      question: "I have ______ two hands.",
-      options: ["only", "alone", "merely", "single"],
-      answer: "only",
-      explanation: "'Only' limits quantity."
-    },
-    {
-      question: "She is the ______ one who knows.",
-      options: ["only", "alone", "lonely", "solely"],
-      answer: "only",
-      explanation: "'Only' functions as an adjective meaning 'sole'."
-    },
-    {
-      question: "He did it ______ for the money.",
-      options: ["only", "alone", "lonely", "solitary"],
-      answer: "only",
-      explanation: "'Only' limits the reason. It shows there was no other motivation."
-    },
-
-    // 121-130: Conjunctive Adverbs (Connectors)
-    {
-      question: "It rained hard; ______, we played soccer.",
-      options: ["however", "therefore", "moreover", "consequently"],
-      answer: "however",
-      explanation: "'However' shows contrast between expectation and result."
-    },
-    {
-      question: "He didn't study; ______, he failed.",
-      options: ["however", "therefore", "nevertheless", "otherwise"],
-      answer: "therefore",
-      explanation: "'Therefore' shows cause and effect."
-    },
-    {
-      question: "The rent is high; ______, the location is bad.",
-      options: ["therefore", "moreover", "consequently", "thus"],
-      answer: "moreover",
-      explanation: "'Moreover' adds another point of the same type."
-    },
-    {
-      question: "Run fast; ______, you will be late.",
-      options: ["otherwise", "therefore", "however", "besides"],
-      answer: "otherwise",
-      explanation: "'Otherwise' means 'if not'. It warns of a consequence if the instruction is not followed."
-    },
-    {
-      question: "I love milk; ______, I am allergic to it.",
-      options: ["consequently", "however", "therefore", "moreover"],
-      answer: "however",
-      explanation: "'However' introduces a contrast between liking milk and being unable to consume it."
-    },
-    {
-      question: "Select the correct punctuation:",
-      options: ["He is sick, therefore he is absent.", "He is sick; therefore, he is absent.", "He is sick therefore, he is absent.", "He is sick; therefore he is absent."],
-      answer: "He is sick; therefore, he is absent.",
-      explanation: "When joining two independent clauses with a conjunctive adverb, use a semicolon before it and a comma after it."
-    },
-    {
-      question: "Select the correct punctuation:",
-      options: ["I tried hard; however, I failed.", "I tried hard, however I failed.", "I tried hard however, I failed.", "I tried hard; however I failed."],
-      answer: "I tried hard; however, I failed.",
-      explanation: "A semicolon is required before 'however' to link independent clauses, and a comma follows the conjunctive adverb."
-    },
-    {
-      question: "He is rich; ______, he is unhappy.",
-      options: ["nevertheless", "consequently", "therefore", "additionally"],
-      answer: "nevertheless",
-      explanation: "'Nevertheless' shows contrast and unexpected outcome despite the first clause."
-    },
-    {
-      question: "We have no money; ______, we can't buy it.",
-      options: ["however", "consequently", "nevertheless", "otherwise"],
-      answer: "consequently",
-      explanation: "'Consequently' expresses result."
-    },
-    {
-      question: "It was cold; ______, we went swimming.",
-      options: ["therefore", "besides", "nonetheless", "consequently"],
-      answer: "nonetheless",
-      explanation: "'Nonetheless' shows that the action happened despite the condition."
-    },
-
-    // 131-140: Degree (Intensity)
-    {
-      question: "I ______ agree with you.",
-      options: ["completely", "very", "too", "much"],
-      answer: "completely",
-      explanation: "'Agree' is a verb that takes degree adverbs like 'completely' or 'fully'."
-    },
-    {
-      question: "It was ______ ridiculous.",
-      options: ["utterly", "very", "much", "many"],
-      answer: "utterly",
-      explanation: "'Ridiculous' is an extreme adjective. Extreme adjectives take adverbs like 'utterly' or 'absolutely'."
-    },
-    {
-      question: "She is ______ prettier than her sister.",
-      options: ["much", "very", "too", "so"],
-      answer: "much",
-      explanation: "Comparatives are intensified by 'much', 'far', or 'a lot'."
-    },
-    {
-      question: "He is ______ the best player.",
-      options: ["by far", "very", "too", "so"],
-      answer: "by far",
-      explanation: "Superlatives are intensified by expressions like 'by far'."
-    },
-    {
-      question: "I am ______ sorry.",
-      options: ["terribly", "terrible", "much", "many"],
-      answer: "terribly",
-      explanation: "'Terribly' is a common collocation meaning 'very'."
-    },
-    {
-      question: "It is ______ freezing outside.",
-      options: ["absolutely", "very", "too", "fairly"],
-      answer: "absolutely",
-      explanation: "'Freezing' is an extreme adjective. It requires an intensifier like 'absolutely'."
-    },
-    {
-      question: "The movie was ______ hilarious.",
-      options: ["absolutely", "very", "slightly", "fairly"],
-      answer: "absolutely",
-      explanation: "'Hilarious' is an extreme adjective. 'Absolutely' correctly intensifies it."
-    },
-    {
-      question: "I was ______ exhausted.",
-      options: ["totally", "very", "quite", "fairly"],
-      answer: "totally",
-      explanation: "'Exhausted' is an extreme adjective. 'Totally' correctly expresses full degree."
-    },
-    {
-      question: "It is ______ hot (meaning 'a little').",
-      options: ["rather", "too", "utterly", "completely"],
-      answer: "rather",
-      explanation: "'Rather' expresses a moderate degree."
-    },
-    {
-      question: "She is ______ shorter than him.",
-      options: ["slightly", "very", "too", "quite"],
-      answer: "slightly",
-      explanation: "'Slightly' correctly modifies a comparative adjective to show small difference."
-    },
-
-    // 141-150: Viewpoint & Comment Adverbs
-    {
-      question: "______, he didn't get the job.",
-      options: ["Unfortunately", "Unfortunate", "Happy", "Badly"],
-      answer: "Unfortunately",
-      explanation: "'Unfortunately' comments on the entire situation and expresses the speaker's judgment."
-    },
-    {
-      question: "______, it will rain today.",
-      options: ["Presumably", "Presume", "Sure", "Definite"],
-      answer: "Presumably",
-      explanation: "'Presumably' expresses assumption about the whole statement."
-    },
-    {
-      question: "______, I don't care.",
-      options: ["Frankly", "Frank", "Honest", "True"],
-      answer: "Frankly",
-      explanation: "'Frankly' introduces the speaker's attitude toward the statement."
-    },
-    {
-      question: "______, he arrived on time.",
-      options: ["Surprisingly", "Surprising", "Surprise", "Shock"],
-      answer: "Surprisingly",
-      explanation: "'Surprisingly' comments on the unexpected nature of the event."
-    },
-    {
-      question: "______, there are no free seats.",
-      options: ["Regrettably", "Regret", "Sorry", "Sad"],
-      answer: "Regrettably",
-      explanation: "'Regrettably' is a formal comment adverb expressing negative evaluation."
-    },
-    {
-      question: "______, she is the best candidate.",
-      options: ["Undoubtedly", "Doubt", "Sure", "Uncertain"],
-      answer: "Undoubtedly",
-      explanation: "'Undoubtedly' expresses certainty about the whole statement."
-    },
-    {
-      question: "______, we need to cut costs.",
-      options: ["Basically", "Basic", "Base", "Basis"],
-      answer: "Basically",
-      explanation: "'Basically' summarizes the core idea of the statement."
-    },
-    {
-      question: "______, I prefer tea.",
-      options: ["Personally", "Person", "Private", "Self"],
-      answer: "Personally",
-      explanation: "'Personally' signals that the statement is the speaker's own viewpoint."
-    },
-    {
-      question: "______, he is right.",
-      options: ["Technically", "Technical", "Technique", "Tech"],
-      answer: "Technically",
-      explanation: "'Technically' shows correctness according to strict rules."
-    },
-    {
-      question: "______, it was a disaster.",
-      options: ["Essentially", "Essential", "Essence", "Real"],
-      answer: "Essentially",
-      explanation: "'Essentially' summarizes the true nature of the situation."
-    }
+     {
+    "question": "Complete the inversion structure: '______ have I seen such an disorganized warehouse operation.'",
+    "options": ["Never", "Always", "Often", "Usually"],
+    "answer": "Never",
+    "explanation": "When a negative adverb or restrictive modifier like 'Never' is placed at the absolute beginning of a sentence for emphatic effect, it triggers mandatory subject-auxiliary inversion. Therefore, the auxiliary verb 'have' must precede the subject pronoun 'I'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Rarely ______ to the regional terminal during the off-peak hours.'",
+    "options": ["we go", "do we go", "we do go", "go we"],
+    "answer": "do we go",
+    "explanation": "Starting a sentence with the restrictive frequency adverb 'Rarely' requires subject-auxiliary inversion. For present simple actions, the auxiliary verb 'do' must step forward to precede the plural subject pronoun 'we'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Seldom ______ such exceptional administrative talent in an entry-level applicant.'",
+    "options": ["one sees", "does one see", "sees one", "one does see"],
+    "answer": "does one see",
+    "explanation": "The term 'Seldom' is a negative frequency adverb. When positioned at the start of an independent clause, it triggers a grammatical inversion, forcing the singular auxiliary 'does' to stand in front of the formal subject pronoun 'one'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Hardly ______ arrived at the construction site when the flash flood triggered an evacuation.'",
+    "options": ["had I", "I had", "have I", "I have"],
+    "answer": "had I",
+    "explanation": "This sentence employs a classic literary time restriction layout. The formal adverbial structure demands the specific formula: 'Hardly' + past perfect auxiliary ('had') + Subject ('I') + past participle ('arrived'), followed by a clause introduced by 'when'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Little ______ that the regional director was actively monitoring the dashboard.'",
+    "options": ["did she know", "she knew", "she did know", "knew she"],
+    "answer": "did she know",
+    "explanation": "When the restrictive modifier 'Little' is placed at the front of a sentence to express a complete lack of awareness, it requires past tense inversion: auxiliary 'did' + subject 'she' + base form verb 'know'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Nowhere else ______ find a more competitive franchise procurement offer.'",
+    "options": ["you will", "will you", "you can", "can"],
+    "answer": "will you",
+    "explanation": "'Nowhere' is a definitive negative adverb of place. When initiating a clause, it commands a structural inversion, requiring the modal or future auxiliary 'will' to advance ahead of the subject 'you'."
+  },
+  {
+    "question": "Complete the inversion structure: 'On no account ______ this secure document archive room be opened without a supervisor present.'",
+    "options": ["should this door", "this door should", "this door", "door should"],
+    "answer": "should this door",
+    "explanation": "The phrase 'On no account' functions as a complex negative prepositional phrase. Placed initial in a clause, it requires subject-auxiliary inversion, placing the modal auxiliary 'should' before the complete noun subject 'this door'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Not only ______ manage the logistical supply chain, but he also oversees financial reports.'",
+    "options": ["he does", "does he", "he can", "he is"],
+    "answer": "does he",
+    "explanation": "When the correlative conjunction phrase 'Not only' leads a sentence, the first independent clause must undergo subject-auxiliary inversion, using the singular auxiliary 'does' before the pronoun 'he'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Scarcely ______ down at my desk to review the audit when the fire alarm rang.'",
+    "options": ["I sat", "did I sit", "had I sat", "was I sitting"],
+    "answer": "had I sat",
+    "explanation": "'Scarcely' is a restrictive time modifier that operates under the exact same inversion principles as 'hardly'. It mandates a past perfect inverted sequence: 'Scarcely' + auxiliary 'had' + subject 'I' + past participle 'sat'."
+  },
+  {
+    "question": "Complete the inversion structure: 'Under no circumstances ______ leave the premises before submitting your end-of-shift data.'",
+    "options": ["you should", "should you", "you must", "are you"],
+    "answer": "should you",
+    "explanation": "The restrictive expression 'Under no circumstances' commands absolute compliance. When leading a sentence, it necessitates immediate inversion, positioning the modal operator 'should' before the subject 'you'."
+  },
+  {
+    "question": "Identify the proper sentence based on the specific contextual meaning: 'No one else but John went to the corporate meeting.'",
+    "options": ["Only John went.", "John went only.", "John only went.", "John went."],
+    "answer": "Only John went.",
+    "explanation": "The adverb 'only' is a highly sensitive limiting modifier. To specify that a restriction applies strictly to the identity of the subject and no one else, 'only' must immediately precede the specific noun 'John'."
+  },
+  {
+    "question": "Identify the proper sentence based on the specific contextual meaning: 'I merely looked at the contract (I did not sign or edit it).'",
+    "options": ["Only I looked at him.", "I only looked at him.", "I looked at him only.", "I looked only at him."],
+    "answer": "I only looked at him.",
+    "explanation": "To demonstrate that an exclusive limitation applies directly to the action itself rather than the people involved, 'only' must be placed immediately before the main verb 'looked'."
+  },
+  {
+    "question": "Identify the proper sentence based on the specific contextual meaning: 'She eats vegetables and absolutely nothing else.'",
+    "options": ["She only eats vegetables.", "She eats only vegetables.", "Only she eats vegetables.", "She eats vegetables only."],
+    "answer": "She eats only vegetables.",
+    "explanation": "To convey precise exclusivity regarding a direct object noun phrase, 'only' should be placed right before 'vegetables'. This explicitly isolates the noun as the single item consumed."
+  },
+  {
+    "question": "Position the modifier 'only' to reflect the exact intended logical meaning: 'He lent me five pesos (and not a single peso more).'",
+    "options": ["Only he lent me five pesos.", "He lent me only five pesos.", "He only lent me five pesos.", "He lent me five pesos only."],
+    "answer": "He lent me only five pesos.",
+    "explanation": "Because the exact contextual constraint targets the quantitative numerical value ('five pesos'), the adverb 'only' must rest directly before the cardinal number to show a strict fiscal ceiling."
+  },
+  {
+    "question": "Identify the proper sentence based on the specific contextual meaning: 'The event occurs on Sundays and on no other day of the week.'",
+    "options": ["It only happens on Sundays.", "It happens only on Sundays.", "Only it happens on Sundays.", "It happens on Sundays only."],
+    "answer": "It happens only on Sundays.",
+    "explanation": "To restrict an operational event strictly to a specific timeframe or prepositional phrase of time, 'only' must be placed directly preceding 'on Sundays'."
+  },
+  {
+    "question": "Complete the statement with the proper logical modifier: 'The emergency evaluation meeting lasted ______ an hour before adjournment.'",
+    "options": ["only", "alone", "single", "justly"],
+    "answer": "only",
+    "explanation": "The word 'only' serves here as a limiting adverb of degree meaning 'no more than', which is used to modify the duration or quantity specified by 'an hour'."
+  },
+  {
+    "question": "Complete the statement with the proper logical modifier: 'Out of fifty applicants, ______ three trainees passed the rigorous operational exam.'",
+    "options": ["Only", "Justly", "Merely", "Alone"],
+    "answer": "Only",
+    "explanation": "The sentence requires a restrictive pre-modifier to draw attention to an unexpectedly low number. 'Only' perfectly limits the numerical subject 'three trainees'."
+  },
+  {
+    "question": "Complete the statement with the proper logical modifier: 'As a human being, I have ______ two hands to handle these multiple tasks.'",
+    "options": ["only", "alone", "merely", "single"],
+    "answer": "only",
+    "explanation": "The modifier restricts the noun phrase 'two hands'. Placing 'only' before the number emphasizes physical limitation and scarcity within standard English syntax."
+  },
+  {
+    "question": "Complete the statement with the proper logical modifier: 'The branch manager confirmed that she is the ______ person who holds the vault combination.'",
+    "options": ["only", "alone", "lonely", "solely"],
+    "answer": "only",
+    "explanation": "In this specific syntax, 'only' functions exceptionally as an attributive adjective meaning 'sole' or 'exclusive', directly qualifying the singular countable noun 'person'."
+  },
+  {
+    "question": "Complete the statement with the proper logical modifier: 'The supervisor admitted that he accepted the high-risk assignment ______ for the additional compensation.'",
+    "options": ["only", "alone", "lonely", "solitary"],
+    "answer": "only",
+    "explanation": "The adverb 'only' is used here to isolate a single reason or motivation, indicating that no other factors or incentives influenced the decision."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'It rained heavily at the construction site; ______, the crew managed to finish the foundation.'",
+    "options": ["however", "therefore", "moreover", "consequently"],
+    "answer": "however",
+    "explanation": "The two clauses present a sharp conflict between an unfavorable condition (heavy rain) and an unexpected success. The conjunctive adverb 'however' is required to establish this contrast."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'The trainee failed to study the standard operating procedures; ______, he did poorly on the evaluation.'",
+    "options": ["however", "therefore", "nevertheless", "otherwise"],
+    "answer": "therefore",
+    "explanation": "The second clause represents a direct logical outcome or consequence of the first clause. The conjunctive adverb 'therefore' is used to demonstrate cause-and-effect transitions."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'The monthly lease for the store branch is exceptionally high; ______, the foot traffic is poorly distributed.'",
+    "options": ["therefore", "moreover", "consequently", "thus"],
+    "answer": "moreover",
+    "explanation": "Both clauses discuss negative attributes of the branch location. The conjunctive adverb 'moreover' is selected to introduce an additional, reinforcing point of the same nature."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'You must maintain a rapid pace while cross-checking data; ______, you will miss the project deadline.'",
+    "options": ["otherwise", "therefore", "however", "besides"],
+    "answer": "otherwise",
+    "explanation": "The conjunctive adverb 'otherwise' introduces a negative consequence or alternative reality that will transpire if the conditional command in the first clause is ignored."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'I highly enjoy consuming the brand's signature milk tea; ______, I am medically lactose intolerant.'",
+    "options": ["consequently", "however", "therefore", "moreover"],
+    "answer": "however",
+    "explanation": "The sentence requires a transitional connector that demonstrates an adversarial or contrasting relationship between personal preference and a physiological limitation."
+  },
+  {
+    "question": "Select the option that reflects flawless punctuation and syntax when using a conjunctive adverb:",
+    "options": ["He is sick, therefore he is absent.", "He is sick; therefore, he is absent.", "He is sick therefore, he is absent.", "He is sick; therefore he is absent."],
+    "answer": "He is sick; therefore, he is absent.",
+    "explanation": "When coordinating two complete independent clauses using a conjunctive adverb ('therefore'), structural rules dictate placing a semicolon immediately prior to the adverb and a comma directly following it."
+  },
+  {
+    "question": "Select the option that reflects flawless punctuation and syntax when using a conjunctive adverb:",
+    "options": ["I tried hard; however, I failed.", "I tried hard, however I failed.", "I tried hard however, I failed.", "I tried hard; however I failed."],
+    "answer": "I tried hard; however, I failed.",
+    "explanation": "Conjunctive adverbs cannot link independent clauses using a mere comma (which creates a comma splice). A semicolon must separate the clauses, and a comma must isolate 'however' from the second clause."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'The corporate investor is incredibly wealthy; ______, he appears constantly stressed and unhappy.'",
+    "options": ["nevertheless", "consequently", "therefore", "additionally"],
+    "answer": "nevertheless",
+    "explanation": "The term 'nevertheless' is a concessive conjunctive adverb used to introduce a fact or situation that occurs in spite of or despite what was stated in the preceding clause."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'Our department has depleted its quarterly operational budget; ______, we cannot procure new office hardware.'",
+    "options": ["however", "consequently", "nevertheless", "otherwise"],
+    "answer": "consequently",
+    "explanation": "The second clause is a direct situational result of the financial deficit explained in the first clause. 'Consequently' is the most accurate adverbial connector to show this result."
+  },
+  {
+    "question": "Select the correct conjunctive adverb based on contextual logic: 'The atmospheric temperature inside the facility was freezing; ______, the audit team proceeded with the physical inventory.'",
+    "options": ["therefore", "besides", "nonetheless", "consequently"],
+    "answer": "nonetheless",
+    "explanation": "The conjunctive adverb 'nonetheless' signals that the action in the second independent clause occurred regardless of the obstacle or condition mentioned in the first clause."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'After careful consideration of the operational data, I ______ agree with your proposal.'",
+    "options": ["completely", "very", "too", "much"],
+    "answer": "completely",
+    "explanation": "The word 'agree' is a non-gradable action verb. It cannot be modified by 'very'. Instead, it requires a maximizing adverb of degree such as 'completely' or 'fully'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'The supervisor's sudden emotional outburst during the briefing was ______ ridiculous.'",
+    "options": ["utterly", "very", "much", "many"],
+    "answer": "utterly",
+    "explanation": "The term 'ridiculous' functions as an ungradable or extreme adjective. Standard grammar rules dictate modifying extreme adjectives with absolute adverbs of degree like 'utterly' or 'absolutely' rather than 'very'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'The newly constructed commercial kiosk is ______ prettier than the older model.'",
+    "options": ["much", "very", "too", "so"],
+    "answer": "much",
+    "explanation": "The modifier precedes the comparative adjective 'prettier'. Under formal syntax constraints, 'very' can never modify a comparative form; intensifiers like 'much', 'far', or 'significantly' must be used."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'He proved during the tournament that he is ______ the best player on the team.'",
+    "options": ["by far", "very", "too", "so"],
+    "answer": "by far",
+    "explanation": "The target of modification is the superlative phrase 'the best'. Superlative structures are intensified by idiomatic adverbial expressions such as 'by far' or 'easily' to denote an undisputed status."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'Please accept our apologies, as we are ______ sorry for the delivery delays.'",
+    "options": ["terribly", "terrible", "much", "many"],
+    "answer": "terribly",
+    "explanation": "The word 'terribly' acts as a highly common, idiomatic adverb of degree that collocates perfectly with adjectives like 'sorry' or 'disappointed' to mean 'extremely'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'Ensure you activate the warehouse heating units because it is ______ freezing outside.'",
+    "options": ["absolutely", "very", "too", "fairly"],
+    "answer": "absolutely",
+    "explanation": "'Freezing' is a limit or extreme adjective representing the absolute end of a scale. It must be paired with an absolute intensifier like 'absolutely' or 'completely', not a gradable one like 'very'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'The promotional marketing video we reviewed was ______ hilarious.'",
+    "options": ["absolutely", "very", "slightly", "fairly"],
+    "answer": "absolutely",
+    "explanation": "Because 'hilarious' inherently means 'extremely funny', it is classified as an ungradable adjective. It cannot be paired with 'very' or 'fairly'. It requires the absolute adverb 'absolutely'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'After working consecutive night shifts, the entire warehouse crew was ______ exhausted.'",
+    "options": ["totally", "very", "quite", "fairly"],
+    "answer": "totally",
+    "explanation": "The modifier targets 'exhausted', which is an extreme adjective meaning 'completely tired'. It must be intensified using total adverbs of degree such as 'totally' or 'completely'."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'The regional office is ______ hot, but it remains manageable if we open the windows.'",
+    "options": ["rather", "too", "utterly", "completely"],
+    "answer": "rather",
+    "explanation": "The context implies a moderate, noticebly negative, but ultimately tolerable level of heat. The adverb of degree 'rather' is used to express a moderate or surprising degree of a quality."
+  },
+  {
+    "question": "Complete the statement with the proper intensifier: 'The administrative assistant is ______ shorter than the supervisor.'",
+    "options": ["slightly", "very", "too", "quite"],
+    "answer": "slightly",
+    "explanation": "To describe a minute, measurable difference using a comparative adjective ('shorter'), the correct modifying adverb of degree to select is 'slightly'."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, despite demonstrating excellent qualifications, he didn't get the position.'",
+    "options": ["Unfortunately", "Unfortunate", "Happy", "Badly"],
+    "answer": "Unfortunately",
+    "explanation": "The sentence requires a comment or viewpoint adverb that modifies the entire clause. 'Unfortunately' expresses the speaker's negative judgment or evaluation of the outcome."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, given the dense cloud formations, it will rain across the site today.'",
+    "options": ["Presumably", "Presume", "Sure", "Definite"],
+    "answer": "Presumably",
+    "explanation": "'Presumably' functions as an epistemic comment adverb placed at the start of a sentence to show that the speaker is making an educated assumption based on available evidence."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, I do not appreciate how the franchise audit was handled.'",
+    "options": ["Frankly", "Frank", "Honest", "True"],
+    "answer": "Frankly",
+    "explanation": "The word 'Frankly' serves as a disjunct or viewpoint adverb. It is used to introduce a statement by signaling that the speaker is expressing their candid, unreserved, or honest perspective."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, despite his previous history of tardiness, he arrived on time today.'",
+    "options": ["Surprisingly", "Surprising", "Surprise", "Shock"],
+    "answer": "Surprisingly",
+    "explanation": "The sentence initialization demands an adverb that comments on the unexpected nature of the entire event. 'Surprisingly' modifies the full clause that follows it."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, there are no remaining free slots for the operations seminar.'",
+    "options": ["Regrettably", "Regret", "Sorry", "Sad"],
+    "answer": "Regrettably",
+    "explanation": "'Regrettably' is a formal sentence adverb that introduces an unfortunate piece of information, framing the clause with a tone of disappointment or official regret."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, based on her flawless performance metrics, she is the best candidate.'",
+    "options": ["Undoubtedly", "Doubt", "Sure", "Uncertain"],
+    "answer": "Undoubtedly",
+    "explanation": "The adverb 'Undoubtedly' acts as a sentence modifier that signals absolute certainty on the part of the speaker regarding the validity of the statement."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, what the corporation needs to do right now is drastically cut waste.'",
+    "options": ["Basically", "Basic", "Base", "Basis"],
+    "answer": "Basically",
+    "explanation": "'Basically' functions as a viewpoint adverb used to strip away unnecessary details and summarize the absolute core, fundamental truth of an assertion."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, I prefer managing logistics through a centralized software dashboard.'",
+    "options": ["Personally", "Person", "Private", "Self"],
+    "answer": "Personally",
+    "explanation": "The word 'Personally' is an introductory disjunct used to clarify that the statement reflects the speaker's own individual opinion, taste, or viewpoint."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, according to the strict wording of the contract, he is in the right.'",
+    "options": ["Technically", "Technical", "Technique", "Tech"],
+    "answer": "Technically",
+    "explanation": "'Technically' is a domain-specific viewpoint adverb used to indicate that a statement is strictly accurate when evaluated under formal rules or precise definitions."
+  },
+  {
+    "question": "Select the correct sentence-level comment adverb: '______, despite all our structural preparation, the rollout was a complete disaster.'",
+    "options": ["Essentially", "Essential", "Essence", "Real"],
+    "answer": "Essentially",
+    "explanation": "The word 'Essentially' acts as an adverbial modifier that assesses the situation as a whole, highlighting the true, core nature or summary of what occurred."
+  }
   ],
 
   // ============================================================
