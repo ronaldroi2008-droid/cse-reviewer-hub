@@ -78,7 +78,7 @@
       opacity: 0.98;
     }
 
-    /* ====== Access pills (PRO / TRIAL / FREE) ====== */
+    /* ====== Access pills ====== */
     .pill {
       display: inline-flex;
       align-items: center;
@@ -132,6 +132,7 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      text-align: left;
     }
 
     .subject-btn:hover {
@@ -237,7 +238,6 @@
       font-size: 0.95rem;
     }
 
-    /* PRO / TRIAL TABS */
     .access-tabs {
       display: flex;
       gap: 8px;
@@ -274,6 +274,7 @@
       color: #fffbeb;
       font-size: 0.92rem;
       line-height: 1.4;
+      text-align: left;
     }
 
     .pro-features {
@@ -282,6 +283,7 @@
       padding: 18px;
       margin-bottom: 18px;
       border: 1px solid #334155;
+      text-align: left;
     }
 
     .pro-features h3 {
@@ -403,9 +405,10 @@
     }
 
     .trial-helper {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: #cbd5e1;
       line-height: 1.4;
+      text-align: left;
     }
 
     @media (max-width: 600px) {
@@ -449,19 +452,19 @@
 
         <a href="general_info.html" class="subject-btn">
           <span>🌍 &nbsp; General Information</span>
-          <span class="arrow">→</span>
+          <span class="arrow">--></span>
         </a>
 
-        <!-- LOCKED PRACTICE MODE (same behavior as Mock Exam) -->
-        <a href="#" class="subject-btn" id="practiceLink">
+        <!-- GINAWANG BUTTON COMPLIANT PARA SA MODALS -->
+        <button class="subject-btn" id="practiceLink">
           <span id="practiceLabel">🔥 &nbsp; Practice Mode (Quick Drills)</span>
           <span class="arrow">→</span>
-        </a>
+        </button>
 
-        <a href="#" class="subject-btn" id="mockExamLink">
+        <button class="subject-btn" id="mockExamLink">
           <span id="mockExamLabel">🎯 &nbsp; Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
-        </a>
+        </button>
 
         <a href="license.html" class="subject-btn">
           <span>🔑 &nbsp; Enter License / Activate PRO</span>
@@ -488,13 +491,11 @@
         <h2 id="modalTitle">🔒 Unlock Full Mock Exam</h2>
         <p id="modalSubtitle">Access the complete 170-item timed simulation</p>
 
-        <!-- PRO vs FREE TRIAL tabs -->
         <div class="access-tabs">
           <button class="access-tab active" data-mode="pro">PRO Access</button>
           <button class="access-tab" data-mode="trial">Free Trial Key</button>
         </div>
 
-        <!-- TRIAL banner (shown only if trial is active) -->
         <div id="accessBanner" class="access-banner" style="display:none;"></div>
       </div>
 
@@ -518,7 +519,6 @@
               🚀 Upgrade to PRO (Lifetime)
             </a>
 
-            <!-- Trial-only secondary button (for active trial) -->
             <button id="trialContinueBtn" class="pro-secondary-btn" style="display:none;">
               ✅ Continue with Trial
             </button>
@@ -557,9 +557,6 @@
   </div>
 
   <script>
-    // ======================================================
-    // 0) DEVICE ID (stable per browser) - kept for compatibility
-    // ======================================================
     const DEVICE_KEY = "cse_device_id";
     let deviceId = localStorage.getItem(DEVICE_KEY);
     if (!deviceId) {
@@ -567,15 +564,10 @@
       localStorage.setItem(DEVICE_KEY, deviceId);
     }
 
-    // ======================================================
-    // 1) LICENSE CONFIG (OFFLINE-FIRST)
-    //    IMPORTANT: Home page should NOT call the license server.
-    //    License verification happens only in license.html.
-    // ======================================================
     const STORAGE_LICENSE_KEY = "cse_license_key";
     const STORAGE_IS_PRO = "cse_is_pro";
-    const STORAGE_ACCESS_KIND = "cse_access_kind";     // "pro" | "trial" | "free"
-    const STORAGE_EXPIRES_AT = "cse_expires_at";       // ISO
+    const STORAGE_ACCESS_KIND = "cse_access_kind";     
+    const STORAGE_EXPIRES_AT = "cse_expires_at";       
     const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
     function fmtManila(iso) {
@@ -587,21 +579,18 @@
     function isExpired(expiresAtIso) {
       if (!expiresAtIso) return false;
       const t = Date.parse(expiresAtIso);
-      if (Number.isNaN(t)) return false;
-      return Date.now() > t;
+      return !Number.isNaN(t) && Date.now() > t;
     }
 
-    // ✅ OFFLINE-ONLY access state (no server calls)
     function getAccessStateOfflineOnly() {
       const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
       const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || (legacyPro ? "pro" : "free");
       const exp  = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
 
-      // Trial expiry check
       if (kind === "trial" && exp && isExpired(exp)) {
         localStorage.setItem(STORAGE_IS_PRO, "false");
         localStorage.setItem(STORAGE_ACCESS_KIND, "free");
-        return { ok: false, kind: "free", expires_at: exp, reason: "expired_local", source: "local" };
+        return { ok: false, kind: "free", expires_at: exp, source: "local" };
       }
 
       if (kind === "pro") return { ok: true, kind: "pro", expires_at: null, source: "local" };
@@ -610,26 +599,20 @@
       return { ok: false, kind: "free", expires_at: null, source: "local" };
     }
 
-    // ======================================================
-    // 2) INIT
-    // ======================================================
     document.addEventListener("DOMContentLoaded", () => {
       const mockExamLink = document.getElementById("mockExamLink");
       const mockExamLabel = document.getElementById("mockExamLabel");
       const practiceLink = document.getElementById("practiceLink");
       const practiceLabel = document.getElementById("practiceLabel");
       const licenseStatus = document.getElementById("licenseStatus");
-
       const proModal = document.getElementById("pro-modal");
       const proModalClose = document.getElementById("pro-modal-close");
       const proGumroadLink = document.getElementById("pro-gumroad-link");
       const proRefreshLink = document.getElementById("pro-refresh-link");
-
       const accessBanner = document.getElementById("accessBanner");
       const trialContinueBtn = document.getElementById("trialContinueBtn");
       const modalTitle = document.getElementById("modalTitle");
       const modalSubtitle = document.getElementById("modalSubtitle");
-
       const accessTabs = document.querySelectorAll(".access-tab");
       const proContent = document.getElementById("proContent");
       const trialContent = document.getElementById("trialContent");
@@ -654,50 +637,25 @@
         });
       }
 
-      function setStatusPill(kind, expiresAt){
+      // ✅ PINAGSAMANG RE-RENDER LOGIC PARA SA KAAYUSAN NG CODE (DRY)
+      function updateUIState(kind, expiresAt) {
         if (!licenseStatus) return;
+        
         if (kind === "pro") {
           licenseStatus.innerHTML = `<span class="pill pill-pro">✅ PRO • Lifetime</span>`;
+          if (mockExamLabel) mockExamLabel.innerHTML = `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
+          if (practiceLabel) practiceLabel.innerHTML = `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
         } else if (kind === "trial") {
-          licenseStatus.innerHTML =
-            `<span class="pill pill-trial">⏳ TRIAL</span>` +
-            `<span style="margin-left:8px;color:#cbd5e1;">Until: ${fmtManila(expiresAt)}</span>`;
+          licenseStatus.innerHTML = `<span class="pill pill-trial">⏳ TRIAL</span><span style="margin-left:8px;color:#cbd5e1;">Until: ${fmtManila(expiresAt)}</span>`;
+          if (mockExamLabel) mockExamLabel.innerHTML = `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
+          if (practiceLabel) practiceLabel.innerHTML = `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
         } else {
-          licenseStatus.innerHTML =
-            `<span class="pill pill-free">🔒 FREE</span>` +
-            `<span style="margin-left:8px;color:#94a3b8;">Mock Exam locked</span>`;
+          licenseStatus.innerHTML = `<span class="pill pill-free">🔒 FREE</span><span style="margin-left:8px;color:#94a3b8;">Mock Exam locked</span>`;
+          if (mockExamLabel) mockExamLabel.innerHTML = `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
+          if (practiceLabel) practiceLabel.innerHTML = `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
         }
       }
 
-      function setMockLabel(kind){
-        if (!mockExamLabel) return;
-        if (kind === "pro") {
-          mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
-        } else if (kind === "trial") {
-          mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
-        } else {
-          mockExamLabel.innerHTML =
-            `🎯 &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
-        }
-      }
-
-      function setPracticeLabel(kind){
-        if (!practiceLabel) return;
-        if (kind === "pro") {
-          practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">✅ PRO</span>`;
-        } else if (kind === "trial") {
-          practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">⏳ TRIAL</span>`;
-        } else {
-          practiceLabel.innerHTML =
-            `🔥 &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;">🔒 LOCKED</span>`;
-        }
-      }
-
-      // Switch between PRO / TRIAL tab in modal
       function switchTab(mode) {
         if (!accessTabs || !accessTabs.length) return;
 
@@ -713,36 +671,24 @@
           if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
         } else if (mode === "trial") {
           if (modalTitle) modalTitle.textContent = "⏳ Enter Trial Key";
-          if (modalSubtitle) {
-            modalSubtitle.textContent = "Activate your FREE trial access using the key we sent.";
-          }
+          if (modalSubtitle) modalSubtitle.textContent = "Activate your FREE trial access using the key we sent.";
         }
       }
 
-      if (accessTabs && accessTabs.length) {
+      if (accessTabs.length) {
         accessTabs.forEach(tab => {
-          tab.addEventListener("click", () => {
-            const mode = tab.dataset.mode || "pro";
-            switchTab(mode);
-          });
+          tab.addEventListener("click", () => switchTab(tab.dataset.mode || "pro"));
         });
       }
 
       function renderModalFor(kind, expiresAt){
-        // reset banner + trial button
         if (accessBanner) { accessBanner.style.display = "none"; accessBanner.textContent = ""; }
         if (trialContinueBtn) trialContinueBtn.style.display = "none";
 
-        // default header if opening from locked state
-        if (modalTitle) modalTitle.textContent = "🔒 Unlock Full Mock Exam";
-        if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
-
-        // TRIAL modal (user already has active trial)
+        // ✅ INAYOS NA TABS LOGIC: Kapag active trial, dalhin ang user sa Trial Tab at huwag i-force sa PRO
         if (kind === "trial" && expiresAt && !isExpired(expiresAt)) {
           if (modalTitle) modalTitle.textContent = "⏳ Trial Active";
-          if (modalSubtitle) {
-            modalSubtitle.textContent = "You can access the Mock Exam during your trial period.";
-          }
+          if (modalSubtitle) modalSubtitle.textContent = "You can access the Mock Exam during your trial period.";
           if (accessBanner) {
             accessBanner.style.display = "block";
             accessBanner.innerHTML =
@@ -757,26 +703,20 @@
               window.location.href = "mock_exam.html";
             };
           }
+          switchTab("trial"); 
+        } else {
+          switchTab("pro");
         }
-
-        // default: show PRO tab first
-        switchTab("pro");
       }
 
-      // ✅ IMPORTANT CHANGE:
-      // Trial activation should happen in license.html (single entry point for server calls).
       if (trialActivateBtn && trialMessage) {
         trialActivateBtn.addEventListener("click", () => {
           trialMessage.textContent = "Opening activation page…";
           trialMessage.style.color = "#fde68a";
-          setTimeout(() => {
-            window.location.href = "license.html";
-          }, 350);
+          setTimeout(() => { window.location.href = "license.html"; }, 350);
         });
       }
 
-      // ✅ PRO SYNC FIX:
-      // If legacy PRO flag is true, force access_kind=pro so Home + Mock Exam unlock correctly.
       (function syncLegacyProToKind(){
         const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
         const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "";
@@ -786,65 +726,31 @@
         }
       })();
 
-      // Get access state locally (no server)
+      // Initializing the state using centralized execution engine
       const access = getAccessStateOfflineOnly();
-
-      // Compute unlocked precisely (trial must not be expired)
-      const unlockedNow =
-        access.ok &&
-        (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
-
+      const unlockedNow = access.ok && (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
       const uiKind = unlockedNow ? access.kind : "free";
 
-      // status UI
-      setStatusPill(uiKind, access.expires_at);
-      setMockLabel(uiKind);
-      setPracticeLabel(uiKind);
+      updateUIState(uiKind, access.expires_at);
 
-      // CLICK HANDLERS (use cached local state)
-      if (mockExamLink) {
-        mockExamLink.addEventListener("click", (e) => {
-          e.preventDefault();
+      // ✅ PINAKALIGTAS NA ROUTING LOGIC GAMIT ANG RE-EVALUATED CENTRAL FUNCTION
+      function handleFeatureAccess(e, targetPage) {
+        e.preventDefault();
+        const currentAccess = getAccessStateOfflineOnly();
+        const isCurrentlyUnlocked = currentAccess.ok && (currentAccess.kind === "pro" || (currentAccess.kind === "trial" && currentAccess.expires_at && !isExpired(currentAccess.expires_at)));
 
-          const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
-          const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
-          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
-
-          if (unlockedCached) {
-            window.location.href = "mock_exam.html";
-          } else {
-            renderModalFor(kind, exp);
-            openProModal();
-          }
-        });
+        if (isCurrentlyUnlocked) {
+          window.location.href = targetPage;
+        } else {
+          renderModalFor(currentAccess.kind, currentAccess.expires_at);
+          openProModal();
+        }
       }
 
-      if (practiceLink) {
-        practiceLink.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
-          const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
-          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
-
-          if (unlockedCached) {
-            window.location.href = "practice.html";
-          } else {
-            renderModalFor(kind, exp);
-            openProModal();
-          }
-        });
-      }
+      if (mockExamLink) mockExamLink.addEventListener("click", (e) => handleFeatureAccess(e, "mock_exam.html"));
+      if (practiceLink) practiceLink.addEventListener("click", (e) => handleFeatureAccess(e, "practice.html"));
     });
   </script>
-
 </body>
 </html>
-
 
