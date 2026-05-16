@@ -8,305 +8,305 @@ window.VERBAL_QUESTION_BANK["error_identification"] = {
 
   beginner: [
     {
-      question: "Identify the error: 'The cat / sleep / on / the sofa.'",
-      options: ["The cat", "sleep", "on", "No error"],
-      answer: "sleep",
-      explanation: "Rule: Subject-Verb Agreement. The subject 'The cat' is singular (one cat). Therefore, the verb must have an 's'. It should be 'sleeps'."
-    },
-    {
-      question: "Identify the error: 'She / do not / like / apples.'",
-      options: ["She", "do not", "like", "No error"],
-      answer: "do not",
-      explanation: "Rule: Auxiliary Verbs. The subject 'She' is singular. We use 'does not' for singular subjects, not 'do not'."
-    },
-    {
-      question: "Identify the error: 'My brother / have / a / new bike.'",
-      options: ["My brother", "have", "a", "No error"],
-      answer: "have",
-      explanation: "Rule: Has vs Have. The subject 'My brother' is singular (He). He takes 'has', while I/You/We/They take 'have'."
-    },
-    {
-      question: "Identify the error: 'They / was / happy / yesterday.'",
-      options: ["They", "was", "happy", "No error"],
-      answer: "was",
-      explanation: "Rule: To Be (Past Tense). The subject 'They' is plural. The past plural form of 'be' is 'were', not 'was'."
-    },
-    {
-      question: "Identify the error: 'He / run / very fast / every morning.'",
-      options: ["He", "run", "very fast", "No error"],
-      answer: "run",
-      explanation: "Rule: Simple Present Tense. For a singular subject 'He', the verb must end in 's'. It should be 'runs'."
-    },
-    {
-      question: "Identify the error: 'We / goes / to school / by bus.'",
-      options: ["We", "goes", "to school", "No error"],
-      answer: "goes",
-      explanation: "Rule: Subject-Verb Agreement. The subject 'We' is plural. It requires the base form 'go', not 'goes'."
-    },
-    {
-      question: "Identify the error: 'The students / is / reading / books.'",
-      options: ["The students", "is", "reading", "No error"],
-      answer: "is",
-      explanation: "Rule: Plural Subjects. 'Students' is plural. The helping verb must be 'are', not 'is'."
-    },
-    {
-      question: "Identify the error: 'You / am / my / best friend.'",
-      options: ["You", "am", "my", "No error"],
-      answer: "am",
-      explanation: "Rule: Verb 'To Be'. The pronoun 'You' always takes 'are', never 'am'. 'Am' is only for 'I'."
-    },
-    {
-      question: "Identify the error: 'She / washes / the dishes / every night.'",
-      options: ["She", "washes", "the dishes", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. The subject 'She' is singular, and the verb 'washes' agrees correctly. There is no error."
-    },
-    {
-      question: "Identify the error: 'John / and Mary / is / here.'",
-      options: ["John", "and Mary", "is", "No error"],
-      answer: "is",
-      explanation: "Rule: Compound Subjects. 'John and Mary' creates a plural subject (They). Therefore, the verb must be 'are'."
-    },
-    {
-      question: "Identify the error: 'I / saw / an / dog.'",
-      options: ["I", "saw", "an", "No error"],
-      answer: "an",
-      explanation: "Rule: Indefinite Articles. The word 'dog' starts with a consonant sound /d/. We use 'a', not 'an'."
-    },
-    {
-      question: "Identify the error: 'She / is / a / engineer.'",
-      options: ["She", "is", "a", "No error"],
-      answer: "a",
-      explanation: "Rule: Indefinite Articles. The word 'engineer' starts with a vowel sound /e/. We use 'an', not 'a'."
-    },
-    {
-      question: "Identify the error: 'He wants / to be / a actor / someday.'",
-      options: ["He wants", "to be", "a actor", "No error"],
-      answer: "a actor",
-      explanation: "Rule: Indefinite Articles. 'Actor' starts with a vowel sound. It should be 'an actor'."
-    },
-    {
-      question: "Identify the error: 'The sun / rises in / a / east.'",
-      options: ["The sun", "rises in", "a", "No error"],
-      answer: "a",
-      explanation: "Rule: Definite Articles with Directions. We say 'the east', not 'a east', because directions are unique specific points."
-    },
-    {
-      question: "Identify the error: 'Please / close / a / door behind you.'",
-      options: ["Please", "close", "a", "No error"],
-      answer: "a",
-      explanation: "Rule: Specificity. When referring to a specific door that both speakers know about (the one behind you), use 'the'."
-    },
-    {
-      question: "Identify the error: 'I / have / an / uniform.'",
-      options: ["I", "have", "an", "No error"],
-      answer: "an",
-      explanation: "Rule: Initial Sounds. 'Uniform' starts with a 'Y' sound (/juː/), which is a consonant sound. Use 'a uniform'."
-    },
-    {
-      question: "Identify the error: 'She / eats / an / apple.'",
-      options: ["She", "eats", "an", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. 'Apple' starts with a vowel sound, so 'an' is correct. No error."
-    },
-    {
-      question: "Identify the error: 'He / is / a / honest man.'",
-      options: ["He", "is", "a", "No error"],
-      answer: "a",
-      explanation: "Rule: Silent Letters. 'Honest' starts with a silent 'H', making an 'O' vowel sound. Use 'an honest man'."
-    },
-    {
-      question: "Identify the error: 'We / visited / the / Manila.'",
-      options: ["We", "visited", "the", "No error"],
-      answer: "the",
-      explanation: "Rule: Proper Nouns (Cities). Cities generally do not take 'the'. We say 'visited Manila'."
-    },
-    {
-      question: "Identify the error: 'This / is / the / best cake.'",
-      options: ["This", "is", "the", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. Superlatives ('best') require 'the'. No error."
-    },
-    {
-      question: "Identify the error: 'Me / and my friend / went / home.'",
-      options: ["Me", "and my friend", "went", "No error"],
-      answer: "Me",
-      explanation: "Rule: Subject Pronouns. 'Me' is an object pronoun and cannot be the subject. Use 'My friend and I' or 'I'."
-    },
-    {
-      question: "Identify the error: 'Him / is / a / good student.'",
-      options: ["Him", "is", "a", "No error"],
-      answer: "Him",
-      explanation: "Rule: Subject Pronouns. 'Him' is an object pronoun. The subject form is 'He'."
-    },
-    {
-      question: "Identify the error: 'The teacher / gave / we / homework.'",
-      options: ["The teacher", "gave", "we", "No error"],
-      answer: "we",
-      explanation: "Rule: Object Pronouns. The pronoun is receiving the giving action. Use 'us', not 'we'."
-    },
-    {
-      question: "Identify the error: 'This book / belongs / to / my.'",
-      options: ["This book", "belongs", "to", "my"],
-      answer: "my",
-      explanation: "Rule: Possessive Pronouns vs Adjectives. 'My' is an adjective that needs a noun (my book). At the end of a sentence, use the pronoun 'mine' or object 'me'."
-    },
-    {
-      question: "Identify the error: 'Us / are / going / to the park.'",
-      options: ["Us", "are", "going", "No error"],
-      answer: "Us",
-      explanation: "Rule: Subject Pronouns. 'Us' is an object. The subject must be 'We'."
-    },
-    {
-      question: "Identify the error: 'Between / you / and / I.'",
-      options: ["Between", "you", "and I", "No error"],
-      answer: "and I",
-      explanation: "Rule: Prepositions. Prepositions (like 'between') are always followed by object pronouns. Use 'me', not 'I'."
-    },
-    {
-      question: "Identify the error: 'Them / boys / are / noisy.'",
-      options: ["Them", "boys", "are", "No error"],
-      answer: "Them",
-      explanation: "Rule: Demonstrative Adjectives. Do not use the object pronoun 'Them' to modify a noun. Use 'Those boys' or just 'The boys'."
-    },
-    {
-      question: "Identify the error: 'My mom / cooked / for / he.'",
-      options: ["My mom", "cooked", "for", "he"],
-      answer: "he",
-      explanation: "Rule: Object of Preposition. After 'for', use the object pronoun 'him'."
-    },
-    {
-      question: "Identify the error: 'Is / that / bag / yours?'",
-      options: ["Is", "that", "bag", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. 'Yours' is the correct possessive pronoun. No error."
-    },
-    {
-      question: "Identify the error: 'Her / likes / to / dance.'",
-      options: ["Her", "likes", "to", "No error"],
-      answer: "Her",
-      explanation: "Rule: Subject Pronouns. 'Her' cannot be a subject. Use 'She'."
-    },
-    {
-      question: "Identify the error: 'I / woke up / on / 7:00 AM.'",
-      options: ["I", "woke up", "on", "No error"],
-      answer: "on",
-      explanation: "Rule: Prepositions of Time. For specific clock times, use 'at', not 'on'."
-    },
-    {
-      question: "Identify the error: 'She / was / born / in Monday.'",
-      options: ["She", "was", "born", "in"],
-      answer: "in",
-      explanation: "Rule: Prepositions of Time. For days of the week, use 'on', not 'in'."
-    },
-    {
-      question: "Identify the error: 'The cat / is / at / the table.'",
-      options: ["The cat", "is", "at", "No error"],
-      answer: "at",
-      explanation: "Rule: Usage. While 'at' is possible if seated like a human, usually objects/animals are 'on' (top) or 'under' the table."
-    },
-    {
-      question: "Identify the error: 'I / live / on / Cebu City.'",
-      options: ["I", "live", "on", "No error"],
-      answer: "on",
-      explanation: "Rule: Prepositions of Place. For cities, countries, and provinces, use 'in'."
-    },
-    {
-      question: "Identify the error: 'He / arrived / at / January.'",
-      options: ["He", "arrived", "at", "No error"],
-      answer: "at",
-      explanation: "Rule: Prepositions of Time. For months, years, and long periods, use 'in'."
-    },
-    {
-      question: "Identify the error: 'My birthday / is / in / July 5th.'",
-      options: ["My birthday", "is", "in", "No error"],
-      answer: "in",
-      explanation: "Rule: Prepositions of Time. When the specific date (day) is given, use 'on'. (e.g., 'in July' but 'on July 5th')."
-    },
-    {
-      question: "Identify the error: 'The picture / is / in / the wall.'",
-      options: ["The picture", "is", "in", "No error"],
-      answer: "in",
-      explanation: "Rule: Surfaces. For vertical or horizontal surfaces, use 'on'."
-    },
-    {
-      question: "Identify the error: 'See / you / in / Friday.'",
-      options: ["See", "you", "in", "No error"],
-      answer: "in",
-      explanation: "Rule: Days. Use 'on' for days of the week."
-    },
-    {
-      question: "Identify the error: 'I am / good / in / Math.'",
-      options: ["I am", "good", "in", "No error"],
-      answer: "in",
-      explanation: "Rule: Collocations. The correct idiom for ability is 'good at', not 'good in'."
-    },
-    {
-      question: "Identify the error: 'He is / afraid / from / dogs.'",
-      options: ["He is", "afraid", "from", "No error"],
-      answer: "from",
-      explanation: "Rule: Collocations. The adjective 'afraid' is always followed by 'of'."
-    },
-    {
-      question: "Identify the error: 'She / sings / very / good.'",
-      options: ["She", "sings", "very", "good"],
-      answer: "good",
-      explanation: "Rule: Adverbs. 'Good' is an adjective. To modify the verb 'sings', use the adverb 'well'."
-    },
-    {
-      question: "Identify the error: 'He / drives / very / careful.'",
-      options: ["He", "drives", "very", "careful"],
-      answer: "careful",
-      explanation: "Rule: Adverbs. To modify the verb 'drives', use the adverb 'carefully'."
-    },
-    {
-      question: "Identify the error: 'The soup / tastes / badly / today.'",
-      options: ["The soup", "tastes", "badly", "No error"],
-      answer: "badly",
-      explanation: "Rule: Linking Verbs. 'Tastes' is a linking verb describing the noun 'soup'. Use the adjective 'bad', not the adverb 'badly'."
-    },
-    {
-      question: "Identify the error: 'She / speaks / soft / to the baby.'",
-      options: ["She", "speaks", "soft", "No error"],
-      answer: "soft",
-      explanation: "Rule: Adverbs. To modify 'speaks', use the adverb 'softly'."
-    },
-    {
-      question: "Identify the error: 'He / acts / polite / with guests.'",
-      options: ["He", "acts", "polite", "No error"],
-      answer: "polite",
-      explanation: "Rule: Adverbs. He acts in a certain way. Use 'politely'."
-    },
-    {
-      question: "Identify the error: 'This / is / a / real good movie.'",
-      options: ["This", "is", "a", "real good movie"],
-      answer: "real good movie",
-      explanation: "Rule: Adverbs of Degree. 'Real' is an adjective. To modify the adjective 'good', use the adverb 'really'."
-    },
-    {
-      question: "Identify the error: 'She / looks / beautiful / tonight.'",
-      options: ["She", "looks", "beautiful", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. 'Looks' is a linking verb here, so the adjective 'beautiful' is correct."
-    },
-    {
-      question: "Identify the error: 'I / can / run / quick.'",
-      options: ["I", "can", "run", "quick"],
-      answer: "quick",
-      explanation: "Rule: Adverbs. Modify the action 'run' with the adverb 'quickly'."
-    },
-    {
-      question: "Identify the error: 'He / is / a / slowly runner.'",
-      options: ["He", "is", "a", "slowly runner"],
-      answer: "slowly runner",
-      explanation: "Rule: Adjectives. To modify the noun 'runner', use the adjective 'slow', not the adverb 'slowly'."
-    },
-    {
-      question: "Identify the error: 'They / worked / hardly / all day.'",
-      options: ["They", "worked", "hardly", "No error"],
-      answer: "hardly",
-      explanation: "Rule: Word Choice. 'Hardly' means 'almost not'. To mean 'with effort', use 'hard'."
-    }
+    "question": "Identify the error: 'The cat / sleep / on / the sofa.'",
+    "options": ["The cat", "sleep", "on", "No error"],
+    "answer": "sleep",
+    "explanation": "The sentence reads: 'The cat sleep on the sofa.' In the Simple Present Tense, a singular third-person subject (he, she, it, or a singular noun like 'the cat') requires a verb ending in -s or -es. Since 'The cat' is singular, the verb 'sleep' must be changed to 'sleeps.' Corrected sentence: 'The cat sleeps on the sofa.'"
+  },
+  {
+    "question": "Identify the error: 'She / do not / like / apples.'",
+    "options": ["She", "do not", "like", "No error"],
+    "answer": "do not",
+    "explanation": "The sentence reads: 'She do not like apples.' When forming a negative sentence in the Simple Present Tense, the auxiliary verb must agree with the subject. 'Do not' is used with plural or first/second person subjects (I, you, we, they). Since 'She' is a singular third-person subject, the correct auxiliary is 'does not.' Corrected sentence: 'She does not like apples.'"
+  },
+  {
+    "question": "Identify the error: 'They / was / happy / yesterday.'",
+    "options": ["They", "was", "happy", "No error"],
+    "answer": "was",
+    "explanation": "The sentence reads: 'They was happy yesterday.' The verb 'to be' in the Simple Past Tense has two forms: 'was' for singular subjects (I, he, she, it) and 'were' for plural subjects (we, you, they). Since 'They' is plural, 'was' is incorrect and must be replaced with 'were.' Corrected sentence: 'They were happy yesterday.'"
+  },
+  {
+    "question": "Identify the error: 'She / is / a / engineer.'",
+    "options": ["She", "is", "a", "No error"],
+    "answer": "a",
+    "explanation": "The sentence reads: 'She is a engineer.' The indefinite articles 'a' and 'an' depend on the sound — not the spelling — of the word that follows. 'A' is used before words that begin with a consonant sound, while 'an' is used before words that begin with a vowel sound. The word 'engineer' begins with a vowel sound /ɛ/, so the correct article is 'an.' Corrected sentence: 'She is an engineer.'"
+  },
+  {
+    "question": "Identify the error: 'I / woke up / on / 7:00 AM.'",
+    "options": ["I", "woke up", "on", "No error"],
+    "answer": "on",
+    "explanation": "The sentence reads: 'I woke up on 7:00 AM.' Prepositions of time follow a specific pattern: 'at' is used for exact clock times, 'on' is used for days and dates, and 'in' is used for months, years, and longer periods. Since 7:00 AM is a specific time on the clock, the correct preposition is 'at.' Corrected sentence: 'I woke up at 7:00 AM.'"
+  },
+  {
+    "question": "Identify the error: 'My brother / have / a / new bike.'",
+    "options": ["My brother", "have", "a", "No error"],
+    "answer": "have",
+    "explanation": "The sentence reads: 'My brother have a new bike.' For subject-verb agreement with the verb 'have' in the present tense, plural subjects and 'I/you' use 'have', while singular third-person subjects use 'has'. Since 'My brother' is singular, it must be changed to 'has'. Corrected sentence: 'My brother has a new bike.'"
+  },
+  {
+    "question": "Identify the error: 'He / run / very fast / every morning.'",
+    "options": ["He", "run", "very fast", "No error"],
+    "answer": "run",
+    "explanation": "The sentence reads: 'He run very fast every morning.' In the simple present tense, regular action verbs must take an '-s' or '-es' suffix when paired with a singular third-person subject like 'He'. Therefore, 'run' must be corrected to 'runs'. Corrected sentence: 'He runs very fast every morning.'"
+  },
+  {
+    "question": "Identify the error: 'We / goes / to school / by bus.'",
+    "options": ["We", "goes", "to school", "No error"],
+    "answer": "goes",
+    "explanation": "The sentence reads: 'We goes to school by bus.' The subject 'We' is plural. Plural subjects require the base form of the verb without '-s' or '-es' in the simple present tense. Thus, 'goes' should be changed to 'go'. Corrected sentence: 'We go to school by bus.'"
+  },
+  {
+    "question": "Identify the error: 'The students / is / reading / books.'",
+    "options": ["The students", "is", "reading", "No error"],
+    "answer": "is",
+    "explanation": "The sentence reads: 'The students is reading books.' The subject 'The students' is plural, indicating more than one person. The plural form of the verb 'to be' in the present continuous tense is 'are', not 'is'. Corrected sentence: 'The students are reading books.'"
+  },
+  {
+    "question": "Identify the error: 'You / am / my / best friend.'",
+    "options": ["You", "am", "my", "No error"],
+    "answer": "am",
+    "explanation": "The sentence reads: 'You am my best friend.' The present tense 'to be' verb 'am' is strictly reserved for the first-person singular pronoun 'I'. The pronoun 'You' always pairs with 'are', whether it refers to one person or multiple people. Corrected sentence: 'You are my best friend.'"
+  },
+  {
+    "question": "Identify the error: 'She / washes / the dishes / every night.'",
+    "options": ["She", "washes", "the dishes", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'She washes the dishes every night.' The subject 'She' is a third-person singular pronoun, which correctly pairs with the singular verb form 'washes' ending in '-es'. The rest of the sentence is grammatically sound, meaning there is no error."
+  },
+  {
+    "question": "Identify the error: 'John / and Mary / is / here.'",
+    "options": ["John", "and Mary", "is", "No error"],
+    "answer": "is",
+    "explanation": "The sentence reads: 'John and Mary is here.' The subject consists of two individuals linked by 'and', making it a compound plural subject equivalent to 'They'. A plural subject requires the plural verb 'are' instead of the singular 'is'. Corrected sentence: 'John and Mary are here.'"
+  },
+  {
+    "question": "Identify the error: 'I / saw / an / dog.'",
+    "options": ["I", "saw", "an", "No error"],
+    "answer": "an",
+    "explanation": "The sentence reads: 'I saw an dog.' The word 'dog' begins with a consonant sound (/d/). The indefinite article 'an' is only used before words starting with vowel sounds, whereas 'a' is used before consonant sounds. Corrected sentence: 'I saw a dog.'"
+  },
+  {
+    "question": "Identify the error: 'He wants / to be / a actor / someday.'",
+    "options": ["He wants", "to be", "a actor", "No error"],
+    "answer": "a actor",
+    "explanation": "The sentence reads: 'He wants to be a actor someday.' The noun 'actor' begins with the short vowel sound /æ/. Therefore, it must be preceded by the indefinite article 'an' instead of 'a'. Corrected sentence: 'He wants to be an actor someday.'"
+  },
+  {
+    "question": "Identify the error: 'The sun / rises in / a / east.'",
+    "options": ["The sun", "rises in", "a", "No error"],
+    "answer": "a",
+    "explanation": "The sentence reads: 'The sun rises in a east.' Geographical directions like east, west, north, and south refer to specific, unique points or areas. Therefore, they require the definite article 'the' instead of 'a'. Corrected sentence: 'The sun rises in the east.'"
+  },
+  {
+    "question": "Identify the error: 'Please / close / a / door behind you.'",
+    "options": ["Please", "close", "a", "No error"],
+    "answer": "a",
+    "explanation": "The sentence reads: 'Please close a door behind you.' Because the phrase specifies 'behind you', it points to one specific door that both the speaker and the listener can identify. Specific or unique items must use the definite article 'the'. Corrected sentence: 'Please close the door behind you.'"
+  },
+  {
+    "question": "Identify the error: 'I / have / an / uniform.'",
+    "options": ["I", "have", "an", "No error"],
+    "answer": "an",
+    "explanation": "The sentence reads: 'I have an uniform.' While 'uniform' starts with the vowel letter 'u', it is pronounced with the initial consonant sound /juː/ (like 'you'). Since article choice depends on sound, 'a' must be used instead of 'an'. Corrected sentence: 'I have a uniform.'"
+  },
+  {
+    "question": "Identify the error: 'She / eats / an / apple.'",
+    "options": ["She", "eats", "an", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'She eats an apple.' The singular subject 'She' matches the singular verb 'eats'. Furthermore, the article 'an' is correctly used before 'apple', which starts with a vowel sound. The sentence has no error."
+  },
+  {
+    "question": "Identify the error: 'He / is / a / honest man.'",
+    "options": ["He", "is", "a", "No error"],
+    "answer": "a",
+    "explanation": "The sentence reads: 'He is a honest man.' In the word 'honest', the letter 'h' is silent, meaning the word begins with the vowel sound /ɒ/. Because it sounds like it starts with a vowel, it requires the article 'an'. Corrected sentence: 'He is an honest man.'"
+  },
+  {
+    "question": "Identify the error: 'We / visited / the / Manila.'",
+    "options": ["We", "visited", "the", "No error"],
+    "answer": "the",
+    "explanation": "The sentence reads: 'We visited the Manila.' As a general rule in English grammar, singular proper nouns designated as names of cities, provinces, or states do not take an article before them. The word 'the' must be removed. Corrected sentence: 'We visited Manila.'"
+  },
+  {
+    "question": "Identify the error: 'This / is / the / best cake.'",
+    "options": ["This", "is", "the", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'This is the best cake.' The word 'best' is a superlative adjective. Superlative adjectives describe a unique item at the highest limit of a scale, meaning they must always be preceded by the definite article 'the'. There is no error."
+  },
+  {
+    "question": "Identify the error: 'Me / and my friend / went / home.'",
+    "options": ["Me", "and my friend", "went", "No error"],
+    "answer": "Me",
+    "explanation": "The sentence reads: 'Me and my friend went home.' The pronoun forms part of the compound subject performing the action. 'Me' is an object pronoun; the subjective case 'I' must be used instead. By polite convention, 'I' also comes second. Corrected sentence: 'My friend and I went home.'"
+  },
+  {
+    "question": "Identify the error: 'Him / is / a / good student.'",
+    "options": ["Him", "is", "a", "No error"],
+    "answer": "Him",
+    "explanation": "The sentence reads: 'Him is a good student.' 'Him' functions as an objective pronoun, which means it can only receive an action. Because this word acts as the main subject performing the state of being, it must be changed to the subject pronoun 'He'. Corrected sentence: 'He is a good student.'"
+  },
+  {
+    "question": "Identify the error: 'The teacher / gave / we / homework.'",
+    "options": ["The teacher", "gave", "we", "No error"],
+    "answer": "we",
+    "explanation": "The sentence reads: 'The teacher gave we homework.' In this clause, the pronoun functions as the indirect object receiving the action of the verb 'gave'. 'We' is a subject pronoun; the correct object pronoun to use here is 'us'. Corrected sentence: 'The teacher gave us homework.'"
+  },
+  {
+    "question": "Identify the error: 'This book / belongs / to / my.'",
+    "options": ["This book", "belongs", "to", "my"],
+    "answer": "my",
+    "explanation": "The sentence reads: 'This book belongs to my.' The word 'my' is a possessive adjective, which means it must immediately precede a noun (e.g., 'my book'). To stand alone at the end of a clause without a noun, a possessive pronoun like 'mine' is required. Corrected sentence: 'This book belongs to mine.'"
+  },
+  {
+    "question": "Identify the error: 'Us / are / going / to the park.'",
+    "options": ["Us", "are", "going", "No error"],
+    "answer": "Us",
+    "explanation": "The sentence reads: 'Us are going to the park.' The word 'Us' is placed at the beginning of the sentence to serve as the subject. However, 'us' is an object pronoun. The proper first-person plural subject pronoun is 'We'. Corrected sentence: 'We are going to the park.'"
+  },
+  {
+    "question": "Identify the error: 'Between / you / and / I.'",
+    "options": ["Between", "you", "and I", "No error"],
+    "answer": "and I",
+    "explanation": "The phrase reads: 'Between you and I.' The word 'between' is a preposition. In English grammar, any pronoun following a preposition must be in the objective case. While 'you' remains the same, 'I' is a subject pronoun and must be changed to 'me'. Corrected phrase: 'Between you and me.'"
+  },
+  {
+    "question": "Identify the error: 'Them / boys / are / noisy.'",
+    "options": ["Them", "boys", "are", "No error"],
+    "answer": "Them",
+    "explanation": "The sentence reads: 'Them boys are noisy.' 'Them' is an object pronoun and cannot be used to point out or modify a noun directly. To modify and point to the plural noun 'boys', you must use a demonstrative adjective like 'Those'. Corrected sentence: 'Those boys are noisy.'"
+  },
+  {
+    "question": "Identify the error: 'My mom / cooked / for / he.'",
+    "options": ["My mom", "cooked", "for", "he"],
+    "answer": "he",
+    "explanation": "The sentence reads: 'My mom cooked for he.' The word 'for' operates as a preposition. Pronouns acting as the object of a preposition must use objective forms. The subjective pronoun 'he' must be changed to its objective form, 'him'. Corrected sentence: 'My mom cooked for him.'"
+  },
+  {
+    "question": "Identify the error: 'Is / that / bag / yours?'",
+    "options": ["Is", "that", "bag", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'Is that bag yours?' The sentence is structured as a proper question. 'Yours' functions correctly here as a independent possessive pronoun indicating ownership without needing a following noun. There is no error."
+  },
+  {
+    "question": "Identify the error: 'Her / likes / to / dance.'",
+    "options": ["Her", "likes", "to", "No error"],
+    "answer": "Her",
+    "explanation": "The sentence reads: 'Her likes to dance.' The pronoun functions as the main subject performing the action of liking. 'Her' is either an object pronoun or a possessive adjective. It must be replaced by the subject pronoun 'She'. Corrected sentence: 'She likes to dance.'"
+  },
+  {
+    "question": "Identify the error: 'She / was / born / in Monday.'",
+    "options": ["She", "was", "born", "in"],
+    "answer": "in",
+    "explanation": "The sentence reads: 'She was born in Monday.' When choosing prepositions of time, specific calendar days of the week require the preposition 'on'. The preposition 'in' is wider and reserved for months, seasons, or years. Corrected sentence: 'She was born on Monday.'"
+  },
+  {
+    "question": "Identify the error: 'The cat / is / at / the table.'",
+    "options": ["The cat", "is", "at", "No error"],
+    "answer": "at",
+    "explanation": "The sentence reads: 'The cat is at the table.' While 'at the table' is common for humans eating or working, animals or inanimate items are positioned spatially relative to surfaces. The cat would typically be 'on' or 'under' the table. Corrected sentence: 'The cat is on the table.'"
+  },
+  {
+    "question": "Identify the error: 'I / live / on / Cebu City.'",
+    "options": ["I", "live", "on", "No error"],
+    "answer": "on",
+    "explanation": "The sentence reads: 'I live on Cebu City.' For standard spatial boundaries like cities, states, and countries, English requires the preposition 'in' to indicate enclosed location. 'On' is used for streets or surfaces. Corrected sentence: 'I live in Cebu City.'"
+  },
+  {
+    "question": "Identify the error: 'He / arrived / at / January.'",
+    "options": ["He", "arrived", "at", "No error"],
+    "answer": "at",
+    "explanation": "The sentence reads: 'He arrived at January.' Months of the year represent extended blocks of time rather than specific clock points. Therefore, they require the preposition 'in' instead of 'at'. Corrected sentence: 'He arrived in January.'"
+  },
+  {
+    "question": "Identify the error: 'My birthday / is / in / July 5th.'",
+    "options": ["My birthday", "is", "in", "No error"],
+    "answer": "in",
+    "explanation": "The sentence reads: 'My birthday is in July 5th.' Although months on their own take 'in' (e.g., in July), adding a specific day makes the entire phrase a specific date. Calendar dates always take the preposition 'on'. Corrected sentence: 'My birthday is on July 5th.'"
+  },
+  {
+    "question": "Identify the error: 'The picture / is / in / the wall.'",
+    "options": ["The picture", "is", "in", "No error"],
+    "answer": "in",
+    "explanation": "The sentence reads: 'The picture is in the wall.' A wall is a flat, vertical surface. To describe an object attached to or supported by any surface, English uses the preposition 'on'. 'In the wall' implies it is embedded inside the structure. Corrected sentence: 'The picture is on the wall.'"
+  },
+  {
+    "question": "Identify the error: 'See / you / in / Friday.'",
+    "options": ["See", "you", "in", "No error"],
+    "answer": "in",
+    "explanation": "The sentence reads: 'See you in Friday.' In English expressions concerning time, days of the week always take the preposition 'on'. The preposition 'in' cannot be paired directly with a single day. Corrected sentence: 'See you on Friday.'"
+  },
+  {
+    "question": "Identify the error: 'I am / good / in / Math.'",
+    "options": ["I am", "good", "in", "No error"],
+    "answer": "in",
+    "explanation": "The sentence reads: 'I am good in Math.' When expressing proficiency, talent, or skill in a certain subject or activity, the adjective 'good' idiomatically pairs with the preposition 'at', not 'in'. Corrected sentence: 'I am good at Math.'"
+  },
+  {
+    "question": "Identify the error: 'He is / afraid / from / dogs.'",
+    "options": ["He is", "afraid", "from", "No error"],
+    "answer": "from",
+    "explanation": "The sentence reads: 'He is afraid from dogs.' The adjective 'afraid' has a fixed prepositional collocation in English. It must always be followed by the preposition 'of' when specifying the source of fear. Corrected sentence: 'He is afraid of dogs.'"
+  },
+  {
+    "question": "Identify the error: 'She / sings / very / good.'",
+    "options": ["She", "sings", "very", "good"],
+    "answer": "good",
+    "explanation": "The sentence reads: 'She sings very good.' The word 'good' is an adjective used to describe nouns. To describe or modify an action verb like 'sings', you must use the corresponding adverb, which is 'well'. Corrected sentence: 'She sings very well.'"
+  },
+  {
+    "question": "Identify the error: 'He / drives / very / careful.'",
+    "options": ["He", "drives", "very", "careful"],
+    "answer": "careful",
+    "explanation": "The sentence reads: 'He drives very careful.' 'Careful' is an adjective meant to describe nouns. Because it is being used to modify the action verb 'drives', it needs to be transformed into an adverb by adding '-ly'. Corrected sentence: 'He drives very carefully.'"
+  },
+  {
+    "question": "Identify the error: 'The soup / tastes / badly / today.'",
+    "options": ["The soup", "tastes", "badly", "No error"],
+    "answer": "badly",
+    "explanation": "The sentence reads: 'The soup tastes badly today.' The verb 'tastes' functions here as a linking verb connecting the subject to a state of being, rather than an intentional action. Linking verbs must be followed by adjectives ('bad'), not adverbs ('badly'). Corrected sentence: 'The soup tastes bad today.'"
+  },
+  {
+    "question": "Identify the error: 'She / speaks / soft / to the baby.'",
+    "options": ["She", "speaks", "soft", "No error"],
+    "answer": "soft",
+    "explanation": "The sentence reads: 'She speaks soft to the baby.' The word 'soft' is an adjective. Since its structural role in this sentence is to describe how the action verb 'speaks' is performed, it must take the adverbial form 'softly'. Corrected sentence: 'She speaks softly to the baby.'"
+  },
+  {
+    "question": "Identify the error: 'He / acts / polite / with guests.'",
+    "options": ["He", "acts", "polite", "No error"],
+    "answer": "polite",
+    "explanation": "The sentence reads: 'He acts polite with guests.' The word 'polite' is an adjective. Because it describes the manner in which the subject performs the action verb 'acts', it must be converted to the adverb 'politely'. Corrected sentence: 'He acts politely with guests.'"
+  },
+  {
+    "question": "Identify the error: 'This / is / a / real good movie.'",
+    "options": ["This", "is", "a", "real good movie"],
+    "answer": "real good movie",
+    "explanation": "The sentence reads: 'This is a real good movie.' The word 'good' is an adjective modifying 'movie'. To modify an adjective, you must use an adverb of degree. 'Real' is an adjective; its adverb form 'really' is required here. Corrected sentence: 'This is a really good movie.'"
+  },
+  {
+    "question": "Identify the error: 'She / looks / beautiful / tonight.'",
+    "options": ["She", "looks", "beautiful", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'She looks beautiful tonight.' In this context, 'looks' serves as a linking verb describing the physical appearance of the subject. Linking verbs are correctly paired with adjectives ('beautiful') rather than adverbs. There is no error."
+  },
+  {
+    "question": "Identify the error: 'I / can / run / quick.'",
+    "options": ["I", "can", "run", "quick"],
+    "answer": "quick",
+    "explanation": "The sentence reads: 'I can run quick.' The word 'quick' is primarily an adjective. To modify the physical action verb 'run' in standard grammar, the adverbial form 'quickly' should be used. Corrected sentence: 'I can run quickly.'"
+  },
+  {
+    "question": "Identify the error: 'He / is / a / slowly runner.'",
+    "options": ["He", "is", "a", "slowly runner"],
+    "answer": "slowly runner",
+    "explanation": "The sentence reads: 'He is a slowly runner.' The word 'runner' is a noun. Nouns can only be modified by adjectives. 'Slowly' is an adverb; it must be changed back to its adjective form, 'slow'. Corrected sentence: 'He is a slow runner.'"
+  },
+  {
+    "question": "Identify the error: 'They / worked / hardly / all day.'",
+    "options": ["They", "worked", "hardly", "No error"],
+    "answer": "hardly",
+    "explanation": "The sentence reads: 'They worked hardly all day.' The adverb 'hardly' means 'almost not at all', which contradicts the context of working all day. To mean 'with great effort or energy', the adverb form is simply 'hard'. Corrected sentence: 'They worked hard all day.'"
+  }
   ],
 
   intermediate: [
