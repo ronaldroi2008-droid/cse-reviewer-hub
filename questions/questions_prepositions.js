@@ -10,56 +10,306 @@ window.VERBAL_QUESTION_BANK["prepositions"] = {
   // 1. BEGINNER – basic AT/ON/IN, place & time
   // ==========================================
   beginner: [
-    { question: "We usually have a meeting ___ Monday mornings.", options: ["at", "in", "on", "by"], answer: "on", explanation: "We use ON for days and for 'day + part of day' expressions: on Monday, on Monday morning." },
-    { question: "My birthday is ___ May.", options: ["at", "on", "in", "by"], answer: "in", explanation: "We use IN for months, years, and long periods: in May, in 2025, in the past." },
-    { question: "The train leaves ___ 6:30 p.m.", options: ["at", "on", "in", "by"], answer: "at", explanation: "We use AT for exact clock times: at 6:30, at noon, at midnight." },
-    { question: "They arrived ___ the airport very early.", options: ["in", "on", "at", "to"], answer: "at", explanation: "We use AT with specific points or public places: at the airport, at school, at the station." },
-    { question: "The students are ___ the classroom right now.", options: ["on", "at", "in", "over"], answer: "in", explanation: "We say IN the classroom because it is an enclosed space (in the room, in the office)." },
-    { question: "Please put your bag ___ the table.", options: ["on", "in", "at", "under"], answer: "on", explanation: "We use ON for surfaces: on the table, on the floor, on the wall." },
-    { question: "There is a carpet ___ the floor.", options: ["in", "on", "at", "over"], answer: "on", explanation: "Something that covers the surface of the floor is ON the floor, not in the floor." },
-    { question: "She lives ___ Cebu City.", options: ["at", "on", "in", "into"], answer: "in", explanation: "We use IN for cities and countries: in Cebu, in Manila, in the Philippines." },
-    { question: "I will see you ___ Friday.", options: ["at", "on", "in", "by"], answer: "on", explanation: "We use ON with days of the week and specific dates: on Friday, on July 5." },
-    { question: "The meeting starts ___ 9:00 a.m.", options: ["on", "in", "at", "by"], answer: "at", explanation: "Again, exact times use AT: at 9:00 a.m., at 3:15 p.m." },
-    { question: "They moved here ___ 2019.", options: ["on", "in", "at", "by"], answer: "in", explanation: "We use IN with years: in 2019, in 2020, in 1995." },
-    { question: "The children are playing ___ the park.", options: ["in", "on", "at", "to"], answer: "in", explanation: "We say IN the park because it is a larger open area that you are inside." },
-    { question: "There is a picture ___ the wall.", options: ["in", "on", "at", "over"], answer: "on", explanation: "We use ON the wall for things attached to or hanging from the wall." },
-    { question: "He is standing ___ the door.", options: ["at", "in", "on", "over"], answer: "at", explanation: "We often say AT the door for a specific point or position." },
-    { question: "The dog is hiding ___ the table.", options: ["on", "in", "under", "over"], answer: "under", explanation: "UNDER shows something is below and covered by something else (under the table, under the bed)." },
-    { question: "Your keys are ___ your pocket.", options: ["on", "in", "at", "over"], answer: "in", explanation: "We use IN for containers or enclosed small spaces: in your pocket, in your bag." },
-    { question: "She is sitting ___ the chair.", options: ["on", "in", "at", "over"], answer: "on", explanation: "We sit ON a chair (on the seat of the chair). We sit IN an armchair or in a wheelchair." },
-    { question: "He is sitting ___ the corner of the room.", options: ["in", "on", "at", "over"], answer: "in", explanation: "We usually say IN the corner of the room because the corner is inside the room." },
-    { question: "There is a small shop ___ the end of the street.", options: ["in", "on", "at", "to"], answer: "at", explanation: "We say AT the end of the street, AT the beginning of the road, etc." },
-    { question: "They walked ___ the river for an hour.", options: ["along", "across", "through", "over"], answer: "along", explanation: "ALONG is used when you move following the line of something (along the river, along the road)." },
-    { question: "We walked ___ the bridge to the other side.", options: ["along", "across", "through", "over"], answer: "across", explanation: "ACROSS shows movement from one side to the other (across the road, across the bridge)." },
-    { question: "The children ran ___ the house, laughing loudly.", options: ["through", "along", "over", "onto"], answer: "through", explanation: "THROUGH is used when you pass inside a space from one side to another (through the house, through the park)." },
-    { question: "She jumped ___ the car quickly.", options: ["into", "onto", "in", "on"], answer: "into", explanation: "INTO shows movement from outside to inside: into the car, into the room." },
-    { question: "The cat jumped ___ the table to get the food.", options: ["into", "onto", "in", "under"], answer: "onto", explanation: "ONTO shows movement from not on the surface to on the surface: onto the table, onto the bed." },
-    { question: "We arrived ___ the station just in time.", options: ["to", "in", "at", "on"], answer: "at", explanation: "We say arrive AT a small place or point (at the station, at the office) and arrive IN a large place (in Cebu, in the Philippines)." },
-    { question: "She arrived ___ Manila early in the morning.", options: ["in", "at", "on", "to"], answer: "in", explanation: "Use arrive IN with cities and countries (arrived in Manila, in Japan)." },
-    { question: "I was born ___ 1995.", options: ["on", "in", "at", "by"], answer: "in", explanation: "Again, years take IN: in 1995, in 2001, in 1987." },
-    { question: "We usually take a vacation ___ April.", options: ["on", "in", "at", "by"], answer: "in", explanation: "Months and seasons use IN: in April, in summer, in December." },
-    { question: "The party is ___ Saturday night.", options: ["at", "on", "in", "by"], answer: "on", explanation: "We use ON for days: on Saturday night, on Thursday afternoon." },
-    { question: "I like to study ___ the morning.", options: ["at", "on", "in", "by"], answer: "in", explanation: "Parts of the day usually take IN (in the morning, in the afternoon, in the evening) except 'at night'." },
-    { question: "We usually sleep ___ night.", options: ["in", "at", "on", "by"], answer: "at", explanation: "Here we say AT night, not in night, so 'at night' is correct." },
-    { question: "The bus stops ___ front of the school.", options: ["on", "at", "in", "in front of"], answer: "in front of", explanation: "The expression IN FRONT OF means 'directly before' something. We say in front of the school." },
-    { question: "He is standing ___ the back of the room.", options: ["on", "at", "in", "behind"], answer: "in", explanation: "We say IN the back of the room to mean inside that area. 'Behind' would mean at the rear, but outside the room." },
-    { question: "The supermarket is ___ the bank and the pharmacy.", options: ["among", "between", "behind", "under"], answer: "between", explanation: "BETWEEN is used when something is in the middle of two distinct things (between the bank and the pharmacy)." },
-    { question: "There is a small garden ___ our house.", options: ["behind", "under", "between", "across"], answer: "behind", explanation: "BEHIND means at the back of something (behind the house, behind the building)." },
-    { question: "She is sitting ___ me and Ana.", options: ["among", "between", "behind", "over"], answer: "between", explanation: "For two people, we use BETWEEN: between me and Ana." },
-    { question: "He is talking ___ his friend on the phone.", options: ["to", "with", "at", "on"], answer: "with", explanation: "In everyday English we often say 'talking with his friend' or 'talking to his friend'. Both are common, but 'with' emphasizes conversation." },
-    { question: "I am listening ___ the radio.", options: ["to", "at", "on", "for"], answer: "to", explanation: "The correct collocation is listen TO: listen to the radio, listen to music." },
-    { question: "She is waiting ___ the bus.", options: ["for", "to", "at", "on"], answer: "for", explanation: "We say wait FOR someone or something: wait for the bus, wait for my friend." },
-    { question: "We are looking ___ our lost keys.", options: ["for", "at", "after", "on"], answer: "for", explanation: "Look FOR means search: look for your keys, look for a job." },
-    { question: "Can I speak ___ the manager, please?", options: ["to", "with", "at", "for"], answer: "to", explanation: "Speak TO someone is the common pattern, especially in polite requests." },
-    { question: "The teacher is angry ___ the noisy students.", options: ["about", "with", "of", "for"], answer: "with", explanation: "We are usually angry WITH a person and angry ABOUT a situation: angry with the students about the noise." },
-    { question: "She is afraid ___ spiders.", options: ["of", "for", "about", "from"], answer: "of", explanation: "The usual collocation is afraid OF: afraid of spiders, afraid of heights." },
-    { question: "I am interested ___ learning more English.", options: ["of", "in", "for", "on"], answer: "in", explanation: "We say interested IN something: interested in English, interested in learning." },
-    { question: "He is good ___ playing the guitar.", options: ["at", "in", "on", "for"], answer: "at", explanation: "The phrase is good AT + activity: good at math, good at playing the guitar." },
-    { question: "This book belongs ___ my sister.", options: ["to", "with", "for", "on"], answer: "to", explanation: "Belong TO is the correct preposition: belongs to my sister." },
-    { question: "Please take care ___ this document.", options: ["of", "for", "about", "with"], answer: "of", explanation: "Take care OF something/someone is the correct pattern." },
-    { question: "We usually go to work ___ bus.", options: ["by", "on", "in", "with"], answer: "by", explanation: "We use BY + transport (by bus, by car, by train) when we speak in general." },
-    { question: "He got out ___ the car and walked away.", options: ["of", "from", "off", "out"], answer: "of", explanation: "We say get out OF a car/taxi, but get off a bus/train." },
-    { question: "She got ___ the bus at the city hall.", options: ["out", "off", "down", "over"], answer: "off", explanation: "We say get OFF a bus, train, or plane; and get OUT OF a car or taxi." }
+      {
+    "question": "We usually have a mandatory staff meeting _______ Monday mornings.",
+    "options": ["at", "in", "on", "by"],
+    "answer": "on",
+    "explanation": "We use the preposition 'on' for specific days of the week (e.g., on Monday) and for combinations of a specific day and a part of the day (e.g., on Monday mornings, on Friday evening)."
+  },
+  {
+    "question": "My sister's grand birthday celebration is scheduled _______ May.",
+    "options": ["at", "on", "in", "by"],
+    "answer": "in",
+    "explanation": "We use the preposition 'in' for long, unspecific periods of time such as months (in May), seasons (in summer), years (in 2026), and centuries."
+  },
+  {
+    "question": "The last northbound train leaves the station exactly _______ 6:30 p.m.",
+    "options": ["at", "on", "in", "by"],
+    "answer": "at",
+    "explanation": "We use the preposition 'at' for precise clock times (e.g., at 6:30 p.m., at 9:00 a.m.) and specific points in the day (e.g., at noon, at midnight)."
+  },
+  {
+    "question": "The international passengers arrived _______ the airport very early.",
+    "options": ["in", "on", "at", "to"],
+    "answer": "at",
+    "explanation": "We use the preposition 'at' when we view a public place, building, or address as a specific point or location in space (e.g., at the airport, at the bus station, at the office)."
+  },
+  {
+    "question": "The elementary students are sitting quietly _______ the classroom right now.",
+    "options": ["on", "at", "in", "over"],
+    "answer": "in",
+    "explanation": "We use the preposition 'in' when an object or person is inside an enclosed physical space, room, or three-dimensional boundary (e.g., in the classroom, in the box, in the car)."
+  },
+  {
+    "question": "Please put your heavy backpack _______ the table near the entrance.",
+    "options": ["on", "in", "at", "under"],
+    "answer": "on",
+    "explanation": "We use the preposition 'on' to indicate that an object is resting on, supported by, or touching a flat surface (e.g., on the table, on the floor, on the desk)."
+  },
+  {
+    "question": "There is a new woven carpet spread _______ the floor of the living room.",
+    "options": ["in", "on", "at", "over"],
+    "answer": "on",
+    "explanation": "Since the floor is a horizontal flat surface, any object covering or placed directly on top of it uses the preposition 'on' (e.g., on the floor)."
+  },
+  {
+    "question": "She works as an operations supervisor and lives _______ Cebu City.",
+    "options": ["at", "on", "in", "into"],
+    "answer": "in",
+    "explanation": "We use the preposition 'in' for large, defined geographical areas such as cities, provinces, regions, and countries (e.g., in Cebu City, in Manila, in the Philippines)."
+  },
+  {
+    "question": "The human resource manager will see you for the interview _______ Friday.",
+    "options": ["at", "on", "in", "by"],
+    "answer": "on",
+    "explanation": "Standard calendar days of the week always take the preposition 'on' (e.g., on Friday, on Sunday) when indicating when a specific event will occur."
+  },
+  {
+    "question": "The final review session starts immediately _______ 9:00 a.m.",
+    "options": ["on", "in", "at", "by"],
+    "answer": "at",
+    "explanation": "Just like any other specific time on the clock, '9:00 a.m.' requires the preposition 'at' to mark the exact moment of commencement."
+  },
+  {
+    "question": "Their family decided to relocate and move here _______ 2019.",
+    "options": ["on", "in", "at", "by"],
+    "answer": "in",
+    "explanation": "Calendar years are long periods of time, so they require the preposition 'in' (e.g., in 2019, in 2026, in 1998) instead of 'on' or 'at'."
+  },
+  {
+    "question": "The children are playing safely _______ the public park.",
+    "options": ["in", "on", "at", "to"],
+    "answer": "in",
+    "explanation": "A park is an area with clear geographical boundaries. When you are inside that open-air territory, you are 'in the park'."
+  },
+  {
+    "question": "There is an inspirational picture hanging _______ the wall.",
+    "options": ["in", "on", "at", "over"],
+    "answer": "on",
+    "explanation": "A wall is a vertical surface. Items that are attached to, painted on, or hanging from a surface use the preposition 'on' (e.g., on the wall)."
+  },
+  {
+    "question": "The delivery rider is currently standing _______ the main door.",
+    "options": ["at", "in", "on", "over"],
+    "answer": "at",
+    "explanation": "We use the preposition 'at' to mark a specific point or location where someone is waiting or standing (e.g., at the door, at the gate, at the intersection)."
+  },
+  {
+    "question": "The scared dog is hiding _______ the dining table during the storm.",
+    "options": ["on", "in", "under", "over"],
+    "answer": "under",
+    "explanation": "The preposition 'under' is used to show that an object is directly below, beneath, or covered by the lower surface of another object (e.g., under the table, under the bed)."
+  },
+  {
+    "question": "You do not need to look around; your keys are _______ your jacket pocket.",
+    "options": ["on", "in", "at", "over"],
+    "answer": "in",
+    "explanation": "A pocket is a small, enclosed container or pouch. Objects resting inside a container require the preposition 'in' (e.g., in your pocket, in your bag)."
+  },
+  {
+    "question": "She is sitting comfortably _______ the wooden chair by the window.",
+    "options": ["on", "in", "at", "over"],
+    "answer": "on",
+    "explanation": "We use 'on' for a standard flat-seated chair because you sit on top of its surface. (Note: We use 'in' for deep armchairs, sofas, or wheelchairs where your body is enclosed by sides)."
+  },
+  {
+    "question": "The new office desk is situated _______ the corner of the room.",
+    "options": ["in", "on", "at", "over"],
+    "answer": "in",
+    "explanation": "When referring to a corner *inside* a room or a building, we use 'in the corner'. (Note: We use 'at the corner' when referring to an outside street intersection)."
+  },
+  {
+    "question": "There is a small retail station located _______ the end of the street.",
+    "options": ["in", "on", "at", "to"],
+    "answer": "at",
+    "explanation": "Phrases that point to a specific edge or boundary line use 'at' (e.g., at the end of the street, at the beginning of the road, at the top of the page)."
+  },
+  {
+    "question": "They walked peacefully _______ the riverbank for a full hour.",
+    "options": ["along", "across", "through", "over"],
+    "answer": "along",
+    "explanation": "The preposition 'along' indicates movement in a line parallel to or following the side, path, or length of a long object (e.g., along the river, along the highway)."
+  },
+  {
+    "question": "We walked carefully _______ the concrete bridge to reach the other side.",
+    "options": ["along", "across", "through", "over"],
+    "answer": "across",
+    "explanation": "The preposition 'across' demonstrates movement from one side of a line, path, bridge, or street directly to the opposite side."
+  },
+  {
+    "question": "The children ran _______ the house, laughing loudly as they crossed the rooms.",
+    "options": ["through", "along", "over", "onto"],
+    "answer": "through",
+    "explanation": "The preposition 'through' shows movement from one side of a three-dimensional or enclosed space to the other, moving inside it (e.g., through the house, through the tunnel)."
+  },
+  {
+    "question": "She opened the door and jumped _______ the car quickly to avoid the rain.",
+    "options": ["into", "onto", "in", "on"],
+    "answer": "into",
+    "explanation": "The preposition 'into' is a dynamic modifier that shows movement from the outside of an enclosed container or vehicle to the inside."
+  },
+  {
+    "question": "The stray cat jumped _______ the kitchen table to get the left-over food.",
+    "options": ["into", "onto", "in", "under"],
+    "answer": "onto",
+    "explanation": "The preposition 'onto' indicates dynamic movement from a position outside a surface to a final position on top of that flat surface."
+  },
+  {
+    "question": "We arrived _______ the provincial bus station just in time for departure.",
+    "options": ["to", "in", "at", "on"],
+    "answer": "at",
+    "explanation": "We use the pattern 'arrive at' for specific points, buildings, and local destinations (like a station, hotel, or office). We use 'arrive in' for large territories like cities or countries."
+  },
+  {
+    "question": "She arrived _______ Manila early in the morning to attend the conference.",
+    "options": ["in", "at", "on", "to"],
+    "answer": "in",
+    "explanation": "Because Manila is a major metropolis/city, standard grammar dictates the use of 'arrive in' instead of 'arrive at' or 'arrive to'."
+  },
+  {
+    "question": "The senior operations manager was born _______ 1995.",
+    "options": ["on", "in", "at", "by"],
+    "answer": "in",
+    "explanation": "A standalone calendar year represents a long time block, which means it must always be modified by the preposition 'in'."
+  },
+  {
+    "question": "Our corporate team usually takes a short vacation _______ April.",
+    "options": ["on", "in", "at", "by"],
+    "answer": "in",
+    "explanation": "Months of the year without any specific calendar dates attached always require the preposition 'in' (e.g., in April, in October)."
+  },
+  {
+    "question": "The social gathering and party is scheduled _______ Saturday night.",
+    "options": ["at", "on", "in", "by"],
+    "answer": "on",
+    "explanation": "Even if the word 'night' is present, the specific day 'Saturday' dominates the syntax pattern, requiring the use of 'on' (e.g., on Saturday night)."
+  },
+  {
+    "question": "I like to review my study materials and notes _______ the morning.",
+    "options": ["at", "on", "in", "by"],
+    "answer": "in",
+    "explanation": "Standard formal parts of the day use the fixed idiom 'in the' (e.g., in the morning, in the afternoon, in the evening). The only major exception to this pattern is 'at night'."
+  },
+  {
+    "question": "We usually turn off the office lights and sleep _______ night.",
+    "options": ["in", "at", "on", "by"],
+    "answer": "at",
+    "explanation": "Unlike morning or afternoon, the word 'night' conventionally forms a fixed time idiom with the preposition 'at' (e.g., at night) when speaking generally."
+  },
+  {
+    "question": "The public shuttle bus always stops _______ the school facade.",
+    "options": ["on", "at", "in", "in front of"],
+    "answer": "in front of",
+    "explanation": "The complex preposition 'in front of' is a compound modifier that means 'directly ahead of' or 'before' the face of a physical structure."
+  },
+  {
+    "question": "He is standing silently _______ the back of the conference room.",
+    "options": ["on", "at", "in", "behind"],
+    "answer": "in",
+    "explanation": "We say 'in the back of' to mean the rear section *inside* an enclosed room. Using 'behind' would incorrectly imply being completely outside the physical room itself."
+  },
+  {
+    "question": "The new supermarket is located exactly _______ the commercial bank and the local pharmacy.",
+    "options": ["among", "between", "behind", "under"],
+    "answer": "between",
+    "explanation": "The preposition 'between' is used when identifying a position that separates exactly two distinct items, entities, or landmarks."
+  },
+  {
+    "question": "There is a small ornamental vegetable garden _______ our residential house.",
+    "options": ["behind", "under", "between", "across"],
+    "answer": "behind",
+    "explanation": "The preposition 'behind' means at the rear side or back of a physical object or building structure."
+  },
+  {
+    "question": "The supervisor is sitting directly _______ me and Ana at the panel table.",
+    "options": ["among", "between", "behind", "over"],
+    "answer": "between",
+    "explanation": "Since the space is bounded by exactly two individual targets ('me' and 'Ana'), the structural preposition 'between' must be selected."
+  },
+  {
+    "question": "He is currently talking _______ his team partner on the mobile phone.",
+    "options": ["to", "with", "at", "on"],
+    "answer": "with",
+    "explanation": "The verb 'talk' can take either 'to' or 'with'. In standard registers, 'talk with' emphasizes a multi-way dialogue or cooperative conversation, which matches the context of team partners."
+  },
+  {
+    "question": "I am quietly listening _______ the recorded audio lectures in my room.",
+    "options": ["to", "at", "on", "for"],
+    "answer": "to",
+    "explanation": "The active verb 'listen' is dependent on a dependent preposition. It must always be followed by 'to' before introducing the object of attention (e.g., listen to a lecture, listen to music)."
+  },
+  {
+    "question": "She is waiting patiently _______ the public bus under the transit shed.",
+    "options": ["for", "to", "at", "on"],
+    "answer": "for",
+    "explanation": "The verb 'wait' requires the preposition 'for' when specifying the person, vehicle, or event that someone is anticipating."
+  },
+  {
+    "question": "We are currently looking _______ our misplaced transaction ledger keys.",
+    "options": ["for", "at", "after", "on"],
+    "answer": "for",
+    "explanation": "The phrasal verb phrase 'look for' is an idiom that means to search or hunt for a missing object or person."
+  },
+  {
+    "question": "Pardon the interruption, but can I speak _______ the area operations manager, please?",
+    "options": ["to", "with", "at", "for"],
+    "answer": "to",
+    "explanation": "The phrase 'speak to' is the standard formal idiom utilized when initiating a direct request or administrative inquiry with a specific individual."
+  },
+  {
+    "question": "The head teacher is visibly angry _______ the noisy students in the corridor.",
+    "options": ["about", "with", "of", "for"],
+    "answer": "with",
+    "explanation": "In formal modifier syntax, a person is usually angry *with* an individual, but angry *about* or *at* an abstract event or situation."
+  },
+  {
+    "question": "Many young children are naturally afraid _______ large house spiders.",
+    "options": ["of", "for", "about", "from"],
+    "answer": "of",
+    "explanation": "The adjective 'afraid' has a fixed dependent preposition pairing, which is 'of'. Using 'from' or 'about' after afraid is a common structural error."
+  },
+  {
+    "question": "Ronald is highly interested _______ learning more about database application structure.",
+    "options": ["of", "in", "for", "on"],
+    "answer": "in",
+    "explanation": "The participial adjective 'interested' must always be complemented by the dependent preposition 'in' to indicate a field of focus or hobby."
+  },
+  {
+    "question": "The applicant claims he is exceptionally good _______ solving algebraic problems.",
+    "options": ["at", "in", "on", "for"],
+    "answer": "at",
+    "explanation": "The standard proficiency idiom uses the pattern `Good + At + Noun/Gerund` to express a high skill level or competency in a specific activity."
+  },
+  {
+    "question": "This reference notebook belongs strictly _______ my senior supervisor.",
+    "options": ["to", "with", "for", "on"],
+    "answer": "to",
+    "explanation": "The verb 'belong' signifies possession and must always be followed by the preposition 'to' before naming the owner."
+  },
+  {
+    "question": "Please take absolute care _______ this confidential audit document.",
+    "options": ["of", "for", "about", "with"],
+    "answer": "of",
+    "explanation": "The idiomatic phrase 'take care of' is a set expression meaning to look after, guard, or handle an item with responsibility."
+  },
+  {
+    "question": "We usually go to the office and travel _______ bus to save on fuel costs.",
+    "options": ["by", "on", "in", "with"],
+    "answer": "by",
+    "explanation": "When discussing an abstract means of transportation or method of travel, formal English utilizes the pattern `By + Vehicle` without any articles (e.g., by bus, by train, by car)."
+  },
+  {
+    "question": "He stepped out, got out _______ the stationary taxi, and walked away.",
+    "options": ["of", "from", "off", "out"],
+    "answer": "of",
+    "explanation": "The standard phrasal verb phrase for exiting small enclosed vehicles like cars, taxis, or small trucks is 'get out of'. (Note: Larger public vehicles use 'get off')."
+  },
+  {
+    "question": "She carefully got _______ the large passenger bus at the city hall terminal.",
+    "options": ["out", "off", "down", "over"],
+    "answer": "off",
+    "explanation": "For large public transport vehicles where passengers can walk upright inside (such as buses, trains, and airplanes), the correct phrasal verb for exiting is 'get off'."
+  }
   ],
 
   // ==========================================
