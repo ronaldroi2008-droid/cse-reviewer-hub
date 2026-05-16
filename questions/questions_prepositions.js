@@ -622,56 +622,316 @@ window.VERBAL_QUESTION_BANK["prepositions"] = {
   // 3. ADVANCED – collocations, exam traps
   // ==========================================
   advanced: [
-    { question: "Choose the sentence with the correct preposition:", options: ["We will discuss about the proposal tomorrow.", "We will discuss of the proposal tomorrow.", "We will discuss the proposal tomorrow.", "We will discuss on the proposal tomorrow."], answer: "We will discuss the proposal tomorrow.", explanation: "Discuss already includes the idea of 'about', so it takes no preposition: discuss the proposal." },
-    { question: "Choose the most natural sentence in formal English:", options: ["Maria married with a doctor last year.", "Maria married a doctor last year.", "Maria married to a doctor last year.", "Maria married with to a doctor last year."], answer: "Maria married a doctor last year.", explanation: "In formal English, we say 'married a doctor' or 'got married to a doctor', not 'married with a doctor'." },
-    { question: "The report consists ___ three main sections.", options: ["in", "of", "from", "about"], answer: "of", explanation: "Consist OF is the correct pattern: consists of three sections." },
-    { question: "He is capable ___ leading a large team.", options: ["of", "for", "to", "in"], answer: "of", explanation: "Capable OF doing something is the standard collocation." },
-    { question: "The manager is concerned ___ the drop in sales.", options: ["of", "about", "for", "from"], answer: "about", explanation: "Concerned ABOUT something is natural when you worry about an issue." },
-    { question: "She is similar ___ her mother in many ways.", options: ["with", "to", "as", "for"], answer: "to", explanation: "Similar TO is correct: similar to her mother." },
-    { question: "This policy is different ___ the previous one.", options: ["than", "from", "with", "to"], answer: "from", explanation: "In formal grammar, we use different FROM, not different than." },
-    { question: "They are opposed ___ the new regulations.", options: ["of", "on", "to", "for"], answer: "to", explanation: "Opposed TO something is the correct expression." },
-    { question: "The company specializes ___ digital marketing.", options: ["on", "in", "at", "for"], answer: "in", explanation: "Specialize IN a field: specializes in digital marketing." },
-    { question: "We must comply ___ all safety requirements.", options: ["with", "to", "on", "for"], answer: "with", explanation: "Comply WITH rules or requirements is standard usage." },
-    { question: "He insisted ___ being given another chance.", options: ["on", "in", "for", "about"], answer: "on", explanation: "Insist ON + -ing: insisted on being given another chance." },
-    { question: "The director approved ___ the new budget.", options: ["of", "on", "for", "with"], answer: "of", explanation: "Approve OF someone/something means to have a positive opinion. Approve (no prep) is used with official permission (approve the plan)." },
-    { question: "He is very good ___ working under pressure.", options: ["for", "at", "in", "with"], answer: "at", explanation: "Good AT + activity/skill: good at working under pressure." },
-    { question: "She is known ___ her kindness and generosity.", options: ["for", "of", "by", "with"], answer: "for", explanation: "Known FOR something: known for her talent, known for her kindness." },
-    { question: "He apologized ___ his mistake during the meeting.", options: ["for", "of", "about", "to"], answer: "for", explanation: "Apologize FOR + thing: apologized for his mistake." },
-    { question: "The judge was satisfied ___ the evidence presented.", options: ["for", "at", "with", "about"], answer: "with", explanation: "Satisfied WITH something is the usual collocation." },
-    { question: "He is fluent ___ both English and Spanish.", options: ["at", "in", "with", "on"], answer: "in", explanation: "Fluent IN a language: fluent in English." },
-    { question: "The town is famous ___ its beautiful beaches.", options: ["for", "of", "by", "to"], answer: "for", explanation: "Famous FOR something: famous for its beaches." },
-    { question: "They invested a large amount of money ___ the project.", options: ["to", "for", "in", "on"], answer: "in", explanation: "Invest IN something: invest in a project, invest in stocks." },
-    { question: "The teacher divided the class ___ four groups.", options: ["to", "into", "in", "on"], answer: "into", explanation: "Divide INTO parts or groups: divided into four groups." },
-    { question: "The contract is subject ___ approval by the board.", options: ["to", "for", "on", "in"], answer: "to", explanation: "Subject TO something means dependent on that condition." },
-    { question: "She is allergic ___ peanuts.", options: ["of", "for", "to", "with"], answer: "to", explanation: "Allergic TO something: allergic to peanuts." },
-    { question: "He accused her ___ breaking the rules.", options: ["for", "of", "about", "on"], answer: "of", explanation: "Accuse someone OF something: accused her of cheating." },
-    { question: "We warned them ___ the dangers of smoking.", options: ["of", "for", "about", "from"], answer: "about", explanation: "Warn someone ABOUT something or OF something are both used; ABOUT is more common in everyday English." },
-    { question: "She congratulated him ___ his promotion.", options: ["for", "on", "about", "at"], answer: "on", explanation: "Congratulate someone ON something: on your promotion, on your success." },
-    { question: "They apologized ___ the delay in processing the request.", options: ["for", "of", "about", "over"], answer: "for", explanation: "Apologize FOR + noun/gerund is the standard structure." },
-    { question: "The speaker referred ___ several recent studies.", options: ["on", "to", "at", "for"], answer: "to", explanation: "Refer TO something: referred to the report, referred to studies." },
-    { question: "Please refrain ___ using your phone during the exam.", options: ["for", "of", "from", "about"], answer: "from", explanation: "Refrain FROM doing something is the normal phrase." },
-    { question: "We must provide the office ___ updated information.", options: ["with", "of", "for", "to"], answer: "with", explanation: "Provide someone WITH something: provide the team with tools." },
-    { question: "The city suffers ___ heavy traffic every morning.", options: ["by", "of", "from", "with"], answer: "from", explanation: "Suffer FROM is also used with cities and societies (suffer from traffic, from pollution)." },
-    { question: "She blamed the failure ___ poor planning.", options: ["for", "about", "on", "at"], answer: "on", explanation: "Blame something ON a cause: blamed the failure on poor planning." },
-    { question: "He apologized to the client ___ the confusion.", options: ["of", "about", "for", "on"], answer: "for", explanation: "Again, apologize FOR the thing that went wrong: for the confusion." },
-    { question: "He is jealous ___ his brother's success.", options: ["of", "from", "for", "about"], answer: "of", explanation: "Jealous OF someone/something is the correct combination." },
-    { question: "The new policy applies ___ all departments.", options: ["for", "in", "to", "on"], answer: "to", explanation: "Apply TO someone/something means it is relevant for them." },
-    { question: "She is independent ___ her parents now.", options: ["from", "of", "to", "about"], answer: "from", explanation: "Independent FROM or independent OF are both possible, but from is more common in this context." },
-    { question: "The solution consists ___ three simple steps.", options: ["in", "of", "from", "on"], answer: "of", explanation: "Again, consist OF is correct here." },
-    { question: "He is interested ___ a career in public service.", options: ["for", "in", "on", "at"], answer: "in", explanation: "Interested IN something: in a career, in public service." },
-    { question: "We were surprised ___ the sudden announcement.", options: ["at", "on", "by", "for"], answer: "at", explanation: "Surprised AT or surprised BY are both acceptable; many exams prefer surprised AT the news." },
-    { question: "The city is divided ___ several districts.", options: ["in", "into", "to", "for"], answer: "into", explanation: "Divide INTO parts, sections, or districts is the correct pattern." },
-    { question: "They collaborated ___ the project with another team.", options: ["on", "in", "for", "at"], answer: "on", explanation: "Collaborate ON a project is commonly used; collaborate WITH someone ON something." },
-    { question: "She is engaged ___ improving community services.", options: ["for", "on", "in", "at"], answer: "in", explanation: "Engaged IN an activity: engaged in improving services." },
-    { question: "The committee is composed ___ five members.", options: ["with", "of", "by", "from"], answer: "of", explanation: "Composed OF is the normal expression: composed of five members." },
-    { question: "He is preoccupied ___ personal problems lately.", options: ["at", "about", "with", "for"], answer: "with", explanation: "Preoccupied WITH something: with personal problems." },
-    { question: "The success of the project relies ___ teamwork.", options: ["in", "on", "to", "for"], answer: "on", explanation: "Rely ON something or someone: relies on teamwork." },
-    { question: "Our office is adjacent ___ the city hall.", options: ["to", "with", "for", "beside"], answer: "to", explanation: "Adjacent TO is the correct formal phrase meaning 'very close to'." },
-    { question: "The company is committed ___ providing quality service.", options: ["in", "for", "to", "with"], answer: "to", explanation: "Committed TO something or to doing something: committed to providing quality service." },
-    { question: "He is obsessed ___ the idea of perfection.", options: ["with", "by", "in", "for"], answer: "with", explanation: "Obsessed WITH something: obsessed with the idea." },
-    { question: "We need to adhere ___ the new guidelines.", options: ["for", "with", "to", "on"], answer: "to", explanation: "Adhere TO rules or guidelines is the standard structure." },
-    { question: "The data is consistent ___ the earlier findings.", options: ["to", "with", "for", "of"], answer: "with", explanation: "Consistent WITH something means it matches or agrees with it." },
-    { question: "They participated ___ the community clean-up drive.", options: ["on", "in", "at", "for"], answer: "in", explanation: "Participate IN an activity: participated in the clean-up." }
+  {
+    "question": "Identify the sentence that utilizes prepositions correctly according to formal grammatical standards:",
+    "options": [
+      "We will discuss about the operational proposal tomorrow.",
+      "We will discuss of the operational proposal tomorrow.",
+      "We will discuss the operational proposal tomorrow.",
+      "We will discuss on the operational proposal tomorrow."
+    ],
+    "answer": "We will discuss the operational proposal tomorrow.",
+    "explanation": "The transitive verb 'discuss' directly requires a direct object without any accompanying preposition. Including 'about', 'of', or 'on' creates an unnecessary structural redundancy because 'discuss' inherently means 'to talk about'."
+  },
+  {
+    "question": "Choose the sentence that conforms to the most natural and accepted syntax in formal English registers:",
+    "options": [
+      "The operations supervisor married with a medical doctor last year.",
+      "The operations supervisor married a medical doctor last year.",
+      "The operations supervisor married to a medical doctor last year.",
+      "The operations supervisor married with to a medical doctor last year."
+    ],
+    "answer": "The operations supervisor married a medical doctor last year.",
+    "explanation": "In standard active voice construction, the verb 'marry' is fully transitive and takes a direct object immediately (e.g., married a doctor). The preposition 'to' is only introduced when utilizing the passive form or the adjectival state (e.g., she was married to a doctor / she got married to a doctor)."
+  },
+  {
+    "question": "The final administrative report consists _______ three main analytical sections.",
+    "options": ["in", "of", "from", "about"],
+    "answer": "of",
+    "explanation": "The intransitive verb 'consist' requires the dependent preposition 'of' when detailing the specific parts, elements, or members that comprise a whole entity."
+  },
+  {
+    "question": "The board believes the newly appointed supervisor is fully capable _______ leading a large operations team.",
+    "options": ["of", "for", "to", "in"],
+    "answer": "of",
+    "explanation": "The descriptive adjective 'capable' dictates a strict dependent prepositional assignment, which is 'of'. This must be followed by either a noun phrase or a gerund phrase (capable of leading)."
+  },
+  {
+    "question": "The regional operations manager is deeply concerned _______ the sudden drop in quarterly sales.",
+    "options": ["of", "about", "for", "from"],
+    "answer": "about",
+    "explanation": "When expressing personal worry, anxiety, or professional distress regarding a problematic situation or issue, the adjective 'concerned' is paired with the preposition 'about'."
+  },
+  {
+    "question": "The architectural layout of the new retail station is remarkably similar _______ the previous prototype.",
+    "options": ["with", "to", "as", "for"],
+    "answer": "to",
+    "explanation": "To indicate a resemblance or standard of comparison between two entities, formal English syntax requires the fixed combination 'similar to' rather than 'similar with'."
+  },
+  {
+    "question": "The revised auditing policy is significantly different _______ the one implemented last fiscal year.",
+    "options": ["than", "from", "with", "to"],
+    "answer": "from",
+    "explanation": "In standard formal grammar, the adjective 'different' should be followed by the preposition 'from' when contrasting two separate entities. While 'different than' is occasionally found in casual speech, 'different from' remains the strict requirement for professional exams."
+  },
+  {
+    "question": "Several traditional franchise owners are heavily opposed _______ the new digital monitoring regulations.",
+    "options": ["of", "on", "to", "for"],
+    "answer": "to",
+    "explanation": "The participial adjective 'opposed' works as a stationary modifier that requires the directional preposition 'to' before introducing the policy, person, or concept being resisted."
+  },
+  {
+    "question": "The niche specialty logistics company specializes _______ corporate digital marketing frameworks.",
+    "options": ["on", "in", "at", "for"],
+    "answer": "in",
+    "explanation": "The verb 'specialize' is idiomatic and demands the dependent preposition 'in' when defining a specific field of expertise, study, commercial focus, or industry."
+  },
+  {
+    "question": "To avoid dynamic legal penalties, the corporate branch must strictly comply _______ all safety requirements.",
+    "options": ["with", "to", "on", "for"],
+    "answer": "with",
+    "explanation": "The regulatory verb 'comply' has a mandatory structural pairing with the preposition 'with'. Using 'comply to' is an incorrect syntax error often confused with the verb 'conform to'."
+  },
+  {
+    "question": "The disgruntled employee firmly insisted _______ being given another fair chance to present his defense.",
+    "options": ["on", "in", "for", "about"],
+    "answer": "on",
+    "explanation": "The verb 'insist' mandates the use of the preposition 'on' (or 'upon') before an object noun or a gerund clause to show an unyielding demand or assertion."
+  },
+  {
+    "question": "The executive director stated that she fully approved _______ the new branch expansion budget.",
+    "options": ["of", "on", "for", "with"],
+    "answer": "of",
+    "explanation": "To 'approve of' something means to express a favorable moral or personal opinion about it. Without a preposition, the transitive 'approve the budget' means to officially sign and legally authorize it. Given the options, 'of' is the correct prepositional pairing."
+  },
+  {
+    "question": "The operations supervisor has proven that he is exceptionally good _______ working under intense pressure.",
+    "options": ["for", "at", "in", "with"],
+    "answer": "at",
+    "explanation": "The standard competency phrase utilizes 'good at' when referencing a specific skill, task, or functional activity that a person executes with high proficiency."
+  },
+  {
+    "question": "The pioneer station founder is universally known _______ her profound kindness and corporate generosity.",
+    "options": ["for", "of", "by", "with"],
+    "answer": "for",
+    "explanation": "We use 'known for' to introduce the specific characteristics, achievements, or traits that caused an individual or entity to gain widespread recognition."
+  },
+  {
+    "question": "He drafted an official email and apologized _______ his major typographical mistake during the board meeting.",
+    "options": ["for", "of", "about", "to"],
+    "answer": "for",
+    "explanation": "As established in formal syntax, you apologize 'for' a specific error, action, or dynamic problem that requires an administrative remedy."
+  },
+  {
+    "question": "The external auditing judge was thoroughly satisfied _______ the concrete evidence presented by the staff.",
+    "options": ["for", "at", "with", "about"],
+    "answer": "with",
+    "explanation": "The state adjective 'satisfied' requires the dependent instrument preposition 'with' to connect to the object or condition that fulfilled the expectations."
+  },
+  {
+    "question": "The prospective customer relations applicant is completely fluent _______ both English and Spanish.",
+    "options": ["at", "in", "with", "on"],
+    "answer": "in",
+    "explanation": "To state a person's mastery or seamless proficiency in speaking a specific language, formal grammar rules dictate the use of 'fluent in'."
+  },
+  {
+    "question": "The small coastal municipality is highly famous _______ its beautiful, well-maintained white sand beaches.",
+    "options": ["for", "of", "by", "to"],
+    "answer": "for",
+    "explanation": "The word 'famous' relies on the preposition 'for' to point directly to the unique asset or feature that makes a location or person popular."
+  },
+  {
+    "question": "The primary angel investors decided to invest a large amount of capital _______ the application project.",
+    "options": ["to", "for", "in", "on"],
+    "answer": "in",
+    "explanation": "The financial and commercial verb 'invest' strictly requires the spatial preposition 'in' when denoting the asset, venture, project, or business where capital is placed."
+  },
+  {
+    "question": "The training moderator strategically divided the corporate class _______ four separate workshop groups.",
+    "options": ["to", "into", "in", "on"],
+    "answer": "into",
+    "explanation": "We use the preposition 'into' following verbs of transformation, separation, or division (like divide, split, turn) to indicate the resulting sections or categories."
+  },
+  {
+    "question": "The execution of the procurement contract is strictly subject _______ final approval by the board of directors.",
+    "options": ["to", "for", "on", "in"],
+    "answer": "to",
+    "explanation": "The conditional phrase 'subject to' is a fixed administrative modifier meaning dependent upon, conditional on, or controlled by a separate ruling action."
+  },
+  {
+    "question": "The operations clerk informed the catering team that she is violently allergic _______ peanuts.",
+    "options": ["of", "for", "to", "with"],
+    "answer": "to",
+    "explanation": "The medical adjective 'allergic' demands the directional target preposition 'to' before naming the specific allergen or substance that triggers the biological reaction."
+  },
+  {
+    "question": "The regional auditor explicitly accused her _______ breaking the standard operating procedures of the branch.",
+    "options": ["for", "of", "about", "on"],
+    "answer": "of",
+    "explanation": "The legal and disciplinary verb construction follows the specific pattern: Accuse + Someone + Of + Crime/Misdeed. Using 'accused for' is a common colloquial error."
+  },
+  {
+    "question": "The safety officer strictly warned the factory workers _______ the potential dangers of dynamic machinery.",
+    "options": ["of", "for", "about", "from"],
+    "answer": "about",
+    "explanation": "While both 'warn of' and 'warn about' are grammatically acceptable, formal and descriptive examinations prefer 'warn about' when discussing specific hazards, conditions, or generalized dangers."
+  },
+  {
+    "question": "The administrative board formally congratulated him _______ his recent promotion to Area Operations Manager.",
+    "options": ["for", "on", "about", "at"],
+    "answer": "on",
+    "explanation": "The verb 'congratulate' takes the fixed preposition 'on' (not 'for') to introduce the happy event, success, or milestone being acknowledged. 'Congratulate for' is incorrect in standard English."
+  },
+  {
+    "question": "They issued a formal letter to apologize _______ the severe delay in processing the franchise request.",
+    "options": ["for", "of", "about", "over"],
+    "answer": "for",
+    "explanation": "An apology directed at an abstract operational failure, lapse in schedule, or specific complication requires the standard causal preposition 'for'."
+  },
+  {
+    "question": "During the seminar presentation, the keynote speaker referred _______ several recent empirical studies.",
+    "options": ["on", "to", "at", "for"],
+    "answer": "to",
+    "explanation": "The directional verb 'refer' must always be linked to its source material, citation, or target entity via the dependent preposition 'to'."
+  },
+  {
+    "question": "All exam candidates are requested to strictly refrain _______ using mobile phones during the testing period.",
+    "options": ["for", "of", "from", "about"],
+    "answer": "from",
+    "explanation": "The restrictive verb 'refrain' requires the ablative preposition 'from' before a gerund to signify deliberate abstinence or avoidance of an action."
+  },
+  {
+    "question": "To maintain accuracy, we must immediately provide the regional office _______ updated inventory information.",
+    "options": ["with", "of", "for", "to"],
+    "answer": "with",
+    "explanation": "The provisioning verb structure utilizes the specific pattern: Provide + Person/Entity + With + Object/Supply. (If the object comes first, the pattern flips to Provide + Object + To/For + Person)."
+  },
+  {
+    "question": "The central metropolitan city suffers acutely _______ heavy traffic gridlocks every single morning.",
+    "options": ["by", "of", "from", "with"],
+    "answer": "from",
+    "explanation": "The verb 'suffer' links to an abstract problem, societal issue, or chronic distress condition via the fixed preposition 'from'."
+  },
+  {
+    "question": "The shift supervisor unfairly blamed the operational failure _______ poor planning by the logistics team.",
+    "options": ["for", "about", "on", "at"],
+    "answer": "on",
+    "explanation": "The verb 'blame' follows two separate patterns. Here, the structure is Blame + The Responsibility/Mistake + On + The Cause/Person. (The alternative pattern is Blame + The Cause/Person + For + The Mistake)."
+  },
+  {
+    "question": "He stepped into the office and apologized directly to the corporate client _______ the widespread confusion.",
+    "options": ["of", "about", "for", "on"],
+    "answer": "for",
+    "explanation": "Regardless of whether a personal recipient is mentioned earlier in the sentence, the specific event or issue being apologized for must be preceded by 'for'."
+  },
+  {
+    "question": "The junior manager is secretly jealous _______ his senior colleague's rapid professional success.",
+    "options": ["of", "from", "for", "about"],
+    "answer": "of",
+    "explanation": "The emotional state adjective 'jealous' has an invariant dependent preposition requirement, which is 'of' (jealous of someone/something)."
+  },
+  {
+    "question": "The newly updated regulatory policy applies strictly _______ all administrative and operations departments.",
+    "options": ["for", "in", "to", "on"],
+    "answer": "to",
+    "explanation": "When the verb 'apply' means to have relevance, validity, or binding enforcement over a group or individual, it requires the preposition 'to'."
+  },
+  {
+    "question": "She manages her own retail station now and is completely independent _______ her parents' financial support.",
+    "options": ["from", "of", "to", "about"],
+    "answer": "of",
+    "explanation": "In high-level formal grammar, when 'independent' refers to a status of self-sufficiency, liberty, or not relying on an asset/entity, it is properly paired with 'of' (independent of support). 'Independent from' is typically reserved for geometric or political separation."
+  },
+  {
+    "question": "The recommended technical solution consists _______ three simple, reproducible database steps.",
+    "options": ["in", "of", "from", "on"],
+    "answer": "of",
+    "explanation": "This reinforces the base standard where 'consist of' translates to 'is composed of' or 'is made up of' three specific sub-elements."
+  },
+  {
+    "question": "Ronald mentioned that he is deeply interested _______ pursuing a long-term career in public service.",
+    "options": ["for", "in", "on", "at"],
+    "answer": "in",
+    "explanation": "The psychological stance modifier 'interested' is fundamentally bound to the spatial preposition 'in' when detailing an industry or a career sector of interest."
+  },
+  {
+    "question": "The data processing staff members were genuinely surprised _______ the sudden, unannounced corporate policy changes.",
+    "options": ["at", "on", "by", "for"],
+    "answer": "at",
+    "explanation": "In formal standards, while 'surprised by' can denote the agent of surprise, the standard idiomatic construction for reacting to a specific event, news, or announcement is 'surprised at' (surprised at the announcement)."
+  },
+  {
+    "question": "The administrative territory of the city is currently divided _______ several highly competitive commercial districts.",
+    "options": ["in", "into", "to", "for"],
+    "answer": "into",
+    "explanation": "The passive form of 'divide' mandates the use of 'into' to define the end state or structural segments resulting from a boundary partition."
+  },
+  {
+    "question": "The operations personnel collaborated closely _______ the marketing team on the product launch project.",
+    "options": ["on", "in", "for", "at"],
+    "answer": "on",
+    "explanation": "The verb 'collaborate' uses 'with' for co-workers, but uses the preposition 'on' to denote the specific assignment, project, or task being co-authored."
+  },
+  {
+    "question": "The corporate legal advisor is deeply engaged _______ improving community stakeholder services.",
+    "options": ["for", "on", "in", "at"],
+    "answer": "in",
+    "explanation": "To be 'engaged in' an activity means to be actively participating, occupied, or deeply involved in executing that continuous process."
+  },
+  {
+    "question": "The special investigative committee is composed entirely _______ five high-ranking external audit members.",
+    "options": ["with", "of", "by", "from"],
+    "answer": "of",
+    "explanation": "The adjectival phrase 'composed' strictly functions with the dependent element 'of' to define structural composition. Avoid the error of using 'composed with'."
+  },
+  {
+    "question": "The lead developer was heavily preoccupied _______ resolving personal server database problems lately.",
+    "options": ["at", "about", "with", "for"],
+    "answer": "with",
+    "explanation": "When an individual's mental attention is completely taken up, distracted, or occupied by an issue or concern, they are said to be 'preoccupied with' it."
+  },
+  {
+    "question": "The ultimate success of the store expansion project relies heavily _______ cross-departmental teamwork.",
+    "options": ["in", "on", "to", "for"],
+    "answer": "on",
+    "explanation": "The dependency verb 'rely' must always form a structural link with the preposition 'on' (or 'upon') before stating the entity providing the vital support."
+  },
+  {
+    "question": "The newly built commercial warehouse is situated adjacent _______ the municipal city hall.",
+    "options": ["to", "with", "for", "beside"],
+    "answer": "to",
+    "explanation": "The locational adjective 'adjacent' has an absolute structural link with the preposition 'to' to form a compound modifier meaning 'next to' or 'bordering'."
+  },
+  {
+    "question": "The entire administrative staff remains fully committed _______ providing high-quality service.",
+    "options": ["in", "for", "to", "with"],
+    "answer": "to",
+    "explanation": "The phrase 'committed to' uses 'to' as a full preposition, not as an infinitive particle. Therefore, it must be followed by a noun phrase or a gerund (committed to providing)."
+  },
+  {
+    "question": "The operations executive is completely obsessed _______ the abstract idea of absolute operational perfection.",
+    "options": ["with", "by", "in", "for"],
+    "answer": "with",
+    "explanation": "The psychological participial modifier 'obsessed' is idiomatically completed by the preposition 'with' when denoting the singular focus of an intense fixation."
+  },
+  {
+    "question": "To secure operational control, all field personnel need to adhere strictly _______ the new audit guidelines.",
+    "options": ["for", "with", "to", "on"],
+    "answer": "to",
+    "explanation": "The compliance verb 'adhere' is visually and metaphorically bound to the preposition 'to' when expressing faithful conformity to laws, principles, or rules."
+  },
+  {
+    "question": "The newly gathered statistical data is fully consistent _______ the earlier research findings.",
+    "options": ["to", "with", "for", "of"],
+    "answer": "with",
+    "explanation": "The adjective 'consistent' forms a fixed professional collocation with 'with' to signify that there are no contradictions between two sets of data or statements."
+  },
+  {
+    "question": "A vast majority of the station workers actively participated _______ the quarterly community clean-up drive.",
+    "options": ["on", "in", "at", "for"],
+    "answer": "in",
+    "explanation": "The active verb 'participate' requires the internal spatial preposition 'in' to legally connect the subject to the event, project, or exercise they joined."
+  }
   ],
 
   // ==========================================
