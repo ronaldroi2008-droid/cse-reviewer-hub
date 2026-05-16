@@ -311,305 +311,305 @@ window.VERBAL_QUESTION_BANK["error_identification"] = {
 
   intermediate: [
     {
-      question: "Identify the error: 'The box / of chocolates / are / missing.'",
-      options: ["The box", "of chocolates", "are", "No error"],
-      answer: "are",
-      explanation: "Rule: Intervening Phrases. The subject is 'box' (singular), not 'chocolates'. The verb must be 'is'."
-    },
-    {
-      question: "Identify the error: 'The teacher, / along with students, / are / going.'",
-      options: ["The teacher,", "along with students,", "are", "No error"],
-      answer: "are",
-      explanation: "Rule: Additive Phrases. Phrases like 'along with' do NOT make the subject plural. The subject is 'teacher' (singular), so use 'is'."
-    },
-    {
-      question: "Identify the error: 'One / of the boys / have / a bike.'",
-      options: ["One", "of the boys", "have", "No error"],
-      answer: "have",
-      explanation: "Rule: 'One of'. The subject is 'One' (singular). Use 'has'."
-    },
-    {
-      question: "Identify the error: 'The list / of names / is / long.'",
-      options: ["The list", "of names", "is", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Sentence. The subject 'list' is singular, and 'is' is singular. No error."
-    },
-    {
-      question: "Identify the error: 'Neither / of the answers / are / correct.'",
-      options: ["Neither", "of the answers", "are", "No error"],
-      answer: "are",
-      explanation: "Rule: Indefinite Pronouns. 'Neither' is grammatically singular in formal English. Use 'is'."
-    },
-    {
-      question: "Identify the error: 'The manager, / as well as clerks, / were / late.'",
-      options: ["The manager,", "as well as clerks,", "were", "No error"],
-      answer: "were",
-      explanation: "Rule: Additive Phrases. 'As well as' does not change the singular subject 'manager'. Use 'was'."
-    },
-    {
-      question: "Identify the error: 'Each / of the girls / sing / beautifully.'",
-      options: ["Each", "of the girls", "sing", "No error"],
-      answer: "sing",
-      explanation: "Rule: Indefinite Pronouns. 'Each' is singular. The verb must be 'sings'."
-    },
-    {
-      question: "Identify the error: 'The decision / of the judges / stand / final.'",
-      options: ["The decision", "of the judges", "stand", "No error"],
-      answer: "stand",
-      explanation: "Rule: Subject-Verb Agreement. Subject 'decision' is singular. Use 'stands'."
-    },
-    {
-      question: "Identify the error: 'A bouquet / of yellow roses / lend / color.'",
-      options: ["A bouquet", "of yellow roses", "lend", "No error"],
-      answer: "lend",
-      explanation: "Rule: Intervening Phrase. Subject 'bouquet' is singular. Use 'lends'."
-    },
-    {
-      question: "Identify the error: 'The noise / of cars / annoy / me.'",
-      options: ["The noise", "of cars", "annoy", "No error"],
-      answer: "annoy",
-      explanation: "Rule: Subject-Verb Agreement. Subject 'noise' is singular. Use 'annoys'."
-    },
-    {
-      question: "Identify the error: 'She / lived / here / since 2010.'",
-      options: ["She", "lived", "here", "since 2010"],
-      answer: "lived",
-      explanation: "Rule: Present Perfect. The action continues to the present (indicated by 'since'). Use 'has lived'."
-    },
-    {
-      question: "Identify the error: 'I / have seen / him / yesterday.'",
-      options: ["I", "have seen", "him", "yesterday"],
-      answer: "have seen",
-      explanation: "Rule: Past Time Markers. 'Yesterday' specifies a finished time. Use simple past 'saw', not present perfect."
-    },
-    {
-      question: "Identify the error: 'When we arrived, / the train / already / left.'",
-      options: ["When we arrived,", "the train", "already", "left"],
-      answer: "left",
-      explanation: "Rule: Past Perfect. The train leaving happened BEFORE we arrived. Use 'had left'."
-    },
-    {
-      question: "Identify the error: 'I / am knowing / him / for years.'",
-      options: ["I", "am knowing", "him", "No error"],
-      answer: "am knowing",
-      explanation: "Rule: Stative Verbs. 'Know' is a stative verb and cannot be continuous. Use 'have known'."
-    },
-    {
-      question: "Identify the error: 'She / has / wrote / a letter.'",
-      options: ["She", "has", "wrote", "No error"],
-      answer: "wrote",
-      explanation: "Rule: Past Participle. With 'has', use the participle 'written', not the simple past 'wrote'."
-    },
-    {
-      question: "Identify the error: 'I / didn't / went / to work.'",
-      options: ["I", "didn't", "went", "No error"],
-      answer: "went",
-      explanation: "Rule: Auxiliary 'Did'. After 'did/didn't', use the base form of the verb. Use 'go'."
-    },
-    {
-      question: "Identify the error: 'By next year, / I / finish / my degree.'",
-      options: ["By next year,", "I", "finish", "No error"],
-      answer: "finish",
-      explanation: "Rule: Future Perfect. 'By next year' implies an action completed in the future. Use 'will have finished'."
-    },
-    {
-      question: "Identify the error: 'He / has / began / the project.'",
-      options: ["He", "has", "began", "No error"],
-      answer: "began",
-      explanation: "Rule: Irregular Verbs. Base: Begin, Past: Began, Participle: Begun. With 'has', use 'begun'."
-    },
-    {
-      question: "Identify the error: 'If I / know / you were coming, / I would have stayed.'",
-      options: ["If I", "know", "you were coming,", "I would have stayed"],
-      answer: "know",
-      explanation: "Rule: Third Conditional. The result is 'would have stayed', so the condition must be Past Perfect: 'had known'."
-    },
-    {
-      question: "Identify the error: 'She / is / sleeping / for two hours.'",
-      options: ["She", "is", "sleeping", "No error"],
-      answer: "is",
-      explanation: "Rule: Present Perfect Continuous. An action starting in the past and continuing for a duration. Use 'has been sleeping'."
-    },
-    {
-      question: "Identify the error: 'I / don't have / no / money.'",
-      options: ["I", "don't have", "no", "No error"],
-      answer: "no",
-      explanation: "Rule: Double Negative. 'Don't' is already negative. Use 'any' instead of 'no'."
-    },
-    {
-      question: "Identify the error: 'He / can't / hardly / see.'",
-      options: ["He", "can't", "hardly", "No error"],
-      answer: "can't",
-      explanation: "Rule: Double Negative. 'Hardly' is considered negative. Use 'can hardly see'."
-    },
-    {
-      question: "Identify the error: 'Please / repeat / that / again.'",
-      options: ["Please", "repeat", "that", "again"],
-      answer: "again",
-      explanation: "Rule: Redundancy. 'Repeat' means to say again. 'Again' is unnecessary."
-    },
-    {
-      question: "Identify the error: 'The / reason is / because / he was late.'",
-      options: ["The", "reason is", "because", "No error"],
-      answer: "because",
-      explanation: "Rule: Redundancy. 'The reason is' should be followed by 'that', not 'because'."
-    },
-    {
-      question: "Identify the error: 'She / returned / back / home.'",
-      options: ["She", "returned", "back", "No error"],
-      answer: "back",
-      explanation: "Rule: Redundancy. 'Return' means go back. Delete 'back'."
-    },
-    {
-      question: "Identify the error: 'He / hasn't / never / been there.'",
-      options: ["He", "hasn't", "never", "No error"],
-      answer: "never",
-      explanation: "Rule: Double Negative. Use 'ever' instead of 'never' with 'hasn't'."
-    },
-    {
-      question: "Identify the error: 'Advance / forward / to the / next level.'",
-      options: ["Advance", "forward", "to the", "No error"],
-      answer: "forward",
-      explanation: "Rule: Redundancy. 'Advance' means move forward. Delete 'forward'."
-    },
-    {
-      question: "Identify the error: 'The / ATM machine / is / broken.'",
-      options: ["The", "ATM machine", "is", "No error"],
-      answer: "ATM machine",
-      explanation: "Rule: RAS Syndrome (Redundant Acronym Syndrome). The 'M' in ATM stands for Machine. Just say 'The ATM is broken'."
-    },
-    {
-      question: "Identify the error: 'I / could / care / less.'",
-      options: ["I", "could", "care", "less"],
-      answer: "could",
-      explanation: "Rule: Idiom Logic. If you 'could' care less, you care a little. The correct phrase for zero care is 'couldn't care less'."
-    },
-    {
-      question: "Identify the error: 'Irregardless / of the weather, / we / go.'",
-      options: ["Irregardless", "of the weather,", "we", "go"],
-      answer: "Irregardless",
-      explanation: "Rule: Non-standard word. 'Irregardless' is a double negative. Use 'Regardless'."
-    },
-    {
-      question: "Identify the error: 'She likes / swimming, / hiking, / and to run.'",
-      options: ["She likes", "swimming,", "hiking,", "and to run"],
-      answer: "and to run",
-      explanation: "Rule: Parallelism. Items in a list must match. Gerunds are used (swimming, hiking), so the last must be 'running'."
-    },
-    {
-      question: "Identify the error: 'The movie / was / long, / boring, and loud noise.'",
-      options: ["The movie", "was", "long,", "boring, and loud noise"],
-      answer: "boring, and loud noise",
-      explanation: "Rule: Parallelism. The list consists of adjectives (long, boring). The last item should be an adjective: 'loud'."
-    },
-    {
-      question: "Identify the error: 'He wants / to travel / and / working abroad.'",
-      options: ["He wants", "to travel", "and", "working abroad"],
-      answer: "working abroad",
-      explanation: "Rule: Parallelism. Match infinitives. 'To travel' and 'to work' (or just 'work')."
-    },
-    {
-      question: "Identify the error: 'She is / smart, / beautiful, / and a doctor.'",
-      options: ["She is", "smart,", "beautiful,", "and a doctor"],
-      answer: "and a doctor",
-      explanation: "Rule: Parallelism. Adjective, Adjective, Adjective. 'and professional' would fit better."
-    },
-    {
-      question: "Identify the error: 'You can / go by / bus or / take a train.'",
-      options: ["You can", "go by", "bus or", "take a train"],
-      answer: "take a train",
-      explanation: "Rule: Parallelism. 'By bus' matches 'by train'. Better: 'go by bus or by train'."
-    },
-    {
-      question: "Identify the error: 'To / learn is / to / growing.'",
-      options: ["To", "learn is", "to", "growing"],
-      answer: "growing",
-      explanation: "Rule: Parallelism. Infinitive 'To learn' matches infinitive 'to grow'."
-    },
-    {
-      question: "Identify the error: 'He spoke / clearly, / eloquently, / and with confidence.'",
-      options: ["He spoke", "clearly,", "eloquently,", "and with confidence"],
-      answer: "and with confidence",
-      explanation: "Rule: Parallelism. Adverb, Adverb, Adverb. Use 'confidently'."
-    },
-    {
-      question: "Identify the error: 'I prefer / reading / to / write.'",
-      options: ["I prefer", "reading", "to", "write"],
-      answer: "write",
-      explanation: "Rule: Verb Patterns. 'Prefer X to Y'. 'Reading' is a gerund, so use 'writing'."
-    },
-    {
-      question: "Identify the error: 'My goals are / to save money, / buying a house, / and retiring.'",
-      options: ["My goals are", "to save money,", "buying a house,", "No error"],
-      answer: "buying a house,",
-      explanation: "Rule: Parallelism. The first item is an infinitive 'to save'. The rest must match. Use 'to buy'."
-    },
-    {
-      question: "Identify the error: 'Not only / is he rich, / but also / famous.'",
-      options: ["Not only", "is he rich,", "but also", "famous"],
-      answer: "is he rich,",
-      explanation: "Rule: Correlative Conjunctions. Structure is unbalanced. 'Not only IS HE rich' (inverted) vs 'but HE IS also famous'. Fix: 'He is not only rich but also famous'."
-    },
-    {
-      question: "Identify the error: 'Walking / down the street, / the trees / looked beautiful.'",
-      options: ["Walking", "down the street,", "the trees", "looked beautiful"],
-      answer: "the trees",
-      explanation: "Rule: Dangling Modifier. 'Walking' implies a person, but the subject 'the trees' cannot walk. The subject 'I' is missing."
-    },
-    {
-      question: "Identify the error: 'She served / sandwiches to the kids / on / paper plates.'",
-      options: ["She served", "sandwiches to the kids", "on", "paper plates"],
-      answer: "sandwiches to the kids",
-      explanation: "Rule: Misplaced Modifier. 'On paper plates' modifies the sandwiches, not the kids. Order: 'She served sandwiches on paper plates to the kids'."
-    },
-    {
-      question: "Identify the error: 'Covered / in cheese, / I ate / the pizza.'",
-      options: ["Covered", "in cheese,", "I ate", "the pizza"],
-      answer: "I ate",
-      explanation: "Rule: Dangling Modifier. This implies 'I' was covered in cheese. Correct: 'I ate the pizza covered in cheese'."
-    },
-    {
-      question: "Identify the error: 'To get / a good grade, / studying / is necessary.'",
-      options: ["To get", "a good grade,", "studying", "is necessary"],
-      answer: "studying",
-      explanation: "Rule: Dangling Infinitive. 'To get a grade' is a goal for a person. 'Studying' is the subject. It needs a person: 'To get a good grade, YOU must study'."
-    },
-    {
-      question: "Identify the error: 'Barking / loudly, / John / shouted at the dog.'",
-      options: ["Barking", "loudly,", "John", "shouted at the dog"],
-      answer: "John",
-      explanation: "Rule: Misplaced Modifier. Implies John was barking. Correct: 'John shouted at the loudly barking dog'."
-    },
-    {
-      question: "Identify the error: 'He / nearly drove / for / six hours.'",
-      options: ["He", "nearly drove", "for", "six hours"],
-      answer: "nearly drove",
-      explanation: "Rule: Misplaced Limiting Modifier. 'Nearly drove' implies he didn't drive at all. Correct: 'He drove for nearly six hours'."
-    },
-    {
-      question: "Identify the error: 'I / only have / five / dollars.'",
-      options: ["I", "only have", "five", "dollars"],
-      answer: "only have",
-      explanation: "Rule: Placement of Only. Precise usage: 'I have only five dollars'."
-    },
-    {
-      question: "Identify the error: 'After / rotting / in the cellar, / mom threw the apples.'",
-      options: ["After", "rotting", "in the cellar,", "mom threw the apples"],
-      answer: "mom threw the apples",
-      explanation: "Rule: Dangling Modifier. Implies Mom was rotting. Correct: 'Mom threw out the apples rotting in the cellar'."
-    },
-    {
-      question: "Identify the error: 'The woman / walked the dog / in / a bikini.'",
-      options: ["The woman", "walked the dog", "in", "a bikini"],
-      answer: "walked the dog",
-      explanation: "Rule: Ambiguity/Misplaced Modifier. Did the dog have the bikini? Place 'In a bikini' closer to 'The woman'."
-    },
-    {
-      question: "Identify the error: 'He / bought a horse / for his sister / called Prince.'",
-      options: ["He", "bought a horse", "for his sister", "called Prince"],
-      answer: "for his sister",
-      explanation: "Rule: Misplaced Modifier. Implies the sister is called Prince. Correct: 'He bought a horse called Prince for his sister'."
-    }
+    "question": "Identify the error: 'The box / of chocolates / are / missing.'",
+    "options": ["The box", "of chocolates", "are", "No error"],
+    "answer": "are",
+    "explanation": "The sentence reads: 'The box of chocolates are missing.' In subject-verb agreement, intervening prepositional phrases like 'of chocolates' do not change the number of the true subject. The true subject is 'The box', which is singular. Therefore, the plural verb 'are' must be replaced with the singular verb 'is'. Corrected sentence: 'The box of chocolates is missing.'"
+  },
+  {
+    "question": "Identify the error: 'The teacher, / along with students, / are / going.'",
+    "options": ["The teacher,", "along with students,", "are", "No error"],
+    "answer": "are",
+    "explanation": "The sentence reads: 'The teacher, along with students, are going.' Additive phrases introduced by expressions such as 'along with', 'as well as', or 'together with' are not part of the grammatical subject. The true subject is 'The teacher', which is singular, requiring the singular verb 'is' instead of 'are'. Corrected sentence: 'The teacher, along with students, is going.'"
+  },
+  {
+    "question": "Identify the error: 'One / of the boys / have / a bike.'",
+    "options": ["One", "of the boys", "have", "No error"],
+    "answer": "have",
+    "explanation": "The sentence reads: 'One of the boys have a bike.' The subject of the sentence is the indefinite pronoun 'One', not the plural noun 'boys' found inside the prepositional modifier. Since 'One' is strictly singular, it requires the singular present tense verb 'has'. Corrected sentence: 'One of the boys has a bike.'"
+  },
+  {
+    "question": "Identify the error: 'The list / of names / is / long.'",
+    "options": ["The list", "of names", "is", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'The list of names is long.' The grammatical subject is 'The list', which is singular. The prepositional phrase 'of names' modifies the subject but does not alter its number. The singular verb 'is' correctly matches the singular subject 'list'. The sentence is completely error-free."
+  },
+  {
+    "question": "Identify the error: 'Neither / of the answers / are / correct.'",
+    "options": ["Neither", "of the answers", "are", "No error"],
+    "answer": "are",
+    "explanation": "The sentence reads: 'Neither of the answers are correct.' In formal English, the distributive indefinite pronoun 'Neither' means 'not the one and not the other'. It functions as a singular subject and must take a singular verb. Therefore, 'are' should be changed to 'is'. Corrected sentence: 'Neither of the answers is correct.'"
+  },
+  {
+    "question": "Identify the error: 'The manager, / as well as clerks, / were / late.'",
+    "options": ["The manager,", "as well as clerks,", "were", "No error"],
+    "answer": "were",
+    "explanation": "The sentence reads: 'The manager, as well as clerks, were late.' The phrase 'as well as clerks' is a parenthetical addition and does not make the subject compound. The main subject remains 'The manager', which is singular. Thus, the plural past verb 'were' must be replaced with 'was'. Corrected sentence: 'The manager, as well as clerks, was late.'"
+  },
+  {
+    "question": "Identify the error: 'Each / of the girls / sing / beautifully.'",
+    "options": ["Each", "of the girls", "sing", "No error"],
+    "answer": "sing",
+    "explanation": "The sentence reads: 'Each of the girls sing beautifully.' The word 'Each' is a singular indefinite pronoun that considers members of a group individually. Even though 'girls' is plural, the verb must agree with 'Each'. In the present tense, singular subjects require a verb ending in '-s', so 'sing' must be 'sings'. Corrected sentence: 'Each of the girls sings beautifully.'"
+  },
+  {
+    "question": "Identify the error: 'The decision / of the judges / stand / final.'",
+    "options": ["The decision", "of the judges", "stand", "No error"],
+    "answer": "stand",
+    "explanation": "The sentence reads: 'The decision of the judges stand final.' The plural noun 'judges' is the object of a preposition and cannot act as the subject. The true subject is 'The decision', which is a singular third-person noun. It requires the singular verb form 'stands'. Corrected sentence: 'The decision of the judges stands final.'"
+  },
+  {
+    "question": "Identify the error: 'A bouquet / of yellow roses / lend / color.'",
+    "options": ["A bouquet", "of yellow roses", "lend", "No error"],
+    "answer": "lend",
+    "explanation": "The sentence reads: 'A bouquet of yellow roses lend color.' The subject is 'A bouquet', which is a singular collective noun phrase acting as a unit. The plural noun 'roses' inside the descriptive phrase does not affect the verb. The verb must be changed from 'lend' to 'lends'. Corrected sentence: 'A bouquet of yellow roses lends color.'"
+  },
+  {
+    "question": "Identify the error: 'The noise / of cars / annoy / me.'",
+    "options": ["The noise", "of cars", "annoy", "No error"],
+    "answer": "annoy",
+    "explanation": "The sentence reads: 'The noise of cars annoy me.' The verb must agree with the head noun of the subject phrase, which is 'noise' (singular and uncountable), rather than the adjacent plural noun 'cars'. A singular subject requires the third-person verb form 'annoys'. Corrected sentence: 'The noise of cars annoys me.'"
+  },
+  {
+    "question": "Identify the error: 'She / lived / here / since 2010.'",
+    "options": ["She", "lived", "here", "since 2010"],
+    "answer": "lived",
+    "explanation": "The sentence reads: 'She lived here since 2010.' The time marker 'since 2010' indicates an action that began in the past and continues up to the present moment. This requires the present perfect tense rather than the simple past. Therefore, 'lived' should be replaced with 'has lived'. Corrected sentence: 'She has lived here since 2010.'"
+  },
+  {
+    "question": "Identify the error: 'I / have seen / him / yesterday.'",
+    "options": ["I", "have seen", "him", "yesterday"],
+    "answer": "have seen",
+    "explanation": "The sentence reads: 'I have seen him yesterday.' The adverb 'yesterday' specifies a distinct, completely finished point in past time. The present perfect tense ('have seen') cannot be paired with specific past time markers. It must be replaced with the simple past tense 'saw'. Corrected sentence: 'I saw him yesterday.'"
+  },
+  {
+    "question": "Identify the error: 'When we arrived, / the train / already / left.'",
+    "options": ["When we arrived,", "the train", "already", "left"],
+    "answer": "left",
+    "explanation": "The sentence reads: 'When we arrived, the train already left.' When describing two interrelated actions in the past, the action that happened prior to the other must be expressed in the past perfect tense. Since the train left before the arrival, 'left' must be changed to 'had already left'. Corrected sentence: 'When we arrived, the train had already left.'"
+  },
+  {
+    "question": "Identify the error: 'I / am knowing / him / for years.'",
+    "options": ["I", "am knowing", "him", "No error"],
+    "answer": "am knowing",
+    "explanation": "The sentence reads: 'I am knowing him for years.' The verb 'know' is a stative verb that represents a state of mind rather than a physical action, meaning it cannot be used in continuous or progressive forms. Combined with the duration 'for years', it should use the present perfect form 'have known'. Corrected sentence: 'I have known him for years.'"
+  },
+  {
+    "question": "Identify the error: 'She / has / wrote / a letter.'",
+    "options": ["She", "has", "wrote", "No error"],
+    "answer": "wrote",
+    "explanation": "The sentence reads: 'She has wrote a letter.' The perfect aspect requires an auxiliary verb ('has') combined with the past participle form of the main verb. 'Wrote' is the simple past form of the irregular verb 'write'. It must be changed to its past participle form, 'written'. Corrected sentence: 'She has written a letter.'"
+  },
+  {
+    "question": "Identify the error: 'I / didn't / went / to work.'",
+    "options": ["I", "didn't", "went", "No error"],
+    "answer": "went",
+    "explanation": "The sentence reads: 'I didn't went to work.' In English negative structures utilizing the past auxiliary 'did' or 'didn't', the tense is already carried by the auxiliary. The main verb that follows must remain in its base form. Therefore, 'went' must be changed to 'go'. Corrected sentence: 'I didn't go to work.'"
+  },
+  {
+    "question": "Identify the error: 'By next year, / I / finish / my degree.'",
+    "options": ["By next year,", "I", "finish", "No error"],
+    "answer": "finish",
+    "explanation": "The sentence reads: 'By next year, I finish my degree.' The phrase 'By next year' sets a future deadline for a completed task. To show that an action will be completed prior to a specific point in the future, the future perfect tense ('will have finished') must be used instead of the simple present. Corrected sentence: 'By next year, I will have finished my degree.'"
+  },
+  {
+    "question": "Identify the error: 'He / has / began / the project.'",
+    "options": ["He", "has", "began", "No error"],
+    "answer": "began",
+    "explanation": "The sentence reads: 'He has began the project.' The auxiliary verb 'has' forms the present perfect tense and must be followed by a past participle. The principal forms of this irregular verb are 'begin' (base), 'began' (past), and 'begun' (past participle). Thus, 'began' must be corrected to 'begun'. Corrected sentence: 'He has begun the project.'"
+  },
+  {
+    "question": "Identify the error: 'If I / know / you were coming, / I would have stayed.'",
+    "options": ["If I", "know", "you were coming,", "I would have stayed"],
+    "answer": "know",
+    "explanation": "The sentence reads: 'If I know you were coming, I would have stayed.' This is a third conditional sentence expressing a hypothetical past situation. The main clause uses 'would have stayed', meaning the conditional 'if' clause must utilize the past perfect tense ('had known') instead of the simple present 'know'. Corrected sentence: 'If I had known you were coming, I would have stayed.'"
+  },
+  {
+    "question": "Identify the error: 'She / is / sleeping / for two hours.'",
+    "options": ["She", "is", "sleeping", "No error"],
+    "answer": "is",
+    "explanation": "The sentence reads: 'She is sleeping for two hours.' The addition of 'for two hours' emphasizes the duration of an ongoing action that started in the past. The present continuous tense ('is sleeping') cannot express duration over time; the present perfect continuous form 'has been sleeping' is required. Corrected sentence: 'She has been sleeping for two hours.'"
+  },
+  {
+    "question": "Identify the error: 'I / don't have / no / money.'",
+    "options": ["I", "don't have", "no", "No error"],
+    "answer": "no",
+    "explanation": "The sentence reads: 'I don't have no money.' This sentence contains a double negative, as 'don't' (do not) and 'no' are both negative elements that cancel each other out in standard English. To maintain the negative meaning properly, 'no' must be switched to the determiner 'any'. Corrected sentence: 'I don't have any money.'"
+  },
+  {
+    "question": "Identify the error: 'He / can't / hardly / see.'",
+    "options": ["He", "can't", "hardly", "No error"],
+    "answer": "can't",
+    "explanation": "The sentence reads: 'He can't hardly see.' The word 'hardly' possesses a restrictive, inherently negative grammatical weight meaning 'almost not at all'. Pairing it with the negative contraction 'can't' creates an ungrammatical double negative. 'Can't' should be changed to the positive auxiliary 'can'. Corrected sentence: 'He can hardly see.'"
+  },
+  {
+    "question": "Identify the error: 'Please / repeat / that / again.'",
+    "options": ["Please", "repeat", "that", "again"],
+    "answer": "again",
+    "explanation": "The sentence reads: 'Please repeat that again.' The definition of the verb 'repeat' is to say, do, or produce something once more. Adding the adverb 'again' at the end creates an unnecessary grammatical redundancy. The word 'again' should be deleted. Corrected sentence: 'Please repeat that.'"
+  },
+  {
+    "question": "Identify the error: 'The / reason is / because / he was late.'",
+    "options": ["The", "reason is", "because", "No error"],
+    "answer": "because",
+    "explanation": "The sentence reads: 'The reason is because he was late.' The phrase 'The reason is' inherently introduces a cause, making the subordinating conjunction 'because' redundant. In formal writing, the linking verb 'is' should introduce a noun clause beginning with 'that'. Corrected sentence: 'The reason is that he was late.'"
+  },
+  {
+    "question": "Identify the error: 'She / returned / back / home.'",
+    "options": ["She", "returned", "back", "No error"],
+    "answer": "back",
+    "explanation": "The sentence reads: 'She returned back home.' The definition of the verb 'return' is to go or come back to a place. Including the directional adverb 'back' directly duplicates the meaning already built into the verb, resulting in pleonasm. The word 'back' must be removed. Corrected sentence: 'She returned home.'"
+  },
+  {
+    "question": "Identify the error: 'He / hasn't / never / been there.'",
+    "options": ["He", "hasn't", "never", "No error"],
+    "answer": "never",
+    "explanation": "The sentence reads: 'He hasn't never been there.' This represents a double negative conflict caused by combining the contraction 'hasn't' (has not) with the negative adverb 'never'. To correct this sentence while keeping its intent, 'never' should be replaced with 'ever'. Corrected sentence: 'He hasn't ever been there.'"
+  },
+  {
+    "question": "Identify the error: 'Advance / forward / to the / next level.'",
+    "options": ["Advance", "forward", "to the", "No error"],
+    "answer": "forward",
+    "explanation": "The sentence reads: 'Advance forward to the next level.' The verb 'advance' means to move forward in a purposeful way. Using the word 'forward' alongside it is completely redundant since one cannot advance backward. Eliminating 'forward' streamlines the sentence. Corrected sentence: 'Advance to the next level.'"
+  },
+  {
+    "question": "Identify the error: 'The / ATM machine / is / broken.'",
+    "options": ["The", "ATM machine", "is", "No error"],
+    "answer": "ATM machine",
+    "explanation": "The sentence reads: 'The ATM machine is broken.' This is an instance of Redundant Acronym Syndrome (RAS). The letter 'M' in the acronym ATM already stands for 'Machine' (Automated Teller Machine). Saying 'ATM machine' is equivalent to saying 'Automated Teller Machine machine'. Corrected sentence: 'The ATM is broken.'"
+  },
+  {
+    "question": "Identify the error: 'I / could / care / less.'",
+    "options": ["I", "could", "care", "less"],
+    "answer": "could",
+    "explanation": "The phrase reads: 'I could care less.' Taken literally, saying you 'could' care less implies that you still care a certain amount. To idiomatically convey that you have absolutely no interest or care left, you must use the negative contraction 'couldn't'. Corrected sentence: 'I couldn't care less.'"
+  },
+  {
+    "question": "Identify the error: 'Irregardless / of the weather, / we / go.'",
+    "options": ["Irregardless", "of the weather,", "we", "go"],
+    "answer": "Irregardless",
+    "explanation": "The sentence reads: 'Irregardless of the weather, we go.' The word 'Irregardless' is considered non-standard because the prefix 'ir-' and the suffix '-less' are both negative, creating a redundant structure. The standard adverb to use is 'Regardless'. Corrected sentence: 'Regardless of the weather, we go.'"
+  },
+  {
+    "question": "Identify the error: 'She likes / swimming, / hiking, / and to run.'",
+    "options": ["She likes", "swimming,", "hiking,", "and to run"],
+    "answer": "and to run",
+    "explanation": "The sentence reads: 'She likes swimming, hiking, and to run.' The rules of parallel structure demand that coordinate elements in a series share the same grammatical form. The first two items are gerunds ('swimming', 'hiking'), so the final item must match them as a gerund ('running') instead of an infinitive. Corrected sentence: 'She likes swimming, hiking, and running.'"
+  },
+  {
+    "question": "Identify the error: 'The movie / was / long, / boring, and loud noise.'",
+    "options": ["The movie", "was", "long,", "boring, and loud noise"],
+    "answer": "boring, and loud noise",
+    "explanation": "The sentence reads: 'The movie was long, boring, and loud noise.' The predicate adjectives 'long' and 'boring' establish a pattern describing the movie's attributes. The phrase 'loud noise' breaks parallelism because it is a noun phrase. It must be converted into a matching adjective, 'loud'. Corrected sentence: 'The movie was long, boring, and loud.'"
+  },
+  {
+    "question": "Identify the error: 'He wants / to travel / and / working abroad.'",
+    "options": ["He wants", "to travel", "and", "working abroad"],
+    "answer": "working abroad",
+    "explanation": "The sentence reads: 'He wants to travel and working abroad.' The infinitive verb 'wants' connects to a coordinated list of compound objects. The first item uses the infinitive form 'to travel', meaning the second element must also match as a base form verb ('work') instead of a gerund phrase. Corrected sentence: 'He wants to travel and work abroad.'"
+  },
+  {
+    "question": "Identify the error: 'She is / smart, / beautiful, / and a doctor.'",
+    "options": ["She is", "smart,", "beautiful,", "and a doctor"],
+    "answer": "and a doctor",
+    "explanation": "The sentence reads: 'She is smart, beautiful, and a doctor.' This list links elements to the subject using the copular verb 'is'. The first two descriptive terms are adjectives ('smart', 'beautiful'). Introducing the noun phrase 'a doctor' violates parallelism. It should match the previous elements by using an adjective like 'professional', or the sentence must be rephrased. Corrected sentence: 'She is smart, beautiful, and professional.'"
+  },
+  {
+    "question": "Identify the error: 'You can / go by / bus or / take a train.'",
+    "options": ["You can", "go by", "bus or", "take a train"],
+    "answer": "take a train",
+    "explanation": "The sentence reads: 'You can go by bus or take a train.' For ideal balancing and parallel symmetry, prepositional choices or phrasing structures should match across coordinating conjunctions. 'By bus' should match with 'by train' to sustain identical grammatical construction. Corrected sentence: 'You can go by bus or by train.'"
+  },
+  {
+    "question": "Identify the error: 'To / learn is / to / growing.'",
+    "options": ["To", "learn is", "to", "growing"],
+    "answer": "growing",
+    "explanation": "The sentence reads: 'To learn is to growing.' This sentence matches two abstract ideas across the linking verb 'is'. The subject is an infinitive phrase ('To learn'). To keep parallel structural balance, the predicate completion must be an infinitive ('to grow') rather than a gerund component. Corrected sentence: 'To learn is to grow.'"
+  },
+  {
+    "question": "Identify the error: 'He spoke / clearly, / eloquently, / and with confidence.'",
+    "options": ["He spoke", "clearly,", "eloquently,", "and with confidence"],
+    "answer": "and with confidence",
+    "explanation": "The sentence reads: 'He spoke clearly, eloquently, and with confidence.' The action verb 'spoke' is modified by a series of manners. The first two descriptors are adverbs ('clearly', 'eloquently'). The prepositional phrase 'with confidence' disrupts this parallel series and must be changed to the adverb 'confidently'. Corrected sentence: 'He spoke clearly, eloquently, and confidently.'"
+  },
+  {
+    "question": "Identify the error: 'I prefer / reading / to / write.'",
+    "options": ["I prefer", "reading", "to", "write"],
+    "answer": "write",
+    "explanation": "The sentence reads: 'I prefer reading to write.' The verb pattern for 'prefer' comparing two activities utilizes the formula 'prefer [gerund] to [gerund]'. Since the first object is the gerund 'reading', the item following the preposition 'to' must also be the gerund 'writing'. Corrected sentence: 'I prefer reading to writing.'"
+  },
+  {
+    "question": "Identify the error: 'My goals are / to save money, / buying a house, / and retiring.'",
+    "options": ["My goals are", "to save money,", "buying a house,", "No error"],
+    "answer": "buying a house,",
+    "explanation": "The sentence reads: 'My goals are to save money, buying a house, and retiring.' The initial goal listed uses an infinitive structure ('to save'). To establish parallelism across the series, the subsequent gerund structures must be reformatted into infinitives ('to buy' and 'to retire'). Corrected sentence: 'My goals are to save money, to buy a house, and to retire.'"
+  },
+  {
+    "question": "Identify the error: 'Not only / is he rich, / but also / famous.'",
+    "options": ["Not only", "is he rich,", "but also", "famous"],
+    "answer": "is he rich,",
+    "explanation": "The sentence reads: 'Not only is he rich, but also famous.' Correlative conjunctions like 'not only... but also' must connect grammatically identical elements. Placing the clause 'is he rich' directly after the first part requires a matching clause later. Moving the verb to the front balances the adjectives. Corrected sentence: 'He is not only rich but also famous.'"
+  },
+  {
+    "question": "Identify the error: 'Walking / down the street, / the trees / looked beautiful.'",
+    "options": ["Walking", "down the street,", "the trees", "looked beautiful"],
+    "answer": "the trees",
+    "explanation": "The sentence reads: 'Walking down the street, the trees looked beautiful.' This sentence contains a dangling modifier. The opening phrase 'Walking down the street' describes an action, but the subject that immediately follows is 'the trees'. This implies the trees themselves were walking, which is illogical. A human subject like 'I' or 'we' must be introduced. Corrected sentence: 'Walking down the street, I thought the trees looked beautiful.'"
+  },
+  {
+    "question": "Identify the error: 'She served / sandwiches to the kids / on / paper plates.'",
+    "options": ["She served", "sandwiches to the kids", "on", "paper plates"],
+    "answer": "sandwiches to the kids",
+    "explanation": "The sentence reads: 'She served sandwiches to the kids on paper plates.' This structure contains a misplaced modifier, because the prepositional phrase 'on paper plates' is positioned next to 'the kids', making it sound as if the children were sitting on the plates. The modifier must be placed closer to 'sandwiches'. Corrected sentence: 'She served sandwiches on paper plates to the kids.'"
+  },
+  {
+    "question": "Identify the error: 'Covered / in cheese, / I ate / the pizza.'",
+    "options": ["Covered", "in cheese,", "I ate", "the pizza"],
+    "answer": "I ate",
+    "explanation": "The sentence reads: 'Covered in cheese, I ate the pizza.' The introductory modifier 'Covered in cheese' naturally attaches to the nearest noun phrase, which is 'I'. This creates a dangling/misplaced modifier suggesting that the speaker was covered in cheese. The phrase must be relocated next to 'the pizza'. Corrected sentence: 'I ate the pizza covered in cheese.'"
+  },
+  {
+    "question": "Identify the error: 'To get / a good grade, / studying / is necessary.'",
+    "options": ["To get", "a good grade,", "studying", "is necessary"],
+    "answer": "studying",
+    "explanation": "The sentence reads: 'To get a good grade, studying is necessary.' The introductory infinitive phrase 'To get a good grade' states an intention or action that can only be performed by a person. However, the subject provided is the abstract action 'studying'. A logical agent or person must be the subject of the clause. Corrected sentence: 'To get a good grade, you must study.'"
+  },
+  {
+    "question": "Identify the error: 'Barking / loudly, / John / shouted at the dog.'",
+    "options": ["Barking", "loudly,", "John", "shouted at the dog"],
+    "answer": "John",
+    "explanation": "The sentence reads: 'Barking loudly, John shouted at the dog.' The participial phrase 'Barking loudly' modifies the closest noun phrase, which is 'John'. This creates a highly confusing image where John is the one barking. The modifier must be reframed to clearly describe the dog. Corrected sentence: 'John shouted at the dog that was barking loudly.'"
+  },
+  {
+    "question": "Identify the error: 'He / nearly drove / for / six hours.'",
+    "options": ["He", "nearly drove", "for", "six hours"],
+    "answer": "nearly drove",
+    "explanation": "The sentence reads: 'He nearly drove for six hours.' The limiting modifier 'nearly' is misplaced. Placing it before 'drove' implies that he almost started driving but never actually did. To accurately reflect that he did drive, but the duration was just under six hours, 'nearly' must modify the time. Corrected sentence: 'He drove for nearly six hours.'"
+  },
+  {
+    "question": "Identify the error: 'I / only have / five / dollars.'",
+    "options": ["I", "only have", "five", "dollars"],
+    "answer": "only have",
+    "explanation": "The sentence reads: 'I only have five dollars.' In strict formal grammar, the placement of the word 'only' must be positioned directly before the specific word or phrase it intends to limit. Placing it before 'have' modifies the action of possession itself rather than limiting the quantity of the money. Corrected sentence: 'I have only five dollars.'"
+  },
+  {
+    "question": "Identify the error: 'After / rotting / in the cellar, / mom threw the apples.'",
+    "options": ["After", "rotting", "in the cellar,", "mom threw the apples"],
+    "answer": "mom threw the apples",
+    "explanation": "The sentence reads: 'After rotting in the cellar, mom threw the apples.' The opening modifying clause 'After rotting in the cellar' specifies a condition that applies to the noun that immediately follows. Because 'mom' is placed right after the comma, it falsely asserts that Mom was rotting. The apples must be the subject. Corrected sentence: 'After the apples rotted in the cellar, mom threw them away.'"
+  },
+  {
+    "question": "Identify the error: 'The woman / walked the dog / in / a bikini.'",
+    "options": ["The woman", "walked the dog", "in", "a bikini"],
+    "answer": "walked the dog",
+    "explanation": "The sentence reads: 'The woman walked the dog in a bikini.' This phrasing creates ambiguity due to a misplaced modifier. Because 'in a bikini' is positioned right next to 'the dog', it implies the dog was wearing the bikini. To fix this, the descriptive phrase should be placed directly next to 'The woman'. Corrected sentence: 'The woman in a bikini walked the dog.'"
+  },
+  {
+    "question": "Identify the error: 'He / bought a horse / for his sister / called Prince.'",
+    "options": ["He", "bought a horse", "for his sister", "called Prince"],
+    "answer": "for his sister",
+    "explanation": "The sentence reads: 'He bought a horse for his sister called Prince.' The modifying phrase 'called Prince' is misplaced because it sits adjacent to 'his sister', which structurally suggests that the sister is named Prince. To align the meaning correctly, the name phrase must follow the word 'horse'. Corrected sentence: 'He bought a horse called Prince for his sister.'"
+  }
   ],
 
   advanced: [
