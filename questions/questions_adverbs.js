@@ -931,313 +931,305 @@ window.VERBAL_QUESTION_BANK["adverbs"] = {
   // ============================================================
   expert: [
     // 151-160: Flat Adverbs & Tricky Pairs (Deep vs Deeply)
-    {
-      question: "He threw the ball ______.",
-      options: ["high", "highly"],
-      answer: "high",
-      explanation: "'High' modifies the verb 'threw' to show physical height or distance."
-    },
-    {
-      question: "He is ______ respected.",
-      options: ["high", "highly"],
-      answer: "highly",
-      explanation: "'Highly' is used for degree or figurative meaning, not physical height."
-    },
-    {
-      question: "I dove ______ into the ocean.",
-      options: ["deep", "deeply"],
-      answer: "deep",
-      explanation: "'Deep' modifies the verb 'dove' to show physical depth."
-    },
-    {
-      question: "I was ______ moved by the movie.",
-      options: ["deep", "deeply"],
-      answer: "deeply",
-      explanation: "'Deeply' expresses emotional intensity."
-    },
-    {
-      question: "The bird flew ______.",
-      options: ["low", "lowly"],
-      answer: "low",
-      explanation: "'Low' modifies the verb 'flew' to show physical height."
-    },
-    {
-      question: "He bowed ______.",
-      options: ["low", "lowly"],
-      answer: "low",
-      explanation: "'Low' modifies the verb 'bowed' to show physical movement downward."
-    },
-    {
-      question: "She arrived ______.",
-      options: ["late", "lately"],
-      answer: "late",
-      explanation: "'Late' modifies the verb 'arrived' to mean 'not on time'."
-    },
-    {
-      question: "I haven't eaten ______.",
-      options: ["late", "lately"],
-      answer: "lately",
-      explanation: "'Lately' means 'recently'."
-    },
-    {
-      question: "Stand ______.",
-      options: ["clear", "clearly"],
-      answer: "clear",
-      explanation: "'Clear' is a flat adverb meaning 'away from'."
-    },
-    {
-      question: "Speak ______.",
-      options: ["clear", "clearly"],
-      answer: "clearly",
-      explanation: "'Clearly' means 'in a way that can be understood'."
-    },
-
-    // 161-170: Meaning Shift with -ly
-    {
-      question: "He works ______.",
-      options: ["hard", "hardly"],
-      answer: "hard",
-      explanation: "The meaning is that he works with effort."
-    },
-    {
-      question: "He ______ works.",
-      options: ["hardly", "hard"],
-      answer: "hardly",
-      explanation: "The meaning is near-negation. 'Hardly' means 'almost not'."
-    },
-    {
-      question: "The eagle flies ______.",
-      options: ["high", "highly"],
-      answer: "high",
-      explanation: "The meaning refers to altitude."
-    },
-    {
-      question: "It is ______ probable.",
-      options: ["high", "highly"],
-      answer: "highly",
-      explanation: "The meaning expresses degree of probability."
-    },
-    {
-      question: "He sat ______ to me.",
-      options: ["close", "closely"],
-      answer: "close",
-      explanation: "The meaning refers to physical distance."
-    },
-    {
-      question: "Listen ______.",
-      options: ["close", "closely"],
-      answer: "closely",
-      explanation: "The meaning is 'pay careful attention'."
-    },
-    {
-      question: "The door was ______ open.",
-      options: ["wide", "widely"],
-      answer: "wide",
-      explanation: "The meaning refers to physical extent."
-    },
-    {
-      question: "He is ______ known.",
-      options: ["wide", "widely"],
-      answer: "widely",
-      explanation: "The meaning refers to how many people know him."
-    },
-    {
-      question: "You are ______ right.",
-      options: ["dead", "deadly"],
-      answer: "dead",
-      explanation: "'Dead' is an idiomatic flat adverb meaning 'completely'."
-    },
-    {
-      question: "It is a ______ weapon.",
-      options: ["dead", "deadly"],
-      answer: "deadly",
-      explanation: "'Deadly' is an adjective meaning 'capable of causing death'."
-    },
-
-    // 171-180: Imposter Adjectives (Ending in -ly)
-    {
-      question: "She is a ______ person.",
-      options: ["lovely", "lovelily"],
-      answer: "lovely",
-      explanation: "'Lovely' is an adjective describing the noun 'person'."
-    },
-    {
-      question: "He behaved in a ______ manner.",
-      options: ["friendly", "friendlily"],
-      answer: "friendly",
-      explanation: "'Friendly' is an adjective. English uses 'in a + adjective + manner' when no natural adverb exists."
-    },
-    {
-      question: "I feel ______.",
-      options: ["lonely", "lone"],
-      answer: "lonely",
-      explanation: "'Lonely' is an adjective describing emotional state."
-    },
-    {
-      question: "It was a ______ meeting.",
-      options: ["timely", "timelily"],
-      answer: "timely",
-      explanation: "'Timely' is an adjective meaning 'at the right time'."
-    },
-    {
-      question: "That looks ______.",
-      options: ["ugly", "uglily"],
-      answer: "ugly",
-      explanation: "'Looks' is a linking verb followed by adjectives."
-    },
-    {
-      question: "He is a ______ man.",
-      options: ["kindly", "kindlily"],
-      answer: "kindly",
-      explanation: "'Kindly' is an adjective here meaning kind or gentle."
-    },
-    {
-      question: "It was a ______ error.",
-      options: ["costly", "costlily"],
-      answer: "costly",
-      explanation: "'Costly' is an adjective meaning expensive."
-    },
-    {
-      question: "'Daily' is:",
-      options: ["Adjective only", "Adverb only", "Both adjective and adverb"],
-      answer: "Both adjective and adverb",
-      explanation: "'Daily' can describe a noun (a daily routine) or modify a verb (I exercise daily)."
-    },
-    {
-      question: "'Early' is:",
-      options: ["Adjective only", "Adverb only", "Both adjective and adverb"],
-      answer: "Both adjective and adverb",
-      explanation: "'Early' functions as both an adjective and an adverb."
-    },
-    {
-      question: "'Fast' is:",
-      options: ["Adjective only", "Adverb only", "Both adjective and adverb"],
-      answer: "Both adjective and adverb",
-      explanation: "'Fast' is a flat form used as both adjective and adverb."
-    },
-
-    // 181-190: Adverbial Objectives & Nouns as Adverbs
-    {
-      question: "Let's go ______.",
-      options: ["home", "to home"],
-      answer: "home",
-      explanation: "'Home' functions as an adverb with verbs of motion."
-    },
-    {
-      question: "I waited ______.",
-      options: ["two hours", "for two hours", "Both are correct"],
-      answer: "Both are correct",
-      explanation: "Time duration can be expressed with or without 'for'."
-    },
-    {
-      question: "He ran ______.",
-      options: ["three miles", "for three miles", "Both are correct"],
-      answer: "Both are correct",
-      explanation: "Distance expressions can function directly as adverbial phrases."
-    },
-    {
-      question: "See you ______.",
-      options: ["next week", "on next week"],
-      answer: "next week",
-      explanation: "Prepositions are not used before 'next', 'last', 'this', or 'every' in time expressions."
-    },
-    {
-      question: "We met ______.",
-      options: ["last night", "on last night"],
-      answer: "last night",
-      explanation: "'Last night' functions as an adverbial time expression without a preposition."
-    },
-    {
-      question: "Do it ______.",
-      options: ["this way", "on this way"],
-      answer: "this way",
-      explanation: "'This way' is an adverbial phrase indicating manner."
-    },
-    {
-      question: "They went ______.",
-      options: ["abroad", "to abroad"],
-      answer: "abroad",
-      explanation: "'Abroad' is an adverb of place and does not take a preposition."
-    },
-    {
-      question: "Go ______.",
-      options: ["upstairs", "to upstairs"],
-      answer: "upstairs",
-      explanation: "'Upstairs' functions as an adverb of place."
-    },
-    {
-      question: "Come ______.",
-      options: ["inside", "to inside"],
-      answer: "inside",
-      explanation: "'Inside' is an adverb of place here."
-    },
-    {
-      question: "He went ______.",
-      options: ["downtown", "to downtown"],
-      answer: "downtown",
-      explanation: "'Downtown' functions as an adverb of place."
-    },
-
-    // 191-200: Double Negatives & Redundancy
-    {
-      question: "I can't see ______.",
-      options: ["nothing", "anything"],
-      answer: "anything",
-      explanation: "'Can't' is already negative. Using 'nothing' would create a double negative."
-    },
-    {
-      question: "He hardly ______ speaks.",
-      options: ["never", "ever"],
-      answer: "ever",
-      explanation: "'Hardly' already expresses negation. 'Ever' avoids a double negative."
-    },
-    {
-      question: "I rarely ______ eat there.",
-      options: ["don't", "ever"],
-      answer: "ever",
-      explanation: "'Rarely' is negative in meaning. Adding 'don't' would be a double negative."
-    },
-    {
-      question: "'Return back' is:",
-      options: ["correct", "redundant"],
-      answer: "redundant",
-      explanation: "'Return' already means 'go back'. Adding 'back' repeats the meaning."
-    },
-    {
-      question: "'Repeat again' is:",
-      options: ["correct", "redundant"],
-      answer: "redundant",
-      explanation: "'Repeat' already means 'do again'. Adding 'again' is unnecessary."
-    },
-    {
-      question: "'Proceed forward' is:",
-      options: ["correct", "redundant"],
-      answer: "redundant",
-      explanation: "'Proceed' already implies forward movement."
-    },
-    {
-      question: "'Revert back' is:",
-      options: ["correct", "redundant"],
-      answer: "redundant",
-      explanation: "'Revert' means to return to a previous state. 'Back' repeats the meaning."
-    },
-    {
-      question: "'Sufficient enough' is:",
-      options: ["correct", "redundant"],
-      answer: "redundant",
-      explanation: "'Sufficient' and 'enough' express the same idea."
-    },
-    {
-      question: "Scarcely ______ (meaning 'almost no one').",
-      options: ["anyone", "no one"],
-      answer: "anyone",
-      explanation: "'Scarcely' is already negative. Using 'no one' would create a double negative."
-    },
-    {
-      question: "Barely ______ (meaning 'almost nothing').",
-      options: ["anything", "nothing"],
-      answer: "anything",
-      explanation: "'Barely' expresses near-negation. 'Anything' avoids a double negative."
-    }
-  ]
+     {
+    "question": "Complete the statement with the proper modifier: 'During the physical team building event, the participant threw the ball ______ into the air.'",
+    "options": ["high", "highly"],
+    "answer": "high",
+    "explanation": "The sentence requires a flat adverb to modify the action verb 'threw'. The word 'high' is used when describing literal, physical elevation or measurable vertical distance."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'The senior operations officer is ______ respected throughout the regional terminal.'",
+    "options": ["high", "highly"],
+    "answer": "highly",
+    "explanation": "The modifier describes an abstract or figurative degree of respect. In non-physical, qualitative, or evaluative contexts, the form ending in '-ly' ('highly') is structurally mandatory."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'To check the structural integrity of the underwater columns, the inspector dove ______ into the water.'",
+    "options": ["deep", "deeply"],
+    "answer": "deep",
+    "explanation": "The verb 'dove' describes literal, physical downward movement. The flat adverb 'deep' is correct because it specifies concrete, geographical, or spatial depth."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'The audience members were ______ moved by the documentary regarding urban poverty.'",
+    "options": ["deep", "deeply"],
+    "answer": "deeply",
+    "explanation": "The context targets a profound emotional, psychological, or internal state. When intensifying feelings or abstract conditions, the proper adverbial choice is 'deeply'."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'The drone flew ______ over the commercial facility to capture the perimeter mapping.'",
+    "options": ["low", "lowly"],
+    "answer": "low",
+    "explanation": "The sentence tracks a literal spatial altitude. The word 'low' acts as a flat adverb modifying 'flew' to represent a physical position close to the ground."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'Before receiving his official corporate assignment, the apprentice bowed ______ out of respect.'",
+    "options": ["low", "lowly"],
+    "answer": "low",
+    "explanation": "The act of bowing involves a direct, physical downward motion of the body. This concrete spatial action requires the flat adverb 'low' rather than its figurative counterpart."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'Due to unexpected logistical delays along the main highway, the delivery driver arrived ______.'",
+    "options": ["late", "lately"],
+    "answer": "late",
+    "explanation": "The sentence evaluates punctuality relative to a specific schedule. The flat adverb 'late' means past the designated time, whereas 'lately' refers strictly to recent time frames."
+  },
+  {
+    "question": "Complete the statement with the proper modifier: 'I have been managing consecutive field audits, so I haven't eaten regular meals ______.'",
+    "options": ["late", "lately"],
+    "answer": "lately",
+    "explanation": "The temporal context implies a generalized modern span of time extending into the present. The adverb 'lately' accurately means 'recently' or 'in recent days'."
+  },
+  {
+    "question": "Complete the emergency instruction: 'Please stand ______ of the automated sliding warehouse doors while they are in motion.'",
+    "options": ["clear", "clearly"],
+    "answer": "clear",
+    "explanation": "In safety directives, 'clear' functions idiomatically as a flat adverb meaning 'completely away' or 'at a safe distance'. It modifies the posture 'stand' regarding physical proximity."
+  },
+  {
+    "question": "Complete the corporate communication directive: 'When conducting virtual briefings, it is crucial that you speak ______.'",
+    "options": ["clear", "clearly"],
+    "answer": "clearly",
+    "explanation": "The modifier describes the qualitative manner of communication. To indicate that an action must be performed in an intelligible, articulate, or understandable way, use 'clearly'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The dedicated administrative assistant works ______ to meet the quarterly deadlines.'",
+    "options": ["hard", "hardly"],
+    "answer": "hard",
+    "explanation": "To demonstrate that a subject exerts massive energy, diligence, and industrious effort, the flat adverb 'hard' must post-modify the active verb 'works'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'He exhibits severe performance issues and ______ works during his designated shift.'",
+    "options": ["hardly", "hard"],
+    "answer": "hardly",
+    "explanation": "The syntax demands a near-negative adverb of degree. 'Hardly' means 'scarcely' or 'almost not at all', completely reversing the sentence meaning when placed before the verb."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The majestic eagle flies ______ above the mountain peaks.'",
+    "options": ["high", "highly"],
+    "answer": "high",
+    "explanation": "Because the sentence involves a literal physical altitude or geographic elevation, the flat adverb 'high' is the grammatically accurate modifier for the verb 'flies'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'Given the positive initial metrics, it is ______ probable that the franchise will generate a profit.'",
+    "options": ["high", "highly"],
+    "answer": "highly",
+    "explanation": "The adjective 'probable' requires an adverb of degree to quantify likelihood. The figurative form 'highly' is used here to mean 'extremely' or 'to a superior degree'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'During the formal corporate seminar, the new team leader sat ______ to the regional director.'",
+    "options": ["close", "closely"],
+    "answer": "close",
+    "explanation": "The objective is to define immediate physical proximity or literal spatial distance. The flat adverb 'close' means near in space and correctly modifies the position 'sat'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The safety inspector advised everyone to listen ______ to the emergency evacuation guidelines.'",
+    "options": ["close", "closely"],
+    "answer": "closely",
+    "explanation": "The context implies giving intense, meticulous, and careful mental focus. The adverb 'closely' is chosen here to denote rigorous attention to detail."
+  },
+  {
+    "question": "Analyze the meaning shift: 'When the delivery crew arrived, they noticed that the main warehouse door was ______ open.'",
+    "options": ["wide", "widely"],
+    "answer": "wide",
+    "explanation": "The sentence highlights the literal, physical extent of a structural opening. The flat adverb 'wide' modifies the predicate adjective 'open' to show complete physical expansion."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The specialty food brand's unique signature recipes are ______ known across the country.'",
+    "options": ["wide", "widely"],
+    "answer": "widely",
+    "explanation": "The sentence references an abstract distribution of public awareness or reputation. The form 'widely' is an adverb of degree meaning 'by a vast number of people or over a massive range'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The data analyst confirmed that your calculations on the financial report are ______ right.'",
+    "options": ["dead", "deadly"],
+    "answer": "dead",
+    "explanation": "In formal idiomatic English, 'dead' can act as an emphatic flat adverb meaning 'absolutely', 'entirely', or 'completely' when modifying specific adjectives like 'right' or 'center'."
+  },
+  {
+    "question": "Analyze the meaning shift: 'The security team discovered that the intruder was carrying a ______ weapon.'",
+    "options": ["dead", "deadly"],
+    "answer": "deadly",
+    "explanation": "The slot modifies the common noun 'weapon'. The word 'deadly' is an adjective meaning 'lethal' or 'capable of causing death'; it is not operating as an adverb in this structure."
+  },
+  {
+    "question": "Identify the correct word class: 'The new administrative receptionist is a genuinely ______ person.'",
+    "options": ["lovely", "lovelily"],
+    "answer": "lovely",
+    "explanation": "The word 'lovely' is an imposter adjective ending in '-ly'. Because it directly describes the inherent qualities of the common noun 'person', the adjective form is correct."
+  },
+  {
+    "question": "Identify the proper structure: 'The customer service representative behaved in a highly ______ manner.'",
+    "options": ["friendly", "friendlily"],
+    "answer": "friendly",
+    "explanation": "'Friendly' is an adjective, not an adverb. To express a friendly manner of action, English relies on the syntactic phrasal formula: 'in a' + adjective + 'manner/way'."
+  },
+  {
+    "question": "Identify the proper structure: 'Working in a remote field station far from family can make an employee feel ______.'",
+    "options": ["lonely", "lone"],
+    "answer": "lonely",
+    "explanation": "The word 'feel' serves here as a linking verb expressing an internal emotional state. Linking verbs must be resolved with a predicate adjective; 'lonely' is the correct descriptive adjective."
+  },
+  {
+    "question": "Identify the correct word class: 'The branch manager's intervention was a ______ action that saved the procurement contract.'",
+    "options": ["timely", "timelily"],
+    "answer": "timely",
+    "explanation": "Despite its terminal '-ly' pattern, 'timely' is an adjective that means 'occurring at an opportune or appropriate moment'. It correctly modifies the noun 'action'."
+  },
+  {
+    "question": "Identify the proper structure: 'If the structural layout of the facility dashboard is disorganized, it looks ______.'",
+    "options": ["ugly", "uglily"],
+    "answer": "ugly",
+    "explanation": "The verb 'looks' functions as a sensory linking verb regarding aesthetic appearance. Linking verbs require a following adjective ('ugly') rather than an adverb to modify the subject."
+  },
+  {
+    "question": "Identify the correct word class: 'The retired construction foreman was a ______ man who guided the apprentices.'",
+    "options": ["kindly", "kindlily"],
+    "answer": "kindly",
+    "explanation": "In this specific syntactic frame, 'kindly' serves as an attributive adjective meaning 'benevolent', 'gentle', or 'warm-hearted', which perfectly modifies the singular noun 'man'."
+  },
+  {
+    "question": "Identify the correct word class: 'Failing to execute the standard warehouse inventory checks was a ______ error.'",
+    "options": ["costly", "costlily"],
+    "answer": "costly",
+    "explanation": "The word 'costly' is a descriptive adjective meaning 'expensive' or 'resulting in catastrophic loss'. It directly qualifies the noun 'error'."
+  },
+  {
+    "question": "Determine the syntactic versatility of the word 'Daily':",
+    "options": ["Adjective only", "Adverb only", "Both adjective and adverb"],
+    "answer": "Both adjective and adverb",
+    "explanation": "The word 'daily' changes its grammatical classification depending on placement. It is an adjective in 'a daily audit' (modifying a noun) and an adverb in 'we audit daily' (modifying a verb)."
+  },
+  {
+    "question": "Determine the syntactic versatility of the word 'Early':",
+    "options": ["Adjective only", "Adverb only", "Both adjective and adverb"],
+    "answer": "Both adjective and adverb",
+    "explanation": "'Early' shifts fluidly between word classes without changing spelling. It acts as an adjective in 'an early shift' and functions as an adverb in 'he arrived early'."
+  },
+  {
+    "question": "Determine the syntactic versatility of the word 'Fast':",
+    "options": ["Adjective only", "Adverb only", "Both adjective and adverb"],
+    "answer": "Both adjective and adverb",
+    "explanation": "'Fast' is a standard flat modifier. It handles adjective responsibilities in 'a fast delivery vehicle' and operates as an adverb of manner in 'the vehicle drives fast'. There is no word form 'fastly'."
+  },
+  {
+    "question": "Identify the correct adverbial expression of place: 'After completing the logistical orientation, the trainees were told to go ______.'",
+    "options": ["home", "to home"],
+    "answer": "home",
+    "explanation": "When combined with active verbs of motion or direction (such as 'go', 'walk', 'travel'), the noun 'home' functions directly as an adverb of place, eliminating the need for a preposition."
+  },
+  {
+    "question": "Identify the correct adverbial expression of duration: 'The operations team waited ______ at the terminal for the supply shipment.'",
+    "options": ["two hours", "for two hours", "Both are correct"],
+    "answer": "Both are correct",
+    "explanation": "In formal English syntax, expressions highlighting a specific duration of time can operate with or without the preposition 'for'. Both choices yield flawless grammar."
+  },
+  {
+    "question": "Identify the correct adverbial expression of distance: 'To verify the perimeter perimeter fence, the security detail ran ______.'",
+    "options": ["three miles", "for three miles", "Both are correct"],
+    "answer": "Both are correct",
+    "explanation": "Nouns quantifying spatial measurement or distance can function natively as adverbial objectives. They effectively modify verbs of motion either directly or when introduced by 'for'."
+  },
+  {
+    "question": "Identify the correct temporal syntax: 'The regional director scheduled the warehouse inspection ______.'",
+    "options": ["next week", "on next week"],
+    "answer": "next week",
+    "explanation": "When a time expression is preceded by demonstrative, limiting, or deictic modifiers such as 'next', 'last', 'this', or 'every', prepending a preposition like 'on' or 'in' is ungrammatical."
+  },
+  {
+    "question": "Identify the correct temporal syntax: 'The franchise auditing team finalized the accounting reports ______.'",
+    "options": ["last night", "on last night"],
+    "answer": "last night",
+    "explanation": "The phrasal modifier 'last night' operates as a self-contained adverbial objective of time. Introducing it with a preposition is a structural error in formal English."
+  },
+  {
+    "question": "Identify the correct expression of manner: 'To maximize structural efficiency, please assemble the commercial kiosk ______.'",
+    "options": ["this way", "on this way"],
+    "answer": "this way",
+    "explanation": "The demonstrative phrase 'this way' serves natively as an adverbial phrase of manner indicating 'in this specific mode'. It does not accept introductory prepositions."
+  },
+  {
+    "question": "Identify the correct directional syntax: 'The expansion manager traveled ______ to study international retail station setups.'",
+    "options": ["abroad", "to abroad"],
+    "answer": "abroad",
+    "explanation": "The word 'abroad' functions intrinsically as a spatial adverb of place. Because directional movement is already built into its definition, using the directional preposition 'to' is redundant."
+  },
+  {
+    "question": "Identify the correct directional syntax: 'Please take these finalized operational manuals ______ to the manager\\'s archive office.'",
+    "options": ["upstairs", "to upstairs"],
+    "answer": "upstairs",
+    "explanation": "'Upstairs' is a locational adverb that means 'to or on a higher floor'. It inherently handles direction, rendering the preposition 'to' syntactically incorrect."
+  },
+  {
+    "question": "Identify the correct directional syntax: 'The storm began to intensify, forcing the construction crew to move ______.'",
+    "options": ["inside", "to inside"],
+    "answer": "inside",
+    "explanation": "In this context, 'inside' functions as a standalone adverb of place denoting destination or position. Incorporating a preposition before it is a stylistic violation."
+  },
+  {
+    "question": "Identify the correct directional syntax: 'The delivery truck driver headed ______ to deliver the specialty food products.'",
+    "options": ["downtown", "to downtown"],
+    "answer": "downtown",
+    "explanation": "'Downtown' functions natively as an adverb of place indicating a specific urban sector. Verbs of motion link to it directly without any intermediary spatial prepositions."
+  },
+  {
+    "question": "Identify the proper sentence to avoid a double negative: 'The visibility inside the storage unit was so poor that I can\\'t see ______.'",
+    "options": ["nothing", "anything"],
+    "answer": "anything",
+    "explanation": "The auxiliary verb contraction 'can't' already introduces a negative value to the clause. Pairing it with the negative pronoun 'nothing' creates an ungrammatical double negative."
+  },
+  {
+    "question": "Identify the proper sentence to avoid a double negative: 'Because of his intense shyness, the trainee hardly ______ speaks during meetings.'",
+    "options": ["never", "ever"],
+    "answer": "ever",
+    "explanation": "The restrictive adverb 'hardly' possesses an inherent negative force. To maintain logical syntax, it must be paired with the affirmative element 'ever' to mean 'almost never'."
+  },
+  {
+    "question": "Identify the proper sentence to avoid a double negative: 'The operations supervisor rarely ______ eats at the facility cafeteria.'",
+    "options": ["don\\'t", "ever"],
+    "answer": "ever",
+    "explanation": "The frequency adverb 'rarely' is functionally negative. Adding the negative auxiliary 'don't' would result in a double negative, destroying the logical coherence of the clause."
+  },
+  {
+    "question": "Analyze the phrase for structural redundancy: 'The delivery rider promised to return back to the retail station immediately.'",
+    "options": ["correct", "redundant"],
+    "answer": "redundant",
+    "explanation": "The verb 'return' structurally means 'to go or come back'. Appending the adverb 'back' directly after 'return' creates a tautology or redundant phrasing."
+  },
+  {
+    "question": "Analyze the phrase for structural redundancy: 'Please repeat again the specific instructions for the franchise audit dashboard.'",
+    "options": ["correct", "redundant"],
+    "answer": "redundant",
+    "explanation": "The definition of 'repeat' is 'to say or do something again'. Consequently, utilizing the modifier 'again' alongside 'repeat' introduces unnecessary lexical repetition."
+  },
+  {
+    "question": "Analyze the phrase for structural redundancy: 'The construction foreman ordered the heavy machinery operators to proceed forward.'",
+    "options": ["correct", "redundant"],
+    "answer": "redundant",
+    "explanation": "The active verb 'proceed' inherently means 'to move forward or carry on an action'. Including the directional adverb 'forward' duplicates the spatial data redundantly."
+  },
+  {
+    "question": "Analyze the phrase for structural redundancy: 'If the system crashes, the system database will revert back to its default settings.'",
+    "options": ["correct", "redundant"],
+    "answer": "redundant",
+    "explanation": "The word 'revert' means 'to return to a previous state, condition, or practice'. Adding 'back' is a common but incorrect pleonasm that repeats the concept of return."
+  },
+  {
+    "question": "Analyze the phrase for structural redundancy: 'The current warehouse inventory supplies are sufficient enough to last the month.'",
+    "options": ["correct", "redundant"],
+    "answer": "redundant",
+    "explanation": "'Sufficient' and 'enough' are absolute synonyms expressing adequacy. Merging them into a single phrase ('sufficient enough') creates an obvious error of redundancy."
+  },
+  {
+    "question": "Identify the proper sentence to avoid a double negative: 'Due to the heavy rain, there was scarcely ______ present at the construction site.'",
+    "options": ["anyone", "no one"],
+    "answer": "anyone",
+    "explanation": "The adverb 'scarcely' implies near-total absence or negation. It requires the non-assertive pronoun 'anyone' to form a grammatically acceptable, non-redundant statement."
+  },
+  {
+    "question": "Identify the proper sentence to avoid a double negative: 'The warehouse cleanup crew found barely ______ usable after the facility flood.'",
+    "options": ["anything", "nothing"],
+    "answer": "anything",
+    "explanation": "The word 'barely' acts as a minimizing adverb with an implicit negative polarity. To prevent a double negative structure, it must be resolved using the open-ended pronoun 'anything'."
+  }
+]
 };
