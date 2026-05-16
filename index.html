@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>CSE Reviewer Hub | Nouns Lesson + Quiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CSE Reviewer Hub | Master the Exam</title>
   <style>
     * {
       margin: 0;
@@ -15,704 +15,746 @@
       background: radial-gradient(circle at 10% 20%, #0b1120, #030712);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       min-height: 100vh;
-      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
     }
 
-    /* main container */
-    .review-container {
-      max-width: 1300px;
+    /* modern glassmorphic container */
+    .dashboard {
+      max-width: 680px;
+      width: 100%;
       margin: 0 auto;
     }
 
-    /* header + subject cards row */
-    .hub-header {
-      margin-bottom: 28px;
+    .glass-panel {
+      background: rgba(15, 25, 45, 0.65);
+      backdrop-filter: blur(14px);
+      border-radius: 2rem;
+      border: 1px solid rgba(71, 85, 105, 0.5);
+      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease;
     }
 
-    .title-badge {
+    .content {
+      padding: 2rem 1.8rem;
+    }
+
+    .badge-area {
       display: flex;
-      align-items: baseline;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-flame {
+      font-size: 2rem;
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
     }
 
     h1 {
-      font-size: 2rem;
-      background: linear-gradient(135deg, #e2e8f0, #a5b4fc);
-      -webkit-background-clip: text;
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e2e8f0, #a5b4fc, #818cf8);
       background-clip: text;
+      -webkit-background-clip: text;
       color: transparent;
       letter-spacing: -0.02em;
     }
 
+    .tagline {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-top: 6px;
+      border-left: 2px solid #4f46e5;
+      padding-left: 12px;
+    }
+
     .access-status {
       background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 60px;
-      padding: 5px 16px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #cbd5e6;
-    }
-
-    .subhead {
-      color: #94a3b8;
-      border-left: 2px solid #6366f1;
-      padding-left: 14px;
-      margin-top: 6px;
-    }
-
-    /* subject cards grid (horizontal-ish but responsive) */
-    .subjects-row {
+      border-radius: 100px;
+      padding: 6px 16px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 28px 0 24px;
-    }
-
-    .subject-pill {
-      background: #0f172a80;
-      border: 1px solid #334155;
-      border-radius: 60px;
-      padding: 10px 20px;
-      font-weight: 600;
-      color: #e2e8f0;
-      cursor: pointer;
-      transition: all 0.2s;
-      backdrop-filter: blur(4px);
-      display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
     }
 
-    .subject-pill:hover {
-      border-color: #818cf8;
-      background: #1e293b;
-      transform: translateY(-2px);
-    }
-
-    .subject-pill.active {
-      background: linear-gradient(110deg, #4f46e5, #6366f1);
-      border-color: transparent;
-      box-shadow: 0 6px 14px #4f46e540;
-    }
-
-    /* MAIN FLEX: left panel (lesson) + right panel (quiz) */
-    .learning-panels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 16px;
-    }
-
-    .lesson-panel {
-      flex: 1.2;
-      min-width: 260px;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 28px;
-      border: 1px solid #334155;
-      padding: 24px;
-      transition: all 0.2s;
-    }
-
-    .quiz-panel {
-      flex: 0.9;
-      min-width: 280px;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 28px;
-      border: 1px solid #334155;
-      padding: 24px;
-      position: relative;
-    }
-
-    .panel-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      background: linear-gradient(to right, #c7d2fe, #a5b4fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: flex;
+    .pill {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      border-left: 3px solid #818cf8;
-      padding-left: 14px;
-    }
-
-    .lesson-content {
-      color: #e2e8f0;
-      line-height: 1.55;
-    }
-
-    .lesson-content h3 {
-      margin-top: 18px;
-      margin-bottom: 8px;
-      color: #facc15;
-      font-size: 1.2rem;
-    }
-
-    .lesson-content p {
-      margin-bottom: 14px;
-      color: #cbd5e6;
-    }
-
-    .lesson-content ul, .lesson-content ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .lesson-content li {
-      margin: 6px 0;
-    }
-
-    .example-box {
-      background: #02061760;
-      border-left: 4px solid #818cf8;
-      padding: 12px 16px;
-      border-radius: 16px;
-      margin: 16px 0;
-    }
-
-    /* QUIZ STYLES */
-    .quiz-question {
-      font-size: 1.1rem;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 40px;
       font-weight: 600;
-      color: #f1f5f9;
-      margin-bottom: 20px;
-      background: #0f172a80;
-      padding: 12px 14px;
-      border-radius: 20px;
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
     }
 
-    .quiz-options {
+    .pill-pro {
+      background: linear-gradient(110deg, #10b98120, #05966930);
+      border: 1px solid #34d39960;
+      color: #bef264;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+    }
+
+    .pill-trial {
+      background: #f59e0b20;
+      border: 1px solid #fbbf2460;
+      color: #fde68a;
+    }
+
+    .pill-free {
+      background: #33415560;
+      border: 1px solid #64748b60;
+      color: #cbd5e1;
+    }
+
+    .expiry-text {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-left: 4px;
+    }
+
+    .subject-grid {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 24px;
+      margin: 28px 0 20px;
     }
 
-    .quiz-option {
-      background: #0f172a;
+    .subject-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a80;
       border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .subject-card:hover {
+      border-color: #6366f1;
+      background: #1e293bb3;
+      transform: translateX(6px);
+      box-shadow: 0 8px 20px -12px #6366f180;
+    }
+
+    .subject-name {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subject-icon {
+      font-size: 1.4rem;
+    }
+
+    .arrow {
+      color: #818cf8;
+      font-size: 1.3rem;
+      transition: transform 0.2s;
+    }
+
+    .subject-card:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .badge-locked {
+      font-size: 0.7rem;
+      background: #1e293b;
+      padding: 3px 8px;
+      border-radius: 40px;
+      color: #94a3b8;
+      margin-left: 10px;
+      font-weight: normal;
+    }
+
+    .footer-tip {
+      font-size: 0.75rem;
+      text-align: center;
+      color: #5b6e8c;
+      padding-top: 18px;
+      border-top: 1px solid #1e2a3e;
+      margin-top: 12px;
+    }
+
+    /* MODAL STYLES — premium & refined */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+
+    .modal-container {
+      max-width: 520px;
+      width: 100%;
+      background: linear-gradient(145deg, #0f172a, #0b0f1c);
+      border-radius: 2rem;
+      border: 1px solid #334155;
+      box-shadow: 0 40px 70px -20px black;
+      overflow: hidden;
+      animation: fadeSlideUp 0.25s ease;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      padding: 1.5rem 1.8rem 0.8rem;
+      position: relative;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 28px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: #33415560;
+      color: white;
+    }
+
+    .modal-icon {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 1rem 1rem 0.5rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: #0f172a80;
+      border: 1px solid #334155;
+      padding: 8px 12px;
       border-radius: 60px;
-      padding: 10px 18px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #cbd5e6;
       cursor: pointer;
       transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(95deg, #4f46e5, #6366f1);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 12px #4f46e560;
+    }
+
+    .modal-body {
+      padding: 1.2rem 1.8rem 1.8rem;
+    }
+
+    .features-box {
+      background: #02061760;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      margin: 12px 0;
+      border: 1px solid #334155;
+    }
+
+    .features-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .features-box li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: #e2e8f0;
       font-size: 0.9rem;
     }
 
-    .quiz-option:hover {
-      background: #1e293b;
-      border-color: #818cf8;
-      transform: translateX(4px);
+    .features-box li::before {
+      content: "✨";
+      font-size: 1rem;
     }
 
-    .quiz-option.selected {
-      background: #4f46e5;
-      border-color: #a5b4fc;
-      color: white;
-      box-shadow: 0 0 8px #6366f180;
-    }
-
-    .quiz-feedback {
-      margin: 12px 0;
-      padding: 10px 14px;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .feedback-correct {
-      background: #10b98120;
-      border: 1px solid #34d39960;
-      color: #bef264;
-    }
-
-    .feedback-wrong {
-      background: #ef444420;
-      border: 1px solid #f8717160;
-      color: #fecaca;
-    }
-
-    .quiz-next {
-      background: linear-gradient(95deg, #4f46e5, #7c3aed);
-      border: none;
-      border-radius: 60px;
-      padding: 10px 20px;
-      font-weight: 700;
-      color: white;
-      cursor: pointer;
+    .btn-glow {
+      display: block;
       width: 100%;
-      font-size: 0.9rem;
-      transition: 0.2s;
-      margin-top: 8px;
-    }
-
-    .quiz-next:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 14px #4f46e580;
-    }
-
-    .quiz-result {
-      margin-top: 20px;
-      padding: 14px;
       text-align: center;
-      background: #02061760;
-      border-radius: 24px;
-      font-weight: bold;
-      color: #facc15;
+      background: linear-gradient(100deg, #4f46e5, #7c3aed);
+      padding: 14px 12px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 18px #4f46e540;
     }
 
-    hr {
-      border-color: #1e293b;
-      margin: 16px 0;
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px #6366f180;
     }
 
-    @media (max-width: 760px) {
-      .learning-panels {
-        flex-direction: column;
-      }
-      .panel-title {
-        font-size: 1.4rem;
-      }
+    .secondary-btn {
+      background: #1e293b;
+      border: 1px solid #475569;
+      padding: 10px 12px;
+      border-radius: 60px;
+      color: #e2e8f0;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 12px;
+    }
+
+    .secondary-btn:hover {
+      background: #334155;
+      border-color: #818cf8;
+    }
+
+    .trial-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 60px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #f1f5f9;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    .trial-input:focus {
+      border-color: #6366f1;
+    }
+
+    .info-note {
+      font-size: 0.75rem;
+      color: #7e8aa2;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .mt-2 {
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
-<div class="review-container">
-  <div class="hub-header">
-    <div class="title-badge">
-      <h1>📘 CSE Reviewer Hub · Grammar Focus</h1>
-      <div class="access-status">⚡ Click any topic → Lesson + quiz instantly</div>
-    </div>
-    <div class="subhead">🎯 No scrolling needed: select a topic and the lesson appears with interactive quiz right beside.</div>
-  </div>
 
-  <!-- TOPIC BUTTONS (Subjects) - Nouns highlighted as primary example -->
-  <div class="subjects-row" id="subjectsContainer">
-    <div class="subject-pill active" data-topic="nouns">📚 NOUNS (Person, Place, Thing)</div>
-    <div class="subject-pill" data-topic="verbs">⚡ VERBS (Action & Linking)</div>
-    <div class="subject-pill" data-topic="adjectives">🎨 ADJECTIVES (Describe Nouns)</div>
-    <div class="subject-pill" data-topic="pronouns">🔄 PRONOUNS (Replace Nouns)</div>
-  </div>
+<div class="dashboard">
+  <div class="glass-panel">
+    <div class="content">
+      <div class="badge-area">
+        <div class="logo-badge">
+          <span class="icon-flame">📚⚡</span>
+          <h1>CSE Reviewer Hub</h1>
+        </div>
+        <div id="licenseStatusBox" class="access-status">
+          <span class="pill pill-free">⟳ loading</span>
+        </div>
+      </div>
+      <div class="tagline">
+        🧠 5 subjects • Full Mock Exam (170 items) • Smart practice
+      </div>
 
-  <!-- DUAL PANELS: LESSON (left) & QUIZ (right) -->
-  <div class="learning-panels">
-    <!-- LESSON PANEL -->
-    <div class="lesson-panel" id="lessonPanel">
-      <div class="panel-title">
-        <span>📖</span> <span id="lessonTitle">NOUNS: The Building Blocks</span>
-      </div>
-      <div id="lessonTextArea" class="lesson-content">
-        <!-- dynamic lesson will be injected here without scroll -->
-      </div>
-    </div>
+      <!-- main menu -->
+      <div class="subject-grid">
+        <a href="verbal.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">📖</span> Verbal Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="numerical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🔢</span> Numerical Reasoning</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="analytical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🧩</span> Analytical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="clerical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">📑</span> Clerical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="general_info.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🇵🇭</span> General Information</span>
+          <span class="arrow">→</span>
+        </a>
 
-    <!-- QUIZ PANEL -->
-    <div class="quiz-panel" id="quizPanel">
-      <div class="panel-title">
-        <span>🧠</span> <span>Quick Quiz</span>
+        <!-- PRACTICE MODE (locked by default) -->
+        <a href="#" id="practiceModeBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🎯</span> Practice Mode (Quick Drills)</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <!-- FULL MOCK EXAM -->
+        <a href="#" id="mockExamBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🏆</span> Full Mock Exam (170 Items)</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="license.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🔑</span> Activate PRO / License</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
-      <div id="quizContainer">
-        <!-- dynamic quiz will be injected here (question, options, feedback, next) -->
+      <div class="footer-tip">
+        💡 Tip: Start with topics → Practice Mode → conquer the 170-item mock exam.
       </div>
     </div>
   </div>
 </div>
 
+<!-- UNIVERSAL MODAL (for upgrade / trial) -->
+<div id="accessModal" class="modal-overlay" style="display: none;">
+  <div class="modal-container">
+    <div class="modal-header">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="modal-icon">⭐</div>
+      <div class="modal-title" id="modalTitleText">Unlock Full Access</div>
+      <div class="tabs" id="modalTabs">
+        <button class="tab-btn active" data-tab="pro">🚀 PRO Lifetime</button>
+        <button class="tab-btn" data-tab="trial">🎁 Free Trial Key</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBodyContainer">
+      <!-- dynamic content via js -->
+    </div>
+  </div>
+</div>
+
 <script>
-  // --------------------------------------------------------------
-  // LESSON DATA + QUIZ DATA (Nouns, Verbs, Adjectives, Pronouns)
-  // All content is self-contained, appears immediately on click.
-  // --------------------------------------------------------------
-  const topicsData = {
-    nouns: {
-      title: "📌 NOUNS – Person, Place, Thing, or Idea",
-      lessonHtml: `
-        <p><strong>What is a noun?</strong> A noun is a word that names a <strong>person</strong>, <strong>place</strong>, <strong>thing</strong>, or <strong>idea</strong>. Nouns are the foundation of English sentences.</p>
-        <div class="example-box">
-          📍 <strong>Examples:</strong> <br>
-          👩 Person: teacher, president, Maria, friend <br>
-          🏙️ Place: Manila, school, park, ocean <br>
-          📱 Thing: laptop, book, flower, car <br>
-          💡 Idea: freedom, happiness, courage, love
-        </div>
-        <h3>🔹 Types of Nouns (Quick recap)</h3>
-        <ul>
-          <li><strong>Common nouns</strong> – general names (city, dog, month)</li>
-          <li><strong>Proper nouns</strong> – specific names (Paris, Max, July) → always capitalized</li>
-          <li><strong>Concrete nouns</strong> – can see/touch (apple, phone)</li>
-          <li><strong>Abstract nouns</strong> – ideas/feelings (justice, sadness)</li>
-          <li><strong>Collective nouns</strong> – group (team, flock, audience)</li>
-        </ul>
-        <h3>🌟 Why nouns matter for CSE</h3>
-        <p>Identifying nouns helps in subject-verb agreement, sentence correction, and reading comprehension. Many exam questions test proper noun usage and capitalization.</p>
-        <div class="example-box">
-          ✏️ <strong>CSE-style tip:</strong> "The committee (decide / decides) its own rules." → committee (collective noun) is singular → "decides"
-        </div>
-      `,
-      quiz: {
-        questions: [
-          {
-            text: "Which of the following is a PROPER noun?",
-            options: ["teacher", "city", "Eiffel Tower", "happiness"],
-            correct: 2,  // index 0-based: "Eiffel Tower"
-            explanation: "✅ 'Eiffel Tower' names a specific landmark → proper noun."
-          },
-          {
-            text: "Identify the ABSTRACT noun in this sentence: 'Her kindness brought great joy to everyone.'",
-            options: ["Her", "kindness", "brought", "everyone"],
-            correct: 1,
-            explanation: "✅ 'Kindness' is an abstract noun (emotion/quality)."
-          },
-          {
-            text: "Which sentence uses a COLLECTIVE noun correctly?",
-            options: [
-              "The flock of birds fly south every winter.",
-              "The flock of birds flies south every winter.",
-              "Both are correct",
-              "None are correct"
-            ],
-            correct: 1,
-            explanation: "✅ 'Flock' is singular collective → 'flies' (singular verb) is correct."
-          },
-          {
-            text: "What type of noun is 'Philippines'?",
-            options: ["Common noun", "Proper noun", "Abstract noun", "Collective noun"],
-            correct: 1,
-            explanation: "🇵🇭 'Philippines' is a specific country → Proper noun."
-          }
-        ]
+  (function(){
+    // ----------------------------- STORAGE KEYS (offline-first) -------------------------
+    const STORAGE_ACCESS_KIND = "cse_access_kind";   // "pro", "trial", "free"
+    const STORAGE_EXPIRES_AT = "cse_expires_at";     // ISO string for trial
+    const STORAGE_IS_PRO_LEGACY = "cse_is_pro";      // legacy compatibility
+    const STORAGE_LICENSE_KEY = "cse_license_key";
+
+    // Helper: format Manila time (just readable)
+    function formatManila(dateISO) {
+      if (!dateISO) return '';
+      try {
+        return new Date(dateISO).toLocaleString('en-PH', { timeZone: 'Asia/Manila', dateStyle: 'medium' });
+      } catch(e) { return dateISO; }
+    }
+
+    function isExpired(expiryISO) {
+      if (!expiryISO) return false;
+      const expiryTime = Date.parse(expiryISO);
+      if (isNaN(expiryTime)) return false;
+      return Date.now() > expiryTime;
+    }
+
+    // synchronize legacy flag
+    function syncLegacy() {
+      const legacyPro = localStorage.getItem(STORAGE_IS_PRO_LEGACY) === "true";
+      const currentKind = localStorage.getItem(STORAGE_ACCESS_KIND);
+      if (legacyPro && currentKind !== "pro") {
+        localStorage.setItem(STORAGE_ACCESS_KIND, "pro");
+        localStorage.removeItem(STORAGE_EXPIRES_AT);
       }
-    },
-    verbs: {
-      title: "⚡ VERBS – Action & State of Being",
-      lessonHtml: `
-        <p><strong>Verbs</strong> express action, occurrence, or state of being. Every complete sentence needs a verb.</p>
-        <div class="example-box">
-          🏃 Action verbs: run, write, think, build <br>
-          🔗 Linking verbs: am, is, are, was, seem, become <br>
-          💡 Helping verbs: can, could, will, have, do
-        </div>
-        <h3>📌 CSE Focus: Subject-Verb Agreement</h3>
-        <p>Singular subjects take singular verbs (she runs). Plural subjects take plural verbs (they run).</p>
-        <div class="example-box">
-          ✨ Example: "The list of items <strong>is</strong> on the table." (list = singular)
-        </div>
-      `,
-      quiz: {
-        questions: [
-          {
-            text: "Choose the correct verb: 'Either the president or the vice president _____ to attend the summit.'",
-            options: ["are", "is", "were", "have"],
-            correct: 1,
-            explanation: "✅ With 'either/or', verb agrees with nearest subject (vice president singular → is)."
-          },
-          {
-            text: "What is the verb in the sentence: 'The exam seemed quite challenging.'",
-            options: ["exam", "seemed", "quite", "challenging"],
-            correct: 1,
-            explanation: "✅ 'seemed' = linking verb."
-          }
-        ]
-      }
-    },
-    adjectives: {
-      title: "🎨 ADJECTIVES – Describe & Modify Nouns",
-      lessonHtml: `
-        <p><strong>Adjectives</strong> describe nouns or pronouns, answering: Which one? What kind? How many?</p>
-        <div class="example-box">
-          🟢 Examples: beautiful sunset, three apples, red car, interesting story.
-        </div>
-        <h3>🔹 Order of adjectives (CSE tip)</h3>
-        <p>Opinion → Size → Age → Shape → Color → Origin → Material → Purpose</p>
-        <div class="example-box">✨ 'A beautiful small old round red French wooden table'</div>
-      `,
-      quiz: {
-        questions: [
-          {
-            text: "Which word functions as an adjective?",
-            options: ["slowly", "friendly", "run", "happiness"],
-            correct: 1,
-            explanation: "✅ 'friendly' describes a noun (a friendly person)."
-          },
-          {
-            text: "Identify the adjective: 'She wore an elegant silk gown.'",
-            options: ["wore", "elegant", "silk", "both elegant & silk"],
-            correct: 3,
-            explanation: "✅ 'elegant' and 'silk' both modify 'gown'."
-          }
-        ]
-      }
-    },
-    pronouns: {
-      title: "🔄 PRONOUNS – Replace Nouns to Avoid Repetition",
-      lessonHtml: `
-        <p><strong>Pronouns</strong> take the place of nouns (he, she, it, they, we, etc.).</p>
-        <div class="example-box">
-          📌 <strong>Types:</strong> Personal (I, you), Possessive (mine, yours), Reflexive (myself), Relative (who, which)
-        </div>
-        <h3>⚠️ Common CSE pronoun errors</h3>
-        <p>Pronoun-antecedent agreement: A pronoun must agree in number & gender with its noun.</p>
-        <div class="example-box">
-          ❌ Each student must bring their book. (informal but sometimes tricky)<br>
-          ✅ Each student must bring his or her book. (formal)
-        </div>
-      `,
-      quiz: {
-        questions: [
-          {
-            text: "Choose the correct pronoun: 'Nobody called, did _____?'",
-            options: ["they", "he", "she", "it"],
-            correct: 0,
-            explanation: "✅ Indefinite pronoun 'nobody' is singular but often takes 'they' in modern English."
-          },
-          {
-            text: "Which sentence has correct pronoun usage?",
-            options: [
-              "Me and John went to the review center.",
-              "John and me went to the review center.",
-              "John and I went to the review center.",
-              "John and myself went to the review center."
-            ],
-            correct: 2,
-            explanation: "✅ 'John and I' (subject pronoun) is correct."
-          }
-        ]
+      if (!legacyPro && currentKind === "pro") {
+        // keep consistency
+        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "true");
       }
     }
-  };
 
-  // Additional fallback: add extra quiz questions for verbs/adjectives/pronouns to make each at least 2 items,
-  // but already have 2 for verbs, 2 for adjectives, 2 for pronouns, 4 for nouns (perfect).
-  // Ensure verbs has at least 2 questions (already done). adjectives 2, pronouns 2.
-  // Enhance verbs quiz with more robust data
-  if (topicsData.verbs.quiz.questions.length < 3) {
-    topicsData.verbs.quiz.questions.push({
-      text: "Which helping verb completes the sentence: 'They _____ already finished the mock exam.'",
-      options: ["has", "have", "is", "are"],
-      correct: 1,
-      explanation: "✅ 'have' with plural subject 'they'."
-    });
-  }
-  if (topicsData.adjectives.quiz.questions.length < 3) {
-    topicsData.adjectives.quiz.questions.push({
-      text: "Which adjective best describes 'weather' in: 'The _____ weather forced us to stay indoors.'",
-      options: ["rain", "rained", "rainy", "raining"],
-      correct: 2,
-      explanation: "✅ 'rainy' is an adjective describing weather."
-    });
-  }
-  if (topicsData.pronouns.quiz.questions.length < 3) {
-    topicsData.pronouns.quiz.questions.push({
-      text: "What is the possessive pronoun in: 'That decision is yours to make.'",
-      options: ["that", "yours", "make", "decision"],
-      correct: 1,
-      explanation: "✅ 'yours' shows ownership without a noun."
-    });
-  }
+    // get current access state (purely offline)
+    function getAccessState() {
+      syncLegacy();
+      let kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
+      let expiry = localStorage.getItem(STORAGE_EXPIRES_AT) || null;
 
-  // --------------------------------------------------------------
-  // QUIZ STATE MANAGEMENT (per topic)
-  // --------------------------------------------------------------
-  let currentTopicKey = "nouns";
-  let currentQuizData = null;        // stores { questions array, currentIndex, userAnswers, selectedOption, feedbackMsg }
-  let quizState = {
-    questions: [],
-    currentIndex: 0,
-    userAnswers: [],   // store selected option index for each question (-1 if not answered)
-    selectedOption: -1,
-    feedbackMsg: "",
-    isAnswered: false
-  };
+      if (kind === "trial" && expiry && isExpired(expiry)) {
+        // auto degrade to free
+        localStorage.setItem(STORAGE_ACCESS_KIND, "free");
+        localStorage.removeItem(STORAGE_EXPIRES_AT);
+        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
+        kind = "free";
+        expiry = null;
+      }
 
-  // Helper to render quiz panel based on current topic and state
-  function renderQuiz() {
-    const quizContainer = document.getElementById("quizContainer");
-    if (!quizContainer) return;
-    const topic = topicsData[currentTopicKey];
-    if (!topic || !topic.quiz) {
-      quizContainer.innerHTML = `<p style="color:#cbd5e6;">✨ Quiz coming soon for this topic.</p>`;
-      return;
-    }
-
-    // init or reinit quiz state if topic changed or no state
-    if (!quizState.questions.length || quizState.questions !== topic.quiz.questions) {
-      // fresh start for this topic
-      quizState.questions = topic.quiz.questions;
-      quizState.currentIndex = 0;
-      quizState.userAnswers = new Array(topic.quiz.questions.length).fill(-1);
-      quizState.selectedOption = -1;
-      quizState.isAnswered = false;
-      quizState.feedbackMsg = "";
-    }
-
-    const q = quizState.questions[quizState.currentIndex];
-    if (!q) return;
-
-    const selectedIdx = quizState.userAnswers[quizState.currentIndex];
-    const isCurrentAnswered = (selectedIdx !== -1);
-    const tempSelected = (quizState.selectedOption !== -1 && !isCurrentAnswered) ? quizState.selectedOption : selectedIdx;
-    
-    let optionsHtml = "";
-    q.options.forEach((opt, idx) => {
-      let additionalClass = "";
-      if (tempSelected === idx) additionalClass = "selected";
-      optionsHtml += `<div class="quiz-option ${additionalClass}" data-opt-index="${idx}">${String.fromCharCode(65+idx)}. ${opt}</div>`;
-    });
-
-    let feedbackHtml = "";
-    if (quizState.feedbackMsg) {
-      const isCorrectFlag = (quizState.userAnswers[quizState.currentIndex] === q.correct);
-      feedbackHtml = `<div class="quiz-feedback ${isCorrectFlag ? 'feedback-correct' : 'feedback-wrong'}">💬 ${quizState.feedbackMsg}</div>`;
-    }
-
-    let nextButtonHtml = `<button class="quiz-next" id="quizNextBtn">${quizState.currentIndex + 1 === quizState.questions.length ? '🏁 Finish & See Result' : 'Next Question →'}</button>`;
-    
-    let progressText = `<div style="font-size:0.75rem; color:#94a3b8; margin-bottom:10px;">Question ${quizState.currentIndex+1} of ${quizState.questions.length}</div>`;
-    
-    let resultSummary = "";
-    if (quizState.currentIndex + 1 === quizState.questions.length && quizState.userAnswers.every(a => a !== -1)) {
-      const totalCorrect = quizState.userAnswers.reduce((acc, ans, idx) => {
-        return acc + (ans === quizState.questions[idx].correct ? 1 : 0);
-      }, 0);
-      resultSummary = `<div class="quiz-result">📊 Quiz result: ${totalCorrect} / ${quizState.questions.length} correct. ${totalCorrect === quizState.questions.length ? 'Perfect! 🎉' : 'Review the lesson & retry!'}</div>`;
-    }
-
-    quizContainer.innerHTML = `
-      ${progressText}
-      <div class="quiz-question">❓ ${q.text}</div>
-      <div class="quiz-options" id="quizOptionsArea">${optionsHtml}</div>
-      ${feedbackHtml}
-      ${!resultSummary ? nextButtonHtml : `<button class="quiz-next" id="retryTopicQuiz" style="background:#334155;">🔄 Retry Quiz</button>`}
-      ${resultSummary}
-    `;
-
-    // attach option listeners
-    const optionDivs = document.querySelectorAll(".quiz-option");
-    optionDivs.forEach(div => {
-      div.addEventListener("click", (e) => {
-        if (quizState.userAnswers[quizState.currentIndex] !== -1) {
-          // already answered for this question, cannot change (or we allow change? better not confuse)
-          quizState.feedbackMsg = "You already answered this. Proceed to next.";
-          renderQuiz();
-          return;
-        }
-        const idx = parseInt(div.dataset.optIndex);
-        quizState.selectedOption = idx;
-        // show feedback immediately: check correct?
-        const currentQ = quizState.questions[quizState.currentIndex];
-        const isCorrect = (idx === currentQ.correct);
-        const explanation = currentQ.explanation || (isCorrect ? "Correct!" : "Incorrect. Check the lesson.");
-        quizState.feedbackMsg = isCorrect ? `✅ Correct! ${explanation}` : `❌ Wrong. ${explanation}`;
-        // save answer
-        quizState.userAnswers[quizState.currentIndex] = idx;
-        quizState.isAnswered = true;
-        renderQuiz(); // re-render to lock
-      });
-    });
-
-    const nextBtn = document.getElementById("quizNextBtn");
-    if (nextBtn && !resultSummary) {
-      nextBtn.addEventListener("click", () => {
-        if (quizState.userAnswers[quizState.currentIndex] === -1) {
-          quizState.feedbackMsg = "⚠️ Please select an answer first.";
-          renderQuiz();
-          return;
-        }
-        // move to next question if available
-        if (quizState.currentIndex + 1 < quizState.questions.length) {
-          quizState.currentIndex++;
-          quizState.selectedOption = -1;
-          quizState.feedbackMsg = "";
-          quizState.isAnswered = false;
-          renderQuiz();
-        } else {
-          // finish quiz: show result, no next
-          if (quizState.userAnswers.every(a => a !== -1)) {
-            // all answered, just render shows summary
-            renderQuiz();
-          } else {
-            quizState.feedbackMsg = "Answer remaining questions first.";
-            renderQuiz();
-          }
-        }
-      });
-    }
-
-    const retryBtn = document.getElementById("retryTopicQuiz");
-    if (retryBtn) {
-      retryBtn.addEventListener("click", () => {
-        // reset quiz state for current topic
-        quizState.userAnswers = new Array(quizState.questions.length).fill(-1);
-        quizState.currentIndex = 0;
-        quizState.selectedOption = -1;
-        quizState.feedbackMsg = "";
-        quizState.isAnswered = false;
-        renderQuiz();
-      });
-    }
-  }
-
-  // Render lesson fully (no scrolling needed)
-  function renderLesson(topicKey) {
-    const topic = topicsData[topicKey];
-    if (!topic) return;
-    document.getElementById("lessonTitle").innerHTML = `${topic.title}`;
-    document.getElementById("lessonTextArea").innerHTML = topic.lessonHtml;
-  }
-
-  // Switch topic handler: updates active pill, lesson, and resets quiz
-  function switchTopic(topicKey) {
-    currentTopicKey = topicKey;
-    // update active pill style
-    document.querySelectorAll(".subject-pill").forEach(pill => {
-      if (pill.dataset.topic === topicKey) {
-        pill.classList.add("active");
+      if (kind === "pro") {
+        return { isUnlocked: true, kind: "pro", expiry: null, valid: true };
+      } else if (kind === "trial" && expiry && !isExpired(expiry)) {
+        return { isUnlocked: true, kind: "trial", expiry: expiry, valid: true };
       } else {
-        pill.classList.remove("active");
+        return { isUnlocked: false, kind: "free", expiry: null, valid: false };
       }
-    });
-    // render lesson
-    renderLesson(topicKey);
-    // reset quiz state for new topic
-    const topicData = topicsData[topicKey];
-    if (topicData && topicData.quiz) {
-      quizState.questions = topicData.quiz.questions;
-      quizState.currentIndex = 0;
-      quizState.userAnswers = new Array(topicData.quiz.questions.length).fill(-1);
-      quizState.selectedOption = -1;
-      quizState.feedbackMsg = "";
-      quizState.isAnswered = false;
-    } else {
-      quizState.questions = [];
     }
-    renderQuiz();
-  }
 
-  // Attach event listeners to subject pills
-  function bindSubjectEvents() {
-    const pills = document.querySelectorAll(".subject-pill");
-    pills.forEach(pill => {
-      pill.addEventListener("click", (e) => {
-        const topic = pill.dataset.topic;
-        if (topic) switchTopic(topic);
+    // update UI (status pill, labels)
+    function updateUI() {
+      const state = getAccessState();
+      const statusDiv = document.getElementById("licenseStatusBox");
+      const mockBtn = document.getElementById("mockExamBtn");
+      const practiceBtn = document.getElementById("practiceModeBtn");
+      
+      // update pill
+      if (statusDiv) {
+        if (state.kind === "pro") {
+          statusDiv.innerHTML = `<span class="pill pill-pro">✅ PRO · Lifetime</span>`;
+        } else if (state.kind === "trial") {
+          const expiryDate = state.expiry ? formatManila(state.expiry) : "";
+          statusDiv.innerHTML = `<span class="pill pill-trial">🎟️ TRIAL active · until ${expiryDate}</span>`;
+        } else {
+          statusDiv.innerHTML = `<span class="pill pill-free">🔓 FREE · Mock Exam locked</span>`;
+        }
+      }
+
+      // update button labels visually (optional subtle badges)
+      if (mockBtn) {
+        const nameSpan = mockBtn.querySelector(".subject-name");
+        if (nameSpan && state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            // remove any locked indicator
+            const oldBadge = nameSpan.querySelector(".badge-locked");
+            if(oldBadge) oldBadge.remove();
+            if(state.kind === 'pro') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; margin-left:6px;">UNLOCKED</span>`;
+            else if(state.kind === 'trial') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#f59e0b20; padding:2px 8px; border-radius:30px; margin-left:6px;">TRIAL</span>`;
+          }
+        } else if (nameSpan && !state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span class="badge-locked">🔒 LOCKED</span>`;
+          }
+        }
+      }
+
+      if (practiceBtn) {
+        const nameSpan = practiceBtn.querySelector(".subject-name");
+        if (nameSpan && state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px;">ACCESSIBLE</span>`;
+          }
+        } else if (nameSpan && !state.isUnlocked) {
+          nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span class="badge-locked">🔒 LOCKED</span>`;
+        }
+      }
+    }
+
+    // ---------- MODAL LOGIC (upgrade / trial redirect) ----------
+    const modal = document.getElementById("accessModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modalTitleText = document.getElementById("modalTitleText");
+    const modalBodyContainer = document.getElementById("modalBodyContainer");
+    let activeReturnUrl = null;   // store which feature we want to unlock
+
+    function closeModal() {
+      if (modal) modal.style.display = "none";
+      activeReturnUrl = null;
+    }
+
+    function openModal(targetUrl) {
+      activeReturnUrl = targetUrl;
+      const currentState = getAccessState();
+      renderModalContent(currentState);
+      if (modal) modal.style.display = "flex";
+    }
+
+    function renderModalContent(state) {
+      if (!modalBodyContainer) return;
+      // determine active tab: default PRO
+      const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab || "pro";
+      
+      if (activeTab === "pro") {
+        modalTitleText.innerText = "🚀 Unlock PRO Access";
+        modalBodyContainer.innerHTML = `
+          <div class="features-box">
+            <ul>
+              <li>Full Mock Exam (170 items) timed & realistic</li>
+              <li>Advanced & expert question sets</li>
+              <li>Practice Mode unlimited drills</li>
+              <li>Detailed review & analytics</li>
+              <li>Lifetime updates + ad-free experience</li>
+            </ul>
+          </div>
+          <a href="https://7329689874364.gumroad.com/l/cvpax" target="_blank" class="btn-glow">⭐ Get PRO Lifetime (One-Time)</a>
+          <div class="info-note">Secure payment · Instant license activation after purchase. Enter key on License page.</div>
+          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here →</a>
+        `;
+      } else {
+        // TRIAL TAB
+        modalTitleText.innerText = "🎟️ Activate Free Trial";
+        modalBodyContainer.innerHTML = `
+          <div class="features-box">
+            <p style="margin-bottom:12px; color:#cbd5e6;">🔑 Enter your 7-day trial key to unlock full Mock Exam & Practice Mode.</p>
+          </div>
+          <input type="text" id="trialKeyInputModal" class="trial-input" placeholder="e.g., CSE-TRIAL-ABCD-1234" autocomplete="off">
+          <button id="modalTrialActivateBtn" class="btn-glow" style="margin-top: 14px; background: linear-gradient(95deg,#f59e0b,#d97706);">Activate Trial & Continue</button>
+          <div id="trialMessageModal" class="info-note" style="color:#facc15;"></div>
+          <div class="info-note" style="margin-top:16px;">No trial key? <a href="license.html" style="color:#818cf8;">Purchase PRO or request trial</a></div>
+        `;
+
+        // attach trial activation event dynamically
+        setTimeout(() => {
+          const trialBtn = document.getElementById("modalTrialActivateBtn");
+          const trialInput = document.getElementById("trialKeyInputModal");
+          const msgDiv = document.getElementById("trialMessageModal");
+          if (trialBtn && trialInput) {
+            trialBtn.onclick = () => {
+              const rawKey = trialInput.value.trim();
+              if (!rawKey) {
+                if(msgDiv) msgDiv.innerText = "Please enter a trial key.";
+                return;
+              }
+              // SIMULATED trial validation (offline demo). In real implementation, server validates.
+              // For this reviewer hub: we simulate trial activation using predefined prefix + check.
+              // DEMO: any key starting with "CSE-TRIAL" will activate 7-day trial.
+              if (rawKey.toUpperCase().startsWith("CSE-TRIAL")) {
+                const expiryDate = new Date();
+                expiryDate.setDate(expiryDate.getDate() + 7);
+                localStorage.setItem(STORAGE_ACCESS_KIND, "trial");
+                localStorage.setItem(STORAGE_EXPIRES_AT, expiryDate.toISOString());
+                localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
+                if(msgDiv) {
+                  msgDiv.innerText = "✅ Trial activated! Redirecting...";
+                  msgDiv.style.color = "#86efac";
+                }
+                setTimeout(() => {
+                  closeModal();
+                  updateUI();
+                  if (activeReturnUrl) {
+                    window.location.href = activeReturnUrl;
+                  } else {
+                    // just refresh UI
+                    location.reload();
+                  }
+                }, 800);
+              } else {
+                if(msgDiv) msgDiv.innerText = "❌ Invalid trial key. Please get a valid key from the license section.";
+              }
+            };
+          }
+        }, 10);
+      }
+    }
+
+    // Tab switching inside modal
+    function bindTabSwitching() {
+      const tabs = document.querySelectorAll(".tab-btn");
+      tabs.forEach(tab => {
+        tab.removeEventListener("click", tab._listener);
+        const handler = () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          const currentState = getAccessState();
+          renderModalContent(currentState);
+        };
+        tab.addEventListener("click", handler);
+        tab._listener = handler;
+      });
+    }
+
+    // Intercept clicks on practice & mock exam
+    function handleProtectedRedirect(event, targetHref) {
+      event.preventDefault();
+      const state = getAccessState();
+      if (state.isUnlocked) {
+        window.location.href = targetHref;
+      } else {
+        openModal(targetHref);
+      }
+    }
+
+    // ---- initial setup after DOM ----
+    document.addEventListener("DOMContentLoaded", () => {
+      syncLegacy();
+      updateUI();
+
+      const mockBtn = document.getElementById("mockExamBtn");
+      const practiceBtn = document.getElementById("practiceModeBtn");
+
+      if (mockBtn) {
+        mockBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "mock_exam.html"));
+      }
+      if (practiceBtn) {
+        practiceBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "practice.html"));
+      }
+
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", closeModal);
+      }
+      modal?.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // bind tabs each time modal opens? we'll rebind when modal content changes, but we bind once globally
+      bindTabSwitching();
+
+      // Add event for refreshing page after license entry (optional)
+      window.addEventListener("storage", (e) => {
+        if (e.key === STORAGE_ACCESS_KIND || e.key === STORAGE_EXPIRES_AT) {
+          updateUI();
+        }
       });
     });
-  }
-
-  // Initial load: set nouns active
-  document.addEventListener("DOMContentLoaded", () => {
-    bindSubjectEvents();
-    switchTopic("nouns");  // loads Nouns lesson + quiz immediately, no scroll needed
-  });
+  })();
 </script>
 </body>
 </html>
