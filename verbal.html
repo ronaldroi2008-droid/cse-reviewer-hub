@@ -6044,6 +6044,58 @@ function initVerbalPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initVerbalPage);
+
+function buildTOC() {
+  var lessonCard = document.querySelector('.lesson-card');
+  if (!lessonCard) return;
+  var existingWrapper = lessonCard.querySelector('.toc-wrapper');
+  if (existingWrapper) existingWrapper.remove();
+  var headings = lessonCard.querySelectorAll('#lessonBody h2');
+  if (headings.length < 2) return;
+  headings.forEach(function(h2, i) { h2.id = 'toc-section-' + i; });
+  var tocWrapper = document.createElement('div');
+  tocWrapper.className = 'toc-wrapper';
+  var toggleBtn = document.createElement('button');
+  toggleBtn.className = 'toc-toggle-btn';
+  toggleBtn.type = 'button';
+  toggleBtn.innerHTML = '<span>📋 Jump to Section</span><span class="toc-arrow">▼</span>';
+  var panel = document.createElement('div');
+  panel.className = 'toc-panel';
+  var ul = document.createElement('ul');
+  ul.className = 'toc-list';
+  headings.forEach(function(h2, i) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#toc-section-' + i;
+    var cleanText = h2.textContent.replace(/\s+/g, ' ').trim();
+    a.innerHTML = '<span class="toc-num">' + (i + 1) + '</span>' + cleanText;
+    a.addEventListener('click', function() {
+      panel.classList.remove('open');
+      toggleBtn.classList.remove('open');
+    });
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  panel.appendChild(ul);
+  tocWrapper.appendChild(toggleBtn);
+  tocWrapper.appendChild(panel);
+  toggleBtn.addEventListener('click', function() {
+    var isOpen = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    toggleBtn.classList.toggle('open', !isOpen);
+  });
+  var lessonBodyEl = document.getElementById('lessonBody');
+  if (lessonBodyEl) { lessonCard.insertBefore(tocWrapper, lessonBodyEl); }
+}
+(function() {
+  var _orig = loadLesson;
+  loadLesson = function(topicId) {
+    _orig(topicId);
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() { buildTOC(); });
+    });
+  };
+})();
 </script>
 
 </body>
