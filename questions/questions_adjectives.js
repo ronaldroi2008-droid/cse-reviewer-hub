@@ -10,69 +10,306 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   // LEVEL 1: BEGINNER (50 Items) - Identification & Basic Types
   // ============================================================
   beginner: [
-    { question: "Which word is the adjective? 'She bought a red bag.'", options: ["She", "bought", "red", "bag"], answer: "red", explanation: "Describes the bag." },
-    { question: "Which word is the adjective? 'The tall boy is my cousin.'", options: ["tall", "boy", "is", "cousin"], answer: "tall", explanation: "Describes the boy." },
-    { question: "In 'four chairs', 'four' is a:", options: ["Noun", "Verb", "Adjective", "Adverb"], answer: "Adjective", explanation: "Numeral adjective." },
-    { question: "Adjective in: 'We had a delicious meal.'", options: ["We", "had", "delicious", "meal"], answer: "delicious", explanation: "Describes the meal." },
-    { question: "Adjective in: 'That building is new.'", options: ["That", "building", "is", "new"], answer: "new", explanation: "Describes the building." },
-    { question: "Adjective in: 'She lives in a small house.'", options: ["lives", "small", "house", "in"], answer: "small", explanation: "Describes the house." },
-    { question: "Adjective in: 'My bag is heavy.'", options: ["My", "bag", "is", "heavy"], answer: "heavy", explanation: "Describes the bag." },
-    { question: "Adjective in: 'They watched an exciting movie.'", options: ["They", "watched", "exciting", "movie"], answer: "exciting", explanation: "Describes the movie." },
-    { question: "Adjective in: 'The streets are quiet tonight.'", options: ["streets", "are", "quiet", "tonight"], answer: "quiet", explanation: "Describes the streets." },
-    { question: "Adjective in: 'She has long hair.'", options: ["She", "has", "long", "hair"], answer: "long", explanation: "Describes the hair." },
-    
-    // Types
-    { question: "Which is a demonstrative adjective?", options: ["quickly", "those", "hers", "they"], answer: "those", explanation: "Points to specific items (those bags)." },
-    { question: "Which is a possessive adjective?", options: ["hers", "their", "them", "they"], answer: "their", explanation: "Shows ownership (their house)." },
-    { question: "Identify the interrogative adjective:", options: ["Which book?", "Which is it?", "Whose is that?", "What?"], answer: "Which book?", explanation: "'Which' modifies 'book'." },
-    { question: "Adjective in: 'Our teacher is kind.'", options: ["Our", "teacher", "is", "kind"], answer: "kind", explanation: "Descriptive adjective." },
-    { question: "Which has a proper adjective?", options: ["fresh fruit", "Filipino food", "fast car", "quiet street"], answer: "Filipino food", explanation: "Derived from proper noun Philippines." },
-    { question: "Which has a numeral adjective?", options: ["some apples", "many books", "three brothers", "enough time"], answer: "three brothers", explanation: "Exact number." },
-    { question: "Which is a quantitative adjective?", options: ["few", "quickly", "sing", "teacher"], answer: "few", explanation: "Shows amount." },
-    { question: "Demonstrative adjective in: 'That car is expensive.'", options: ["That", "car", "is", "expensive"], answer: "That", explanation: "Points out the car." },
-    { question: "Correct possessive adjective usage:", options: ["This is me pen", "This is mine pen", "This is my pen", "This is I pen"], answer: "This is my pen", explanation: "My + Noun." },
-    { question: "Sentence with interrogative adjective:", options: ["What is that?", "Whose bag is this?", "Who is he?", "Where are they?"], answer: "Whose bag is this?", explanation: "'Whose' modifies 'bag'." },
-
-    // Adj vs Adv Basics
-    { question: "Choose correct usage:", options: ["She sings beautiful", "She sings beautifully", "She sings beauty", "She sings beautify"], answer: "She sings beautifully", explanation: "Adverb describing verb." },
-    { question: "Correct usage after linking verb 'smells':", options: ["smells good", "smells well", "smells quickly", "smells carefully"], answer: "smells good", explanation: "Linking verb takes adjective." },
-    { question: "Which is correct?", options: ["He feels badly", "He feels bad", "He feels badder", "He feels more bad"], answer: "He feels bad", explanation: "Linking verb 'feels' + adjective." },
-    { question: "Correct usage:", options: ["tastes sweet", "tastes sweetly", "tastes sweetness", "tastes sweetful"], answer: "tastes sweet", explanation: "Linking verb 'tastes' + adjective." },
-    { question: "Adjective in: 'He is a careful driver.'", options: ["He", "is", "careful", "driver"], answer: "careful", explanation: "Describes driver." },
-    { question: "Sentence using adverb correctly:", options: ["He drives careful", "He drives carefully", "He is carefully", "He is carefully driver"], answer: "He drives carefully", explanation: "Modifies verb 'drives'." },
-    { question: "Correct usage of 'good':", options: ["sings good", "is a good singer", "sings more good", "sings goodly"], answer: "is a good singer", explanation: "Good describes noun 'singer'." },
-    { question: "Adjective in: 'It was a noisy classroom.'", options: ["It", "was", "noisy", "classroom"], answer: "noisy", explanation: "Describes classroom." },
-    { question: "Usage of 'well' as adjective (health):", options: ["I feel well", "I feel quickly", "I feel hardly", "I feel slowly"], answer: "I feel well", explanation: "Well = healthy." },
-    { question: "Which is an adjective?", options: ["quick", "quickly", "quickness", "quickerly"], answer: "quick", explanation: "Simple form." },
-
-    // Simple Comparison
-    { question: "Comparative of 'tall':", options: ["taller", "more tall", "tallest", "most tall"], answer: "taller", explanation: "Add -er." },
-    { question: "Superlative of 'small':", options: ["more small", "smallest", "most small", "smaller"], answer: "smallest", explanation: "Add -est." },
-    { question: "Comparative of 'beautiful':", options: ["beautifuller", "more beautiful", "most beautiful", "beautifullest"], answer: "more beautiful", explanation: "Long adjectives take 'more'." },
-    { question: "Superlative of 'interesting':", options: ["more interesting", "most interesting", "interestinger", "interestingest"], answer: "most interesting", explanation: "Long adjectives take 'most'." },
-    { question: "Ana is ___ than Bea.", options: ["smart", "smarter", "smartest", "more smart"], answer: "smarter", explanation: "Comparing two." },
-    { question: "Comparing 3+ players:", options: ["he is the taller", "he is taller", "he is the tallest", "he is more tall"], answer: "he is the tallest", explanation: "Superlative for 3+." },
-    { question: "Comparative of 'narrow':", options: ["narrow", "narrower", "narrowest", "more narrowest"], answer: "narrower", explanation: "Add -er." },
-    { question: "Superlative of 'happy':", options: ["happier", "more happy", "happiest", "most happiest"], answer: "happiest", explanation: "y becomes i + est." },
-    { question: "Comparative of 'hot':", options: ["hot", "more hot", "hotter", "hottest"], answer: "hotter", explanation: "Double t + er." },
-    { question: "Positive degree:", options: ["better", "best", "good", "more good"], answer: "good", explanation: "Base form." },
-
-    // Simple Order
-    { question: "Natural order:", options: ["red small car", "small red car", "car small red", "red car small"], answer: "small red car", explanation: "Size before Color." },
-    { question: "Natural order:", options: ["brown big bag", "big brown bag", "bag brown big", "brown bag big"], answer: "big brown bag", explanation: "Size before Color." },
-    { question: "Correct order:", options: ["wooden old chair", "old wooden chair", "chair old wooden", "wooden chair old"], answer: "old wooden chair", explanation: "Age before Material." },
-    { question: "Correct phrase:", options: ["Chinese interesting story", "interesting Chinese story", "story Chinese interesting", "story interesting Chinese"], answer: "interesting Chinese story", explanation: "Opinion before Origin." },
-    { question: "Natural order:", options: ["plastic small bottle", "small plastic bottle", "bottle small plastic", "plastic bottle small"], answer: "small plastic bottle", explanation: "Size before Material." },
-    {
-      question: "Correct phrase:",
-      options: ["expensive new phone", "new expensive phone", "phone expensive new", "expensive phone new"],
-      answer: "expensive new phone",
-      explanation: "Opinion (expensive) comes before age (new)."
-    },
-    { question: "Usage of 'enough':", options: ["enough tall", "tall enough", "enough is tall", "tall is enough"], answer: "tall enough", explanation: "Adj + enough." },
-    { question: "Usage of 'too':", options: ["too hot", "hot too", "too is hot", "hot too much"], answer: "too hot", explanation: "Too + Adj." },
-    { question: "Adjectives in 'The sky is blue and clear':", options: ["None", "One", "Two", "Three"], answer: "Two", explanation: "Blue, Clear." },
-    { question: "Adjectives in 'small quiet town':", options: ["visited, town", "small, quiet", "we, town"], answer: "small, quiet", explanation: "Modifiers of town." }
+     {
+    "question": "Which word is the adjective? 'She bought a red bag.'",
+    "options": ["She", "bought", "red", "bag"],
+    "answer": "red",
+    "explanation": "In this sentence, the word 'red' is the adjective because it modifies or describes the noun 'bag' by telling us its color. 'She' is a pronoun, 'bought' is a verb, and 'bag' is the object noun."
+  },
+  {
+    "question": "Which word is the adjective? 'The tall boy is my cousin.'",
+    "options": ["tall", "boy", "is", "cousin"],
+    "answer": "tall",
+    "explanation": "The word 'tall' functions as the adjective because it directly describes the physical characteristic of the noun 'boy'. It answers the question 'which boy?' or 'what kind of boy?'."
+  },
+  {
+    "question": "In 'four chairs', 'four' is a:",
+    "options": ["Noun", "Verb", "Adjective", "Adverb"],
+    "answer": "Adjective",
+    "explanation": "The word 'four' is a numeral adjective (specifically a cardinal number). Instead of describing a quality, it quantifies the noun 'chairs' by stating exactly how many units are present."
+  },
+  {
+    "question": "Adjective in: 'We had a delicious meal.'",
+    "options": ["We", "had", "delicious", "meal"],
+    "answer": "delicious",
+    "explanation": "The word 'delicious' is the adjective because it describes the quality or taste of the noun 'meal'. It provides sensory information about the food that was eaten."
+  },
+  {
+    "question": "Adjective in: 'That building is new.'",
+    "options": ["That", "building", "is", "new"],
+    "answer": "new",
+    "explanation": "The word 'new' is a predicate adjective. Even though it comes after the linking verb 'is', it still functions to describe the state or age of the subject noun 'building'."
+  },
+  {
+    "question": "Adjective in: 'She lives in a small house.'",
+    "options": ["lives", "small", "house", "in"],
+    "answer": "small",
+    "explanation": "The word 'small' is an adjective of size. It is placed directly before the noun 'house' to modify it by giving us an idea of its physical scale or dimensions."
+  },
+  {
+    "question": "Adjective in: 'My bag is heavy.'",
+    "options": ["My", "bag", "is", "heavy"],
+    "answer": "heavy",
+    "explanation": "The word 'heavy' serves as a predicate adjective in this sentence. It follows the linking verb 'is' and describes a specific physical property or weight of the subject noun 'bag'."
+  },
+  {
+    "question": "Adjective in: 'They watched an exciting movie.'",
+    "options": ["They", "watched", "exciting", "movie"],
+    "answer": "exciting",
+    "explanation": "The word 'exciting' is a descriptive adjective derived from a participle. It is positioned right before the noun 'movie' to explain the kind of emotional response or quality the movie possessed."
+  },
+  {
+    "question": "Adjective in: 'The streets are quiet tonight.'",
+    "options": ["streets", "are", "quiet", "tonight"],
+    "answer": "quiet",
+    "explanation": "The word 'quiet' acts as a predicate adjective following the plural linking verb 'are'. It describes the peaceful condition or atmosphere of the subject noun 'streets'."
+  },
+  {
+    "question": "Adjective in: 'She has long hair.'",
+    "options": ["She", "has", "long", "hair"],
+    "answer": "long",
+    "explanation": "The word 'long' is the descriptive adjective here. It is paired with the noun 'hair' to specify its measurement or physical extent from root to tip."
+  },
+  {
+    "question": "Which is a demonstrative adjective?",
+    "options": ["quickly", "those", "hers", "they"],
+    "answer": "those",
+    "explanation": "The word 'those' is a demonstrative adjective because it is used to point out specific plural nouns that are relatively far from the speaker (e.g., 'those books'). 'Quickly' is an adverb, 'hers' is a possessive pronoun, and 'they' is a subject pronoun."
+  },
+  {
+    "question": "Which is a possessive adjective?",
+    "options": ["hers", "their", "them", "they"],
+    "answer": "their",
+    "explanation": "The word 'their' is a possessive adjective because it must be placed directly before a noun to show ownership or association (e.g., 'their house'). 'Hers' is a standalone possessive pronoun, while 'them' and 'they' are personal pronouns."
+  },
+  {
+    "question": "Identify the interrogative adjective:",
+    "options": ["Which book?", "Which is it?", "Whose is that?", "What?"],
+    "answer": "Which book?",
+    "explanation": "In the phrase 'Which book?', the word 'Which' acts as an interrogative adjective because it directly modifies and precedes the noun 'book' to ask a specific question. In the other options, the words stand alone as interrogative pronouns."
+  },
+  {
+    "question": "Adjective in: 'Our teacher is kind.'",
+    "options": ["Our", "teacher", "is", "kind"],
+    "answer": "kind",
+    "explanation": "While 'Our' is technically a possessive adjective modifying 'teacher', the clear descriptive adjective focusing on personality or trait here is 'kind', which acts as a predicate adjective describing the subject."
+  },
+  {
+    "question": "Which has a proper adjective?",
+    "options": ["fresh fruit", "Filipino food", "fast car", "quiet street"],
+    "answer": "Filipino food",
+    "explanation": "The phrase 'Filipino food' contains a proper adjective. 'Filipino' is derived from the proper noun 'Philippines' and must always be capitalized because it refers to a specific nationality, culture, or origin modifying the noun 'food'."
+  },
+  {
+    "question": "Which has a numeral adjective?",
+    "options": ["some apples", "many books", "three brothers", "enough time"],
+    "answer": "three brothers",
+    "explanation": "The phrase 'three brothers' contains a numeral adjective ('three') because it expresses a definite, exact countable number. The other choices ('some', 'many', 'enough') are indefinite quantitative adjectives that do not give an exact count."
+  },
+  {
+    "question": "Which is a quantitative adjective?",
+    "options": ["few", "quickly", "sing", "teacher"],
+    "answer": "few",
+    "explanation": "The word 'few' is an indefinite quantitative adjective because it indicates an approximate amount or volume of something without providing a precise number. 'Quickly' is an adverb, 'sing' is a verb, and 'teacher' is a noun."
+  },
+  {
+    "question": "Demonstrative adjective in: 'That car is expensive.'",
+    "options": ["That", "car", "is", "expensive"],
+    "answer": "That",
+    "explanation": "The word 'That' functions as a demonstrative adjective because it modifies the noun 'car' by pointing out a specific singular object located at a distance from the speaker. 'Expensive' is a descriptive predicate adjective."
+  },
+  {
+    "question": "Correct possessive adjective usage:",
+    "options": ["This is me pen", "This is mine pen", "This is my pen", "This is I pen"],
+    "answer": "This is my pen",
+    "explanation": "The word 'my' is the correct singular possessive adjective that must immediately precede and modify the noun 'pen'. 'Mine' is a possessive pronoun used without a noun, 'me' is an object pronoun, and 'I' is a subject pronoun."
+  },
+  {
+    "question": "Sentence with interrogative adjective:",
+    "options": ["What is that?", "Whose bag is this?", "Who is he?", "Where are they?"],
+    "answer": "Whose bag is this?",
+    "explanation": "In 'Whose bag is this?', the word 'Whose' is an interrogative adjective because it is placed directly next to the noun 'bag' to ask about ownership. In 'What is that?', 'What' stands alone as an interrogative pronoun."
+  },
+  {
+    "question": "Choose correct usage:",
+    "options": ["She sings beautiful", "She sings beautifully", "She sings beauty", "She sings beautify"],
+    "answer": "She sings beautifully",
+    "explanation": "The action verb 'sings' requires the adverb 'beautifully' to describe *how* the action is performed. Adjectives like 'beautiful' cannot modify active verbs; they can only modify nouns or follow linking verbs."
+  },
+  {
+    "question": "Correct usage after linking verb 'smells':",
+    "options": ["smells good", "smells well", "smells quickly", "smells carefully"],
+    "answer": "smells good",
+    "explanation": "'Smells' functions here as a sensory linking verb, not an action verb. In English grammar, linking verbs must be followed by a predicate adjective ('good') to describe the subject, rather than an adverb ('well')."
+  },
+  {
+    "question": "Which is correct?",
+    "options": ["He feels badly", "He feels bad", "He feels badder", "He feels more bad"],
+    "answer": "He feels bad",
+    "explanation": "The verb 'feels' is a linking verb that connects the subject to an emotional or physical state. Therefore, it requires the adjective form 'bad' instead of the adverb 'badly'. Forms like 'badder' and 'more bad' are grammatically incorrect."
+  },
+  {
+    "question": "Correct usage:",
+    "options": ["tastes sweet", "tastes sweetly", "tastes sweetness", "tastes sweetful"],
+    "answer": "tastes sweet",
+    "explanation": "The word 'tastes' is a sensory linking verb that describes the property of a food item. It must be paired with the descriptive adjective 'sweet' rather than an adverb or noun to express its flavor profile."
+  },
+  {
+    "question": "Adjective in: 'He is a careful driver.'",
+    "options": ["He", "is", "careful", "driver"],
+    "answer": "careful",
+    "explanation": "The word 'careful' is an adjective because it is positioned directly before the noun 'driver' to modify it, telling us what kind of habits or characteristics the driver has."
+  },
+  {
+    "question": "Sentence using adverb correctly:",
+    "options": ["He drives careful", "He drives carefully", "He is carefully", "He is carefully driver"],
+    "answer": "He drives carefully",
+    "explanation": "In this sentence, 'drives' is an action verb, so it must be modified by the adverb 'carefully' to explain the manner of driving. Adjectives like 'careful' are incorrect when modifying actions."
+  },
+  {
+    "question": "Correct usage of 'good':",
+    "options": ["sings good", "is a good singer", "sings more good", "sings goodly"],
+    "answer": "is a good singer",
+    "explanation": "The word 'good' is strictly an adjective and must modify a noun like 'singer'. To modify an action verb like 'sings', you would need to use the adverb 'well'. Thus, 'is a good singer' is perfectly grammatical."
+  },
+  {
+    "question": "Adjective in: 'It was a noisy classroom.'",
+    "options": ["It", "was", "noisy", "classroom"],
+    "answer": "noisy",
+    "explanation": "The word 'noisy' is the adjective because it modifies the common noun 'classroom', describing the loud auditory environment or sound level inside the room."
+  },
+  {
+    "question": "Usage of 'well' as adjective (health):",
+    "options": ["I feel well", "I feel quickly", "I feel hardly", "I feel slowly"],
+    "answer": "I feel well",
+    "explanation": "While 'well' is usually an adverb, it functions as a valid predicate adjective when it refers specifically to a person's physical health or lack of illness after linking verbs like 'feel' or 'am'."
+  },
+  {
+    "question": "Which is an adjective?",
+    "options": ["quick", "quickly", "quickness", "quickerly"],
+    "answer": "quick",
+    "explanation": "The word 'quick' is the base, simple form of the adjective. 'Quickly' is an adverb ending in '-ly', 'quickness' is an abstract noun ending in the suffix '-ness', and 'quickerly' is an ungrammatical invented word."
+  },
+  {
+    "question": "Comparative of 'tall':",
+    "options": ["taller", "more tall", "tallest", "most tall"],
+    "answer": "taller",
+    "explanation": "For short, one-syllable adjectives like 'tall', the standard rule to form the comparative degree (comparing two things) is to append the suffix '-er' to the end of the base word, resulting in 'taller'."
+  },
+  {
+    "question": "Superlative of 'small':",
+    "options": ["more small", "smallest", "most small", "smaller"],
+    "answer": "smallest",
+    "explanation": "For short, single-syllable adjectives like 'small', the superlative degree (comparing three or more things) is achieved by attaching the suffix '-est' to the end of the base form, giving us 'smallest'."
+  },
+  {
+    "question": "Comparative of 'beautiful':",
+    "options": ["beautifuller", "more beautiful", "most beautiful", "beautifullest"],
+    "answer": "more beautiful",
+    "explanation": "Adjectives with three or more syllables, such as 'beau-ti-ful', cannot accept the comparative suffix '-er'. Instead, they form the comparative degree by placing the independent modifier word 'more' in front of them."
+  },
+  {
+    "question": "Superlative of 'interesting':",
+    "options": ["more interesting", "most interesting", "interestinger", "interestingest"],
+    "answer": "most interesting",
+    "explanation": "Because 'in-ter-est-ing' is a multi-syllable adjective, it requires the periphrastic word 'most' placed before its base form to establish the superlative degree. Suffixes like '-est' are not used for long adjectives."
+  },
+  {
+    "question": "Ana is ___ than Bea.",
+    "options": ["smart", "smarter", "smartest", "more smart"],
+    "answer": "smarter",
+    "explanation": "The sentence introduces a direct comparison between exactly two individuals ('Ana' and 'Bea') and features the keyword 'than'. This context mandates the comparative degree form 'smarter'."
+  },
+  {
+    "question": "Comparing 3+ players:",
+    "options": ["he is the taller", "he is taller", "he is the tallest", "he is more tall"],
+    "answer": "he is the tallest",
+    "explanation": "When evaluating or comparing a group consisting of three or more entities, you must apply the superlative degree accompanied by the definite article, which makes 'the tallest' the correct choice."
+  },
+  {
+    "question": "Comparative of 'narrow':",
+    "options": ["narrow", "narrower", "narrowest", "more narrowest"],
+    "answer": "narrower",
+    "explanation": "Many two-syllable adjectives ending in unstressed sounds or '-ow' follow the rules of single-syllable adjectives. Therefore, 'narrow' takes the comparative suffix '-er' to become 'narrower'."
+  },
+  {
+    "question": "Superlative of 'happy':",
+    "options": ["happier", "more happy", "happiest", "most happiest"],
+    "answer": "happiest",
+    "explanation": "For two-syllable adjectives that terminate with a consonant followed by the letter '-y', the spelling rule requires you to change the '-y' to an '-i' before adding the superlative suffix '-est', creating 'happiest'."
+  },
+  {
+    "question": "Comparative of 'hot':",
+    "options": ["hot", "more hot", "hotter", "hottest"],
+    "answer": "hotter",
+    "explanation": "The word 'hot' is a short adjective ending in a single vowel followed by a single consonant (CVC pattern). The spelling rule states you must double the final consonant ('t') before adding the comparative suffix '-er'."
+  },
+  {
+    "question": "Positive degree:",
+    "options": ["better", "best", "good", "more good"],
+    "answer": "good",
+    "explanation": "The positive degree refers to the basic, un-inflected form of an adjective without any comparison taking place. 'Good' is the positive base form, 'better' is the comparative, and 'best' is the superlative."
+  },
+  {
+    "question": "Natural order:",
+    "options": ["red small car", "small red car", "car small red", "red car small"],
+    "answer": "small red car",
+    "explanation": "According to the conventional order of cumulative adjectives in English, modifiers indicating physical Size ('small') must always precede modifiers indicating Color ('red') before reaching the head noun."
+  },
+  {
+    "question": "Natural order:",
+    "options": ["brown big bag", "big brown bag", "bag brown big", "brown bag big"],
+    "answer": "big brown bag",
+    "explanation": "Following the royal order of adjectives, an adjective describing physical Size ('big') must be placed ahead of an adjective specifying Color ('brown') to create a natural-sounding English phrase."
+  },
+  {
+    "question": "Correct order:",
+    "options": ["wooden old chair", "old wooden chair", "chair old wooden", "wooden chair old"],
+    "answer": "old wooden chair",
+    "explanation": "Standard English grammar dictates that adjectives concerning Age ('old') must appear before adjectives concerning the Material or composition ('wooden') from which the object is manufactured."
+  },
+  {
+    "question": "Correct phrase:",
+    "options": ["Chinese interesting story", "interesting Chinese story", "story Chinese interesting", "story interesting Chinese"],
+    "answer": "interesting Chinese story",
+    "explanation": "A subjective Opinion adjective ('interesting') represents how someone perceives something and must always precede objective classification adjectives such as Origin or nationality ('Chinese')."
+  },
+  {
+    "question": "Natural order:",
+    "options": ["plastic small bottle", "small plastic bottle", "bottle small plastic", "plastic bottle small"],
+    "answer": "small plastic bottle",
+    "explanation": "In the standard adjective sequence hierarchy, physical dimensions or Size ('small') take priority in placement over the specific substance or Material ('plastic') making up the object."
+  },
+  {
+    "question": "Correct phrase:",
+    "options": ["expensive new phone", "new expensive phone", "phone expensive new", "expensive phone new"],
+    "answer": "expensive new phone",
+    "explanation": "An adjective detailing personal value or Opinion ('expensive') is highly subjective and must be positioned prior to an objective descriptor tracking Age ('new') in a descriptive sequence."
+  },
+  {
+    "question": "Usage of 'enough':",
+    "options": ["enough tall", "tall enough", "enough is tall", "tall is enough"],
+    "answer": "tall enough",
+    "explanation": "When the modifier 'enough' is used to specify sufficiency in relation to an adjective, the strict word order rule requires 'enough' to follow immediately *after* the adjective (Adjective + Enough)."
+  },
+  {
+    "question": "Usage of 'too':",
+    "options": ["too hot", "hot too", "too is hot", "hot too much"],
+    "answer": "too hot",
+    "explanation": "The intensifying adverb 'too', which signals an excessive degree, operates under the opposite rule of 'enough' and must be positioned directly *before* the adjective it modifies (Too + Adjective)."
+  },
+  {
+    "question": "Adjectives in 'The sky is blue and clear':",
+    "options": ["None", "One", "Two", "Three"],
+    "answer": "Two",
+    "explanation": "There are exactly two predicate adjectives in this sentence connected by the conjunction 'and'. Both 'blue' (color) and 'clear' (condition) work together to describe the state of the subject noun 'sky'."
+  },
+  {
+    "question": "Adjectives in 'small quiet town':",
+    "options": ["visited, town", "small, quiet", "we, town"],
+    "answer": "small, quiet",
+    "explanation": "The words 'small' (size) and 'quiet' (atmosphere) are both functioning as descriptive adjectives that modify and provide details about the central noun 'town'."
+  }
   ],
 
   // ============================================================
