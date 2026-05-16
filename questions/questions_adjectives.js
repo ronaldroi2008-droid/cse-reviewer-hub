@@ -622,76 +622,306 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   // LEVEL 3: ADVANCED (50 Items) - Nuances & Context
   // ============================================================
   advanced: [
-    {
-      question: "Find the error: 'The flowers (A) / smelled (B) / sweetly (C) / in the garden (D).'",
-      options: ["The flowers", "smelled", "sweetly", "in the garden"],
-      answer: "sweetly",
-      explanation: "With sense verbs like 'smelled' as linking verbs, use an adjective: 'smelled sweet'."
-    },
-    { question: "Linking verb 'look':", options: ["looked carefully", "looked tired", "looked around", "looked through"], answer: "looked tired", explanation: "Links to adjective." },
-    { question: "After 'remain':", options: ["remained quietly", "remained quiet", "remained quietlier", "remained quietful"], answer: "remained quiet", explanation: "Linking verb." },
-    { question: "After 'appear':", options: ["appeared suddenly", "appeared nervous", "appeared quickly", "appeared quietly"], answer: "appeared nervous", explanation: "Links to adjective." },
-    { question: "After 'feel':", options: ["feel strongly", "feel strong", "feel stronglyly", "feel more strongly"], answer: "feel strong", explanation: "Physical state." },
-    { question: "Formal English:", options: ["writes neat", "writes neatly", "writes more neat", "writes neatlier"], answer: "writes neatly", explanation: "Adverb modifying verb." },
-    { question: "Linking verb 'sound':", options: ["soundly passed", "sounds reasonable", "sounds clearly", "sounds beautifully"], answer: "sounds reasonable", explanation: "Adj after sound." },
-    { question: "After 'grow':", options: ["grew angrily", "grew angry", "grew angryly", "grew more angrily"], answer: "grew angry", explanation: "Became angry." },
-    { question: "After 'turn':", options: ["turned red", "turned quickly", "turned redly", "turned more quickly"], answer: "turned red", explanation: "Became red." },
-    { question: "Correct sentence:", options: ["gone sour", "gone sourly", "gone sourer", "gone most sour"], answer: "gone sour", explanation: "Linking verb." },
-    {
-      question: "Best order:",
-      options: ["long old narrow road", "old long narrow road", "narrow old long road", "long narrow old road"],
-      answer: "long narrow old road",
-      explanation: "Dimension (long, narrow) usually comes before age (old)."
-    },
-    { question: "Standard order:", options: ["German small red car", "small red German car", "red German small car", "German red small car"], answer: "small red German car", explanation: "Size-Color-Origin." },
-    { question: "Natural phrase:", options: ["interesting new Filipino movie", "new interesting Filipino movie", "Filipino new interesting movie", "interesting Filipino new movie"], answer: "interesting new Filipino movie", explanation: "Opinion-Age-Origin." },
-    { question: "Correct order:", options: ["beautiful big old stone church", "big old beautiful stone church", "old beautiful big stone church", "beautiful stone big old church"], answer: "beautiful big old stone church", explanation: "Opinion-Size-Age-Material." },
-    {
-      question: "Multiple adjectives:",
-      options: ["small black stray dog", "stray black small dog", "black small stray dog", "stray small black dog"],
-      answer: "small black stray dog",
-      explanation: "Size (small) + Color (black) + Type (stray)."
-    },
-    { question: "Best order:", options: ["wooden lovely round table", "lovely round wooden table", "round wooden lovely table", "wooden round lovely table"], answer: "lovely round wooden table", explanation: "Opinion-Shape-Material." },
-    { question: "Natural phrase:", options: ["cotton white comfortable shirt", "comfortable white cotton shirt", "white comfortable cotton shirt", "cotton comfortable white shirt"], answer: "comfortable white cotton shirt", explanation: "Opinion-Color-Material." },
-    { question: "Correct phrase:", options: ["old French famous song", "famous old French song", "French famous old song", "famous French old song"], answer: "famous old French song", explanation: "Opinion-Age-Origin." },
-    { question: "Usual order:", options: ["delicious small round cake", "small delicious round cake", "delicious round small cake", "round small delicious cake"], answer: "delicious small round cake", explanation: "Opinion-Size-Shape." },
-    { question: "Best phrase:", options: ["heavy big old metal box", "big heavy old metal box", "old big heavy metal box", "metal heavy old big box"], answer: "big heavy old metal box", explanation: "Size-Weight-Age-Material." },
-    { question: "Logically correct:", options: ["Between Maria, Ana, Liza, Maria is taller", "Between Maria, Ana, Liza, Maria is taller", "Among Maria, Ana, Liza, Maria is the tallest", "Among Maria, Ana, Liza, Maria is taller"], answer: "Among Maria, Ana, Liza, Maria is the tallest", explanation: "3+ items." },
-    {
-      question: "Illogical comparison:",
-      options: ["better than previous", "better than previous one", "better than previous policy", "Both B and C"],
-      answer: "better than previous",
-      explanation: "Option A is incomplete. We must compare noun to noun (e.g., 'better than the previous one' or 'better than the previous policy')."
-    },
-    { question: "Correct sentence:", options: ["more better", "much better", "very more better", "betterest"], answer: "much better", explanation: "Intensifier." },
-    { question: "Formal English:", options: ["most safe", "safer", "more safe", "safe"], answer: "safer", explanation: "Standard comparative." },
-    { question: "Less vs Fewer:", options: ["less people", "fewer traffic", "fewer tasks", "less tasks"], answer: "fewer tasks", explanation: "Countable." },
-    { question: "Correct sentence:", options: ["most eldest", "eldest", "elder than all", "more eldest"], answer: "eldest", explanation: "Superlative." },
-    { question: "Correct sentence:", options: ["more preferable", "preferable", "more preferable", "most preferable"], answer: "preferable", explanation: "Absolute." },
-    { question: "Grammatically acceptable:", options: ["more kinder", "kinder", "most kindest", "kindest than"], answer: "kinder", explanation: "Standard." },
-    { question: "Correct forms:", options: ["far, farther, farthest", "far, more far, most far", "far, furtherer, furtherest", "far, farest, farestest"], answer: "far, farther, farthest", explanation: "Standard." },
-    { question: "Best sentence:", options: ["better of three", "the better of three", "the best of three", "bestest"], answer: "the best of three", explanation: "Superlative." },
-    { question: "Correct sentence:", options: ["most unique", "a unique", "very unique", "uniqueest"], answer: "a unique", explanation: "Absolute." },
-    { question: "Redundancy check:", options: ["final conclusion", "conclusion", "end result", "past history"], answer: "conclusion", explanation: "Others are redundant." },
-    { question: "Placement of 'only':", options: ["only one suitable", "only suitable candidate", "suitable only", "only suitable the"], answer: "only suitable candidate", explanation: "Modifier placement." },
-    { question: "Correct sentence:", options: ["almost nearly missed", "nearly almost missed", "almost missed", "nearly almost last"], answer: "almost missed", explanation: "Redundant." },
-    { question: "Usage of 'even':", options: ["even more difficult", "more even difficult", "difficult even more", "even was more"], answer: "even more difficult", explanation: "Intensifier." },
-    { question: "Usage of 'such':", options: ["such difficult", "such a difficult", "a such difficult", "difficult such"], answer: "such a difficult", explanation: "Pattern." },
-    { question: "Correct sentence:", options: ["too much tired", "too tired", "very too tired", "tired too much"], answer: "too tired", explanation: "Standard." },
-    { question: "Formal 'quite':", options: ["quite good", "good quite", "quite report", "good quitely"], answer: "quite good", explanation: "Degree." },
-    { question: "Punctuation:", options: ["Tired and hungry, the", "Tired and hungry the", "Tired, and hungry, the", "Tired and hungry the,"], answer: "Tired and hungry, the", explanation: "Intro phrase." },
-    { question: "Adjective clause:", options: ["book that I bought", "book I bought interesting", "book which bought", "book bought I"], answer: "book that I bought", explanation: "Clause." },
-    { question: "Correct sentence:", options: ["few good advices", "few good pieces of advice", "few good advice", "some advices"], answer: "few good pieces of advice", explanation: "Countable phrase." },
-    { question: "Little vs Few:", options: ["little chairs", "few chairs", "few time", "little chairs time"], answer: "few chairs", explanation: "Countable." },
-    { question: "Another:", options: ["another informations", "another piece of information", "other another", "anothers"], answer: "another piece of information", explanation: "Singular." },
-    { question: "Each:", options: ["Each students", "Each student", "Each of student", "Each student received"], answer: "Each student", explanation: "Singular." },
-    { question: "Every:", options: ["Every students", "Every of students", "Every student", "Every student passed"], answer: "Every student", explanation: "Singular." },
-    { question: "No as adjective:", options: ["No people was", "No one people", "No student was", "No the student"], answer: "No student was", explanation: "Singular." },
-    { question: "Same:", options: ["same exactly", "exactly same", "exact same", "same exact"], answer: "exact same", explanation: "Idiomatic." },
-    { question: "Such:", options: ["such unforgettable", "such an unforgettable", "an such", "unforgettable such"], answer: "such an unforgettable", explanation: "Pattern." },
-    { question: "Correct sentence:", options: ["responsible enough", "enough responsible", "enough is responsible", "responsible for enough"], answer: "responsible enough", explanation: "Post-position." },
-    { question: "Reduced clause:", options: ["man standing", "man who standing", "man near standing", "man stood"], answer: "man standing", explanation: "Participle." }
+   {
+    "question": "Identify the section that contains a grammatical error: 'The colorful flowers (A) / smelled (B) / sweetly (C) / in the morning garden (D).'",
+    "options": ["The colorful flowers", "smelled", "sweetly", "in the morning garden"],
+    "answer": "sweetly",
+    "explanation": "The verb 'smelled' functions here as a sensory linking verb that connects the subject ('flowers') to its state or description. Linking verbs must be modified by a predicate adjective ('sweet') instead of an adverb ('sweetly'), because the flowers are not actively performing the action of smelling with nose receptors."
+  },
+  {
+    "question": "Which of the following sentences correctly utilizes the verb 'look' as a linking verb?",
+    "options": ["The supervisor looked carefully at the official ledger.", "The applicant looked tired after the long examination.", "The security guards looked around for any signs of intrusion.", "The auditor looked through the submitted financial reports."],
+    "answer": "The applicant looked tired after the long examination.",
+    "explanation": "When 'look' is used to indicate an appearance or state of being, it functions as a linking verb and requires a predicate adjective ('tired') to describe the subject. In the other choices, 'look' acts as an action verb (meaning to direct one's gaze), which properly requires adverbial modifiers or prepositions."
+  },
+  {
+    "question": "Complete the sentence with the correct modifier following the linking verb 'remain': 'Despite the chaos, the classroom _______.'",
+    "options": ["remained quietly", "remained quiet", "remained quietlier", "remained quietful"],
+    "answer": "remained quiet",
+    "explanation": "The word 'remain' functions as a status or copular linking verb meaning 'to continue to be'. It must connect the subject directly to a predicate adjective ('quiet') rather than an adverb ('quietly') to accurately describe the ongoing condition of the subject."
+  },
+  {
+    "question": "Choose the option where 'appear' functions strictly as a linking verb connected to a property of the subject:",
+    "options": ["A sudden witness appeared suddenly before the court panel.", "The corporate manager appeared nervous during the presentation.", "The missing documents appeared quickly on the working desk.", "The laboratory technician appeared quietly in the room."],
+    "answer": "The corporate manager appeared nervous during the presentation.",
+    "explanation": "When 'appear' means 'to seem to be', it serves as a linking verb and demands a predicate adjective ('nervous') to modify the subject. In the other options, 'appear' means 'to come into view or arrive', which describes an action modified by adverbs."
+  },
+  {
+    "question": "Which construction is grammatically correct when using 'feel' to express a physical or structural state?",
+    "options": ["The concrete columns feel strongly and durable.", "The steel beams feel strong enough for the foundation.", "The support structures feel stronglyly built.", "The old wooden beams feel more strongly than before."],
+    "answer": "The steel beams feel strong enough for the foundation.",
+    "explanation": "The verb 'feel' acts as a sensory linking verb when describing an objective physical characteristic or texture. It requires the base adjective 'strong' to modify the subject 'beams'. The adverb 'strongly' is only appropriate when modifying actions or expressing an intense internal conviction (e.g., 'I feel strongly about this policy')."
+  },
+  {
+    "question": "Select the sentence that conforms to formal English criteria by correctly modifying an active performance verb:",
+    "options": ["The secretary writes neat when documenting the minutes.", "The secretary writes neatly when documenting the minutes.", "The secretary writes more neat during fast dictations.", "The secretary writes neatlier than the office assistant."],
+    "answer": "The secretary writes neatly when documenting the minutes.",
+    "explanation": "In this context, 'writes' is an active performance verb describing how an physical operation is executed. Therefore, it requires the standard adverb form 'neatly' (ending in '-ly') to show the manner of writing. The adjective 'neat' cannot modify an action verb directly."
+  },
+  {
+    "question": "Which clause correctly utilizes a predicate adjective after the linking verb 'sound'?",
+    "options": ["The legal measure was soundly passed by the board.", "The legal compromise sounds reasonable under the circumstances.", "The proposed argument sounds clearly to the audience.", "The classical piece sounds beautifully in the hall."],
+    "answer": "The legal compromise sounds reasonable under the circumstances.",
+    "explanation": "When 'sound' is used to express an impression or evaluation of an abstract concept (like a compromise or idea), it acts as a linking verb. It must take a predicate adjective ('reasonable') to describe the subject, rather than adverbs like 'clearly' or 'beautifully'."
+  },
+  {
+    "question": "Complete the sentence following the dynamic linking verb 'grow' (meaning 'to become'): 'The tenant _______ when the rent increased.'",
+    "options": ["grew angrily", "grew angry", "grew angryly", "grew more angrily"],
+    "answer": "grew angry",
+    "explanation": "The verb 'grow' is a copular verb of change when it means 'to change or transform into a specific state'. It connects the subject to a state of mind, which requires the adjective 'angry'. If you use 'grew angrily', it would incorrectly imply that the tenant was performing physical growth in a furious manner."
+  },
+  {
+    "question": "Choose the option that uses correct adjective syntax after the verb of transformation 'turn':",
+    "options": ["The litmus paper turned red when exposed to acid.", "The vehicle turned quickly at the intersection.", "The autumn leaves turned redly in October.", "The operator turned more quickly to prevent the spill."],
+    "answer": "The litmus paper turned red when exposed to acid.",
+    "explanation": "When 'turn' signifies a mutation or change in state, appearance, or color, it operates as a linking verb and takes a predicate adjective ('red'). When it signifies a literal change in physical direction or movement, it acts as an action verb modified by an adverb ('turned quickly')."
+  },
+  {
+    "question": "Which idiomatic combination shows correct linking verb agreement with the past participle 'gone'?",
+    "options": ["The milk stored outside the refrigerator has gone sour.", "The milk stored outside the refrigerator has gone sourly.", "The milk stored outside the refrigerator has gone sourer.", "The milk stored outside the refrigerator has gone most sour."],
+    "answer": "The milk stored outside the refrigerator has gone sour.",
+    "explanation": "The verb phrase 'has gone' functions as a copular verb of change when describing spoilage, decay, or transformation. It connects the subject ('milk') to its altered property, which requires the predicate adjective 'sour'. 'Sourly' is an adverb and is incorrect here."
+  },
+  {
+    "question": "Select the phrase that demonstrates the correct sequence of dimensional and age-related adjectives:",
+    "options": ["They walked down a long old narrow road.", "They walked down an old long narrow road.", "They walked down a narrow old long road.", "They walked down a long narrow old road."],
+    "answer": "They walked down a long narrow old road.",
+    "explanation": "According to the natural hierarchy of cumulative adjectives in English syntax, primary physical dimensions or measurements like length ('long') and width ('narrow') must precede classifications of age ('old') before reaching the head noun."
+  },
+  {
+    "question": "What is the most grammatically natural adjective sequence for describing a vehicle?",
+    "options": ["They bought a German small red car.", "They bought a small red German car.", "They bought a red German small car.", "They bought a German red small car."],
+    "answer": "They bought a small red German car.",
+    "explanation": "The Royal Order of Adjectives requires physical dimensions or Size ('small') to come first, followed by a physical attribute like Color ('red'), and ending with the proper adjective denoting Origin or nationality ('German') immediately preceding the noun."
+  },
+  {
+    "question": "Select the option that strictly adheres to the standard order of subjective opinion and objective fact modifiers:",
+    "options": ["We watched an interesting new Filipino movie.", "We watched a new interesting Filipino movie.", "We watched a Filipino new interesting movie.", "We watched an interesting Filipino new movie."],
+    "answer": "We watched an interesting new Filipino movie.",
+    "explanation": "Subjective Evaluation or Opinion adjectives ('interesting') must always lead a modifier string. They are followed by chronological descriptors of Age ('new'), which are then followed by cultural or national Origin ('Filipino')."
+  },
+  {
+    "question": "Identify the option that displays the perfect hierarchical arrangement of four distinct cumulative modifiers:",
+    "options": ["They visited a beautiful big old stone church.", "They visited a big old beautiful stone church.", "They visited an old beautiful big stone church.", "They visited a beautiful stone big old church."],
+    "answer": "They visited a beautiful big old stone church.",
+    "explanation": "The established sequence for multiple adjectives is: Opinion ('beautiful') ➔ Size ('big') ➔ Age ('old') ➔ Material ('stone'). Deviating from this order sounds unnatural to a native speaker and violates structural patterns tested in formal exams."
+  },
+  {
+    "question": "Which combination follows the correct order of modifiers when incorporating physical characteristics and behavioral categories?",
+    "options": ["They rescued a small black stray dog.", "They rescued a stray black small dog.", "They rescued a black small stray dog.", "They rescued a stray small black dog."],
+    "answer": "They rescued a small black stray dog.",
+    "explanation": "Physical traits must be positioned before behavioral types or absolute classifications. Therefore, Size ('small') and Color ('black') must come before the Type/Purpose descriptor ('stray'), which is acting as a classifying adjective right next to 'dog'."
+  },
+  {
+    "question": "What is the correct structural positioning of shape, material, and qualitative value modifiers?",
+    "options": ["They bought a wooden lovely round table.", "They bought a lovely round wooden table.", "They bought a round wooden lovely table.", "They bought a wooden round lovely table."],
+    "answer": "They bought a lovely round wooden table.",
+    "explanation": "A personal Opinion modifier ('lovely') must occupy the initial position. It is followed by the geometric property of Shape ('round'), which takes priority over the compositional substance or Material ('wooden') of the object."
+  },
+  {
+    "question": "Choose the phrase that exhibits a natural and standard grammatical arrangement of attributes for an article of clothing:",
+    "options": ["He wore a cotton white comfortable shirt.", "He wore a comfortable white cotton shirt.", "He wore a white comfortable cotton shirt.", "He wore a cotton comfortable white shirt."],
+    "answer": "He wore a comfortable white cotton shirt.",
+    "explanation": "Following standard adjective ordering, the subjective attribute of Opinion/Comfort ('comfortable') must precede the objective attribute of Color ('white'), which must then precede the raw Material ('cotton') from which the shirt is woven."
+  },
+  {
+    "question": "Select the sentence containing the most natural and standard sequence of descriptive modifiers:",
+    "options": ["They performed an old French famous song.", "They performed a famous old French song.", "They performed a French famous old song.", "They performed a famous French old song."],
+    "answer": "They performed a famous old French song.",
+    "explanation": "The proper syntax sequence requires a broad value descriptor or Opinion ('famous') to be placed first, followed by a chronological indicator of Age ('old'), and concluding with an ethnical or regional Origin descriptor ('French')."
+  },
+  {
+    "question": "What is the standard order of modifiers for describing a culinary item with multiple physical dimensions?",
+    "options": ["They served a delicious small round cake.", "They served a small delicious round cake.", "They served a delicious round small cake.", "They served a round small delicious cake."],
+    "answer": "They served a delicious small round cake.",
+    "explanation": "An adjective evaluating sensory quality or Opinion ('delicious') must always sit at the front of the sequence. For physical dimensions, absolute scale or Size ('small') must precede geometric layout or Shape ('round')."
+  },
+  {
+    "question": "Identify the option that aligns perfectly with the standard cumulative adjective sequence involving weight and material:",
+    "options": ["They carried a heavy big old metal box.", "They carried a big heavy old metal box.", "They carried an old big heavy metal box.", "They carried a metal heavy old big box."],
+    "answer": "They carried a big heavy old metal box.",
+    "explanation": "When sizing parameters conflict, absolute spatial Dimension or Size ('big') generally takes priority over specific internal properties like Weight ('heavy'). These are followed by Age ('old'), and finally the structural Material ('metal') immediately before the noun."
+  },
+  {
+    "question": "Which of the following demonstrates logical and grammatical correctness when singling out an individual from a defined plural group?",
+    "options": ["Between Maria, Ana, and Liza, Maria is taller.", "Between Maria, Ana, and Liza, Maria is the taller one.", "Among Maria, Ana, and Liza, Maria is the tallest.", "Among Maria, Ana, and Liza, Maria is taller."],
+    "answer": "Among Maria, Ana, and Liza, Maria is the tallest.",
+    "explanation": "The preposition 'among' is required when referring to a collective group of three or more entities (Maria, Ana, Liza), while 'between' is restricted to exactly two. Furthermore, comparing three entities mandates the use of the superlative degree ('the tallest') instead of the comparative degree."
+  },
+  {
+    "question": "Identify why the statement 'The economic outcome of this strategy is better than the previous' contains an illogical comparison fault:",
+    "options": ["Because 'better' should be changed to 'more better' to match formal registers.", "Because it compares an economic outcome directly to a strategy instead of another outcome.", "Because it leaves the comparison incomplete by failing to specify a parallel noun or pronoun.", "Both B and C are valid structural criticisms of this sentence form."],
+    "answer": "Because it leaves the comparison incomplete by failing to specify a parallel noun or pronoun.",
+    "explanation": "A formal comparison must always contrast parallel elements (noun-to-noun or attribute-to-attribute). Saying 'better than the previous' is incorrect because 'previous' is acting as a bare adjective. It must be paired with a pronoun ('the previous one') or a noun ('the previous policy') to maintain structural logic."
+  },
+  {
+    "question": "Which of the following options correctly enhances the comparative degree of an adjective using an intensifying adverb?",
+    "options": ["The situation is now more better than it was yesterday.", "The situation is now much better than it was yesterday.", "The situation is now very more better than it was yesterday.", "The situation is now betterest than it was yesterday."],
+    "answer": "The situation is now much better than it was yesterday.",
+    "explanation": "The word 'better' is already an irregular comparative adjective. To intensify it, you must use the adverb 'much'. Using 'more' alongside an already inflected comparative adjective creates an ungrammatical 'double comparative' error, while 'very' cannot directly modify comparative forms."
+  },
+  {
+    "question": "Which option demonstrates formal standard English when expressing the comparative form of the single-syllable adjective 'safe'?",
+    "options": ["This route is considered the most safe option during floods.", "This route is considered a safer choice under current conditions.", "This route is considered more safe than the highway.", "This route is considered safe than the other option."],
+    "answer": "This route is considered a safer choice under current conditions.",
+    "explanation": "Short, single-syllable adjectives form their comparative degree synthetically by adding the suffix '-er' ('safer'). Analytical forms using 'more safe' or 'most safe' are considered non-standard or structurally deficient in formal registers."
+  },
+  {
+    "question": "Choose the phrase that demonstrates a flawless command over the quantitative modifiers 'less' and 'fewer':",
+    "options": ["There are less people attending the seminar today.", "We encountered fewer traffic on the alternative route.", "The project manager assigned fewer tasks to the team.", "The department has less tasks to complete this week."],
+    "answer": "The project manager assigned fewer tasks to the team.",
+    "explanation": "The modifier 'fewer' is strictly reserved for plural countable nouns (such as 'tasks' or 'people'). The modifier 'less' must be used exclusively for uncountable mass nouns (such as 'traffic' or 'time'). Therefore, 'fewer tasks' is correct, while 'less people' and 'fewer traffic' are grammatical errors."
+  },
+  {
+    "question": "Which sentence is structurally correct and completely free of redundant modifiers?",
+    "options": ["She is recognized as the most eldest member of the council.", "She is recognized as the eldest member of the council.", "She is recognized as the elder than all members of the council.", "She is recognized as the more eldest member of the council."],
+    "answer": "She is recognized as the eldest member of the council.",
+    "explanation": "The word 'eldest' is already a fully formed superlative adjective indicating the highest seniority within a group. Adding 'most' or 'more' creates a double superlative error, which introduces a severe grammatical redundancy."
+  },
+  {
+    "question": "Select the option that handles the absolute semantic nature of the adjective 'preferable' correctly:",
+    "options": ["Having a backup strategy is more preferable than proceeding blindly.", "Having a backup strategy is preferable to proceeding blindly.", "Having a backup strategy is much more preferable than proceeding blindly.", "Having a backup strategy is most preferable among all choices."],
+    "answer": "Having a backup strategy is preferable to proceeding blindly.",
+    "explanation": "The adjective 'preferable' is an absolute modifier that inherently means 'more desirable'. Because it already contains a comparative meaning, it cannot be modified by 'more' or 'most'. Additionally, the adjective 'preferable' idiomatically takes the preposition 'to' rather than the conjunction 'than'."
+  },
+  {
+    "question": "Which option represents a grammatically acceptable comparative structure?",
+    "options": ["The newly appointed officer proved to be more kinder.", "The newly appointed officer proved to be kinder than expected.", "The newly appointed officer proved to be most kindest.", "The newly appointed officer proved to be kindest than others."],
+    "answer": "The newly appointed officer proved to be kinder than expected.",
+    "explanation": "The short adjective 'kind' forms its comparative degree by adding the suffix '-er' ('kinder'), which is then paired with 'than'. Combining it with 'more' or 'most' is ungrammatical because it results in a double comparison defect."
+  },
+  {
+    "question": "What is the correct paradigm of irregular comparison for the spatial/physical adjective 'far' when tracking concrete distance?",
+    "options": ["far, farther, farthest", "far, more far, most far", "far, furtherer, furtherest", "far, farest, farestest"],
+    "answer": "far, farther, farthest",
+    "explanation": "In formal English geography and spatial measurements, physical linear distance uses the irregular paradigm 'far ➔ farther ➔ farthest'. The parallel form 'further/furthest' is preferred for abstract extensions, degrees, or figurative depth (e.g., 'further research')."
+  },
+  {
+    "question": "Identify the most optimal and grammatically sound sentence when evaluating a class of exactly three options:",
+    "options": ["This model is considered the better of three alternatives.", "This model is considered the better of the three alternatives.", "This model is considered the best of the three alternatives.", "This model is considered the bestest of all three alternatives."],
+    "answer": "This model is considered the best of the three alternatives.",
+    "explanation": "When comparing three or more distinct items, the superlative degree ('the best') is required. The comparative form 'the better of the two' is strictly capped at a population size of exactly two."
+  },
+  {
+    "question": "Which phrase correctly matches the indefinite article with an absolute adjective without creating a modifier contradiction?",
+    "options": ["This artifact represents a most unique discovery.", "This artifact represents a unique discovery.", "This artifact represents a very unique discovery.", "This artifact represents the uniqueest discovery."],
+    "answer": "This artifact represents a unique discovery.",
+    "explanation": "The word 'unique' is an absolute adjective meaning 'being the only one of its kind'. Logically, something cannot be 'very unique' or 'most unique' because uniqueness does not have varying degrees. It requires the basic indefinite article 'a' without intensifying modifiers."
+  },
+  {
+    "question": "Identify the option that avoids semantic redundancy (pleonasm) in its modifier-noun pairing:",
+    "options": ["The committee reached a final conclusion after the audit.", "The committee reached a conclusion after the audit.", "The team evaluated the end result of the operation.", "The historian cataloged the past history of the municipality."],
+    "answer": "The committee reached a conclusion after the audit.",
+    "explanation": "A 'conclusion' is inherently final, a 'result' occurs at the end, and 'history' is always in the past. Therefore, phrases like 'final conclusion', 'end result', and 'past history' contain logical redundancies. 'Conclusion' on its own is the cleanest and most accurate choice."
+  },
+  {
+    "question": "Which sentence demonstrates the correct placement of the limiting adjective 'only' to show that no other candidate fits the profile?",
+    "options": ["He is the only one suitable candidate for the executive role.", "He is the only suitable candidate for the executive role.", "He is the candidate suitable only for the executive role.", "He is the only suitable the candidate for the executive role."],
+    "answer": "He is the only suitable candidate for the executive role.",
+    "explanation": "The limiting modifier 'only' must be placed directly before the adjective-noun cluster it intends to qualify ('only suitable candidate') to clearly show that he is the sole individual who meets the requirements."
+  },
+  {
+    "question": "Choose the sentence that successfully avoids using redundant degree or limiting modifiers together:",
+    "options": ["The vehicle almost nearly missed the oncoming truck.", "The vehicle nearly almost missed the oncoming truck.", "The vehicle almost missed the oncoming truck.", "The vehicle was nearly almost last at the finish line."],
+    "answer": "The vehicle almost missed the oncoming truck.",
+    "explanation": "The words 'almost' and 'nearly' are synonyms that express identical degrees of proximity. Combining them together within a single clause ('almost nearly') creates a structural redundancy that should be avoided in formal English."
+  },
+  {
+    "question": "Select the correct pattern for incorporating the intensive adverb 'even' with a comparative adjective structure:",
+    "options": ["The second phase of the examination proved to be even more difficult.", "The second phase of the examination proved to be more even difficult.", "The second phase of the examination proved to be difficult even more.", "The second phase of the examination even was more difficult."],
+    "answer": "The second phase of the examination proved to be even more difficult.",
+    "explanation": "The intensifier 'even' must always be positioned directly *before* the comparative modifier cluster ('even more difficult') to modify it correctly."
+  },
+  {
+    "question": "Which construction illustrates the correct syntax pattern for the pre-determiner modifier 'such'?",
+    "options": ["It was such difficult assignment that many failed.", "It was such a difficult assignment that many failed.", "It was a such difficult assignment that many failed.", "It was an assignment such difficult that many failed."],
+    "answer": "It was such a difficult assignment that many failed.",
+    "explanation": "The correct structural idiom for using 'such' with a singular countable noun requires the pattern: `Such + Indefinite Article (a/an) + Adjective + Noun`. This makes 'such a difficult assignment' the only grammatically correct option."
+  },
+  {
+    "question": "Identify the option that represents standard modifier usage without introducing ungrammatical degree inflation:",
+    "options": ["The employee was too much tired to continue the late shift.", "The employee was too tired to continue the late shift.", "The employee was very too tired to continue the late shift.", "The employee was tired too much to continue the late shift."],
+    "answer": "The employee was too tired to continue the late shift.",
+    "explanation": "The adverb of degree 'too' can directly modify the predicate adjective 'tired' on its own (`Too + Adjective`). Inserting 'much' between them is ungrammatical and redundant unless 'too much' is modifying a noun or a verb."
+  },
+  {
+    "question": "What is the correct positioning of the adverb of degree 'quite' within a standard predicate framework?",
+    "options": ["The submitted evaluation report was quite good.", "The submitted evaluation report was good quite.", "It was a quite report submitted by the committee.", "The submitted evaluation report was good quitely."],
+    "answer": "The submitted evaluation report was quite good.",
+    "explanation": "The degree modifier 'quite' must be placed directly before the adjective 'good' to show a moderate to high degree of quality. Placing it after the adjective or using the non-existent word 'quitely' is ungrammatical."
+  },
+  {
+    "question": "Which option displays the correct punctuation pattern for an introductory adjectival phrase?",
+    "options": ["Tired and hungry, the stranded motorists waited for assistance.", "Tired and hungry the stranded motorists waited for assistance.", "Tired, and hungry, the stranded motorists waited for assistance.", "Tired and hungry the stranded motorists, waited for assistance."],
+    "answer": "Tired and hungry, the stranded motorists waited for assistance.",
+    "explanation": "When a coordinate or compound adjectival phrase ('Tired and hungry') is placed at the very beginning of a sentence to modify the subject ('motorists'), it functions as an introductory element that must be separated from the main clause by a comma."
+  },
+  {
+    "question": "Identify the option that correctly implements a relative adjective clause to modify a target noun:",
+    "options": ["The reference book that I bought yesterday contains vital formulas.", "The reference book I bought interesting contains vital formulas.", "The reference book which bought yesterday contains vital formulas.", "The reference book bought I yesterday contains vital formulas."],
+    "answer": "The reference book that I bought yesterday contains vital formulas.",
+    "explanation": "The clause 'that I bought yesterday' is a restrictive adjective clause (relative clause) that correctly uses the relative pronoun 'that' to modify the noun 'book'. Option C is missing a subject inside the clause, while options B and D violate standard English syntax."
+  },
+  {
+    "question": "Choose the option that correctly pairs a modifier with the uncountable abstract noun 'advice':",
+    "options": ["The consultant provided me with a few good advices.", "The consultant provided me with a few good pieces of advice.", "The consultant provided me with few good advice.", "The consultant provided me with some helpful advices."],
+    "answer": "The consultant provided me with a few good pieces of advice.",
+    "explanation": "The noun 'advice' is strictly an uncountable (mass) noun in English grammar. It can never be pluralized into 'advices' and cannot be modified directly by countable determiners like 'a few'. To make it countable, you must introduce a counter phrase like 'pieces of advice'."
+  },
+  {
+    "question": "Which sentence demonstrates proper grammatical alignment using the quantifiers 'little' and 'few'?",
+    "options": ["We need to arrange a little chairs in the conference hall.", "We need to arrange a few chairs in the conference hall.", "There is a few time remaining before the board meeting.", "We have a little chairs and time remaining for the setups."],
+    "answer": "We need to arrange a few chairs in the conference hall.",
+    "explanation": "The word 'chairs' is a plural countable noun, so it must be paired with the countable quantifier 'few'. The quantifier 'little' is reserved exclusively for uncountable mass nouns like 'time'."
+  },
+  {
+    "question": "Which combination correctly handles the modern singular limiting framework for the mass noun 'information'?",
+    "options": ["The system downloaded another informations onto the drive.", "The system downloaded another piece of information onto the drive.", "The system downloaded other another information onto the drive.", "The system downloaded anothers information onto the drive."],
+    "answer": "The system downloaded another piece of information onto the drive.",
+    "explanation": "Because 'information' is an uncountable noun, it cannot be directly pluralized or modified by 'another' (which combines 'an' + 'other'). To isolate a single unit, you must use a partial counter phrase like 'another piece of information'."
+  },
+  {
+    "question": "Identify the sentence that conforms to standard noun-modifier agreement when using the distributive adjective 'each':",
+    "options": ["Each students must present a valid identification card.", "Each student must present a valid identification card.", "Each of student must present a valid identification card.", "Each student received must present a valid identification card."],
+    "answer": "Each student must present a valid identification card.",
+    "explanation": "The distributive adjective 'each' describes members of a group individually. It must always be followed immediately by a singular countable noun ('student') and a singular verb, rather than a plural noun ('students')."
+  },
+  {
+    "question": "Identify the option that demonstrates correct syntax using the distributive adjective 'every':",
+    "options": ["Every students in the department passed the assessment.", "Every of students in the department passed the assessment.", "Every student in the department passed the assessment.", "Every student passed in the department passed the assessment."],
+    "answer": "Every student in the department passed the assessment.",
+    "explanation": "Similar to 'each', the distributive modifier 'every' considers a group as a collection of individuals and must be paired directly with a singular countable noun ('student') followed by a singular verb form."
+  },
+  {
+    "question": "Which option displays the correct structural pairing of the negative adjective 'no' with a singular subject?",
+    "options": ["No people was permitted to enter the secure vault area.", "No one people was permitted to enter the secure vault area.", "No student was permitted to enter the secure vault area.", "No the student was permitted to enter the secure vault area."],
+    "answer": "No student was permitted to enter the secure vault area.",
+    "explanation": "The word 'no' can act as an adjective that means 'not any'. It can be paired directly with a singular countable noun ('student') and a singular verb ('was'). Placing an article right after it (like 'no the student') is a severe syntax error."
+  },
+  {
+    "question": "Select the option that shows the correct idiomatic ordering of intensifiers when using the adjective 'same':",
+    "options": ["They made the same exactly errors as the previous team.", "They made the exactly same errors as the previous team.", "They made the exact same errors as the previous team.", "They made the same exact errors as the previous team."],
+    "answer": "They made the exact same errors as the previous team.",
+    "explanation": "The phrase 'exact same' is an established English idiom where the adjective 'exact' acts as an emphasis modifier right before the primary adjective 'same'. Reversing them or using adverbs like 'exactly' changes the required structural pattern."
+  },
+  {
+    "question": "Which phrase correctly integrates the pre-determiner 'such' with an adjective starting with a vowel sound?",
+    "options": ["It was such unforgettable experience for the entire family.", "It was such an unforgettable experience for the entire family.", "It was an such unforgettable experience for the entire family.", "It was an experience such unforgettable for the entire family."],
+    "answer": "It was such an unforgettable experience for the entire family.",
+    "explanation": "This follows the `Such + Indefinite Article + Adjective + Noun` pattern. Because the adjective 'unforgettable' begins with a vowel sound (/u/), it requires the indefinite article 'an' instead of 'a', resulting in 'such an unforgettable experience'."
+  },
+  {
+    "question": "Choose the option that shows the correct post-positional modifier structure for the word 'enough':",
+    "options": ["The officer in charge was deemed responsible enough to manage the fund.", "The officer in charge was deemed enough responsible to manage the fund.", "The officer in charge was deemed enough is responsible to manage the fund.", "The officer in charge was deemed responsible for enough to manage the fund."],
+    "answer": "The officer in charge was deemed responsible enough to manage the fund.",
+    "explanation": "When the word 'enough' functions as an adverb of degree modifying an adjective, it must always be placed immediately *after* the adjective it qualifies ('responsible enough'). Placing it before the adjective is a common syntax error."
+  },
+  {
+    "question": "Which option features a correctly reduced relative clause functioning as a post-positive participle adjective?",
+    "options": ["The man standing by the entrance ledger is the head registrar.", "The man who standing by the entrance ledger is the head registrar.", "The man near standing by the entrance ledger is the head registrar.", "The man stood by the entrance ledger is the head registrar."],
+    "answer": "The man standing by the entrance ledger is the head registrar.",
+    "explanation": "The phrase 'standing by the entrance ledger' is a reduced relative clause (shortened from 'who is standing'). The present participle 'standing' functions perfectly as a post-positive adjective that directly modifies the noun 'man' from behind."
+  }
   ],
 
   // ============================================================
