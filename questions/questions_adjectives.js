@@ -929,149 +929,336 @@ window.VERBAL_QUESTION_BANK["adjectives"] = {
   // ============================================================
   expert: [
     // 1-15: Error Identification (Segmented)
-    { 
-      question: "Find the error: 'The CEO is (A) / the most smartest (B) / leader in (C) / the industry (D).'", 
-      options: ["The CEO is", "the most smartest", "leader in", "the industry"], 
-      answer: "the most smartest", 
-      explanation: "Double superlative. Use 'the smartest' or 'the most smart'." 
-    },
-    { 
-      question: "Find the error: 'The teacher (A) / gave him (B) / a few good (C) / advices (D).'", 
-      options: ["The teacher", "gave him", "a few good", "advices"], 
-      answer: "advices", 
-      explanation: "'Advice' is uncountable. Use 'pieces of advice'." 
-    },
-    { 
-      question: "Find the error: 'There is (A) / only few (B) / time left (C) / before the deadline (D).'", 
-      options: ["There is", "only few", "time left", "before the deadline"], 
-      answer: "only few", 
-      explanation: "'Time' is uncountable. Use 'little', not 'few'." 
-    },
-    { 
-      question: "Find the error: 'This is (A) / the more (B) / importantest point (C) / in the report (D).'", 
-      options: ["This is", "the more", "importantest point", "in the report"], 
-      answer: "importantest point", 
-      explanation: "Use 'most important'. 'Importantest' is incorrect." 
-    },
-    { 
-      question: "Find the error: 'She is (A) / more friendlier (B) / than (C) / her sister (D).'", 
-      options: ["She is", "more friendlier", "than", "her sister"], 
-      answer: "more friendlier", 
-      explanation: "Redundancy. 'Friendlier' is already comparative. Remove 'more'." 
-    },
-    { 
-      question: "Find the error: 'This is (A) / the less (B) / useful of (C) / the three tools (D).'", 
-      options: ["This is", "the less", "useful of", "the three tools"], 
-      answer: "the less", 
-      explanation: "Comparing three or more requires the superlative 'least'." 
-    },
-    { 
-      question: "Find the error: 'His score (A) / was (B) / more superior than (C) / the others (D).'", 
-      options: ["His score", "was", "more superior than", "the others"], 
-      answer: "more superior than", 
-      explanation: "'Superior' is already comparative and takes 'to', not 'than'." 
-    },
-    { 
-      question: "Find the error: 'She is (A) / the more (B) / elder of (C) / the three sisters (D).'", 
-      options: ["She is", "the more", "elder of", "the three sisters"], 
-      answer: "the more", 
-      explanation: "Remove 'more'. Also, 'eldest' is preferred for three." 
-    },
-    { 
-      question: "Find the error: 'That design (A) / is (B) / more unique (C) / than this one (D).'", 
-      options: ["That design", "is", "more unique", "than this one"], 
-      answer: "more unique", 
-      explanation: "'Unique' is absolute. Something cannot be 'more' unique." 
-    },
-    { 
-      question: "Find the error: 'She (A) / almost nearly (B) / missed (C) / the flight (D).'", 
-      options: ["She", "almost nearly", "missed", "the flight"], 
-      answer: "almost nearly", 
-      explanation: "Redundancy. 'Almost' and 'nearly' mean the same thing." 
-    },
-    { 
-      question: "Find the error: 'He (A) / is (B) / enough old (C) / to drive (D).'", 
-      options: ["He", "is", "enough old", "to drive"], 
-      answer: "enough old", 
-      explanation: "Adjectives come before enough: 'old enough'." 
-    },
-    { 
-      question: "Find the error: 'It (A) / was (B) / a so (C) / long day (D).'", 
-      options: ["It", "was", "a so", "long day"], 
-      answer: "a so", 
-      explanation: "With a noun phrase, use 'such a': 'such a long day'." 
-    },
-    { 
-      question: "Find the error: 'Please (A) / drive (B) / more slower (C) / here (D).'", 
-      options: ["Please", "drive", "more slower", "here"], 
-      answer: "more slower", 
-      explanation: "Double comparative. Use 'slower' or 'more slowly'." 
-    },
-    { 
-      question: "Find the error: 'She (A) / sings (B) / real (C) / good (D).'", 
-      options: ["She", "sings", "real", "good"], 
-      answer: "good", 
-      explanation: "Use the adverb 'well' to modify 'sings'." 
-    },
-    { 
-      question: "Find the error: 'The (A) / soup (B) / tastes (C) / badly (D).'", 
-      options: ["The", "soup", "tastes", "badly"], 
-      answer: "badly", 
-      explanation: "Linking verb 'tastes' requires adjective 'bad'." 
-    },
-
-    // Sentence Improvement
-    { question: "Improve: 'She is more kinder than her sister.'", options: ["kinder", "more kind", "most kinder", "kindest"], answer: "kinder", explanation: "Standard comparative." },
-    { question: "Improve: 'This is the most happiest day.'", options: ["happiest", "most happy", "happier", "more happiest"], answer: "happiest", explanation: "Standard superlative." },
-    { question: "Improve: 'He is elder than me.'", options: ["older than me", "elder than", "more elder", "eldest"], answer: "older than me", explanation: "General age comparison uses 'older'." },
-    { question: "Improve: 'This is the less expensive of the three.'", options: ["least expensive", "lesser expensive", "less expensive", "less most"], answer: "least expensive", explanation: "Superlative for 3+." },
-    { question: "Improve: 'She is the most talentedest.'", options: ["most talented", "talentedest", "most talented singer", "talentedest singer"], answer: "most talented", explanation: "Standard." },
-    { question: "Improve: 'He is more superior than others.'", options: ["superior to", "more superior to", "superior than", "most superior"], answer: "superior to", explanation: "Standard form." },
-    { question: "Improve: 'This is the very best solution.'", options: ["the best", "very best", "most best", "best"], answer: "the best", explanation: "Formal standard." },
-    { question: "Improve: 'She is more prettier.'", options: ["prettier", "more pretty", "most prettier", "prettiest"], answer: "prettier", explanation: "Standard comparative." },
-    { question: "Improve: 'This is the most ideal choice.'", options: ["ideal", "more ideal", "idealest", "most ideally"], answer: "ideal", explanation: "Absolute adjective." },
-    { question: "Improve: 'The report is more complete now.'", options: ["complete", "most complete", "completer", "completely"], answer: "complete", explanation: "Absolute adjective." },
-
-    // Reading Context
-    { question: "Modify 'explanation': 'brief but clear'", options: ["He", "gave", "explanation", "brief but clear"], answer: "brief but clear", explanation: "Adjectives modifying explanation." },
-    { question: "Main adjective: 'newly appointed regional director'", options: ["newly", "appointed", "regional", "director"], answer: "appointed", explanation: "Participle adj." },
-    { question: "Count adjectives: 'simple, elegant black dress'", options: ["One", "Two", "Three", "Four"], answer: "Three", explanation: "Simple, elegant, black." },
-    { question: "Adjective phrase: 'man with red hat'", options: ["with red hat", "man", "waved", "yesterday"], answer: "with red hat", explanation: "Describes the man." },
-    { question: "Adjectives: 'tired but satisfied'", options: ["arrived", "tired", "satisfied", "tired but satisfied"], answer: "tired but satisfied", explanation: "Subject complement." },
-    { question: "Modify 'proposal': 'risky'", options: ["proposal", "approved", "was", "though"], answer: "proposal", explanation: "Adjective." },
-    { question: "Phrase type: 'smart enough'", options: ["Noun", "Adjective", "Adverb", "Verb"], answer: "Adjective", explanation: "Describes subject." },
-    { question: "Main adjective: 'remained calm'", options: ["Facing", "difficult", "calm", "remained"], answer: "calm", explanation: "Predicate adjective." },
-    { question: "Adverb modifying adj: 'extremely boring'", options: ["long", "boring", "extremely", "lecture"], answer: "extremely", explanation: "Degree." },
-    { question: "Quantitative adj: 'few loyal'", options: ["Only", "few", "loyal", "end"], answer: "few", explanation: "Amount." },
-
-    // Logic & Nuance
-    { question: "Place description: 'crowded and noisy'", options: ["crowded and noisy", "crowded and noisily", "crowdedly and noisy", "crowded noisily"], answer: "crowded and noisy", explanation: "Adjectives describing a place." },
-    { question: "Placement: 'almost late'", options: ["almost late", "late almost", "almost was", "late for"], answer: "almost late", explanation: "Before the adjective." },
-    { question: "Reduced clause: 'interested in'", options: ["Students interested", "Students who interested", "Students interest", "Students which"], answer: "Students interested", explanation: "Passive participle." },
-    { question: "Usage: 'enough information'", options: ["enough information", "information enough", "enough have", "enough informations"], answer: "enough information", explanation: "Before the noun." },
-    { question: "Usage: 'too heavy'", options: ["too heavy", "heavy too", "heavy for too", "heavy too much"], answer: "too heavy", explanation: "Excessive." },
-    { question: "Usage: 'clear enough'", options: ["clear enough", "enough clear", "enough are", "clear for"], answer: "clear enough", explanation: "After the adjective." },
-    { question: "Comparative: 'fairer'", options: ["more fairer", "fairer", "most fairer", "the fairer"], answer: "fairer", explanation: "Standard." },
-    { question: "Usage: 'too young'", options: ["too much young", "too young", "young too much", "much too young not"], answer: "too young", explanation: "Standard pattern." },
-    { question: "Usage: 'such a'", options: ["such long", "such a long", "long such", "a such"], answer: "such a long", explanation: "Pattern: such a + adj + noun." },
-    { question: "Complement: 'satisfactory'", options: ["satisfactory", "satisfactorily", "satisfaction", "satisfyingness"], answer: "satisfactory", explanation: "Adjective." },
-
-    // Mixed Final
-    { question: "Correct sentence: 'more friendlier'", options: ["more friendlier", "friendlier", "most friendlier", "friendliest"], answer: "friendlier", explanation: "Standard comparative." },
-    { question: "Linking verb: 'tastes salty'", options: ["salty", "saltly", "salt", "saltyly"], answer: "salty", explanation: "Adjective." },
-    { question: "Avoid double: 'finest'", options: ["most finest", "finest", "more finest", "finestest"], answer: "finest", explanation: "Superlative." },
-    { question: "Use 'fewer':", options: ["less problems", "fewer problems", "less problem", "many less"], answer: "fewer problems", explanation: "Countable noun." },
-    { question: "Correct: 'highest'", options: ["most highest", "highest", "higher", "more higher"], answer: "highest", explanation: "Superlative." },
-    { question: "Correct: 'a few'", options: ["few passed", "a few passed", "every passed", "many passed"], answer: "a few passed", explanation: "Positive quantity." },
-    { question: "Collocation: 'quite boring'", options: ["quite boring", "quite long", "quite and rather", "boring quite"], answer: "quite boring", explanation: "Standard." },
-    {
-      question: "Adjective phrase: 'in a blue shirt'",
-      options: ["in a blue shirt", "in blue", "blue shirt", "with blue"],
-      answer: "in a blue shirt",
-      explanation: "Prepositional phrase functioning as an adjective."
-    },
-    { question: "Correct: 'such a nice'", options: ["so a nice", "such a nice", "such nice", "so nice"], answer: "such a nice", explanation: "Pattern: such a + adj." },
-    { question: "Correct: 'many people'", options: ["much people", "many water", "many people", "much people"], answer: "many people", explanation: "Countable." }
-  ]
+  {
+    "question": "Identify the section that contains a grammatical error: 'The corporate CEO is (A) / the most smartest (B) / executive leader in (C) / the manufacturing industry (D).'",
+    "options": ["The corporate CEO is", "the most smartest", "executive leader in", "the manufacturing industry"],
+    "answer": "the most smartest",
+    "explanation": "This sentence contains a double superlative defect. One-syllable adjectives form their superlative degree synthetically by adding the suffix '-est' ('smartest'). Combining it with the analytical adverb 'most' is redundant and grammatically incorrect in formal registers."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'The lead consultant (A) / gave him (B) / a few good (C) / advices (D) before the audit.'",
+    "options": ["The lead consultant", "gave him", "a few good", "advices"],
+    "answer": "advices",
+    "explanation": "The noun 'advice' functions strictly as an uncountable mass noun in English syntax. It cannot take the plural suffix '-es' nor be directly quantified by count modifiers like 'a few'. To maintain formal compliance, partitive counters such as 'pieces of advice' must be used."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'There is (A) / only few (B) / time left (C) / before the final project deadline (D).'",
+    "options": ["There is", "only few", "time left", "before the final project deadline"],
+    "answer": "only few",
+    "explanation": "The noun 'time' in this context is an uncountable abstract noun. It must be paired with an non-count quantifier like 'little' or 'a small amount of'. The quantifier 'few' is structurally limited to plural countable nouns."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'This technical section is (A) / the more (B) / importantest point (C) / in the entire audit report (D).'",
+    "options": ["This technical section is", "the more", "importantest point", "in the entire audit report"],
+    "answer": "importantest point",
+    "explanation": "The word 'important' is a multi-syllable adjective that forms its superlative degree analytically by placing the word 'most' before it. The non-standard inflection 'importantest' is incorrect, and the comparative modifier 'more' fails because the phrase evaluates a singular point within a whole report."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'The operations supervisor is (A) / more friendlier (B) / than (C) / her predecessor (D).'",
+    "options": ["The operations supervisor is", "more friendlier", "than", "her predecessor"],
+    "answer": "more friendlier",
+    "explanation": "The adjective 'friendly' forms its comparative degree by dropping the '-y' and adding the suffix '-ier' ('friendlier'). Placing the modifier 'more' before an already inflected comparative adjective introduces a severe double comparative error."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'This automated process is (A) / the less (B) / useful of (C) / the three tools currently deployed (D).'",
+    "options": ["This automated process is", "the less", "useful of", "the three tools currently deployed"],
+    "answer": "the less",
+    "explanation": "When comparing three or more distinct items, standard syntax mandates the superlative degree ('the least'). The comparative form 'less' is restricted exclusively to comparisons involving exactly two entities."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'His performance score (A) / was considered (B) / more superior than (C) / the others on the team (D).'",
+    "options": ["His performance score", "was considered", "more superior than", "the others on the team"],
+    "answer": "more superior than",
+    "explanation": "The word 'superior' is an absolute Latinate comparative adjective that contains a comparative meaning within itself; therefore, adding 'more' is redundant. Furthermore, Latinate adjectives idiomatically complement with the preposition 'to' instead of the conjunction 'than'."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'She is recognized as (A) / the more (B) / elder of (C) / the three sisters managing the estate (D).'",
+    "options": ["She is recognized as", "the more", "elder of", "the three sisters managing the estate"],
+    "answer": "the more",
+    "explanation": "Because a group of three individuals is specified, the superlative degree 'eldest' must be used instead of the comparative 'elder'. Additionally, pairing 'more' with 'elder' introduces an ungrammatical double comparative modifier."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'That architectural design (A) / is (B) / more unique (C) / than this one (D).'",
+    "options": ["That architectural design", "is", "more unique", "than this one"],
+    "answer": "more unique",
+    "explanation": "'Unique' is an absolute adjective meaning 'the sole specimen in existence'. Because its semantic boundary is binary (something either is or is not unique), it cannot be modified by relative qualifiers of degree like 'more' or 'most' in formal comparisons."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'The commuter (A) / almost nearly (B) / missed (C) / the evening flight to Manila (D).'",
+    "options": ["The commuter", "almost nearly", "missed", "the evening flight to Manila"],
+    "answer": "almost nearly",
+    "explanation": "The degree adverbs 'almost' and 'nearly' are complete synonyms that express identical structural properties. Placing them next to each other creates a pleonastic redundancy that weakens the sentence structure."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'He (A) / is already (B) / enough old (C) / to drive commercial vehicles (D).'",
+    "options": ["He", "is already", "enough old", "to drive commercial vehicles"],
+    "answer": "enough old",
+    "explanation": "When the word 'enough' acts as an adverb modifying an adjective, it must postmodify the target word. The correct order is `Adjective + Enough` ('old enough'). Placing 'enough' before an adjective is incorrect."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'It (A) / was (B) / a so (C) / long day at the processing plant (D).'",
+    "options": ["It", "was", "a so", "long day at the processing plant"],
+    "answer": "a so",
+    "explanation": "The word 'so' directly modifies a bare adjective without an intervening article (e.g., 'so long'). When modifying an entire noun phrase that includes an adjective and a singular countable noun, standard syntax requires the pre-determiner format: `such + a + adjective + noun` ('such a long day')."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'Please (A) / drive (B) / more slower (C) / here near the active construction zone (D).'",
+    "options": ["Please", "drive", "more slower", "here near the active construction zone"],
+    "answer": "more slower",
+    "explanation": "This phrase contains a double comparative error. To modify the active verb 'drive' in formal English, one must use the comparative adverb phrase 'more slowly' or, in more casual contexts, the single inflected form 'slower'. Combining 'more' with 'slower' is incorrect."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'The choir director noted that (A) / she (B) / sings (C) / real (C) / good (D) under pressure.'",
+    "options": ["The choir director noted that", "she", "sings", "good"],
+    "answer": "good",
+    "explanation": "The word 'sings' is an action verb that requires an adverbial modifier to express the manner of execution. The adjective 'good' cannot modify active verbs; instead, the standard adverb 'well' must be utilized. Additionally, the casual use of 'real' as an intensive adverb should be avoided in favor of 'really' or 'very'."
+  },
+  {
+    "question": "Identify the section that contains a grammatical error: 'The (A) / institutional soup (B) / tastes (C) / badly (D) according to the inspectors.'",
+    "options": ["The", "soup", "tastes", "badly"],
+    "answer": "badly",
+    "explanation": "The verb 'tastes' acts here as a sensory linking verb connecting the subject ('soup') to its intrinsic flavor profile. Linking verbs must be followed by a predicate adjective ('bad') instead of an adverb ('badly'), as the soup is not actively performing the physical mechanism of tasting."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'She is *more kinder* than her sister.'",
+    "options": ["kinder", "more kind", "most kinder", "kindest"],
+    "answer": "kinder",
+    "explanation": "The single-syllable adjective 'kind' forms its comparative degree synthetically by adding the suffix '-er'. Removing the analytical modifier 'more' resolves the double comparative error and leaves a clean, formal structure."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'This is the *most happiest* day of my career.'",
+    "options": ["happiest", "most happy", "happier", "more happiest"],
+    "answer": "happiest",
+    "explanation": "The adjective 'happy' forms its superlative degree synthetically as 'happiest'. Paring it with the adverb 'most' creates an ungrammatical double superlative modifier."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'He is *elder than me* by two years.'",
+    "options": ["older than me", "elder than", "more elder", "eldest"],
+    "answer": "older than me",
+    "explanation": "While 'elder' is used to show seniority within family relationships, it serves primarily as an attributive noun or adjective (e.g., 'my elder brother') and cannot be followed directly by 'than' in standard comparisons. General comparisons of age require 'older than'."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'This option is the *less expensive* of the three proposals.'",
+    "options": ["least expensive", "lesser expensive", "less expensive", "less most"],
+    "answer": "least expensive",
+    "explanation": "Because the evaluation compares three distinct proposals, the superlative modifier 'least' must replace the comparative form 'less' to satisfy standard English rules."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'She is recognized as the *most talentedest* applicant.'",
+    "options": ["most talented", "talentedest", "most talented singer", "talentedest singer"],
+    "answer": "most talented",
+    "explanation": "The multi-syllable participle adjective 'talented' forms its superlative degree solely through the analytical use of the preceding adverb 'most'. The non-standard suffix inflection 'talentedest' is ungrammatical."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'The quality of this brand is *more superior than* others.'",
+    "options": ["superior to", "more superior to", "superior than", "most superior"],
+    "answer": "superior to",
+    "explanation": "The absolute comparative word 'superior' does not accept the modifier 'more'. It also requires the preposition 'to' instead of 'than' to complete its comparison."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'This specific route provides the *very best* solution for transit.'",
+    "options": ["the best", "very best", "most best", "best"],
+    "answer": "the best",
+    "explanation": "In formal standard English, 'the best' is the complete and correct superlative form. While 'very best' is common in casual speech for emphasis, formal writing prefers the simple superlative to avoid redundant exaggeration."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'The showroom model is *more prettier* than the base unit.'",
+    "options": ["prettier", "more pretty", "most prettier", "prettiest"],
+    "answer": "prettier",
+    "explanation": "The adjective 'pretty' changes its terminal '-y' to '-ier' to form its comparative degree. Adding 'more' is ungrammatical because it results in a double comparative."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'The location chosen for the new branch is the *most ideal* choice.'",
+    "options": ["ideal", "more ideal", "idealest", "most ideally"],
+    "answer": "ideal",
+    "explanation": "'Ideal' is an absolute adjective representing a state of perfection. Something cannot be more or less perfect; it either reaches the ideal standard or it does not. Therefore, adding 'most' introduces a logical error in formal writing."
+  },
+  {
+    "question": "Select the option that best improves the italicized segment: 'The inventory record is *more complete* now after the evening update.'",
+    "options": ["complete", "most complete", "completer", "completely"],
+    "answer": "complete",
+    "explanation": "Like 'ideal', 'complete' is an absolute adjective. A ledger cannot contain more than 100% of its data. In strict formal grammar, qualifying absolute states with comparative markers should be avoided in favor of the base adjective."
+  },
+  {
+    "question": "In the sentence 'The manager gave a brief but clear explanation,' which segment functions as the modifier of the core noun?",
+    "options": ["He", "gave", "explanation", "brief but clear"],
+    "answer": "brief but clear",
+    "explanation": "The phrase 'brief but clear' consists of coordinate adjectives joined by a adversative conjunction. They function together as an adjectival unit that modifies the noun 'explanation'."
+  },
+  {
+    "question": "Identify the primary participle adjective modifying the main head noun in the phrase: 'the newly appointed regional director'",
+    "options": ["newly", "appointed", "regional", "director"],
+    "answer": "appointed",
+    "explanation": "The word 'appointed' is a past participle acting as an adjective that directly modifies 'director'. The word 'newly' is an adverb that modifies the participle 'appointed', while 'regional' is a classifying adjective."
+  },
+  {
+    "question": "Determine the exact count of descriptive adjectives present within the phrase: 'a simple, elegant black dress'",
+    "options": ["One", "Two", "Three", "Four"],
+    "answer": "Three",
+    "explanation": "There are three distinct descriptive adjectives modifying the noun 'dress': 'simple' (opinion), 'elegant' (opinion), and 'black' (color). The word 'a' functions as an indefinite article/determiner."
+  },
+  {
+    "question": "Identify the complete adjectival element in the sentence: 'The man with the red hat waved at us yesterday.'",
+    "options": ["with the red hat", "man", "waved", "yesterday"],
+    "answer": "with the red hat",
+    "explanation": "The prepositional phrase 'with the red hat' is positioned immediately after the noun 'man' and functions as a post-positive adjectival modifier to restrict and identify the subject."
+  },
+  {
+    "question": "In the sentence 'The auditors arrived tired but satisfied,' what grammatical role does the phrase 'tired but satisfied' play?",
+    "options": ["adverbial modifier of manner", "direct object of the action verb", "subject complement / predicate adjectives", "tired but satisfied"],
+    "answer": "tired but satisfied",
+    "explanation": "The pair 'tired but satisfied' functions as a compound adjective structure linked back to the subject 'auditors'. They serve as a subject complement (specifically, a predicate adjective structure following a verb of arrival)."
+  },
+  {
+    "question": "In the context of the clause 'The risky proposal was approved though controversial,' which noun does the adjective 'risky' modify?",
+    "options": ["proposal", "approved", "was", "though"],
+    "answer": "proposal",
+    "explanation": "The word 'risky' is an attributive adjective positioned directly before the noun 'proposal' to define its level of danger or uncertainty."
+  },
+  {
+    "question": "What is the structural classification of the modifier combination found in the phrase 'a supervisor smart enough to delegate'?",
+    "options": ["Noun phrase", "Adjective-adverb phrase", "Adverb phrase", "Verb phrase"],
+    "answer": "Adjective-adverb phrase",
+    "explanation": "The phrase contains the base adjective 'smart' followed by the degree adverb 'enough'. Together, they form an adjectival modifier phrase that modifies the noun 'supervisor' from a post-positive position."
+  },
+  {
+    "question": "Identify the primary predicate adjective in the sentence: 'Facing a difficult crisis, the crew remained calm.'",
+    "options": ["Facing", "difficult", "calm", "remained"],
+    "answer": "calm",
+    "explanation": "The verb 'remained' functions here as a copular (linking) verb of status. It connects the subject 'crew' directly to the predicate adjective 'calm', which describes their state of mind. The word 'difficult' modifies 'crisis' within the introductory participle phrase."
+  },
+  {
+    "question": "Identify the adverb of degree modifying another adjective in the phrase: 'an extremely boring lecture'",
+    "options": ["long", "boring", "extremely", "lecture"],
+    "answer": "extremely",
+    "explanation": "The word 'boring' is a participle adjective that modifies 'lecture'. The word 'extremely' ends in '-ly' and functions as an adverb of degree that intensifies the adjective 'boring'."
+  },
+  {
+    "question": "Identify the quantitative adjective indicating an amount or numerical boundaries in the clause: 'Only a few loyal supporters remained until the end.'",
+    "options": ["Only", "few", "loyal", "end"],
+    "answer": "few",
+    "explanation": "The word 'few' functions as a quantitative limiter or determiner that describes the countable quantity of 'supporters'. The word 'loyal' is a descriptive adjective, and 'only' acts as a limiting adverb."
+  },
+  {
+    "question": "Choose the correct coordinate adjective pair to describe an urban business setting:",
+    "options": ["The district was crowded and noisy during peak shifts.", "The district was crowded and noisily during peak shifts.", "The district was crowdedly and noisy during peak shifts.", "The district was crowded noisily during peak shifts."],
+    "answer": "The district was crowded and noisy during peak shifts.",
+    "explanation": "To describe the state of the noun 'district' after a linking verb, you must maintain parallel structure by joining two adjectives ('crowded' and 'noisy') with a coordinating conjunction."
+  },
+  {
+    "question": "Select the option that demonstrates the correct placement of a degree adverb modifying a predicate state:",
+    "options": ["The late shift team was almost late for the briefing.", "The late shift team was late almost for the briefing.", "The late shift team almost was late for the briefing.", "The late shift team was late for almost the briefing."],
+    "answer": "The late shift team was almost late for the briefing.",
+    "explanation": "The adverb of degree 'almost' must be placed directly before the adjective it qualifies ('late') to accurately express how close the team came to that state."
+  },
+  {
+    "question": "Which construction uses a reduced relative clause to properly post-modify a plural subject?",
+    "options": ["Students interested in research should register here.", "Students who interested in research should register here.", "Students interest in research should register here.", "Students which interested in research should register here."],
+    "answer": "Students interested in research should register here.",
+    "explanation": "'Students interested in research' is a correctly reduced relative clause (shortened from 'Students who are interested in...'). The past participle 'interested' functions as a post-positive adjective that directly modifies 'students'."
+  },
+  {
+    "question": "Which combination follows the standard order of quantitative determiners before a mass target noun?",
+    "options": ["The warehouse had enough information to proceed.", "The warehouse had information enough to proceed.", "The warehouse had enough have information to proceed.", "The warehouse had enough informations to proceed."],
+    "answer": "The warehouse had enough information to proceed.",
+    "explanation": "Unlike adverbs that modify adjectives, when 'enough' functions as a quantifier modifying a noun, it must be placed *before* that noun (`Enough + Noun`). Additionally, 'information' must remain singular because it is an uncountable mass noun."
+  },
+  {
+    "question": "Identify the option that correctly utilizes 'too' as an intensive degree modifier for a physical property:",
+    "options": ["The metal crate was too heavy for a single operator.", "The metal crate was heavy too for a single operator.", "The metal crate was heavy for too a single operator.", "The metal crate was heavy too much for a single operator."],
+    "answer": "The metal crate was too heavy for a single operator.",
+    "explanation": "The intensive adverb 'too' must be placed directly before the adjective it modifies ('heavy') to indicate an excessive characteristic that prevents an action."
+  },
+  {
+    "question": "Select the correct pattern for an adjective paired with an adverb of sufficiency:",
+    "options": ["The layout design was clear enough for the client.", "The layout design was enough clear for the client.", "The layout design was enough are clear for the client.", "The layout design was clear for enough the client."],
+    "answer": "The layout design was clear enough for the client.",
+    "explanation": "This follows the standard `Adjective + Enough` post-position rule. 'Enough' must follow the adjective 'clear' when it is used to express a sufficient degree."
+  },
+  {
+    "question": "Choose the standard comparative form for a single-syllable objective evaluation word:",
+    "options": ["The evaluation criteria must be more fairer next time.", "The evaluation criteria must be fairer next time.", "The evaluation criteria must be most fairer next time.", "The evaluation criteria must be the fairer next time."],
+    "answer": "The evaluation criteria must be fairer next time.",
+    "explanation": "The short adjective 'fair' forms its comparative degree by adding the suffix '-er' ('fairer'). Adding the word 'more' introduces an ungrammatical double comparative error."
+  },
+  {
+    "question": "Identify the standard formal pattern used to express that an individual has not yet reached a specific age threshold:",
+    "options": ["The applicant is too much young to enlist.", "The applicant is too young to enlist.", "The applicant is young too much to enlist.", "The applicant is much too young not to enlist."],
+    "answer": "The applicant is too young to enlist.",
+    "explanation": "The modifier 'too' can directly precede and modify the adjective 'young' to show an excessive trait. Adding 'much' between them is unnecessary and creates an ungrammatical structure in formal writing."
+  },
+  {
+    "question": "Select the correct pre-determiner modifier sequence for a singular countable noun phrase:",
+    "options": ["It was such long process that required patience.", "It was such a long process that required patience.", "It was long such process that required patience.", "It was a such long process that required patience."],
+    "answer": "It was such a long process that required patience.",
+    "explanation": "The correct grammatical structure for this intensifier is: `Such + Indefinite Article (a/an) + Adjective + Singular Countable Noun`. This makes 'such a long process' the only correct choice."
+  },
+  {
+    "question": "Which subject complement adjective choice maintains standard formal compliance after an evaluative linking verb?",
+    "options": ["The resolution of the dispute was deemed satisfactory.", "The resolution of the dispute was deemed satisfactorily.", "The resolution of the dispute was deemed satisfaction.", "The resolution of the dispute was deemed satisfyingness."],
+    "answer": "The resolution of the dispute was deemed satisfactory.",
+    "explanation": "The passive verb 'was deemed' functions as a copular linking mechanism that requires a predicate adjective ('satisfactory') to describe the state of the subject ('resolution'). The adverb 'satisfactorily' or the nouns 'satisfaction' and 'satisfyingness' are incorrect in this position."
+  },
+  {
+    "question": "Which sentence avoids a double comparative fault when using the adjective 'friendly'?",
+    "options": ["He became more friendlier after the orientation.", "He became friendlier after the orientation.", "He became most friendlier after the orientation.", "He became friendliest than others."],
+    "answer": "He became friendlier after the orientation.",
+    "explanation": "The comparative form 'friendlier' already includes the suffix meaning 'more'. Adding the word 'more' before it is redundant and ungrammatical."
+  },
+  {
+    "question": "Complete the clause with the correct predicate adjective following a culinary sensory linking verb: 'The broth _______.'",
+    "options": ["tastes salty", "tastes saltly", "tastes salt", "tastes saltyly"],
+    "answer": "tastes salty",
+    "explanation": "The verb 'tastes' connects the subject directly to its physical property, which requires the predicate adjective 'salty'. The noun 'salt' or the non-standard adverbs 'saltly' and 'saltyly' violate this linking verb rule."
+  },
+  {
+    "question": "Identify the option that avoids an ungrammatical double superlative error:",
+    "options": ["This diamond is the most finest specimen in the vault.", "This diamond is the finest specimen in the vault.", "This diamond is the more finest specimen in the vault.", "This diamond is the finestest specimen in the vault."],
+    "answer": "This diamond is the finest specimen in the vault.",
+    "explanation": "The single-syllable adjective 'fine' forms its superlative degree by adding the suffix '-est' ('finest'). Adding 'most' creates an ungrammatical double superlative."
+  },
+  {
+    "question": "Select the phrase that correctly pairs a quantifier with a plural countable noun:",
+    "options": ["The department encountered less problems this quarter.", "The department encountered fewer problems this quarter.", "The department encountered less problem this quarter.", "The department encountered many less problems."],
+    "answer": "The department encountered fewer problems this quarter.",
+    "explanation": "Because 'problems' is a countable noun in the plural form, it must be paired with the quantifier 'fewer'. The word 'less' is reserved exclusively for uncountable mass nouns."
+  },
+  {
+    "question": "Which of the following choices represents a structurally correct superlative construction?",
+    "options": ["Mount Apo is the most highest peak in the country.", "Mount Apo is the highest peak in the country.", "Mount Apo is the higher peak in the country.", "Mount Apo is the more higher peak in the country."],
+    "answer": "Mount Apo is the highest peak in the country.",
+    "explanation": "The adjective 'high' forms its superlative degree synthetically ('highest'). Combining it with 'most' creates a double superlative error, which is incorrect in standard formal English."
+  },
+  {
+    "question": "Identify the option that uses the quantifier 'a few' correctly to show a positive, existing quantity:",
+    "options": ["Despite the hard exam, few passed the baseline cut.", "Despite the hard exam, a few passed the baseline cut.", "Despite the hard exam, every passed the baseline cut.", "Despite the hard exam, many passed the baseline cut."],
+    "answer": "Despite the hard exam, a few passed the baseline cut.",
+    "explanation": "The expression 'a few' emphasizes that a small but positive number of candidates successfully passed the exam. The bare word 'few' carries a negative connotation that emphasizes scarcity (meaning 'almost none')."
+  },
+  {
+    "question": "Which collocation represents a standard adverb-adjective degree combination?",
+    "options": ["The presentation was quite boring to the stakeholders.", "The presentation was quite long to the stakeholders.", "The presentation was quite and rather boring to the stakeholders.", "The presentation was boring quite to the stakeholders."],
+    "answer": "The presentation was quite boring to the stakeholders.",
+    "explanation": "The degree adverb 'quite' is placed directly before the adjective 'boring' to modify its intensity. Reversing the order or combining it with another conjunction ('quite and rather') is ungrammatical."
+  },
+  {
+    "question": "Identify the complete prepositional phrase functioning as an adjectival modifier in this selection:",
+    "options": ["The officer in a blue shirt organized the files.", "The officer in blue organized the files.", "The officer blue shirt organized the files.", "The officer with blue organized the files."],
+    "answer": "The officer in a blue shirt organized the files.",
+    "explanation": "The phrase 'in a blue shirt' is a complete prepositional phrase positioned immediately after the noun 'officer'. It functions as an adjective to identify and describe the subject."
+  },
+  {
+    "question": "Select the correct pre-determiner syntax pattern for an intensive evaluation:",
+    "options": ["The venue was so a nice place for the reception.", "The venue was such a nice place for the reception.", "The venue was such nice place for the reception.", "The venue was so nice place for the reception."],
+    "answer": "The venue was such a nice place for the reception.",
+    "explanation": "This follows the standard `Such + a + Adjective + Singular Countable Noun` pattern. The alternative 'so' cannot be followed directly by an article; it requires a pattern like 'so nice a place'."
+  },
+  {
+    "question": "Which option demonstrates correct quantifier alignment for count and non-count parameters?",
+    "options": ["The event coordinator noted much people in the lobby.", "The event coordinator noted many water on the floor.", "The event coordinator noted many people in the lobby.", "The event coordinator noted much people on the floor."],
+    "answer": "The event coordinator noted many people in the lobby.",
+    "explanation": "The noun 'people' is a plural countable noun, so it must be paired with the quantifier 'many'. The word 'much' is an alternative quantifier that is reserved strictly for uncountable mass nouns (such as 'water' or 'information')."
+  }
+]
 };
 
