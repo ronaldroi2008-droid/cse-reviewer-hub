@@ -613,306 +613,306 @@ window.VERBAL_QUESTION_BANK["error_identification"] = {
   ],
 
   advanced: [
-    {
-      question: "Identify the error: 'Never / I have / seen / such a thing.'",
-      options: ["Never", "I have", "seen", "No error"],
-      answer: "I have",
-      explanation: "Rule: Negative Inversion. When starting with 'Never', invert the subject and auxiliary: 'Never have I seen'."
-    },
-    {
-      question: "Identify the error: 'I suggest / that he / stops / smoking.'",
-      options: ["I suggest", "that he", "stops", "No error"],
-      answer: "stops",
-      explanation: "Rule: Mandative Subjunctive. After 'suggest', use the base form. 'That he stop smoking'."
-    },
-    {
-      question: "Identify the error: 'If I / was / you, / I would accept.'",
-      options: ["If I", "was", "you,", "I would accept"],
-      answer: "was",
-      explanation: "Rule: Hypothetical Subjunctive. In 'If' clauses representing unreal situations, use 'were' for all subjects. 'If I were you'."
-    },
-    {
-      question: "Identify the error: 'Rarely / we do / go / to the cinema.'",
-      options: ["Rarely", "we do", "go", "No error"],
-      answer: "we do",
-      explanation: "Rule: Inversion. Negative adverb 'Rarely' requires inversion: 'Rarely do we go'."
-    },
-    {
-      question: "Identify the error: 'It is / important that / she / is on time.'",
-      options: ["It is", "important that", "she", "is on time"],
-      answer: "is on time",
-      explanation: "Rule: Subjunctive. After adjectives of necessity, use base form. 'That she be on time'."
-    },
-    {
-      question: "Identify the error: 'Not only / he is / rich, / but also famous.'",
-      options: ["Not only", "he is", "rich,", "No error"],
-      answer: "he is",
-      explanation: "Rule: Inversion. After 'Not only', invert: 'is he'."
-    },
-    {
-      question: "Identify the error: 'I wish / I / know / the answer.'",
-      options: ["I wish", "I", "know", "No error"],
-      answer: "know",
-      explanation: "Rule: Wish Structures. Wishes about the present use the past tense. 'I wish I knew'."
-    },
-    {
-      question: "Identify the error: 'Had / I / knew, / I would have come.'",
-      options: ["Had", "I", "knew,", "No error"],
-      answer: "knew,",
-      explanation: "Rule: Past Perfect. 'Had' requires the past participle 'known', not 'knew'."
-    },
-    {
-      question: "Identify the error: 'Little / he knew / about / the surprise.'",
-      options: ["Little", "he knew", "about", "No error"],
-      answer: "he knew",
-      explanation: "Rule: Inversion. 'Little' acts as a negative adverb here. 'Little did he know'."
-    },
-    {
-      question: "Identify the error: 'God / blesses / the / Philippines.'",
-      options: ["God", "blesses", "the", "No error"],
-      answer: "blesses",
-      explanation: "Rule: Formulaic Subjunctive. In prayers/wishes, use the base form: 'God bless the Philippines'."
-    },
-    {
-      question: "Identify the error: 'Who / did you / give / the book to?'",
-      options: ["Who", "did you", "give", "No error"],
-      answer: "Who",
-      explanation: "Rule: Formal Case. The pronoun is the object of 'to'. Formal English requires 'Whom'."
-    },
-    {
-      question: "Identify the error: 'He is / the man / whom / I think stole it.'",
-      options: ["He is", "the man", "whom", "No error"],
-      answer: "whom",
-      explanation: "Rule: Subject of Clause. Ignore 'I think'. The clause is 'who stole it' (Subject). Use 'who'."
-    },
-    {
-      question: "Identify the error: 'Give it / to / whomever / wants it.'",
-      options: ["Give it", "to", "whomever", "No error"],
-      answer: "whomever",
-      explanation: "Rule: Subject of Clause. The pronoun is the subject of 'wants'. Use 'whoever'."
-    },
-    {
-      question: "Identify the error: 'Us / students / need / more time.'",
-      options: ["Us", "students", "need", "No error"],
-      answer: "Us",
-      explanation: "Rule: Appositives. The pronoun is the subject. Use 'We students'."
-    },
-    {
-      question: "Identify the error: 'She is / taller / than / me.'",
-      options: ["She is", "taller", "than", "me"],
-      answer: "me",
-      explanation: "Rule: Comparative Ellipsis. Formal grammar completes the sentence 'than I (am)'. Use 'I'."
-    },
-    {
-      question: "Identify the error: 'It was / him / who / called.'",
-      options: ["It was", "him", "who", "No error"],
-      answer: "him",
-      explanation: "Rule: Predicate Nominative. After 'to be', usage requires the subject pronoun. 'It was he'."
-    },
-    {
-      question: "Identify the error: 'Everyone / has / their / own opinion.'",
-      options: ["Everyone", "has", "their", "No error"],
-      answer: "their",
-      explanation: "Rule: Singular Indefinite. Formal exams often require 'his or her' for 'Everyone'."
-    },
-    {
-      question: "Identify the error: 'Between / you / and / I.'",
-      options: ["Between", "you", "and", "I"],
-      answer: "I",
-      explanation: "Rule: Object of Preposition. Use 'me'."
-    },
-    {
-      question: "Identify the error: 'The jury / gave / their / verdict.'",
-      options: ["The jury", "gave", "their", "No error"],
-      answer: "their",
-      explanation: "Rule: Collective Nouns. If the jury acts as one unit, use 'its'."
-    },
-    {
-      question: "Identify the error: 'Myself / will / handle / the project.'",
-      options: ["Myself", "will", "handle", "No error"],
-      answer: "Myself",
-      explanation: "Rule: Reflexive Pronouns. Cannot be a subject. Use 'I'."
-    },
-    {
-      question: "Identify the error: 'We / discussed / about / the problem.'",
-      options: ["We", "discussed", "about", "No error"],
-      answer: "about",
-      explanation: "Rule: Transitive Verb. 'Discuss' means 'talk about'. Adding 'about' is redundant. Delete it."
-    },
-    {
-      question: "Identify the error: 'She / married / with / a doctor.'",
-      options: ["She", "married", "with", "No error"],
-      answer: "with",
-      explanation: "Rule: Preposition Error. Use 'married a doctor' or 'is married to a doctor'."
-    },
-    {
-      question: "Identify the error: 'I / entered / into / the room.'",
-      options: ["I", "entered", "into", "No error"],
-      answer: "into",
-      explanation: "Rule: Transitive Verb. 'Enter' (a place) does not take 'into'. Just 'entered the room'."
-    },
-    {
-      question: "Identify the error: 'He / lacks / of / confidence.'",
-      options: ["He", "lacks", "of", "No error"],
-      answer: "of",
-      explanation: "Rule: Verb vs Noun. 'Lack' (verb) takes no preposition. Here it is a verb. Delete 'of'."
-    },
-    {
-      question: "Identify the error: 'Despite / of / the rain, / we played.'",
-      options: ["Despite", "of", "the rain,", "No error"],
-      answer: "of",
-      explanation: "Rule: Preposition Error. Use 'Despite' alone OR 'In spite of'. Never 'Despite of'."
-    },
-    {
-      question: "Identify the error: 'Comprised / of / many / elements.'",
-      options: ["Comprised", "of", "many", "No error"],
-      answer: "Comprised",
-      explanation: "Rule: Word Choice. 'Comprise' means 'include'. Do not use 'of'. Alternatively, use 'Composed of'."
-    },
-    {
-      question: "Identify the error: 'Please / await / for / further instructions.'",
-      options: ["Please", "await", "for", "No error"],
-      answer: "for",
-      explanation: "Rule: Transitive Verb. 'Await' means 'wait for'. Adding 'for' is redundant."
-    },
-    {
-      question: "Identify the error: 'I / met / up / with him.'",
-      options: ["I", "met", "up", "No error"],
-      answer: "up",
-      explanation: "Rule: Redundancy. 'Met him' is sufficient. 'Met up with' is informal."
-    },
-    {
-      question: "Identify the error: 'Inside / of / the / box.'",
-      options: ["Inside", "of", "the", "No error"],
-      answer: "of",
-      explanation: "Rule: Preposition Style. 'Inside the box' is preferred. Drop 'of'."
-    },
-    {
-      question: "Identify the error: 'Where / are you / going / to?'",
-      options: ["Where", "are you", "going", "to?"],
-      answer: "to?",
-      explanation: "Rule: Redundancy. 'Where are you going?' implies destination. 'To' is unnecessary."
-    },
-    {
-      question: "Identify the error: 'I / accept / your / preposition.'",
-      options: ["I", "accept", "your", "preposition"],
-      answer: "preposition",
-      explanation: "Rule: Malapropism. Context suggests 'proposition' (offer), not 'preposition' (grammar word)."
-    },
-    {
-      question: "Identify the error: 'He / lost / his / site.'",
-      options: ["He", "lost", "his", "site"],
-      answer: "site",
-      explanation: "Rule: Homophones. He lost his vision, which is 'sight', not 'site' (location)."
-    },
-    {
-      question: "Identify the error: 'Please / proceed / with / the next item.'",
-      options: ["Please", "proceed", "with", "No error"],
-      answer: "with",
-      explanation: "Rule: Preposition. 'Proceed to' implies moving to a new point. 'Proceed with' means continue doing."
-    },
-    {
-      question: "Identify the error: 'I / could / care / less.'",
-      options: ["I", "could", "care", "less"],
-      answer: "could",
-      explanation: "Rule: Idiom. 'Could care less' implies you care a little. The correct phrase is 'Couldn't care less'."
-    },
-    {
-      question: "Identify the error: 'For / all / intensive / purposes.'",
-      options: ["For", "all", "intensive", "purposes"],
-      answer: "intensive",
-      explanation: "Rule: Malapropism. The idiom is 'For all intents and purposes', not 'intensive'."
-    },
-    {
-      question: "Identify the error: 'Nip / it / in / the butt.'",
-      options: ["Nip", "it", "in", "the butt"],
-      answer: "the butt",
-      explanation: "Rule: Idiom. The phrase refers to a flower bud. It is 'Nip it in the bud'."
-    },
-    {
-      question: "Identify the error: 'One / in / the / same.'",
-      options: ["One", "in", "the", "same"],
-      answer: "in",
-      explanation: "Rule: Idiom. The phrase is 'One and the same'."
-    },
-    {
-      question: "Identify the error: 'Case / and / point.'",
-      options: ["Case", "and", "point", "No error"],
-      answer: "and",
-      explanation: "Rule: Idiom. The correct phrase is 'Case in point'."
-    },
-    {
-      question: "Identify the error: 'Peaked / my / interest.'",
-      options: ["Peaked", "my", "interest", "No error"],
-      answer: "Peaked",
-      explanation: "Rule: Homophones. 'Piqued' means to stimulate. 'Peaked' means reached a high point."
-    },
-    {
-      question: "Identify the error: 'By / and / large.'",
-      options: ["By", "and", "large", "No error"],
-      answer: "No error",
-      explanation: "Rule: Correct Idiom. 'By and large' means on the whole. No error."
-    },
-    {
-      question: "Identify the error: 'It was / both / a long ceremony / and tedious.'",
-      options: ["It was", "both", "a long ceremony", "and tedious"],
-      answer: "and tedious",
-      explanation: "Rule: Parallelism. 'Both' is followed by Noun Phrase. 'And' must follow with Noun Phrase. 'Tedious' is Adjective."
-    },
-    {
-      question: "Identify the error: 'He not only / passed / the test / but also the interview.'",
-      options: ["He not only", "passed", "the test", "but also the interview"],
-      answer: "passed",
-      explanation: "Rule: Correlative Position. 'Not only' precedes verb 'passed', so 'but also' must precede a verb."
-    },
-    {
-      question: "Identify the error: 'The room / was / light, airy, / and had plenty of space.'",
-      options: ["The room", "was", "light, airy,", "and had plenty of space"],
-      answer: "and had plenty of space",
-      explanation: "Rule: Parallel Lists. Adjective, Adjective, and [Clause]. Fix: 'and spacious'."
-    },
-    {
-      question: "Identify the error: 'I like / running, / jumping, / and to swim.'",
-      options: ["I like", "running,", "jumping,", "and to swim"],
-      answer: "and to swim",
-      explanation: "Rule: Parallel Forms. Gerund, Gerund, Infinitive. Fix: 'swimming'."
-    },
-    {
-      question: "Identify the error: 'To think / is / existing.'",
-      options: ["To think", "is", "existing", "No error"],
-      answer: "existing",
-      explanation: "Rule: Parallelism. Infinitive subject ('To think') needs infinitive compliment ('to exist')."
-    },
-    {
-      question: "Identify the error: 'He is / a / man of wealth / and kind.'",
-      options: ["He is", "a", "man of wealth", "and kind"],
-      answer: "and kind",
-      explanation: "Rule: Parallelism. Noun phrase vs Adjective. Fix: 'and kindness'."
-    },
-    {
-      question: "Identify the error: 'The teacher / told them / to sit / and that they should listen.'",
-      options: ["The teacher", "told them", "to sit", "and that they should listen"],
-      answer: "and that they should listen",
-      explanation: "Rule: Parallelism. Infinitive vs Clause. Fix: 'to sit and listen'."
-    },
-    {
-      question: "Identify the error: 'Either / you / pay now / or later.'",
-      options: ["Either", "you", "pay now", "or later"],
-      answer: "you",
-      explanation: "Rule: Correlative Placement. 'Either' comes before 'you' (Pronoun). 'Or' before 'later' (Adverb). Fix: 'You pay either now or later'."
-    },
-    {
-      question: "Identify the error: 'She / enjoys / reading / more than to write.'",
-      options: ["She", "enjoys", "reading", "more than to write"],
-      answer: "more than to write",
-      explanation: "Rule: Parallel Comparison. Gerund vs Infinitive. Fix: 'writing'."
-    },
-    {
-      question: "Identify the error: 'The new car / is / fast, / reliable, and it saves gas.'",
-      options: ["The new car", "is", "fast,", "reliable, and it saves gas"],
-      answer: "reliable, and it saves gas",
-      explanation: "Rule: List Structure. Adj, Adj, Clause. Fix: 'and fuel-efficient'."
-    }
+     {
+    "question": "Identify the error: 'Never / I have / seen / such a thing.'",
+    "options": ["Never", "I have", "seen", "No error"],
+    "answer": "I have",
+    "explanation": "The sentence reads: 'Never I have seen such a thing.' Under the rules of negative inversion, when a sentence begins with an emphatic negative adverb or restrictive word like 'Never', 'Seldom', or 'Rarely', the subject and the auxiliary verb must be inverted. Therefore, the subject-verb order 'I have' must be changed to the inverted form 'have I'. Corrected sentence: 'Never have I seen such a thing.'"
+  },
+  {
+    "question": "Identify the error: 'I suggest / that he / stops / smoking.'",
+    "options": ["I suggest", "that he", "stops", "No error"],
+    "answer": "stops",
+    "explanation": "The sentence reads: 'I suggest that he stops smoking.' The verb 'suggest' triggers the mandative subjunctive mood in the dependent 'that' clause, which is used to express demands, suggestions, or necessities. The subjunctive mood requires the bare base form of the verb, regardless of the subject. Therefore, the third-person singular form 'stops' must be changed to 'stop'. Corrected sentence: 'I suggest that he stop smoking.'"
+  },
+  {
+    "question": "Identify the error: 'If I / was / you, / I would accept.'",
+    "options": ["If I", "was", "you,", "I would accept"],
+    "answer": "was",
+    "explanation": "The sentence reads: 'If I was you, I would accept.' This sentence is a second conditional structure expressing a hypothetical, counterfactual, or unreal present situation. In formal English, the hypothetical subjunctive mood requires the use of 'were' for all subjects, including first and third-person singular pronouns ('I', 'he', 'she', 'it'). Thus, 'was' must be changed to 'were'. Corrected sentence: 'If I were you, I would accept.'"
+  },
+  {
+    "question": "Identify the error: 'Rarely / we do / go / to the cinema.'",
+    "options": ["Rarely", "we do", "go", "No error"],
+    "answer": "we do",
+    "explanation": "The sentence reads: 'Rarely we do go to the cinema.' The restrictive adverb 'Rarely' placed at the very beginning of the sentence mandates subject-auxiliary inversion to maintain proper rhetorical structure. The standard word order 'we do' must be inverted so that the auxiliary verb precedes the subject pronoun. Corrected sentence: 'Rarely do we go to the cinema.'"
+  },
+  {
+    "question": "Identify the error: 'It is / important that / she / is on time.'",
+    "options": ["It is", "important that", "she", "is on time"],
+    "answer": "is on time",
+    "explanation": "The sentence reads: 'It is important that she is on time.' The adjective 'important' introduces a clause expressing necessity or urgency, which triggers the subjunctive mood. The subjunctive form of the verb 'to be' is always 'be', regardless of the subject tense or person. Therefore, the indicative form 'is' must be replaced with the base form 'be'. Corrected sentence: 'It is important that she be on time.'"
+  },
+  {
+    "question": "Identify the error: 'Not only / he is / rich, / but also famous.'",
+    "options": ["Not only", "he is", "rich,", "No error"],
+    "answer": "he is",
+    "explanation": "The sentence reads: 'Not only he is rich, but also famous.' When the correlative conjunction phrase 'Not only' introduces a main clause at the beginning of a sentence, it acts as a negative element that triggers a mandatory subject-verb inversion. The declarative ordering 'he is' must be inverted into the interrogative-style structure 'is he'. Corrected sentence: 'Not only is he rich, but also famous.'"
+  },
+  {
+    "question": "Identify the error: 'I wish / I / know / the answer.'",
+    "options": ["I wish", "I", "know", "No error"],
+    "answer": "know",
+    "explanation": "The sentence reads: 'I wish I know the answer.' Expressions using the verb 'wish' to describe a desire for a different reality in the present require the past subjunctive mood to show that the situation is hypothetical or unfulfilled. The simple present tense 'know' must be changed to the simple past tense form 'knew'. Corrected sentence: 'I wish I knew the answer.'"
+  },
+  {
+    "question": "Identify the error: 'Had / I / knew, / I would have come.'",
+    "options": ["Had", "I", "knew,", "No error"],
+    "answer": "knew,",
+    "explanation": "The sentence reads: 'Had I knew, I would have come.' This sentence uses an inverted third conditional structure to express a past hypothesis. The past perfect inversion begins with the auxiliary 'Had', which must be paired with the past participle form of the main verb. The simple past form 'knew' must be changed to the past participle 'known'. Corrected sentence: 'Had I known, I would have come.'"
+  },
+  {
+    "question": "Identify the error: 'Little / he knew / about / the surprise.'",
+    "options": ["Little", "he knew", "about", "No error"],
+    "answer": "he knew",
+    "explanation": "The sentence reads: 'Little he knew about the surprise.' The word 'Little' is used here as a restrictive or negative adverb at the opening of the clause, which requires a subject-auxiliary inversion. To invert a simple past verb like 'knew', you must introduce the past auxiliary 'did' and return the main verb to its base form. Corrected sentence: 'Little did he know about the surprise.'"
+  },
+  {
+    "question": "Identify the error: 'God / blesses / the / Philippines.'",
+    "options": ["God", "blesses", "the", "No error"],
+    "answer": "blesses",
+    "explanation": "The sentence reads: 'God blesses the Philippines.' While 'blesses' is correct in a standard indicative sentence describing a regular action, this specific phrasing functions as a formulaic or optative subjunctive expression used in prayers, blessings, or traditional wishes. Formulaic subjunctives require the bare base form of the verb, meaning 'blesses' must be changed to 'bless'. Corrected sentence: 'God bless the Philippines.'"
+  },
+  {
+    "question": "Identify the error: 'Who / did you / give / the book to?'",
+    "options": ["Who", "did you", "give", "No error"],
+    "answer": "Who",
+    "explanation": "The sentence reads: 'Who did you give the book to?' In strict formal grammar, pronouns that serve as the object of a verb or a preposition must use the objective case. Here, the pronoun is the grammatical object of the terminal preposition 'to' (i.e., 'you did give the book to [someone]'). Therefore, the subjective pronoun 'Who' must be changed to the objective form 'Whom'. Corrected sentence: 'Whom did you give the book to?'"
+  },
+  {
+    "question": "Identify the error: 'He is / the man / whom / I think stole it.'",
+    "options": ["He is", "the man", "whom", "No error"],
+    "answer": "whom",
+    "explanation": "The sentence reads: 'He is the man whom I think stole it.' To determine the correct pronoun case, parenthetical insertions like 'I think', 'I believe', or 'we suspect' should be set aside. The relative pronoun functions as the true subject of the dependent clause verb 'stole' ('[who] stole it'). Because a subject requires the nominative case, the objective pronoun 'whom' must be corrected to 'who'. Corrected sentence: 'He is the man who I think stole it.'"
+  },
+  {
+    "question": "Identify the error: 'Give it / to / whomever / wants it.'",
+    "options": ["Give it", "to", "whomever", "No error"],
+    "answer": "whomever",
+    "explanation": "The sentence reads: 'Give it to whomever wants it.' Although the pronoun immediately follows the preposition 'to', it actually functions as the subject for the verb 'wants' inside the relative clause ('[whoever] wants it'). The rule of grammar dictating that a relative clause subject must be in the nominative case overrides the preposition's object rule. Thus, 'whomever' must be changed to 'whoever'. Corrected sentence: 'Give it to whoever wants it.'"
+  },
+  {
+    "question": "Identify the error: 'Us / students / need / more time.'",
+    "options": ["Us", "students", "need", "No error"],
+    "answer": "Us",
+    "explanation": "The sentence reads: 'Us students need more time.' The phrase 'Us students' serves as the complete compound subject of the verb 'need'. When a pronoun is modified by an appositive noun like 'students', the pronoun must maintain the case required by its syntactic position. Dropping the noun 'students' reveals that 'Us need' is incorrect; it must use the nominative pronoun 'We'. Corrected sentence: 'We students need more time.'"
+  },
+  {
+    "question": "Identify the error: 'She is / taller / than / me.'",
+    "options": ["She is", "taller", "than", "me"],
+    "answer": "me",
+    "explanation": "The sentence reads: 'She is taller than me.' In strict formal grammar, the word 'than' functions as a conjunction introducing an elliptical clause of comparison where the verb is omitted but understood (i.e., 'than I am'). Because the pronoun is the subject of this implied clause, it must use the nominative case 'I' instead of the objective case 'me'. Corrected sentence: 'She is taller than I.'"
+  },
+  {
+    "question": "Identify the error: 'It was / him / who / called.'",
+    "options": ["It was", "him", "who", "No error"],
+    "answer": "him",
+    "explanation": "The sentence reads: 'It was him who called.' The pronoun follows the past tense form of the linking verb 'to be' ('was'). In formal or classical grammar rules, a pronoun following a copular verb must be a predicate nominative, which matches the subjective case of the main sentence subject. Therefore, the objective pronoun 'him' must be changed to 'he'. Corrected sentence: 'It was he who called.'"
+  },
+  {
+    "question": "Identify the error: 'Everyone / has / their / own opinion.'",
+    "options": ["Everyone", "has", "their", "No error"],
+    "answer": "their",
+    "explanation": "The sentence reads: 'Everyone has their own opinion.' The indefinite pronoun 'Everyone' is grammatically singular and requires a singular verb ('has'). To maintain absolute singular agreement throughout the sentence in traditional formal examinations, the possessive pronoun modifying 'opinion' must also be singular. The plural 'their' should be updated to the singular construction 'his or her'. Corrected sentence: 'Everyone has his or her own opinion.'"
+  },
+  {
+    "question": "Identify the error: 'Between / you / and / I.'",
+    "options": ["Between", "you", "and", "I"],
+    "answer": "I",
+    "explanation": "The phrase reads: 'Between you and I.' The word 'Between' is a preposition, and all pronouns paired with it inside a prepositional phrase must function as compound objects of the preposition. Objects must always be in the objective case. While 'you' is the same in both cases, the nominative pronoun 'I' must be changed to the objective pronoun 'me'. Corrected sentence: 'Between you and me.'"
+  },
+  {
+    "question": "Identify the error: 'The jury / gave / their / verdict.'",
+    "options": ["The jury", "gave", "their", "No error"],
+    "answer": "their",
+    "explanation": "The sentence reads: 'The jury gave their verdict.' 'The jury' is a collective noun. When a collective noun acts together as a single, unanimous, and cohesive institutional unit, it is treated as singular. Consequently, any pronouns referring back to it must also be singular. The plural pronoun 'their' should be changed to the singular neutral pronoun 'its'. Corrected sentence: 'The jury gave its verdict.'"
+  },
+  {
+    "question": "Identify the error: 'Myself / will / handle / the project.'",
+    "options": ["Myself", "will", "handle", "No error"],
+    "answer": "Myself",
+    "explanation": "The sentence reads: 'Myself will handle the project.' Intensive or reflexive pronouns ending in '-self' cannot be used as the independent grammatical subject of a sentence, as they require a preceding noun or pronoun antecedent in the same clause to refer back to. The reflexive pronoun 'Myself' must be replaced with the standard nominative subject pronoun 'I'. Corrected sentence: 'I will handle the project.'"
+  },
+  {
+    "question": "Identify the error: 'We / discussed / about / the problem.'",
+    "options": ["We", "discussed", "about", "No error"],
+    "answer": "about",
+    "explanation": "The sentence reads: 'We discussed about the problem.' The word 'discuss' is a transitive verb that directly carries the meaning of 'to talk about' or 'to debate'. Because the prepositional concept of 'about' is already embedded inside the meaning of the verb itself, adding 'about' immediately after create an ungrammatical redundancy. The word 'about' should be deleted. Corrected sentence: 'We discussed the problem.'"
+  },
+  {
+    "question": "Identify the error: 'She / married / with / a doctor.'",
+    "options": ["She", "married", "with", "No error"],
+    "answer": "with",
+    "explanation": "The sentence reads: 'She married with a doctor.' In this sentence structure, 'marry' functions as an active transitive verb, meaning it requires a direct object without an intervening preposition. Using the preposition 'with' is an ungrammatical idiom transfer error. To correct it, 'with' should be removed, or the sentence must be rephrased using the passive state 'was married to'. Corrected sentence: 'She married a doctor.'"
+  },
+  {
+    "question": "Identify the error: 'I / entered / into / the room.'",
+    "options": ["I", "entered into the room.", "into", "No error"],
+    "answer": "into",
+    "explanation": "The sentence reads: 'I entered into the room.' When 'enter' refers to physically moving into a literal geographical space or structure, it is a transitive verb that takes a direct object immediately without prepositions. The phrase 'entered into' is reserved for metaphorical references like entering into an agreement or a contract. The word 'into' must be dropped. Corrected sentence: 'I entered the room.'"
+  },
+  {
+    "question": "Identify the error: 'He / lacks / of / confidence.'",
+    "options": ["He", "lacks", "of", "No error"],
+    "answer": "of",
+    "explanation": "The sentence reads: 'He lacks of confidence.' It is vital to separate the noun form from the verb form. The noun phrase 'a lack of' requires a preposition, but here, 'lacks' is acting directly as the main active verb of the subject 'He'. Active transitive verbs take direct objects without modifiers, so the preposition 'of' is incorrect and must be deleted. Corrected sentence: 'He lacks confidence.'"
+  },
+  {
+    "question": "Identify the error: 'Despite / of / the rain, / we played.'",
+    "options": ["Despite", "of", "the rain,", "No error"],
+    "answer": "of",
+    "explanation": "The sentence reads: 'Despite of the rain, we played.' This is a common prepositional confusion error. English possesses two distinct concessive phrases: the three-word phrase 'In spite of' and the single-word preposition 'Despite'. Combining the two into 'Despite of' is ungrammatical. The word 'of' must be removed. Corrected sentence: 'Despite the rain, we played.'"
+  },
+  {
+    "question": "Identify the error: 'Comprised / of / many / elements.'",
+    "options": ["Comprised", "of", "many", "No error"],
+    "answer": "Comprised",
+    "explanation": "The phrase reads: 'Comprised of many elements.' The verb 'comprise' literally means 'to contain', 'to include', or 'to embrace' as a whole. A classic rule of style states that the whole comprises its parts, meaning 'comprised' cannot be followed by 'of' in the active voice. To fix this, you can change the word to 'Composed' (which pairs with 'of') or use 'comprise' actively. Corrected sentence: 'Composed of many elements.'"
+  },
+  {
+    "question": "Identify the error: 'Please / await / for / further instructions.'",
+    "options": ["Please", "await", "for", "No error"],
+    "answer": "for",
+    "explanation": "The sentence reads: 'Please await for further instructions.' The verb 'await' is a transitive verb that means 'to wait for'. Adding the preposition 'for' after 'await' duplicates the internal definition of the verb. You must either use the transitive verb alone ('await further instructions') or switch to the intransitive verb phrase ('wait for further instructions'). Corrected sentence: 'Please await further instructions.'"
+  },
+  {
+    "question": "Identify the error: 'I / met / up / with him.'",
+    "options": ["I", "met", "up", "No error"],
+    "answer": "up",
+    "explanation": "The sentence reads: 'I met up with him.' In traditional, highly formal grammar, the verb 'meet' is fully self-sufficient when describing an encounter with a person. Adding the phrasal particles 'up with' creates a redundant and colloquial phrasal construction that is generally avoided in rigorous writing. Dropping 'up with' or simply 'up' clarifies the clause. Corrected sentence: 'I met him.'"
+  },
+  {
+    "question": "Identify the error: 'Inside / of / the / box.'",
+    "options": ["Inside", "of", "the", "No error"],
+    "answer": "of",
+    "explanation": "The phrase reads: 'Inside of the box.' The word 'Inside' functions perfectly as a self-contained preposition when defining physical containment. Adding the secondary preposition 'of' directly after it is an unnecessary structural addition that does not add any semantic meaning. Standard formal writing styles require dropping 'of'. Corrected sentence: 'Inside the box.'"
+  },
+  {
+    "question": "Identify the error: 'Where / are you / going / to?'",
+    "options": ["Where", "are you", "going", "to?"],
+    "answer": "to?",
+    "explanation": "The sentence reads: 'Where are you going to?' The interrogative adverb 'Where' inherently asks for and encompasses a destination or direction (meaning 'to what place'). Adding the preposition 'to' at the absolute end of the question is completely redundant and creates a pleonastic error. The word 'to' must be omitted. Corrected sentence: 'Where are you going?'"
+  },
+  {
+    "question": "Identify the error: 'I / accept / your / preposition.'",
+    "options": ["I", "accept", "your", "preposition"],
+    "answer": "preposition",
+    "explanation": "The sentence reads: 'I accept your preposition.' This is a malapropism error involving word choice. A 'preposition' is a grammatical term used to link nouns and pronouns. The context of accepting an offer, plan, or business idea requires the noun 'proposition'. Corrected sentence: 'I accept your proposition.'"
+  },
+  {
+    "question": "Identify the error: 'He / lost / his / site.'",
+    "options": ["He", "lost", "his", "site"],
+    "answer": "site",
+    "explanation": "The sentence reads: 'He lost his site.' This is a homophone error. The noun 'site' refers to a physical location, place, or website. In the context of losing one's physical vision or ability to see, the correct spelling is the homophone 'sight'. Corrected sentence: 'He lost his sight.'"
+  },
+  {
+    "question": "Identify the error: 'Please / proceed / with / the next item.'",
+    "options": ["Please", "proceed", "with", "No error"],
+    "answer": "No error",
+    "explanation": "The sentence reads: 'Please proceed with the next item.' This sentence is entirely correct. The verb 'proceed' changes its meaning based on its preposition: 'proceed to' means to move forward physically or transition to a new location/step, while 'proceed with' is the exact idiomatic match for continuing an ongoing activity or task. There is no error."
+  },
+  {
+    "question": "Identify the error: 'I / could / care / less.'",
+    "options": ["I", "could", "care", "less"],
+    "answer": "could",
+    "explanation": "The phrase reads: 'I could care less.' This is a widely misused idiom. Taken literally, saying you 'could' care less implies that you still possess some level of care or concern. To correctly convey the idiomatic meaning that you have absolutely zero interest or care, you must use the negative contraction 'couldn't'. Corrected sentence: 'I couldn't care less.'"
+  },
+  {
+    "question": "Identify the error: 'For / all / intensive / purposes.'",
+    "options": ["For", "all", "intensive", "purposes"],
+    "answer": "intensive",
+    "explanation": "The phrase reads: 'For all intensive purposes.' This is an example of an eggcorn or a phonetic malapropism. The correct, established legal and idiomatic phrase is 'For all intents and purposes', which means 'in every practical sense'. The adjective 'intensive' is incorrect here. Corrected sentence: 'For all intents and purposes.'"
+  },
+  {
+    "question": "Identify the error: 'Nip / it / in / the butt.'",
+    "options": ["Nip", "it", "in", "the butt"],
+    "answer": "the butt",
+    "explanation": "The phrase reads: 'Nip it in the butt.' This idiom stems from horticulture, where a gardener cuts off a flower 'bud' early on to stop it from growing further, symbolizing stopping a problem before it develops. The correct word is 'bud', not the anatomy word 'butt'. Corrected sentence: 'Nip it in the bud.'"
+  },
+  {
+    "question": "Identify the error: 'One / in / the / same.'",
+    "options": ["One", "in", "the", "same"],
+    "answer": "in",
+    "explanation": "The phrase reads: 'One in the same.' This is a common phonetic error. The phrase is used to show that two things are actually identical or the exact same entity. The correct coordinating conjunction to link them is 'and', making the proper idiom 'One and the same'. Corrected sentence: 'One and the same.'"
+  },
+  {
+    "question": "Identify the error: 'Case / and / point.'",
+    "options": ["Case", "and", "point", "No error"],
+    "answer": "and",
+    "explanation": "The phrase reads: 'Case and point.' This is an incorrect alteration of a standard idiom used to indicate that a perfect illustrative example is being presented. The correct idiomatic preposition to link these words is 'in'. Corrected phrase: 'Case in point.'"
+  },
+  {
+    "question": "Identify the error: 'Peaked / my / interest.'",
+    "options": ["Peaked", "my", "interest", "No error"],
+    "answer": "Peaked",
+    "explanation": "The phrase reads: 'Peaked my interest.' This is a homophone error. The verb 'peak' means to reach a highest physical point or maximum value. To describe the act of exciting, stimulating, or arousing a feeling like curiosity or interest, formal English requires the verb 'pique'. Corrected sentence: 'Piqued my interest.'"
+  },
+  {
+    "question": "Identify the error: 'By / and / large.'",
+    "options": ["By", "and", "large", "No error"],
+    "answer": "No error",
+    "explanation": "The phrase reads: 'By and large.' This expression originated as a nautical term but has evolved into a completely correct standard English idiom meaning 'on the whole', 'mostly', or 'generally speaking'. The phrasing is entirely accurate as written, so the correct option is No error."
+  },
+  {
+    "question": "Identify the error: 'It was / both / a long ceremony / and tedious.'",
+    "options": ["It was", "both", "a long ceremony", "and tedious"],
+    "answer": "and tedious",
+    "explanation": "The sentence reads: 'It was both a long ceremony and tedious.' The correlative conjunction 'both... and' requires strict parallel structure for the elements it links. 'Both' is followed by the noun phrase 'a long ceremony', which means 'and' must be followed by a matching noun phrase. Since 'tedious' is an adjective, it breaks parallelism. Corrected sentence: 'It was both long and tedious.'"
+  },
+  {
+    "question": "Identify the error: 'He not only / passed / the test / but also the interview.'",
+    "options": ["He not only", "passed", "the test", "but also the interview"],
+    "answer": "passed",
+    "explanation": "The sentence reads: 'He not only passed the test but also the interview.' The elements linked by 'not only... but also' must be balanced. As written, 'not only' sits before the verb 'passed', but 'but also' sits directly before a noun phrase ('the interview'). To balance the sentence, 'not only' should be moved past the verb so that it balances two noun phrases. Corrected sentence: 'He passed not only the test but also the interview.'"
+  },
+  {
+    "question": "Identify the error: 'The room / was / light, airy, / and had plenty of space.'",
+    "options": ["The room", "was", "light, airy,", "and had plenty of space"],
+    "answer": "and had plenty of space",
+    "explanation": "The sentence reads: 'The room was light, airy, and had plenty of space.' The sentence links features to the subject using a serial list. The first two descriptors are adjectives ('light', 'airy'), but the third item abruptly switches to a full verbal predicate phrase ('had plenty of space'). To maintain parallel form, the final element must be an adjective. Corrected sentence: 'The room was light, airy, and spacious.'"
+  },
+  {
+    "question": "Identify the error: 'I like / running, / jumping, / and to swim.'",
+    "options": ["I like", "running,", "jumping,", "and to swim"],
+    "answer": "and to swim",
+    "explanation": "The sentence reads: 'I like running, jumping, and to swim.' Parallel structure dictates that all items listed in a series must share the same grammatical form. The list begins with two gerunds ('running', 'jumping'), so the final item must match them as a gerund rather than changing into an infinitive phrase. Corrected sentence: 'I like running, jumping, and swimming.'"
+  },
+  {
+    "question": "Identify the error: 'To think / is / existing.'",
+    "options": ["To think", "is", "existing", "No error"],
+    "answer": "existing",
+    "explanation": "The sentence reads: 'To think is existing.' When equating two conceptual actions across a copular verb like 'is', the grammatical forms of the subject and the predicate nominative must be parallel. The subject is an infinitive ('To think'), so the complement must also be an infinitive rather than a gerund. Corrected sentence: 'To think is to exist.'"
+  },
+  {
+    "question": "Identify the error: 'He is / a / man of wealth / and kind.'",
+    "options": ["He is", "a", "man of wealth", "and kind"],
+    "answer": "and kind",
+    "explanation": "The sentence reads: 'He is a man of wealth and kind.' The conjunction 'and' connects descriptors for the noun 'man'. The first descriptive element is a prepositional noun phrase ('of wealth'), but the second is a standalone adjective ('kind'). To establish parallelism, both modifiers should match in form, such as using two noun phrases. Corrected sentence: 'He is a man of wealth and kindness.'"
+  },
+  {
+    "question": "Identify the error: 'The teacher / told them / to sit / and that they should listen.'",
+    "options": ["The teacher", "told them", "to sit", "and that they should listen"],
+    "answer": "and that they should listen",
+    "explanation": "The sentence reads: 'The teacher told them to sit and that they should listen.' The verb 'told' introduces a series of compound commands. The first command utilizes an infinitive structure ('to sit'), meaning the second item linked by 'and' must also use an infinitive form instead of switching to a full dependent 'that' clause. Corrected sentence: 'The teacher told them to sit and listen.'"
+  },
+  {
+    "question": "Identify the error: 'Either / you / pay now / or later.'",
+    "options": ["Either", "you", "pay now", "or later"],
+    "answer": "you",
+    "explanation": "The sentence reads: 'Either you pay now or later.' Correlative conjunction pairs like 'Either... or' must be placed directly before the parallel terms they contrast. Here, 'or' precedes a time adverb ('later'), but 'Either' is placed all the way before the pronoun 'you'. Moving the position of 'either' fixes the balance. Corrected sentence: 'You pay either now or later.'"
+  },
+  {
+    "question": "Identify the error: 'She / enjoys / reading / more than to write.'",
+    "options": ["She", "enjoys", "reading", "more than to write"],
+    "answer": "more than to write",
+    "explanation": "The sentence reads: 'She enjoys reading more than to write.' In comparative sentences, the two activities being compared across the phrase 'more than' must be in parallel form. Since the first activity is the gerund 'reading', the second activity must match as a gerund rather than an infinitive. Corrected sentence: 'She enjoys reading more than writing.'"
+  },
+  {
+    "question": "Identify the error: 'The new car / is / fast, / reliable, and it saves gas.'",
+    "options": ["The new car", "is", "fast,", "reliable, and it saves gas"],
+    "answer": "reliable, and it saves gas",
+    "explanation": "The sentence reads: 'The new car is fast, reliable, and it saves gas.' The linking verb 'is' introduces a series of descriptors for 'The new car'. The first two entries are simple adjectives ('fast', 'reliable'), but the third entry disrupts this pattern by introducing an independent clause. The final entry must be converted into an adjective. Corrected sentence: 'The new car is fast, reliable, and fuel-efficient.'"
+  }
   ],
 
   expert: [
