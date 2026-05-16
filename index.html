@@ -1,848 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #0f172a;
-      --border: #1e293b;
-      --accent: #6366f1;
-      --accent-hover: #4f46e5;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CSE Reviewer Hub | Master the Exam</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    * { box-sizing: border-box; }
+    body {
+      background: radial-gradient(circle at 10% 20%, #0b1120, #030712);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e1b4b 0%, #020617 60%, #000 100%);
-      color: var(--text);
-    }
+    /* modern glassmorphic container */
+    .dashboard {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
-    .shell {
-      width: 100%;
-      max-width: 480px;
-      padding: 20px;
-    }
+    .glass-panel {
+      background: rgba(15, 25, 45, 0.65);
+      backdrop-filter: blur(14px);
+      border-radius: 2rem;
+      border: 1px solid rgba(71, 85, 105, 0.5);
+      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
 
-    .card {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(12px);
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      padding: 32px 24px;
-      text-align: center;
-    }
+    .content {
+      padding: 2rem 1.8rem;
+    }
 
-    .logo-area { margin-bottom: 14px; }
+    .badge-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
 
-    .app-logo {
-      font-size: 3rem;
-      margin-bottom: 8px;
-      display: block;
-      color: #fbbf24;
-      text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
-    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 1.75rem;
-      font-weight: 700;
-      background: linear-gradient(to right, #818cf8, #c7d2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.02em;
-    }
+    .icon-flame {
+      font-size: 2rem;
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+    }
 
-    .subtitle {
-      margin: 0 0 12px;
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e2e8f0, #a5b4fc, #818cf8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
 
-    .status-line {
-      margin: 0 0 26px;
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      opacity: 0.98;
-    }
+    .tagline {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-top: 6px;
+      border-left: 2px solid #4f46e5;
+      padding-left: 12px;
+    }
 
-    /* ====== Access pills (PRO / TRIAL / FREE) ====== */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      border: 1px solid rgba(148,163,184,.35);
-      background: rgba(2,6,23,.35);
-      white-space: nowrap;
-    }
+    .access-status {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 100px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+    }
 
-    .pill-pro {
-      border-color: rgba(34,197,94,.35);
-      background: rgba(34,197,94,.10);
-      color: #dcfce7;
-    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
+    }
 
-    .pill-trial {
-      border-color: rgba(251,191,36,.35);
-      background: rgba(251,191,36,.10);
-      color: #fffbeb;
-    }
+    .pill-pro {
+      background: linear-gradient(110deg, #10b98120, #05966930);
+      border: 1px solid #34d39960;
+      color: #bef264;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+    }
 
-    .pill-free {
-      border-color: rgba(148,163,184,.35);
-      background: rgba(148,163,184,.08);
-      color: #e2e8f0;
-    }
+    .pill-trial {
+      background: #f59e0b20;
+      border: 1px solid #fbbf2460;
+      color: #fde68a;
+    }
 
-    .menu-grid {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
+    .pill-free {
+      background: #33415560;
+      border: 1px solid #64748b60;
+      color: #cbd5e1;
+    }
 
-    .subject-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 16px 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
+    .expiry-text {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-left: 4px;
+    }
 
-    .subject-btn:hover {
-      border-color: var(--accent);
-      background: rgba(99, 102, 241, 0.1);
-      transform: translateY(-2px);
-    }
+    .subject-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0 20px;
+    }
 
-    .subject-btn .arrow {
-      color: var(--muted);
-      font-size: 1.2rem;
-      transition: transform 0.2s, color 0.2s;
-    }
+    .subject-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a80;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
 
-    .subject-btn:hover .arrow {
-      transform: translateX(4px);
-      color: var(--accent);
-    }
+    .subject-card:hover {
+      border-color: #6366f1;
+      background: #1e293bb3;
+      transform: translateX(6px);
+      box-shadow: 0 8px 20px -12px #6366f180;
+    }
 
-    .footer-note {
-      margin-top: 24px;
-      font-size: 0.8rem;
-      color: #475569;
-      border-top: 1px solid #1e293b;
-      padding-top: 16px;
-      line-height: 1.4;
-    }
+    .subject-name {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-    /* =========================================== */
-    /* MODAL STYLES */
-    /* =========================================== */
-    .pro-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 20px;
-    }
+    .subject-icon {
+      font-size: 1.4rem;
+    }
 
-    .pro-modal-card {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: 20px;
-      border: 1px solid #334155;
-      max-width: 500px;
-      width: 100%;
-      padding: 24px;
-      position: relative;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-    }
+    .arrow {
+      color: #818cf8;
+      font-size: 1.3rem;
+      transition: transform 0.2s;
+    }
 
-    .pro-modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      font-size: 24px;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
+    .subject-card:hover .arrow {
+      transform: translateX(5px);
+    }
 
-    .pro-modal-close:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #f1f5f9;
-    }
+    .badge-locked {
+      font-size: 0.7rem;
+      background: #1e293b;
+      padding: 3px 8px;
+      border-radius: 40px;
+      color: #94a3b8;
+      margin-left: 10px;
+      font-weight: normal;
+    }
 
-    .pro-modal-header {
-      text-align: center;
-      margin-bottom: 18px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #334155;
-    }
+    .footer-tip {
+      font-size: 0.75rem;
+      text-align: center;
+      color: #5b6e8c;
+      padding-top: 18px;
+      border-top: 1px solid #1e2a3e;
+      margin-top: 12px;
+    }
 
-    .stars-logo {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-      color: #fbbf24;
-      text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
-    }
+    /* MODAL STYLES — premium & refined */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 20px;
+      transition: all 0.2s;
+    }
 
-    .pro-modal-header h2 {
-      margin: 0 0 8px;
-      color: #f8fafc;
-      font-size: 1.5rem;
-    }
+    .modal-container {
+      max-width: 520px;
+      width: 100%;
+      background: linear-gradient(145deg, #0f172a, #0b0f1c);
+      border-radius: 2rem;
+      border: 1px solid #334155;
+      box-shadow: 0 40px 70px -20px black;
+      overflow: hidden;
+      animation: fadeSlideUp 0.25s ease;
+    }
 
-    .pro-modal-header p {
-      margin: 0;
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    /* PRO / TRIAL TABS */
-    .access-tabs {
-      display: flex;
-      gap: 8px;
-      margin-top: 14px;
-      justify-content: center;
-    }
+    .modal-header {
+      padding: 1.5rem 1.8rem 0.8rem;
+      position: relative;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
 
-    .access-tab {
-      flex: 1;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid #334155;
-      background: rgba(15,23,42,0.7);
-      color: #e2e8f0;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 28px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    .access-tab.active {
-      background: linear-gradient(to right, #6366f1, #4f46e5);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 6px 18px rgba(99,102,241,0.35);
-    }
+    .modal-close:hover {
+      background: #33415560;
+      color: white;
+    }
 
-    .access-banner{
-      margin: 12px 0 0;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(251,191,36,.35);
-      background: rgba(251,191,36,.10);
-      color: #fffbeb;
-      font-size: 0.92rem;
-      line-height: 1.4;
-    }
+    .modal-icon {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
 
-    .pro-features {
-      background: rgba(30, 41, 59, 0.5);
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 18px;
-      border: 1px solid #334155;
-    }
+    .modal-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-    .pro-features h3 {
-      margin: 0 0 12px;
-      color: #e2e8f0;
-      font-size: 1.1rem;
-    }
+    .tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 1rem 1rem 0.5rem;
+    }
 
-    .pro-features ul {
-      margin: 0;
-      padding-left: 0;
-      list-style: none;
-    }
+    .tab-btn {
+      flex: 1;
+      background: #0f172a80;
+      border: 1px solid #334155;
+      padding: 8px 12px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #cbd5e6;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
 
-    .pro-features li {
-      margin-bottom: 8px;
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
+    .tab-btn.active {
+      background: linear-gradient(95deg, #4f46e5, #6366f1);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 12px #4f46e560;
+    }
 
-    .pro-features li:before {
-      content: "✓";
-      color: #10b981;
-      font-weight: bold;
-    }
+    .modal-body {
+      padding: 1.2rem 1.8rem 1.8rem;
+    }
 
-    .pro-cta {
-      text-align: center;
-      margin-bottom: 14px;
-    }
+    .features-box {
+      background: #02061760;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      margin: 12px 0;
+      border: 1px solid #334155;
+    }
 
-    .pro-upgrade-btn {
-      display: inline-block;
-      width: 100%;
-      background: linear-gradient(to right, #6366f1, #4f46e5);
-      color: white;
-      text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-    }
+    .features-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-    .pro-upgrade-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
-    }
+    .features-box li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+    }
 
-    .pro-secondary-btn{
-      display:inline-block;
-      width: 100%;
-      margin-top: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(2,6,23,.4);
-      border: 1px solid #334155;
-      color: #e2e8f0;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .2s;
-    }
-    .pro-secondary-btn:hover{
-      border-color: rgba(251,191,36,.6);
-      transform: translateY(-1px);
-    }
+    .features-box li::before {
+      content: "✨";
+      font-size: 1rem;
+    }
 
-    .pro-note {
-      margin-top: 10px;
-      font-size: 0.85rem;
-      color: #94a3b8;
-    }
+    .btn-glow {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(100deg, #4f46e5, #7c3aed);
+      padding: 14px 12px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 18px #4f46e540;
+    }
 
-    .pro-already {
-      text-align: center;
-      padding-top: 16px;
-      border-top: 1px solid #334155;
-      color: #cbd5e1;
-      font-size: 0.95rem;
-    }
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px #6366f180;
+    }
 
-    .pro-already a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
+    .secondary-btn {
+      background: #1e293b;
+      border: 1px solid #475569;
+      padding: 10px 12px;
+      border-radius: 60px;
+      color: #e2e8f0;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 12px;
+    }
 
-    .pro-already a:hover { text-decoration: underline; }
+    .secondary-btn:hover {
+      background: #334155;
+      border-color: #818cf8;
+    }
 
-    .trial-form {
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .trial-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 60px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #f1f5f9;
+      outline: none;
+      font-size: 0.9rem;
+    }
 
-    .trial-input {
-      width: 100%;
-      border-radius: 999px;
-      border: 1px solid #334155;
-      padding: 10px 14px;
-      background: rgba(15,23,42,0.7);
-      color: #e2e8f0;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
+    .trial-input:focus {
+      border-color: #6366f1;
+    }
 
-    .trial-input::placeholder { color: #64748b; }
+    .info-note {
+      font-size: 0.75rem;
+      color: #7e8aa2;
+      margin-top: 12px;
+      text-align: center;
+    }
 
-    .trial-input:focus {
-      border-color: #6366f1;
-      box-shadow: 0 0 0 1px rgba(99,102,241,0.4);
-    }
-
-    .trial-helper {
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 600px) {
-      .pro-modal-card { padding: 20px; }
-    }
-  </style>
+    .mt-2 {
+      margin-top: 12px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="shell">
-    <div class="card">
-      <div class="logo-area">
-        <span class="app-logo"> </span>
-        <h1>CSE Reviewer Hub</h1>
-        <p class="subtitle">
-          Welcome! Choose a subject, do quick drills in Practice Mode, or try the Full Mock Exam.
-        </p>
-        <p id="licenseStatus" class="status-line">Checking access…</p>
-      </div>
+<div class="dashboard">
+  <div class="glass-panel">
+    <div class="content">
+      <div class="badge-area">
+        <div class="logo-badge">
+          <span class="icon-flame">📚⚡</span>
+          <h1>CSE Reviewer Hub</h1>
+        </div>
+        <div id="licenseStatusBox" class="access-status">
+          <span class="pill pill-free">⟳ loading</span>
+        </div>
+      </div>
+      <div class="tagline">
+        🧠 5 subjects • Full Mock Exam (170 items) • Smart practice
+      </div>
 
-      <div class="menu-grid">
-        <a href="verbal.html" class="subject-btn">
-          <span> &nbsp; Verbal Ability</span>
-          <span class="arrow">→</span>
-        </a>
+      <!-- main menu -->
+      <div class="subject-grid">
+        <a href="verbal.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">📖</span> Verbal Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="numerical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🔢</span> Numerical Reasoning</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="analytical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🧩</span> Analytical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="clerical.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">📑</span> Clerical Ability</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="general_info.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🇵🇭</span> General Information</span>
+          <span class="arrow">→</span>
+        </a>
 
-        <a href="numerical.html" class="subject-btn">
-          <span> &nbsp; Numerical Reasoning</span>
-          <span class="arrow">→</span>
-        </a>
+        <!-- PRACTICE MODE (locked by default) -->
+        <a href="#" id="practiceModeBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🎯</span> Practice Mode (Quick Drills)</span>
+          <span class="arrow">→</span>
+        </a>
 
-        <a href="analytical.html" class="subject-btn">
-          <span> &nbsp; Analytical Ability</span>
-          <span class="arrow">→</span>
-        </a>
+        <!-- FULL MOCK EXAM -->
+        <a href="#" id="mockExamBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🏆</span> Full Mock Exam (170 Items)</span>
+          <span class="arrow">→</span>
+        </a>
 
-        <a href="clerical.html" class="subject-btn">
-          <span> &nbsp; Clerical Ability</span>
-          <span class="arrow">→</span>
-        </a>
+        <a href="license.html" class="subject-card">
+          <span class="subject-name"><span class="subject-icon">🔑</span> Activate PRO / License</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="footer-tip">
+        💡 Tip: Start with topics → Practice Mode → conquer the 170-item mock exam.
+      </div>
+    </div>
+  </div>
+</div>
 
-        <a href="general_info.html" class="subject-btn">
-          <span> &nbsp; General Information</span>
-          <span class="arrow">→</span>
-        </a>
+<!-- UNIVERSAL MODAL (for upgrade / trial) -->
+<div id="accessModal" class="modal-overlay" style="display: none;">
+  <div class="modal-container">
+    <div class="modal-header">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="modal-icon">⭐</div>
+      <div class="modal-title" id="modalTitleText">Unlock Full Access</div>
+      <div class="tabs" id="modalTabs">
+        <button class="tab-btn active" data-tab="pro">🚀 PRO Lifetime</button>
+        <button class="tab-btn" data-tab="trial">🎁 Free Trial Key</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBodyContainer">
+      <!-- dynamic content via js -->
+    </div>
+  </div>
+</div>
 
-        <!-- LOCKED PRACTICE MODE (same behavior as Mock Exam) -->
-        <a href="#" class="subject-btn" id="practiceLink">
-          <span id="practiceLabel"> &nbsp; Practice Mode (Quick Drills)</span>
-          <span class="arrow">→</span>
-        </a>
+<script>
+  (function(){
+    // ----------------------------- STORAGE KEYS (offline-first) -------------------------
+    const STORAGE_ACCESS_KIND = "cse_access_kind";   // "pro", "trial", "free"
+    const STORAGE_EXPIRES_AT = "cse_expires_at";     // ISO string for trial
+    const STORAGE_IS_PRO_LEGACY = "cse_is_pro";      // legacy compatibility
+    const STORAGE_LICENSE_KEY = "cse_license_key";
 
-        <a href="#" class="subject-btn" id="mockExamLink">
-          <span id="mockExamLabel"> &nbsp; Full Mock Exam (170 Items)</span>
-          <span class="arrow">→</span>
-        </a>
+    // Helper: format Manila time (just readable)
+    function formatManila(dateISO) {
+      if (!dateISO) return '';
+      try {
+        return new Date(dateISO).toLocaleString('en-PH', { timeZone: 'Asia/Manila', dateStyle: 'medium' });
+      } catch(e) { return dateISO; }
+    }
 
-        <a href="license.html" class="subject-btn">
-          <span> &nbsp; Enter License / Activate PRO</span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
+    function isExpired(expiryISO) {
+      if (!expiryISO) return false;
+      const expiryTime = Date.parse(expiryISO);
+      if (isNaN(expiryTime)) return false;
+      return Date.now() > expiryTime;
+    }
 
-      <p class="footer-note">
-        Tip: Start with topic-by-topic review, then use <strong>Practice Mode</strong> for short drills.
-        When you feel ready, challenge yourself with the <strong>Full Mock Exam (170 items)</strong>.
-      </p>
-    </div>
-  </div>
+    // synchronize legacy flag
+    function syncLegacy() {
+      const legacyPro = localStorage.getItem(STORAGE_IS_PRO_LEGACY) === "true";
+      const currentKind = localStorage.getItem(STORAGE_ACCESS_KIND);
+      if (legacyPro && currentKind !== "pro") {
+        localStorage.setItem(STORAGE_ACCESS_KIND, "pro");
+        localStorage.removeItem(STORAGE_EXPIRES_AT);
+      }
+      if (!legacyPro && currentKind === "pro") {
+        // keep consistency
+        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "true");
+      }
+    }
 
-  <!-- =========================================== -->
-  <!-- MODAL -->
-  <!-- =========================================== -->
-  <div id="pro-modal" class="pro-modal" style="display: none;">
-    <div class="pro-modal-card">
-      <button id="pro-modal-close" class="pro-modal-close">×</button>
+    // get current access state (purely offline)
+    function getAccessState() {
+      syncLegacy();
+      let kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
+      let expiry = localStorage.getItem(STORAGE_EXPIRES_AT) || null;
 
-      <div class="pro-modal-header">
-        <div class="stars-logo"> </div>
-        <h2 id="modalTitle"> Unlock Full Mock Exam</h2>
-        <p id="modalSubtitle">Access the complete 170-item timed simulation</p>
+      if (kind === "trial" && expiry && isExpired(expiry)) {
+        // auto degrade to free
+        localStorage.setItem(STORAGE_ACCESS_KIND, "free");
+        localStorage.removeItem(STORAGE_EXPIRES_AT);
+        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
+        kind = "free";
+        expiry = null;
+      }
 
-        <!-- PRO vs FREE TRIAL tabs -->
-        <div class="access-tabs">
-          <button class="access-tab active" data-mode="pro">PRO Access</button>
-          <button class="access-tab" data-mode="trial">Free Trial Key</button>
-        </div>
+      if (kind === "pro") {
+        return { isUnlocked: true, kind: "pro", expiry: null, valid: true };
+      } else if (kind === "trial" && expiry && !isExpired(expiry)) {
+        return { isUnlocked: true, kind: "trial", expiry: expiry, valid: true };
+      } else {
+        return { isUnlocked: false, kind: "free", expiry: null, valid: false };
+      }
+    }
 
-        <!-- TRIAL banner (shown only if trial is active) -->
-        <div id="accessBanner" class="access-banner" style="display:none;"></div>
-      </div>
+    // update UI (status pill, labels)
+    function updateUI() {
+      const state = getAccessState();
+      const statusDiv = document.getElementById("licenseStatusBox");
+      const mockBtn = document.getElementById("mockExamBtn");
+      const practiceBtn = document.getElementById("practiceModeBtn");
+      
+      // update pill
+      if (statusDiv) {
+        if (state.kind === "pro") {
+          statusDiv.innerHTML = `<span class="pill pill-pro">✅ PRO · Lifetime</span>`;
+        } else if (state.kind === "trial") {
+          const expiryDate = state.expiry ? formatManila(state.expiry) : "";
+          statusDiv.innerHTML = `<span class="pill pill-trial">🎟️ TRIAL active · until ${expiryDate}</span>`;
+        } else {
+          statusDiv.innerHTML = `<span class="pill pill-free">🔓 FREE · Mock Exam locked</span>`;
+        }
+      }
 
-      <div class="pro-modal-content">
-        <!-- PRO CONTENT -->
-        <div id="proContent">
-          <div class="pro-features">
-            <h3> What you get:</h3>
-            <ul>
-              <li><strong>Full Mock Exam (170 items)</strong> – Timed simulation</li>
-              <li><strong>Advanced & Expert Level</strong> questions</li>
-              <li><strong>Detailed performance analytics</strong> and review</li>
-              <li><strong>Priority updates</strong> and new content</li>
-              <li><strong>Ad-free experience</strong></li>
-            </ul>
-          </div>
+      // update button labels visually (optional subtle badges)
+      if (mockBtn) {
+        const nameSpan = mockBtn.querySelector(".subject-name");
+        if (nameSpan && state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            // remove any locked indicator
+            const oldBadge = nameSpan.querySelector(".badge-locked");
+            if(oldBadge) oldBadge.remove();
+            if(state.kind === 'pro') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; margin-left:6px;">UNLOCKED</span>`;
+            else if(state.kind === 'trial') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#f59e0b20; padding:2px 8px; border-radius:30px; margin-left:6px;">TRIAL</span>`;
+          }
+        } else if (nameSpan && !state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span class="badge-locked">🔒 LOCKED</span>`;
+          }
+        }
+      }
 
-          <div class="pro-cta">
-            <a id="pro-gumroad-link" href="https://7329689874364.gumroad.com/l/cvpax"
-               target="_blank" class="pro-upgrade-btn">
-              Upgrade to PRO (Lifetime)
-            </a>
+      if (practiceBtn) {
+        const nameSpan = practiceBtn.querySelector(".subject-name");
+        if (nameSpan && state.isUnlocked) {
+          if (!nameSpan.querySelector(".badge-locked")) {
+            nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px;">ACCESSIBLE</span>`;
+          }
+        } else if (nameSpan && !state.isUnlocked) {
+          nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span class="badge-locked">🔒 LOCKED</span>`;
+        }
+      }
+    }
 
-            <!-- Trial-only secondary button (for active trial) -->
-            <button id="trialContinueBtn" class="pro-secondary-btn" style="display:none;">
-              Continue with Trial
-            </button>
+    // ---------- MODAL LOGIC (upgrade / trial redirect) ----------
+    const modal = document.getElementById("accessModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modalTitleText = document.getElementById("modalTitleText");
+    const modalBodyContainer = document.getElementById("modalBodyContainer");
+    let activeReturnUrl = null;   // store which feature we want to unlock
 
-            <p class="pro-note">One-time payment • Lifetime access</p>
-          </div>
-        </div>
+    function closeModal() {
+      if (modal) modal.style.display = "none";
+      activeReturnUrl = null;
+    }
 
-        <!-- TRIAL KEY CONTENT -->
-        <div id="trialContent" style="display:none; margin-top:4px;">
-          <p class="trial-helper">
-            May <strong>FREE trial key</strong> ka na?<br/>
-            Encode mo dito para ma-activate ang 7-day trial access sa Full Mock Exam.
-          </p>
-          <div class="trial-form">
-            <input
-              id="trialKeyInput"
-              class="trial-input"
-              type="text"
-              placeholder="Enter Trial Key (e.g., CSE-TRIAL-XXXX-XXXX)"
-              autocomplete="off"
-            />
-            <button id="trialActivateBtn" class="pro-secondary-btn">
-              Activate Trial
-            </button>
-          </div>
-          <p id="trialMessage" class="pro-note" style="margin-top:10px;"></p>
-        </div>
+    function openModal(targetUrl) {
+      activeReturnUrl = targetUrl;
+      const currentState = getAccessState();
+      renderModalContent(currentState);
+      if (modal) modal.style.display = "flex";
+    }
 
-        <div class="pro-already">
-          <p>Paid PRO ka na? <a href="license.html">Enter your PRO license key here</a>.</p>
-          <p style="margin-top:6px;">Na-activate mo na dati? <a href="#" id="pro-refresh-link">Refresh page</a>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    function renderModalContent(state) {
+      if (!modalBodyContainer) return;
+      // determine active tab: default PRO
+      const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab || "pro";
+      
+      if (activeTab === "pro") {
+        modalTitleText.innerText = "🚀 Unlock PRO Access";
+        modalBodyContainer.innerHTML = `
+          <div class="features-box">
+            <ul>
+              <li>Full Mock Exam (170 items) timed & realistic</li>
+              <li>Advanced & expert question sets</li>
+              <li>Practice Mode unlimited drills</li>
+              <li>Detailed review & analytics</li>
+              <li>Lifetime updates + ad-free experience</li>
+            </ul>
+          </div>
+          <a href="https://7329689874364.gumroad.com/l/cvpax" target="_blank" class="btn-glow">⭐ Get PRO Lifetime (One-Time)</a>
+          <div class="info-note">Secure payment · Instant license activation after purchase. Enter key on License page.</div>
+          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here →</a>
+        `;
+      } else {
+        // TRIAL TAB
+        modalTitleText.innerText = "🎟️ Activate Free Trial";
+        modalBodyContainer.innerHTML = `
+          <div class="features-box">
+            <p style="margin-bottom:12px; color:#cbd5e6;">🔑 Enter your 7-day trial key to unlock full Mock Exam & Practice Mode.</p>
+          </div>
+          <input type="text" id="trialKeyInputModal" class="trial-input" placeholder="e.g., CSE-TRIAL-ABCD-1234" autocomplete="off">
+          <button id="modalTrialActivateBtn" class="btn-glow" style="margin-top: 14px; background: linear-gradient(95deg,#f59e0b,#d97706);">Activate Trial & Continue</button>
+          <div id="trialMessageModal" class="info-note" style="color:#facc15;"></div>
+          <div class="info-note" style="margin-top:16px;">No trial key? <a href="license.html" style="color:#818cf8;">Purchase PRO or request trial</a></div>
+        `;
 
-  <script>
-    // ======================================================
-    // 0) DEVICE ID (stable per browser) - kept for compatibility
-    // ======================================================
-    const DEVICE_KEY = "cse_device_id";
-    let deviceId = localStorage.getItem(DEVICE_KEY);
-    if (!deviceId) {
-      deviceId = "dev_" + (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(16).slice(2));
-      localStorage.setItem(DEVICE_KEY, deviceId);
-    }
+        // attach trial activation event dynamically
+        setTimeout(() => {
+          const trialBtn = document.getElementById("modalTrialActivateBtn");
+          const trialInput = document.getElementById("trialKeyInputModal");
+          const msgDiv = document.getElementById("trialMessageModal");
+          if (trialBtn && trialInput) {
+            trialBtn.onclick = () => {
+              const rawKey = trialInput.value.trim();
+              if (!rawKey) {
+                if(msgDiv) msgDiv.innerText = "Please enter a trial key.";
+                return;
+              }
+              // SIMULATED trial validation (offline demo). In real implementation, server validates.
+              // For this reviewer hub: we simulate trial activation using predefined prefix + check.
+              // DEMO: any key starting with "CSE-TRIAL" will activate 7-day trial.
+              if (rawKey.toUpperCase().startsWith("CSE-TRIAL")) {
+                const expiryDate = new Date();
+                expiryDate.setDate(expiryDate.getDate() + 7);
+                localStorage.setItem(STORAGE_ACCESS_KIND, "trial");
+                localStorage.setItem(STORAGE_EXPIRES_AT, expiryDate.toISOString());
+                localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
+                if(msgDiv) {
+                  msgDiv.innerText = "✅ Trial activated! Redirecting...";
+                  msgDiv.style.color = "#86efac";
+                }
+                setTimeout(() => {
+                  closeModal();
+                  updateUI();
+                  if (activeReturnUrl) {
+                    window.location.href = activeReturnUrl;
+                  } else {
+                    // just refresh UI
+                    location.reload();
+                  }
+                }, 800);
+              } else {
+                if(msgDiv) msgDiv.innerText = "❌ Invalid trial key. Please get a valid key from the license section.";
+              }
+            };
+          }
+        }, 10);
+      }
+    }
 
-    // ======================================================
-    // 1) LICENSE CONFIG (OFFLINE-FIRST)
-    //    IMPORTANT: Home page should NOT call the license server.
-    //    License verification happens only in license.html.
-    // ======================================================
-    const STORAGE_LICENSE_KEY = "cse_license_key";
-    const STORAGE_IS_PRO = "cse_is_pro";
-    const STORAGE_ACCESS_KIND = "cse_access_kind";     // "pro" | "trial" | "free"
-    const STORAGE_EXPIRES_AT = "cse_expires_at";       // ISO
-    const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
+    // Tab switching inside modal
+    function bindTabSwitching() {
+      const tabs = document.querySelectorAll(".tab-btn");
+      tabs.forEach(tab => {
+        tab.removeEventListener("click", tab._listener);
+        const handler = () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          const currentState = getAccessState();
+          renderModalContent(currentState);
+        };
+        tab.addEventListener("click", handler);
+        tab._listener = handler;
+      });
+    }
 
-    function fmtManila(iso) {
-      if (!iso) return "";
-      try { return new Date(iso).toLocaleString("en-PH", { timeZone: "Asia/Manila" }); }
-      catch { return iso; }
-    }
+    // Intercept clicks on practice & mock exam
+    function handleProtectedRedirect(event, targetHref) {
+      event.preventDefault();
+      const state = getAccessState();
+      if (state.isUnlocked) {
+        window.location.href = targetHref;
+      } else {
+        openModal(targetHref);
+      }
+    }
 
-    function isExpired(expiresAtIso) {
-      if (!expiresAtIso) return false;
-      const t = Date.parse(expiresAtIso);
-      if (Number.isNaN(t)) return false;
-      return Date.now() > t;
-    }
+    // ---- initial setup after DOM ----
+    document.addEventListener("DOMContentLoaded", () => {
+      syncLegacy();
+      updateUI();
 
-    // OFFLINE-ONLY access state (no server calls)
-    function getAccessStateOfflineOnly() {
-      const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-      const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || (legacyPro ? "pro" : "free");
-      const exp  = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
+      const mockBtn = document.getElementById("mockExamBtn");
+      const practiceBtn = document.getElementById("practiceModeBtn");
 
-      // Trial expiry check
-      if (kind === "trial" && exp && isExpired(exp)) {
-        localStorage.setItem(STORAGE_IS_PRO, "false");
-        localStorage.setItem(STORAGE_ACCESS_KIND, "free");
-        return { ok: false, kind: "free", expires_at: exp, reason: "expired_local", source: "local" };
-      }
+      if (mockBtn) {
+        mockBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "mock_exam.html"));
+      }
+      if (practiceBtn) {
+        practiceBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "practice.html"));
+      }
 
-      if (kind === "pro") return { ok: true, kind: "pro", expires_at: null, source: "local" };
-      if (kind === "trial") return { ok: true, kind: "trial", expires_at: exp, source: "local" };
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", closeModal);
+      }
+      modal?.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
 
-      return { ok: false, kind: "free", expires_at: null, source: "local" };
-    }
+      // bind tabs each time modal opens? we'll rebind when modal content changes, but we bind once globally
+      bindTabSwitching();
 
-    // ======================================================
-    // 2) INIT
-    // ======================================================
-    document.addEventListener("DOMContentLoaded", () => {
-      const mockExamLink = document.getElementById("mockExamLink");
-      const mockExamLabel = document.getElementById("mockExamLabel");
-      const practiceLink = document.getElementById("practiceLink");
-      const practiceLabel = document.getElementById("practiceLabel");
-      const licenseStatus = document.getElementById("licenseStatus");
-
-      const proModal = document.getElementById("pro-modal");
-      const proModalClose = document.getElementById("pro-modal-close");
-      const proGumroadLink = document.getElementById("pro-gumroad-link");
-      const proRefreshLink = document.getElementById("pro-refresh-link");
-
-      const accessBanner = document.getElementById("accessBanner");
-      const trialContinueBtn = document.getElementById("trialContinueBtn");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalSubtitle = document.getElementById("modalSubtitle");
-
-      const accessTabs = document.querySelectorAll(".access-tab");
-      const proContent = document.getElementById("proContent");
-      const trialContent = document.getElementById("trialContent");
-      const trialActivateBtn = document.getElementById("trialActivateBtn");
-      const trialMessage = document.getElementById("trialMessage");
-
-      if (proGumroadLink) proGumroadLink.href = GUMROAD_URL;
-
-      function openProModal() { if (proModal) proModal.style.display = "flex"; }
-      function closeProModal() { if (proModal) proModal.style.display = "none"; }
-
-      if (proModalClose) proModalClose.addEventListener("click", closeProModal);
-      if (proRefreshLink) {
-        proRefreshLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          location.reload();
-        });
-      }
-      if (proModal) {
-        proModal.addEventListener("click", (event) => {
-          if (event.target === proModal) closeProModal();
-        });
-      }
-
-      function setStatusPill(kind, expiresAt){
-        if (!licenseStatus) return;
-        if (kind === "pro") {
-          licenseStatus.innerHTML = `<span class="pill pill-pro"> PRO • Lifetime</span>`;
-        } else if (kind === "trial") {
-          licenseStatus.innerHTML =
-            `<span class="pill pill-trial"> TRIAL</span>` +
-            `<span style="margin-left:8px;color:#cbd5e1;">Until: ${fmtManila(expiresAt)}</span>`;
-        } else {
-          licenseStatus.innerHTML =
-            `<span class="pill pill-free"> FREE</span>` +
-            `<span style="margin-left:8px;color:#94a3b8;">Mock Exam locked</span>`;
-        }
-      }
-
-      function setMockLabel(kind){
-        if (!mockExamLabel) return;
-        if (kind === "pro") {
-          mockExamLabel.innerHTML =
-            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> PRO</span>`;
-        } else if (kind === "trial") {
-          mockExamLabel.innerHTML =
-            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> TRIAL</span>`;
-        } else {
-          mockExamLabel.innerHTML =
-            ` &nbsp; Full Mock Exam (170 Items) <span style="font-size:0.75rem; opacity:0.85;"> LOCKED</span>`;
-        }
-      }
-
-      function setPracticeLabel(kind){
-        if (!practiceLabel) return;
-        if (kind === "pro") {
-          practiceLabel.innerHTML =
-            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> PRO</span>`;
-        } else if (kind === "trial") {
-          practiceLabel.innerHTML =
-            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> TRIAL</span>`;
-        } else {
-          practiceLabel.innerHTML =
-            ` &nbsp; Practice Mode (Quick Drills) <span style="font-size:0.75rem; opacity:0.85;"> LOCKED</span>`;
-        }
-      }
-
-      // Switch between PRO / TRIAL tab in modal
-      function switchTab(mode) {
-        if (!accessTabs || !accessTabs.length) return;
-
-        accessTabs.forEach(tab => {
-          tab.classList.toggle("active", tab.dataset.mode === mode);
-        });
-
-        if (proContent) proContent.style.display = (mode === "pro") ? "block" : "none";
-        if (trialContent) trialContent.style.display = (mode === "trial") ? "block" : "none";
-
-        if (mode === "pro") {
-          if (modalTitle) modalTitle.textContent = " Unlock Full Mock Exam";
-          if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
-        } else if (mode === "trial") {
-          if (modalTitle) modalTitle.textContent = " Enter Trial Key";
-          if (modalSubtitle) {
-            modalSubtitle.textContent = "Activate your FREE trial access using the key we sent.";
-          }
-        }
-      }
-
-      if (accessTabs && accessTabs.length) {
-        accessTabs.forEach(tab => {
-          tab.addEventListener("click", () => {
-            const mode = tab.dataset.mode || "pro";
-            switchTab(mode);
-          });
-        });
-      }
-
-      function renderModalFor(kind, expiresAt){
-        // reset banner + trial button
-        if (accessBanner) { accessBanner.style.display = "none"; accessBanner.textContent = ""; }
-        if (trialContinueBtn) trialContinueBtn.style.display = "none";
-
-        // default header if opening from locked state
-        if (modalTitle) modalTitle.textContent = " Unlock Full Mock Exam";
-        if (modalSubtitle) modalSubtitle.textContent = "Access the complete 170-item timed simulation";
-
-        // TRIAL modal (user already has active trial)
-        if (kind === "trial" && expiresAt && !isExpired(expiresAt)) {
-          if (modalTitle) modalTitle.textContent = " Trial Active";
-          if (modalSubtitle) {
-            modalSubtitle.textContent = "You can access the Mock Exam during your trial period.";
-          }
-          if (accessBanner) {
-            accessBanner.style.display = "block";
-            accessBanner.innerHTML =
-              ` <strong>Trial is active</strong><br>` +
-              `Valid until: <strong>${fmtManila(expiresAt)}</strong><br>` +
-              `<span style="opacity:.9">Upgrade anytime for lifetime PRO.</span>`;
-          }
-          if (trialContinueBtn) {
-            trialContinueBtn.style.display = "inline-block";
-            trialContinueBtn.onclick = () => {
-              closeProModal();
-              window.location.href = "mock_exam.html";
-            };
-          }
-        }
-
-        // default: show PRO tab first
-        switchTab("pro");
-      }
-
-      // IMPORTANT CHANGE:
-      // Trial activation should happen in license.html (single entry point for server calls).
-      if (trialActivateBtn && trialMessage) {
-        trialActivateBtn.addEventListener("click", () => {
-          trialMessage.textContent = "Opening activation page…";
-          trialMessage.style.color = "#fde68a";
-          setTimeout(() => {
-            window.location.href = "license.html";
-          }, 350);
-        });
-      }
-
-      // PRO SYNC FIX:
-      // If legacy PRO flag is true, force access_kind=pro so Home + Mock Exam unlock correctly.
-      (function syncLegacyProToKind(){
-        const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-        const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "";
-        if (legacyPro && kind !== "pro") {
-          localStorage.setItem(STORAGE_ACCESS_KIND, "pro");
-          localStorage.removeItem(STORAGE_EXPIRES_AT);
-        }
-      })();
-
-      // Get access state locally (no server)
-      const access = getAccessStateOfflineOnly();
-
-      // Compute unlocked precisely (trial must not be expired)
-      const unlockedNow =
-        access.ok &&
-        (access.kind === "pro" || (access.kind === "trial" && access.expires_at && !isExpired(access.expires_at)));
-
-      const uiKind = unlockedNow ? access.kind : "free";
-
-      // status UI
-      setStatusPill(uiKind, access.expires_at);
-      setMockLabel(uiKind);
-      setPracticeLabel(uiKind);
-
-      // CLICK HANDLERS (use cached local state)
-      if (mockExamLink) {
-        mockExamLink.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
-          const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
-          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
-
-          if (unlockedCached) {
-            window.location.href = "mock_exam.html";
-          } else {
-            renderModalFor(kind, exp);
-            openProModal();
-          }
-        });
-      }
-
-      if (practiceLink) {
-        practiceLink.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
-          const exp = localStorage.getItem(STORAGE_EXPIRES_AT) || "";
-          const legacyPro = localStorage.getItem(STORAGE_IS_PRO) === "true";
-
-          const unlockedCached =
-            legacyPro || (kind === "pro") || (kind === "trial" && exp && !isExpired(exp));
-
-          if (unlockedCached) {
-            window.location.href = "practice.html";
-          } else {
-            renderModalFor(kind, exp);
-            openProModal();
-          }
-        });
-      }
-    });
-  </script>
-
+      // Add event for refreshing page after license entry (optional)
+      window.addEventListener("storage", (e) => {
+        if (e.key === STORAGE_ACCESS_KIND || e.key === STORAGE_EXPIRES_AT) {
+          updateUI();
+        }
+      });
+    });
+  })();
+</script>
 </body>
 </html>
