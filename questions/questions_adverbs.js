@@ -10,314 +10,306 @@ window.VERBAL_QUESTION_BANK["adverbs"] = {
   // ============================================================
   beginner: [
     // 1-10: Identification (Finding the Adverb)
-    {
-      question: "In 'He runs quickly', identify the adverb.",
-      options: ["He", "runs", "quickly", "is"],
-      answer: "quickly",
-      explanation: "'Quickly' tells how he runs and modifies the verb 'runs'. Words that describe how an action happens are adverbs."
-    },
-    {
-      question: "In 'She sings loudly', identify the adverb.",
-      options: ["She", "sings", "loudly", "song"],
-      answer: "loudly",
-      explanation: "'Loudly' answers the question 'How does she sing?' and modifies the verb 'sings'."
-    },
-    {
-      question: "In 'They played happily', identify the adverb.",
-      options: ["They", "played", "happily", "game"],
-      answer: "happily",
-      explanation: "'Happily' modifies the verb 'played' by describing the manner or feeling of the action."
-    },
-    {
-      question: "In 'Go inside now', identify the adverb(s).",
-      options: ["Go", "inside", "now", "Both 'inside' and 'now'"],
-      answer: "Both 'inside' and 'now'",
-      explanation: "'Inside' tells where to go (adverb of place), and 'now' tells when to go (adverb of time). Both modify the verb."
-    },
-    {
-      question: "In 'He never lies', identify the adverb.",
-      options: ["He", "never", "lies", "is"],
-      answer: "never",
-      explanation: "'Never' modifies the verb 'lies' by showing frequency (at no time). Words that answer 'how often' are adverbs of frequency."
-    },
-    {
-      question: "In 'It is very cold', identify the adverb.",
-      options: ["It", "is", "very", "cold"],
-      answer: "very",
-      explanation: "The word 'very' modifies the adjective 'cold' by showing degree or intensity. Adverbs can modify adjectives."
-    },
-    {
-      question: "In 'She eats slowly', identify the adverb.",
-      options: ["She", "eats", "slowly", "food"],
-      answer: "slowly",
-      explanation: "'Slowly' modifies the verb 'eats' by describing the manner of eating."
-    },
-    {
-      question: "In 'We met yesterday', identify the adverb.",
-      options: ["We", "met", "yesterday", "us"],
-      answer: "yesterday",
-      explanation: "'Yesterday' tells when the action happened. It modifies the verb 'met' by expressing time."
-    },
-    {
-      question: "In 'Look up', identify the adverb.",
-      options: ["Look", "up", "you", "none"],
-      answer: "up",
-      explanation: "The word 'up' tells where to look and modifies the verb. In this sentence, 'up' functions as an adverb of direction."
-    },
-    {
-      question: "In 'I am fully prepared', identify the adverb.",
-      options: ["I", "am", "fully", "prepared"],
-      answer: "fully",
-      explanation: "'Fully' modifies 'prepared' by showing degree or completeness. Adverbs can modify adjectives."
-    },
-
-    // 11-20: Classification (Types of Adverbs)
-    {
-      question: "What type of adverb is 'tomorrow'?",
-      options: ["Manner", "Time", "Place", "Degree"],
-      answer: "Time",
-      explanation: "'Tomorrow' answers the question 'When does the action happen?' Words that express time are adverbs of time."
-    },
-    {
-      question: "What type of adverb is 'here'?",
-      options: ["Manner", "Time", "Place", "Frequency"],
-      answer: "Place",
-      explanation: "'Here' answers the question 'Where?' It indicates location, so it is an adverb of place."
-    },
-    {
-      question: "What type of adverb is 'beautifully'?",
-      options: ["Manner", "Time", "Place", "Degree"],
-      answer: "Manner",
-      explanation: "'Beautifully' describes how an action is done. Words that answer 'how' describe manner."
-    },
-    {
-      question: "What type of adverb is 'always'?",
-      options: ["Manner", "Time", "Frequency", "Degree"],
-      answer: "Frequency",
-      explanation: "'Always' tells how often an action happens. Words that show repetition are adverbs of frequency."
-    },
-    {
-      question: "What type of adverb is 'outside'?",
-      options: ["Manner", "Time", "Place", "Degree"],
-      answer: "Place",
-      explanation: "'Outside' tells where an action takes place. It answers 'Where?' and is an adverb of place."
-    },
-    {
-      question: "What type of adverb is 'carefully'?",
-      options: ["Manner", "Time", "Place", "Frequency"],
-      answer: "Manner",
-      explanation: "'Carefully' explains how an action is performed. Words that describe how something is done are adverbs of manner."
-    },
-    {
-      question: "What type of adverb is 'soon'?",
-      options: ["Manner", "Time", "Place", "Degree"],
-      answer: "Time",
-      explanation: "'Soon' refers to a point in time in the near future. Words that answer 'when' are adverbs of time."
-    },
-    {
-      question: "What type of adverb is 'everywhere'?",
-      options: ["Manner", "Time", "Place", "Frequency"],
-      answer: "Place",
-      explanation: "'Everywhere' refers to all locations. It answers 'where' and is an adverb of place."
-    },
-    {
-      question: "What type of adverb is 'rarely'?",
-      options: ["Manner", "Time", "Frequency", "Place"],
-      answer: "Frequency",
-      explanation: "'Rarely' shows how often something happens. It expresses frequency."
-    },
-    {
-      question: "What type of adverb is 'quite'?",
-      options: ["Manner", "Time", "Place", "Degree"],
-      answer: "Degree",
-      explanation: "'Quite' modifies an adjective or another adverb by showing intensity."
-    },
-
-    // 21-30: Fill in the blank (Basic Forms)
-    {
-      question: "She walked ______ down the street.",
-      options: ["slow", "slowly", "slower", "slowest"],
-      answer: "slowly",
-      explanation: "Words that describe how a verb is performed must be adverbs. 'Slowly' modifies the verb 'walked'."
-    },
-    {
-      question: "He speaks English ______.",
-      options: ["fluent", "fluently", "fluency", "most fluent"],
-      answer: "fluently",
-      explanation: "'Fluently' is the adverb form that modifies the verb 'speaks'."
-    },
-    {
-      question: "The dog barked ______.",
-      options: ["loud", "loudly", "loudness", "louder"],
-      answer: "loudly",
-      explanation: "'Loudly' modifies the verb 'barked' and describes manner."
-    },
-    {
-      question: "Please hold the glass ______.",
-      options: ["careful", "carefully", "care", "caring"],
-      answer: "carefully",
-      explanation: "'Carefully' modifies the verb 'hold' and shows manner."
-    },
-    {
-      question: "She answered ______.",
-      options: ["correct", "correctly", "correction", "corrects"],
-      answer: "correctly",
-      explanation: "'Correctly' modifies the verb 'answered'."
-    },
-    {
-      question: "The sun shines ______.",
-      options: ["bright", "brightly", "brightness", "brighter"],
-      answer: "brightly",
-      explanation: "'Brightly' modifies the verb 'shines' by describing how the sun shines."
-    },
-    {
-      question: "He waited ______ for his turn.",
-      options: ["patient", "patiently", "patience", "patients"],
-      answer: "patiently",
-      explanation: "'Patiently' modifies the verb 'waited'."
-    },
-    {
-      question: "The rain fell ______.",
-      options: ["heavy", "heavily", "heavier", "heaviest"],
-      answer: "heavily",
-      explanation: "'Heavily' modifies the verb 'fell'."
-    },
-    {
-      question: "They lived ______ ever after.",
-      options: ["happy", "happily", "happiness", "happier"],
-      answer: "happily",
-      explanation: "'Happily' modifies the verb 'lived'."
-    },
-    {
-      question: "Drive ______!",
-      options: ["safe", "safely", "safety", "saver"],
-      answer: "safely",
-      explanation: "'Safely' modifies the verb 'drive'."
-    },
-
-    // 31-40: Adjective vs Adverb Distinction
-    {
-      question: "He is a ______ driver.",
-      options: ["careful", "carefully"],
-      answer: "careful",
-      explanation: "The word describes the noun 'driver'. Adjectives describe nouns."
-    },
-    {
-      question: "He drives ______.",
-      options: ["careful", "carefully"],
-      answer: "carefully",
-      explanation: "The word describes the action 'drives'. Adverbs describe verbs."
-    },
-    {
-      question: "She has a ______ voice.",
-      options: ["loud", "loudly"],
-      answer: "loud",
-      explanation: "The word describes the noun 'voice'. Adjectives describe nouns."
-    },
-    {
-      question: "She speaks ______.",
-      options: ["loud", "loudly"],
-      answer: "loudly",
-      explanation: "'Loudly' modifies the verb 'speaks' and shows manner."
-    },
-    {
-      question: "This math problem is ______.",
-      options: ["easy", "easily"],
-      answer: "easy",
-      explanation: "'Is' is a linking verb followed by adjectives, so 'easy' is correct."
-    },
-    {
-      question: "I can solve it ______.",
-      options: ["easy", "easily"],
-      answer: "easily",
-      explanation: "'Easily' modifies the verb 'solve'."
-    },
-    {
-      question: "Be ______.",
-      options: ["quiet", "quietly"],
-      answer: "quiet",
-      explanation: "After the linking verb 'be', we describe the subject with adjectives."
-    },
-    {
-      question: "Work ______.",
-      options: ["quiet", "quietly"],
-      answer: "quietly",
-      explanation: "'Quietly' modifies the verb 'work' and shows manner."
-    },
-    {
-      question: "The test was ______.",
-      options: ["bad", "badly"],
-      answer: "bad",
-      explanation: "'Was' is a linking verb. Linking verbs take adjectives, not adverbs."
-    },
-    {
-      question: "The team played ______.",
-      options: ["bad", "badly"],
-      answer: "badly",
-      explanation: "'Badly' modifies the verb 'played' and shows manner."
-    },
-
-    // 41-50: Spelling & Formation
-    {
-      question: "Adverb form of 'happy'?",
-      options: ["happyly", "happily", "happely", "happly"],
-      answer: "happily",
-      explanation: "When an adjective ends in 'y', change 'y' to 'i' and add 'ly'."
-    },
-    {
-      question: "Adverb form of 'terrible'?",
-      options: ["terribly", "terriblely", "terriby", "terriblly"],
-      answer: "terribly",
-      explanation: "For adjectives ending in 'le', drop the 'e' and add 'y'."
-    },
-    {
-      question: "Adverb form of 'gentle'?",
-      options: ["gently", "gentlely", "gentlyly", "gentily"],
-      answer: "gently",
-      explanation: "Adjectives ending in 'le' form adverbs by dropping 'e' and adding 'y'."
-    },
-    {
-      question: "Adverb form of 'basic'?",
-      options: ["basicly", "basically", "basicaly", "basiclly"],
-      answer: "basically",
-      explanation: "Adjectives ending in 'ic' usually add '-ally'."
-    },
-    {
-      question: "Adverb form of 'tragic'?",
-      options: ["tragicly", "tragically", "tragicaly", "tragicy"],
-      answer: "tragically",
-      explanation: "Adjectives ending in 'ic' take '-ally' to form adverbs."
-    },
-    {
-      question: "Adverb form of 'full'?",
-      options: ["fully", "fuly", "fullly", "fullley"],
-      answer: "fully",
-      explanation: "The correct spelling drops one 'l' before adding 'y'."
-    },
-    {
-      question: "Adverb form of 'angry'?",
-      options: ["angryly", "angrily", "angrely", "angry"],
-      answer: "angrily",
-      explanation: "Adjectives ending in 'y' change 'y' to 'i' before adding 'ly'."
-    },
-    {
-      question: "Adverb form of 'fast'?",
-      options: ["fast", "fastly", "faster", "fastest"],
-      answer: "fast",
-      explanation: "'Fast' is an irregular (flat) adverb. It has the same form as the adjective."
-    },
-    {
-      question: "Adverb form of 'good'?",
-      options: ["goodly", "well", "good", "goodest"],
-      answer: "well",
-      explanation: "'Good' is an adjective. Its adverb form is irregular: good → well."
-    },
-    {
-      question: "Adverb form of 'hard' (meaning 'with effort')?",
-      options: ["hard", "hardly", "harder", "hardest"],
-      answer: "hard",
-      explanation: "'Hard' means 'with effort' and functions as an adverb without -ly."
-    }
+ {
+    "question": "In the sentence, 'The operations clerk runs quickly to deliver the documents,' identify the word functioning as the adverb.",
+    "options": ["clerk", "runs", "quickly", "deliver"],
+    "answer": "quickly",
+    "explanation": "The word 'quickly' describes the manner in which the action is performed, thereby modifying the active verb 'runs'. Words that explain how an action happens are classified as adverbs of manner."
+  },
+  {
+    "question": "In the sentence, 'She sings loudly during the local terminal assembly,' identify the word functioning as the adverb.",
+    "options": ["She", "sings", "loudly", "assembly"],
+    "answer": "loudly",
+    "explanation": "The word 'loudly' directly answers the question 'How does she sing?' and serves to modify the active verb 'sings' by indicating the volume or manner of the action."
+  },
+  {
+    "question": "In the sentence, 'The field workers played happily after completing their shift tasks,' identify the word functioning as the adverb.",
+    "options": ["workers", "played", "happily", "tasks"],
+    "answer": "happily",
+    "explanation": "The word 'happily' modifies the verb 'played' by describing the emotional manner or state accompanying the structural action."
+  },
+  {
+    "question": "In the sentence, 'The supervisor ordered the staff to go inside now,' identify the accurate adverbial assignment.",
+    "options": ["go", "inside", "now", "Both 'inside' and 'now'"],
+    "answer": "Both 'inside' and 'now'",
+    "explanation": "In this instruction, 'inside' functions as an adverb of place answering 'where', while 'now' functions as an adverb of time answering 'when'. Both words simultaneously modify the verb phrase 'to go'."
+  },
+  {
+    "question": "In the sentence, 'He never lies when submitting his formal operational reports,' identify the word functioning as the adverb.",
+    "options": ["He", "never", "lies", "reports"],
+    "answer": "never",
+    "explanation": "The word 'never' modifies the active verb 'lies' by indicating frequency. Adverbs of frequency express how often an action occurs, ranging from 'always' to 'never'."
+  },
+  {
+    "question": "In the sentence, 'The storage room is very cold during the winter season,' identify the word functioning as the adverb.",
+    "options": ["storage", "is", "very", "cold"],
+    "answer": "very",
+    "explanation": "The word 'very' functions as an adverb of degree. It modifies the descriptive adjective 'cold' by intensifying its meaning. Remember that adverbs can modify verbs, adjectives, or other adverbs."
+  },
+  {
+    "question": "In the sentence, 'She eats slowly during her designated lunch break,' identify the word functioning as the adverb.",
+    "options": ["She", "eats", "slowly", "break"],
+    "answer": "slowly",
+    "explanation": "The word 'slowly' modifies the active verb 'eats' by detailing the speed or manner in which the subject performs the action."
+  },
+  {
+    "question": "In the sentence, 'We met yesterday to finalize the franchise dashboard layout,' identify the word functioning as the adverb.",
+    "options": ["We", "met", "yesterday", "layout"],
+    "answer": "yesterday",
+    "explanation": "The word 'yesterday' expresses the specific timeframe of the action, modifying the verb 'met' as a definitive adverb of time."
+  },
+  {
+    "question": "In the mandatory directive, 'Look up when the machinery is actively operating,' identify the word functioning as the adverb.",
+    "options": ["Look", "up", "when", "operating"],
+    "answer": "up",
+    "explanation": "The word 'up' indicates the physical direction or location of the action, modifying the imperative verb 'Look' as an adverb of place."
+  },
+  {
+    "question": "In the sentence, 'I am fully prepared for the upcoming management evaluation,' identify the word functioning as the adverb.",
+    "options": ["I", "am", "fully", "prepared"],
+    "answer": "fully",
+    "explanation": "The word 'fully' modifies the participial adjective 'prepared' by expressing the exact extent, degree, or completeness of the state."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'tomorrow'?",
+    "options": ["Manner", "Time", "Place", "Degree"],
+    "answer": "Time",
+    "explanation": "The word 'tomorrow' designates a temporal point in the future, answering the foundational question 'When?' with respect to an action."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'here'?",
+    "options": ["Manner", "Time", "Place", "Frequency"],
+    "answer": "Place",
+    "explanation": "The word 'here' identifies a specific location or spatial point relative to the speaker, categorizing it as an adverb of place."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'beautifully'?",
+    "options": ["Manner", "Time", "Place", "Degree"],
+    "answer": "Manner",
+    "explanation": "The word 'beautifully' outlines the specific quality or manner in which an action is executed, answering the question 'How?'."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'always'?",
+    "options": ["Manner", "Time", "Frequency", "Degree"],
+    "answer": "Frequency",
+    "explanation": "The word 'always' indicates that an action occurs at all times or without exception, classifying it as an adverb of frequency."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'outside'?",
+    "options": ["Manner", "Time", "Place", "Degree"],
+    "answer": "Place",
+    "explanation": "The word 'outside' establishes an external physical location or boundary for an event, making it an adverb of place."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'carefully'?",
+    "options": ["Manner", "Time", "Place", "Frequency"],
+    "answer": "Manner",
+    "explanation": "The word 'carefully' describes a state of caution or attentiveness applied during an action, identifying it as an adverb of manner."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'soon'?",
+    "options": ["Manner", "Time", "Place", "Degree"],
+    "answer": "Time",
+    "explanation": "The word 'soon' indicates that an event will take place within a short period from the present moment, classifying it as an adverb of time."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'everywhere'?",
+    "options": ["Manner", "Time", "Place", "Frequency"],
+    "answer": "Place",
+    "explanation": "The word 'everywhere' refers to an omnipresent or universal distribution across all locations, classifying it as an adverb of place."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'rarely'?",
+    "options": ["Manner", "Time", "Frequency", "Place"],
+    "answer": "Frequency",
+    "explanation": "The word 'rarely' signifies that an action has a very low repetition rate or seldom occurs, classifying it as an adverb of frequency."
+  },
+  {
+    "question": "What functional grammatical type of adverb is the word 'quite'?",
+    "options": ["Manner", "Time", "Place", "Degree"],
+    "answer": "Degree",
+    "explanation": "The word 'quite' measures the intensity or extent of an adjective or another adverb, defining it structurally as an adverb of degree."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'She walked ______ down the street to observe the station layout.'",
+    "options": ["slow", "slowly", "slower", "slowest"],
+    "answer": "slowly",
+    "explanation": "To modify the action verb 'walked' by describing its manner, the adverbial form ending in '-ly' ('slowly') must be used instead of the adjective form 'slow'."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'The international representative speaks English ______.'",
+    "options": ["fluent", "fluently", "fluency", "most fluent"],
+    "answer": "fluently",
+    "explanation": "The word 'fluently' is the correct adverbial form required to modify the active communication verb 'speaks'."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'The security guard's dog barked ______ at the intruder.'",
+    "options": ["loud", "loudly", "loudness", "louder"],
+    "answer": "loudly",
+    "explanation": "The modifier describes how the dog barked. Therefore, the standard adverb of manner 'loudly' is required to qualify the verb 'barked'."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'Please hold the fragile laboratory glass ______.'",
+    "options": ["careful", "carefully", "care", "caring"],
+    "answer": "carefully",
+    "explanation": "The sentence requires an adverb of manner to specify how the action 'hold' should be executed safely; 'carefully' is the correct choice."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'She answered all the audit verification questions ______.'",
+    "options": ["correct", "correctly", "correction", "corrects"],
+    "answer": "correctly",
+    "explanation": "The word 'correctly' functions as an adverb of manner that modifies the active past-tense verb 'answered'."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'The afternoon sun shines ______ across the newly painted platform.'",
+    "options": ["bright", "brightly", "brightness", "brighter"],
+    "answer": "brightly",
+    "explanation": "The verb 'shines' is an active action verb in this context, demanding the adverbial modifier 'brightly' to express manner."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'He waited ______ for his turn to present the quarterly strategy.'",
+    "options": ["patient", "patiently", "patience", "patients"],
+    "answer": "patiently",
+    "explanation": "The term 'patiently' is the adverb of manner needed to describe how the subject sustained the state of waiting ('waited')."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'The tropical rain fell ______ upon the construction site.'",
+    "options": ["heavy", "heavily", "heavier", "heaviest"],
+    "answer": "heavily",
+    "explanation": "When an adjective ends in an consonant followed by '-y' (heavy), the adverb form drops the '-y', introduces an '-i', and appends '-ly' (heavily) to properly modify the verb 'fell'."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'According to the story, they lived ______ ever after.'",
+    "options": ["happy", "happily", "happiness", "happier"],
+    "answer": "happily",
+    "explanation": "The word modifies the verb 'lived'. Following standard spelling adjustments for terms ending in '-y', 'happily' is the correct adverbial choice."
+  },
+  {
+    "question": "Complete the statement using the correct word form: 'To prevent workplace injuries, always drive ______!'",
+    "options": ["safe", "safely", "safety", "saver"],
+    "answer": "safely",
+    "explanation": "The imperative command 'drive' requires an adverb of manner ('safely') to describe the correct execution of the action."
+  },
+  {
+    "question": "Choose the correct word to complete the description: 'He is recognized by the company as a ______ driver.'",
+    "options": ["careful", "carefully"],
+    "answer": "careful",
+    "explanation": "The word modifies the noun 'driver'. Under formal syntax rules, adjectives modify nouns, making 'careful' the correct grammatical choice."
+  },
+  {
+    "question": "Choose the correct word to complete the description: 'He navigates the delivery routes and drives ______.'",
+    "options": ["careful", "carefully"],
+    "answer": "carefully",
+    "explanation": "The word modifies the active action verb 'drives'. Adverbs are required to modify verbs, making 'carefully' the correct choice."
+  },
+  {
+    "question": "Choose the correct word to complete the description: 'The customer service representative possesses a ______ voice.'",
+    "options": ["loud", "loudly"],
+    "answer": "loud",
+    "explanation": "The word functions as a modifier for the common noun 'voice'. Because nouns are qualified by adjectives, 'loud' must be selected."
+  },
+  {
+    "question": "Choose the correct word to complete the description: 'When addressing the crowded hall, she speaks ______.'",
+    "options": ["loud", "loudly"],
+    "answer": "loudly",
+    "explanation": "The word modifies the communication verb 'speaks', which necessitates the use of the adverb of manner 'loudly'."
+  },
+  {
+    "question": "Choose the correct word to complete the statement: 'The operational team noted that this math problem is ______.'",
+    "options": ["easy", "easily"],
+    "answer": "easy",
+    "explanation": "The word 'is' functions as a static linking verb. Linking verbs connect the subject to a predicate adjective that describes the subject, rather than an adverb."
+  },
+  {
+    "question": "Choose the correct word to complete the statement: 'The task is simple, and I can solve it ______.'",
+    "options": ["easy", "easily"],
+    "answer": "easily",
+    "explanation": "The word modifies the transitive verb 'solve', requiring the adverb form 'easily' to denote the manner of resolution."
+  },
+  {
+    "question": "Choose the correct word to complete the instruction: 'While inside the corporate archives, please be ______.'",
+    "options": ["quiet", "quietly"],
+    "answer": "quiet",
+    "explanation": "The command relies on the linking verb 'be'. Linking verbs require a predicate adjective ('quiet') to describe the state of the implied subject."
+  },
+  {
+    "question": "Choose the correct word to complete the instruction: 'To meet the project deadline, we must work ______.'",
+    "options": ["quiet", "quietly"],
+    "answer": "quietly",
+    "explanation": "The modifier target is the active verb 'work'. Therefore, the adverb 'quietly' is the correct syntactical choice."
+  },
+  {
+    "question": "Choose the correct word to complete the statement: 'The quality of the initial software test was ______.'",
+    "options": ["bad", "badly"],
+    "answer": "bad",
+    "explanation": "The past-tense linking verb 'was' demands a predicate adjective to describe the subject ('test'). The adjective 'bad' is grammatically correct in this position."
+  },
+  {
+    "question": "Choose the correct word to complete the statement: 'Despite practicing for weeks, the team played ______.'",
+    "options": ["bad", "badly"],
+    "answer": "badly",
+    "explanation": "The modifier targets the action verb 'played', which strictly demands the adverb of manner 'badly' to show poor performance."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'happy':",
+    "options": ["happyly", "happily", "happely", "happly"],
+    "answer": "happily",
+    "explanation": "For adjectives that end in a consonant followed by '-y', formal orthography rules dictate changing the '-y' to an '-i' before appending the '-ly' suffix."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'terrible':",
+    "options": ["terribly", "terriblely", "terriby", "terriblly"],
+    "answer": "terribly",
+    "explanation": "When forming adverbs from adjectives that end in a consonant followed by '-le', you drop the final silent '-e' and substitute it with '-y'."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'gentle':",
+    "options": ["gently", "gentlely", "gentlyly", "gentily"],
+    "answer": "gently",
+    "explanation": "Adjectives ending in a structural '-le' drop the final '-e' and directly absorb a '-y' to create the standard adverb form (gently)."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'basic':",
+    "options": ["basicly", "basically", "basicaly", "basiclly"],
+    "answer": "basically",
+    "explanation": "Adjectives that terminate with the suffix '-ic' generally require the addition of '-ally' to form their corresponding adverbial structure."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'tragic':",
+    "options": ["tragicly", "tragically", "tragicaly", "tragicy"],
+    "answer": "tragically",
+    "explanation": "Following the rule for '-ic' ending adjectives, the word 'tragic' must expand into 'tragically' to establish its proper adverbial form."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'full':",
+    "options": ["fully", "fuly", "fullly", "fullley"],
+    "answer": "fully",
+    "explanation": "When an adjective already ends in a double 'l' ('full'), the standard adverbial transformation simplifies the junction by adding only a single '-y' to produce 'fully'."
+  },
+  {
+    "question": "Identify the correct spelling for the adverb form of the adjective 'angry':",
+    "options": ["angryly", "angrily", "angrely", "angry"],
+    "answer": "angrily",
+    "explanation": "The base adjective 'angry' features a terminal '-y' following a consonant. The orthographic rule requires changing the '-y' to '-i' and adding '-ly'."
+  },
+  {
+    "question": "Identify the correct adverb form of the adjective 'fast':",
+    "options": ["fast", "fastly", "faster", "fastest"],
+    "answer": "fast",
+    "explanation": "The word 'fast' is classified as a 'flat adverb' or irregular adverb. It maintains the exact same morphological spelling in both its adjectival and adverbial states; 'fastly' is not a recognized word in standard English."
+  },
+  {
+    "question": "Identify the correct adverb form of the adjective 'good':",
+    "options": ["goodly", "well", "good", "goodest"],
+    "answer": "well",
+    "explanation": "The adjective 'good' undergoes an irregular mutation when transitioning into an adverb, completely changing its root form to 'well'."
+  },
+  {
+    "question": "Identify the correct adverb form of the adjective 'hard' when it is used to mean 'with great effort or intensity':",
+    "options": ["hard", "hardly", "harder", "hardest"],
+    "answer": "hard",
+    "explanation": "The word 'hard' functions natively as both an adjective and an adverb. While 'hardly' exists, it is an adverb of degree that carries an entirely separate meaning: 'scarcely' or 'almost not at all'."
+  }
   ],
 
   // ============================================================
