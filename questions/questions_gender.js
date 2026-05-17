@@ -11,313 +11,313 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   beginner: [
     // 1-10: Masculine
-    {
-      question: "Which word is a masculine noun?",
-      options: ["Mother", "Father", "Sister", "Aunt"],
-      answer: "Father",
-      explanation: "'Father' is a male parent."
+  {
+        "question": "Which of the following nouns belongs strictly to the masculine gender?",
+        "options": ["Beneficiary", "Chairman", "Liaison", "Colleague"],
+        "answer": "Chairman",
+        "explanation": "'Chairman' explicitly denotes a male presiding officer, while the other choices are gender-neutral or common nouns."
     },
     {
-      question: "Select the masculine noun:",
-      options: ["Queen", "King", "Princess", "Lady"],
-      answer: "King",
-      explanation: "'King' is a male ruler."
+        "question": "Select the noun that represents a masculine counterpart in traditional legal and estate terms:",
+        "options": ["Matriarch", "Executor", "Executrix", "Administrative Aide"],
+        "answer": "Executor",
+        "explanation": "'Executor' is the traditional masculine term for a person appointed to carry out a will, whereas 'executrix' is its feminine equivalent."
     },
     {
-      question: "Which noun refers to a male?",
-      options: ["Niece", "Uncle", "Daughter", "Grandma"],
-      answer: "Uncle",
-      explanation: "'Uncle' refers to a male relative, the brother of your parent."
+        "question": "Which of the following options refers to a male member of a religious or administrative order?",
+        "options": ["Nun", "Abbess", "Friar", "Deaconess"],
+        "answer": "Friar",
+        "explanation": "'Friar' specifically refers to a male member of a religious order, making it a masculine noun."
     },
     {
-      question: "Find the masculine noun:",
-      options: ["Son", "Daughter", "Wife", "Mother"],
-      answer: "Son",
-      explanation: "'Son' is a male child."
+        "question": "Identify the masculine noun often used in formal hereditary or corporate successions:",
+        "options": ["Heiress", "Scion", "Benefactress", "Patroness"],
+        "answer": "Scion",
+        "explanation": "While 'scion' can be broad, in traditional formal gender pairs of inheritance, it aligns with a male descendant, distinct from feminine terms like 'heiress'."
     },
     {
-      question: "Which word is masculine?",
-      options: ["Widow", "Widower", "Bride", "Girl"],
-      answer: "Widower",
-      explanation: "'Widower' is a man whose wife has died."
+        "question": "Which noun refers specifically to a male spouse or partner in formal domestic law?",
+        "options": ["Consort", "Spouse", "Husband", "Dependent"],
+        "answer": "Husband",
+        "explanation": "'Husband' is a gender-specific masculine noun denoting a male partner in marriage."
     },
     {
-      question: "Select the male animal:",
-      options: ["Hen", "Cow", "Bull", "Duck"],
-      answer: "Bull",
-      explanation: "'Bull' is the specific term for a male bovine."
+        "question": "Select the masculine noun used to describe a male monarch or sovereign leader:",
+        "options": ["Empress", "Dauphine", "Emperor", "Regent"],
+        "answer": "Emperor",
+        "explanation": "'Emperor' is the masculine title for a sovereign ruler of an empire."
     },
     {
-      question: "Which is masculine?",
-      options: ["Boy", "Girl", "Lady", "Madam"],
-      answer: "Boy",
-      explanation: "'Boy' is a young male."
+        "question": "Which of the following terms is a masculine noun denoting a male graduate or former student?",
+        "options": ["Alumna", "Alumnus", "Alumnae", "Alumni"],
+        "answer": "Alumnus",
+        "explanation": "'Alumnus' is the singular masculine form; 'alumna' is feminine, while 'alumni' is the plural form."
     },
     {
-      question: "Find the masculine noun:",
-      options: ["Husband", "Wife", "Mother", "Madam"],
-      answer: "Husband",
-      explanation: "'Husband' is a male spouse."
+        "question": "Find the masculine noun among these specific occupational titles:",
+        "options": ["Seamstress", "Hostess", "Steward", "Midwife"],
+        "answer": "Steward",
+        "explanation": "'Steward' is the masculine form for a person who manages property or provisions, whereas 'stewardess' or 'seamstress' are feminine."
     },
     {
-      question: "Which noun is masculine?",
-      options: ["Actor", "Actress", "Heroine", "Waitress"],
-      answer: "Actor",
-      explanation: "'Actor' is the traditional masculine form."
+        "question": "Which noun represents the masculine gender in formal social greetings?",
+        "options": ["Gentleman", "Matron", "Duenna", "Mademoiselle"],
+        "answer": "Gentleman",
+        "explanation": "'Gentleman' is the formal masculine noun used to address or refer to a man."
     },
     {
-      question: "Select the masculine word:",
-      options: ["Gentleman", "Lady", "Woman", "Madam"],
-      answer: "Gentleman",
-      explanation: "'Gentleman' refers to a polite man."
-    },
-
-    // 11-20: Feminine
-    {
-      question: "Which word is a feminine noun?",
-      options: ["Brother", "Uncle", "Sister", "Father"],
-      answer: "Sister",
-      explanation: "'Sister' is a female sibling."
-    },
-    {
-      question: "Select the feminine noun:",
-      options: ["Rooster", "Hen", "Bull", "Drake"],
-      answer: "Hen",
-      explanation: "'Hen' is a female chicken."
-    },
-    {
-      question: "Which noun refers to a female?",
-      options: ["Nephew", "Niece", "Son", "King"],
-      answer: "Niece",
-      explanation: "'Niece' is the daughter of a brother or sister."
-    },
-    {
-      question: "Find the feminine noun:",
-      options: ["Grandfather", "Grandmother", "Uncle", "Dad"],
-      answer: "Grandmother",
-      explanation: "'Grandmother' is a female grandparent."
-    },
-    {
-      question: "Which word is feminine?",
-      options: ["Prince", "Princess", "Duke", "Lord"],
-      answer: "Princess",
-      explanation: "'Princess' is a female royal."
-    },
-    {
-      question: "Select the female animal:",
-      options: ["Lion", "Lioness", "Tiger", "Leopard"],
-      answer: "Lioness",
-      explanation: "'Lioness' is the female lion."
-    },
-    {
-      question: "Which is feminine?",
-      options: ["Lad", "Lass", "Boy", "Man"],
-      answer: "Lass",
-      explanation: "'Lass' is a girl or young woman."
-    },
-    {
-      question: "Find the feminine noun:",
-      options: ["Landlord", "Landlady", "Man", "Sir"],
-      answer: "Landlady",
-      explanation: "'Landlady' is a woman who owns or rents out property."
-    },
-    {
-      question: "Which noun is feminine?",
-      options: ["Hero", "Heroine", "Actor", "Waiter"],
-      answer: "Heroine",
-      explanation: "'Heroine' is a female hero."
-    },
-    {
-      question: "Select the feminine word:",
-      options: ["Monk", "Nun", "Priest", "Friar"],
-      answer: "Nun",
-      explanation: "'Nun' is a female member of a religious order."
+        "question": "Select the masculine term from this list of specific family relations:",
+        "options": ["Niece", "Nephew", "Cousin", "Sibling"],
+        "answer": "Nephew",
+        "explanation": "'Nephew' is a masculine noun referring to the son of one's sibling, whereas 'niece' is feminine."
     },
 
-    // 21-30: Neuter (Objects)
+    // 11-20: Feminine Nouns (Professional & Social Contexts)
     {
-      question: "Which noun is neuter gender?",
-      options: ["Baby", "Table", "Mother", "Rooster"],
-      answer: "Table",
-      explanation: "'Table' is a non-living object and is treated as neuter."
+        "question": "Which of the following terms is classified under the feminine gender?",
+        "options": ["Proprietor", "Proprietress", "Ombudsman", "Commissioner"],
+        "answer": "Proprietress",
+        "explanation": "The suffix '-tress' in 'proprietress' explicitly indicates a female owner of a business property."
     },
     {
-      question: "Select the neuter noun:",
-      options: ["Computer", "Teacher", "Doctor", "Nurse"],
-      answer: "Computer",
-      explanation: "'Computer' is a machine, so it is neuter."
+        "question": "Select the feminine noun that represents a female sovereign or ruler:",
+        "options": ["Sultan", "Tzar", "Queen", "Marquis"],
+        "answer": "Queen",
+        "explanation": "'Queen' is the distinct feminine noun for a female monarch."
     },
     {
-      question: "Which word is neuter?",
-      options: ["Boy", "School", "Girl", "Man"],
-      answer: "School",
-      explanation: "'School' is a place, not a person, so it is neuter."
+        "question": "Identify the feminine noun used in legal or official donor roles:",
+        "options": ["Benefactor", "Benefactress", "Trustee", "Guarantor"],
+        "answer": "Benefactress",
+        "explanation": "'Benefactress' is the specific feminine noun for a woman who provides financial support or gifts."
     },
     {
-      question: "Find the neuter noun:",
-      options: ["Tree", "Cat", "Dog", "Horse"],
-      answer: "Tree",
-      explanation: "Plants like 'tree' are treated as neuter."
+        "question": "Which of the following nouns refers exclusively to a female sibling?",
+        "options": ["Brother", "Sister", "Kinship", "Relative"],
+        "answer": "Sister",
+        "explanation": "'Sister' is the feminine noun for a female sibling sharing the same parentage."
     },
     {
-      question: "Which is neuter?",
-      options: ["Phone", "Father", "Aunt", "Son"],
-      answer: "Phone",
-      explanation: "'Phone' is an inanimate object."
+        "question": "Find the feminine noun associated with a female head of a family or clan:",
+        "options": ["Patriarch", "Matriarch", "Governor", "Director"],
+        "answer": "Matriarch",
+        "explanation": "A 'matriarch' is a woman who is the head of a family, tribe, or organizational hierarchy."
     },
     {
-      question: "Select the neuter noun:",
-      options: ["Ball", "Player", "Coach", "Referee"],
-      answer: "Ball",
-      explanation: "'Ball' is an object and therefore neuter."
+        "question": "Which noun represents the feminine equivalent of a male hero in literary or historical contexts?",
+        "options": ["Protagonist", "Heroine", "Champion", "Ideologue"],
+        "answer": "Heroine",
+        "explanation": "'Heroine' specifically refers to a female main character or a woman admired for her courage."
     },
     {
-      question: "Which word refers to a thing?",
-      options: ["Chair", "Student", "Principal", "Janitor"],
-      answer: "Chair",
-      explanation: "'Chair' is a thing, so it is neuter."
+        "question": "Select the feminine noun used to address a woman of high administrative or diplomatic standing:",
+        "options": ["Sir", "Mister", "Madam", "Excellency"],
+        "answer": "Madam",
+        "explanation": "'Madam' is a formal, polite feminine noun used as a salutation for a woman."
     },
     {
-      question: "Find the neuter noun:",
-      options: ["River", "Swimmer", "Fish", "Crab"],
-      answer: "River",
-      explanation: "'River' is a natural feature and is neuter."
+        "question": "Which of the following terms is a feminine noun indicating a female deity or divine figure?",
+        "options": ["Goddess", "Angel", "Clergy", "Patron"],
+        "answer": "Goddess",
+        "explanation": "'Goddess' is the feminine form of the noun 'god'."
     },
     {
-      question: "Which noun has no gender?",
-      options: ["Book", "Author", "Writer", "Poet"],
-      answer: "Book",
-      explanation: "'Book' is an object and is neuter."
+        "question": "Identify the feminine occupational noun from the choices below:",
+        "options": ["Aviator", "Host", "Waitress", "Conductor"],
+        "answer": "Waitress",
+        "explanation": "'Waitress' refers specifically to a female server in a commercial dining establishment."
     },
     {
-      question: "Select the neuter noun:",
-      options: ["Car", "Driver", "Mechanic", "Passenger"],
-      answer: "Car",
-      explanation: "'Car' is a vehicle and is neuter."
-    },
-
-    // 31-40: Common Gender
-    {
-      question: "Which noun is common gender?",
-      options: ["King", "Queen", "Teacher", "Boy"],
-      answer: "Teacher",
-      explanation: "A 'teacher' can be either male or female."
-    },
-    {
-      question: "Select the common noun:",
-      options: ["Mother", "Parent", "Father", "Sister"],
-      answer: "Parent",
-      explanation: "'Parent' can mean either a mother or a father."
-    },
-    {
-      question: "Which word implies either gender?",
-      options: ["Doctor", "Actress", "Nun", "Monk"],
-      answer: "Doctor",
-      explanation: "A 'doctor' may be male or female."
-    },
-    {
-      question: "Find the common gender noun:",
-      options: ["Friend", "Boyfriend", "Girlfriend", "Husband"],
-      answer: "Friend",
-      explanation: "'Friend' can refer to a person of any gender."
-    },
-    {
-      question: "Which is common gender?",
-      options: ["Baby", "Boy", "Man", "Woman"],
-      answer: "Baby",
-      explanation: "A 'baby' can be a boy or a girl."
-    },
-    {
-      question: "Select the common noun:",
-      options: ["Student", "Headmaster", "Headmistress", "King"],
-      answer: "Student",
-      explanation: "'Student' applies to any learner, male or female."
-    },
-    {
-      question: "Which word is common gender?",
-      options: ["Cousin", "Uncle", "Aunt", "Niece"],
-      answer: "Cousin",
-      explanation: "A 'cousin' may be male or female."
-    },
-    {
-      question: "Find the common gender noun:",
-      options: ["Guest", "Hostess", "Landlady", "Waiter"],
-      answer: "Guest",
-      explanation: "A 'guest' can be any visitor, regardless of gender."
-    },
-    {
-      question: "Which is common gender?",
-      options: ["Neighbor", "Man", "Gentleman", "Lady"],
-      answer: "Neighbor",
-      explanation: "Your 'neighbor' may be a man or a woman."
-    },
-    {
-      question: "Select the common noun:",
-      options: ["Enemy", "King", "Prince", "Duke"],
-      answer: "Enemy",
-      explanation: "An 'enemy' can be of any gender."
+        "question": "Which noun refers to a female member of a religious community living in a convent?",
+        "options": ["Monk", "Nun", "Priest", "Abbot"],
+        "answer": "Nun",
+        "explanation": "A 'nun' is a female member of a religious community, serving as the feminine counterpart to a monk."
     },
 
-    // 41-50: Basic Matching
+    // 21-30: Neuter Gender (Inanimate Objects, Places, & Systems)
     {
-      question: "What is the feminine of 'Boy'?",
-      options: ["Girl", "Woman", "Lady", "Aunt"],
-      answer: "Girl",
-      explanation: "The opposite of 'boy' is 'girl'."
+        "question": "Which of the following nouns belongs to the neuter gender category?",
+        "options": ["Manager", "Document", "Auditor", "Consultant"],
+        "answer": "Document",
+        "explanation": "'Document' is an inanimate object and does not possess biological sex, classifying it as a neuter noun."
     },
     {
-      question: "What is the masculine of 'Mother'?",
-      options: ["Father", "Uncle", "Grandpa", "Brother"],
-      answer: "Father",
-      explanation: "The male parent is called 'father'."
+        "question": "Select the neuter noun that represents an organizational infrastructure:",
+        "options": ["Committee", "Building", "Secretary", "Chairman"],
+        "answer": "Building",
+        "explanation": "While 'committee' is a collective noun composed of people, a physical 'building' is strictly an inanimate object (neuter gender)."
     },
     {
-      question: "What is the feminine of 'Husband'?",
-      options: ["Wife", "Spouse", "Partner", "Girl"],
-      answer: "Wife",
-      explanation: "The female spouse is called 'wife'."
+        "question": "Which word is an example of a neuter noun representing a piece of office technology?",
+        "options": ["Operator", "Technician", "Computer", "Programmer"],
+        "answer": "Computer",
+        "explanation": "A 'computer' is a mechanical device, making it a neuter noun."
     },
     {
-      question: "What is the masculine of 'Sister'?",
-      options: ["Brother", "Cousin", "Father", "Uncle"],
-      answer: "Brother",
-      explanation: "The male sibling is called 'brother'."
+        "question": "Find the neuter noun that describes an administrative workplace setting:",
+        "options": ["Office", "Officer", "Official", "Officiant"],
+        "answer": "Office",
+        "explanation": "An 'office' is a physical location or abstract entity, which falls under the neuter gender category."
     },
     {
-      question: "What is the feminine of 'King'?",
-      options: ["Queen", "Princess", "Duchess", "Lady"],
-      answer: "Queen",
-      explanation: "A king rules with a queen as his female counterpart."
+        "question": "Which of the following abstract nouns belongs to the neuter gender?",
+        "options": ["Leader", "Policy", "Director", "Supervisor"],
+        "answer": "Policy",
+        "explanation": "A 'policy' is an abstract framework or concept; because it is non-living, it is classified as neuter."
     },
     {
-      question: "What is the masculine of 'Aunt'?",
-      options: ["Uncle", "Father", "Nephew", "Brother"],
-      answer: "Uncle",
-      explanation: "The male counterpart of 'aunt' is 'uncle'."
+        "question": "Select the neuter noun that represents a formal financial tool:",
+        "options": ["Accountant", "Collector", "Ledger", "Cashier"],
+        "answer": "Ledger",
+        "explanation": "A 'ledger' is a physical book or digital file used for financial records, making it a neuter noun."
     },
     {
-      question: "What is the feminine of 'Son'?",
-      options: ["Daughter", "Niece", "Sister", "Mother"],
-      answer: "Daughter",
-      explanation: "A 'son' is a male child; a 'daughter' is a female child."
+        "question": "Which noun is considered neuter because it refers to a municipal or public asset?",
+        "options": ["Citizen", "Mayor", "Vehicle", "Pedestrian"],
+        "answer": "Vehicle",
+        "explanation": "A 'vehicle' is a mechanical apparatus for transport, categorized under the neuter gender."
     },
     {
-      question: "What is the masculine of 'Grandmother'?",
-      options: ["Grandfather", "Father", "Uncle", "Brother"],
-      answer: "Grandfather",
-      explanation: "The male grandparent is called 'grandfather'."
+        "question": "Find the neuter noun associated with an institutional facility:",
+        "options": ["Principal", "Student", "University", "Instructor"],
+        "answer": "University",
+        "explanation": "A 'university' is an educational institution or property, which means it holds a neuter gender."
     },
     {
-      question: "What is the feminine of 'Man'?",
-      options: ["Woman", "Girl", "Lady", "Person"],
-      answer: "Woman",
-      explanation: "The usual opposite of 'man' is 'woman'."
+        "question": "Which of the following nouns represents an objective piece of communication?",
+        "options": ["Sender", "Recipient", "Memorandum", "Messenger"],
+        "answer": "Memorandum",
+        "explanation": "A 'memorandum' is a written official message, making it an inanimate object of the neuter gender."
     },
     {
-      question: "What is the masculine of 'Madam'?",
-      options: ["Sir", "Mister", "Boy", "Man"],
-      answer: "Sir",
-      explanation: "'Madam' is formally paired with 'Sir'."
+        "question": "Select the neuter noun that represents a physical piece of office equipment:",
+        "options": ["Desk", "Clerk", "Typist", "Stenographer"],
+        "answer": "Desk",
+        "explanation": "A 'desk' is an item of furniture, placing it firmly in the neuter gender group."
+    },
+
+    // 31-40: Common Gender (Ambiguous Professional Titles)
+    {
+        "question": "Which of the following professional titles is classified under the common gender?",
+        "options": ["Prince", "Dutchess", "Accountant", "Actor"],
+        "answer": "Accountant",
+        "explanation": "'Accountant' is a common gender noun because it can refer to either a male or a female professional."
+    },
+    {
+        "question": "Select the common gender noun used to describe an authorized medical professional:",
+        "options": ["Physician", "Actor", "Hostess", "Seamstress"],
+        "answer": "Physician",
+        "explanation": "A 'physician' can be either male or female, making it a common gender designation."
+    },
+    {
+        "question": "Which noun implies that the individual could be of either biological gender?",
+        "options": ["Widower", "Applicant", "Bride", "Groom"],
+        "answer": "Applicant",
+        "explanation": "An 'applicant' is a person who applies for a position, regardless of whether they are male or female."
+    },
+    {
+        "question": "Find the common gender noun that refers to a person representing a legal client:",
+        "options": ["Attorney", "Executrix", "King", "Waitress"],
+        "answer": "Attorney",
+        "explanation": "An 'attorney' is a legal practitioner of any gender, which defines it as a common noun."
+    },
+    {
+        "question": "Which of the following terms is a common gender noun meaning a person who evaluates records?",
+        "options": ["Auditor", "Proprietress", "Chairman", "Heroine"],
+        "answer": "Auditor",
+        "explanation": "An 'auditor' can be a man or a woman, classifying the title under the common gender."
+    },
+    {
+        "question": "Select the common gender title used for an educational administrator:",
+        "options": ["Headmaster", "Headmistress", "Superintendent", "Emperor"],
+        "answer": "Superintendent",
+        "explanation": "Unlike 'headmaster' (male) or 'headmistress' (female), 'superintendent' applies neutrally to any gender."
+    },
+    {
+        "question": "Which noun refers to a person under the supervision of a business manager?",
+        "options": ["Employee", "Actor", "Stewardess", "Baron"],
+        "answer": "Employee",
+        "explanation": "An 'employee' refers broadly to any worker in a corporate grid, male or female."
+    },
+    {
+        "question": "Find the common gender noun that designates a person who visits an agency or office:",
+        "options": ["Host", "Client", "Landlady", "Widower"],
+        "answer": "Client",
+        "explanation": "A 'client' is a general customer or service recipient, which means the term fits the common gender profile."
+    },
+    {
+        "question": "Which of the following words is a common gender noun representing a public safety officer?",
+        "options": ["Officer", "Actor", "Waitress", "Bride"],
+        "answer": "Officer",
+        "explanation": "An 'officer' can be a male or female member of law enforcement or administration."
+    },
+    {
+        "question": "Select the common gender noun used to identify a person who lives adjacent to your property:",
+        "options": ["Neighbor", "Brother", "Sister", "Groom"],
+        "answer": "Neighbor",
+        "explanation": "A 'neighbor' can be a person of any gender who resides nearby."
+    },
+
+    // 41-50: Gender Pairing & Professional Matching
+    {
+        "question": "What is the professionally accurate feminine counterpart of the noun 'Executor'?",
+        "options": ["Executrix", "Executioner", "Executive", "Executors"],
+        "answer": "Executrix",
+        "explanation": "In traditional legal language, an 'executrix' is a female executor of an estate or will."
+    },
+    {
+        "question": "What is the proper masculine match for the feminine royal title 'Empress'?",
+        "options": ["Emperor", "Empire", "Knight", "Prince"],
+        "answer": "Emperor",
+        "explanation": "The masculine equivalent of an 'empress' is an 'emperor'."
+    },
+    {
+        "question": "What is the feminine equivalent of the business title 'Proprietor'?",
+        "options": ["Proprietress", "Property", "Partner", "Proprietary"],
+        "answer": "Proprietress",
+        "explanation": "A female business owner or proprietor is formally referred to as a 'proprietress'."
+    },
+    {
+        "question": "What is the masculine equivalent of the singular educational title 'Alumna'?",
+        "options": ["Alumnus", "Alumni", "Alumnae", "Alum"],
+        "answer": "Alumnus",
+        "explanation": "'Alumnus' is the correct masculine singular form for a former graduate student."
+    },
+    {
+        "question": "What is the feminine counterpart for the corporate title 'Steward'?",
+        "options": ["Stewardess", "Steward", "Manager", "Assistant"],
+        "answer": "Stewardess",
+        "explanation": "'Stewardess' is the traditional feminine counterpart of 'steward' in logistics or administrative management."
+    },
+    {
+        "question": "What is the masculine counterpart of the feminine kinship noun 'Niece'?",
+        "options": ["Nephew", "Uncle", "Brother", "Cousin"],
+        "answer": "Nephew",
+        "explanation": "The male child of one's sibling is a 'nephew', which matches the feminine 'niece'."
+    },
+    {
+        "question": "What is the feminine counterpart of the traditional formal noun 'Benefactor'?",
+        "options": ["Benefactress", "Beneficiary", "Benefit", "Donor"],
+        "answer": "Benefactress",
+        "explanation": "A female supporter or donor who awards a grant is called a 'benefactress'."
+    },
+    {
+        "question": "What is the masculine equivalent of the religious noun 'Nun'?",
+        "options": ["Monk", "Priest", "Friar", "Abbot"],
+        "answer": "Monk",
+        "explanation": "A 'monk' is the masculine counterpart to a 'nun' within cloistered religious orders."
+    },
+    {
+        "question": "What is the feminine counterpart of the legal status noun 'Widower'?",
+        "options": ["Widow", "Wife", "Spouse", "Matron"],
+        "answer": "Widow",
+        "explanation": "A woman whose spouse has deceased is called a 'widow', making it the feminine match for 'widower'."
+    },
+    {
+        "question": "What is the formal masculine counterpart for the polite greeting 'Madam'?",
+        "options": ["Sir", "Mister", "Gentleman", "Officer"],
+        "answer": "Sir",
+        "explanation": "In corporate and government correspondence, 'Madam' is paired directly with 'Sir'."
     }
   ],
 
