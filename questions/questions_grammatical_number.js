@@ -952,60 +952,310 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
   // ============================================================
   expert: [
     // 1-15: Tricky Subject-Verb Agreement (Proximity & Indefinite)
-    { question: "Either the boy or the girls ___ playing.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Either/Or: Agree with the closest noun (girls) -> 'are'." },
-    { question: "Either the girls or the boy ___ playing.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Either/Or: Agree with the closest noun (boy) -> 'is'." },
-    { question: "Neither the manager nor the employees ___ present.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Neither/Nor: Agree with closest (employees) -> 'are'." },
-    { question: "Neither the employees nor the manager ___ present.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Neither/Nor: Agree with closest (manager) -> 'is'." },
-    { question: "Each of the students ___ a book.", options: ["have", "has", "are", "were"], answer: "has", explanation: "'Each' is singular -> 'has'." },
-    { question: "Everyone ___ welcome.", options: ["is", "are", "were", "have"], answer: "is", explanation: "'Everyone' is singular -> 'is'." },
-    { question: "Somebody ___ knocking.", options: ["is", "are", "were", "have"], answer: "is", explanation: "'Somebody' is singular -> 'is'." },
-    { question: "Nobody ___ the answer.", options: ["know", "knows", "knowing", "known"], answer: "knows", explanation: "'Nobody' is singular -> 'knows'." },
-    { question: "Many a student ___ tried.", options: ["have", "has", "are", "were"], answer: "has", explanation: "'Many a' is followed by a singular noun and verb -> 'has'." },
-    { question: "Bread and butter ___ my favorite breakfast.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Compound subject forming ONE idea -> singular 'is'." },
-    { question: "Gold and silver ___ precious metals.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Two distinct items -> plural 'are'." },
-    { question: "The teacher, along with the students, ___ coming.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Ignore phrases like 'along with'. Subject is 'teacher' (singular) -> 'is'." },
-    { question: "The students, as well as the teacher, ___ coming.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Ignore 'as well as'. Subject is 'students' (plural) -> 'are'." },
-    { question: "One of the boxes ___ open.", options: ["is", "are", "were", "have"], answer: "is", explanation: "'One' is the subject -> singular 'is'." },
-    { question: "The only one of the students who ___ passing is John.", options: ["is", "are", "were", "have"], answer: "is", explanation: "'The only one' -> singular 'is'." },
+       { 
+        "question": "Either the boy or the girls ________ playing in the designated courtyard.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When subjects are linked by the correlative conjunction 'either... or', the grammatical 'Rule of Proximity' applies. The verb must agree in number with the closer subject noun phrase. Since 'the girls' is plural, the plural verb 'are' is mandatory." 
+    },
+    { 
+        "question": "Either the girls or the boy ________ playing in the designated courtyard.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Applying the Rule of Proximity for alternative compound subjects joined by 'either... or', the verb adapts to the nearest noun phrase. Here, the singular noun 'the boy' is closest to the blank, dictating the singular present copula 'is'." 
+    },
+    { 
+        "question": "Neither the manager nor the employees ________ present at the emergency briefing.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When a sentence features the negative correlative structure 'neither... nor', syntax rules dictate that the verb concord follows the closer subject element. Because 'the employees' functions as a plural entity, the plural verb 'are' is correct." 
+    },
+    { 
+        "question": "Neither the employees nor the manager ________ present at the emergency briefing.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Under the proximity protocol for 'neither... nor' constructions, the verb is governed by the secondary subject component. Since the singular noun 'the manager' directly precedes the verb slot, the singular configuration 'is' must be selected." 
+    },
+    { 
+        "question": "Each of the prospective students ________ a copy of the institutional handbook.", 
+        "options": ["have", "has", "are", "were"], 
+        "answer": "has", 
+        "explanation": "The distributive pronoun 'Each' functions strictly as an absolute singular grammatical subject. Prepositional phrases like 'of the prospective students' contain object nouns that do not alter the number of the core subject; hence, it requires the singular verb 'has'." 
+    },
+    { 
+        "question": "Everyone ________ welcome to attend the annual government seminar.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The word 'Everyone' is an indefinite pronoun. In English formal syntax, all compound indefinite pronouns ending in '-one', '-body', or '-thing' are singular by nature and invariably command a singular active or static verb form ('is')." 
+    },
+    { 
+        "question": "Somebody ________ loudly knocking on the security entrance door.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The indefinite pronoun 'Somebody' denotes an unspecified singular agent. Consequently, it must comply with singular subject-verb concord, making the singular present continuous auxiliary verb 'is' the only structurally sound choice." 
+    },
+    { 
+        "question": "Nobody ________ the precise answer to the administrative inquiry.", 
+        "options": ["know", "knows", "knowing", "known"], 
+        "answer": "knows", 
+        "explanation": "As a singular negative indefinite pronoun, 'Nobody' acts as a singular third-person subject. In the present simple tense, regular verbs must append the appropriate dynamic singular suffix '-s' or '-es', resulting in 'knows'." 
+    },
+    { 
+        "question": "Many a student ________ tried to pass the rigorous qualifying examination.", 
+        "options": ["have", "has", "are", "were"], 
+        "answer": "has", 
+        "explanation": "The idiom 'Many a' is a formal distributive quantifier that explicitly requires a singular count noun ('student') and a singular verb ('has'). Although it conveys a plural concept notionally, its structural morphosyntax remains strictly singular." 
+    },
+    { 
+        "question": "Bread and butter ________ my absolute favorite breakfast option.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When two singular nouns linked by the coordinating conjunction 'and' refer to a single, integrated culinary dish or a unified abstract conceptual entity, they form a compound singular idea. This mandates the singular verb 'is'." 
+    },
+    { 
+        "question": "Gold and silver ________ classified as precious geological metals.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "In this context, 'Gold' and 'silver' represent two separate, distinct material commodities operating independently within a compound subject phrase. Because they do not fuse into a single concept, they trigger standard plural agreement ('are')." 
+    },
+    { 
+        "question": "The teacher, along with the students, ________ coming to the assembly hall.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Parenthetical expressions or intervening prepositional phrases introduced by modifiers like 'along with', 'together with', or 'accompanied by' do not modify the grammatical number of the true subject. The true subject is 'The teacher' (singular), requiring 'is'." 
+    },
+    { 
+        "question": "The students, as well as the teacher, ________ coming to the assembly hall.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The phrase 'as well as the teacher' functions as an additive parenthetical insert and has no syntactic power over the verb. The structural subject remains the plural count noun 'The students', which correctly governs the plural verb 'are'." 
+    },
+    { 
+        "question": "One of the structural boxes ________ currently left wide open.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "In sentences utilizing the selective structure 'One of the [plural noun]', the functional head of the complete subject phrase is the numerical pronoun 'One'. Because 'One' is singular, it dictates the singular verb 'is', ignoring the plural object 'boxes'." 
+    },
+    { 
+        "question": "The only one of the students who ________ passing the course is John.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The restrictive modifier 'The only one' decisively isolates a solitary individual out of the group. This structural restriction supersedes the relative clause object, forcing the dependent relative pronoun 'who' to agree with a singular antecedent, requiring 'is'." 
+    },
 
     // 16-30: Abstract & Mass Nouns Logic
-    { question: "Measles ___ dangerous.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Disease names ending in s -> singular 'is'." },
-    { question: "Mumps ___ painful.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Disease names -> singular 'is'." },
-    { question: "Physics ___ interesting.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Subjects ending in s -> singular 'is'." },
-    { question: "Politics ___ a dirty game.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Activities ending in s -> singular 'is'." },
-    { question: "The news ___ shocking.", options: ["is", "are", "were", "have"], answer: "is", explanation: "News -> singular 'is'." },
-    { question: "Furniture ___ expensive.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Furniture is uncountable -> singular 'is'." },
-    { question: "Luggage ___ heavy.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Luggage is uncountable -> singular 'is'." },
-    { question: "Knowledge ___ power.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Abstract noun -> singular 'is'." },
-    { question: "Advice ___ helpful.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Abstract noun -> singular 'is'." },
-    { question: "Traffic ___ bad today.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Mass noun -> singular 'is'." },
-    { question: "My hair ___ long.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Hair (on head) is uncountable -> singular 'is'." },
-    { question: "Two hairs ___ in my soup.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Individual strands -> plural 'are'." },
-    { question: "Paper ___ made from wood.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Material -> singular 'is'." },
-    { question: "Legal papers ___ signed.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Documents -> plural 'are'." },
-    { question: "Iron ___ a metal.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Material -> singular 'is'." },
+    { 
+        "question": "Measles ________ historically a dangerous viral disease for young children.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Names of specific medical pathologies and clinical diseases that end with the sibilant letter '-s' (such as measles, mumps, or rickets) are treated strictly as singular mass nouns. They always link with a singular verb form ('is')." 
+    },
+    { 
+        "question": "Mumps ________ an extremely painful inflammation of the parotid glands.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Although 'Mumps' terminates orthographically with an '-s', it represents a single, cohesive pathological medical condition. It operates exclusively as a singular noun and must be paired with the singular present copula 'is'." 
+    },
+    { 
+        "question": "Physics ________ an interesting field of scientific investigation.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Academic disciplines, branches of advanced knowledge, or sciences ending in the suffix '-ics' (such as physics, mathematics, or ethics) are singular in structural number and consistently govern a singular verb ('is')." 
+    },
+    { 
+        "question": "Politics ________ a complex and often polarizing societal game.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When referencing a generic domain of civic governance, an institutional apparatus, or an abstract concept, the noun 'Politics' behaves as a singular mass entity, requiring the singular verb form 'is'." 
+    },
+    { 
+        "question": "The current news regarding the geopolitical situation ________ truly shocking.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The word 'news' is an uncountable mass noun in English, despite its terminal '-s'. It cannot be fragmented into individual counts without partitive indicators like 'pieces of news'; thus, it strictly governs the singular verb 'is'." 
+    },
+    { 
+        "question": "Imported office furniture ________ highly expensive due to tariff adjustments.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "'Furniture' is categorized as an uncountable collective mass noun. Because it represents an abstract accumulation of assets rather than individual countable units, it must always be paired with a singular verb ('is')." 
+    },
+    { 
+        "question": "The passenger luggage ________ deemed too heavy for the cargo compartment.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Parallel to 'furniture', the word 'luggage' is a non-count mass noun encompassing bags and containers collectively. It cannot take a plural suffix or plural verb, demanding the singular helper verb 'is'." 
+    },
+    { 
+        "question": "Academically acquired knowledge ________ absolute power in modern society.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Abstract quality nouns like 'Knowledge' represent intangible, continuous conditions that lack plural physical dimensions. They are structurally classified as singular and must link with a singular verb format ('is')." 
+    },
+    { 
+        "question": "Professional legal advice ________ highly helpful during administrative litigation.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "'Advice' functions purely as an uncountable abstract noun. It is incorrect to pair it with plural elements unless it is quantified via partitive phrases like 'pieces of advice'. The base noun requires the singular verb 'is'." 
+    },
+    { 
+        "question": "Vehicular traffic ________ exceptionally bad along the primary highway today.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The mass noun 'Traffic' quantifies an undivided flow of vehicles along a transit route. Because it denotes a single collective movement, it behaves as a singular subject and governs the singular copula 'is'." 
+    },
+    { 
+        "question": "My natural hair ________ grown long since my last salon appointment.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When 'hair' is used to describe the entire aggregate mass or coat of hair on a person's head, it operates as an uncountable mass noun. This mass classification mandates a singular verb agreement ('is')." 
+    },
+    { 
+        "question": "Two distinct gray hairs ________ found floating inside my warm soup.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When 'hair' refers to isolated, individual strands that can be explicitly enumerated, it shifts from a mass noun to a standard countable noun. The numerical modifier 'Two' establishes a plural count, requiring the plural verb 'are'." 
+    },
+    { 
+        "question": "Commercial paper ________ typically made from refined wood pulp fibers.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When 'paper' references the generic material or substance used for writing and industrial packaging, it acts as a singular material mass noun, which demands the use of the singular linking verb 'is'." 
+    },
+    { 
+        "question": "The official legal papers ________ finally signed by the corporate directors.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When 'papers' shifts its semantic meaning to denote individual physical documents, historical records, or formal certificates, it functions as a regular plural count noun, requiring the plural passive verb 'are'." 
+    },
+    { 
+        "question": "Structural iron ________ an abundant metal utilized in modern construction.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "As an elemental chemical substance or generic material, the noun 'Iron' is categorized as an uncountable material noun. Mass material nouns are syntactically singular, requiring the present-tense singular link 'is'." 
+    },
 
     // 31-50: Advanced Singular/Plural Nuances
-    { question: "The jury ___ given its verdict.", options: ["has", "have", "are", "were"], answer: "has", explanation: "Unit -> 'has'." },
-    { question: "The jury ___ divided.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Individuals -> 'are'." },
-    { question: "Fish ___ swimming.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Multiple fish -> 'are'." },
-    { question: "There ___ many reasons.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Subject is 'reasons' (after verb) -> 'are'." },
-    { question: "There ___ a reason.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Subject is 'reason' -> 'is'." },
-    { question: "Here ___ the bus.", options: ["come", "comes", "coming", "came"], answer: "comes", explanation: "Subject 'bus' -> 'comes'." },
-    { question: "Here ___ the buses.", options: ["come", "comes", "coming", "came"], answer: "come", explanation: "Subject 'buses' -> 'come'." },
-    { question: "Three miles ___ a long way.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Distance as unit -> 'is'." },
-    { question: "Fifty pesos ___ not enough.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Money as unit -> 'is'." },
-    { question: "Two hours ___ passed.", options: ["has", "have", "is", "are"], answer: "have", explanation: "Subject 'hours' is plural here, so we say 'Two hours have passed.'." },
-    { question: "Statistics (the subject) ___ difficult.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Field of study -> 'is'." },
-    { question: "Statistics (the data) ___ misleading.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Facts/Data -> 'are'." },
-    { question: "A pair of shoes ___ stolen.", options: ["was", "were", "are", "have"], answer: "was", explanation: "Subject is 'pair' -> 'was'." },
-    { question: "The shoes ___ stolen.", options: ["was", "were", "is", "has"], answer: "were", explanation: "Subject is 'shoes' -> 'were'." },
-    { question: "My family ___ here.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Unit -> 'is'." },
-    { question: "The rich ___ taxes.", options: ["pay", "pays", "paying", "paid"], answer: "pay", explanation: "'The rich' = Rich people (plural) -> 'pay'." },
-    { question: "The poor ___ help.", options: ["need", "needs", "needing", "needed"], answer: "need", explanation: "'The poor' = Poor people (plural) -> 'need'." },
-    { question: "The blind ___ guided.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'The blind' = Blind people -> 'are'." },
-    { question: "The French ___ good food.", options: ["love", "loves", "loving", "loved"], answer: "love", explanation: "'The French' = French people -> 'love'." },
-    { question: "The Chinese ___ diligent.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'The Chinese' = Chinese people -> 'are'." }
-  ]
+    { 
+        "question": "The administrative jury ________ already given its official verdict to the court.", 
+        "options": ["has", "have", "are", "were"], 
+        "answer": "has", 
+        "explanation": "The collective body 'jury' acts as a unified legal institution, as confirmed by the singular-neuter possessive modifier 'its'. This structural unity requires the singular present-perfect helper verb 'has'." 
+    },
+    { 
+        "question": "The panel of the jury ________ deeply divided in their individual assessments.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Under the principle of Notional Agreement, when the individual members of a collective noun ('jury') are fragmented or hold conflicting views, the noun takes a plural verb ('are') and a plural pronoun ('their')." 
+    },
+    { 
+        "question": "Several colorful fish ________ swimming gracefully inside the public aquarium.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The modifier 'Several' indicates a plural count. Since 'fish' functions as an unchanged zero plural noun when describing multiple individual organisms of the same type, it requires the plural progressive verb 'are'." 
+    },
+    { 
+        "question": "There ________ many logical reasons to re-evaluate the agency's current policy.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "In sentences initiated by the expletive or dummy adverb 'There', the grammatical subject appears *after* the verb. The actual subject is the plural noun 'reasons', which commands the plural verb form 'are'." 
+    },
+    { 
+        "question": "There ________ a compelling reason to amend the operational guidelines.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Because 'There' functions merely as a structural placeholder, the verb must look ahead to the true subject. The noun phrase 'a compelling reason' is singular, requiring the singular copula 'is'." 
+    },
+    { 
+        "question": "Here ________ the morning shuttle bus for the agency employees.", 
+        "options": ["come", "comes", "coming", "came"], 
+        "answer": "comes", 
+        "explanation": "In inverted sentences starting with 'Here', the true subject follows the verb. Because the subject noun 'bus' is singular, the present simple verb must apply the singular third-person inflection, resulting in 'comes'." 
+    },
+    { 
+        "question": "Here ________ the morning shuttle buses for the agency employees.", 
+        "options": ["come", "comes", "coming", "came"], 
+        "answer": "come", 
+        "explanation": "With the introductory adverb 'Here' creating an inverted word order, the plural noun phrase 'the morning shuttle buses' acts as the true subject. A plural subject requires the uninflected plural verb 'come'." 
+    },
+    { 
+        "question": "Three linear miles ________ a long distance to travel on foot during patrol.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Expressions defining specific measurements of distance, weight, or volume are conceptualized as a single, collective abstract quantity or unit. This singular conceptualization requires the singular verb 'is'." 
+    },
+    { 
+        "question": "Fifty pesos ________ not enough to cover the current administrative processing fee.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When an amount of money is stated as a specific lump sum or a singular price point, it functions as a singular generic value. Therefore, it links with the singular verb 'is' rather than the plural 'are'." 
+    },
+    { 
+        "question": "Two continuous hours ________ already passed since the examination commenced.", 
+        "options": ["has", "have", "is", "are"], 
+        "answer": "have", 
+        "explanation": "When time expressions emphasize the sequential, independent passing of individual time increments rather than a single fixed block, the noun behaves as a plural count subject, requiring the present-perfect plural auxiliary verb 'have'." 
+    },
+    { 
+        "question": "Statistics, as an academic subject, ________ highly difficult for many research students.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When nouns ending in '-ics' designate a systematic field of academic study or a formal science (e.g., Statistics), they are strictly singular in number and govern the singular verb 'is'." 
+    },
+    { 
+        "question": "The compiled statistics for this financial quarter ________ completely misleading.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When the word 'statistics' shifts from an academic subject to denote individual sets of numerical data, mathematical facts, or tabulated figures, it functions as a plural count noun, requiring 'are'." 
+    },
+    { 
+        "question": "A fresh pair of leather shoes ________ stolen from the locker room vestibule.", 
+        "options": ["was", "were", "are", "have"], 
+        "answer": "was", 
+        "explanation": "While 'shoes' is structurally plural, the intervention of the singular noun counter phrase 'A pair of' shifts the grammatical subject to 'pair'. The singular head noun 'pair' commands the singular past passive verb 'was'." 
+    },
+    { 
+        "question": "The leather shoes ________ stolen from the locker room vestibule.", 
+        "options": ["was", "were", "is", "has"], 
+        "answer": "were", 
+        "explanation": "In the absence of a singular limiting counter phrase like 'a pair of', the inherent *plurale tantum* property of the garment noun 'shoes' dominates the clause, requiring the plural past passive verb 'were'." 
+    },
+    { 
+        "question": "My extended family ________ currently gathered here for the civic holiday.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The collective noun 'family' is treated as a single, undivided household unit in this layout. In standard formal English, a unified collective noun requires a singular verb matching structure ('is')." 
+    },
+    { 
+        "question": "The rich ________ required to pay higher progressive taxes under the new law.", 
+        "options": ["pay", "pays", "paying", "paid"], 
+        "answer": "pay", 
+        "explanation": "When a definitive adjective is preceded by the definite article 'The' to represent a collective class of individuals (e.g., 'The rich' = rich people), it forms a plural class adjective. Plural class adjectives require the plural verb 'pay'." 
+    },
+    { 
+        "question": "The poor ________ urgent structural help from the social welfare department.", 
+        "options": ["need", "needs", "needing", "needed"], 
+        "answer": "need", 
+        "explanation": "The phrase 'The poor' operates as a collective class adjective referencing poor citizens in general. Because this grammatical category is structurally plural, it commands the uninflected plural verb form 'need'." 
+    },
+    { 
+        "question": "The blind ________ expertly guided across the intersection by trained assistance dogs.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Similar to other plural class adjectives formed by 'The + Adjective', 'The blind' represents a plural demographic. It is syntactically plural and must couple with the plural linking verb 'are'." 
+    },
+    { 
+        "question": "The French ________ authentic gourmet food and traditional culinary arts.", 
+        "options": ["love", "loves", "loving", "loved"], 
+        "answer": "love", 
+        "explanation": "When a nationality adjective is preceded by 'The' to designate the entire populace or citizenry of a country collectively, it operates as a plural subject. This collective plural status requires the plural verb 'love'." 
+    },
+    { 
+        "question": "The Chinese ________ exceptionally diligent when executing corporate infrastructure projects.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The demonym phrase 'The Chinese' designates the collective body of Chinese people. Because it acts as a plural group subject, it must be paired with the plural present-tense copula verb 'are'." 
+    }
+]
 };
 
