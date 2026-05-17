@@ -325,311 +325,311 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
 
   intermediate: [
     // 1-15: Irregular Plurals
-    {
-      question: "Which of the following is an irregular plural noun?",
-      options: ["cars", "books", "children", "houses"],
-      answer: "children",
-      explanation: '"Children" is the irregular plural of "child".'
+      {
+        "question": "The department is evaluating alternative welfare programs designed specifically to protect marginalized ________.",
+        "options": ["childs", "children", "childes", "childrens"],
+        "answer": "children",
+        "explanation": "'Children' is the correct irregular plural form of 'child', requiring no additional plural suffixes like '-s'."
     },
     {
-      question: "Which plural form is correct?",
-      options: ["foot", "foots", "feet", "feets"],
-      answer: "feet",
-      explanation: '"Feet" is the plural of "foot".'
+        "question": "The structural safety inspection revealed that the building's foundation had shifted by several ________.",
+        "options": ["foot", "foots", "feet", "feets"],
+        "answer": "feet",
+        "explanation": "'Feet' functions as the correct irregular plural noun for the unit of measurement 'foot'."
     },
     {
-      question: "Which plural noun is correct?",
-      options: ["womans", "woman", "womens", "women"],
-      answer: "women",
-      explanation: '"Women" is the plural of "woman".'
+        "question": "A significant percentage of the local labor force is comprised of diligent ________ working in agricultural sectors.",
+        "options": ["womans", "woman", "womens", "women"],
+        "answer": "women",
+        "explanation": "'Women' is the grammatically correct irregular plural form of the singular noun 'woman'."
     },
     {
-      question: "What is the plural of 'tooth'?",
-      options: ["tooths", "teeth", "toothes", "teeths"],
-      answer: "teeth",
-      explanation: '"Teeth" is the plural of "tooth".'
+        "question": "The forensic investigator noted that the dental impressions matched the victim's remaining ________.",
+        "options": ["tooths", "teeth", "toothes", "teeths"],
+        "answer": "teeth",
+        "explanation": "The noun 'tooth' undergoes an internal vowel change to form its irregular plural state, which is 'teeth'."
     },
     {
-      question: "What is the plural of 'mouse'?",
-      options: ["mouses", "mices", "mice", "mouse"],
-      answer: "mice",
-      explanation: '"Mice" is the plural of "mouse".'
+        "question": "The health inspector reported that the laboratory facility was completely free from ________ and other pests.",
+        "options": ["mouses", "mices", "mice", "mouse"],
+        "answer": "mice",
+        "explanation": "'Mice' is the standard irregular plural form of 'mouse'. The form 'mouses' is grammatically incorrect in this context."
     },
     {
-      question: "What is the plural of 'person'?",
-      options: ["persons", "people", "peoples", "persones"],
-      answer: "people",
-      explanation: '"People" is the most common plural of "person".'
+        "question": "The constitutional mandate ensures that the state shall serve and protect the rights of all ________.",
+        "options": ["persons", "people", "peoples", "persones"],
+        "answer": "people",
+        "explanation": "While 'persons' is used in strict legal statutes, 'people' is the standard collective plural noun representing individuals in general contexts."
     },
     {
-      question: "What is the plural of 'leaf'?",
-      options: ["leafs", "leaves", "leafes", "leave"],
-      answer: "leaves",
-      explanation: 'Nouns ending in "f" often change to "ves".'
+        "question": "During the autumn season, clearing dry ________ from the drainage system prevents municipal flooding.",
+        "options": ["leafs", "leaves", "leafes", "leave"],
+        "answer": "leaves",
+        "explanation": "Nouns ending in a voiceless consonant sound like '-f' typically change their ending to '-ves' to form the plural."
     },
     {
-      question: "What is the plural of 'knife'?",
-      options: ["knifes", "knives", "knive", "knifves"],
-      answer: "knives",
-      explanation: 'Change "fe" to "ves".'
+        "question": "The customs officer confiscated several undocumented surgical ________ from the cargo shipment.",
+        "options": ["knifes", "knives", "knive", "knifves"],
+        "answer": "knives",
+        "explanation": "For nouns ending in '-fe' such as 'knife', the plural form requires replacing '-fe' with '-ves'."
     },
     {
-      question: "What is the plural of 'sheep'?",
-      options: ["sheeps", "sheep", "shoop", "sheepes"],
-      answer: "sheep",
-      explanation: '"Sheep" stays the same in plural.'
+        "question": "The agricultural department provided local farmers with a livestock subsidy consisting of fifty ________.",
+        "options": ["sheeps", "sheep", "shoop", "sheepes"],
+        "answer": "sheep",
+        "explanation": "'Sheep' belongs to a category of irregular nouns that preserve an identical form in both singular and plural numbers."
     },
     {
-      question: "What is the plural of 'fish'?",
-      options: ["fishs", "fish", "fishes", "fishies"],
-      answer: "fish",
-      explanation: '"Fish" usually stays the same (unless talking about species).'
+        "question": "Environmental scientists are monitoring the migration patterns of various ________ in the protected marine sanctuary.",
+        "options": ["fishs", "fish", "fishes", "fishies"],
+        "answer": "fish",
+        "explanation": "The plural form remains 'fish' when referring to a collective mass of individuals. 'Fishes' is only acceptable when specifically emphasizing different biological species."
     },
     {
-      question: "What is the plural of 'goose'?",
-      options: ["gooses", "geese", "geeses", "goose"],
-      answer: "geese",
-      explanation: '"Geese" is the plural of "goose".'
+        "question": "The civil aviation authority issued a warning regarding a flock of migratory ________ near the runway.",
+        "options": ["gooses", "geese", "geeses", "goose"],
+        "answer": "geese",
+        "explanation": "'Geese' is the valid irregular plural designation achieved through internal mutation of the word 'goose'."
     },
     {
-      question: "What is the plural of 'ox'?",
-      options: ["oxes", "oxs", "oxen", "oxens"],
-      answer: "oxen",
-      explanation: '"Oxen" is the plural of "ox".'
+        "question": "Historically, pairs of domesticated ________ were utilized in rural provinces to plow agricultural lands.",
+        "options": ["oxes", "oxs", "oxen", "oxens"],
+        "answer": "oxen",
+        "explanation": "'Oxen' represents a rare, traditional Germanic irregular plural mutation for the singular noun 'ox'."
     },
     {
-      question: "What is the plural of 'cactus'?",
-      options: ["cactuses", "cacti", "cactus", "cactii"],
-      answer: "cacti",
-      explanation: '"Cacti" is the plural of "cactus".'
+        "question": "Arid regions are characterized by specialized flora, including various species of desert ________.",
+        "options": ["cactuses", "cacti", "cactus", "cactii"],
+        "answer": "cacti",
+        "explanation": "'Cacti' is the preferred plural variation derived from classical Latin rules governing singular nouns ending in '-us'."
     },
     {
-      question: "What is the plural of 'child'?",
-      options: ["childs", "children", "childes", "childrens"],
-      answer: "children",
-      explanation: '"Children" is correct.'
+        "question": "The Department of Social Welfare and Development conducts census surveys to assist underprivileged ________.",
+        "options": ["childs", "children", "childes", "childrens"],
+        "answer": "children",
+        "explanation": "'Children' is inherently pluralized; adding an extra '-s' is a redundant and grammatically incorrect construction."
     },
     {
-      question: "What is the plural of 'life'?",
-      options: ["lifes", "lives", "live", "liffes"],
-      answer: "lives",
-      explanation: 'Change "fe" to "ves".'
-    },
-
-    // 16-30: Countable vs Uncountable Nouns
-    {
-      question: "Which sentence uses a countable noun correctly?",
-      options: ["He gave me three advice.", "She bought two breads.", "I have two cars.", "We have many furniture."],
-      answer: "I have two cars.",
-      explanation: '"Cars" is countable.'
-    },
-    {
-      question: "Which sentence uses an uncountable noun correctly?",
-      options: ["She has many money.", "He has much experience.", "We bought three rice.", "They gave me two information."],
-      answer: "He has much experience.",
-      explanation: '"Experience" (as knowledge) is uncountable; use "much".'
-    },
-    {
-      question: "Which word is an uncountable noun?",
-      options: ["apple", "water", "bottle", "cup"],
-      answer: "water",
-      explanation: '"Water" is a liquid and uncountable.'
-    },
-    {
-      question: "Which word is a countable noun?",
-      options: ["rice", "sugar", "orange", "milk"],
-      answer: "orange",
-      explanation: '"Orange" can be counted (one orange, two oranges).'
-    },
-    {
-      question: "Select the correct phrase:",
-      options: ["many waters", "much water", "many water", "much waters"],
-      answer: "much water",
-      explanation: 'Use "much" with uncountable nouns like "water".'
-    },
-    {
-      question: "Select the correct phrase:",
-      options: ["few information", "little information", "an information", "two informations"],
-      answer: "little information",
-      explanation: 'Use "little" with uncountable nouns.'
-    },
-    {
-      question: "Which noun is uncountable?",
-      options: ["chair", "table", "furniture", "desk"],
-      answer: "furniture",
-      explanation: '"Furniture" is a collective uncountable noun.'
-    },
-    {
-      question: "Which noun is uncountable?",
-      options: ["suitcase", "bag", "luggage", "box"],
-      answer: "luggage",
-      explanation: '"Luggage" is uncountable.'
-    },
-    {
-      question: "Correct usage:",
-      options: ["I have a news.", "I have some news.", "I have two news.", "I have many news."],
-      answer: "I have some news.",
-      explanation: '"News" is uncountable; use "some".'
-    },
-    {
-      question: "Which is correct?",
-      options: ["How many money do you have?", "How much money do you have?", "How many moneys?", "How much moneys?"],
-      answer: "How much money do you have?",
-      explanation: '"Money" is uncountable, so use "How much".'
-    },
-    {
-      question: "Identify the countable noun:",
-      options: ["bread", "flour", "bun", "dough"],
-      answer: "bun",
-      explanation: '"Bun" is countable.'
-    },
-    {
-      question: "Identify the uncountable noun:",
-      options: ["cloud", "rain", "puddle", "drop"],
-      answer: "rain",
-      explanation: '"Rain" is uncountable.'
-    },
-    {
-      question: "Choose the correct quantifier for 'rice':",
-      options: ["many", "a few", "a little", "an"],
-      answer: "a little",
-      explanation: '"Rice" is uncountable, use "a little".'
-    },
-    {
-      question: "Choose the correct quantifier for 'friends':",
-      options: ["much", "a little", "a lot of", "less"],
-      answer: "a lot of",
-      explanation: '"Friends" is countable, "a lot of" works (or many).'
-    },
-    {
-      question: "Which is uncountable?",
-      options: ["gold", "ring", "necklace", "jewel"],
-      answer: "gold",
-      explanation: '"Gold" is a material/uncountable.'
+        "question": "The heroic actions of the first responders saved numerous ________ during the metropolitan disaster.",
+        "options": ["lifes", "lives", "live", "liffes"],
+        "answer": "lives",
+        "explanation": "The plural form of 'life' follows the conventional linguistic transformation where terminal '-fe' is substituted with '-ves'."
     },
 
-    // 31-40: Possessive Nouns
+    // 16-30: Countable vs Uncountable Nouns (CSE Context)
     {
-      question: "Which shows correct possession?",
-      options: ["The boys bike", "The boy's bike", "The boys's bike", "The boies bike"],
-      answer: "The boy's bike",
-      explanation: '"Boy" is singular, so add apostrophe + s.'
+        "question": "Which of the following sentences demonstrates the grammatically correct application of a countable noun?",
+        "options": ["The consultant provided me with three invaluable advice.", "The relief agency distributed two packed breads to each family.", "The administrative division acquired two fleet cars for field operations.", "The regional office procured many modern furniture for the lounge."],
+        "answer": "The administrative division acquired two fleet cars for field operations.",
+        "explanation": "'Cars' is a standard countable noun that can be directly preceded by numerical quantifiers, unlike advice, bread, or furniture."
     },
     {
-      question: "Which shows possession for plural 'dogs'?",
-      options: ["The dogs's bone", "The dog's bone", "The dogs' bone", "The dog bone"],
-      answer: "The dogs' bone",
-      explanation: 'For plural ending in s, just add apostrophe.'
+        "question": "Which of the following sentences correctly utilizes an uncountable mass noun in professional writing?",
+        "options": ["The newly appointed director does not possess many money.", "The senior technical adviser possesses much valuable experience.", "The warehouse clerk verified that we bought three imported rice.", "The human resource unit gave me two urgent information."],
+        "answer": "The senior technical adviser possesses much valuable experience.",
+        "explanation": "'Experience' represents an abstract, non-count noun concept which must be modified by quantifiers like 'much' rather than 'many'."
     },
     {
-      question: "Correct possession for 'children':",
-      options: ["The childrens' toys", "The children' toys", "The children's toys", "The childs' toys"],
-      answer: "The children's toys",
-      explanation: '"Children" is plural but no "s", so add apostrophe + s.'
+        "question": "In governmental budgeting, which of the following items is strictly classified as an uncountable noun?",
+        "options": ["apple", "water", "bottle", "cup"],
+        "answer": "water",
+        "explanation": "As a liquid substance, 'water' is inherently continuous and cannot be partitioned into discrete countable units without a container."
     },
     {
-      question: "Whose car is it? It is ___ car.",
-      options: ["James'", "James's", "Jame's", "Both A and B are accepted"],
-      answer: "Both A and B are accepted",
-      explanation: 'For names ending in s, both "James\'" and "James\'s" are often accepted.'
+        "question": "Identify the countable asset noun from the choices provided below:",
+        "options": ["rice", "sugar", "orange", "milk"],
+        "answer": "orange",
+        "explanation": "An 'orange' is a distinct physical object that can be tallied individually using cardinal numbers."
     },
     {
-      question: "The ___ room is clean. (Plural)",
-      options: ["teacher's", "teachers'", "teachers's", "teacher"],
-      answer: "teachers'",
-      explanation: 'Plural "teachers" + apostrophe.'
+        "question": "Select the phrase that aligns with standard formal grammar guidelines:",
+        "options": ["The laboratory required many waters for the chemical test.", "The reservoir contained much water despite the prolonged drought.", "The logistics team requested many water supplies for the delegation.", "The local community conserved much waters during the emergency."],
+        "answer": "The reservoir contained much water despite the prolonged drought.",
+        "explanation": "'Water' is a mass noun; therefore, the non-count singular quantifier 'much' must be utilized."
     },
     {
-      question: "This is my ___ house.",
-      options: ["parents'", "parent's", "parents's", "parents"],
-      answer: "parents'",
-      explanation: 'Usually refers to two parents, so plural possessive.'
+        "question": "Choose the expression that adheres to correct grammatical syntax regarding administrative data:",
+        "options": ["The auditor found few information regarding the missing funds.", "The committee discovered little information in the preliminary brief.", "The researcher attached an information to the summary report.", "The intelligence division processed two critical informations."],
+        "answer": "The committee discovered little information in the preliminary brief.",
+        "explanation": "'Information' is an uncountable noun. It cannot take the indefinite article 'an', be pluralized with '-s', or be modified by 'few'."
     },
     {
-      question: "The ___ tail is long.",
-      options: ["cat", "cats", "cat's", "cats'"],
-      answer: "cat's",
-      explanation: 'One cat owning a tail.'
+        "question": "Which of the following organizational assets is classified as an uncountable collective noun?",
+        "options": ["chair", "table", "furniture", "desk"],
+        "answer": "furniture",
+        "explanation": "While 'chair' and 'table' are individual countable items, 'furniture' is an overarching, uncountable category noun."
     },
     {
-      question: "The ___ bag is blue.",
-      options: ["man's", "mans'", "mens'", "mens"],
-      answer: "man's",
-      explanation: 'Singular man + \'s.'
+        "question": "Identify the non-count noun often referenced in customs and travel regulations:",
+        "options": ["suitcase", "bag", "luggage", "box"],
+        "answer": "luggage",
+        "explanation": "'Luggage' aggregates individual items into an abstract mass entity, rendering it grammatically uncountable."
     },
     {
-      question: "The ___ restroom. (Plural)",
-      options: ["mens'", "mans'", "men's", "mens"],
-      answer: "men's",
-      explanation: 'Irregular plural "men" + \'s.'
+        "question": "Determine the most precise and grammatically sound sentence structure for public relations:",
+        "options": ["The press secretary released a news regarding the executive order.", "The department broadcasted some news about the administrative reform.", "The media relations unit distributed two news to the journalists.", "The public information office handled many news yesterday."],
+        "answer": "The department broadcasted some news about the administrative reform.",
+        "explanation": "'News' is singular and uncountable despite ending in '-s'; it properly pairs with partitive quantifiers like 'some'."
     },
     {
-      question: "My ___ name is Sarah.",
-      options: ["sisters", "sister's", "sisters'", "sister"],
-      answer: "sister's",
-      explanation: 'One sister + \'s.'
+        "question": "Which of the following queries complies fully with correct English grammar conventions?",
+        "options": ["How many money do you have allocated for the project?", "How much money do you have remaining in the agency budget?", "How many fiscal penalizing moneys were collected?", "How much operational funding moneys are needed?"],
+        "answer": "How much money do you have remaining in the agency budget?",
+        "explanation": "'Money' is grammatically an uncountable collective noun, which mandates the interrogative modifier 'How much'."
+    },
+    {
+        "question": "Identify the countable carbohydrate item from the perspective of standard dietary classification:",
+        "options": ["bread", "flour", "bun", "dough"],
+        "answer": "bun",
+        "explanation": "A 'bun' is treated as a single, discrete baked unit that can be counted, whereas bread, flour, and dough are mass nouns."
+    },
+    {
+        "question": "Which of the following environmental factors is grammatically structured as an uncountable noun?",
+        "options": ["cloud", "rain", "puddle", "drop"],
+        "answer": "rain",
+        "explanation": "'Rain' describes a collective meteorological precipitation mass, classifying it strictly as an uncountable noun."
+    },
+    {
+        "question": "Select the correct grammatical modifier to quantify the agricultural yield of 'rice':",
+        "options": ["The warehouse contained many surplus rice.", "The cooperative distributed a few sacks of rice.", "The relief center required a little rice to complete the pack.", "The agency processed an import quota for rice."],
+        "answer": "The relief center required a little rice to complete the pack.",
+        "explanation": "'Rice' is a bulk mass noun. The modifier 'a little' is correctly applied to express a small quantity of an uncountable item."
+    },
+    {
+        "question": "Choose the most appropriate quantifier for the plural countable noun 'friends':",
+        "options": ["The diplomat did not receive much friends at the embassy.", "The regional director invited a little friends to the conference.", "The project manager gained a lot of friends within the community.", "The supervisor retained less friends after the policy shift."],
+        "answer": "The project manager gained a lot of friends within the community.",
+        "explanation": "'Friends' is plural and countable. 'A lot of' is a versatile modifier applicable to both plural countable and uncountable nouns."
+    },
+    {
+        "question": "Which resource noun is considered uncountable under standard physical asset metrics?",
+        "options": ["gold", "ring", "necklace", "jewel"],
+        "answer": "gold",
+        "explanation": "'Gold' represents an elemental raw material substance, which places it under the category of mass uncountable nouns."
     },
 
-    // 41-50: Gender & Context
+    // 31-40: Possessive Nouns (CSE Context)
     {
-      question: "What is the feminine noun for 'Prince'?",
-      options: ["Queen", "Lady", "Princess", "Duchess"],
-      answer: "Princess",
-      explanation: '"Princess" is the female equivalent.'
+        "question": "Which phrase demonstrates correct singular possessive punctuation for an employee asset?",
+        "options": ["The boys bike was parked outside the municipal hall.", "The boy's bike was secured near the office entrance.", "The boys's bike remained in the government compound.", "The boies bike was registered under local transport rules."],
+        "answer": "The boy's bike was secured near the office entrance.",
+        "explanation": "To indicate ownership for a singular noun ('boy'), attach an apostrophe followed by the letter 's'."
     },
     {
-      question: "What is the masculine noun for 'Niece'?",
-      options: ["Nephew", "Uncle", "Brother", "Cousin"],
-      answer: "Nephew",
-      explanation: '"Nephew" is the male equivalent.'
+        "question": "Which sentence correctly reflects the plural possessive form for a canine unit?",
+        "options": ["The dogs's bone was provided by the security department.", "The dog's bone was inspected by the veterinary officer.", "The dogs' bone structure was analyzed during the forensic trial.", "The dog bone supply was audited by the budget team."],
+        "answer": "The dogs' bone structure was analyzed during the forensic trial.",
+        "explanation": "For regular plural nouns that terminate in the letter 's' ('dogs'), possession is indicated by appending a solitary trailing apostrophe."
     },
     {
-      question: "What is the feminine noun for 'Bull'?",
-      options: ["Horse", "Cow", "Ewe", "Mare"],
-      answer: "Cow",
-      explanation: '"Cow" is the female of "Bull".'
+        "question": "What is the correct possessive formulation for an item belonging to an irregular plural demographic?",
+        "options": ["The childrens' toys were donated to the state orphanage.", "The children' toys were distributed by the social worker.", "The children's toys met the international safety standards.", "The childs' toys were stored in the community center."],
+        "answer": "The children's toys met the international safety standards.",
+        "explanation": "Because 'children' is an irregular plural noun that does not end in 's', its possessive form requires an apostrophe followed by an 's'."
     },
     {
-      question: "What is the masculine noun for 'Hen'?",
-      options: ["Duck", "Rooster", "Drake", "Gander"],
-      answer: "Rooster",
-      explanation: '"Rooster" is the male of "Hen".'
+        "question": "The public information officer confirmed that the vehicle parked outside was ________.",
+        "options": ["James' vehicle", "James's vehicle", "Jame's vehicle", "Both A and B are accepted"],
+        "answer": "Both A and B are accepted",
+        "explanation": "For singular proper nouns ending in an 's' sound, classical grammar accepts just the apostrophe, while modern style guides accept the apostrophe plus 's'."
     },
     {
-      question: "The word 'Doctor' is a:",
-      options: ["Masculine noun", "Feminine noun", "Common gender noun", "Neuter noun"],
-      answer: "Common gender noun",
-      explanation: 'Doctors can be male or female.'
+        "question": "The collective association announced that the new faculty ________ lounge was officially open for all academic staff members.",
+        "options": ["teacher's", "teachers'", "teachers's", "teacher"],
+        "answer": "teachers'",
+        "explanation": "Since the context implies a shared space belonging to multiple educators (plural), the correct form is 'teachers''."
     },
     {
-      question: "The word 'Table' is a:",
-      options: ["Masculine noun", "Feminine noun", "Common gender noun", "Neuter noun"],
-      answer: "Neuter noun",
-      explanation: 'In English, objects are neuter.'
+        "question": "To secure the juvenile passport, the civil service application mandated the explicit submission of both ________ consent.",
+        "options": ["parents'", "parent's", "parents's", "parents"],
+        "answer": "parents'",
+        "explanation": "This legal requirement refers to the joint authority of both parents (plural), necessitating a trailing apostrophe after the 's'."
     },
     {
-      question: "What is the feminine of 'Waiter'?",
-      options: ["Waitress", "Waiting", "Lady waiter", "Waiteress"],
-      answer: "Waitress",
-      explanation: '"Waitress" is the traditional feminine form.'
+        "question": "The quarantine officer observed that the domestic ________ microchip was registered properly.",
+        "options": ["cat", "cats", "cat's", "cats'"],
+        "answer": "cat's",
+        "explanation": "The sentence dictates ownership by a single singular animal ('cat'), which demands an apostrophe followed by an 's'."
     },
     {
-      question: "What is the masculine of 'Aunt'?",
-      options: ["Father", "Uncle", "Grandpa", "Nephew"],
-      answer: "Uncle",
-      explanation: '"Uncle" corresponds to "Aunt".'
+        "question": "The security personnel discovered that the ________ unattended baggage contained suspicious documents.",
+        "options": ["man's", "mans'", "mens'", "mens"],
+        "answer": "man's",
+        "explanation": "The singular noun 'man' forms its possessive case by adding an apostrophe and an 's'."
     },
     {
-      question: "What is the feminine of 'Lion'?",
-      options: ["Tiger", "Lioness", "Leopard", "Liona"],
-      answer: "Lioness",
-      explanation: '"Lioness" is the female lion.'
+        "question": "The municipal engineering department designated a specific floor area inside the government center for the exclusive construction of the ________ locker room.",
+        "options": ["mens'", "mans'", "men's", "mens"],
+        "answer": "men's",
+        "explanation": "'Men' is an irregular plural noun. To show possession, an apostrophe and an 's' must be appended."
     },
     {
-      question: "Which word can refer to both male and female?",
-      options: ["King", "Sister", "Student", "Father"],
-      answer: "Student",
-      explanation: '"Student" is a common gender noun.'
+        "question": "The administrative assistant noted that her ________ official designation was executive clerk.",
+        "options": ["sisters", "sister's", "sisters'", "sister"],
+        "answer": "sister's",
+        "explanation": "The statement points to one specific sibling, which means the singular possessive pattern ('s) must be utilized."
+    },
+
+    // 41-50: Gender & Context (CSE Context)
+    {
+        "question": "In royal succession law, what is the feminine noun equivalent of a 'Prince'?",
+        "options": ["Queen", "Lady", "Princess", "Duchess"],
+        "answer": "Princess",
+        "explanation": "'Princess' is the distinct grammatical feminine noun counterpart to the masculine title 'Prince'."
+    },
+    {
+        "question": "When filing a civil registry inheritance claim, what is the masculine counterpart for a 'Niece'?",
+        "options": ["Nephew", "Uncle", "Brother", "Cousin"],
+        "answer": "Nephew",
+        "explanation": "'Nephew' represents the specific masculine kin relation that corresponds directly to a female 'Niece'."
+    },
+    {
+        "question": "The livestock inspector separated the aggressive male ________ from the female cow.",
+        "options": ["Horse", "Bull", "Ewe", "Mare"],
+        "answer": "Bull",
+        "explanation": "In bovine taxonomy, 'Bull' is the masculine noun designation, while 'Cow' is the feminine counterpart."
+    },
+    {
+        "question": "The agricultural census categorized the breeding male chicken as a ________.",
+        "options": ["Duck", "Rooster", "Drake", "Gander"],
+        "answer": "Rooster",
+        "explanation": "'Rooster' is the correct masculine noun used to specify a male chicken, contrasting with the female hen."
+    },
+    {
+        "question": "The professional title 'Doctor' is classified under which grammatical gender category?",
+        "options": ["Masculine noun", "Feminine noun", "Common gender noun", "Neuter noun"],
+        "answer": "Common gender noun",
+        "explanation": "Titles like 'Doctor' belong to the common gender category because they can represent either male or female professionals without changing form."
+    },
+    {
+        "question": "In English grammar, an inanimate workspace object like a 'Table' is categorized as a:",
+        "options": ["Masculine noun", "Feminine noun", "Common gender noun", "Neuter noun"],
+        "answer": "Neuter noun",
+        "explanation": "Nouns that denote non-living, inanimate things possess no biological sex and are classified as neuter."
+    },
+    {
+        "question": "The hospitality management terminal noted that the senior ________ handled the VIP delegation.",
+        "options": ["Waitress", "Waiting", "Lady waiter", "Waiteress"],
+        "answer": "Waitress",
+        "explanation": "'Waitress' remains the traditional, formally recognized feminine suffix modification for the noun 'Waiter'."
+    },
+    {
+        "question": "The deceased employee's surviving paternal ________, who is the biological brother of the employee's late father, filed for secondary insurance benefits.",
+        "options": ["Father", "Uncle", "Grandpa", "Nephew"],
+        "answer": "Uncle",
+        "explanation": "An 'Uncle' is the masculine familial counterpart representing the brother of one's parent (maternal or paternal)."
+    },
+    {
+        "question": "The wildlife ranger documented the maternal instincts of a protective ________ in the reservation.",
+        "options": ["Tiger", "Lioness", "Leopard", "Liona"],
+        "answer": "Lioness",
+        "explanation": "The term 'Lioness' is the distinct feminine noun applied to a female lion."
+    },
+    {
+        "question": "To promote inclusive and gender-neutral language, the agency prefers which common gender noun?",
+        "options": ["King", "Sister", "Student", "Father"],
+        "answer": "Student",
+        "explanation": "'Student' is a common gender noun because it neutrally encompasses both male and female learners without gender specification."
     }
   ],
 
