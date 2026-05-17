@@ -636,374 +636,369 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
 advanced: [
     // 1-10: Collective Nouns
     {
-      question: "Which word is a collective noun?",
-      options: ["flock", "chair", "boy", "river"],
-      answer: "flock",
-      explanation: '"Flock" refers to a group of birds or animals.'
+        "question": "During the plenary session, the legislative ________ voted unanimously to pass the proposed civil service amendment bill.",
+        "options": ["assembly", "congregations", "assemblies", "board of directors"],
+        "answer": "assembly",
+        "explanation": "'Assembly' functions as a singular collective noun designating a body of legislators acting as a single unit to pass statutes."
     },
     {
-      question: "Which is a collective noun?",
-      options: ["family", "mother", "child", "aunt"],
-      answer: "family",
-      explanation: '"Family" names a group of related people.'
+        "question": "The Bureau of Fisheries and Aquatic Resources documented a massive ________ of tuna passing through the protected marine pathway.",
+        "options": ["school", "pod", "pack", "herd"],
+        "answer": "school",
+        "explanation": "In institutional wildlife classification, 'school' is the accurate technical collective noun utilized for fish populations."
     },
     {
-      question: 'In the sentence "The jury reached a decision", which word is a collective noun?',
-      options: ["jury", "reached", "decision", "a"],
-      answer: "jury",
-      explanation: '"Jury" names a group acting as one body.'
+        "question": "The internal affairs unit confirmed that a ________ of corrupt investigators was involved in the anomalous bidding process.",
+        "options": ["cabal", "crowd", "mob", "crew"],
+        "answer": "cabal",
+        "explanation": "'Cabal' is a sophisticated collective noun that specifies a small group of individuals secretively plotting sinister or illegal administrative actions."
     },
     {
-      question: "Which sentence uses a collective noun correctly?",
-      options: [
-        "The flock of birds was flying overhead.",
-        "The flock of bird was flying overhead.",
-        "The bird of flock was flying overhead.",
-        "Birds was flying flock."
-      ],
-      answer: "The flock of birds was flying overhead.",
-      explanation: '"Flock" is a collective noun and matches the sentence structure.'
+        "question": "Which of the following sentences adheres strictly to executive subject-verb agreement rules involving a collective noun?",
+        "options": [
+            "The oversight committee disagree on the structural distribution of the fiscal budget.",
+            "The oversight committee disagrees on the structural distribution of the fiscal budget.",
+            "The oversight committee are disagreeing on the structural distribution of the fiscal budget.",
+            "The oversight committee have disagreed on the structural distribution of the fiscal budget."
+        ],
+        "answer": "The oversight committee disagrees on the structural distribution of the fiscal budget.",
+        "explanation": "When a collective noun ('committee') acts as a single, unified entity performing a singular action, it demands a singular verb ('disagrees')."
     },
     {
-      question: "Which pair shows a collective noun and its members?",
-      options: [
-        "team - players",
-        "pen - ink",
-        "door - house",
-        "tree - leaves"
-      ],
-      answer: "team - players",
-      explanation: "A team is made up of players."
+        "question": "The executive director acknowledged that a ________ of distinguished medical experts was convened to analyze the outbreak data.",
+        "options": ["panel", "bunch", "band", "flock"],
+        "answer": "panel",
+        "explanation": "In professional and state settings, 'panel' is the standard collective designation for an appointed group of specialists or experts."
     },
     {
-      question: 'Which word is a collective noun in: "Our choir sings every Sunday"?',
-      options: ["Our", "choir", "sings", "Sunday"],
-      answer: "choir",
-      explanation: '"Choir" names a group of singers.'
+        "question": "The strategic deployment blueprint indicates that a specialized ________ of elite naval vessels has arrived at the disputed territory.",
+        "options": ["fleet", "pack", "colony", "swarm"],
+        "answer": "fleet",
+        "explanation": "'Fleet' is the correct collective noun denoting an organized group of military ships operating under unified military command."
     },
     {
-      question: 'In the sentence "The audience clapped loudly", "audience" is:',
-      options: ["a collective noun", "an abstract noun", "a proper noun", "a material noun"],
-      answer: "a collective noun",
-      explanation: '"Audience" refers to a group of people watching something.'
+        "question": "Identify the sentence that correctly applies an operational collective noun syntax representing divided individual actions:",
+        "options": [
+            "The board of trustees has signed its names on the executive employment contract.",
+            "The board of trustees are signing their individual names on the executive employment contract.",
+            "The board of trustees signs their names on the executive employment contract.",
+            "The board of trustees is signing their names on the executive employment contract."
+        ],
+        "answer": "The board of trustees are signing their individual names on the executive employment contract.",
+        "explanation": "When members of a collective group act individually (indicated by 'individual names'), the noun shifts to a plural concept, mandating a plural verb ('are') and plural pronoun ('their')."
     },
     {
-      question: "Which of the following is NOT a collective noun?",
-      options: ["committee", "class", "bunch", "candle"],
-      answer: "candle",
-      explanation: '"Candle" names one thing, not a group.'
+        "question": "The multi-agency task force intercepted an illegal ________ of documents containing state secrets near the international border.",
+        "options": ["cache", "bunch", "cluster", "heap"],
+        "answer": "cache",
+        "explanation": "'Cache' is an advanced collective noun used to define a hidden, secure collection of specialized items, supplies, or sensitive documents."
     },
     {
-      question: "Which collective noun best completes the sentence? 'A ___ of ships sailed into the harbor.'",
-      options: ["flock", "pack", "fleet", "herd"],
-      answer: "fleet",
-      explanation: '"Fleet" is the collective noun for ships.'
+        "question": "The diplomatic compound requested a tight cordon of protection due to an angry ________ of protesters destabilizing the entrance gates.",
+        "options": ["throng", "mob", "audience", "congregation"],
+        "answer": "mob",
+        "explanation": "While 'throng' signifies a dense crowd, 'mob' specifically connotes a disorderly, aggressive, or chaotic collection of individuals intent on disruption."
     },
     {
-      question: "Which collective noun best completes the sentence? 'He found a ___ of keys on the table.'",
-      options: ["herd", "bunch", "swarm", "gang"],
-      answer: "bunch",
-      explanation: '"Bunch" is commonly used for a group of keys.'
-
-    },
-
-    // 11-20: Concrete, Abstract, and Material Nouns
-    {
-      question: "Which is a material noun?",
-      options: ["silver", "happiness", "teacher", "country"],
-      answer: "silver",
-      explanation: '"Silver" names a substance or material.'
-    },
-    {
-      question: "Which word is a concrete noun?",
-      options: ["childhood", "fear", "music", "table"],
-      answer: "table",
-      explanation: "A table can be seen and touched, so it is concrete."
-    },
-    {
-      question: "Which is an abstract noun?",
-      options: ["truth", "stone", "bottle", "sand"],
-      answer: "truth",
-      explanation: '"Truth" is an idea and cannot be touched.'
-    },
-    {
-      question: 'In "Patience is important", which word is an abstract noun?',
-      options: ["Patience", "is", "important", "none"],
-      answer: "Patience",
-      explanation: '"Patience" is a quality or idea.'
-    },
-    {
-      question: "Which pair shows a concrete noun followed by an abstract noun?",
-      options: [
-        "chair - comfort",
-        "anger - joy",
-        "beauty - love",
-        "kindness - honesty"
-      ],
-      answer: "chair - comfort",
-      explanation: '"Chair" is concrete, "comfort" is abstract.'
-    },
-    {
-      question: "Which sentence uses a material noun?",
-      options: [
-        "The gold ring was expensive.",
-        "Her kindness is known.",
-        "They showed courage.",
-        "Honesty matters."
-      ],
-      answer: "The gold ring was expensive.",
-      explanation: '"Gold" names a metal, a material noun.'
-    },
-    {
-      question: "Which of the following is NOT a material noun?",
-      options: ["iron", "cotton", "water", "friendship"],
-      answer: "friendship",
-      explanation: '"Friendship" is an abstract noun, not a substance.'
-    },
-    {
-      question: "Choose the abstract noun formed from the verb 'decide'.",
-      options: ["decision", "deciding", "decided", "decisive"],
-      answer: "decision",
-      explanation: '"Decision" is the noun form of "decide".'
-    },
-    {
-      question: "Choose the abstract noun formed from the adjective 'wise'.",
-      options: ["wisely", "wisdom", "wiser", "wise"],
-      answer: "wisdom",
-      explanation: '"Wisdom" is the noun form of "wise".'
-    },
-    {
-      question: "Choose the abstract noun formed from the adjective 'free'.",
-      options: ["freely", "freedom", "freeing", "freed"],
-      answer: "freedom",
-      explanation: '"Freedom" is the noun form of "free".'
+        "question": "The environmental protection agency released a memorandum regarding the seasonal migration patterns of a ________ of locusts.",
+        "options": ["swarm", "herd", "pack", "brood"],
+        "answer": "swarm",
+        "explanation": "'Swarm' is the definitive collective noun utilized in scientific literature to describe an overwhelming, moving mass of flying insects."
     },
 
-    // 21-30: Proper Nouns & Capitalization (Advanced)
+    // 11-20: Concrete, Abstract, and Material Nouns (Advanced CSE Context)
     {
-      question: "Which is correctly capitalized?",
-      options: ["the pacific ocean", "Pacific ocean", "Pacific Ocean", "pacific Ocean"],
-      answer: "Pacific Ocean",
-      explanation: "Each important word in a proper name is capitalized."
+        "question": "The anti-graft magistrate emphasized that public ________ must be upheld at all levels of government operations.",
+        "options": ["integrity", "currency", "paperwork", "infrastructure"],
+        "answer": "integrity",
+        "explanation": "'Integrity' represents an ideal, moral value that cannot be physically perceived, classifying it strictly as an abstract noun."
     },
     {
-      question: "Which should NOT be capitalized?",
-      options: ["Monday", "January", "river", "Filipino"],
-      answer: "river",
-      explanation: "Common nouns like 'river' are not capitalized by themselves."
+        "question": "Which of the following elements referenced in the public works inventory is classified as a material noun?",
+        "options": ["cement", "bridge", "highway", "blueprint"],
+        "answer": "cement",
+        "explanation": "'Cement' denotes a raw physical material substance used to create structures, whereas 'bridge' and 'highway' are concrete countable objects."
     },
     {
-      question: "Which option corrects the capitalization?",
-      options: [
-        "Manila, Philippines",
-        "manila, philippines",
-        "Manila, philippines",
-        "manila, Philippines"
-      ],
-      answer: "Manila, Philippines",
-      explanation: "Both the city and country names are proper nouns."
+        "question": "The presidential award was conferred upon the senior officer to honor her exceptional ________ under severe crisis conditions.",
+        "options": ["fortitude", "medallion", "uniform", "certificate"],
+        "answer": "fortitude",
+        "explanation": "'Fortitude' is an intangible quality of mental or emotional strength, which classifies it as an abstract noun."
     },
     {
-      question: "Which is a Proper Noun?",
-      options: ["country", "Asia", "city", "mountain"],
-      answer: "Asia",
-      explanation: '"Asia" is the specific name of a continent.'
+        "question": "The procurement office purchased heavy-duty office desks composed entirely of high-grade ________.",
+        "options": ["timber", "furniture", "desks", "stations"],
+        "answer": "timber",
+        "explanation": "'Timber' represents the fundamental raw material matter used in fabrication, making it a definitive material noun."
     },
     {
-      question: 'Which part of the sentence is a Proper Noun: "We visited Rizal Park last year"?',
-      options: ["We visited", "Rizal Park", "last year", "visited Park"],
-      answer: "Rizal Park",
-      explanation: '"Rizal Park" is the full proper name of a place.'
+        "question": "Identify the option that exhibits a concrete asset noun followed directly by an abstract operational concept:",
+        "options": [
+            "computer - efficiency",
+            "intellect - performance",
+            "strategy - formulation",
+            "steel - durability"
+        ],
+        "answer": "computer - efficiency",
+        "explanation": "'Computer' is tangible and concrete, while 'efficiency' is an intangible performance concept, making it abstract."
     },
     {
-      question: "Which sentence uses capital letters correctly?",
-      options: [
-        "I speak English and Filipino.",
-        "I speak english and filipino.",
-        "I speak English and filipino.",
-        "i speak English and Filipino."
-      ],
-      answer: "I speak English and Filipino.",
-      explanation: "Languages always begin with capital letters."
+        "question": "The judicial defense argued that the prosecutor's claims lacked substantial evidence and were based entirely on pure ________.",
+        "options": ["speculation", "affidavits", "fingerprints", "documents"],
+        "answer": "speculation",
+        "explanation": "'Speculation' is an intellectual concept or guess that cannot be physically measured, marking it as an abstract noun."
     },
     {
-      question: "Which sentence uses a title correctly?",
-      options: [
-        "My uncle is doctor Cruz.",
-        "My uncle is Doctor Cruz.",
-        "My Uncle is Doctor Cruz.",
-        "my uncle is doctor cruz."
-      ],
-      answer: "My uncle is Doctor Cruz.",
-      explanation: 'The title "Doctor" is capitalized before a name.'
+        "question": "To complete the construction of the municipal water filtration grid, the engineering team required tons of raw ________.",
+        "options": ["copper", "pipes", "valves", "pumps"],
+        "answer": "copper",
+        "explanation": "'Copper' is an elemental raw material substance, distinguishing it as a material noun from fabricated items like pipes and valves."
     },
     {
-      question: "Which word should be written with a capital letter?",
-      options: ["library", "school", "christmas", "street"],
-      answer: "christmas",
-      explanation: "Names of holidays like Christmas are capitalized."
+        "question": "Convert the administrative verb 'rationalize' into its formal abstract noun derivative:",
+        "options": ["rationalization", "rationalizing", "rationalized", "rational"],
+        "answer": "rationalization",
+        "explanation": "The suffix '-ation' transforms the verb 'rationalize' into the formal abstract state noun 'rationalization'."
     },
     {
-      question: "Which is a proper noun for a brand?",
-      options: ["phone", "store", "Samsung", "laptop"],
-      answer: "Samsung",
-      explanation: '"Samsung" is a specific brand name.'
+        "question": "What is the correct abstract noun formulation representing the internal state or quality of being 'sovereign'?",
+        "options": ["sovereignty", "sovereignly", "sovereignties", "sovereignism"],
+        "answer": "sovereignty",
+        "explanation": "'Sovereignty' is the derived abstract noun that symbolizes supreme political power, authority, or independence."
     },
     {
-      question: "Which sentence has NO capitalization error?",
-      options: [
-        "We will travel to Baguio in April.",
-        "We will travel to baguio in April.",
-        "We will travel to Baguio in april.",
-        "we will travel to Baguio in April."
-      ],
-      answer: "We will travel to Baguio in April.",
-      explanation: "City names and months begin with capital letters."
+        "question": "Select the option that converts the adjective 'resilient' into an abstract bureaucratic trait noun:",
+        "options": ["resilience", "resiliently", "resiliency", "Both A and C are accepted"],
+        "answer": "Both A and C are accepted",
+        "explanation": "Both 'resilience' and 'resiliency' are grammatically recognized abstract nouns that denote the quality of being resilient."
     },
 
-    // 31-40: Partitives & Quantifiers with Nouns
+    // 21-30: Proper Nouns & Capitalization (Advanced CSE Context)
     {
-      question: "Which phrase is correct for the uncountable noun 'advice'?",
-      options: ["an advice", "a piece of advice", "two advices", "many advices"],
-      answer: "a piece of advice",
-      explanation: 'Use "a piece of" with uncountable nouns like "advice".'
+        "question": "Which of the following legal bodies is written with the flawless application of proper noun capitalization?",
+        "options": [
+            "the supreme court of the Philippines",
+            "the Supreme Court of the Philippines",
+            "The Supreme Court Of The Philippines",
+            "The Supreme Court of the philippines"
+        ],
+        "answer": "the Supreme Court of the Philippines",
+        "explanation": "Specific names of judicial bodies are proper nouns; functional words like prepositions ('of') and articles ('the') are generally not capitalized unless beginning a sentence."
     },
     {
-      question: "Which is correct for 'bread'?",
-      options: ["a bread", "two breads", "two loaves of bread", "a breades"],
-      answer: "two loaves of bread",
-      explanation: "We count loaves, not bread itself."
+        "question": "Identify the geographical term that should remain lowercase because it is utilized as a general common noun direction:",
+        "options": [
+            "We traveled west toward the provincial capital to audit the precinct.",
+            "The economic zone is influenced heavily by Western trade policies.",
+            "The delegation represents the cultural heritage of the Middle West.",
+            "He assigned a task force to monitor the geopolitical shifts in East Asia."
+        ],
+        "answer": "We traveled west toward the provincial capital to audit the precinct.",
+        "explanation": "When compass points ('west') indicate pure direction rather than a specific geopolitical region, they function as common descriptors and are not capitalized."
     },
     {
-      question: "Which is a correct phrase?",
-      options: ["a furniture", "a piece of furniture", "many furnitures", "two furniture"],
-      answer: "a piece of furniture",
-      explanation: '"Furniture" is uncountable; use "a piece of furniture".'
+        "question": "Which of the following state document titles is capitalized correctly?",
+        "options": [
+            "The philippine philippine Philippine Philippine Constitution of 1987",
+            "the Philippine Constitution of 1987",
+            "The Philippine constitution of 1987",
+            "the philippine constitution of 1987"
+        ],
+        "answer": "the Philippine Constitution of 1987",
+        "explanation": "Specific historic and organic legal documents function as proper nouns and require initial capitalization for major naming components."
     },
     {
-      question: "Which expression is correct?",
-      options: ["a news", "a piece of news", "many newses", "two news"],
-      answer: "a piece of news",
-      explanation: '"News" is uncountable; use "a piece of news".'
+        "question": "Determine the proper noun classification that requires strict capitalization under civil registry standards:",
+        "options": ["executive order", "republic act", "Republic Act No. 11032", "presidential decree"],
+        "answer": "Republic Act No. 11032",
+        "explanation": "'Republic Act No. 11032' is a specific proper designation of a particular statute, unlike common generic legal classifications like 'executive order'."
     },
     {
-      question: "Which quantifier works with 'information'?",
-      options: ["many informations", "a lot of information", "two informations", "an information"],
-      answer: "a lot of information",
-      explanation: '"Information" is uncountable; use "a lot of information".'
+        "question": "Which sentence satisfies all technical capitalization rules concerning corporate titles and official administrative names?",
+        "options": [
+            "The Undersecretary coordinated directly with the Department of Budget and Management.",
+            "The undersecretary coordinated directly with the department of budget and management.",
+            "The undersecretary coordinated directly with the Department of Budget and Management.",
+            "The Undersecretary coordinated directly with the Department Of Budget And Management."
+        ],
+        "answer": "The undersecretary coordinated directly with the Department of Budget and Management.",
+        "explanation": "Official agency names are proper nouns and must be capitalized. General organizational titles like 'undersecretary' remain lowercase unless followed directly by a specific proper name."
     },
     {
-      question: "Which is correct?",
-      options: ["three luggages", "much luggage", "many luggage", "a luggage"],
-      answer: "much luggage",
-      explanation: '"Luggage" is uncountable; use "much luggage".'
+        "question": "Select the expression that demonstrates flawless proper noun alignment for a seasonal statutory holiday:",
+        "options": ["Ninoy Aquino day", "Ninoy Aquino Day", "ninoy aquino day", "Ninoy aquino Day"],
+        "answer": "Ninoy Aquino Day",
+        "explanation": "All constituent words forming the formal proper designation of a national commemorative holiday must be capitalized."
     },
     {
-      question: 'Complete the sentence: "She drank a ___ of water."',
-      options: ["glass", "grain", "sheet", "slice"],
-      answer: "glass",
-      explanation: "We usually say a glass of water."
+        "question": "Which sentence features a critical capitalization error regarding an institutional program name?",
+        "options": [
+            "The bureau implemented the comprehensive agrarian reform program last fiscal year.",
+            "The bureau implemented the Comprehensive Agrarian Reform Program last fiscal year.",
+            "The regional office supports the local environmental preservation initiatives.",
+            "The state university offers an advanced degree in public administration."
+        ],
+        "answer": "The bureau implemented the comprehensive agrarian reform program last fiscal year.",
+        "explanation": "The 'Comprehensive Agrarian Reform Program' is a specific, officially legislated state program and must be treated as a proper noun with full capitalization."
     },
     {
-      question: 'Complete the sentence: "He bought two ___ of paper."',
-      options: ["bottles", "sheets", "drops", "cups"],
-      answer: "sheets",
-      explanation: "Paper is counted in sheets."
+        "question": "Identify the proper noun variant that represents a specific linguistic group rather than a generic identifier:",
+        "options": ["bureaucrat", "government", "Austronesian", "municipality"],
+        "answer": "Austronesian",
+        "explanation": "'Austronesian' designates a specific, distinct anthropological and linguistic heritage group, classifying it as a proper noun."
     },
     {
-      question: 'Complete the sentence: "I need three ___ of chalk for the board."',
-      options: ["sticks", "loaves", "cups", "bags"],
-      answer: "sticks",
-      explanation: "Chalk is often counted in sticks."
+        "question": "Which sentence contains no syntax errors and reflects immaculate capitalization concerning academic designations?",
+        "options": [
+            "Professor Laurel, who holds a doctorate in Economics, led the fiscal panel.",
+            "professor Laurel, who holds a Doctorate in economics, led the fiscal panel.",
+            "Professor Laurel, who holds a Doctorate in Economics, led the fiscal panel.",
+            "Professor Laurel, who holds a doctorate in economics, led the fiscal panel."
+        ],
+        "answer": "Professor Laurel, who holds a doctorate in Economics, led the fiscal panel.",
+        "explanation": "'Professor' is capitalized before a specific name. General degrees like 'doctorate' are lowercase, but specific academic disciplines derived from field studies or proper fields ('Economics') are capitalized in formal course classifications."
     },
     {
-      question: "Which phrase is acceptable English?",
-      options: [
-        "a bar of chocolate",
-        "a chocolate of bar",
-        "a bar chocolate",
-        "bar of a chocolate"
-      ],
-      answer: "a bar of chocolate",
-      explanation: "We say a bar of chocolate."
+        "question": "Which specific commercial entity or entity asset name is formatted flawlessly?",
+        "options": [
+            "Government Service Insurance System",
+            "government service insurance system",
+            "Government service insurance system",
+            "Government Service Insurance system"
+        ],
+        "answer": "Government Service Insurance System",
+        "explanation": "As a specific government corporate entity, every key functional word in the 'Government Service Insurance System' requires an initial uppercase letter."
     },
 
-    // 41-50: Nouns Used as Adjectives
+    // 31-40: Partitives & Quantifiers with Nouns (Advanced CSE Context)
     {
-      question: 'In the phrase "chicken soup", the word "chicken" is:',
-      options: ["a verb", "a noun used as an adjective", "an adverb", "a pronoun"],
-      answer: "a noun used as an adjective",
-      explanation: '"Chicken" describes the kind of soup.'
+        "question": "The legal advisor noted that the whistleblower provided ________ that could incriminate the erring officials.",
+        "options": ["an invaluable advice", "a crucial piece of advice", "many valuable advices", "several vital advices"],
+        "answer": "a crucial piece of advice",
+        "explanation": "'Advice' is strictly non-count and uncountable; it cannot be pluralized with '-s' or prefixed by 'an'. It demands a partitive phrase like 'a piece of advice'."
     },
     {
-      question: 'In "school bus", the word "school" is:',
-      options: ["a verb", "a noun used as an adjective", "an adverb", "a preposition"],
-      answer: "a noun used as an adjective",
-      explanation: '"School" describes the type of bus.'
+        "question": "To accommodate the stranded delegates, the social welfare office requested ________ to be delivered immediately.",
+        "options": ["fifty loaves of bread", "fifty breads", "fifty pieces of breads", "fifty bread packages"],
+        "answer": "fifty loaves of bread",
+        "explanation": "'Bread' is a mass noun entity. To mathematically specify an exact count, you must prefix it with a partitive container structure like 'loaves of'."
     },
     {
-      question: "Which phrase shows a noun used as an adjective?",
-      options: ["blue sky", "history book", "quickly ran", "very tall"],
-      answer: "history book",
-      explanation: '"History" is a noun describing the kind of book.'
+        "question": "The administrative logistics team requested a budget clearance to purchase ________ for the regional conference room.",
+        "options": ["several new pieces of furniture", "several new furnitures", "many modern furnitures", "a few new structural furnitures"],
+        "answer": "several new pieces of furniture",
+        "explanation": "'Furniture' is an uncountable collective category. To partition it into discrete components, use the plural partitive format 'pieces of furniture'."
     },
     {
-      question: 'In "police station", the word "police" describes:',
-      options: ["station", "police", "both", "neither"],
-      answer: "station",
-      explanation: '"Police" tells what kind of station it is.'
+        "question": "The public information bureau disseminated ________ regarding the international trade treaty.",
+        "options": ["a critical piece of news", "an urgent news", "several groundbreaking newses", "two volatile news"],
+        "answer": "a critical piece of news",
+        "explanation": "Although it terminates with an 's', 'news' is an uncountable mass concept that properly pairs with singular partitives like 'a piece of'."
     },
     {
-      question: "Which is the best way to join these nouns?",
-      options: ["car sports", "sports car", "sport car", "cars sports"],
-      answer: "sports car",
-          explanation: '"Sports car" is the correct noun + noun phrase.'
+        "question": "The strategic intelligence division generated ________ during the preliminary evaluation phase.",
+        "options": ["a substantial amount of information", "many critical informations", "an extensive information", "several classified informations"],
+        "answer": "a substantial amount of information",
+        "explanation": "'Information' is completely uncountable. Quantifying its mass volume requires non-count modifiers like 'a substantial amount of'."
+    },
+    {
+        "question": "The customs clearing agent intercepted a diplomatic traveler transporting ________ across the security line.",
+        "options": ["too much undocumented luggage", "too many undocumented luggages", "several excessive luggages", "three separate illicit luggages"],
+        "answer": "too much undocumented luggage",
+        "explanation": "'Luggage' functions as an uncountable mass noun entity, dictating the use of the non-count intensive modifier 'much' instead of 'many'."
+    },
+    {
+        "question": "The emergency response grid requires the installation of at least ________ before the severe weather anomaly makes landfall.",
+        "options": ["two auxiliary blocks of ice", "two auxiliary ices", "two massive ice blocks", "Both A and C are accepted"],
+        "answer": "Both A and C are accepted",
+        "explanation": "To quantify the mass substance 'ice', you can employ the partitive 'blocks of ice' or use 'ice' as a clarifying noun adjective modifying a countable container like 'blocks'."
+    },
+    {
+        "question": "The secretarial unit procured ________ to distribute among the members of the constitutional drafting panel.",
+        "options": ["ten reams of paper", "ten papers", "ten piece of papers", "ten structural papers"],
+        "answer": "ten reams of paper",
+        "explanation": "As a mass material substance, 'paper' is measured professionally utilizing technical collective partitives like 'reams of'."
+    },
+    {
+        "question": "The education department purchased ________ to be distributed to rural public classrooms.",
+        "options": ["one hundred boxes of chalk", "one hundred chalks", "one hundred pieces of chalks", "one hundred individual chalk pieces"],
+        "answer": "one hundred boxes of chalk",
+        "explanation": "'Chalk' is fundamentally an uncountable mass material noun. Counts must be attributed to an external container modifier like 'boxes of chalk'."
+    },
+    {
+        "question": "The human resource desk requires every fresh applicant to complete ________ as part of the initial screening process.",
+        "options": ["a battery of psychological tests", "a psychological test battery", "many psychologic testing arrays", "Both A and B are accepted"],
+        "answer": "Both A and B are accepted",
+        "explanation": "Both options utilize valid grammatical structures—either an explicit partitive collective phrase ('a battery of...') or a compounding noun adjunct layout ('test battery')."
+    },
 
+    // 41-50: Nouns Used as Adjectives (Advanced CSE Context)
+    {
+        "question": "In the administrative directive phrase 'emergency evacuation blueprint', the word 'emergency' functions grammatically as:",
+        "options": ["a dynamic verb", "a noun used as an adjective", "a modal modifier", "a traditional adverb"],
+        "answer": "a noun used as an adjective",
+        "explanation": "Although 'emergency' is inherently a noun, it sits before 'evacuation blueprint' to describe the type or purpose of the asset, acting as a noun adjunct."
     },
     {
-      question: "Which phrase is correctly written?",
-      options: [
-        "a ten-minute break",
-        "a ten-minutes break",
-        "a ten minute's break",
-        "a ten-minutes's break"
-      ],
-      answer: "a ten-minute break",
-      explanation: "When a noun shows measurement before another noun, it is usually singular."
+        "question": "Identify the compound professional expression that correctly showcases a noun acting as an adjective to modify an operational asset:",
+        "options": ["aviation regulatory manual", "highly regulated manual", "manually regulated aviation", "aviation regulations manual"],
+        "answer": "aviation regulatory manual",
+        "explanation": "'Aviation' is a noun used as an adjective (noun adjunct) that combines with the traditional adjective 'regulatory' to modify the core noun 'manual'."
     },
     {
-      question: 'In "power failure", the word "power" is:',
-      options: ["an adjective", "a noun used as an adjective", "a verb", "an adverb"],
-      answer: "a noun used as an adjective",
-      explanation: '"Power" describes the type of failure.'
+        "question": "Which of the following professional phrases demonstrates a flawless application of a noun adjunct modifying a corporate asset?",
+        "options": ["history reference book", "historical reference book", "historically referenced book", "history referencing book"],
+        "answer": "history reference book",
+        "explanation": "'History' and 'reference' are both distinct nouns functioning as descriptive adjectives to specify the exact category of the 'book'."
     },
     {
-      question: "Which phrase does NOT use a noun as an adjective?",
-      options: ["chocolate cake", "river bank", "garden chair", "very quickly"],
-      answer: "very quickly",
-      explanation: '"Very quickly" has no noun; both are adverb and adverb marker.'
+        "question": "In the official state address regarding 'water resource management', the word 'water' directly modifies which specific component?",
+        "options": ["resource", "management", "both resource and management", "neither component"],
+        "answer": "resource",
+        "explanation": "In this stacked compound noun chain, 'water' modifies the secondary noun adjunct 'resource', which collectively modifies the master noun 'management'."
     },
     {
-      question: 'In "office worker", the word "worker" is:',
-      options: ["a noun", "a verb", "an adjective", "an adverb"],
-      answer: "a noun",
-      explanation: '"Worker" is the main noun; "office" describes it.'
+        "question": "Select the option that correctly establishes a formal noun-plus-noun compound syntax for a municipal transit vehicle:",
+        "options": ["transit rail system", "transiting rail system", "railway transited system", "system rail transit"],
+        "answer": "transit rail system",
+        "explanation": "'Transit' and 'rail' are base nouns stacked sequentially as adjectives to define the exact nature of the overarching 'system'."
     },
     {
-      question: "Which sentence uses a noun correctly as an adjective?",
-      options: [
-        "I bought a shoes sports.",
-        "I bought sports shoes.",
-        "I bought sport's shoes.",
-        "I bought sport shoeses."
-      ],
-      answer: "I bought sports shoes.",
-      explanation: '"Sports" is a noun used to describe the kind of shoes.'
-      }
+        "question": "The auditing firm noted that the corporate deficit was solved through a strict ________ stabilization framework.",
+        "options": ["two-year", "two-years", "two years'", "two year's"],
+        "answer": "two-year",
+        "explanation": "When a compound measurement noun operates as an adjective before a noun, it must be hyphenated and remain strictly singular ('two-year')."
+    },
+    {
+        "question": "In the administrative infrastructure statement 'The system suffered a massive power grid failure', the word 'power' serves as:",
+        "options": ["an inherent abstract adjective", "a noun functioning as an adjective", "a progressive verb form", "a descriptive predicate adverb"],
+        "answer": "a noun functioning as an adjective",
+        "explanation": "'Power' is fundamentally a noun, but in this context, it describes the specific type of grid system that failed, acting as a noun adjunct."
+    },
+    {
+        "question": "Which of the following phrases does NOT utilize a structural noun as an adjective modifier?",
+        "options": ["sugar plantation", "diamond industry", "leather briefcase", "exceptionally fast"],
+        "answer": "exceptionally fast",
+        "explanation": "'Exceptionally fast' contains no noun adjuncts; it is comprised purely of a traditional adverb modifying a standard descriptive adjective."
+    },
+    {
+        "question": "In the operational job description 'The senior logistics officer inspected the warehouse floor', the target word 'warehouse' is classified as:",
+        "options": ["a noun used as an adjective", "the primary objective noun", "a participle adjective", "a locative adverb marker"],
+        "answer": "a noun used as an adjective",
+        "explanation": "'Warehouse' is a noun that specifies the location type of the 'floor', thereby serving as a noun adjunct/adjective modifier."
+    },
+    {
+        "question": "Choose the most professional and grammatically precise arrangement using a noun adjunct for public safety equipment:",
+        "options": [
+            "The personnel received advanced leather safety gloves.",
+            "The personnel received advanced safety leather gloves.",
+            "The personnel received advanced gloves leather safety.",
+            "The personnel received advanced safety's leather gloves."
+        ],
+        "answer": "The personnel received advanced leather safety gloves.",
+        "explanation": "The noun adjuncts are stacked according to standard English order where material ('leather') precedes function/purpose ('safety') to modify the core noun 'gloves'."
+    }
   ],
-
-  
-
 
   
   expert: [
