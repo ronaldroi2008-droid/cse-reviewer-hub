@@ -646,313 +646,313 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   advanced: [
     // 1-10: Gender-Neutral Language
-    {
-      question: "The student lost ____ book. (Gender unknown)",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "When the student's gender is unknown, 'their' is a natural gender-neutral pronoun."
+     {
+        "question": "In contemporary public administration, when a position holder's gender is unspecified, which pronoun approach is preferred for inclusive legal drafting?",
+        "options": ["his", "their", "its", "one's"],
+        "answer": "their",
+        "explanation": "Modern grammatical standards and inclusive public policy emphasize using the singular 'their' as a gender-neutral pronoun when a subject's gender is unknown or irrelevant."
     },
     {
-      question: "If anyone calls, tell ____ I am busy.",
-      options: ["him", "her", "them", "it"],
-      answer: "them",
-      explanation: "Indefinite pronouns like 'anyone' are often followed by the singular 'them'."
+        "question": "Complete the statutory provision using modern inclusive grammar: 'If anyone calls to challenge the assessment, tell ____ that a formal appeal must be filed.'",
+        "options": ["him", "her", "them", "it"],
+        "answer": "them",
+        "explanation": "Indefinite pronouns such as 'anyone' or 'anybody' are single in intent but are widely paired with the gender-inclusive singular 'them' in modern professional contexts."
     },
     {
-      question: "Every passenger must hold ____ ticket.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "To include all genders, we can say: 'Every passenger must hold their ticket.'"
+        "question": "Apply standard policy formatting to complete this directive: 'Every passenger boarding the government transit line must present ____ valid transport pass.'",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "'Every' syntactically signals a singular group distribution, but to ensure equal gender inclusion without clunky phrasing, modern standards favor 'their'."
     },
     {
-      question: "Somebody left ____ umbrella here.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "We do not know the person's gender, so 'their umbrella' is used."
+        "question": "An administrative security report states: 'Somebody left ____ secure access token at the terminal desk.' Choose the best gender-neutral pronoun.",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "Because the identity and gender of the person are completely unverified, the inclusive pronoun 'their' is the standard choice."
     },
     {
-      question: "A good leader listens to ____ team.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "A leader may be male or female, so 'their team' is inclusive."
+        "question": "Complete the executive leadership module phrase: 'A truly objective supervisor regularly evaluates the performance metrics of ____ immediate subordinates.'",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "A supervisor can be of any gender identity; hence, 'their' keeps the executive evaluation guide entirely gender-neutral."
     },
     {
-      question: "Each candidate must submit ____ resume.",
-      options: ["his", "his or her", "their", "All of the above"],
-      answer: "All of the above",
-      explanation: "Traditional style uses 'his' or 'his or her'; modern style often prefers 'their'."
+        "question": "According to civil service guidelines on equal opportunity documentation, how should this be structured: 'Each candidate must submit ____ comprehensive credentials.'",
+        "options": ["his", "his or her", "their", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "While legacy test formats accept 'his' (traditional masculine generic) or 'his or her' (binary inclusion), modern administrative styles heavily favor 'their'."
     },
     {
-      question: "Who dropped ____ wallet?",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "We do not know who it was, so 'their' is the inclusive choice."
+        "question": "Identify the proper pronoun to complete this official inquiry sentence: 'An investigation is underway to determine who dropped ____ clearance portfolio in the hallway.'",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "The relative pronoun 'who' leaves the gender completely unestablished, necessitating the use of the plural-form singular 'their'."
     },
     {
-      question: "No one should lose ____ hope.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "We often pair 'no one' with 'their' to avoid assuming gender."
+        "question": "Complete the social welfare draft agreement: 'No one enrolled in the emergency rehabilitation program should be deprived of ____ basic civil rights.'",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "The negative indefinite pronoun 'no one' pairs efficiently with the genderless singular 'their' to ensure absolute citizen inclusion."
     },
     {
-      question: "The parent brought ____ child to school.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "'Parent' can be any gender, so 'their child' is gender-neutral."
+        "question": "A legal guardianship filing states: 'The single parent brought ____ dependent ward to the regional center for verification.' Which pronoun fits best?",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "The noun 'parent' is of common gender, meaning it encompasses both maternal and paternal figures neutrally through the word 'their'."
     },
     {
-      question: "Usually, a doctor cares for ____ patients.",
-      options: ["his", "her", "their", "its"],
-      answer: "their",
-      explanation: "Since doctors can be any gender, 'their patients' is inclusive."
-    },
-
-    // 11-20: Modern Usage
-    {
-      question: "Which term is preferred over 'Stewardess'?",
-      options: ["Flight attendant", "Air lady", "Plane host", "Steward"],
-      answer: "Flight attendant",
-      explanation: "'Flight attendant' is the standard modern, gender-neutral title."
-    },
-    {
-      question: "Instead of 'Policeman', use:",
-      options: ["Cop", "Police officer", "Patrolman", "Guard"],
-      answer: "Police officer",
-      explanation: "'Police officer' clearly describes the role without mentioning gender."
-    },
-    {
-      question: "Instead of 'Mailman', use:",
-      options: ["Mail carrier", "Postman", "Mail boy", "Letter man"],
-      answer: "Mail carrier",
-      explanation: "'Mail carrier' is a neutral term for the person delivering mail."
-    },
-    {
-      question: "Instead of 'Fireman', use:",
-      options: ["Firefighter", "Fire person", "Burner", "Rescuer"],
-      answer: "Firefighter",
-      explanation: "'Firefighter' names the job without referring to gender."
-    },
-    {
-      question: "The term 'Actor' is now often used for:",
-      options: ["Males only", "Females only", "Both males and females", "Neither"],
-      answer: "Both males and females",
-      explanation: "In modern usage, 'actor' can refer to performers of any gender."
-    },
-    {
-      question: "Neutral form of 'Mankind'?",
-      options: ["Humankind", "Man", "Humanity", "Both A and C"],
-      answer: "Both A and C",
-      explanation: "'Humankind' and 'humanity' both avoid suggesting only males."
-    },
-    {
-      question: "Instead of 'Man-made', use:",
-      options: ["Synthetic", "Artificial", "Manufactured", "All of the above"],
-      answer: "All of the above",
-      explanation: "'Synthetic', 'artificial', or 'manufactured' are all neutral alternatives."
-    },
-    {
-      question: "Instead of 'Chairman', use:",
-      options: ["Chairperson", "Chair", "Head", "All of the above"],
-      answer: "All of the above",
-      explanation: "Any of 'chairperson', 'chair', or 'head' may be used without gender reference."
-    },
-    {
-      question: "Instead of 'Forefathers', use:",
-      options: ["Ancestors", "Dads", "Old men", "History"],
-      answer: "Ancestors",
-      explanation: "'Ancestors' is neutral and includes both male and female ancestors."
-    },
-    {
-      question: "Instead of 'Businessman', use:",
-      options: ["Business person", "Executive", "Business professional", "All of the above"],
-      answer: "All of the above",
-      explanation: "All these alternatives can describe a person in business without naming gender."
+        "question": "Fill the blank in the hospital protocol manual: 'A certified attending physician must prioritize the immediate medical concerns of ____ assigned patients.'",
+        "options": ["his", "her", "their", "its"],
+        "answer": "their",
+        "explanation": "Medical professionals are not defined by binary gender expectations in modern documentation, making 'their' the standard inclusive possessive."
     },
 
-    // 21-30: Personification
+    // 11-20: Modern Occupational Designations
     {
-      question: "In poetry, the 'Sun' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Masculine",
-      explanation: "In traditional English poetry, the sun is often personified as 'he'."
+        "question": "To comply with modern gender-fair language policies in civil aviation and transport management, the historical term 'Stewardess' has been updated to:",
+        "options": ["Flight attendant", "Air host", "Cabin server", "Sky marshal"],
+        "answer": "Flight attendant",
+        "explanation": "'Flight attendant' is an institutional, gender-neutral title that describes the function rather than the gender of the employee."
     },
     {
-      question: "In poetry, the 'Moon' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Feminine",
-      explanation: "The moon is often personified as 'she' or as a feminine figure."
+        "question": "Which of the following occupational titles is preferred in modern community policing frameworks to avoid gender bias?",
+        "options": ["Policeman", "Patrolman", "Police officer", "Lawman"],
+        "answer": "Police officer",
+        "explanation": "'Police officer' effectively captures the operational rank and responsibility without specifying a male or female identity."
     },
     {
-      question: "In poetry, 'Nature' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Feminine",
-      explanation: "Nature is frequently called 'Mother Nature', so it is treated as feminine."
+        "question": "A public works logistics proposal is being revised to remove gender-restrictive terms. What should replace the word 'Mailman'?",
+        "options": ["Mail carrier", "Postman", "Letter delivery boy", "Postal clerk"],
+        "answer": "Mail carrier",
+        "explanation": "'Mail carrier' is the recognized, neutral term used to specify personnel handling postal distributions."
     },
     {
-      question: "In poetry, 'Death' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Masculine",
-      explanation: "Death is often pictured as a male figure, such as the 'grim reaper'."
+        "question": "In an municipal emergency services roster, what is the proper gender-fair replacement for the legacy term 'Fireman'?",
+        "options": ["Firefighter", "Fire protector", "Rescue operative", "Bravest operator"],
+        "answer": "Firefighter",
+        "explanation": "'Firefighter' is the standard neutral nomenclature used across modern global civil safety departments."
     },
     {
-      question: "In poetry, 'Earth' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Feminine",
-      explanation: "The Earth is commonly personified as 'Mother Earth', which is feminine."
+        "question": "In modern dramatic arts guilds and general occupational classifications, how is the term 'Actor' now comprehensively utilized?",
+        "options": ["Exclusively for male performers", "Exclusively for female performers", "For performers of any gender identity", "Only for theatrical directors"],
+        "answer": "For performers of any gender identity",
+        "explanation": "Modern industry standards trend toward using 'actor' as a gender-neutral noun for all dramatic performers, phase-shifting away from 'actress'."
     },
     {
-      question: "In poetry, 'War' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Masculine",
-      explanation: "War is often imagined as a fierce male spirit in literature."
+        "question": "A constitutional preamble draft aims to utilize gender-neutral terminology. Which alternatives are preferred instead of 'Mankind'?",
+        "options": ["Humankind", "Humanity", "Man", "Both A and B"],
+        "answer": "Both A and B",
+        "explanation": "Both 'humankind' and 'humanity' are accepted as fully inclusive terms that accurately describe the entire human species without male centricity."
     },
     {
-      question: "In poetry, 'Spring' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Feminine",
-      explanation: "Spring is sometimes pictured as a young maiden, so it is treated as feminine."
+        "question": "An environmental safety standard logs a chemical as a 'man-made' compound. What is the most precise and objective gender-neutral alternative?",
+        "options": ["Synthetic", "Artificial", "Manufactured", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "Terms like 'synthetic', 'artificial', and 'manufactured' provide neutral, technically accurate descriptors that eliminate 'man-made'."
     },
     {
-      question: "In poetry, 'Time' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Masculine",
-      explanation: "Time is personified as 'Father Time', which is masculine."
+        "question": "During a legislative panel reorganization, an official requests a gender-fair title to replace 'Chairman'. Which options are recognized as correct?",
+        "options": ["Chairperson", "Chair", "Presiding officer", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "Depending on specific internal rules, 'chairperson', 'chair', and 'presiding officer' are all valid, neutral options replacing 'chairman'."
     },
     {
-      question: "Ships/boats are traditionally:",
-      options: ["He", "She", "It", "They"],
-      answer: "She",
-      explanation: "By long tradition, ships and boats are referred to as 'she'."
+        "question": "A historical commemorative resolution mentions the 'forefathers' of the nation. What is the preferred inclusive term?",
+        "options": ["Ancestors", "Founders", "Pioneers", "All of the above depending on precision"],
+        "answer": "All of the above depending on precision",
+        "explanation": "Depending on the exact context, 'ancestors' (lineage) or 'founders/pioneers' (foundational figures) are excellent gender-fair alternatives."
     },
     {
-      question: "Countries (affectionately) are:",
-      options: ["Masculine", "Feminine", "Neuter", "Common"],
-      answer: "Feminine",
-      explanation: "People often speak of their country as 'the motherland' or 'she'."
-    },
-
-    // 31-40: Specific Animals
-    {
-      question: "Feminine of 'Boar'?",
-      options: ["Sow", "Doe", "Mare", "Hen"],
-      answer: "Sow",
-      explanation: "A 'boar' is a male pig; the female pig is called a 'sow'."
-    },
-    {
-      question: "Masculine of 'Doe'?",
-      options: ["Buck", "Bull", "Ram", "Stallion"],
-      answer: "Buck",
-      explanation: "A 'doe' is a female deer; the male deer is called a 'buck'."
-    },
-    {
-      question: "Masculine of 'Ewe'?",
-      options: ["Ram", "Buck", "Boar", "Bull"],
-      answer: "Ram",
-      explanation: "An 'ewe' is a female sheep; the male sheep is called a 'ram'."
-    },
-    {
-      question: "Feminine of 'Colt'?",
-      options: ["Filly", "Mare", "Foal", "Doe"],
-      answer: "Filly",
-      explanation: "A 'colt' is a young male horse; the young female horse is a 'filly'."
-    },
-    {
-      question: "Masculine of 'Filly'?",
-      options: ["Colt", "Foal", "Stallion", "Gelding"],
-      answer: "Colt",
-      explanation: "A 'filly' is a young female horse; the young male horse is a 'colt'."
-    },
-    {
-      question: "Neutral term for 'Ram/Ewe'?",
-      options: ["Sheep", "Goat", "Lamb", "Flock"],
-      answer: "Sheep",
-      explanation: "'Ram' and 'ewe' are male and female; the general name for the animal is 'sheep'."
-    },
-    {
-      question: "Neutral term for 'Bull/Cow'?",
-      options: ["Cattle", "Oxen", "Bovine", "All of the above"],
-      answer: "Cattle",
-      explanation: "'Bull' and 'cow' are male and female; together they are usually called 'cattle'."
-    },
-    {
-      question: "Feminine of 'Dog' (technical)?",
-      options: ["Bitch", "Dam", "Queen", "Sow"],
-      answer: "Bitch",
-      explanation: "In technical animal terminology, the female dog is called a 'bitch'."
-    },
-    {
-      question: "Masculine of 'Bitch'?",
-      options: ["Dog", "Sire", "Hound", "Wolf"],
-      answer: "Dog",
-      explanation: "In this pair, 'bitch' is the female; 'dog' is the usual word for the male."
-    },
-    {
-      question: "What is a 'Gelding'?",
-      options: ["Male horse (castrated)", "Female horse", "Young horse", "Wild horse"],
-      answer: "Male horse (castrated)",
-      explanation: "A 'gelding' is a male horse that has been castrated."
+        "question": "In commerce and trade department publications, what term should replace 'Businessman' to ensure modern professional inclusivity?",
+        "options": ["Business professional", "Business person", "Executive", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "All these expressions represent polished, non-gender-biased language suitable for modern institutional economic reports."
     },
 
-    // 41-50: Titles
+    // 21-30: Personification & Literary Gender
     {
-      question: "Feminine of 'Czar'?",
-      options: ["Czarina", "Queen", "Empress", "Duchess"],
-      answer: "Czarina",
-      explanation: "The female title corresponding to 'czar' is 'czarina'."
+        "question": "In classical literature and formal poetic personification, what grammatical gender is traditionally assigned to the 'Sun'?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Masculine",
+        "explanation": "In classical literary conventions, the sun is traditionally personified as a masculine entity ('he'), representing power and light."
     },
     {
-      question: "Masculine of 'Sultana'?",
-      options: ["Sultan", "King", "Prince", "Rajah"],
-      answer: "Sultan",
-      explanation: "'Sultana' is the female title; 'sultan' is the male ruler."
+        "question": "In literary allegories and mythological references, the 'Moon' is typically personified with which gender?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Feminine",
+        "explanation": "The moon is historically and poetically personified as feminine ('she'), often tied to classical deities like Diana or Selene."
     },
     {
-      question: "Feminine of 'Maharajah'?",
-      options: ["Maharani", "Princess", "Rani", "Lady"],
-      answer: "Maharani",
-      explanation: "The wife or female counterpart of a maharajah is a 'maharani'."
+        "question": "When an essay refers to the phrase 'Mother Nature' protecting her resources, it is employing what type of traditional gender assignment?",
+        "options": ["Masculine personification", "Feminine personification", "Neuter abstraction", "Common assignment"],
+        "answer": "Feminine personification",
+        "explanation": "'Nature' is traditionally cast as a nurturing yet powerful maternal figure, making it a classic example of feminine personification."
     },
     {
-      question: "Masculine of 'Signora'?",
-      options: ["Signor", "Sir", "Monsieur", "Senor"],
-      answer: "Signor",
-      explanation: "In Italian, 'signora' is for a woman and 'signor' is for a man."
+        "question": "In classic prose, such as the depiction of the 'Grim Reaper', what grammatical gender is conventionally assigned to 'Death'?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Masculine",
+        "explanation": "Death is conventionally personified as masculine in Western literary tradition, represented as a stern male figure or reaper."
     },
     {
-      question: "Feminine of 'Fiancé'?",
-      options: ["Fiancée", "Bride", "Wife", "Betrothed"],
-      answer: "Fiancée",
-      explanation: "'Fiancé' is a man who is engaged; 'fiancée' (two e's) is a woman who is engaged."
+        "question": "Environmental texts sometimes personify the planet to emphasize care, calling it 'Mother Earth'. This represents which gender category?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Feminine",
+        "explanation": "The planet Earth is historically and cross-culturally personified as a feminine, life-giving archetype."
     },
     {
-      question: "Masculine of 'Blonde'?",
-      options: ["Blond", "Brunette", "Dark", "Fair"],
-      answer: "Blond",
-      explanation: "'Blonde' is often used for a fair-haired woman; 'blond' (without e) is used for a man."
+        "question": "In Epic poetry and classical war records, how is 'War' conventionally personified?",
+        "options": ["As a fierce masculine force", "As a gentle feminine presence", "As a purely neuter contract", "As a common domestic concept"],
+        "answer": "As a fierce masculine force",
+        "explanation": "War is traditionally personified as a aggressive masculine figure, historically linked to deities like Mars or Ares."
     },
     {
-      question: "Feminine of 'Executor'?",
-      options: ["Executrix", "Executer", "Executioner", "Executor"],
-      answer: "Executrix",
-      explanation: "'Executrix' is the traditional feminine form of 'executor'."
+        "question": "Poetic works describing the changing seasons often depict 'Spring' as a young maiden sowing seeds. This implies what gender assignment?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Feminine",
+        "explanation": "Spring is traditionally personified as feminine, symbolizing rebirth, youth, and beauty."
     },
     {
-      question: "Masculine of 'Testatrix'?",
-      options: ["Testator", "Testament", "Tester", "Testy"],
-      answer: "Testator",
-      explanation: "A 'testator' is a man who makes a will; 'testatrix' is the older feminine form."
+        "question": "The literary trope of 'Father Time' carrying an hourglass is an explicit personification of time into which gender?",
+        "options": ["Masculine", "Feminine", "Neuter", "Common"],
+        "answer": "Masculine",
+        "explanation": "'Father Time' is a standard cultural and literary personification of time as an old, wise masculine figure."
     },
     {
-      question: "Feminine of 'Administrator'?",
-      options: ["Administratrix", "Admin", "Secretary", "Boss"],
-      answer: "Administratrix",
-      explanation: "'Administratrix' is the traditional feminine form of 'administrator'."
+        "question": "By long-standing maritime law custom and traditional naval jargon, how are deep-sea vessels formally referred to?",
+        "options": ["By masculine pronouns (he/him)", "By feminine pronouns (she/her)", "Strictly by neuter pronouns (it)", "By plural pronouns only"],
+        "answer": "By feminine pronouns (she/her)",
+        "explanation": "Maritime tradition has historically personified ships and large seafaring vessels using the feminine pronouns 'she' and 'her'."
     },
     {
-      question: "Masculine of 'Belle'?",
-      options: ["Beau", "Boy", "Handsome", "Gent"],
-      answer: "Beau",
-      explanation: "A 'belle' is a beautiful woman; her male admirer or counterpart can be called a 'beau'."
+        "question": "When a state orator affectionately refers to their nation as the 'Motherland' or claims allegiance to 'her' laws, they are using:",
+        "options": ["Masculine personification", "Feminine personification", "Neuter objective analysis", "Common designation"],
+        "answer": "Feminine personification",
+        "explanation": "Sovereign nations are frequently personified as feminine figures ('the motherland' or 'the daughter of democracy') in patriotic rhetoric."
+    },
+
+    // 31-40: Advanced & Technical Animal Nomenclature
+    {
+        "question": "An elite agricultural breeding program notes the death of a prize 'Boar'. What is the correct term for its female counterpart?",
+        "options": ["Sow", "Gilt", "Bitch", "Cow"],
+        "answer": "Sow",
+        "explanation": "A 'boar' represents the uncastrated mature male pig, and 'sow' represents the mature breeding female."
+    },
+    {
+        "question": "A forestry wildlife census logs a high population of 'Does' in the reserve. What is the specific masculine counterpart for this animal?",
+        "options": ["Buck", "Stallion", "Bull", "Ram"],
+        "answer": "Buck",
+        "explanation": "A 'doe' is a mature female deer, goat, or rabbit; its masculine counterpart is a 'buck'."
+    },
+    {
+        "question": "A livestock subsidy application requires a count of 'Ewes'. What specific animal type and gender does this track?",
+        "options": ["Male goat", "Female sheep", "Male sheep", "Young horse"],
+        "answer": "Female sheep",
+        "explanation": "An 'ewe' is a mature female sheep, whereas a 'ram' is the mature male sheep."
+    },
+    {
+        "question": "An equine pedigree database categorizes a young horse under three years old as a 'Colt'. What is the accurate term for a young female horse of the same age?",
+        "options": ["Filly", "Mare", "Foal", "Gelding"],
+        "answer": "Filly",
+        "explanation": "A 'colt' is a young male horse; a 'filly' is a young female horse. A 'foal' is generic for any newborn horse."
+    },
+    {
+        "question": "If a racehorse registry logs an animal as a 'Filly', what is the exact masculine equivalent for that developmental stage?",
+        "options": ["Colt", "Stallion", "Gelding", "Sire"],
+        "answer": "Colt",
+        "explanation": "'Filly' (young female) pairs explicitly with 'colt' (young male) before reaching adult horse classification."
+    },
+    {
+        "question": "What is the overarching, gender-neutral collective species name for the gendered pair 'Ram' and 'Ewe'?",
+        "options": ["Sheep", "Mutton", "Bovine", "Caprine"],
+        "answer": "Sheep",
+        "explanation": "'Sheep' is the common/neutral species noun, while 'ram' (male) and 'ewe' (female) designate biological gender."
+    },
+    {
+        "question": "In scientific agricultural classification, what is the overarching collective term used for the group containing 'Bulls' and 'Cows'?",
+        "options": ["Cattle", "Swine", "Equine", "Poultry"],
+        "answer": "Cattle",
+        "explanation": "'Cattle' serves as the collective neutral plural noun for domesticated bovine animals."
+    },
+    {
+        "question": "In professional canine registries (such as the AKC) and technical veterinary science, what is the specific technical term for an adult female dog?",
+        "options": ["Bitch", "Dam", "Queen", "Vixen"],
+        "answer": "Bitch",
+        "explanation": "While often avoided in casual conversation, 'bitch' remains the exact, technical, and non-offensive biological term for a female canine."
+    },
+    {
+        "question": "A specialized canine search-and-rescue team documents a 'Sire' in their pedigree chart. What is the technical counterpart term for the biological mother?",
+        "options": ["Dam", "Bitch", "Queen", "Sow"],
+        "answer": "Dam",
+        "explanation": "In technical animal breeding records, 'sire' is the biological father and 'dam' is the biological mother."
+    },
+    {
+        "question": "An equine ranch report classifies an animal as a 'Gelding'. What does this precise technical term signify?",
+        "options": ["A castrated male horse", "A young unweaned horse", "A wild unbroken female horse", "An elite breeding stallion"],
+        "answer": "A castrated male horse",
+        "explanation": "A 'gelding' is a male horse that has been castrated, changing its classification from a stallion or colt."
+    },
+
+    // 41-50: Advanced Legal Suffixes & International Titles
+    {
+        "question": "An archival text on Imperial Russian history describes the decree of a 'Czar'. What is the correct spelling for the feminine title of this ruler?",
+        "options": ["Czarina", "Czarevna", "Tsaris", "Czariss"],
+        "answer": "Czarina",
+        "explanation": "The title 'czar' (or tsar) takes the traditional feminine inflectional form 'czarina' (or tsarina)."
+    },
+    {
+        "question": "A diplomatic dispatch from an Ottoman historical archive mentions a 'Sultana'. What is the corresponding masculine sovereign title?",
+        "options": ["Sultan", "Caliph", "Emir", "Vizier"],
+        "answer": "Sultan",
+        "explanation": "'Sultana' is the feminine title or consort equivalent to the masculine ruler, the 'sultan'."
+    },
+    {
+        "question": "A state dinner program honors a foreign dignitary holding the title 'Maharajah'. What is the correct title for his sovereign female counterpart or wife?",
+        "options": ["Maharani", "Rani", "Begum", "Sultana"],
+        "answer": "Maharani",
+        "explanation": "The feminine equivalent of the South Asian princely title 'maharajah' is 'maharani'."
+    },
+    {
+        "question": "In formal legal transcription involving Italian civil status, what is the masculine counterpart to the title 'Signora'?",
+        "options": ["Signor", "Signorina", "Monsieur", "Senor"],
+        "answer": "Signor",
+        "explanation": "'Signora' is the title for a married woman, and 'signor' is the corresponding formal masculine title for a man."
+    },
+    {
+        "question": "Review the spelling rules derived from French loanwords in legal documentation: A man engaged to be married is a 'Fiancé'. What is the correct form for an engaged woman?",
+        "options": ["Fiancée", "Fiance", "Betrothed", "Bride-to-be"],
+        "answer": "Fiancée",
+        "explanation": "Loanwords from French retain gender distinctions in formal English: masculine uses one 'e' ('fiancé'), feminine uses two 'e's' ('fiancée')."
+    },
+    {
+        "question": "In formal descriptive texts, a fair-haired man is described as 'Blond'. What is the traditionally accurate spelling variant reserved for a fair-haired woman?",
+        "options": ["Blonde", "Blond", "Blondie", "Brunette"],
+        "answer": "Blonde",
+        "explanation": "In traditional adjective usage, 'blond' describes males, while 'blonde' (with an 'e') is reserved for females."
+    },
+    {
+        "question": "A probate court file notes that a woman was legally designated in a will to administer the estate. What is the traditional feminine form of 'Executor' used in legal jurisprudence?",
+        "options": ["Executrix", "Executress", "Executioner", "Administrative Agent"],
+        "answer": "Executrix",
+        "explanation": "Traditional legal language utilizes the Latinate feminine suffix '-trix', turning 'executor' into 'executrix'."
+    },
+    {
+        "question": "A civil law brief references a 'Testatrix' who drafted her final wishes before passing. What is the masculine counterpart of this legal noun?",
+        "options": ["Testator", "Testament", "Executor", "Trustee"],
+        "answer": "Testator",
+        "explanation": "A 'testator' is a man who makes a valid will; a 'testatrix' is the traditional feminine designation."
+    },
+    {
+        "question": "An older judicial archive identifies a woman managing a bankrupt entity's assets as the 'Administratrix'. What is the standard masculine form of this title?",
+        "options": ["Administrator", "Admin", "Executor", "Magistrate"],
+        "answer": "Administrator",
+        "explanation": "The masculine base title is 'administrator', paired with the traditional legal feminine form 'administratrix'."
+    },
+    {
+        "question": "In classic literary romances, a highly celebrated beautiful woman is called the 'Belle' of the ball. What is the correct term for her handsome male partner or suitor?",
+        "options": ["Beau", "Gentleman", "Knight", "Suitor"],
+        "answer": "Beau",
+        "explanation": "'Belle' stems from the French feminine word for beautiful, while 'beau' is the corresponding masculine term for a handsome male admirer or escort."
     }
   ],
 
