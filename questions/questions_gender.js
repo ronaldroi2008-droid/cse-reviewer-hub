@@ -962,316 +962,316 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   expert: [
     // 1-15: Obscure Animals
     {
-      question: "Masculine of 'Pen' (Swan)?",
-      options: ["Drake", "Cob", "Gander", "Buck"],
-      answer: "Cob",
-      explanation: "A female swan is called a 'pen'; the male swan is called a 'cob'."
+        "question": "In the statutory interpretation of government ordinances, how is the generic masculine pronoun 'he' legally construed in older civil service codes?",
+        "options": ["It is strictly limited to male civil servants.", "It is legally interpreted to encompass both male and female personnel.", "It invalidates the policy if applied to a female official.", "It applies exclusively to elected heads of agencies."],
+        "answer": "It is legally interpreted to encompass both male and female personnel.",
+        "explanation": "Under classic rules of statutory construction, masculine pronouns in historic legal texts are generically construed to include all individuals unless a specific restriction is stated."
     },
     {
-      question: "Feminine of 'Cob'?",
-      options: ["Hen", "Sow", "Pen", "Goose"],
-      answer: "Pen",
-      explanation: "A 'cob' is a male swan; the female swan is called a 'pen'."
+        "question": "To comply with executive mandates on gender-fair government documentation, which administrative title is preferred for a presiding officer?",
+        "options": ["Chairperson", "Chairman", "Chairwoman", "Presiding Man"],
+        "answer": "Chairperson",
+        "explanation": "Official Civil Service Commission (CSC) style guides strongly mandate gender-neutral titles like 'Chairperson' or 'Chair' over gender-restrictive terms."
     },
     {
-      question: "Masculine of 'Jill' (Ferret)?",
-      options: ["Jack", "Tom", "Buck", "Hob"],
-      answer: "Hob",
-      explanation: "A female ferret is a 'jill'; the male ferret is called a 'hob'."
+        "question": "An official board resolution states: 'The investigative body ________ resolved to review the operational compliance of the local agency.' Select the correct verb.",
+        "options": ["has formally", "have formally", "are formally", "were formally"],
+        "answer": "has formally",
+        "explanation": "The word 'body' operates as a collective noun acting as a single, unified entity in this context, requiring the singular verb 'has'."
     },
     {
-      question: "Feminine of 'Tod' (Fox)?",
-      options: ["Vixen", "Sow", "Doe", "Jill"],
-      answer: "Vixen",
-      explanation: "A 'tod' is a male fox; the female fox is called a 'vixen'."
+        "question": "Analyze the syntax under professional public sector communication standards: 'Every bureau director and regional head must submit ________ fiscal projection before the deadline.'",
+        "options": ["their", "his", "her", "its"],
+        "answer": "their",
+        "explanation": "Modern professional guidelines specify the use of the singular 'their' with distributive pronouns like 'every' or 'each' to ensure seamless gender inclusivity."
     },
     {
-      question: "Masculine of 'Tabby' (Cat)?",
-      options: ["Gib", "Jack", "Tom", "Boar"],
-      answer: "Tom",
-      explanation: "In traditional usage, the male cat is often called a 'tom'."
+        "question": "Apply the rule of proximity to this legal text: 'Neither the agency head nor the regional directors ________ signed the memorandum of agreement.'",
+        "options": ["have", "has", "is", "was"],
+        "answer": "have",
+        "explanation": "When using correlative conjunctions like 'neither... nor', the verb must agree with the nearer subject. 'Directors' is plural, so 'have' is correct."
     },
     {
-      question: "Feminine of 'Hart' (Red Deer)?",
-      options: ["Doe", "Roe", "Sow", "Hind"],
-      answer: "Hind",
-      explanation: "A 'hart' is an old term for a male red deer; the female is a 'hind'."
+        "question": "In administrative and legal misconduct proceedings, the term 'complainant' is classified as what type of noun?",
+        "options": ["Epicene / Common gender", "Masculine generic", "Feminine default", "Neuter abstract"],
+        "answer": "Epicene / Common gender",
+        "explanation": "An epicene or common gender noun has a single unchanged grammatical form (like 'complainant', 'witness', or 'taxpayer') but can denote either sex."
     },
     {
-      question: "Masculine of 'Hind'?",
-      options: ["Stag", "Hart", "Buck", "Bull"],
-      answer: "Hart",
-      explanation: "A 'hind' is a female red deer; the male is called a 'hart'."
+        "question": "Evaluate the structural agreement in this case summary: 'The Department of Finance, alongside its attached bureaus, issued ________ joint strategic directive.'",
+        "options": ["its", "their", "our", "his"],
+        "answer": "its",
+        "explanation": "The true grammatical subject is the singular 'Department of Finance'. Parenthetical phrases introduced by 'alongside' do not alter the singular nature of the main subject."
     },
     {
-      question: "Masculine of 'Jenny' (Donkey)?",
-      options: ["Jack", "Tom", "Dick", "Harry"],
-      answer: "Jack",
-      explanation: "A 'jenny' is a female donkey; the male donkey is called a 'jack'."
+        "question": "Under modern civil service publishing standards, which term should replace the restrictive phrase 'man-hours' in operational logs?",
+        "options": ["Staff-hours / Work-hours", "Person-time", "Labor-units", "Human-duration"],
+        "answer": "Staff-hours / Work-hours",
+        "explanation": "Gender-fair language policies in government agencies recommend replacing 'man-hours' with 'staff-hours' or 'work-hours'."
     },
     {
-      question: "Feminine of 'Billy' (Goat)?",
-      options: ["Doe", "Sow", "Nanny", "Ewe"],
-      answer: "Nanny",
-      explanation: "A 'billy' is a male goat; the female goat is called a 'nanny'."
+        "question": "A memorandum from the commission states: 'Each of the municipal units is strictly required to submit ________ localized evaluation report.'",
+        "options": ["its", "their", "his", "her"],
+        "answer": "its",
+        "explanation": "The subject of the sentence is the singular pronoun 'Each'. Therefore, the matching possessive pronoun must be the singular neuter 'its'."
     },
     {
-      question: "Masculine of 'Nanny' (Goat)?",
-      options: ["Buck", "Ram", "Bull", "Billy"],
-      answer: "Billy",
-      explanation: "A 'nanny' is a female goat; the male goat is called a 'billy'."
+        "question": "When an internal investigation refers to an anonymous whistleblower whose identity must be protected, what pronoun choice maintains objectivity?",
+        "options": ["The singular 'they/their' to maintain absolute neutrality.", "The masculine 'he/him' as the historical default.", "Alternating between 'he' and 'she' in every sentence.", "The neuter 'it/its' since the identity is unverified."],
+        "answer": "The singular 'they/their' to maintain absolute neutrality.",
+        "explanation": "Using the singular 'they' is the standard professional approach to reference a single individual whose gender is unknown or intentionally hidden."
     },
     {
-      question: "Gender of a 'Drone' (Bee)?",
-      options: ["Female", "Male", "Neuter", "Common"],
-      answer: "Male",
-      explanation: "In a hive, a 'drone' is a male bee."
+        "question": "Complete the transparency provision: 'No public officer or employee shall utilize ________ official position to secure illicit financial advantages.'",
+        "options": ["their", "his", "her", "its"],
+        "answer": "their",
+        "explanation": "The singular 'their' is widely implemented in modern statutory drafts to refer back to a singular subject ('officer or employee') without gender bias."
     },
     {
-      question: "Feminine of 'Tiercel' (Hawk)?",
-      options: ["Hen", "Sow", "Formel", "Pen"],
-      answer: "Formel",
-      explanation: "A 'tiercel' is a male hawk; the female hawk can be called a 'formel'."
+        "question": "How is an organization, corporation, or public office categorized regarding its gender properties in legal and formal texts?",
+        "options": ["Juridical person / Neuter gender", "Natural person / Common gender", "Artificial entity / Masculine generic", "Epicene unit / Feminine gender"],
+        "answer": "Juridical person / Neuter gender",
+        "explanation": "An agency or corporation is a 'juridical person' under the law and is grammatically treated as neuter, requiring pronouns like 'it' or 'its'."
     },
     {
-      question: "Masculine of 'Cygnet'?",
-      options: ["Cob", "Pen", "Drake", "None (Young Swan)"],
-      answer: "None (Young Swan)",
-      explanation: "'Cygnet' is the word for a young swan and does not indicate male or female."
+        "question": "Choose the best genderless singular pronoun assignment: 'The individual applicant appeared before the panel with ________ legal representative.'",
+        "options": ["their", "his", "her", "its"],
+        "answer": "their",
+        "explanation": "Since the gender of the applicant is not declared, the singular 'their' ensures formal precision without assuming gender."
     },
     {
-      question: "Feminine of 'Buck' (Rabbit)?",
-      options: ["Doe", "Sow", "Hen", "Vixen"],
-      answer: "Doe",
-      explanation: "A 'buck' is a male rabbit; the female rabbit is called a 'doe'."
+        "question": "Identify the option that effectively removes masculine-generic bias from: 'Every law enforcer must secure his sector.'",
+        "options": ["Law enforcers must secure their sectors.", "A law enforcer must secure their sector.", "Every law enforcer must secure his or her sector.", "All of the above are valid improvements."],
+        "answer": "All of the above are valid improvements.",
+        "explanation": "Shifting to the plural form, utilizing the singular 'their', or using 'his or her' are all recognized methods to eliminate gender bias."
     },
     {
-      question: "Masculine of 'Queen' (Cat)?",
-      options: ["King", "Sire", "Tom", "Jack"],
-      answer: "Tom",
-      explanation: "A breeding female cat may be called a 'queen'; the male cat is called a 'tom'."
-    },
-
-    // 16-30: Archaic & Foreign
-    {
-      question: "Masculine of 'Marquise'?",
-      options: ["Duke", "Earl", "Marquis", "Baron"],
-      answer: "Marquis",
-      explanation: "A 'marquise' is a noblewoman; the male title is 'marquis'."
-    },
-    {
-      question: "Feminine of 'Viceroy'?",
-      options: ["Queen", "Countess", "Lady", "Vicereine"],
-      answer: "Vicereine",
-      explanation: "The female counterpart of a 'viceroy' can be called a 'vicereine'."
-    },
-    {
-      question: "Masculine of 'Abbess'?",
-      options: ["Abbot", "Monk", "Priest", "Bishop"],
-      answer: "Abbot",
-      explanation: "An 'abbess' leads a convent of nuns; the male leader is an 'abbot'."
-    },
-    {
-      question: "Feminine of 'Prior'?",
-      options: ["Prioress", "Nun", "Sister", "Mother"],
-      answer: "Prioress",
-      explanation: "The female head of a convent corresponding to a 'prior' is a 'prioress'."
-    },
-    {
-      question: "Masculine of 'Spinster' (in traditional grammar)?",
-      options: ["Spinner", "Weaver", "Bachelor", "Husband"],
-      answer: "Bachelor",
-      explanation: "In traditional grammar pairs, an unmarried man is a 'bachelor' and an unmarried woman a 'spinster'."
-    },
-    {
-      question: "Feminine of 'Prosecutor'?",
-      options: ["Prosecuter", "Lawyer", "Attorney", "Prosecutrix"],
-      answer: "Prosecutrix",
-      explanation: "'Prosecutrix' is the older feminine form of 'prosecutor'."
-    },
-    {
-      question: "Masculine of 'Aviatrix'?",
-      options: ["Pilot", "Aviator", "Flyer", "Captain"],
-      answer: "Aviator",
-      explanation: "An 'aviatrix' is a female pilot; the traditional male term is 'aviator'."
-    },
-    {
-      question: "Feminine of 'Equerry'?",
-      options: ["Equerress", "Lady", "None/Equerry", "Dame"],
-      answer: "None/Equerry",
-      explanation: "'Equerry' is now used for both men and women, so it has no special feminine form."
-    },
-    {
-      question: "Masculine of 'Prima Donna'?",
-      options: ["Tenor", "Primo Uomo", "Singer", "Star"],
-      answer: "Primo Uomo",
-      explanation: "In opera, the male equivalent of the 'prima donna' can be called 'primo uomo'."
-    },
-    {
-      question: "Feminine of 'Alumnus'?",
-      options: ["Alumni", "Alumnae", "Graduate", "Alumna"],
-      answer: "Alumna",
-      explanation: "A male graduate is an 'alumnus'; a female graduate is an 'alumna'."
-    },
-    {
-      question: "Plural masculine of 'Alumnus'?",
-      options: ["Alumnus", "Alumni", "Alumnas", "Alumnae"],
-      answer: "Alumni",
-      explanation: "The Latin plural of 'alumnus' (masculine) is 'alumni'."
-    },
-    {
-      question: "Plural feminine of 'Alumna'?",
-      options: ["Alumnas", "Alumni", "Alumnae", "Alumnus"],
-      answer: "Alumnae",
-      explanation: "The Latin plural of 'alumna' (feminine) is 'alumnae'."
-    },
-    {
-      question: "Feminine of 'Sorcerer'?",
-      options: ["Witch", "Sorceress", "Wizard", "Warlock"],
-      answer: "Sorceress",
-      explanation: "The traditional feminine form of 'sorcerer' is 'sorceress'."
-    },
-    {
-      question: "Feminine of 'Prophet'?",
-      options: ["Seer", "Visionary", "Lady", "Prophetess"],
-      answer: "Prophetess",
-      explanation: "A female prophet can be called a 'prophetess' in older usage."
-    },
-    {
-      question: "Masculine of 'Diva'?",
-      options: ["Singer", "Tenor", "Divo", "Star"],
-      answer: "Divo",
-      explanation: "A celebrated male singer may be called a 'divo' (male form of 'diva')."
+        "question": "Complete the administrative brief using correct subject-verb syntax: 'A technical committee of senior engineers ________ currently reviewing the structural integrity of the facility.'",
+        "options": ["is", "are", "were", "have been"],
+        "answer": "is",
+        "explanation": "The true subject is the singular collective phrase 'A technical committee', not the plural object 'engineers', so it requires the singular verb 'is'."
     },
 
-    // 31-40: Complex Agreement
+    // 16-30: Archaic Titles, Legal Jurisprudence & Foreign Inflections
     {
-      question: "Agreement: 'Neither the manager nor the employees could find ____ keys.'",
-      options: ["their", "his", "her", "its"],
-      answer: "their",
-      explanation: "The nearer subject is 'employees' (plural), so 'their keys' is natural."
+        "question": "In the traditional hierarchy of peerage and European nobility, what is the masculine title that corresponds directly with 'Marquise'?",
+        "options": ["Marquis", "Earl", "Count", "Baron"],
+        "answer": "Marquis",
+        "explanation": "'Marquise' is the feminine title for a noblewoman ranking above a countess; its direct masculine counterpart is 'marquis' (or marquess)."
     },
     {
-      question: "Agreement: 'Neither the employees nor the manager could find ____ keys.'",
-      options: ["their", "his or her", "its", "our"],
-      answer: "his or her",
-      explanation: "Here the nearer subject is 'manager' (singular), so we use 'his or her'."
+        "question": "A historical text detailing colonial administration mentions the authority of the 'Viceroy'. What is the accurate feminine title for a female ruler in this position?",
+        "options": ["Vicereine", "Viceroyess", "Governor General", "Archduchess"],
+        "answer": "Vicereine",
+        "explanation": "The title 'viceroy' (a colonial governor representing a sovereign) takes the distinct feminine form 'vicereine'."
     },
     {
-      question: "Agreement: 'The jury gave ____ verdict.'",
-      options: ["their", "his", "its", "her"],
-      answer: "its",
-      explanation: "When we treat 'jury' as one unit, we use the singular pronoun 'its'."
+        "question": "An ecclesiastical court record is signed by the 'Abbess' of the convent. What is the corresponding title for the male head of an abbey?",
+        "options": ["Abbot", "Prior", "Friar", "Monk"],
+        "answer": "Abbot",
+        "explanation": "An 'abbot' is the male superior of a monastery, matching the feminine 'abbess' who leads a convent."
     },
     {
-      question: "Agreement: 'The jury were divided in ____ opinions.'",
-      options: ["its", "his", "her", "their"],
-      answer: "their",
-      explanation: "Here 'jury' is seen as individuals, so we use the plural 'their opinions'."
+        "question": "If a religious house or order is headed by a 'Prior', what is the traditionally correct title given to his female counterpart?",
+        "options": ["Prioress", "Mother Superior", "Abbess", "Deaconess"],
+        "answer": "Prioress",
+        "explanation": "A 'prior' is a monastic official ranking just below an abbot; his direct female equivalent is a 'prioress'."
     },
     {
-      question: "'Gentle reader' addresses:",
-      options: ["Men only", "Both genders", "Women only", "Critics"],
-      answer: "Both genders",
-      explanation: "The phrase 'gentle reader' is a polite form of address to all readers."
+        "question": "In classical philology, why is the single legal status pair 'Bachelor' and 'Spinster' unique in historical English grammar?",
+        "options": ["They are complete heteronyms with distinct roots", "They represent an inflectional suffix change", "They are inherently gender-neutral", "They are semantic loans from Latin"],
+        "answer": "They are complete heteronyms with distinct roots",
+        "explanation": "'Bachelor' and 'spinster' are heteronyms—words with completely different etymological roots used to express a gendered pair, rather than modifying a shared root."
     },
     {
-      question: "Which is an 'epicene' noun?",
-      options: ["King", "Queen", "Teacher", "Boy"],
-      answer: "Teacher",
-      explanation: "An epicene noun like 'teacher' has one form for both sexes."
+        "question": "A formal indictment from an early legal archive refers to the state's female legal counsel as the 'Prosecutrix'. This is an example of which linguistic suffix rule?",
+        "options": ["The Latinate feminine agent suffix '-trix'", "The Anglo-Saxon occupational suffix", "The French diminutive inflection", "The generic epicene assignment"],
+        "answer": "The Latinate feminine agent suffix '-trix'",
+        "explanation": "The Latinate suffix '-trix' denotes a female agent or doer, making 'prosecutrix' the historical feminine inflection of 'prosecutor'."
     },
     {
-      question: "Gender of 'Baby' (unknown sex)?",
-      options: ["Masculine", "Feminine", "Common", "Neuter (It)"],
-      answer: "Neuter (It)",
-      explanation: "In traditional grammar, if we do not know whether the baby is a boy or a girl, we may refer to the baby as 'it', which is treated as neuter."
+        "question": "A historical exhibition commemorates an 'Aviatrix' who broke flight records in 1930. What is the standard base masculine form of this noun?",
+        "options": ["Aviator", "Pilot", "Captain", "Navigator"],
+        "answer": "Aviator",
+        "explanation": "'Aviatrix' is the traditional feminine inflection of 'aviator', which represents a male aircraft pilot."
     },
     {
-      question: "'Man is mortal' refers to:",
-      options: ["Specific masculine", "Neuter", "Generic masculine (Humanity)", "Adjective"],
-      answer: "Generic masculine (Humanity)",
-      explanation: "Here 'man' stands for 'human beings in general', not only males."
+        "question": "An official protocol guide outlines the administrative duties of an 'Equerry'. What is the correct modern feminine form of this title?",
+        "options": ["None / Equerry functions as an epicene title", "Equerress", "Lady-in-waiting", "Maid of Honor"],
+        "answer": "None / Equerry functions as an epicene title",
+        "explanation": "'Equerry' (an officer of a royal household) has transitioned into an epicene or gender-neutral title, utilizing the exact same form for both men and women."
     },
     {
-      question: "Which avoids bias?",
-      options: [
-        "A nurse must be patient with his patients.",
-        "Nurses must be patient with their patients.",
-        "A nurse must be patient with her patients.",
-        "A nurse must be patient with its patients."
-      ],
-      answer: "Nurses must be patient with their patients.",
-      explanation: "Using the plural 'nurses' and 'their' avoids assuming that all nurses are male or female."
+        "question": "In classical operatic production hierarchies, the leading female singer is designated the 'Prima Donna'. What is the exact traditional title for the leading male singer?",
+        "options": ["Primo Uomo", "Tenor", "Maestro", "Baritone"],
+        "answer": "Primo Uomo",
+        "explanation": "In traditional Italian operatic structures, the principal male singer is titled 'primo uomo', which pairs directly with the feminine 'prima donna'."
     },
     {
-      question: "Pronoun 'one' is:",
-      options: ["Masculine", "Feminine", "Neuter", "Gender neutral"],
-      answer: "Gender neutral",
-      explanation: "The pronoun 'one' can refer to any person and does not mark gender."
+        "question": "An institutional university decree honors a single female graduate. Which specific Latin loanword must be utilized in formal certification?",
+        "options": ["Alumna", "Alumnus", "Alumni", "Alumnae"],
+        "answer": "Alumna",
+        "explanation": "A single female graduate is an 'alumna'. A single male graduate is an 'alumnus'."
+    },
+    {
+        "question": "A university advancement office invites a group consisting entirely of male graduates to an annual gala. What is the correct Latin plural form?",
+        "options": ["Alumni", "Alumnae", "Alumnas", "Alumnuses"],
+        "answer": "Alumni",
+        "explanation": "In Latin inflection, 'alumni' is the plural for a group of male graduates (or a mixed-gender group), while 'alumnae' is strictly for a group of female graduates."
+    },
+    {
+        "question": "A prestigious all-women's college issues a newsletter addressed to its former graduates. What is the correct plural feminine noun?",
+        "options": ["Alumnae", "Alumni", "Alumnas", "Alumna"],
+        "answer": "Alumnae",
+        "explanation": "'Alumnae' is the grammatically correct feminine plural inflection for an all-female group of graduates."
+    },
+    {
+        "question": "A folklore studies dissertation traces the linguistic history of occult nouns. What is the exact feminine inflectional form of 'Sorcerer'?",
+        "options": ["Sorceress", "Witch", "Hag", "Enchantress"],
+        "answer": "Sorceress",
+        "explanation": "'Sorceress' is formed via the traditional inflectional suffix '-ess' added to the masculine agent base 'sorcerer'."
+    },
+    {
+        "question": "An ancient theological commentary mentions the pronouncements of a 'Prophetess'. What is the base masculine form of this word?",
+        "options": ["Prophet", "Seer", "Oracle", "Clairvoyant"],
+        "answer": "Prophet",
+        "explanation": "'Prophetess' is the traditional feminine variant generated by adding the suffix '-ess' to the masculine noun 'prophet'."
+    },
+    {
+        "question": "A music critic praises a celebrated male operatic star by calling him a 'Divo'. This term functions as the direct masculine form of which popular noun?",
+        "options": ["Diva", "Prima Donna", "Virtuoso", "Maestro"],
+        "answer": "Diva",
+        "explanation": "'Divo' is the grammatically correct masculine counterpart to 'diva', used to describe a distinguished male performer."
     },
 
-    // 41-50: Trivia
+    // 31-40: Advanced Syntactical Agreement & Linguistic Classifications
     {
-      question: "Suffix '-ess' (as in 'princess') came mainly from:",
-      options: ["German", "French/Latin", "Greek", "Spanish"],
-      answer: "French/Latin",
-      explanation: "Many feminine endings in '-ess' in English came through French from Latin."
+        "question": "Analyze the correlative conjunction structure: 'Neither the executive director nor the regional branch managers surrendered ____ operational authority.'",
+        "options": ["their", "his", "her", "its"],
+        "answer": "their",
+        "explanation": "Under the rule of proximity for correlative conjunctions ('neither... nor'), the pronoun must agree with the closer subject. 'Managers' is plural, requiring 'their'."
     },
     {
-      question: "Suffix '-ster' (as in 'spinster') was originally:",
-      options: ["Masculine", "Neuter", "Feminine", "Common"],
-      answer: "Feminine",
-      explanation: "Historically, '-ster' was a feminine agent ending, as in 'spinster'."
+        "question": "Evaluate this flipped structure: 'Neither the regional branch managers nor the executive director surrendered ____ operational authority.'",
+        "options": ["his or her", "their", "its", "our"],
+        "answer": "his or her",
+        "explanation": "Applying the rule of proximity, the closer subject is now 'executive director' (singular common gender), which traditionally requires the singular possessive phrase 'his or her'."
     },
     {
-      question: "Which word is sometimes applied metaphorically to males, even though it is female in origin?",
-      options: ["Bull", "Ram", "Stag", "Siren"],
-      answer: "Siren",
-      explanation: "A 'siren' is a female figure in myth, but the word can be used figuratively for seductive males too."
+        "question": "Determine the correct pronoun agreement for a collective noun acting as a single, unified entity: 'The audit committee delivered ____ final report to the board.'",
+        "options": ["its", "their", "his", "her"],
+        "answer": "its",
+        "explanation": "When a collective noun acts as a singular, harmonious unit, it takes a singular neuter pronoun ('its')."
     },
     {
-      question: "'Widower' is unusual because:",
-      options: ["It is shorter", "No feminine form exists", "It derives from the feminine form", "It comes from Latin"],
-      answer: "It derives from the feminine form",
-      explanation: "The male form 'widower' is built from the base 'widow', which is originally feminine."
+        "question": "Analyze the shift in this sentence: 'The audit committee were completely split in ____ individual assessments of the corporate ledger.'",
+        "options": ["their", "its", "his", "her"],
+        "answer": "their",
+        "explanation": "When a collective noun implies that members are acting as individuals with dissenting views, the noun functions as a plural entity, requiring the plural pronoun 'their'."
     },
     {
-      question: "English mainly uses which type of gender system?",
-      options: ["Grammatical gender", "Common gender", "No gender", "Natural gender"],
-      answer: "Natural gender",
-      explanation: "English usually follows natural gender, based on real-world sex rather than word endings."
+        "question": "In classical literature and historic editorial prefaces, the archaic vocative phrase 'Gentle reader' functions as a:",
+        "options": ["Gender-neutral or epicene address", "Strictly masculine address", "Strictly feminine address", "Neuter abstract classification"],
+        "answer": "Gender-neutral or epicene address",
+        "explanation": "'Gentle reader' was used by early authors as a polite, universal address encompassing readers of any gender."
     },
     {
-      question: "Which ship name below is treated as masculine by its name, even though ships are usually 'she'?",
-      options: ["The Titanic", "The Bismarck", "The Queen Mary", "The Elizabeth"],
-      answer: "The Bismarck",
-      explanation: "The warship 'Bismarck' is named after a male statesman, though ships are still referred to as 'she'."
+        "question": "What is the precise linguistic definition of an 'epicene' noun in grammatical gender analysis?",
+        "options": ["A noun that has a single immutable grammatical form but can denote either sex", "A noun that changes its suffix depending on biological sex", "A noun reserved entirely for inanimate objects", "A noun derived from an etymological loan translation"],
+        "answer": "A noun that has a single immutable grammatical form but can denote either sex",
+        "explanation": "An epicene noun (like 'teacher', 'doctor', or 'parent') has one set grammatical form but applies equally to males and females without morphological change."
     },
     {
-      question: "Masculine of 'Amazon'?",
-      options: ["Warrior", "Soldier", "No specific equivalent", "Spartan"],
-      answer: "No specific equivalent",
-      explanation: "There is no exact male counterpart to 'Amazon' in traditional usage."
+        "question": "In rigorous traditional grammar frameworks, if a sentence references a 'baby' or 'infant' of completely unstated sex, what pronoun assignment is structurally permissible?",
+        "options": ["Neuter pronoun (it/its)", "Masculine generic (he/his)", "Feminine generic (she/her)", "Plural only (they/their)"],
+        "answer": "Neuter pronoun (it/its)",
+        "explanation": "Traditional English grammar permits treating a young child or animal of unknown sex as grammatically neuter, using 'it' or 'its'."
     },
     {
-      question: "'Hero' today is often treated as:",
-      options: ["Masculine only", "Common gender", "Neuter", "Archaic"],
-      answer: "Common gender",
-      explanation: "In modern English, 'hero' is sometimes used for any brave person, not only males."
+        "question": "Examine the philosophical aphorism: 'Man is a political animal by nature.' The word 'Man' functions here as a:",
+        "options": ["Generic masculine noun representing all humanity", "Specific masculine noun excluding females", "Neuter abstraction", "Grammatical epicene inflection"],
+        "answer": "Generic masculine noun representing all humanity",
+        "explanation": "The generic masculine utilizes masculine nouns ('Man' or 'mankind') to semantically encompass the entire human race, regardless of sex."
     },
     {
-      question: "Feminine of 'Tsar'?",
-      options: ["Tsara", "Queen", "Duchess", "Tsarina"],
-      answer: "Tsarina",
-      explanation: "The female title corresponding to 'tsar' is 'tsarina'."
+        "question": "Identify the sentence that structurally eliminates gender-restrictive bias while maintaining standard formal agreement:",
+        "options": [
+            "Nurses must remain vigilant with their patients.",
+            "A nurse must remain vigilant with her patients.",
+            "A nurse must remain vigilant with his patients.",
+            "A nurse must remain vigilant with its patients."
+        ],
+        "answer": "Nurses must remain vigilant with their patients.",
+        "explanation": "Converting the sentence to a plural format ('nurses' and 'their') is the most elegant way to avoid gender-biased assumptions or awkward singular phrasing."
     },
     {
-      question: "Why is Justice often shown as a woman with scales?",
-      options: ["Greek God Zeus", "Random choice", "Roman Goddess Justitia", "Because of judges"],
-      answer: "Roman Goddess Justitia",
-      explanation: "The image comes from the Roman goddess Justitia, who symbolizes justice."
+        "question": "From a structural standpoint, the indefinite pronoun 'one' is classified as:",
+        "options": ["Gender-neutral/indefinite", "Masculine default", "Feminine default", "Neuter objective"],
+        "answer": "Gender-neutral/indefinite",
+        "explanation": "The pronoun 'one' is an indefinite, impersonal pronoun that does not convey any gender properties, rendering it completely neutral."
+    },
+
+    // 41-50: Historical Linguistics, Etymology & Grammatical Trivia
+    {
+        "question": "From which linguistic source did English primarily inherit the feminine word-forming suffix '-ess' (as seen in 'actress' or 'princess')?",
+        "options": ["Old French (via Latin and Greek)", "Old Norse", "Proto-Germanic", "Celtic dialects"],
+        "answer": "Old French (via Latin and Greek)",
+        "explanation": "The suffix '-ess' entered Middle English via Old French borrowings, tracing back through Latin '-issa' to the Greek '-issa'."
+    },
+    {
+        "question": "In Old English historical linguistics, the suffix '-ster' (found in words like 'spinster' or 'brewster') originally signified:",
+        "options": ["A female agent or doer of an action", "A masculine occupational rank", "A neuter tool or implement", "A collective plural noun"],
+        "answer": "A female agent or doer of an action",
+        "explanation": "In Anglo-Saxon or Old English, '-ster' was a feminine suffix denoting a female worker (e.g., a female spinner was a spinster). It later shifted in meaning."
+    },
+    {
+        "question": "Which of the following nouns has a mythological feminine origin but is occasionally applied metaphorically to describe individuals regardless of sex?",
+        "options": ["Siren", "Harpy", "Fury", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "'Siren', 'harpy', and 'fury' are all gendered female creatures from classical mythology that are now used metaphorically in modern prose."
+    },
+    {
+        "question": "Why is the word 'Widower' considered a morphological anomaly in English gender etymology?",
+        "options": ["The masculine form is derived by adding a suffix to an originally feminine base word", "It contains no vowels in its root suffix", "It has no corresponding singular equivalent", "It is an uninflected loan from high German"],
+        "answer": "The masculine form is derived by adding a suffix to an originally feminine base word",
+        "explanation": "English usually forms feminine words by adding suffixes to a masculine base (e.g., waiter -> waitress). 'Widower' is a rare exception where the masculine word is formed by adding '-er' to the feminine base 'widow'."
+    },
+    {
+        "question": "Modern English does not assign grammatical genders to nouns based on word endings like Spanish or German do. Instead, it operates on a system of:",
+        "options": ["Natural gender", "Morphological gender inflection", "Arbitrary lexical gender", "Phonological gender categorization"],
+        "answer": "Natural gender",
+        "explanation": "English utilizes a natural gender system, meaning pronouns and gender distinctions match the actual biological sex of the entity rather than grammatical rules governing word endings."
+    },
+    {
+        "question": "The German warship 'Bismarck' was famously referred to using masculine pronouns ('he') by its captain, Ernst Lindemann. This historical exception demonstrates a violation of which maritime custom?",
+        "options": ["The traditional feminine personification of seafaring vessels", "The neuter classification of military hardware", "The epicene nature of battleship registry names", "The masculine default of merchant fleets"],
+        "answer": "The traditional feminine personification of seafaring vessels",
+        "explanation": "Ships are traditionally personified as feminine ('she/her'). Captain Lindemann defied this custom by calling the Bismarck 'he' due to its immense power."
+    },
+    {
+        "question": "In classical historical accounts, what is the exact, gender-specific masculine equivalent to the noun 'Amazon'?",
+        "options": ["There is no specific masculine etymological equivalent", "Gargarean", "Centaur", "Spartan"],
+        "answer": "There is no specific masculine etymological equivalent",
+        "explanation": "The term 'Amazon' specifically denotes a member of a legendary race of female warriors, and it possesses no formal masculine etymological counter-noun."
+    },
+    {
+        "question": "In contemporary lexicography and modern dictionary definitions, how is the noun 'Hero' categorized regarding gender properties?",
+        "options": ["It is increasingly treated as an epicene or common gender noun", "It is strictly restricted to masculine individuals", "It has been replaced completely by neuter adjectives", "It remains an uninflected feminine variant"],
+        "answer": "It is increasingly treated as an epicene or common gender noun",
+        "explanation": "Modern English increasingly treats 'hero' as a common gender or epicene noun that applies to any brave person, reducing the use of 'heroine'."
+    },
+    {
+        "question": "A study of Slavic royal lineage references a monarch's wife as a 'Tsarina'. Which of the following represents an alternate, linguistically accurate spelling of this title?",
+        "options": ["Czarina", "Tsaritsa", "Both A and B", "Tsarevna"],
+        "answer": "Both A and B",
+        "explanation": "The feminine title can be spelled 'czarina' or 'tsarina' in English, and it is derived from the Russian form 'tsaritsa'. 'Tsarevna' refers specifically to a tsar's daughter."
+    },
+    {
+        "question": "The allegorical figure of 'Lady Justice' holding a sword and scales is an iconic legal symbol derived directly from:",
+        "options": ["The Roman Goddess Justitia", "A legislative decree by the British Parliament", "An illustration in the Magna Carta", "The Greek Goddess Aphrodite"],
+        "answer": "The Roman Goddess Justitia",
+        "explanation": "The personification of justice as a blindfolded woman with scales is inherited from Justitia, the ancient Roman goddess of justice and moral law."
     }
-  ]
+]
 };
 
