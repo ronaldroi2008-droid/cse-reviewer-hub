@@ -1003,313 +1003,378 @@ advanced: [
   
   expert: [
     // 1-10: Noun Functions
-    {
-      question: 'In the phrase "the old wooden bridge", which word is the head noun?',
-      options: ["the", "old", "wooden", "bridge"],
-      answer: "bridge",
-      explanation: '"Bridge" is the head noun; the others describe it.'
+      {
+        "question": "In the administrative mandate 'The newly appointed regional director's highly controversial executive decision', which component functions as the true head noun?",
+        "options": ["director's", "decision", "mandate", "executive"],
+        "answer": "decision",
+        "explanation": "'Decision' is the core head noun of the complex noun phrase; all preceding elements act as phrases, possessives, or modifiers that describe it."
     },
     {
-      question: 'Identify the function of "cake" in: "She baked a cake."',
-      options: ["Subject", "Direct Object", "Indirect Object", "Predicate Nominative"],
-      answer: "Direct Object",
-      explanation: 'It receives the action of baking directly.'
+        "question": "Identify the exact grammatical function of the bolded noun clause in: 'The audit committee considers **what the regional office declared** a major miscalculation.'",
+        "options": ["Direct Object", "Indirect Object", "Object Complement", "Subject"],
+        "answer": "Direct Object",
+        "explanation": "The noun clause 'what the regional office declared' receives the action of the transitive verb 'considers' directly, serving as its direct object."
     },
     {
-      question: 'Identify the function of "teacher" in: "He is a teacher."',
-      options: ["Subject", "Direct Object", "Indirect Object", "Predicate Nominative"],
-      answer: "Predicate Nominative",
-      explanation: 'It follows a linking verb (is) and renames the subject.'
+        "question": "In the civil court ruling, 'The magistrate declared the previous bidding process a complete nullity', the noun phrase 'a complete nullity' functions as:",
+        "options": ["Predicate Nominative", "Direct Object", "Object Complement", "Indirect Object"],
+        "answer": "Object Complement",
+        "explanation": "'A complete nullity' is an object complement because it follows the direct object ('bidding process') to rename and complete its meaning after a verb of making or declaring."
     },
     {
-      question: 'Identify the function of "John" in: "She gave John a book."',
-      options: ["Subject", "Direct Object", "Indirect Object", "Object of Preposition"],
-      answer: "Indirect Object",
-      explanation: 'John is the recipient of the direct object (book).'
+        "question": "Identify the structural function of the noun 'prosecutor' in the following sentence: 'The ombudsman provided the senior prosecutor a detailed matrix of the financial anomalies.'",
+        "options": ["Direct Object", "Indirect Object", "Object of the Preposition", "Retained Object"],
+        "answer": "Indirect Object",
+        "explanation": "The noun 'prosecutor' is the indirect object because it names the recipient to whom the direct object ('matrix') was provided."
     },
     {
-      question: 'In "The dog in the yard barked", "yard" is the:',
-      options: ["Subject", "Direct Object", "Object of the Preposition", "Appositive"],
-      answer: "Object of the Preposition",
-      explanation: 'It follows the preposition "in".'
+        "question": "In the technical report, 'The discrepancy in the automated liquidation records triggered an immediate internal inquiry', the noun 'records' is operating as:",
+        "options": ["Subject", "Direct Object", "Object of a Preposition", "Appositive Modifier"],
+        "answer": "Object of a Preposition",
+        "explanation": "'Records' follows and is governed by the preposition 'in', making it the object of the preposition within the prepositional phrase."
     },
     {
-      question: 'Identify the Subject: "Under the bridge lived a troll."',
-      options: ["Under", "bridge", "lived", "troll"],
-      answer: "troll",
-      explanation: 'The sentence is inverted. The troll is the one living.'
+        "question": "Identify the absolute grammatical Subject of this inverted sentence: 'Amidst intense public scrutiny and structural reforms, down from the executive penthouse marched the embattled board members.'",
+        "options": ["scrutiny", "reforms", "penthouse", "members"],
+        "answer": "members",
+        "explanation": "Despite the inverted syntax where adverbial phrases open the sentence, 'members' is the actual subject performing the action of the verb 'marched'."
     },
     {
-      question: 'Identify the Direct Object: "The committee elected him chairman."',
-      options: ["committee", "elected", "him", "chairman"],
-      answer: "him",
-      explanation: '"Him" receives the action of electing.'
+        "question": "In the administrative text, 'The board of trustees appointed him Officer-in-Charge during the transition period', what is the function of the pronoun 'him'?",
+        "options": ["Subject Complement", "Indirect Object", "Direct Object", "Objective Retainer"],
+        "answer": "Direct Object",
+        "explanation": "The pronoun 'him' undergoes the direct action of the transitive verb 'appointed', while 'Officer-in-Charge' functions as its object complement."
     },
     {
-      question: 'In "They elected him chairman", "chairman" is the:',
-      options: ["Direct Object", "Indirect Object", "Object Complement", "Subject"],
-      answer: "Object Complement",
-      explanation: '"Chairman" renames or describes the direct object "him".'
+        "question": "What grammatical role does the noun phrase 'an absolute prerequisite' fulfill in: 'For aspiring civil servants, passing the eligibility examination remains an absolute prerequisite.'",
+        "options": ["Direct Object", "Predicate Nominative", "Object Complement", "Appositive Noun"],
+        "answer": "Predicate Nominative",
+        "explanation": "The phrase follows the linking verb 'remains' and renames the subject gerund phrase 'passing the eligibility examination', making it a predicate nominative."
     },
     {
-      question: 'Identify the Predicate Nominative: "My favorite sport is swimming."',
-      options: ["My", "favorite", "sport", "swimming"],
-      answer: "swimming",
-      explanation: 'It renames the subject after a linking verb.'
+        "question": "Determine the function of the noun 'agency' in the following corporate resolution: 'The primary concern of the department is the agency's operational stability.'",
+        "options": ["Subject", "Predicate Nominative", "Possessive Noun Modifier", "Direct Object"],
+        "answer": "Possessive Noun Modifier",
+        "explanation": "The noun 'agency's' contains a possessive clitic ('s) used to modify the noun 'stability', indicating ownership or relation."
     },
     {
-      question: 'Identify the Indirect Object: "Throw me the ball."',
-      options: ["Throw", "me", "the", "ball"],
-      answer: "me",
-      explanation: '"Me" is the one receiving the ball.'
-    },
-
-    // 11-20: Gerunds
-    {
-      question: "Which word is a Gerund acting as a noun?",
-      options: ["running (verb)", "run", "Running (is fun)", "ran"],
-      answer: "Running (is fun)",
-      explanation: 'In "Running is fun", running acts as the subject.'
-    },
-    {
-      question: 'Identify the gerund: "I enjoy reading."',
-      options: ["I", "enjoy", "reading", "none"],
-      answer: "reading",
-      explanation: '"Reading" is a noun form derived from a verb.'
-    },
-    {
-      question: 'In "Swimming is good exercise", "Swimming" functions as:',
-      options: ["Verb", "Adjective", "Noun (Subject)", "Adverb"],
-      answer: "Noun (Subject)",
-      explanation: 'It is the subject of the sentence.'
-    },
-    {
-      question: 'Identify the Gerund Phrase: "Eating vegetables is healthy."',
-      options: ["Eating", "Eating vegetables", "is healthy", "vegetables"],
-      answer: "Eating vegetables",
-      explanation: 'The whole phrase acts as the subject.'
-    },
-    {
-      question: "Which sentence contains a gerund?",
-      options: ["He is sleeping.", "Sleeping is vital.", "He sleeps well.", "I will sleep."],
-      answer: "Sleeping is vital.",
-      explanation: '"Sleeping" is the subject (noun).'
-    },
-    {
-      question: 'Function of the gerund in: "He hates waiting."',
-      options: ["Subject", "Direct Object", "Predicate Nominative", "Appositive"],
-      answer: "Direct Object",
-      explanation: 'It receives the action of hating.'
-    },
-    {
-      question: 'Function of the gerund in: "Her passion is dancing."',
-      options: ["Subject", "Direct Object", "Predicate Nominative", "Object of Preposition"],
-      answer: "Predicate Nominative",
-      explanation: 'Renames the subject "passion".'
-    },
-    {
-      question: 'Function of the gerund in: "He is afraid of flying."',
-      options: ["Subject", "Direct Object", "Object of Preposition", "Indirect Object"],
-      answer: "Object of Preposition",
-      explanation: 'Follows the preposition "of".'
-    },
-    {
-      question: "Which word is NOT a noun?",
-      options: ["Freedom", "Flying (in 'Flying is safe')", "Quickly", "Decision"],
-      answer: "Quickly",
-      explanation: '"Quickly" is an adverb.'
-    },
-    {
-      question: "Is 'Walking' a noun in: 'The walking dead'?",
-      options: ["Yes", "No, it's an adjective (participle)", "No, it's a verb", "Maybe"],
-      answer: "No, it's an adjective (participle)",
-      explanation: 'Here it describes the dead, so it acts as an adjective.'
+        "question": "In the passive voice restructuring, 'The designated committee was granted full executive authority by the council', the phrase 'full executive authority' functions as a/an:",
+        "options": ["Retained Object", "Indirect Object", "Subject Modifier", "Predicate Nominative"],
+        "answer": "Retained Object",
+        "explanation": "When an active sentence with an indirect and direct object is made passive, the object that remains a direct object ('authority') is called a retained object."
     },
 
-    // 21-30: Compound Nouns
+    // 11-20: Gerunds vs. Participles (Complex Verbal Nominalizations)
     {
-      question: "Which is a closed compound noun?",
-      options: ["ice cream", "mother-in-law", "toothpaste", "post office"],
-      answer: "toothpaste",
-      explanation: 'Written as one word.'
+        "question": "Which of the following sentences features an -ing verbal form acting strictly as a nominal Subject?",
+        "options": [
+            "The clearing agent is verifying the shipment manifests at the dock.",
+            "Clearing the structural deficits proved to be an arduous administrative challenge.",
+            "The clearing team presented their comprehensive liquidation report.",
+            "Having cleared the backlog, the operations manager closed the portal."
+        ],
+        "answer": "Clearing the structural deficits proved to be an arduous administrative challenge.",
+        "explanation": "'Clearing' is a gerund heading the phrase that serves as the noun subject of the main verb 'proved'."
     },
     {
-      question: "Which is a hyphenated compound noun?",
-      options: ["basketball", "full moon", "check-in", "swimming pool"],
-      answer: "check-in",
-      explanation: 'Uses a hyphen.'
+        "question": "Identify the precise grammatical function of the gerund phrase in: 'The executive committee strongly recommends suspending all non-essential travel protocols.'",
+        "options": ["Subject", "Direct Object", "Predicate Nominative", "Appositive"],
+        "answer": "Direct Object",
+        "explanation": "The gerund phrase 'suspending all non-essential travel protocols' serves as the direct object of the transitive verb 'recommends'."
     },
     {
-      question: "Which is an open compound noun?",
-      options: ["firefly", "bus stop", "dry-cleaning", "bedroom"],
-      answer: "bus stop",
-      explanation: 'Written as two separate words.'
+        "question": "In the strategic proposal, 'Our immediate operational priority is optimizing the supply chain grid', the verbal 'optimizing' functions as a/an:",
+        "options": ["Participle modifying priority", "Gerund functioning as a Predicate Nominative", "Action verb in the progressive aspect", "Gerund functioning as an Object Complement"],
+        "answer": "Gerund functioning as a Predicate Nominative",
+        "explanation": "'Optimizing' is a gerund that renames the subject 'priority' after the linking verb 'is'; it is not a progressive verb because the subject itself is not conducting the physical act of optimizing."
     },
     {
-      question: "Plural of 'mother-in-law':",
-      options: ["mother-in-laws", "mothers-in-law", "mothers-in-laws", "mother-in-law"],
-      answer: "mothers-in-law",
-      explanation: 'Pluralize the main noun (mother).'
+        "question": "Analyze the function of the bolded phrase: '**Implementing strict fiscal discipline** saved the local municipality from corporate bankruptcy.'",
+        "options": ["Gerund Phrase acting as Subject", "Participial Phrase acting as Adjective", "Noun Clause acting as Subject", "Infinitive Phrase acting as Adverb"],
+        "answer": "Gerund Phrase acting as Subject",
+        "explanation": "The entire phrase functions as the singular noun subject that initiates the action of the verb 'saved'."
     },
     {
-      question: "Plural of 'passer-by':",
-      options: ["passer-bys", "passers-by", "passers-bys", "passer-bies"],
-      answer: "passers-by",
-      explanation: 'Pluralize the main person (passer).'
+        "question": "Which of the following sentences utilizes the verbal form 'monitoring' as a traditional participle adjective rather than a nominal gerund?",
+        "options": [
+            "Monitoring compliance guidelines is a key responsibility of the unit.",
+            "The division dedicated its entire budget to automated monitoring.",
+            "The team introduced new software for monitoring network security.",
+            "The monitoring committee submitted its final evaluation report to the board."
+        ],
+        "answer": "The monitoring committee submitted its final evaluation report to the board.",
+        "explanation": "In this specific instance, 'monitoring' directly modifies the noun 'committee', classifying it as a participial adjective, not a gerund."
     },
     {
-      question: "Plural of 'spoonful':",
-      options: ["spoonsful", "spoonfuls", "spoons-ful", "spoonsfuls"],
-      answer: "spoonfuls",
-      explanation: 'For measurement amounts ending in -ful, add s at the end.'
+        "question": "Identify the function of the gerund phrase in: 'The team succeeded by integrating automated scripts into the system grid.'",
+        "options": ["Direct Object", "Object of a Preposition", "Subject Complement", "Appositive"],
+        "answer": "Object of a Preposition",
+        "explanation": "The gerund phrase follows the preposition 'by', making it the object of the preposition used to denote the manner of success."
     },
     {
-      question: "Plural of 'attorney-at-law':",
-      options: ["attorney-at-laws", "attorneys-at-law", "attorneys-at-laws", "attorney-at-law"],
-      answer: "attorneys-at-law",
-      explanation: 'Pluralize the main noun (attorney).'
+        "question": "In the corporate memorandum, 'Her primary administrative duty, evaluating field performance reports, requires extensive travel', the gerund phrase functions as a/an:",
+        "options": ["Direct Object", "Predicate Nominative", "Appositive Phrase", "Objective Complement"],
+        "answer": "Appositive Phrase",
+        "explanation": "The gerund phrase 'evaluating field performance reports' sits adjacent to the noun 'duty' to explain and rename it, separated by commas, making it an appositive."
     },
     {
-      question: "Plural of 'chief of staff':",
-      options: ["chief of staffs", "chiefs of staff", "chiefs of staffs", "chieves of staff"],
-      answer: "chiefs of staff",
-      explanation: 'Pluralize the head (chief).'
+        "question": "What is the structural function of the gerund phrase in: 'The council found themselves accused of violating administrative transparency laws.'",
+        "options": ["Subject Complement", "Object of the Preposition", "Direct Object of accused", "Adverbial Modifier"],
+        "answer": "Object of the Preposition",
+        "explanation": "The gerund phrase acts as the object of the preposition 'of' which anchors the descriptive prepositional phrase."
     },
     {
-      question: "Which is a compound noun?",
-      options: ["sun", "flower", "sunflower", "sunny"],
-      answer: "sunflower",
-      explanation: 'Combination of sun + flower.'
+        "question": "Which word in the following legal text does NOT function as a noun format? 'The administrative checking of the liquidation records requires absolute concentration.'",
+        "options": ["checking", "liquidation", "concentration", "requires"],
+        "answer": "requires",
+        "explanation": "'Requires' acts as the principal finite operational verb of the sentence, whereas 'checking' is a verbal noun, 'liquidation' is a noun adjunct, and 'concentration' is an abstract noun."
     },
     {
-      question: "Plural of 'merry-go-round':",
-      options: ["merries-go-round", "merry-go-rounds", "merry-goes-round", "merry-go-round"],
-      answer: "merry-go-rounds",
-      explanation: 'No clear main noun, so pluralize the end.'
-    },
-
-    // 31-40: Appositives
-    {
-      question: 'Identify the appositive: "My brother, David, is here."',
-      options: ["My", "brother", "David", "here"],
-      answer: "David",
-      explanation: '"David" renames "brother".'
-    },
-    {
-      question: 'In "The book, a bestseller, is sold out," the phrase "a bestseller" is an:',
-      options: ["Adjective Clause", "Appositive Phrase", "Adverbial Phrase", "Infinitive"],
-      answer: "Appositive Phrase",
-      explanation: 'It renames the noun "book".'
-    },
-    {
-      question: 'Which sentence uses an appositive correctly?',
-      options: ["Mr. Smith, the teacher, is nice.", "Mr. Smith the teacher is nice.", "Mr. Smith, is nice.", "The teacher, is Mr. Smith."],
-      answer: "Mr. Smith, the teacher, is nice.",
-      explanation: 'Non-essential appositives need commas.'
-    },
-    {
-      question: 'Identify the appositive: "Edison, the inventor, was smart."',
-      options: ["Edison", "inventor", "smart", "was"],
-      answer: "inventor",
-      explanation: '"The inventor" renames Edison.'
-    },
-    {
-      question: 'Function of the appositive noun:',
-      options: ["To express action", "To rename another noun", "To show possession", "To connect clauses"],
-      answer: "To rename another noun",
-      explanation: 'Appositives rename or identify nearby nouns.'
-    },
-    {
-      question: "Appositives are usually separated by:",
-      options: ["Periods", "Commas", "Semicolons", "Colons"],
-      answer: "Commas",
-      explanation: 'Commas set off non-essential appositives.'
-    },
-    {
-      question: "Find the appositive: 'We visited Paris, the capital of France.'",
-      options: ["We", "visited", "Paris", "the capital of France"],
-      answer: "the capital of France",
-      explanation: 'Renames Paris.'
-    },
-    {
-      question: "Is the appositive essential? 'My friend John is here.' (I have many friends)",
-      options: ["Yes", "No"],
-      answer: "Yes",
-      explanation: 'Essential (no commas) because it specifies WHICH friend.'
-    },
-    {
-      question: "Is the appositive essential? 'My husband, Mark, is here.' (I have one husband)",
-      options: ["Yes", "No"],
-      answer: "No",
-      explanation: 'Non-essential (uses commas) because the name isn\'t needed to identify him.'
-    },
-    {
-      question: 'In "The insect, a cockroach, crawled away," "cockroach" is:',
-      options: ["Subject", "Object", "Appositive", "Verb"],
-      answer: "Appositive",
-      explanation: 'An Appositive stands next to a noun to explain it. Here, "cockroach" identifies exactly what the "insect" is.'
+        "question": "Examine the verbal 'working' in the phrase: 'The working group drafted a comprehensive framework.' Is it a gerund?",
+        "options": [
+            "Yes, because it represents an ongoing administrative activity.",
+            "No, it is a participial adjective modifying the head noun 'group'.",
+            "No, it functions as the primary operational verb of the phrase.",
+            "Yes, it acts as the direct object of the adjective 'advanced'."
+        ],
+        "answer": "No, it is a participial adjective modifying the head noun 'group'.",
+        "explanation": "Because 'working' characterizes the descriptive status of the noun 'group' rather than naming an independent activity, it acts as a participle adjective."
     },
 
-    // 41-50: Noun Clauses
+    // 21-30: Advanced Compound Nouns (Morphology & Pluralization)
     {
-      question: 'Identify the noun clause: "I know what you did."',
-      options: ["I know", "what you did", "you did", "know what"],
-      answer: "what you did",
-      explanation: 'The clause acts as the direct object.'
+        "question": "Which of the following corporate or legal compound terms represents a solid, closed compound noun?",
+        "options": ["boardroom", "master plan", "trade-off", "point of view"],
+        "answer": "boardroom",
+        "explanation": "'Boardroom' is morphologically classified as a closed or solid compound noun because its constituent roots are fused without spaces or hyphens."
     },
     {
-      question: 'Function of the noun clause in: "What you said is true."',
-      options: ["Subject", "Object", "Adjective", "Adverb"],
-      answer: "Subject",
-      explanation: 'The whole clause is the subject.'
+        "question": "Select the option that represents a structurally sound hyphenated compound noun used in public governance:",
+        "options": ["memorandum of agreement", "undersecretary-general", "procurement officer", "data center"],
+        "answer": "undersecretary-general",
+        "explanation": "'Undersecretary-general' utilizes a hyphen to link its constituent descriptive title roots, making it a hyphenated compound noun."
     },
     {
-      question: 'Identify the noun clause: "Give it to whoever wants it."',
-      options: ["Give it", "to whoever", "whoever wants it", "wants it"],
-      answer: "whoever wants it",
-      explanation: 'Acts as the object of the preposition "to".'
+        "question": "Which compound noun formatting is categorized as an open or spaced compound noun configuration?",
+        "options": ["headquarters", "warrant officer", "self-assessment", "database"],
+        "answer": "warrant officer",
+        "explanation": "'Warrant officer' is an open compound noun because it acts as a single semantic noun unit but retains a space between its words."
     },
     {
-      question: 'Noun clauses often start with:',
-      options: ["If, because, since", "Who, what, that, how", "And, but, or", "In, on, at"],
-      answer: "Who, what, that, how",
-      explanation: 'Relative pronouns/adverbs start noun clauses.'
+        "question": "What is the professionally accurate plural form of the official hyphenated compound title 'editor-in-chief'?",
+        "options": ["editor-in-chiefs", "editors-in-chief", "editors-in-chiefs", "editor-ins-chief"],
+        "answer": "editors-in-chief",
+        "explanation": "To pluralize a complex compound noun linked by prepositions, apply the plural inflectional suffix to the principal base head noun ('editors')."
     },
     {
-      question: 'Replace the noun clause with a pronoun: "I know [where he lives]."',
-      options: ["I know him.", "I know it.", "I know that.", "I know there."],
-      answer: "I know it.",
-      explanation: 'Noun clauses function like nouns/pronouns.'
+        "question": "Identify the correct plural form of the compound entity 'passer-by' under modern lexicographical standards:",
+        "options": ["passer-bys", "passers-by", "passers-bys", "passer-bies"],
+        "answer": "passers-by",
+        "explanation": "The pluralizing suffix must attach to the principal noun component ('passer') rather than the modifying prepositional adverb ('by')."
     },
     {
-      question: 'Function of the clause in: "My hope is that we win."',
-      options: ["Subject", "Direct Object", "Predicate Nominative", "Appositive"],
-      answer: "Predicate Nominative",
-      explanation: 'Follows linking verb "is".'
+        "question": "The department ordered three ________ of chemical solution to properly calibrate the water testing systems.",
+        "options": ["bucketfuls", "bucketsful", "bucketsfuls", "bucket-fuls"],
+        "answer": "bucketfuls",
+        "explanation": "Noun structures terminating in the suffix '-ful' represent total measurement quantities and take their plural inflection at the very end of the word ('bucketfuls')."
     },
     {
-      question: "Is this a noun clause? 'The man [who called] is angry.'",
-      options: ["Yes", "No, it's an Adjective clause", "No, it's an Adverb clause", "No, it's a Verb"],
-      answer: "No, it's an Adjective clause",
-      explanation: 'It describes "the man", so it is an adjective clause.'
+        "question": "Choose the legally flawless plural form of the legal administrative designation 'attorney-at-law':",
+        "options": ["attorney-at-laws", "attorneys-at-law", "attorneys-at-laws", "attorneys-at-the-law"],
+        "answer": "attorneys-at-law",
+        "explanation": "The primary semantic noun asset is 'attorney', so it must absorb the pluralizing token, yielding 'attorneys-at-law'."
     },
     {
-      question: 'In "I wonder how he did it," the clause is the:',
-      options: ["Subject", "Direct Object", "Indirect Object", "Predicate Nominative"],
-      answer: "Direct Object",
-      explanation: 'Receives the action of wondering.'
+        "question": "The newly established government committee requires the joint presence of all regional ________.",
+        "options": ["chiefs of staff", "chief of staffs", "chiefs of staffs", "chieves of staff"],
+        "answer": "chiefs of staff",
+        "explanation": "The word 'chief' is the principal head noun within this complex phrasal title structure, requiring it to take the plural marker 's'."
     },
     {
-      question: 'The word "that" usually introduces a noun clause when it follows a:',
-      options: ["Noun", "Verb (mental action)", "Preposition", "Adjective"],
-      answer: "Verb (mental action)",
-      explanation: 'E.g., I think that..., I believe that...'
+        "question": "Which of the following words is a morphological compound noun that combines two independent noun roots to form a single financial concept?",
+        "options": ["shareholder", "investment", "liquidate", "profitable"],
+        "answer": "shareholder",
+        "explanation": "'Shareholder' fuses two distinct nouns ('share' + 'holder') to express a unified commercial entity, making it a compound noun."
     },
     {
-      question: 'Analyze: "Whoever wins gets the prize."',
-      options: ["'Whoever' is the subject", "'Whoever wins' is the subject", "'Prize' is the subject", "'Gets' is the subject"],
-      answer: "'Whoever wins' is the subject",
-      explanation: 'The entire clause is the subject.'
+        "question": "Select the correct plural configuration for the technical equipment term 'go-between' when referring to multiple intermediaries:",
+        "options": ["goes-between", "go-betweens", "goes-betweens", "go-betweenes"],
+        "answer": "go-betweens",
+        "explanation": "Because 'go-between' does not contain an explicit base noun root (it is made of a verb and adverb), the plural 's' must be affixed to the final component."
+    },
+
+    // 31-40: Appositives (Essential vs. Non-Essential & Case Alignment)
+    {
+        "question": "Identify the full appositive phrase in the following executive decree: 'The main administrative building, a historical landmark from the post-war era, will undergo intensive preservation.'",
+        "options": [
+            "The main administrative building",
+            "a historical landmark from the post-war era",
+            "will undergo intensive preservation",
+            "historical landmark"
+        ],
+        "answer": "a historical landmark from the post-war era",
+        "explanation": "The entire phrase stands next to the main subject noun to explain and rename it, defining its identity as an appositive phrase."
+    },
+    {
+        "question": "In the administrative clause 'The committee consulted Dr. Alcaraz, the senior internal auditor, before finalizing the fiscal balance sheets', the phrase 'the senior internal auditor' is a/an:",
+        "options": ["Adjective Clause", "Appositive Phrase", "Adverbial Modifier", "Objective Complement"],
+        "answer": "Appositive Phrase",
+        "explanation": "It functions as a non-essential appositive phrase because it renames and clarifies the identity of the adjacent proper noun, 'Dr. Alcaraz'."
+    },
+    {
+        "question": "Which of the following options displays the correct punctuation layout for a sentence containing a non-essential appositive?",
+        "options": [
+            "The division manager Mr. Santos reviewed the procurement logs.",
+            "The division manager, Mr. Santos, reviewed the procurement logs.",
+            "The division manager Mr. Santos, reviewed the procurement logs.",
+            "The division manager, Mr. Santos reviewed the procurement logs."
+        ],
+        "answer": "The division manager, Mr. Santos, reviewed the procurement logs.",
+        "explanation": "When an appositive is non-essential (meaning the sentence's primary meaning remains intact without it), it must be set off on both sides by punctuation commas."
+    },
+    {
+        "question": "Identify the core appositive noun in: 'The board members interviewed the finalist, the prominent industrial architect, yesterday afternoon.'",
+        "options": ["members", "finalist", "architect", "afternoon"],
+        "answer": "architect",
+        "explanation": "'Architect' is the central noun within the appositive phrase that directly corresponds to and renames the object noun 'finalist'."
+    },
+    {
+        "question": "What is the structural purpose of an appositive within high-level administrative or legal writing?",
+        "options": [
+            "To qualify the manner or speed of an action verb.",
+            "To rename, identify, or restrict the meaning of an adjacent noun asset.",
+            "To indicate the tense, aspect, or mood of a predicate structure.",
+            "To connect dependent conditional clauses to parent statements."
+        ],
+        "answer": "To rename, identify, or restrict the meaning of an adjacent noun asset.",
+        "explanation": "Appositives serve nominal functions by providing supplementary identification or critical context to nearby nouns."
+    },
+    {
+        "question": "Non-essential (restrictive) and non-restrictive appositives differ fundamentally because non-restrictive appositives always require:",
+        "options": ["Parenthetical hyphens", "Punctuation commas", "Semicolon breaks", "Prepositional prefixes"],
+        "answer": "Punctuation commas",
+        "explanation": "Non-restrictive appositives add non-essential info and must be isolated from the main clause using commas."
+    },
+    {
+        "question": "Find the entire appositive structure in: 'The delegation visited Toledo, the mining hub of the central province, to verify the resource logs.'",
+        "options": ["The delegation visited", "Toledo", "the mining hub of the central province", "to verify the resource logs"],
+        "answer": "the mining hub of the central province",
+        "explanation": "This entire noun phrase renames and describes the proper noun city 'Toledo'."
+    },
+    {
+        "question": "Analyze the restriction property: 'The acclaimed legal scholar Joaquin Laurel authored the constitutional critique.' (Assume there are multiple acclaimed legal scholars). Is the name essential?",
+        "options": [
+            "Yes, it is an essential restrictive appositive and must not be enclosed in commas.",
+            "No, it is non-essential and requires commas because the title is specific.",
+            "Yes, because it functions as the primary predicate verb modifier.",
+            "No, because proper nouns are inherently non-restrictive in all structures."
+        ],
+        "answer": "Yes, it is an essential restrictive appositive and must not be enclosed in commas.",
+        "explanation": "Because there are multiple scholars, the specific name 'Joaquin Laurel' is absolutely essential to restrict the identity to the exact scholar being discussed. No commas should be used."
+    },
+    {
+        "question": "Analyze the restriction property: 'My eldest daughter, Maria, handles our real estate portfolio.' (Assume I have only one eldest daughter). Is the appositive name essential?",
+        "options": [
+            "Yes, because names always act as essential identifiers.",
+            "No, it is non-essential (non-restrictive) because 'eldest daughter' already uniquely identifies the individual.",
+            "Yes, because it alters the absolute tense value of the predicate.",
+            "No, because it functions as a direct object complement to portfolio."
+        ],
+        "answer": "No, it is non-essential (non-restrictive) because 'eldest daughter' already uniquely identifies the individual.",
+        "explanation": "Since the phrase 'my eldest daughter' can only refer to one unique person, her actual name 'Maria' is extra, non-essential details and must be framed with commas."
+    },
+    {
+        "question": "In the administrative finding 'The hazardous compound, a volatile sulfur derivative, leaked from the storage tank', the noun 'derivative' is structured as a/an:",
+        "options": ["Subject Complement", "Objective Complement", "Appositive Noun", "Adverbial Adjunct"],
+        "answer": "Appositive Noun",
+        "explanation": "'Derivative' is the head noun of the appositive phrase that clarifies and renames the identity of the subject 'compound'."
+    },
+
+    // 41-50: Noun Clauses (Syntactic Analysis & Advanced Connectors)
+    {
+        "question": "Identify the complete noun clause in the following legal deposition: 'The internal audit team verified that the financial records had been systematically altered.'",
+        "options": [
+            "The internal audit team verified",
+            "that the financial records had been systematically altered",
+            "the financial records had been altered",
+            "had been systematically altered"
+        ],
+        "answer": "that the financial records had been systematically altered",
+        "explanation": "The entire clause introduced by the subordinating conjunction 'that' acts as a single noun entity serving as the direct object of 'verified'."
+    },
+    {
+        "question": "Determine the exact grammatical function of the noun clause in: 'Whoever drafted the structural blueprint overlooked the regional zoning guidelines.'",
+        "options": ["Subject of the sentence", "Direct Object of the verb", "Predicate Nominative", "Object of a Preposition"],
+        "answer": "Subject of the sentence",
+        "explanation": "The entire relative noun clause 'Whoever drafted the structural blueprint' acts collectively as the singular subject that executes the action of the main verb 'overlooked'."
+    },
+    {
+        "question": "Identify the noun clause and its function in this administrative text: 'The award will be conferred upon whoever demonstrates exceptional leadership traits.'",
+        "options": [
+            "Clause: 'The award will be' | Function: Subject",
+            "Clause: 'whoever demonstrates exceptional leadership traits' | Function: Object of a Preposition",
+            "Clause: 'exceptional leadership traits' | Function: Direct Object",
+            "Clause: 'whoever demonstrates' | Function: Subject Complement"
+        ],
+        "answer": "Clause: 'whoever demonstrates exceptional leadership traits' | Function: Object of a Preposition",
+        "explanation": "The clause is the object of the preposition 'upon'. Note that 'whoever' is used because it acts as the subject within its own clause."
+    },
+    {
+        "question": "Which of the following introductory words commonly signals the presence of a dependent noun clause rather than a relative adjective clause?",
+        "options": ["because", "whether", "although", "which (modifying an item)"],
+        "answer": "whether",
+        "explanation": "'Whether' is a subordinating connector that introduces alternative conditions within noun clauses (e.g., 'I do not know whether he will attend')."
+    },
+    {
+        "question": "If you replace the bolded noun clause with a simple pronoun, which option preserves the structural integrity? 'The director understands **how the automated system processes the logs**.'",
+        "options": [
+            "The director understands him.",
+            "The director understands it.",
+            "The director understands there.",
+            "The director understands them."
+        ],
+        "answer": "The director understands it.",
+        "explanation": "Because noun clauses function exactly like singular nouns or object pronouns, the clause can be completely swapped with the abstract objective pronoun 'it'."
+    },
+    {
+        "question": "What is the structural function of the noun clause in the following legal resolution? 'The final consensus of the adjudication panel is that the contract must be voided.'",
+        "options": ["Subject", "Direct Object", "Predicate Nominative", "Appositive Phrase"],
+        "answer": "Predicate Nominative",
+        "explanation": "The clause 'that the contract must be voided' follows the main linking verb 'is' and renames the absolute subject 'consensus', making it a predicate nominative."
+    },
+    {
+        "question": "Analyze the bracketed clause: 'The senior official [who coordinates the trade program] signed the clearance.' Is this a noun clause?",
+        "options": [
+            "Yes, it acts as the direct object of the subject 'official'.",
+            "No, it is an Adjective (Relative) Clause modifying the head noun 'official'.",
+            "No, it functions as an Adverbial Clause showing conditional action.",
+            "Yes, it is a Predicate Nominative following a silent linking asset."
+        ],
+        "answer": "No, it is an Adjective (Relative) Clause modifying the head noun 'official'.",
+        "explanation": "Because the clause 'who coordinates the trade program' describes and limits the noun 'official', it serves an adjectival function, not a nominal one."
+    },
+    {
+        "question": "In the administrative report, 'The board wondered why the procurement phase experienced a delay', the dependent noun clause functions as the:",
+        "options": ["Subject", "Direct Object", "Indirect Object", "Subject Complement"],
+        "answer": "Direct Object",
+        "explanation": "The clause answers the question 'what did the board wonder?', making it the direct object of the mental action transitive verb 'wondered'."
+    },
+    {
+        "question": "A noun clause introduced by the conjunction 'that' typically follows verbs that express which specific cognitive property?",
+        "options": ["Physical kinetic force", "Mental states, beliefs, or assertions", "Temporal progression or duration", "Spatial location changes"],
+        "answer": "Mental states, beliefs, or assertions",
+        "explanation": "Verbs of cognition, speech, or belief (e.g., 'maintain that', 'believe that', 'state that') naturally accept noun clauses as their direct objects."
+    },
+    {
+        "question": "Analyze the complex sentence structure: 'What the civil service commission mandates must be executed without delay.' Which statement is true?",
+        "options": [
+            "The term 'What' is the sole subject of the sentence.",
+            "The entire clause 'What the civil service commission mandates' is the subject.",
+            "The noun phrase 'civil service commission' is the global subject.",
+            "The clause acts as an adverbial modifier to the verb 'executed'."
+        ],
+        "answer": "The entire clause 'What the civil service commission mandates' is the subject.",
+        "explanation": "The entire clausal block functions as a unified nominal entity that sits before the auxiliary verb cluster 'must be executed' as its global subject."
     }
-  ]
+]
 };
