@@ -7,7 +7,6 @@ window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 window.VERBAL_QUESTION_BANK["nouns"] = {
 
   beginner: [
-    beginner: [
     // 1-10: Identifying Nouns (Person / Professionals / Roles)
     { 
         "question": "The ________ presided over the annual conference and addressed the stockholders' concerns.", 
