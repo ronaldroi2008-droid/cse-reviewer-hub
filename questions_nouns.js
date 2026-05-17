@@ -1,64 +1,318 @@
 const NOUNS_QUESTIONS = {
   beginner: [
-    // 1-10: Identifying Nouns (Person)
-    { question: "Which word is a noun?", choices: ["quickly", "happy", "table", "outside"], correctIndex: 2, explanation: '"Table" is a noun because it names a thing.' },
-    { question: 'Which word is a noun in this sentence: "The boy runs fast"?', choices: ["boy", "runs", "fast", "the"], correctIndex: 0, explanation: '"Boy" is a noun; it names a person.' },
-    { question: "Which of the following is a person noun?", choices: ["library", "teacher", "city", "river"], correctIndex: 1, explanation: '"Teacher" names a person.' },
-    { question: "Find the noun: 'The baby sleeps.'", choices: ["The", "baby", "sleeps", "quietly"], correctIndex: 1, explanation: '"Baby" is the person in the sentence.' },
-    { question: "Which word names a person?", choices: ["sister", "blue", "jump", "under"], correctIndex: 0, explanation: '"Sister" is a person.' },
-    { question: "Select the noun: 'My doctor is kind.'", choices: ["My", "doctor", "is", "kind"], correctIndex: 1, explanation: '"Doctor" names a person.' },
-    { question: "Which is a noun?", choices: ["sing", "loudly", "uncle", "soft"], correctIndex: 2, explanation: '"Uncle" is a noun (person).' },
-    { question: "Identify the noun: 'A driver drives the bus.'", choices: ["driver", "drives", "the", "fast"], correctIndex: 0, explanation: '"Driver" is a person noun.' },
-    { question: "Which word is a noun?", choices: ["friend", "play", "funny", "always"], correctIndex: 0, explanation: '"Friend" is a noun.' },
-    { question: "Find the noun: 'The king sat down.'", choices: ["sat", "king", "down", "The"], correctIndex: 1, explanation: '"King" is a person noun.' },
+     { 
+        question: "The ________ presided over the annual conference and addressed the stockholders' concerns.", 
+        choices: ["executive", "executes", "executively", "executed"], 
+        correctIndex: 0, 
+        explanation: 'The sentence requires a noun that refers to a person acting as the subject. "Executive" is the correct noun form.' 
+    },
+    { 
+        question: "Identify the noun that acts as the subject: 'The diligent inspector reviewed the documents.'", 
+        choices: ["diligent", "inspector", "reviewed", "documents"], 
+        correctIndex: 1, 
+        explanation: '"Inspector" is a concrete noun referring to a person, and it functions as the subject performing the action in the sentence.' 
+    },
+    { 
+        question: "Which word in the following sentence functions as a noun representing a person? 'The local physician administered the vaccine.'", 
+        choices: ["local", "administered", "vaccine", "physician"], 
+        correctIndex: 3, 
+        explanation: '"Physician" is a noun that means a medical doctor, which represents a person.' 
+    },
+    { 
+        question: "The ________ submitted the financial report to the board of directors yesterday.", 
+        choices: ["accountant", "accounting", "accountable", "account"], 
+        correctIndex: 0, 
+        explanation: '"Accountant" is the correct noun denoting a professional person who performs the action of submitting.' 
+    },
+    { 
+        question: "During the trial, the ________ presented a compelling argument to defend the client.", 
+        choices: ["lawyer", "law", "lawful", "legally"], 
+        correctIndex: 0, 
+        explanation: '"Lawyer" is a noun that represents a person or profession. The other options are a baseline noun, an adjective, and an adverb.' 
+    },
+    { 
+        question: "Which noun refers to a person in this sentence? 'A passionate educator inspires students to achieve their dreams.'", 
+        choices: ["passionate", "educator", "inspires", "dreams"], 
+        correctIndex: 1, 
+        explanation: '"Educator" (teacher) is the noun in the sentence that represents a person.' 
+    },
+    { 
+        question: "The Chief of Staff assigned a new ________ to handle the administrative tasks.", 
+        choices: ["assistant", "assist", "assistance", "assisted"], 
+        correctIndex: 0, 
+        explanation: '"Assistant" is a noun referring to a person. "Assistance" is also a noun, but it refers to the abstract concept of help.' 
+    },
+    { 
+        question: "In a democratic country, every ________ has the right to cast a vote during the elections.", 
+        choices: ["citizen", "citizenship", "civic", "civilly"], 
+        correctIndex: 0, 
+        explanation: '"Citizen" is a concrete noun representing an individual person, fitting the context of casting a vote.' 
+    },
+    { 
+        question: "The ________ carefully directed the motorists away from the construction site.", 
+        choices: ["officer", "official", "officially", "officiate"], 
+        correctIndex: 0, 
+        explanation: '"Officer" refers to the specific person/authority directing traffic. "Official" is typically an adjective or an abstract designation.' 
+    },
+    { 
+        question: "Which of the following underlined words is a person noun? 'The prominent scientist received an award for her research.'", 
+        choices: ["prominent", "scientist", "award", "research"], 
+        correctIndex: 1, 
+        explanation: '"Scientist" is a noun that refers to a person who conducts scientific research.' 
+    },
 
-    // 11-20: Identifying Nouns (Place)
-    { question: "Which word is a place noun?", choices: ["honesty", "mountain", "sing", "blue"], correctIndex: 1, explanation: '"Mountain" names a place.' },
-    { question: "Find the place noun: 'We went to the park.'", choices: ["We", "went", "park", "to"], correctIndex: 2, explanation: '"Park" is a place.' },
-    { question: "Which is a place?", choices: ["apple", "school", "run", "red"], correctIndex: 1, explanation: '"School" is a place.' },
-    { question: "Select the noun: 'The city is big.'", choices: ["The", "city", "is", "big"], correctIndex: 1, explanation: '"City" is a place noun.' },
-    { question: "Which word names a place?", choices: ["kitchen", "jump", "happy", "spoon"], correctIndex: 0, explanation: '"Kitchen" is a room/place.' },
-    { question: "Identify the place: 'Let's go to the beach.'", choices: ["Let's", "go", "beach", "the"], correctIndex: 2, explanation: '"Beach" is a place.' },
-    { question: "Which is a noun?", choices: ["garden", "swim", "slowly", "sad"], correctIndex: 0, explanation: '"Garden" is a place noun.' },
-    { question: "Find the noun: 'The library is quiet.'", choices: ["library", "quiet", "is", "The"], correctIndex: 0, explanation: '"Library" is a place.' },
-    { question: "Which word is a place?", choices: ["store", "run", "eat", "hot"], correctIndex: 0, explanation: '"Store" is a place.' },
-    { question: "Identify the noun: 'My house is white.'", choices: ["My", "house", "is", "white"], correctIndex: 1, explanation: '"House" is a place noun.' },
+    // 11-20: Identifying Nouns (Place / Institutions / Venues)
+    { 
+        question: "The international summit will be held at the newly constructed ________.", 
+        choices: ["convention", "convene", "auditorium", "auditory"], 
+        correctIndex: 2, 
+        explanation: '"Auditorium" is a concrete noun that represents a physical venue or place.' 
+    },
+    { 
+        question: "Applicants are advised to submit their credentials directly to the main ________.", 
+        choices: ["office", "officially", "officiate", "officious"], 
+        correctIndex: 0, 
+        explanation: '"Office" is a noun that refers to a specific physical location or place of business.' 
+    },
+    { 
+        question: "Which word functions as a place noun in this sentence? 'The pristine beach attracted thousands of tourists last summer.'", 
+        choices: ["pristine", "beach", "tourists", "summer"], 
+        correctIndex: 1, 
+        explanation: '"Beach" is a common noun that designates a geographical location or place.' 
+    },
+    { 
+        question: "The newly built ________ offers a wide variety of books and digital archives for researchers.", 
+        choices: ["library", "librarian", "literary", "liberate"], 
+        correctIndex: 0, 
+        explanation: '"Library" is a noun representing a place, whereas "librarian" refers to the person managing it.' 
+    },
+    { 
+        question: "Public officials are expected to maintain order within their respective ________.", 
+        choices: ["govern", "governmental", "municipality", "municipally"], 
+        correctIndex: 2, 
+        explanation: '"Municipality" is a noun that refers to a distinct administrative district or place.' 
+    },
+    { 
+        question: "The heavy downpour caused severe flooding in the metropolitan ________.", 
+        choices: ["area", "aerial", "arise", "around"], 
+        correctIndex: 0, 
+        explanation: '"Area" functions as a noun used to describe a particular geographical region, space, or place.' 
+    },
+    { 
+        question: "Identify the noun representing a place: 'The historical museum houses artifacts from the pre-colonial era.'", 
+        choices: ["historical", "museum", "artifacts", "pre-colonial"], 
+        correctIndex: 1, 
+        explanation: '"Museum" is a noun that designates a specific building or location used to display items.' 
+    },
+    { 
+        question: "The delegation arrived safely at the international ________ for the cross-border conference.", 
+        choices: ["airport", "airplane", "airborne", "airline"], 
+        correctIndex: 0, 
+        explanation: '"Airport" is the correct noun indicating a location or place. "Airplane" is a thing, and "airline" is an organization.' 
+    },
+    { 
+        question: "Due to the state of emergency, citizens were advised to stay inside their ________.", 
+        choices: ["reside", "residential", "residence", "resident"], 
+        correctIndex: 2, 
+        explanation: '"Residence" is a noun that means a dwelling or place of living. "Resident" refers to the person.' 
+    },
+    { 
+        question: "The dynamic team conducted their field study in a remote ________ in the north.", 
+        choices: ["province", "provincial", "provincially", "provoke"], 
+        correctIndex: 0, 
+        explanation: '"Province" is a geographical and political noun that denotes a specific territory or place.' 
+    },
 
-    // 21-30: Identifying Nouns (Thing)
-    { question: "Which word names a thing?", choices: ["run", "pencil", "happy", "slow"], correctIndex: 1, explanation: '"Pencil" is a thing.' },
-    { question: "Find the noun: 'The car is red.'", choices: ["The", "car", "is", "red"], correctIndex: 1, explanation: '"Car" is a thing.' },
-    { question: "Which is a thing?", choices: ["eat", "sleep", "ball", "walk"], correctIndex: 2, explanation: '"Ball" is a thing.' },
-    { question: "Select the noun: 'I have a new phone.'", choices: ["I", "have", "new", "phone"], correctIndex: 3, explanation: '"Phone" is a thing.' },
-    { question: "Which word is a noun?", choices: ["apple", "jump", "green", "under"], correctIndex: 0, explanation: '"Apple" is a thing.' },
-    { question: "Identify the thing: 'The chair is hard.'", choices: ["The", "chair", "is", "hard"], correctIndex: 1, explanation: '"Chair" is a thing.' },
-    { question: "Which is a noun?", choices: ["shoe", "go", "fast", "up"], correctIndex: 0, explanation: '"Shoe" is a thing.' },
-    { question: "Find the noun: 'Read the book.'", choices: ["Read", "the", "book", "loudly"], correctIndex: 2, explanation: '"Book" is a thing.' },
-    { question: "Which word names a thing?", choices: ["cup", "sing", "nice", "they"], correctIndex: 0, explanation: '"Cup" is a thing.' },
-    { question: "Select the noun: 'The computer is on.'", choices: ["The", "computer", "is", "on"], correctIndex: 1, explanation: '"Computer" is a thing.' },
+    // 21-30: Identifying Nouns (Thing / Objects / Equipment)
+    { 
+        question: "The technician replaced the broken ________ to restore the system's functionality.", 
+        choices: ["component", "componental", "compose", "compositely"], 
+        correctIndex: 0, 
+        explanation: '"Component" is a concrete noun that refers to a part or a physical object (thing).' 
+    },
+    { 
+        question: "Please ensure that your government-issued ________ is valid before booking the flight.", 
+        choices: ["passport", "pass", "passage", "passenger"], 
+        correctIndex: 0, 
+        explanation: '"Passport" is a concrete noun representing a physical document or object required for travel.' 
+    },
+    { 
+        question: "Which word functions as a noun for a thing? 'The automated vehicle successfully navigated the obstacle course.'", 
+        choices: ["automated", "vehicle", "successfully", "navigated"], 
+        correctIndex: 1, 
+        explanation: '"Vehicle" is a common noun that represents a physical object or mechanical thing.' 
+    },
+    { 
+        question: "The laboratory is equipped with state-of-the-art ________ for scientific experiments.", 
+        choices: ["apparatus", "apparel", "apparent", "apparently"], 
+        correctIndex: 0, 
+        explanation: '"Apparatus" is a technical noun that refers to tools, machinery, or equipment (things).' 
+    },
+    { 
+        question: "He lost the official ________ containing the confidential receipts of the transaction.", 
+        choices: ["document", "documentary", "documenting", "documented"], 
+        correctIndex: 0, 
+        explanation: '"Document" is the correct noun form used to denote a physical record or piece of paper.' 
+    },
+    { 
+        question: "The company purchased new office ________ to upgrade the workspace ergonomics.", 
+        choices: ["furniture", "furnish", "furnished", "furnishing"], 
+        correctIndex: 0, 
+        explanation: '"Furniture" is a collective mass noun representing physical objects like desks and chairs.' 
+    },
+    { 
+        question: "Identify the noun representing an object: 'She carefully packed the fragile vase into the box.'", 
+        choices: ["carefully", "fragile", "vase", "packed"], 
+        correctIndex: 2, 
+        explanation: '"Vase" is a concrete noun that refers to a specific physical object.' 
+    },
+    { 
+        question: "The security guard inspected the contents of the suspicious ________ at the entrance.", 
+        choices: ["package", "pack", "packaging", "packed"], 
+        correctIndex: 0, 
+        explanation: '"Package" is a noun that represents a physical item or parcel (thing).' 
+    },
+    { 
+        question: "The printer ran out of ________ midway through the printing of the civil service reviewers.", 
+        choices: ["ink", "inky", "inked", "inking"], 
+        correctIndex: 0, 
+        explanation: '"Ink" is a concrete material noun that refers to a physical substance.' 
+    },
+    { 
+        question: "The committee utilized a digital ________ to record the votes accurately.", 
+        choices: ["device", "devise", "devising", "devised"], 
+        correctIndex: 0, 
+        explanation: '"Device" is a noun meaning a mechanical or electronic tool. "Devise" is a verb meaning to plan or invent.' 
+    },
 
-    // 31-40: Identifying Nouns (Idea/Abstract - Basic)
-    { question: "Which of the following is an idea (abstract) noun?", choices: ["happiness", "chair", "garden", "window"], correctIndex: 0, explanation: '"Happiness" is a feeling/idea.' },
-    { question: "Find the abstract noun: 'Love is important.'", choices: ["Love", "is", "important", "very"], correctIndex: 0, explanation: '"Love" is an idea or feeling.' },
-    { question: "Which is an idea?", choices: ["table", "freedom", "pen", "dog"], correctIndex: 1, explanation: '"Freedom" is an idea.' },
-    { question: "Select the noun: 'Her beauty is famous.'", choices: ["Her", "beauty", "is", "famous"], correctIndex: 1, explanation: '"Beauty" is an abstract noun.' },
-    { question: "Which word is an abstract noun?", choices: ["hope", "door", "cat", "tree"], correctIndex: 0, explanation: '"Hope" is a feeling/idea.' },
-    { question: "Find the noun: 'We want peace.'", choices: ["We", "want", "peace", "now"], correctIndex: 2, explanation: '"Peace" is an abstract noun.' },
-    { question: "Which is a noun?", choices: ["anger", "angry", "angrily", "red"], correctIndex: 0, explanation: '"Anger" is the name of the feeling (noun).' },
-    { question: "Identify the abstract noun: 'Time flies fast.'", choices: ["Time", "flies", "fast", "very"], correctIndex: 0, explanation: '"Time" is an abstract concept.' },
-    { question: "Which word is a noun?", choices: ["bravery", "brave", "bravely", "strong"], correctIndex: 0, explanation: '"Bravery" is a quality/noun.' },
-    { question: "Find the noun: 'It gives me joy.'", choices: ["It", "gives", "me", "joy"], correctIndex: 3, explanation: '"Joy" is a feeling/noun.' },
+    // 31-40: Identifying Nouns (Abstract / Ideas / Concepts)
+    { 
+        question: "________ is essential in public service to maintain the trust of the citizenry.", 
+        choices: ["Integrity", "Honest", "Faithfully", "Transparent"], 
+        correctIndex: 0, 
+        explanation: '"Integrity" is an abstract noun that refers to a quality or concept, serving as the subject of the sentence.' 
+    },
+    { 
+        question: "The agency gained recognition due to the extreme ________ of its personnel.", 
+        choices: ["efficiency", "efficient", "efficiently", "efficacious"], 
+        correctIndex: 0, 
+        explanation: '"Efficiency" is the abstract noun form representing a quality. The other choices are adjectives or adverbs.' 
+    },
+    { 
+        question: "Which abstract noun represents a quality of being brave? 'The soldiers showed immense ________ during the rescue operation.'", 
+        choices: ["bravely", "brave", "bravery", "bravest"], 
+        correctIndex: 2, 
+        explanation: '"Bravery" is the abstract noun form that refers to the quality of courage. "Brave" is an adjective.' 
+    },
+    { 
+        question: "The Constitution guarantees ________ of speech for all citizens.", 
+        choices: ["free", "freedom", "freely", "freed"], 
+        correctIndex: 1, 
+        explanation: '"Freedom" is an abstract noun that denotes a state of liberty, right, or concept.' 
+    },
+    { 
+        question: "We must strive for ________ in the workplace by treating everyone fairly.", 
+        choices: ["equality", "equal", "equally", "equalize"], 
+        correctIndex: 0, 
+        explanation: '"Equality" is an abstract noun denoting a fair state or concept. "Equal" is an adjective, and "equalize" is a verb.' 
+    },
+    { 
+        question: "Identify the abstract noun: 'The judge made the decision based solely on justice and truth.'", 
+        choices: ["judge", "decision", "justice", "solely"], 
+        correctIndex: 2, 
+        explanation: 'While "judge" and "decision" are also nouns, "justice" is a pure abstract noun representing an idea or moral concept.' 
+    },
+    { 
+        question: "The leader's ________ inspired the entire community to participate in the project.", 
+        choices: ["visionary", "vision", "visible", "visually"], 
+        correctIndex: 1, 
+        explanation: '"Vision" functions as an abstract noun meaning a foresight or concept. "Visionary" is typically an adjective or a person noun.' 
+    },
+    { 
+        question: "Working under extreme ________ can lead to errors and decreased productivity.", 
+        choices: ["stressful", "stress", "stressed", "stressing"], 
+        correctIndex: 1, 
+        explanation: '"Stress" is used here as an abstract noun referring to a psychological or physical condition.' 
+    },
+    { 
+        question: "Her ________ in solving complex mathematical problems amazed the evaluators.", 
+        choices: ["brilliant", "brilliantly", "brilliance", "brilliantness"], 
+        correctIndex: 2, 
+        explanation: '"Brilliance" is the grammatically correct abstract noun form that indicates superior mental quality.' 
+    },
+    { 
+        question: "The mutual ________ between the two nations led to a successful peace treaty.", 
+        choices: ["understand", "understanding", "understandable", "understandably"], 
+        correctIndex: 1, 
+        explanation: '"Understanding" functions as an abstract noun (gerund form) denoting shared comprehension or agreement.' 
+    },
 
-    // 41-50: Proper vs Common & Simple Plurals
-    { question: "Which is a Proper Noun (specific name)?", choices: ["city", "London", "town", "village"], correctIndex: 1, explanation: '"London" is the specific name of a city.' },
-    { question: "Which is a Common Noun?", choices: ["Superman", "Batman", "hero", "Spiderman"], correctIndex: 2, explanation: '"Hero" is a general term, not a specific name.' },
-    { question: "Select the Proper Noun:", choices: ["man", "boy", "John", "guy"], correctIndex: 2, explanation: '"John" is a specific name.' },
-    { question: "Which needs a capital letter?", choices: ["river", "nile", "water", "lake"], correctIndex: 1, explanation: '"Nile" is a proper noun (Name of a river).' },
-    { question: "What is the plural of 'cat'?", choices: ["cat", "cats", "cates", "catss"], correctIndex: 1, explanation: 'Add "s" to make "cat" plural.' },
-    { question: "What is the plural of 'dog'?", choices: ["dogs", "doges", "dog", "doggies"], correctIndex: 0, explanation: 'Add "s" to make "dog" plural.' },
-    { question: "What is the plural of 'box'?", choices: ["boxs", "boxes", "boxies", "box"], correctIndex: 1, explanation: 'Add "es" to words ending in x.' },
-    { question: "What is the plural of 'bus'?", choices: ["buss", "buses", "busses", "busies"], correctIndex: 1, explanation: 'Add "es" to words ending in s.' },
-    { question: "What is the plural of 'baby'?", choices: ["babys", "babyes", "babies", "babe"], correctIndex: 2, explanation: 'Change "y" to "i" and add "es".' },
-    { question: "Which is singular?", choices: ["cups", "cup", "cuppes", "caps"], correctIndex: 1, explanation: '"Cup" is one item.' }
+    // 41-50: Proper vs Common & Pluralization Rules
+    { 
+        question: "Which of the following is a Proper Noun that must always be capitalized?", 
+        choices: ["government", "department", "republic", "philippines"], 
+        correctIndex: 3, 
+        explanation: '"Philippines" is a proper noun because it is the specific name of a country, meaning it must always begin with a capital letter.' 
+    },
+    { 
+        question: "Identify the sentence that correctly uses a proper noun.", 
+        choices: [
+            "We visited the National Museum last Friday.", 
+            "We visited the national museum last Friday.", 
+            "We visited the National museum last friday.", 
+            "We visited the national Museum last friday."
+        ], 
+        correctIndex: 0, 
+        explanation: 'Both "National Museum" (a specific institution) and "Friday" (a specific day of the week) are proper nouns and must be capitalized.' 
+    },
+    { 
+        question: "Which word in the choices is a common noun? 'Dr. Jose Rizal is a renowned national hero.'", 
+        choices: ["Dr. Jose Rizal", "Rizal", "hero", "national"], 
+        correctIndex: 2, 
+        explanation: '"Hero" is a common noun because it is a generic term for figures of admiration, unlike the specific proper name "Dr. Jose Rizal".' 
+    },
+    { 
+        question: "The ________ of the Supreme Court are responsible for reviewing judicial appeals.", 
+        choices: ["justices", "justice's", "justiceses", "justice"], 
+        correctIndex: 0, 
+        explanation: 'The plural form of "justice" (when referring to a judge) is "justices". An apostrophe is not needed because it is not possessive.' 
+    },
+    { 
+        question: "Several ________ were deployed to secure the international economic forum.", 
+        choices: ["agencys", "agencies", "agencies'", "agency"], 
+        correctIndex: 1, 
+        explanation: 'For nouns ending in a consonant + "y", change the "y" to "i" and add "es" to form the plural (agencies).' 
+    },
+    { 
+        question: "The office purchased three new ________ for the administrative staff.", 
+        choices: ["computer", "computers", "computeres", "computers's"], 
+        correctIndex: 1, 
+        explanation: 'The quantifier "three" indicates a plural requirement. Regular nouns form their plural by simply adding "s" (computers).' 
+    },
+    { 
+        question: "Due to the storm, the heavy downpour caused multiple ________ to overflow.", 
+        choices: ["ditchs", "ditches", "ditches'", "ditches"], 
+        correctIndex: 1, 
+        explanation: 'Nouns ending in s, x, z, ch, or sh form their plural by adding "es" (ditches).' 
+    },
+    { 
+        question: "The human resource department updated the records of all female ________.", 
+        choices: ["attorneys", "attornies", "attorney", "attorney's"], 
+        correctIndex: 0, 
+        explanation: 'If a noun ends in a vowel + "y" (such as -ey), you form the plural simply by adding "s" (attorneys).' 
+    },
+    { 
+        question: "The seminar focuses on how to manage the various ________ encountered by public servants.", 
+        choices: ["crisis", "crises", "crisises", "crisis's"], 
+        correctIndex: 1, 
+        explanation: '"Crisis" is an irregular noun of Greek origin. Its plural form changes the "-is" ending to "-es" (crises).' 
+    },
+    { 
+        question: "Only five ________ are allowed inside the examination room at a time.", 
+        choices: ["candidate", "candidates", "candidates'", "candidate's"], 
+        correctIndex: 1, 
+        explanation: 'The number "five" modifies a plural noun. "Candidates" is the simple plural form without possessive punctuation.' 
+    }
   ],
 
   intermediate: [
