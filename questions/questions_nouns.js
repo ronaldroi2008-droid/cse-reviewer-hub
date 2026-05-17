@@ -8,317 +8,317 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
 
   beginner: [
      { 
-        question: "The ________ presided over the annual conference and addressed the stockholders' concerns.", 
-        choices: ["executive", "executes", "executively", "executed"], 
-        correctIndex: 0, 
-        explanation: 'The sentence requires a noun that refers to a person acting as the subject. "Executive" is the correct noun form.' 
+        "question": "The ________ presided over the annual conference and addressed the stockholders' concerns.", 
+        "options": ["executive", "executes", "executively", "executed"], 
+        "answer": "executive", 
+        "explanation": "The sentence requires a noun that refers to a person acting as the subject. 'Executive' is the correct noun form." 
     },
     { 
-        question: "Identify the noun that acts as the subject: 'The diligent inspector reviewed the documents.'", 
-        choices: ["diligent", "inspector", "reviewed", "documents"], 
-        correctIndex: 1, 
-        explanation: '"Inspector" is a concrete noun referring to a person, and it functions as the subject performing the action in the sentence.' 
+        "question": "Identify the noun that acts as the subject: 'The diligent inspector reviewed the documents.'", 
+        "options": ["diligent", "inspector", "reviewed", "documents"], 
+        "answer": "inspector", 
+        "explanation": "'Inspector' is a concrete noun referring to a person, and it functions as the subject performing the action in the sentence." 
     },
     { 
-        question: "Which word in the following sentence functions as a noun representing a person? 'The local physician administered the vaccine.'", 
-        choices: ["local", "administered", "vaccine", "physician"], 
-        correctIndex: 3, 
-        explanation: '"Physician" is a noun that means a medical doctor, which represents a person.' 
+        "question": "Which word in the following sentence functions as a noun representing a person? 'The local physician administered the vaccine.'", 
+        "options": ["local", "administered", "vaccine", "physician"], 
+        "answer": "physician", 
+        "explanation": "'Physician' is a noun that means a medical doctor, which represents a person." 
     },
     { 
-        question: "The ________ submitted the financial report to the board of directors yesterday.", 
-        choices: ["accountant", "accounting", "accountable", "account"], 
-        correctIndex: 0, 
-        explanation: '"Accountant" is the correct noun denoting a professional person who performs the action of submitting.' 
+        "question": "The ________ submitted the financial report to the board of directors yesterday.", 
+        "options": ["accountant", "accounting", "accountable", "account"], 
+        "answer": "accountant", 
+        "explanation": "'Accountant' is the correct noun denoting a professional person who performs the action of submitting." 
     },
     { 
-        question: "During the trial, the ________ presented a compelling argument to defend the client.", 
-        choices: ["lawyer", "law", "lawful", "legally"], 
-        correctIndex: 0, 
-        explanation: '"Lawyer" is a noun that represents a person or profession. The other options are a baseline noun, an adjective, and an adverb.' 
+        "question": "During the trial, the ________ presented a compelling argument to defend the client.", 
+        "options": ["lawyer", "law", "lawful", "legally"], 
+        "answer": "lawyer", 
+        "explanation": "'Lawyer' is a noun that represents a person or profession. The other options are a baseline noun, an adjective, and an adverb." 
     },
     { 
-        question: "Which noun refers to a person in this sentence? 'A passionate educator inspires students to achieve their dreams.'", 
-        choices: ["passionate", "educator", "inspires", "dreams"], 
-        correctIndex: 1, 
-        explanation: '"Educator" (teacher) is the noun in the sentence that represents a person.' 
+        "question": "Which noun refers to a person in this sentence? 'A passionate educator inspires students to achieve their dreams.'", 
+        "options": ["passionate", "educator", "inspires", "dreams"], 
+        "answer": "educator", 
+        "explanation": "'Educator' (teacher) is the noun in the sentence that represents a person." 
     },
     { 
-        question: "The Chief of Staff assigned a new ________ to handle the administrative tasks.", 
-        choices: ["assistant", "assist", "assistance", "assisted"], 
-        correctIndex: 0, 
-        explanation: '"Assistant" is a noun referring to a person. "Assistance" is also a noun, but it refers to the abstract concept of help.' 
+        "question": "The Chief of Staff assigned a new ________ to handle the administrative tasks.", 
+        "options": ["assistant", "assist", "assistance", "assisted"], 
+        "answer": "assistant", 
+        "explanation": "'Assistant' is a noun referring to a person. 'Assistance' is also a noun, but it refers to the abstract concept of help." 
     },
     { 
-        question: "In a democratic country, every ________ has the right to cast a vote during the elections.", 
-        choices: ["citizen", "citizenship", "civic", "civilly"], 
-        correctIndex: 0, 
-        explanation: '"Citizen" is a concrete noun representing an individual person, fitting the context of casting a vote.' 
+        "question": "In a democratic country, every ________ has the right to cast a vote during the elections.", 
+        "options": ["citizen", "citizenship", "civic", "civilly"], 
+        "answer": "citizen", 
+        "explanation": "'Citizen' is a concrete noun representing an individual person, fitting the context of casting a vote." 
     },
     { 
-        question: "The ________ carefully directed the motorists away from the construction site.", 
-        choices: ["officer", "official", "officially", "officiate"], 
-        correctIndex: 0, 
-        explanation: '"Officer" refers to the specific person/authority directing traffic. "Official" is typically an adjective or an abstract designation.' 
+        "question": "The ________ carefully directed the motorists away from the construction site.", 
+        "options": ["officer", "official", "officially", "officiate"], 
+        "answer": "officer", 
+        "explanation": "'Officer' refers to the specific person/authority directing traffic. 'Official' is typically an adjective or an abstract designation." 
     },
     { 
-        question: "Which of the following underlined words is a person noun? 'The prominent scientist received an award for her research.'", 
-        choices: ["prominent", "scientist", "award", "research"], 
-        correctIndex: 1, 
-        explanation: '"Scientist" is a noun that refers to a person who conducts scientific research.' 
+        "question": "Which of the following underlined words is a person noun? 'The prominent scientist received an award for her research.'", 
+        "options": ["prominent", "scientist", "award", "research"], 
+        "answer": "scientist", 
+        "explanation": "'Scientist' is a noun that refers to a person who conducts scientific research." 
     },
 
     // 11-20: Identifying Nouns (Place / Institutions / Venues)
     { 
-        question: "The international summit will be held at the newly constructed ________.", 
-        choices: ["convention", "convene", "auditorium", "auditory"], 
-        correctIndex: 2, 
-        explanation: '"Auditorium" is a concrete noun that represents a physical venue or place.' 
+        "question": "The international summit will be held at the newly constructed ________.", 
+        "options": ["convention", "convene", "auditorium", "auditory"], 
+        "answer": "auditorium", 
+        "explanation": "'Auditorium' is a concrete noun that represents a physical venue or place." 
     },
     { 
-        question: "Applicants are advised to submit their credentials directly to the main ________.", 
-        choices: ["office", "officially", "officiate", "officious"], 
-        correctIndex: 0, 
-        explanation: '"Office" is a noun that refers to a specific physical location or place of business.' 
+        "question": "Applicants are advised to submit their credentials directly to the main ________.", 
+        "options": ["office", "officially", "officiate", "officious"], 
+        "answer": "office", 
+        "explanation": "'Office' is a noun that refers to a specific physical location or place of business." 
     },
     { 
-        question: "Which word functions as a place noun in this sentence? 'The pristine beach attracted thousands of tourists last summer.'", 
-        choices: ["pristine", "beach", "tourists", "summer"], 
-        correctIndex: 1, 
-        explanation: '"Beach" is a common noun that designates a geographical location or place.' 
+        "question": "Which word functions as a place noun in this sentence? 'The pristine beach attracted thousands of tourists last summer.'", 
+        "options": ["pristine", "beach", "tourists", "summer"], 
+        "answer": "beach", 
+        "explanation": "'Beach' is a common noun that designates a geographical location or place." 
     },
     { 
-        question: "The newly built ________ offers a wide variety of books and digital archives for researchers.", 
-        choices: ["library", "librarian", "literary", "liberate"], 
-        correctIndex: 0, 
-        explanation: '"Library" is a noun representing a place, whereas "librarian" refers to the person managing it.' 
+        "question": "The newly built ________ offers a wide variety of books and digital archives for researchers.", 
+        "options": ["library", "librarian", "literary", "liberate"], 
+        "answer": "library", 
+        "explanation": "'Library' is a noun representing a place, whereas 'librarian' refers to the person managing it." 
     },
     { 
-        question: "Public officials are expected to maintain order within their respective ________.", 
-        choices: ["govern", "governmental", "municipality", "municipally"], 
-        correctIndex: 2, 
-        explanation: '"Municipality" is a noun that refers to a distinct administrative district or place.' 
+        "question": "Public officials are expected to maintain order within their respective ________.", 
+        "options": ["govern", "governmental", "municipality", "municipally"], 
+        "answer": "municipality", 
+        "explanation": "'Municipality' is a noun that refers to a distinct administrative district or place." 
     },
     { 
-        question: "The heavy downpour caused severe flooding in the metropolitan ________.", 
-        choices: ["area", "aerial", "arise", "around"], 
-        correctIndex: 0, 
-        explanation: '"Area" functions as a noun used to describe a particular geographical region, space, or place.' 
+        "question": "The heavy downpour caused severe flooding in the metropolitan ________.", 
+        "options": ["area", "aerial", "arise", "around"], 
+        "answer": "area", 
+        "explanation": "'Area' functions as a noun used to describe a particular geographical region, space, or place." 
     },
     { 
-        question: "Identify the noun representing a place: 'The historical museum houses artifacts from the pre-colonial era.'", 
-        choices: ["historical", "museum", "artifacts", "pre-colonial"], 
-        correctIndex: 1, 
-        explanation: '"Museum" is a noun that designates a specific building or location used to display items.' 
+        "question": "Identify the noun representing a place: 'The historical museum houses artifacts from the pre-colonial era.'", 
+        "options": ["historical", "museum", "artifacts", "pre-colonial"], 
+        "answer": "museum", 
+        "explanation": "'Museum' is a noun that designates a specific building or location used to display items." 
     },
     { 
-        question: "The delegation arrived safely at the international ________ for the cross-border conference.", 
-        choices: ["airport", "airplane", "airborne", "airline"], 
-        correctIndex: 0, 
-        explanation: '"Airport" is the correct noun indicating a location or place. "Airplane" is a thing, and "airline" is an organization.' 
+        "question": "The delegation arrived safely at the international ________ for the cross-border conference.", 
+        "options": ["airport", "airplane", "airborne", "airline"], 
+        "answer": "airport", 
+        "explanation": "'Airport' is the correct noun indicating a location or place. 'Airplane' is a thing, and 'airline' is an organization." 
     },
     { 
-        question: "Due to the state of emergency, citizens were advised to stay inside their ________.", 
-        choices: ["reside", "residential", "residence", "resident"], 
-        correctIndex: 2, 
-        explanation: '"Residence" is a noun that means a dwelling or place of living. "Resident" refers to the person.' 
+        "question": "Due to the state of emergency, citizens were advised to stay inside their ________.", 
+        "options": ["reside", "residential", "residence", "resident"], 
+        "answer": "residence", 
+        "explanation": "'Residence' is a noun that means a dwelling or place of living. 'Resident' refers to the person." 
     },
     { 
-        question: "The dynamic team conducted their field study in a remote ________ in the north.", 
-        choices: ["province", "provincial", "provincially", "provoke"], 
-        correctIndex: 0, 
-        explanation: '"Province" is a geographical and political noun that denotes a specific territory or place.' 
+        "question": "The dynamic team conducted their field study in a remote ________ in the north.", 
+        "options": ["province", "provincial", "provincially", "provoke"], 
+        "answer": "province", 
+        "explanation": "'Province' is a geographical and political noun that denotes a specific territory or place." 
     },
 
     // 21-30: Identifying Nouns (Thing / Objects / Equipment)
     { 
-        question: "The technician replaced the broken ________ to restore the system's functionality.", 
-        choices: ["component", "componental", "compose", "compositely"], 
-        correctIndex: 0, 
-        explanation: '"Component" is a concrete noun that refers to a part or a physical object (thing).' 
+        "question": "The technician replaced the broken ________ to restore the system's functionality.", 
+        "options": ["component", "componental", "compose", "compositely"], 
+        "answer": "component", 
+        "explanation": "'Component' is a concrete noun that refers to a part or a physical object (thing)." 
     },
     { 
-        question: "Please ensure that your government-issued ________ is valid before booking the flight.", 
-        choices: ["passport", "pass", "passage", "passenger"], 
-        correctIndex: 0, 
-        explanation: '"Passport" is a concrete noun representing a physical document or object required for travel.' 
+        "question": "Please ensure that your government-issued ________ is valid before booking the flight.", 
+        "options": ["passport", "pass", "passage", "passenger"], 
+        "answer": "passport", 
+        "explanation": "'Passport' is a concrete noun representing a physical document or object required for travel." 
     },
     { 
-        question: "Which word functions as a noun for a thing? 'The automated vehicle successfully navigated the obstacle course.'", 
-        choices: ["automated", "vehicle", "successfully", "navigated"], 
-        correctIndex: 1, 
-        explanation: '"Vehicle" is a common noun that represents a physical object or mechanical thing.' 
+        "question": "Which word functions as a noun for a thing? 'The automated vehicle successfully navigated the obstacle course.'", 
+        "options": ["automated", "vehicle", "successfully", "navigated"], 
+        "answer": "vehicle", 
+        "explanation": "'Vehicle' is a common noun that represents a physical object or mechanical thing." 
     },
     { 
-        question: "The laboratory is equipped with state-of-the-art ________ for scientific experiments.", 
-        choices: ["apparatus", "apparel", "apparent", "apparently"], 
-        correctIndex: 0, 
-        explanation: '"Apparatus" is a technical noun that refers to tools, machinery, or equipment (things).' 
+        "question": "The laboratory is equipped with state-of-the-art ________ for scientific experiments.", 
+        "options": ["apparatus", "apparel", "apparent", "apparently"], 
+        "answer": "apparatus", 
+        "explanation": "'Apparatus' is a technical noun that refers to tools, machinery, or equipment (things)." 
     },
     { 
-        question: "He lost the official ________ containing the confidential receipts of the transaction.", 
-        choices: ["document", "documentary", "documenting", "documented"], 
-        correctIndex: 0, 
-        explanation: '"Document" is the correct noun form used to denote a physical record or piece of paper.' 
+        "question": "He lost the official ________ containing the confidential receipts of the transaction.", 
+        "options": ["document", "documentary", "documenting", "documented"], 
+        "answer": "document", 
+        "explanation": "'Document' is the correct noun form used to denote a physical record or piece of paper." 
     },
     { 
-        question: "The company purchased new office ________ to upgrade the workspace ergonomics.", 
-        choices: ["furniture", "furnish", "furnished", "furnishing"], 
-        correctIndex: 0, 
-        explanation: '"Furniture" is a collective mass noun representing physical objects like desks and chairs.' 
+        "question": "The company purchased new office ________ to upgrade the workspace ergonomics.", 
+        "options": ["furniture", "furnish", "furnished", "furnishing"], 
+        "answer": "furniture", 
+        "explanation": "'Furniture' is a collective mass noun representing physical objects like desks and chairs." 
     },
     { 
-        question: "Identify the noun representing an object: 'She carefully packed the fragile vase into the box.'", 
-        choices: ["carefully", "fragile", "vase", "packed"], 
-        correctIndex: 2, 
-        explanation: '"Vase" is a concrete noun that refers to a specific physical object.' 
+        "question": "Identify the noun representing an object: 'She carefully packed the fragile vase into the box.'", 
+        "options": ["carefully", "fragile", "vase", "packed"], 
+        "answer": "vase", 
+        "explanation": "'Vase' is a concrete noun that refers to a specific physical object." 
     },
     { 
-        question: "The security guard inspected the contents of the suspicious ________ at the entrance.", 
-        choices: ["package", "pack", "packaging", "packed"], 
-        correctIndex: 0, 
-        explanation: '"Package" is a noun that represents a physical item or parcel (thing).' 
+        "question": "The security guard inspected the contents of the suspicious ________ at the entrance.", 
+        "options": ["package", "pack", "packaging", "packed"], 
+        "answer": "package", 
+        "explanation": "'Package' is a noun that represents a physical item or parcel (thing)." 
     },
     { 
-        question: "The printer ran out of ________ midway through the printing of the civil service reviewers.", 
-        choices: ["ink", "inky", "inked", "inking"], 
-        correctIndex: 0, 
-        explanation: '"Ink" is a concrete material noun that refers to a physical substance.' 
+        "question": "The printer ran out of ________ midway through the printing of the civil service reviewers.", 
+        "options": ["ink", "inky", "inked", "inking"], 
+        "answer": "ink", 
+        "explanation": "'Ink' is a concrete material noun that refers to a physical substance." 
     },
     { 
-        question: "The committee utilized a digital ________ to record the votes accurately.", 
-        choices: ["device", "devise", "devising", "devised"], 
-        correctIndex: 0, 
-        explanation: '"Device" is a noun meaning a mechanical or electronic tool. "Devise" is a verb meaning to plan or invent.' 
+        "question": "The committee utilized a digital ________ to record the votes accurately.", 
+        "options": ["device", "devise", "devising", "devised"], 
+        "answer": "device", 
+        "explanation": "'Device' is a noun meaning a mechanical or electronic tool. 'Devise' is a verb meaning to plan or invent." 
     },
 
     // 31-40: Identifying Nouns (Abstract / Ideas / Concepts)
     { 
-        question: "________ is essential in public service to maintain the trust of the citizenry.", 
-        choices: ["Integrity", "Honest", "Faithfully", "Transparent"], 
-        correctIndex: 0, 
-        explanation: '"Integrity" is an abstract noun that refers to a quality or concept, serving as the subject of the sentence.' 
+        "question": "________ is essential in public service to maintain the trust of the citizenry.", 
+        "options": ["Integrity", "Honest", "Faithfully", "Transparent"], 
+        "answer": "Integrity", 
+        "explanation": "'Integrity' is an abstract noun that refers to a quality or concept, serving as the subject of the sentence." 
     },
     { 
-        question: "The agency gained recognition due to the extreme ________ of its personnel.", 
-        choices: ["efficiency", "efficient", "efficiently", "efficacious"], 
-        correctIndex: 0, 
-        explanation: '"Efficiency" is the abstract noun form representing a quality. The other choices are adjectives or adverbs.' 
+        "question": "The agency gained recognition due to the extreme ________ of its personnel.", 
+        "options": ["efficiency", "efficient", "efficiently", "efficacious"], 
+        "answer": "efficiency", 
+        "explanation": "'Efficiency' is the abstract noun form representing a quality. The other choices are adjectives or adverbs." 
     },
     { 
-        question: "Which abstract noun represents a quality of being brave? 'The soldiers showed immense ________ during the rescue operation.'", 
-        choices: ["bravely", "brave", "bravery", "bravest"], 
-        correctIndex: 2, 
-        explanation: '"Bravery" is the abstract noun form that refers to the quality of courage. "Brave" is an adjective.' 
+        "question": "Which abstract noun represents a quality of being brave? 'The soldiers showed immense ________ during the rescue operation.'", 
+        "options": ["bravely", "brave", "bravery", "bravest"], 
+        "answer": "bravery", 
+        "explanation": "'Bravery' is the abstract noun form that refers to the quality of courage. 'Brave' is an adjective." 
     },
     { 
-        question: "The Constitution guarantees ________ of speech for all citizens.", 
-        choices: ["free", "freedom", "freely", "freed"], 
-        correctIndex: 1, 
-        explanation: '"Freedom" is an abstract noun that denotes a state of liberty, right, or concept.' 
+        "question": "The Constitution guarantees ________ of speech for all citizens.", 
+        "options": ["free", "freedom", "freely", "freed"], 
+        "answer": "freedom", 
+        "explanation": "'Freedom' is an abstract noun that denotes a state of liberty, right, or concept." 
     },
     { 
-        question: "We must strive for ________ in the workplace by treating everyone fairly.", 
-        choices: ["equality", "equal", "equally", "equalize"], 
-        correctIndex: 0, 
-        explanation: '"Equality" is an abstract noun denoting a fair state or concept. "Equal" is an adjective, and "equalize" is a verb.' 
+        "question": "We must strive for ________ in the workplace by treating everyone fairly.", 
+        "options": ["equality", "equal", "equally", "equalize"], 
+        "answer": "equality", 
+        "explanation": "'Equality' is an abstract noun denoting a fair state or concept. 'Equal' is an adjective, and 'equalize' is a verb." 
     },
     { 
-        question: "Identify the abstract noun: 'The judge made the decision based solely on justice and truth.'", 
-        choices: ["judge", "decision", "justice", "solely"], 
-        correctIndex: 2, 
-        explanation: 'While "judge" and "decision" are also nouns, "justice" is a pure abstract noun representing an idea or moral concept.' 
+        "question": "Identify the abstract noun: 'The judge made the decision based solely on justice and truth.'", 
+        "options": ["judge", "decision", "justice", "solely"], 
+        "answer": "justice", 
+        "explanation": "While 'judge' and 'decision' are also nouns, 'justice' is a pure abstract noun representing an idea or moral concept." 
     },
     { 
-        question: "The leader's ________ inspired the entire community to participate in the project.", 
-        choices: ["visionary", "vision", "visible", "visually"], 
-        correctIndex: 1, 
-        explanation: '"Vision" functions as an abstract noun meaning a foresight or concept. "Visionary" is typically an adjective or a person noun.' 
+        "question": "The leader's ________ inspired the entire community to participate in the project.", 
+        "options": ["visionary", "vision", "visible", "visually"], 
+        "answer": "vision", 
+        "explanation": "'Vision' functions as an abstract noun meaning a foresight or concept. 'Visionary' is typically an adjective or a person noun." 
     },
     { 
-        question: "Working under extreme ________ can lead to errors and decreased productivity.", 
-        choices: ["stressful", "stress", "stressed", "stressing"], 
-        correctIndex: 1, 
-        explanation: '"Stress" is used here as an abstract noun referring to a psychological or physical condition.' 
+        "question": "Working under extreme ________ can lead to errors and decreased productivity.", 
+        "options": ["stressful", "stress", "stressed", "stressing"], 
+        "answer": "stress", 
+        "explanation": "'Stress' is used here as an abstract noun referring to a psychological or physical condition." 
     },
     { 
-        question: "Her ________ in solving complex mathematical problems amazed the evaluators.", 
-        choices: ["brilliant", "brilliantly", "brilliance", "brilliantness"], 
-        correctIndex: 2, 
-        explanation: '"Brilliance" is the grammatically correct abstract noun form that indicates superior mental quality.' 
+        "question": "Her ________ in solving complex mathematical problems amazed the evaluators.", 
+        "options": ["brilliant", "brilliantly", "brilliance", "brilliantness"], 
+        "answer": "brilliance", 
+        "explanation": "'Brilliance' is the grammatically correct abstract noun form that indicates superior mental quality." 
     },
     { 
-        question: "The mutual ________ between the two nations led to a successful peace treaty.", 
-        choices: ["understand", "understanding", "understandable", "understandably"], 
-        correctIndex: 1, 
-        explanation: '"Understanding" functions as an abstract noun (gerund form) denoting shared comprehension or agreement.' 
+        "question": "The mutual ________ between the two nations led to a successful peace treaty.", 
+        "options": ["understand", "understanding", "understandable", "understandably"], 
+        "answer": "understanding", 
+        "explanation": "'Understanding' functions as an abstract noun (gerund form) denoting shared comprehension or agreement." 
     },
 
     // 41-50: Proper vs Common & Pluralization Rules
     { 
-        question: "Which of the following is a Proper Noun that must always be capitalized?", 
-        choices: ["government", "department", "republic", "philippines"], 
-        correctIndex: 3, 
-        explanation: '"Philippines" is a proper noun because it is the specific name of a country, meaning it must always begin with a capital letter.' 
+        "question": "Which of the following is a Proper Noun that must always be capitalized?", 
+        "options": ["government", "department", "republic", "philippines"], 
+        "answer": "philippines", 
+        "explanation": "'Philippines' is a proper noun because it is the specific name of a country, meaning it must always begin with a capital letter." 
     },
     { 
-        question: "Identify the sentence that correctly uses a proper noun.", 
-        choices: [
+        "question": "Identify the sentence that correctly uses a proper noun.", 
+        "options": [
             "We visited the National Museum last Friday.", 
             "We visited the national museum last Friday.", 
             "We visited the National museum last friday.", 
             "We visited the national Museum last friday."
         ], 
-        correctIndex: 0, 
-        explanation: 'Both "National Museum" (a specific institution) and "Friday" (a specific day of the week) are proper nouns and must be capitalized.' 
+        "answer": "We visited the National Museum last Friday.", 
+        "explanation": "Both 'National Museum' (a specific institution) and 'Friday' (a specific day of the week) are proper nouns and must be capitalized." 
     },
     { 
-        question: "Which word in the choices is a common noun? 'Dr. Jose Rizal is a renowned national hero.'", 
-        choices: ["Dr. Jose Rizal", "Rizal", "hero", "national"], 
-        correctIndex: 2, 
-        explanation: '"Hero" is a common noun because it is a generic term for figures of admiration, unlike the specific proper name "Dr. Jose Rizal".' 
+        "question": "Which word in the choices is a common noun? 'Dr. Jose Rizal is a renowned national hero.'", 
+        "options": ["Dr. Jose Rizal", "Rizal", "hero", "national"], 
+        "answer": "hero", 
+        "explanation": "'Hero' is a common noun because it is a generic term for figures of admiration, unlike the specific proper name 'Dr. Jose Rizal'." 
     },
     { 
-        question: "The ________ of the Supreme Court are responsible for reviewing judicial appeals.", 
-        choices: ["justices", "justice's", "justiceses", "justice"], 
-        correctIndex: 0, 
-        explanation: 'The plural form of "justice" (when referring to a judge) is "justices". An apostrophe is not needed because it is not possessive.' 
+        "question": "The ________ of the Supreme Court are responsible for reviewing judicial appeals.", 
+        "options": ["justices", "justice's", "justiceses", "justice"], 
+        "answer": "justices", 
+        "explanation": "The plural form of 'justice' (when referring to a judge) is 'justices'. An apostrophe is not needed because it is not possessive." 
     },
     { 
-        question: "Several ________ were deployed to secure the international economic forum.", 
-        choices: ["agencys", "agencies", "agencies'", "agency"], 
-        correctIndex: 1, 
-        explanation: 'For nouns ending in a consonant + "y", change the "y" to "i" and add "es" to form the plural (agencies).' 
+        "question": "Several ________ were deployed to secure the international economic forum.", 
+        "options": ["agencys", "agencies", "agencies'", "agency"], 
+        "answer": "agencies", 
+        "explanation": "For nouns ending in a consonant + 'y', change the 'y' to 'i' and add 'es' to form the plural (agencies)." 
     },
     { 
-        question: "The office purchased three new ________ for the administrative staff.", 
-        choices: ["computer", "computers", "computeres", "computers's"], 
-        correctIndex: 1, 
-        explanation: 'The quantifier "three" indicates a plural requirement. Regular nouns form their plural by simply adding "s" (computers).' 
+        "question": "The office purchased three new ________ for the administrative staff.", 
+        "options": ["computer", "computers", "computeres", "computers's"], 
+        "answer": "computers", 
+        "explanation": "The quantifier 'three' indicates a plural requirement. Regular nouns form their plural by simply adding 's' (computers)." 
     },
     { 
-        question: "Due to the storm, the heavy downpour caused multiple ________ to overflow.", 
-        choices: ["ditchs", "ditches", "ditches'", "ditches"], 
-        correctIndex: 1, 
-        explanation: 'Nouns ending in s, x, z, ch, or sh form their plural by adding "es" (ditches).' 
+        "question": "Due to the storm, the heavy downpour caused multiple ________ to overflow.", 
+        "options": ["ditchs", "ditches", "ditches'", "ditches"], 
+        "answer": "ditches", 
+        "explanation": "Nouns ending in s, x, z, ch, or sh form their plural by adding 'es' (ditches)." 
     },
     { 
-        question: "The human resource department updated the records of all female ________.", 
-        choices: ["attorneys", "attornies", "attorney", "attorney's"], 
-        correctIndex: 0, 
-        explanation: 'If a noun ends in a vowel + "y" (such as -ey), you form the plural simply by adding "s" (attorneys).' 
+        "question": "The human resource department updated the records of all female ________.", 
+        "options": ["attorneys", "attornies", "attorney", "attorney's"], 
+        "answer": "attorneys", 
+        "explanation": "If a noun ends in a vowel + 'y' (such as -ey), you form the plural simply by adding 's' (attorneys)." 
     },
     { 
-        question: "The seminar focuses on how to manage the various ________ encountered by public servants.", 
-        choices: ["crisis", "crises", "crisises", "crisis's"], 
-        correctIndex: 1, 
-        explanation: '"Crisis" is an irregular noun of Greek origin. Its plural form changes the "-is" ending to "-es" (crises).' 
+        "question": "The seminar focuses on how to manage the various ________ encountered by public servants.", 
+        "options": ["crisis", "crises", "crisises", "crisis's"], 
+        "answer": "crises", 
+        "explanation": "'Crisis' is an irregular noun of Greek origin. Its plural form changes the '-is' ending to '-es' (crises)." 
     },
     { 
-        question: "Only five ________ are allowed inside the examination room at a time.", 
-        choices: ["candidate", "candidates", "candidates'", "candidate's"], 
-        correctIndex: 1, 
-        explanation: 'The number "five" modifies a plural noun. "Candidates" is the simple plural form without possessive punctuation.' 
+        "question": "Only five ________ are allowed inside the examination room at a time.", 
+        "options": ["candidate", "candidates", "candidates'", "candidate's"], 
+        "answer": "candidates", 
+        "explanation": "The number 'five' modifies a plural noun. 'Candidates' is the simple plural form without possessive punctuation." 
     }
   ],
 
