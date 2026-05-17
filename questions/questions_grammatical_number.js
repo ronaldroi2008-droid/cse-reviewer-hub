@@ -326,62 +326,312 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
   // ============================================================
   intermediate: [
     // 1-15: Irregular Plurals
-    { question: "What is the plural of 'man'?", options: ["mans", "mens", "men", "manes"], answer: "men", explanation: "Irregular plural: 'a' changes to 'e'." },
-    { question: "What is the plural of 'woman'?", options: ["womans", "womens", "women", "womanes"], answer: "women", explanation: "Irregular plural: 'woman' becomes 'women'." },
-    { question: "What is the plural of 'child'?", options: ["childs", "children", "childes", "childrens"], answer: "children", explanation: "Child -> Children." },
-    { question: "What is the plural of 'foot'?", options: ["foots", "feet", "feets", "futes"], answer: "feet", explanation: "Foot -> Feet." },
-    { question: "What is the plural of 'tooth'?", options: ["tooths", "teeth", "toothes", "teeths"], answer: "teeth", explanation: "Tooth -> Teeth." },
-    { question: "What is the plural of 'goose'?", options: ["gooses", "geese", "geeses", "gouse"], answer: "geese", explanation: "Goose -> Geese." },
-    { question: "What is the plural of 'mouse'?", options: ["mouses", "mice", "mices", "meese"], answer: "mice", explanation: "Mouse -> Mice." },
-    { question: "What is the plural of 'ox'?", options: ["oxes", "oxen", "oxs", "oxens"], answer: "oxen", explanation: "Ox -> Oxen." },
-    { question: "What is the plural of 'louse'?", options: ["louses", "lice", "licses", "louse"], answer: "lice", explanation: "Louse -> Lice." },
-    { question: "What is the plural of 'person'?", options: ["persons", "people", "peoples", "persones"], answer: "people", explanation: "'People' is the most common plural, though 'persons' exists in formal contexts." },
-    { question: "What is the plural of 'leaf'?", options: ["leafs", "leaves", "leafes", "leave"], answer: "leaves", explanation: "Nouns ending in 'f' often change to 'ves'." },
-    { question: "What is the plural of 'wolf'?", options: ["wolfs", "wolves", "wolfes", "wolv"], answer: "wolves", explanation: "Wolf -> Wolves." },
-    { question: "What is the plural of 'knife'?", options: ["knifes", "knives", "knive", "knifves"], answer: "knives", explanation: "Knife -> Knives." },
-    { question: "What is the plural of 'wife'?", options: ["wifes", "wives", "wivies", "wifs"], answer: "wives", explanation: "Wife -> Wives." },
-    { question: "What is the plural of 'thief'?", options: ["thiefs", "thieves", "thiefes", "thievs"], answer: "thieves", explanation: "Thief -> Thieves." },
+ { 
+        "question": "What is the correct plural form of the irregular noun 'man'?", 
+        "options": ["mans", "mens", "men", "manes"], 
+        "answer": "men", 
+        "explanation": "The word 'man' is an irregular Germanic noun that undergoes an internal vowel mutation (ablaut) instead of taking a regular plural suffix. The singular vowel 'a' mutates into 'e' to signify the plural form 'men'." 
+    },
+    { 
+        "question": "Choose the grammatically accurate plural variation for the noun 'woman'.", 
+        "options": ["womans", "womens", "women", "womanes"], 
+        "answer": "women", 
+        "explanation": "Parallel to 'man', the noun 'woman' utilizes internal stem modification for pluralization. The vowel shift alters the spelling of the final syllable to 'women', which also shifts the pronunciation of the initial syllable." 
+    },
+    { 
+        "question": "Identify the proper plural inflection for the noun 'child'.", 
+        "options": ["childs", "children", "childes", "childrens"], 
+        "answer": "children", 
+        "explanation": "The word 'child' forms its plural through a rare historical Germanic convention known as a 'broken plural', which appends the Germanic plural suffix '-ren' alongside an internal vowel change to yield 'children'." 
+    },
+    { 
+        "question": "What is the correct plural form of the anatomical noun 'foot'?", 
+        "options": ["foots", "feet", "feets", "futes"], 
+        "answer": "feet", 
+        "explanation": "'Foot' belongs to a specific class of irregular nouns that exhibit mutations in their root vowels. The double mid-vowel 'oo' systematically converts to a double high-vowel 'ee' to create the plural form 'feet'." 
+    },
+    { 
+        "question": "Which option denotes the structurally correct plural for 'tooth'?", 
+        "options": ["tooths", "teeth", "toothes", "teeths"], 
+        "answer": "teeth", 
+        "explanation": "The noun 'tooth' forms its plural via regressive assimilation or internal vowel mutation. The singular 'oo' sound is altered to an 'ee' sound, establishing 'teeth' as the only valid plural form without adding an '-s'." 
+    },
+    { 
+        "question": "Select the correct plural form of the avian noun 'goose'.", 
+        "options": ["gooses", "geese", "geeses", "gouse"], 
+        "answer": "geese", 
+        "explanation": "Following the historical patterns of linguistic mutation within English irregular count nouns, the word 'goose' shifts its primary vowel configuration from 'oo' to 'ee', giving rise to the plural term 'geese'." 
+    },
+    { 
+        "question": "What is the proper plural translation for the rodent noun 'mouse'?", 
+        "options": ["mouses", "mice", "mices", "meese"], 
+        "answer": "mice", 
+        "explanation": "The singular noun 'mouse' utilizes an irregular inflectional pattern involving an internal diphthong mutation. The root spelling completely shifts from '-ouse' to '-ice' to define the plural 'mice'." 
+    },
+    { 
+        "question": "Determine the correct plural form of the livestock noun 'ox'.", 
+        "options": ["oxes", "oxen", "oxs", "oxens"], 
+        "answer": "oxen", 
+        "explanation": "'Ox' is one of the very few surviving modern English words that retains the Old English weak plural inflection. Instead of adding an '-s' or '-es', it takes the terminal suffix '-en', rendering 'oxen'." 
+    },
+    { 
+        "question": "What is the accurate plural form of the parasitic noun 'louse'?", 
+        "options": ["louses", "lice", "licses", "louse"], 
+        "answer": "lice", 
+        "explanation": "Identical to the morphological paradigm observed in 'mouse/mice', the singular noun 'louse' undergoes an internal vowel and consonant shift, substituting the root to produce the plural form 'lice'." 
+    },
+    { 
+        "question": "From a standard modern grammatical perspective, what is the accepted plural form of 'person'?", 
+        "options": ["persons", "people", "peoples", "persones"], 
+        "answer": "people", 
+        "explanation": "While 'persons' is valid in strictly legal, statutory, and highly formal bureaucratic contexts, 'people' functions as the standard, widely accepted irregular plural equivalent of 'person' in general and academic English." 
+    },
+    { 
+        "question": "What is the plural form of the organic noun 'leaf'?", 
+        "options": ["leafs", "leaves", "leafes", "leave"], 
+        "answer": "leaves", 
+        "explanation": "Under the voicing rule of English plurals, many nouns that terminate in the voiceless labiodental fricative 'f' switch to a voiced labiodental fricative 'v' before adding the plural suffix '-es' (hence, 'leaves')." 
+    },
+    { 
+        "question": "Choose the grammatically correct plural form of the wildlife noun 'wolf'.", 
+        "options": ["wolfs", "wolves", "wolfes", "wolv"], 
+        "answer": "wolves", 
+        "explanation": "The noun 'wolf' terminates in a singular 'f'. To transform this class of nouns into a plural state, standard orthography mandates modifying the 'f' to a 'v' and subsequently attaching the sibilant suffix '-es'." 
+    },
+    { 
+        "question": "What is the correct plural form of the utensil noun 'knife'?", 
+        "options": ["knifes", "knives", "knive", "knifves"], 
+        "answer": "knives", 
+        "explanation": "When a singular noun ends in the voiceless sound sequence '-fe' such as 'knife', the structural rule requires changing the 'f' element into a 'v' and appending an '-es' suffix, yielding 'knives'." 
+    },
+    { 
+        "question": "Identify the proper plural form of the marital noun 'wife'.", 
+        "options": ["wifes", "wives", "wivies", "wifs"], 
+        "answer": "wives", 
+        "explanation": "The word 'wife' ends in '-fe'. Morphological rules dictate the conversion of the terminal fricative segment, changing the 'f' component into a 'v' followed by the addition of the standard plural marker '-es'." 
+    },
+    { 
+        "question": "What is the correct plural form of the criminal noun 'thief'?", 
+        "options": ["thiefs", "thieves", "thiefes", "thievs"], 
+        "answer": "thieves", 
+        "explanation": "The word 'thief' concludes with a lone 'f' preceded by a long vowel digraph. In accordance with established English phonological pluralization, the 'f' is replaced by 'v' and accompanied by '-es' to produce 'thieves'." 
+    },
 
     // 16-30: Zero Plural (Same Form)
-    { question: "What is the plural of 'sheep'?", options: ["sheeps", "sheep", "sheppes", "shoop"], answer: "sheep", explanation: "Sheep stays the same." },
-    { question: "What is the plural of 'deer'?", options: ["deers", "deer", "deeres", "doer"], answer: "deer", explanation: "Deer stays the same." },
-    { question: "What is the plural of 'fish' (general)?", options: ["fishs", "fishes", "fish", "fishies"], answer: "fish", explanation: "Fish usually stays the same (Fishes is used for different species)." },
-    { question: "What is the plural of 'salmon'?", options: ["salmons", "salmon", "salmones", "salmen"], answer: "salmon", explanation: "Salmon stays the same." },
-    { question: "What is the plural of 'tuna'?", options: ["tunas", "tuna", "tunae", "tunes"], answer: "tuna", explanation: "In general use, 'tuna' is a zero plural (one tuna, two tuna). 'Tunas' can be used for kinds of tuna." },
-    { question: "What is the plural of 'moose'?", options: ["mooses", "meese", "moose", "moos"], answer: "moose", explanation: "Moose stays the same." },
-    { question: "What is the plural of 'aircraft'?", options: ["aircrafts", "aircraft", "aircraftes", "air-crafts"], answer: "aircraft", explanation: "Aircraft stays the same." },
-    { question: "What is the plural of 'series'?", options: ["serieses", "series", "serie", "seri"], answer: "series", explanation: "Series is the same in singular and plural." },
-    { question: "What is the plural of 'species'?", options: ["specieses", "specie", "species", "speci"], answer: "species", explanation: "Species is the same in singular and plural." },
-    { question: "What is the plural of 'shrimp'?", options: ["shrimps", "shrimp", "shrimpes", "shramps"], answer: "shrimp", explanation: "'Shrimp' is commonly a zero plural (one shrimp, two shrimp). 'Shrimps' is sometimes used for different species." },
-    { question: "Which is correct?", options: ["Two sheeps", "Two sheep", "Two sheepses", "Two ship"], answer: "Two sheep", explanation: "Sheep never takes an 's'." },
-    { question: "Which is correct?", options: ["Many deers", "Many deer", "Many doer", "Much deer"], answer: "Many deer", explanation: "Deer never takes an 's'." },
-    { question: "Which is correct?", options: ["A herd of mooses", "A herd of moose", "A herd of meese", "A herd of moos"], answer: "A herd of moose", explanation: "Moose is always moose." },
-    { question: "Is 'Music' countable or uncountable?", options: ["Countable", "Uncountable", "Both", "Neither"], answer: "Uncountable", explanation: "Music is uncountable." },
-    { question: "Is 'Furniture' countable or uncountable?", options: ["Countable", "Uncountable", "Both", "Neither"], answer: "Uncountable", explanation: "Furniture is uncountable." },
+    { 
+        "question": "What is the plural form of the agricultural noun 'sheep'?", 
+        "options": ["sheeps", "sheep", "sheppes", "shoop"], 
+        "answer": "sheep", 
+        "explanation": "The word 'sheep' is categorized as a 'zero plural' or 'unchanged plural' noun. Due to historical Old English neuter noun structures, the singular and plural forms remain completely identical in spelling and pronunciation." 
+    },
+    { 
+        "question": "Which option indicates the correct plural configuration for the animal noun 'deer'?", 
+        "options": ["deers", "deer", "deeres", "doer"], 
+        "answer": "deer", 
+        "explanation": "'Deer' functions as a zero-inflection plural noun. Whether referring to a solitary organism or an entire herd, the base spelling does not accept the addition of a pluralizing suffix like '-s'." 
+    },
+    { 
+        "question": "What is the general plural form of the aquatic noun 'fish'?", 
+        "options": ["fishs", "fishes", "fish", "fishies"], 
+        "answer": "fish", 
+        "explanation": "In general context, 'fish' serves as a zero plural noun when referring to multiple individuals of the same type. The alternative form 'fishes' is grammatically reserved exclusively for scientific contexts denoting multiple distinct species." 
+    },
+    { 
+        "question": "What is the plural form of the specific marine noun 'salmon'?", 
+        "options": ["salmons", "salmon", "salmones", "salmen"], 
+        "answer": "salmon", 
+        "explanation": "Names of many game fish and edible marine life, such as 'salmon', are systematically treated as zero plurals. The word undergoes no morphological changes when transitioning from singular to plural." 
+    },
+    { 
+        "question": "Select the correct plural convention for the predatory fish 'tuna'.", 
+        "options": ["tunas", "tuna", "tunae", "tunes"], 
+        "answer": "tuna", 
+        "explanation": "In standard vernacular and culinary usage, 'tuna' maintains a zero plural property (e.g., 'three tuna'). While 'tunas' may appear when categorizing diverse scientific families of tuna, the collective baseline plural is unchanged." 
+    },
+    { 
+        "question": "What is the correct plural form of the large mammal noun 'moose'?", 
+        "options": ["mooses", "meese", "moose", "moos"], 
+        "answer": "moose", 
+        "explanation": "Unlike 'goose/geese', the word 'moose' is an loanword of Native American (Algonquian) origin and does not share the same Germanic root mutations. It operates strictly as a zero plural noun; thus, the form remains 'moose'." 
+    },
+    { 
+        "question": "Identify the correct plural iteration of the technological noun 'aircraft'.", 
+        "options": ["aircrafts", "aircraft", "aircraftes", "air-crafts"], 
+        "answer": "aircraft", 
+        "explanation": "Compound nouns terminating in the root word '-craft' (such as aircraft, spacecraft, or watercraft) possess an unchanging plural profile. Appending a terminal '-s' is a grammatical error." 
+    },
+    { 
+        "question": "What is the plural form of the noun 'series'?", 
+        "options": ["serieses", "series", "serie", "seri"], 
+        "answer": "series", 
+        "explanation": "The word 'series' is derived from Latin and is fundamentally identical in both its singular and plural numbers. The presence of the terminal 's' is part of its base morphology and not an added suffix." 
+    },
+    { 
+        "question": "What is the proper plural form of the biological noun 'species'?", 
+        "options": ["specieses", "specie", "species", "speci"], 
+        "answer": "species", 
+        "explanation": "The noun 'species' is a direct borrowing from Latin that functions natively as a zero plural. Dropping the 's' to form 'specie' change the meaning entirely, as 'specie' refers to coined money." 
+    },
+    { 
+        "question": "Determine the standard plural form of the crustacean noun 'shrimp'.", 
+        "options": ["shrimps", "shrimp", "shrimpes", "shramps"], 
+        "answer": "shrimp", 
+        "explanation": "While both formats can be found, standard collective reference to this marine animal favors the zero plural form 'shrimp' (e.g., 'a plate of shrimp'). 'Shrimps' is structurally confined to individual counts or varied species definitions." 
+    },
+    { 
+        "question": "Evaluate the phrases below and select the grammatically flawless expression.", 
+        "options": ["Two sheeps", "Two sheep", "Two sheepses", "Two ship"], 
+        "answer": "Two sheep", 
+        "explanation": "Because 'sheep' is a strict zero plural noun, it is grammatically restricted from receiving pluralizing suffixes. Numerical modifiers affect its quantity contextually without altering the base word." 
+    },
+    { 
+        "question": "Which of the following sentences utilizes the correct plural adjective-noun pairing?", 
+        "options": ["Many deers", "Many deer", "Many doer", "Much deer"], 
+        "answer": "Many deer", 
+        "explanation": "The quantitative adjective 'many' modifies plural count nouns. Since 'deer' has an unchanging plural form, 'many deer' is correct. 'Much' is incorrect because it modifies uncountable mass nouns." 
+    },
+    { 
+        "question": "Identify the correct phrasing for a collective group of moose.", 
+        "options": ["A herd of mooses", "A herd of moose", "A herd of meese", "A herd of moos"], 
+        "answer": "A herd of moose", 
+        "explanation": "A collective noun phrase like 'a herd of' requires a plural object noun. Since 'moose' is a zero plural term, it must retain its exact original singular format inside the prepositional phrase." 
+    },
+    { 
+        "question": "In structural linguistics, how is the noun 'Music' definitively categorized?", 
+        "options": ["Countable", "Uncountable", "Both", "Neither"], 
+        "answer": "Uncountable", 
+        "explanation": "'Music' is an abstract, non-count (uncountable) mass noun representing an artistic concept. It cannot be pluralized with numerals or standard plural markers unless structured through a partitive phrase like 'pieces of music'." 
+    },
+    { 
+        "question": "How is the common workplace noun 'Furniture' classified regarding grammatical number?", 
+        "options": ["Countable", "Uncountable", "Both", "Neither"], 
+        "answer": "Uncountable", 
+        "explanation": "'Furniture' is a non-count, collective mass noun. It is structurally incorrect to write 'furnitures' or 'three furnitures'; instead, counts must be quantified using partitive counters such as 'articles of furniture' or 'items of furniture'." 
+    },
 
     // 31-40: Compound Nouns Pluralization
-    { question: "What is the plural of 'mother-in-law'?", options: ["mother-in-laws", "mothers-in-law", "mothers-in-laws", "mother-in-law"], answer: "mothers-in-law", explanation: "Pluralize the main person (mother), not the law." },
-    { question: "What is the plural of 'passer-by'?", options: ["passer-bys", "passers-by", "passers-bys", "passer-by"], answer: "passers-by", explanation: "Pluralize the person (passer)." },
-    { question: "What is the plural of 'editor-in-chief'?", options: ["editors-in-chief", "editor-in-chiefs", "editors-in-chiefs", "editor-in-chieves"], answer: "editors-in-chief", explanation: "Pluralize the main word (editor)." },
-    { question: "What is the plural of 'runner-up'?", options: ["runner-ups", "runners-up", "runners-ups", "runner-up"], answer: "runners-up", explanation: "Pluralize the person (runner)." },
-    { question: "What is the plural of 'cupful'?", options: ["cupsful", "cupfuls", "cupsfuls", "cup-fuls"], answer: "cupfuls", explanation: "For measurements ending in -ful, add 's' at the end." },
-    { question: "What is the plural of 'spoonful'?", options: ["spoonsful", "spoonfuls", "spoonsfuls", "spoon-fuls"], answer: "spoonfuls", explanation: "Add 's' to the end: Spoonfuls." },
-    { question: "What is the plural of 'toothbrush'?", options: ["teethbrush", "toothbrushes", "teethbrushes", "toothbrushs"], answer: "toothbrushes", explanation: "Pluralize the end of the compound word." },
-    { question: "What is the plural of 'fireman'?", options: ["firemans", "firemen", "firesman", "firemens"], answer: "firemen", explanation: "Man changes to Men." },
-    { question: "What is the plural of 'bookshelf'?", options: ["bookshelfs", "bookshelves", "booksshelf", "bookshelvs"], answer: "bookshelves", explanation: "Shelf changes to Shelves." },
-    { question: "What is the plural of 'stepchild'?", options: ["stepchilds", "stepchildren", "stepschild", "stepchildes"], answer: "stepchildren", explanation: "Child changes to Children." },
+    { 
+        "question": "What is the grammatically correct plural form of the hyphenated compound noun 'mother-in-law'?", 
+        "options": ["mother-in-laws", "mothers-in-law", "mothers-in-laws", "mother-in-law"], 
+        "answer": "mothers-in-law", 
+        "explanation": "To pluralize a hyphenated compound noun containing a principal noun and a prepositional phrase, the plural suffix '-s' must be strictly appended to the principal component or head noun ('mother') which holds the core meaning." 
+    },
+    { 
+        "question": "Choose the correct plural adaptation for the agent noun 'passer-by'.", 
+        "options": ["passer-bys", "passers-by", "passers-bys", "passer-by"], 
+        "answer": "passers-by", 
+        "explanation": "In the compound phrase 'passer-by', 'passer' functions as the operational noun agent, while 'by' is an adverbial particle. Grammar rules mandate pluralizing the primary noun agent, resulting in 'passers-by'." 
+    },
+    { 
+        "question": "What is the proper plural iteration for the organizational title 'editor-in-chief'?", 
+        "options": ["editors-in-chief", "editor-in-chiefs", "editors-in-chiefs", "editor-in-chieves"], 
+        "answer": "editors-in-chief", 
+        "explanation": "The structural head of this compound title is 'editor'. The descriptive prepositional extension '-in-chief' remains static; therefore, only 'editor' receives the plural inflectional '-s'." 
+    },
+    { 
+        "question": "Identify the correct plural form of the competitive noun 'runner-up'.", 
+        "options": ["runner-ups", "runners-up", "runners-ups", "runner-up"], 
+        "answer": "runners-up", 
+        "explanation": "The word 'runner' is the essential noun element performing the action in this phrase, whereas 'up' is a modifying particle. Pluralizing the noun element yields the proper form 'runners-up'." 
+    },
+    { 
+        "question": "What is the correct plural form of the measurement noun 'cupful'?", 
+        "options": ["cupsful", "cupfuls", "cupsfuls", "cup-fuls"], 
+        "answer": "cupfuls", 
+        "explanation": "Nouns ending in the suffix '-ful' (like cupful, spoonful, or handful) are treated as consolidated single words rather than broken compounds. Consequently, the pluralizing '-s' is attached cleanly to the very end of the word ('cupfuls')." 
+    },
+    { 
+        "question": "Select the correct plural configuration for the volume measurement 'spoonful'.", 
+        "options": ["spoonsful", "spoonfuls", "spoonsfuls", "spoon-fuls"], 
+        "answer": "spoonfuls", 
+        "explanation": "Because 'spoonful' functions as a unified singular container-measurement term, standard morphological composition dictates that the plural marker must be placed as a terminal suffix, creating 'spoonfuls'." 
+    },
+    { 
+        "question": "What is the correct plural form of the consolidated compound noun 'toothbrush'?", 
+        "options": ["teethbrush", "toothbrushes", "teethbrushes", "toothbrushs"], 
+        "answer": "toothbrushes", 
+        "explanation": "For solid (unhyphenated) compound nouns, the primary plural rule dictates modifying only the final component of the word. Since the word concludes with 'brush', it takes the sibilant plural suffix to become 'toothbrushes'." 
+    },
+    { 
+        "question": "Identify the correct plural variant for the professional noun 'fireman'.", 
+        "options": ["firemans", "firemen", "firesman", "firemens"], 
+        "answer": "firemen", 
+        "explanation": "The terminal block of this compound noun is the irregular stem '-man'. To achieve an accurate plural state, the internal mutation rules of the base word are triggered, altering it to 'firemen'." 
+    },
+    { 
+        "question": "What is the proper plural form of the storage unit 'bookshelf'?", 
+        "options": ["bookshelfs", "bookshelves", "booksshelf", "bookshelvs"], 
+        "answer": "bookshelves", 
+        "explanation": "This solid compound noun concludes with 'shelf'. Following standard pluralization rules for nouns ending in an 'f' sound, the 'f' transforms into a 'v' and receives '-es', constructing 'bookshelves'." 
+    },
+    { 
+        "question": "Choose the accurate plural form of the familial compound 'stepchild'?", 
+        "options": ["stepchilds", "stepchildren", "stepschild", "stepchildes"], 
+        "answer": "stepchildren", 
+        "explanation": "The modifier prefix 'step-' stays invariable in compound family terms. The plural transformation is completely handled by the irregular head noun 'child', which converts into 'stepchildren'." 
+    },
 
     // 41-50: Nouns ending in 'o'
-    { question: "What is the plural of 'potato'?", options: ["potatos", "potatoes", "potatoies", "potatose"], answer: "potatoes", explanation: "Add '-es' to potato." },
-    { question: "What is the plural of 'tomato'?", options: ["tomatos", "tomatoes", "tomatoies", "tomatose"], answer: "tomatoes", explanation: "Add '-es' to tomato." },
-    { question: "What is the plural of 'hero'?", options: ["heros", "heroes", "heroies", "herose"], answer: "heroes", explanation: "Add '-es' to hero." },
-    { question: "What is the plural of 'echo'?", options: ["echos", "echoes", "echoies", "echose"], answer: "echoes", explanation: "Add '-es' to echo." },
-    { question: "What is the plural of 'radio'?", options: ["radios", "radioes", "radioies", "radiose"], answer: "radios", explanation: "For musical/tech terms ending in 'o', usually just add 's'." },
-    { question: "What is the plural of 'piano'?", options: ["pianos", "pianoes", "pianoies", "pianose"], answer: "pianos", explanation: "Just add 's' to piano." },
-    { question: "What is the plural of 'photo'?", options: ["photos", "photoes", "photoies", "photose"], answer: "photos", explanation: "Just add 's' to photo." },
-    { question: "What is the plural of 'video'?", options: ["videos", "videoes", "videoies", "videose"], answer: "videos", explanation: "Just add 's' to video." },
-    { question: "What is the plural of 'zoo'?", options: ["zoos", "zooes", "zooies", "zoose"], answer: "zoos", explanation: "Just add 's' to zoo." },
-    { question: "What is the plural of 'volcano'?", options: ["volcanos", "volcanoes", "Both A and B", "volcani"], answer: "Both A and B", explanation: "Both 'volcanos' and 'volcanoes' are accepted." }
+    { 
+        "question": "What is the correct plural spelling of the agricultural root crop 'potato'?", 
+        "options": ["potatos", "potatoes", "potatoies", "potatose"], 
+        "answer": "potatoes", 
+        "explanation": "As a general linguistic rule, singular nouns that end in a consonant followed by the vowel 'o' (t + o) require the addition of the full '-es' suffix to be considered orthographically correct." 
+    },
+    { 
+        "question": "Identify the standard plural form of the agricultural crop 'tomato'.", 
+        "options": ["tomatos", "tomatoes", "tomatoies", "tomatose"], 
+        "answer": "tomatoes", 
+        "explanation": "The noun 'tomato' features a consonant-O ending structure (t + o). Standard written English requires adding an '-es' suffix rather than a lone '-s' to properly finalize its plural state." 
+    },
+    { 
+        "question": "What is the correct plural representation of the iconic character noun 'hero'?", 
+        "options": ["heros", "heroes", "heroies", "herose"], 
+        "answer": "heroes", 
+        "explanation": "The word 'hero' ends in an 'o' preceded by a consonant (r + o). It belongs to the classical category of regular nouns that mandate the implementation of the '-es' pluralizing marker." 
+    },
+    { 
+        "question": "Which option displays the correct plural spelling of the acoustic noun 'echo'?", 
+        "options": ["echos", "echoes", "echoies", "echose"], 
+        "answer": "echoes", 
+        "explanation": "The noun 'echo' terminates in a consonant-O configuration (h + o). To generate the valid plural noun format according to spelling principles, an '-es' must be attached." 
+    },
+    { 
+        "question": "What is the proper plural format for the electronic device noun 'radio'?", 
+        "options": ["radios", "radioes", "radioies", "radiose"], 
+        "answer": "radios", 
+        "explanation": "When a singular noun ends in an 'o' that is directly preceded by another vowel (i + o), the rule shifts. It strictly takes only a single terminal '-s' to establish its plural form." 
+    },
+    { 
+        "question": "What is the correct plural form of the musical instrument noun 'piano'?", 
+        "options": ["pianos", "pianoes", "pianoies", "pianose"], 
+        "answer": "pianos", 
+        "explanation": "Words derived from Italian musical terms or foreign loanwords ending in 'o' (such as piano, cello, or solo) serve as an exception to the consonant-O rule. They form their plural by adding only a simple '-s'." 
+    },
+    { 
+        "question": "Select the correct plural spelling for the media graphic noun 'photo'.", 
+        "options": ["photos", "photoes", "photoies", "photose"], 
+        "answer": "photos", 
+        "explanation": "The word 'photo' is a clipped abbreviation of the original term 'photograph'. Abbreviated or clipped words terminating in 'o' universally form their plural by appending a regular terminal '-s'." 
+    },
+    { 
+        "question": "Determine the proper plural form of the multimedia noun 'video'.", 
+        "options": ["videos", "videoes", "videoies", "videose"], 
+        "answer": "videos", 
+        "explanation": "The word 'video' features a vowel immediately preceding the terminal 'o' (e + o). Consistent with English spelling conventions, vowel-O combinations pluralize purely by adding a literal '-s'." 
+    },
+    { 
+        "question": "What is the plural form of the wildlife facility noun 'zoo'?", 
+        "options": ["zoos", "zooes", "zooies", "zoose"], 
+        "answer": "zoos", 
+        "explanation": "Nouns that terminate in a double vowel 'oo' sequence do not accept an '-es' extension. To complete its plural inflection accurately, you only append a terminal '-s'." 
+    },
+    { 
+        "question": "Evaluate the plural options for the geological feature 'volcano' and select the most accurate judgment.", 
+        "options": ["volcanos", "volcanoes", "Both A and B", "volcani"], 
+        "answer": "Both A and B", 
+        "explanation": "Certain English words ending in a consonant-O sequence have evolved to accept dual spelling standards. Both the regularized 'volcanos' (with an '-s') and the traditional 'volcanoes' (with an '-es') are recognized as entirely correct in dictionaries." 
+    }
   ],
 
   // ============================================================
