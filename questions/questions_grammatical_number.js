@@ -639,62 +639,312 @@ window.VERBAL_QUESTION_BANK["grammatical_number"] = {
   // ============================================================
   advanced: [
     // 1-15: Foreign Plurals (Latin/Greek)
-    { question: "What is the plural of 'datum'?", options: ["datums", "data", "datas", "date"], answer: "data", explanation: "Data is the Latin plural of datum." },
-    { question: "What is the plural of 'criterion'?", options: ["criterions", "criteria", "criterias", "criterion"], answer: "criteria", explanation: "Criteria is the Greek plural of criterion." },
-    { question: "What is the plural of 'phenomenon'?", options: ["phenomenons", "phenomena", "phenomenas", "phenomeni"], answer: "phenomena", explanation: "Phenomena is the Greek plural." },
-    { question: "What is the plural of 'analysis'?", options: ["analyses", "analysises", "analysis", "analysi"], answer: "analyses", explanation: "Change 'is' to 'es': Analyses." },
-    { question: "What is the plural of 'thesis'?", options: ["thesises", "theses", "thesis", "thesi"], answer: "theses", explanation: "Change 'is' to 'es': Theses." },
-    { question: "What is the plural of 'crisis'?", options: ["crisises", "crises", "crisi", "cries"], answer: "crises", explanation: "Change 'is' to 'es': Crises." },
-    { question: "What is the plural of 'cactus'?", options: ["cactuses", "cacti", "Both A and B", "cactus"], answer: "Both A and B", explanation: "Both Cacti (Latin) and Cactuses (English) are accepted." },
-    { question: "What is the plural of 'fungus'?", options: ["funguses", "fungi", "Both A and B", "fungu"], answer: "Both A and B", explanation: "Both Fungi and Funguses are accepted." },
-    { question: "What is the plural of 'nucleus'?", options: ["nucleuses", "nuclei", "nucleis", "nuclear"], answer: "nuclei", explanation: "Nucleus -> Nuclei." },
-    { question: "What is the plural of 'stimulus'?", options: ["stimuluses", "stimuli", "stimulis", "stimul"], answer: "stimuli", explanation: "Stimulus -> Stimuli." },
-    { question: "What is the plural of 'alumnus' (male)?", options: ["alumni", "alumnae", "alumnuses", "alumnas"], answer: "alumni", explanation: "Alumnus -> Alumni." },
-    { question: "What is the plural of 'alumna' (female)?", options: ["alumni", "alumnae", "alumnas", "alumnus"], answer: "alumnae", explanation: "Alumna -> Alumnae." },
-    { question: "What is the plural of 'bacterium'?", options: ["bacteriums", "bacteria", "bacterias", "bacteri"], answer: "bacteria", explanation: "Bacterium -> Bacteria." },
-    { question: "What is the plural of 'medium'?", options: ["mediums", "media", "medias", "medi"], answer: "media", explanation: "Medium -> Media (e.g., Social Media)." },
-    { question: "What is the plural of 'index'?", options: ["indexes", "indices", "Both A and B", "index"], answer: "Both A and B", explanation: "Indexes (books) or Indices (math)." },
+    { 
+        "question": "What is the grammatically accurate plural form of the Latin loanword 'datum'?", 
+        "options": ["datums", "data", "datas", "date"], 
+        "answer": "data", 
+        "explanation": "The word 'datum' is a second-declension Latin neuter noun. In classical Latin grammatical morphology, nouns terminating in the singular suffix '-um' form their plural by substituting it with a terminal '-a', resulting in 'data'. Appending a standard English '-s' is a morphological error." 
+    },
+    { 
+        "question": "Identify the correct plural manifestation for the evaluative noun 'criterion'.", 
+        "options": ["criterions", "criteria", "criterias", "criterion"], 
+        "answer": "criteria", 
+        "explanation": "The noun 'criterion' is derived directly from ancient Greek. According to Greek orthographic rules preserved in English, singular nouns that end in the suffix '-on' must change their terminal marker to an '-a' in the plural form, establishing 'criteria' as the sole valid standard." 
+    },
+    { 
+        "question": "Which of the following represents the correct plural form of 'phenomenon'?", 
+        "options": ["phenomenons", "phenomena", "phenomenas", "phenomeni"], 
+        "answer": "phenomena", 
+        "explanation": "Parallel to the morphological profile of 'criterion', 'phenomenon' is a classical Greek loanword. To shift the word into its accurate plural state, the singular terminal '-on' is completely replaced by the plural suffix '-a', producing 'phenomena'." 
+    },
+    { 
+        "question": "What is the proper plural configuration for the analytical noun 'analysis'?", 
+        "options": ["analyses", "analysises", "analysis", "analysi"], 
+        "answer": "analyses", 
+        "explanation": "'Analysis' is a third-declension Greek abstract noun ending in a closed sibilant '-is'. In English grammar, loanwords belonging to this class achieve pluralization by altering the internal vowel structure, replacing the singular terminal '-is' with an '-es' suffix." 
+    },
+    { 
+        "question": "Choose the correct plural variant of the academic noun 'thesis'.", 
+        "options": ["thesises", "theses", "thesis", "thesi"], 
+        "answer": "theses", 
+        "explanation": "The word 'thesis' features a classical Greek inflectional pattern ending in '-is'. To establish a grammatically sound plural count, the word must undergo an internal vowel shift where the '-is' marker is replaced by the pluralizing suffix '-es'." 
+    },
+    { 
+        "question": "What is the structurally correct plural form of the systemic noun 'crisis'?", 
+        "options": ["crisises", "crises", "crisi", "cries"], 
+        "answer": "crises", 
+        "explanation": "Consistent with foreign structural roots of Greek origin ending in the terminal syllable '-is', the word 'crisis' forms its plural through a systematic mutation of its ending into '-es', giving rise to the formal plural 'crises'." 
+    },
+    { 
+        "question": "Evaluate the options below and select the correct plural form for the botanical noun 'cactus'.", 
+        "options": ["cactuses", "cacti", "Both A and B", "cactus"], 
+        "answer": "Both A and B", 
+        "explanation": "The word 'cactus' is a Latin loanword that has undergone naturalization in modern English. As a result, both the traditional Latin etymological plural 'cacti' (replacing the singular masculine '-us' with '-i') and the fully anglicized regular plural 'cactuses' (adding '-es') are recognized as valid." 
+    },
+    { 
+        "question": "Determine the accepted plural designation for the biological organism 'fungus'.", 
+        "options": ["funguses", "fungi", "Both A and B", "fungu"], 
+        "answer": "Both A and B", 
+        "explanation": "Due to overlapping linguistic standards in modern English, 'fungus' exhibits dual plural capabilities. The classical Latin morphological transformation shifts '-us' to '-i' to yield 'fungi', while modern anglicized standards permit 'funguses'. Both are grammatically correct." 
+    },
+    { 
+        "question": "What is the precise plural form of the scientific noun 'nucleus'?", 
+        "options": ["nucleuses", "nuclei", "nucleis", "nuclear"], 
+        "answer": "nuclei", 
+        "explanation": "'Nucleus' is a second-declension Latin masculine noun. In rigorous scientific, technical, and academic writing, it strictly retains its etymological pluralization rule, which requires dropping the singular suffix '-us' and replacing it with the terminal vowel '-i'." 
+    },
+    { 
+        "question": "Identify the proper plural inflection for the psychological or physiological noun 'stimulus'.", 
+        "options": ["stimuluses", "stimuli", "stimulis", "stimul"], 
+        "answer": "stimuli", 
+        "explanation": "Derived from classical Latin morphology, singular words ending in a masculine '-us' suffix are pluralized by converting the root termination to an '-i'. This changes 'stimulus' to 'stimuli', which is the required standard in formal English syntax." 
+    },
+    { 
+        "question": "What is the correct plural form when referencing a group of male graduates ('alumnus')?", 
+        "options": ["alumni", "alumnae", "alumnuses", "alumnas"], 
+        "answer": "alumni", 
+        "explanation": "'Alumnus' is a masculine singular Latin noun. To signify a plural group composed entirely of males or a mixed-gender assembly of graduates, Latin grammatical concord demands substituting the masculine '-us' with the plural suffix '-i', forming 'alumni'." 
+    },
+    { 
+        "question": "What is the proper plural form when specifically referencing a group of female graduates ('alumna')?", 
+        "options": ["alumni", "alumnae", "alumnas", "alumnus"], 
+        "answer": "alumnae", 
+        "explanation": "'Alumna' is a first-declension feminine singular Latin noun. Under classical gender-inflected rules preserved in English, a plural assembly composed strictly of females requires changing the singular ending '-a' to the diphthong suffix '-ae' ('alumnae')." 
+    },
+    { 
+        "question": "Select the correct plural counterpart for the microbiological noun 'bacterium'.", 
+        "options": ["bacteriums", "bacteria", "bacterias", "bacteri"], 
+        "answer": "bacteria", 
+        "explanation": "The word 'bacterium' is classified as a neuter Latin noun ending in the singular marker '-um'. Formal English grammar mandates dropping the '-um' suffix and replacing it with a terminal '-a' to formulate the correct collective plural 'bacteria'." 
+    },
+    { 
+        "question": "What is the standard plural form of the communication-channel noun 'medium'?", 
+        "options": ["mediums", "media", "medias", "medi"], 
+        "answer": "media", 
+        "explanation": "When used in the context of mass communication, data preservation, or artistic avenues, the Latin noun 'medium' forms its plural through classical inflections by changing the terminal '-um' to '-a' ('media'). 'Mediums' is restricted to spiritualists or psychics." 
+    },
+    { 
+        "question": "Analyze the choices below and determine the correct plural representation for the noun 'index'.", 
+        "options": ["indexes", "indices", "Both A and B", "index"], 
+        "answer": "Both A and B", 
+        "explanation": "The pluralization of 'index' depends on contextual semantics. The standard anglicized form 'indexes' is preferred when referencing alphabetical lists in literature, whereas the classical Latin plural 'indices' (changing '-ex' to '-ices') is mandatory in mathematical, financial, and statistical fields." 
+    },
 
     // 16-30: Subject-Verb Agreement (Collective Nouns)
-    { question: "The team ___ winning the game.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Team acting as one unit -> singular verb 'is'." },
-    { question: "The team ___ arguing among themselves.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Team members acting individually -> plural verb 'are'." },
-    { question: "The committee ___ reached a decision.", options: ["has", "have", "are", "were"], answer: "has", explanation: "Acting as a unit -> singular 'has'." },
-    { question: "The staff ___ in a meeting.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Staff as a unit -> singular 'is'." },
-    { question: "The staff ___ working on their own projects.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Individual actions -> plural 'are'." },
-    { question: "The audience ___ clapping.", options: ["was", "were", "is", "has"], answer: "was", explanation: "Audience as a whole -> singular 'was'." },
-    { question: "The family ___ eating dinner.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Family as a unit -> singular 'is'." },
-    { question: "The jury ___ given its verdict.", options: ["has", "have", "are", "were"], answer: "has", explanation: "Unit -> singular 'has'." },
-    { question: "The jury ___ divided in their opinions.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Divided/Individual -> plural 'are'." },
-    { question: "The crowd ___ shouting.", options: ["was", "were", "are", "have"], answer: "was", explanation: "Crowd as a unit -> singular 'was'." },
-    { question: "A pack of wolves ___ approaching.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Subject is 'pack' (singular) -> 'is'." },
-    { question: "A bunch of grapes ___ on the table.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Subject is 'bunch' (singular) -> 'is'." },
-    { question: "A herd of cattle ___ grazing.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Subject is 'herd' (singular) -> 'is'." },
-    { question: "The police ___ here.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'Police' is always plural -> 'are'." },
-    { question: "Cattle ___ raised on the farm.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'Cattle' is always plural -> 'are'." },
+    { 
+        "question": "The athletic team ________ winning the championship game with ease.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Collective nouns ('team') trigger singular verb agreement when the group acts collectively as a single, unified corporate entity. Because the sentence frames the team performing one synchronized action, the singular copula 'is' is required." 
+    },
+    { 
+        "question": "The disgruntled team ________ arguing among themselves regarding the strategy.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Under the principle of Notional Agreement, if the members of a collective noun ('team') are acting as separate individuals or are in a state of internal division, the noun takes a plural verb ('are') and a plural reflexive pronoun ('themselves')." 
+    },
+    { 
+        "question": "The executive committee ________ reached a unanimous decision on the annual budget.", 
+        "options": ["has", "have", "are", "were"], 
+        "answer": "has", 
+        "explanation": "The modifier 'unanimous' indicates complete cohesion within the collective body ('committee'). Since the group is operating as a single unit, the singular present-perfect auxiliary verb 'has' must be utilized." 
+    },
+    { 
+        "question": "The administrative staff ________ currently assembled in a formal meeting.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "In this structural layout, 'the staff' functions as a singular collective unit engaged in a single institutional event. Consequently, it must govern the singular present-tense linking verb 'is'." 
+    },
+    { 
+        "question": "The research staff ________ working on their respective individual projects.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The inclusion of the distributive possessive adjective 'their' and the plural noun phrase 'respective individual projects' indicates that the staff members are acting independently. This distinct individuality forces a plural verb ('are')." 
+    },
+    { 
+        "question": "The appreciative audience ________ clapping enthusiastically at the performance.", 
+        "options": ["was", "were", "is", "has"], 
+        "answer": "was", 
+        "explanation": "'Audience' is a collective noun. Because the sentence depicts the entire crowd acting as a single mass body in past-tense progression, it links with the singular past-continuous auxiliary verb 'was'." 
+    },
+    { 
+        "question": "The immediate family ________ eating dinner at the dining table.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The collective family unit is performing a single shared action concurrently. Standard American and academic English syntax dictates treating this domestic collective unit with a singular verb format ('is')." 
+    },
+    { 
+        "question": "The judicial jury ________ already given its official verdict to the judge.", 
+        "options": ["has", "have", "are", "were"], 
+        "answer": "has", 
+        "explanation": "The choice of the singular-neuter possessive pronoun 'its' proves that the collective body 'jury' is behaving as a single legal entity. It therefore commands the singular helping verb 'has' to maintain internal clause agreement." 
+    },
+    { 
+        "question": "The selected jury ________ severely divided in their opinions regarding the evidence.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The predicate adjective 'divided' and the plural pronoun 'their' indicate internal conflict and fragmentation among the individual members of the jury. This context triggers notional pluralization, requiring the plural verb 'are'." 
+    },
+    { 
+        "question": "The massive crowd ________ shouting slogans outside the parliament building.", 
+        "options": ["was", "were", "are", "have"], 
+        "answer": "was", 
+        "explanation": "The noun 'crowd' represents an undivided, single congregational mass in this context. To ensure syntactic harmony in a past-progressive continuous layout, the singular helper verb 'was' must be inserted." 
+    },
+    { 
+        "question": "A pack of wolves ________ rapidly approaching the livestock perimeter.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "In a construction featuring a collective phrase ('A pack of wolves'), the true grammatical head of the subject phrase is the singular noun 'pack', not the plural object 'wolves' inside the prepositional modifier. A singular head noun requires the singular verb 'is'." 
+    },
+    { 
+        "question": "A fresh bunch of grapes ________ left resting on the kitchen counter.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The structural subject is defined by the singular noun container 'bunch'. The plural noun 'grapes' is merely an object of the prepositional phrase 'of grapes' and does not influence the number of the main verb 'is'." 
+    },
+    { 
+        "question": "A large herd of cattle ________ currently grazing peacefully in the valley.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The operative subject governing the sentence is the singular collective quantifier 'herd'. Despite being followed by the plural-only asset 'cattle', the grammatical number remains singular, requiring 'is'." 
+    },
+    { 
+        "question": "The local police ________ investigating the fraudulent transaction at the agency.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Unlike standard collective nouns, the word 'police' is a unique collective asset categorized as a 'nominal plural' or *plurale tantum*. It possesses no singular form and must *always* be accompanied by a plural verb form ('are')." 
+    },
+    { 
+        "question": "Domesticated cattle ________ raised extensively across the northern plains.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Similar to 'police', the livestock noun 'cattle' is inherently and structurally plural in English grammar. It cannot be paired with singular verbs; it requires the plural passive linking verb 'are'." 
+    },
 
     // 31-40: Subject-Verb Agreement (Quantifiers & Fractions)
-    { question: "Half of the pie ___ eaten.", options: ["was", "were", "are", "have"], answer: "was", explanation: "Pie is singular/uncountable -> 'was'." },
-    { question: "Half of the pies ___ eaten.", options: ["was", "were", "is", "has"], answer: "were", explanation: "Pies is plural -> 'were'." },
-    { question: "Some of the milk ___ spilled.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Milk is uncountable -> 'is'." },
-    { question: "Some of the students ___ late.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Students is plural -> 'are'." },
-    { question: "All of the cake ___ gone.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Cake is singular here -> 'is'." },
-    { question: "All of the cookies ___ gone.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Cookies is plural -> 'are'." },
-    { question: "A number of students ___ absent.", options: ["is", "are", "was", "has"], answer: "are", explanation: "'A number of' takes a PLURAL verb -> 'are'." },
-    { question: "The number of students ___ increasing.", options: ["is", "are", "were", "have"], answer: "is", explanation: "'The number of' takes a SINGULAR verb -> 'is'." },
-    { question: "Ten dollars ___ a lot of money.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Money/Time/Distance as a unit -> singular 'is'." },
-    { question: "Five years ___ a long time.", options: ["is", "are", "were", "have"], answer: "is", explanation: "Time as a unit -> singular 'is'." },
+    { 
+        "question": "Exactly half of the strawberry pie ________ consumed within minutes.", 
+        "options": ["was", "were", "are", "have"], 
+        "answer": "was", 
+        "explanation": "With fractions, percentages, and indefinite quantifiers, the verb agreement is not determined by the fraction itself, but by the object of the prepositional phrase that follows it. Since 'pie' is singular, the verb must be singular ('was')." 
+    },
+    { 
+        "question": "Exactly half of the baked pies ________ distributed to the community centers.", 
+        "options": ["was", "were", "is", "has"], 
+        "answer": "were", 
+        "explanation": "Following the rule of fractional modifiers, the verb adjusts to the noun inside the prepositional phrase ('of the baked pies'). Because 'pies' is a plural count noun, it forces the selection of the plural verb 'were'." 
+    },
+    { 
+        "question": "Some of the organic milk ________ spilled onto the clean floor.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The quantifier 'some' modifies the mass noun 'milk'. Because mass nouns are inherently uncountable and treated as singular entities, they require a singular present-tense linking verb ('is')." 
+    },
+    { 
+        "question": "Some of the qualified students ________ late for the civil service seminar.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When 'some of' acts as a modifier for a plural count noun ('students'), the sentence framework recognizes a plural quantity, thereby demanding the implementation of the plural verb 'are'." 
+    },
+    { 
+        "question": "All of the wedding cake ________ completely gone before the reception ended.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "The absolute quantifier 'all' relies on the target noun to establish grammatical number. Because 'cake' is presented here as a singular entity, the sentence commands the singular linking verb 'is'." 
+    },
+    { 
+        "question": "All of the chocolate cookies ________ gone from the storage jar.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Since 'all' modifies 'cookies', which is a plural count noun, the subject expression assumes a plural identity. This requires a matching plural verb 'are' to achieve syntax correctness." 
+    },
+    { 
+        "question": "A large number of students ________ reported absent due to inclement weather.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The idiomatic phrase 'A number of' functions grammatically as an indefinite plural quantifier meaning 'several' or 'many'. It universally requires a plural count noun and dictates a plural verb ('are')." 
+    },
+    { 
+        "question": "The total number of absent students ________ steadily increasing this semester.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "In contrast to 'a number of', the specific phrase 'The number of' isolates a single mathematical unit or statistical sum. The literal head of the sentence is the singular word 'The number', which mandates a singular verb ('is')." 
+    },
+    { 
+        "question": "Ten thousand dollars ________ considered a substantial amount for an initial investment.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "When expressions of money, time, velocity, or distance are stated as a collective measurement or a lump sum, they are treated as a singular abstract concept. Therefore, they govern a singular verb ('is')." 
+    },
+    { 
+        "question": "Five continuous years ________ a long duration to wait for a promotional appointment.", 
+        "options": ["is", "are", "were", "have"], 
+        "answer": "is", 
+        "explanation": "Although 'five years' contains a plural quantitative descriptor, units of time are conceptualized as a single unified block or period of duration, which commands the use of the singular linking verb 'is'." 
+    },
 
     // 41-50: Plural-Only Nouns
-    { question: "The scissors ___ sharp.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Scissors is plural -> 'are'." },
-    { question: "My glasses ___ broken.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Glasses is plural -> 'are'." },
-    { question: "His pants ___ torn.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Pants is plural -> 'are'." },
-    { question: "The binoculars ___ helpful.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Binoculars is plural -> 'are'." },
-    { question: "Her belongings ___ packed.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Belongings is plural -> 'are'." },
-    { question: "The goods ___ delivered.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Goods is plural -> 'are'." },
-    { question: "My shorts ___ dirty.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Shorts is plural -> 'are'." },
-    { question: "The tweezers ___ small.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Tweezers is plural -> 'are'." },
-    { question: "The pliers ___ rusty.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Pliers is plural -> 'are'." },
-    { question: "Thanks ___ due to him.", options: ["is", "are", "was", "has"], answer: "are", explanation: "Thanks is plural -> 'are'." }
+    { 
+        "question": "The medical scissors ________ kept inside the sterilization room.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The tool noun 'scissors' is classified as a *plurale tantum*—a noun that exists exclusively in a plural form because it is composed of two symmetrical operational halves. It inherently demands a plural verb ('are') unless preceded by the singular counter phrase 'a pair of'." 
+    },
+    { 
+        "question": "My prescription glasses ________ accidentally broken during the field exercise.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Because 'glasses' refers to a two-lens garment, it is structurally plural. In the absence of the limiting singular phrase 'a pair of', it remains plural and dictates the use of the plural passive verb 'are'." 
+    },
+    { 
+        "question": "His formal uniform pants ________ torn at the seam during the inspection.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "Articles of clothing that cover the lower extremities via two distinct leg chambers (e.g., pants, trousers, jeans) are plural-only nouns. They must always couple with plural verbs ('are')." 
+    },
+    { 
+        "question": "The tactical binoculars ________ highly helpful for the surveillance team.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The word 'binoculars' denotes an instrument with dual structural optical tubes. It functions natively as a plural count asset and automatically triggers a plural verb structure ('are')." 
+    },
+    { 
+        "question": "Her personal belongings ________ carefully packed inside the relocation vehicle.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "'Belongings' is a mass plural noun that lacks a singular counter-form in standard English. It is contextually and syntactically plural, requiring the plural verb 'are'." 
+    },
+    { 
+        "question": "The commercial goods ________ safely delivered to the regional warehouse.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "When used to define physical merchandise or commodities, the noun 'goods' functions exclusively in the plural number. It cannot link with singular verbs like 'is' or 'was'; it commands 'are'." 
+    },
+    { 
+        "question": "My athletic shorts ________ still dirty from the outdoor marathon.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The word 'shorts' belongs to the twin-legged apparel category of plural-only nouns. To maintain precise syntactic alignment under English rules, a plural verb ('are') is required." 
+    },
+    { 
+        "question": "The surgical tweezers ________ too small to handle the delicate circuit components.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "'Tweezers' functions as an instrument consisting of two connected prongs. Like all items in this morphological class, it is fundamentally plural and commands the plural copula verb 'are'." 
+    },
+    { 
+        "question": "The iron pliers ________ rusty due to prolonged exposure to high humidity.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "As a tool consisting of two interlocking handles, the noun 'pliers' is inherently plural in form and function. It requires a plural present-tense adjective link, which is 'are'." 
+    },
+    { 
+        "question": "Special thanks ________ due to the director for facilitating the emergency funding.", 
+        "options": ["is", "are", "was", "has"], 
+        "answer": "are", 
+        "explanation": "The expressive noun 'thanks' is a *plurale tantum* that possesses no singular structural baseline. In formal public notices and sentences, it must always be paired with a plural verb structure ('are')." 
+    }
   ],
 
   // ============================================================
