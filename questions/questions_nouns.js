@@ -7,14 +7,16 @@ window.VERBAL_QUESTION_BANK = window.VERBAL_QUESTION_BANK || {};
 window.VERBAL_QUESTION_BANK["nouns"] = {
 
   beginner: [
-     { 
+    beginner: [
+    // 1-10: Identifying Nouns (Person / Professionals / Roles)
+    { 
         "question": "The ________ presided over the annual conference and addressed the stockholders' concerns.", 
         "options": ["executive", "executes", "executively", "executed"], 
         "answer": "executive", 
         "explanation": "The sentence requires a noun that refers to a person acting as the subject. 'Executive' is the correct noun form." 
     },
     { 
-        "question": "Identify the noun that acts as the subject: 'The diligent inspector reviewed the documents.'", 
+        "question": "In the sentence 'The diligent inspector reviewed the documents,' which word is a noun that refers to a person?", 
         "options": ["diligent", "inspector", "reviewed", "documents"], 
         "answer": "inspector", 
         "explanation": "'Inspector' is a concrete noun referring to a person, and it functions as the subject performing the action in the sentence." 
@@ -62,10 +64,10 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
         "explanation": "'Officer' refers to the specific person/authority directing traffic. 'Official' is typically an adjective or an abstract designation." 
     },
     { 
-        "question": "Which of the following underlined words is a person noun? 'The prominent scientist received an award for her research.'", 
+        "question": "Which word in this sentence is a noun that refers to a person? 'The prominent scientist received an award for her research.'", 
         "options": ["prominent", "scientist", "award", "research"], 
         "answer": "scientist", 
-        "explanation": "'Scientist' is a noun that refers to a person who conducts scientific research." 
+        "explanation": "'Scientist' is a noun that refers to a person. 'Award' and 'research' are nouns for things/concepts, and 'prominent' is an adjective." 
     },
 
     // 11-20: Identifying Nouns (Place / Institutions / Venues)
@@ -106,10 +108,10 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
         "explanation": "'Area' functions as a noun used to describe a particular geographical region, space, or place." 
     },
     { 
-        "question": "Identify the noun representing a place: 'The historical museum houses artifacts from the pre-colonial era.'", 
+        "question": "Which word functions as a place noun in this sentence? 'The historical museum houses artifacts from the pre-colonial era.'", 
         "options": ["historical", "museum", "artifacts", "pre-colonial"], 
         "answer": "museum", 
-        "explanation": "'Museum' is a noun that designates a specific building or location used to display items." 
+        "explanation": "'Museum' is a noun that designates a specific building or location (place)." 
     },
     { 
         "question": "The delegation arrived safely at the international ________ for the cross-border conference.", 
@@ -224,7 +226,7 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
         "explanation": "'Equality' is an abstract noun denoting a fair state or concept. 'Equal' is an adjective, and 'equalize' is a verb." 
     },
     { 
-        "question": "Identify the abstract noun: 'The judge made the decision based solely on justice and truth.'", 
+        "question": "Identify the abstract noun in this choice selection: 'The judge made the decision based solely on justice and truth.'", 
         "options": ["judge", "decision", "justice", "solely"], 
         "answer": "justice", 
         "explanation": "While 'judge' and 'decision' are also nouns, 'justice' is a pure abstract noun representing an idea or moral concept." 
