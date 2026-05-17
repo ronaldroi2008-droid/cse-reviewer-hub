@@ -326,313 +326,318 @@ window.VERBAL_QUESTION_BANK["gender"] = {
   // ============================================================
   intermediate: [
     // 1-10: Animal Genders
-    {
-      question: "What is the feminine of 'Bull'?",
-      options: ["Cow", "Heifer", "Mare", "Sow"],
-      answer: "Cow",
-      explanation: "A 'bull' is a male bovine; the adult female is called a 'cow'."
+      {
+        "question": "In a livestock inventory report for an agricultural cooperative, what is the correct feminine term for an adult bovine paired with a 'Bull'?",
+        "options": ["Heifer", "Cow", "Mare", "Sow"],
+        "answer": "Cow",
+        "explanation": "A 'bull' refers to the mature male bovine, while a 'cow' is the mature female. A 'heifer' is a young female that has not yet calved."
     },
     {
-      question: "What is the masculine of 'Hen'?",
-      options: ["Rooster", "Drake", "Gander", "Ram"],
-      answer: "Rooster",
-      explanation: "A 'hen' is a female chicken; the male chicken is a 'rooster'."
+        "question": "An avian assessment registry notes the presence of a 'Drake' on the wetlands. What is the specific feminine counterpart of this bird?",
+        "options": ["Hen", "Duck", "Goose", "Gander"],
+        "answer": "Duck",
+        "explanation": "In specific avian gender terms, 'drake' is the mature male and 'duck' refers specifically to the female."
     },
     {
-      question: "What is the feminine of 'Horse' (stallion)?",
-      options: ["Mare", "Ewe", "Vixen", "Doe"],
-      answer: "Mare",
-      explanation: "The male horse is a stallion; the adult female horse is a 'mare'."
+        "question": "A veterinary record logs a 'Stallion' as the primary sire. Which of the following nouns refers to its adult feminine counterpart?",
+        "options": ["Mare", "Ewe", "Vixen", "Doe"],
+        "answer": "Mare",
+        "explanation": "A mature male horse is a stallion or colt (young), while an adult female horse is classified as a 'mare'."
     },
     {
-      question: "What is the masculine of 'Duck'?",
-      options: ["Drake", "Goose", "Gander", "Swan"],
-      answer: "Drake",
-      explanation: "In this pair, 'duck' is female and 'drake' is the male."
+        "question": "Identify the specific masculine noun for a mature bird belonging to the species *Anser anser* (Goose):",
+        "options": ["Gander", "Drake", "Rooster", "Cockerel"],
+        "answer": "Gander",
+        "explanation": "A 'gander' is the specific term for a mature male goose, whereas 'drake' is a male duck."
     },
     {
-      question: "What is the feminine of 'Fox'?",
-      options: ["Vixen", "Sow", "Ewe", "Doe"],
-      answer: "Vixen",
-      explanation: "A female fox is called a 'vixen'."
+        "question": "Wildlife conservationists are tracking a male fox. What is the correct feminine noun for a female of this species?",
+        "options": ["Sow", "Vixen", "Ewe", "Doe"],
+        "answer": "Vixen",
+        "explanation": "A female fox is biologically and traditionally referred to as a 'vixen'."
     },
     {
-      question: "What is the masculine of 'Goose'?",
-      options: ["Gander", "Drake", "Rooster", "Bull"],
-      answer: "Gander",
-      explanation: "'Goose' is the female; the male bird is called a 'gander'."
+        "question": "A poultry farming subsidy program documents a 'Rooster' as the flock leader. What is the accurate feminine term?",
+        "options": ["Hen", "Duck", "Pen", "Cob"],
+        "answer": "Hen",
+        "explanation": "'Rooster' or 'cock' denotes the male chicken, while 'hen' is the female chicken."
     },
     {
-      question: "What is the feminine of 'Ram' (Sheep)?",
-      options: ["Ewe", "Sow", "Doe", "Mare"],
-      answer: "Ewe",
-      explanation: "A 'ram' is a male sheep; the female sheep is an 'ewe'."
+        "question": "An agricultural ledger denotes a 'Ram' as the primary breeder. What is the correct term for the female sheep?",
+        "options": ["Ewe", "Sow", "Doe", "Dam"],
+        "answer": "Ewe",
+        "explanation": "A mature male sheep is a 'ram', and its mature female counterpart is an 'ewe'."
     },
     {
-      question: "What is the masculine of 'Sow' (Pig)?",
-      options: ["Boar", "Bull", "Ram", "Drake"],
-      answer: "Boar",
-      explanation: "A 'sow' is a female pig; the male pig is a 'boar'."
+        "question": "In swine production management, a 'Boar' represents the male asset. What noun is used to specify the adult female pig?",
+        "options": ["Sow", "Gilt", "Heifer", "Vixen"],
+        "answer": "Sow",
+        "explanation": "A mature female pig is a 'sow', while a 'gilt' is a young female pig that has not yet farrowed."
     },
     {
-      question: "What is the feminine of 'Tiger'?",
-      options: ["Tigress", "Tigeress", "Tigra", "Tigris"],
-      answer: "Tigress",
-      explanation: "We form the feminine by adding '-ess': 'tiger' → 'tigress'."
+        "question": "Which of the following represents the correct spelling and form for the feminine counterpart of a 'Tiger'?",
+        "options": ["Tigeress", "Tigress", "Tigris", "Tigra"],
+        "answer": "Tigress",
+        "explanation": "The feminine suffix '-ess' drops the 'e' from the root word 'tiger', resulting in the standard spelling 'tigress'."
     },
     {
-      question: "What is the masculine of 'Lioness'?",
-      options: ["Lion", "Tiger", "Leopard", "Cat"],
-      answer: "Lion",
-      explanation: "'Lioness' is the female; the male is simply 'lion'."
-    },
-
-    // 11-20: Human Roles
-    {
-      question: "What is the feminine of 'Bachelor'?",
-      options: ["Spinster", "Wife", "Widow", "Lady"],
-      answer: "Spinster",
-      explanation: "Traditionally, 'bachelor' is an unmarried man and 'spinster' an unmarried woman."
-    },
-    {
-      question: "What is the masculine of 'Witch'?",
-      options: ["Wizard", "Warlock", "Sorcerer", "Magician"],
-      answer: "Wizard",
-      explanation: "A female magic-user is a witch; the common male term is 'wizard'."
-    },
-    {
-      question: "What is the feminine of 'Monk'?",
-      options: ["Nun", "Priestess", "Sister", "Lady"],
-      answer: "Nun",
-      explanation: "A 'monk' is male; the religious female counterpart is a 'nun'."
-    },
-    {
-      question: "What is the masculine of 'Bride'?",
-      options: ["Bridegroom", "Groom", "Husband", "Bachelor"],
-      answer: "Bridegroom",
-      explanation: "The traditional male term paired with 'bride' is 'bridegroom' (or simply 'groom')."
-    },
-    {
-      question: "What is the feminine of 'Count'?",
-      options: ["Countess", "Princess", "Duchess", "Baroness"],
-      answer: "Countess",
-      explanation: "The female title corresponding to 'count' is 'countess'."
-    },
-    {
-      question: "What is the masculine of 'Hostess'?",
-      options: ["Host", "Waiter", "Steward", "Manager"],
-      answer: "Host",
-      explanation: "'Hostess' is female; the male term is 'host'."
-    },
-    {
-      question: "What is the feminine of 'God'?",
-      options: ["Goddess", "Angel", "Saint", "Spirit"],
-      answer: "Goddess",
-      explanation: "The feminine form of 'god' is 'goddess'."
-    },
-    {
-      question: "What is the masculine of 'Empress'?",
-      options: ["Emperor", "King", "Tsar", "Sultan"],
-      answer: "Emperor",
-      explanation: "The male ruler parallel to 'empress' is 'emperor'."
-    },
-    {
-      question: "What is the feminine of 'Master'?",
-      options: ["Mistress", "Miss", "Mrs", "Lady"],
-      answer: "Mistress",
-      explanation: "In old usage, 'master' pairs with 'mistress' as the feminine."
-    },
-    {
-      question: "What is the masculine of 'Widow'?",
-      options: ["Widower", "Bachelor", "Single", "Husband"],
-      answer: "Widower",
-      explanation: "A 'widow' has lost her husband; a 'widower' has lost his wife."
+        "question": "Identify the masculine counterpart of the feline noun 'Lioness':",
+        "options": ["Lion", "Leopard", "Cougar", "Tomcat"],
+        "answer": "Lion",
+        "explanation": "'Lioness' uses the feminine inflectional suffix, making 'lion' its base masculine format."
     },
 
-    // 21-30: Titles
+    // 11-20: Human Roles & Civil Status
     {
-      question: "What is the feminine of 'Waiter'?",
-      options: ["Waitress", "Server", "Stewardess", "Maid"],
-      answer: "Waitress",
-      explanation: "The traditional feminine form is 'waitress'."
+        "question": "In traditional demographic registries, an unmarried man is designated a 'Bachelor'. What is the corresponding historical feminine term for an unmarried woman?",
+        "options": ["Matron", "Spinster", "Widow", "Dowager"],
+        "answer": "Spinster",
+        "explanation": "Traditionally and legally, a 'bachelor' is an unmarried male, and a 'spinster' is an unmarried female of mature age."
     },
     {
-      question: "What is the masculine of 'Stewardess'?",
-      options: ["Steward", "Pilot", "Waiter", "Host"],
-      answer: "Steward",
-      explanation: "'Stewardess' is female; the matching male term is 'steward'."
+        "question": "A legal brief references a 'Widower' as the sole claimant to the real estate property. This term indicates that the claimant is a:",
+        "options": ["Man whose wife has deceased", "Woman whose husband has deceased", "Man who has never been married", "Divorced male official"],
+        "answer": "Man whose wife has deceased",
+        "explanation": "A 'widower' is a man whose spouse has died; a 'widow' is a woman whose spouse has died."
     },
     {
-      question: "What is the feminine of 'Duke'?",
-      options: ["Duchess", "Countess", "Princess", "Lady"],
-      answer: "Duchess",
-      explanation: "The female title paired with 'duke' is 'duchess'."
+        "question": "A state protocol document mentions a 'Wizard' in folkloric municipal history. What is the paired feminine noun?",
+        "options": ["Witch", "Sorceress", "Enchantress", "Siren"],
+        "answer": "Witch",
+        "explanation": "In historical gender pairs, 'witch' serves as the feminine counterpart to the masculine 'wizard'."
     },
     {
-      question: "What is the masculine of 'Lady'?",
-      options: ["Lord", "Gentleman", "Sir", "Knight"],
-      answer: "Lord",
-      explanation: "In nobility, 'lady' corresponds to 'lord'."
+        "question": "The registry of a diplomatic gala pairs a 'Bridegroom' with which specific feminine counterpart during a civil union celebration?",
+        "options": ["Bride", "Spouse", "Consort", "Matron"],
+        "answer": "Bride",
+        "explanation": "'Bridegroom' (or groom) is the masculine noun that pairs directly with the feminine 'bride'."
     },
     {
-      question: "What is the feminine of 'Nephew'?",
-      options: ["Niece", "Cousin", "Sister", "Aunt"],
-      answer: "Niece",
-      explanation: "A 'nephew' is a brother's or sister's son; a 'niece' is their daughter."
+        "question": "An archival document references a 'Count' of the realm. What is the proper feminine nobility title associated with this rank?",
+        "options": ["Countess", "Duchess", "Baroness", "Marquisa"],
+        "answer": "Countess",
+        "explanation": "The peerage title 'count' pairs with 'countess' as its feminine equivalent."
     },
     {
-      question: "What is the masculine of 'Landlady'?",
-      options: ["Landlord", "Owner", "Master", "Host"],
-      answer: "Landlord",
-      explanation: "'Landlady' is a female property owner; 'landlord' is the male counterpart."
+        "question": "The administrative manager acted as the 'Host' for the international civil delegation. If a female colleague filled this specific traditional role, she would be called the:",
+        "options": ["Hostess", "Stewardess", "Manageress", "Directress"],
+        "answer": "Hostess",
+        "explanation": "'Host' is the masculine form, whereas 'hostess' is the traditional feminine inflection."
     },
     {
-      question: "What is the feminine of 'Headmaster'?",
-      options: ["Headmistress", "Principal", "Teacher", "Lady"],
-      answer: "Headmistress",
-      explanation: "'Headmaster' is male; 'headmistress' is the female form."
+        "question": "In legal property management documents, what is the traditional feminine counterpart of the noun 'Master'?",
+        "options": ["Mistress", "Manager", "Proprietress", "Governess"],
+        "answer": "Mistress",
+        "explanation": "In historical and formal property contexts, 'master' pairs with 'mistress' as the feminine head of a household or estate."
     },
     {
-      question: "What is the masculine of 'Policewoman'?",
-      options: ["Policeman", "Police officer", "Cop", "Sergeant"],
-      answer: "Policeman",
-      explanation: "'Policewoman' is female; 'policeman' is the male form."
+        "question": "A public cultural project features a monument dedicated to a 'God' of ancient mythology. What is the precise feminine word?",
+        "options": ["Goddess", "Angel", "Deity", "Patroness"],
+        "answer": "Goddess",
+        "explanation": "'Goddess' is formed by adding the feminine suffix '-ess' to the masculine noun 'god'."
     },
     {
-      question: "What is the feminine of 'Salesman'?",
-      options: ["Saleswoman", "Saleslady", "Both A and B", "Seller"],
-      answer: "Both A and B",
-      explanation: "Both 'saleswoman' and 'saleslady' can be used as feminine forms."
+        "question": "A constitutional history textbook mentions the 'Emperor' who established the territorial boundaries. What is the feminine counterpart?",
+        "options": ["Empress", "Tzarina", "Queen", "Regent"],
+        "answer": "Empress",
+        "explanation": "An 'empress' is the feminine counterpart to an 'emperor', denoting a female sovereign of an empire."
     },
     {
-      question: "What is the masculine of 'Spokeswoman'?",
-      options: ["Spokesman", "Speaker", "Talker", "Reporter"],
-      answer: "Spokesman",
-      explanation: "'Spokeswoman' pairs with 'spokesman' as the male form."
-    },
-
-    // 31-40: Pronouns (Basic)
-    {
-      question: "The boy lost ___ ball.",
-      options: ["his", "her", "its", "their"],
-      answer: "his",
-      explanation: "We use 'his' as the possessive pronoun for 'boy'."
-    },
-    {
-      question: "The girl finished ___ homework.",
-      options: ["her", "his", "its", "their"],
-      answer: "her",
-      explanation: "We use 'her' as the possessive pronoun for 'girl'."
-    },
-    {
-      question: "The dog wagged ___ tail.",
-      options: ["its", "his", "her", "their"],
-      answer: "its",
-      explanation: "For an animal of unknown sex, we often use 'its'."
-    },
-    {
-      question: "The teacher asked the student to bring ___ book.",
-      options: ["his or her", "its", "it", "she"],
-      answer: "his or her",
-      explanation: "'Student' can be male or female, so 'his or her' is used in traditional grammar."
-    },
-    {
-      question: "My mother loves ___ garden.",
-      options: ["her", "his", "its", "their"],
-      answer: "her",
-      explanation: "'Mother' is feminine, so we use 'her'."
-    },
-    {
-      question: "The king wore ___ crown.",
-      options: ["his", "her", "its", "their"],
-      answer: "his",
-      explanation: "'King' is masculine, so the possessive pronoun is 'his'."
-    },
-    {
-      question: "The car has lost ___ shine.",
-      options: ["its", "his", "her", "their"],
-      answer: "its",
-      explanation: "A car is an object, so we use 'its'."
-    },
-    {
-      question: "The baby is crying for ___ mother.",
-      options: ["its", "his", "her", "their"],
-      answer: "its",
-      explanation: "When the baby's sex is not specified, traditional grammar uses 'its'."
-    },
-    {
-      question: "Every girl must clean ___ room.",
-      options: ["her", "his", "its", "their"],
-      answer: "her",
-      explanation: "We use 'her' with 'every girl'."
-    },
-    {
-      question: "Every boy must bring ___ lunch.",
-      options: ["his", "her", "its", "their"],
-      answer: "his",
-      explanation: "We use 'his' with 'every boy'."
+        "question": "A religious history archive documents the activities of a 'Monk' in a secluded monastery. What is the matching feminine noun?",
+        "options": ["Nun", "Priestess", "Abbess", "Deaconess"],
+        "answer": "Nun",
+        "explanation": "A 'monk' is a male member of a cloistered order, while a 'nun' is the female counterpart."
     },
 
-    // 41-50: Context
+    // 21-30: Official Titles & Designations
     {
-      question: "Which word is masculine? 'The mare and the stallion ran.'",
-      options: ["mare", "stallion", "ran", "the"],
-      answer: "stallion",
-      explanation: "A 'stallion' is a male horse."
+        "question": "A civil service workplace memorandum uses the traditional term 'Waiter'. What is its specific feminine equivalent?",
+        "options": ["Waitress", "Server", "Stewardess", "Caterer"],
+        "answer": "Waitress",
+        "explanation": "'Waitress' is the traditional gender-specific feminine term for a food server."
     },
     {
-      question: "Which word is feminine? 'The ewe and the ram grazed.'",
-      options: ["ewe", "ram", "grazed", "the"],
-      answer: "ewe",
-      explanation: "An 'ewe' is a female sheep."
+        "question": "An airline logistics report lists a 'Steward' as the cabin safety supervisor. What is the corresponding feminine term?",
+        "options": ["Stewardess", "Aviator", "Pilot", "Attendant"],
+        "answer": "Stewardess",
+        "explanation": "'Stewardess' is the traditional feminine term paired with the masculine 'steward'."
     },
     {
-      question: "Identify the neuter noun: 'He put the computer on the desk.'",
-      options: ["He", "computer", "desk", "Both B and C"],
-      answer: "Both B and C",
-      explanation: "'Computer' and 'desk' are both objects and therefore neuter."
+        "question": "A real estate case file states that the 'Landlady' collected the monthly lease. What is the correct masculine counterpart?",
+        "options": ["Landlord", "Proprietor", "Lessor", "Bailiff"],
+        "answer": "Landlord",
+        "explanation": "'Landlady' is the feminine noun for a property owner who rents out spaces; 'landlord' is the masculine form."
     },
     {
-      question: "Identify the common gender noun: 'The doctor called the nurse.'",
-      options: ["doctor", "nurse", "Both A and B", "called"],
-      answer: "Both A and B",
-      explanation: "Both 'doctor' and 'nurse' can refer to males or females."
+        "question": "An international protocol guide notes that a 'Duke' attended the state summit. What is the corresponding feminine title?",
+        "options": ["Duchess", "Countess", "Baroness", "Princess"],
+        "answer": "Duchess",
+        "explanation": "The feminine equivalent of a 'duke' (a high-ranking nobleman) is a 'duchess'."
     },
     {
-      question: "In 'The ship struck an iceberg', ships are sometimes referred to as:",
-      options: ["he", "she", "it", "they"],
-      answer: "she",
-      explanation: "By tradition, ships are often personified and called 'she'."
+        "question": "In the peerage systems of historical governance, what is the masculine counterpart to the title 'Lady'?",
+        "options": ["Lord", "Knight", "Earl", "Gentleman"],
+        "answer": "Lord",
+        "explanation": "In formal nobility frameworks, the title 'lady' directly corresponds to the masculine 'lord'."
     },
     {
-      question: "Gender-neutral term for 'Fireman'?",
-      options: ["Firefighter", "Firewoman", "Fire person", "Burner"],
-      answer: "Firefighter",
-      explanation: "'Firefighter' is the standard gender-neutral term."
+        "question": "An employee's emergency contact form identifies an individual as a 'Nephew'. What would be the correct feminine term if the relative were a female child of the employee's sibling?",
+        "options": ["Niece", "Cousin", "Aunt", "Ward"],
+        "answer": "Niece",
+        "explanation": "A 'niece' is the female child of one's sibling, serving as the feminine counter-term to 'nephew'."
     },
     {
-      question: "Gender-neutral term for 'Policeman'?",
-      options: ["Police officer", "Cop", "Guard", "Detective"],
-      answer: "Police officer",
-      explanation: "'Police officer' is a widely accepted gender-neutral title."
+        "question": "An academic board review notes that the 'Headmaster' updated the curriculum standards. What is the traditional feminine counterpart?",
+        "options": ["Headmistress", "Principal", "Superintendent", "Directress"],
+        "answer": "Headmistress",
+        "explanation": "'Headmaster' refers to a male school head; 'headmistress' is the traditional feminine designation."
     },
     {
-      question: "Gender-neutral term for 'Mailman'?",
-      options: ["Mail carrier", "Postman", "Mail boy", "Letter man"],
-      answer: "Mail carrier",
-      explanation: "'Mail carrier' is a neutral term that can refer to any gender."
+        "question": "A security logbook from 1980 records the signature of a 'Policeman'. What was the gender-specific feminine counterpart used during that era?",
+        "options": ["Policewoman", "Patrol officer", "Constable", "Marshal"],
+        "answer": "Policewoman",
+        "explanation": "'Policewoman' was the traditional gender-specific title for a female officer, corresponding to 'policeman'."
     },
     {
-      question: "Gender-neutral term for 'Stewardess'?",
-      options: ["Flight attendant", "Plane server", "Air host", "Flyer"],
-      answer: "Flight attendant",
-      explanation: "'Flight attendant' is the neutral, modern term."
+        "question": "A corporate marketing directory from a legacy firm lists a 'Salesman' for the region. Which terms are accepted as its traditional feminine variants?",
+        "options": ["Saleswoman", "Saleslady", "Both A and B", "Vendor"],
+        "answer": "Both A and B",
+        "explanation": "Both 'saleswoman' and 'saleslady' have been traditionally utilized as feminine forms of 'salesman'."
     },
     {
-      question: "Gender-neutral term for 'Chairman'?",
-      options: ["Chairperson", "Chair", "Both A and B", "Chairlady"],
-      answer: "Both A and B",
-      explanation: "Both 'chairperson' and 'chair' can be used for any gender."
+        "question": "The press release states that the 'Spokeswoman' answered the media queries. What is the traditional masculine counterpart?",
+        "options": ["Spokesman", "Speaker", "Presenter", "Orator"],
+        "answer": "Spokesman",
+        "explanation": "'Spokesman' is the traditional masculine counterpart to 'spokeswoman'."
+    },
+
+    // 31-40: Pronoun Antecedent Agreement (Formal Rules)
+    {
+        "question": "Complete the administrative statement with correct pronoun agreement: 'The regional director signed ___ official approval for the project budget yesterday.'",
+        "options": ["his", "her", "their", "Any of the above depending on the context"],
+        "answer": "Any of the above depending on the context",
+        "explanation": "Because 'regional director' is a common gender noun, the possessive pronoun can be 'his', 'her', or 'their' (singular/gender-neutral) based on the context."
+    },
+    {
+        "question": "Choose the most grammatically correct pronoun for a traditional formal context: 'Every single auditor must submit ___ independent evaluation report by Friday.'",
+        "options": ["his or her", "their", "its", "it's"],
+        "answer": "his or her",
+        "explanation": "In traditional, formal grammar rules often tested in civil service exams, a singular common gender noun modified by 'every' takes the singular pronoun phrase 'his or her'."
+    },
+    {
+        "question": "Complete the structural sentence: 'The municipal council published ___ revised operational guidelines for the fiscal year.'",
+        "options": ["its", "their", "his", "her"],
+        "answer": "its",
+        "explanation": "'Municipal council' is a collective noun acting as a single neuter organizational unit, requiring the singular neuter possessive pronoun 'its'."
+    },
+    {
+        "question": "Fill the blank following professional pronoun rules: 'The complainant stated that someone had left ___ security badge at the administrative desk.'",
+        "options": ["his or her", "their", "its", "our"],
+        "answer": "his or her",
+        "explanation": "Indefinite singular pronouns like 'someone' traditionally require a singular possessive option such as 'his or her' in formal exam formats."
+    },
+    {
+        "question": "In the sentence, 'The vessel lost ___ primary steering grid during the maritime maneuver', what possessive pronoun is traditionally used for ships in formal personification?",
+        "options": ["her", "his", "its", "their"],
+        "answer": "her",
+        "explanation": "By long-standing maritime tradition and formal literary personification, ships are uniquely assigned the feminine pronoun 'her' or 'she'."
+    },
+    {
+        "question": "Complete the statutory clause: 'Neither the agency chief nor the deputy officer admitted that ___ department had failed the audit.'",
+        "options": ["his or her", "their", "its", "our"],
+        "answer": "his or her",
+        "explanation": "When singular subjects are connected by 'neither... nor', the singular pronoun rule applies, requiring the singular 'his or her'."
+    },
+    {
+        "question": "Complete the entry: 'The witness testified that the driver lost control of ___ vehicle before impacting the concrete barrier.'",
+        "options": ["his or her", "their", "its", "one's"],
+        "answer": "his or her",
+        "explanation": "'Driver' is a common gender singular noun; thus, traditional formal rules dictate 'his or her' to ensure gender inclusion while maintaining singular agreement."
+    },
+    {
+        "question": "Identify the correct pronoun fit: 'The newly born infant was kept in the incubator to monitor ___ respiratory rates.'",
+        "options": ["its", "his", "her", "their"],
+        "answer": "its",
+        "explanation": "In formal grammar, when the biological sex of an infant is unstated or irrelevant to the report, the neuter pronoun 'its' is utilized."
+    },
+    {
+        "question": "Complete the human resource mandate: 'Each applicant must present ___ original academic transcript during the validation process.'",
+        "options": ["his or her", "their", "its", "our"],
+        "answer": "his or her",
+        "explanation": "'Each' distributes the subject as a singular common entity, matching with the singular 'his or her' in formal standard English."
+    },
+    {
+        "question": "Fill the blank in the policy document: 'A public officer must always protect the integrity of ___ designated office.'",
+        "options": ["his or her", "their", "its", "one's"],
+        "answer": "his or her",
+        "explanation": "'A public officer' is singular and common gender, making 'his or her' the most standard formal choice for exam structures."
+    },
+
+    // 41-50: Contextual Gender & Neutral Expressions
+    {
+        "question": "Identify the gender-neutral and modern professional replacement for the occupational term 'Fireman' in official civil service codes:",
+        "options": ["Firefighter", "Fire person", "Fire Marshall", "Rescue Warden"],
+        "answer": "Firefighter",
+        "explanation": "'Firefighter' is the universally accepted gender-neutral title that replaces the masculine-biased term 'fireman'."
+    },
+    {
+        "question": "What is the standard gender-neutral designation used in contemporary public policy to replace 'Policeman'?",
+        "options": ["Police officer", "Law enforcer", "Patrol agent", "Peace guard"],
+        "answer": "Police officer",
+        "explanation": "'Police officer' provides a neutral professional title suitable for any individual in law enforcement."
+    },
+    {
+        "question": "In updated procurement protocols, the term 'Mailman' is modernly replaced by which inclusive expression?",
+        "options": ["Mail carrier", "Post operator", "Letter courier", "Postal dispatcher"],
+        "answer": "Mail carrier",
+        "explanation": "'Mail carrier' (or postal carrier) avoids gender specifications, making it the preferred modern term."
+    },
+    {
+        "question": "To ensure gender neutrality in civil aviation or public hospitality codes, 'Stewardess' has been systematically replaced by:",
+        "options": ["Flight attendant", "Cabin server", "Air host", "In-flight operator"],
+        "answer": "Flight attendant",
+        "explanation": "'Flight attendant' is the standard modern gender-neutral title used across the aviation industry."
+    },
+    {
+        "question": "Which of the following terms serves as an inclusive, gender-neutral title for a presiding official instead of 'Chairman'?",
+        "options": ["Chairperson", "Chair", "Both A and B", "Presider"],
+        "answer": "Both A and B",
+        "explanation": "Modern professional language accepts both 'chairperson' and 'chair' as valid, gender-neutral replacements for 'chairman'."
+    },
+    {
+        "question": "Identify the sentence that contains exactly one masculine noun, one feminine noun, and one neuter noun:",
+        "options": [
+            "The king gave the queen a golden ring.",
+            "The supervisor assigned the clerk a new office.",
+            "The uncle visited his nephew at the university.",
+            "The actress met the director at the studio."
+        ],
+        "answer": "The king gave the queen a golden ring.",
+        "explanation": "'King' is masculine, 'queen' is feminine, and 'ring' is an inanimate object (neuter). The other sentences contain common nouns or different combinations."
+    },
+    {
+        "question": "In the administrative report sentence, 'The doctor requested an immediate audit from the nurse regarding the medical desk assets', the words 'doctor' and 'nurse' function as:",
+        "options": ["Common gender nouns", "Neuter gender nouns", "Masculine nouns", "Feminine nouns"],
+        "answer": "Common gender nouns",
+        "explanation": "Both 'doctor' and 'nurse' designate professional roles that can be held by individuals of any gender."
+    },
+    {
+        "question": "Examine this legal statement: 'The executor submitted the liquidation ledger to the court.' Which noun in this sentence is explicitly masculine?",
+        "options": ["executor", "ledger", "court", "liquidation"],
+        "answer": "executor",
+        "explanation": "'Executor' is explicitly masculine (paired with the feminine 'executrix'), while 'ledger' and 'court' are neuter, and 'liquidation' is an abstract nominal process."
+    },
+    {
+        "question": "In public relations and human resource manuals, what is the preferred gender-neutral term for 'Manpower'?",
+        "options": ["Workforce", "Personnel", "Human resources", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "'Workforce', 'personnel', and 'human resources' are all effective, modern, gender-neutral alternatives to the legacy term 'manpower'."
+    },
+    {
+        "question": "Which noun in the following statutory text represents the neuter gender? 'The administrator reviewed the contract details inside the government facility.'",
+        "options": ["administrator", "contract", "facility", "Both B and C"],
+        "answer": "Both B and C",
+        "explanation": "Both 'contract' (an abstract legal document) and 'facility' (a physical building structure) are non-living entities classified under the neuter gender."
     }
   ],
 
