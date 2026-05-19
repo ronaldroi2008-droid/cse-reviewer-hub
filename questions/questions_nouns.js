@@ -299,7 +299,7 @@ window.VERBAL_QUESTION_BANK["nouns"] = {
     },
     { 
         "question": "Due to the storm, the heavy downpour caused multiple ________ to overflow.", 
-        "options": ["ditchs", "ditches", "ditches'", "ditches"], 
+        "options": ["ditchs", "ditches", "ditches'", "ditchees"], 
         "answer": "ditches", 
         "explanation": "Nouns ending in s, x, z, ch, or sh form their plural by adding 'es' (ditches)." 
     },
