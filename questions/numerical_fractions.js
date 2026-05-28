@@ -320,305 +320,311 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // ==========================================
   intermediate: [
     {
-      question: "What is 1/4 + 1/4?",
-      options: ["1/2", "1/8", "2/8", "2/4"],
-      answer: "1/2",
-      explanation: "1/4 + 1/4 = 2/4, and 2/4 simplifies to 1/2."
-    },
-    {
-      question: "What is 2/5 + 1/5?",
-      options: ["2/10", "3/5", "3/10", "1/2"],
-      answer: "3/5",
-      explanation: "Same denominator 5, 2 + 1 = 3, so 3/5."
-    },
-    {
-      question: "What is 3/8 + 2/8?",
-      options: ["5/16", "5/8", "1/2", "3/16"],
-      answer: "5/8",
-      explanation: "Same denominator 8, 3 + 2 = 5, so 5/8."
-    },
-    {
-      question: "What is 5/6 − 1/6?",
-      options: ["2/3", "5/5", "1/5", "4/3"],
-      answer: "2/3",
-      explanation: "Same denominator 6, 5 − 1 = 4, so 4/6 simplifies to 2/3."
-    },
-    {
-      question: "What is 7/9 − 2/9?",
-      options: ["5/9", "9/7", "2/7", "7/7"],
-      answer: "5/9",
-      explanation: "Same denominator 9, 7 − 2 = 5, giving 5/9."
-    },
-    {
-      question: "What is 1/2 + 1/3?",
-      options: ["2/5", "5/6", "3/5", "1/5"],
-      answer: "5/6",
-      explanation: "LCM of 2 and 3 is 6. 1/2 = 3/6 and 1/3 = 2/6. 3/6 + 2/6 = 5/6."
-    },
-    {
-      question: "What is 1/4 + 1/3?",
-      options: ["2/7", "3/7", "7/12", "1/7"],
-      answer: "7/12",
-      explanation: "LCM of 4 and 3 is 12. 1/4 = 3/12 and 1/3 = 4/12. 3/12 + 4/12 = 7/12."
-    },
-    {
-      question: "What is 3/5 + 1/10?",
-      options: ["4/15", "7/10", "2/5", "1/2"],
-      answer: "7/10",
-      explanation: "LCM of 5 and 10 is 10. 3/5 = 6/10, 1/10 stays 1/10. 6/10 + 1/10 = 7/10."
-    },
-    {
-      question: "What is 2/3 + 1/6?",
-      options: ["1/2", "2/3", "5/6", "2/5"],
-      answer: "5/6",
-      explanation: "LCM of 3 and 6 is 6. 2/3 = 4/6, 1/6 stays 1/6. 4/6 + 1/6 = 5/6."
-    },
-    {
-      question: "What is 3/4 − 1/8?",
-      options: ["2/8", "5/8", "1/2", "3/8"],
-      answer: "5/8",
-      explanation: "LCM of 4 and 8 is 8. 3/4 = 6/8. 6/8 − 1/8 = 5/8."
-    },
-    {
-      question: "What is 5/6 − 1/3?",
-      options: ["1/2", "2/3", "1/3", "2/5"],
-      answer: "1/2",
-      explanation: "1/3 = 2/6, 5/6 − 2/6 = 3/6, which simplifies to 1/2."
-    },
-    {
-      question: "What is 7/10 − 1/5?",
-      options: ["1/2", "3/10", "2/5", "4/10"],
-      answer: "1/2",
-      explanation: "1/5 = 2/10, 7/10 − 2/10 = 5/10, which simplifies to 1/2."
-    },
-    {
-      question: "What is 2/3 of 9?",
-      options: ["3", "4", "5", "6"],
-      answer: "6",
-      explanation: "2/3 of 9 means (2/3) × 9 = 18/3 = 6."
-    },
-    {
-      question: "What is 3/4 of 12?",
-      options: ["6", "8", "9", "10"],
-      answer: "9",
-      explanation: "3/4 of 12 = (3/4) × 12 = 36/4 = 9."
-    },
-    {
-      question: "What is 1/5 of 25?",
-      options: ["3", "4", "5", "6"],
-      answer: "5",
-      explanation: "1/5 of 25 = 25 ÷ 5 = 5."
-    },
-    {
-      question: "What is 2/7 of 21?",
-      options: ["4", "5", "6", "7"],
-      answer: "6",
-      explanation: "2/7 of 21 = (2/7) × 21 = 42/7 = 6."
-    },
-    {
-      question: "What is 1/2 × 1/3?",
-      options: ["1/5", "1/6", "2/5", "2/3"],
-      answer: "1/6",
-      explanation: "Multiply numerators: 1 × 1 = 1. Multiply denominators: 2 × 3 = 6. So 1/6."
-    },
-    {
-      question: "What is 2/5 × 3/4?",
-      options: ["6/9", "5/9", "6/20", "3/10"],
-      answer: "3/10",
-      explanation: "Multiply numerators: 2 × 3 = 6, denominators: 5 × 4 = 20. 6/20 simplifies to 3/10."
-    },
-    {
-      question: "What is 3/8 × 2/3?",
-      options: ["5/8", "1/4", "1/2", "3/11"],
-      answer: "1/4",
-      explanation: "3/8 × 2/3 = (3×2)/(8×3) = 6/24, which simplifies to 1/4."
-    },
-    {
-      question: "What is 4/9 × 3/4?",
-      options: ["1/3", "1/2", "7/9", "4/12"],
-      answer: "1/3",
-      explanation: "4/9 × 3/4 = (4×3)/(9×4) = 12/36, which simplifies to 1/3."
-    },
-    {
-      question: "What is 1/2 ÷ 1/4?",
-      options: ["1/8", "1/2", "2", "4"],
-      answer: "2",
-      explanation: "Dividing by 1/4 is the same as multiplying by 4. 1/2 × 4 = 2."
-    },
-    {
-      question: "What is 3/5 ÷ 1/5?",
-      options: ["3", "1", "5", "2"],
-      answer: "3",
-      explanation: "3/5 ÷ 1/5 = (3/5) × (5/1) = 15/5 = 3."
-    },
-    {
-      question: "What is 2/3 ÷ 1/6?",
-      options: ["1/9", "4", "6", "1/4"],
-      answer: "4",
-      explanation: "2/3 ÷ 1/6 = (2/3) × (6/1) = 12/3 = 4."
-    },
-    {
-      question: "What is 3/4 ÷ 1/2?",
-      options: ["1/8", "3/8", "1 1/2", "3/2"],
-      answer: "3/2",
-      explanation: "3/4 ÷ 1/2 = (3/4) × (2/1) = 6/4, which simplifies to 3/2."
-    },
-    {
-      question: "Simplify 6/15.",
-      options: ["2/5", "3/5", "1/3", "5/6"],
-      answer: "2/5",
-      explanation: "Divide numerator and denominator by 3: 6/15 = 2/5."
-    },
-    {
-      question: "Simplify 9/21.",
-      options: ["3/7", "3/5", "2/7", "7/9"],
-      answer: "3/7",
-      explanation: "Divide numerator and denominator by 3: 9/21 = 3/7."
-    },
-    {
-      question: "Simplify 12/18.",
-      options: ["2/3", "3/2", "4/6", "6/9"],
-      answer: "2/3",
-      explanation: "Divide numerator and denominator by 6: 12/18 = 2/3."
-    },
-    {
-      question: "Simplify 10/25.",
-      options: ["2/5", "5/2", "1/5", "3/5"],
-      answer: "2/5",
-      explanation: "Divide numerator and denominator by 5: 10/25 = 2/5."
-    },
-    {
-      question: "What is 2/9 + 4/9?",
-      options: ["6/9", "5/9", "4/9", "8/9"],
-      answer: "2/3",
-      explanation: "2/9 + 4/9 = 6/9, which simplifies to 2/3."
-    },
-    {
-      question: "What is 5/8 − 1/8?",
-      options: ["1/2", "3/8", "6/8", "4/8"],
-      answer: "1/2",
-      explanation: "5/8 − 1/8 = 4/8, which simplifies to 1/2."
-    },
-    {
-      question: "What is 1/3 + 1/6?",
-      options: ["1/2", "2/9", "1/9", "5/6"],
-      answer: "1/2",
-      explanation: "1/3 = 2/6, so 2/6 + 1/6 = 3/6, which simplifies to 1/2."
-    },
-    {
-      question: "What is 3/4 − 1/3?",
-      options: ["5/12", "1/12", "7/12", "2/3"],
-      answer: "5/12",
-      explanation: "LCM of 4 and 3 is 12. 3/4 = 9/12, 1/3 = 4/12. 9/12 − 4/12 = 5/12."
-    },
-    {
-      question: "What is 2/5 of 30?",
-      options: ["8", "10", "12", "15"],
-      answer: "12",
-      explanation: "2/5 of 30 = (2 × 30) ÷ 5 = 60 ÷ 5 = 12."
-    },
-    {
-      question: "What is 3/8 of 32?",
-      options: ["10", "11", "12", "13"],
-      answer: "12",
-      explanation: "3/8 of 32 = (3 × 32) ÷ 8 = 96 ÷ 8 = 12."
-    },
-    {
-      question: "A recipe needs 3/4 cup of sugar. If you make half the recipe, how much sugar do you need?",
-      options: ["1/4 cup", "3/8 cup", "1/2 cup", "2/3 cup"],
-      answer: "3/8 cup",
-      explanation: "Half of 3/4 is (1/2) × 3/4 = 3/8."
-    },
-    {
-      question: "A ribbon is 5/6 meter long. If you cut off 1/6 meter, how much is left?",
-      options: ["2/3 m", "4/6 m", "5/6 m", "1/3 m"],
-      answer: "2/3 m",
-      explanation: "5/6 − 1/6 = 4/6, which simplifies to 2/3 meter."
-    },
-    {
-      question: "What is 4/5 × 10?",
-      options: ["6", "7", "8", "9"],
-      answer: "8",
-      explanation: "4/5 of 10 = (4 × 10) ÷ 5 = 40 ÷ 5 = 8."
-    },
-    {
-      question: "What is 2/3 × 15?",
-      options: ["9", "10", "11", "12"],
-      answer: "10",
-      explanation: "2/3 of 15 = (2 × 15) ÷ 3 = 30 ÷ 3 = 10."
-    },
-    {
-      question: "What is 1/2 ÷ 1/8?",
-      options: ["4", "6", "8", "2"],
-      answer: "4",
-      explanation: "1/2 ÷ 1/8 = (1/2) × (8/1) = 8/2 = 4."
-    },
-    {
-      question: "What is 3/4 ÷ 3?",
-      options: ["1/4", "1/3", "1/2", "3/7"],
-      answer: "1/4",
-      explanation: "Dividing by 3 is like multiplying by 1/3. (3/4) × (1/3) = 3/12 = 1/4."
-    },
-    {
-      question: "A student answered 12 out of 20 questions correctly. What fraction of the test was correct in simplest form?",
-      options: ["12/20", "3/5", "4/5", "2/5"],
-      answer: "3/5",
-      explanation: "12/20 simplifies to 3/5 by dividing by 4."
-    },
-    {
-      question: "In a class, 9 out of 15 students passed a quiz. What fraction passed in simplest form?",
-      options: ["9/15", "3/5", "2/3", "1/3"],
-      answer: "3/5",
-      explanation: "9/15 simplifies to 3/5 by dividing by 3."
-    },
-    {
-      question: "What is the reciprocal of 3/5?",
-      options: ["5/3", "3/5", "2/5", "5/8"],
-      answer: "5/3",
-      explanation: "The reciprocal of a/b is b/a. So the reciprocal of 3/5 is 5/3."
-    },
-    {
-      question: "What is the reciprocal of 4/7?",
-      options: ["7/4", "4/7", "3/7", "7/3"],
-      answer: "7/4",
-      explanation: "Switch numerator and denominator. 4/7 becomes 7/4."
-    },
-    {
-      question: "What is 5/9 + 1/3?",
-      options: ["6/12", "8/9", "2/3", "7/9"],
-      answer: "8/9",
-      explanation: "1/3 = 3/9. 5/9 + 3/9 = 8/9."
-    },
-    {
-      question: "What is 7/8 − 1/4?",
-      options: ["5/8", "3/8", "6/8", "1/2"],
-      answer: "5/8",
-      explanation: "1/4 = 2/8. 7/8 − 2/8 = 5/8."
-    },
-    {
-      question: "What is 2/3 of 27?",
-      options: ["16", "17", "18", "20"],
-      answer: "18",
-      explanation: "2/3 of 27 = (2 × 27) ÷ 3 = 54 ÷ 3 = 18."
-    },
-    {
-      question: "What is 3/5 of 40?",
-      options: ["20", "22", "24", "30"],
-      answer: "24",
-      explanation: "3/5 of 40 = (3 × 40) ÷ 5 = 120 ÷ 5 = 24."
-    },
-    {
-      question: "A tank is 3/4 full and holds 40 liters when full. How many liters of water are in the tank?",
-      options: ["25 L", "30 L", "35 L", "20 L"],
-      answer: "30 L",
-      explanation: "3/4 of 40 = (3 × 40) ÷ 4 = 120 ÷ 4 = 30 liters."
-    },
-    {
-      question: "A basket contains 24 fruits, and 2/3 of them are mangoes. How many mangoes are there?",
-      options: ["12", "14", "15", "16"],
-      answer: "16",
-      explanation: "2/3 of 24 = (2 × 24) ÷ 3 = 48 ÷ 3 = 16 mangoes."
-    }
+    question: "Maria has ₱500. She spent 2/5 on food and 1/5 on transportation. How much did she save?",
+    options: ["₱100", "₱150", "₱200", "₱250"],
+    answer: "₱200",
+    explanation: "Spent = 2/5 + 1/5 = 3/5 of ₱500 = ₱300. Saved = ₱500 − ₱300 = ₱200."
+  },
+  {
+    question: "A tank is 3/8 full of water. Mang Tomas added 2/8 more. What fraction of the tank now has water?",
+    options: ["1/2", "5/8", "6/8", "7/8"],
+    answer: "5/8",
+    explanation: "3/8 + 2/8 = 5/8. Same denominator, just add the numerators."
+  },
+  {
+    question: "Lito has 3/4 sack of rice. He used 1/4 sack for dinner. How much is left?",
+    options: ["1/4", "1/2", "2/3", "3/4"],
+    answer: "1/2",
+    explanation: "3/4 − 1/4 = 2/4 = 1/2 sack."
+  },
+  {
+    question: "Ana walked 1/2 km and Ben walked 1/3 km. Who walked farther and by how much?",
+    options: ["Ana, 1/6 km", "Ben, 1/6 km", "Ana, 1/2 km", "Ben, 1/3 km"],
+    answer: "Ana, 1/6 km",
+    explanation: "LCD of 2 and 3 is 6. 1/2 = 3/6 and 1/3 = 2/6. Ana walked farther. Difference = 3/6 − 2/6 = 1/6 km."
+  },
+  {
+    question: "A project was 2/5 done on Monday. Another 1/4 was completed on Tuesday. What fraction is done now?",
+    options: ["3/9", "13/20", "3/5", "7/10"],
+    answer: "13/20",
+    explanation: "LCD of 5 and 4 is 20. 2/5 = 8/20 and 1/4 = 5/20. 8/20 + 5/20 = 13/20."
+  },
+  {
+    question: "Nena has 5/6 meter of ribbon. She cut off 1/3 meter. How much is left?",
+    options: ["1/2", "2/3", "4/6", "5/6"],
+    answer: "1/2",
+    explanation: "1/3 = 2/6. 5/6 − 2/6 = 3/6 = 1/2 meter."
+  },
+  {
+    question: "A pail is 1/2 full. Another 1/4 of its capacity was added. What fraction of the pail is now filled?",
+    options: ["1/4", "1/2", "2/3", "3/4"],
+    answer: "3/4",
+    explanation: "LCD of 2 and 4 is 4. 1/2 = 2/4. 2/4 + 1/4 = 3/4."
+  },
+  {
+    question: "Jose completed 1/3 of his work in the morning and 1/4 in the afternoon. What fraction of his work is done?",
+    options: ["2/7", "5/12", "7/12", "1/2"],
+    answer: "7/12",
+    explanation: "LCD of 3 and 4 is 12. 1/3 = 4/12 and 1/4 = 3/12. 4/12 + 3/12 = 7/12."
+  },
+  {
+    question: "Mang Rene's monthly salary is ₱9,000. He spends 1/3 on rent. How much does he pay for rent?",
+    options: ["₱2,000", "₱2,500", "₱3,000", "₱3,500"],
+    answer: "₱3,000",
+    explanation: "1/3 of ₱9,000 = ₱9,000 ÷ 3 = ₱3,000."
+  },
+  {
+    question: "A can of paint is 7/8 full. The painter used 3/8. What fraction is left?",
+    options: ["1/4", "3/8", "1/2", "5/8"],
+    answer: "1/2",
+    explanation: "7/8 − 3/8 = 4/8 = 1/2."
+  },
+  {
+    question: "Cora ate 2/7 of bread at breakfast and 1/7 at lunch. What total fraction did she eat?",
+    options: ["2/7", "3/7", "4/7", "1/2"],
+    answer: "3/7",
+    explanation: "2/7 + 1/7 = 3/7. Same denominator, just add."
+  },
+  {
+    question: "A class has 40 students. 3/8 are girls. How many are boys?",
+    options: ["10", "15", "20", "25"],
+    answer: "25",
+    explanation: "Girls = 3/8 of 40 = 15. Boys = 40 − 15 = 25."
+  },
+  {
+    question: "Mang Berto has 24 eggs. He sold 3/4 of them. How many did he sell?",
+    options: ["6", "12", "16", "18"],
+    answer: "18",
+    explanation: "3/4 of 24 = (3 × 24) ÷ 4 = 72 ÷ 4 = 18 eggs."
+  },
+  {
+    question: "A water bottle is 5/6 full. Carlo drank 1/2 of the bottle's capacity. What fraction is left?",
+    options: ["1/6", "1/3", "1/2", "2/3"],
+    answer: "1/3",
+    explanation: "LCD of 6 and 2 is 6. 1/2 = 3/6. 5/6 − 3/6 = 2/6 = 1/3."
+  },
+  {
+    question: "Ate Sonia's salary is ₱15,000. She spends 2/5 on food. How much does she spend on food?",
+    options: ["₱4,000", "₱5,000", "₱6,000", "₱7,000"],
+    answer: "₱6,000",
+    explanation: "2/5 of ₱15,000 = (2 × 15,000) ÷ 5 = 30,000 ÷ 5 = ₱6,000."
+  },
+  {
+    question: "In a box, 1/4 of the apples are rotten and 1/2 are ripe. What fraction is neither rotten nor ripe?",
+    options: ["1/8", "1/6", "1/4", "1/3"],
+    answer: "1/4",
+    explanation: "LCD of 4 and 2 is 4. Rotten + ripe = 1/4 + 2/4 = 3/4. Remaining = 1 − 3/4 = 1/4."
+  },
+  {
+    question: "What fraction of an hour is 20 minutes?",
+    options: ["1/4", "1/3", "2/5", "1/2"],
+    answer: "1/3",
+    explanation: "20 minutes out of 60 minutes = 20/60 = 1/3."
+  },
+  {
+    question: "What fraction of an hour is 45 minutes?",
+    options: ["1/2", "2/3", "3/4", "4/5"],
+    answer: "3/4",
+    explanation: "45 minutes out of 60 minutes = 45/60 = 3/4."
+  },
+  {
+    question: "Kuya Dan has 2/3 of a kilo of meat. He gave 1/4 kilo to his sibling. How much is left?",
+    options: ["5/12", "1/3", "7/12", "1/2"],
+    answer: "5/12",
+    explanation: "LCD of 3 and 4 is 12. 2/3 = 8/12 and 1/4 = 3/12. 8/12 − 3/12 = 5/12."
+  },
+  {
+    question: "A farm is 2/3 onion and 1/6 tomato. What fraction is neither onion nor tomato?",
+    options: ["1/6", "1/4", "1/3", "1/2"],
+    answer: "1/6",
+    explanation: "LCD is 6. 2/3 = 4/6. Onion + tomato = 4/6 + 1/6 = 5/6. Remaining = 1 − 5/6 = 1/6."
+  },
+  {
+    question: "Aling Mercy used 3/4 kilo of sugar in the morning and 1/8 kilo in the afternoon. How much sugar did she use in total?",
+    options: ["4/12", "5/8", "7/8", "1"],
+    answer: "7/8",
+    explanation: "LCD of 4 and 8 is 8. 3/4 = 6/8. 6/8 + 1/8 = 7/8 kilo."
+  },
+  {
+    question: "A plate has 12 pieces of bread. The family ate 2/3 of them. How many are left?",
+    options: ["2", "3", "4", "6"],
+    answer: "4",
+    explanation: "Eaten = 2/3 of 12 = 8. Remaining = 12 − 8 = 4."
+  },
+  {
+    question: "The water in a tank is 5/8 of its capacity. Then 1/4 of the capacity was used. What fraction remains?",
+    options: ["1/4", "3/8", "1/2", "5/8"],
+    answer: "3/8",
+    explanation: "LCD of 8 and 4 is 8. 1/4 = 2/8. 5/8 − 2/8 = 3/8."
+  },
+  {
+    question: "Boy has ₱1,200. He spent 1/4 on food and 1/3 on clothes. How much is left?",
+    options: ["₱400", "₱450", "₱500", "₱600"],
+    answer: "₱500",
+    explanation: "Food = 1/4 of 1,200 = 300. Clothes = 1/3 of 1,200 = 400. Total spent = 700. Left = 1,200 − 700 = ₱500."
+  },
+  {
+    question: "In a province, 3/5 of residents are farmers and 1/10 are fishermen. What fraction are neither?",
+    options: ["3/10", "1/3", "2/5", "1/2"],
+    answer: "3/10",
+    explanation: "LCD is 10. 3/5 = 6/10. Farmers + fishermen = 6/10 + 1/10 = 7/10. Others = 1 − 7/10 = 3/10."
+  },
+  {
+    question: "A recipe uses 3/4 cup of sugar. If you make it twice, how much sugar do you need?",
+    options: ["1 cup", "1 1/4 cups", "1 1/2 cups", "2 cups"],
+    answer: "1 1/2 cups",
+    explanation: "3/4 × 2 = 6/4 = 3/2 = 1 1/2 cups."
+  },
+  {
+    question: "A worker completed 1/3 of a task on the first day and 2/5 on the second day. What fraction is done?",
+    options: ["3/8", "11/15", "7/15", "3/5"],
+    answer: "11/15",
+    explanation: "LCD of 3 and 5 is 15. 1/3 = 5/15 and 2/5 = 6/15. 5/15 + 6/15 = 11/15."
+  },
+  {
+    question: "Ate Lisa sold 5/8 of her 40 dresses. How many did she sell?",
+    options: ["20", "24", "25", "30"],
+    answer: "25",
+    explanation: "5/8 of 40 = (5 × 40) ÷ 8 = 200 ÷ 8 = 25 dresses."
+  },
+  {
+    question: "Mang Rudy's salary is ₱12,000. He gives 3/4 to his family. How much does he keep for himself?",
+    options: ["₱2,000", "₱3,000", "₱4,000", "₱5,000"],
+    answer: "₱3,000",
+    explanation: "Given to family = 3/4 of 12,000 = 9,000. Kept = 12,000 − 9,000 = ₱3,000."
+  },
+  {
+    question: "A can is 7/10 full of milk. 2/5 of the can's capacity was used. What fraction remains?",
+    options: ["1/5", "3/10", "2/5", "1/2"],
+    answer: "3/10",
+    explanation: "LCD of 10 and 5 is 10. 2/5 = 4/10. 7/10 − 4/10 = 3/10."
+  },
+  {
+    question: "Kuya Mario traveled 2/3 of the route before lunch and 1/4 after lunch. What fraction of the route did he cover?",
+    options: ["3/7", "5/12", "11/12", "7/12"],
+    answer: "11/12",
+    explanation: "LCD of 3 and 4 is 12. 2/3 = 8/12 and 1/4 = 3/12. 8/12 + 3/12 = 11/12."
+  },
+  {
+    question: "A bag of rice is 2/3 full and weighs 8 kilos. What is the full weight of the bag?",
+    options: ["10 kilos", "11 kilos", "12 kilos", "14 kilos"],
+    answer: "12 kilos",
+    explanation: "2/3 of full weight = 8. Full weight = 8 ÷ (2/3) = 8 × 3/2 = 12 kilos."
+  },
+  {
+    question: "In a 30-item test, Rosa answered 4/5 correctly. How many did she answer correctly?",
+    options: ["18", "20", "22", "24"],
+    answer: "24",
+    explanation: "4/5 of 30 = (4 × 30) ÷ 5 = 120 ÷ 5 = 24 items."
+  },
+  {
+    question: "One meter of cloth costs ₱80. How much does 3/4 meter cost?",
+    options: ["₱50", "₱55", "₱60", "₱65"],
+    answer: "₱60",
+    explanation: "3/4 of ₱80 = (3 × 80) ÷ 4 = 240 ÷ 4 = ₱60."
+  },
+  {
+    question: "Mang Pepe has 18 banana trees. 2/3 are bearing fruit. How many are NOT yet bearing fruit?",
+    options: ["4", "5", "6", "8"],
+    answer: "6",
+    explanation: "Bearing fruit = 2/3 of 18 = 12. Not yet = 18 − 12 = 6."
+  },
+  {
+    question: "A book has 120 pages. Ben read 3/8 of it. How many pages did he read?",
+    options: ["35", "40", "45", "50"],
+    answer: "45",
+    explanation: "3/8 of 120 = (3 × 120) ÷ 8 = 360 ÷ 8 = 45 pages."
+  },
+  {
+    question: "A tank's capacity is 25 liters and is 4/5 full. How many liters of water are in the tank?",
+    options: ["15 L", "18 L", "20 L", "22 L"],
+    answer: "20 L",
+    explanation: "4/5 of 25 = (4 × 25) ÷ 5 = 100 ÷ 5 = 20 liters."
+  },
+  {
+    question: "A family spends 1/4 of their salary on food and 1/3 on rent. What fraction is left for other expenses?",
+    options: ["1/4", "5/12", "7/12", "1/3"],
+    answer: "5/12",
+    explanation: "LCD of 4 and 3 is 12. 1/4 = 3/12 and 1/3 = 4/12. Spent = 7/12. Remaining = 1 − 7/12 = 5/12."
+  },
+  {
+    question: "Lola Caring has ₱600. She gave 1/3 to her child and 1/6 to her grandchild. How much is left?",
+    options: ["₱200", "₱250", "₱300", "₱350"],
+    answer: "₱300",
+    explanation: "Child = 1/3 of 600 = 200. Grandchild = 1/6 of 600 = 100. Given = 300. Left = 600 − 300 = ₱300."
+  },
+  {
+    question: "A farmer harvested 48 kilos of corn. He sold 5/8 of it. How many kilos did he sell?",
+    options: ["24 kilos", "28 kilos", "30 kilos", "32 kilos"],
+    answer: "30 kilos",
+    explanation: "5/8 of 48 = (5 × 48) ÷ 8 = 240 ÷ 8 = 30 kilos."
+  },
+  {
+    question: "The water in a tank dropped from 7/8 to 3/8 of its capacity. What fraction was used?",
+    options: ["1/4", "3/8", "1/2", "5/8"],
+    answer: "1/2",
+    explanation: "7/8 − 3/8 = 4/8 = 1/2 of the capacity was used."
+  },
+  {
+    question: "In a barangay, 2/5 of the population are youth and 1/3 are elderly. What fraction are neither?",
+    options: ["4/15", "7/15", "4/5", "3/5"],
+    answer: "4/15",
+    explanation: "LCD of 5 and 3 is 15. 2/5 = 6/15 and 1/3 = 5/15. Youth + elderly = 11/15. Neither = 1 − 11/15 = 4/15."
+  },
+  {
+    question: "Pedro planted 3/5 of his land with rice and 1/4 with corn. What fraction is not yet planted?",
+    options: ["3/20", "7/20", "9/20", "11/20"],
+    answer: "3/20",
+    explanation: "LCD of 5 and 4 is 20. 3/5 = 12/20 and 1/4 = 5/20. Planted = 17/20. Unplanted = 1 − 17/20 = 3/20."
+  },
+  {
+    question: "A company has 200 employees. 3/5 are regular and the rest are contractual. How many are contractual?",
+    options: ["60", "70", "80", "90"],
+    answer: "80",
+    explanation: "Regular = 3/5 of 200 = 120. Contractual = 200 − 120 = 80."
+  },
+  {
+    question: "A truck traveled 2/3 of the route in the first hour and 1/4 in the second hour. What fraction is left?",
+    options: ["1/12", "3/12", "1/6", "1/4"],
+    answer: "1/12",
+    explanation: "LCD of 3 and 4 is 12. 2/3 = 8/12 and 1/4 = 3/12. Traveled = 11/12. Remaining = 1 − 11/12 = 1/12."
+  },
+  {
+    question: "A box has 36 apples: 1/4 are red, 1/3 are green, and the rest are yellow. How many are yellow?",
+    options: ["9", "12", "15", "16"],
+    answer: "15",
+    explanation: "Red = 1/4 of 36 = 9. Green = 1/3 of 36 = 12. Yellow = 36 − 9 − 12 = 15."
+  },
+  {
+    question: "Nestor works 8 hours a day. He spends 3/4 of his time in the office and the rest on field work. How many hours does he spend on field work?",
+    options: ["1 hour", "2 hours", "3 hours", "4 hours"],
+    answer: "2 hours",
+    explanation: "Office = 3/4 of 8 = 6 hours. Field = 8 − 6 = 2 hours."
+  },
+  {
+    question: "A water container was 2/3 full. After the rain, it became 5/6 full. What fraction was added by the rain?",
+    options: ["1/6", "1/5", "1/4", "1/3"],
+    answer: "1/6",
+    explanation: "LCD of 3 and 6 is 6. 2/3 = 4/6. Added = 5/6 − 4/6 = 1/6."
+  },
+  {
+    question: "Ate Grace has 2/3 meter of ribbon. She needs 1/2 meter. Is it enough and how much will be left or short?",
+    options: ["Enough, 1/6 meter left", "Not enough, 1/6 meter short", "Enough, 1/3 meter left", "Not enough, 1/3 meter short"],
+    answer: "Enough, 1/6 meter left",
+    explanation: "LCD is 6. 2/3 = 4/6 and 1/2 = 3/6. 4/6 > 3/6, so it is enough. Left = 4/6 − 3/6 = 1/6 meter."
+  },
+  {
+    question: "A business owner produces 3/5 of products in the morning and 1/4 in the afternoon. What fraction is produced in one day?",
+    options: ["4/9", "17/20", "11/20", "3/4"],
+    answer: "17/20",
+    explanation: "LCD of 5 and 4 is 20. 3/5 = 12/20 and 1/4 = 5/20. 12/20 + 5/20 = 17/20."
+  },
+  {
+    question: "A student spent 1/3 of her study time on math and 1/4 on science. What fraction of time was spent on these two subjects?",
+    options: ["2/7", "5/12", "7/12", "1/2"],
+    answer: "7/12",
+    explanation: "LCD of 3 and 4 is 12. 1/3 = 4/12 and 1/4 = 3/12. 4/12 + 3/12 = 7/12."
+  }
   ],
 
   // ==========================================
