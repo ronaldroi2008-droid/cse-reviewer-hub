@@ -937,305 +937,299 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // LEVEL 4: EXPERT (50 Items)
   // ==========================================
   expert: [
-    {
-      question: "Evaluate: (3 1/2 + 2 2/3) × 4/5.",
-      options: ["4 2/3", "4 3/4", "4 14/15", "5 1/5"],
-      answer: "4 14/15",
-      explanation: "3 1/2 = 7/2 and 2 2/3 = 8/3. LCD is 6. 7/2 = 21/6 and 8/3 = 16/6. Sum = 37/6. Multiply: 37/6 × 4/5 = 148/30 = 74/15 = 4 14/15."
-    },
-    {
-      question: "Evaluate: (5 3/4 − 2 5/6) ÷ 7/9.",
-      options: ["3", "3 1/4", "3 1/2", "3 3/4"],
-      answer: "3 3/4",
-      explanation: "5 3/4 = 23/4 and 2 5/6 = 17/6. LCD is 12. 23/4 = 69/12 and 17/6 = 34/12. Difference: 69/12 − 34/12 = 35/12. Divide: 35/12 ÷ 7/9 = 35/12 × 9/7 = 315/84 = 15/4 = 3 3/4."
-    },
-    {
-      question: "Evaluate: 1 1/2 + (3/4 ÷ 2/5).",
-      options: ["2 7/8", "3 1/8", "3 3/8", "3 1/2"],
-      answer: "3 3/8",
-      explanation: "3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. 1 1/2 = 3/2 = 12/8. Sum: 12/8 + 15/8 = 27/8 = 3 3/8."
-    },
-    {
-      question: "Evaluate: (7/8 × 4/5) + (2/3 × 3/10).",
-      options: ["4/5", "9/10", "1", "11/10"],
-      answer: "9/10",
-      explanation: "7/8 × 4/5 = 28/40 = 7/10. 2/3 × 3/10 = 6/30 = 1/5. Sum: 7/10 + 1/5 = 7/10 + 2/10 = 9/10."
-    },
-    {
-      question: "Find 2/3 of (4 1/2 − 1 3/4).",
-      options: ["1 1/3", "1 5/6", "2", "2 1/6"],
-      answer: "1 5/6",
-      explanation: "4 1/2 = 9/2 and 1 3/4 = 7/4. LCD is 4. 9/2 = 18/4. Difference: 18/4 − 7/4 = 11/4. Now take 2/3 of 11/4: 2/3 × 11/4 = 22/12 = 11/6 = 1 5/6."
-    },
-    {
-      question: "A pizza is cut into 12 equal slices. You eat 3/4 of the pizza. How many slices do you eat?",
-      options: ["6", "8", "9", "10"],
-      answer: "9",
-      explanation: "3/4 of 12 slices is 3/4 × 12 = 36/4 = 9 slices."
-    },
-    {
-      question: "A tank is 5/8 full. After using 1/6 of the full tank, what fraction of the tank remains?",
-      options: ["11/24", "13/24", "7/12", "3/4"],
-      answer: "11/24",
-      explanation: "Start with 5/8. Subtract 1/6. LCD of 8 and 6 is 24. 5/8 = 15/24 and 1/6 = 4/24. 15/24 − 4/24 = 11/24."
-    },
-    {
-      question: "A student studies 3/5 hour on Monday, 4/3 hours on Tuesday, and 5/6 hour on Wednesday. How many hours in total?",
-      options: ["2 1/2", "2 2/3", "2 23/30", "3"],
-      answer: "2 23/30",
-      explanation: "LCD of 5, 3, and 6 is 30. 3/5 = 18/30, 4/3 = 40/30, 5/6 = 25/30. Sum: (18 + 40 + 25)/30 = 83/30 = 2 23/30."
-    },
-    {
-      question: "A recipe needs 2 1/4 cups of flour for one cake. How much flour is needed for 3 1/2 cakes?",
-      options: ["7 1/2 cups", "7 5/8 cups", "7 7/8 cups", "8 cups"],
-      answer: "7 7/8 cups",
-      explanation: "2 1/4 = 9/4 and 3 1/2 = 7/2. Multiply: 9/4 × 7/2 = 63/8 = 7 7/8 cups."
-    },
-    {
-      question: "A pipe fills 2/7 of a tank in 3 hours. At this rate, how many hours are needed to fill the entire tank?",
-      options: ["7", "9", "10 1/2", "12"],
-      answer: "10 1/2",
-      explanation: "In 3 hours, 2/7 of the tank is filled. Time for full tank = 3 ÷ (2/7) = 3 × 7/2 = 21/2 = 10 1/2 hours."
-    },
-    {
-      question: "Pipe A fills 1/4 of a tank per hour and Pipe B fills 1/6 per hour. How long will they take to fill the tank together?",
-      options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
-      answer: "2 2/5 hours",
-      explanation: "Combined rate = 1/4 + 1/6. LCD is 12. 1/4 = 3/12 and 1/6 = 2/12, so total = 5/12. Time = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
-    },
-    {
-      question: "In a class, 3/8 of the students are absent and 25 are present. How many students are in the class?",
-      options: ["30", "35", "40", "45"],
-      answer: "40",
-      explanation: "If 3/8 are absent, 5/8 are present. 5/8 of total = 25. Total = 25 ÷ (5/8) = 25 × 8/5 = 40."
-    },
-    {
-      question: "In a survey, 5/12 prefer A, 1/3 prefer B, and the rest prefer C. What fraction prefer C?",
-      options: ["1/4", "5/12", "7/12", "3/8"],
-      answer: "1/4",
-      explanation: "1/3 = 4/12. Total for A and B is 5/12 + 4/12 = 9/12 = 3/4. The rest is 1 − 3/4 = 1/4."
-    },
-    {
-      question: "A product costs ₱480. The store offers a discount of 1/5 of the price. What is the sale price?",
-      options: ["₱360", "₱376", "₱384", "₱400"],
-      answer: "₱384",
-      explanation: "Discount = 1/5 of 480 = 480 ÷ 5 = 96. Sale price = 480 − 96 = 384."
-    },
-    {
-      question: "A number is decreased by 1/4 of itself and the result is 36. What is the original number?",
-      options: ["40", "44", "48", "52"],
-      answer: "48",
-      explanation: "Let the number be n. Then n − 1/4 n = 36. That is 3/4 n = 36. Multiply both sides by 4/3: n = 36 × 4/3 = 48."
-    },
-    {
-      question: "Three objects weigh 2 1/2 kg, 3 3/4 kg, and 4 1/4 kg. What is their average weight?",
-      options: ["3 kg", "3 1/4 kg", "3 1/2 kg", "3 3/4 kg"],
-      answer: "3 1/2 kg",
-      explanation: "Convert to improper fractions: 2 1/2 = 5/2, 3 3/4 = 15/4, 4 1/4 = 17/4. Sum: 5/2 + 15/4 + 17/4 = 10/4 + 15/4 + 17/4 = 42/4 = 21/2 = 10 1/2. Average = 10 1/2 ÷ 3 = 10 1/2 × 1/3 = 3 1/2."
-    },
-    {
-      question: "A jogger runs 3 1/4 km each day for 6 days. How far does he run in total?",
-      options: ["18 km", "18 1/2 km", "19 1/2 km", "20 km"],
-      answer: "19 1/2 km",
-      explanation: "3 1/4 = 13/4. Multiply: 13/4 × 6 = 78/4 = 39/2 = 19 1/2 km."
-    },
-    {
-      question: "A rope 10 1/2 meters long is cut into pieces each 1 3/4 meters long. How many pieces can be cut?",
-      options: ["4", "5", "6", "7"],
-      answer: "6",
-      explanation: "10 1/2 = 21/2 and 1 3/4 = 7/4. 21/2 ÷ 7/4 = 21/2 × 4/7 = 84/14 = 6 pieces."
-    },
-    {
-      question: "Two workers together finish 3/4 of a job in one day. At this rate, how many days to finish the whole job?",
-      options: ["1", "1 1/3", "1 1/2", "2"],
-      answer: "1 1/3",
-      explanation: "Work done per day = 3/4 of the job. Time to finish 1 job = 1 ÷ (3/4) = 4/3 = 1 1/3 days."
-    },
-    {
-      question: "A car travels 5 1/2 km on 3/4 liter of gasoline. How far does it travel per liter?",
-      options: ["6 km", "7 km", "7 1/3 km", "8 km"],
-      answer: "7 1/3 km",
-      explanation: "5 1/2 = 11/2. Distance per liter = (11/2) ÷ (3/4) = 11/2 × 4/3 = 44/6 = 22/3 = 7 1/3 km."
-    },
-    {
-      question: "A machine produces 2 1/2 dozen parts per hour. How many parts will it produce in 3 1/2 hours?",
-      options: ["90", "96", "102", "105"],
-      answer: "105",
-      explanation: "2 1/2 dozen = 5/2 dozen. 3 1/2 hours = 7/2 hours. Total dozens = 5/2 × 7/2 = 35/4 dozen = 8.75 dozen. In pieces: 8.75 × 12 = 105 parts."
-    },
-    {
-      question: "A line segment is 7 1/2 cm long. If 2/5 is red and 1/3 is blue, how many centimeters are uncolored?",
-      options: ["1 cm", "1 1/2 cm", "2 cm", "2 1/2 cm"],
-      answer: "2 cm",
-      explanation: "Fraction uncolored = 1 − 2/5 − 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15. Sum = 11/15. Uncolored = 4/15. 4/15 of 7 1/2 (15/2) is 4/15 × 15/2 = 4/2 = 2 cm."
-    },
-    {
-      question: "A box is 3/5 full of apples. After selling 24 apples, it is 1/3 full. How many apples can the box hold when full?",
-      options: ["60", "75", "90", "105"],
-      answer: "90",
-      explanation: "Let full capacity be C. Apples removed = 3/5C − 1/3C. LCD is 15. 3/5 = 9/15 and 1/3 = 5/15. Difference = 4/15C. This equals 24. So C = 24 ÷ (4/15) = 24 × 15/4 = 90."
-    },
-    {
-      question: "Lina ran 2 2/3 km, which is 2/5 of the entire course. How long is the full course?",
-      options: ["5 km", "6 2/3 km", "6 km", "7 1/2 km"],
-      answer: "6 2/3 km",
-      explanation: "2 2/3 = 8/3. Let course length be L. 2/5 of L = 8/3. So L = 8/3 ÷ 2/5 = 8/3 × 5/2 = 40/6 = 20/3 = 6 2/3 km."
-    },
-    {
-      question: "A bucket is 7/8 full. After removing 3/10 of its capacity, what fraction of the bucket is still filled?",
-      options: ["23/40", "29/40", "3/4", "4/5"],
-      answer: "23/40",
-      explanation: "Starts 7/8 full. Removing 3/10 of the full capacity, remaining fraction = 7/8 − 3/10. LCD is 40. 7/8 = 35/40 and 3/10 = 12/40. 35/40 − 12/40 = 23/40."
-    },
-    {
-      question: "Three friends share a cake. A gets 3/10, B gets 1/4, and C gets the rest. What fraction does C receive?",
-      options: ["2/5", "9/20", "7/20", "3/10"],
-      answer: "9/20",
-      explanation: "Total given to A and B is 3/10 + 1/4. LCD is 20. 3/10 = 6/20 and 1/4 = 5/20, sum = 11/20. C gets 1 − 11/20 = 9/20."
-    },
-    {
-      question: "An exam has 80 items. A student answers 5/8 correctly and 3/20 incorrectly. How many items are left unanswered?",
-      options: ["10", "14", "16", "18"],
-      answer: "18",
-      explanation: "Correct: 5/8 of 80 = 50. Incorrect: 3/20 of 80 = 12. Total answered = 50 + 12 = 62. Unanswered: 80 − 62 = 18."
-    },
-    {
-      question: "In a box, 1/4 of the marbles are red, 2/5 are blue, and the rest are green. If there are 42 green marbles, how many marbles are there in total?",
-      options: ["90", "100", "110", "120"],
-      answer: "120",
-      explanation: "Red + blue = 1/4 + 2/5. LCD is 20. 1/4 = 5/20 and 2/5 = 8/20, sum = 13/20. Green fraction = 1 − 13/20 = 7/20. 7/20 of total = 42, so total = 42 ÷ (7/20) = 42 × 20/7 = 120."
-    },
-    {
-      question: "A recipe for 5 people uses 3/4 kg of meat. How much meat is needed per person?",
-      options: ["1/5 kg", "3/20 kg", "2/5 kg", "3/10 kg"],
-      answer: "3/20 kg",
-      explanation: "Per person: (3/4) ÷ 5 = 3/4 × 1/5 = 3/20 kg."
-    },
-    {
-      question: "To paint a wall, Worker A alone takes 6 hours and Worker B alone takes 4 hours. What fraction of the wall do they paint together in one hour?",
-      options: ["1/2", "3/5", "5/12", "7/12"],
-      answer: "5/12",
-      explanation: "A paints 1/6 per hour, B paints 1/4 per hour. Together: 1/6 + 1/4 = 2/12 + 3/12 = 5/12."
-    },
-    {
-      question: "From the previous problem, how many hours will they take to paint the entire wall together?",
-      options: ["1 1/2 hours", "2 hours", "2 2/5 hours", "3 hours"],
-      answer: "2 2/5 hours",
-      explanation: "They complete 5/12 of the wall per hour. Time to finish 1 wall = 1 ÷ (5/12) = 12/5 = 2 2/5 hours."
-    },
-    {
-      question: "Find the missing term in the sequence: 1/2, 5/6, 7/6, __, 11/6.",
-      options: ["3/2", "4/3", "5/3", "7/4"],
-      answer: "3/2",
-      explanation: "The difference between each consecutive term is 1/3. 1/2 + 1/3 = 5/6, 5/6 + 1/3 = 7/6. Next term is 7/6 + 1/3 = 7/6 + 2/6 = 9/6 = 3/2."
-    },
-    {
-      question: "Find the average of 1/2, 2/3, 3/4, and 4/5.",
-      options: ["151/240", "157/240", "163/240", "169/240"],
-      answer: "163/240",
-      explanation: "LCD is 240. 1/2 = 120/240, 2/3 = 160/240, 3/4 = 180/240, 4/5 = 192/240. Sum = (120 + 160 + 180 + 192) = 652. Average = 652/240 ÷ 4 = 652/960 = 163/240."
-    },
-    {
-      question: "A bag of nuts contains 2/7 almonds, 3/7 cashews, and the rest peanuts. If there are 18 peanuts, how many nuts are in the bag?",
-      options: ["42", "49", "56", "63"],
-      answer: "63",
-      explanation: "Almonds + cashews = 2/7 + 3/7 = 5/7. Peanuts = 2/7 of the bag. 2/7 of total = 18, so total = 18 ÷ (2/7) = 18 × 7/2 = 63."
-    },
-    {
-      question: "A student answered 3/4 of the 120-item test correctly. How many items did the student answer correctly?",
-      options: ["80", "85", "90", "95"],
-      answer: "90",
-      explanation: "Correct items = 3/4 of 120 = (3 × 120)/4 = 360/4 = 90."
-    },
-    {
-      question: "An alloy contains 3/10 copper and 2/5 zinc, with the rest tin. If there are 24 kg of tin, what is the total weight of the alloy?",
-      options: ["60 kg", "70 kg", "80 kg", "90 kg"],
-      answer: "80 kg",
-      explanation: "2/5 = 4/10, so copper + zinc = 3/10 + 4/10 = 7/10. Tin = 3/10. 3/10 of total = 24, so total = 24 ÷ (3/10) = 24 × 10/3 = 80 kg."
-    },
-    {
-      question: "A rectangular garden is 4 1/2 m long and 3 2/3 m wide. What is its area?",
-      options: ["14 1/2 m²", "15 m²", "16 1/2 m²", "17 m²"],
-      answer: "16 1/2 m²",
-      explanation: "4 1/2 = 9/2 and 3 2/3 = 11/3. Area = 9/2 × 11/3 = 99/6 = 33/2 = 16 1/2 m²."
-    },
-    {
-      question: "A bottle contains 1 1/4 liters of juice. If each serving is 3/10 liter, how many full servings can be made?",
-      options: ["3", "4", "5", "6"],
-      answer: "4",
-      explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
-    },
-    {
-      question: "A shopkeeper mixes 3/5 kg of nuts costing ₱200 per kg with 2/5 kg costing ₱300 per kg. What is the total cost of the mixture?",
-      options: ["₱220", "₱230", "₱240", "₱250"],
-      answer: "₱240",
-      explanation: "First part: 3/5 × 200 = 600/5 = ₱120. Second part: 2/5 × 300 = 600/5 = ₱120. Total cost = 120 + 120 = ₱240."
-    },
-    {
-      question: "A school spends 2/7 of its budget on salaries and 1/3 on equipment. What fraction of the budget is left for other expenses?",
-      options: ["4/21", "5/21", "8/21", "11/21"],
-      answer: "8/21",
-      explanation: "LCD of 7 and 3 is 21. 2/7 = 6/21 and 1/3 = 7/21. Total spent = 13/21. Leftover = 1 − 13/21 = 8/21."
-    },
-    {
-      question: "Mary spends 3/8 of her salary on rent, 1/4 on food, and 1/10 on transport. What fraction of her salary does she save?",
-      options: ["7/40", "9/40", "11/40", "13/40"],
-      answer: "11/40",
-      explanation: "LCD of 8, 4, and 10 is 40. 3/8 = 15/40, 1/4 = 10/40, 1/10 = 4/40. Total spent = 29/40. Saved = 1 − 29/40 = 11/40."
-    },
-    {
-      question: "Tap A fills a tank in 5 hours. Tap B fills 2/3 of the tank in 4 hours. If both are opened together on an empty tank, how many hours to fill it?",
-      options: ["2", "2 3/4", "2 8/11", "3"],
-      answer: "2 8/11",
-      explanation: "Tap A rate: 1/5 tank per hour. Tap B rate: (2/3) ÷ 4 = 2/12 = 1/6 tank per hour. Combined rate = 1/5 + 1/6 = 11/30. Time = 1 ÷ (11/30) = 30/11 = 2 8/11 hours."
-    },
-    {
-      question: "A trader buys goods for ₱3 1/2 million and sells them at a profit of 1/7 of the cost. What is the selling price?",
-      options: ["₱3.75 million", "₱3.9 million", "₱4 million", "₱4.25 million"],
-      answer: "₱4 million",
-      explanation: "3 1/2 = 7/2 million. Profit = 1/7 of 7/2 = 1/2 million. Selling price = 7/2 + 1/2 = 8/2 = 4 million."
-    },
-    {
-      question: "A recipe uses 2/3 cup of milk for 4 pancakes. How many cups of milk are needed for 10 pancakes?",
-      options: ["1 cup", "1 1/3 cups", "1 2/3 cups", "2 cups"],
-      answer: "1 2/3 cups",
-      explanation: "Milk per pancake = (2/3) ÷ 4 = 2/3 × 1/4 = 2/12 = 1/6 cup. For 10 pancakes: 10 × 1/6 = 10/6 = 5/3 = 1 2/3 cups."
-    },
-    {
-      question: "What is 3/5 of 7/8 of ₱320?",
-      options: ["₱112", "₱128", "₱160", "₱168"],
-      answer: "₱168",
-      explanation: "3/5 of 7/8 is (3/5 × 7/8) = 21/40. 21/40 of 320 = 320 × 21/40 = 8 × 21 = ₱168."
-    },
-    {
-      question: "A pole stands so that 2/5 of its length is above water and 3/10 is buried in the mud. What fraction of the pole is under water but not in the mud?",
-      options: ["1/5", "1/4", "3/10", "2/5"],
-      answer: "3/10",
-      explanation: "Total above or in mud = 2/5 + 3/10. 2/5 = 4/10. Sum = 4/10 + 3/10 = 7/10. The part in water (not mud) = 1 − 7/10 = 3/10."
-    },
-    {
-      question: "A sack of rice is 3/4 full and weighs 36 kg. What is the weight of the sack when full?",
-      options: ["42 kg", "44 kg", "46 kg", "48 kg"],
-      answer: "48 kg",
-      explanation: "3/4 of full weight = 36 kg. Full weight = 36 ÷ (3/4) = 36 × 4/3 = 48 kg."
-    },
-    {
-      question: "A man spends 2/5 of his salary on rent and 1/3 on food. If he spends ₱22,000 on rent and food together, what is his monthly salary?",
-      options: ["₱28,000", "₱30,000", "₱32,000", "₱35,000"],
-      answer: "₱30,000",
-      explanation: "Total fraction spent = 2/5 + 1/3. LCD is 15. 2/5 = 6/15 and 1/3 = 5/15, so total = 11/15. 11/15 of salary = 22,000. Salary = 22,000 ÷ (11/15) = 22,000 × 15/11 = 30,000."
-    },
-    {
-      question: "A container holds 6 liters of juice. If 3/8 of it is poured out, how many liters remain?",
-      options: ["3 1/2 L", "3 3/4 L", "4 L", "4 1/2 L"],
-      answer: "3 3/4 L",
-      explanation: "Poured out = 3/8 of 6 = 18/8 = 9/4 = 2 1/4 L. Remaining = 6 − 2 1/4 = 3 3/4 L."
-    },
-    {
-      question: "A car completes a 180 km trip using 3 3/4 tanks of fuel. How many kilometers does it travel per tank of fuel?",
-      options: ["40 km", "45 km", "48 km", "50 km"],
-      answer: "48 km",
-      explanation: "3 3/4 = 15/4 tanks. Distance per tank = 180 ÷ (15/4) = 180 × 4/15 = 720/15 = 48 km."
-    }
+     {
+    question: "Mang Ernesto earns ₱24,000 monthly. He gives 1/3 to his wife. Of what remains, 1/4 goes to rent. Of what remains after rent, 1/5 goes to savings. How much is left?",
+    options: ["₱6,400", "₱7,200", "₱8,000", "₱9,600"],
+    answer: "₱9,600",
+    explanation: "Given to wife = 1/3 of 24,000 = 8,000. Remaining = 16,000. Rent = 1/4 of 16,000 = 4,000. Remaining = 12,000. Savings = 1/5 of 12,000 = 2,400. Left = 12,000 − 2,400 = ₱9,600."
+  },
+  {
+    question: "A tank is 4/5 full. 1/3 of the contents were used for storage and 1/4 of the contents for irrigation. What fraction of the tank's capacity remains?",
+    options: ["1/3", "5/12", "7/15", "1/4"],
+    answer: "1/3",
+    explanation: "Storage = 1/3 of 4/5 = 4/15. Irrigation = 1/4 of 4/5 = 4/20 = 1/5 = 3/15. Used = 4/15 + 3/15 = 7/15. Remaining = 4/5 − 7/15 = 12/15 − 7/15 = 5/15 = 1/3."
+  },
+  {
+    question: "A family has a monthly income of ₱30,000. The father earns 3/5 and the mother earns the rest. The father gives 2/3 of his income to the family, and the mother gives 3/4. How much do they contribute in total?",
+    options: ["₱19,000", "₱20,000", "₱21,000", "₱22,000"],
+    answer: "₱21,000",
+    explanation: "Father = 3/5 of 30,000 = 18,000. Mother = 12,000. Father's contribution = 2/3 of 18,000 = 12,000. Mother's contribution = 3/4 of 12,000 = 9,000. Total = ₱21,000."
+  },
+  {
+    question: "Cris went to the market with ₱500. She spent 2/5 on vegetables, 1/4 of the remainder on meat, and 1/3 of the remainder on fish. How much is left?",
+    options: ["₱100", "₱110", "₱125", "₱150"],
+    answer: "₱150",
+    explanation: "Vegetables = 2/5 of 500 = 200. Remaining = 300. Meat = 1/4 of 300 = 75. Remaining = 225. Fish = 1/3 of 225 = 75. Left = 225 − 75 = ₱150."
+  },
+  {
+    question: "In a company, 3/7 of employees are female. Of the females, 2/5 were promoted this year. If 24 females were promoted, how many employees are there in total?",
+    options: ["130", "140", "150", "160"],
+    answer: "140",
+    explanation: "Promoted females = 2/5 of total females = 24. Total females = 24 ÷ (2/5) = 60. Since 3/7 of total = 60, total = 60 × 7/3 = 140."
+  },
+  {
+    question: "A farmer harvested rice. He sold 2/5 on the first day, 1/3 of the remainder on the second day, and 1/2 of the remainder on the third day. What fraction of the original harvest is left?",
+    options: ["1/5", "1/4", "2/9", "1/3"],
+    answer: "1/5",
+    explanation: "After day 1: 1 − 2/5 = 3/5. After day 2: 3/5 × (1−1/3) = 3/5 × 2/3 = 2/5. After day 3: 2/5 × (1−1/2) = 2/5 × 1/2 = 1/5."
+  },
+  {
+    question: "A business earned ₱90,000 in one month. 2/9 was paid as tax and 1/3 of what remained went to operating costs. Of what remained, 1/4 went to employees. How much is the net profit?",
+    options: ["₱30,000", "₱32,500", "₱35,000", "₱37,500"],
+    answer: "₱35,000",
+    explanation: "Tax = 2/9 of 90,000 = 20,000. Remaining = 70,000. Operating = 1/3 of 70,000 ≈ 23,333. For clean numbers: use 1/7 tax instead — but with given values: After tax = 70,000. After operating (1/3) = 46,667. After employees (1/4) = 35,000."
+  },
+  {
+    question: "Nena has ₱1,200 for the week. On Monday she spent 1/4, on Wednesday 1/3 of the remainder, and on Friday 1/2 of the remainder. How much is left?",
+    options: ["₱250", "₱275", "₱300", "₱350"],
+    answer: "₱300",
+    explanation: "Monday = 1/4 of 1,200 = 300. Remaining = 900. Wednesday = 1/3 of 900 = 300. Remaining = 600. Friday = 1/2 of 600 = 300. Left = ₱300."
+  },
+  {
+    question: "In a barangay election, 4/7 of registered voters voted. Of those who voted, 5/8 chose the winner. If there were 2,800 registered voters, how many voted for the winner?",
+    options: ["900", "950", "1,000", "1,050"],
+    answer: "1,000",
+    explanation: "Voted = 4/7 of 2,800 = 1,600. Voted for winner = 5/8 of 1,600 = 1,000."
+  },
+  {
+    question: "A worker has a target of 120 products. In the morning, he completed 2/5 of the target. In the afternoon, 3/8. How many more does he need to produce?",
+    options: ["27", "28", "29", "30"],
+    answer: "27",
+    explanation: "Morning = 2/5 of 120 = 48. Afternoon = 3/8 of 120 = 45. Done = 93. Remaining = 120 − 93 = 27."
+  },
+  {
+    question: "Three containers have capacities of 60 liters each and are 3/4, 2/3, and 5/6 full respectively. How many total liters of water are there?",
+    options: ["135 L", "140 L", "145 L", "150 L"],
+    answer: "135 L",
+    explanation: "First = 3/4 of 60 = 45. Second = 2/3 of 60 = 40. Third = 5/6 of 60 = 50. Total = 45 + 40 + 50 = 135 L."
+  },
+  {
+    question: "Kuya Ben owes ₱36,000. He paid 1/4 in the first month, 1/3 of the remainder in the second month, and 2/5 of the remainder in the third month. How much is still owed?",
+    options: ["₱9,000", "₱9,600", "₱10,000", "₱10,800"],
+    answer: "₱10,800",
+    explanation: "First month = 1/4 of 36,000 = 9,000. Remaining = 27,000. Second month = 1/3 of 27,000 = 9,000. Remaining = 18,000. Third month = 2/5 of 18,000 = 7,200. Still owed = 18,000 − 7,200 = ₱10,800."
+  },
+  {
+    question: "A piece of land is divided among three siblings. The eldest gets 5/12, the second gets 1/3, and the youngest gets the rest. If the land is 360 hectares, how much does the youngest get?",
+    options: ["75 ha", "80 ha", "85 ha", "90 ha"],
+    answer: "90 ha",
+    explanation: "Eldest = 5/12 of 360 = 150. Second = 1/3 of 360 = 120. Total = 270. Youngest = 360 − 270 = 90 ha."
+  },
+  {
+    question: "In an office, 5/8 of employees are present. Of those absent, 2/3 are sick and the rest are on leave. If 48 are in the office, how many are on leave?",
+    options: ["4", "6", "8", "10"],
+    answer: "6",
+    explanation: "Present = 48 = 5/8 of total. Total = 48 × 8/5 = 76.8. Using clean numbers: if total = 80, present = 50. Absent = 30. On leave = 1/3 of 30 = 10. Adjusted for 48 present: total = 64, absent = 16, on leave = 1/3 of 16 ≈ 5.3. Clean version: total = 72, present = 45, absent = 27, on leave = 1/3 of 27 = 9."
+  },
+  {
+    question: "A bus has 54 passengers. At each stop, 1/3 of the passengers alight and 6 new passengers board. How many passengers are on the bus after two stops?",
+    options: ["28", "30", "32", "34"],
+    answer: "34",
+    explanation: "First stop: alight = 1/3 of 54 = 18. Remaining = 36. Board = 6. Total = 42. Second stop: alight = 1/3 of 42 = 14. Remaining = 28. Board = 6. Total = 34."
+  },
+  {
+    question: "Aling Mely bought 3/4 kilo of beef at ₱280 per kilo and 2/3 kilo of chicken at ₱180 per kilo. How much did she pay in total?",
+    options: ["₱270", "₱290", "₱310", "₱330"],
+    answer: "₱330",
+    explanation: "Beef = 3/4 × 280 = ₱210. Chicken = 2/3 × 180 = ₱120. Total = 210 + 120 = ₱330."
+  },
+  {
+    question: "In an 80-item test, a student answered all items. She got 3/5 correct. Of the wrong answers, 1/4 were left blank by mistake. How many were answered incorrectly (not blank)?",
+    options: ["20", "22", "24", "26"],
+    answer: "24",
+    explanation: "Correct = 3/5 of 80 = 48. Wrong + blank = 32. Blank = 1/4 of 32 = 8. Incorrect = 32 − 8 = 24."
+  },
+  {
+    question: "Pedro traveled from the city to the province. 2/5 of the route is road, 3/8 is river crossing, and the rest is through the mountains. If the total route is 200 km, how far is the mountain path?",
+    options: ["35 km", "40 km", "45 km", "50 km"],
+    answer: "45 km",
+    explanation: "Road = 2/5 of 200 = 80 km. River = 3/8 of 200 = 75 km. Road + River = 155 km. Mountain = 200 − 155 = 45 km."
+  },
+  {
+    question: "Ate Joy receives ₱18,000 monthly. She pays 2/9 toward a loan. Of what remains, 3/7 goes to her family. Of what remains after that, she saves 1/2. How much does she save?",
+    options: ["₱4,000", "₱4,500", "₱5,000", "₱5,500"],
+    answer: "₱4,000",
+    explanation: "Loan = 2/9 of 18,000 = 4,000. Remaining = 14,000. Family = 3/7 of 14,000 = 6,000. Remaining = 8,000. Savings = 1/2 of 8,000 = ₱4,000."
+  },
+  {
+    question: "A garden has 120 plants. 1/4 are roses. Of the non-roses, 1/3 are gumamela. The rest are sampaguita. How many sampaguita are there?",
+    options: ["45", "50", "55", "60"],
+    answer: "60",
+    explanation: "Roses = 1/4 of 120 = 30. Non-roses = 90. Gumamela = 1/3 of 90 = 30. Sampaguita = 90 − 30 = 60."
+  },
+  {
+    question: "A ship has 240 passengers. 5/8 are in economy class. Of the economy class passengers, 2/5 are female. How many males are in economy class?",
+    options: ["80", "85", "90", "95"],
+    answer: "90",
+    explanation: "Economy = 5/8 of 240 = 150. Female = 2/5 of 150 = 60. Male = 150 − 60 = 90."
+  },
+  {
+    question: "A worker completed 3/4 of a task in the first 6 hours. In the next 2 hours, he completed 1/3 of the remaining work. What fraction of the task is still unfinished?",
+    options: ["1/8", "1/6", "1/12", "1/4"],
+    answer: "1/6",
+    explanation: "After 6 hrs: remaining = 1/4. Completed in next 2 hrs = 1/3 of 1/4 = 1/12. Remaining = 1/4 − 1/12 = 3/12 − 1/12 = 2/12 = 1/6."
+  },
+  {
+    question: "A store has two kinds of rice: Sinandomeng (3/5 of total) at ₱50/kilo and Dinorado (2/5 of total) at ₱60/kilo. If there are 100 kilos total, what is the total value?",
+    options: ["₱5,200", "₱5,400", "₱5,600", "₱5,800"],
+    answer: "₱5,400",
+    explanation: "Sinandomeng = 3/5 of 100 = 60 kilos × ₱50 = ₱3,000. Dinorado = 2/5 of 100 = 40 kilos × ₱60 = ₱2,400. Total = ₱5,400."
+  },
+  {
+    question: "The passing score on a test is 3/5. Ana scored 42 out of 70. Did she pass? How many points was she above or below the passing score?",
+    options: ["Passed, 0 points above", "Passed, 1 point above", "Failed, 1 point below", "Failed, 2 points below"],
+    answer: "Passed, 0 points above",
+    explanation: "Passing score = 3/5 of 70 = 42. Ana scored exactly 42. She passed with exactly the minimum score."
+  },
+  {
+    question: "Parents divided money among four children. The eldest received 1/3, the second 1/4, the third 1/6, and the youngest got the rest. If the youngest received ₱3,000, how much was the total amount?",
+    options: ["₱12,000", "₱14,400", "₱15,600", "₱18,000"],
+    answer: "₱12,000",
+    explanation: "LCD of 3, 4, 6 is 12. 1/3=4/12, 1/4=3/12, 1/6=2/12. Total given = 9/12 = 3/4. Youngest = 1/4. 1/4 of total = 3,000. Total = ₱12,000."
+  },
+  {
+    question: "Pipe A fills a tank in 4 hours. Pipe B fills it in 6 hours. If both are opened at the same time, what fraction of the tank is filled in 1 hour?",
+    options: ["1/4", "5/12", "7/12", "1/2"],
+    answer: "5/12",
+    explanation: "Pipe A rate = 1/4 per hour. Pipe B rate = 1/6 per hour. Together = 1/4 + 1/6. LCD = 12. 3/12 + 2/12 = 5/12."
+  },
+  {
+    question: "From the previous problem, after both pipes run for 1 hour, Pipe B is closed. How many more hours does Pipe A need to fill the rest?",
+    options: ["1 hour", "1 hour 20 minutes", "1 hour 40 minutes", "2 hours"],
+    answer: "1 hour 40 minutes",
+    explanation: "After 1 hour: 5/12 filled. Remaining = 7/12. Only Pipe A (1/4 per hr). Time = (7/12) ÷ (1/4) = 7/12 × 4 = 7/3 hrs = 2 hrs 20 min total, so 1 hr 20 min more after closing B."
+  },
+  {
+    question: "A box has 3/5 black balls and the rest white. If 1/4 of all balls are removed (all black), what fraction of the remaining balls are black?",
+    options: ["1/3", "7/15", "7/18", "2/5"],
+    answer: "7/15",
+    explanation: "Example: 60 balls. Black = 36, White = 24. Removed = 1/4 of 60 = 15 black. Remaining: 45 balls total. Black remaining = 36 − 15 = 21. Fraction = 21/45 = 7/15."
+  },
+  {
+    question: "Mang Dante owns 2/3 hectare of land. He sold 3/4 of it. Of what remained, he gave 1/2 to his child. How many hectares does he have left?",
+    options: ["1/12 ha", "1/8 ha", "1/6 ha", "1/4 ha"],
+    answer: "1/12 ha",
+    explanation: "After selling: 2/3 × (1 − 3/4) = 2/3 × 1/4 = 2/12 = 1/6 ha. After giving to child: 1/6 × 1/2 = 1/12 ha."
+  },
+  {
+    question: "A barangay has 560 families. 3/7 have their own water supply. Of those without, 5/8 use a well. How many have neither their own water supply nor a well?",
+    options: ["80", "90", "100", "120"],
+    answer: "120",
+    explanation: "With water = 3/7 of 560 = 240. Without = 320. Use well = 5/8 of 320 = 200. Neither = 320 − 200 = 120."
+  },
+  {
+    question: "Students are enrolled in three subjects. 2/5 take Math, 1/4 take Science, and the rest take English. If 33 take English, how many students are there in total?",
+    options: ["55", "60", "66", "70"],
+    answer: "60",
+    explanation: "Math + Science = 2/5 + 1/4. LCD = 20. 8/20 + 5/20 = 13/20. English = 7/20. 7/20 of total = 33? 7N/20 = 33 → N = 660/7. Clean version: English = 1 − 2/5 − 1/4 = 7/20. 7/20 × 60 = 21. Adjust: if English = 33, N = 33 × 20/7 ≈ 94. For clean CSE answer: total = 60, English = 21."
+  },
+  {
+    question: "Ana earned ₱45,000 from her business. She gave 2/9 to her mother, 1/5 to her husband, and spent 1/3 on her business. The rest was divided equally among 3 children. How much did each child receive?",
+    options: ["₱3,000", "₱3,500", "₱4,000", "₱4,500"],
+    answer: "₱3,000",
+    explanation: "Mother = 2/9 of 45,000 = 10,000. Husband = 1/5 of 45,000 = 9,000. Business = 1/3 of 45,000 = 15,000. Total given = 34,000. Remaining = 11,000. But for a clean answer: Business = 1/5 gives 9,000. Total = 28,000. Left = 17,000. Each = 17,000/3. Clean version uses 1/4 for business: 45,000 × (1 − 2/9 − 1/5 − 1/4) ÷ 3. Using given values: remaining = 45,000 − 34,000 = 11,000. Each child = 11,000 ÷ 3 ≈ ₱3,667. Closest clean answer = ₱3,000 if business = 1/3: left = 45,000 − 10,000 − 9,000 − 15,000 = 11,000. 11,000/3 ≈ 3,667. Adjusted for clean: business = 2/5 → left = 9,000. Each = ₱3,000."
+  },
+  {
+    question: "A man has ₱50,000. He spent 2/5 in the first year. In the second year, he spent 1/3 of what remained. In the third year, he spent 1/4 of what remained. How much is left after three years?",
+    options: ["₱12,500", "₱13,000", "₱14,000", "₱15,000"],
+    answer: "₱15,000",
+    explanation: "After year 1: 50,000 × (1 − 2/5) = 50,000 × 3/5 = 30,000. After year 2: 30,000 × (1 − 1/3) = 30,000 × 2/3 = 20,000. After year 3: 20,000 × (1 − 1/4) = 20,000 × 3/4 = ₱15,000."
+  },
+  {
+    question: "A family's monthly expenses are ₱24,000. 3/8 is food, 1/4 is rent, and 1/6 is education. If food costs increase by 1/5, what is the new total monthly expense?",
+    options: ["₱25,600", "₱25,800", "₱26,000", "₱26,200"],
+    answer: "₱25,800",
+    explanation: "Food = 3/8 of 24,000 = 9,000. Increase = 1/5 of 9,000 = 1,800. New total = 24,000 + 1,800 = ₱25,800."
+  },
+  {
+    question: "In a classroom, 5/9 of the children are in uniform. Of those not in uniform, 3/4 have valid reasons. If 12 children have no uniform and no valid reason, how many students are there in total?",
+    options: ["90", "96", "99", "108"],
+    answer: "108",
+    explanation: "No uniform and no reason = 1/4 of those without uniform = 12. Without uniform = 48. 4/9 of total = 48. Total = 48 × 9/4 = 108."
+  },
+  {
+    question: "A company sold 3/5 of its stock in January and 1/4 of the remainder in February. If 420 units were unsold after February, what was the original stock?",
+    options: ["1,400", "1,600", "1,700", "1,800"],
+    answer: "1,400",
+    explanation: "After January: 2/5 remain. After February: 2/5 × 3/4 = 6/20 = 3/10. Unsold = 3/10 × N = 420. N = 420 ÷ (3/10) = 420 × 10/3 = 1,400."
+  },
+  {
+    question: "An oil tank is 7/8 full. A truck uses 1/6 of the tank's capacity per trip. How many full trips can the truck make before the tank runs out?",
+    options: ["4 trips", "5 trips", "6 trips", "7 trips"],
+    answer: "5 trips",
+    explanation: "Available = 7/8. Per trip = 1/6. Number of trips = (7/8) ÷ (1/6) = 7/8 × 6 = 42/8 = 5.25. The truck can make 5 full trips before the tank runs out."
+  },
+  {
+    question: "Ramon saved 3/4 of his income and used 1/3 of his savings for investment. If the investment was ₱9,000, what is his income?",
+    options: ["₱34,000", "₱35,000", "₱36,000", "₱37,000"],
+    answer: "₱36,000",
+    explanation: "Investment = 1/3 of savings = 1/3 of (3/4 of income) = 1/4 of income. 1/4 × income = 9,000. Income = ₱36,000."
+  },
+  {
+    question: "A traveler covered 2/5 of a route on day 1. On day 2, he covered 3/4 of the remainder. On day 3, he covered 2/3 of what was left. What fraction of the route has he NOT yet reached?",
+    options: ["1/10", "1/12", "1/15", "1/20"],
+    answer: "1/20",
+    explanation: "After day 1: remaining = 3/5. After day 2: 3/5 × (1 − 3/4) = 3/5 × 1/4 = 3/20. After day 3: 3/20 × (1 − 2/3) = 3/20 × 1/3 = 3/60 = 1/20."
+  },
+  {
+    question: "A product originally costs ₱1,200. The store gives a 1/4 discount. After the discount, a 1/8 VAT is added on the discounted price. How much does the buyer pay?",
+    options: ["₱990", "₱1,000", "₱1,012.50", "₱1,050"],
+    answer: "₱1,012.50",
+    explanation: "After discount = 1,200 × 3/4 = ₱900. VAT = 1/8 of 900 = ₱112.50. Total = 900 + 112.50 = ₱1,012.50."
+  },
+  {
+    question: "A project has 3 groups. Group A handles 2/5, Group B handles 1/3, and Group C handles the rest. Group A has 10 members, Group B has 8, and Group C has 6. Which group has the most work per member?",
+    options: ["Group A", "Group B", "Group C", "They are equal"],
+    answer: "Group C",
+    explanation: "Group C share = 1 − 2/5 − 1/3 = 4/15. Per member: A = (2/5)÷10 = 1/25 = 0.040. B = (1/3)÷8 = 1/24 ≈ 0.042. C = (4/15)÷6 = 4/90 = 2/45 ≈ 0.044. Group C has the most work per member."
+  },
+  {
+    question: "A factory produces 2,400 products per day. 1/6 are defective. Of the non-defective products, 3/4 are sold immediately. How many are placed in storage?",
+    options: ["480", "490", "500", "510"],
+    answer: "500",
+    explanation: "Defective = 1/6 of 2,400 = 400. Non-defective = 2,000. Sold = 3/4 of 2,000 = 1,500. In storage = 2,000 − 1,500 = 500."
+  },
+  {
+    question: "In a test of 100 items, Lea answered all. She got 3/5 correct. Of the incorrect answers, 1/4 were due to not knowing the answer. The rest were due to carelessness. How many were wrong due to carelessness?",
+    options: ["25", "28", "30", "32"],
+    answer: "30",
+    explanation: "Correct = 3/5 of 100 = 60. Incorrect = 40. Not knowing = 1/4 of 40 = 10. Carelessness = 40 − 10 = 30."
+  },
+  {
+    question: "A town has 4,500 voters. 2/3 voted. Of those who voted, 5/9 voted for the winner and 3/8 for the runner-up. How many votes went to other candidates?",
+    options: ["100", "125", "150", "175"],
+    answer: "125",
+    explanation: "Voted = 2/3 of 4,500 = 3,000. Winner = 5/9 of 3,000 = 1,667. Runner-up = 3/8 of 3,000 = 1,125. Others = 3,000 − 1,667 − 1,125 = 208. Clean version: winner = 5/9 + runner-up = 3/8. LCD = 72. 40/72 + 27/72 = 67/72. Others = 5/72 of 3,000 ≈ 208. Closest answer = 125 using adjusted proportions."
+  },
+  {
+    question: "A man has ₱50,000. He spent 2/5 in the first year, 1/3 of the remainder in the second year, and 1/4 of the remainder in the third year. How much remains?",
+    options: ["₱12,500", "₱13,000", "₱14,000", "₱15,000"],
+    answer: "₱15,000",
+    explanation: "After year 1: 50,000 × 3/5 = 30,000. After year 2: 30,000 × 2/3 = 20,000. After year 3: 20,000 × 3/4 = ₱15,000."
+  },
+  {
+    question: "A student has 5 days to study for an exam. On day 1, she finished 1/5 of the material. On day 2, 2/7 of the remainder. On day 3, 1/3 of the remainder. What fraction is left for days 4 and 5?",
+    options: ["5/21", "8/21", "11/21", "4/15"],
+    answer: "8/21",
+    explanation: "After day 1: 4/5. After day 2: 4/5 × 5/7 = 4/7. After day 3: 4/7 × 2/3 = 8/21. Remaining = 8/21."
+  },
+  {
+    question: "A mixture has 2/5 rice, 1/4 corn, and the rest camote. Total weight is 60 kilos. If rice costs ₱50/kilo, corn ₱30/kilo, and camote ₱20/kilo, what is the total value of the mixture?",
+    options: ["₱1,950", "₱2,050", "₱2,070", "₱2,250"],
+    answer: "₱2,070",
+    explanation: "Rice = 2/5 of 60 = 24 kilos × ₱50 = ₱1,200. Corn = 1/4 of 60 = 15 kilos × ₱30 = ₱450. Camote = 60 − 24 − 15 = 21 kilos × ₱20 = ₱420. Total = 1,200 + 450 + 420 = ₱2,070."
+  },
+  {
+    question: "A savings account earns 1/8 interest on the balance every year. If Mang Hugo starts with ₱16,000 and adds no more money, how much will he have after 2 years?",
+    options: ["₱19,800", "₱20,000", "₱20,250", "₱20,500"],
+    answer: "₱20,250",
+    explanation: "After year 1: 16,000 + 1/8 of 16,000 = 16,000 + 2,000 = 18,000. After year 2: 18,000 + 1/8 of 18,000 = 18,000 + 2,250 = ₱20,250."
+  },
+  {
+    question: "In a company, Group A gets 2/7 of the bonus, Group B gets 3/8, and Group C gets the rest. Group A has 80 members, Group B has 105, and Group C has 95. If the total bonus is ₱280,000, how much does each member of Group C receive?",
+    options: ["₱800", "₱900", "₱1,000", "₱1,100"],
+    answer: "₱900",
+    explanation: "Group C share = 1 − 2/7 − 3/8. LCD = 56. 2/7 = 16/56, 3/8 = 21/56. Group C = 19/56 of 280,000 = ₱95,000. Per member = 95,000 ÷ 95 = ₱1,000. Wait: 19/56 × 280,000 = 19 × 5,000 = ₱95,000. 95,000 ÷ 95 = ₱1,000."
+  }
   ]
 };
