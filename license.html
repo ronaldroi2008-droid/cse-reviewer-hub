@@ -153,12 +153,6 @@
     .status.error { color: var(--danger); }
     .status.success { color: var(--success); }
 
-    .device-info {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
     .small-note {
       margin-top: 16px;
       font-size: 0.78rem;
@@ -166,6 +160,22 @@
       line-height: 1.4;
       border-top: 1px solid #1e293b;
       padding-top: 10px;
+    }
+
+    .key-format {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: #a5b4fc;
+    }
+
+    .key-format strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #c7d2fe;
     }
   </style>
 </head>
@@ -180,21 +190,21 @@
 
       <h1>Activate PRO</h1>
       <p class="subtitle">
-        Paste your <strong>Gumroad license key</strong> below to unlock:
+        Paste your <strong>PRO license key</strong> below to unlock:
         Advanced &amp; Expert levels, plus the 170-item Full Mock Exam.
       </p>
 
       <form id="licenseForm">
-        <label for="licenseKey">Gumroad License Key</label>
+        <label for="licenseKey">PRO License Key</label>
         <input
           id="licenseKey"
           class="input"
           type="text"
-          placeholder="Example: 85DB562A-C11D4B06-A2335A6B-8C079166"
+          placeholder="Example: CSE-PRO-2026-ABCD-1234"
           autocomplete="off"
         />
         <p class="hint">
-          You’ll find this on your Gumroad receipt page and in the email sent after purchase.
+          You'll receive your license key via email after purchase.
         </p>
 
         <button id="activateBtn" type="submit" class="btn">
@@ -205,167 +215,86 @@
       <div id="status" class="status info">
         License is only needed for PRO features. Free version (Beginner &amp; Intermediate) works without activation.
       </div>
-      <div id="deviceInfo" class="device-info"></div>
+
+      <div class="key-format">
+        <strong>📋 Key format:</strong>
+        Keys start with <code>CSE-PRO-</code><br>
+        Example: <code>CSE-PRO-2026-XXXX-XXXX</code>
+      </div>
 
       <p class="small-note">
         Note: The license will be stored in this browser only. If you switch device or browser,
-        you may need to enter the same key again. Each key can be used on up to <strong>5 devices/browsers</strong>.
+        you may need to enter the same key again.
       </p>
     </div>
   </div>
 
   <script>
-    // Your license API (backend). If backend is down (expired Postgres),
-    // this page will fail gracefully and FREE mode still works.
-    const API_BASE = "https://cse-license-api.onrender.com";
-
-    // Reusable deviceId
-    function getDeviceId() {
-      try {
-        let id = localStorage.getItem("cse_device_id");
-        if (!id) {
-          if (window.crypto && crypto.randomUUID) {
-            id = crypto.randomUUID();
-          } else {
-            id = "dev-" + Date.now() + "-" + Math.random().toString(16).slice(2);
-          }
-          localStorage.setItem("cse_device_id", id);
-        }
-        return id;
-      } catch (e) {
-        return "no-storage-" + Date.now();
-      }
-    }
-
-    // ✅ Offline-safe: if already activated before, allow user to proceed even if server is down
-    function getCachedPro() {
-      return localStorage.getItem("cse_is_pro") === "true" &&
-             !!localStorage.getItem("cse_license_key");
-    }
-
     async function activatePro(event) {
       event.preventDefault();
 
       const input = document.getElementById("licenseKey");
       const statusEl = document.getElementById("status");
-      const deviceInfoEl = document.getElementById("deviceInfo");
       const btn = document.getElementById("activateBtn");
-
-      const rawKey = (input.value || "").trim();
+      const rawKey = (input.value || "").trim().toUpperCase();
 
       if (!rawKey) {
-        statusEl.textContent = "Please paste your Gumroad license key.";
+        statusEl.textContent = "Please paste your license key.";
         statusEl.className = "status error";
         return;
       }
 
-      const deviceId = getDeviceId();
-
-      statusEl.textContent = "Checking license… please wait.";
-      statusEl.className = "status info";
-      deviceInfoEl.textContent = "";
       btn.disabled = true;
+      statusEl.textContent = "Checking license…";
+      statusEl.className = "status info";
 
-      try {
-        // ✅ timeout so it doesn't hang when server is down
-        const ctrl = new AbortController();
-        const t = setTimeout(() => ctrl.abort(), 4000); // 4s timeout
+      // Small delay for better UX feel
+      await new Promise(r => setTimeout(r, 600));
 
-        const resp = await fetch(API_BASE + "/verify-license", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ licenseKey: rawKey, deviceId }),
-          signal: ctrl.signal
-        });
+      // Validate: accept any key starting with CSE-PRO
+      const isValid = rawKey.startsWith("CSE-PRO");
 
-        clearTimeout(t);
-
-        // Non-200 (CORS, 500, etc.)
-        if (!resp.ok) {
-          let msg = "Activation failed. Please double-check your license key.";
-          try {
-            const errData = await resp.json();
-            if (errData && errData.error) msg = errData.error;
-          } catch (_) {}
-          statusEl.textContent = msg;
-          statusEl.className = "status error";
-          return;
-        }
-
-        const data = await resp.json();
-
-        if (!data.ok) {
-          if (data.error === "Device limit reached for this license.") {
-            statusEl.textContent =
-              "Device limit reached for this license (max " +
-              (data.maxDevices || 5) +
-              "). You may need to remove it from another device.";
-          } else {
-            statusEl.textContent = data.error || "Invalid license key.";
-          }
-          statusEl.className = "status error";
-
-          if (data.currentDevices && data.maxDevices) {
-            deviceInfoEl.textContent =
-              "Registered devices: " + data.currentDevices.length + " / " + data.maxDevices;
-          }
-          return;
-        }
-
-        // ✅ Success – save locally (cached PRO)
+      if (isValid) {
         try {
           localStorage.setItem("cse_is_pro", "true");
+          localStorage.setItem("cse_access_kind", "pro");
           localStorage.setItem("cse_license_key", rawKey);
-          localStorage.setItem("cse_device_id", deviceId);
-        } catch (_) {}
+        } catch (e) {
+          console.warn("Storage error:", e);
+        }
 
-        statusEl.textContent =
-          "✅ PRO Activated on this device. You can now access Advanced, Expert, and the Full Mock Exam.";
+        statusEl.textContent = "✅ PRO Activated! Redirecting to homepage…";
         statusEl.className = "status success";
 
-        if (typeof data.usedDevices === "number" && typeof data.maxDevices === "number") {
-          const remaining = data.remainingDevices ?? (data.maxDevices - data.usedDevices);
-          deviceInfoEl.textContent =
-            "This key is now active on " + data.usedDevices + " / " + data.maxDevices +
-            " devices. Remaining slots: " + remaining + ".";
-        }
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1200);
 
-        setTimeout(() => { window.location.href = "index.html"; }, 1200);
-      } catch (err) {
-        console.error("Activation error:", err);
-
-        // ✅ If already PRO on this device, proceed even if server is down
-        if (getCachedPro()) {
-          statusEl.textContent =
-            "⚠️ License server is currently unavailable, but this device is already PRO-activated. You can continue using PRO features offline.";
-          statusEl.className = "status success";
-          setTimeout(() => { window.location.href = "index.html"; }, 1200);
-          return;
-        }
-
-        // ✅ Otherwise: allow FREE mode, and show a friendly message
-        statusEl.textContent =
-          "Network/server is unavailable (license server may be down). You can still use the FREE version offline. Try activation again when online.";
+      } else {
+        statusEl.textContent = "❌ Invalid license key. Your key should start with CSE-PRO-...";
         statusEl.className = "status error";
-      } finally {
         btn.disabled = false;
       }
     }
 
     document.getElementById("licenseForm").addEventListener("submit", activatePro);
 
-    // On load: if PRO already, show message
+    // On load: check if already PRO
     (function initStatus() {
       const statusEl = document.getElementById("status");
       const isPro = localStorage.getItem("cse_is_pro") === "true";
       if (isPro) {
-        statusEl.textContent =
-          "This device is already PRO-activated. You can use all Advanced, Expert, and Mock Exam features.";
+        const savedKey = localStorage.getItem("cse_license_key") || "";
+        statusEl.textContent = "✅ This device is already PRO-activated. All features are unlocked.";
         statusEl.className = "status success";
+        if (savedKey) {
+          document.getElementById("licenseKey").value = savedKey;
+        }
       }
     })();
   </script>
 </body>
 </html>
+
 
 
