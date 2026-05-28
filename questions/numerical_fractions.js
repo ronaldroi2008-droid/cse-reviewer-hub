@@ -12,306 +12,307 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // LEVEL 1: BEGINNER (50 items - Basic Concepts)
   // ==========================================
   beginner: [
-    {
-      question: "In the fraction 3/5, what is the numerator?",
-      options: ["3", "5", "8", "1"],
-      answer: "3",
-      explanation: "The numerator is the top number of the fraction. In 3/5, the top number is 3."
-    },
-    {
-      question: "In the fraction 7/9, what is the denominator?",
-      options: ["7", "9", "16", "2"],
-      answer: "9",
-      explanation: "The denominator is the bottom number of the fraction. In 7/9, the bottom number is 9."
-    },
-    {
-      question: "Which fraction represents 'three-fourths'?",
-      options: ["1/3", "2/3", "3/4", "4/3"],
-      answer: "3/4",
-      explanation: "Three-fourths means 3 parts out of 4 equal parts, written as 3/4."
-    },
-    {
-      question: "Which fraction represents 'three out of four equal parts'?",
-      options: ["3/4", "4/3", "1/4", "2/3"],
-      answer: "3/4",
-      explanation: "Three parts taken out of four equal parts is written as 3/4."
-    },
-    {
-      question: "Which of the following is a proper fraction?",
-      options: ["5/3", "7/7", "2/5", "9/2"],
-      answer: "2/5",
-      explanation: "A proper fraction has a numerator smaller than the denominator. Only 2/5 satisfies this."
-    },
-    {
-      question: "Which of the following is an improper fraction?",
-      options: ["1/4", "3/8", "9/4", "2/7"],
-      answer: "9/4",
-      explanation: "An improper fraction has a numerator greater than or equal to the denominator. 9/4 is improper."
-    },
-    {
-      question: "Which of the following is a mixed number?",
-      options: ["7/2", "3 1/2", "5/6", "9/9"],
-      answer: "3 1/2",
-      explanation: "A mixed number has a whole number and a fraction part, like 3 1/2."
-    },
-    {
-      question: "Which fraction is equal to 1 whole?",
-      options: ["1/2", "2/2", "3/4", "5/6"],
-      answer: "2/2",
-      explanation: "Any fraction with the same numerator and denominator, like 2/2, is equal to 1."
-    },
-    {
-      question: "If a pizza is cut into 8 equal slices and you take 3 slices, what fraction of the pizza do you have?",
-      options: ["3/8", "5/8", "3/5", "8/3"],
-      answer: "3/8",
-      explanation: "You took 3 out of 8 equal slices, so the fraction is 3/8."
-    },
-    {
-      question: "If a chocolate bar is divided into 6 equal parts and you eat 1 part, what fraction did you eat?",
-      options: ["1/6", "1/5", "1/3", "1/2"],
-      answer: "1/6",
-      explanation: "You ate 1 out of 6 equal parts, so it is 1/6."
-    },
-    {
-      question: "Which fraction shows 'two out of three'?",
-      options: ["3/2", "2/3", "2/5", "3/5"],
-      answer: "2/3",
-      explanation: "Two parts out of three equal parts is written as 2/3."
-    },
-    {
-      question: "Which fraction shows 'five out of eight'?",
-      options: ["5/8", "8/5", "3/8", "5/3"],
-      answer: "5/8",
-      explanation: "Five parts out of eight equal parts is 5/8."
-    },
-    {
-      question: "Which of the following fractions is equivalent to 1/2?",
-      options: ["2/3", "3/6", "2/5", "1/3"],
-      answer: "3/6",
-      explanation: "3/6 simplifies to 1/2 because both 3 and 6 can be divided by 3."
-    },
-    {
-      question: "Which of the following fractions is equivalent to 2/4?",
-      options: ["1/2", "1/4", "2/8", "3/4"],
-      answer: "1/2",
-      explanation: "2/4 simplifies to 1/2 when you divide numerator and denominator by 2."
-    },
-    {
-      question: "Which of these fractions is equal to 3/5?",
-      options: ["6/10", "9/20", "3/10", "2/5"],
-      answer: "6/10",
-      explanation: "Multiplying numerator and denominator of 3/5 by 2 gives 6/10, an equivalent fraction."
-    },
-    {
-      question: "Which of these fractions is equal to 1/3?",
-      options: ["2/6", "3/9", "4/9", "1/6"],
-      answer: "2/6",
-      explanation: "2/6 simplifies to 1/3 by dividing numerator and denominator by 2."
-    },
-    {
-      question: "Which is larger: 1/4 or 1/2?",
-      options: ["1/4", "1/2", "They are equal", "Cannot be compared"],
-      answer: "1/2",
-      explanation: "One-half is larger than one-fourth because 1/2 represents a bigger part of the whole."
-    },
-    {
-      question: "Which is smaller: 3/4 or 2/4?",
-      options: ["3/4", "2/4", "They are equal", "Cannot be compared"],
-      answer: "2/4",
-      explanation: "With the same denominator, the smaller numerator gives the smaller fraction. So 2/4 < 3/4."
-    },
-    {
-      question: "Which fraction is greater: 5/8 or 3/8?",
-      options: ["5/8", "3/8", "They are equal", "Cannot be compared"],
-      answer: "5/8",
-      explanation: "Same denominator 8, so compare numerators: 5 is greater than 3."
-    },
-    {
-      question: "Which fraction is less: 2/5 or 4/5?",
-      options: ["2/5", "4/5", "They are equal", "Cannot be compared"],
-      answer: "2/5",
-      explanation: "Same denominator 5, compare numerators 2 and 4; 2 is smaller, so 2/5 is less."
-    },
-    {
-      question: "Which fraction is equal to 4/8?",
-      options: ["1/2", "1/4", "3/8", "2/3"],
-      answer: "1/2",
-      explanation: "4/8 simplifies to 1/2 when you divide top and bottom by 4."
-    },
-    {
-      question: "Which fraction is equal to 5/10?",
-      options: ["1/5", "1/2", "3/5", "2/5"],
-      answer: "1/2",
-      explanation: "5/10 simplifies to 1/2 when you divide numerator and denominator by 5."
-    },
-    {
-      question: "Arrange in ascending order: 1/4, 3/4, 2/4.",
-      options: ["1/4, 2/4, 3/4", "3/4, 2/4, 1/4", "2/4, 1/4, 3/4", "1/4, 3/4, 2/4"],
-      answer: "1/4, 2/4, 3/4",
-      explanation: "All have denominator 4. Order the numerators: 1, 2, 3."
-    },
-    {
-      question: "Arrange in descending order: 1/6, 5/6, 3/6.",
-      options: ["5/6, 3/6, 1/6", "1/6, 3/6, 5/6", "3/6, 5/6, 1/6", "5/6, 1/6, 3/6"],
-      answer: "5/6, 3/6, 1/6",
-      explanation: "All have denominator 6. From greatest to least: 5, 3, 1."
-    },
-    {
-      question: "What is 1/8 + 2/8?",
-      options: ["3/8", "3/16", "1/4", "2/16"],
-      answer: "3/8",
-      explanation: "Same denominator 8, add numerators: 1 + 2 = 3, so 3/8."
-    },
-    {
-      question: "What is 1/5 + 3/5?",
-      options: ["3/10", "4/10", "4/5", "1/8"],
-      answer: "4/5",
-      explanation: "Same denominator 5, add numerators: 1 + 3 = 4, giving 4/5."
-    },
-    {
-      question: "What is 3/7 − 1/7?",
-      options: ["2/7", "2/14", "4/7", "1/6"],
-      answer: "2/7",
-      explanation: "Same denominator 7, subtract numerators: 3 − 1 = 2, so 2/7."
-    },
-    {
-      question: "What is 5/9 − 2/9?",
-      options: ["3/9", "7/9", "3/18", "1/9"],
-      answer: "3/9",
-      explanation: "Same denominator 9, 5 − 2 = 3, so 3/9."
-    },
-    {
-      question: "What is 2/3 + 1/3?",
-      options: ["3/3", "2/6", "1/3", "3/6"],
-      answer: "3/3",
-      explanation: "2/3 + 1/3 = 3/3, which is equal to 1 whole."
-    },
-    {
-      question: "What is 4/10 in simplest form?",
-      options: ["2/5", "1/2", "4/5", "1/5"],
-      answer: "2/5",
-      explanation: "Divide numerator and denominator by 2: 4/10 = 2/5."
-    },
-    {
-      question: "What is 6/12 in simplest form?",
-      options: ["1/2", "2/3", "3/4", "1/3"],
-      answer: "1/2",
-      explanation: "Divide top and bottom by 6: 6/12 = 1/2."
-    },
-    {
-      question: "Which fraction is equal to 0.5?",
-      options: ["1/3", "1/2", "2/3", "2/5"],
-      answer: "1/2",
-      explanation: "0.5 represents one-half, which is 1/2."
-    },
-    {
-      question: "Which fraction is equal to 0.25?",
-      options: ["1/2", "1/3", "1/4", "2/5"],
-      answer: "1/4",
-      explanation: "0.25 means one-fourth, or 1/4."
-    },
-    {
-      question: "If a class has 20 students and 5 are absent, what fraction of the class is absent?",
-      options: ["5/20", "1/4", "1/3", "5/15"],
-      answer: "1/4",
-      explanation: "5 out of 20 is 5/20, which simplifies to 1/4."
-    },
-    {
-      question: "A cake is cut into 10 equal slices. If you eat 4 slices, what fraction of the cake is left?",
-      options: ["6/10", "4/10", "2/5", "3/10"],
-      answer: "6/10",
-      explanation: "You ate 4, so 6 are left: 6/10."
-    },
-    {
-      question: "Which fraction shows 'one out of five'?",
-      options: ["1/5", "1/4", "1/3", "1/2"],
-      answer: "1/5",
-      explanation: "One part out of five equal parts is written 1/5."
-    },
-    {
-      question: "Which fraction shows 'three out of ten'?",
-      options: ["3/10", "3/5", "3/8", "3/4"],
-      answer: "3/10",
-      explanation: "Three parts out of ten equal parts is 3/10."
-    },
-    {
-      question: "Which of these is the largest fraction?",
-      options: ["1/8", "1/4", "1/2", "1/3"],
-      answer: "1/2",
-      explanation: "Among unit fractions, the smaller the denominator, the larger the fraction. 1/2 is the greatest here."
-    },
-    {
-      question: "Which of these is the smallest fraction?",
-      options: ["3/4", "2/3", "1/2", "1/4"],
-      answer: "1/4",
-      explanation: "1/4 is the smallest because it represents the smallest part of the whole among the choices."
-    },
-    {
-      question: "What is 2/8 in simplest form?",
-      options: ["1/4", "1/2", "1/8", "2/4"],
-      answer: "1/4",
-      explanation: "Divide numerator and denominator by 2: 2/8 = 1/4."
-    },
-    {
-      question: "What is 9/12 in simplest form?",
-      options: ["3/4", "2/3", "1/3", "1/4"],
-      answer: "3/4",
-      explanation: "Divide numerator and denominator by 3: 9/12 = 3/4."
-    },
-    {
-      question: "Which fraction is greater: 2/3 or 3/5?",
-      options: ["2/3", "3/5", "They are equal", "Cannot be compared"],
-      answer: "2/3",
-      explanation: "2/3 is approximately 0.67, while 3/5 = 0.6, so 2/3 is greater."
-    },
-    {
-      question: "Which fraction is less: 4/7 or 5/7?",
-      options: ["4/7", "5/7", "They are equal", "Cannot be compared"],
-      answer: "4/7",
-      explanation: "Same denominator 7; the smaller numerator 4 means 4/7 is less."
-    },
-    {
-      question: "A bottle is filled to 3/5 of its capacity. How much of the bottle is empty?",
-      options: ["2/5", "1/5", "1/2", "3/5"],
-      answer: "2/5",
-      explanation: "The whole is 1. 1 − 3/5 = 2/5 is still empty."
-    },
-    {
-      question: "If you shade 2 parts of a shape divided into 6 equal parts, what fraction is shaded?",
-      options: ["2/3", "1/3", "2/6", "1/6"],
-      answer: "2/6",
-      explanation: "You shaded 2 out of 6 parts, so the fraction is 2/6."
-    },
-    {
-      question: "If you shade 4 parts of a rectangle divided into 8 equal parts, what fraction is shaded?",
-      options: ["4/8", "1/2", "2/4", "All of the above"],
-      answer: "All of the above",
-      explanation: "4/8, 1/2, and 2/4 are all equivalent fractions representing half the rectangle."
-    },
-    {
-      question: "What fraction of an hour is 30 minutes?",
-      options: ["1/2", "1/3", "1/4", "3/4"],
-      answer: "1/2",
-      explanation: "30 minutes is half of 60 minutes, so it is 1/2 hour."
-    },
-    {
-      question: "What fraction of an hour is 15 minutes?",
-      options: ["1/2", "1/3", "1/4", "1/5"],
-      answer: "1/4",
-      explanation: "15 minutes is 1/4 of 60 minutes."
-    },
-    {
-      question: "What fraction of a day is 12 hours?",
-      options: ["1/2", "1/3", "1/4", "2/3"],
-      answer: "1/2",
-      explanation: "A day has 24 hours. 12/24 = 1/2."
-    },
-    {
-      question: "What fraction of a dozen eggs is 3 eggs?",
-      options: ["1/2", "1/3", "1/4", "3/12"],
-      answer: "1/4",
-      explanation: "A dozen is 12 eggs. 3/12 simplifies to 1/4."
-    }
+   {
+    question: "Ana has 8 pieces of bread. She ate 3 pieces. What fraction of the bread did she eat?",
+    options: ["3/8", "5/8", "3/5", "8/3"],
+    answer: "3/8",
+    explanation: "Ana ate 3 out of 8 pieces, so the fraction is 3/8."
+  },
+  {
+    question: "In a class of 20 students, 5 are absent. What fraction of the class is absent?",
+    options: ["1/4", "1/5", "3/4", "5/4"],
+    answer: "1/4",
+    explanation: "5 out of 20 = 5/20. Simplified: 5/20 ÷ 5 = 1/4."
+  },
+  {
+    question: "Mang Jose has 12 mangoes. He gave 4 to his neighbor. What fraction of the mangoes did he give away?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/3",
+    explanation: "4 out of 12 = 4/12. Simplified: 4/12 ÷ 4 = 1/3."
+  },
+  {
+    question: "A pizza was cut into 8 equal slices. The family ate 6 slices. What fraction of the pizza is left?",
+    options: ["3/4", "1/4", "6/8", "3/8"],
+    answer: "1/4",
+    explanation: "2 slices remain out of 8 = 2/8. Simplified: 2/8 ÷ 2 = 1/4."
+  },
+  {
+    question: "A basket has 9 fruits in total, 3 of which are apples. What fraction of the fruits are apples?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/3",
+    explanation: "3 apples out of 9 fruits = 3/9. Simplified: 3/9 ÷ 3 = 1/3."
+  },
+  {
+    question: "Lola cooked 10 rice cakes. Her grandchildren ate 5. What fraction is left?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/2",
+    explanation: "5 remain out of 10 = 5/10. Simplified: 5/10 ÷ 5 = 1/2."
+  },
+  {
+    question: "A can of milk is 3/4 full. Which of the following is equivalent to 3/4?",
+    options: ["6/8", "2/3", "4/6", "3/6"],
+    answer: "6/8",
+    explanation: "3/4 × 2/2 = 6/8. So 6/8 is equivalent to 3/4."
+  },
+  {
+    question: "Which fraction is larger: 2/5 or 3/5?",
+    options: ["2/5", "3/5", "They are equal", "Cannot be compared"],
+    answer: "3/5",
+    explanation: "Both have denominator 5. The larger numerator 3 means 3/5 is larger."
+  },
+  {
+    question: "Which fraction is smaller: 3/8 or 5/8?",
+    options: ["3/8", "5/8", "They are equal", "Cannot be compared"],
+    answer: "3/8",
+    explanation: "Both have denominator 8. The smaller numerator 3 means 3/8 is smaller."
+  },
+  {
+    question: "Pedro walked 1/2 kilometer to the market. How far did he walk on the way back if the distance is the same?",
+    options: ["1/4 km", "1/2 km", "1 km", "2 km"],
+    answer: "1/2 km",
+    explanation: "The distance going and coming back are equal, so he walked 1/2 km back."
+  },
+  {
+    question: "A flag is 2/3 red and the rest is white. What fraction of the flag is white?",
+    options: ["1/3", "2/3", "1/2", "3/2"],
+    answer: "1/3",
+    explanation: "The whole flag = 1. White = 1 − 2/3 = 1/3."
+  },
+  {
+    question: "In a 30-item test, Carlo answered 15 questions correctly. What fraction did he answer correctly?",
+    options: ["1/3", "1/2", "2/3", "3/4"],
+    answer: "1/2",
+    explanation: "15 out of 30 = 15/30. Simplified: 15/30 ÷ 15 = 1/2."
+  },
+  {
+    question: "A glass is 3/4 full. What fraction is empty?",
+    options: ["1/4", "1/3", "1/2", "3/4"],
+    answer: "1/4",
+    explanation: "Empty = 1 − 3/4 = 4/4 − 3/4 = 1/4."
+  },
+  {
+    question: "Nena has 6 meters of cloth. She used 2 meters for a dress. What fraction of the cloth did she use?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/3",
+    explanation: "2 out of 6 meters = 2/6. Simplified: 2/6 ÷ 2 = 1/3."
+  },
+  {
+    question: "Which of the following is a proper fraction?",
+    options: ["7/3", "5/5", "3/7", "9/4"],
+    answer: "3/7",
+    explanation: "A proper fraction has a numerator smaller than the denominator. Only 3/7 qualifies."
+  },
+  {
+    question: "Which of the following is an improper fraction?",
+    options: ["2/5", "3/8", "7/4", "1/6"],
+    answer: "7/4",
+    explanation: "An improper fraction has a numerator greater than the denominator. 7/4 is improper."
+  },
+  {
+    question: "How many minutes is 1/4 of an hour?",
+    options: ["10 minutes", "15 minutes", "20 minutes", "30 minutes"],
+    answer: "15 minutes",
+    explanation: "1 hour = 60 minutes. 1/4 of 60 = 60 ÷ 4 = 15 minutes."
+  },
+  {
+    question: "How many minutes is 1/2 of an hour?",
+    options: ["15 minutes", "20 minutes", "30 minutes", "45 minutes"],
+    answer: "30 minutes",
+    explanation: "1 hour = 60 minutes. 1/2 of 60 = 60 ÷ 2 = 30 minutes."
+  },
+  {
+    question: "How many months is 1/4 of a year?",
+    options: ["2 months", "3 months", "4 months", "6 months"],
+    answer: "3 months",
+    explanation: "1 year = 12 months. 1/4 of 12 = 12 ÷ 4 = 3 months."
+  },
+  {
+    question: "How many months is 1/2 of a year?",
+    options: ["4 months", "5 months", "6 months", "8 months"],
+    answer: "6 months",
+    explanation: "1 year = 12 months. 1/2 of 12 = 12 ÷ 2 = 6 months."
+  },
+  {
+    question: "4/8 in simplest form is:",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/2",
+    explanation: "4/8 ÷ 4 = 1/2. The GCF of 4 and 8 is 4."
+  },
+  {
+    question: "6/9 in simplest form is:",
+    options: ["1/3", "2/3", "3/4", "4/5"],
+    answer: "2/3",
+    explanation: "6/9 ÷ 3 = 2/3. The GCF of 6 and 9 is 3."
+  },
+  {
+    question: "10/15 in simplest form is:",
+    options: ["1/3", "2/3", "3/5", "4/5"],
+    answer: "2/3",
+    explanation: "10/15 ÷ 5 = 2/3. The GCF of 10 and 15 is 5."
+  },
+  {
+    question: "Aling Luisa has 8 kilos of rice. She cooked 2 kilos. What fraction of the rice was cooked?",
+    options: ["1/8", "1/4", "1/3", "1/2"],
+    answer: "1/4",
+    explanation: "2 out of 8 kilos = 2/8. Simplified: 2/8 ÷ 2 = 1/4."
+  },
+  {
+    question: "Which fraction is equal to 0.5?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/2",
+    explanation: "0.5 = 5/10 = 1/2. It represents one-half."
+  },
+  {
+    question: "Which fraction is equal to 0.25?",
+    options: ["1/5", "1/4", "1/3", "1/2"],
+    answer: "1/4",
+    explanation: "0.25 = 25/100 = 1/4. It represents one-fourth."
+  },
+  {
+    question: "Which fraction is equal to 0.75?",
+    options: ["1/4", "1/2", "2/3", "3/4"],
+    answer: "3/4",
+    explanation: "0.75 = 75/100 = 3/4. It represents three-fourths."
+  },
+  {
+    question: "Arrange in ascending order: 1/5, 4/5, 2/5.",
+    options: ["1/5, 2/5, 4/5", "4/5, 2/5, 1/5", "2/5, 1/5, 4/5", "1/5, 4/5, 2/5"],
+    answer: "1/5, 2/5, 4/5",
+    explanation: "All have denominator 5. Order the numerators from least to greatest: 1, 2, 4."
+  },
+  {
+    question: "Arrange in descending order: 2/7, 6/7, 4/7.",
+    options: ["6/7, 4/7, 2/7", "2/7, 4/7, 6/7", "4/7, 6/7, 2/7", "6/7, 2/7, 4/7"],
+    answer: "6/7, 4/7, 2/7",
+    explanation: "All have denominator 7. Descending order of numerators: 6, 4, 2."
+  },
+  {
+    question: "Ramon ate 3/8 of a cake and Linda ate 2/8. Who ate more?",
+    options: ["Ramon", "Linda", "They ate equally", "Cannot be determined"],
+    answer: "Ramon",
+    explanation: "Same denominator 8. Since 3 > 2, Ramon ate more."
+  },
+  {
+    question: "A can of paint is 5/6 full. What fraction is empty?",
+    options: ["1/6", "2/6", "1/3", "1/2"],
+    answer: "1/6",
+    explanation: "Empty = 1 − 5/6 = 6/6 − 5/6 = 1/6."
+  },
+  {
+    question: "An office has 24 workers, 6 of whom are women. What fraction of the workers are women?",
+    options: ["1/6", "1/5", "1/4", "1/3"],
+    answer: "1/4",
+    explanation: "6 out of 24 = 6/24. Simplified: 6/24 ÷ 6 = 1/4."
+  },
+  {
+    question: "Which fraction is larger: 1/3 or 1/4?",
+    options: ["1/3", "1/4", "They are equal", "Cannot be compared"],
+    answer: "1/3",
+    explanation: "For unit fractions, the smaller the denominator, the larger the fraction. So 1/3 > 1/4."
+  },
+  {
+    question: "Which fraction is smaller: 1/2 or 1/5?",
+    options: ["1/2", "1/5", "They are equal", "Cannot be compared"],
+    answer: "1/5",
+    explanation: "For unit fractions, the larger the denominator, the smaller the fraction. So 1/5 < 1/2."
+  },
+  {
+    question: "9/4 as a mixed number is:",
+    options: ["1 1/4", "2 1/4", "2 3/4", "3 1/4"],
+    answer: "2 1/4",
+    explanation: "9 ÷ 4 = 2 with remainder 1. So 9/4 = 2 1/4."
+  },
+  {
+    question: "7/3 as a mixed number is:",
+    options: ["1 1/3", "2 1/3", "2 2/3", "3 1/3"],
+    answer: "2 1/3",
+    explanation: "7 ÷ 3 = 2 with remainder 1. So 7/3 = 2 1/3."
+  },
+  {
+    question: "1 3/4 as an improper fraction is:",
+    options: ["4/4", "5/4", "6/4", "7/4"],
+    answer: "7/4",
+    explanation: "1 3/4 = (1×4 + 3)/4 = 7/4."
+  },
+  {
+    question: "2 1/3 as an improper fraction is:",
+    options: ["5/3", "6/3", "7/3", "8/3"],
+    answer: "7/3",
+    explanation: "2 1/3 = (2×3 + 1)/3 = 7/3."
+  },
+  {
+    question: "What fraction of a dozen eggs is 3 eggs?",
+    options: ["1/6", "1/5", "1/4", "1/3"],
+    answer: "1/4",
+    explanation: "A dozen = 12 eggs. 3/12 = 1/4."
+  },
+  {
+    question: "What fraction of a day is 6 hours?",
+    options: ["1/6", "1/5", "1/4", "1/3"],
+    answer: "1/4",
+    explanation: "A day = 24 hours. 6/24 = 1/4."
+  },
+  {
+    question: "What fraction of a day is 8 hours?",
+    options: ["1/4", "1/3", "1/2", "2/3"],
+    answer: "1/3",
+    explanation: "A day = 24 hours. 8/24 = 1/3."
+  },
+  {
+    question: "Aling Rosa has ₱100. She spent ₱25. What fraction of her money did she spend?",
+    options: ["1/5", "1/4", "1/3", "1/2"],
+    answer: "1/4",
+    explanation: "25 out of 100 = 25/100. Simplified: 25/100 ÷ 25 = 1/4."
+  },
+  {
+    question: "In a group of 15 children, 5 are wearing blue shirts. What fraction is wearing blue?",
+    options: ["1/5", "1/4", "1/3", "2/5"],
+    answer: "1/3",
+    explanation: "5 out of 15 = 5/15. Simplified: 5/15 ÷ 5 = 1/3."
+  },
+  {
+    question: "A box of candy has 20 pieces. Berto took 5. What fraction is left?",
+    options: ["1/4", "3/4", "2/5", "3/5"],
+    answer: "3/4",
+    explanation: "Remaining = 20 − 5 = 15 pieces. 15/20 = 3/4."
+  },
+  {
+    question: "Which two fractions are equivalent?",
+    options: ["1/2 and 2/3", "2/4 and 3/6", "3/5 and 4/6", "1/3 and 2/5"],
+    answer: "2/4 and 3/6",
+    explanation: "2/4 = 1/2 and 3/6 = 1/2. They are equivalent."
+  },
+  {
+    question: "Father traveled 1/2 of the route before reaching the station. If the full route is 10 km, how far did he travel?",
+    options: ["2 km", "3 km", "4 km", "5 km"],
+    answer: "5 km",
+    explanation: "1/2 of 10 km = 10 ÷ 2 = 5 km."
+  },
+  {
+    question: "In a survey of 40 people, 10 said they like mangoes. What fraction likes mangoes?",
+    options: ["1/5", "1/4", "1/3", "2/5"],
+    answer: "1/4",
+    explanation: "10 out of 40 = 10/40. Simplified: 10/40 ÷ 10 = 1/4."
+  },
+  {
+    question: "A rope is 9 meters long. It was cut into 3 equal parts. How long is each part?",
+    options: ["1/3 meter", "2 meters", "3 meters", "4 meters"],
+    answer: "3 meters",
+    explanation: "9 meters ÷ 3 = 3 meters each. Each piece is 1/3 of the whole rope."
+  },
+  {
+    question: "Which fraction is the smallest?",
+    options: ["1/2", "1/3", "1/4", "1/5"],
+    answer: "1/5",
+    explanation: "For unit fractions, the larger the denominator, the smaller the value. 1/5 is the smallest."
+  },
+  {
+    question: "Which fraction is the largest?",
+    options: ["2/9", "4/9", "5/9", "7/9"],
+    answer: "7/9",
+    explanation: "All have denominator 9. The highest numerator 7 makes 7/9 the largest."
+  }
+
   ],
 
   // ==========================================
