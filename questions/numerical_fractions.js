@@ -632,305 +632,305 @@ window.NUMERICAL_QUESTION_BANK["fractions"] = {
   // ==========================================
   advanced: [
     {
-      question: "A tank contains 2 1/2 liters of water, which is 5/8 of its full capacity. What is the full capacity of the tank?",
-      options: ["3 liters", "4 liters", "5 liters", "6 liters"],
-      answer: "4 liters",
-      explanation: "Let the full capacity be C. Given 5/8 of C = 2 1/2 liters. Convert 2 1/2 to an improper fraction: 2 1/2 = 5/2. So 5/8 · C = 5/2. Solve for C: C = (5/2) ÷ (5/8) = (5/2) × (8/5) = 40/10 = 4 liters."
-    },
-    {
-      question: "Evaluate: (1 2/3 + 3/4) × 3/5.",
-      options: ["1 1/4", "1 3/10", "1 9/20", "1 1/2"],
-      answer: "1 9/20",
-      explanation: "Convert 1 2/3 to 5/3. Add 5/3 and 3/4. The LCD of 3 and 4 is 12, so 5/3 = 20/12 and 3/4 = 9/12. Sum = 29/12 = 2 5/12. Now multiply by 3/5: (29/12) × (3/5) = 87/60 = 29/20 = 1 9/20."
-    },
-    {
-      question: "Convert the improper fraction 9/4 to a mixed number.",
-      options: ["2 1/4", "2 2/4", "1 3/4", "3 1/4"],
-      answer: "2 1/4",
-      explanation: "9 ÷ 4 = 2 with remainder 1, so 9/4 = 2 1/4."
-    },
-    {
-      question: "Convert the improper fraction 11/3 to a mixed number.",
-      options: ["3 1/3", "3 2/3", "4 1/3", "2 2/3"],
-      answer: "3 2/3",
-      explanation: "11 ÷ 3 = 3 with remainder 2, so 11/3 = 3 2/3."
-    },
-    {
-      question: "Convert 2 3/5 to an improper fraction.",
-      options: ["7/5", "8/5", "13/5", "11/5"],
-      answer: "13/5",
-      explanation: "2 3/5 = (2×5 + 3)/5 = 13/5."
-    },
-    {
-      question: "Convert 4 1/2 to an improper fraction.",
-      options: ["7/2", "8/2", "9/2", "5/2"],
-      answer: "9/2",
-      explanation: "4 1/2 = (4×2 + 1)/2 = 9/2."
-    },
-    {
-      question: "What is 1 1/2 + 2 1/2?",
-      options: ["3", "4", "4 1/2", "3 1/2"],
-      answer: "4",
-      explanation: "1 1/2 + 2 1/2 = (1+2) + (1/2+1/2) = 3 + 1 = 4."
-    },
-    {
-      question: "What is 3 1/4 + 2 3/4?",
-      options: ["5 1/2", "6", "6 1/4", "5 3/4"],
-      answer: "6",
-      explanation: "Add whole parts: 3 + 2 = 5; add fractions: 1/4 + 3/4 = 1. Total is 6."
-    },
-    {
-      question: "What is 4 2/3 + 1 1/3?",
-      options: ["5", "5 1/3", "6", "6 1/3"],
-      answer: "6",
-      explanation: "4 2/3 + 1 1/3 = (4+1) + (2/3+1/3) = 5 + 1 = 6."
-    },
-    {
-      question: "What is 5 1/4 − 2 3/4?",
-      options: ["2 1/2", "2 3/4", "3 1/2", "1 1/2"],
-      answer: "2 1/2",
-      explanation: "Convert to improper or subtract: 5 1/4 − 2 3/4 = 5.25 − 2.75 = 2.5 = 2 1/2."
-    },
-    {
-      question: "What is 6 1/3 − 2 2/3?",
-      options: ["3 2/3", "3 1/2", "3 1/3", "4"],
-      answer: "3 2/3",
-      explanation: "6 1/3 − 2 2/3 = (19/3 − 8/3) = 11/3 = 3 2/3."
-    },
-    {
-      question: "What is 7 1/2 − 3 3/4?",
-      options: ["3 3/4", "3 1/2", "3 2/3", "4"],
-      answer: "3 3/4",
-      explanation: "7.5 − 3.75 = 3.75, which is 3 3/4."
-    },
-    {
-      question: "What is 2/3 + 3/4?",
-      options: ["17/12", "13/12", "5/7", "1 1/2"],
-      answer: "1 5/12",
-      explanation: "LCM of 3 and 4 is 12. 2/3 = 8/12, 3/4 = 9/12. Sum = 17/12 = 1 5/12."
-    },
-    {
-      question: "What is 5/6 + 7/8?",
-      options: ["1 17/24", "1 11/24", "1 7/8", "2"],
-      answer: "1 17/24",
-      explanation: "LCM of 6 and 8 is 24. 5/6 = 20/24 and 7/8 = 21/24. Their sum is 41/24, which is 1 17/24."
-    },
-    {
-      question: "What is 2/3 of (4 1/2 − 1 3/4)?",
-      options: ["1 1/3", "1 5/6", "2", "2 1/6"],
-      answer: "1 5/6",
-      explanation: "4 1/2 = 9/2 and 1 3/4 = 7/4. LCD is 4. 9/2 = 18/4. Difference: 18/4 − 7/4 = 11/4. Now take 2/3 of 11/4: 2/3 × 11/4 = 22/12 = 11/6 = 1 5/6."
-    },
-    {
-      question: "What is 3/4 of 2 2/3?",
-      options: ["1 1/3", "2", "2 1/4", "2 1/2"],
-      answer: "2",
-      explanation: "Convert 2 2/3 to an improper fraction: 2 2/3 = 8/3. Multiply: 3/4 × 8/3 = 24/12 = 2."
-    },
-    {
-      question: "What is 2/3 of 4 1/2?",
-      options: ["2", "2 1/2", "3", "3 1/2"],
-      answer: "3",
-      explanation: "4 1/2 = 9/2. Multiply: 2/3 × 9/2 = 18/6 = 3."
-    },
-    {
-      question: "What is 3/5 of 2/3 of 45?",
-      options: ["12", "15", "18", "20"],
-      answer: "18",
-      explanation: "First, 2/3 of 45 is 30. Then 3/5 of 30 is (3/5) × 30 = 90/5 = 18."
-    },
-    {
-      question: "Find the sum: 2 3/4 + 5/6.",
-      options: ["3 5/12", "3 7/12", "3 9/12", "4 1/12"],
-      answer: "3 7/12",
-      explanation: "2 3/4 = 11/4. LCD of 4 and 6 is 12. 11/4 = 33/12 and 5/6 = 10/12. Sum: 33/12 + 10/12 = 43/12 = 3 7/12."
-    },
-    {
-      question: "Find the difference: 5 1/3 − 2 5/6.",
-      options: ["2 1/2", "2 2/3", "3 1/2", "3 2/3"],
-      answer: "2 1/2",
-      explanation: "5 1/3 = 16/3 and 2 5/6 = 17/6. LCD is 6. 16/3 = 32/6. Subtract: 32/6 − 17/6 = 15/6 = 5/2 = 2 1/2."
-    },
-    {
-      question: "Find the product: 3/4 × 2 2/5.",
-      options: ["1 4/5", "1 3/5", "2 1/5", "2 2/5"],
-      answer: "1 4/5",
-      explanation: "2 2/5 = 12/5. Multiply: 3/4 × 12/5 = 36/20 = 9/5 = 1 4/5."
-    },
-    {
-      question: "Find the quotient: 5 1/2 ÷ 1 3/4.",
-      options: ["2 7/10", "3", "3 1/7", "3 1/4"],
-      answer: "3 1/7",
-      explanation: "5 1/2 = 11/2 and 1 3/4 = 7/4. 11/2 ÷ 7/4 = 11/2 × 4/7 = 44/14 = 22/7 = 3 1/7."
-    },
-    {
-      question: "Find the quotient: 2/3 ÷ 5/6.",
-      options: ["2/5", "4/5", "1 1/5", "1 2/3"],
-      answer: "4/5",
-      explanation: "2/3 ÷ 5/6 = 2/3 × 6/5 = 12/15 = 4/5 after simplifying by 3."
-    },
-    {
-      question: "Evaluate: (3/4 + 5/6) − 1/2.",
-      options: ["11/12", "1 1/12", "1 1/6", "1 5/12"],
-      answer: "1 1/12",
-      explanation: "3/4 = 9/12, 5/6 = 10/12, so 3/4 + 5/6 = 19/12. Subtract 1/2 = 6/12. 19/12 − 6/12 = 13/12 = 1 1/12."
-    },
-    {
-      question: "Evaluate: (5/8 + 2/3) ÷ 1/2.",
-      options: ["2 3/8", "2 5/12", "2 7/12", "3 1/12"],
-      answer: "2 7/12",
-      explanation: "5/8 = 15/24 and 2/3 = 16/24, so sum = 31/24. Dividing by 1/2 is the same as multiplying by 2. 31/24 × 2 = 62/24 = 31/12 = 2 7/12."
-    },
-    {
-      question: "Evaluate: 1 1/2 × (4/5 + 3/10).",
-      options: ["1 1/2", "1 7/10", "1 13/20", "2 1/20"],
-      answer: "1 13/20",
-      explanation: "4/5 = 8/10, so 4/5 + 3/10 = 11/10. 1 1/2 = 3/2. Multiply: 3/2 × 11/10 = 33/20 = 1 13/20."
-    },
-    {
-      question: "Evaluate: (2 1/4 + 1 2/3) ÷ 3.",
-      options: ["1 1/6", "1 1/12", "1 11/36", "1 13/36"],
-      answer: "1 11/36",
-      explanation: "2 1/4 = 9/4 and 1 2/3 = 5/3. LCD is 12. 9/4 = 27/12 and 5/3 = 20/12. Sum = 47/12. Divide by 3: 47/12 × 1/3 = 47/36 = 1 11/36."
-    },
-    {
-      question: "A ribbon is 3 3/4 meters long. If each piece is 3/8 meter, how many pieces can be cut?",
-      options: ["8", "9", "10", "12"],
-      answer: "10",
-      explanation: "3 3/4 = 15/4. Divide: 15/4 ÷ 3/8 = 15/4 × 8/3 = 120/12 = 10 pieces."
-    },
-    {
-      question: "A container holds 5 1/2 liters of juice. Each glass holds 3/8 liter. How many full glasses can be filled?",
-      options: ["13", "14", "15", "16"],
-      answer: "14",
-      explanation: "5 1/2 = 11/2. 11/2 ÷ 3/8 = 11/2 × 8/3 = 88/6 = 44/3 ≈ 14.67. You can fill 14 full glasses."
-    },
-    {
-      question: "A recipe uses 2 1/4 cups of flour and 1 2/3 cups of sugar. How many cups are used in total?",
-      options: ["3 5/6", "3 11/12", "4", "4 1/12"],
-      answer: "3 11/12",
-      explanation: "2 1/4 = 9/4 and 1 2/3 = 5/3. LCD is 12. 9/4 = 27/12 and 5/3 = 20/12. Sum = 47/12 = 3 11/12."
-    },
-    {
-      question: "The average of 3/5 and 4/5 is:",
-      options: ["7/10", "3/5", "4/5", "1"],
-      answer: "7/10",
-      explanation: "Add the fractions and divide by 2. (3/5 + 4/5) = 7/5. Then 7/5 ÷ 2 = 7/5 × 1/2 = 7/10."
-    },
-    {
-      question: "Jessa walked 2 1/3 km in the morning and 3/4 of that distance in the evening. How far did she walk in the evening?",
-      options: ["1 1/2 km", "1 3/4 km", "2 km", "2 1/4 km"],
-      answer: "1 3/4 km",
-      explanation: "2 1/3 = 7/3. Evening distance is 3/4 of 7/3: 3/4 × 7/3 = 21/12 = 7/4 = 1 3/4 km."
-    },
-    {
-      question: "What fraction of a day is 9 hours?",
-      options: ["1/2", "3/8", "3/4", "5/12"],
-      answer: "3/8",
-      explanation: "There are 24 hours in a day. 9/24 simplifies by dividing top and bottom by 3: 9/24 = 3/8."
-    },
-    {
-      question: "You spend 2/5 of your money on food and 1/4 on transport. What fraction of your money is left?",
-      options: ["7/20", "9/20", "11/20", "13/20"],
-      answer: "7/20",
-      explanation: "Total spent = 2/5 + 1/4. LCD is 20. 2/5 = 8/20, 1/4 = 5/20. Sum = 13/20. Leftover = 1 − 13/20 = 7/20."
-    },
-    {
-      question: "In a class of 40 students, 3/8 are boys. How many boys are there?",
-      options: ["12", "14", "15", "18"],
-      answer: "15",
-      explanation: "3/8 of 40 is (3 × 40)/8 = 120/8 = 15 boys."
-    },
-    {
-      question: "A water tank is 3/5 full. Then 1/4 of the tank is added. What fraction of the tank is full now?",
-      options: ["7/10", "17/20", "4/5", "9/10"],
-      answer: "17/20",
-      explanation: "Current amount = 3/5 + 1/4. LCD is 20. 3/5 = 12/20 and 1/4 = 5/20. Sum = 17/20."
-    },
-    {
-      question: "The sum of two fractions is 11/12. If one fraction is 2/3, what is the other?",
-      options: ["1/3", "1/4", "5/12", "7/12"],
-      answer: "1/4",
-      explanation: "2/3 = 8/12. The other is 11/12 − 8/12 = 3/12 = 1/4."
-    },
-    {
-      question: "One number is 3/4 of another. If the larger number is 24, what is the smaller number?",
-      options: ["16", "17", "18", "20"],
-      answer: "18",
-      explanation: "The smaller number is 3/4 of the larger number. Compute 3/4 × 24 = 72/4 = 18. So the smaller number is 18."
-    },
-    {
-      question: "Simplify: (2/3 of 27) ÷ 5/6.",
-      options: ["7 1/5", "8 2/5", "9 1/5", "21 3/5"],
-      answer: "21 3/5",
-      explanation: "First find 2/3 of 27: (2/3) × 27 = 18. Then divide by 5/6: 18 ÷ (5/6) = 18 × 6/5 = 108/5 = 21 3/5."
-    },
-    {
-      question: "What is 5/8 of 2 2/5?",
-      options: ["1 1/4", "1 1/2", "1 3/5", "1 3/4"],
-      answer: "1 1/2",
-      explanation: "2 2/5 = 12/5. Multiply 5/8 × 12/5. The fives cancel, leaving 12/8 = 3/2 = 1 1/2."
-    },
-    {
-      question: "If 3/7 of a number is 18, what is the number?",
-      options: ["30", "36", "40", "42"],
-      answer: "42",
-      explanation: "Let the number be n. 3/7 of n is 18: (3/7)n = 18. Multiply both sides by 7/3: n = 18 × 7/3 = 6 × 7 = 42."
-    },
-    {
-      question: "A recipe uses 2/3 cup of sugar per serving. How many servings can be made from 4 cups of sugar?",
-      options: ["4", "5", "6", "8"],
-      answer: "6",
-      explanation: "Number of servings = 4 ÷ 2/3 = 4 × 3/2 = 12/2 = 6."
-    },
-    {
-      question: "A farmer harvests 3 1/2 sacks of rice from one field and 4 3/4 sacks from another. How many sacks in total?",
-      options: ["7 1/4", "8 1/4", "8 1/2", "8 3/4"],
-      answer: "8 1/4",
-      explanation: "3 1/2 = 7/2 and 4 3/4 = 19/4. LCD is 4. 7/2 = 14/4. Sum: 14/4 + 19/4 = 33/4 = 8 1/4."
-    },
-    {
-      question: "A car uses 3/5 of a tank on trip A and 1/10 of a tank on trip B. What fraction of the tank is used in total?",
-      options: ["2/3", "3/4", "7/10", "4/5"],
-      answer: "7/10",
-      explanation: "3/5 = 6/10. Total used = 6/10 + 1/10 = 7/10."
-    },
-    {
-      question: "From the previous question, what fraction of the tank is left?",
-      options: ["1/10", "2/10", "3/10", "4/10"],
-      answer: "3/10",
-      explanation: "The whole tank is 1. Remaining fraction = 1 − 7/10 = 3/10."
-    },
-    {
-      question: "A number is increased by 2/5 of itself to become 35. What was the original number?",
-      options: ["20", "21", "25", "28"],
-      answer: "25",
-      explanation: "Let the original number be n. Then n + 2/5 n = 35. This is (7/5)n = 35. Multiply both sides by 5/7: n = 35 × 5/7 = 25."
-    },
-    {
-      question: "The sum of two numbers is 5 1/4. If one number is 2 2/3, what is the other?",
-      options: ["2 1/2", "2 7/12", "2 5/6", "3"],
-      answer: "2 7/12",
-      explanation: "5 1/4 = 21/4 and 2 2/3 = 8/3. LCD is 12. 21/4 = 63/12 and 8/3 = 32/12. Difference: 63/12 − 32/12 = 31/12 = 2 7/12."
-    },
-    {
-      question: "₱180 is shared among three people in the ratio 2/5, 1/4, and the rest. How much does the third person receive?",
-      options: ["₱45", "₱54", "₱63", "₱72"],
-      answer: "₱63",
-      explanation: "First person gets 2/5 of 180 = 72. Second gets 1/4 of 180 = 45. Total given = 72 + 45 = 117. Remaining: 180 − 117 = 63, which goes to the third person."
-    },
-    {
-      question: "A rectangular garden is 4 1/2 m long and 3 2/3 m wide. What is its area?",
-      options: ["14 1/2 m²", "15 m²", "16 1/2 m²", "17 m²"],
-      answer: "16 1/2 m²",
-      explanation: "4 1/2 = 9/2 and 3 2/3 = 11/3. Area = 9/2 × 11/3 = 99/6 = 33/2 = 16 1/2 m²."
-    },
-    {
-      question: "A bottle contains 1 1/4 liters of juice. If each serving is 3/10 liter, how many full servings can be made?",
-      options: ["3", "4", "5", "6"],
-      answer: "4",
-      explanation: "1 1/4 = 5/4. Servings = 5/4 ÷ 3/10 = 5/4 × 10/3 = 50/12 = 25/6 ≈ 4.16. You can pour 4 full servings."
-    }
+    question: "Mang Rodel's monthly salary is ₱18,000. He spends 2/5 on food, 1/4 on rent, and 1/6 on transportation. How much does he save?",
+    options: ["₱3,150", "₱3,300", "₱3,450", "₱3,600"],
+    answer: "₱3,300",
+    explanation: "LCD of 5, 4, 6 is 60. 2/5=24/60, 1/4=15/60, 1/6=10/60. Total spent = 49/60 of 18,000 = ₱14,700. Saved = 18,000 − 14,700 = ₱3,300."
+  },
+  {
+    question: "Aling Nora baked 60 bread rolls. She sold 3/4 in the morning and 1/6 in the afternoon. How many were not sold?",
+    options: ["3", "4", "5", "6"],
+    answer: "5",
+    explanation: "Morning = 3/4 of 60 = 45. Afternoon = 1/6 of 60 = 10. Sold = 55. Unsold = 60 − 55 = 5."
+  },
+  {
+    question: "A garden has an area of 120 square meters. 2/5 is planted with onions, 1/4 with tomatoes, and the rest with eggplant. How many square meters are eggplant?",
+    options: ["36 m²", "40 m²", "42 m²", "48 m²"],
+    answer: "42 m²",
+    explanation: "Onions = 2/5 of 120 = 48. Tomatoes = 1/4 of 120 = 30. Eggplant = 120 − 48 − 30 = 42 m²."
+  },
+  {
+    question: "Bert has ₱24,000. He spent 1/3 on food, gave 1/4 to his parents, and saved 1/8. How much is left for other expenses?",
+    options: ["₱5,500", "₱6,000", "₱6,500", "₱7,000"],
+    answer: "₱7,000",
+    explanation: "Food = 1/3 of 24,000 = 8,000. Parents = 1/4 of 24,000 = 6,000. Savings = 1/8 of 24,000 = 3,000. Total = 17,000. Left = 24,000 − 17,000 = ₱7,000."
+  },
+  {
+    question: "A group of 45 workers has 2/5 males. Of the females, 1/3 have college degrees. How many females have college degrees?",
+    options: ["7", "8", "9", "10"],
+    answer: "9",
+    explanation: "Males = 2/5 of 45 = 18. Females = 45 − 18 = 27. Females with degrees = 1/3 of 27 = 9."
+  },
+  {
+    question: "The distance from Lina's home to the office is 24 km. She reached 2/3 of the route after 40 minutes. How much farther does she need to travel?",
+    options: ["6 km", "7 km", "8 km", "9 km"],
+    answer: "8 km",
+    explanation: "Traveled = 2/3 of 24 = 16 km. Remaining = 24 − 16 = 8 km."
+  },
+  {
+    question: "Mang Tony has ₱30,000 capital. He used 3/5 to buy products and 1/6 for store rent. How much has he not yet used?",
+    options: ["₱5,000", "₱6,000", "₱7,000", "₱8,000"],
+    answer: "₱7,000",
+    explanation: "Products = 3/5 of 30,000 = 18,000. Rent = 1/6 of 30,000 = 5,000. Used = 23,000. Remaining = 30,000 − 23,000 = ₱7,000."
+  },
+  {
+    question: "An office has 80 employees. 3/4 were present on Monday. Of those present, 2/5 were in a meeting. How many were NOT in the meeting?",
+    options: ["30", "32", "34", "36"],
+    answer: "36",
+    explanation: "Present = 3/4 of 80 = 60. In meeting = 2/5 of 60 = 24. Not in meeting = 60 − 24 = 36."
+  },
+  {
+    question: "A farmer harvested 200 kilos of rice. He sold 3/5, set aside 1/4 for the next planting season. How much is left for personal consumption?",
+    options: ["20 kilos", "25 kilos", "30 kilos", "35 kilos"],
+    answer: "30 kilos",
+    explanation: "Sold = 3/5 of 200 = 120. Set aside = 1/4 of 200 = 50. Total = 170. Left = 200 − 170 = 30 kilos."
+  },
+  {
+    question: "A student studies 3 hours every night. 2/3 of the time is for math and 1/4 is for Filipino. How many minutes are spent on other subjects?",
+    options: ["10 minutes", "15 minutes", "20 minutes", "25 minutes"],
+    answer: "15 minutes",
+    explanation: "LCD of 3 and 4 is 12. 2/3=8/12, 1/4=3/12. Math + Filipino = 11/12. Others = 1/12 of 3 hrs = 1/12 of 180 min = 15 minutes."
+  },
+  {
+    question: "Kuya Ramon has ₱8,400. 5/7 goes to his family. Of what remains, 1/3 is for personal expenses. How much does he save?",
+    options: ["₱1,200", "₱1,400", "₱1,600", "₱1,800"],
+    answer: "₱1,600",
+    explanation: "Family = 5/7 of 8,400 = 6,000. Remaining = 2,400. Personal = 1/3 of 2,400 = 800. Savings = 2,400 − 800 = ₱1,600."
+  },
+  {
+    question: "A tank is 7/10 full of water. 2/5 of its capacity was used for gardening and 1/10 for cooking. What fraction remains?",
+    options: ["1/5", "1/4", "3/10", "2/5"],
+    answer: "1/5",
+    explanation: "LCD is 10. 2/5 = 4/10. Used = 4/10 + 1/10 = 5/10 = 1/2. Remaining = 7/10 − 5/10 = 2/10 = 1/5."
+  },
+  {
+    question: "A barangay has 360 families. 5/9 have their own house. Of those with houses, 2/5 are made of concrete. How many houses are made of concrete?",
+    options: ["70", "75", "80", "85"],
+    answer: "80",
+    explanation: "With house = 5/9 of 360 = 200. Concrete = 2/5 of 200 = 80."
+  },
+  {
+    question: "Aling Luisa baked 144 bread rolls. She sold 3/4 in the morning. Of the remaining rolls, she sold another 1/3. How many were not sold?",
+    options: ["18", "20", "22", "24"],
+    answer: "24",
+    explanation: "Sold in morning = 3/4 of 144 = 108. Remaining = 36. Sold later = 1/3 of 36 = 12. Unsold = 36 − 12 = 24."
+  },
+  {
+    question: "A school has 500 students. 2/5 are in elementary and 3/10 are in high school. How many are in neither?",
+    options: ["125", "140", "150", "160"],
+    answer: "150",
+    explanation: "Elementary = 2/5 of 500 = 200. High school = 3/10 of 500 = 150. Total = 350. Neither = 500 − 350 = 150."
+  },
+  {
+    question: "Mang Ben has ₱45,000 in savings. He used 2/9 for house repairs and 1/5 for his child's education. How much is left?",
+    options: ["₱24,000", "₱25,000", "₱26,000", "₱27,000"],
+    answer: "₱26,000",
+    explanation: "Repairs = 2/9 of 45,000 = 10,000. Education = 1/5 of 45,000 = 9,000. Used = 19,000. Left = 45,000 − 19,000 = ₱26,000."
+  },
+  {
+    question: "A store has 240 products. 5/8 were sold in the first week and 1/6 in the second week. How many were not yet sold?",
+    options: ["40", "45", "50", "55"],
+    answer: "50",
+    explanation: "First week = 5/8 of 240 = 150. Second week = 1/6 of 240 = 40. Sold = 190. Unsold = 240 − 190 = 50."
+  },
+  {
+    question: "Nena receives a monthly salary of ₱20,000. She pays 1/4 for rent, 1/5 for food, and 1/10 for utility bills. How much is left?",
+    options: ["₱8,000", "₱8,500", "₱9,000", "₱9,500"],
+    answer: "₱9,000",
+    explanation: "LCD is 20. 1/4=5/20, 1/5=4/20, 1/10=2/20. Total = 11/20 of 20,000 = 11,000. Left = 20,000 − 11,000 = ₱9,000."
+  },
+  {
+    question: "In a market, 2/7 of vendors sell fish, 3/7 sell vegetables, and the rest sell meat. If there are 63 vendors, how many sell meat?",
+    options: ["9", "12", "15", "18"],
+    answer: "18",
+    explanation: "Fish + vegetables = 2/7 + 3/7 = 5/7. Meat = 2/7 of 63 = 18."
+  },
+  {
+    question: "A village has 420 residents. 3/7 are employed. Of those employed, 2/5 work for the government. How many work for the government?",
+    options: ["60", "65", "70", "72"],
+    answer: "72",
+    explanation: "Employed = 3/7 of 420 = 180. Government = 2/5 of 180 = 72."
+  },
+  {
+    question: "Father sold 3/4 of his 80-kilo corn harvest at ₱25 per kilo. How much did he earn?",
+    options: ["₱1,200", "₱1,400", "₱1,500", "₱1,600"],
+    answer: "₱1,500",
+    explanation: "Sold = 3/4 of 80 = 60 kilos. Earnings = 60 × ₱25 = ₱1,500."
+  },
+  {
+    question: "A group has 56 members. 3/8 are male. Of the female members, 1/5 are officers. How many female officers are there?",
+    options: ["7", "8", "9", "10"],
+    answer: "7",
+    explanation: "Males = 3/8 of 56 = 21. Females = 56 − 21 = 35. Female officers = 1/5 of 35 = 7."
+  },
+  {
+    question: "Two tanks each have a capacity of 100 liters. The first is 3/5 full and the second is 7/10 full. How many liters of water are there in total?",
+    options: ["110 L", "120 L", "125 L", "130 L"],
+    answer: "130 L",
+    explanation: "First tank = 3/5 of 100 = 60 L. Second tank = 7/10 of 100 = 70 L. Total = 60 + 70 = 130 L."
+  },
+  {
+    question: "Ana started a business using 3/5 of her ₱50,000 savings. She earned a profit of 1/4 of her capital. How much was her profit?",
+    options: ["₱6,500", "₱7,000", "₱7,500", "₱8,000"],
+    answer: "₱7,500",
+    explanation: "Capital = 3/5 of 50,000 = 30,000. Profit = 1/4 of 30,000 = ₱7,500."
+  },
+  {
+    question: "In a class of 42 students, 3/7 passed math and 2/6 passed science. How many passed at least one subject (assuming no overlap)?",
+    options: ["28", "30", "32", "34"],
+    answer: "32",
+    explanation: "Math = 3/7 of 42 = 18. Science = 2/6 of 42 = 14. Total = 18 + 14 = 32."
+  },
+  {
+    question: "Mang Rudy works 48 hours a week. 5/8 of his time is regular work and the rest is overtime. How many hours is overtime?",
+    options: ["14 hours", "16 hours", "18 hours", "20 hours"],
+    answer: "18 hours",
+    explanation: "Regular = 5/8 of 48 = 30 hours. Overtime = 48 − 30 = 18 hours."
+  },
+  {
+    question: "In a survey of 200 people, 3/5 like coffee. Of those who like coffee, 2/3 drink it every morning. How many drink coffee every morning?",
+    options: ["70", "75", "80", "85"],
+    answer: "80",
+    explanation: "Like coffee = 3/5 of 200 = 120. Drink every morning = 2/3 of 120 = 80."
+  },
+  {
+    question: "A piece of land is 3/4 hectare. 2/3 of it is planted with rice and the rest with vegetables. How many hectares are planted with vegetables?",
+    options: ["1/4 hectare", "3/16 hectare", "1/8 hectare", "1/6 hectare"],
+    answer: "1/4 hectare",
+    explanation: "Rice = 2/3 of 3/4 = 6/12 = 1/2 hectare. Vegetables = 3/4 − 1/2 = 3/4 − 2/4 = 1/4 hectare."
+  },
+  {
+    question: "Bea earns ₱3,600 weekly. She spent 5/9 on the sixth day. Of what remained, 3/4 was for food. How much was spent on food?",
+    options: ["₱1,100", "₱1,200", "₱1,300", "₱1,400"],
+    answer: "₱1,200",
+    explanation: "Spent = 5/9 of 3,600 = 2,000. Remaining = 1,600. Food = 3/4 of 1,600 = ₱1,200."
+  },
+  {
+    question: "A factory produces 960 products per day. 7/8 pass quality control. Of those that pass, 5/6 are sold immediately. How many are sold?",
+    options: ["680", "700", "720", "740"],
+    answer: "700",
+    explanation: "Passed = 7/8 of 960 = 840. Sold = 5/6 of 840 = 700."
+  },
+  {
+    question: "On a hiking trail of 18 km, Jun reached 2/3 of the route in 2 hours. At the same speed, how many more hours does he need to finish?",
+    options: ["30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes"],
+    answer: "1 hour",
+    explanation: "Traveled = 2/3 of 18 = 12 km in 2 hours. Speed = 6 km/hr. Remaining = 6 km. Time = 6 ÷ 6 = 1 hour."
+  },
+  {
+    question: "Aling Tess bought 120 kilos of rice. She sold 3/5 on the first day and 1/4 of the original amount on the second day. How many kilos are left?",
+    options: ["12 kilos", "15 kilos", "18 kilos", "20 kilos"],
+    answer: "18 kilos",
+    explanation: "First day = 3/5 of 120 = 72. Second day = 1/4 of 120 = 30. Sold = 102. Left = 120 − 102 = 18 kilos."
+  },
+  {
+    question: "A building has 5 floors. 2/5 of the rooms are on the first three floors. If there are 75 rooms in total, how many are on the last two floors?",
+    options: ["40", "42", "44", "45"],
+    answer: "45",
+    explanation: "First three floors = 2/5 of 75 = 30. Last two floors = 75 − 30 = 45."
+  },
+  {
+    question: "Mario sells fruits. Out of 180 fruits, 5/9 are mangoes and 1/4 are bananas. How many are neither mangoes nor bananas?",
+    options: ["35", "40", "45", "50"],
+    answer: "35",
+    explanation: "Mangoes = 5/9 of 180 = 100. Bananas = 1/4 of 180 = 45. Others = 180 − 100 − 45 = 35."
+  },
+  {
+    question: "Rosa's salary is ₱16,000 per month. She sent 3/8 to the province and spent 2/5 of what remained for herself. How much did she save?",
+    options: ["₱5,800", "₱6,000", "₱6,200", "₱6,400"],
+    answer: "₱6,000",
+    explanation: "Sent = 3/8 of 16,000 = 6,000. Remaining = 10,000. Personal = 2/5 of 10,000 = 4,000. Saved = 10,000 − 4,000 = ₱6,000."
+  },
+  {
+    question: "A dam has a capacity of 500,000 liters. It is currently 3/5 full. After rain, 1/10 of capacity was added. How many liters are there now?",
+    options: ["330,000 L", "340,000 L", "350,000 L", "360,000 L"],
+    answer: "350,000 L",
+    explanation: "Before rain = 3/5 of 500,000 = 300,000. Added = 1/10 of 500,000 = 50,000. Total = 350,000 L."
+  },
+  {
+    question: "At a celebration, 2/7 of guests paid ₱500 and 3/7 paid ₱300. The rest were free. If there were 140 guests, how much was collected in total?",
+    options: ["₱34,000", "₱36,000", "₱38,000", "₱40,000"],
+    answer: "₱38,000",
+    explanation: "Paid ₱500 = 2/7 of 140 = 40 → 40 × 500 = ₱20,000. Paid ₱300 = 3/7 of 140 = 60 → 60 × 300 = ₱18,000. Total = ₱38,000."
+  },
+  {
+    question: "A school ordered 480 books. 3/8 are for Grade 5 and 5/12 for Grade 6. How many books are for other grades?",
+    options: ["80", "90", "100", "110"],
+    answer: "100",
+    explanation: "Grade 5 = 3/8 of 480 = 180. Grade 6 = 5/12 of 480 = 200. Total = 380. Others = 480 − 380 = 100."
+  },
+  {
+    question: "A trader bought 240 kilos of fruit. 1/8 rotted. Of what remained, he sold 3/4. How many kilos were not sold?",
+    options: ["45 kilos", "50 kilos", "52 kilos", "55 kilos"],
+    answer: "52 kilos",
+    explanation: "Rotted = 1/8 of 240 = 30. Remaining = 210. Sold = 3/4 of 210 = 157.5 ≈ 158. Unsold = 210 − 158 = 52."
+  },
+  {
+    question: "A barangay budget plan allocates 2/5 for health and 1/4 for education. If the total budget is ₱2,000,000, how much is left for other services?",
+    options: ["₱600,000", "₱650,000", "₱700,000", "₱750,000"],
+    answer: "₱700,000",
+    explanation: "Health = 2/5 of 2M = 800,000. Education = 1/4 of 2M = 500,000. Total = 1,300,000. Others = 2,000,000 − 1,300,000 = ₱700,000."
+  },
+  {
+    question: "Mang Cardo works 6 days a week, 8 hours a day. 3/4 of his time is production and 1/6 is for meetings. How many hours are for other tasks?",
+    options: ["4 hours", "5 hours", "6 hours", "7 hours"],
+    answer: "4 hours",
+    explanation: "Total hours = 6 × 8 = 48. Production = 3/4 of 48 = 36. Meetings = 1/6 of 48 = 8. Others = 48 − 36 − 8 = 4 hours."
+  },
+  {
+    question: "In a village of 350 families, 4/7 own their land. Of those who own land, 3/8 use irrigation. How many use irrigation?",
+    options: ["70", "75", "80", "85"],
+    answer: "75",
+    explanation: "Own land = 4/7 of 350 = 200. Use irrigation = 3/8 of 200 = 75."
+  },
+  {
+    question: "A 50-kilo sack of rice was used by a family. They used 2/5 in the first week and 3/10 in the second week. How many kilos are left?",
+    options: ["10 kilos", "12 kilos", "14 kilos", "15 kilos"],
+    answer: "15 kilos",
+    explanation: "First week = 2/5 of 50 = 20. Second week = 3/10 of 50 = 15. Used = 35. Left = 50 − 35 = 15 kilos."
+  },
+  {
+    question: "An employee receives a monthly salary of ₱22,000. 1/4 goes to SSS, PhilHealth, and Pag-IBIG. Of the net pay, he spends 3/5. How much does he save?",
+    options: ["₱5,500", "₱6,000", "₱6,600", "₱7,000"],
+    answer: "₱6,600",
+    explanation: "Deductions = 1/4 of 22,000 = 5,500. Net = 16,500. Spent = 3/5 of 16,500 = 9,900. Savings = 16,500 − 9,900 = ₱6,600."
+  },
+  {
+    question: "A boat can carry 800 kilos. 3/8 of the capacity is already filled with cargo. How much more cargo can be loaded?",
+    options: ["400 kilos", "450 kilos", "500 kilos", "550 kilos"],
+    answer: "500 kilos",
+    explanation: "Already loaded = 3/8 of 800 = 300 kilos. Remaining capacity = 800 − 300 = 500 kilos."
+  },
+  {
+    question: "Out of 250 employees, 2/5 worked overtime. Of those who worked overtime, 3/4 received additional pay. How many did NOT receive additional pay?",
+    options: ["20", "22", "25", "28"],
+    answer: "25",
+    explanation: "Overtime = 2/5 of 250 = 100. Received pay = 3/4 of 100 = 75. Did not receive = 100 − 75 = 25."
+  },
+  {
+    question: "A recipe uses 2/3 cup of sugar for 12 cookies. If you want to make 30 cookies, how many cups of sugar do you need?",
+    options: ["1 1/3 cups", "1 2/3 cups", "2 cups", "2 1/3 cups"],
+    answer: "1 2/3 cups",
+    explanation: "Per cookie = 2/3 ÷ 12 = 1/18 cup. For 30 cookies = 30/18 = 5/3 = 1 2/3 cups."
+  },
+  {
+    question: "A store is offering a 2/3 discount on products. If the original price is ₱900, how much will the buyer pay?",
+    options: ["₱250", "₱300", "₱350", "₱400"],
+    answer: "₱300",
+    explanation: "Discount = 2/3 of 900 = 600. Amount to pay = 900 − 600 = ₱300."
+  },
+  {
+    question: "A class has 48 students. 3/8 own a cellphone and 1/4 own a laptop. If no student owns both, how many have no gadget?",
+    options: ["14", "16", "18", "20"],
+    answer: "18",
+    explanation: "Cellphone = 3/8 of 48 = 18. Laptop = 1/4 of 48 = 12. With gadget = 30. Without = 48 − 30 = 18."
+  },
+  {
+    question: "A worker's daily target is 120 products. In the morning, he made 2/5 of the target. In the afternoon, he made 3/8. How many more does he need to make?",
+    options: ["27", "28", "29", "30"],
+    answer: "27",
+    explanation: "Morning = 2/5 of 120 = 48. Afternoon = 3/8 of 120 = 45. Done = 93. Remaining = 120 − 93 = 27."
+  }
   ],
 
   // ==========================================
