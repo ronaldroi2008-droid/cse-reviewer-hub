@@ -1367,18 +1367,37 @@
     // 7. TOPIC SELECT
     // ==========================================
     function selectTopic(topicId) {
-      currentTopicId = topicId;
+  currentTopicId = topicId;
 
-      document.querySelectorAll(".topic-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.topicId === topicId);
-      });
+  const topic = ANALYTICAL_TOPICS.find(
+    t => t.id === topicId
+  );
 
-      document.getElementById("quiz-topic-label").textContent =
-        getTopicLabel(currentTopicId);
+  const url = new URL(window.location.href);
 
-      renderLesson();
-      startQuiz();
-    }
+  url.searchParams.set("topic", topicId);
+
+  history.pushState({}, "", url);
+
+  if (topic) {
+    document.title =
+      topic.label +
+      " Reviewer for Civil Service Exam | CSE Reviewer Hub";
+  }
+
+  document.querySelectorAll(".topic-btn").forEach(btn => {
+    btn.classList.toggle(
+      "active",
+      btn.dataset.topicId === topicId
+    );
+  });
+
+  document.getElementById("quiz-topic-label").textContent =
+    getTopicLabel(currentTopicId);
+
+  renderLesson();
+  startQuiz();
+}
 
     // ==========================================
     // 8. MODE TOGGLE
@@ -1750,10 +1769,54 @@
     initItemsTabs();
     initNavButtons();
     initResultsButtons();
-    selectTopic(currentTopicId);
+    const params =
+  new URLSearchParams(window.location.search);
+
+const topicFromUrl =
+  params.get("topic");
+
+if (
+  topicFromUrl &&
+  ANALYTICAL_TOPICS.some(
+    t => t.id === topicFromUrl
+  )
+) {
+  currentTopicId = topicFromUrl;
+}
+window.addEventListener("popstate", () => {
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const topic =
+    params.get("topic");
+
+  if (
+    topic &&
+    topic !== currentTopicId &&
+    ANALYTICAL_TOPICS.some(
+      t => t.id === topic
+    )
+  ) {
+
+    currentTopicId = topic;
+
+    document.querySelectorAll(".topic-btn").forEach(btn => {
+      btn.classList.toggle(
+        "active",
+        btn.dataset.topicId === topic
+      );
+    });
+
+    renderLesson();
+    startQuiz();
+  }
+});
+selectTopic(currentTopicId);
   </script>
 </body>
 </html>
+
 
 
 
