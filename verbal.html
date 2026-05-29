@@ -1028,6 +1028,17 @@ html {
 // 0. PRO CONFIG
 // ==========================================
 
+
+// SEO URL SUPPORT
+const paramsSEO = new URLSearchParams(window.location.search);
+const initialTopicFromUrl = paramsSEO.get("topic");
+
+function updateSEO(topicId){
+ document.title = (VERBAL_LESSONS[topicId]?.title || topicId) + " | CSE Reviewer Hub";
+ let meta=document.querySelector('meta[name="description"]');
+ if(!meta){meta=document.createElement('meta');meta.name='description';document.head.appendChild(meta);}
+ meta.content=(VERBAL_LESSONS[topicId]?.title || topicId)+" reviewer with explanations and practice questions for the Civil Service Exam.";
+}
 const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
 const LOCKED_LEVELS = ["advanced", "expert"];
 const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
@@ -5567,6 +5578,11 @@ function renderTopics() {
 
 // Load lesson content sa Study Mode
 function loadLesson(topicId) {
+updateSEO(topicId);
+const seoUrl=new URL(window.location);
+seoUrl.searchParams.set('topic',topicId);
+history.replaceState({},'',seoUrl.toString());
+
   const lessonTitleEl = document.getElementById("lessonTitle");
   const lessonIntroEl = document.getElementById("lessonIntro");
   const lessonBodyEl = document.getElementById("lessonBody");
@@ -6099,4 +6115,5 @@ function buildTOC() {
 </script>
 
 </body>
-</html>
+</html>window.addEventListener('popstate',()=>{const p=new URLSearchParams(window.location.search);const topic=p.get('topic')||'nouns';if(topic!==currentTopicId){currentTopicId=topic;loadLesson(topic);}});
+
