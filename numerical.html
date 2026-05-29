@@ -747,6 +747,18 @@
       }
     }
   </style>
+
+<script>
+// SEO URL Topic Support
+const NUM_TOPIC_META = {};
+function updateSEO(topicId,label){
+ document.title = `${label} Reviewer for Civil Service Exam | CSE Reviewer Hub`;
+ let desc=document.querySelector('meta[name="description"]');
+ if(!desc){desc=document.createElement('meta');desc.name='description';document.head.appendChild(desc);}
+ desc.content=`${label} reviewer with lessons, explanations and practice questions for the Civil Service Exam.`;
+}
+</script>
+
 </head>
 <body>
   <div class="app-shell">
