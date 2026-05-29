@@ -2283,14 +2283,29 @@ function updateSEO(topicId,label){
   });
 }
 
+function selectTopic(topicId) {
+  currentTopicId = topicId;
 
-    function selectTopic(topicId) {
-      currentTopicId = topicId;
-      resetQuizState();
-      updateActiveTopicPill();
-      renderLesson();
-      renderQuiz();
-    }
+  const topic = NUMERICAL_TOPICS.find(
+    t => t.id === topicId
+  );
+
+  const url = new URL(window.location);
+
+  url.searchParams.set("topic", topicId);
+
+  history.pushState({}, "", url);
+
+  if (topic) {
+    updateSEO(topicId, topic.label);
+  }
+
+  resetQuizState();
+  updateActiveTopicPill();
+  renderLesson();
+  renderQuiz();
+}
+
 
     // ==========================================
     // PRO MODAL FUNCTIONS
@@ -2419,10 +2434,48 @@ function updateSEO(topicId,label){
       attachEvents();
       markLockedLevels(); // 🔒 apply lock styling
       setupProModal(); // Setup PRO modal
-      selectTopic(currentTopicId);
+      const params =
+  new URLSearchParams(window.location.search);
+
+const topicFromUrl =
+  params.get("topic");
+
+if (
+  topicFromUrl &&
+  NUMERICAL_TOPICS.some(
+    t => t.id === topicFromUrl
+  )
+) {
+  currentTopicId = topicFromUrl;
+}
+
+selectTopic(currentTopicId);
       switchMode("study");
     }
+window.addEventListener("popstate", () => {
 
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const topic =
+    params.get("topic");
+
+  if (
+    topic &&
+    topic !== currentTopicId &&
+    NUMERICAL_TOPICS.some(
+      t => t.id === topic
+    )
+  ) {
+
+    currentTopicId = topic;
+
+    resetQuizState();
+    updateActiveTopicPill();
+    renderLesson();
+    renderQuiz();
+  }
+});
     initNumericalPage();
   </script>
 </body>
