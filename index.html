@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>CSE Reviewer Hub | Master the Exam</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>CSE Reviewer Hub | Civil Service Exam Practice & Mock Test</title>
+  <meta name="description" content="Pass the Civil Service Exam with CSE Reviewer Hub. Access full 170-item mock exams, practice drills, and lessons for Verbal, Numerical, Analytical, and Clerical ability." />
+  <meta name="keywords" content="Civil Service Exam Reviewer, CSE Mock Exam, Philippine Civil Service Reviewer, Verbal Ability, Numerical Reasoning" />
+  <meta name="author" content="CSE Reviewer Hub" />
+
+  <!-- Open Graph / Facebook Meta Tags (Para maganda kapag shinare sa Social Media) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CSE Reviewer Hub | Master the Civil Service Exam" />
+  <meta property="og:description" content="Prepare effectively with our 170-item simulated mock exam and interactive subject drills." />
+  
   <style>
     * {
       margin: 0;
@@ -197,7 +208,7 @@
       margin-top: 12px;
     }
 
-    /* MODAL STYLES — premium & refined */
+    /* MODAL STYLES */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -407,74 +418,78 @@
 </head>
 <body>
 
-<div class="dashboard">
+<main class="dashboard">
   <div class="glass-panel">
     <div class="content">
-      <div class="badge-area">
+      
+      <!-- HEADER SECTION -->
+      <header class="badge-area">
         <div class="logo-badge">
-          <span class="icon-flame">📚⚡</span>
+          <span class="icon-flame" aria-hidden="true">📚⚡</span>
           <h1>CSE Reviewer Hub</h1>
         </div>
         <div id="licenseStatusBox" class="access-status">
           <span class="pill pill-free">⟳ loading</span>
         </div>
-      </div>
+      </header>
+
       <div class="tagline">
-        🧠 5 subjects • Full Mock Exam (170 items) • Smart practice
+        🧠 5 subjects &bull; Full Mock Exam (170 items) &bull; Smart practice
       </div>
 
-      <!-- main menu -->
-      <div class="subject-grid">
+      <!-- MAIN NAVIGATION GRID (SEO Friendly Links) -->
+      <nav class="subject-grid" aria-label="Main Reviewer Menu">
         <a href="verbal.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">📖</span> Verbal Ability</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">📖</span> Verbal Ability</span>
           <span class="arrow">→</span>
         </a>
         <a href="numerical.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🔢</span> Numerical Reasoning</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🔢</span> Numerical Reasoning</span>
           <span class="arrow">→</span>
         </a>
         <a href="analytical.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🧩</span> Analytical Ability</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🧩</span> Analytical Ability</span>
           <span class="arrow">→</span>
         </a>
         <a href="clerical.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">📑</span> Clerical Ability</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">📑</span> Clerical Ability</span>
           <span class="arrow">→</span>
         </a>
         <a href="general_info.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🇵🇭</span> General Information</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🇵🇭</span> General Information</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- PRACTICE MODE (locked by default) -->
-        <a href="#" id="practiceModeBtn" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🎯</span> Practice Mode (Quick Drills)</span>
+        <!-- PRACTICE MODE (Inilagay ang totoong link para sa SEO crawler) -->
+        <a href="practice.html" id="practiceModeBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🎯</span> Practice Mode (Quick Drills)</span>
           <span class="arrow">→</span>
         </a>
 
-        <!-- FULL MOCK EXAM -->
-        <a href="#" id="mockExamBtn" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🏆</span> Full Mock Exam (170 Items)</span>
+        <!-- FULL MOCK EXAM (Inilagay ang totoong link para sa SEO crawler) -->
+        <a href="mock_exam.html" id="mockExamBtn" class="subject-card">
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
         </a>
 
         <a href="license.html" class="subject-card">
-          <span class="subject-name"><span class="subject-icon">🔑</span> Activate PRO / License</span>
+          <span class="subject-name"><span class="subject-icon" aria-hidden="true">🔑</span> Activate PRO / License</span>
           <span class="arrow">→</span>
         </a>
-      </div>
-      <div class="footer-tip">
-        💡 Tip: Start with topics → Practice Mode → conquer the 170-item mock exam.
-      </div>
+      </nav>
+      
+      <footer class="footer-tip">
+        💡 Tip: Start with topics &rarr; Practice Mode &rarr; conquer the 170-item mock exam.
+      </footer>
     </div>
   </div>
-</div>
+</main>
 
-<!-- UNIVERSAL MODAL (for upgrade / trial) -->
+<!-- UNIVERSAL MODAL -->
 <div id="accessModal" class="modal-overlay" style="display: none;">
   <div class="modal-container">
     <div class="modal-header">
-      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <button class="modal-close" id="closeModalBtn" aria-label="Close Modal">&times;</button>
       <div class="modal-icon">⭐</div>
       <div class="modal-title" id="modalTitleText">Unlock Full Access</div>
       <div class="tabs" id="modalTabs">
@@ -490,13 +505,11 @@
 
 <script>
   (function(){
-    // ----------------------------- STORAGE KEYS (offline-first) -------------------------
-    const STORAGE_ACCESS_KIND = "cse_access_kind";   // "pro", "trial", "free"
-    const STORAGE_EXPIRES_AT = "cse_expires_at";     // ISO string for trial
-    const STORAGE_IS_PRO_LEGACY = "cse_is_pro";      // legacy compatibility
+    const STORAGE_ACCESS_KIND = "cse_access_kind";   
+    const STORAGE_EXPIRES_AT = "cse_expires_at";     
+    const STORAGE_IS_PRO_LEGACY = "cse_is_pro";      
     const STORAGE_LICENSE_KEY = "cse_license_key";
 
-    // Helper: format Manila time (just readable)
     function formatManila(dateISO) {
       if (!dateISO) return '';
       try {
@@ -511,7 +524,6 @@
       return Date.now() > expiryTime;
     }
 
-    // synchronize legacy flag
     function syncLegacy() {
       const legacyPro = localStorage.getItem(STORAGE_IS_PRO_LEGACY) === "true";
       const currentKind = localStorage.getItem(STORAGE_ACCESS_KIND);
@@ -520,19 +532,16 @@
         localStorage.removeItem(STORAGE_EXPIRES_AT);
       }
       if (!legacyPro && currentKind === "pro") {
-        // keep consistency
         localStorage.setItem(STORAGE_IS_PRO_LEGACY, "true");
       }
     }
 
-    // get current access state (purely offline)
     function getAccessState() {
       syncLegacy();
       let kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
       let expiry = localStorage.getItem(STORAGE_EXPIRES_AT) || null;
 
       if (kind === "trial" && expiry && isExpired(expiry)) {
-        // auto degrade to free
         localStorage.setItem(STORAGE_ACCESS_KIND, "free");
         localStorage.removeItem(STORAGE_EXPIRES_AT);
         localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
@@ -549,39 +558,33 @@
       }
     }
 
-    // update UI (status pill, labels)
     function updateUI() {
       const state = getAccessState();
       const statusDiv = document.getElementById("licenseStatusBox");
       const mockBtn = document.getElementById("mockExamBtn");
       const practiceBtn = document.getElementById("practiceModeBtn");
       
-      // update pill
       if (statusDiv) {
         if (state.kind === "pro") {
-          statusDiv.innerHTML = `<span class="pill pill-pro">✅ PRO · Lifetime</span>`;
+          statusDiv.innerHTML = `<span class="pill pill-pro">✅ PRO &middot; Lifetime</span>`;
         } else if (state.kind === "trial") {
           const expiryDate = state.expiry ? formatManila(state.expiry) : "";
-          statusDiv.innerHTML = `<span class="pill pill-trial">🎟️ TRIAL active · until ${expiryDate}</span>`;
+          statusDiv.innerHTML = `<span class="pill pill-trial">🎟️ TRIAL active &middot; until ${expiryDate}</span>`;
         } else {
-          statusDiv.innerHTML = `<span class="pill pill-free">🔓 FREE · Mock Exam locked</span>`;
+          statusDiv.innerHTML = `<span class="pill pill-free">🔓 FREE &middot; Mock Exam locked</span>`;
         }
       }
 
-      // update button labels visually (optional subtle badges)
       if (mockBtn) {
         const nameSpan = mockBtn.querySelector(".subject-name");
         if (nameSpan && state.isUnlocked) {
-          if (!nameSpan.querySelector(".badge-locked")) {
-            // remove any locked indicator
-            const oldBadge = nameSpan.querySelector(".badge-locked");
-            if(oldBadge) oldBadge.remove();
-            if(state.kind === 'pro') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; margin-left:6px;">UNLOCKED</span>`;
-            else if(state.kind === 'trial') nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#f59e0b20; padding:2px 8px; border-radius:30px; margin-left:6px;">TRIAL</span>`;
-          }
+          const oldBadge = nameSpan.querySelector(".badge-locked");
+          if(oldBadge) oldBadge.remove();
+          if(state.kind === 'pro') nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; margin-left:6px; color:#bef264;">UNLOCKED</span>`;
+          else if(state.kind === 'trial') nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#f59e0b20; padding:2px 8px; border-radius:30px; margin-left:6px; color:#fde68a;">TRIAL</span>`;
         } else if (nameSpan && !state.isUnlocked) {
           if (!nameSpan.querySelector(".badge-locked")) {
-            nameSpan.innerHTML = `<span class="subject-icon">🏆</span> Full Mock Exam (170 Items) <span class="badge-locked">🔒 LOCKED</span>`;
+            nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span class="badge-locked">🔒 LOCKED</span>`;
           }
         }
       }
@@ -589,21 +592,22 @@
       if (practiceBtn) {
         const nameSpan = practiceBtn.querySelector(".subject-name");
         if (nameSpan && state.isUnlocked) {
-          if (!nameSpan.querySelector(".badge-locked")) {
-            nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px;">ACCESSIBLE</span>`;
-          }
+          const oldBadge = nameSpan.querySelector(".badge-locked");
+          if(oldBadge) oldBadge.remove();
+          nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🎯</span> Practice Mode (Quick Drills) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; color:#bef264;">ACCESSIBLE</span>`;
         } else if (nameSpan && !state.isUnlocked) {
-          nameSpan.innerHTML = `<span class="subject-icon">🎯</span> Practice Mode (Quick Drills) <span class="badge-locked">🔒 LOCKED</span>`;
+          if (!nameSpan.querySelector(".badge-locked")) {
+            nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🎯</span> Practice Mode (Quick Drills) <span class="badge-locked">🔒 LOCKED</span>`;
+          }
         }
       }
     }
 
-    // ---------- MODAL LOGIC (upgrade / trial redirect) ----------
     const modal = document.getElementById("accessModal");
     const closeModalBtn = document.getElementById("closeModalBtn");
     const modalTitleText = document.getElementById("modalTitleText");
     const modalBodyContainer = document.getElementById("modalBodyContainer");
-    let activeReturnUrl = null;   // store which feature we want to unlock
+    let activeReturnUrl = null;   
 
     function closeModal() {
       if (modal) modal.style.display = "none";
@@ -619,7 +623,6 @@
 
     function renderModalContent(state) {
       if (!modalBodyContainer) return;
-      // determine active tab: default PRO
       const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab || "pro";
       
       if (activeTab === "pro") {
@@ -635,11 +638,10 @@
             </ul>
           </div>
           <a href="https://7329689874364.gumroad.com/l/cvpax" target="_blank" class="btn-glow">⭐ Get PRO Lifetime (One-Time)</a>
-          <div class="info-note">Secure payment · Instant license activation after purchase. Enter key on License page.</div>
-          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here →</a>
+          <div class="info-note">Secure payment &middot; Instant license activation after purchase. Enter key on License page.</div>
+          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here &rarr;</a>
         `;
       } else {
-        // TRIAL TAB
         modalTitleText.innerText = "🎟️ Activate Free Trial";
         modalBodyContainer.innerHTML = `
           <div class="features-box">
@@ -651,7 +653,6 @@
           <div class="info-note" style="margin-top:16px;">No trial key? <a href="license.html" style="color:#818cf8;">Purchase PRO or request trial</a></div>
         `;
 
-        // attach trial activation event dynamically
         setTimeout(() => {
           const trialBtn = document.getElementById("modalTrialActivateBtn");
           const trialInput = document.getElementById("trialKeyInputModal");
@@ -663,9 +664,6 @@
                 if(msgDiv) msgDiv.innerText = "Please enter a trial key.";
                 return;
               }
-              // SIMULATED trial validation (offline demo). In real implementation, server validates.
-              // For this reviewer hub: we simulate trial activation using predefined prefix + check.
-              // DEMO: any key starting with "CSE-TRIAL" will activate 7-day trial.
               if (rawKey.toUpperCase().startsWith("CSE-TRIAL")) {
                 const expiryDate = new Date();
                 expiryDate.setDate(expiryDate.getDate() + 7);
@@ -682,7 +680,6 @@
                   if (activeReturnUrl) {
                     window.location.href = activeReturnUrl;
                   } else {
-                    // just refresh UI
                     location.reload();
                   }
                 }, 800);
@@ -695,7 +692,6 @@
       }
     }
 
-    // Tab switching inside modal
     function bindTabSwitching() {
       const tabs = document.querySelectorAll(".tab-btn");
       tabs.forEach(tab => {
@@ -711,18 +707,15 @@
       });
     }
 
-    // Intercept clicks on practice & mock exam
     function handleProtectedRedirect(event, targetHref) {
-      event.preventDefault();
       const state = getAccessState();
-      if (state.isUnlocked) {
-        window.location.href = targetHref;
-      } else {
+      // Kung naka-lock, huwag muna ituloy ang default redirection ng <a> tag, ipakita ang modal
+      if (!state.isUnlocked) {
+        event.preventDefault();
         openModal(targetHref);
       }
     }
 
-    // ---- initial setup after DOM ----
     document.addEventListener("DOMContentLoaded", () => {
       syncLegacy();
       updateUI();
@@ -744,10 +737,8 @@
         if (e.target === modal) closeModal();
       });
 
-      // bind tabs each time modal opens? we'll rebind when modal content changes, but we bind once globally
       bindTabSwitching();
 
-      // Add event for refreshing page after license entry (optional)
       window.addEventListener("storage", (e) => {
         if (e.key === STORAGE_ACCESS_KIND || e.key === STORAGE_EXPIRES_AT) {
           updateUI();
