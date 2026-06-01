@@ -1,40 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://cse.tinylaunch.site/</loc>
-</url>
+  <!-- Main Pages -->
 
-<url>
-<loc>https://cse.tinylaunch.site/verbal.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/numerical.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/analytical.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/numerical.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/clerical.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/analytical.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/general_info.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/clerical.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/practice.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/general_info.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/mock_exam.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/practice.html</loc>
+  </url>
 
-<url>
-<loc>https://cse.tinylaunch.site/license.html</loc>
-</url>
+  <url>
+    <loc>https://cse.tinylaunch.site/mock_exam.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/license.html</loc>
+  </url>
+
+  <!-- Verbal Topics -->
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=nouns</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=gender</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=grammatical_number</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=verbs</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=tenses</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=pronouns</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=adjectives</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=adverbs</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=prepositions</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=conjunctions</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=interjections</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=articles</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=subject_verb_agreement</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=sentence_construction</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=sentence_structure</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=affixes</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=punctuation</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=words_often_confused</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=error_identification</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=synonyms</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=antonyms</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=analogy</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=paragraph_organization</loc>
+  </url>
+
+  <url>
+    <loc>https://cse.tinylaunch.site/verbal.html?topic=reading_comprehension</loc>
+  </url>
 
 </urlset>
