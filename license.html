@@ -272,9 +272,22 @@
       statusEl.className = "status info";
 
       // Intentional micro-delay for natural verification experience
-      await new Promise(r => setTimeout(r, 600));
+     await new Promise(r => setTimeout(r, 600));
 
-      const isValid = rawKey.startsWith("CSE-PRO");
+const { data, error } = await supabaseClient
+  .from("license_keys")
+  .select("key,is_used")
+  .eq("key", rawKey)
+  .maybeSingle();
+
+if (error) {
+  statusEl.textContent = "Unable to verify license. Please try again.";
+  statusEl.className = "status error";
+  btn.disabled = false;
+  return;
+}
+
+const isValid = data && !data.is_used;
 
       if (isValid) {
         try {
