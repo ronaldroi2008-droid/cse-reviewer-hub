@@ -6115,5 +6115,5 @@ function buildTOC() {
 </script>
 
 </body>
-</html>window.addEventListener('popstate',()=>{const p=new URLSearchParams(window.location.search);const topic=p.get('topic')||'nouns';if(topic!==currentTopicId){currentTopicId=topic;loadLesson(topic);}});
+</html>window.addEventListener('popstate',()=>{const p=new URLSearchParams(window.location.search);const topic=p.get('topic')||'nouns';if(topic!==currentTopicId){currentTopicId=topic;loadLesson(topic);updateSEO(topic);}});
 
