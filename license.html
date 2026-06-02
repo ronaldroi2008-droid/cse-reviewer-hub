@@ -252,6 +252,9 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+
   <script>
     async function activatePro(event) {
       event.preventDefault();
@@ -272,22 +275,22 @@
       statusEl.className = "status info";
 
       // Intentional micro-delay for natural verification experience
-     await new Promise(r => setTimeout(r, 600));
+      await new Promise(r => setTimeout(r, 600));
 
-const { data, error } = await supabaseClient
-  .from("license_keys")
-  .select("key,is_used")
-  .eq("key", rawKey)
-  .maybeSingle();
+      const { data, error } = await supabaseClient
+        .from("license_keys")
+        .select("key,is_used")
+        .eq("key", rawKey)
+        .maybeSingle();
 
-if (error) {
-  statusEl.textContent = "Unable to verify license. Please try again.";
-  statusEl.className = "status error";
-  btn.disabled = false;
-  return;
-}
+      if (error) {
+        statusEl.textContent = "Unable to verify license. Please try again.";
+        statusEl.className = "status error";
+        btn.disabled = false;
+        return;
+      }
 
-const isValid = data && !data.is_used;
+      const isValid = data && !data.is_used;
 
       if (isValid) {
         try {
@@ -307,7 +310,7 @@ const isValid = data && !data.is_used;
         }, 1200);
 
       } else {
-        statusEl.textContent = "❌ Verification failure. Key signatures must conform with prefix CSE-PRO-...";
+        statusEl.textContent = "❌ Invalid or already used license key.";
         statusEl.className = "status error";
         btn.disabled = false;
       }
@@ -330,5 +333,4 @@ const isValid = data && !data.is_used;
   </script>
 </body>
 </html>
-
 
