@@ -153,28 +153,7 @@
       color: var(--muted);
     }
 
-    .plan-chip {
-      border-radius: 999px;
-      padding: 3px 10px;
-      font-size: 0.78rem;
-      border: 1px solid var(--border);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .plan-chip.free {
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-    }
-
-    .plan-chip.pro {
-      background: var(--accent-soft);
-      border-color: rgba(129, 140, 248, 0.9);
-      color: #c7d2fe;
-    }
-
-    .plan-toggle-btn {
+    .action-btn {
       margin-top: 8px;
       border-radius: 999px;
       border: 1px solid var(--border);
@@ -189,7 +168,7 @@
       transition: all 0.15s ease;
     }
 
-    .plan-toggle-btn:hover {
+    .action-btn:hover {
       border-color: var(--accent);
       color: #e5e7eb;
     }
@@ -285,6 +264,22 @@
       font-size: 0.9rem;
       color: var(--muted);
       font-weight: 400;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #111827;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    #mock-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+      transition: width 0.3s ease;
     }
 
     .mock-note-empty {
@@ -386,7 +381,7 @@
           CSE Reviewer Hub · <span>Stats & Progress</span>
         </h1>
         <p class="page-subtitle">
-          See your practice history, mock exam performance, and manage your Free / Pro access.
+          Track your practice sessions, mock exam performance, and learning progress.
         </p>
       </div>
 
@@ -397,24 +392,20 @@
 
     <main class="card stats-card">
       <div class="stats-grid">
-        <!-- LEFT: Plan + Overall Practice -->
         <div class="stat-section">
           <div class="stat-header">
             <div>
-              <h2 class="stat-title">Account & Access</h2>
-              <p class="stat-subtitle">Current plan, and which features are unlocked.</p>
-            </div>
-            <div id="plan-chip" class="plan-chip free">
-              <span id="plan-chip-label">Free Plan</span>
+              <h2 class="stat-title">Reviewer Membership</h2>
+              <p class="stat-subtitle">Unlock advanced features and analytical dashboards.</p>
             </div>
           </div>
 
-          <button id="plan-toggle-btn" class="plan-toggle-btn">
-            🔁 Switch Plan (Dev Test)
-          </button>
+          <a href="license.html" class="action-btn">
+            ⭐ Upgrade to PRO
+          </a>
 
-          <p class="plan-note" id="plan-note-text">
-            Free Plan: Beginner & Intermediate levels unlocked. Advanced, Expert, and Full 170-item Mock Exam are Pro-only.
+          <p class="plan-note">
+            Gain full access to Advanced, Expert levels, detailed breakdown histories, and the complete 170-item simulated exam module.
           </p>
 
           <hr style="border:none;border-top:1px solid #111827;margin:10px 0 8px;" />
@@ -440,7 +431,6 @@
           </div>
         </div>
 
-        <!-- RIGHT: By Subject + Last Mock -->
         <div class="stat-section">
           <div class="stat-header">
             <div>
@@ -450,8 +440,18 @@
           </div>
 
           <ul class="subject-list" id="subject-stats-list">
-            <!-- Filled by JS -->
-          </ul>
+            </ul>
+
+          <div class="kpi-row" style="margin-top:12px;">
+            <div class="kpi-pill">
+              <span class="kpi-label">🏆 Strongest Subject</span>
+              <span class="kpi-value" id="best-subject">No data</span>
+            </div>
+            <div class="kpi-pill">
+              <span class="kpi-label">📈 Most Practiced</span>
+              <span class="kpi-value" id="most-practiced">No data</span>
+            </div>
+          </div>
 
           <hr style="border:none;border-top:1px solid #111827;margin:10px 0 8px;" />
 
@@ -466,6 +466,11 @@
             <div class="mock-score" id="mock-score-main">
               No mock exam taken yet.
             </div>
+            
+            <div class="progress-bar">
+              <div id="mock-progress-fill"></div>
+            </div>
+
             <div id="mock-score-extra"></div>
             <p class="mock-note-empty">
               Take a Full Mock Exam to see your performance summary here.
@@ -474,7 +479,16 @@
         </div>
       </div>
 
-      <!-- Recent sessions -->
+      <div class="recent-section" style="margin-bottom: 12px;">
+        <h2 class="recent-title">🎯 Recommended Next Step</h2>
+        <p class="recent-subtitle" id="recommendation-text">
+          Start drilling basic items or test setups to initialize insights.
+        </p>
+        <a id="recommendation-link" href="practice.html" class="action-btn" style="border-color: var(--accent); color: #e5e7eb;">
+          Begin Practice →
+        </a>
+      </div>
+
       <section class="recent-section">
         <div class="recent-header">
           <div>
@@ -499,8 +513,7 @@
                 </tr>
               </thead>
               <tbody id="recent-tbody">
-                <!-- Rows via JS -->
-              </tbody>
+                </tbody>
             </table>
           </div>
           <p class="empty-state" id="recent-empty">
@@ -514,9 +527,6 @@
       </section>
     </main>
   </div>
-
-  <!-- PLAN JS (shared) -->
-  <script src="plan.js"></script>
 
   <script>
     const PRACTICE_HISTORY_KEY = "CSE_PRACTICE_HISTORY";
@@ -615,55 +625,6 @@
       };
     }
 
-    function renderPlanUI() {
-      const plan = (window.CSE_PLAN && window.CSE_PLAN.get()) || "free";
-
-      const chip = document.getElementById("plan-chip");
-      const chipLabel = document.getElementById("plan-chip-label");
-      const note = document.getElementById("plan-note-text");
-      const toggleBtn = document.getElementById("plan-toggle-btn");
-
-      if (chip) {
-        chip.classList.remove("free", "pro");
-        chip.classList.add(plan === "pro" ? "pro" : "free");
-      }
-      if (chipLabel) {
-        chipLabel.textContent = plan === "pro" ? "Pro Plan" : "Free Plan";
-      }
-      if (note) {
-        if (plan === "pro") {
-          note.textContent =
-            "Pro Plan: Advanced & Expert levels unlocked for all subjects, plus Full 170-item Mock Exam.";
-        } else {
-          note.textContent =
-            "Free Plan: Beginner & Intermediate levels unlocked. Advanced, Expert, and Full 170-item Mock Exam are Pro-only.";
-        }
-      }
-      if (toggleBtn) {
-        toggleBtn.textContent =
-          plan === "pro"
-            ? "🔁 Switch to Free (Dev Test)"
-            : "🔁 Switch to Pro (Dev Test)";
-      }
-    }
-
-    function initPlanToggle() {
-      const toggleBtn = document.getElementById("plan-toggle-btn");
-      if (!toggleBtn) return;
-
-      toggleBtn.addEventListener("click", () => {
-        if (!window.CSE_PLAN) return;
-        const current = window.CSE_PLAN.get();
-        const next = current === "pro" ? "free" : "pro";
-        window.CSE_PLAN.set(next);
-        renderPlanUI();
-        alert(
-          "Plan switched to: " +
-            (next === "pro" ? "Pro (Advanced / Expert / Mock unlocked)" : "Free")
-        );
-      });
-    }
-
     function renderOverallKpis(agg) {
       const totalSessionsEl = document.getElementById("kpi-total-sessions");
       const totalItemsEl = document.getElementById("kpi-total-items");
@@ -688,17 +649,16 @@
           subtitleEl.textContent = "No practice sessions yet.";
         } else {
           subtitleEl.textContent =
-            "Based on " +
-            agg.totalSessions +
-            " session(s) and " +
-            agg.totalQuestions +
-            " question(s) attempted.";
+            "Based on " + agg.totalSessions + " session(s) and " + agg.totalQuestions + " question(s) attempted.";
         }
       }
     }
 
     function renderSubjectStats(subjectMap) {
       const listEl = document.getElementById("subject-stats-list");
+      const bestSubjectEl = document.getElementById("best-subject");
+      const mostPracticedEl = document.getElementById("most-practiced");
+      
       if (!listEl) return;
 
       const ids = Object.keys(subjectMap);
@@ -714,39 +674,55 @@
         return;
       }
 
+      let highestAvg = -1;
+      let bestSubjName = "No data";
+      let maxSessions = -1;
+      let mostPracticedName = "No data";
+
       ids.sort();
 
       ids.forEach(id => {
         const s = subjectMap[id];
         const avg = s.sessions ? Math.round(s.totalPercent / s.sessions) : 0;
+        
+        // Track Best Score Performance
+        if (avg > highestAvg) {
+          highestAvg = avg;
+          bestSubjName = getSubjectLabel(id);
+        }
+        
+        // Track High Activity Session
+        if (s.sessions > maxSessions) {
+          maxSessions = s.sessions;
+          mostPracticedName = getSubjectLabel(id);
+        }
+
         const li = document.createElement("li");
         li.className = "subject-item";
         li.innerHTML =
-          '<span class="subject-name">' +
-          getSubjectLabel(id) +
-          "</span>" +
-          '<span class="tag-pill">' +
-          avg +
-          "% · " +
-          s.sessions +
-          " session(s)</span>";
+          '<span class="subject-name">' + getSubjectLabel(id) + "</span>" +
+          '<span class="tag-pill">' + avg + "% · " + s.sessions + " session(s)</span>";
         listEl.appendChild(li);
       });
+
+      // Update KPI widgets
+      if (bestSubjectEl) bestSubjectEl.textContent = bestSubjName + " (" + highestAvg + "%)";
+      if (mostPracticedEl) mostPracticedEl.textContent = mostPracticedName;
     }
 
     function renderMockSummary(mock) {
       const mainEl = document.getElementById("mock-score-main");
       const extraEl = document.getElementById("mock-score-extra");
       const noteEl = document.querySelector(".mock-note-empty");
+      const fillEl = document.getElementById("mock-progress-fill");
 
       if (!mainEl || !extraEl) return;
 
       if (!mock) {
         mainEl.textContent = "No mock exam taken yet.";
         extraEl.textContent = "";
-        if (noteEl) {
-          noteEl.style.display = "block";
-        }
+        if (fillEl) fillEl.style.width = "0%";
+        if (noteEl) noteEl.style.display = "block";
         return;
       }
 
@@ -763,20 +739,15 @@
         dateStr = d.toLocaleString();
       }
 
-      mainEl.innerHTML =
-        correct +
-        " / " +
-        total +
-        ' <span>(' +
-        percent +
-        "%)</span>";
+      mainEl.innerHTML = correct + " / " + total + ' <span>(' + percent + "%)</span>";
+      
+      if (fillEl) {
+        setTimeout(() => {
+          fillEl.style.width = percent + "%";
+        }, 150);
+      }
 
-      let extraText =
-        "Answered " +
-        answered +
-        " item(s) · Time: " +
-        mins +
-        " min";
+      let extraText = "Answered " + answered + " item(s) · Time: " + mins + " min";
       if (byTimer) extraText += " · Finished by timer";
       if (dateStr) extraText += " · Taken: " + dateStr;
 
@@ -784,6 +755,40 @@
 
       if (noteEl) {
         noteEl.style.display = "none";
+      }
+    }
+
+    function generateSmartRecommendation(subjectMap) {
+      const recTextEl = document.getElementById("recommendation-text");
+      const recLinkEl = document.getElementById("recommendation-link");
+      if (!recTextEl || !recLinkEl) return;
+
+      const ids = Object.keys(subjectMap);
+      
+      if (!ids.length) {
+        recTextEl.textContent = "You don't have any practice data yet. We suggest starting with Verbal or Numerical reviews.";
+        recLinkEl.href = "practice.html";
+        recLinkEl.textContent = "Launch Practice Mode →";
+        return;
+      }
+
+      let weakestSubject = "";
+      let lowestAvg = 101;
+
+      ids.forEach(id => {
+        const s = subjectMap[id];
+        const avg = s.sessions ? Math.round(s.totalPercent / s.sessions) : 0;
+        if (avg < lowestAvg) {
+          lowestAvg = avg;
+          weakestSubject = id;
+        }
+      });
+
+      if (weakestSubject) {
+        const displayLabel = getSubjectLabel(weakestSubject);
+        recTextEl.textContent = `Your current performance bottleneck is ${displayLabel} with an average score of ${lowestAvg}%. Focus your attention here to improve.`;
+        recLinkEl.href = `${weakestSubject}.html`;
+        recLinkEl.textContent = `Review ${displayLabel} Core Topics →`;
       }
     }
 
@@ -799,7 +804,6 @@
         return;
       }
 
-      // sort newest first
       const sorted = history.slice().sort((a, b) => {
         const ta = a.timestamp || 0;
         const tb = b.timestamp || 0;
@@ -816,19 +820,11 @@
 
         const subj = getSubjectLabel(entry.subject || "unknown");
         const topic = makeTopicLabel(entry.topic || "all");
-        const level = (entry.level || "beginner")
-          .replace(/\b\w/g, ch => ch.toUpperCase());
+        const level = (entry.level || "beginner").replace(/\b\w/g, ch => ch.toUpperCase());
 
-        const percent =
-          typeof entry.percent === "number" ? entry.percent + "%" : "-";
-
-        const items =
-          (entry.correct ?? 0) +
-          " / " +
-          (entry.numQuestions ?? 0);
-
-        const time =
-          (entry.timeUsedMinutes ?? 0) + " min";
+        const percent = typeof entry.percent === "number" ? entry.percent + "%" : "-";
+        const items = (entry.correct ?? 0) + " / " + (entry.numQuestions ?? 0);
+        const time = (entry.timeUsedMinutes ?? 0) + " min";
 
         const timerTag = entry.finishedByTimer
           ? '<span class="recent-tag timer">Time up</span>'
@@ -851,15 +847,12 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Plan UI
-      renderPlanUI();
-      initPlanToggle();
-
-      // Stats
       const history = loadPracticeHistory();
       const agg = computePracticeAggregates(history);
+      
       renderOverallKpis(agg);
       renderSubjectStats(agg.subjectMap);
+      generateSmartRecommendation(agg.subjectMap);
 
       const mock = loadLastMockResult();
       renderMockSummary(mock);
@@ -868,4 +861,3 @@
   </script>
 </body>
 </html>
-
