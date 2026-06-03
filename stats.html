@@ -436,6 +436,10 @@
               <span class="kpi-value" id="best-subject">No data</span>
             </div>
             <div class="kpi-pill">
+              <span class="kpi-label">📉 Weakest Subject</span>
+              <span class="kpi-value" id="weakest-subject">No data</span>
+            </div>
+            <div class="kpi-pill">
               <span class="kpi-label">📈 Most Practiced</span>
               <span class="kpi-value" id="most-practiced">No data</span>
             </div>
@@ -463,12 +467,12 @@
 
             <div class="kpi-row" style="margin-top:12px;">
               <div class="kpi-pill">
-                <span class="kpi-label">⏱ Average Time</span>
-                <span class="kpi-value" id="avg-time">0 min</span>
+                <span class="kpi-label">🏅 Best Mock Score</span>
+                <span class="kpi-value" id="best-mock-score">0%</span>
               </div>
               <div class="kpi-pill">
-                <span class="kpi-label">📈 Improvement Trend</span>
-                <span class="kpi-value" id="improvement">No Data</span>
+                <span class="kpi-label">📝 Mock Exams Taken</span>
+                <span class="kpi-value" id="mock-count">0</span>
               </div>
             </div>
 
@@ -682,10 +686,12 @@
       }
     }
 
+    // Fixed Section 2: Update renderSubjectStats() tracking variables & logic
     function renderSubjectStats(subjectMap) {
       const listEl = document.getElementById("subject-stats-list");
       const bestSubjectEl = document.getElementById("best-subject");
       const mostPracticedEl = document.getElementById("most-practiced");
+      const weakestSubjectEl = document.getElementById("weakest-subject");
       
       if (!listEl) return;
 
@@ -703,7 +709,11 @@
       }
 
       let highestAvg = -1;
+      let lowestAvg = 101;
+
       let bestSubjName = "No data";
+      let weakestSubjName = "No data";
+
       let maxSessions = -1;
       let mostPracticedName = "No data";
 
@@ -716,6 +726,11 @@
         if (avg > highestAvg) {
           highestAvg = avg;
           bestSubjName = getSubjectLabel(id);
+        }
+
+        if (avg < lowestAvg) {
+          lowestAvg = avg;
+          weakestSubjName = getSubjectLabel(id);
         }
         
         if (s.sessions > maxSessions) {
@@ -732,7 +747,28 @@
       });
 
       if (bestSubjectEl) bestSubjectEl.textContent = bestSubjName + " (" + highestAvg + "%)";
+      if (weakestSubjectEl) weakestSubjectEl.textContent = weakestSubjName + " (" + lowestAvg + "%)";
       if (mostPracticedEl) mostPracticedEl.textContent = mostPracticedName;
+    }
+
+    // Fixed Section 4: Add Mock Analytics Function
+    function renderMockAnalytics(mock) {
+      const bestMockEl = document.getElementById("best-mock-score");
+      const mockCountEl = document.getElementById("mock-count");
+
+      if (!mock) {
+        if (bestMockEl) bestMockEl.textContent = "0%";
+        if (mockCountEl) mockCountEl.textContent = "0";
+        return;
+      }
+
+      if (bestMockEl) {
+        bestMockEl.textContent = (mock.percent || 0) + "%";
+      }
+
+      if (mockCountEl) {
+        mockCountEl.textContent = "1";
+      }
     }
 
     function renderMockSummary(mock, history) {
@@ -740,41 +776,6 @@
       const extraEl = document.getElementById("mock-score-extra");
       const noteEl = document.querySelector(".mock-note-empty");
       const fillEl = document.getElementById("mock-progress-fill");
-      const avgTimeEl = document.getElementById("avg-time");
-      const improvementEl = document.getElementById("improvement");
-
-      if (history && history.length) {
-        let totalMin = history.reduce((sum, s) => sum + (s.timeUsedMinutes || 0), 0);
-        let avgMins = Math.round(totalMin / history.length);
-        if (avgTimeEl) avgTimeEl.textContent = avgMins + " min";
-      } else {
-        if (avgTimeEl) avgTimeEl.textContent = "0 min";
-      }
-
-      if (history && history.length >= 2) {
-        const sorted = history.slice().sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-        const last = sorted[sorted.length - 1].percent || 0;
-        const prev = sorted[sorted.length - 2].percent || 0;
-        const diff = last - prev;
-
-        if (improvementEl) {
-          if (diff > 0) {
-            improvementEl.textContent = `+${diff}% 📈`;
-            improvementEl.style.color = "var(--success)";
-          } else if (diff < 0) {
-            improvementEl.textContent = `${diff}% 📉`;
-            improvementEl.style.color = "var(--danger)";
-          } else {
-            improvementEl.textContent = "Stable ➡️";
-            improvementEl.style.color = "var(--muted)";
-          }
-        }
-      } else {
-        if (improvementEl) {
-          improvementEl.textContent = history.length === 1 ? "Baseline Set" : "No Data";
-          improvementEl.style.color = "var(--muted)";
-        }
-      }
 
       if (!mainEl || !extraEl) return;
 
@@ -935,7 +936,9 @@
         }
       }
 
+      // Fixed Section 5: Load Last Mock Result & Trigger Mock Analytics
       const mock = loadLastMockResult();
+      renderMockAnalytics(mock);
       renderMockSummary(mock, history);
       renderRecentSessions(history);
     });
