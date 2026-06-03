@@ -153,26 +153,6 @@
       color: var(--muted);
     }
 
-    .action-btn {
-      margin-top: 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 6px 14px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease;
-    }
-
-    .action-btn:hover {
-      border-color: var(--accent);
-      color: #e5e7eb;
-    }
-
     .kpi-row {
       display: flex;
       flex-wrap: wrap;
@@ -188,6 +168,10 @@
       background: #020617;
       padding: 8px 10px;
       font-size: 0.8rem;
+    }
+
+    .kpi-pill.full-width {
+      flex: 1 1 100%;
     }
 
     .kpi-label {
@@ -208,6 +192,10 @@
 
     .kpi-value.bad {
       color: var(--danger);
+    }
+
+    #motivation-message {
+      color: #fbbf24;
     }
 
     .subject-list {
@@ -421,6 +409,15 @@
               <span class="kpi-value" id="best-score">0%</span>
             </div>
           </div>
+
+          <div class="kpi-row" style="margin-top:12px;">
+            <div class="kpi-pill full-width">
+              <span class="kpi-label">⭐ Motivation</span>
+              <span class="kpi-value" id="motivation-message">
+                Start practicing to build your performance profile.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div class="stat-section">
@@ -583,7 +580,6 @@
           totalAnswered: 0,
           avgPercent: 0,
           bestScore: 0,
-          streak: 0,
           subjectMap: {}
         };
       }
@@ -595,7 +591,6 @@
       let bestScore = 0;
 
       const subjectMap = {};
-      const uniqueDates = new Set();
 
       history.forEach(entry => {
         const subj = entry.subject || "unknown";
@@ -607,11 +602,8 @@
         totalAnswered += ans;
         sumPercent += percent;
 
-        if (percent > bestScore) bestScore = percent;
-
-        if (entry.timestamp) {
-          const d = new Date(entry.timestamp);
-          uniqueDates.add(d.toDateString());
+        if (percent > bestScore) {
+          bestScore = percent;
         }
 
         if (!subjectMap[subj]) {
@@ -628,7 +620,6 @@
       });
 
       const avgPercent = totalSessions ? Math.round(sumPercent / totalSessions) : 0;
-      const streak = calculateStreak(uniqueDates);
 
       return {
         totalSessions,
@@ -636,49 +627,37 @@
         totalAnswered,
         avgPercent,
         bestScore,
-        streak,
         subjectMap
       };
     }
 
-    function calculateStreak(uniqueDatesSet) {
-      if (uniqueDatesSet.size === 0) return 0;
-      
-      const sortedDates = Array.from(uniqueDatesSet).map(d => new Date(d));
-      sortedDates.sort((a, b) => b - a); // Bagong petsa muna
+    function calculateStreak(history) {
+      if (!history.length) return 0;
 
-      let streak = 0;
-      let today = new Date();
-      today.setHours(0,0,0,0);
-      
-      let checkDate = new Date(sortedDates[0]);
-      checkDate.setHours(0,0,0,0);
+      const dates = [...new Set(
+        history.map(x =>
+          new Date(x.timestamp)
+            .toISOString()
+            .split("T")[0]
+        )
+      )];
 
-      // Kung ang huling session ay hindi ngayon o kahapon, putol ang streak
-      const diffTime = Math.abs(today - checkDate);
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      
-      if (diffDays > 1) return 0;
+      dates.sort().reverse();
 
-      for (let i = 0; i < sortedDates.length; i++) {
-        const current = new Date(sortedDates[i]);
-        current.setHours(0,0,0,0);
-        
-        if (i === 0) {
-          streak = 1;
-          continue;
-        }
+      let streak = 1;
 
-        const prev = new Date(sortedDates[i - 1]);
-        prev.setHours(0,0,0,0);
-
+      for (let i = 1; i < dates.length; i++) {
+        const prev = new Date(dates[i - 1]);
+        const current = new Date(dates[i]);
         const diff = (prev - current) / (1000 * 60 * 60 * 24);
+
         if (diff === 1) {
           streak++;
-        } else if (diff > 1) {
-          break; // Putol ang pagkakasunod-sunod
+        } else {
+          break;
         }
       }
+
       return streak;
     }
 
@@ -686,12 +665,10 @@
       const totalSessionsEl = document.getElementById("kpi-total-sessions");
       const totalItemsEl = document.getElementById("kpi-total-items");
       const avgScoreEl = document.getElementById("kpi-avg-score");
-      const streakEl = document.getElementById("study-streak");
       const bestScoreEl = document.getElementById("best-score");
 
       if (totalSessionsEl) totalSessionsEl.textContent = agg.totalSessions;
       if (totalItemsEl) totalItemsEl.textContent = agg.totalQuestions;
-      if (streakEl) streakEl.textContent = agg.streak + " Day" + (agg.streak !== 1 ? "s" : "");
       if (bestScoreEl) bestScoreEl.textContent = agg.bestScore + "%";
 
       if (avgScoreEl) {
@@ -766,7 +743,6 @@
       const avgTimeEl = document.getElementById("avg-time");
       const improvementEl = document.getElementById("improvement");
 
-      // I-compute ang Average Time ng normal practice sessions kung mayroon
       if (history && history.length) {
         let totalMin = history.reduce((sum, s) => sum + (s.timeUsedMinutes || 0), 0);
         let avgMins = Math.round(totalMin / history.length);
@@ -775,9 +751,8 @@
         if (avgTimeEl) avgTimeEl.textContent = "0 min";
       }
 
-      // I-calculate ang Improvement Trend base sa huling dalawang sessions
       if (history && history.length >= 2) {
-        const sorted = history.slice().sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0)); // Oldest to Newest
+        const sorted = history.slice().sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
         const last = sorted[sorted.length - 1].percent || 0;
         const prev = sorted[sorted.length - 2].percent || 0;
         const diff = last - prev;
@@ -938,6 +913,27 @@
       renderOverallKpis(agg);
       renderSubjectStats(agg.subjectMap);
       generateSmartRecommendation(agg.subjectMap);
+
+      // Render Study Streak Component
+      const streak = calculateStreak(history);
+      const streakEl = document.getElementById("study-streak");
+      if (streakEl) {
+        streakEl.textContent = streak + " Day" + (streak !== 1 ? "s" : "");
+      }
+
+      // Render Dynamic Motivation Message
+      const motivation = document.getElementById("motivation-message");
+      if (motivation) {
+        if (agg.avgPercent >= 80) {
+          motivation.textContent = "Excellent work! You're exam ready.";
+        } else if (agg.avgPercent >= 60) {
+          motivation.textContent = "Good progress. Keep practicing.";
+        } else if (agg.avgPercent > 0) {
+          motivation.textContent = "Keep going. Focus on weak areas.";
+        } else {
+          motivation.textContent = "Start practicing to build your performance profile.";
+        }
+      }
 
       const mock = loadLastMockResult();
       renderMockSummary(mock, history);
