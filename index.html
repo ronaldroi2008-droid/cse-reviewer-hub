@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="NmbVYHlPt9cSpaaXwaBexeHEdzAgjUy7210Jmh-ijjY" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   
@@ -133,12 +132,6 @@
       color: #cbd5e1;
     }
 
-    .expiry-text {
-      font-size: 0.7rem;
-      color: #94a3b8;
-      margin-left: 4px;
-    }
-
     .subject-grid {
       display: flex;
       flex-direction: column;
@@ -197,6 +190,36 @@
       color: #94a3b8;
       margin-left: 10px;
       font-weight: normal;
+    }
+
+    /* Guide Section Styles */
+    .guide-card {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid rgba(71, 85, 105, 0.3);
+      border-radius: 1.2rem;
+      padding: 1.25rem;
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    .guide-card h3 a {
+      color: #818cf8;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .guide-card h3 a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    .guide-card p {
+      font-size: 0.9rem !important;
+      color: #94a3b8 !important;
+      margin-top: 6px;
+      margin-bottom: 0 !important;
     }
 
     .footer-tip {
@@ -389,21 +412,6 @@
       border-color: #818cf8;
     }
 
-    .trial-input {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 60px;
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: #f1f5f9;
-      outline: none;
-      font-size: 0.9rem;
-    }
-
-    .trial-input:focus {
-      border-color: #6366f1;
-    }
-
     .info-note {
       font-size: 0.9rem;
       color: #cbd5e1;
@@ -510,13 +518,18 @@
           Each reviewer section contains carefully prepared practice questions and explanations to help learners understand concepts, improve test-taking skills, and build confidence before the examination.
         </p>
 
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Realistic Civil Service Exam Mock Test
-        </h2>
-
-        <p style="margin-bottom:20px;">
-          Evaluate your readiness through a full-length mock examination that simulates the actual Civil Service Exam experience. Practice under realistic conditions and identify areas that need further improvement.
-        </p>
+        <!-- INSERTED GUIDES SECTION -->
+        <h2 style="margin-bottom:15px;color:#f8fafc;">Civil Service Exam Guides</h2>
+        <div class="guide-card">
+          <h3>
+            <a href="civil-service-exam-coverage.html">
+              Civil Service Exam Coverage 2026: Complete Guide for Filipino Examinees
+            </a>
+          </h3>
+          <p>
+            Learn the complete coverage of the Civil Service Exam including Verbal Ability, Numerical Ability, Analytical Ability, Clerical Ability, and General Information.
+          </p>
+        </div>
 
         <h2 style="margin-bottom:15px;color:#f8fafc;">
           Why Use CSE Reviewer Hub?
@@ -529,6 +542,14 @@
           <li>Mobile-friendly learning platform</li>
           <li>Regularly updated reviewer content</li>
         </ul>
+
+        <h2 style="margin-bottom:15px;color:#f8fafc;">
+          Realistic Civil Service Exam Mock Test
+        </h2>
+
+        <p style="margin-bottom:20px;">
+          Evaluate your readiness through a full-length mock examination that simulates the actual Civil Service Exam experience. Practice under realistic conditions and identify areas that need further improvement.
+        </p>
 
         <h2 style="margin-bottom:15px;color:#f8fafc;">
           Prepare for Success
