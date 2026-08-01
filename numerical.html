@@ -923,12 +923,20 @@ function updateSEO(topicId,label){
   <script src="questions/numerical_algebra_linear.js"></script>
   <script src="questions/numerical_odd_even_consecutive.js"></script>
 
+  <!-- MEMBERSHIP / PRO ACCESS SYSTEM (same source of truth as verbal.html) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="membership.js"></script>
+
   <script>
     // ==========================================
     // 0. PRO CONFIG
     // ==========================================
-    const IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
-    const LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
+    // Fast synchronous fallback (localStorage) so the UI has an initial
+    // state before the Supabase check below finishes. This gets refreshed
+    // for real once loadMembership() resolves in initNumericalPage().
+    let IS_PRO_USER = localStorage.getItem("cse_is_pro") === "true";
+    let LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
     const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
     // ==========================================
@@ -2429,7 +2437,30 @@ function selectTopic(topicId) {
       }
     }
 
-    function initNumericalPage() {
+    async function initNumericalPage() {
+      // Refresh PRO status from Supabase (source of truth), with a graceful
+      // fallback to the localStorage flag / Free Plan if membership.js or
+      // Supabase isn't available for any reason (missing file, network, etc.)
+      try {
+        if (typeof loadMembership === "function") {
+          await loadMembership();
+        } else {
+          console.warn("loadMembership() is not defined — membership.js may not have loaded. Using localStorage fallback.");
+        }
+        if (typeof isProUser === "function") {
+          IS_PRO_USER = isProUser();
+        }
+      } catch (err) {
+        console.error("Membership check failed, using localStorage fallback:", err);
+      }
+
+      // Keep localStorage in sync so other pages that only read the flag stay correct
+      try {
+        localStorage.setItem("cse_is_pro", IS_PRO_USER ? "true" : "false");
+      } catch (e) {}
+
+      LOCKED_LEVELS = IS_PRO_USER ? [] : ["advanced", "expert"];
+
       buildTopicsList();
       attachEvents();
       markLockedLevels(); // 🔒 apply lock styling
