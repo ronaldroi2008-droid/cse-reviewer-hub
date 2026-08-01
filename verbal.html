@@ -1023,6 +1023,11 @@ html {
   <script src="questions/questions_grammatical_number.js"></script>
   <script src="questions/error_identification.js"></script>
 
+  <!-- MEMBERSHIP / PRO ACCESS SYSTEM -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-init.js"></script>
+  <script src="membership.js"></script>
+
 <script>
 // ==========================================
 // 0. PRO CONFIG
@@ -6041,9 +6046,16 @@ function setupProModal() {
   if (refreshLink) {
     refreshLink.addEventListener("click", async (e) => {
       e.preventDefault();
-      await loadMembership();
-      IS_PRO_USER = isProUser();
-      
+      try {
+        if (typeof loadMembership === "function") {
+          await loadMembership();
+        }
+        IS_PRO_USER = typeof isProUser === "function" ? isProUser() : false;
+      } catch (err) {
+        console.error("Membership recheck failed:", err);
+        IS_PRO_USER = false;
+      }
+
       if (IS_PRO_USER) {
         LOCKED_LEVELS = [];
         markLockedLevels();
@@ -6060,8 +6072,21 @@ function setupProModal() {
 // ==========================================
 async function initVerbalPage() {
   // Kunin ang membership gamit ang membership.js
-  await loadMembership();
-  IS_PRO_USER = isProUser();
+  // NOTE: defensive wrapper - kung hindi na-load ang membership.js (missing file,
+  // 404, blocked domain, Supabase error, atbp.), hindi na dapat mag-crash ang
+  // buong page. Mag-de-default lang tayo sa Free Plan at ituloy ang pag-render
+  // ng topics/lessons.
+  try {
+    if (typeof loadMembership === "function") {
+      await loadMembership();
+    } else {
+      console.warn("loadMembership() is not defined — membership.js may not have loaded. Defaulting to Free Plan.");
+    }
+    IS_PRO_USER = typeof isProUser === "function" ? isProUser() : false;
+  } catch (err) {
+    console.error("Membership check failed, defaulting to Free Plan:", err);
+    IS_PRO_USER = false;
+  }
 
   // If PRO, remove locked levels
   if (IS_PRO_USER) {
@@ -6144,3 +6169,6 @@ function buildTOC() {
     });
   };
 })();
+</script>
+</body>
+</html>
