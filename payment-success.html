@@ -1,85 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Received - CSE Reviewer Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  font-family:Arial,sans-serif;
-  background:#0f172a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  padding:20px;
-}
+    <title>Payment Successful | CSE Reviewer Hub</title>
 
-.card{
-  max-width:600px;
-  background:#1e293b;
-  padding:30px;
-  border-radius:15px;
-  text-align:center;
-}
+    <meta name="description"
+        content="Your PRO Membership has been successfully activated.">
 
-h1{
-  color:#22c55e;
-}
+    <style>
 
-.box{
-  background:#0f172a;
-  padding:15px;
-  border-radius:10px;
-  margin:15px 0;
-}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  background:#4f46e5;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
-}
-</style>
+        body{
+
+            font-family:Inter,Arial,sans-serif;
+
+            background:
+            radial-gradient(circle at top,#1e3a8a,#020617);
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            min-height:100vh;
+
+            padding:20px;
+
+            color:#fff;
+
+        }
+
+        .card{
+
+            max-width:600px;
+
+            width:100%;
+
+            background:rgba(15,23,42,.75);
+
+            backdrop-filter:blur(12px);
+
+            border-radius:24px;
+
+            padding:45px;
+
+            text-align:center;
+
+            border:1px solid rgba(255,255,255,.08);
+
+            box-shadow:0 30px 50px rgba(0,0,0,.45);
+
+        }
+
+        .success{
+
+            font-size:70px;
+
+            margin-bottom:20px;
+
+        }
+
+        h1{
+
+            font-size:2.2rem;
+
+            margin-bottom:15px;
+
+            font-weight:800;
+
+        }
+
+        .subtitle{
+
+            font-size:1rem;
+
+            color:#cbd5e1;
+
+            line-height:1.8;
+
+            margin-bottom:30px;
+
+        }
+
+        .box{
+
+            background:#0f172a;
+
+            border:1px solid #334155;
+
+            border-radius:18px;
+
+            padding:25px;
+
+            text-align:left;
+
+            margin-bottom:35px;
+
+        }
+
+        .box h2{
+
+            font-size:1.1rem;
+
+            margin-bottom:15px;
+
+        }
+
+        .box ul{
+
+            list-style:none;
+
+        }
+
+        .box li{
+
+            padding:10px 0;
+
+            border-bottom:1px solid #1e293b;
+
+        }
+
+        .box li:last-child{
+
+            border-bottom:none;
+
+        }
+
+        .btn{
+
+            display:inline-block;
+
+            width:100%;
+
+            padding:18px;
+
+            border-radius:999px;
+
+            text-decoration:none;
+
+            background:linear-gradient(135deg,#4f46e5,#7c3aed);
+
+            color:white;
+
+            font-weight:700;
+
+            font-size:1rem;
+
+            transition:.2s;
+
+        }
+
+        .btn:hover{
+
+            transform:translateY(-2px);
+
+        }
+
+        .footer{
+
+            margin-top:25px;
+
+            font-size:.9rem;
+
+            color:#94a3b8;
+
+            line-height:1.8;
+
+        }
+
+        .badge{
+
+            display:inline-block;
+
+            padding:7px 16px;
+
+            border-radius:999px;
+
+            background:#14532d;
+
+            color:#86efac;
+
+            font-weight:700;
+
+            margin-bottom:20px;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
 <div class="card">
 
-<h1>✅ Payment Received</h1>
+<div class="success">🎉</div>
 
-<p>
-Thank you for purchasing CSE Reviewer Hub PRO.
+<div class="badge">
+⭐ PRO Membership Activated
+</div>
+
+<h1>Payment Successful!</h1>
+
+<p class="subtitle">
+
+Thank you for upgrading to
+<strong>CSE Reviewer Hub PRO.</strong>
+
+<br><br>
+
+Your membership has been activated automatically.
+
 </p>
 
 <div class="box">
-<b>Please send the following:</b><br><br>
 
-1. Payment Screenshot<br>
-2. Payment Reference Number
+<h2>You now have access to:</h2>
+
+<ul>
+
+<li>✅ Full 170-Item Mock Exam</li>
+
+<li>✅ Unlimited Practice Mode</li>
+
+<li>✅ Unlimited Review Sessions</li>
+
+<li>✅ Detailed Answer Explanations</li>
+
+<li>✅ Future Premium Features</li>
+
+<li>✅ Lifetime Updates</li>
+
+</ul>
+
 </div>
-
-<p>
-Email:
-<br>
-<b>cse.reviewer.hub@gmail.com</b>
-</p>
-
-<p>
-PRO activation is usually processed within a few hours.
-</p>
 
 <a href="index.html" class="btn">
-Back to Home
+
+🚀 Go to Dashboard
+
 </a>
 
+<div class="footer">
+
+Thank you for supporting CSE Reviewer Hub.
+
+<br><br>
+
+Redirecting to your dashboard in
+<strong><span id="count">5</span></strong>
+seconds...
+
 </div>
+
+</div>
+
+<script>
+
+let seconds = 5;
+
+const timer = setInterval(() => {
+
+    seconds--;
+
+    document.getElementById("count").textContent = seconds;
+
+    if(seconds <= 0){
+
+        clearInterval(timer);
+
+        window.location.href = "index.html";
+
+    }
+
+},1000);
+
+</script>
 
 </body>
 </html>
