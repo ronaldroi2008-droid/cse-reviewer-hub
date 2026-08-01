@@ -131,7 +131,7 @@
       color: #cbd5e1;
     }
 
-    /* ===== NEW: User Session Info Styles ===== */
+    /* ===== User Session Info Styles ===== */
     .user-session-info {
       display: none;
       margin: 16px 0 20px;
@@ -241,7 +241,7 @@
       gap: 8px;
     }
 
-    /* ===== NEW: Upgrade Banner ===== */
+    /* ===== Upgrade Banner ===== */
     .upgrade-banner {
       display: none;
       margin: 16px 0;
@@ -297,8 +297,6 @@
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
-
-    /* ===== END NEW STYLES ===== */
 
     .subject-grid {
       display: flex;
@@ -622,7 +620,7 @@
         🧠 5 subjects &bull; Full Mock Exam (170 items) &bull; Smart practice
       </div>
 
-      <!-- ===== NEW: USER SESSION INFO ===== -->
+      <!-- ===== USER SESSION INFO ===== -->
       <div id="userSessionInfo" class="user-session-info">
         <div class="session-row">
           <div>
@@ -633,7 +631,7 @@
         </div>
       </div>
 
-      <!-- ===== NEW: UPGRADE BANNER ===== -->
+      <!-- ===== UPGRADE BANNER ===== -->
       <div id="upgradeBanner" class="upgrade-banner">
         <div class="upgrade-row">
           <div class="upgrade-text">
@@ -862,16 +860,22 @@
       // --- Show logged-in UI ---
       userSessionInfo.style.display = 'block';
       
-      // Set user name
-      const email = currentProfile.email || 'User';
-      userName.textContent = email.split('@')[0];
+      // Set user name - use full_name if available
+      const displayName = currentProfile.full_name || currentProfile.email || 'User';
+      userName.textContent = displayName.split('@')[0];
 
       // Get membership status
       const status = getProStatus();
 
-      // Update membership badge
+      // Update membership badge - FIXED FOR LIFETIME PRO
       if (status.isPro) {
-        membershipBadge.textContent = `🟢 PRO (${status.daysRemaining}d left)`;
+        if (status.isLifetime) {
+          membershipBadge.textContent = '🟢 PRO (Lifetime)';
+        } else if (status.daysRemaining > 0) {
+          membershipBadge.textContent = `🟢 PRO (${status.daysRemaining}d left)`;
+        } else {
+          membershipBadge.textContent = '🟢 PRO';
+        }
         membershipBadge.className = 'membership-badge pro';
         upgradeBanner.style.display = 'none';
       } else {

@@ -295,7 +295,7 @@ async function logoutUser() {
         
         console.log("✅ User logged out successfully");
         
-        // Mag-redirect sa index page (homepage)
+        // Mag-redirect sa index (homepage)
         window.location.href = "index.html";
         
     } catch (error) {
@@ -444,14 +444,12 @@ async function upgradeToPro(paymentMethod = "stripe") {
         console.log("💳 Processing payment via", paymentMethod);
         
         // Pagkatapos ng successful payment:
-        const expiryDate = new Date();
-        expiryDate.setFullYear(expiryDate.getFullYear() + 1); // 1 year validity
-        
+        // For LIFETIME PRO, set pro_expiry to NULL
         const { error } = await supabaseClient
             .from("profiles")
             .update({ 
                 is_pro: true,
-                pro_expiry: expiryDate.toISOString()
+                pro_expiry: null  // NULL means lifetime
             })
             .eq("id", session.user.id);
         
@@ -461,13 +459,12 @@ async function upgradeToPro(paymentMethod = "stripe") {
             return;
         }
         
-        console.log("✅ User upgraded to PRO successfully");
-        console.log("📅 PRO expiry:", expiryDate);
+        console.log("✅ User upgraded to PRO successfully (Lifetime)");
         
         // I-reload ang membership
         await loadMembership();
         
-        alert("🎉 Welcome to PRO! Your account has been upgraded successfully.");
+        alert("🎉 Welcome to PRO Lifetime! Your account has been upgraded successfully.");
         
     } catch (error) {
         console.error("❌ Upgrade error:", error);
@@ -483,6 +480,12 @@ async function checkProExpiry() {
     try {
         if (!currentProfile || !currentProfile.is_pro) {
             console.log("📝 Not a PRO user - expiry check skipped");
+            return;
+        }
+        
+        // Skip expiry check for lifetime PRO (no expiry date)
+        if (!currentProfile.pro_expiry) {
+            console.log("👑 Lifetime PRO - expiry check skipped");
             return;
         }
         
@@ -539,7 +542,7 @@ async function checkProExpiry() {
 }
 
 // ==========================================
-// GET PRO STATUS FUNCTION
+// GET PRO STATUS FUNCTION (UPDATED FOR LIFETIME)
 // ==========================================
 
 function getProStatus() {
@@ -547,24 +550,39 @@ function getProStatus() {
         return {
             isPro: false,
             status: "Not logged in",
-            daysRemaining: 0
+            daysRemaining: 0,
+            isLifetime: false
         };
     }
     
     const isPro = currentProfile.is_pro === true;
-    let status = isPro ? "Active" : "Free";
+    
+    // Check if lifetime PRO (walang pro_expiry o pro_expiry ay null)
+    const isLifetime = isPro && (!currentProfile.pro_expiry || currentProfile.pro_expiry === null);
+    
+    let status = "Free";
     let daysRemaining = 0;
     
-    if (isPro && currentProfile.pro_expiry) {
-        const expiryDate = new Date(currentProfile.pro_expiry);
-        const now = new Date();
-        daysRemaining = Math.ceil((expiryDate - now) / (1000 * 60 * 60 * 24));
-        
-        if (daysRemaining <= 0) {
-            status = "Expired";
-            daysRemaining = 0;
-        } else if (daysRemaining <= 7) {
-            status = "Expiring Soon";
+    if (isPro) {
+        if (isLifetime) {
+            status = "Lifetime";
+            daysRemaining = -1; // -1 means lifetime
+        } else if (currentProfile.pro_expiry) {
+            const expiryDate = new Date(currentProfile.pro_expiry);
+            const now = new Date();
+            daysRemaining = Math.ceil((expiryDate - now) / (1000 * 60 * 60 * 24));
+            
+            if (daysRemaining <= 0) {
+                status = "Expired";
+                daysRemaining = 0;
+            } else if (daysRemaining <= 7) {
+                status = "Expiring Soon";
+            } else {
+                status = "Active";
+            }
+        } else {
+            status = "Lifetime";
+            daysRemaining = -1;
         }
     }
     
@@ -572,7 +590,8 @@ function getProStatus() {
         isPro: isPro,
         status: status,
         daysRemaining: daysRemaining,
-        expiryDate: currentProfile.pro_expiry
+        expiryDate: currentProfile.pro_expiry,
+        isLifetime: isLifetime
     };
 }
 
