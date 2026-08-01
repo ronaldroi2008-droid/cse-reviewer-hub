@@ -282,14 +282,22 @@
 
                 try {
                     const response = await fetch(
-                        "http://localhost:3000/api/create-checkout",
+                        "https://cse-reviewer-hub-final.onrender.com/api/create-checkout",
                         {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
-                            }
+                            },
+                            body: JSON.stringify({
+                                user_id: session.user.id,
+                                email: session.user.email
+                            })
                         }
                     );
+
+                    if (!response.ok) {
+                        throw new Error("Server error");
+                    }
 
                     const data = await response.json();
 
