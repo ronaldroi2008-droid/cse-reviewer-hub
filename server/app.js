@@ -128,11 +128,62 @@ app.post("/api/create-checkout", async (req, res) => {
 
 app.post("/api/paymongo-webhook", async (req, res) => {
 
-    console.log("========== WEBHOOK ==========");
-    console.log(JSON.stringify(req.body, null, 2));
-    console.log("=============================");
+    try {
 
-    res.sendStatus(200);
+        const checkout = req.body.data.attributes.data;
+
+        const metadata = checkout.attributes.metadata;
+
+        const user_id = metadata.user_id;
+
+        const payment =
+            checkout.attributes.payments[0].attributes;
+
+        const paymentIntent =
+            payment.payment_intent_id;
+
+        const checkoutId =
+            checkout.id;
+
+        // Activate PRO
+        const { error: profileError } = await supabase
+            .from("profiles")
+            .update({
+                is_pro: true,
+                plan: "PRO",
+                updated_at: new Date().toISOString()
+            })
+            .eq("id", user_id);
+
+        if (profileError) {
+            console.error("Profile update error:", profileError);
+        }
+
+        // Update payment
+        const { error: paymentError } = await supabase
+            .from("payments")
+            .update({
+                status: "paid",
+                payment_intent_id: paymentIntent,
+                updated_at: new Date().toISOString()
+            })
+            .eq("checkout_id", checkoutId);
+
+        if (paymentError) {
+            console.error("Payment update error:", paymentError);
+        }
+
+        console.log("PRO Activated:", user_id);
+
+        res.sendStatus(200);
+
+    } catch (err) {
+
+        console.error("Webhook error:", err);
+
+        res.sendStatus(200);
+
+    }
 
 });
 
