@@ -5523,6 +5523,10 @@ let quizQuestions = [];
 let currentQuestionIndex = 0;
 let userAnswers = [];
 
+// ==========================================
+// TOPIC HELPERS
+// ==========================================
+
 // Helper: kuha ng topic label
 function getTopicLabel(id) {
   const t = VERBAL_TOPICS.find((x) => x.id === id);
@@ -5579,10 +5583,10 @@ function renderTopics() {
 
 // Load lesson content sa Study Mode
 function loadLesson(topicId) {
-updateSEO(topicId);
-const seoUrl=new URL(window.location);
-seoUrl.searchParams.set('topic',topicId);
-history.replaceState({},'',seoUrl.toString());
+  updateSEO(topicId);
+  const seoUrl = new URL(window.location);
+  seoUrl.searchParams.set('topic', topicId);
+  history.replaceState({}, '', seoUrl.toString());
 
   const lessonTitleEl = document.getElementById("lessonTitle");
   const lessonIntroEl = document.getElementById("lessonIntro");
@@ -5617,16 +5621,19 @@ history.replaceState({},'',seoUrl.toString());
   }
 }
 
-// Mark locked levels (Advanced / Expert)
+// Mark locked levels
 function markLockedLevels() {
   const chips = document.querySelectorAll(".level-chip");
   chips.forEach((chip) => {
     const level = chip.dataset.level;
-    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.trim();
+    chip.dataset.levelLabel = chip.dataset.levelLabel || chip.textContent.replace("🔒", "").trim();
 
     if (LOCKED_LEVELS.includes(level) && !IS_PRO_USER) {
       chip.classList.add("locked");
       chip.textContent = chip.dataset.levelLabel + " 🔒";
+    } else {
+      chip.classList.remove("locked");
+      chip.textContent = chip.dataset.levelLabel;
     }
   });
 }
@@ -5807,7 +5814,7 @@ function renderCurrentQuestion() {
   }
 }
 
-// Option click = auto check (walang Check Answer button)
+// Option click = auto check
 function handleOptionClick(index) {
   const feedbackEl = document.getElementById("feedback");
   const q = quizQuestions[currentQuestionIndex];
@@ -5996,103 +6003,79 @@ function setupNavButtonsHandlers() {
 // ==========================================
 
 function openProModal() {
+  if (IS_PRO_USER) {
+    return;
+  }
 
-    // Kung PRO user na, huwag ipakita ang modal.
-    if (typeof isProUser === "function" && isProUser()) {
-        return;
-    }
+  const modal = document.getElementById("pro-modal");
 
-    const modal = document.getElementById("pro-modal");
+  if (!modal) {
+    window.location.href = "license.html";
+    return;
+  }
 
-    if (!modal) {
-
-        // Fallback
-        window.location.href = "license.html";
-
-        return;
-
-    }
-
-    modal.style.display = "flex";
-
+  modal.style.display = "flex";
 }
 
 function closeProModal() {
-
-    const modal = document.getElementById("pro-modal");
-
-    if (!modal) return;
-
-    modal.style.display = "none";
-
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
+  modal.style.display = "none";
 }
 
 function setupProModal() {
+  const modal = document.getElementById("pro-modal");
+  if (!modal) return;
 
-    const modal = document.getElementById("pro-modal");
+  const closeBtn = document.getElementById("pro-modal-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeProModal);
+  }
 
-    if (!modal) return;
+  const upgradeBtn = document.getElementById("pro-gumroad-link");
+  if (upgradeBtn) {
+    upgradeBtn.href = "license.html";
+  }
 
-    const closeBtn = document.getElementById("pro-modal-close");
-
-    if (closeBtn) {
-
-        closeBtn.addEventListener("click", closeProModal);
-
-    }
-
-    // PayMongo Upgrade Page
-    const upgradeBtn = document.getElementById("pro-gumroad-link");
-
-    if (upgradeBtn) {
-
-        upgradeBtn.href = "license.html";
-
-    }
-
-    // Refresh after payment
-    const refreshLink = document.getElementById("pro-refresh-link");
-
-    if (refreshLink) {
-
-        refreshLink.addEventListener("click", async (e) => {
-
-            e.preventDefault();
-
-            if (typeof loadMembership === "function") {
-
-                await loadMembership();
-
-            }
-
-            if (typeof isProUser === "function" && isProUser()) {
-
-                location.reload();
-
-                return;
-
-            }
-
-            alert("Your PRO membership has not been detected yet.");
-
-        });
-
-    }
-
+  const refreshLink = document.getElementById("pro-refresh-link");
+  if (refreshLink) {
+    refreshLink.addEventListener("click", async (e) => {
+      e.preventDefault();
+      await loadMembership();
+      IS_PRO_USER = isProUser();
+      
+      if (IS_PRO_USER) {
+        LOCKED_LEVELS = [];
+        markLockedLevels();
+        location.reload();
+        return;
+      }
+      alert("Your PRO membership has not been detected yet. Please make sure you are logged in.");
+    });
+  }
 }
+
 // ==========================================
 // INIT
 // ==========================================
-function initVerbalPage() {
-  // Badge text
+async function initVerbalPage() {
+  // Kunin ang membership gamit ang membership.js
+  await loadMembership();
+  IS_PRO_USER = isProUser();
+
+  // If PRO, remove locked levels
+  if (IS_PRO_USER) {
+    LOCKED_LEVELS = [];
+  }
+
+  // Update badge
   const badgeEl = document.querySelector(".badge");
   if (badgeEl) {
-    badgeEl.textContent = IS_PRO_USER ? "PRO Access" : "Free Plan";
+    badgeEl.textContent = IS_PRO_USER ? "PRO Access ✅" : "Free Plan";
   }
 
   renderTopics();
   loadLesson(currentTopicId);
- updateSEO(currentTopicId);
   setupModeTabs();
   setupItemChips();
   markLockedLevels();
@@ -6102,7 +6085,12 @@ function initVerbalPage() {
   setupProModal();
 }
 
+// Wait for DOM to load then initialize
 document.addEventListener("DOMContentLoaded", initVerbalPage);
+
+// ==========================================
+// TABLE OF CONTENTS BUILDER
+// ==========================================
 
 function buildTOC() {
   var lessonCard = document.querySelector('.lesson-card');
@@ -6146,6 +6134,7 @@ function buildTOC() {
   var lessonBodyEl = document.getElementById('lessonBody');
   if (lessonBodyEl) { lessonCard.insertBefore(tocWrapper, lessonBodyEl); }
 }
+
 (function() {
   var _orig = loadLesson;
   loadLesson = function(topicId) {
@@ -6155,7 +6144,3 @@ function buildTOC() {
     });
   };
 })();
-</script>
-
-</body>
-</html>

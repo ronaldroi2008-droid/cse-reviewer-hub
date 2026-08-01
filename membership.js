@@ -153,6 +153,8 @@ async function loadMembership() {
     }
 
     window.currentProfile = data;
+    console.log("Profile loaded:", data);
+    console.log("is_pro:", data.is_pro);
 
     updateMembershipUI();
 
