@@ -388,9 +388,9 @@ async function performLogin(email, password) {
         showMessage("✅ Login successful! Redirecting...", "success");
         loginBtn.innerHTML = "✅ Logged in";
         
-        // Redirect to dashboard after 1.5 seconds
+        // Redirect to index (homepage) after 1.5 seconds
         setTimeout(() => {
-            window.location.href = "dashboard.html";
+            window.location.href = "index.html";
         }, 1500);
         
     } catch (error) {
@@ -434,11 +434,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if user is already logged in
     const sessionId = localStorage.getItem("session_id");
     if (sessionId) {
-        // Optional: Redirect to dashboard if already logged in
-        // window.location.href = "dashboard.html";
-        console.log("ℹ️ User already has a session. Redirecting to dashboard...");
-        // Uncomment the line below to auto-redirect
-        // window.location.href = "dashboard.html";
+        // Redirect to index if already logged in
+        console.log("ℹ️ User already has a session. Redirecting to index...");
+        window.location.href = "index.html";
     }
     
     // Auto-focus on email field

@@ -131,6 +131,175 @@
       color: #cbd5e1;
     }
 
+    /* ===== NEW: User Session Info Styles ===== */
+    .user-session-info {
+      display: none;
+      margin: 16px 0 20px;
+      padding: 14px 20px;
+      background: #1e293b80;
+      border-radius: 12px;
+      border-left: 4px solid #4f46e5;
+    }
+
+    .user-session-info .session-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .user-session-info .user-greeting {
+      color: #e2e8f0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .user-session-info .user-greeting span {
+      color: #818cf8;
+      font-weight: 600;
+    }
+
+    .membership-badge {
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .membership-badge.pro {
+      background: #10b98120;
+      color: #6ee7b7;
+      border: 1px solid #34d39940;
+    }
+
+    .membership-badge.free {
+      background: #f59e0b20;
+      color: #fbbf24;
+      border: 1px solid #f59e0b40;
+    }
+
+    .btn-logout {
+      background: #dc2626;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .btn-logout:hover {
+      background: #b91c1c;
+      transform: scale(1.02);
+    }
+
+    .btn-login {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 40px;
+      border: 1px solid #818cf8;
+      transition: all 0.2s;
+    }
+
+    .btn-login:hover {
+      background: #818cf8;
+      color: white;
+    }
+
+    .btn-register {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 40px;
+      background: #4f46e5;
+      transition: all 0.2s;
+    }
+
+    .btn-register:hover {
+      background: #6366f1;
+      transform: scale(1.02);
+    }
+
+    .auth-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .user-actions {
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ===== NEW: Upgrade Banner ===== */
+    .upgrade-banner {
+      display: none;
+      margin: 16px 0;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #f59e0b20, #d9770620);
+      border-radius: 12px;
+      border: 1px solid #f59e0b40;
+    }
+
+    .upgrade-banner .upgrade-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .upgrade-banner .upgrade-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .upgrade-banner .upgrade-text .icon {
+      font-size: 1.2rem;
+    }
+
+    .upgrade-banner .upgrade-text .label {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .upgrade-banner .upgrade-text .desc {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-left: 4px;
+    }
+
+    .btn-upgrade {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-upgrade:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+
+    /* ===== END NEW STYLES ===== */
+
     .subject-grid {
       display: flex;
       flex-direction: column;
@@ -189,6 +358,17 @@
       color: #94a3b8;
       margin-left: 10px;
       font-weight: normal;
+    }
+
+    .badge-unlocked {
+      font-size: 0.7rem;
+      background: #10b98120;
+      padding: 3px 8px;
+      border-radius: 40px;
+      color: #6ee7b7;
+      margin-left: 10px;
+      font-weight: normal;
+      border: 1px solid #34d39940;
     }
 
     .guide-card {
@@ -427,6 +607,7 @@
   <div class="glass-panel">
     <div class="content">
       
+      <!-- ===== HEADER ===== -->
       <header class="badge-area">
         <div class="logo-badge">
           <span class="icon-flame" aria-hidden="true">📚⚡</span>
@@ -441,6 +622,30 @@
         🧠 5 subjects &bull; Full Mock Exam (170 items) &bull; Smart practice
       </div>
 
+      <!-- ===== NEW: USER SESSION INFO ===== -->
+      <div id="userSessionInfo" class="user-session-info">
+        <div class="session-row">
+          <div>
+            <span class="user-greeting">👋 Welcome back, <span id="userName">User</span>!</span>
+            <span id="membershipBadge" class="membership-badge free">🔓 Loading...</span>
+          </div>
+          <button onclick="logoutUser()" class="btn-logout">Logout</button>
+        </div>
+      </div>
+
+      <!-- ===== NEW: UPGRADE BANNER ===== -->
+      <div id="upgradeBanner" class="upgrade-banner">
+        <div class="upgrade-row">
+          <div class="upgrade-text">
+            <span class="icon">⭐</span>
+            <span class="label">Upgrade to PRO</span>
+            <span class="desc">Unlock full mock exams &amp; practice drills</span>
+          </div>
+          <a href="license.html" class="btn-upgrade">Upgrade Now →</a>
+        </div>
+      </div>
+
+      <!-- ===== SUBJECT GRID ===== -->
       <nav class="subject-grid" aria-label="Main Reviewer Menu">
         <a href="verbal.html" class="subject-card">
           <span class="subject-name"><span class="subject-icon" aria-hidden="true">📖</span> Verbal Ability</span>
@@ -476,6 +681,7 @@
         <div id="membershipCard"></div>
       </nav>
       
+      <!-- ===== CONTENT SECTIONS ===== -->
       <section style="margin-top:40px;color:#e2e8f0;line-height:1.8">
 
         <h2 style="margin-bottom:15px;color:#f8fafc;">
@@ -510,7 +716,6 @@
           Each reviewer section contains carefully prepared practice questions and explanations to help learners understand concepts, improve test-taking skills, and build confidence before the examination.
         </p>
 
-        <!-- CHANGE 1: Updated Civil Service Exam Guides section -->
         <h2 style="margin-bottom:15px;color:#f8fafc;">
           Civil Service Exam Guides
         </h2>
@@ -568,7 +773,6 @@
           Consistent practice is one of the most effective ways to improve performance in the Civil Service Exam. Start with individual subjects, strengthen weak areas through practice drills, and assess your overall readiness using mock examinations.
         </p>
 
-        <!-- CHANGE 2: Popular Resources / Quick Links section -->
         <h2 style="margin-bottom:15px;color:#f8fafc;">
           Popular Resources
         </h2>
@@ -582,7 +786,6 @@
           <li><a href="mock_exam.html" style="color:#818cf8;">Full Mock Exam (170 Items)</a></li>
         </ul>
 
-        <!-- CHANGE 3: FAQ Section -->
         <h2 style="margin-bottom:20px;color:#f8fafc;">
           Frequently Asked Questions
         </h2>
@@ -611,6 +814,7 @@
   </div>
 </main>
 
+<!-- ===== MODAL ===== -->
 <div id="accessModal" class="modal-overlay" style="display: none;">
   <div class="modal-container">
     <div class="modal-header">
@@ -626,246 +830,231 @@
   </div>
 </div>
 
-<!--
-  MEMBERSHIP SCRIPT (LEGACY localStorage-based access control)
-  Temporarily disabled while migrating to Supabase-based membership system
-  (supabase-config.js + membership.js + app.js).
-  Do not delete — kept here for reference / rollback until the new system
-  is confirmed working.
-
-<script>
-  (function(){
-    const STORAGE_ACCESS_KIND = "cse_access_kind";   
-    const STORAGE_EXPIRES_AT = "cse_expires_at";     
-    const STORAGE_IS_PRO_LEGACY = "cse_is_pro";      
-    const STORAGE_LICENSE_KEY = "cse_license_key";
-
-    function formatManila(dateISO) {
-      if (!dateISO) return '';
-      try {
-        return new Date(dateISO).toLocaleString('en-PH', { timeZone: 'Asia/Manila', dateStyle: 'medium' });
-      } catch(e) { return dateISO; }
-    }
-
-    function isExpired(expiryISO) {
-      if (!expiryISO) return false;
-      const expiryTime = Date.parse(expiryISO);
-      if (isNaN(expiryTime)) return false;
-      return Date.now() > expiryTime;
-    }
-
-    function syncLegacy() {
-      const legacyPro = localStorage.getItem(STORAGE_IS_PRO_LEGACY) === "true";
-      const currentKind = localStorage.getItem(STORAGE_ACCESS_KIND);
-      if (legacyPro && currentKind !== "pro") {
-        localStorage.setItem(STORAGE_ACCESS_KIND, "pro");
-        localStorage.removeItem(STORAGE_EXPIRES_AT);
-      }
-      if (!legacyPro && currentKind === "pro") {
-        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "true");
-      }
-    }
-
-    function getAccessState() {
-      syncLegacy();
-      let kind = localStorage.getItem(STORAGE_ACCESS_KIND) || "free";
-      let expiry = localStorage.getItem(STORAGE_EXPIRES_AT) || null;
-
-      if (kind === "trial" && expiry && isExpired(expiry)) {
-        localStorage.setItem(STORAGE_ACCESS_KIND, "free");
-        localStorage.removeItem(STORAGE_EXPIRES_AT);
-        localStorage.setItem(STORAGE_IS_PRO_LEGACY, "false");
-        kind = "free";
-        expiry = null;
-      }
-
-      if (kind === "pro") {
-        return { isUnlocked: true, kind: "pro", expiry: null, valid: true };
-      } else if (kind === "trial" && expiry && !isExpired(expiry)) {
-        return { isUnlocked: true, kind: "trial", expiry: expiry, valid: true };
-      } else {
-        return { isUnlocked: false, kind: "free", expiry: null, valid: false };
-      }
-    }
-
-    function updateUI() {
-      const state = getAccessState();
-      const statusDiv = document.getElementById("licenseStatusBox");
-      const mockBtn = document.getElementById("mockExamBtn");
-      const practiceBtn = document.getElementById("practiceModeBtn");
-      
-      if (statusDiv) {
-        if (state.kind === "pro") {
-          statusDiv.innerHTML = `<span class="pill pill-pro">✅ PRO &middot; Lifetime</span>`;
-        } else if (state.kind === "trial") {
-          const expiryDate = state.expiry ? formatManila(state.expiry) : "";
-          statusDiv.innerHTML = `<span class="pill pill-trial">🎟️ TRIAL active &middot; until ${expiryDate}</span>`;
-        } else {
-          statusDiv.innerHTML = `<span class="pill pill-free">🔓 FREE &middot; Mock Exam locked</span>`;
-        }
-      }
-
-      if (mockBtn) {
-        const nameSpan = mockBtn.querySelector(".subject-name");
-        if (nameSpan && state.isUnlocked) {
-          const oldBadge = nameSpan.querySelector(".badge-locked");
-          if(oldBadge) oldBadge.remove();
-          if(state.kind === 'pro') nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; margin-left:6px; color:#bef264;">UNLOCKED</span>`;
-          else if(state.kind === 'trial') nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span style="font-size:0.7rem; background:#f59e0b20; padding:2px 8px; border-radius:30px; margin-left:6px; color:#fde68a;">TRIAL</span>`;
-        } else if (nameSpan && !state.isUnlocked) {
-          if (!nameSpan.querySelector(".badge-locked")) {
-            nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items) <span class="badge-locked">🔒 LOCKED</span>`;
-          }
-        }
-      }
-
-      if (practiceBtn) {
-        const nameSpan = practiceBtn.querySelector(".subject-name");
-        if (nameSpan && state.isUnlocked) {
-          const oldBadge = nameSpan.querySelector(".badge-locked");
-          if(oldBadge) oldBadge.remove();
-          nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🎯</span> Practice Mode (Quick Drills) <span style="font-size:0.7rem; background:#10b98120; padding:2px 8px; border-radius:30px; color:#bef264;">ACCESSIBLE</span>`;
-        } else if (nameSpan && !state.isUnlocked) {
-          if (!nameSpan.querySelector(".badge-locked")) {
-            nameSpan.innerHTML = `<span class="subject-icon" aria-hidden="true">🎯</span> Practice Mode (Quick Drills) <span class="badge-locked">🔒 LOCKED</span>`;
-          }
-        }
-      }
-    }
-
-    const modal = document.getElementById("accessModal");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-    const modalTitleText = document.getElementById("modalTitleText");
-    const modalBodyContainer = document.getElementById("modalBodyContainer");
-    let activeReturnUrl = null;
-
-    function closeModal() {
-      if (modal) modal.style.display = "none";
-      activeReturnUrl = null;
-    }
-
-    function openModal(targetUrl) {
-      activeReturnUrl = targetUrl;
-      const currentState = getAccessState();
-      renderModalContent(currentState);
-      if (modal) modal.style.display = "flex";
-    }
-
-    function renderModalContent(state) {
-      if (!modalBodyContainer) return;
-      const activeTab = document.querySelector(".tab-btn.active")?.dataset.tab || "pro";
-      
-      if (activeTab === "pro") {
-        modalTitleText.innerText = "🚀 Unlock PRO Access";
-        modalBodyContainer.innerHTML = `
-          <div class="features-box">
-            <ul>
-              <li>Full Mock Exam (170 items) timed & realistic</li>
-              <li>Advanced & expert question sets</li>
-              <li>Practice Mode unlimited drills</li>
-              <li>Detailed review & analytics</li>
-              <li>Lifetime updates + ad-free experience</li>
-            </ul>
-          </div>
-          <a href="https://pm.link/org-6hz4LoiE7cA2Fawmo4d62SHH/aw0ifx1" target="_blank" class="btn-glow">
-            ⭐ Get PRO Lifetime (₱299)
-          </a>
-          <div class="features-box">
-            <p style="color:#e2e8f0;">
-              📧 <strong>After payment</strong>, send your payment screenshot and reference number to:
-            </p>
-            <p style="margin-top:12px; color:#bef264; font-weight:700; font-size:1rem;">
-              cse.reviewer.hub@gmail.com
-            </p>
-            <p style="margin-top:12px; color:#cbd5e1;">
-              You will receive activation instructions via email after payment verification.
-            </p>
-          </div>
-          <div class="info-note">Secure payment via PayMongo.</div>
-          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here →</a>
-        `;
-      } else {
-        modalTitleText.innerText = "🎟️ Activate Access";
-        modalBodyContainer.innerHTML = `
-          <div class="features-box">
-            <p style="margin-bottom:12px; color:#cbd5e6;">
-              Upgrade to PRO to unlock Full Mock Exam, Practice Mode, Advanced Question Sets, and Detailed Analytics.
-            </p>
-          </div>
-          <a href="https://pm.link/org-6hz4LoiE7cA2Fawmo4d62SHH/aw0ifx1" target="_blank" class="btn-glow">
-            ⭐ Get PRO Lifetime (₱299)
-          </a>
-          <div class="features-box">
-            <p>📧 <strong>After payment</strong>, send your payment screenshot and reference number to:</p>
-            <p style="margin-top:10px; font-weight:700; color:#bef264;">cse.reviewer.hub@gmail.com</p>
-            <p style="margin-top:10px; font-size:0.85rem; color:#94a3b8;">PRO access is manually activated within a few hours.</p>
-          </div>
-          <div class="info-note">Secure payment via PayMongo.</div>
-          <a href="license.html" class="secondary-btn mt-2">Already have a PRO key? Activate here →</a>
-        `;
-      }
-    }
-
-    function bindTabSwitching() {
-      const tabs = document.querySelectorAll(".tab-btn");
-      tabs.forEach(tab => {
-        tab.removeEventListener("click", tab._listener);
-        const handler = () => {
-          tabs.forEach(t => t.classList.remove("active"));
-          tab.classList.add("active");
-          const currentState = getAccessState();
-          renderModalContent(currentState);
-        };
-        tab.addEventListener("click", handler);
-        tab._listener = handler;
-      });
-    }
-
-    function handleProtectedRedirect(event, targetHref) {
-      const state = getAccessState();
-      if (!state.isUnlocked) {
-        event.preventDefault();
-        openModal(targetHref);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      syncLegacy();
-      updateUI();
-
-      const mockBtn = document.getElementById("mockExamBtn");
-      const practiceBtn = document.getElementById("practiceModeBtn");
-
-      if (mockBtn) {
-        mockBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "mock_exam.html"));
-      }
-      if (practiceBtn) {
-        practiceBtn.addEventListener("click", (e) => handleProtectedRedirect(e, "practice.html"));
-      }
-
-      if (closeModalBtn) {
-        closeModalBtn.addEventListener("click", closeModal);
-      }
-      modal?.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
-
-      bindTabSwitching();
-
-      window.addEventListener("storage", (e) => {
-        if (e.key === STORAGE_ACCESS_KIND || e.key === STORAGE_EXPIRES_AT) {
-          updateUI();
-        }
-      });
-    });
-  })();
-</script>
--->
-
+<!-- ===== SCRIPTS ===== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-config.js"></script>
 <script src="membership.js"></script>
-<script src="app.js"></script>
+
+<!-- ===== MAIN APPLICATION SCRIPT ===== -->
+<script>
+(function() {
+  'use strict';
+
+  // ==========================================
+  // DOM ELEMENTS
+  // ==========================================
+  const userSessionInfo = document.getElementById('userSessionInfo');
+  const userName = document.getElementById('userName');
+  const membershipBadge = document.getElementById('membershipBadge');
+  const upgradeBanner = document.getElementById('upgradeBanner');
+  const practiceBtn = document.getElementById('practiceModeBtn');
+  const mockBtn = document.getElementById('mockExamBtn');
+  const licenseStatusBox = document.getElementById('licenseStatusBox');
+
+  // ==========================================
+  // UPDATE UI BASED ON LOGIN STATUS
+  // ==========================================
+  function updateUI() {
+    const sessionInfo = getSessionInfo();
+    const isLoggedIn = sessionInfo.hasLocalSession;
+
+    if (isLoggedIn && currentProfile) {
+      // --- Show logged-in UI ---
+      userSessionInfo.style.display = 'block';
+      
+      // Set user name
+      const email = currentProfile.email || 'User';
+      userName.textContent = email.split('@')[0];
+
+      // Get membership status
+      const status = getProStatus();
+
+      // Update membership badge
+      if (status.isPro) {
+        membershipBadge.textContent = `🟢 PRO (${status.daysRemaining}d left)`;
+        membershipBadge.className = 'membership-badge pro';
+        upgradeBanner.style.display = 'none';
+      } else {
+        membershipBadge.textContent = '🔓 FREE Plan';
+        membershipBadge.className = 'membership-badge free';
+        upgradeBanner.style.display = 'block';
+      }
+
+      // Update practice and mock exam buttons
+      updateProtectedButtons(status);
+
+    } else {
+      // --- Show logged-out UI ---
+      userSessionInfo.style.display = 'none';
+      upgradeBanner.style.display = 'none';
+      
+      // Reset practice and mock exam buttons to default (locked)
+      resetProtectedButtons();
+    }
+  }
+
+  // ==========================================
+  // UPDATE PROTECTED BUTTONS
+  // ==========================================
+  function updateProtectedButtons(status) {
+    if (!practiceBtn || !mockBtn) return;
+
+    const isPro = status.isPro;
+
+    // Practice Mode
+    const practiceName = practiceBtn.querySelector('.subject-name');
+    if (practiceName) {
+      if (isPro) {
+        practiceName.innerHTML = `
+          <span class="subject-icon" aria-hidden="true">🎯</span> 
+          Practice Mode (Quick Drills) 
+          <span class="badge-unlocked">✅ UNLOCKED</span>
+        `;
+        practiceBtn.href = 'practice.html';
+      } else {
+        practiceName.innerHTML = `
+          <span class="subject-icon" aria-hidden="true">🎯</span> 
+          Practice Mode (Quick Drills) 
+          <span class="badge-locked">🔒 LOCKED</span>
+        `;
+        practiceBtn.href = 'license.html';
+      }
+    }
+
+    // Mock Exam
+    const mockName = mockBtn.querySelector('.subject-name');
+    if (mockName) {
+      if (isPro) {
+        mockName.innerHTML = `
+          <span class="subject-icon" aria-hidden="true">🏆</span> 
+          Full Mock Exam (170 Items) 
+          <span class="badge-unlocked">✅ UNLOCKED</span>
+        `;
+        mockBtn.href = 'mock_exam.html';
+      } else {
+        mockName.innerHTML = `
+          <span class="subject-icon" aria-hidden="true">🏆</span> 
+          Full Mock Exam (170 Items) 
+          <span class="badge-locked">🔒 LOCKED</span>
+        `;
+        mockBtn.href = 'license.html';
+      }
+    }
+  }
+
+  // ==========================================
+  // RESET PROTECTED BUTTONS (DEFAULT STATE)
+  // ==========================================
+  function resetProtectedButtons() {
+    if (!practiceBtn || !mockBtn) return;
+
+    const practiceName = practiceBtn.querySelector('.subject-name');
+    if (practiceName) {
+      practiceName.innerHTML = `
+        <span class="subject-icon" aria-hidden="true">🎯</span> 
+        Practice Mode (Quick Drills) 
+        <span class="badge-locked">🔒 LOCKED</span>
+      `;
+      practiceBtn.href = 'license.html';
+    }
+
+    const mockName = mockBtn.querySelector('.subject-name');
+    if (mockName) {
+      mockName.innerHTML = `
+        <span class="subject-icon" aria-hidden="true">🏆</span> 
+        Full Mock Exam (170 Items) 
+        <span class="badge-locked">🔒 LOCKED</span>
+      `;
+      mockBtn.href = 'license.html';
+    }
+  }
+
+  // ==========================================
+  // OVERRIDE LOGOUT FUNCTION
+  // ==========================================
+  // Make sure logoutUser is available globally
+  if (typeof window.logoutUser === 'undefined') {
+    window.logoutUser = async function() {
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        
+        if (session) {
+          await supabaseClient
+            .from('profiles')
+            .update({ session_id: null })
+            .eq('id', session.user.id);
+        }
+        
+        await supabaseClient.auth.signOut();
+        localStorage.removeItem('session_id');
+        window.currentProfile = null;
+        
+        if (sessionValidationTimer) {
+          clearInterval(sessionValidationTimer);
+          sessionValidationTimer = null;
+        }
+        isLoggingOut = false;
+        
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error('❌ Logout error:', error);
+        alert('An error occurred during logout. Please try again.');
+      }
+    };
+  }
+
+  // ==========================================
+  // INITIALIZATION
+  // ==========================================
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Index page loaded');
+    
+    // Wait for membership to load
+    setTimeout(function() {
+      updateUI();
+    }, 500);
+  });
+
+  // Update UI when membership changes
+  document.addEventListener('membershipUpdated', function() {
+    updateUI();
+  });
+
+  // Also update on storage changes (when user logs in/out from another tab)
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'session_id' || e.key === 'cse_access_kind') {
+      updateUI();
+    }
+  });
+
+  // ==========================================
+  // MODAL HANDLING (Legacy)
+  // ==========================================
+  const modal = document.getElementById('accessModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  function closeModal() {
+    if (modal) modal.style.display = 'none';
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Expose functions globally
+  window.updateUI = updateUI;
+  window.updateProtectedButtons = updateProtectedButtons;
+  window.resetProtectedButtons = resetProtectedButtons;
+
+  console.log('✅ Index page ready');
+})();
+</script>
 
 </body>
 </html>

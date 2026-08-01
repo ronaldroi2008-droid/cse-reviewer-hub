@@ -295,8 +295,8 @@ async function logoutUser() {
         
         console.log("✅ User logged out successfully");
         
-        // Mag-redirect sa login page
-        window.location.href = "login.html";
+        // Mag-redirect sa index page (homepage)
+        window.location.href = "index.html";
         
     } catch (error) {
         console.error("❌ Logout error:", error);
@@ -350,8 +350,8 @@ async function loginUser(email, password) {
         
         console.log("✅ User logged in successfully");
         
-        // Mag-redirect sa dashboard
-        window.location.href = "dashboard.html";
+        // Mag-redirect sa index (homepage)
+        window.location.href = "index.html";
         
     } catch (error) {
         console.error("❌ Login error:", error);
@@ -412,8 +412,8 @@ async function registerUser(email, password, fullName) {
         
         console.log("✅ User registered successfully");
         
-        // Mag-redirect sa dashboard
-        window.location.href = "dashboard.html";
+        // Mag-redirect sa index (homepage)
+        window.location.href = "index.html";
         
     } catch (error) {
         console.error("❌ Registration error:", error);

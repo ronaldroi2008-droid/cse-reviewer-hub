@@ -540,9 +540,9 @@ async function performRegistration(fullName, email, password) {
         
         registerBtn.innerHTML = "✅ Account Created";
         
-        // Redirect to login page after 3 seconds
+        // Redirect to index (homepage) after 3 seconds
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }, 3000);
         
     } catch (error) {
@@ -646,9 +646,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if user is already logged in
     const sessionId = localStorage.getItem("session_id");
     if (sessionId) {
-        console.log("ℹ️ User already has a session. Redirecting to dashboard...");
-        // Uncomment the line below to auto-redirect
-        // window.location.href = "dashboard.html";
+        console.log("ℹ️ User already has a session. Redirecting to index...");
+        window.location.href = "index.html";
     }
     
     // Auto-focus on name field
