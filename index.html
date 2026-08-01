@@ -55,7 +55,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       gap: 12px;
       margin-bottom: 1rem;
     }
@@ -87,6 +87,13 @@
       margin-top: 6px;
       border-left: 2px solid #4f46e5;
       padding-left: 12px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .access-status {
@@ -131,7 +138,67 @@
       color: #cbd5e1;
     }
 
-    /* ===== User Session Info Styles ===== */
+    /* ===== Auth Buttons ===== */
+    .auth-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-login {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 40px;
+      border: 1px solid #818cf8;
+      transition: all 0.2s;
+    }
+
+    .btn-login:hover {
+      background: #818cf8;
+      color: white;
+    }
+
+    .btn-register {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 40px;
+      background: #4f46e5;
+      transition: all 0.2s;
+    }
+
+    .btn-register:hover {
+      background: #6366f1;
+      transform: scale(1.02);
+    }
+
+    .btn-logout {
+      background: #dc2626;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .btn-logout:hover {
+      background: #b91c1c;
+      transform: scale(1.02);
+    }
+
+    #logoutContainer {
+      display: none;
+    }
+
+    /* ===== User Session Info ===== */
     .user-session-info {
       display: none;
       margin: 16px 0 20px;
@@ -178,67 +245,6 @@
       background: #f59e0b20;
       color: #fbbf24;
       border: 1px solid #f59e0b40;
-    }
-
-    .btn-logout {
-      background: #dc2626;
-      border: none;
-      color: white;
-      padding: 6px 16px;
-      border-radius: 40px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-
-    .btn-logout:hover {
-      background: #b91c1c;
-      transform: scale(1.02);
-    }
-
-    .btn-login {
-      color: #818cf8;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 6px 14px;
-      border-radius: 40px;
-      border: 1px solid #818cf8;
-      transition: all 0.2s;
-    }
-
-    .btn-login:hover {
-      background: #818cf8;
-      color: white;
-    }
-
-    .btn-register {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 6px 14px;
-      border-radius: 40px;
-      background: #4f46e5;
-      transition: all 0.2s;
-    }
-
-    .btn-register:hover {
-      background: #6366f1;
-      transform: scale(1.02);
-    }
-
-    .auth-links {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .user-actions {
-      display: none;
-      align-items: center;
-      gap: 8px;
     }
 
     /* ===== Upgrade Banner ===== */
@@ -298,6 +304,7 @@
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
+    /* ===== Subject Grid ===== */
     .subject-grid {
       display: flex;
       flex-direction: column;
@@ -611,8 +618,22 @@
           <span class="icon-flame" aria-hidden="true">📚⚡</span>
           <h1>CSE Reviewer Hub</h1>
         </div>
-        <div id="licenseStatusBox" class="access-status">
-          <span class="pill pill-free">⟳ loading</span>
+        <div class="header-right">
+          <!-- Membership Status -->
+          <div id="licenseStatusBox" class="access-status">
+            <span class="pill pill-free">⟳ loading</span>
+          </div>
+          
+          <!-- Login/Register Links (lumalabas lang kapag naka-log out) -->
+          <div id="authLinks" class="auth-links">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Register</a>
+          </div>
+          
+          <!-- Logout Button (lumalabas lang kapag naka-log in) -->
+          <div id="logoutContainer">
+            <button onclick="logoutUser()" class="btn-logout">Logout</button>
+          </div>
         </div>
       </header>
 
@@ -627,7 +648,6 @@
             <span class="user-greeting">👋 Welcome back, <span id="userName">User</span>!</span>
             <span id="membershipBadge" class="membership-badge free">🔓 Loading...</span>
           </div>
-          <button onclick="logoutUser()" class="btn-logout">Logout</button>
         </div>
       </div>
 
@@ -848,6 +868,8 @@
   const practiceBtn = document.getElementById('practiceModeBtn');
   const mockBtn = document.getElementById('mockExamBtn');
   const licenseStatusBox = document.getElementById('licenseStatusBox');
+  const authLinks = document.getElementById('authLinks');
+  const logoutContainer = document.getElementById('logoutContainer');
 
   // ==========================================
   // UPDATE UI BASED ON LOGIN STATUS
@@ -857,7 +879,10 @@
     const isLoggedIn = sessionInfo.hasLocalSession;
 
     if (isLoggedIn && currentProfile) {
-      // --- Show logged-in UI ---
+      // --- SHOW LOGGED-IN UI ---
+      // Hide login/register, show logout
+      authLinks.style.display = 'none';
+      logoutContainer.style.display = 'block';
       userSessionInfo.style.display = 'block';
       
       // Set user name - use full_name if available
@@ -888,7 +913,10 @@
       updateProtectedButtons(status);
 
     } else {
-      // --- Show logged-out UI ---
+      // --- SHOW LOGGED-OUT UI ---
+      // Show login/register, hide logout
+      authLinks.style.display = 'flex';
+      logoutContainer.style.display = 'none';
       userSessionInfo.style.display = 'none';
       upgradeBanner.style.display = 'none';
       
