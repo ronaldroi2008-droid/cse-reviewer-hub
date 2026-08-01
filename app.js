@@ -80,7 +80,6 @@ const VERBAL_LESSONS = {
       </section>
     `
   }
-  // Add more lessons as needed
 };
 
 const NUMERICAL_LESSONS = {
@@ -132,7 +131,6 @@ const NUMERICAL_LESSONS = {
       </section>
     `
   }
-  // Add more numerical lessons as needed
 };
 
 // ==========================================
@@ -179,8 +177,8 @@ const NUMERICAL_QUESTIONS = {
     {
       question: "Calculate: (12 + 8) × 3 - 15 ÷ 3",
       choices: ["55", "57", "59", "61"],
-      answer: "57",
-      explanation: "Parentheses first: (20) × 3 - 5 = 60 - 5 = 55. Wait, correction: 20 × 3 = 60, minus 5 = 55. But 55 is not in options. Let me recalculate: (12+8)=20, 20×3=60, 15÷3=5, 60-5=55. The correct answer should be 55."
+      answer: "55",
+      explanation: "Parentheses first: (12 + 8) = 20. Then 20 × 3 = 60. Then 15 ÷ 3 = 5. Finally, 60 - 5 = 55."
     }
   ],
   percentage: [
@@ -207,11 +205,26 @@ let currentMode = 'study';
 let quizState = null;
 
 // ==========================================
+// AUTH
+// ==========================================
+let currentUser = null;
+let currentProfile = null;
+
+// ==========================================
 // 5. INITIALIZATION
 // ==========================================
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   console.log("CSE Reviewer Hub initialized");
+
+  await checkLogin();
   initializeApp();
+
+  if (typeof updateMembershipUI === "function") {
+    updateMembershipUI();
+  }
+  if (typeof protectPremiumLinks === "function") {
+    protectPremiumLinks();
+  }
 });
 
 function initializeApp() {
@@ -351,11 +364,8 @@ function renderTopicsSidebar() {
     btn.textContent = topic.label;
     btn.dataset.topic = topic.id;
     btn.addEventListener("click", () => {
-      // Remove active class from all buttons
       document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
       btn.classList.add('active');
-      // Render the lesson
       renderLesson(topic.id);
     });
     listContainer.appendChild(btn);
@@ -379,7 +389,6 @@ function renderLesson(topicKey) {
     lessonMetaEl.textContent = `${currentSubject.charAt(0).toUpperCase() + currentSubject.slice(1)} Ability · Study Material`;
     lessonContentEl.innerHTML = lesson.fullHtml;
   } else {
-    // Fallback if lesson not found
     lessonTitleEl.textContent = topicKey.charAt(0).toUpperCase() + topicKey.slice(1);
     lessonMetaEl.textContent = `${currentSubject.charAt(0).toUpperCase() + currentSubject.slice(1)} Ability · Study Material`;
     lessonContentEl.innerHTML = `
@@ -785,5 +794,39 @@ function showResults() {
   
   quizChoicesEl.appendChild(restartBtn);
 }
-      
-     
+
+// ==========================================
+// AUTH SYSTEM
+// ==========================================
+async function checkLogin() {
+  const {
+    data: { session }
+  } = await supabaseClient.auth.getSession();
+
+  if (!session) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  currentUser = session.user;
+
+  const {
+    data,
+    error
+  } = await supabaseClient
+    .from("profiles")
+    .select("*")
+    .eq("id", currentUser.id)
+    .single();
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  currentProfile = data;
+
+  console.log("Current User:", currentUser.email);
+  console.log("Plan:", currentProfile.plan);
+  console.log("PRO:", currentProfile.is_pro);
+}

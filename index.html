@@ -629,6 +629,13 @@
   </div>
 </div>
 
+<!--
+  MEMBERSHIP SCRIPT (LEGACY localStorage-based access control)
+  Temporarily disabled while migrating to Supabase-based membership system
+  (supabase-config.js + membership.js + app.js).
+  Do not delete — kept here for reference / rollback until the new system
+  is confirmed working.
+
 <script>
   (function(){
     const STORAGE_ACCESS_KIND = "cse_access_kind";   
@@ -856,5 +863,12 @@
     });
   })();
 </script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="membership.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>

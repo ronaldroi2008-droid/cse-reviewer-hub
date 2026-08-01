@@ -1,108 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Create Account - CSE Reviewer Hub</title>
+
+<title>Create Account - ApplySmart Reviewer</title>
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
-  font-family:Arial,sans-serif;
-  background:#0f172a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
+
 .card{
-  width:400px;
-  background:#1e293b;
-  padding:25px;
-  border-radius:12px;
+    width:420px;
+    background:#1e293b;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
+
+h2{
+    margin-top:0;
+    text-align:center;
+}
+
 input{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:none;
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
 }
+
 button{
-  width:100%;
-  padding:12px;
-  background:#4f46e5;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
+    width:100%;
+    padding:13px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
 }
+
+button:hover{
+    background:#4338ca;
+}
+
 #message{
-  margin-top:10px;
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
 }
+
+a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="card">
-  <h2>Create Account</h2>
 
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
+<h2>Create Free Account</h2>
 
-  <button onclick="registerUser()">Register</button>
+<input
+type="email"
+id="email"
+placeholder="Email Address">
 
-  <p id="message"></p>
+<input
+type="password"
+id="password"
+placeholder="Password (minimum 6 characters)">
 
-  <p>
-    Already have an account?
-    <a href="login.html">Login</a>
-  </p>
+<button onclick="registerUser()">
+Create Account
+</button>
+
+<p id="message"></p>
+
+<div class="footer">
+Already have an account?
+<a href="login.html">Login</a>
+</div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-config.js"></script>
 
 <script>
+
 async function registerUser(){
 
-  const email =
+    const email =
     document.getElementById("email").value.trim();
 
-  const password =
+    const password =
     document.getElementById("password").value;
 
-  const msg =
+    const msg =
     document.getElementById("message");
 
-  msg.innerText = "Creating account...";
+    msg.style.color="white";
 
-  const { data, error } =
+    if(!email){
+        msg.innerText="Please enter your email.";
+        return;
+    }
+
+    if(!password){
+        msg.innerText="Please enter your password.";
+        return;
+    }
+
+    if(password.length < 6){
+        msg.innerText="Password must be at least 6 characters.";
+        return;
+    }
+
+    msg.innerText="Creating account...";
+
+    const { data, error } =
     await supabaseClient.auth.signUp({
-      email,
-      password
+
+        email: email,
+        password: password
+
     });
 
-  if(error){
-    msg.innerText = error.message;
-    return;
-  }
+    if(error){
 
-  if(data.user){
+        msg.style.color="#ef4444";
+        msg.innerText=error.message;
+        return;
 
-    await supabaseClient
-      .from("profiles")
-      .insert({
-        id:data.user.id,
-        email:data.user.email,
-        is_pro:false
-      });
+    }
 
-    msg.innerText =
-      "Account created. Check your email for verification.";
-  }
+    msg.style.color="#22c55e";
+
+    msg.innerText="Registration successful! Please check your email to verify your account.";
+
+    setTimeout(function(){
+
+        window.location.href="login.html";
+
+    },2000);
+
 }
+
 </script>
 
 </body>

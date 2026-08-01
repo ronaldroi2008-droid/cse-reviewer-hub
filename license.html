@@ -1,336 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CSE Reviewer Hub – Activate PRO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #0f172a;
-      --border: #334155;
-      --accent: #4f46e5;
-      --accent-hover: #6366f1;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --danger: #f97373;
-      --success: #34d399;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade to PRO | CSE Reviewer Hub</title>
+    <meta name="description" content="Upgrade to CSE Reviewer Hub PRO and unlock the Full Mock Exam, Practice Mode, unlimited drills, and future premium features.">
+    <style>
+        :root {
+            --bg: #020617;
+            --card: #0f172a;
+            --border: #334155;
+            --primary: #4f46e5;
+            --primary2: #7c3aed;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --success: #22c55e;
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0b1120, #030712);
-      color: var(--text);
-      padding: 24px 16px;
-    }
+        body {
+            background: radial-gradient(circle at 10% 20%, #0b1120, #030712);
+            font-family: Inter, system-ui, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text);
+        }
 
-    .shell {
-      width: 100%;
-      max-width: 480px;
-    }
+        .wrapper {
+            width: 100%;
+            max-width: 560px;
+        }
 
-    .card {
-      background: rgba(15, 25, 45, 0.65);
-      backdrop-filter: blur(14px);
-      border-radius: 2rem;
-      border: 1px solid rgba(71, 85, 105, 0.5);
-      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      padding: 2rem 1.8rem;
-    }
+        .card {
+            background: rgba(15, 25, 45, 0.70);
+            backdrop-filter: blur(14px);
+            border-radius: 28px;
+            padding: 40px;
+            border: 1px solid rgba(71, 85, 105, 0.45);
+            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.60), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-      margin-bottom: 14px;
-      transition: color 0.2s;
-    }
+        .back {
+            display: inline-block;
+            margin-bottom: 18px;
+            text-decoration: none;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
 
-    .back-link:hover { color: var(--accent-hover); }
+        .back:hover {
+            color: white;
+        }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 14px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.75rem;
-      letter-spacing: 0.3px;
-      background: rgba(79, 70, 229, 0.15);
-      border: 1px solid rgba(99, 102, 241, 0.4);
-      color: #c7d2fe;
-      margin-bottom: 12px;
-    }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #4338ca30;
+            border: 1px solid #6366f1;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+        }
 
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #e2e8f0, #a5b4fc, #818cf8);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff, #c7d2fe, #818cf8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
 
-    .subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      border-left: 2px solid #4f46e5;
-      padding-left: 12px;
-    }
+        .subtitle {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
 
-    label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: #cbd5e1;
-    }
+        .price-box {
+            background: #02061780;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
 
-    .input {
-      width: 100%;
-      padding: 12px 18px;
-      border-radius: 60px;
-      background: #0f172a;
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.95rem;
-      outline: none;
-      margin-bottom: 10px;
-      transition: border-color 0.2s;
-    }
+        .price-title {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
 
-    .input:focus {
-      border-color: var(--accent-hover);
-    }
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
 
-    .hint {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-      padding-left: 6px;
-    }
+        .price-note {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
 
-    .btn {
-      width: 100%;
-      background: linear-gradient(100deg, #4f46e5, #7c3aed);
-      padding: 14px 12px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
-      margin-bottom: 14px;
-    }
+        .features {
+            background: #02061760;
+            border-radius: 20px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
 
-    .btn:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 25px -8px rgba(99, 102, 241, 0.6);
-    }
+        .features h2 {
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+        }
 
-    .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
+        .features ul {
+            list-style: none;
+        }
 
-    .status {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      border-radius: 1.2rem;
-      padding: 12px;
-      text-align: center;
-      margin-top: 4px;
-      border: 1px solid #334155;
-      background: #02061760;
-    }
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #e2e8f0;
+        }
 
-    .status.info { color: #cbd5e1; }
-    .status.error { color: var(--danger); border-color: rgba(249, 115, 115, 0.3); background: rgba(249, 115, 115, 0.05); }
-    .status.success { color: #bef264; border-color: rgba(52, 211, 153, 0.3); background: rgba(16, 185, 129, 0.05); }
+        .features li:last-child {
+            border-bottom: none;
+        }
 
-    .key-format {
-      margin-top: 16px;
-      padding: 12px 16px;
-      background: #02061760;
-      border: 1px solid #334155;
-      border-radius: 1.2rem;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            background: linear-gradient(100deg, var(--primary), var(--primary2));
+            color: white;
+            transition: 0.2s;
+            box-shadow: 0 10px 22px rgba(79, 70, 229, 0.35);
+        }
 
-    .key-format strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #f1f5f9;
-    }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
 
-    code {
-      font-family: monospace;
-      background: rgba(0,0,0,0.4);
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #a5b4fc;
-    }
+        .btn:disabled {
+            background: #334155;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
 
-    .small-note {
-      font-size: 0.75rem;
-      text-align: center;
-      color: #5b6e8c;
-      padding-top: 16px;
-      border-top: 1px solid #1e2a3e;
-      margin-top: 18px;
-      line-height: 1.5;
-    }
-  </style>
+        .note {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .secure {
+            margin-top: 16px;
+            text-align: center;
+            color: #22c55e;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-  <div class="shell">
-    <div class="card">
-      <a href="index.html" class="back-link">← Back to Home</a>
 
-      <div>
-        <div class="badge">
-          🔑 <span>PRO License Configuration</span>
+    <div class="wrapper">
+        <div class="card">
+            <a href="index.html" class="back">← Back to Dashboard</a>
+
+            <div class="badge">⭐ PRO Membership</div>
+
+            <h1>Upgrade to PRO</h1>
+
+            <p class="subtitle">
+                Unlock the complete Civil Service Exam Reviewer.
+                Get unlimited access to Practice Mode, the Full 170-item Mock Exam,
+                future premium features, and all upcoming reviewer updates.
+            </p>
+
+            <div class="price-box">
+                <div class="price-title">Lifetime Access</div>
+                <div class="price">₱299</div>
+                <div class="price-note">One-time payment • No monthly fees</div>
+                <div style="margin-top:14px; font-size:.85rem; color:#22c55e; font-weight:600;">
+                    ✔ Lifetime Access<br>
+                    ✔ No Monthly Subscription
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Everything Included</h2>
+                <ul>
+                    <li>✅ Unlimited Practice Mode</li>
+                    <li>✅ Full Mock Exam (170 Items)</li>
+                    <li>✅ Detailed Answer Explanations</li>
+                    <li>✅ Unlimited Review Sessions</li>
+                    <li>✅ Performance Analytics (Coming Soon)</li>
+                    <li>✅ AI Study Recommendations (Future Update)</li>
+                    <li>✅ Future Premium Updates Included</li>
+                    <li>✅ One-time Payment</li>
+                </ul>
+            </div>
+
+            <button id="payBtn" class="btn">🚀 Upgrade to PRO – ₱299</button>
+
+            <div class="secure">🔒 Secure payment powered by PayMongo</div>
+
+            <div class="note">
+                After successful payment, your account will automatically be upgraded to <strong>PRO</strong>.
+                <br><br>
+                No license key. No manual activation. Simply complete your payment and enjoy instant access.
+            </div>
         </div>
-      </div>
-
-      <h1>Activate PRO</h1>
-      <p class="subtitle">
-        Paste your <strong>PRO license key</strong> below to unlock advanced question configurations and the full 170-item Mock Exam.
-      </p>
-
-      <form id="licenseForm">
-        <label for="licenseKey">PRO License Key</label>
-        <input
-          id="licenseKey"
-          class="input"
-          type="text"
-          placeholder="Example: CSE-PRO-2026-ABCD-1234"
-          autocomplete="off"
-        />
-        <p class="hint">
-          You will receive your activation key via email after registration confirmation.
-        </p>
-
-        <button id="activateBtn" type="submit" class="btn">
-          Activate PRO Version
-        </button>
-      </form>
-
-      <div id="status" class="status info">
-        Activation keys are only required for PRO analytics modules. Default drills remain open for preview.
-      </div>
-
-      <div class="key-format">
-        <strong>📧 Key format:</strong>
-        Authentic identifiers begin with <code>CSE-PRO-</code><br>
-        Structure: <code>CSE-PRO-2026-XXXX-XXXX</code>
-      </div>
-
-      <p class="small-note">
-        Notice: Configuration properties are stored inside this local web client workspace profile. Cleared browser databases will require active key re-entry.
-      </p>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const payBtn = document.getElementById("payBtn");
 
-  <script>
-    async function activatePro(event) {
-      event.preventDefault();
+            // Check if user is logged in
+            const {
+                data: { session }
+            } = await supabaseClient.auth.getSession();
 
-      const input = document.getElementById("licenseKey");
-      const statusEl = document.getElementById("status");
-      const btn = document.getElementById("activateBtn");
-      const rawKey = (input.value || "").trim().toUpperCase();
+            if (!session) {
+                alert("Please login first.");
+                window.location.href = "login.html";
+                return;
+            }
 
-      if (!rawKey) {
-        statusEl.textContent = "Please paste your license key.";
-        statusEl.className = "status error";
-        return;
-      }
+            // Check membership status
+            const { data: profile, error } = await supabaseClient
+                .from("profiles")
+                .select("is_pro")
+                .eq("id", session.user.id)
+                .single();
 
-      btn.disabled = true;
-      statusEl.textContent = "Checking license authenticity…";
-      statusEl.className = "status info";
+            if (error) {
+                console.error(error);
+                alert("Unable to verify your account. Please refresh the page and try again.");
+                return;
+            }
 
-      // Intentional micro-delay for natural verification experience
-      await new Promise(r => setTimeout(r, 600));
+            // Already PRO
+            if (profile.is_pro) {
+                payBtn.innerHTML = "✅ PRO Already Activated";
+                payBtn.disabled = true;
+                return;
+            }
 
-      const { data, error } = await supabaseClient
-        .from("license_keys")
-        .select("key,is_used")
-        .eq("key", rawKey)
-        .maybeSingle();
+            // Pay button
+            payBtn.addEventListener("click", async () => {
+                payBtn.disabled = true;
+                payBtn.innerHTML = "Creating Secure Checkout...";
 
-      if (error) {
-        statusEl.textContent = "Unable to verify license. Please try again.";
-        statusEl.className = "status error";
-        btn.disabled = false;
-        return;
-      }
+                try {
+                    const response = await fetch(
+                        "http://localhost:3000/api/create-checkout",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        }
+                    );
 
-      const isValid = data && !data.is_used;
+                    const data = await response.json();
 
-      if (isValid) {
-        try {
-          localStorage.setItem("cse_is_pro", "true");
-          localStorage.setItem("cse_access_kind", "pro");
-          localStorage.setItem("cse_license_key", rawKey);
-          localStorage.removeItem("cse_expires_at"); // Ensure active runtime lifecycle cleanup
-        } catch (e) {
-          console.warn("Storage exception detected:", e);
-        }
+                    if (!data.checkout_url) {
+                        throw new Error("Checkout URL not received.");
+                    }
 
-        statusEl.textContent = "✅ PRO Activated! Synchronizing environment workspace…";
-        statusEl.className = "status success";
-
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1200);
-
-      } else {
-        statusEl.textContent = "❌ Invalid or already used license key.";
-        statusEl.className = "status error";
-        btn.disabled = false;
-      }
-    }
-
-    document.getElementById("licenseForm").addEventListener("submit", activatePro);
-
-    (function initStatus() {
-      const statusEl = document.getElementById("status");
-      const isPro = localStorage.getItem("cse_access_kind") === "pro" || localStorage.getItem("cse_is_pro") === "true";
-      if (isPro) {
-        const savedKey = localStorage.getItem("cse_license_key") || "";
-        statusEl.textContent = "✅ Active environment verified. Full PRO privileges unlocked on this client workstation.";
-        statusEl.className = "status success";
-        if (savedKey) {
-          document.getElementById("licenseKey").value = savedKey;
-        }
-      }
-    })();
-  </script>
+                    window.location.href = data.checkout_url;
+                }
+                catch (err) {
+                    console.error(err);
+                    alert("Unable to create checkout session.");
+                    payBtn.disabled = false;
+                    payBtn.innerHTML = "🚀 Upgrade to PRO – ₱299";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
