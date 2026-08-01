@@ -1041,7 +1041,7 @@ function updateSEO(topicId){
 }
 let IS_PRO_USER = false;
 
-let LOCKED_LEVELS = ["advanced", "expert"];git status
+let LOCKED_LEVELS = ["advanced", "expert"];
 const GUMROAD_URL = "https://7329689874364.gumroad.com/l/cvpax";
 
 // ==========================================
@@ -6008,6 +6008,7 @@ function openProModal() {
 
         // Fallback
         window.location.href = "license.html";
+
         return;
 
     }
@@ -6157,5 +6158,4 @@ function buildTOC() {
 </script>
 
 </body>
-</html>window.addEventListener('popstate',()=>{const p=new URLSearchParams(window.location.search);const topic=p.get('topic')||'nouns';if(topic!==currentTopicId){currentTopicId=topic;loadLesson(topic);updateSEO(topic);}});
-
+</html>
