@@ -113,3 +113,53 @@ function unlockButton(button, text) {
 function isProUser() {
     return currentProfile && currentProfile.is_pro === true;
 }
+
+// ==========================================
+// LOAD MEMBERSHIP FROM SUPABASE
+// ==========================================
+
+async function loadMembership() {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+    if (!session) {
+
+        window.currentProfile = {
+            is_pro: false
+        };
+
+        return;
+
+    }
+
+    const { data, error } = await supabaseClient
+        .from("profiles")
+        .select("*")
+        .eq("id", session.user.id)
+        .single();
+
+    if (error || !data) {
+
+        console.error(error);
+
+        window.currentProfile = {
+            is_pro: false
+        };
+
+        return;
+
+    }
+
+    window.currentProfile = data;
+
+    updateMembershipUI();
+
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await loadMembership();
+
+});

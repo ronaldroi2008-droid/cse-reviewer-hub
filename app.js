@@ -830,3 +830,76 @@ async function checkLogin() {
   console.log("Plan:", currentProfile.plan);
   console.log("PRO:", currentProfile.is_pro);
 }
+
+// ==========================================
+// MEMBERSHIP CARD
+// ==========================================
+async function loadMembershipCard() {
+
+    const membershipCard = document.getElementById("membershipCard");
+
+    if (!membershipCard) return;
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+    if (!session) {
+
+        membershipCard.innerHTML = `
+        <a href="license.html" class="subject-card">
+            <span class="subject-name">
+                <span class="subject-icon">🔑</span>
+                Upgrade to PRO
+            </span>
+            <span class="arrow">→</span>
+        </a>
+        `;
+
+        return;
+    }
+
+    const { data } = await supabaseClient
+        .from("profiles")
+        .select("is_pro")
+        .eq("id", session.user.id)
+        .single();
+
+    if (data?.is_pro) {
+
+        membershipCard.innerHTML = `
+        <div class="subject-card"
+             style="cursor:default;
+                    background:#052e16;
+                    border:1px solid #22c55e;">
+
+            <span class="subject-name">
+                ⭐ PRO MEMBER
+            </span>
+
+            <span style="
+                color:#22c55e;
+                font-weight:bold;">
+                Lifetime
+            </span>
+
+        </div>
+        `;
+
+    } else {
+
+        membershipCard.innerHTML = `
+        <a href="license.html" class="subject-card">
+            <span class="subject-name">
+                <span class="subject-icon">🔑</span>
+                Upgrade to PRO
+            </span>
+            <span class="arrow">→</span>
+        </a>
+        `;
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", loadMembershipCard);
