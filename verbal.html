@@ -5556,7 +5556,8 @@ let userAnswers = [];
 let quizStartTime = 0;
 
 
-CHECK IF REVIEW MODE
+// ==========================================
+// CHECK IF REVIEW MODE
 // ==========================================
 const urlParams = new URLSearchParams(window.location.search);
 const isReviewMode = urlParams.get('review') === 'true';
@@ -5698,9 +5699,6 @@ async function loadWrongQuestionsForReview() {
 // ==========================================
 // 4. HELPER FUNCTIONS (nasa baba pa rin ito)
 // ==========================================
-function capitalize(text) {
-    // ...
-
 // ==========================================
 // TOPIC HELPERS
 // ==========================================
@@ -6160,111 +6158,8 @@ async function finishQuiz() {
     console.error("❌ Failed to save quiz attempt:", error);
   }
 }
-  // ==========================================
-  // BUILD MISTAKE LIST
-  // ==========================================
 
-  mistakeListEl.innerHTML = "";
-
-  quizQuestions.forEach((q, idx) => {
-
-    const ans = userAnswers[idx];
-
-    if (ans && ans.isCorrect) return;
-
-    const item = document.createElement("div");
-
-    item.className = "mistake-item";
-
-    const userAnswerText =
-      ans && typeof ans.selectedIndex === "number"
-        ? q.options[ans.selectedIndex]
-        : "No answer";
-
-    item.innerHTML = `
-      <p class="mistake-q-title">
-        Question ${idx + 1}
-      </p>
-
-      <p class="mistake-q-text">
-        ${q.question}
-      </p>
-
-      <div class="mistake-answers">
-
-        <p class="wrong">
-          <span class="label">Your answer:</span>
-          ${userAnswerText}
-        </p>
-
-        <p class="correct">
-          <span class="label">Correct answer:</span>
-          ${q.answer}
-        </p>
-
-        ${
-          q.explanation
-            ? `
-              <p class="explanation">
-                <span class="label">Explanation:</span>
-                ${q.explanation}
-              </p>
-            `
-            : ""
-        }
-
-      </div>
-    `;
-
-    mistakeListEl.appendChild(item);
-
-  });
-
-  quizCardEl.style.display = "none";
-  resultPanelEl.classList.remove("hidden");
-
-  // ==========================================
-  // SAVE QUIZ ATTEMPT
-  // ==========================================
-
-  try {
-
-    console.log("Calling saveQuizAttempt...");
-
-    const saved = await saveQuizAttempt({
-
-      subject: "Verbal",
-
-      topic: currentTopicId,
-
-      level: currentLevel,
-
-      totalQuestions: total,
-
-      correctAnswers: correctCount,
-
-      wrongAnswers: total - correctCount,
-
-      durationMinutes: quizDuration
-
-    });
-
-    console.log("Save Result:", saved);
-
-    const stats = await getOverallStats();
-
-    console.log("Overall Stats:", stats);
-
-  }
-  catch (err) {
-
-    console.error("Failed to save progress:", err);
-
-  }
-
-}
-
-// Result buttons (Retake / Home)
+  // Result buttons (Retake / Home)
 function setupResultButtons() {
   const resultRetryBtn = document.getElementById("resultRetryBtn");
   const resultHomeBtn = document.getElementById("resultHomeBtn");
