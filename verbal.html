@@ -5555,7 +5555,6 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let quizStartTime = 0;
 
-
 // ==========================================
 // CHECK IF REVIEW MODE
 // ==========================================
@@ -5576,12 +5575,12 @@ async function loadWrongQuestionsForReview() {
         }
 
         // Get the latest quiz attempt with wrong questions for this subject
-        const subject = document.querySelector('.app-subtitle span')?.textContent || 'Numerical';
+        const subject = document.querySelector('.app-subtitle span')?.textContent || 'Verbal';
         const subjectMap = {
             'Numerical': 'Numerical',
             'Verbal': 'Verbal'
         };
-        const subjectKey = subjectMap[subject] || 'Numerical';
+        const subjectKey = subjectMap[subject] || 'Verbal';
 
         const { data: attempts, error } = await supabaseClient
             .from('quiz_attempts')
@@ -5696,9 +5695,6 @@ async function loadWrongQuestionsForReview() {
     }
 }
 
-// ==========================================
-// 4. HELPER FUNCTIONS (nasa baba pa rin ito)
-// ==========================================
 // ==========================================
 // TOPIC HELPERS
 // ==========================================
@@ -5988,6 +5984,39 @@ function renderCurrentQuestion() {
     feedbackEl.classList.toggle("feedback--correct", existing.isCorrect);
     feedbackEl.classList.toggle("feedback--incorrect", !existing.isCorrect);
   }
+
+  // ✅ IF IN REVIEW MODE, HIGHLIGHT WRONG ANSWERS
+  if (isReviewMode && quizQuestions[currentQuestionIndex]?.isReview) {
+    const currentQ = quizQuestions[currentQuestionIndex];
+    const buttons = optionsListEl.querySelectorAll('.option-button');
+    
+    buttons.forEach(btn => {
+      const btnText = btn.textContent;
+      if (btnText === currentQ.userAnswer) {
+        btn.classList.add('is-incorrect');
+      }
+      if (btnText === currentQ.answer) {
+        btn.classList.add('is-correct');
+      }
+    });
+    
+    if (feedbackEl) {
+      feedbackEl.innerHTML = `
+        <div style="background: rgba(248, 113, 113, 0.08); padding: 10px; border-radius: 8px; margin-top: 8px; border: 1px solid rgba(248, 113, 113, 0.2);">
+          <p style="color: #f87171; font-size: 0.85rem; margin: 0;">
+            ❌ Your answer: ${currentQ.userAnswer}
+          </p>
+          <p style="color: #34d399; font-size: 0.85rem; margin: 4px 0 0 0;">
+            ✅ Correct answer: ${currentQ.answer}
+          </p>
+          <p style="color: #94a3b8; font-size: 0.8rem; margin: 4px 0 0 0;">
+            💡 ${currentQ.explanation}
+          </p>
+        </div>
+      `;
+      feedbackEl.className = 'feedback';
+    }
+  }
 }
 
 // Option click = auto check
@@ -6052,11 +6081,42 @@ function updateNavButtons() {
 }
 
 // ==========================================
+// START QUIZ
+// ==========================================
+function startQuiz() {
+  const quizTopicTitleEl = document.getElementById("quizTopicTitle");
+  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+
+  quizStartTime = Date.now();
+
+  // ✅ CHECK IF REVIEW MODE
+  if (isReviewMode && quizQuestions.length === 0) {
+    loadWrongQuestionsForReview();
+    return;
+  }
+
+  quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
+
+  const currentLevelChip = document.querySelector(
+    `.level-chip[data-level="${currentLevel}"]`
+  );
+  if (currentLevelChip) {
+    const label =
+      currentLevelChip.dataset.levelLabel ||
+      currentLevelChip.textContent.replace("🔒", "").trim();
+    quizLevelLabelEl.textContent = label;
+  } else {
+    quizLevelLabelEl.textContent =
+      currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
+  }
+
+  buildQuizQuestions();
+}
+
+// ==========================================
 // FINISH QUIZ + SAVE PROGRESS
 // ==========================================
-
 async function finishQuiz() {
-
   console.log("🎯 finishQuiz() called");
 
   const quizCardEl = document.getElementById("quizCard");
@@ -6141,14 +6201,14 @@ async function finishQuiz() {
   try {
     if (typeof saveQuizAttempt === "function") {
       await saveQuizAttempt({
-        subject: "Verbal",  // or "Numerical" for numerical.html
+        subject: "Verbal",
         topic: currentTopicId,
         level: currentLevel,
         totalQuestions: total,
         correctAnswers: correctCount,
         wrongAnswers: total - correctCount,
         durationMinutes: quizDuration,
-        wrongQuestions: wrongQuestions  // ✅ NEW
+        wrongQuestions: wrongQuestions
       });
       console.log("✅ Quiz saved with", wrongQuestions.length, "wrong questions");
     } else {
@@ -6159,7 +6219,9 @@ async function finishQuiz() {
   }
 }
 
-  // Result buttons (Retake / Home)
+// ==========================================
+// RESULT BUTTONS
+// ==========================================
 function setupResultButtons() {
   const resultRetryBtn = document.getElementById("resultRetryBtn");
   const resultHomeBtn = document.getElementById("resultHomeBtn");
@@ -6177,32 +6239,9 @@ function setupResultButtons() {
   });
 }
 
-// Start quiz for current topic/level/items
-function startQuiz() {
-  const quizTopicTitleEl = document.getElementById("quizTopicTitle");
-  const quizLevelLabelEl = document.getElementById("quizLevelLabel");
-
-  quizStartTime = Date.now();
-
-  quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
-
-  const currentLevelChip = document.querySelector(
-    `.level-chip[data-level="${currentLevel}"]`
-  );
-  if (currentLevelChip) {
-    const label =
-      currentLevelChip.dataset.levelLabel ||
-      currentLevelChip.textContent.replace("🔒", "").trim();
-    quizLevelLabelEl.textContent = label;
-  } else {
-    quizLevelLabelEl.textContent =
-      currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1);
-  }
-
-  buildQuizQuestions();
-}
-
-// Prev/Next button handlers
+// ==========================================
+// PREV/NEXT BUTTON HANDLERS
+// ==========================================
 function setupNavButtonsHandlers() {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
@@ -6231,9 +6270,33 @@ function setupNavButtonsHandlers() {
 }
 
 // ==========================================
+// SWITCH MODE
+// ==========================================
+function switchMode(mode) {
+  currentMode = mode;
+
+  const modeTabs = document.querySelectorAll(".mode-tab");
+  modeTabs.forEach((tab) => {
+    tab.classList.toggle("active", tab.dataset.mode === mode);
+  });
+
+  const studyView = document.getElementById("studyView");
+  const practiceView = document.getElementById("practiceView");
+
+  if (mode === "study") {
+    studyView.classList.add("view--active");
+    practiceView.classList.remove("view--active");
+    loadLesson(currentTopicId);
+  } else {
+    practiceView.classList.add("view--active");
+    studyView.classList.remove("view--active");
+    startQuiz();
+  }
+}
+
+// ==========================================
 // PRO MODAL FUNCTIONS
 // ==========================================
-
 function openProModal() {
   if (IS_PRO_USER) {
     return;
@@ -6298,11 +6361,6 @@ function setupProModal() {
 // INIT
 // ==========================================
 async function initVerbalPage() {
-  // Kunin ang membership gamit ang membership.js
-  // NOTE: defensive wrapper - kung hindi na-load ang membership.js (missing file,
-  // 404, blocked domain, Supabase error, atbp.), hindi na dapat mag-crash ang
-  // buong page. Mag-de-default lang tayo sa Free Plan at ituloy ang pag-render
-  // ng topics/lessons.
   try {
     if (typeof loadMembership === "function") {
       await loadMembership();
