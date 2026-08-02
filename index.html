@@ -939,6 +939,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-config.js"></script>
 <script src="membership.js"></script>
+<script src="progress.js"></script>
 
 <!-- ===== MAIN APPLICATION SCRIPT ===== -->
 <script>
@@ -969,7 +970,45 @@
   const quickMock = document.getElementById('quickMock');
 
   // ==========================================
-  // RESET STATS TO DEFAULT (no hardcoded values)
+  // LOAD DASHBOARD STATS FROM PROGRESS.JS
+  // ==========================================
+  async function loadDashboardStats() {
+    try {
+      // Check if user is logged in
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) {
+        console.log('No active session, stats remain at 0');
+        resetStats();
+        return;
+      }
+
+      // Check if getOverallStats function exists
+      if (typeof getOverallStats !== 'function') {
+        console.warn('getOverallStats not available - progress.js may not be loaded');
+        resetStats();
+        return;
+      }
+
+      const stats = await getOverallStats();
+      
+      if (stats) {
+        console.log('📊 Dashboard stats loaded:', stats);
+        statQuestions.textContent = stats.totalQuestions || 0;
+        statAccuracy.textContent = stats.accuracy || '0';
+        statStudyTime.textContent = stats.studyHours || '0';
+        statStreak.textContent = `🔥${stats.streak || 0}`;
+      } else {
+        console.warn('No stats available from getOverallStats');
+        resetStats();
+      }
+    } catch (error) {
+      console.error('Error loading dashboard stats:', error);
+      resetStats();
+    }
+  }
+
+  // ==========================================
+  // RESET STATS TO DEFAULT
   // ==========================================
   function resetStats() {
     statQuestions.textContent = '0';
@@ -1023,8 +1062,9 @@
       }
 
       updateProtectedButtons(status);
-      // Stats remain at default (0) until progress tracking is implemented
-      resetStats();
+      
+      // Load actual stats from progress.js
+      loadDashboardStats();
 
     } else {
       // --- SHOW LOGGED-OUT UI ---
@@ -1155,14 +1195,22 @@
     }, 500);
   });
 
+  // Listen for membership updates
   document.addEventListener('membershipUpdated', function() {
     updateUI();
   });
 
+  // Listen for storage changes (for cross-tab updates)
   window.addEventListener('storage', function(e) {
     if (e.key === 'session_id' || e.key === 'cse_access_kind') {
       updateUI();
     }
+  });
+
+  // Listen for progress updates from other pages
+  document.addEventListener('progressUpdated', function() {
+    console.log('🔄 Progress updated, refreshing stats...');
+    loadDashboardStats();
   });
 
   // ==========================================
@@ -1188,8 +1236,9 @@
   window.updateProtectedButtons = updateProtectedButtons;
   window.resetProtectedButtons = resetProtectedButtons;
   window.resetStats = resetStats;
+  window.loadDashboardStats = loadDashboardStats;
 
-  console.log('✅ Index page ready with dashboard (stats ready for progress tracking)');
+  console.log('✅ Index page ready with dashboard (stats integrated with progress.js)');
 })();
 </script>
 

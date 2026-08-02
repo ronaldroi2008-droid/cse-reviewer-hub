@@ -5907,33 +5907,59 @@ function updateNavButtons() {
     currentQuestionIndex === quizQuestions.length - 1 ? "Finish Quiz" : "Next";
 }
 
-// Finish quiz + result panel
-function finishQuiz() {
+// ==========================================
+// FINISH QUIZ + SAVE PROGRESS
+// ==========================================
+
+async function finishQuiz() {
+
+  console.log("🎯 finishQuiz() called");
+
   const quizCardEl = document.getElementById("quizCard");
   const resultPanelEl = document.getElementById("resultPanel");
   const resultScoreMainEl = document.getElementById("resultScoreMain");
   const resultScoreTextEl = document.getElementById("resultScoreText");
   const mistakeListEl = document.getElementById("mistakeList");
 
+  // Calculate quiz duration
+  const endTime = Date.now();
+  const quizDuration = Math.max(
+    1,
+    Math.round((endTime - quizStartTime) / 60000)
+  );
+
+  // Count correct answers
   let correctCount = 0;
+
   quizQuestions.forEach((q, idx) => {
     const ans = userAnswers[idx];
-    if (ans && ans.isCorrect) correctCount++;
+    if (ans && ans.isCorrect) {
+      correctCount++;
+    }
   });
 
   const total = quizQuestions.length || 0;
-  const percent = total ? Math.round((correctCount / total) * 100) : 0;
+  const percent = total
+    ? Math.round((correctCount / total) * 100)
+    : 0;
 
   resultScoreMainEl.textContent = `${correctCount} / ${total}`;
   resultScoreTextEl.textContent = `Score: ${percent}%`;
 
-  // Build mistake list
+  // ==========================================
+  // BUILD MISTAKE LIST
+  // ==========================================
+
   mistakeListEl.innerHTML = "";
+
   quizQuestions.forEach((q, idx) => {
+
     const ans = userAnswers[idx];
+
     if (ans && ans.isCorrect) return;
 
     const item = document.createElement("div");
+
     item.className = "mistake-item";
 
     const userAnswerText =
@@ -5942,70 +5968,86 @@ function finishQuiz() {
         : "No answer";
 
     item.innerHTML = `
-      <p class="mistake-q-title">Question ${idx + 1}</p>
-      <p class="mistake-q-text">${q.question}</p>
+      <p class="mistake-q-title">
+        Question ${idx + 1}
+      </p>
+
+      <p class="mistake-q-text">
+        ${q.question}
+      </p>
+
       <div class="mistake-answers">
-        <p class="wrong"><span class="label">Your answer:</span> ${userAnswerText}</p>
-        <p class="correct"><span class="label">Correct answer:</span> ${q.answer}</p>
+
+        <p class="wrong">
+          <span class="label">Your answer:</span>
+          ${userAnswerText}
+        </p>
+
+        <p class="correct">
+          <span class="label">Correct answer:</span>
+          ${q.answer}
+        </p>
+
         ${
           q.explanation
-            ? `<p class="explanation"><span class="label">Explanation:</span> ${q.explanation}</p>`
+            ? `
+              <p class="explanation">
+                <span class="label">Explanation:</span>
+                ${q.explanation}
+              </p>
+            `
             : ""
         }
+
       </div>
     `;
+
     mistakeListEl.appendChild(item);
+
   });
 
   quizCardEl.style.display = "none";
   resultPanelEl.classList.remove("hidden");
 
-  // Save quiz attempt
-  saveAttemptAndShowStats(total, correctCount);
-}
+  // ==========================================
+  // SAVE QUIZ ATTEMPT
+  // ==========================================
 
-async function saveAttemptAndShowStats(total, correctCount) {
   try {
-    if (typeof saveQuizAttempt === "function") {
-      const endTime = Date.now();
-      const quizDuration = quizStartTime
-        ? Math.max(1, Math.round((endTime - quizStartTime) / 60000))
-        : 1;
 
-      await saveQuizAttempt({
-        subject: "Verbal",
-        topic: currentTopicId,
-        level: currentLevel,
-        totalQuestions: total,
-        correctAnswers: correctCount,
-        wrongAnswers: total - correctCount,
-        durationMinutes: quizDuration || 0
-      });
-      console.log("✅ Quiz attempt saved successfully");
+    console.log("Calling saveQuizAttempt...");
 
-      if (typeof getOverallStats === "function") {
-        const stats = await getOverallStats();
+    const saved = await saveQuizAttempt({
 
-        if (stats) {
-          const statsDisplay = document.getElementById("statsDisplay");
-          if (statsDisplay) {
-            statsDisplay.innerHTML = `
-              <h3>Your Overall Progress</h3>
-              <p>Questions Answered: <strong>${stats.totalQuestions}</strong></p>
-              <p>Accuracy: <strong>${stats.accuracy}%</strong></p>
-              <p>Study Time: <strong>${stats.studyHours} hrs</strong></p>
-            `;
-          }
-        }
-      } else {
-        console.warn("⚠️ getOverallStats function not available");
-      }
-    } else {
-      console.warn("⚠️ saveQuizAttempt function not available");
-    }
-  } catch (error) {
-    console.error("❌ Failed to save quiz attempt:", error);
+      subject: "Verbal",
+
+      topic: currentTopicId,
+
+      level: currentLevel,
+
+      totalQuestions: total,
+
+      correctAnswers: correctCount,
+
+      wrongAnswers: total - correctCount,
+
+      durationMinutes: quizDuration
+
+    });
+
+    console.log("Save Result:", saved);
+
+    const stats = await getOverallStats();
+
+    console.log("Overall Stats:", stats);
+
   }
+  catch (err) {
+
+    console.error("Failed to save progress:", err);
+
+  }
+
 }
 
 // Result buttons (Retake / Home)
