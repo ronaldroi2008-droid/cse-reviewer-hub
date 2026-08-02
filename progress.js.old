@@ -1,0 +1,134 @@
+// ==========================================
+// PROGRESS SYSTEM
+// ==========================================
+
+async function saveProgress({
+    subject,
+    topic,
+    level,
+    correct
+}) {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+    if (!session) return;
+
+    const userId = session.user.id;
+
+    // Check existing record
+    const { data } = await supabaseClient
+        .from("user_progress")
+        .select("*")
+        .eq("user_id", userId)
+        .eq("subject", subject)
+        .eq("topic", topic)
+        .eq("level", level)
+        .maybeSingle();
+
+    if (!data) {
+
+        await supabaseClient
+            .from("user_progress")
+            .insert({
+
+                user_id: userId,
+
+                subject,
+
+                topic,
+
+                level,
+
+                questions_answered: 1,
+
+                correct_answers: correct ? 1 : 0,
+
+                wrong_answers: correct ? 0 : 1,
+
+                study_minutes: 1,
+
+                last_studied: new Date()
+
+            });
+
+        return;
+
+    }
+
+    await supabaseClient
+        .from("user_progress")
+        .update({
+
+            questions_answered:
+                data.questions_answered + 1,
+
+            correct_answers:
+                data.correct_answers + (correct ? 1 : 0),
+
+            wrong_answers:
+                data.wrong_answers + (correct ? 0 : 1),
+
+            study_minutes:
+                data.study_minutes + 1,
+
+            last_studied:
+                new Date(),
+
+            updated_at:
+                new Date()
+
+        })
+        .eq("id", data.id);
+
+}
+
+// ==========================================
+
+async function getOverallStats() {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+    if (!session) return null;
+
+    const { data } = await supabaseClient
+        .from("user_progress")
+        .select("*")
+        .eq("user_id", session.user.id);
+
+    if (!data) return null;
+
+    let questions = 0;
+
+    let correct = 0;
+
+    let minutes = 0;
+
+    data.forEach(row => {
+
+        questions += row.questions_answered;
+
+        correct += row.correct_answers;
+
+        minutes += row.study_minutes;
+
+    });
+
+    return {
+
+        questions,
+
+        accuracy:
+            questions
+                ? Math.round(correct / questions * 100)
+                : 0,
+
+        studyHours:
+            (minutes / 60).toFixed(1)
+
+    };
+
+}

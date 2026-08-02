@@ -560,6 +560,30 @@
       font-weight: 600;
     }
 
+    #statsDisplay {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: rgba(99, 102, 241, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+
+    #statsDisplay h3 {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: #a5b4fc;
+    }
+
+    #statsDisplay p {
+      margin: 0 0 4px;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    #statsDisplay p strong {
+      color: #f9fafb;
+    }
+
     /* PRO MODAL STYLES */
     .pro-modal {
       position: fixed;
@@ -953,6 +977,7 @@ html {
               <div id="mistakeList" class="mistake-list">
                 <!-- Filled by JS -->
               </div>
+              <div id="statsDisplay"></div>
             </div>
           </div>
         </div>
@@ -1027,6 +1052,7 @@ html {
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="membership.js"></script>
+  <script src="progress.js"></script>
 
 <script>
 // ==========================================
@@ -5527,6 +5553,7 @@ let currentItemsCount = 10;
 let quizQuestions = [];
 let currentQuestionIndex = 0;
 let userAnswers = [];
+let quizStartTime = 0;
 
 // ==========================================
 // TOPIC HELPERS
@@ -5932,6 +5959,53 @@ function finishQuiz() {
 
   quizCardEl.style.display = "none";
   resultPanelEl.classList.remove("hidden");
+
+  // Save quiz attempt
+  saveAttemptAndShowStats(total, correctCount);
+}
+
+async function saveAttemptAndShowStats(total, correctCount) {
+  try {
+    if (typeof saveQuizAttempt === "function") {
+      const endTime = Date.now();
+      const quizDuration = quizStartTime
+        ? Math.max(1, Math.round((endTime - quizStartTime) / 60000))
+        : 1;
+
+      await saveQuizAttempt({
+        subject: "Verbal",
+        topic: currentTopicId,
+        level: currentLevel,
+        totalQuestions: total,
+        correctAnswers: correctCount,
+        wrongAnswers: total - correctCount,
+        durationMinutes: quizDuration || 0
+      });
+      console.log("✅ Quiz attempt saved successfully");
+
+      if (typeof getOverallStats === "function") {
+        const stats = await getOverallStats();
+
+        if (stats) {
+          const statsDisplay = document.getElementById("statsDisplay");
+          if (statsDisplay) {
+            statsDisplay.innerHTML = `
+              <h3>Your Overall Progress</h3>
+              <p>Questions Answered: <strong>${stats.totalQuestions}</strong></p>
+              <p>Accuracy: <strong>${stats.accuracy}%</strong></p>
+              <p>Study Time: <strong>${stats.studyHours} hrs</strong></p>
+            `;
+          }
+        }
+      } else {
+        console.warn("⚠️ getOverallStats function not available");
+      }
+    } else {
+      console.warn("⚠️ saveQuizAttempt function not available");
+    }
+  } catch (error) {
+    console.error("❌ Failed to save quiz attempt:", error);
+  }
 }
 
 // Result buttons (Retake / Home)
@@ -5956,6 +6030,8 @@ function setupResultButtons() {
 function startQuiz() {
   const quizTopicTitleEl = document.getElementById("quizTopicTitle");
   const quizLevelLabelEl = document.getElementById("quizLevelLabel");
+
+  quizStartTime = Date.now();
 
   quizTopicTitleEl.textContent = getTopicLabel(currentTopicId);
 

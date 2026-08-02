@@ -15,6 +15,7 @@
   <meta property="og:description" content="Prepare effectively with our 170-item simulated mock exam and interactive subject drills." />
   
   <style>
+    /* ===== RESET & BASE ===== */
     * {
       margin: 0;
       padding: 0;
@@ -51,6 +52,7 @@
       padding: 2rem 1.8rem;
     }
 
+    /* ===== HEADER ===== */
     .badge-area {
       display: flex;
       flex-wrap: wrap;
@@ -138,7 +140,6 @@
       color: #cbd5e1;
     }
 
-    /* ===== Auth Buttons ===== */
     .auth-links {
       display: flex;
       gap: 8px;
@@ -155,7 +156,6 @@
       border: 1px solid #818cf8;
       transition: all 0.2s;
     }
-
     .btn-login:hover {
       background: #818cf8;
       color: white;
@@ -171,7 +171,6 @@
       background: #4f46e5;
       transition: all 0.2s;
     }
-
     .btn-register:hover {
       background: #6366f1;
       transform: scale(1.02);
@@ -188,17 +187,14 @@
       font-size: 0.85rem;
       transition: all 0.2s;
     }
-
     .btn-logout:hover {
       background: #b91c1c;
       transform: scale(1.02);
     }
 
-    #logoutContainer {
-      display: none;
-    }
+    #logoutContainer { display: none; }
 
-    /* ===== User Session Info ===== */
+    /* ===== USER SESSION INFO ===== */
     .user-session-info {
       display: none;
       margin: 16px 0 20px;
@@ -207,7 +203,6 @@
       border-radius: 12px;
       border-left: 4px solid #4f46e5;
     }
-
     .user-session-info .session-row {
       display: flex;
       justify-content: space-between;
@@ -215,18 +210,15 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .user-session-info .user-greeting {
       color: #e2e8f0;
       font-size: 1rem;
       font-weight: 500;
     }
-
     .user-session-info .user-greeting span {
       color: #818cf8;
       font-weight: 600;
     }
-
     .membership-badge {
       padding: 4px 12px;
       border-radius: 40px;
@@ -234,20 +226,101 @@
       font-weight: 600;
       margin-left: 10px;
     }
-
     .membership-badge.pro {
       background: #10b98120;
       color: #6ee7b7;
       border: 1px solid #34d39940;
     }
-
     .membership-badge.free {
       background: #f59e0b20;
       color: #fbbf24;
       border: 1px solid #f59e0b40;
     }
 
-    /* ===== Upgrade Banner ===== */
+    /* ===== DASHBOARD OVERVIEW ===== */
+    .dashboard-overview {
+      margin: 20px 0 18px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .stat-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 14px 8px;
+      text-align: center;
+      transition: border 0.2s;
+      backdrop-filter: blur(2px);
+    }
+    .stat-card:hover {
+      border-color: #4f46e5;
+    }
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    /* ===== QUICK ACTIONS ===== */
+    .quick-actions {
+      margin: 18px 0 22px;
+      background: rgba(15, 23, 42, 0.4);
+      border-radius: 20px;
+      padding: 18px 20px;
+      border: 1px solid #2a3a55;
+    }
+    .quick-actions h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quick-actions .action-btn {
+      display: inline-block;
+      background: #1e293b;
+      border: 1px solid #475569;
+      border-radius: 60px;
+      padding: 10px 22px;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-right: 12px;
+      margin-bottom: 8px;
+    }
+    .quick-actions .action-btn:hover {
+      background: #334155;
+      border-color: #818cf8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(79, 70, 229, 0.2);
+    }
+    .quick-actions .action-btn.locked {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .quick-actions .action-btn.locked:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: #475569;
+    }
+
+    /* ===== UPGRADE BANNER ===== */
     .upgrade-banner {
       display: none;
       margin: 16px 0;
@@ -256,7 +329,6 @@
       border-radius: 12px;
       border: 1px solid #f59e0b40;
     }
-
     .upgrade-banner .upgrade-row {
       display: flex;
       justify-content: space-between;
@@ -264,28 +336,21 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .upgrade-banner .upgrade-text {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
-    .upgrade-banner .upgrade-text .icon {
-      font-size: 1.2rem;
-    }
-
+    .upgrade-banner .upgrade-text .icon { font-size: 1.2rem; }
     .upgrade-banner .upgrade-text .label {
       color: #fbbf24;
       font-weight: 600;
     }
-
     .upgrade-banner .upgrade-text .desc {
       color: #94a3b8;
       font-size: 0.9rem;
       margin-left: 4px;
     }
-
     .btn-upgrade {
       background: linear-gradient(135deg, #f59e0b, #d97706);
       color: white;
@@ -298,13 +363,12 @@
       border: none;
       cursor: pointer;
     }
-
     .btn-upgrade:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
-    /* ===== Subject Grid ===== */
+    /* ===== SUBJECT GRID ===== */
     .subject-grid {
       display: flex;
       flex-direction: column;
@@ -324,14 +388,12 @@
       transition: all 0.2s ease;
       backdrop-filter: blur(2px);
     }
-
     .subject-card:hover {
       border-color: #6366f1;
       background: #1e293bb3;
       transform: translateX(6px);
       box-shadow: 0 8px 20px -12px #6366f180;
     }
-
     .subject-name {
       font-weight: 600;
       color: #f1f5f9;
@@ -340,20 +402,13 @@
       align-items: center;
       gap: 12px;
     }
-
-    .subject-icon {
-      font-size: 1.4rem;
-    }
-
+    .subject-icon { font-size: 1.4rem; }
     .arrow {
       color: #818cf8;
       font-size: 1.3rem;
       transition: transform 0.2s;
     }
-
-    .subject-card:hover .arrow {
-      transform: translateX(5px);
-    }
+    .subject-card:hover .arrow { transform: translateX(5px); }
 
     .badge-locked {
       font-size: 0.7rem;
@@ -364,7 +419,6 @@
       margin-left: 10px;
       font-weight: normal;
     }
-
     .badge-unlocked {
       font-size: 0.7rem;
       background: #10b98120;
@@ -376,6 +430,7 @@
       border: 1px solid #34d39940;
     }
 
+    /* ===== GUIDE CARDS ===== */
     .guide-card {
       background: rgba(30, 41, 59, 0.4);
       border: 1px solid rgba(71, 85, 105, 0.3);
@@ -384,7 +439,6 @@
       margin-top: 12px;
       margin-bottom: 16px;
     }
-
     .guide-card h3 a {
       color: #818cf8;
       text-decoration: none;
@@ -392,12 +446,10 @@
       font-weight: 600;
       transition: color 0.2s;
     }
-
     .guide-card h3 a:hover {
       color: #a5b4fc;
       text-decoration: underline;
     }
-
     .guide-card p {
       font-size: 0.9rem !important;
       color: #94a3b8 !important;
@@ -408,14 +460,12 @@
     .faq-item {
       margin-bottom: 20px;
     }
-
     .faq-item h3 {
       color: #c4b5fd;
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 6px;
     }
-
     .faq-item p {
       color: #94a3b8;
       font-size: 0.9rem;
@@ -431,6 +481,7 @@
       margin-top: 12px;
     }
 
+    /* ===== MODAL ===== */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -446,7 +497,6 @@
       padding: 20px;
       transition: all 0.2s;
     }
-
     .modal-container {
       max-width: 520px;
       width: 100%;
@@ -457,19 +507,16 @@
       overflow: hidden;
       animation: fadeSlideUp 0.25s ease;
     }
-
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .modal-header {
       padding: 1.5rem 1.8rem 0.8rem;
       position: relative;
       text-align: center;
       border-bottom: 1px solid #1e293b;
     }
-
     .modal-close {
       position: absolute;
       right: 18px;
@@ -486,14 +533,11 @@
       align-items: center;
       justify-content: center;
     }
-
     .modal-close:hover {
       background: #33415560;
       color: white;
     }
-
     .modal-icon { font-size: 2.4rem; margin-bottom: 8px; }
-
     .modal-title {
       font-size: 1.6rem;
       font-weight: 700;
@@ -502,14 +546,12 @@
       background-clip: text;
       color: transparent;
     }
-
     .tabs {
       display: flex;
       gap: 12px;
       justify-content: center;
       margin: 1rem 1rem 0.5rem;
     }
-
     .tab-btn {
       flex: 1;
       background: #0f172a80;
@@ -522,16 +564,13 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-
     .tab-btn.active {
       background: linear-gradient(95deg, #4f46e5, #6366f1);
       border-color: transparent;
       color: white;
       box-shadow: 0 4px 12px #4f46e560;
     }
-
     .modal-body { padding: 1.2rem 1.8rem 1.8rem; }
-
     .features-box {
       background: #02061760;
       border-radius: 1.2rem;
@@ -539,9 +578,7 @@
       margin: 12px 0;
       border: 1px solid #334155;
     }
-
     .features-box ul { list-style: none; padding-left: 0; }
-
     .features-box li {
       margin-bottom: 10px;
       display: flex;
@@ -550,7 +587,6 @@
       color: #e2e8f0;
       font-size: 0.9rem;
     }
-
     .features-box li::before { content: "✨"; font-size: 1rem; }
 
     .btn-glow {
@@ -569,12 +605,10 @@
       transition: 0.2s;
       box-shadow: 0 8px 18px #4f46e540;
     }
-
     .btn-glow:hover {
       transform: translateY(-2px);
       box-shadow: 0 15px 25px -8px #6366f180;
     }
-
     .secondary-btn {
       background: #1e293b;
       border: 1px solid #475569;
@@ -588,12 +622,10 @@
       transition: 0.2s;
       margin-top: 12px;
     }
-
     .secondary-btn:hover {
       background: #334155;
       border-color: #818cf8;
     }
-
     .info-note {
       font-size: 0.9rem;
       color: #cbd5e1;
@@ -602,8 +634,39 @@
       line-height: 1.7;
       padding: 12px;
     }
-
     .mt-2 { margin-top: 12px; }
+
+    /* ===== RESPONSIVE TWEAKS ===== */
+    @media (max-width: 500px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .stat-card {
+        padding: 12px 6px;
+      }
+      .stat-value {
+        font-size: 1.3rem;
+      }
+      .quick-actions .action-btn {
+        display: block;
+        margin-right: 0;
+        text-align: center;
+      }
+      .content {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .badge-area {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .header-right {
+        justify-content: space-between;
+      }
+    }
   </style>
 </head>
 <body>
@@ -619,18 +682,13 @@
           <h1>CSE Reviewer Hub</h1>
         </div>
         <div class="header-right">
-          <!-- Membership Status -->
           <div id="licenseStatusBox" class="access-status">
             <span class="pill pill-free">⟳ loading</span>
           </div>
-          
-          <!-- Login/Register Links (lumalabas lang kapag naka-log out) -->
           <div id="authLinks" class="auth-links">
             <a href="login.html" class="btn-login">Login</a>
             <a href="register.html" class="btn-register">Register</a>
           </div>
-          
-          <!-- Logout Button (lumalabas lang kapag naka-log in) -->
           <div id="logoutContainer">
             <button onclick="logoutUser()" class="btn-logout">Logout</button>
           </div>
@@ -650,6 +708,35 @@
           </div>
         </div>
       </div>
+
+      <!-- ===== DASHBOARD OVERVIEW ===== -->
+      <section class="dashboard-overview">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="statQuestions">0</div>
+            <div class="stat-label">Questions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statAccuracy">0%</div>
+            <div class="stat-label">Accuracy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statStudyTime">0h</div>
+            <div class="stat-label">Study Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statStreak">🔥0</div>
+            <div class="stat-label">Streak</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== QUICK ACTIONS ===== -->
+      <section class="quick-actions">
+        <h2>🚀 Continue Learning</h2>
+        <a href="license.html" class="action-btn locked" id="quickPractice">🎯 Practice Mode</a>
+        <a href="license.html" class="action-btn locked" id="quickMock">🏆 Mock Exam</a>
+      </section>
 
       <!-- ===== UPGRADE BANNER ===== -->
       <div id="upgradeBanner" class="upgrade-banner">
@@ -871,6 +958,26 @@
   const authLinks = document.getElementById('authLinks');
   const logoutContainer = document.getElementById('logoutContainer');
 
+  // Dashboard stat elements
+  const statQuestions = document.getElementById('statQuestions');
+  const statAccuracy = document.getElementById('statAccuracy');
+  const statStudyTime = document.getElementById('statStudyTime');
+  const statStreak = document.getElementById('statStreak');
+
+  // Quick action buttons
+  const quickPractice = document.getElementById('quickPractice');
+  const quickMock = document.getElementById('quickMock');
+
+  // ==========================================
+  // RESET STATS TO DEFAULT (no hardcoded values)
+  // ==========================================
+  function resetStats() {
+    statQuestions.textContent = '0';
+    statAccuracy.textContent = '0%';
+    statStudyTime.textContent = '0h';
+    statStreak.textContent = '🔥0';
+  }
+
   // ==========================================
   // UPDATE UI BASED ON LOGIN STATUS
   // ==========================================
@@ -880,19 +987,15 @@
 
     if (isLoggedIn && currentProfile) {
       // --- SHOW LOGGED-IN UI ---
-      // Hide login/register, show logout
       authLinks.style.display = 'none';
       logoutContainer.style.display = 'block';
       userSessionInfo.style.display = 'block';
       
-      // Set user name - use full_name if available
       const displayName = currentProfile.full_name || currentProfile.email || 'User';
       userName.textContent = displayName.split('@')[0];
 
-      // Get membership status
       const status = getProStatus();
 
-      // Update membership badge - FIXED FOR LIFETIME PRO
       if (status.isPro) {
         if (status.isLifetime) {
           membershipBadge.textContent = '🟢 PRO (Lifetime)';
@@ -903,25 +1006,41 @@
         }
         membershipBadge.className = 'membership-badge pro';
         upgradeBanner.style.display = 'none';
+        // Unlock quick actions
+        quickPractice.href = 'practice.html';
+        quickPractice.classList.remove('locked');
+        quickMock.href = 'mock_exam.html';
+        quickMock.classList.remove('locked');
       } else {
         membershipBadge.textContent = '🔓 FREE Plan';
         membershipBadge.className = 'membership-badge free';
         upgradeBanner.style.display = 'block';
+        // Lock quick actions
+        quickPractice.href = 'license.html';
+        quickPractice.classList.add('locked');
+        quickMock.href = 'license.html';
+        quickMock.classList.add('locked');
       }
 
-      // Update practice and mock exam buttons
       updateProtectedButtons(status);
+      // Stats remain at default (0) until progress tracking is implemented
+      resetStats();
 
     } else {
       // --- SHOW LOGGED-OUT UI ---
-      // Show login/register, hide logout
       authLinks.style.display = 'flex';
       logoutContainer.style.display = 'none';
       userSessionInfo.style.display = 'none';
       upgradeBanner.style.display = 'none';
       
-      // Reset practice and mock exam buttons to default (locked)
       resetProtectedButtons();
+      // Lock quick actions
+      quickPractice.href = 'license.html';
+      quickPractice.classList.add('locked');
+      quickMock.href = 'license.html';
+      quickMock.classList.add('locked');
+      // Reset stats to 0
+      resetStats();
     }
   }
 
@@ -930,10 +1049,8 @@
   // ==========================================
   function updateProtectedButtons(status) {
     if (!practiceBtn || !mockBtn) return;
-
     const isPro = status.isPro;
 
-    // Practice Mode
     const practiceName = practiceBtn.querySelector('.subject-name');
     if (practiceName) {
       if (isPro) {
@@ -953,7 +1070,6 @@
       }
     }
 
-    // Mock Exam
     const mockName = mockBtn.querySelector('.subject-name');
     if (mockName) {
       if (isPro) {
@@ -974,9 +1090,6 @@
     }
   }
 
-  // ==========================================
-  // RESET PROTECTED BUTTONS (DEFAULT STATE)
-  // ==========================================
   function resetProtectedButtons() {
     if (!practiceBtn || !mockBtn) return;
 
@@ -1004,29 +1117,24 @@
   // ==========================================
   // OVERRIDE LOGOUT FUNCTION
   // ==========================================
-  // Make sure logoutUser is available globally
   if (typeof window.logoutUser === 'undefined') {
     window.logoutUser = async function() {
       try {
         const { data: { session } } = await supabaseClient.auth.getSession();
-        
         if (session) {
           await supabaseClient
             .from('profiles')
             .update({ session_id: null })
             .eq('id', session.user.id);
         }
-        
         await supabaseClient.auth.signOut();
         localStorage.removeItem('session_id');
         window.currentProfile = null;
-        
         if (sessionValidationTimer) {
           clearInterval(sessionValidationTimer);
           sessionValidationTimer = null;
         }
         isLoggingOut = false;
-        
         window.location.href = 'index.html';
       } catch (error) {
         console.error('❌ Logout error:', error);
@@ -1039,20 +1147,18 @@
   // INITIALIZATION
   // ==========================================
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Index page loaded');
-    
-    // Wait for membership to load
+    console.log('🚀 Index page loaded with dashboard');
+    // Initialize stats to 0
+    resetStats();
     setTimeout(function() {
       updateUI();
     }, 500);
   });
 
-  // Update UI when membership changes
   document.addEventListener('membershipUpdated', function() {
     updateUI();
   });
 
-  // Also update on storage changes (when user logs in/out from another tab)
   window.addEventListener('storage', function(e) {
     if (e.key === 'session_id' || e.key === 'cse_access_kind') {
       updateUI();
@@ -1068,11 +1174,9 @@
   function closeModal() {
     if (modal) modal.style.display = 'none';
   }
-
   if (closeModalBtn) {
     closeModalBtn.addEventListener('click', closeModal);
   }
-
   if (modal) {
     modal.addEventListener('click', function(e) {
       if (e.target === modal) closeModal();
@@ -1083,8 +1187,9 @@
   window.updateUI = updateUI;
   window.updateProtectedButtons = updateProtectedButtons;
   window.resetProtectedButtons = resetProtectedButtons;
+  window.resetStats = resetStats;
 
-  console.log('✅ Index page ready');
+  console.log('✅ Index page ready with dashboard (stats ready for progress tracking)');
 })();
 </script>
 
