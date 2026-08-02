@@ -5555,6 +5555,152 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let quizStartTime = 0;
 
+
+CHECK IF REVIEW MODE
+// ==========================================
+const urlParams = new URLSearchParams(window.location.search);
+const isReviewMode = urlParams.get('review') === 'true';
+
+// ==========================================
+// LOAD WRONG QUESTIONS FOR REVIEW
+// ==========================================
+async function loadWrongQuestionsForReview() {
+    console.log("📋 Loading wrong questions for review...");
+    
+    try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) {
+            alert('Please log in to review your mistakes.');
+            return;
+        }
+
+        // Get the latest quiz attempt with wrong questions for this subject
+        const subject = document.querySelector('.app-subtitle span')?.textContent || 'Numerical';
+        const subjectMap = {
+            'Numerical': 'Numerical',
+            'Verbal': 'Verbal'
+        };
+        const subjectKey = subjectMap[subject] || 'Numerical';
+
+        const { data: attempts, error } = await supabaseClient
+            .from('quiz_attempts')
+            .select('*')
+            .eq('user_id', session.user.id)
+            .eq('subject', subjectKey)
+            .order('completed_at', { ascending: false })
+            .limit(1);
+
+        if (error) {
+            console.error('Error fetching attempts:', error);
+            alert('Error loading review data.');
+            return;
+        }
+
+        if (!attempts || attempts.length === 0) {
+            alert('No quiz attempts found to review. Take a quiz first!');
+            return;
+        }
+
+        const lastAttempt = attempts[0];
+        
+        // Check if there are wrong questions
+        if (!lastAttempt.wrong_questions_data || lastAttempt.wrong_questions_data.length === 0) {
+            alert('🎉 No mistakes to review! Perfect score on your last quiz.');
+            return;
+        }
+
+        const wrongQuestions = lastAttempt.wrong_questions_data;
+        console.log(`📋 Found ${wrongQuestions.length} wrong questions to review`);
+
+        // Switch to practice mode
+        switchMode('practice');
+        
+        // Create review banner
+        const reviewBanner = document.createElement('div');
+        reviewBanner.id = 'reviewBanner';
+        reviewBanner.style.cssText = `
+            background: rgba(248, 113, 113, 0.15);
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        `;
+        reviewBanner.innerHTML = `
+            <span style="color: #f87171; font-size: 0.9rem;">
+                📋 Review Mode - ${wrongQuestions.length} mistakes to review
+            </span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <span style="color: #94a3b8; font-size: 0.8rem;">
+                    Score: ${lastAttempt.score_percent}%
+                </span>
+                <a href="${window.location.pathname}" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; padding: 4px 12px; border: 1px solid #475569; border-radius: 40px;">
+                    ✕ Exit Review
+                </a>
+            </div>
+        `;
+        
+        // Insert banner after quiz header
+        const quizHeader = document.getElementById('quizHeader');
+        if (quizHeader) {
+            // Remove existing banner if any
+            const existingBanner = document.getElementById('reviewBanner');
+            if (existingBanner) existingBanner.remove();
+            quizHeader.parentNode.insertBefore(reviewBanner, quizHeader.nextSibling);
+        }
+
+        // Set the questions to review (only wrong ones)
+        // Convert wrong questions format to match quiz format
+        const reviewQuestions = wrongQuestions.map((wq, index) => ({
+            question: wq.question,
+            options: wq.options || [],
+            answer: wq.correctAnswer,
+            explanation: wq.explanation || 'No explanation available',
+            isReview: true,
+            userAnswer: wq.userAnswer
+        }));
+
+        // Override current questions with review questions
+        currentQuestions = reviewQuestions;
+        currentIndex = 0;
+        userAnswers = currentQuestions.map(() => null);
+        quizFinished = false;
+
+        // Show quiz card
+        if (quizCardEl) quizCardEl.style.display = 'block';
+        if (resultPanelEl) resultPanelEl.classList.add('hidden');
+        if (quizHeaderEl) quizHeaderEl.classList.remove('hidden');
+
+        renderQuiz();
+
+        // Add review mode indicator in feedback
+        if (feedbackEl) {
+            feedbackEl.innerHTML = `
+                <div style="background: rgba(248, 113, 113, 0.08); padding: 10px; border-radius: 8px; margin-top: 8px; border: 1px solid rgba(248, 113, 113, 0.2);">
+                    <p style="color: #f87171; font-size: 0.85rem; margin: 0;">
+                        📖 Review Mode: Reviewing questions you answered incorrectly.
+                    </p>
+                </div>
+            `;
+            feedbackEl.className = 'feedback';
+        }
+
+    } catch (error) {
+        console.error('Error loading review:', error);
+        alert('Error loading review data. Please try again.');
+    }
+}
+
+// ==========================================
+// 4. HELPER FUNCTIONS (nasa baba pa rin ito)
+// ==========================================
+function capitalize(text) {
+    // ...
+
 // ==========================================
 // TOPIC HELPERS
 // ==========================================
@@ -5928,13 +6074,26 @@ async function finishQuiz() {
     Math.round((endTime - quizStartTime) / 60000)
   );
 
-  // Count correct answers
+  // ✅ COLLECT WRONG QUESTIONS
+  const wrongQuestions = [];
+
+  // Count correct answers and collect wrong ones
   let correctCount = 0;
 
   quizQuestions.forEach((q, idx) => {
     const ans = userAnswers[idx];
     if (ans && ans.isCorrect) {
       correctCount++;
+    } else if (ans && !ans.isCorrect) {
+      // ✅ Add to wrong questions list
+      wrongQuestions.push({
+        id: idx,
+        question: q.question,
+        options: q.options,
+        correctAnswer: q.answer,
+        userAnswer: q.options[ans.selectedIndex] || "Not answered",
+        explanation: q.explanation || "No explanation available"
+      });
     }
   });
 
@@ -5946,6 +6105,61 @@ async function finishQuiz() {
   resultScoreMainEl.textContent = `${correctCount} / ${total}`;
   resultScoreTextEl.textContent = `Score: ${percent}%`;
 
+  // ==========================================
+  // BUILD MISTAKE LIST
+  // ==========================================
+  mistakeListEl.innerHTML = "";
+  
+  if (wrongQuestions.length === 0) {
+    const p = document.createElement("p");
+    p.textContent = "🎉 Perfect score! No mistakes to review.";
+    p.style.color = "#34d399";
+    p.style.textAlign = "center";
+    p.style.padding = "20px";
+    mistakeListEl.appendChild(p);
+  } else {
+    wrongQuestions.forEach((wq, index) => {
+      const item = document.createElement("div");
+      item.className = "mistake-item";
+      item.innerHTML = `
+        <p class="mistake-q-title">Question ${index + 1}</p>
+        <p class="mistake-q-text">${wq.question}</p>
+        <div class="mistake-answers">
+          <p class="wrong"><span class="label">✗ Your answer:</span> ${wq.userAnswer}</p>
+          <p class="correct"><span class="label">✓ Correct answer:</span> ${wq.correctAnswer}</p>
+          <p class="explanation"><span class="label">👉 Why:</span> ${wq.explanation}</p>
+        </div>
+      `;
+      mistakeListEl.appendChild(item);
+    });
+  }
+
+  quizCardEl.style.display = "none";
+  resultPanelEl.classList.remove("hidden");
+
+  // ==========================================
+  // ✅ SAVE QUIZ ATTEMPT WITH WRONG QUESTIONS
+  // ==========================================
+  try {
+    if (typeof saveQuizAttempt === "function") {
+      await saveQuizAttempt({
+        subject: "Verbal",  // or "Numerical" for numerical.html
+        topic: currentTopicId,
+        level: currentLevel,
+        totalQuestions: total,
+        correctAnswers: correctCount,
+        wrongAnswers: total - correctCount,
+        durationMinutes: quizDuration,
+        wrongQuestions: wrongQuestions  // ✅ NEW
+      });
+      console.log("✅ Quiz saved with", wrongQuestions.length, "wrong questions");
+    } else {
+      console.warn("⚠️ saveQuizAttempt function not available");
+    }
+  } catch (error) {
+    console.error("❌ Failed to save quiz attempt:", error);
+  }
+}
   // ==========================================
   // BUILD MISTAKE LIST
   // ==========================================
