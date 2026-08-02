@@ -16,10 +16,12 @@ async function saveQuizAttempt({
     totalQuestions,
     correctAnswers,
     wrongAnswers,
-    durationMinutes = 0
+    durationMinutes = 0,
+    wrongQuestions = []  // ✅ ADDED
 }) {
 
     console.log("🚀 saveQuizAttempt() called");
+    console.log("Wrong questions received:", wrongQuestions.length);  // ✅ DEBUG
 
     // Guard against duplicate saves
     if (isSavingProgress) {
@@ -43,7 +45,7 @@ async function saveQuizAttempt({
         const scorePercent = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
 
         // ======================================
-        // SAVE QUIZ ATTEMPT
+        // SAVE QUIZ ATTEMPT - WITH WRONG QUESTIONS
         // ======================================
         const { data, error } = await supabaseClient
             .from("quiz_attempts")
@@ -57,12 +59,15 @@ async function saveQuizAttempt({
                 wrong_answers: wrongAnswers,
                 score_percent: scorePercent,
                 duration_minutes: durationMinutes,
-                completed_at: new Date().toISOString()
+                completed_at: new Date().toISOString(),
+                wrong_question_ids: wrongQuestions.map(q => q.id || q.question),  // ✅ ADDED
+                wrong_questions_data: wrongQuestions  // ✅ ADDED
             })
             .select();
 
         console.log("Insert Result:", data);
         console.log("Insert Error:", error);
+        console.log("Wrong questions saved:", wrongQuestions.length);  // ✅ DEBUG
 
         if (error) {
             console.error("Quiz attempt failed:", error);
@@ -514,22 +519,5 @@ async function getAllSubjectsStats() {
 // ==========================================
 // EXPORT FUNCTIONS (if using modules)
 // ==========================================
-
-// Uncomment if you're using ES modules
-/*
-export {
-    saveQuizAttempt,
-    updateOverallProgress,
-    getOverallStats,
-    getSubjectStats,
-    getSubjectStatsFromDB,
-    getAllSubjectsStats,
-    getRecentAttempts,
-    getContinueLearning,
-    resetProgress,
-    getWeeklyProgress,
-    getCurrentStreak
-};
-*/
 
 console.log("✅ Progress Engine v2.1 Ready");
