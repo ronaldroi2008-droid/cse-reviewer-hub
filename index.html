@@ -966,6 +966,9 @@
   const statStreak = document.getElementById('statStreak');
 
   // Quick action buttons
+
+
+
   const quickPractice = document.getElementById('quickPractice');
   const quickMock = document.getElementById('quickMock');
 
@@ -994,7 +997,7 @@
       if (stats) {
         console.log('📊 Dashboard stats loaded:', stats);
         statQuestions.textContent = stats.totalQuestions || 0;
-        statAccuracy.textContent = stats.accuracy || '0';
+        statAccuracy.textContent = (stats.accuracy || 0) + '%';
         statStudyTime.textContent = stats.studyHours || '0';
         statStreak.textContent = `🔥${stats.streak || 0}`;
       } else {
