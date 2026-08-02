@@ -18,6 +18,9 @@ async function saveQuizAttempt({
     wrongAnswers,
     durationMinutes = 0
 }) {
+
+    console.log("🚀 saveQuizAttempt() called");
+
     // Guard against duplicate saves
     if (isSavingProgress) {
         console.warn("Save in progress, ignoring duplicate request.");
@@ -28,6 +31,9 @@ async function saveQuizAttempt({
 
     try {
         const { data: { session } } = await supabaseClient.auth.getSession();
+
+        console.log("Session:", session);
+
         if (!session) {
             console.warn("No active session.");
             return false;
@@ -39,7 +45,7 @@ async function saveQuizAttempt({
         // ======================================
         // SAVE QUIZ ATTEMPT
         // ======================================
-        const { error } = await supabaseClient
+        const { data, error } = await supabaseClient
             .from("quiz_attempts")
             .insert({
                 user_id: userId,
@@ -52,7 +58,11 @@ async function saveQuizAttempt({
                 score_percent: scorePercent,
                 duration_minutes: durationMinutes,
                 completed_at: new Date().toISOString()
-            });
+            })
+            .select();
+
+        console.log("Insert Result:", data);
+        console.log("Insert Error:", error);
 
         if (error) {
             console.error("Quiz attempt failed:", error);
