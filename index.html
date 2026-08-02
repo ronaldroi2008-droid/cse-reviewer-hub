@@ -397,6 +397,18 @@
       background: #6366f1;
       border-color: #6366f1;
     }
+    
+    /* Review Mistakes button */
+    .subject-actions .btn-sm.review-btn {
+      background: rgba(248, 113, 113, 0.15);
+      border-color: #f87171;
+      color: #f87171;
+    }
+    .subject-actions .btn-sm.review-btn:hover {
+      background: rgba(248, 113, 113, 0.25);
+      border-color: #ef4444;
+      color: #ef4444;
+    }
 
     /* ===== RECOMMENDATIONS ===== */
     .recommendations {
@@ -999,6 +1011,10 @@
       card.href = config.link;
       card.className = 'subject-card-detailed';
 
+      // Determine if there are wrong answers to review
+      const hasWrongAnswers = stats && stats.wrongAnswers > 0;
+      const wrongCount = stats ? stats.wrongAnswers : 0;
+
       card.innerHTML = `
         <div class="subject-header">
           <div class="subject-name">
@@ -1024,7 +1040,9 @@
         </div>
         <div class="subject-actions">
           <a href="${config.link}" class="btn-sm primary-sm">📝 Practice Now</a>
-          ${stats && stats.wrongAnswers > 0 ? `<a href="${config.link}?review=true" class="btn-sm">📋 Review Mistakes</a>` : ''}
+          ${hasWrongAnswers ? `
+            <a href="${config.link}?review=true" class="btn-sm review-btn">📋 Review Mistakes (${wrongCount})</a>
+          ` : ''}
         </div>
       `;
 
