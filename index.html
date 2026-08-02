@@ -33,7 +33,7 @@
     }
 
     .dashboard {
-      max-width: 680px;
+      max-width: 900px;
       width: 100%;
       margin: 0 auto;
     }
@@ -126,12 +126,6 @@
       border: 1px solid #34d39960;
       color: #bef264;
       box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
-    }
-
-    .pill-trial {
-      background: #f59e0b20;
-      border: 1px solid #fbbf2460;
-      color: #fde68a;
     }
 
     .pill-free {
@@ -241,6 +235,15 @@
     .dashboard-overview {
       margin: 20px 0 18px;
     }
+    
+    .section-title {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -272,6 +275,211 @@
       letter-spacing: 0.3px;
       text-transform: uppercase;
     }
+    .stat-trend {
+      font-size: 0.6rem;
+      margin-top: 2px;
+    }
+    .stat-trend.up { color: #34d399; }
+    .stat-trend.down { color: #f87171; }
+    .stat-trend.neutral { color: #94a3b8; }
+
+    /* ===== PROGRESS BARS ===== */
+    .progress-bar-container {
+      width: 100%;
+      background: #1e293b;
+      border-radius: 10px;
+      height: 6px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.6s ease;
+    }
+    .progress-bar-fill.green { background: #34d399; }
+    .progress-bar-fill.yellow { background: #fbbf24; }
+    .progress-bar-fill.red { background: #f87171; }
+    .progress-bar-fill.gray { background: #64748b; }
+
+    /* ===== SUBJECT MASTERY CARDS ===== */
+    .subject-mastery {
+      margin: 20px 0;
+    }
+    
+    .subject-card-detailed {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .subject-card-detailed:hover {
+      border-color: #4f46e5;
+      transform: translateX(4px);
+      background: rgba(30, 41, 59, 0.6);
+    }
+    .subject-card-detailed .subject-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .subject-card-detailed .subject-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 0.95rem;
+    }
+    .subject-card-detailed .subject-icon { font-size: 1.2rem; }
+    .subject-card-detailed .subject-status {
+      font-size: 0.7rem;
+      padding: 2px 10px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+    .subject-status.good { background: #10b98120; color: #34d399; border: 1px solid #34d39940; }
+    .subject-status.warning { background: #f59e0b20; color: #fbbf24; border: 1px solid #f59e0b40; }
+    .subject-status.danger { background: #ef444420; color: #f87171; border: 1px solid #ef444440; }
+    .subject-status.not-started { background: #47556940; color: #94a3b8; border: 1px solid #47556940; }
+    
+    .subject-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .subject-details span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .subject-details .correct { color: #34d399; }
+    .subject-details .wrong { color: #f87171; }
+    
+    .subject-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .subject-actions .btn-sm {
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: 1px solid #475569;
+      background: transparent;
+      color: #cbd5e1;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .subject-actions .btn-sm:hover {
+      background: #1e293b;
+      border-color: #818cf8;
+    }
+    .subject-actions .btn-sm.primary-sm {
+      background: #4f46e5;
+      border-color: #4f46e5;
+      color: white;
+    }
+    .subject-actions .btn-sm.primary-sm:hover {
+      background: #6366f1;
+      border-color: #6366f1;
+    }
+
+    /* ===== RECOMMENDATIONS ===== */
+    .recommendations {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .recommendations h3 {
+      color: #a5b4fc;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .recommendations ul {
+      list-style: none;
+      padding: 0;
+    }
+    .recommendations li {
+      padding: 6px 0;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+    }
+    .recommendations li:last-child {
+      border-bottom: none;
+    }
+    .recommendations .rec-number {
+      background: #4f46e5;
+      color: white;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== RECENT ACTIVITY ===== */
+    .recent-activity {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid #2a3a55;
+      border-radius: 14px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .recent-activity h3 {
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(71, 85, 105, 0.2);
+      font-size: 0.85rem;
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-item .activity-subject {
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .activity-item .activity-score {
+      font-weight: 600;
+    }
+    .activity-item .activity-score.good { color: #34d399; }
+    .activity-item .activity-score.warning { color: #fbbf24; }
+    .activity-item .activity-score.danger { color: #f87171; }
+    .activity-item .activity-time {
+      color: #64748b;
+      font-size: 0.7rem;
+    }
 
     /* ===== QUICK ACTIONS ===== */
     .quick-actions {
@@ -282,10 +490,10 @@
       border: 1px solid #2a3a55;
     }
     .quick-actions h2 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #e2e8f0;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -298,7 +506,7 @@
       padding: 10px 22px;
       color: #e2e8f0;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-decoration: none;
       transition: all 0.2s;
       margin-right: 12px;
@@ -368,108 +576,66 @@
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
 
-    /* ===== SUBJECT GRID ===== */
+    /* ===== SUBJECT GRID (Quick Access) ===== */
     .subject-grid {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin: 28px 0 20px;
+      gap: 10px;
+      margin: 20px 0 16px;
     }
 
-    .subject-card {
+    .subject-grid .subject-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: #0f172a80;
       border: 1px solid #334155;
-      border-radius: 20px;
-      padding: 14px 20px;
+      border-radius: 16px;
+      padding: 12px 18px;
       text-decoration: none;
       transition: all 0.2s ease;
       backdrop-filter: blur(2px);
     }
-    .subject-card:hover {
+    .subject-grid .subject-card:hover {
       border-color: #6366f1;
       background: #1e293bb3;
       transform: translateX(6px);
       box-shadow: 0 8px 20px -12px #6366f180;
     }
-    .subject-name {
+    .subject-grid .subject-name {
       font-weight: 600;
       color: #f1f5f9;
-      font-size: 1rem;
+      font-size: 0.95rem;
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .subject-icon { font-size: 1.4rem; }
-    .arrow {
+    .subject-grid .subject-icon { font-size: 1.2rem; }
+    .subject-grid .arrow {
       color: #818cf8;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       transition: transform 0.2s;
     }
-    .subject-card:hover .arrow { transform: translateX(5px); }
+    .subject-grid .subject-card:hover .arrow { transform: translateX(5px); }
 
     .badge-locked {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       background: #1e293b;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 40px;
       color: #94a3b8;
-      margin-left: 10px;
+      margin-left: 8px;
       font-weight: normal;
     }
     .badge-unlocked {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       background: #10b98120;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 40px;
       color: #6ee7b7;
-      margin-left: 10px;
+      margin-left: 8px;
       font-weight: normal;
       border: 1px solid #34d39940;
-    }
-
-    /* ===== GUIDE CARDS ===== */
-    .guide-card {
-      background: rgba(30, 41, 59, 0.4);
-      border: 1px solid rgba(71, 85, 105, 0.3);
-      border-radius: 1.2rem;
-      padding: 1.25rem;
-      margin-top: 12px;
-      margin-bottom: 16px;
-    }
-    .guide-card h3 a {
-      color: #818cf8;
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .guide-card h3 a:hover {
-      color: #a5b4fc;
-      text-decoration: underline;
-    }
-    .guide-card p {
-      font-size: 0.9rem !important;
-      color: #94a3b8 !important;
-      margin-top: 6px;
-      margin-bottom: 0 !important;
-    }
-
-    .faq-item {
-      margin-bottom: 20px;
-    }
-    .faq-item h3 {
-      color: #c4b5fd;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .faq-item p {
-      color: #94a3b8;
-      font-size: 0.9rem;
-      line-height: 1.7;
     }
 
     .footer-tip {
@@ -481,191 +647,25 @@
       margin-top: 12px;
     }
 
-    /* ===== MODAL ===== */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      padding: 20px;
-      transition: all 0.2s;
-    }
-    .modal-container {
-      max-width: 520px;
-      width: 100%;
-      background: linear-gradient(145deg, #0f172a, #0b0f1c);
-      border-radius: 2rem;
-      border: 1px solid #334155;
-      box-shadow: 0 40px 70px -20px black;
-      overflow: hidden;
-      animation: fadeSlideUp 0.25s ease;
-    }
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .modal-header {
-      padding: 1.5rem 1.8rem 0.8rem;
-      position: relative;
-      text-align: center;
-      border-bottom: 1px solid #1e293b;
-    }
-    .modal-close {
-      position: absolute;
-      right: 18px;
-      top: 18px;
-      background: none;
-      border: none;
-      color: #94a3b8;
-      font-size: 28px;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-close:hover {
-      background: #33415560;
-      color: white;
-    }
-    .modal-icon { font-size: 2.4rem; margin-bottom: 8px; }
-    .modal-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      background: linear-gradient(to right, #c084fc, #a78bfa);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .tabs {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin: 1rem 1rem 0.5rem;
-    }
-    .tab-btn {
-      flex: 1;
-      background: #0f172a80;
-      border: 1px solid #334155;
-      padding: 8px 12px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #cbd5e6;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .tab-btn.active {
-      background: linear-gradient(95deg, #4f46e5, #6366f1);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 4px 12px #4f46e560;
-    }
-    .modal-body { padding: 1.2rem 1.8rem 1.8rem; }
-    .features-box {
-      background: #02061760;
-      border-radius: 1.2rem;
-      padding: 1rem 1.2rem;
-      margin: 12px 0;
-      border: 1px solid #334155;
-    }
-    .features-box ul { list-style: none; padding-left: 0; }
-    .features-box li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #e2e8f0;
-      font-size: 0.9rem;
-    }
-    .features-box li::before { content: "✨"; font-size: 1rem; }
-
-    .btn-glow {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: linear-gradient(100deg, #4f46e5, #7c3aed);
-      padding: 14px 12px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 8px 18px #4f46e540;
-    }
-    .btn-glow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 25px -8px #6366f180;
-    }
-    .secondary-btn {
-      background: #1e293b;
-      border: 1px solid #475569;
-      padding: 10px 12px;
-      border-radius: 60px;
-      color: #e2e8f0;
-      font-weight: 600;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s;
-      margin-top: 12px;
-    }
-    .secondary-btn:hover {
-      background: #334155;
-      border-color: #818cf8;
-    }
-    .info-note {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin-top: 16px;
-      text-align: center;
-      line-height: 1.7;
-      padding: 12px;
-    }
-    .mt-2 { margin-top: 12px; }
-
-    /* ===== RESPONSIVE TWEAKS ===== */
-    @media (max-width: 500px) {
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
       }
-      .stat-card {
-        padding: 12px 6px;
-      }
-      .stat-value {
-        font-size: 1.3rem;
-      }
-      .quick-actions .action-btn {
-        display: block;
-        margin-right: 0;
-        text-align: center;
-      }
-      .content {
-        padding: 1.5rem 1rem;
-      }
-      h1 {
-        font-size: 1.5rem;
-      }
-      .badge-area {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .header-right {
-        justify-content: space-between;
-      }
+      .stat-card { padding: 10px 6px; }
+      .stat-value { font-size: 1.3rem; }
+      .content { padding: 1.2rem 1rem; }
+      h1 { font-size: 1.4rem; }
+      .badge-area { flex-direction: column; align-items: stretch; }
+      .header-right { justify-content: space-between; }
+      .subject-card-detailed .subject-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 400px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .subject-details { flex-direction: column; gap: 4px; }
+      .quick-actions .action-btn { display: block; margin-right: 0; text-align: center; }
     }
   </style>
 </head>
@@ -709,34 +709,56 @@
         </div>
       </div>
 
-      <!-- ===== DASHBOARD OVERVIEW ===== -->
+      <!-- ===== LEVEL 2: OVERALL STATS ===== -->
       <section class="dashboard-overview">
+        <div class="section-title">📊 Overall Progress (All Subjects)</div>
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-value" id="statQuestions">0</div>
             <div class="stat-label">Questions</div>
+            <div class="stat-trend up" id="statQuestionsTrend">▲ 0 this week</div>
           </div>
           <div class="stat-card">
             <div class="stat-value" id="statAccuracy">0%</div>
             <div class="stat-label">Accuracy</div>
+            <div class="stat-trend neutral" id="statAccuracyTrend">-- no data</div>
           </div>
           <div class="stat-card">
             <div class="stat-value" id="statStudyTime">0h</div>
             <div class="stat-label">Study Time</div>
+            <div class="stat-trend neutral" id="statStudyTrend">-- no data</div>
           </div>
           <div class="stat-card">
             <div class="stat-value" id="statStreak">🔥0</div>
             <div class="stat-label">Streak</div>
+            <div class="stat-trend neutral" id="statStreakTrend">Keep going!</div>
           </div>
         </div>
       </section>
 
-      <!-- ===== QUICK ACTIONS ===== -->
-      <section class="quick-actions">
-        <h2>🚀 Continue Learning</h2>
-        <a href="license.html" class="action-btn locked" id="quickPractice">🎯 Practice Mode</a>
-        <a href="license.html" class="action-btn locked" id="quickMock">🏆 Mock Exam</a>
+      <!-- ===== LEVEL 2: SUBJECT MASTERY ===== -->
+      <section class="subject-mastery">
+        <div class="section-title">📊 Subject Mastery</div>
+        <div id="subjectMasteryList">
+          <!-- Filled by JavaScript -->
+        </div>
       </section>
+
+      <!-- ===== LEVEL 2: RECOMMENDATIONS ===== -->
+      <div id="recommendationsContainer" class="recommendations" style="display: none;">
+        <h3>🎯 Recommended Next Steps</h3>
+        <ul id="recommendationsList">
+          <!-- Filled by JavaScript -->
+        </ul>
+      </div>
+
+      <!-- ===== LEVEL 2: RECENT ACTIVITY ===== -->
+      <div id="recentActivityContainer" class="recent-activity" style="display: none;">
+        <h3>📈 Recent Activity</h3>
+        <div id="recentActivityList">
+          <!-- Filled by JavaScript -->
+        </div>
+      </div>
 
       <!-- ===== UPGRADE BANNER ===== -->
       <div id="upgradeBanner" class="upgrade-banner">
@@ -750,7 +772,15 @@
         </div>
       </div>
 
-      <!-- ===== SUBJECT GRID ===== -->
+      <!-- ===== QUICK ACTIONS ===== -->
+      <section class="quick-actions">
+        <h2>🚀 Quick Actions</h2>
+        <a href="license.html" class="action-btn locked" id="quickPractice">🎯 Practice Mode</a>
+        <a href="license.html" class="action-btn locked" id="quickMock">🏆 Mock Exam</a>
+        <a href="stats.html" class="action-btn" id="quickStats">📊 View Full Stats</a>
+      </section>
+
+      <!-- ===== SUBJECT GRID (Quick Access) ===== -->
       <nav class="subject-grid" aria-label="Main Reviewer Menu">
         <a href="verbal.html" class="subject-card">
           <span class="subject-name"><span class="subject-icon" aria-hidden="true">📖</span> Verbal Ability</span>
@@ -782,138 +812,10 @@
           <span class="subject-name"><span class="subject-icon" aria-hidden="true">🏆</span> Full Mock Exam (170 Items)</span>
           <span class="arrow">→</span>
         </a>
-
-        <div id="membershipCard"></div>
       </nav>
-      
-      <!-- ===== CONTENT SECTIONS ===== -->
-      <section style="margin-top:40px;color:#e2e8f0;line-height:1.8">
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Civil Service Exam Reviewer Philippines 2026
-        </h2>
-
-        <p style="margin-bottom:20px;">
-          CSE Reviewer Hub is a comprehensive Civil Service Exam reviewer platform designed to help aspiring government employees prepare for the Philippine Civil Service Examination. The platform provides topic-based reviewers, practice drills, and realistic mock examinations covering the major competencies tested in the Civil Service Exam.
-        </p>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Subjects Covered
-        </h2>
-
-        <p style="margin-bottom:15px;">
-          Our reviewer covers the core areas of the Civil Service Exam:
-        </p>
-
-        <ul style="margin-left:25px;margin-bottom:25px;">
-          <li><a href="verbal.html" style="color:#818cf8;">Verbal Ability Reviewer</a></li>
-          <li><a href="numerical.html" style="color:#818cf8;">Numerical Reasoning Reviewer</a></li>
-          <li><a href="analytical.html" style="color:#818cf8;">Analytical Ability Reviewer</a></li>
-          <li><a href="clerical.html" style="color:#818cf8;">Clerical Ability Reviewer</a></li>
-          <li><a href="general_info.html" style="color:#818cf8;">General Information Reviewer</a></li>
-        </ul>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Practice Questions and Detailed Explanations
-        </h2>
-
-        <p style="margin-bottom:20px;">
-          Each reviewer section contains carefully prepared practice questions and explanations to help learners understand concepts, improve test-taking skills, and build confidence before the examination.
-        </p>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Civil Service Exam Guides
-        </h2>
-
-        <div class="guide-card">
-          <h3><a href="civil-service-exam-coverage.html">Civil Service Exam Coverage 2026</a></h3>
-          <p>Learn the complete coverage of the Civil Service Examination.</p>
-        </div>
-
-        <div class="guide-card">
-          <h3><a href="civil-service-exam-requirements.html">Civil Service Exam Requirements 2026</a></h3>
-          <p>Complete guide to application requirements and qualifications.</p>
-        </div>
-
-        <div class="guide-card">
-          <h3><a href="civil-service-exam-passing-score.html">Civil Service Exam Passing Score 2026</a></h3>
-          <p>Understand the passing rate and scoring system.</p>
-        </div>
-
-        <div class="guide-card">
-          <h3><a href="how-to-pass-the-civil-service-exam.html">How to Pass the Civil Service Exam</a></h3>
-          <p>Study strategies, reviewer tips, and preparation techniques.</p>
-        </div>
-
-        <div class="guide-card">
-          <h3><a href="civil-service-exam-schedule-2026.html">Civil Service Exam Schedule 2026</a></h3>
-          <p>Official filing periods, exam dates, and important deadlines.</p>
-        </div>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Why Use CSE Reviewer Hub?
-        </h2>
-
-        <ul style="margin-left:25px;margin-bottom:25px;">
-          <li>Topic-based reviewer materials</li>
-          <li>Practice drills for skill development</li>
-          <li>Realistic mock examination experience</li>
-          <li>Mobile-friendly learning platform</li>
-          <li>Regularly updated reviewer content</li>
-        </ul>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Realistic Civil Service Exam Mock Test
-        </h2>
-
-        <p style="margin-bottom:20px;">
-          Evaluate your readiness through a full-length mock examination that simulates the actual Civil Service Exam experience. Practice under realistic conditions and identify areas that need further improvement.
-        </p>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Prepare for Success
-        </h2>
-
-        <p style="margin-bottom:30px;">
-          Consistent practice is one of the most effective ways to improve performance in the Civil Service Exam. Start with individual subjects, strengthen weak areas through practice drills, and assess your overall readiness using mock examinations.
-        </p>
-
-        <h2 style="margin-bottom:15px;color:#f8fafc;">
-          Popular Resources
-        </h2>
-
-        <ul style="margin-left:25px;line-height:2;margin-bottom:30px;">
-          <li><a href="verbal.html" style="color:#818cf8;">Verbal Ability Reviewer</a></li>
-          <li><a href="numerical.html" style="color:#818cf8;">Numerical Reasoning Reviewer</a></li>
-          <li><a href="analytical.html" style="color:#818cf8;">Analytical Ability Reviewer</a></li>
-          <li><a href="clerical.html" style="color:#818cf8;">Clerical Ability Reviewer</a></li>
-          <li><a href="general_info.html" style="color:#818cf8;">General Information Reviewer</a></li>
-          <li><a href="mock_exam.html" style="color:#818cf8;">Full Mock Exam (170 Items)</a></li>
-        </ul>
-
-        <h2 style="margin-bottom:20px;color:#f8fafc;">
-          Frequently Asked Questions
-        </h2>
-
-        <div class="faq-item">
-          <h3>What is the passing score for the Civil Service Exam?</h3>
-          <p>The required passing score is 80%.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>What subjects are covered in the Civil Service Exam?</h3>
-          <p>The exam covers Verbal, Numerical, Analytical, Clerical, and General Information topics.</p>
-        </div>
-
-        <div class="faq-item" style="margin-bottom:30px;">
-          <h3>How can I prepare for the Civil Service Exam?</h3>
-          <p>Use reviewer materials, practice drills, and full mock examinations.</p>
-        </div>
-
-      </section>
 
       <footer class="footer-tip">
-        💡 Tip: Start with topics &rarr; Practice Mode &rarr; conquer the 170-item mock exam.
+        💡 Tip: Focus on your weakest subject first, then practice consistently!
       </footer>
     </div>
   </div>
@@ -964,30 +866,349 @@
   const statAccuracy = document.getElementById('statAccuracy');
   const statStudyTime = document.getElementById('statStudyTime');
   const statStreak = document.getElementById('statStreak');
+  const statQuestionsTrend = document.getElementById('statQuestionsTrend');
+  const statAccuracyTrend = document.getElementById('statAccuracyTrend');
+  const statStudyTrend = document.getElementById('statStudyTrend');
+  const statStreakTrend = document.getElementById('statStreakTrend');
 
   // Quick action buttons
-
-
-
   const quickPractice = document.getElementById('quickPractice');
   const quickMock = document.getElementById('quickMock');
 
   // ==========================================
-  // LOAD DASHBOARD STATS FROM PROGRESS.JS
+  // SUBJECT CONFIGURATION
+  // ==========================================
+  const SUBJECT_CONFIG = {
+    'Verbal': { icon: '📖', color: '#818cf8', link: 'verbal.html', bgColor: 'rgba(129, 140, 248, 0.1)' },
+    'Numerical': { icon: '🔢', color: '#34d399', link: 'numerical.html', bgColor: 'rgba(52, 211, 153, 0.1)' },
+    'Analytical': { icon: '🧩', color: '#fbbf24', link: 'analytical.html', bgColor: 'rgba(251, 191, 36, 0.1)' },
+    'Clerical': { icon: '📑', color: '#f472b6', link: 'clerical.html', bgColor: 'rgba(244, 114, 182, 0.1)' },
+    'General': { icon: '🇵🇭', color: '#60a5fa', link: 'general_info.html', bgColor: 'rgba(96, 165, 250, 0.1)' }
+  };
+
+  // ==========================================
+  // RESET STATS
+  // ==========================================
+  function resetStats() {
+    statQuestions.textContent = '0';
+    statAccuracy.textContent = '0%';
+    statStudyTime.textContent = '0h';
+    statStreak.textContent = '🔥0';
+    statQuestionsTrend.textContent = '▲ 0 this week';
+    statQuestionsTrend.className = 'stat-trend neutral';
+    statAccuracyTrend.textContent = '-- no data';
+    statAccuracyTrend.className = 'stat-trend neutral';
+    statStudyTrend.textContent = '-- no data';
+    statStudyTrend.className = 'stat-trend neutral';
+    statStreakTrend.textContent = 'Keep going!';
+    statStreakTrend.className = 'stat-trend neutral';
+  }
+
+  // ==========================================
+  // GET SUBJECT STATS FROM PROGRESS.JS
+  // ==========================================
+  async function getSubjectStats(subject) {
+    try {
+      if (typeof getSubjectStatsFromDB === 'function') {
+        return await getSubjectStatsFromDB(subject);
+      }
+      
+      // Fallback: direct query
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) return null;
+
+      const { data, error } = await supabaseClient
+        .from('user_progress')
+        .select('*')
+        .eq('user_id', session.user.id)
+        .eq('subject', subject);
+
+      if (error) {
+        console.error(`Error fetching ${subject} stats:`, error);
+        return null;
+      }
+
+      let totalQ = 0, correct = 0, wrong = 0, minutes = 0;
+      data.forEach(row => {
+        totalQ += row.questions_answered || 0;
+        correct += row.correct_answers || 0;
+        wrong += row.wrong_answers || 0;
+        minutes += row.study_minutes || 0;
+      });
+
+      return {
+        subject,
+        totalQuestions: totalQ,
+        correctAnswers: correct,
+        wrongAnswers: wrong,
+        accuracy: totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0,
+        studyMinutes: minutes,
+        studyHours: (minutes / 60).toFixed(1)
+      };
+    } catch (error) {
+      console.error(`Error in getSubjectStats for ${subject}:`, error);
+      return null;
+    }
+  }
+
+  // ==========================================
+  // LOAD SUBJECT MASTERY CARDS
+  // ==========================================
+  async function loadSubjectMastery() {
+    const container = document.getElementById('subjectMasteryList');
+    if (!container) return;
+
+    const subjects = ['Verbal', 'Numerical', 'Analytical', 'Clerical', 'General'];
+    container.innerHTML = '';
+
+    let hasData = false;
+
+    for (const subject of subjects) {
+      const stats = await getSubjectStats(subject);
+      const config = SUBJECT_CONFIG[subject];
+
+      // Determine status
+      let statusClass = 'not-started';
+      let statusText = 'Not started';
+      let statusEmoji = '⏳';
+      
+      if (stats && stats.totalQuestions > 0) {
+        hasData = true;
+        if (stats.accuracy >= 70) {
+          statusClass = 'good';
+          statusText = `${stats.accuracy}% • Good!`;
+          statusEmoji = '✅';
+        } else if (stats.accuracy >= 50) {
+          statusClass = 'warning';
+          statusText = `${stats.accuracy}% • Needs practice`;
+          statusEmoji = '⚠️';
+        } else {
+          statusClass = 'danger';
+          statusText = `${stats.accuracy}% • Needs focus`;
+          statusEmoji = '❌';
+        }
+      }
+
+      // Progress bar width
+      const progressWidth = stats && stats.totalQuestions > 0 ? Math.min(stats.accuracy, 100) : 0;
+      const progressColor = stats && stats.totalQuestions > 0 
+        ? (stats.accuracy >= 70 ? 'green' : stats.accuracy >= 50 ? 'yellow' : 'red')
+        : 'gray';
+
+      const card = document.createElement('a');
+      card.href = config.link;
+      card.className = 'subject-card-detailed';
+
+      card.innerHTML = `
+        <div class="subject-header">
+          <div class="subject-name">
+            <span class="subject-icon">${config.icon}</span>
+            ${subject}
+            <span class="subject-status ${statusClass}">${statusEmoji} ${statusText}</span>
+          </div>
+          <div style="font-size: 0.8rem; color: #64748b;">
+            ${stats ? stats.totalQuestions : 0} questions
+          </div>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill ${progressColor}" style="width: ${progressWidth}%;"></div>
+        </div>
+        <div class="subject-details">
+          ${stats && stats.totalQuestions > 0 ? `
+            <span class="correct">✅ ${stats.correctAnswers} correct</span>
+            <span class="wrong">❌ ${stats.wrongAnswers} wrong</span>
+            <span>⏱️ ${stats.studyHours}h studied</span>
+          ` : `
+            <span>⏳ Not started yet - click to begin!</span>
+          `}
+        </div>
+        <div class="subject-actions">
+          <a href="${config.link}" class="btn-sm primary-sm">📝 Practice Now</a>
+          ${stats && stats.wrongAnswers > 0 ? `<a href="${config.link}?review=true" class="btn-sm">📋 Review Mistakes</a>` : ''}
+        </div>
+      `;
+
+      container.appendChild(card);
+    }
+
+    return hasData;
+  }
+
+  // ==========================================
+  // LOAD RECOMMENDATIONS
+  // ==========================================
+  async function loadRecommendations() {
+    const container = document.getElementById('recommendationsContainer');
+    const list = document.getElementById('recommendationsList');
+    if (!container || !list) return;
+
+    const subjects = ['Verbal', 'Numerical', 'Analytical', 'Clerical', 'General'];
+    const stats = [];
+    
+    for (const subject of subjects) {
+      const data = await getSubjectStats(subject);
+      if (data && data.totalQuestions > 0) {
+        stats.push(data);
+      }
+    }
+
+    if (stats.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+
+    container.style.display = 'block';
+    list.innerHTML = '';
+
+    // Sort by accuracy (lowest first)
+    stats.sort((a, b) => a.accuracy - b.accuracy);
+    
+    // Find weakest
+    const weakest = stats[0];
+    const strongest = stats[stats.length - 1];
+    const notStarted = subjects.filter(s => {
+      const data = stats.find(st => st.subject === s);
+      return !data || data.totalQuestions === 0;
+    });
+
+    let recommendations = [];
+    let num = 1;
+
+    // 1. Weakest subject
+    if (weakest && weakest.accuracy < 70) {
+      recommendations.push({
+        num: num++,
+        text: `Focus on <strong>${weakest.subject}</strong> - Your weakest subject (${weakest.accuracy}%)`,
+        action: `Practice ${weakest.subject}`
+      });
+    }
+
+    // 2. Not started subjects
+    if (notStarted.length > 0) {
+      recommendations.push({
+        num: num++,
+        text: `Complete <strong>${notStarted.join(', ')}</strong> - Not started yet`,
+        action: `Start ${notStarted[0]}`
+      });
+    }
+
+    // 3. Strengths
+    if (strongest && strongest.accuracy >= 70) {
+      recommendations.push({
+        num: num++,
+        text: `Maintain your strength in <strong>${strongest.subject}</strong> (${strongest.accuracy}%)`,
+        action: `Practice ${strongest.subject}`
+      });
+    }
+
+    // 4. Review mistakes
+    const hasMistakes = stats.some(s => s.wrongAnswers > 0);
+    if (hasMistakes) {
+      recommendations.push({
+        num: num++,
+        text: `Review your mistakes - ${stats.reduce((sum, s) => sum + s.wrongAnswers, 0)} items to review`,
+        action: 'Review Mistakes'
+      });
+    }
+
+    // 5. General tip
+    if (recommendations.length === 0) {
+      recommendations.push({
+        num: 1,
+        text: 'Great job! Keep practicing to maintain your skills.',
+        action: 'Continue Practicing'
+      });
+    }
+
+    recommendations.forEach(rec => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="rec-number">${rec.num}</span>
+        ${rec.text}
+        <a href="${SUBJECT_CONFIG[rec.action.split(' ')[1]]?.link || '#'}" style="margin-left: auto; font-size: 0.75rem; color: #818cf8; text-decoration: none;">
+          ${rec.action} →
+        </a>
+      `;
+      list.appendChild(li);
+    });
+  }
+
+  // ==========================================
+  // LOAD RECENT ACTIVITY
+  // ==========================================
+  async function loadRecentActivity() {
+    const container = document.getElementById('recentActivityContainer');
+    const list = document.getElementById('recentActivityList');
+    if (!container || !list) return;
+
+    try {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) {
+        container.style.display = 'none';
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('quiz_attempts')
+        .select('*')
+        .eq('user_id', session.user.id)
+        .order('completed_at', { ascending: false })
+        .limit(5);
+
+      if (error || !data || data.length === 0) {
+        container.style.display = 'none';
+        return;
+      }
+
+      container.style.display = 'block';
+      list.innerHTML = '';
+
+      data.forEach(attempt => {
+        const item = document.createElement('div');
+        item.className = 'activity-item';
+        
+        const scoreClass = attempt.score_percent >= 70 ? 'good' : attempt.score_percent >= 50 ? 'warning' : 'danger';
+        const date = new Date(attempt.completed_at);
+        const timeAgo = getTimeAgo(date);
+
+        item.innerHTML = `
+          <span class="activity-subject">${attempt.subject}</span>
+          <span class="activity-score ${scoreClass}">${attempt.score_percent}%</span>
+          <span class="activity-time">${timeAgo}</span>
+        `;
+        list.appendChild(item);
+      });
+    } catch (error) {
+      console.error('Error loading recent activity:', error);
+      container.style.display = 'none';
+    }
+  }
+
+  // ==========================================
+  // HELPER: TIME AGO
+  // ==========================================
+  function getTimeAgo(date) {
+    const now = new Date();
+    const diff = Math.floor((now - date) / (1000 * 60));
+    
+    if (diff < 1) return 'Just now';
+    if (diff < 60) return `${diff}m ago`;
+    if (diff < 1440) return `${Math.floor(diff / 60)}h ago`;
+    return `${Math.floor(diff / 1440)}d ago`;
+  }
+
+  // ==========================================
+  // LOAD DASHBOARD STATS
   // ==========================================
   async function loadDashboardStats() {
     try {
-      // Check if user is logged in
       const { data: { session } } = await supabaseClient.auth.getSession();
       if (!session) {
-        console.log('No active session, stats remain at 0');
         resetStats();
         return;
       }
 
-      // Check if getOverallStats function exists
       if (typeof getOverallStats !== 'function') {
-        console.warn('getOverallStats not available - progress.js may not be loaded');
         resetStats();
         return;
       }
@@ -995,29 +1216,33 @@
       const stats = await getOverallStats();
       
       if (stats) {
-        console.log('📊 Dashboard stats loaded:', stats);
         statQuestions.textContent = stats.totalQuestions || 0;
         statAccuracy.textContent = (stats.accuracy || 0) + '%';
         statStudyTime.textContent = stats.studyHours || '0';
         statStreak.textContent = `🔥${stats.streak || 0}`;
-      } else {
-        console.warn('No stats available from getOverallStats');
-        resetStats();
+
+        // Trends (simplified - can be enhanced with weekly comparison)
+        if (stats.totalQuestions > 0) {
+          statQuestionsTrend.textContent = `📊 ${stats.totalQuestions} total questions`;
+          statQuestionsTrend.className = 'stat-trend up';
+          statAccuracyTrend.textContent = `🎯 ${stats.accuracy}% accuracy`;
+          statAccuracyTrend.className = 'stat-trend ' + (stats.accuracy >= 70 ? 'up' : stats.accuracy >= 50 ? 'neutral' : 'down');
+          statStudyTrend.textContent = `⏱️ ${stats.studyHours}h total study time`;
+          statStudyTrend.className = 'stat-trend neutral';
+          statStreakTrend.textContent = stats.streak > 0 ? `🔥 ${stats.streak} day streak!` : 'Start a streak!';
+          statStreakTrend.className = 'stat-trend ' + (stats.streak > 0 ? 'up' : 'neutral');
+        }
       }
+
+      // Load all Level 2 components
+      await loadSubjectMastery();
+      await loadRecommendations();
+      await loadRecentActivity();
+
     } catch (error) {
       console.error('Error loading dashboard stats:', error);
       resetStats();
     }
-  }
-
-  // ==========================================
-  // RESET STATS TO DEFAULT
-  // ==========================================
-  function resetStats() {
-    statQuestions.textContent = '0';
-    statAccuracy.textContent = '0%';
-    statStudyTime.textContent = '0h';
-    statStreak.textContent = '🔥0';
   }
 
   // ==========================================
@@ -1028,7 +1253,6 @@
     const isLoggedIn = sessionInfo.hasLocalSession;
 
     if (isLoggedIn && currentProfile) {
-      // --- SHOW LOGGED-IN UI ---
       authLinks.style.display = 'none';
       logoutContainer.style.display = 'block';
       userSessionInfo.style.display = 'block';
@@ -1048,7 +1272,6 @@
         }
         membershipBadge.className = 'membership-badge pro';
         upgradeBanner.style.display = 'none';
-        // Unlock quick actions
         quickPractice.href = 'practice.html';
         quickPractice.classList.remove('locked');
         quickMock.href = 'mock_exam.html';
@@ -1057,7 +1280,6 @@
         membershipBadge.textContent = '🔓 FREE Plan';
         membershipBadge.className = 'membership-badge free';
         upgradeBanner.style.display = 'block';
-        // Lock quick actions
         quickPractice.href = 'license.html';
         quickPractice.classList.add('locked');
         quickMock.href = 'license.html';
@@ -1065,25 +1287,25 @@
       }
 
       updateProtectedButtons(status);
-      
-      // Load actual stats from progress.js
       loadDashboardStats();
 
     } else {
-      // --- SHOW LOGGED-OUT UI ---
       authLinks.style.display = 'flex';
       logoutContainer.style.display = 'none';
       userSessionInfo.style.display = 'none';
       upgradeBanner.style.display = 'none';
       
       resetProtectedButtons();
-      // Lock quick actions
       quickPractice.href = 'license.html';
       quickPractice.classList.add('locked');
       quickMock.href = 'license.html';
       quickMock.classList.add('locked');
-      // Reset stats to 0
       resetStats();
+
+      // Hide Level 2 components
+      document.getElementById('recommendationsContainer').style.display = 'none';
+      document.getElementById('recentActivityContainer').style.display = 'none';
+      document.getElementById('subjectMasteryList').innerHTML = '<p style="color: #94a3b8; text-align: center; padding: 20px;">Please log in to see your progress.</p>';
     }
   }
 
@@ -1158,7 +1380,7 @@
   }
 
   // ==========================================
-  // OVERRIDE LOGOUT FUNCTION
+  // LOGOUT
   // ==========================================
   if (typeof window.logoutUser === 'undefined') {
     window.logoutUser = async function() {
@@ -1190,49 +1412,22 @@
   // INITIALIZATION
   // ==========================================
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Index page loaded with dashboard');
-    // Initialize stats to 0
+    console.log('🚀 Level 2 Dashboard loading...');
     resetStats();
     setTimeout(function() {
       updateUI();
     }, 500);
   });
 
-  // Listen for membership updates
   document.addEventListener('membershipUpdated', function() {
     updateUI();
   });
 
-  // Listen for storage changes (for cross-tab updates)
   window.addEventListener('storage', function(e) {
     if (e.key === 'session_id' || e.key === 'cse_access_kind') {
       updateUI();
     }
   });
-
-  // Listen for progress updates from other pages
-  document.addEventListener('progressUpdated', function() {
-    console.log('🔄 Progress updated, refreshing stats...');
-    loadDashboardStats();
-  });
-
-  // ==========================================
-  // MODAL HANDLING (Legacy)
-  // ==========================================
-  const modal = document.getElementById('accessModal');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-
-  function closeModal() {
-    if (modal) modal.style.display = 'none';
-  }
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', closeModal);
-  }
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
-  }
 
   // Expose functions globally
   window.updateUI = updateUI;
@@ -1241,7 +1436,7 @@
   window.resetStats = resetStats;
   window.loadDashboardStats = loadDashboardStats;
 
-  console.log('✅ Index page ready with dashboard (stats integrated with progress.js)');
+  console.log('✅ Level 2 Dashboard ready!');
 })();
 </script>
 

@@ -90,6 +90,15 @@ async function saveQuizAttempt({
             return false;
         }
 
+        // Dispatch event for real-time dashboard updates
+        try {
+            document.dispatchEvent(new CustomEvent('progressUpdated', {
+                detail: { subject, totalQuestions, correctAnswers, wrongAnswers }
+            }));
+        } catch (e) {
+            // Ignore if document is not available
+        }
+
         return true;
     } catch (err) {
         console.error(err);
@@ -215,13 +224,17 @@ async function getOverallStats() {
             minutes += row.study_minutes || 0;
         });
 
+        // Calculate streak from recent attempts
+        const streak = await getCurrentStreak(session.user.id);
+
         return {
             totalQuestions: questions,
             correctAnswers: correct,
             wrongAnswers: wrong,
             accuracy: questions > 0 ? Math.round((correct / questions) * 100) : 0,
             studyMinutes: minutes,
-            studyHours: (minutes / 60).toFixed(1)
+            studyHours: (minutes / 60).toFixed(1),
+            streak: streak || 0
         };
     } catch (err) {
         console.error("Error in getOverallStats:", err);
@@ -230,7 +243,90 @@ async function getOverallStats() {
 }
 
 // ==========================================
-// GET SUBJECT STATS
+// GET CURRENT STREAK
+// ==========================================
+
+async function getCurrentStreak(userId) {
+    try {
+        const { data, error } = await supabaseClient
+            .from("quiz_attempts")
+            .select("completed_at")
+            .eq("user_id", userId)
+            .order("completed_at", { ascending: false });
+
+        if (error || !data || data.length === 0) {
+            return 0;
+        }
+
+        let streak = 0;
+        let currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0);
+
+        for (let attempt of data) {
+            const attemptDate = new Date(attempt.completed_at);
+            attemptDate.setHours(0, 0, 0, 0);
+            
+            const diffDays = Math.floor((currentDate - attemptDate) / (1000 * 60 * 60 * 24));
+            
+            if (diffDays === streak) {
+                streak++;
+            } else if (diffDays > streak) {
+                break;
+            }
+        }
+
+        return streak;
+    } catch (err) {
+        console.error("Error calculating streak:", err);
+        return 0;
+    }
+}
+
+// ==========================================
+// GET SUBJECT STATS (for Level 2 Dashboard)
+// ==========================================
+
+async function getSubjectStatsFromDB(subject) {
+    try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) return null;
+
+        const { data, error } = await supabaseClient
+            .from("user_progress")
+            .select("*")
+            .eq("user_id", session.user.id)
+            .eq("subject", subject);
+
+        if (error) {
+            console.error(`Error fetching ${subject} stats:`, error);
+            return null;
+        }
+
+        let totalQ = 0, correct = 0, wrong = 0, minutes = 0;
+        data.forEach(row => {
+            totalQ += row.questions_answered || 0;
+            correct += row.correct_answers || 0;
+            wrong += row.wrong_answers || 0;
+            minutes += row.study_minutes || 0;
+        });
+
+        return {
+            subject,
+            totalQuestions: totalQ,
+            correctAnswers: correct,
+            wrongAnswers: wrong,
+            accuracy: totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0,
+            studyMinutes: minutes,
+            studyHours: (minutes / 60).toFixed(1)
+        };
+    } catch (error) {
+        console.error(`Error in getSubjectStatsFromDB for ${subject}:`, error);
+        return null;
+    }
+}
+
+// ==========================================
+// GET SUBJECT STATS (Legacy - returns array)
 // ==========================================
 
 async function getSubjectStats(subject) {
@@ -395,6 +491,27 @@ async function getWeeklyProgress() {
 }
 
 // ==========================================
+// GET ALL SUBJECTS STATS (For Level 2 Dashboard)
+// ==========================================
+
+async function getAllSubjectsStats() {
+    try {
+        const subjects = ['Verbal', 'Numerical', 'Analytical', 'Clerical', 'General'];
+        const results = {};
+        
+        for (const subject of subjects) {
+            const stats = await getSubjectStatsFromDB(subject);
+            results[subject] = stats;
+        }
+        
+        return results;
+    } catch (error) {
+        console.error("Error in getAllSubjectsStats:", error);
+        return null;
+    }
+}
+
+// ==========================================
 // EXPORT FUNCTIONS (if using modules)
 // ==========================================
 
@@ -405,10 +522,13 @@ export {
     updateOverallProgress,
     getOverallStats,
     getSubjectStats,
+    getSubjectStatsFromDB,
+    getAllSubjectsStats,
     getRecentAttempts,
     getContinueLearning,
     resetProgress,
-    getWeeklyProgress
+    getWeeklyProgress,
+    getCurrentStreak
 };
 */
 
