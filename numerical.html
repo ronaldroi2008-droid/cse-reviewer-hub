@@ -1445,7 +1445,14 @@ function updateSEO(topicId,label){
           explanation: wq.explanation || 'No explanation available'
         }));
         currentIndex = 0;
-        userAnswers = currentQuestions.map(() => null);
+        // Pre-fill each answer with the user's previously recorded wrong
+        // answer so the correct/incorrect highlighting and explanation show
+        // immediately on load, instead of requiring the user to click an
+        // option again before seeing anything.
+        userAnswers = wrongQuestionsRaw.map((wq) => ({
+          selected: (wq.userAnswer && wq.userAnswer !== 'Not answered') ? wq.userAnswer : null,
+          correct: false
+        }));
         quizFinished = false;
         reviewLoaded = true;
 
