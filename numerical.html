@@ -1027,6 +1027,10 @@ function updateSEO(topicId,label){
     let quizFinished = false;
     let quizStartTime = 0;
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const isReviewMode = urlParams.get("review") === "true";
+    let reviewLoaded = false;
+
     const modeTabs        = document.querySelectorAll(".mode-tab");
     const topicListEl     = document.getElementById("topicList");
     const subtitleTopicEl = document.getElementById("subtitleTopic");
@@ -1347,8 +1351,142 @@ function updateSEO(topicId,label){
     // ==========================================
     function startQuiz() {
       quizStartTime = Date.now();
+
+      // ✅ CHECK IF REVIEW MODE
+      if (isReviewMode && !reviewLoaded) {
+        loadWrongQuestionsForReview();
+        return;
+      }
+
       resetQuizState();
       renderQuiz();
+    }
+
+    // ==========================================
+    // LOAD WRONG QUESTIONS FOR REVIEW
+    // ==========================================
+    async function loadWrongQuestionsForReview() {
+      console.log("📋 Loading wrong questions for review (Numerical)...");
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) {
+          alert('Please log in to review your mistakes.');
+          return;
+        }
+
+        // Fetch ALL attempts for this subject (not just the latest) so the
+        // review count matches the cumulative "Review Mistakes (N)" count
+        // shown on the dashboard.
+        const { data: attempts, error } = await supabaseClient
+          .from('quiz_attempts')
+          .select('*')
+          .eq('user_id', session.user.id)
+          .eq('subject', 'Numerical')
+          .order('completed_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching attempts:', error);
+          alert('Error loading review data.');
+          return;
+        }
+
+        if (!attempts || attempts.length === 0) {
+          alert('No quiz attempts found to review. Take a quiz first!');
+          return;
+        }
+
+        console.log(`📋 Total attempts found for Numerical:`, attempts.length);
+        attempts.forEach((a, i) => {
+          console.log(`  Attempt ${i + 1} (${a.completed_at}): wrong_answers=${a.wrong_answers}, wrong_questions_data length=${(a.wrong_questions_data || []).length}`);
+        });
+
+        // Merge wrong_questions_data from ALL attempts, deduped by question
+        // text (NOT by "id" — that field is just the question's position
+        // within a single quiz, e.g. 0,1,2..., and repeats across different
+        // attempts, so using it as a dedupe key would wrongly treat
+        // different questions from different attempts as duplicates).
+        const seenQuestions = new Set();
+        const wrongQuestionsRaw = [];
+        for (const attempt of attempts) {
+          const attemptWrongQuestions = attempt.wrong_questions_data || [];
+          for (const wq of attemptWrongQuestions) {
+            const key = String(wq.question || '').trim();
+            if (key && !seenQuestions.has(key)) {
+              seenQuestions.add(key);
+              wrongQuestionsRaw.push(wq);
+            }
+          }
+        }
+
+        console.log(`📋 Merged unique wrong questions:`, wrongQuestionsRaw.length);
+
+        if (wrongQuestionsRaw.length === 0) {
+          alert('🎉 No mistakes to review! Perfect score so far.');
+          return;
+        }
+
+        // Switch to the practice view directly (do NOT call switchMode()
+        // here — that would call startQuiz() again while currentQuestions
+        // is still empty, causing infinite recursion, or would overwrite
+        // these review questions with a freshly built regular quiz).
+        currentMode = 'practice';
+        modeTabs.forEach((tab) => {
+          tab.classList.toggle('active', tab.dataset.mode === 'practice');
+        });
+        if (practiceView) practiceView.classList.add('view--active');
+        if (studyView) studyView.classList.remove('view--active');
+
+        // Map saved wrong-question records back into the shape renderQuiz()
+        // expects: { question, options, answer, explanation }
+        currentQuestions = wrongQuestionsRaw.map((wq) => ({
+          question: wq.question,
+          options: Array.isArray(wq.options) ? wq.options.slice() : [],
+          answer: wq.correctAnswer,
+          explanation: wq.explanation || 'No explanation available'
+        }));
+        currentIndex = 0;
+        userAnswers = currentQuestions.map(() => null);
+        quizFinished = false;
+        reviewLoaded = true;
+
+        if (quizCardEl) quizCardEl.classList.remove('hidden');
+        if (resultPanelEl) resultPanelEl.classList.add('hidden');
+        if (quizHeaderEl) quizHeaderEl.classList.remove('hidden');
+
+        // Insert (or replace) the review-mode banner
+        const existingBanner = document.getElementById('reviewBanner');
+        if (existingBanner) existingBanner.remove();
+
+        const totalAnswered = attempts.reduce((sum, a) => sum + (a.total_questions || 0), 0);
+        const totalCorrect = attempts.reduce((sum, a) => sum + (a.correct_answers || 0), 0);
+        const overallAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
+        const reviewBanner = document.createElement('div');
+        reviewBanner.id = 'reviewBanner';
+        reviewBanner.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background: rgba(127,29,29,0.35); border:1px solid rgba(248,113,113,0.6); border-radius:14px; padding:10px 14px; margin-bottom:12px;';
+        reviewBanner.innerHTML = `
+          <span style="color: #f87171; font-size: 0.9rem;">
+            📋 Review Mode - ${currentQuestions.length} mistakes to review
+          </span>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="color: #94a3b8; font-size: 0.8rem;">
+              Overall Accuracy: ${overallAccuracy}%
+            </span>
+            <a href="${window.location.pathname}" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; padding: 4px 12px; border: 1px solid #475569; border-radius: 40px;">
+              ✕ Exit Review
+            </a>
+          </div>
+        `;
+
+        if (quizHeaderEl && quizHeaderEl.parentNode) {
+          quizHeaderEl.parentNode.insertBefore(reviewBanner, quizHeaderEl.nextSibling);
+        }
+
+        renderQuiz();
+      } catch (error) {
+        console.error('Error loading review:', error);
+        alert('Error loading review data. Please try again.');
+      }
     }
 
     // ==========================================
@@ -1379,7 +1517,7 @@ function updateSEO(topicId,label){
               question: q.question,
               options: q.options,
               correctAnswer: q.answer,
-              userAnswer: q.options[ans.selected] || "Not answered",
+              userAnswer: ans.selected || "Not answered",
               explanation: q.explanation || "No explanation available"
             });
           }
@@ -1682,7 +1820,7 @@ function updateSEO(topicId,label){
       }
 
       selectTopic(currentTopicId);
-      switchMode("study");
+      switchMode(isReviewMode ? "practice" : "study");
       
       quizStartTime = Date.now();
     }
