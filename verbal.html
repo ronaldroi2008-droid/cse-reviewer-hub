@@ -5586,8 +5586,7 @@ async function loadWrongQuestionsForReview() {
             .select('*')
             .eq('user_id', session.user.id)
             .eq('subject', subjectKey)
-            .order('completed_at', { ascending: false })
-            .limit(1);
+            .order('completed_at', { ascending: false });
 
         if (error) {
             console.error('Error fetching attempts:', error);
@@ -5600,15 +5599,29 @@ async function loadWrongQuestionsForReview() {
             return;
         }
 
-        const lastAttempt = attempts[0];
-        
-        if (!lastAttempt.wrong_questions_data || lastAttempt.wrong_questions_data.length === 0) {
-            alert('🎉 No mistakes to review! Perfect score on your last quiz.');
-            return;
+        // Merge wrong_questions_data from ALL attempts (not just the latest),
+        // so this matches the cumulative "Review Mistakes (N)" count on the dashboard.
+        // Dedupe by question text, keeping the most recent occurrence
+        // (attempts are already ordered newest-first).
+        const seenQuestions = new Set();
+        const wrongQuestions = [];
+        for (const attempt of attempts) {
+            const attemptWrongQuestions = attempt.wrong_questions_data || [];
+            for (const wq of attemptWrongQuestions) {
+                const key = wq.id !== undefined ? String(wq.id) : String(wq.question);
+                if (!seenQuestions.has(key)) {
+                    seenQuestions.add(key);
+                    wrongQuestions.push(wq);
+                }
+            }
         }
 
-        const wrongQuestions = lastAttempt.wrong_questions_data;
-        console.log(`📋 Found ${wrongQuestions.length} wrong questions to review`);
+        const lastAttempt = attempts[0];
+
+        if (wrongQuestions.length === 0) {
+            alert('🎉 No mistakes to review! Perfect score so far.');
+            return;
+        }
 
         // Switch to the practice view directly (do NOT call switchMode()/startQuiz()
         // here — those would re-enter loadWrongQuestionsForReview() or overwrite
@@ -5636,13 +5649,17 @@ async function loadWrongQuestionsForReview() {
             flex-wrap: wrap;
             gap: 8px;
         `;
+        const totalAnswered = attempts.reduce((sum, a) => sum + (a.total_questions || 0), 0);
+        const totalCorrect = attempts.reduce((sum, a) => sum + (a.correct_answers || 0), 0);
+        const overallAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
         reviewBanner.innerHTML = `
             <span style="color: #f87171; font-size: 0.9rem;">
                 📋 Review Mode - ${wrongQuestions.length} mistakes to review
             </span>
             <div style="display: flex; gap: 8px; align-items: center;">
                 <span style="color: #94a3b8; font-size: 0.8rem;">
-                    Score: ${lastAttempt.score_percent}%
+                    Overall Accuracy: ${overallAccuracy}%
                 </span>
                 <a href="${window.location.pathname}" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; padding: 4px 12px; border: 1px solid #475569; border-radius: 40px;">
                     ✕ Exit Review
@@ -5695,9 +5712,8 @@ async function loadWrongQuestionsForReview() {
         }
 
     } catch (error) {
-        console.error('Error loading review - message:', error && error.message);
-        console.error('Error loading review - stack:', error && error.stack);
-        alert('Error loading review data: ' + (error && error.message ? error.message : error));
+        console.error('Error loading review:', error);
+        alert('Error loading review data. Please try again.');
     }
 }
 
