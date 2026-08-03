@@ -484,6 +484,18 @@
       box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.75);
     }
 
+    .option-btn.correct-answer {
+      background: rgba(22, 163, 74, 0.12);
+      border-color: rgba(34, 197, 94, 0.85);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.85);
+    }
+
+    .option-btn.wrong-answer {
+      background: rgba(248, 113, 113, 0.12);
+      border-color: rgba(248, 113, 113, 0.85);
+      box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.85);
+    }
+
     .quiz-footer {
       display: flex;
       align-items: center;
@@ -1046,6 +1058,14 @@
   <script src="questions/clerical_spelling.js"></script>
   <script src="questions/clerical_alphabetizing.js"></script>
 
+  <!-- MEMBERSHIP / PRO ACCESS SYSTEM -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="membership.js"></script>
+
+  <!-- ✅ PROGRESS TRACKING (was missing — quiz attempts were never being saved) -->
+  <script src="progress.js"></script>
+
   <script>
     // ==========================================
     // 0. PRO CONFIG (UPDATED)
@@ -1272,6 +1292,11 @@
     let currentQuestionSet = [];
     let userAnswers = [];
     let quizFinished = false;
+    let quizStartTime = 0;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const isReviewMode = urlParams.get("review") === "true";
+    let reviewLoaded = false;
 
     function getTopicLabel(id) {
       const t = CLERICAL_TOPICS.find(x => x.id === id);
@@ -1495,6 +1520,14 @@
       if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
       if (detailsEl) detailsEl.innerHTML = "";
 
+      // ✅ CHECK IF REVIEW MODE
+      if (isReviewMode && !reviewLoaded) {
+        loadWrongQuestionsForReview();
+        return;
+      }
+
+      quizStartTime = Date.now();
+
       const bank = window.CLERICAL_QUESTION_BANK || {};
       const topicBank = bank[currentTopicId];
       const questions = topicBank && topicBank[currentLevel]
@@ -1575,6 +1608,15 @@
         btn.className = "option-btn";
         btn.textContent = opt;
 
+        if (selectedIndex != null) {
+          if (opt === q.answer) {
+            btn.classList.add("correct-answer");
+          }
+          if (idx === selectedIndex && opt !== q.answer) {
+            btn.classList.add("wrong-answer");
+          }
+        }
+
         if (selectedIndex === idx) {
           btn.classList.add("selected");
         }
@@ -1632,7 +1674,7 @@
     // ==========================================
     // 10. FINISH & RESULTS
     // ==========================================
-    function finishQuiz() {
+    async function finishQuiz() {
       quizFinished = true;
 
       const quizCard = document.getElementById("quiz-card");
@@ -1647,6 +1689,7 @@
 
       let correctCount = 0;
       const mistakes = [];
+      const wrongQuestionsForSave = [];
 
       currentQuestionSet.forEach((q, idx) => {
         const optionsArray = getShuffledOptions(q);
@@ -1665,6 +1708,17 @@
             correctAnswer: q.answer,
             explanation: q.explanation || ""
           });
+          // Save the options in the ORDER actually shown/answered against
+          // (optionsArray), not the raw pre-shuffle q.options, so review
+          // mode reconstructs the exact same layout the user saw.
+          wrongQuestionsForSave.push({
+            id: idx,
+            question: q.question,
+            options: optionsArray,
+            correctAnswer: q.answer,
+            userAnswer: userText || "Not answered",
+            explanation: q.explanation || "No explanation available"
+          });
         }
       });
 
@@ -1678,6 +1732,30 @@
           ? Math.round((correctCount / currentQuestionSet.length) * 100)
           : 0;
         scorePercentEl.textContent = "Score: " + pct + "%";
+      }
+
+      // ==========================================
+      // ✅ SAVE QUIZ ATTEMPT WITH WRONG QUESTIONS
+      // ==========================================
+      try {
+        if (typeof saveQuizAttempt === "function") {
+          const quizDuration = Math.max(1, Math.round((Date.now() - quizStartTime) / 60000));
+          await saveQuizAttempt({
+            subject: "Clerical",
+            topic: currentTopicId,
+            level: currentLevel,
+            totalQuestions: currentQuestionSet.length,
+            correctAnswers: correctCount,
+            wrongAnswers: currentQuestionSet.length - correctCount,
+            durationMinutes: quizDuration,
+            wrongQuestions: wrongQuestionsForSave
+          });
+          console.log("✅ Clerical quiz saved with", wrongQuestionsForSave.length, "wrong questions");
+        } else {
+          console.warn("⚠️ saveQuizAttempt function not available");
+        }
+      } catch (err) {
+        console.error("❌ Failed to save clerical quiz attempt:", err);
       }
 
       if (!detailsEl) return;
@@ -1737,6 +1815,143 @@
     }
 
     // ==========================================
+    // LOAD WRONG QUESTIONS FOR REVIEW
+    // ==========================================
+    async function loadWrongQuestionsForReview() {
+      console.log("📋 Loading wrong questions for review (Clerical)...");
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) {
+          alert('Please log in to review your mistakes.');
+          return;
+        }
+
+        const { data: attempts, error } = await supabaseClient
+          .from('quiz_attempts')
+          .select('*')
+          .eq('user_id', session.user.id)
+          .eq('subject', 'Clerical')
+          .order('completed_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching attempts:', error);
+          alert('Error loading review data.');
+          return;
+        }
+
+        if (!attempts || attempts.length === 0) {
+          alert('No quiz attempts found to review. Take a quiz first!');
+          return;
+        }
+
+        console.log(`📋 Total attempts found for Clerical:`, attempts.length);
+        attempts.forEach((a, i) => {
+          console.log(`  Attempt ${i + 1} (${a.completed_at}): wrong_answers=${a.wrong_answers}, wrong_questions_data length=${(a.wrong_questions_data || []).length}`);
+        });
+
+        // Merge wrong_questions_data from ALL attempts, deduped by question
+        // text (NOT by "id" — that field is just the question's position
+        // within a single quiz and repeats across attempts).
+        const seenQuestions = new Set();
+        const wrongQuestionsRaw = [];
+        for (const attempt of attempts) {
+          const attemptWrongQuestions = attempt.wrong_questions_data || [];
+          for (const wq of attemptWrongQuestions) {
+            const key = String(wq.question || '').trim();
+            if (key && !seenQuestions.has(key)) {
+              seenQuestions.add(key);
+              wrongQuestionsRaw.push(wq);
+            }
+          }
+        }
+
+        console.log(`📋 Merged unique wrong questions:`, wrongQuestionsRaw.length);
+
+        if (wrongQuestionsRaw.length === 0) {
+          alert('🎉 No mistakes to review! Perfect score so far.');
+          return;
+        }
+
+        // Switch to the quiz panel directly (do NOT call startQuiz() here —
+        // that would rebuild a regular random quiz and overwrite these
+        // review questions).
+        const studyBtn = document.getElementById("mode-study");
+        const quizBtn = document.getElementById("mode-quiz");
+        const studyPanel = document.getElementById("panel-study");
+        const quizPanel = document.getElementById("panel-quiz");
+        if (quizBtn) quizBtn.classList.add("active");
+        if (studyBtn) studyBtn.classList.remove("active");
+        if (quizPanel) quizPanel.classList.remove("hidden");
+        if (studyPanel) studyPanel.classList.add("hidden");
+
+        currentQuestionSet = wrongQuestionsRaw.map((wq) => {
+          const savedOptions = Array.isArray(wq.options) ? wq.options.slice() : [];
+          const q = {
+            question: wq.question,
+            options: savedOptions,
+            answer: wq.correctAnswer,
+            explanation: wq.explanation || 'No explanation available'
+          };
+          // Lock in the saved option order (no re-shuffle) so the index we
+          // compute below for the user's previous answer stays correct.
+          q._shuffledOptions = savedOptions.slice();
+          return q;
+        });
+        currentQuestionIndex = 0;
+        // Pre-fill each answer with the index of the user's previously
+        // recorded wrong answer so renderQuizQuestion() shows the
+        // correct/incorrect highlighting and explanation immediately.
+        userAnswers = wrongQuestionsRaw.map((wq) => {
+          const opts = Array.isArray(wq.options) ? wq.options : [];
+          const idx = opts.indexOf(wq.userAnswer);
+          return idx >= 0 ? idx : null;
+        });
+        quizFinished = false;
+        reviewLoaded = true;
+
+        const quizCard = document.getElementById("quiz-card");
+        const resultsPanel = document.getElementById("results-panel");
+        if (quizCard) quizCard.classList.remove("hidden");
+        if (resultsPanel) resultsPanel.classList.add("hidden");
+
+        // Insert (or replace) the review-mode banner above the quiz topbar
+        const existingBanner = document.getElementById('reviewBanner');
+        if (existingBanner) existingBanner.remove();
+
+        const totalAnswered = attempts.reduce((sum, a) => sum + (a.total_questions || 0), 0);
+        const totalCorrect = attempts.reduce((sum, a) => sum + (a.correct_answers || 0), 0);
+        const overallAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
+        const reviewBanner = document.createElement('div');
+        reviewBanner.id = 'reviewBanner';
+        reviewBanner.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background: rgba(99,102,241,0.15); border:1px solid rgba(129,140,248,0.6); border-radius:14px; padding:10px 14px; margin-bottom:12px;';
+        reviewBanner.innerHTML = `
+          <span style="color: #c7d2fe; font-size: 0.9rem;">
+            📋 Review Mode - ${currentQuestionSet.length} mistakes to review
+          </span>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="color: #94a3b8; font-size: 0.8rem;">
+              Overall Accuracy: ${overallAccuracy}%
+            </span>
+            <a href="${window.location.pathname}" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; padding: 4px 12px; border: 1px solid #475569; border-radius: 40px;">
+              ✕ Exit Review
+            </a>
+          </div>
+        `;
+
+        const quizTopbar = document.querySelector('.quiz-topbar');
+        if (quizTopbar && quizTopbar.parentNode) {
+          quizTopbar.parentNode.insertBefore(reviewBanner, quizTopbar);
+        }
+
+        renderQuizQuestion();
+      } catch (error) {
+        console.error('Error loading review:', error);
+        alert('Error loading review data. Please try again.');
+      }
+    }
+
+    // ==========================================
     // 11. INITIALIZATION (UPDATED)
     // ==========================================
     renderTopics();
@@ -1751,5 +1966,3 @@
   </script>
 </body>
 </html>
-
-
