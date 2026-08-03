@@ -17,11 +17,11 @@ async function saveQuizAttempt({
     correctAnswers,
     wrongAnswers,
     durationMinutes = 0,
-    wrongQuestions = []  // ✅ ADDED
+    wrongQuestions = []
 }) {
 
     console.log("🚀 saveQuizAttempt() called");
-    console.log("Wrong questions received:", wrongQuestions.length);  // ✅ DEBUG
+    console.log("Wrong questions received:", wrongQuestions.length);
 
     // Guard against duplicate saves
     if (isSavingProgress) {
@@ -44,6 +44,16 @@ async function saveQuizAttempt({
         const userId = session.user.id;
         const scorePercent = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
 
+        // ✅ Ensure wrongQuestions is an array
+        const wrongQuestionsArray = Array.isArray(wrongQuestions) ? wrongQuestions : [];
+        
+        // ✅ Extract IDs properly
+        const wrongQuestionIds = wrongQuestionsArray.map(q => {
+            if (q.id !== undefined) return String(q.id);
+            if (q.question) return String(q.question);
+            return String(Math.random());
+        });
+
         // ======================================
         // SAVE QUIZ ATTEMPT - WITH WRONG QUESTIONS
         // ======================================
@@ -60,14 +70,14 @@ async function saveQuizAttempt({
                 score_percent: scorePercent,
                 duration_minutes: durationMinutes,
                 completed_at: new Date().toISOString(),
-                wrong_question_ids: wrongQuestions.map(q => q.id || q.question),  // ✅ ADDED
-                wrong_questions_data: wrongQuestions  // ✅ ADDED
+                wrong_question_ids: wrongQuestionIds,
+                wrong_questions_data: wrongQuestionsArray
             })
             .select();
 
         console.log("Insert Result:", data);
         console.log("Insert Error:", error);
-        console.log("Wrong questions saved:", wrongQuestions.length);  // ✅ DEBUG
+        console.log("Wrong questions saved:", wrongQuestionsArray.length);
 
         if (error) {
             console.error("Quiz attempt failed:", error);
@@ -513,6 +523,68 @@ async function getAllSubjectsStats() {
     } catch (error) {
         console.error("Error in getAllSubjectsStats:", error);
         return null;
+    }
+}
+
+// ==========================================
+// FIX WRONG QUESTIONS DATA (Run once to fix existing data)
+// ==========================================
+
+async function fixWrongQuestionsData() {
+    try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) return;
+
+        const { data, error } = await supabaseClient
+            .from("quiz_attempts")
+            .select("*")
+            .eq("user_id", session.user.id)
+            .not('wrong_questions_data', 'is', null)
+            .order('completed_at', { ascending: false });
+
+        if (error) {
+            console.error("Error fetching attempts to fix:", error);
+            return;
+        }
+
+        for (const attempt of data) {
+            let fixedData = attempt.wrong_questions_data;
+            
+            // If it's a string, try to parse it
+            if (typeof fixedData === 'string') {
+                try {
+                    fixedData = JSON.parse(fixedData);
+                } catch (e) {
+                    console.log(`Skipping attempt ${attempt.id} - invalid JSON`);
+                    continue;
+                }
+            }
+            
+            // If it's not an array, skip
+            if (!Array.isArray(fixedData)) {
+                console.log(`Skipping attempt ${attempt.id} - not an array`);
+                continue;
+            }
+            
+            // Update with proper array
+            const { error: updateError } = await supabaseClient
+                .from("quiz_attempts")
+                .update({
+                    wrong_questions_data: fixedData,
+                    wrong_question_ids: fixedData.map(q => String(q.id || q.question))
+                })
+                .eq("id", attempt.id);
+                
+            if (updateError) {
+                console.error(`Error fixing attempt ${attempt.id}:`, updateError);
+            } else {
+                console.log(`✅ Fixed attempt ${attempt.id}`);
+            }
+        }
+        
+        console.log("✅ Finished fixing wrong questions data");
+    } catch (error) {
+        console.error("Error in fixWrongQuestionsData:", error);
     }
 }
 
