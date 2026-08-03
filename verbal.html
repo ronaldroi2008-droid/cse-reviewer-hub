@@ -5599,6 +5599,11 @@ async function loadWrongQuestionsForReview() {
             return;
         }
 
+        console.log(`📋 Total attempts found for ${subjectKey}:`, attempts.length);
+        attempts.forEach((a, i) => {
+            console.log(`  Attempt ${i + 1} (${a.completed_at}): wrong_answers=${a.wrong_answers}, wrong_questions_data length=${(a.wrong_questions_data || []).length}`);
+        });
+
         // Merge wrong_questions_data from ALL attempts (not just the latest),
         // so this matches the cumulative "Review Mistakes (N)" count on the dashboard.
         // Dedupe by question text, keeping the most recent occurrence
@@ -5615,6 +5620,8 @@ async function loadWrongQuestionsForReview() {
                 }
             }
         }
+
+        console.log(`📋 Merged unique wrong questions:`, wrongQuestions.length);
 
         const lastAttempt = attempts[0];
 
