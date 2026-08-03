@@ -1054,6 +1054,14 @@
   <script src="questions/analytical_logical_reasoning.js"></script>
   <script src="questions/analytical_flowchart.js"></script>
 
+  <!-- MEMBERSHIP / PRO ACCESS SYSTEM -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="membership.js"></script>
+
+  <!-- ✅ PROGRESS TRACKING (was missing — quiz attempts were never being saved) -->
+  <script src="progress.js"></script>
+
   <script>
     // ==========================================
     // 1. TOPIC LIST
@@ -1219,6 +1227,11 @@
     let currentQuestionSet = [];
     let userAnswers = [];
     let quizFinished = false;
+    let quizStartTime = 0;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const isReviewMode = urlParams.get("review") === "true";
+    let reviewLoaded = false;
 
     // ==========================================
     // PRO MODAL FUNCTIONS (ADDED)
@@ -1521,6 +1534,14 @@
       if (reviewTitleEl) reviewTitleEl.classList.add("hidden");
       if (detailsEl) detailsEl.innerHTML = "";
 
+      // ✅ CHECK IF REVIEW MODE
+      if (isReviewMode && !reviewLoaded) {
+        loadWrongQuestionsForReview();
+        return;
+      }
+
+      quizStartTime = Date.now();
+
       const bank = window.ANALYTICAL_QUESTION_BANK || {};
       const topicBank = bank[currentTopicId];
       const questions = topicBank && topicBank[currentLevel]
@@ -1655,7 +1676,7 @@
     // ==========================================
     // 11. FINISH & RESULTS
     // ==========================================
-    function finishQuiz() {
+    async function finishQuiz() {
       quizFinished = true;
 
       const quizCard = document.getElementById("quiz-card");
@@ -1670,6 +1691,7 @@
 
       let correctCount = 0;
       const mistakes = [];
+      const wrongQuestionsForSave = [];
 
       currentQuestionSet.forEach((q, idx) => {
         const userIndex = userAnswers[idx];
@@ -1687,6 +1709,14 @@
             correctAnswer: q.answer,
             explanation: q.explanation || ""
           });
+          wrongQuestionsForSave.push({
+            id: idx,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.answer,
+            userAnswer: userText || "Not answered",
+            explanation: q.explanation || "No explanation available"
+          });
         }
       });
 
@@ -1700,6 +1730,30 @@
           ? Math.round((correctCount / currentQuestionSet.length) * 100)
           : 0;
         scorePercentEl.textContent = "Score: " + pct + "%";
+      }
+
+      // ==========================================
+      // ✅ SAVE QUIZ ATTEMPT WITH WRONG QUESTIONS
+      // ==========================================
+      try {
+        if (typeof saveQuizAttempt === "function") {
+          const quizDuration = Math.max(1, Math.round((Date.now() - quizStartTime) / 60000));
+          await saveQuizAttempt({
+            subject: "Analytical",
+            topic: currentTopicId,
+            level: currentLevel,
+            totalQuestions: currentQuestionSet.length,
+            correctAnswers: correctCount,
+            wrongAnswers: currentQuestionSet.length - correctCount,
+            durationMinutes: quizDuration,
+            wrongQuestions: wrongQuestionsForSave
+          });
+          console.log("✅ Analytical quiz saved with", wrongQuestionsForSave.length, "wrong questions");
+        } else {
+          console.warn("⚠️ saveQuizAttempt function not available");
+        }
+      } catch (err) {
+        console.error("❌ Failed to save analytical quiz attempt:", err);
       }
 
       if (!detailsEl) return;
@@ -1756,6 +1810,138 @@
 
     function retakeQuiz() {
       startQuiz();
+    }
+
+    // ==========================================
+    // LOAD WRONG QUESTIONS FOR REVIEW
+    // ==========================================
+    async function loadWrongQuestionsForReview() {
+      console.log("📋 Loading wrong questions for review (Analytical)...");
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session) {
+          alert('Please log in to review your mistakes.');
+          return;
+        }
+
+        const { data: attempts, error } = await supabaseClient
+          .from('quiz_attempts')
+          .select('*')
+          .eq('user_id', session.user.id)
+          .eq('subject', 'Analytical')
+          .order('completed_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching attempts:', error);
+          alert('Error loading review data.');
+          return;
+        }
+
+        if (!attempts || attempts.length === 0) {
+          alert('No quiz attempts found to review. Take a quiz first!');
+          return;
+        }
+
+        console.log(`📋 Total attempts found for Analytical:`, attempts.length);
+        attempts.forEach((a, i) => {
+          console.log(`  Attempt ${i + 1} (${a.completed_at}): wrong_answers=${a.wrong_answers}, wrong_questions_data length=${(a.wrong_questions_data || []).length}`);
+        });
+
+        // Merge wrong_questions_data from ALL attempts, deduped by question
+        // text (NOT by "id" — that field is just the question's position
+        // within a single quiz and repeats across attempts).
+        const seenQuestions = new Set();
+        const wrongQuestionsRaw = [];
+        for (const attempt of attempts) {
+          const attemptWrongQuestions = attempt.wrong_questions_data || [];
+          for (const wq of attemptWrongQuestions) {
+            const key = String(wq.question || '').trim();
+            if (key && !seenQuestions.has(key)) {
+              seenQuestions.add(key);
+              wrongQuestionsRaw.push(wq);
+            }
+          }
+        }
+
+        console.log(`📋 Merged unique wrong questions:`, wrongQuestionsRaw.length);
+
+        if (wrongQuestionsRaw.length === 0) {
+          alert('🎉 No mistakes to review! Perfect score so far.');
+          return;
+        }
+
+        // Switch to the quiz panel directly (do NOT call startQuiz() here —
+        // that would rebuild a regular random quiz and overwrite these
+        // review questions).
+        const studyBtn = document.getElementById("mode-study");
+        const quizBtn = document.getElementById("mode-quiz");
+        const studyPanel = document.getElementById("panel-study");
+        const quizPanel = document.getElementById("panel-quiz");
+        if (quizBtn) quizBtn.classList.add("active");
+        if (studyBtn) studyBtn.classList.remove("active");
+        if (quizPanel) quizPanel.classList.remove("hidden");
+        if (studyPanel) studyPanel.classList.add("hidden");
+
+        currentQuestionSet = wrongQuestionsRaw.map((wq) => ({
+          question: wq.question,
+          options: Array.isArray(wq.options) ? wq.options.slice() : [],
+          answer: wq.correctAnswer,
+          explanation: wq.explanation || 'No explanation available'
+        }));
+        currentQuestionIndex = 0;
+        // Pre-fill each answer with the index of the user's previously
+        // recorded wrong answer (within that question's saved options
+        // array) so renderQuizQuestion() shows the correct/incorrect
+        // highlighting and explanation immediately, without requiring the
+        // user to click an option again.
+        userAnswers = wrongQuestionsRaw.map((wq) => {
+          const opts = Array.isArray(wq.options) ? wq.options : [];
+          const idx = opts.indexOf(wq.userAnswer);
+          return idx >= 0 ? idx : null;
+        });
+        quizFinished = false;
+        reviewLoaded = true;
+
+        const quizCard = document.getElementById("quiz-card");
+        const resultsPanel = document.getElementById("results-panel");
+        if (quizCard) quizCard.classList.remove("hidden");
+        if (resultsPanel) resultsPanel.classList.add("hidden");
+
+        // Insert (or replace) the review-mode banner above the quiz topbar
+        const existingBanner = document.getElementById('reviewBanner');
+        if (existingBanner) existingBanner.remove();
+
+        const totalAnswered = attempts.reduce((sum, a) => sum + (a.total_questions || 0), 0);
+        const totalCorrect = attempts.reduce((sum, a) => sum + (a.correct_answers || 0), 0);
+        const overallAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
+        const reviewBanner = document.createElement('div');
+        reviewBanner.id = 'reviewBanner';
+        reviewBanner.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background: rgba(99,102,241,0.15); border:1px solid rgba(129,140,248,0.6); border-radius:14px; padding:10px 14px; margin-bottom:12px;';
+        reviewBanner.innerHTML = `
+          <span style="color: #c7d2fe; font-size: 0.9rem;">
+            📋 Review Mode - ${currentQuestionSet.length} mistakes to review
+          </span>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="color: #94a3b8; font-size: 0.8rem;">
+              Overall Accuracy: ${overallAccuracy}%
+            </span>
+            <a href="${window.location.pathname}" style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; padding: 4px 12px; border: 1px solid #475569; border-radius: 40px;">
+              ✕ Exit Review
+            </a>
+          </div>
+        `;
+
+        const quizTopbar = document.querySelector('.quiz-topbar');
+        if (quizTopbar && quizTopbar.parentNode) {
+          quizTopbar.parentNode.insertBefore(reviewBanner, quizTopbar);
+        }
+
+        renderQuizQuestion();
+      } catch (error) {
+        console.error('Error loading review:', error);
+        alert('Error loading review data. Please try again.');
+      }
     }
 
     // ==========================================
@@ -1816,8 +2002,3 @@ selectTopic(currentTopicId);
   </script>
 </body>
 </html>
-
-
-
-
-
