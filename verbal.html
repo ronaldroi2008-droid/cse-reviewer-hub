@@ -5695,8 +5695,9 @@ async function loadWrongQuestionsForReview() {
         }
 
     } catch (error) {
-        console.error('Error loading review:', error);
-        alert('Error loading review data. Please try again.');
+        console.error('Error loading review - message:', error && error.message);
+        console.error('Error loading review - stack:', error && error.stack);
+        alert('Error loading review data: ' + (error && error.message ? error.message : error));
     }
 }
 
