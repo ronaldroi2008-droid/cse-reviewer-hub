@@ -5610,8 +5610,18 @@ async function loadWrongQuestionsForReview() {
         const wrongQuestions = lastAttempt.wrong_questions_data;
         console.log(`📋 Found ${wrongQuestions.length} wrong questions to review`);
 
-        switchMode('practice');
-        
+        // Switch to the practice view directly (do NOT call switchMode()/startQuiz()
+        // here — those would re-enter loadWrongQuestionsForReview() or overwrite
+        // these review questions with the regular quiz bank).
+        currentMode = 'practice';
+        document.querySelectorAll('.mode-tab').forEach((tab) => {
+            tab.classList.toggle('active', tab.dataset.mode === 'practice');
+        });
+        const studyViewEl = document.getElementById('studyView');
+        const practiceViewEl = document.getElementById('practiceView');
+        if (practiceViewEl) practiceViewEl.classList.add('view--active');
+        if (studyViewEl) studyViewEl.classList.remove('view--active');
+
         const reviewBanner = document.createElement('div');
         reviewBanner.id = 'reviewBanner';
         reviewBanner.style.cssText = `
@@ -5656,10 +5666,9 @@ async function loadWrongQuestionsForReview() {
             userAnswer: wq.userAnswer
         }));
 
-        currentQuestions = reviewQuestions;
-        currentIndex = 0;
-        userAnswers = currentQuestions.map(() => null);
-        quizFinished = false;
+        quizQuestions = reviewQuestions;
+        currentQuestionIndex = 0;
+        userAnswers = new Array(quizQuestions.length).fill(null);
 
         const quizCardEl = document.getElementById('quizCard');
         const resultPanelEl = document.getElementById('resultPanel');
@@ -5669,7 +5678,9 @@ async function loadWrongQuestionsForReview() {
         if (resultPanelEl) resultPanelEl.classList.add('hidden');
         if (quizHeaderEl) quizHeaderEl.classList.remove('hidden');
 
-        renderQuiz();
+        renderCurrentQuestion();
+        updateProgressText();
+        updateNavButtons();
 
         const feedbackEl = document.getElementById('feedback');
         if (feedbackEl) {
