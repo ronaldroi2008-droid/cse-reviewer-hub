@@ -5613,8 +5613,11 @@ async function loadWrongQuestionsForReview() {
         for (const attempt of attempts) {
             const attemptWrongQuestions = attempt.wrong_questions_data || [];
             for (const wq of attemptWrongQuestions) {
-                const key = wq.id !== undefined ? String(wq.id) : String(wq.question);
-                if (!seenQuestions.has(key)) {
+                // Dedupe by question text — NOT by id. The saved "id" is just the
+                // question's position within that quiz (0, 1, 2...), which repeats
+                // across different attempts and is not a stable/unique identifier.
+                const key = String(wq.question || '').trim();
+                if (key && !seenQuestions.has(key)) {
                     seenQuestions.add(key);
                     wrongQuestions.push(wq);
                 }
