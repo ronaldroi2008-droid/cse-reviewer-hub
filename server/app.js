@@ -58,7 +58,7 @@ app.post("/api/create-checkout", async (req, res) => {
                         line_items: [
                             {
                                 currency: "PHP",
-                                amount: 1000,
+                                amount: 29900,
                                 name: "CSE Reviewer PRO Lifetime",
                                 quantity: 1
                             }
@@ -96,7 +96,7 @@ app.post("/api/create-checkout", async (req, res) => {
             .insert({
                 user_id: user_id,
                 checkout_id: response.data.data.id,
-                amount: 10,
+                amount: 290,
                 status: "pending"
             });
 
