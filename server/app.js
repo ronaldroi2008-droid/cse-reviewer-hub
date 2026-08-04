@@ -64,10 +64,8 @@ app.post("/api/create-checkout", async (req, res) => {
                             }
                         ],
                         payment_method_types: [
-                            "gcash",
-                            "paymaya",
-                            "card"
-                        ],
+                                 "qrph"
+                                  ],
                         metadata: {
                             user_id: user_id,
                             email: email
