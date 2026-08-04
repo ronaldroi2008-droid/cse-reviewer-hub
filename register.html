@@ -483,7 +483,10 @@ async function performRegistration(fullName, email, password) {
             
             // User-friendly error messages
             if (error.message.includes("User already registered")) {
-                showMessage("This email is already registered. Please login instead.", "error");
+                showMessage(
+                    "This email is already registered. Please sign in instead.",
+                    "error"
+                );
                 setTimeout(() => {
                     window.location.href = "login.html";
                 }, 2000);
@@ -516,7 +519,10 @@ async function performRegistration(fullName, email, password) {
         
         if (updateError) {
             console.error("❌ Error saving profile:", updateError);
-            showMessage("Account created but profile data could not be saved. Please contact support.", "error");
+            showMessage(
+                "Account created but profile data could not be saved. Please contact support.",
+                "error"
+            );
             registerBtn.disabled = false;
             registerBtn.innerHTML = "Create Account";
             return;
@@ -531,19 +537,20 @@ async function performRegistration(fullName, email, password) {
         // Load membership data
         await loadMembership();
         
-        // Show success message
+        // ==========================================
+        // FIXED: Professional success message
+        // ==========================================
         showMessage(
-            "✅ Account created successfully! " +
-            "Please check your email to verify your account.",
-            "success"
+            "Please check your email. If your account was created successfully, you'll receive a verification email. If you already have an account, please sign in instead.",
+            "info"
         );
         
-        registerBtn.innerHTML = "✅ Account Created";
+        registerBtn.innerHTML = "✅ Check Your Email";
         
-        // Redirect to index (homepage) after 3 seconds
+        // Redirect to login page after 4 seconds
         setTimeout(() => {
-            window.location.href = "index.html";
-        }, 3000);
+            window.location.href = "login.html";
+        }, 4000);
         
     } catch (error) {
         console.error("❌ Unexpected error:", error);
