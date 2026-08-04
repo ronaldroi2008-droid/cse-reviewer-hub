@@ -98,7 +98,7 @@ app.post("/api/create-checkout", async (req, res) => {
             .insert({
                 user_id: user_id,
                 checkout_id: response.data.data.id,
-                amount: 299,
+                amount: 10,
                 status: "pending"
             });
 
