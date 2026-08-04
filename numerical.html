@@ -999,6 +999,769 @@ function updateSEO(topicId,label){
         ]
       },
       // ... (keep all other lesson objects)
+      simple_interest: {
+        title: "Simple Interest (Bonus Topic)",
+        intro: "Simple interest is the extra amount earned or owed on a loan or investment, calculated only on the original (principal) amount over time.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "The simple interest formula is: I = P × R × T, where P = principal (starting amount), R = annual interest rate (as a decimal), and T = time in years.",
+              "The total amount after interest is: A = P + I, or equivalently A = P(1 + RT).",
+              "Interest rates given as a percent must be converted to a decimal before use (e.g., 5% = 0.05).",
+              "If time is given in months, convert it to years first by dividing by 12."
+            ]
+          },
+          {
+            heading: "Worked example: Find the interest on ₱10,000 at 6% annual rate for 3 years",
+            bullets: [
+              "Step 1: Convert the rate to a decimal: 6% = 0.06.",
+              "Step 2: Apply the formula: I = P × R × T = 10,000 × 0.06 × 3.",
+              "Step 3: Calculate: 10,000 × 0.06 = 600, then 600 × 3 = 1,800.",
+              "Answer: The interest is ₱1,800."
+            ]
+          },
+          {
+            heading: "Worked example: A loan of ₱5,000 grows to ₱5,600 after 2 years. What was the interest rate?",
+            bullets: [
+              "Step 1: Find the interest earned: 5,600 − 5,000 = 600.",
+              "Step 2: Rearrange the formula to solve for R: R = I ÷ (P × T) = 600 ÷ (5,000 × 2) = 600 ÷ 10,000 = 0.06.",
+              "Step 3: Convert back to a percent: 0.06 = 6%.",
+              "Answer: The interest rate was 6% per year."
+            ]
+          }
+        ],
+        tips: [
+          "Always double-check whether the given rate is annual (per year) — most simple interest problems assume this unless stated otherwise.",
+          "Keep the interest rate as a decimal throughout your calculations, and only convert back to a percent for the final answer if needed.",
+          "Simple interest is called 'simple' because it does not compound — it is always calculated on the original principal only, not on accumulated interest."
+        ]
+      },
+
+      profit_loss_discount: {
+        title: "Profit, Loss & Discount (Bonus)",
+        intro: "These problems involve buying and selling prices, the profit or loss made, and discounts applied to original prices — common in everyday transactions.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Profit = Selling Price − Cost Price (when selling price is higher). Loss = Cost Price − Selling Price (when cost price is higher).",
+              "Profit percent = (Profit ÷ Cost Price) × 100. Loss percent = (Loss ÷ Cost Price) × 100 — both are based on the COST price, not the selling price.",
+              "Discount = Original Price − Sale Price. Discount percent = (Discount ÷ Original Price) × 100.",
+              "To find the sale price after a discount: Sale Price = Original Price × (1 − discount rate as a decimal)."
+            ]
+          },
+          {
+            heading: "Worked example: A vendor buys an item for ₱200 and sells it for ₱250. Find the profit and profit percent",
+            bullets: [
+              "Step 1: Profit = Selling Price − Cost Price = 250 − 200 = 50.",
+              "Step 2: Profit percent = (Profit ÷ Cost Price) × 100 = (50 ÷ 200) × 100 = 25%.",
+              "Answer: Profit is ₱50, which is a 25% profit."
+            ]
+          },
+          {
+            heading: "Worked example: A shirt originally priced at ₱800 is on sale with a 20% discount. What is the sale price?",
+            bullets: [
+              "Step 1: Convert the discount rate to a decimal: 20% = 0.20.",
+              "Step 2: Find the discount amount: 800 × 0.20 = 160.",
+              "Step 3: Subtract from the original price: 800 − 160 = 640.",
+              "Answer: The sale price is ₱640."
+            ]
+          }
+        ],
+        tips: [
+          "Profit and loss percent are always calculated based on the COST price, never the selling price — this is a common mistake.",
+          "For quick discount calculations, you can also multiply directly: Sale Price = Original Price × (1 − discount rate), skipping the subtraction step.",
+          "When a problem mentions multiple successive discounts (e.g., 10% then 5%), apply them one after another, not by simply adding the percentages together."
+        ]
+      },
+
+      sequences_series: {
+        title: "Sequences & Series (Bonus)",
+        intro: "A sequence is an ordered list of numbers following a pattern. This topic covers arithmetic sequences (constant difference) and finding specific terms or sums.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "An arithmetic sequence has a constant difference (d) between consecutive terms, such as 2, 5, 8, 11 (d = 3).",
+              "The formula for the nth term is: aₙ = a₁ + (n − 1) × d, where a₁ is the first term.",
+              "To find the common difference, subtract any term from the term that follows it: d = a₂ − a₁.",
+              "The sum of the first n terms of an arithmetic sequence is: Sₙ = n/2 × (a₁ + aₙ)."
+            ]
+          },
+          {
+            heading: "Worked example: Find the 10th term of the sequence 3, 7, 11, 15, ...",
+            bullets: [
+              "Step 1: Identify the first term and common difference: a₁ = 3, d = 7 − 3 = 4.",
+              "Step 2: Apply the formula: aₙ = a₁ + (n − 1) × d = 3 + (10 − 1) × 4.",
+              "Step 3: Calculate: 3 + (9 × 4) = 3 + 36 = 39.",
+              "Answer: The 10th term is 39."
+            ]
+          },
+          {
+            heading: "Worked example: Find the sum of the first 5 terms of 2, 5, 8, 11, 14",
+            bullets: [
+              "Step 1: Identify a₁ = 2 and a₅ = 14 (the 5th term).",
+              "Step 2: Apply the sum formula: Sₙ = n/2 × (a₁ + aₙ) = 5/2 × (2 + 14).",
+              "Step 3: Calculate: 2.5 × 16 = 40.",
+              "Answer: The sum of the first 5 terms is 40."
+            ]
+          }
+        ],
+        tips: [
+          "Always verify the common difference is truly constant by checking it between at least two or three pairs of consecutive terms.",
+          "For 'find the sum' questions, you don't need to add every term manually — use the sum formula once you know the first and last term.",
+          "If asked for a specific term far along the sequence (like the 50th term), always use the nth term formula rather than listing terms one by one."
+        ]
+      },
+      geometry_problems: {
+        title: "Geometry Problems",
+        intro: "This topic covers basic geometry formulas for perimeter, area, and simple shape relationships commonly tested in the CSE.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Perimeter is the total distance around a shape; for a rectangle, Perimeter = 2 × (Length + Width). For a square, Perimeter = 4 × side.",
+              "Area measures the space inside a shape; for a rectangle, Area = Length × Width. For a square, Area = side². For a triangle, Area = (1/2) × base × height.",
+              "The circumference of a circle is C = 2πr (or πd), and the area is A = πr², where r is the radius and d is the diameter.",
+              "The sum of interior angles in a triangle is always 180°; in a quadrilateral (4-sided shape), it is always 360°."
+            ]
+          },
+          {
+            heading: "Worked example: A rectangle has a length of 12 cm and a width of 7 cm. Find its perimeter and area",
+            bullets: [
+              "Step 1: Perimeter = 2 × (Length + Width) = 2 × (12 + 7) = 2 × 19 = 38 cm.",
+              "Step 2: Area = Length × Width = 12 × 7 = 84 cm².",
+              "Answer: Perimeter = 38 cm, Area = 84 cm²."
+            ]
+          },
+          {
+            heading: "Worked example: The perimeter of a square is 36 cm. What is its area?",
+            bullets: [
+              "Step 1: Find the side length: Perimeter ÷ 4 = 36 ÷ 4 = 9 cm.",
+              "Step 2: Find the area: side² = 9² = 81 cm².",
+              "Answer: The area is 81 cm²."
+            ]
+          }
+        ],
+        tips: [
+          "Memorize the core formulas for rectangles, squares, triangles, and circles — these come up frequently.",
+          "Always check the units in your final answer: perimeter uses linear units (cm, m); area uses squared units (cm², m²).",
+          "When a problem gives you perimeter or area and asks for a missing side, work backward by isolating the unknown in the formula."
+        ]
+      },
+
+      divisibility_rules: {
+        title: "Divisibility Rules",
+        intro: "Divisibility rules are quick tricks to check if one number divides evenly into another, without doing long division.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Divisible by 2: the number ends in 0, 2, 4, 6, or 8 (it is even).",
+              "Divisible by 3: the sum of all digits is divisible by 3. Divisible by 9: the sum of all digits is divisible by 9.",
+              "Divisible by 5: the number ends in 0 or 5. Divisible by 10: the number ends in 0.",
+              "Divisible by 4: the last two digits form a number divisible by 4. Divisible by 6: the number is divisible by both 2 AND 3."
+            ]
+          },
+          {
+            heading: "Worked example: Is 342 divisible by 3?",
+            bullets: [
+              "Step 1: Add the digits: 3 + 4 + 2 = 9.",
+              "Step 2: Check if 9 is divisible by 3: yes, 9 ÷ 3 = 3.",
+              "Answer: Yes, 342 is divisible by 3."
+            ]
+          },
+          {
+            heading: "Worked example: Is 4,116 divisible by 4?",
+            bullets: [
+              "Step 1: Look at the last two digits: 16.",
+              "Step 2: Check if 16 is divisible by 4: yes, 16 ÷ 4 = 4.",
+              "Answer: Yes, 4,116 is divisible by 4 (you don't need to check the whole number)."
+            ]
+          }
+        ],
+        tips: [
+          "Combine rules for compound checks — a number divisible by 6 must pass both the rule for 2 and the rule for 3.",
+          "For divisibility by 9, the same digit-sum trick as 3 applies, just check against 9 instead.",
+          "Practice these rules with multi-digit numbers regularly so they become automatic during the actual exam."
+        ]
+      },
+
+      multiples_factors: {
+        title: "Multiples and Factors",
+        intro: "Multiples and factors describe how numbers relate through multiplication and division. This topic includes finding the Greatest Common Factor (GCF) and Least Common Multiple (LCM).",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A multiple of a number is the product of that number and any whole number (e.g., multiples of 4 are 4, 8, 12, 16...).",
+              "A factor of a number divides into it evenly with no remainder (e.g., factors of 12 are 1, 2, 3, 4, 6, 12).",
+              "The Greatest Common Factor (GCF) is the largest number that divides evenly into two or more numbers.",
+              "The Least Common Multiple (LCM) is the smallest number that is a multiple of two or more numbers."
+            ]
+          },
+          {
+            heading: "Worked example: Find the GCF of 18 and 24",
+            bullets: [
+              "Step 1: List factors of 18: 1, 2, 3, 6, 9, 18.",
+              "Step 2: List factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
+              "Step 3: Find the largest number common to both lists: 6.",
+              "Answer: The GCF of 18 and 24 is 6."
+            ]
+          },
+          {
+            heading: "Worked example: Find the LCM of 4 and 6",
+            bullets: [
+              "Step 1: List multiples of 4: 4, 8, 12, 16, 20...",
+              "Step 2: List multiples of 6: 6, 12, 18, 24...",
+              "Step 3: Find the smallest number common to both lists: 12.",
+              "Answer: The LCM of 4 and 6 is 12."
+            ]
+          }
+        ],
+        tips: [
+          "Use prime factorization for larger numbers — it's often faster than listing out every factor or multiple.",
+          "GCF is always less than or equal to the smallest number given; LCM is always greater than or equal to the largest number given.",
+          "GCF problems often involve dividing things into equal groups; LCM problems often involve finding when events repeat together."
+        ]
+      },
+      age_problems: {
+        title: "Age Problems",
+        intro: "Age problems describe relationships between people's ages now, in the past, or in the future. They are solved by carefully setting up variables for each stage in time.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Assign a variable for the age of one person now, then express other ages (and other people) in terms of that variable.",
+              "'X years ago' means subtract X from the current age; 'in X years' means add X to the current age.",
+              "Everyone in the problem ages by the same number of years over the same time period — this is the key relationship that lets you set up the equation.",
+              "Translate the comparison phrase (e.g., 'twice as old', '5 years older') into an equation using the ages at the SAME point in time."
+            ]
+          },
+          {
+            heading: "Worked example: Ana is 6 years older than Ben. The sum of their ages is 40",
+            bullets: [
+              "Step 1: Let Ben's age = x, so Ana's age = x + 6.",
+              "Step 2: Set up the equation: x + (x + 6) = 40.",
+              "Step 3: Solve: 2x + 6 = 40 → 2x = 34 → x = 17.",
+              "Answer: Ben is 17 and Ana is 23."
+            ]
+          },
+          {
+            heading: "Worked example: In 5 years, a father will be twice as old as his son. The father is now 35",
+            bullets: [
+              "Step 1: Let the son's current age = x. In 5 years, father = 35 + 5 = 40, and son = x + 5.",
+              "Step 2: Set up the equation: 40 = 2(x + 5).",
+              "Step 3: Solve: 40 = 2x + 10 → 30 = 2x → x = 15.",
+              "Answer: The son is currently 15 years old."
+            ]
+          }
+        ],
+        tips: [
+          "Draw a simple table with columns for 'now', 'past', and 'future' for each person to keep the ages organized.",
+          "Always apply the same number of years to everyone in the problem when moving to a past or future time.",
+          "Re-read the comparison sentence carefully to identify exactly which point in time (now, past, or future) it refers to."
+        ]
+      },
+
+      work_problems: {
+        title: "Work Problems",
+        intro: "Work problems involve people or machines completing a task together or separately, based on their individual work rates.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "If someone can complete a job in n days/hours, their work rate is 1/n of the job per day/hour.",
+              "When two or more people work together, their rates ADD: combined rate = rate 1 + rate 2 + ...",
+              "Time to complete a job together = 1 ÷ (combined rate).",
+              "The basic work formula: Work done = Rate × Time. For a complete job, total work = 1 (the whole job)."
+            ]
+          },
+          {
+            heading: "Worked example: A can finish a job in 6 days, B can finish it in 3 days. How long will it take together?",
+            bullets: [
+              "Step 1: A's rate = 1/6 of the job per day. B's rate = 1/3 of the job per day.",
+              "Step 2: Combined rate = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2 of the job per day.",
+              "Step 3: Time together = 1 ÷ (1/2) = 2 days.",
+              "Answer: Working together, they can finish the job in 2 days."
+            ]
+          },
+          {
+            heading: "Worked example: A pipe fills a tank in 4 hours; another pipe drains it in 6 hours. How long to fill if both are open?",
+            bullets: [
+              "Step 1: Filling rate = 1/4 of the tank per hour. Draining rate = 1/6 of the tank per hour (this subtracts from the fill).",
+              "Step 2: Combined rate = 1/4 − 1/6 = 3/12 − 2/12 = 1/12 of the tank per hour.",
+              "Step 3: Time to fill = 1 ÷ (1/12) = 12 hours.",
+              "Answer: It will take 12 hours to fill the tank with both pipes open."
+            ]
+          }
+        ],
+        tips: [
+          "Always convert 'time to finish a job' into a RATE (1/time) before adding rates together — you cannot add times directly.",
+          "For draining or opposing work (like a leak while filling), subtract that rate instead of adding it.",
+          "Double-check your final answer is reasonable — working together should always take LESS time than either person alone."
+        ]
+      },
+
+      motion_problems: {
+        title: "Motion Problems (Speed, Distance & Time)",
+        intro: "Motion problems relate speed, distance, and time using the formula Distance = Speed × Time. This includes problems with objects moving toward or away from each other.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "The core formula is: Distance = Speed × Time (D = S × T). This can be rearranged to Speed = D/T or Time = D/S.",
+              "For objects moving toward each other, their speeds ADD together to find how fast the distance between them closes.",
+              "For objects moving in the same direction, use the DIFFERENCE in speeds to find how fast one catches up to the other.",
+              "Make sure all units match (e.g., convert minutes to hours) before applying the formula."
+            ]
+          },
+          {
+            heading: "Worked example: A car travels 240 km in 4 hours. What is its speed?",
+            bullets: [
+              "Step 1: Use Speed = Distance ÷ Time.",
+              "Step 2: Speed = 240 ÷ 4 = 60.",
+              "Answer: The car's speed is 60 km/h."
+            ]
+          },
+          {
+            heading: "Worked example: Two cyclists start 90 km apart and ride toward each other at 20 km/h and 25 km/h. How long until they meet?",
+            bullets: [
+              "Step 1: Since they move toward each other, add their speeds: 20 + 25 = 45 km/h (combined closing speed).",
+              "Step 2: Use Time = Distance ÷ Speed: Time = 90 ÷ 45 = 2.",
+              "Answer: They will meet after 2 hours."
+            ]
+          }
+        ],
+        tips: [
+          "Draw a simple diagram showing the direction of travel — this helps you decide whether to add or subtract speeds.",
+          "Always check that your units are consistent (km with km/h and hours, not km with m/s) before calculating.",
+          "For 'catching up' problems, remember the gap closes at a rate equal to the DIFFERENCE of the two speeds, not the sum."
+        ]
+      },
+      writing_math_expressions: {
+        title: "Writing Mathematical Expressions",
+        intro: "This topic teaches you how to translate word phrases into mathematical expressions and equations — a key skill for solving word problems.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Certain keywords signal certain operations: 'sum', 'more than', 'increased by' = addition; 'difference', 'less than', 'decreased by' = subtraction.",
+              "'Product', 'times', 'of' (with percent/fractions) = multiplication; 'quotient', 'divided by', 'per' = division.",
+              "Watch out for reversed order phrases: '5 less than a number' means x − 5, NOT 5 − x.",
+              "'Twice', 'double' means 2×, and 'half of' means ÷2 or ×(1/2)."
+            ]
+          },
+          {
+            heading: "Worked example: Translate 'Eight more than a number is 15'",
+            bullets: [
+              "Step 1: Let the number be x.",
+              "Step 2: 'Eight more than a number' means x + 8.",
+              "Step 3: 'is 15' means = 15.",
+              "Expression: x + 8 = 15."
+            ]
+          },
+          {
+            heading: "Worked example: Translate 'Five less than twice a number'",
+            bullets: [
+              "Step 1: Let the number be x.",
+              "Step 2: 'Twice a number' means 2x.",
+              "Step 3: 'Five less than' twice the number means we subtract 5 FROM 2x, not the other way around.",
+              "Expression: 2x − 5."
+            ]
+          }
+        ],
+        tips: [
+          "For 'less than' phrases, always write the equation in reverse order of how it sounds: 'A less than B' means B − A.",
+          "Read the sentence slowly, phrase by phrase, translating each part before combining the whole expression.",
+          "Practice with everyday sentences to build fluency — the CSE often tests this skill directly with 'translate the following' questions."
+        ]
+      },
+
+      number_problems: {
+        title: "Number Problems",
+        intro: "Number problems describe relationships between unknown numbers in words, which you then translate into equations and solve.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Start by assigning a variable (usually x) to represent the unknown number described in the problem.",
+              "Carefully translate each phrase of the sentence into its mathematical equivalent, one piece at a time.",
+              "Set the translated expression equal to the given value to form a complete equation.",
+              "Solve the equation using standard algebra steps, then check that your answer makes sense in the context of the problem."
+            ]
+          },
+          {
+            heading: "Worked example: A number increased by 12 is 25",
+            bullets: [
+              "Step 1: Let the number be x.",
+              "Step 2: Translate: x + 12 = 25.",
+              "Step 3: Solve: subtract 12 from both sides: x = 13.",
+              "Answer: The number is 13."
+            ]
+          },
+          {
+            heading: "Worked example: Three times a number, decreased by 7, is 20",
+            bullets: [
+              "Step 1: Let the number be x.",
+              "Step 2: 'Three times a number' is 3x, 'decreased by 7' means −7: 3x − 7.",
+              "Step 3: Set equal to 20: 3x − 7 = 20.",
+              "Step 4: Solve: add 7 to both sides (3x = 27), then divide by 3 (x = 9).",
+              "Answer: The number is 9."
+            ]
+          }
+        ],
+        tips: [
+          "Underline the key phrases in the problem before translating, so you don't miss any operations.",
+          "After solving, plug your answer back into the original sentence (in words) to verify it makes sense.",
+          "If a problem mentions two related numbers, express the second in terms of the first (e.g., 'a number 5 more than x' is x + 5)."
+        ]
+      },
+
+      odd_even_consecutive: {
+        title: "Odd, Even and Consecutive Integers",
+        intro: "This topic covers special number patterns often tested in the CSE: consecutive integers, consecutive even integers, and consecutive odd integers.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Consecutive integers follow one after another with a difference of 1, represented as x, x+1, x+2, and so on.",
+              "Consecutive even integers differ by 2, represented as x, x+2, x+4 (where x is even).",
+              "Consecutive odd integers also differ by 2, represented as x, x+2, x+4 (where x is odd) — the representation looks the same as even integers, but the starting value must be odd.",
+              "An even number is divisible by 2 with no remainder; an odd number is not."
+            ]
+          },
+          {
+            heading: "Worked example: The sum of three consecutive integers is 48",
+            bullets: [
+              "Step 1: Let the integers be x, x+1, x+2.",
+              "Step 2: Set up the equation: x + (x+1) + (x+2) = 48.",
+              "Step 3: Combine like terms: 3x + 3 = 48.",
+              "Step 4: Solve: subtract 3 (3x = 45), then divide by 3 (x = 15).",
+              "Answer: The integers are 15, 16, and 17."
+            ]
+          },
+          {
+            heading: "Worked example: The sum of two consecutive even integers is 34",
+            bullets: [
+              "Step 1: Let the integers be x and x+2.",
+              "Step 2: Set up the equation: x + (x+2) = 34.",
+              "Step 3: Combine and solve: 2x + 2 = 34 → 2x = 32 → x = 16.",
+              "Answer: The integers are 16 and 18."
+            ]
+          }
+        ],
+        tips: [
+          "Always double check that your final answers actually match the type described (odd, even, or just consecutive).",
+          "For consecutive even or odd integers, the gap between terms is always 2, never 1.",
+          "If the problem asks for the 'largest' or 'smallest' integer, make sure to identify which term (x, x+1, x+2, etc.) corresponds to that after solving for x."
+        ]
+      },
+      averages: {
+        title: "Averages",
+        intro: "The average (or mean) summarizes a set of numbers with a single typical value. This topic covers finding averages and working backward from a known average.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Average = Sum of all values ÷ Number of values.",
+              "To find a missing value when the average is known, use: Sum = Average × Number of values, then subtract the known values.",
+              "The weighted average accounts for values that count more than others, such as grades with different unit weights.",
+              "Adding a value above the current average raises the average; adding a value below it lowers the average."
+            ]
+          },
+          {
+            heading: "Worked example: Find the average of 8, 12, 15, 9, 6",
+            bullets: [
+              "Step 1: Add all the values: 8 + 12 + 15 + 9 + 6 = 50.",
+              "Step 2: Divide by the number of values (5): 50 ÷ 5 = 10.",
+              "Answer: The average is 10."
+            ]
+          },
+          {
+            heading: "Worked example: The average of 4 numbers is 20. Three of them are 15, 18, and 22. What is the fourth?",
+            bullets: [
+              "Step 1: Find the total sum: Average × Count = 20 × 4 = 80.",
+              "Step 2: Add the three known numbers: 15 + 18 + 22 = 55.",
+              "Step 3: Subtract to find the missing number: 80 − 55 = 25.",
+              "Answer: The fourth number is 25."
+            ]
+          }
+        ],
+        tips: [
+          "Always find the total SUM first when working backward from an average — this is the key step most students skip.",
+          "Double-check by re-computing the average of your final set of numbers to confirm it matches the given average.",
+          "For weighted averages, multiply each value by its weight before adding, then divide by the total weight (not just the count of items)."
+        ]
+      },
+
+      data_interpretation: {
+        title: "Tables, Charts, and Graphs",
+        intro: "Data interpretation questions test your ability to read information from tables, bar graphs, line graphs, and pie charts, and to answer questions based on that data.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Always read the title, axis labels, and legend first — they tell you exactly what the data represents and in what units.",
+              "In bar and line graphs, the height or position of each point corresponds to a value on the vertical (y) axis, matched to a category on the horizontal (x) axis.",
+              "In pie charts, each slice represents a percentage or fraction of the whole; all slices should add up to 100% (or the total amount).",
+              "For comparison questions (e.g., 'how much more'), calculate the difference between two data points instead of guessing."
+            ]
+          },
+          {
+            heading: "Worked example: Reading a bar graph",
+            bullets: [
+              "Sample data: A bar graph shows sales for 4 months: Jan = 20, Feb = 35, Mar = 25, Apr = 40 (in units of ₱1,000).",
+              "Question: How much more were April sales than March sales?",
+              "Step 1: Identify the two values needed: April = 40, March = 25.",
+              "Step 2: Subtract: 40 − 25 = 15.",
+              "Answer: April sales were ₱15,000 more than March sales."
+            ]
+          },
+          {
+            heading: "Worked example: Reading a pie chart",
+            bullets: [
+              "Sample data: A pie chart shows a family budget: Food 40%, Rent 30%, Transport 15%, Savings 15%. Total monthly budget is ₱20,000.",
+              "Question: How much is spent on Rent?",
+              "Step 1: Convert the percent to a decimal: 30% = 0.30.",
+              "Step 2: Multiply by the total: 0.30 × 20,000 = 6,000.",
+              "Answer: ₱6,000 is spent on Rent."
+            ]
+          }
+        ],
+        tips: [
+          "Underline or note the specific numbers the question asks for before scanning the whole chart — this saves time.",
+          "Watch out for graphs where the y-axis does not start at 0, which can make differences look bigger or smaller than they really are.",
+          "For percent-based charts, convert to actual amounts only when the question asks for a specific value, not just a comparison."
+        ]
+      },
+
+      algebra_linear: {
+        title: "Linear Equations",
+        intro: "Linear equations involve variables raised only to the first power. This topic covers solving for an unknown value using inverse operations.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "The goal of solving an equation is to isolate the variable on one side by undoing operations in reverse order (opposite of PEMDAS).",
+              "Whatever you do to one side of the equation, you must do to the other side, to keep it balanced.",
+              "When a variable appears on both sides, move all variable terms to one side and all constants to the other before solving.",
+              "Distribute any parentheses first if the equation contains expressions like 2(x + 3)."
+            ]
+          },
+          {
+            heading: "Worked example: 3x + 5 = 20",
+            bullets: [
+              "Step 1: Subtract 5 from both sides: 3x + 5 − 5 = 20 − 5, so 3x = 15.",
+              "Step 2: Divide both sides by 3: 3x ÷ 3 = 15 ÷ 3, so x = 5.",
+              "Answer: x = 5."
+            ]
+          },
+          {
+            heading: "Worked example: 2(x + 4) = 3x − 1",
+            bullets: [
+              "Step 1: Distribute the left side: 2x + 8 = 3x − 1.",
+              "Step 2: Subtract 2x from both sides: 8 = x − 1.",
+              "Step 3: Add 1 to both sides: 9 = x, or x = 9.",
+              "Answer: x = 9."
+            ]
+          }
+        ],
+        tips: [
+          "Always perform the same operation on both sides of the equation — this keeps it balanced and true.",
+          "Check your answer by substituting it back into the original equation to see if both sides are equal.",
+          "Work step by step and rewrite the simplified equation each time, rather than trying to solve everything mentally."
+        ]
+      },
+      pemdas: {
+        title: "PEMDAS (Order of Operations)",
+        intro: "When a math expression has more than one operation, PEMDAS tells you the correct order to solve it so everyone gets the same answer.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "PEMDAS stands for Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right).",
+              "Multiplication and division have equal priority — do whichever comes first when reading left to right. The same is true for addition and subtraction.",
+              "Always simplify what is inside parentheses or brackets first, even if it contains more than one operation."
+            ]
+          },
+          {
+            heading: "Worked example: 6 + 4 × 2",
+            bullets: [
+              "Step 1: Look for multiplication or division first. There is a multiplication: 4 × 2 = 8.",
+              "Step 2: Now the expression is 6 + 8.",
+              "Step 3: Add: 6 + 8 = 14. Answer: 14 (not 20 — you must multiply before adding)."
+            ]
+          },
+          {
+            heading: "Worked example: (3 + 5) × 2² − 4",
+            bullets: [
+              "Step 1: Parentheses first: 3 + 5 = 8. Expression becomes 8 × 2² − 4.",
+              "Step 2: Exponents next: 2² = 4. Expression becomes 8 × 4 − 4.",
+              "Step 3: Multiplication: 8 × 4 = 32. Expression becomes 32 − 4.",
+              "Step 4: Subtraction: 32 − 4 = 28. Answer: 28."
+            ]
+          }
+        ],
+        tips: [
+          "Rewrite the expression after each step so you don't lose track of what's left to do.",
+          "Remember: multiplication does not always come before division, and addition does not always come before subtraction — go left to right for each pair.",
+          "When in doubt, work through parentheses first, then exponents, then everything else in order."
+        ]
+      },
+
+      decimals: {
+        title: "Decimals",
+        intro: "Decimals let us represent parts of a whole using place value. This topic covers reading, comparing, and performing operations with decimal numbers.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "Each place after the decimal point represents a fraction of 10: tenths, hundredths, thousandths, and so on.",
+              "To add or subtract decimals, line up the decimal points first so each place value matches, then compute as with whole numbers.",
+              "To multiply decimals, ignore the decimal points, multiply as whole numbers, then count the total decimal places in both factors to place the point in the answer.",
+              "To divide by a decimal, move the decimal point in both the divisor and dividend to make the divisor a whole number, then divide normally."
+            ]
+          },
+          {
+            heading: "Worked example: 12.75 + 3.4",
+            bullets: [
+              "Step 1: Line up decimal points: 12.75 and 3.40 (add a placeholder zero so both have two decimal places).",
+              "Step 2: Add normally: 12.75 + 3.40 = 16.15.",
+              "Answer: 16.15."
+            ]
+          },
+          {
+            heading: "Worked example: 2.5 × 1.2",
+            bullets: [
+              "Step 1: Multiply as whole numbers, ignoring the decimals: 25 × 12 = 300.",
+              "Step 2: Count decimal places in both factors: 2.5 has 1, 1.2 has 1, total 2.",
+              "Step 3: Place the decimal point 2 places from the right in 300 → 3.00.",
+              "Answer: 3.00, or simply 3."
+            ]
+          }
+        ],
+        tips: [
+          "Adding zeros after the last decimal digit does not change the value — use this to line up place values when adding or subtracting.",
+          "When comparing decimals, compare digit by digit from left to right, not by counting the number of digits.",
+          "Double-check your placement of the decimal point by estimating the answer first (e.g., 2.5 × 1.2 should be a little more than 2.5, so 3 makes sense)."
+        ]
+      },
+
+      fractions: {
+        title: "Fractions & Operations on Fractions",
+        intro: "Fractions represent parts of a whole. This topic reviews simplifying fractions and performing addition, subtraction, multiplication, and division with them.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A fraction a/b means a parts out of b equal parts. The top number is the numerator, the bottom is the denominator.",
+              "To add or subtract fractions, they must have the same denominator (a common denominator). Find the least common denominator (LCD) if needed.",
+              "To multiply fractions, multiply the numerators together and the denominators together, then simplify.",
+              "To divide fractions, multiply by the reciprocal (flip) of the second fraction."
+            ]
+          },
+          {
+            heading: "Worked example: 1/3 + 1/4",
+            bullets: [
+              "Step 1: Find the LCD of 3 and 4, which is 12.",
+              "Step 2: Convert each fraction: 1/3 = 4/12, and 1/4 = 3/12.",
+              "Step 3: Add the numerators: 4/12 + 3/12 = 7/12.",
+              "Answer: 7/12 (already in simplest form since 7 and 12 share no common factors)."
+            ]
+          },
+          {
+            heading: "Worked example: 2/3 ÷ 1/6",
+            bullets: [
+              "Step 1: Keep the first fraction, change division to multiplication, and flip the second fraction: 2/3 × 6/1.",
+              "Step 2: Multiply: (2 × 6)/(3 × 1) = 12/3.",
+              "Step 3: Simplify: 12/3 = 4.",
+              "Answer: 4."
+            ]
+          }
+        ],
+        tips: [
+          "Always simplify your final answer by dividing the numerator and denominator by their greatest common factor.",
+          "Convert mixed numbers (like 2 1/2) into improper fractions (5/2) before multiplying or dividing.",
+          "Remember the phrase 'keep, change, flip' for dividing fractions: keep the first, change ÷ to ×, flip the second."
+        ]
+      },
+
+      percentages: {
+        title: "Percent",
+        intro: "Percent means 'out of 100' and is used constantly in real life — discounts, interest, statistics, and more. This topic covers converting, calculating, and applying percentages.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "To convert a percent to a decimal, divide by 100 (move the decimal point 2 places left). To convert a decimal to a percent, multiply by 100.",
+              "The basic percentage formula is: Part = Percent (as decimal) × Whole.",
+              "To find what percent one number is of another, divide the part by the whole, then multiply by 100.",
+              "Percentage increase or decrease is calculated as: (change ÷ original amount) × 100."
+            ]
+          },
+          {
+            heading: "Worked example: What is 25% of 80?",
+            bullets: [
+              "Step 1: Convert 25% to a decimal: 25 ÷ 100 = 0.25.",
+              "Step 2: Multiply by the whole: 0.25 × 80 = 20.",
+              "Answer: 20."
+            ]
+          },
+          {
+            heading: "Worked example: 15 is what percent of 60?",
+            bullets: [
+              "Step 1: Divide the part by the whole: 15 ÷ 60 = 0.25.",
+              "Step 2: Convert to a percent by multiplying by 100: 0.25 × 100 = 25%.",
+              "Answer: 25%."
+            ]
+          }
+        ],
+        tips: [
+          "Memorize common percent-decimal-fraction equivalents: 50% = 0.5 = 1/2, 25% = 0.25 = 1/4, 10% = 0.1 = 1/10.",
+          "To quickly estimate 10% of a number, just move the decimal point one place to the left.",
+          "For percentage increase/decrease problems, always divide by the ORIGINAL amount, not the new amount."
+        ]
+      },
+
+      ratio_proportion: {
+        title: "Ratio and Proportion",
+        intro: "A ratio compares two quantities, and a proportion states that two ratios are equal. These are used to solve problems involving scaling, mixing, and comparing amounts.",
+        sections: [
+          {
+            heading: "Key ideas",
+            bullets: [
+              "A ratio a:b compares two quantities and can also be written as a fraction a/b.",
+              "A proportion is an equation stating two ratios are equal, such as a/b = c/d.",
+              "To solve a proportion for an unknown value, use cross-multiplication: if a/b = c/d, then a × d = b × c.",
+              "Ratios should be simplified to lowest terms, just like fractions, by dividing both terms by their greatest common factor."
+            ]
+          },
+          {
+            heading: "Worked example: Simplify the ratio 18:24",
+            bullets: [
+              "Step 1: Find the greatest common factor (GCF) of 18 and 24, which is 6.",
+              "Step 2: Divide both terms by 6: 18 ÷ 6 = 3, and 24 ÷ 6 = 4.",
+              "Answer: 3:4."
+            ]
+          },
+          {
+            heading: "Worked example: Solve for x: 3/4 = x/20",
+            bullets: [
+              "Step 1: Cross-multiply: 3 × 20 = 4 × x.",
+              "Step 2: Simplify: 60 = 4x.",
+              "Step 3: Divide both sides by 4: x = 15.",
+              "Answer: x = 15."
+            ]
+          }
+        ],
+        tips: [
+          "Keep the units or categories in the same order on both sides of a proportion (e.g., boys:girls = boys:girls, not boys:girls = girls:boys).",
+          "Cross-multiplication is the fastest way to solve for an unknown value in a proportion.",
+          "Check your answer by substituting it back into the original proportion to see if both sides are equal."
+        ]
+      },
     };
 
     // ==========================================
@@ -1578,26 +2341,30 @@ function updateSEO(topicId,label){
       if (resultPanelEl) resultPanelEl.classList.remove("hidden");
 
       // ==========================================
-      // ✅ SAVE QUIZ ATTEMPT WITH WRONG QUESTIONS
+      // ✅ SAVE QUIZ ATTEMPT WITH WRONG QUESTIONS (skip when finishing a
+      // review session — review mode re-practices existing mistakes and
+      // should not add a new attempt row / inflate cumulative stats)
       // ==========================================
-      try {
-        if (typeof saveQuizAttempt === "function") {
-          await saveQuizAttempt({
-            subject: "Numerical",
-            topic: currentTopicId,
-            level: currentLevel,
-            totalQuestions: total,
-            correctAnswers: correctCount,
-            wrongAnswers: total - correctCount,
-            durationMinutes: quizDuration,
-            wrongQuestions: wrongQuestions
-          });
-          console.log("✅ Numerical quiz saved with", wrongQuestions.length, "wrong questions");
-        } else {
-          console.warn("⚠️ saveQuizAttempt function not available");
+      if (!isReviewMode) {
+        try {
+          if (typeof saveQuizAttempt === "function") {
+            await saveQuizAttempt({
+              subject: "Numerical",
+              topic: currentTopicId,
+              level: currentLevel,
+              totalQuestions: total,
+              correctAnswers: correctCount,
+              wrongAnswers: total - correctCount,
+              durationMinutes: quizDuration,
+              wrongQuestions: wrongQuestions
+            });
+            console.log("✅ Numerical quiz saved with", wrongQuestions.length, "wrong questions");
+          } else {
+            console.warn("⚠️ saveQuizAttempt function not available");
+          }
+        } catch (error) {
+          console.error("❌ Failed to save numerical quiz attempt:", error);
         }
-      } catch (error) {
-        console.error("❌ Failed to save numerical quiz attempt:", error);
       }
     }
 
