@@ -124,6 +124,26 @@ async function saveQuizAttempt({
 }
 
 // ==========================================
+// DURATION SANITY CAP
+// ==========================================
+// A single quiz session realistically never takes more than a few hours.
+// Older buggy code paths (fixed now) could compute a duration equal to the
+// raw epoch timestamp in minutes when quizStartTime was left at 0 — that
+// produced values in the hundreds of thousands of minutes. Any stored
+// duration above this cap is almost certainly bad legacy data, not a real
+// study session, so we exclude it from aggregate totals rather than
+// letting it dominate the "hours studied" figure.
+const MAX_SANE_SESSION_MINUTES = 180; // 3 hours — generous upper bound for one sitting
+
+function sanitizeMinutes(rawMinutes) {
+    const minutes = Number(rawMinutes) || 0;
+    if (minutes < 0 || minutes > MAX_SANE_SESSION_MINUTES) {
+        return 0;
+    }
+    return minutes;
+}
+
+// ==========================================
 // UPDATE OVERALL PROGRESS
 // ==========================================
 
@@ -152,6 +172,11 @@ async function updateOverallProgress({
             return false;
         }
 
+        // Sanitize the incoming duration too, so freshly-saved attempts
+        // never contribute an unreasonable value even before this fix was
+        // deployed everywhere.
+        const safeDuration = sanitizeMinutes(durationMinutes);
+
         // ======================================
         // INSERT NEW RECORD
         // ======================================
@@ -166,7 +191,7 @@ async function updateOverallProgress({
                     questions_answered: totalQuestions,
                     correct_answers: correctAnswers,
                     wrong_answers: wrongAnswers,
-                    study_minutes: durationMinutes,
+                    study_minutes: safeDuration,
                     last_studied: new Date().toISOString(),
                     updated_at: new Date().toISOString()
                 });
@@ -189,7 +214,7 @@ async function updateOverallProgress({
                 questions_answered: data.questions_answered + totalQuestions,
                 correct_answers: data.correct_answers + correctAnswers,
                 wrong_answers: data.wrong_answers + wrongAnswers,
-                study_minutes: data.study_minutes + durationMinutes,
+                study_minutes: sanitizeMinutes(data.study_minutes) + safeDuration,
                 last_studied: new Date().toISOString(),
                 updated_at: new Date().toISOString()
             })
@@ -236,7 +261,10 @@ async function getOverallStats() {
             questions += row.questions_answered || 0;
             correct += row.correct_answers || 0;
             wrong += row.wrong_answers || 0;
-            minutes += row.study_minutes || 0;
+            // Sanitize: exclude any legacy row whose accumulated
+            // study_minutes is beyond what's realistically possible, so a
+            // single bad row can't blow up the whole dashboard figure.
+            minutes += sanitizeMinutes(row.study_minutes);
         });
 
         // Calculate streak from recent attempts
@@ -322,7 +350,7 @@ async function getSubjectStatsFromDB(subject) {
             totalQ += row.questions_answered || 0;
             correct += row.correct_answers || 0;
             wrong += row.wrong_answers || 0;
-            minutes += row.study_minutes || 0;
+            minutes += sanitizeMinutes(row.study_minutes);
         });
 
         return {
