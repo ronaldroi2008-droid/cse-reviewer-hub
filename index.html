@@ -706,33 +706,13 @@ gtag('config', 'G-9HYPPWKM7R');
           <h1>CSE Reviewer Hub</h1>
         </div>
         <div class="header-right">
-          <div id="licenseStatusBox" class="access-status">
-            <span class="pill pill-free">⟳ loading</span>
-          </div>
-          <div id="authLinks" class="auth-links">
-            <a href="login.html" class="btn-login">Login</a>
-            <a href="register.html" class="btn-register">Register</a>
-          </div>
-          <div id="logoutContainer">
-            <button onclick="logoutUser()" class="btn-logout">Logout</button>
-          </div>
+          <div class="access-status"><span class="pill pill-pro">✓ Free Guest Access</span></div>
         </div>
       </header>
 
       <div class="tagline">
         🧠 5 subjects &bull; Full Mock Exam (170 items) &bull; Smart practice
       </div>
-
-      <!-- ===== USER SESSION INFO ===== -->
-      <div id="userSessionInfo" class="user-session-info">
-        <div class="session-row">
-          <div>
-            <span class="user-greeting">👋 Welcome back, <span id="userName">User</span>!</span>
-            <span id="membershipBadge" class="membership-badge free">🔓 Loading...</span>
-          </div>
-        </div>
-      </div>
-
       <!-- ===== LEVEL 2: OVERALL STATS ===== -->
       <section class="dashboard-overview">
         <div class="section-title">📊 Overall Progress (All Subjects)</div>
@@ -783,24 +763,11 @@ gtag('config', 'G-9HYPPWKM7R');
           <!-- Filled by JavaScript -->
         </div>
       </div>
-
-      <!-- ===== UPGRADE BANNER ===== -->
-      <div id="upgradeBanner" class="upgrade-banner">
-        <div class="upgrade-row">
-          <div class="upgrade-text">
-            <span class="icon">⭐</span>
-            <span class="label">Upgrade to PRO</span>
-            <span class="desc">Unlock full mock exams &amp; practice drills</span>
-          </div>
-          <a href="license.html" class="btn-upgrade">Upgrade Now →</a>
-        </div>
-      </div>
-
       <!-- ===== QUICK ACTIONS ===== -->
       <section class="quick-actions">
         <h2>🚀 Quick Actions</h2>
-        <a href="license.html" class="action-btn locked" id="quickPractice">🎯 Practice Mode</a>
-        <a href="license.html" class="action-btn locked" id="quickMock">🏆 Mock Exam</a>
+        <a href="practice.html" class="action-btn" id="quickPractice">🎯 Practice Mode</a>
+        <a href="mock_exam.html" class="action-btn" id="quickMock">🏆 Mock Exam</a>
         <a href="stats.html" class="action-btn" id="quickStats">📊 View Full Stats</a>
       </section>
 
@@ -845,630 +812,47 @@ gtag('config', 'G-9HYPPWKM7R');
   </div>
 </main>
 
-<!-- ===== MODAL ===== -->
-<div id="accessModal" class="modal-overlay" style="display: none;">
-  <div class="modal-container">
-    <div class="modal-header">
-      <button class="modal-close" id="closeModalBtn" aria-label="Close Modal">&times;</button>
-      <div class="modal-icon">⭐</div>
-      <div class="modal-title" id="modalTitleText">Unlock Full Access</div>
-      <div class="tabs" id="modalTabs">
-        <button class="tab-btn active" data-tab="pro">🚀 PRO Lifetime</button>
-      </div>
-    </div>
-    <div class="modal-body" id="modalBodyContainer">
-    </div>
-  </div>
-</div>
-
-<!-- ===== SCRIPTS ===== -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-<script src="membership.js"></script>
-<script src="progress.js"></script>
-
-<!-- ===== MAIN APPLICATION SCRIPT ===== -->
+<!-- Guest-only homepage: no Supabase, account or membership scripts -->
 <script>
-(function() {
+(function () {
   'use strict';
-
-  // ==========================================
-  // DOM ELEMENTS
-  // ==========================================
-  const userSessionInfo = document.getElementById('userSessionInfo');
-  const userName = document.getElementById('userName');
-  const membershipBadge = document.getElementById('membershipBadge');
-  const upgradeBanner = document.getElementById('upgradeBanner');
-  const practiceBtn = document.getElementById('practiceModeBtn');
-  const mockBtn = document.getElementById('mockExamBtn');
-  const licenseStatusBox = document.getElementById('licenseStatusBox');
-  const authLinks = document.getElementById('authLinks');
-  const logoutContainer = document.getElementById('logoutContainer');
-
-  // Dashboard stat elements
-  const statQuestions = document.getElementById('statQuestions');
-  const statAccuracy = document.getElementById('statAccuracy');
-  const statStudyTime = document.getElementById('statStudyTime');
-  const statStreak = document.getElementById('statStreak');
-  const statQuestionsTrend = document.getElementById('statQuestionsTrend');
-  const statAccuracyTrend = document.getElementById('statAccuracyTrend');
-  const statStudyTrend = document.getElementById('statStudyTrend');
-  const statStreakTrend = document.getElementById('statStreakTrend');
-
-  // Quick action buttons
-  const quickPractice = document.getElementById('quickPractice');
-  const quickMock = document.getElementById('quickMock');
-
-  // ==========================================
-  // SUBJECT CONFIGURATION
-  // ==========================================
-  const SUBJECT_CONFIG = {
-    'Verbal': { icon: '📖', color: '#818cf8', link: 'verbal.html', bgColor: 'rgba(129, 140, 248, 0.1)' },
-    'Numerical': { icon: '🔢', color: '#34d399', link: 'numerical.html', bgColor: 'rgba(52, 211, 153, 0.1)' },
-    'Analytical': { icon: '🧩', color: '#fbbf24', link: 'analytical.html', bgColor: 'rgba(251, 191, 36, 0.1)' },
-    'Clerical': { icon: '📑', color: '#f472b6', link: 'clerical.html', bgColor: 'rgba(244, 114, 182, 0.1)' },
-    'General': { icon: '🇵🇭', color: '#60a5fa', link: 'general_info.html', bgColor: 'rgba(96, 165, 250, 0.1)' }
-  };
-
-  // ==========================================
-  // RESET STATS
-  // ==========================================
-  function resetStats() {
-    statQuestions.textContent = '0';
-    statAccuracy.textContent = '0%';
-    statStudyTime.textContent = '0h';
-    statStreak.textContent = '🔥0';
-    statQuestionsTrend.textContent = '▲ 0 this week';
-    statQuestionsTrend.className = 'stat-trend neutral';
-    statAccuracyTrend.textContent = '-- no data';
-    statAccuracyTrend.className = 'stat-trend neutral';
-    statStudyTrend.textContent = '-- no data';
-    statStudyTrend.className = 'stat-trend neutral';
-    statStreakTrend.textContent = 'Keep going!';
-    statStreakTrend.className = 'stat-trend neutral';
-  }
-
-  // ==========================================
-  // GET SUBJECT STATS FROM PROGRESS.JS
-  // ==========================================
-  async function getSubjectStats(subject) {
-    try {
-      if (typeof getSubjectStatsFromDB === 'function') {
-        return await getSubjectStatsFromDB(subject);
-      }
-      
-      // Fallback: direct query
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (!session) return null;
-
-      const { data, error } = await supabaseClient
-        .from('user_progress')
-        .select('*')
-        .eq('user_id', session.user.id)
-        .eq('subject', subject);
-
-      if (error) {
-        console.error(`Error fetching ${subject} stats:`, error);
-        return null;
-      }
-
-      let totalQ = 0, correct = 0, wrong = 0, minutes = 0;
-      data.forEach(row => {
-        totalQ += row.questions_answered || 0;
-        correct += row.correct_answers || 0;
-        wrong += row.wrong_answers || 0;
-        minutes += row.study_minutes || 0;
-      });
-
-      return {
-        subject,
-        totalQuestions: totalQ,
-        correctAnswers: correct,
-        wrongAnswers: wrong,
-        accuracy: totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0,
-        studyMinutes: minutes,
-        studyHours: (minutes / 60).toFixed(1)
-      };
-    } catch (error) {
-      console.error(`Error in getSubjectStats for ${subject}:`, error);
-      return null;
-    }
-  }
-
-  // ==========================================
-  // LOAD SUBJECT MASTERY CARDS
-  // ==========================================
-  async function loadSubjectMastery() {
-    const container = document.getElementById('subjectMasteryList');
-    if (!container) return;
-
-    const subjects = ['Verbal', 'Numerical', 'Analytical', 'Clerical', 'General'];
-    container.innerHTML = '';
-
-    let hasData = false;
-
-    for (const subject of subjects) {
-      const stats = await getSubjectStats(subject);
-      const config = SUBJECT_CONFIG[subject];
-
-      // Determine status
-      let statusClass = 'not-started';
-      let statusText = 'Not started';
-      let statusEmoji = '⏳';
-      
-      if (stats && stats.totalQuestions > 0) {
-        hasData = true;
-        if (stats.accuracy >= 70) {
-          statusClass = 'good';
-          statusText = `${stats.accuracy}% • Good!`;
-          statusEmoji = '✅';
-        } else if (stats.accuracy >= 50) {
-          statusClass = 'warning';
-          statusText = `${stats.accuracy}% • Needs practice`;
-          statusEmoji = '⚠️';
-        } else {
-          statusClass = 'danger';
-          statusText = `${stats.accuracy}% • Needs focus`;
-          statusEmoji = '❌';
-        }
-      }
-
-      // Progress bar width
-      const progressWidth = stats && stats.totalQuestions > 0 ? Math.min(stats.accuracy, 100) : 0;
-      const progressColor = stats && stats.totalQuestions > 0 
-        ? (stats.accuracy >= 70 ? 'green' : stats.accuracy >= 50 ? 'yellow' : 'red')
-        : 'gray';
-
+  const subjects = [
+    ['📖','Verbal','verbal.html'],
+    ['🔢','Numerical','numerical.html'],
+    ['🧩','Analytical','analytical.html'],
+    ['📑','Clerical','clerical.html'],
+    ['🇵🇭','General','general_info.html']
+  ];
+  const mastery = document.getElementById('subjectMasteryList');
+  if (mastery) {
+    mastery.innerHTML = '';
+    for (const [icon, name, link] of subjects) {
       const card = document.createElement('a');
-      card.href = config.link;
       card.className = 'subject-card-detailed';
-
-      // Determine if there are wrong answers to review
-      const hasWrongAnswers = stats && stats.wrongAnswers > 0;
-      const wrongCount = stats ? stats.wrongAnswers : 0;
-
-      card.innerHTML = `
-        <div class="subject-header">
-          <div class="subject-name">
-            <span class="subject-icon">${config.icon}</span>
-            ${subject}
-            <span class="subject-status ${statusClass}">${statusEmoji} ${statusText}</span>
-          </div>
-          <div style="font-size: 0.8rem; color: #64748b;">
-            ${stats ? stats.totalQuestions : 0} questions
-          </div>
-        </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill ${progressColor}" style="width: ${progressWidth}%;"></div>
-        </div>
-        <div class="subject-details">
-          ${stats && stats.totalQuestions > 0 ? `
-            <span class="correct">✅ ${stats.correctAnswers} correct</span>
-            <span class="wrong">❌ ${stats.wrongAnswers} wrong</span>
-            <span>⏱️ ${stats.studyHours}h studied</span>
-          ` : `
-            <span>⏳ Not started yet - click to begin!</span>
-          `}
-        </div>
-        <div class="subject-actions">
-          <a href="${config.link}" class="btn-sm primary-sm">📝 Practice Now</a>
-          ${hasWrongAnswers ? `
-            <a href="${config.link}?review=true" class="btn-sm review-btn">📋 Review Mistakes (${wrongCount})</a>
-          ` : ''}
-        </div>
-      `;
-
-      container.appendChild(card);
-    }
-
-    return hasData;
-  }
-
-  // ==========================================
-  // LOAD RECOMMENDATIONS
-  // ==========================================
-  async function loadRecommendations() {
-    const container = document.getElementById('recommendationsContainer');
-    const list = document.getElementById('recommendationsList');
-    if (!container || !list) return;
-
-    const subjects = ['Verbal', 'Numerical', 'Analytical', 'Clerical', 'General'];
-    const stats = [];
-    
-    for (const subject of subjects) {
-      const data = await getSubjectStats(subject);
-      if (data && data.totalQuestions > 0) {
-        stats.push(data);
-      }
-    }
-
-    if (stats.length === 0) {
-      container.style.display = 'none';
-      return;
-    }
-
-    container.style.display = 'block';
-    list.innerHTML = '';
-
-    // Sort by accuracy (lowest first)
-    stats.sort((a, b) => a.accuracy - b.accuracy);
-    
-    // Find weakest
-    const weakest = stats[0];
-    const strongest = stats[stats.length - 1];
-    const notStarted = subjects.filter(s => {
-      const data = stats.find(st => st.subject === s);
-      return !data || data.totalQuestions === 0;
-    });
-
-    let recommendations = [];
-    let num = 1;
-
-    // 1. Weakest subject
-    if (weakest && weakest.accuracy < 70) {
-      recommendations.push({
-        num: num++,
-        text: `Focus on <strong>${weakest.subject}</strong> - Your weakest subject (${weakest.accuracy}%)`,
-        action: `Practice ${weakest.subject}`
-      });
-    }
-
-    // 2. Not started subjects
-    if (notStarted.length > 0) {
-      recommendations.push({
-        num: num++,
-        text: `Complete <strong>${notStarted.join(', ')}</strong> - Not started yet`,
-        action: `Start ${notStarted[0]}`
-      });
-    }
-
-    // 3. Strengths
-    if (strongest && strongest.accuracy >= 70) {
-      recommendations.push({
-        num: num++,
-        text: `Maintain your strength in <strong>${strongest.subject}</strong> (${strongest.accuracy}%)`,
-        action: `Practice ${strongest.subject}`
-      });
-    }
-
-    // 4. Review mistakes
-    const hasMistakes = stats.some(s => s.wrongAnswers > 0);
-    if (hasMistakes) {
-      recommendations.push({
-        num: num++,
-        text: `Review your mistakes - ${stats.reduce((sum, s) => sum + s.wrongAnswers, 0)} items to review`,
-        action: 'Review Mistakes'
-      });
-    }
-
-    // 5. General tip
-    if (recommendations.length === 0) {
-      recommendations.push({
-        num: 1,
-        text: 'Great job! Keep practicing to maintain your skills.',
-        action: 'Continue Practicing'
-      });
-    }
-
-    recommendations.forEach(rec => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span class="rec-number">${rec.num}</span>
-        ${rec.text}
-        <a href="${SUBJECT_CONFIG[rec.action.split(' ')[1]]?.link || '#'}" style="margin-left: auto; font-size: 0.75rem; color: #818cf8; text-decoration: none;">
-          ${rec.action} →
-        </a>
-      `;
-      list.appendChild(li);
-    });
-  }
-
-  // ==========================================
-  // LOAD RECENT ACTIVITY
-  // ==========================================
-  async function loadRecentActivity() {
-    const container = document.getElementById('recentActivityContainer');
-    const list = document.getElementById('recentActivityList');
-    if (!container || !list) return;
-
-    try {
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (!session) {
-        container.style.display = 'none';
-        return;
-      }
-
-      const { data, error } = await supabaseClient
-        .from('quiz_attempts')
-        .select('*')
-        .eq('user_id', session.user.id)
-        .order('completed_at', { ascending: false })
-        .limit(5);
-
-      if (error || !data || data.length === 0) {
-        container.style.display = 'none';
-        return;
-      }
-
-      container.style.display = 'block';
-      list.innerHTML = '';
-
-      data.forEach(attempt => {
-        const item = document.createElement('div');
-        item.className = 'activity-item';
-        
-        const scoreClass = attempt.score_percent >= 70 ? 'good' : attempt.score_percent >= 50 ? 'warning' : 'danger';
-        const date = new Date(attempt.completed_at);
-        const timeAgo = getTimeAgo(date);
-
-        item.innerHTML = `
-          <span class="activity-subject">${attempt.subject}</span>
-          <span class="activity-score ${scoreClass}">${attempt.score_percent}%</span>
-          <span class="activity-time">${timeAgo}</span>
-        `;
-        list.appendChild(item);
-      });
-    } catch (error) {
-      console.error('Error loading recent activity:', error);
-      container.style.display = 'none';
+      card.href = link;
+      const header = document.createElement('div');
+      header.className = 'subject-header';
+      const title = document.createElement('span');
+      title.className = 'subject-name';
+      title.textContent = `${icon} ${name} Ability`;
+      if (name === 'General') title.textContent = `${icon} General Information`;
+      const status = document.createElement('span');
+      status.className = 'subject-status not-started';
+      status.textContent = 'Start reviewing →';
+      header.append(title, status);
+      card.appendChild(header);
+      mastery.appendChild(card);
     }
   }
-
-  // ==========================================
-  // HELPER: TIME AGO
-  // ==========================================
-  function getTimeAgo(date) {
-    const now = new Date();
-    const diff = Math.floor((now - date) / (1000 * 60));
-    
-    if (diff < 1) return 'Just now';
-    if (diff < 60) return `${diff}m ago`;
-    if (diff < 1440) return `${Math.floor(diff / 60)}h ago`;
-    return `${Math.floor(diff / 1440)}d ago`;
+  const statsSection = document.querySelector('.dashboard-overview');
+  if (statsSection) {
+    statsSection.innerHTML = '<div class="section-title">📊 Your Progress</div><p style="color:#94a3b8;line-height:1.6">Guest mode is active. Account-based progress is unavailable on this homepage. You can start reviewing any subject below.</p>';
   }
-
-  // ==========================================
-  // LOAD DASHBOARD STATS
-  // ==========================================
-  async function loadDashboardStats() {
-    try {
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (!session) {
-        resetStats();
-        return;
-      }
-
-      if (typeof getOverallStats !== 'function') {
-        resetStats();
-        return;
-      }
-
-      const stats = await getOverallStats();
-      
-      if (stats) {
-        statQuestions.textContent = stats.totalQuestions || 0;
-        statAccuracy.textContent = (stats.accuracy || 0) + '%';
-        statStudyTime.textContent = stats.studyHours || '0';
-        statStreak.textContent = `🔥${stats.streak || 0}`;
-
-        // Trends (simplified - can be enhanced with weekly comparison)
-        if (stats.totalQuestions > 0) {
-          statQuestionsTrend.textContent = `📊 ${stats.totalQuestions} total questions`;
-          statQuestionsTrend.className = 'stat-trend up';
-          statAccuracyTrend.textContent = `🎯 ${stats.accuracy}% accuracy`;
-          statAccuracyTrend.className = 'stat-trend ' + (stats.accuracy >= 70 ? 'up' : stats.accuracy >= 50 ? 'neutral' : 'down');
-          statStudyTrend.textContent = `⏱️ ${stats.studyHours}h total study time`;
-          statStudyTrend.className = 'stat-trend neutral';
-          statStreakTrend.textContent = stats.streak > 0 ? `🔥 ${stats.streak} day streak!` : 'Start a streak!';
-          statStreakTrend.className = 'stat-trend ' + (stats.streak > 0 ? 'up' : 'neutral');
-        }
-      }
-
-      // Load all Level 2 components
-      await loadSubjectMastery();
-      await loadRecommendations();
-      await loadRecentActivity();
-
-    } catch (error) {
-      console.error('Error loading dashboard stats:', error);
-      resetStats();
-    }
-  }
-
-  // ==========================================
-  // UPDATE UI BASED ON LOGIN STATUS
-  // ==========================================
-  function updateUI() {
-    const sessionInfo = getSessionInfo();
-    const isLoggedIn = sessionInfo.hasLocalSession;
-
-    if (isLoggedIn && currentProfile) {
-      authLinks.style.display = 'none';
-      logoutContainer.style.display = 'block';
-      userSessionInfo.style.display = 'block';
-      
-      const displayName = currentProfile.full_name || currentProfile.email || 'User';
-      userName.textContent = displayName.split('@')[0];
-
-      const status = getProStatus();
-
-      if (status.isPro) {
-        if (status.isLifetime) {
-          membershipBadge.textContent = '🟢 PRO (Lifetime)';
-        } else if (status.daysRemaining > 0) {
-          membershipBadge.textContent = `🟢 PRO (${status.daysRemaining}d left)`;
-        } else {
-          membershipBadge.textContent = '🟢 PRO';
-        }
-        membershipBadge.className = 'membership-badge pro';
-        upgradeBanner.style.display = 'none';
-        quickPractice.href = 'practice.html';
-        quickPractice.classList.remove('locked');
-        quickMock.href = 'mock_exam.html';
-        quickMock.classList.remove('locked');
-      } else {
-        membershipBadge.textContent = '🔓 FREE Plan';
-        membershipBadge.className = 'membership-badge free';
-        upgradeBanner.style.display = 'block';
-        quickPractice.href = 'license.html';
-        quickPractice.classList.add('locked');
-        quickMock.href = 'license.html';
-        quickMock.classList.add('locked');
-      }
-
-      updateProtectedButtons(status);
-      loadDashboardStats();
-
-    } else {
-      authLinks.style.display = 'flex';
-      logoutContainer.style.display = 'none';
-      userSessionInfo.style.display = 'none';
-      upgradeBanner.style.display = 'none';
-      
-      resetProtectedButtons();
-      quickPractice.href = 'license.html';
-      quickPractice.classList.add('locked');
-      quickMock.href = 'license.html';
-      quickMock.classList.add('locked');
-      resetStats();
-
-      // Hide Level 2 components
-      document.getElementById('recommendationsContainer').style.display = 'none';
-      document.getElementById('recentActivityContainer').style.display = 'none';
-      document.getElementById('subjectMasteryList').innerHTML = '<p style="color: #94a3b8; text-align: center; padding: 20px;">Please log in to see your progress.</p>';
-    }
-  }
-
-  // ==========================================
-  // UPDATE PROTECTED BUTTONS
-  // ==========================================
-  function updateProtectedButtons(status) {
-    if (!practiceBtn || !mockBtn) return;
-    const isPro = status.isPro;
-
-    const practiceName = practiceBtn.querySelector('.subject-name');
-    if (practiceName) {
-      if (isPro) {
-        practiceName.innerHTML = `
-          <span class="subject-icon" aria-hidden="true">🎯</span> 
-          Practice Mode (Quick Drills) 
-          <span class="badge-unlocked">✅ UNLOCKED</span>
-        `;
-        practiceBtn.href = 'practice.html';
-      } else {
-        practiceName.innerHTML = `
-          <span class="subject-icon" aria-hidden="true">🎯</span> 
-          Practice Mode (Quick Drills) 
-          <span class="badge-locked">🔒 LOCKED</span>
-        `;
-        practiceBtn.href = 'license.html';
-      }
-    }
-
-    const mockName = mockBtn.querySelector('.subject-name');
-    if (mockName) {
-      if (isPro) {
-        mockName.innerHTML = `
-          <span class="subject-icon" aria-hidden="true">🏆</span> 
-          Full Mock Exam (170 Items) 
-          <span class="badge-unlocked">✅ UNLOCKED</span>
-        `;
-        mockBtn.href = 'mock_exam.html';
-      } else {
-        mockName.innerHTML = `
-          <span class="subject-icon" aria-hidden="true">🏆</span> 
-          Full Mock Exam (170 Items) 
-          <span class="badge-locked">🔒 LOCKED</span>
-        `;
-        mockBtn.href = 'license.html';
-      }
-    }
-  }
-
-  function resetProtectedButtons() {
-    if (!practiceBtn || !mockBtn) return;
-
-    const practiceName = practiceBtn.querySelector('.subject-name');
-    if (practiceName) {
-      practiceName.innerHTML = `
-        <span class="subject-icon" aria-hidden="true">🎯</span> 
-        Practice Mode (Quick Drills) 
-        <span class="badge-locked">🔒 LOCKED</span>
-      `;
-      practiceBtn.href = 'license.html';
-    }
-
-    const mockName = mockBtn.querySelector('.subject-name');
-    if (mockName) {
-      mockName.innerHTML = `
-        <span class="subject-icon" aria-hidden="true">🏆</span> 
-        Full Mock Exam (170 Items) 
-        <span class="badge-locked">🔒 LOCKED</span>
-      `;
-      mockBtn.href = 'license.html';
-    }
-  }
-
-  // ==========================================
-  // LOGOUT
-  // ==========================================
-  if (typeof window.logoutUser === 'undefined') {
-    window.logoutUser = async function() {
-      try {
-        const { data: { session } } = await supabaseClient.auth.getSession();
-        if (session) {
-          await supabaseClient
-            .from('profiles')
-            .update({ session_id: null })
-            .eq('id', session.user.id);
-        }
-        await supabaseClient.auth.signOut();
-        localStorage.removeItem('session_id');
-        window.currentProfile = null;
-        if (sessionValidationTimer) {
-          clearInterval(sessionValidationTimer);
-          sessionValidationTimer = null;
-        }
-        isLoggingOut = false;
-        window.location.href = 'index.html';
-      } catch (error) {
-        console.error('❌ Logout error:', error);
-        alert('An error occurred during logout. Please try again.');
-      }
-    };
-  }
-
-  // ==========================================
-  // INITIALIZATION
-  // ==========================================
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Level 2 Dashboard loading...');
-    resetStats();
-    setTimeout(function() {
-      updateUI();
-    }, 500);
-  });
-
-  document.addEventListener('membershipUpdated', function() {
-    updateUI();
-  });
-
-  window.addEventListener('storage', function(e) {
-    if (e.key === 'session_id' || e.key === 'cse_access_kind') {
-      updateUI();
-    }
-  });
-
-  // Expose functions globally
-  window.updateUI = updateUI;
-  window.updateProtectedButtons = updateProtectedButtons;
-  window.resetProtectedButtons = resetProtectedButtons;
-  window.resetStats = resetStats;
-  window.loadDashboardStats = loadDashboardStats;
-
-  console.log('✅ Level 2 Dashboard ready!');
+  const recent = document.getElementById('recentActivityContainer');
+  if (recent) recent.style.display = 'none';
+  const recs = document.getElementById('recommendationsContainer');
+  if (recs) recs.style.display = 'none';
 })();
 </script>
-
 </body>
 </html>
